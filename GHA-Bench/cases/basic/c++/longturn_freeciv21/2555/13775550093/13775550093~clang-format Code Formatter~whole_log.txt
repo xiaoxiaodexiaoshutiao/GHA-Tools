@@ -1,0 +1,240 @@
+2025-03-10T21:56:13.8907999Z Requested labels: ubuntu-latest
+2025-03-10T21:56:13.8908251Z Job defined at: longturn/freeciv21/.github/workflows/build.yaml@refs/pull/2555/merge
+2025-03-10T21:56:13.8908391Z Waiting for a runner to pick up this job...
+2025-03-10T21:56:14.1685709Z Job is waiting for a hosted runner to come online.
+2025-03-10T21:56:18.4784912Z Job is about to start running on the hosted runner: GitHub Actions 12 (hosted)
+2025-03-10T21:56:21.0079127Z Current runner version: '2.322.0'
+2025-03-10T21:56:21.0102012Z ##[group]Operating System
+2025-03-10T21:56:21.0102892Z Ubuntu
+2025-03-10T21:56:21.0103571Z 24.04.2
+2025-03-10T21:56:21.0104062Z LTS
+2025-03-10T21:56:21.0104708Z ##[endgroup]
+2025-03-10T21:56:21.0105257Z ##[group]Runner Image
+2025-03-10T21:56:21.0105871Z Image: ubuntu-24.04
+2025-03-10T21:56:21.0106387Z Version: 20250302.1.0
+2025-03-10T21:56:21.0107416Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250302.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-10T21:56:21.0108852Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250302.1
+2025-03-10T21:56:21.0109785Z ##[endgroup]
+2025-03-10T21:56:21.0110344Z ##[group]Runner Image Provisioner
+2025-03-10T21:56:21.0110998Z 2.0.422.1
+2025-03-10T21:56:21.0111466Z ##[endgroup]
+2025-03-10T21:56:21.0113745Z ##[group]GITHUB_TOKEN Permissions
+2025-03-10T21:56:21.0115655Z Actions: read
+2025-03-10T21:56:21.0116457Z Attestations: read
+2025-03-10T21:56:21.0117079Z Checks: read
+2025-03-10T21:56:21.0117562Z Contents: read
+2025-03-10T21:56:21.0118160Z Deployments: read
+2025-03-10T21:56:21.0118699Z Discussions: read
+2025-03-10T21:56:21.0119159Z Issues: read
+2025-03-10T21:56:21.0119732Z Metadata: read
+2025-03-10T21:56:21.0120230Z Packages: read
+2025-03-10T21:56:21.0120768Z Pages: read
+2025-03-10T21:56:21.0121290Z PullRequests: read
+2025-03-10T21:56:21.0121789Z RepositoryProjects: read
+2025-03-10T21:56:21.0122462Z SecurityEvents: read
+2025-03-10T21:56:21.0123168Z Statuses: read
+2025-03-10T21:56:21.0123683Z ##[endgroup]
+2025-03-10T21:56:21.0126508Z Secret source: None
+2025-03-10T21:56:21.0127174Z Prepare workflow directory
+2025-03-10T21:56:21.0510167Z Prepare all required actions
+2025-03-10T21:56:21.0547814Z Getting action download info
+2025-03-10T21:56:21.2891070Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-10T21:56:21.3725280Z Download action repository 'jidicula/clang-format-action@v4.11.0' (SHA:f62da5e3d3a2d88ff364771d9d938773a618ab5e)
+2025-03-10T21:56:21.9133349Z Complete job name: clang-format Code Formatter
+2025-03-10T21:56:21.9813597Z ##[group]Run actions/checkout@v4
+2025-03-10T21:56:21.9814794Z with:
+2025-03-10T21:56:21.9815477Z   fetch-depth: 0
+2025-03-10T21:56:21.9816212Z   repository: longturn/freeciv21
+2025-03-10T21:56:21.9817352Z   token: ***
+2025-03-10T21:56:21.9818063Z   ssh-strict: true
+2025-03-10T21:56:21.9818800Z   ssh-user: git
+2025-03-10T21:56:21.9819532Z   persist-credentials: true
+2025-03-10T21:56:21.9820349Z   clean: true
+2025-03-10T21:56:21.9821101Z   sparse-checkout-cone-mode: true
+2025-03-10T21:56:21.9821972Z   fetch-tags: false
+2025-03-10T21:56:21.9822711Z   show-progress: true
+2025-03-10T21:56:21.9823664Z   lfs: false
+2025-03-10T21:56:21.9824324Z   submodules: false
+2025-03-10T21:56:21.9825040Z   set-safe-directory: true
+2025-03-10T21:56:21.9826134Z ##[endgroup]
+2025-03-10T21:56:22.1761913Z Syncing repository: longturn/freeciv21
+2025-03-10T21:56:22.1763812Z ##[group]Getting Git version info
+2025-03-10T21:56:22.1764547Z Working directory is '/home/runner/work/freeciv21/freeciv21'
+2025-03-10T21:56:22.1765531Z [command]/usr/bin/git version
+2025-03-10T21:56:22.1914974Z git version 2.48.1
+2025-03-10T21:56:22.1942828Z ##[endgroup]
+2025-03-10T21:56:22.1958550Z Temporarily overriding HOME='/home/runner/work/_temp/279c3a61-8823-4ae0-b558-771caf31f3c1' before making global git config changes
+2025-03-10T21:56:22.1961003Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-10T21:56:22.1965286Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/freeciv21/freeciv21
+2025-03-10T21:56:22.2002765Z Deleting the contents of '/home/runner/work/freeciv21/freeciv21'
+2025-03-10T21:56:22.2007485Z ##[group]Initializing the repository
+2025-03-10T21:56:22.2012182Z [command]/usr/bin/git init /home/runner/work/freeciv21/freeciv21
+2025-03-10T21:56:22.2090451Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-10T21:56:22.2091972Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-10T21:56:22.2093178Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-10T21:56:22.2093858Z hint:
+2025-03-10T21:56:22.2094361Z hint: 	git config --global init.defaultBranch <name>
+2025-03-10T21:56:22.2094932Z hint:
+2025-03-10T21:56:22.2095474Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-10T21:56:22.2096462Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-10T21:56:22.2097150Z hint:
+2025-03-10T21:56:22.2097540Z hint: 	git branch -m <name>
+2025-03-10T21:56:22.2100001Z Initialized empty Git repository in /home/runner/work/freeciv21/freeciv21/.git/
+2025-03-10T21:56:22.2110518Z [command]/usr/bin/git remote add origin https://github.com/longturn/freeciv21
+2025-03-10T21:56:22.2146974Z ##[endgroup]
+2025-03-10T21:56:22.2148186Z ##[group]Disabling automatic garbage collection
+2025-03-10T21:56:22.2151891Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-10T21:56:22.2181026Z ##[endgroup]
+2025-03-10T21:56:22.2182288Z ##[group]Setting up auth
+2025-03-10T21:56:22.2188509Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-10T21:56:22.2219708Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-10T21:56:22.2570182Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-10T21:56:22.2600322Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-10T21:56:22.2830658Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-10T21:56:22.2866176Z ##[endgroup]
+2025-03-10T21:56:22.2866973Z ##[group]Fetching the repository
+2025-03-10T21:56:22.2876092Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* +f5bd735357c9e5fbfeaa4c016d48dd095f8302bc:refs/remotes/pull/2555/merge
+2025-03-10T21:56:48.4801226Z From https://github.com/longturn/freeciv21
+2025-03-10T21:56:48.4802092Z  * [new branch]            LT2_6_2       -> origin/LT2_6_2
+2025-03-10T21:56:48.4806503Z  * [new branch]            bugfix/governor-tab-width -> origin/bugfix/governor-tab-width
+2025-03-10T21:56:48.4807550Z  * [new branch]            cambot        -> origin/cambot
+2025-03-10T21:56:48.4808320Z  * [new branch]            coverity_scan -> origin/coverity_scan
+2025-03-10T21:56:48.4809056Z  * [new branch]            master        -> origin/master
+2025-03-10T21:56:48.4810085Z  * [new branch]            stable        -> origin/stable
+2025-03-10T21:56:48.4812090Z  * [new tag]               v3.0          -> v3.0
+2025-03-10T21:56:48.4813361Z  * [new tag]               v3.0-alpha.1  -> v3.0-alpha.1
+2025-03-10T21:56:48.4814693Z  * [new tag]               v3.0-alpha.10 -> v3.0-alpha.10
+2025-03-10T21:56:48.4816318Z  * [new tag]               v3.0-alpha.2  -> v3.0-alpha.2
+2025-03-10T21:56:48.4817491Z  * [new tag]               v3.0-alpha.3  -> v3.0-alpha.3
+2025-03-10T21:56:48.4818914Z  * [new tag]               v3.0-alpha.4  -> v3.0-alpha.4
+2025-03-10T21:56:48.4820266Z  * [new tag]               v3.0-alpha.5  -> v3.0-alpha.5
+2025-03-10T21:56:48.4821956Z  * [new tag]               v3.0-alpha.6  -> v3.0-alpha.6
+2025-03-10T21:56:48.4823521Z  * [new tag]               v3.0-alpha.7  -> v3.0-alpha.7
+2025-03-10T21:56:48.4825051Z  * [new tag]               v3.0-alpha.8  -> v3.0-alpha.8
+2025-03-10T21:56:48.4826253Z  * [new tag]               v3.0-alpha.9  -> v3.0-alpha.9
+2025-03-10T21:56:48.4827631Z  * [new tag]               v3.0-beta.1   -> v3.0-beta.1
+2025-03-10T21:56:48.4828995Z  * [new tag]               v3.0-beta.2   -> v3.0-beta.2
+2025-03-10T21:56:48.4830412Z  * [new tag]               v3.0-beta.3   -> v3.0-beta.3
+2025-03-10T21:56:48.4831819Z  * [new tag]               v3.0-beta.4   -> v3.0-beta.4
+2025-03-10T21:56:48.4833376Z  * [new tag]               v3.0-beta.5   -> v3.0-beta.5
+2025-03-10T21:56:48.4834758Z  * [new tag]               v3.0-beta.6   -> v3.0-beta.6
+2025-03-10T21:56:48.4836148Z  * [new tag]               v3.0-beta.7   -> v3.0-beta.7
+2025-03-10T21:56:48.4837487Z  * [new tag]               v3.0-final    -> v3.0-final
+2025-03-10T21:56:48.4839101Z  * [new tag]               v3.0-patch.1  -> v3.0-patch.1
+2025-03-10T21:56:48.4840411Z  * [new tag]               v3.0-patch.2  -> v3.0-patch.2
+2025-03-10T21:56:48.4841691Z  * [new tag]               v3.0-patch.3  -> v3.0-patch.3
+2025-03-10T21:56:48.4843425Z  * [new tag]               v3.0-patch.4  -> v3.0-patch.4
+2025-03-10T21:56:48.4844784Z  * [new tag]               v3.0-patch.5  -> v3.0-patch.5
+2025-03-10T21:56:48.4846223Z  * [new tag]               v3.0-rc.1     -> v3.0-rc.1
+2025-03-10T21:56:48.4847614Z  * [new tag]               v3.0-rc.2     -> v3.0-rc.2
+2025-03-10T21:56:48.4849040Z  * [new tag]               v3.0-rc.3     -> v3.0-rc.3
+2025-03-10T21:56:48.4850413Z  * [new tag]               v3.1-alpha.1  -> v3.1-alpha.1
+2025-03-10T21:56:48.4851560Z  * [new tag]               v3.1-alpha.2  -> v3.1-alpha.2
+2025-03-10T21:56:48.4852975Z  * [new tag]               v3.1-alpha.3  -> v3.1-alpha.3
+2025-03-10T21:56:48.4854543Z  * [new tag]               v3.1-alpha.4  -> v3.1-alpha.4
+2025-03-10T21:56:48.4855884Z  * [new tag]               v3.1-alpha.5  -> v3.1-alpha.5
+2025-03-10T21:56:48.4857246Z  * [new tag]               v3.1-beta.1   -> v3.1-beta.1
+2025-03-10T21:56:48.4858634Z  * [new tag]               v3.1-beta.2   -> v3.1-beta.2
+2025-03-10T21:56:48.4860365Z  * [new tag]               v3.1-rc.1     -> v3.1-rc.1
+2025-03-10T21:56:48.4861739Z  * [new tag]               v3.1-rc.2     -> v3.1-rc.2
+2025-03-10T21:56:48.4865503Z  * [new ref]               f5bd735357c9e5fbfeaa4c016d48dd095f8302bc -> pull/2555/merge
+2025-03-10T21:56:48.4905941Z ##[endgroup]
+2025-03-10T21:56:48.4907201Z ##[group]Determining the checkout info
+2025-03-10T21:56:48.4908240Z ##[endgroup]
+2025-03-10T21:56:48.4914205Z [command]/usr/bin/git sparse-checkout disable
+2025-03-10T21:56:48.4955247Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-10T21:56:48.4982419Z ##[group]Checking out the ref
+2025-03-10T21:56:48.4986438Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/2555/merge
+2025-03-10T21:56:49.5477006Z Updating files:  97% (6015/6165)
+2025-03-10T21:56:49.5747200Z Updating files:  98% (6042/6165)
+2025-03-10T21:56:49.5752581Z Updating files:  99% (6104/6165)
+2025-03-10T21:56:49.5753433Z Updating files: 100% (6165/6165)
+2025-03-10T21:56:49.5753938Z Updating files: 100% (6165/6165), done.
+2025-03-10T21:56:49.5788728Z Note: switching to 'refs/remotes/pull/2555/merge'.
+2025-03-10T21:56:49.5789263Z 
+2025-03-10T21:56:49.5789695Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-10T21:56:49.5790645Z changes and commit them, and you can discard any commits you make in this
+2025-03-10T21:56:49.5791516Z state without impacting any branches by switching back to a branch.
+2025-03-10T21:56:49.5791996Z 
+2025-03-10T21:56:49.5792339Z If you want to create a new branch to retain commits you create, you may
+2025-03-10T21:56:49.5793301Z do so (now or later) by using -c with the switch command. Example:
+2025-03-10T21:56:49.5793751Z 
+2025-03-10T21:56:49.5793967Z   git switch -c <new-branch-name>
+2025-03-10T21:56:49.5794349Z 
+2025-03-10T21:56:49.5794538Z Or undo this operation with:
+2025-03-10T21:56:49.5794822Z 
+2025-03-10T21:56:49.5795000Z   git switch -
+2025-03-10T21:56:49.5795223Z 
+2025-03-10T21:56:49.5795659Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-10T21:56:49.5796198Z 
+2025-03-10T21:56:49.5796833Z HEAD is now at f5bd735357 Merge 891b693d5997c3bd162001d84f8398c97fbc021d into 4dcc6cce77d394a217d16e23f3836f47b2d4fe4e
+2025-03-10T21:56:49.5894615Z ##[endgroup]
+2025-03-10T21:56:49.5936971Z [command]/usr/bin/git log -1 --format=%H
+2025-03-10T21:56:49.5960646Z f5bd735357c9e5fbfeaa4c016d48dd095f8302bc
+2025-03-10T21:56:49.6163865Z ##[group]Run jidicula/clang-format-action@v4.11.0
+2025-03-10T21:56:49.6164263Z with:
+2025-03-10T21:56:49.6164505Z   clang-format-version: 11
+2025-03-10T21:56:49.6164805Z   exclude-regex: dependencies
+2025-03-10T21:56:49.6165092Z   check-path: .
+2025-03-10T21:56:49.6165343Z   fallback-style: llvm
+2025-03-10T21:56:49.6165598Z ##[endgroup]
+2025-03-10T21:56:49.6265066Z ##[group]Run "/home/runner/work/_actions/jidicula/clang-format-action/v4.11.0/check.sh" "11" "." "llvm" "dependencies" ""
+2025-03-10T21:56:49.6265958Z [36;1m"/home/runner/work/_actions/jidicula/clang-format-action/v4.11.0/check.sh" "11" "." "llvm" "dependencies" ""[0m
+2025-03-10T21:56:49.6316641Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-10T21:56:49.6317026Z ##[endgroup]
+2025-03-10T21:56:49.7461603Z Unable to find image 'ghcr.io/jidicula/clang-format:11' locally
+2025-03-10T21:56:50.4796050Z 11: Pulling from jidicula/clang-format
+2025-03-10T21:56:50.4796671Z 8f84a9f2102e: Pulling fs layer
+2025-03-10T21:56:50.4797152Z 7d39c3f96830: Pulling fs layer
+2025-03-10T21:56:50.4797558Z 10124ad7b355: Pulling fs layer
+2025-03-10T21:56:50.7651422Z 10124ad7b355: Verifying Checksum
+2025-03-10T21:56:50.7651876Z 10124ad7b355: Download complete
+2025-03-10T21:56:50.7844261Z 8f84a9f2102e: Verifying Checksum
+2025-03-10T21:56:50.7845013Z 8f84a9f2102e: Download complete
+2025-03-10T21:56:51.7167314Z 7d39c3f96830: Verifying Checksum
+2025-03-10T21:56:51.7167860Z 7d39c3f96830: Download complete
+2025-03-10T21:56:51.8187495Z 8f84a9f2102e: Pull complete
+2025-03-10T21:56:54.1896738Z 7d39c3f96830: Pull complete
+2025-03-10T21:56:54.2043301Z 10124ad7b355: Pull complete
+2025-03-10T21:56:54.2079144Z Digest: sha256:d089a0b93fa969be71008a89783910c986aa48497bc3705b75c22bf32a742a0f
+2025-03-10T21:56:54.2096509Z Status: Downloaded newer image for ghcr.io/jidicula/clang-format:11
+2025-03-10T21:59:34.9622730Z ./server/unittools.cpp:1372:15: error: code should be clang-formatted [-Wclang-format-violations]
+2025-03-10T21:59:34.9623608Z     const auto& path = paths[fc_rand(paths.size())];
+2025-03-10T21:59:34.9623954Z               ^
+2025-03-10T21:59:34.9624407Z ./server/unittools.cpp:1372:16: error: code should be clang-formatted [-Wclang-format-violations]
+2025-03-10T21:59:34.9624969Z     const auto& path = paths[fc_rand(paths.size())];
+2025-03-10T21:59:34.9625294Z                ^
+2025-03-10T21:59:34.9625725Z ./server/unittools.cpp:1373:15: error: code should be clang-formatted [-Wclang-format-violations]
+2025-03-10T21:59:34.9626240Z     const auto& steps = path.steps();
+2025-03-10T21:59:34.9626519Z               ^
+2025-03-10T21:59:34.9626934Z ./server/unittools.cpp:1373:16: error: code should be clang-formatted [-Wclang-format-violations]
+2025-03-10T21:59:34.9627432Z     const auto& steps = path.steps();
+2025-03-10T21:59:34.9627708Z                ^
+2025-03-10T21:59:35.0412061Z Failed on file: ./server/unittools.cpp
+2025-03-10T21:59:35.0412478Z 
+2025-03-10T22:00:18.0431850Z ##[error]Process completed with exit code 1.
+2025-03-10T22:00:18.0485571Z ##[group]Run SHA="891b693d5997c3bd162001d84f8398c97fbc021d"
+2025-03-10T22:00:18.0485948Z [36;1mSHA="891b693d5997c3bd162001d84f8398c97fbc021d"[0m
+2025-03-10T22:00:18.0486289Z [36;1mecho "SHA=$SHA" >> $GITHUB_ENV[0m
+2025-03-10T22:00:18.0534682Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-10T22:00:18.0535005Z ##[endgroup]
+2025-03-10T22:00:18.0639412Z ##[group]Run DEEPLINK="https://github.com/longturn/freeciv21/commit/891b693d5997c3bd162001d84f8398c97fbc021d"
+2025-03-10T22:00:18.0640111Z [36;1mDEEPLINK="https://github.com/longturn/freeciv21/commit/891b693d5997c3bd162001d84f8398c97fbc021d"[0m
+2025-03-10T22:00:18.0640918Z [36;1mecho -e "Format check failed on commit [${GITHUB_SHA:0:8}]($DEEPLINK) with files:\n$(<$GITHUB_WORKSPACE/failing-files.txt)" >> $GITHUB_STEP_SUMMARY[0m
+2025-03-10T22:00:18.0684320Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-10T22:00:18.0684821Z env:
+2025-03-10T22:00:18.0685029Z   SHA: 891b693d5997c3bd162001d84f8398c97fbc021d
+2025-03-10T22:00:18.0685465Z ##[endgroup]
+2025-03-10T22:00:18.0852342Z Post job cleanup.
+2025-03-10T22:00:18.1780044Z [command]/usr/bin/git version
+2025-03-10T22:00:18.1816017Z git version 2.48.1
+2025-03-10T22:00:18.1859630Z Temporarily overriding HOME='/home/runner/work/_temp/7e76261b-b991-4aeb-899e-6ea9212e173b' before making global git config changes
+2025-03-10T22:00:18.1860915Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-10T22:00:18.1872878Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/freeciv21/freeciv21
+2025-03-10T22:00:18.1907191Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-10T22:00:18.1939629Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-10T22:00:18.2177324Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-10T22:00:18.2198870Z http.https://github.com/.extraheader
+2025-03-10T22:00:18.2211173Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-10T22:00:18.2243324Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-10T22:00:18.2611953Z Cleaning up orphan processes

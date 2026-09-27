@@ -1,0 +1,258 @@
+﻿2025-04-04T07:44:09.9079303Z Current runner version: '2.323.0'
+2025-04-04T07:44:09.9116243Z ##[group]Operating System
+2025-04-04T07:44:09.9117487Z Ubuntu
+2025-04-04T07:44:09.9118296Z 24.04.2
+2025-04-04T07:44:09.9119021Z LTS
+2025-04-04T07:44:09.9120059Z ##[endgroup]
+2025-04-04T07:44:09.9120976Z ##[group]Runner Image
+2025-04-04T07:44:09.9121944Z Image: ubuntu-24.04
+2025-04-04T07:44:09.9122907Z Version: 20250323.1.0
+2025-04-04T07:44:09.9124715Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-04T07:44:09.9127222Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-04-04T07:44:09.9128691Z ##[endgroup]
+2025-04-04T07:44:09.9129665Z ##[group]Runner Image Provisioner
+2025-04-04T07:44:09.9130967Z 2.0.422.1
+2025-04-04T07:44:09.9131630Z ##[endgroup]
+2025-04-04T07:44:09.9135954Z ##[group]GITHUB_TOKEN Permissions
+2025-04-04T07:44:09.9139584Z Actions: write
+2025-04-04T07:44:09.9141125Z Attestations: write
+2025-04-04T07:44:09.9142316Z Checks: write
+2025-04-04T07:44:09.9143216Z Contents: write
+2025-04-04T07:44:09.9144133Z Deployments: write
+2025-04-04T07:44:09.9144961Z Discussions: write
+2025-04-04T07:44:09.9146002Z Issues: write
+2025-04-04T07:44:09.9146791Z Metadata: read
+2025-04-04T07:44:09.9147619Z Models: read
+2025-04-04T07:44:09.9148612Z Packages: write
+2025-04-04T07:44:09.9149509Z Pages: write
+2025-04-04T07:44:09.9150550Z PullRequests: write
+2025-04-04T07:44:09.9151662Z RepositoryProjects: write
+2025-04-04T07:44:09.9152717Z SecurityEvents: write
+2025-04-04T07:44:09.9153692Z Statuses: write
+2025-04-04T07:44:09.9154677Z ##[endgroup]
+2025-04-04T07:44:09.9157855Z Secret source: Actions
+2025-04-04T07:44:09.9159551Z Prepare workflow directory
+2025-04-04T07:44:09.9649534Z Prepare all required actions
+2025-04-04T07:44:09.9707489Z Getting action download info
+2025-04-04T07:44:10.2173120Z Download action repository 'extractions/setup-just@v3' (SHA:e33e0265a09d6d736e2ee1e0eb685ef1de4669ff)
+2025-04-04T07:44:10.5683328Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-04T07:44:10.5685142Z Version: 4.2.2
+2025-04-04T07:44:10.5686678Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-04T07:44:10.5688128Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-04T07:44:10.5689119Z ##[endgroup]
+2025-04-04T07:44:10.6561228Z Getting action download info
+2025-04-04T07:44:10.7782057Z Download action repository 'extractions/setup-crate@v1' (SHA:4993624604c307fbca528d28a3c8b60fa5ecc859)
+2025-04-04T07:44:11.1888825Z Complete job name: clang-format
+2025-04-04T07:44:11.2637390Z ##[group]Run extractions/setup-just@v3
+2025-04-04T07:44:11.2638877Z with:
+2025-04-04T07:44:11.2639630Z   just-version: 1.26.0
+2025-04-04T07:44:11.2641125Z   github-token: ***
+2025-04-04T07:44:11.2642205Z ##[endgroup]
+2025-04-04T07:44:11.2771926Z ##[group]Run extractions/setup-crate@v1
+2025-04-04T07:44:11.2772964Z with:
+2025-04-04T07:44:11.2773646Z   repo: casey/just
+2025-04-04T07:44:11.2774396Z   version: 1.26.0
+2025-04-04T07:44:11.2775598Z   github-token: ***
+2025-04-04T07:44:11.2776361Z ##[endgroup]
+2025-04-04T07:44:12.2587653Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/a29ef7e3-dd9b-40a3-9e14-2e8ed807ebfc -f /home/runner/work/_temp/7ac81340-ae2c-48e4-8be2-75a6204ca9c7
+2025-04-04T07:44:12.3225575Z Successfully setup just v1.26.0
+2025-04-04T07:44:12.3434280Z ##[group]Run actions/checkout@v4
+2025-04-04T07:44:12.3434604Z with:
+2025-04-04T07:44:12.3434832Z   repository: LDMX-Software/ldmx-sw
+2025-04-04T07:44:12.3435259Z   token: ***
+2025-04-04T07:44:12.3435487Z   ssh-strict: true
+2025-04-04T07:44:12.3435720Z   ssh-user: git
+2025-04-04T07:44:12.3435949Z   persist-credentials: true
+2025-04-04T07:44:12.3436204Z   clean: true
+2025-04-04T07:44:12.3436431Z   sparse-checkout-cone-mode: true
+2025-04-04T07:44:12.3436708Z   fetch-depth: 1
+2025-04-04T07:44:12.3436929Z   fetch-tags: false
+2025-04-04T07:44:12.3437159Z   show-progress: true
+2025-04-04T07:44:12.3437391Z   lfs: false
+2025-04-04T07:44:12.3437840Z   submodules: false
+2025-04-04T07:44:12.3438091Z   set-safe-directory: true
+2025-04-04T07:44:12.3438365Z ##[endgroup]
+2025-04-04T07:44:12.4465344Z Syncing repository: LDMX-Software/ldmx-sw
+2025-04-04T07:44:12.4468020Z ##[group]Getting Git version info
+2025-04-04T07:44:12.4468580Z Working directory is '/home/runner/work/ldmx-sw/ldmx-sw'
+2025-04-04T07:44:12.4469590Z [command]/usr/bin/git version
+2025-04-04T07:44:12.4554757Z git version 2.49.0
+2025-04-04T07:44:12.4580895Z ##[endgroup]
+2025-04-04T07:44:12.4596314Z Temporarily overriding HOME='/home/runner/work/_temp/98017cd8-af7b-4f2e-b294-0b4737437a3b' before making global git config changes
+2025-04-04T07:44:12.4597741Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-04T07:44:12.4603005Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ldmx-sw/ldmx-sw
+2025-04-04T07:44:12.4638749Z Deleting the contents of '/home/runner/work/ldmx-sw/ldmx-sw'
+2025-04-04T07:44:12.4642834Z ##[group]Initializing the repository
+2025-04-04T07:44:12.4647448Z [command]/usr/bin/git init /home/runner/work/ldmx-sw/ldmx-sw
+2025-04-04T07:44:12.4753747Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-04T07:44:12.4754664Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-04T07:44:12.4755426Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-04T07:44:12.4755803Z hint:
+2025-04-04T07:44:12.4756121Z hint: 	git config --global init.defaultBranch <name>
+2025-04-04T07:44:12.4756438Z hint:
+2025-04-04T07:44:12.4756756Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-04T07:44:12.4757243Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-04T07:44:12.4757619Z hint:
+2025-04-04T07:44:12.4757838Z hint: 	git branch -m <name>
+2025-04-04T07:44:12.4765639Z Initialized empty Git repository in /home/runner/work/ldmx-sw/ldmx-sw/.git/
+2025-04-04T07:44:12.4776570Z [command]/usr/bin/git remote add origin https://github.com/LDMX-Software/ldmx-sw
+2025-04-04T07:44:12.4808958Z ##[endgroup]
+2025-04-04T07:44:12.4809477Z ##[group]Disabling automatic garbage collection
+2025-04-04T07:44:12.4813777Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-04T07:44:12.4841323Z ##[endgroup]
+2025-04-04T07:44:12.4841775Z ##[group]Setting up auth
+2025-04-04T07:44:12.4847852Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-04T07:44:12.4877309Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-04T07:44:12.5223903Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-04T07:44:12.5255232Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-04T07:44:12.5491466Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-04T07:44:12.5525616Z ##[endgroup]
+2025-04-04T07:44:12.5526094Z ##[group]Fetching the repository
+2025-04-04T07:44:12.5534845Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a52b53374560138d3e0980eef475dabafebe90ed:refs/remotes/pull/1678/merge
+2025-04-04T07:44:22.1153022Z From https://github.com/LDMX-Software/ldmx-sw
+2025-04-04T07:44:22.1153859Z  * [new ref]         a52b53374560138d3e0980eef475dabafebe90ed -> pull/1678/merge
+2025-04-04T07:44:22.1184033Z ##[endgroup]
+2025-04-04T07:44:22.1184756Z ##[group]Determining the checkout info
+2025-04-04T07:44:22.1185922Z ##[endgroup]
+2025-04-04T07:44:22.1192096Z [command]/usr/bin/git sparse-checkout disable
+2025-04-04T07:44:22.1234460Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-04T07:44:22.1261544Z ##[group]Checking out the ref
+2025-04-04T07:44:22.1265292Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1678/merge
+2025-04-04T07:44:22.7829324Z Note: switching to 'refs/remotes/pull/1678/merge'.
+2025-04-04T07:44:22.7830162Z 
+2025-04-04T07:44:22.7830612Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-04T07:44:22.7831387Z changes and commit them, and you can discard any commits you make in this
+2025-04-04T07:44:22.7832094Z state without impacting any branches by switching back to a branch.
+2025-04-04T07:44:22.7832530Z 
+2025-04-04T07:44:22.7832841Z If you want to create a new branch to retain commits you create, you may
+2025-04-04T07:44:22.7833493Z do so (now or later) by using -c with the switch command. Example:
+2025-04-04T07:44:22.7833885Z 
+2025-04-04T07:44:22.7834039Z   git switch -c <new-branch-name>
+2025-04-04T07:44:22.7834328Z 
+2025-04-04T07:44:22.7834478Z Or undo this operation with:
+2025-04-04T07:44:22.7834710Z 
+2025-04-04T07:44:22.7834861Z   git switch -
+2025-04-04T07:44:22.7835068Z 
+2025-04-04T07:44:22.7835413Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-04T07:44:22.7835903Z 
+2025-04-04T07:44:22.7836454Z HEAD is now at a52b533 Merge 95f70c4fd4e9c1bbea236ba6d39a3fece1c9be2d into e828a26d817bd27ce7763844c434451e84bbf8ef
+2025-04-04T07:44:22.7864081Z ##[endgroup]
+2025-04-04T07:44:22.7913462Z [command]/usr/bin/git log -1 --format=%H
+2025-04-04T07:44:22.7939607Z a52b53374560138d3e0980eef475dabafebe90ed
+2025-04-04T07:44:22.8073492Z ##[group]Run git fetch origin ${GITHUB_HEAD_REF}
+2025-04-04T07:44:22.8073950Z [36;1mgit fetch origin ${GITHUB_HEAD_REF}[0m
+2025-04-04T07:44:22.8074235Z [36;1mgit checkout ${GITHUB_HEAD_REF}[0m
+2025-04-04T07:44:22.8074517Z [36;1mgit pull origin ${GITHUB_HEAD_REF}[0m
+2025-04-04T07:44:22.8190055Z shell: /usr/bin/bash -e {0}
+2025-04-04T07:44:22.8190321Z ##[endgroup]
+2025-04-04T07:45:06.4715138Z From https://github.com/LDMX-Software/ldmx-sw
+2025-04-04T07:45:06.4716064Z  * branch              iss1677    -> FETCH_HEAD
+2025-04-04T07:45:06.4732879Z  * [new branch]        iss1677    -> origin/iss1677
+2025-04-04T07:45:07.3815535Z Previous HEAD position was a52b5337 Merge 95f70c4fd4e9c1bbea236ba6d39a3fece1c9be2d into e828a26d817bd27ce7763844c434451e84bbf8ef
+2025-04-04T07:45:07.3825384Z Switched to a new branch 'iss1677'
+2025-04-04T07:45:07.3828551Z branch 'iss1677' set up to track 'origin/iss1677'.
+2025-04-04T07:45:07.5773009Z From https://github.com/LDMX-Software/ldmx-sw
+2025-04-04T07:45:07.5774072Z  * branch              iss1677    -> FETCH_HEAD
+2025-04-04T07:45:07.5847278Z Already up to date.
+2025-04-04T07:45:07.5886743Z ##[group]Run just install-denv init format-cpp
+2025-04-04T07:45:07.5887095Z [36;1mjust install-denv init format-cpp[0m
+2025-04-04T07:45:07.5935301Z shell: /usr/bin/bash -e {0}
+2025-04-04T07:45:07.5935529Z ##[endgroup]
+2025-04-04T07:45:07.6019593Z curl -s https://raw.githubusercontent.com/tomeichlersmith/denv/main/install | sh
+2025-04-04T07:45:07.6490423Z [32;1m INFO: [0m[32mChecking dependencies...
+2025-04-04T07:45:07.6491112Z [0m[32;1m INFO: [0m[32mDownloading v1.1.3...
+2025-04-04T07:45:07.8832231Z [0m[32;1m INFO: [0m[32mUnpacking...
+2025-04-04T07:45:07.9019310Z [0m[32;1m INFO: [0m[32mSuccessfully installed denv to /home/runner/.local/bin
+2025-04-04T07:45:07.9020437Z [0m[32;1m INFO: [0m[32mFound /home/runner/.local/bin in PATH, you're all set!
+2025-04-04T07:45:08.1675024Z Resolving "ldmx/dev" using unqualified-search registries (/etc/containers/registries.conf)
+2025-04-04T07:45:08.1675790Z Trying to pull docker.io/ldmx/dev:latest...
+2025-04-04T07:45:08.7805948Z Getting image source signatures
+2025-04-04T07:45:08.7809471Z Copying blob sha256:577a46e91d52aefabd24cc13e47510edb7bd76b0efebc905e23dc9aa0e3ce987
+2025-04-04T07:45:08.7810524Z Copying blob sha256:fab97ef385ab856d1cef86df95e480c62de5adda51c006045185059dc266875c
+2025-04-04T07:45:08.7811188Z Copying blob sha256:b6d953e2c4bb5df81652f3f287ffd6fcfc5679500d738bd6e3c33c83e01e4dff
+2025-04-04T07:45:08.7812239Z Copying blob sha256:bccd10f490ab0f3fba61b193d1b80af91b17ca9bdca9768a16ed05ce16552fcb
+2025-04-04T07:45:08.7812889Z Copying blob sha256:40edf883a31244c14d7b31cd6532ebc3010485b100e6e0104c4fd7eeb7e6e2af
+2025-04-04T07:45:08.7813521Z Copying blob sha256:03d44cf79f1ab9903cd3cc3639da9946be808b9d8a0b81c16ca1b5b689141865
+2025-04-04T07:45:08.8339578Z Copying blob sha256:9146579d07a9954eca3ca1886152702743cd4dded733cfd1b9f9ea87658a7dc7
+2025-04-04T07:45:08.8919875Z Copying blob sha256:4b27146ee559c27d3261e5711eeb0ffbcaeff600512692879023e5b93548f9ea
+2025-04-04T07:45:09.1553364Z Copying blob sha256:ee5438be23fde7c90fe01da7c972963e68cf6b0224fdce52be126d9e81451c65
+2025-04-04T07:45:09.2020973Z Copying blob sha256:e95531cdb57b39206170c6c42a26c19ba56690d5d7c0896ec42c7ca1994da537
+2025-04-04T07:45:10.0091164Z Copying blob sha256:1a73791f30ce5bb982d0fc11046493e7c18390938a1da976b6ba14427316628d
+2025-04-04T07:45:11.7493846Z Copying blob sha256:61f88ec6164cf11eac07cc612a8d2083d353c90e16e5ff1080736b4670d53322
+2025-04-04T07:45:11.8369469Z Copying blob sha256:4feceff0ff59db97cecc2c511846bd2a7d668ab967fe08fa8b07873214d8c530
+2025-04-04T07:45:11.9285752Z Copying blob sha256:c0333d9a4c6036fb0fc1c89b8e6b77d15a872bea03313a36a6227a29986a0ad8
+2025-04-04T07:45:11.9923918Z Copying blob sha256:4ef610f289a90a39df1b9ab5d3225923dbe036591b7f80f63b0b0996b4f7b807
+2025-04-04T07:45:12.0745066Z Copying blob sha256:19eeb4a63f0e73972312f78cb73bedb78c97dc87984f3f0cc45ddfd8b508ae1c
+2025-04-04T07:45:12.2330283Z Copying blob sha256:26b2414b843d89527bc7b99c049bba9b55a1af8c1cda63d876d3ba332f770fa7
+2025-04-04T07:45:12.4046666Z Copying blob sha256:867e42ad7094805871db021883d262906c79b44328c7a8afcc22e651a9133760
+2025-04-04T07:45:12.6078704Z Copying blob sha256:5fcb425a7ec879e41fcb92c14e069190a5bc843d04ce7aa46cbdd89c6a944e4c
+2025-04-04T07:45:12.7540772Z Copying blob sha256:44d7088589cbc3dfe3a156ffbd22869ec851c1a80f69849d31b32f0b021a137c
+2025-04-04T07:45:12.8239683Z Copying blob sha256:3be65e404272b9d354b289b7e4c628d35aa0efde9de1affa58afbacc052932c2
+2025-04-04T07:45:12.8379075Z Copying blob sha256:362b13875ea631df0c54982a0c4523125938edf858ad5bf9f7c34d50d805623b
+2025-04-04T07:45:15.4263150Z Copying blob sha256:62edab454264d9eacfd6224634f42364d5895b9f7844d203ba822c29defdeed0
+2025-04-04T07:45:22.6462017Z Copying blob sha256:ded2543b78928d91afee8a275baaa4d9d711d3dd77cc676de665aa4dd318724a
+2025-04-04T07:45:22.6515930Z Copying blob sha256:a9e6a31cd32f49bdba15c9624faa483b7406be86323b14785ba8ff690b369067
+2025-04-04T07:45:23.6867767Z Copying blob sha256:d8df4c0b060d820684301691881d1e36531af88589b4e7892a612aaec06c1b52
+2025-04-04T07:45:24.7114125Z Copying blob sha256:f9e6048eb5a0a78a5d4dd692bfe7676acb09a92288f9696f897f3fed79e5197e
+2025-04-04T07:45:24.7149231Z Copying blob sha256:eb8777762daa5aecc226cee96e85316045ec5cfa40dfd78878937cebfaacc6ad
+2025-04-04T07:45:52.8796486Z Copying config sha256:90be1f6c02adbc8b3f7e621af9ae17acf151b09d7e662db1aa368abcadb721bb
+2025-04-04T07:45:52.8817111Z Writing manifest to image destination
+2025-04-04T07:45:53.2338229Z [0m90be1f6c02adbc8b3f7e621af9ae17acf151b09d7e662db1aa368abcadb721bb
+2025-04-04T07:45:53.2521256Z denv_workspace="/home/runner/work/ldmx-sw"
+2025-04-04T07:45:53.2522898Z denv_name="ldmx"
+2025-04-04T07:45:53.2530689Z denv_image="ldmx/dev:latest"
+2025-04-04T07:45:53.2531045Z denv_mounts=""
+2025-04-04T07:45:53.2531352Z denv_shell="/bin/bash -i"
+2025-04-04T07:45:53.2531680Z denv_network="true"
+2025-04-04T07:45:53.2655134Z podman version 4.9.3
+2025-04-04T07:45:53.2669436Z DISPLAY=:0
+2025-04-04T07:45:53.2669628Z DENV_NAME=ldmx
+2025-04-04T07:45:53.2670020Z DENV_RUNNER=podman
+2025-04-04T07:45:53.2670226Z DENV_IMAGE=ldmx/dev:latest
+2025-04-04T07:45:53.2670550Z HOME=/home/runner/work/ldmx-sw
+2025-04-04T07:45:53.2693748Z + mktemp
+2025-04-04T07:45:53.2703775Z + format_list=/tmp/tmp.JROWNspTsX
+2025-04-04T07:45:53.2705939Z + git ls-tree -r HEAD --name-only
+2025-04-04T07:45:53.2707382Z + egrep (\.h|\.cxx)$
+2025-04-04T07:45:53.2743058Z + cat /tmp/tmp.JROWNspTsX
+2025-04-04T07:45:53.2906353Z + denv clang-format -i Biasing/include/Biasing/DeepEcalProcessFilter.h Biasing/include/Biasing/EcalDarkBremFilter.h Biasing/include/Biasing/EcalProcessFilter.h Biasing/include/Biasing/MidShowerDiMuonBkgdFilter.h Biasing/include/Biasing/MidShowerNuclearBkgdFilter.h Biasing/include/Biasing/NonFiducialFilter.h Biasing/include/Biasing/PhotoNuclearProductsFilter.h Biasing/include/Biasing/PhotoNuclearTopologyFilters.h Biasing/include/Biasing/PrimaryToEcalFilter.h Biasing/include/Biasing/TaggerHitFilter.h Biasing/include/Biasing/TaggerVetoFilter.h Biasing/include/Biasing/TargetBremFilter.h Biasing/include/Biasing/TargetDarkBremFilter.h Biasing/include/Biasing/TargetENProcessFilter.h Biasing/include/Biasing/TargetProcessFilter.h Biasing/include/Biasing/Utility/DecayChildrenKeeper.h Biasing/include/Biasing/Utility/PartialEnergySorter.h Biasing/include/Biasing/Utility/StepPrinter.h Biasing/include/Biasing/Utility/TrackProcessFilter.h Biasing/src/Biasing/DeepEcalProcessFilter.cxx Biasing/src/Biasing/EcalDarkBremFilter.cxx Biasing/src/Biasing/EcalProcessFilter.cxx Biasing/src/Biasing/MidShowerDiMuonBkgdFilter.cxx Biasing/src/Biasing/MidShowerNuclearBkgdFilter.cxx Biasing/src/Biasing/NonFiducialFilter.cxx Biasing/src/Biasing/PhotoNuclearProductsFilter.cxx Biasing/src/Biasing/PhotoNuclearTopologyFilters.cxx Biasing/src/Biasing/PrimaryToEcalFilter.cxx Biasing/src/Biasing/TaggerHitFilter.cxx Biasing/src/Biasing/TaggerVetoFilter.cxx Biasing/src/Biasing/TargetBremFilter.cxx Biasing/src/Biasing/TargetDarkBremFilter.cxx Biasing/src/Biasing/TargetENProcessFilter.cxx Biasing/src/Biasing/TargetProcessFilter.cxx Biasing/src/Biasing/Utility/DecayChildrenKeeper.cxx Biasing/src/Biasing/Utility/PartialEnergySorter.cxx Biasing/src/Biasing/Utility/StepPrinter.cxx Biasing/src/Biasing/Utility/TrackProcessFilter.cxx Conditions/include/Conditions/GeneralCSVLoader.h Conditions/include/Conditions/SimpleCSVTableProvider.h Conditions/include/Conditions/SimpleTableCondition.h Conditions/include/Conditions/SimpleTableStreamers.h Conditions/include/Conditions/URLStreamer.h Conditions/src/Conditions/BaseTableCondition.cxx Conditions/src/Conditions/GeneralCSVLoader.cxx Conditions/src/Conditions/SimpleCSVTableProvider.cxx Conditions/src/Conditions/SimpleTableStreamers.cxx Conditions/src/Conditions/URLStreamer.cxx Conditions/test/TestConditions.cxx DQM/include/DQM/DarkBremInteraction.h DQM/include/DQM/EcalDigiVerifier.h DQM/include/DQM/EcalMipTrackingFeatures.h DQM/include/DQM/EcalShowerFeatures.h DQM/include/DQM/EcalVetoResults.h DQM/include/DQM/EcalWABRecResults.h DQM/include/DQM/HCalDQM.h DQM/include/DQM/HCalRawDigi.h DQM/include/DQM/HcalGeometryVerifier.h DQM/include/DQM/HcalInefficiencyDQM.h DQM/include/DQM/HcalVetoResults.h DQM/include/DQM/PhotoNuclearDQM.h DQM/include/DQM/ReSimVerifier.h DQM/include/DQM/SampleValidation.h DQM/include/DQM/SimObjects.h DQM/include/DQM/TrigScintClusterDQM.h DQM/include/DQM/TrigScintDQM.h DQM/include/DQM/TrigScintHitDQM.h DQM/include/DQM/TrigScintTrackDQM.h DQM/include/DQM/Trigger.h DQM/include/DQM/TrkDeDxMassEstFeatures.h DQM/src/DQM/DarkBremInteraction.cxx DQM/src/DQM/EcalDigiVerifier.cxx DQM/src/DQM/EcalMipTrackingFeatures.cxx DQM/src/DQM/EcalShowerFeatures.cxx DQM/src/DQM/EcalVetoResults.cxx DQM/src/DQM/EcalWABRecResults.cxx DQM/src/DQM/HCalDQM.cxx DQM/src/DQM/HCalRawDigi.cxx DQM/src/DQM/HcalGeometryVerfifier.cxx DQM/src/DQM/HcalInefficiencyDQM.cxx DQM/src/DQM/HcalVetoResults.cxx DQM/src/DQM/NtuplizeHgcrocDigiCollection.cxx DQM/src/DQM/NtuplizeTrigScintQIEDigis.cxx DQM/src/DQM/PhotoNuclearDQM.cxx DQM/src/DQM/ReSimVerifier.cxx DQM/src/DQM/SampleValidation.cxx DQM/src/DQM/SimObjects.cxx DQM/src/DQM/TrigScintClusterDQM.cxx DQM/src/DQM/TrigScintDQM.cxx DQM/src/DQM/TrigScintHitDQM.cxx DQM/src/DQM/TrigScintTrackDQM.cxx DQM/src/DQM/Trigger.cxx DQM/src/DQM/TrkDeDxMassEstFeatures.cxx DetDescr/include/DetDescr/DetectorHeader.h DetDescr/include/DetDescr/DetectorID.h DetDescr/include/DetDescr/DetectorIDInterpreter.h DetDescr/include/DetDescr/EcalAbstractID.h DetDescr/include/DetDescr/EcalElectronicsID.h DetDescr/include/DetDescr/EcalGeometry.h DetDescr/include/DetDescr/EcalID.h DetDescr/include/DetDescr/EcalTriggerID.h DetDescr/include/DetDescr/HcalAbstractID.h DetDescr/include/DetDescr/HcalDigiID.h DetDescr/include/DetDescr/HcalElectronicsID.h DetDescr/include/DetDescr/HcalGeometry.h DetDescr/include/DetDescr/HcalID.h DetDescr/include/DetDescr/HcalTriggerID.h DetDescr/include/DetDescr/IDField.h DetDescr/include/DetDescr/PackedIndex.h DetDescr/include/DetDescr/SimSpecialID.h DetDescr/include/DetDescr/TrackerID.h DetDescr/include/DetDescr/TrigScintID.h DetDescr/src/DetDescr/DetectorID.cxx DetDescr/src/DetDescr/DetectorIDBindings.cxx DetDescr/src/DetDescr/DetectorIDInterpreter.cxx DetDescr/src/DetDescr/EcalAbstractID.cxx DetDescr/src/DetDescr/EcalElectronicsID.cxx DetDescr/src/DetDescr/EcalGeometry.cxx DetDescr/src/DetDescr/EcalID.cxx DetDescr/src/DetDescr/EcalTriggerID.cxx DetDescr/src/DetDescr/HcalAbstractID.cxx DetDescr/src/DetDescr/HcalDigiID.cxx DetDescr/src/DetDescr/HcalElectronicsID.cxx DetDescr/src/DetDescr/HcalGeometry.cxx DetDescr/src/DetDescr/HcalID.cxx DetDescr/src/DetDescr/HcalTriggerID.cxx DetDescr/src/DetDescr/IDField.cxx DetDescr/src/DetDescr/SimSpecialID.cxx DetDescr/src/DetDescr/TrackerID.cxx DetDescr/src/DetDescr/TrigScintID.cxx DetDescr/test/DetectorIDTest.cxx Ecal/include/Ecal/DNNEcalVetoProcessor.h Ecal/include/Ecal/EcalClusterProducer.h Ecal/include/Ecal/EcalDetectorMap.h Ecal/include/Ecal/EcalDigiProducer.h Ecal/include/Ecal/EcalRawDecoder.h Ecal/include/Ecal/EcalRawEncoder.h Ecal/include/Ecal/EcalRecProducer.h Ecal/include/Ecal/EcalReconConditions.h Ecal/include/Ecal/EcalTrigPrimDigiProducer.h Ecal/include/Ecal/EcalTriggerGeometry.h Ecal/include/Ecal/EcalVetoProcessor.h Ecal/include/Ecal/EcalWABRecProcessor.h Ecal/include/Ecal/Event/ClusterAlgoResult.h Ecal/include/Ecal/Event/EcalCluster.h Ecal/include/Ecal/Event/EcalDigiCollection.h Ecal/include/Ecal/Event/EcalHit.h Ecal/include/Ecal/Event/EcalVetoResult.h Ecal/include/Ecal/Event/EcalWABResult.h Ecal/include/Ecal/MyClusterWeight.h Ecal/include/Ecal/TemplatedClusterFinder.h Ecal/include/Ecal/WorkingCluster.h Ecal/src/Ecal/DNNEcalVetoProcessor.cxx Ecal/src/Ecal/EcalClusterProducer.cxx Ecal/src/Ecal/EcalDetectorMap.cxx Ecal/src/Ecal/EcalDigiProducer.cxx Ecal/src/Ecal/EcalGeometryProvider.cxx Ecal/src/Ecal/EcalRawDecoder.cxx Ecal/src/Ecal/EcalRawEncoder.cxx Ecal/src/Ecal/EcalRecProducer.cxx Ecal/src/Ecal/EcalReconConditions.cxx Ecal/src/Ecal/EcalTrigPrimDigiProducer.cxx Ecal/src/Ecal/EcalTriggerGeometry.cxx Ecal/src/Ecal/EcalVetoProcessor.cxx Ecal/src/Ecal/EcalWABRecProcessor.cxx Ecal/src/Ecal/Event/ClusterAlgoResult.cxx Ecal/src/Ecal/Event/EcalCluster.cxx Ecal/src/Ecal/Event/EcalDigiCollection.cxx Ecal/src/Ecal/Event/EcalHit.cxx Ecal/src/Ecal/Event/EcalVetoResult.cxx Ecal/src/Ecal/TrigPrimResolutionAnalyzer.cxx Ecal/src/Ecal/WorkingCluster.cxx Ecal/src/Ecal/print_ecal_hex_readout.cxx Ecal/test/EcalDigiPipelineTest.cxx EventDisplay/include/EventDisplay/DetectorGeometry.h EventDisplay/include/EventDisplay/Display.h EventDisplay/include/EventDisplay/EveDetectorGeometry.h EventDisplay/include/EventDisplay/EveShapeDrawer.h EventDisplay/include/EventDisplay/Objects.h EventDisplay/src/EventDisplay/DetectorGeometry.cxx EventDisplay/src/EventDisplay/Display.cxx EventDisplay/src/EventDisplay/EveDetectorGeometry.cxx EventDisplay/src/EventDisplay/Objects.cxx EventDisplay/src/EventDisplay/ldmx_eve.cxx Framework/app/fire.cxx Framework/include/Framework/Bus.h Framework/include/Framework/Conditions.h Framework/include/Framework/ConditionsIOV.h Framework/include/Framework/ConditionsObject.h Framework/include/Framework/ConditionsObjectProvider.h Framework/include/Framework/Configure/Parameters.h Framework/include/Framework/Configure/Python.h Framework/include/Framework/Event.h Framework/include/Framework/EventFile.h Framework/include/Framework/EventHeader.h Framework/include/Framework/EventProcessor.h Framework/include/Framework/Exception/Exception.h Framework/include/Framework/Histograms.h Framework/include/Framework/Logger.h Framework/include/Framework/NtupleManager.h Framework/include/Framework/Performance/Callback.h Framework/include/Framework/Performance/LinkDef.h Framework/include/Framework/Performance/Timer.h Framework/include/Framework/Performance/Tracker.h Framework/include/Framework/PluginFactory.h Framework/include/Framework/Process.h Framework/include/Framework/ProductTag.h Framework/include/Framework/RandomNumberSeedService.h Framework/include/Framework/RunHeader.h Framework/include/Framework/RunHeaderAnalyzer.h Framework/include/Framework/StorageControl.h Framework/src/Framework/Conditions.cxx Framework/src/Framework/ConditionsIOV.cxx Framework/src/Framework/ConditionsObjectProvider.cxx Framework/src/Framework/Configure/Python.cxx Framework/src/Framework/Event.cxx Framework/src/Framework/EventFile.cxx Framework/src/Framework/EventHeader.cxx Framework/src/Framework/EventProcessor.cxx Framework/src/Framework/Exception/Exception.cxx Framework/src/Framework/Histograms.cxx Framework/src/Framework/Logger.cxx Framework/src/Framework/NtupleManager.cxx Framework/src/Framework/Performance/Callback.cxx Framework/src/Framework/Performance/Timer.cxx Framework/src/Framework/Performance/Tracker.cxx Framework/src/Framework/PluginFactory.cxx Framework/src/Framework/Process.cxx Framework/src/Framework/ProductTag.cxx Framework/src/Framework/RandomNumberSeedService.cxx Framework/src/Framework/RunHeader.cxx Framework/src/Framework/RunHeaderAnalyzer.cxx Framework/src/Framework/StorageControl.cxx Framework/test/ConfigurePythonTest.cxx Framework/test/FunctionalCoreTest.cxx Framework/test/NtupleManagerTest.cxx Hcal/include/Hcal/Event/HcalCluster.h Hcal/include/Hcal/Event/HcalHit.h Hcal/include/Hcal/Event/HcalVetoResult.h Hcal/include/Hcal/HcalAlignPolarfires.h Hcal/include/Hcal/HcalClusterProducer.h Hcal/include/Hcal/HcalDetectorMap.h Hcal/include/Hcal/HcalDigiProducer.h Hcal/include/Hcal/HcalDoubleEndRecProducer.h Hcal/include/Hcal/HcalPedestalAnalyzer.h Hcal/include/Hcal/HcalRawDecoder.h Hcal/include/Hcal/HcalRecProducer.h Hcal/include/Hcal/HcalReconConditions.h Hcal/include/Hcal/HcalSimpleDigiAndRecProducer.h Hcal/include/Hcal/HcalSingleEndRecProducer.h Hcal/include/Hcal/HcalTrigPrimDigiProducer.h Hcal/include/Hcal/HcalTriggerGeometry.h Hcal/include/Hcal/HcalVetoProcessor.h Hcal/include/Hcal/HcalWABVetoProcessor.h Hcal/include/Hcal/MyClusterWeight.h Hcal/include/Hcal/TemplatedClusterFinder.h Hcal/include/Hcal/WorkingCluster.h Hcal/src/Hcal/Event/HcalCluster.cxx Hcal/src/Hcal/Event/HcalHit.cxx Hcal/src/Hcal/Event/HcalVetoResult.cxx Hcal/src/Hcal/HcalAlignPolarfires.cxx Hcal/src/Hcal/HcalClusterProducer.cxx Hcal/src/Hcal/HcalDetectorMap.cxx Hcal/src/Hcal/HcalDigiProducer.cxx Hcal/src/Hcal/HcalDoubleEndRecProducer.cxx Hcal/src/Hcal/HcalGeometryProvider.cxx Hcal/src/Hcal/HcalPedestalAnalyzer.cxx Hcal/src/Hcal/HcalRawDecoder.cxx Hcal/src/Hcal/HcalRecProducer.cxx Hcal/src/Hcal/HcalReconConditions.cxx Hcal/src/Hcal/HcalSimpleDigiAndRecProducer.cxx Hcal/src/Hcal/HcalSingleEndRecProducer.cxx Hcal/src/Hcal/HcalTrigPrimDigiProducer.cxx Hcal/src/Hcal/HcalTriggerGeometry.cxx Hcal/src/Hcal/HcalVetoProcessor.cxx Hcal/src/Hcal/HcalWABVetoProcessor.cxx Hcal/src/Hcal/WorkingCluster.cxx Hcal/test/HcalDigiPipelineTest.cxx Hcal/test/HcalGeometryTest.cxx Packing/include/Packing/RawDataFile/EventPacket.h Packing/include/Packing/RawDataFile/File.h Packing/include/Packing/RawDataFile/SubsystemPacket.h Packing/include/Packing/RawIO.h Packing/include/Packing/SingleSubsystemPacker.h Packing/include/Packing/SingleSubsystemUnpacker.h Packing/include/Packing/Utility/BufferReader.h Packing/include/Packing/Utility/CRC.h Packing/include/Packing/Utility/Hex.h Packing/include/Packing/Utility/Mask.h Packing/include/Packing/Utility/Reader.h Packing/include/Packing/Utility/Writer.h Packing/src/Packing/FiberTrackerRawDecoder.cxx Packing/src/Packing/RawDataFile/EventPacket.cxx Packing/src/Packing/RawDataFile/File.cxx Packing/src/Packing/RawDataFile/SubsystemPacket.cxx Packing/src/Packing/RawIO.cxx Packing/src/Packing/SingleSubsystemPacker.cxx Packing/src/Packing/SingleSubsystemUnpacker.cxx Packing/src/Packing/WRRawDecoder.cxx Packing/test/BinaryIO.cxx Recon/include/Recon/BeamElectronLocator.h Recon/include/Recon/DBScanClusterBuilder.h Recon/include/Recon/ElectronCounter.h Recon/include/Recon/Event/BeamElectronTruth.h Recon/include/Recon/Event/CaloCluster.h Recon/include/Recon/Event/CaloTrigPrim.h Recon/include/Recon/Event/CalorimeterHit.h Recon/include/Recon/Event/EventConstants.h Recon/include/Recon/Event/FiducialFlag.h Recon/include/Recon/Event/HgcrocDigiCollection.h Recon/include/Recon/Event/HgcrocTrigDigi.h Recon/include/Recon/Event/PFCandidate.h Recon/include/Recon/Event/TrackDeDxMassEstimate.h Recon/include/Recon/Event/TriggerResult.h Recon/include/Recon/Examples/MyProcessor.h Recon/include/Recon/OverlayProducer.h Recon/include/Recon/PFEcalClusterProducer.h Recon/include/Recon/PFHcalClusterProducer.h Recon/include/Recon/PFTrackProducer.h Recon/include/Recon/PFTruthProducer.h Recon/include/Recon/ParticleFlow.h Recon/include/Recon/SequentialTrigger.h Recon/include/Recon/Skims/EcalPreselectionSkimmer.h Recon/include/Recon/Skims/RecoilFiducialityProcessor.h Recon/include/Recon/Skims/RecoilMissesEcalSkimmer.h Recon/include/Recon/TrackDeDxMassEstimator.h Recon/include/Recon/TriggerProcessor.h Recon/src/Recon/BeamElectronLocator.cxx Recon/src/Recon/DBScanClusterBuilder.cxx Recon/src/Recon/ElectronCounter.cxx Recon/src/Recon/Event/BeamElectronTruth.cxx Recon/src/Recon/Event/CaloCluster.cxx Recon/src/Recon/Event/CaloTrigPrim.cxx Recon/src/Recon/Event/CalorimeterHit.cxx Recon/src/Recon/Event/EventConstants.cxx Recon/src/Recon/Event/FiducialFlag.cxx Recon/src/Recon/Event/HgcrocDigiCollection.cxx Recon/src/Recon/Event/HgcrocTrigDigi.cxx Recon/src/Recon/Event/PFCandidate.cxx Recon/src/Recon/Event/TrackDeDxMassEstimate.cxx Recon/src/Recon/Event/TriggerResult.cxx Recon/src/Recon/Examples/MyProcessor.cxx Recon/src/Recon/OverlayProducer.cxx Recon/src/Recon/PFEcalClusterProducer.cxx Recon/src/Recon/PFHcalClusterProducer.cxx Recon/src/Recon/PFTrackProducer.cxx Recon/src/Recon/PFTruthProducer.cxx Recon/src/Recon/ParticleFlow.cxx Recon/src/Recon/SequentialTrigger.cxx Recon/src/Recon/Skims/EcalPreselectionSkimmer.cxx Recon/src/Recon/Skims/RecoilFiducialityProcessor.cxx Recon/src/Recon/Skims/RecoilMissesEcalSkimmer.cxx Recon/src/Recon/TrackDeDxMassEstimator.cxx Recon/src/Recon/TriggerProcessor.cxx SimCore/include/SimCore/APrimePhysics.h SimCore/include/SimCore/BiasOperators/DarkBrem.h SimCore/include/SimCore/BiasOperators/ElectroNuclear.h SimCore/include/SimCore/BiasOperators/GammaToMuPair.h SimCore/include/SimCore/BiasOperators/K0LongInelastic.h SimCore/include/SimCore/BiasOperators/NeutronInelastic.h SimCore/include/SimCore/BiasOperators/PhotoNuclear.h SimCore/include/SimCore/ConditionsInterface.h SimCore/include/SimCore/DetectorConstruction.h SimCore/include/SimCore/Event/SimCalorimeterHit.h SimCore/include/SimCore/Event/SimParticle.h SimCore/include/SimCore/Event/SimTrackerHit.h SimCore/include/SimCore/Factory.h SimCore/include/SimCore/G4Session.h SimCore/include/SimCore/G4User/EventAction.h SimCore/include/SimCore/G4User/PrimaryGeneratorAction.h SimCore/include/SimCore/G4User/PtrRetrieval.h SimCore/include/SimCore/G4User/RunAction.h SimCore/include/SimCore/G4User/StackingAction.h SimCore/include/SimCore/G4User/SteppingAction.h SimCore/include/SimCore/G4User/TrackingAction.h SimCore/include/SimCore/G4User/VolumeChecks.h SimCore/include/SimCore/GammaPhysics.h SimCore/include/SimCore/Generators/GeneralParticleSource.h SimCore/include/SimCore/Generators/LHEPrimaryGenerator.h SimCore/include/SimCore/Generators/MultiParticleGunPrimaryGenerator.h SimCore/include/SimCore/Generators/ParticleGun.h SimCore/include/SimCore/Geo/AuxInfoReader.h SimCore/include/SimCore/Geo/GDMLParser.h SimCore/include/SimCore/Geo/Parser.h SimCore/include/SimCore/Geo/ParserFactory.h SimCore/include/SimCore/KaonPhysics.h SimCore/include/SimCore/LHE/LHEEvent.h SimCore/include/SimCore/LHE/LHEParticle.h SimCore/include/SimCore/LHE/LHEReader.h SimCore/include/SimCore/MagneticFieldMap3D.h SimCore/include/SimCore/MagneticFieldStore.h SimCore/include/SimCore/ParallelWorld.h SimCore/include/SimCore/PhotoNuclearModel.h SimCore/include/SimCore/PhotoNuclearModels/BertiniAtLeastNProductsModel.h SimCore/include/SimCore/PhotoNuclearModels/BertiniEventTopologyProcess.h SimCore/include/SimCore/PhotoNuclearModels/BertiniModel.h SimCore/include/SimCore/PhotoNuclearModels/BertiniNothingHardModel.h SimCore/include/SimCore/PhotoNuclearModels/BertiniSingleNeutronModel.h SimCore/include/SimCore/PhotoNuclearModels/NoPhotoNuclearModel.h SimCore/include/SimCore/PrimaryGenerator.h SimCore/include/SimCore/ReSimulator.h SimCore/include/SimCore/RunManager.h SimCore/include/SimCore/SDs/EcalSD.h SimCore/include/SimCore/SDs/HcalSD.h SimCore/include/SimCore/SDs/ScoringPlaneSD.h SimCore/include/SimCore/SDs/TrackerSD.h SimCore/include/SimCore/SDs/TrigScintSD.h SimCore/include/SimCore/SensitiveDetector.h SimCore/include/SimCore/Simulator.h SimCore/include/SimCore/SimulatorBase.h SimCore/include/SimCore/TrackMap.h SimCore/include/SimCore/UserAction.h SimCore/include/SimCore/UserEventInformation.h SimCore/include/SimCore/UserPrimaryParticleInformation.h SimCore/include/SimCore/UserRegionInformation.h SimCore/include/SimCore/UserTrackInformation.h SimCore/include/SimCore/VisAttributesStore.h SimCore/include/SimCore/XsecBiasingOperator.h SimCore/src/SimCore/APrimePhysics.cxx SimCore/src/SimCore/BiasOperators/DarkBrem.cxx SimCore/src/SimCore/BiasOperators/ElectroNuclear.cxx SimCore/src/SimCore/BiasOperators/GammaToMuPair.cxx SimCore/src/SimCore/BiasOperators/K0LongInelastic.cxx SimCore/src/SimCore/BiasOperators/NeutronInelastic.cxx SimCore/src/SimCore/BiasOperators/PhotoNuclear.cxx SimCore/src/SimCore/DetectorConstruction.cxx SimCore/src/SimCore/Event/SimCalorimeterHit.cxx SimCore/src/SimCore/Event/SimParticle.cxx SimCore/src/SimCore/Event/SimTrackerHit.cxx SimCore/src/SimCore/G4Session.cxx SimCore/src/SimCore/G4User/EventAction.cxx SimCore/src/SimCore/G4User/PrimaryGeneratorAction.cxx SimCore/src/SimCore/G4User/RunAction.cxx SimCore/src/SimCore/G4User/StackingAction.cxx SimCore/src/SimCore/G4User/SteppingAction.cxx SimCore/src/SimCore/G4User/TrackingAction.cxx SimCore/src/SimCore/GammaPhysics.cxx SimCore/src/SimCore/Generators/GeneralParticleSource.cxx SimCore/src/SimCore/Generators/LHEPrimaryGenerator.cxx SimCore/src/SimCore/Generators/MultiParticleGunPrimaryGenerator.cxx SimCore/src/SimCore/Generators/ParticleGun.cxx SimCore/src/SimCore/Geo/AuxInfoReader.cxx SimCore/src/SimCore/Geo/GDMLParser.cxx SimCore/src/SimCore/Geo/ParserFactory.cxx SimCore/src/SimCore/KaonPhysics.cxx SimCore/src/SimCore/LHE/LHEEvent.cxx SimCore/src/SimCore/LHE/LHEParticle.cxx SimCore/src/SimCore/LHE/LHEReader.cxx SimCore/src/SimCore/MagneticFieldMap3D.cxx SimCore/src/SimCore/ParallelWorld.cxx SimCore/src/SimCore/PhotoNuclearModels/BertiniAtLeastNProductsModel.cxx SimCore/src/SimCore/PhotoNuclearModels/BertiniEventTopologyProcess.cxx SimCore/src/SimCore/PhotoNuclearModels/BertiniModel.cxx SimCore/src/SimCore/PhotoNuclearModels/BertiniNothingHardModel.cxx SimCore/src/SimCore/PhotoNuclearModels/BertiniSingleNeutronModel.cxx SimCore/src/SimCore/PhotoNuclearModels/NoPhotoNuclearModel.cxx SimCore/src/SimCore/PhotonuclearModel.cxx SimCore/src/SimCore/PrimaryGenerator.cxx SimCore/src/SimCore/ReSimulator.cxx SimCore/src/SimCore/RunManager.cxx SimCore/src/SimCore/SDs/EcalSD.cxx SimCore/src/SimCore/SDs/HcalSD.cxx SimCore/src/SimCore/SDs/ScoringPlaneSD.cxx SimCore/src/SimCore/SDs/TrackerSD.cxx SimCore/src/SimCore/SDs/TrigScintSD.cxx SimCore/src/SimCore/SensitiveDetector.cxx SimCore/src/SimCore/Simulator.cxx SimCore/src/SimCore/SimulatorBase.cxx SimCore/src/SimCore/TrackMap.cxx SimCore/src/SimCore/UserAction.cxx SimCore/src/SimCore/UserEventInformation.cxx SimCore/src/SimCore/UserRegionInformation.cxx SimCore/src/SimCore/UserTrackInformation.cxx SimCore/src/SimCore/XsecBiasingOperator.cxx SimCore/src/SimCore/g4_vis.cxx Tools/HLS_Arbitrary_Precision_Types/include/ap_fixed.h Tools/HLS_Arbitrary_Precision_Types/include/ap_fixed_base.h Tools/HLS_Arbitrary_Precision_Types/include/ap_impl/ap_common.h Tools/HLS_Arbitrary_Precision_Types/include/ap_impl/ap_decl.h Tools/HLS_Arbitrary_Precision_Types/include/ap_impl/ap_fixed_ref.h Tools/HLS_Arbitrary_Precision_Types/include/ap_impl/ap_fixed_special.h Tools/HLS_Arbitrary_Precision_Types/include/ap_impl/ap_int_base.h Tools/HLS_Arbitrary_Precision_Types/include/ap_impl/ap_int_ref.h Tools/HLS_Arbitrary_Precision_Types/include/ap_impl/ap_int_special.h Tools/HLS_Arbitrary_Precision_Types/include/ap_impl/ap_private.h Tools/HLS_Arbitrary_Precision_Types/include/ap_int.h Tools/include/Tools/AnalysisUtils.h Tools/include/Tools/ElectronicsMap.h Tools/include/Tools/HgcrocEmulator.h Tools/include/Tools/HgcrocTriggerCalculations.h Tools/include/Tools/NoiseGenerator.h Tools/include/Tools/ONNXRuntime.h Tools/src/Tools/AnalysisUtils.cxx Tools/src/Tools/HgcrocEmulator.cxx Tools/src/Tools/HgcrocTriggerCalculations.cxx Tools/src/Tools/NoiseGenerator.cxx Tools/src/Tools/ONNXRuntime.cxx Tools/src/Tools/run_hgcroc.cxx Tracking/include/Tracking/Digitization/CDFSiSensorSim.h Tracking/include/Tracking/Digitization/ChargeCarrier.h Tracking/include/Tracking/Digitization/GaussianDistribution2D.h Tracking/include/Tracking/Digitization/SiElectrodeData.h Tracking/include/Tracking/Digitization/SiElectrodeDataCollection.h Tracking/include/Tracking/Event/Measurement.h Tracking/include/Tracking/Event/RawSiStripHit.h Tracking/include/Tracking/Event/StraightTrack.h Tracking/include/Tracking/Event/Track.h Tracking/include/Tracking/Event/TrackerVetoResult.h Tracking/include/Tracking/Event/TruthTrack.h Tracking/include/Tracking/Reco/ActsUtils.h Tracking/include/Tracking/Reco/AlignmentTestProcessor.h Tracking/include/Tracking/Reco/CKFProcessor.h Tracking/include/Tracking/Reco/DigitizationProcessor.h Tracking/include/Tracking/Reco/GSFProcessor.h Tracking/include/Tracking/Reco/GreedyAmbiguitySolver.h Tracking/include/Tracking/Reco/LinearSeedFinder.h Tracking/include/Tracking/Reco/LinearTrackFinder.h Tracking/include/Tracking/Reco/LinearTruthTracking.h Tracking/include/Tracking/Reco/SeedFinderProcessor.h Tracking/include/Tracking/Reco/TrackExtrapolatorTool.h Tracking/include/Tracking/Reco/TrackingGeometryUser.h Tracking/include/Tracking/Reco/TruthMatchingTool.h Tracking/include/Tracking/Reco/TruthSeedProcessor.h Tracking/include/Tracking/Reco/VertexProcessor.h Tracking/include/Tracking/Reco/Vertexer.h Tracking/include/Tracking/Sim/BFieldXYZUtils.h Tracking/include/Tracking/Sim/GeometryContainers.h Tracking/include/Tracking/Sim/GroupBy.h Tracking/include/Tracking/Sim/Index.h Tracking/include/Tracking/Sim/IndexSourceLink.h Tracking/include/Tracking/Sim/LdmxSpacePoint.h Tracking/include/Tracking/Sim/MeasurementCalibrator.h Tracking/include/Tracking/Sim/PropagatorStepWriter.h Tracking/include/Tracking/Sim/Range.h Tracking/include/Tracking/Sim/SeedToTrackParamMaker.h Tracking/include/Tracking/Sim/TrackingUtils.h Tracking/include/Tracking/TrackerVetoProcessor.h Tracking/include/Tracking/dqm/StraightTracksDQM.h Tracking/include/Tracking/dqm/TrackerDigiDQM.h Tracking/include/Tracking/dqm/TrackingRecoDQM.h Tracking/include/Tracking/geo/CalibrationContext.h Tracking/include/Tracking/geo/DetectorElement.h Tracking/include/Tracking/geo/EcalTrackingGeometry.h Tracking/include/Tracking/geo/GeoUtils.h Tracking/include/Tracking/geo/GeometryContext.h Tracking/include/Tracking/geo/MagneticFieldContext.h Tracking/include/Tracking/geo/TrackersTrackingGeometry.h Tracking/include/Tracking/geo/TrackingGeometry.h Tracking/src/Tracking/Digitization/CDFSiSensorSim.cxx Tracking/src/Tracking/Digitization/ChargeCarrier.cxx Tracking/src/Tracking/Digitization/GaussianDistribution2D.cxx Tracking/src/Tracking/Digitization/SiElectrodeData.cxx Tracking/src/Tracking/Digitization/SiElectrodeDataCollection.cxx Tracking/src/Tracking/Event/Measurement.cxx Tracking/src/Tracking/Event/RawSiStripHit.cxx Tracking/src/Tracking/Event/Track.cxx Tracking/src/Tracking/Event/TrackerVetoResult.cxx Tracking/src/Tracking/Event/TruthTrack.cxx Tracking/src/Tracking/Reco/AlignmentTestProcessor.cxx Tracking/src/Tracking/Reco/CKFProcessor.cxx Tracking/src/Tracking/Reco/DigitizationProcessor.cxx Tracking/src/Tracking/Reco/GSFProcessor.cxx Tracking/src/Tracking/Reco/GreedyAmbiguitySolver.cxx Tracking/src/Tracking/Reco/LinearSeedFinder.cxx Tracking/src/Tracking/Reco/LinearTrackFinder.cxx Tracking/src/Tracking/Reco/LinearTruthTracking.cxx Tracking/src/Tracking/Reco/SeedFinderProcessor.cxx Tracking/src/Tracking/Reco/TrackingGeometryUser.cxx Tracking/src/Tracking/Reco/TruthSeedProcessor.cxx Tracking/src/Tracking/Reco/VertexProcessor.cxx Tracking/src/Tracking/Reco/Vertexer.cxx Tracking/src/Tracking/Sim/BFieldXYZUtils.cxx Tracking/src/Tracking/Sim/PropagatorStepWriter.cxx Tracking/src/Tracking/Sim/TruthMatchingTool.cxx Tracking/src/Tracking/TrackerVetoProcessor.cxx Tracking/src/Tracking/dqm/StraightTracksDQM.cxx Tracking/src/Tracking/dqm/TrackerDigiDQM.cxx Tracking/src/Tracking/dqm/TrackingRecoDQM.cxx Tracking/src/Tracking/geo/CalibrationContext.cxx Tracking/src/Tracking/geo/DetectorElement.cxx Tracking/src/Tracking/geo/EcalTrackingGeometry.cxx Tracking/src/Tracking/geo/GeoUtils.cxx Tracking/src/Tracking/geo/GeometryContext.cxx Tracking/src/Tracking/geo/MagneticFieldContext.cxx Tracking/src/Tracking/geo/TrackersTrackingGeometry.cxx Tracking/src/Tracking/geo/TrackersTrackingGeometryProvider.cxx Tracking/src/Tracking/geo/TrackingGeometry.cxx TrigScint/include/TrigScint/Event/EventReadout.h TrigScint/include/TrigScint/Event/QIEStream.h TrigScint/include/TrigScint/Event/TestBeamHit.h TrigScint/include/TrigScint/Event/TrigScintCluster.h TrigScint/include/TrigScint/Event/TrigScintHit.h TrigScint/include/TrigScint/Event/TrigScintQIEDigis.h TrigScint/include/TrigScint/Event/TrigScintTrack.h TrigScint/include/TrigScint/EventReadoutProducer.h TrigScint/include/TrigScint/Firmware/clusterproducer.h TrigScint/include/TrigScint/Firmware/hitproducer.h TrigScint/include/TrigScint/Firmware/objdef.h TrigScint/include/TrigScint/Firmware/testutils.h TrigScint/include/TrigScint/Firmware/trackproducer.h TrigScint/include/TrigScint/QIEAnalyzer.h TrigScint/include/TrigScint/QIEDecoder.h TrigScint/include/TrigScint/QIEEncoder.h TrigScint/include/TrigScint/QIEInputPulse.h TrigScint/include/TrigScint/QualityFlagAnalyzer.h TrigScint/include/TrigScint/SimQIE.h TrigScint/include/TrigScint/TestBeamClusterAnalyzer.h TrigScint/include/TrigScint/TestBeamClusterProducer.h TrigScint/include/TrigScint/TestBeamHitAnalyzer.h TrigScint/include/TrigScint/TestBeamHitProducer.h TrigScint/include/TrigScint/TrigScintClusterProducer.h TrigScint/include/TrigScint/TrigScintDigiProducer.h TrigScint/include/TrigScint/TrigScintFirmwareHitProducer.h TrigScint/include/TrigScint/TrigScintFirmwareTracker.h TrigScint/include/TrigScint/TrigScintQIEDigiProducer.h TrigScint/include/TrigScint/TrigScintRecHitProducer.h TrigScint/include/TrigScint/TrigScintTrackProducer.h TrigScint/include/TrigScint/TruthHitProducer.h TrigScint/src/TrigScint/Event/EventReadout.cxx TrigScint/src/TrigScint/Event/TestBeamHit.cxx TrigScint/src/TrigScint/Event/TrigScintCluster.cxx TrigScint/src/TrigScint/Event/TrigScintHit.cxx TrigScint/src/TrigScint/Event/TrigScintQIEDigis.cxx TrigScint/src/TrigScint/Event/TrigScintTrack.cxx TrigScint/src/TrigScint/EventReadoutProducer.cxx TrigScint/src/TrigScint/Firmware/clusterproducer_sw.cxx TrigScint/src/TrigScint/Firmware/hitproducer_hw.cxx TrigScint/src/TrigScint/Firmware/trackproducer_hw.cxx TrigScint/src/TrigScint/QIEAnalyzer.cxx TrigScint/src/TrigScint/QIEDecoder.cxx TrigScint/src/TrigScint/QIEEncoder.cxx TrigScint/src/TrigScint/QIEInputPulse.cxx TrigScint/src/TrigScint/QualityFlagAnalyzer.cxx TrigScint/src/TrigScint/SimQIE.cxx TrigScint/src/TrigScint/TestBeamClusterAnalyzer.cxx TrigScint/src/TrigScint/TestBeamClusterProducer.cxx TrigScint/src/TrigScint/TestBeamHitAnalyzer.cxx TrigScint/src/TrigScint/TestBeamHitProducer.cxx TrigScint/src/TrigScint/TrigScintClusterProducer.cxx TrigScint/src/TrigScint/TrigScintDigiProducer.cxx TrigScint/src/TrigScint/TrigScintFirmwareHitProducer.cxx TrigScint/src/TrigScint/TrigScintFirmwareTracker.cxx TrigScint/src/TrigScint/TrigScintQIEDigiProducer.cxx TrigScint/src/TrigScint/TrigScintRecHitProducer.cxx TrigScint/src/TrigScint/TrigScintTrackProducer.cxx TrigScint/src/TrigScint/TruthHitProducer.cxx Trigger/Algo/include/Trigger/DiscreteInputs.h Trigger/Algo/include/Trigger/DiscreteInputs_IO.h Trigger/Algo/include/Trigger/DumpFileWriter.h Trigger/Algo/include/Trigger/EcalTPSelector.h Trigger/Algo/include/Trigger/Event/TrigCaloCluster.h Trigger/Algo/include/Trigger/Event/TrigCaloHit.h Trigger/Algo/include/Trigger/Event/TrigEnergySum.h Trigger/Algo/include/Trigger/Event/TrigParticle.h Trigger/Algo/include/Trigger/IdealClusterBuilder.h Trigger/Algo/include/Trigger/NtupleWriter.h Trigger/Algo/include/Trigger/PropagationMapWriter.h Trigger/Algo/include/Trigger/TrigEcalClusterProducer.h Trigger/Algo/include/Trigger/TrigEcalEnergySum.h Trigger/Algo/include/Trigger/TrigElectronProducer.h Trigger/Algo/include/Trigger/TrigHcalEnergySum.h Trigger/Algo/include/Trigger/TrigUtilities.h Trigger/Algo/src/Trigger/DumpFileWriter.cxx Trigger/Algo/src/Trigger/EcalTPSelector.cxx Trigger/Algo/src/Trigger/Event/TrigCaloCluster.cxx Trigger/Algo/src/Trigger/Event/TrigCaloHit.cxx Trigger/Algo/src/Trigger/Event/TrigEnergySum.cxx Trigger/Algo/src/Trigger/Event/TrigParticle.cxx Trigger/Algo/src/Trigger/IdealClusterBuilder.cxx Trigger/Algo/src/Trigger/NtupleWriter.cxx Trigger/Algo/src/Trigger/PropagationMapWriter.cxx Trigger/Algo/src/Trigger/TrigEcalClusterProducer.cxx Trigger/Algo/src/Trigger/TrigEcalEnergySum.cxx Trigger/Algo/src/Trigger/TrigElectronProducer.cxx Trigger/Algo/src/Trigger/TrigHcalEnergySum.cxx Trigger/Algo_HLS/Ecal/src/TotalEnergy.h Trigger/Algo_HLS/Ecal/src/data.h
+2025-04-04T07:46:32.4241118Z + rm /tmp/tmp.JROWNspTsX
+2025-04-04T07:46:32.4283867Z ##[group]Run git config user.name 'github-actions[bot]'
+2025-04-04T07:46:32.4284255Z [36;1mgit config user.name 'github-actions[bot]'[0m
+2025-04-04T07:46:32.4284632Z [36;1mgit config user.email 'github-actions[bot]@users.noreply.github.com'[0m
+2025-04-04T07:46:32.4344487Z shell: /usr/bin/bash -e {0}
+2025-04-04T07:46:32.4344713Z ##[endgroup]
+2025-04-04T07:46:32.4464851Z ##[group]Run git add .
+2025-04-04T07:46:32.4465083Z [36;1mgit add .[0m
+2025-04-04T07:46:32.4465370Z [36;1mgit commit -m "Apply clang-format" || echo "No changes to commit"[0m
+2025-04-04T07:46:32.4506928Z shell: /usr/bin/bash -e {0}
+2025-04-04T07:46:32.4507143Z ##[endgroup]
+2025-04-04T07:46:32.4725674Z [iss1677 ec1af394] Apply clang-format
+2025-04-04T07:46:32.4726012Z  1 file changed, 2 insertions(+), 1 deletion(-)
+2025-04-04T07:46:32.4776594Z ##[group]Run git push origin HEAD:${GITHUB_HEAD_REF}
+2025-04-04T07:46:32.4776946Z [36;1mgit push origin HEAD:${GITHUB_HEAD_REF}[0m
+2025-04-04T07:46:32.4821647Z shell: /usr/bin/bash -e {0}
+2025-04-04T07:46:32.4821871Z ##[endgroup]
+2025-04-04T07:46:32.8141629Z To https://github.com/LDMX-Software/ldmx-sw
+2025-04-04T07:46:32.8142178Z  ! [rejected]          HEAD -> iss1677 (fetch first)
+2025-04-04T07:46:32.8142768Z error: failed to push some refs to 'https://github.com/LDMX-Software/ldmx-sw'
+2025-04-04T07:46:32.8152022Z hint: Updates were rejected because the remote contains work that you do not
+2025-04-04T07:46:32.8152594Z hint: have locally. This is usually caused by another repository pushing to
+2025-04-04T07:46:32.8153090Z hint: the same ref. If you want to integrate the remote changes, use
+2025-04-04T07:46:32.8153496Z hint: 'git pull' before pushing again.
+2025-04-04T07:46:32.8153885Z hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2025-04-04T07:46:32.8169399Z ##[error]Process completed with exit code 1.
+2025-04-04T07:46:32.8261064Z Post job cleanup.
+2025-04-04T07:46:32.9188833Z [command]/usr/bin/git version
+2025-04-04T07:46:32.9227385Z git version 2.49.0
+2025-04-04T07:46:32.9277476Z Temporarily overriding HOME='/home/runner/work/_temp/cc64d978-a326-43e5-a651-efa19d5f3194' before making global git config changes
+2025-04-04T07:46:32.9278712Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-04T07:46:32.9283824Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ldmx-sw/ldmx-sw
+2025-04-04T07:46:32.9320329Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-04T07:46:32.9353186Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-04T07:46:32.9621463Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-04T07:46:32.9646437Z http.https://github.com/.extraheader
+2025-04-04T07:46:32.9664280Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-04T07:46:32.9700074Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-04T07:46:33.0064664Z Cleaning up orphan processes
+2025-04-04T07:46:33.0371789Z Terminate orphan process: pid (2026) (catatonit)

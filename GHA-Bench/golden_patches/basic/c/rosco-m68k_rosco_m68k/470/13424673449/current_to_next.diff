@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 026ada25..c8076190 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -81,7 +81,7 @@ jobs:
+             tar czf rosco_m68k_fw_$(cat "$GITHUB_WORKSPACE/branch.txt")_$(cat "$GITHUB_WORKSPACE/stamp.txt")_mainboard_1.x_hugerom.tar.gz *.rom
+             cp rosco_m68k_fw_$(cat "$GITHUB_WORKSPACE/branch.txt")_$(cat "$GITHUB_WORKSPACE/stamp.txt")_mainboard_1.x_hugerom.tar.gz "$GITHUB_WORKSPACE/artifacts"
+         - name: Upload artifacts
+-          uses: actions/upload-artifact@v3
++          uses: actions/upload-artifact@v4
+           with:
+             name: build-snapshots
+             path: artifacts/

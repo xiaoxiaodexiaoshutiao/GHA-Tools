@@ -1,0 +1,76 @@
+diff --git a/api/src/main/java/org/allaymc/api/item/creative/CreativeItemRegistry.java b/api/src/main/java/org/allaymc/api/item/creative/CreativeItemRegistry.java
+index 6716909db5..93e9f36200 100644
+--- a/api/src/main/java/org/allaymc/api/item/creative/CreativeItemRegistry.java
++++ b/api/src/main/java/org/allaymc/api/item/creative/CreativeItemRegistry.java
+@@ -3,6 +3,9 @@
+ import org.allaymc.api.i18n.LangCode;
+ import org.allaymc.api.item.ItemStack;
+ import org.cloudburstmc.protocol.bedrock.packet.CreativeContentPacket;
++import org.jetbrains.annotations.UnmodifiableView;
++
++import java.util.Map;
+ 
+ /**
+  * Represents the registry for creative items. Plugin can modify the creative items through the methods inside.
+@@ -47,6 +50,14 @@ public interface CreativeItemRegistry {
+      */
+     ItemStack getItemStackByIndex(int index);
+ 
++    /**
++     * Get all registered creative items.
++     *
++     * @return the registered creative items.
++     */
++    @UnmodifiableView
++    Map<Integer, ItemStack> getItems();
++
+     /**
+      * Encode the creative content packet in the specified language code.
+      *
+diff --git a/server/src/main/java/org/allaymc/server/item/creative/AllayCreativeItemRegistry.java b/server/src/main/java/org/allaymc/server/item/creative/AllayCreativeItemRegistry.java
+index dddf8186d7..855445a0f9 100644
+--- a/server/src/main/java/org/allaymc/server/item/creative/AllayCreativeItemRegistry.java
++++ b/server/src/main/java/org/allaymc/server/item/creative/AllayCreativeItemRegistry.java
+@@ -22,13 +22,11 @@
+ import org.cloudburstmc.protocol.bedrock.data.inventory.CreativeItemData;
+ import org.cloudburstmc.protocol.bedrock.data.inventory.CreativeItemGroup;
+ import org.cloudburstmc.protocol.bedrock.packet.CreativeContentPacket;
++import org.jetbrains.annotations.UnmodifiableView;
+ 
+ import java.io.BufferedInputStream;
+ import java.io.InputStreamReader;
+-import java.util.ArrayList;
+-import java.util.List;
+-import java.util.Map;
+-import java.util.Objects;
++import java.util.*;
+ 
+ /**
+  * @author daoge_cmd
+@@ -129,6 +127,11 @@ public ItemStack getItemStackByIndex(int index) {
+         return items.get(index);
+     }
+ 
++    @Override
++    public @UnmodifiableView Map<Integer, ItemStack> getItems() {
++        return Collections.unmodifiableMap(items);
++    }
++
+     @Override
+     public CreativeContentPacket encodeCreativeContentPacketFor(LangCode langCode) {
+         var encodedGroups = new ArrayList<CreativeItemGroup>();
+diff --git a/server/src/test/java/org/allaymc/server/item/type/CreativeItemRegistryTest.java b/server/src/test/java/org/allaymc/server/item/type/CreativeItemRegistryTest.java
+index 094d22215d..dab6eeed7a 100644
+--- a/server/src/test/java/org/allaymc/server/item/type/CreativeItemRegistryTest.java
++++ b/server/src/test/java/org/allaymc/server/item/type/CreativeItemRegistryTest.java
+@@ -15,8 +15,8 @@
+ public class CreativeItemRegistryTest {
+     @Test
+     void testCreativeItemRegistry() {
+-        assertFalse(Registries.CREATIVE_ITEMS.getContent().isEmpty());
+-        for (var itemStack : Registries.CREATIVE_ITEMS.getContent().values()) {
++        assertFalse(Registries.CREATIVE_ITEMS.getItems().isEmpty());
++        for (var itemStack : Registries.CREATIVE_ITEMS.getItems().values()) {
+             assertEquals(1, itemStack.getCount());
+         }
+     }

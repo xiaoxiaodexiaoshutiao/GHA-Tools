@@ -1,0 +1,142 @@
+﻿2025-04-11T04:58:40.6110377Z Current runner version: '2.323.0'
+2025-04-11T04:58:40.6133876Z ##[group]Operating System
+2025-04-11T04:58:40.6134643Z Ubuntu
+2025-04-11T04:58:40.6135206Z 24.04.2
+2025-04-11T04:58:40.6135656Z LTS
+2025-04-11T04:58:40.6136123Z ##[endgroup]
+2025-04-11T04:58:40.6136637Z ##[group]Runner Image
+2025-04-11T04:58:40.6137237Z Image: ubuntu-24.04
+2025-04-11T04:58:40.6137716Z Version: 20250406.1.0
+2025-04-11T04:58:40.6138743Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250406.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-11T04:58:40.6140159Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250406.1
+2025-04-11T04:58:40.6141235Z ##[endgroup]
+2025-04-11T04:58:40.6141966Z ##[group]Runner Image Provisioner
+2025-04-11T04:58:40.6142552Z 2.0.422.1
+2025-04-11T04:58:40.6142999Z ##[endgroup]
+2025-04-11T04:58:40.6144080Z ##[group]GITHUB_TOKEN Permissions
+2025-04-11T04:58:40.6145836Z Contents: read
+2025-04-11T04:58:40.6146328Z Metadata: read
+2025-04-11T04:58:40.6147098Z Packages: read
+2025-04-11T04:58:40.6147661Z ##[endgroup]
+2025-04-11T04:58:40.6149633Z Secret source: None
+2025-04-11T04:58:40.6150290Z Prepare workflow directory
+2025-04-11T04:58:40.6483801Z Prepare all required actions
+2025-04-11T04:58:40.6519797Z Getting action download info
+2025-04-11T04:58:41.1233659Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-11T04:58:41.1234753Z Version: 4.2.2
+2025-04-11T04:58:41.1235703Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-11T04:58:41.1236795Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-11T04:58:41.1237541Z ##[endgroup]
+2025-04-11T04:58:41.2098718Z Download action repository 'astral-sh/ruff-action@v3' (SHA:9828f49eb4cadf267b40eaa330295c412c68c1f9)
+2025-04-11T04:58:41.8999587Z Complete job name: ruff
+2025-04-11T04:58:41.9672841Z ##[group]Run actions/checkout@v4
+2025-04-11T04:58:41.9673707Z with:
+2025-04-11T04:58:41.9674152Z   repository: MaiM-with-u/MaiBot
+2025-04-11T04:58:41.9674857Z   token: ***
+2025-04-11T04:58:41.9675268Z   ssh-strict: true
+2025-04-11T04:58:41.9675691Z   ssh-user: git
+2025-04-11T04:58:41.9676113Z   persist-credentials: true
+2025-04-11T04:58:41.9676599Z   clean: true
+2025-04-11T04:58:41.9677026Z   sparse-checkout-cone-mode: true
+2025-04-11T04:58:41.9677536Z   fetch-depth: 1
+2025-04-11T04:58:41.9677948Z   fetch-tags: false
+2025-04-11T04:58:41.9678373Z   show-progress: true
+2025-04-11T04:58:41.9678796Z   lfs: false
+2025-04-11T04:58:41.9679206Z   submodules: false
+2025-04-11T04:58:41.9679641Z   set-safe-directory: true
+2025-04-11T04:58:41.9680335Z ##[endgroup]
+2025-04-11T04:58:42.1374933Z Syncing repository: MaiM-with-u/MaiBot
+2025-04-11T04:58:42.1376531Z ##[group]Getting Git version info
+2025-04-11T04:58:42.1377157Z Working directory is '/home/runner/work/MaiBot/MaiBot'
+2025-04-11T04:58:42.1378142Z [command]/usr/bin/git version
+2025-04-11T04:58:42.1441402Z git version 2.49.0
+2025-04-11T04:58:42.1472536Z ##[endgroup]
+2025-04-11T04:58:42.1486848Z Temporarily overriding HOME='/home/runner/work/_temp/d84c44be-ed83-4235-b099-16c23fbb0ba0' before making global git config changes
+2025-04-11T04:58:42.1488161Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-11T04:58:42.1492123Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/MaiBot/MaiBot
+2025-04-11T04:58:42.1525577Z Deleting the contents of '/home/runner/work/MaiBot/MaiBot'
+2025-04-11T04:58:42.1529223Z ##[group]Initializing the repository
+2025-04-11T04:58:42.1533551Z [command]/usr/bin/git init /home/runner/work/MaiBot/MaiBot
+2025-04-11T04:58:42.1596165Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-11T04:58:42.1597346Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-11T04:58:42.1598889Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-11T04:58:42.1600046Z hint:
+2025-04-11T04:58:42.1600761Z hint: 	git config --global init.defaultBranch <name>
+2025-04-11T04:58:42.1602466Z hint:
+2025-04-11T04:58:42.1603104Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-11T04:58:42.1603965Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-11T04:58:42.1604633Z hint:
+2025-04-11T04:58:42.1605007Z hint: 	git branch -m <name>
+2025-04-11T04:58:42.1605672Z Initialized empty Git repository in /home/runner/work/MaiBot/MaiBot/.git/
+2025-04-11T04:58:42.1612615Z [command]/usr/bin/git remote add origin https://github.com/MaiM-with-u/MaiBot
+2025-04-11T04:58:42.1647323Z ##[endgroup]
+2025-04-11T04:58:42.1648531Z ##[group]Disabling automatic garbage collection
+2025-04-11T04:58:42.1652294Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-11T04:58:42.1680973Z ##[endgroup]
+2025-04-11T04:58:42.1682137Z ##[group]Setting up auth
+2025-04-11T04:58:42.1687735Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-11T04:58:42.1718924Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-11T04:58:42.2004211Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-11T04:58:42.2033060Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-11T04:58:42.2267160Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-11T04:58:42.2302472Z ##[endgroup]
+2025-04-11T04:58:42.2309477Z ##[group]Fetching the repository
+2025-04-11T04:58:42.2311198Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +03c0bd571d9273beec8bb178eccf51ade71f0635:refs/remotes/pull/710/merge
+2025-04-11T04:58:43.3243102Z From https://github.com/MaiM-with-u/MaiBot
+2025-04-11T04:58:43.3245892Z  * [new ref]         03c0bd571d9273beec8bb178eccf51ade71f0635 -> pull/710/merge
+2025-04-11T04:58:43.3267414Z ##[endgroup]
+2025-04-11T04:58:43.3268497Z ##[group]Determining the checkout info
+2025-04-11T04:58:43.3269932Z ##[endgroup]
+2025-04-11T04:58:43.3275011Z [command]/usr/bin/git sparse-checkout disable
+2025-04-11T04:58:43.3314770Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-11T04:58:43.3342306Z ##[group]Checking out the ref
+2025-04-11T04:58:43.3345810Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/710/merge
+2025-04-11T04:58:43.4122345Z Note: switching to 'refs/remotes/pull/710/merge'.
+2025-04-11T04:58:43.4123557Z 
+2025-04-11T04:58:43.4124515Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-11T04:58:43.4126945Z changes and commit them, and you can discard any commits you make in this
+2025-04-11T04:58:43.4129387Z state without impacting any branches by switching back to a branch.
+2025-04-11T04:58:43.4130844Z 
+2025-04-11T04:58:43.4131934Z If you want to create a new branch to retain commits you create, you may
+2025-04-11T04:58:43.4134125Z do so (now or later) by using -c with the switch command. Example:
+2025-04-11T04:58:43.4135382Z 
+2025-04-11T04:58:43.4135894Z   git switch -c <new-branch-name>
+2025-04-11T04:58:43.4136821Z 
+2025-04-11T04:58:43.4137321Z Or undo this operation with:
+2025-04-11T04:58:43.4138081Z 
+2025-04-11T04:58:43.4138383Z   git switch -
+2025-04-11T04:58:43.4138815Z 
+2025-04-11T04:58:43.4139533Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-11T04:58:43.4140651Z 
+2025-04-11T04:58:43.4142610Z HEAD is now at 03c0bd5 Merge ffe831ed10ebd4728860325234d01a0a803ffe36 into b11ebbc8323ea2155376aff74f9a9afc2ad3705f
+2025-04-11T04:58:43.4146870Z ##[endgroup]
+2025-04-11T04:58:43.4182401Z [command]/usr/bin/git log -1 --format=%H
+2025-04-11T04:58:43.4205583Z 03c0bd571d9273beec8bb178eccf51ade71f0635
+2025-04-11T04:58:43.4458659Z ##[group]Run astral-sh/ruff-action@v3
+2025-04-11T04:58:43.4460058Z with:
+2025-04-11T04:58:43.4460832Z   args: check
+2025-04-11T04:58:43.4461861Z   src: /home/runner/work/MaiBot/MaiBot
+2025-04-11T04:58:43.4463390Z   github-token: ***
+2025-04-11T04:58:43.4464262Z ##[endgroup]
+2025-04-11T04:58:43.5356941Z ##[warning]Could not parse version from /home/runner/work/MaiBot/MaiBot/pyproject.toml. Using latest version.
+2025-04-11T04:58:43.8174422Z Downloading ruff from "https://github.com/astral-sh/ruff/releases/download/0.11.5/ruff-x86_64-unknown-linux-gnu.tar.gz" ...
+2025-04-11T04:58:44.3010973Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/c76f226d-7ac5-454b-8cfe-a6bea32b9491 -f /home/runner/work/_temp/40811e4a-b21f-4334-8bef-48b6fdaaba58
+2025-04-11T04:58:44.5492076Z Added /opt/hostedtoolcache/ruff/0.11.5/x86_64 to the path
+2025-04-11T04:58:44.5494020Z Set RUFF_OUTPUT_FORMAT to github
+2025-04-11T04:58:44.5519962Z Successfully installed ruff version 0.11.5
+2025-04-11T04:58:44.5520462Z [command]/opt/hostedtoolcache/ruff/0.11.5/x86_64/ruff check /home/runner/work/MaiBot/MaiBot
+2025-04-11T04:58:44.5775866Z ##[error]src/plugins/willing/mode_classical.py:3:8: F401 `time` imported but unused
+2025-04-11T04:58:44.5788292Z ##[error]The process '/opt/hostedtoolcache/ruff/0.11.5/x86_64/ruff' failed with exit code 1
+2025-04-11T04:58:44.5981191Z Post job cleanup.
+2025-04-11T04:58:44.6969511Z [command]/usr/bin/git version
+2025-04-11T04:58:44.7012304Z git version 2.49.0
+2025-04-11T04:58:44.7055343Z Temporarily overriding HOME='/home/runner/work/_temp/c32be38c-82c7-4c8e-ab67-bfab66191905' before making global git config changes
+2025-04-11T04:58:44.7056644Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-11T04:58:44.7061857Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/MaiBot/MaiBot
+2025-04-11T04:58:44.7096237Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-11T04:58:44.7129036Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-11T04:58:44.7361902Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-11T04:58:44.7383034Z http.https://github.com/.extraheader
+2025-04-11T04:58:44.7395257Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-11T04:58:44.7425716Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-11T04:58:44.7775186Z Cleaning up orphan processes

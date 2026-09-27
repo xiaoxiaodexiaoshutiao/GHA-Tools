@@ -1,0 +1,15 @@
+diff --git a/src/scripts/choices.ts b/src/scripts/choices.ts
+index 63464dd63..9e2cf734b 100644
+--- a/src/scripts/choices.ts
++++ b/src/scripts/choices.ts
+@@ -692,7 +692,9 @@ class Choices {
+         return new Promise((resolve) => requestAnimationFrame(resolve))
+           .then(() => this._handleLoadingState(true))
+           .then(() => fetcher)
+-          .then((data: InputChoice[]) => this.setChoices(data, value, label, replaceChoices, clearSearchFlag, replaceItems))
++          .then((data: InputChoice[]) =>
++            this.setChoices(data, value, label, replaceChoices, clearSearchFlag, replaceItems),
++          )
+           .catch((err) => {
+             if (!this.config.silent) {
+               console.error(err);

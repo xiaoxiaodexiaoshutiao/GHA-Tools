@@ -1,0 +1,254 @@
+2025-03-31T12:29:25.6447758Z Requested labels: ubuntu-latest
+2025-03-31T12:29:25.6448006Z Job defined at: MetOffice/CSET/.github/workflows/pull-request-checks.yml@refs/pull/1296/merge
+2025-03-31T12:29:25.6448086Z Waiting for a runner to pick up this job...
+2025-03-31T12:29:27.6273888Z Job is waiting for a hosted runner to come online.
+2025-03-31T12:29:31.0938715Z Job is about to start running on the hosted runner: GitHub Actions 358 (hosted)
+2025-03-31T12:29:33.7279103Z Current runner version: '2.323.0'
+2025-03-31T12:29:33.7306946Z ##[group]Operating System
+2025-03-31T12:29:33.7307732Z Ubuntu
+2025-03-31T12:29:33.7308319Z 24.04.2
+2025-03-31T12:29:33.7308834Z LTS
+2025-03-31T12:29:33.7309275Z ##[endgroup]
+2025-03-31T12:29:33.7310059Z ##[group]Runner Image
+2025-03-31T12:29:33.7310663Z Image: ubuntu-24.04
+2025-03-31T12:29:33.7311182Z Version: 20250323.1.0
+2025-03-31T12:29:33.7312298Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-31T12:29:33.7313733Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-03-31T12:29:33.7314616Z ##[endgroup]
+2025-03-31T12:29:33.7315227Z ##[group]Runner Image Provisioner
+2025-03-31T12:29:33.7315821Z 2.0.422.1
+2025-03-31T12:29:33.7316362Z ##[endgroup]
+2025-03-31T12:29:33.7317438Z ##[group]GITHUB_TOKEN Permissions
+2025-03-31T12:29:33.7319176Z Contents: read
+2025-03-31T12:29:33.7320056Z Metadata: read
+2025-03-31T12:29:33.7320752Z Packages: read
+2025-03-31T12:29:33.7321458Z ##[endgroup]
+2025-03-31T12:29:33.7324234Z Secret source: Actions
+2025-03-31T12:29:33.7325137Z Prepare workflow directory
+2025-03-31T12:29:33.7633381Z Prepare all required actions
+2025-03-31T12:29:33.7670629Z Getting action download info
+2025-03-31T12:29:34.0543892Z Download action repository 'actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-31T12:29:34.1685308Z Download action repository 'actions/setup-python@42375524e23c412d93fb67b49958b491fce71c38' (SHA:42375524e23c412d93fb67b49958b491fce71c38)
+2025-03-31T12:29:34.3407962Z Download action repository 'actions/cache@5a3ec84eff668545956fd18022155c47e93e2684' (SHA:5a3ec84eff668545956fd18022155c47e93e2684)
+2025-03-31T12:29:34.9919061Z Complete job name: pre-commit
+2025-03-31T12:29:35.0630238Z ##[group]Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+2025-03-31T12:29:35.0631358Z with:
+2025-03-31T12:29:35.0631774Z   repository: MetOffice/CSET
+2025-03-31T12:29:35.0632456Z   token: ***
+2025-03-31T12:29:35.0632848Z   ssh-strict: true
+2025-03-31T12:29:35.0633253Z   ssh-user: git
+2025-03-31T12:29:35.0633669Z   persist-credentials: true
+2025-03-31T12:29:35.0634119Z   clean: true
+2025-03-31T12:29:35.0634526Z   sparse-checkout-cone-mode: true
+2025-03-31T12:29:35.0635023Z   fetch-depth: 1
+2025-03-31T12:29:35.0635420Z   fetch-tags: false
+2025-03-31T12:29:35.0635832Z   show-progress: true
+2025-03-31T12:29:35.0636236Z   lfs: false
+2025-03-31T12:29:35.0636620Z   submodules: false
+2025-03-31T12:29:35.0637039Z   set-safe-directory: true
+2025-03-31T12:29:35.0637731Z ##[endgroup]
+2025-03-31T12:29:35.3105077Z Syncing repository: MetOffice/CSET
+2025-03-31T12:29:35.3106896Z ##[group]Getting Git version info
+2025-03-31T12:29:35.3107663Z Working directory is '/home/runner/work/CSET/CSET'
+2025-03-31T12:29:35.3108588Z [command]/usr/bin/git version
+2025-03-31T12:29:35.3209487Z git version 2.49.0
+2025-03-31T12:29:35.3240748Z ##[endgroup]
+2025-03-31T12:29:35.3255604Z Temporarily overriding HOME='/home/runner/work/_temp/82aeef3c-09f8-4d20-bdf0-edb986c019f2' before making global git config changes
+2025-03-31T12:29:35.3257021Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-31T12:29:35.3261203Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/CSET/CSET
+2025-03-31T12:29:35.3299312Z Deleting the contents of '/home/runner/work/CSET/CSET'
+2025-03-31T12:29:35.3303881Z ##[group]Initializing the repository
+2025-03-31T12:29:35.3307769Z [command]/usr/bin/git init /home/runner/work/CSET/CSET
+2025-03-31T12:29:35.3390836Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-31T12:29:35.3391847Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-31T12:29:35.3392773Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-31T12:29:35.3393441Z hint:
+2025-03-31T12:29:35.3393924Z hint: 	git config --global init.defaultBranch <name>
+2025-03-31T12:29:35.3394790Z hint:
+2025-03-31T12:29:35.3395343Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-31T12:29:35.3396220Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-31T12:29:35.3396902Z hint:
+2025-03-31T12:29:35.3397287Z hint: 	git branch -m <name>
+2025-03-31T12:29:35.3402340Z Initialized empty Git repository in /home/runner/work/CSET/CSET/.git/
+2025-03-31T12:29:35.3414703Z [command]/usr/bin/git remote add origin https://github.com/MetOffice/CSET
+2025-03-31T12:29:35.3457248Z ##[endgroup]
+2025-03-31T12:29:35.3458001Z ##[group]Disabling automatic garbage collection
+2025-03-31T12:29:35.3461864Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-31T12:29:35.3492386Z ##[endgroup]
+2025-03-31T12:29:35.3493064Z ##[group]Setting up auth
+2025-03-31T12:29:35.3499428Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-31T12:29:35.3530565Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-31T12:29:35.3870708Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-31T12:29:35.3902382Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-31T12:29:35.4131856Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-31T12:29:35.4168102Z ##[endgroup]
+2025-03-31T12:29:35.4169382Z ##[group]Fetching the repository
+2025-03-31T12:29:35.4179180Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5e6f12948abb5619246b11b8ae7aef6d2ff64eed:refs/remotes/pull/1296/merge
+2025-03-31T12:29:36.4058863Z From https://github.com/MetOffice/CSET
+2025-03-31T12:29:36.4060762Z  * [new ref]         5e6f12948abb5619246b11b8ae7aef6d2ff64eed -> pull/1296/merge
+2025-03-31T12:29:36.4090082Z ##[endgroup]
+2025-03-31T12:29:36.4091669Z ##[group]Determining the checkout info
+2025-03-31T12:29:36.4093164Z ##[endgroup]
+2025-03-31T12:29:36.4096721Z [command]/usr/bin/git sparse-checkout disable
+2025-03-31T12:29:36.4138223Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-31T12:29:36.4165890Z ##[group]Checking out the ref
+2025-03-31T12:29:36.4168931Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1296/merge
+2025-03-31T12:29:36.4845912Z Note: switching to 'refs/remotes/pull/1296/merge'.
+2025-03-31T12:29:36.4847358Z 
+2025-03-31T12:29:36.4848454Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-31T12:29:36.4851529Z changes and commit them, and you can discard any commits you make in this
+2025-03-31T12:29:36.4854530Z state without impacting any branches by switching back to a branch.
+2025-03-31T12:29:36.4856428Z 
+2025-03-31T12:29:36.4857385Z If you want to create a new branch to retain commits you create, you may
+2025-03-31T12:29:36.4859248Z do so (now or later) by using -c with the switch command. Example:
+2025-03-31T12:29:36.4860646Z 
+2025-03-31T12:29:36.4861235Z   git switch -c <new-branch-name>
+2025-03-31T12:29:36.4862115Z 
+2025-03-31T12:29:36.4862592Z Or undo this operation with:
+2025-03-31T12:29:36.4863382Z 
+2025-03-31T12:29:36.4863842Z   git switch -
+2025-03-31T12:29:36.4864435Z 
+2025-03-31T12:29:36.4865604Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-31T12:29:36.4867122Z 
+2025-03-31T12:29:36.4868839Z HEAD is now at 5e6f129 Merge 5b1d01647f622b27efa85016fff578a64ba85fa1 into 765f77f6dace9c46f52db0a3875391984f4e0fd5
+2025-03-31T12:29:36.4873982Z ##[endgroup]
+2025-03-31T12:29:36.4901742Z [command]/usr/bin/git log -1 --format=%H
+2025-03-31T12:29:36.4923808Z 5e6f12948abb5619246b11b8ae7aef6d2ff64eed
+2025-03-31T12:29:36.5231836Z ##[group]Run actions/setup-python@42375524e23c412d93fb67b49958b491fce71c38
+2025-03-31T12:29:36.5233784Z with:
+2025-03-31T12:29:36.5234668Z   python-version: 3.x
+2025-03-31T12:29:36.5235664Z   check-latest: false
+2025-03-31T12:29:36.5236912Z   token: ***
+2025-03-31T12:29:36.5237841Z   update-environment: true
+2025-03-31T12:29:36.5238923Z   allow-prereleases: false
+2025-03-31T12:29:36.5240239Z ##[endgroup]
+2025-03-31T12:29:36.6973225Z ##[group]Installed versions
+2025-03-31T12:29:36.7030634Z Successfully set up CPython (3.13.2)
+2025-03-31T12:29:36.7033336Z ##[endgroup]
+2025-03-31T12:29:36.7790667Z ##[group]Run actions/cache@5a3ec84eff668545956fd18022155c47e93e2684
+2025-03-31T12:29:36.7792103Z with:
+2025-03-31T12:29:36.7794102Z   key: pre-commit|Linux-X64|/opt/hostedtoolcache/Python/3.13.2/x64|74c362ec760337e16665d73b9430699819a5debc5b41f3ad3c143beb501b3848
+2025-03-31T12:29:36.7796409Z   path: ~/.cache/pre-commit
+2025-03-31T12:29:36.7797405Z   enableCrossOsArchive: false
+2025-03-31T12:29:36.7798417Z   fail-on-cache-miss: false
+2025-03-31T12:29:36.7799388Z   lookup-only: false
+2025-03-31T12:29:36.7800370Z   save-always: false
+2025-03-31T12:29:36.7801185Z env:
+2025-03-31T12:29:36.7802147Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-31T12:29:36.7803842Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-31T12:29:36.7805495Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-31T12:29:36.7806971Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-31T12:29:36.7808515Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-31T12:29:36.7810256Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-31T12:29:36.7811549Z ##[endgroup]
+2025-03-31T12:29:37.1990887Z Cache hit for: pre-commit|Linux-X64|/opt/hostedtoolcache/Python/3.13.2/x64|74c362ec760337e16665d73b9430699819a5debc5b41f3ad3c143beb501b3848
+2025-03-31T12:29:38.5249911Z Received 0 of 35635367 (0.0%), 0.0 MBs/sec
+2025-03-31T12:29:39.5247134Z Received 31441063 of 35635367 (88.2%), 15.0 MBs/sec
+2025-03-31T12:29:39.7926120Z Received 35635367 of 35635367 (100.0%), 15.0 MBs/sec
+2025-03-31T12:29:39.7927125Z Cache Size: ~34 MB (35635367 B)
+2025-03-31T12:29:39.7968566Z [command]/usr/bin/tar -xf /home/runner/work/_temp/25a79b71-e985-4e48-a09f-84e5a9e0ad38/cache.tzst -P -C /home/runner/work/CSET/CSET --use-compress-program unzstd
+2025-03-31T12:29:40.1315756Z Cache restored successfully
+2025-03-31T12:29:40.1600739Z Cache restored from key: pre-commit|Linux-X64|/opt/hostedtoolcache/Python/3.13.2/x64|74c362ec760337e16665d73b9430699819a5debc5b41f3ad3c143beb501b3848
+2025-03-31T12:29:40.1729263Z ##[group]Run python3 -m pip install pre-commit
+2025-03-31T12:29:40.1729984Z [36;1mpython3 -m pip install pre-commit[0m
+2025-03-31T12:29:40.1781378Z shell: /usr/bin/bash -e {0}
+2025-03-31T12:29:40.1781688Z env:
+2025-03-31T12:29:40.1781997Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-31T12:29:40.1782473Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-31T12:29:40.1782949Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-31T12:29:40.1783373Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-31T12:29:40.1783802Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-31T12:29:40.1784197Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-31T12:29:40.1784535Z ##[endgroup]
+2025-03-31T12:29:43.0205601Z Collecting pre-commit
+2025-03-31T12:29:43.0531457Z   Downloading pre_commit-4.2.0-py2.py3-none-any.whl.metadata (1.3 kB)
+2025-03-31T12:29:43.0677035Z Collecting cfgv>=2.0.0 (from pre-commit)
+2025-03-31T12:29:43.0708899Z   Downloading cfgv-3.4.0-py2.py3-none-any.whl.metadata (8.5 kB)
+2025-03-31T12:29:43.1151092Z Collecting identify>=1.0.0 (from pre-commit)
+2025-03-31T12:29:43.1176513Z   Downloading identify-2.6.9-py2.py3-none-any.whl.metadata (4.4 kB)
+2025-03-31T12:29:43.1330177Z Collecting nodeenv>=0.11.1 (from pre-commit)
+2025-03-31T12:29:43.1355866Z   Downloading nodeenv-1.9.1-py2.py3-none-any.whl.metadata (21 kB)
+2025-03-31T12:29:43.1679502Z Collecting pyyaml>=5.1 (from pre-commit)
+2025-03-31T12:29:43.1705676Z   Downloading PyYAML-6.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+2025-03-31T12:29:43.2098184Z Collecting virtualenv>=20.10.0 (from pre-commit)
+2025-03-31T12:29:43.2124801Z   Downloading virtualenv-20.29.3-py3-none-any.whl.metadata (4.5 kB)
+2025-03-31T12:29:43.2323746Z Collecting distlib<1,>=0.3.7 (from virtualenv>=20.10.0->pre-commit)
+2025-03-31T12:29:43.2347760Z   Downloading distlib-0.3.9-py2.py3-none-any.whl.metadata (5.2 kB)
+2025-03-31T12:29:43.2536748Z Collecting filelock<4,>=3.12.2 (from virtualenv>=20.10.0->pre-commit)
+2025-03-31T12:29:43.2564308Z   Downloading filelock-3.18.0-py3-none-any.whl.metadata (2.9 kB)
+2025-03-31T12:29:43.2748487Z Collecting platformdirs<5,>=3.9.1 (from virtualenv>=20.10.0->pre-commit)
+2025-03-31T12:29:43.2776744Z   Downloading platformdirs-4.3.7-py3-none-any.whl.metadata (11 kB)
+2025-03-31T12:29:43.2876058Z Downloading pre_commit-4.2.0-py2.py3-none-any.whl (220 kB)
+2025-03-31T12:29:43.2994840Z Downloading cfgv-3.4.0-py2.py3-none-any.whl (7.2 kB)
+2025-03-31T12:29:43.3047798Z Downloading identify-2.6.9-py2.py3-none-any.whl (99 kB)
+2025-03-31T12:29:43.3106615Z Downloading nodeenv-1.9.1-py2.py3-none-any.whl (22 kB)
+2025-03-31T12:29:43.3162293Z Downloading PyYAML-6.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (759 kB)
+2025-03-31T12:29:43.3289175Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 759.5/759.5 kB 65.4 MB/s eta 0:00:00
+2025-03-31T12:29:43.3321241Z Downloading virtualenv-20.29.3-py3-none-any.whl (4.3 MB)
+2025-03-31T12:29:43.3684630Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 124.5 MB/s eta 0:00:00
+2025-03-31T12:29:43.3714221Z Downloading distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+2025-03-31T12:29:43.3791331Z Downloading filelock-3.18.0-py3-none-any.whl (16 kB)
+2025-03-31T12:29:43.3844632Z Downloading platformdirs-4.3.7-py3-none-any.whl (18 kB)
+2025-03-31T12:29:43.4238914Z Installing collected packages: distlib, pyyaml, platformdirs, nodeenv, identify, filelock, cfgv, virtualenv, pre-commit
+2025-03-31T12:29:43.8136729Z Successfully installed cfgv-3.4.0 distlib-0.3.9 filelock-3.18.0 identify-2.6.9 nodeenv-1.9.1 platformdirs-4.3.7 pre-commit-4.2.0 pyyaml-6.0.2 virtualenv-20.29.3
+2025-03-31T12:29:43.9621930Z ##[group]Run pre-commit run --show-diff-on-failure --color=always --all-files
+2025-03-31T12:29:43.9622477Z [36;1mpre-commit run --show-diff-on-failure --color=always --all-files[0m
+2025-03-31T12:29:43.9670042Z shell: /usr/bin/bash -e {0}
+2025-03-31T12:29:43.9670280Z env:
+2025-03-31T12:29:43.9670531Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-31T12:29:43.9670936Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-31T12:29:43.9671321Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-31T12:29:43.9671685Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-31T12:29:43.9672064Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-31T12:29:43.9672441Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-31T12:29:43.9672751Z   RUFF_OUTPUT_FORMAT: github
+2025-03-31T12:29:43.9672971Z ##[endgroup]
+2025-03-31T12:29:44.9101790Z codespell................................................................[42mPassed[m
+2025-03-31T12:29:44.9826893Z ruff.....................................................................[42mPassed[m
+2025-03-31T12:29:45.0625021Z ruff-format..............................................................[41mFailed[m
+2025-03-31T12:29:45.0625527Z [2m- hook id: ruff-format[m
+2025-03-31T12:29:45.0625857Z [2m- files were modified by this hook[m
+2025-03-31T12:29:45.0626076Z 
+2025-03-31T12:29:45.0626204Z 1 file reformatted, 63 files left unchanged
+2025-03-31T12:29:45.0626418Z 
+2025-03-31T12:29:45.1991273Z shellcheck...............................................................[42mPassed[m
+2025-03-31T12:29:45.2867648Z Sort JSON................................................................[42mPassed[m
+2025-03-31T12:29:45.5227703Z Regenerate rose metadata.................................................[42mPassed[m
+2025-03-31T12:29:45.5881607Z check for added large files..............................................[42mPassed[m
+2025-03-31T12:29:45.6521198Z check for case conflicts.................................................[42mPassed[m
+2025-03-31T12:29:45.7141186Z check for merge conflicts................................................[42mPassed[m
+2025-03-31T12:29:45.7563197Z check toml...............................................................[42mPassed[m
+2025-03-31T12:29:45.9373035Z check yaml...............................................................[42mPassed[m
+2025-03-31T12:29:45.9917219Z fix end of files.........................................................[42mPassed[m
+2025-03-31T12:29:46.0517472Z trim trailing whitespace.................................................[42mPassed[m
+2025-03-31T12:29:46.0518028Z pre-commit hook(s) made changes.
+2025-03-31T12:29:46.0518481Z If you are seeing this message in CI, reproduce locally with: `pre-commit run --all-files`.
+2025-03-31T12:29:46.0518989Z To run `pre-commit` as part of git workflow, use `pre-commit install`.
+2025-03-31T12:29:46.0519454Z All changes made by hooks:
+2025-03-31T12:29:46.0550019Z [1mdiff --git a/src/CSET/operators/plot.py b/src/CSET/operators/plot.py[m
+2025-03-31T12:29:46.0550805Z [1mindex 69c1860..d3f4658 100644[m
+2025-03-31T12:29:46.0551330Z [1m--- a/src/CSET/operators/plot.py[m
+2025-03-31T12:29:46.0551837Z [1m+++ b/src/CSET/operators/plot.py[m
+2025-03-31T12:29:46.0552268Z [36m@@ -388,7 +388,7 @@[m [mdef _plot_and_save_spatial_plot([m
+2025-03-31T12:29:46.0552749Z      # add ticks and tick_labels for every levels if less than 20 levels exist[m
+2025-03-31T12:29:46.0553183Z      if levels is not None and len(levels) < 20:[m
+2025-03-31T12:29:46.0553507Z          cbar.set_ticks(levels)[m
+2025-03-31T12:29:46.0553893Z [31m-        cbar.set_ticklabels([f"{level:.1f}" for level in levels])   [m
+2025-03-31T12:29:46.0554389Z [32m+[m[32m        cbar.set_ticklabels([f"{level:.1f}" for level in levels])[m
+2025-03-31T12:29:46.0554729Z  [m
+2025-03-31T12:29:46.0554921Z      # Save plot.[m
+2025-03-31T12:29:46.0555638Z      fig.savefig(filename, bbox_inches="tight", dpi=_get_plot_resolution())[m
+2025-03-31T12:29:46.0754889Z ##[error]Process completed with exit code 1.
+2025-03-31T12:29:46.0878296Z Post job cleanup.
+2025-03-31T12:29:46.1808888Z [command]/usr/bin/git version
+2025-03-31T12:29:46.1844614Z git version 2.49.0
+2025-03-31T12:29:46.1894728Z Temporarily overriding HOME='/home/runner/work/_temp/a11d9c87-729f-40b4-9c2c-9e9126d98d8b' before making global git config changes
+2025-03-31T12:29:46.1896072Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-31T12:29:46.1900984Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/CSET/CSET
+2025-03-31T12:29:46.1935686Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-31T12:29:46.1968701Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-31T12:29:46.2199607Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-31T12:29:46.2221073Z http.https://github.com/.extraheader
+2025-03-31T12:29:46.2234021Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-31T12:29:46.2265430Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-31T12:29:46.2593800Z Cleaning up orphan processes

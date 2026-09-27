@@ -1,0 +1,210 @@
+﻿2025-04-15T11:05:26.1833871Z Current runner version: '2.323.0'
+2025-04-15T11:05:26.1859810Z ##[group]Operating System
+2025-04-15T11:05:26.1860877Z Ubuntu
+2025-04-15T11:05:26.1861338Z 24.04.2
+2025-04-15T11:05:26.1861827Z LTS
+2025-04-15T11:05:26.1862361Z ##[endgroup]
+2025-04-15T11:05:26.1862848Z ##[group]Runner Image
+2025-04-15T11:05:26.1863421Z Image: ubuntu-24.04
+2025-04-15T11:05:26.1863939Z Version: 20250406.1.0
+2025-04-15T11:05:26.1864963Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250406.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-15T11:05:26.1866309Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250406.1
+2025-04-15T11:05:26.1867219Z ##[endgroup]
+2025-04-15T11:05:26.1867750Z ##[group]Runner Image Provisioner
+2025-04-15T11:05:26.1868280Z 2.0.422.1
+2025-04-15T11:05:26.1868763Z ##[endgroup]
+2025-04-15T11:05:26.1871424Z ##[group]GITHUB_TOKEN Permissions
+2025-04-15T11:05:26.1873442Z Actions: write
+2025-04-15T11:05:26.1874263Z Attestations: write
+2025-04-15T11:05:26.1874811Z Checks: write
+2025-04-15T11:05:26.1875389Z Contents: write
+2025-04-15T11:05:26.1875839Z Deployments: write
+2025-04-15T11:05:26.1876313Z Discussions: write
+2025-04-15T11:05:26.1876847Z Issues: write
+2025-04-15T11:05:26.1877321Z Metadata: read
+2025-04-15T11:05:26.1877784Z Models: read
+2025-04-15T11:05:26.1878299Z Packages: write
+2025-04-15T11:05:26.1878780Z Pages: write
+2025-04-15T11:05:26.1879222Z PullRequests: write
+2025-04-15T11:05:26.1879802Z RepositoryProjects: write
+2025-04-15T11:05:26.1880526Z SecurityEvents: write
+2025-04-15T11:05:26.1881051Z Statuses: write
+2025-04-15T11:05:26.1881550Z ##[endgroup]
+2025-04-15T11:05:26.1884086Z Secret source: Actions
+2025-04-15T11:05:26.1885020Z Prepare workflow directory
+2025-04-15T11:05:26.2212074Z Prepare all required actions
+2025-04-15T11:05:26.2248821Z Getting action download info
+2025-04-15T11:05:26.8354433Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-15T11:05:26.8355389Z Version: 4.2.2
+2025-04-15T11:05:26.8356345Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-15T11:05:26.8357637Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-15T11:05:26.8358308Z ##[endgroup]
+2025-04-15T11:05:26.9368848Z ##[group]Download immutable action package 'actions/setup-python@v4'
+2025-04-15T11:05:26.9369529Z Version: 4.8.0
+2025-04-15T11:05:26.9370147Z Digest: sha256:7e597ce284e0b40cf85abcb7aa2474fa843336422b823ce21b6643f3a262b88d
+2025-04-15T11:05:26.9371339Z Source commit SHA: b64ffcaf5b410884ad320a9cfac8866006a109aa
+2025-04-15T11:05:26.9371917Z ##[endgroup]
+2025-04-15T11:05:27.1193734Z ##[group]Download immutable action package 'actions/download-artifact@v4'
+2025-04-15T11:05:27.1194452Z Version: 4.2.1
+2025-04-15T11:05:27.1195065Z Digest: sha256:dc468d5aa7f2038c97563f0fd51a6d40150fe504eef54e24f5ac75983c6666de
+2025-04-15T11:05:27.1195876Z Source commit SHA: 95815c38cf2ff2164869cbab79da8d1f422bc89e
+2025-04-15T11:05:27.1196446Z ##[endgroup]
+2025-04-15T11:05:27.4969561Z Complete job name: test (3.12, ubuntu-latest)
+2025-04-15T11:05:27.5648380Z ##[group]Run actions/checkout@v4
+2025-04-15T11:05:27.5649200Z with:
+2025-04-15T11:05:27.5649591Z   repository: flexiblepower/s2-python
+2025-04-15T11:05:27.5650449Z   token: ***
+2025-04-15T11:05:27.5650826Z   ssh-strict: true
+2025-04-15T11:05:27.5651203Z   ssh-user: git
+2025-04-15T11:05:27.5651589Z   persist-credentials: true
+2025-04-15T11:05:27.5652015Z   clean: true
+2025-04-15T11:05:27.5652446Z   sparse-checkout-cone-mode: true
+2025-04-15T11:05:27.5652910Z   fetch-depth: 1
+2025-04-15T11:05:27.5653293Z   fetch-tags: false
+2025-04-15T11:05:27.5653667Z   show-progress: true
+2025-04-15T11:05:27.5654053Z   lfs: false
+2025-04-15T11:05:27.5654398Z   submodules: false
+2025-04-15T11:05:27.5654787Z   set-safe-directory: true
+2025-04-15T11:05:27.5655458Z ##[endgroup]
+2025-04-15T11:05:27.7857098Z Syncing repository: flexiblepower/s2-python
+2025-04-15T11:05:27.7859064Z ##[group]Getting Git version info
+2025-04-15T11:05:27.7859805Z Working directory is '/home/runner/work/s2-python/s2-python'
+2025-04-15T11:05:27.7862502Z [command]/usr/bin/git version
+2025-04-15T11:05:27.7931791Z git version 2.49.0
+2025-04-15T11:05:27.7962506Z ##[endgroup]
+2025-04-15T11:05:27.7978724Z Temporarily overriding HOME='/home/runner/work/_temp/62fdc73a-7761-49e4-9cdf-4c688215f90a' before making global git config changes
+2025-04-15T11:05:27.7981740Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-15T11:05:27.7986031Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/s2-python/s2-python
+2025-04-15T11:05:27.8025866Z Deleting the contents of '/home/runner/work/s2-python/s2-python'
+2025-04-15T11:05:27.8029976Z ##[group]Initializing the repository
+2025-04-15T11:05:27.8035486Z [command]/usr/bin/git init /home/runner/work/s2-python/s2-python
+2025-04-15T11:05:27.8108768Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-15T11:05:27.8109992Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-15T11:05:27.8111192Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-15T11:05:27.8111955Z hint:
+2025-04-15T11:05:27.8112452Z hint: 	git config --global init.defaultBranch <name>
+2025-04-15T11:05:27.8113048Z hint:
+2025-04-15T11:05:27.8113589Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-15T11:05:27.8114498Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-15T11:05:27.8115281Z hint:
+2025-04-15T11:05:27.8116064Z hint: 	git branch -m <name>
+2025-04-15T11:05:27.8117153Z Initialized empty Git repository in /home/runner/work/s2-python/s2-python/.git/
+2025-04-15T11:05:27.8130203Z [command]/usr/bin/git remote add origin https://github.com/flexiblepower/s2-python
+2025-04-15T11:05:27.8167627Z ##[endgroup]
+2025-04-15T11:05:27.8169016Z ##[group]Disabling automatic garbage collection
+2025-04-15T11:05:27.8173098Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-15T11:05:27.8204270Z ##[endgroup]
+2025-04-15T11:05:27.8205721Z ##[group]Setting up auth
+2025-04-15T11:05:27.8212413Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-15T11:05:27.8245483Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-15T11:05:27.8584621Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-15T11:05:27.8617538Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-15T11:05:27.8857992Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-15T11:05:27.8895267Z ##[endgroup]
+2025-04-15T11:05:27.8896473Z ##[group]Fetching the repository
+2025-04-15T11:05:27.8904986Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +f9610d59014b24813f86a82ea75acc543e1898f1:refs/remotes/pull/103/merge
+2025-04-15T11:05:28.4541243Z From https://github.com/flexiblepower/s2-python
+2025-04-15T11:05:28.4542996Z  * [new ref]         f9610d59014b24813f86a82ea75acc543e1898f1 -> pull/103/merge
+2025-04-15T11:05:28.4577118Z ##[endgroup]
+2025-04-15T11:05:28.4578880Z ##[group]Determining the checkout info
+2025-04-15T11:05:28.4581151Z ##[endgroup]
+2025-04-15T11:05:28.4582363Z [command]/usr/bin/git sparse-checkout disable
+2025-04-15T11:05:28.4629350Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-15T11:05:28.4660667Z ##[group]Checking out the ref
+2025-04-15T11:05:28.4663513Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/103/merge
+2025-04-15T11:05:28.4764934Z Note: switching to 'refs/remotes/pull/103/merge'.
+2025-04-15T11:05:28.4766872Z 
+2025-04-15T11:05:28.4768286Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-15T11:05:28.4771542Z changes and commit them, and you can discard any commits you make in this
+2025-04-15T11:05:28.4774076Z state without impacting any branches by switching back to a branch.
+2025-04-15T11:05:28.4775609Z 
+2025-04-15T11:05:28.4776547Z If you want to create a new branch to retain commits you create, you may
+2025-04-15T11:05:28.4778915Z do so (now or later) by using -c with the switch command. Example:
+2025-04-15T11:05:28.4780676Z 
+2025-04-15T11:05:28.4781214Z   git switch -c <new-branch-name>
+2025-04-15T11:05:28.4782151Z 
+2025-04-15T11:05:28.4782633Z Or undo this operation with:
+2025-04-15T11:05:28.4783482Z 
+2025-04-15T11:05:28.4783907Z   git switch -
+2025-04-15T11:05:28.4784578Z 
+2025-04-15T11:05:28.4785772Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-15T11:05:28.4787413Z 
+2025-04-15T11:05:28.4789037Z HEAD is now at f9610d5 Merge 07858aa041d2de90e0636c80e793193604fb08d7 into 2d6119b099ef6621f90a5e1ff6d8d82a90d8b2a2
+2025-04-15T11:05:28.4794533Z ##[endgroup]
+2025-04-15T11:05:28.4818358Z [command]/usr/bin/git log -1 --format=%H
+2025-04-15T11:05:28.4842502Z f9610d59014b24813f86a82ea75acc543e1898f1
+2025-04-15T11:05:28.5194166Z ##[group]Run actions/setup-python@v4
+2025-04-15T11:05:28.5195325Z with:
+2025-04-15T11:05:28.5196110Z   python-version: 3.12
+2025-04-15T11:05:28.5197061Z   check-latest: false
+2025-04-15T11:05:28.5198280Z   token: ***
+2025-04-15T11:05:28.5199132Z   update-environment: true
+2025-04-15T11:05:28.5200148Z   allow-prereleases: false
+2025-04-15T11:05:28.5201319Z ##[endgroup]
+2025-04-15T11:05:28.6498290Z ##[group]Installed versions
+2025-04-15T11:05:28.6614165Z Successfully set up CPython (3.12.9)
+2025-04-15T11:05:28.6616509Z ##[endgroup]
+2025-04-15T11:05:28.6770472Z ##[group]Run actions/download-artifact@v4
+2025-04-15T11:05:28.6771586Z with:
+2025-04-15T11:05:28.6772354Z   name: python-distribution-files
+2025-04-15T11:05:28.6773327Z   path: dist/
+2025-04-15T11:05:28.6774104Z   merge-multiple: false
+2025-04-15T11:05:28.6775030Z   repository: flexiblepower/s2-python
+2025-04-15T11:05:28.6776050Z   run-id: 14467854790
+2025-04-15T11:05:28.6776822Z env:
+2025-04-15T11:05:28.6777753Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-15T11:05:28.6779414Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib/pkgconfig
+2025-04-15T11:05:28.6781302Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-15T11:05:28.6782783Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-15T11:05:28.6784247Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-15T11:05:28.6785734Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib
+2025-04-15T11:05:28.6786986Z ##[endgroup]
+2025-04-15T11:05:28.8785618Z Downloading single artifact
+2025-04-15T11:05:29.1853105Z Preparing to download the following artifacts:
+2025-04-15T11:05:29.1854203Z - python-distribution-files (ID: 2947235327, Size: 91748, Expected Digest: sha256:c9345ca126718f1f6807a5d901bd69da2a06bb9622c22fd81fdf54f06e47edbf)
+2025-04-15T11:05:29.3893228Z Redirecting to blob download url: https://productionresultssa12.blob.core.windows.net/actions-results/0858e287-eb2e-4294-af5a-2c65c03ea8b5/workflow-job-run-645345ec-e881-59fe-afa2-1ca27f55ce16/artifacts/9ca8ac00b446704a4d7feb246c669fbf4ebe7aeaf4b65b8d279b478cb7da960c.zip
+2025-04-15T11:05:29.3894577Z Starting download of artifact to: /home/runner/work/s2-python/s2-python/dist
+2025-04-15T11:05:29.7001653Z (node:1889) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2025-04-15T11:05:29.7003362Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-04-15T11:05:29.8435362Z SHA256 digest of downloaded artifact is c9345ca126718f1f6807a5d901bd69da2a06bb9622c22fd81fdf54f06e47edbf
+2025-04-15T11:05:29.8436501Z Artifact download completed successfully.
+2025-04-15T11:05:29.8437130Z Total of 1 artifact(s) downloaded
+2025-04-15T11:05:29.8442666Z Download artifact has finished successfully
+2025-04-15T11:05:29.8581432Z ##[group]Run pipx run --python '/opt/hostedtoolcache/Python/3.12.9/x64/bin/python' tox --installpkg 'dist/s2_python-0.5.0-py3-none-any.whl' -- -rFEx --durations 10 --color yes  # pytest args
+2025-04-15T11:05:29.8582806Z [36;1mpipx run --python '/opt/hostedtoolcache/Python/3.12.9/x64/bin/python' tox --installpkg 'dist/s2_python-0.5.0-py3-none-any.whl' -- -rFEx --durations 10 --color yes  # pytest args[0m
+2025-04-15T11:05:29.8638662Z shell: /usr/bin/bash -e {0}
+2025-04-15T11:05:29.8639021Z env:
+2025-04-15T11:05:29.8639338Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-15T11:05:29.8639805Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib/pkgconfig
+2025-04-15T11:05:29.8640555Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-15T11:05:29.8640998Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-15T11:05:29.8641394Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-15T11:05:29.8641860Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib
+2025-04-15T11:05:29.8642194Z ##[endgroup]
+2025-04-15T11:05:30.0158435Z creating virtual environment...
+2025-04-15T11:05:30.1595672Z installing tox...
+2025-04-15T11:05:33.6144636Z .pkg_external: freeze> python -m pip freeze --all
+2025-04-15T11:05:34.2090733Z .pkg_external: pip==25.0.1
+2025-04-15T11:05:34.2142027Z default: install_package_deps> python -I -m pip install click mypy 'pydantic>=2.8.2' pylint pyright pytest pytest-coverage pytest-timer pytz types-pytz 'websockets~=13.1'
+2025-04-15T11:05:41.3151500Z default: install_package> python -I -m pip install --force-reinstall --no-deps /home/runner/work/s2-python/s2-python/dist/s2_python-0.5.0-py3-none-any.whl
+2025-04-15T11:05:41.7588741Z [31mERROR: Package 's2-python' requires a different Python: 3.12.9 not in '<=3.12,>=3.8'
+2025-04-15T11:05:41.7589684Z Processing ./dist/s2_python-0.5.0-py3-none-any.whl
+2025-04-15T11:05:41.7591187Z INFO: pip is looking at multiple versions of s2-python to determine which version is compatible with other requirements. This could take a while.
+2025-04-15T11:05:41.7593554Z default: exit 1 (0.44 seconds) /home/runner/work/s2-python/s2-python> python -I -m pip install --force-reinstall --no-deps /home/runner/work/s2-python/s2-python/dist/s2_python-0.5.0-py3-none-any.whl pid=1977
+2025-04-15T11:05:41.7614698Z   default: FAIL code 1 (8.42 seconds)
+2025-04-15T11:05:41.7615186Z   evaluation failed :( (8.50 seconds)
+2025-04-15T11:05:41.7925121Z [39m
+2025-04-15T11:05:41.7939011Z ##[error]Process completed with exit code 1.
+2025-04-15T11:05:41.8040073Z Post job cleanup.
+2025-04-15T11:05:41.8999149Z [command]/usr/bin/git version
+2025-04-15T11:05:41.9045167Z git version 2.49.0
+2025-04-15T11:05:41.9087657Z Temporarily overriding HOME='/home/runner/work/_temp/5a9053da-d516-4587-b22d-311fa8ac4158' before making global git config changes
+2025-04-15T11:05:41.9088827Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-15T11:05:41.9093258Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/s2-python/s2-python
+2025-04-15T11:05:41.9129686Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-15T11:05:41.9164945Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-15T11:05:41.9410928Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-15T11:05:41.9434220Z http.https://github.com/.extraheader
+2025-04-15T11:05:41.9446943Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-15T11:05:41.9478902Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-15T11:05:41.9829577Z Cleaning up orphan processes

@@ -1,0 +1,193 @@
+﻿2025-03-30T19:01:58.7078697Z Current runner version: '2.323.0'
+2025-03-30T19:01:58.7102998Z ##[group]Operating System
+2025-03-30T19:01:58.7104116Z Ubuntu
+2025-03-30T19:01:58.7104576Z 24.04.2
+2025-03-30T19:01:58.7105157Z LTS
+2025-03-30T19:01:58.7105610Z ##[endgroup]
+2025-03-30T19:01:58.7106134Z ##[group]Runner Image
+2025-03-30T19:01:58.7106780Z Image: ubuntu-24.04
+2025-03-30T19:01:58.7107280Z Version: 20250323.1.0
+2025-03-30T19:01:58.7108300Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-30T19:01:58.7109655Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-03-30T19:01:58.7110551Z ##[endgroup]
+2025-03-30T19:01:58.7111034Z ##[group]Runner Image Provisioner
+2025-03-30T19:01:58.7111669Z 2.0.422.1
+2025-03-30T19:01:58.7112116Z ##[endgroup]
+2025-03-30T19:01:58.7113153Z ##[group]GITHUB_TOKEN Permissions
+2025-03-30T19:01:58.7115267Z Contents: read
+2025-03-30T19:01:58.7115802Z Metadata: read
+2025-03-30T19:01:58.7116555Z Packages: read
+2025-03-30T19:01:58.7117136Z ##[endgroup]
+2025-03-30T19:01:58.7119480Z Secret source: Actions
+2025-03-30T19:01:58.7120522Z Prepare workflow directory
+2025-03-30T19:01:58.7473493Z Prepare all required actions
+2025-03-30T19:01:58.7529062Z Getting action download info
+2025-03-30T19:01:59.1442808Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-03-30T19:01:59.1444173Z Version: 4.2.2
+2025-03-30T19:01:59.1445120Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-03-30T19:01:59.1446413Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-03-30T19:01:59.1447095Z ##[endgroup]
+2025-03-30T19:01:59.2397722Z Download action repository 'arduino/setup-arduino-cli@v2' (SHA:81d310742121c928ea9c8bbd407b4217b432ae02)
+2025-03-30T19:01:59.6129932Z Complete job name: build-batteries (esp32:esp32:esp32, FOXESS_BATTERY, BYD_CAN, HW_LILYGO)
+2025-03-30T19:01:59.6792249Z ##[group]Run actions/checkout@v4
+2025-03-30T19:01:59.6793068Z with:
+2025-03-30T19:01:59.6793917Z   repository: dalathegreat/Battery-Emulator
+2025-03-30T19:01:59.6795076Z   token: ***
+2025-03-30T19:01:59.6795721Z   ssh-strict: true
+2025-03-30T19:01:59.6796376Z   ssh-user: git
+2025-03-30T19:01:59.6797086Z   persist-credentials: true
+2025-03-30T19:01:59.6797899Z   clean: true
+2025-03-30T19:01:59.6798611Z   sparse-checkout-cone-mode: true
+2025-03-30T19:01:59.6799511Z   fetch-depth: 1
+2025-03-30T19:01:59.6800193Z   fetch-tags: false
+2025-03-30T19:01:59.6800875Z   show-progress: true
+2025-03-30T19:01:59.6801553Z   lfs: false
+2025-03-30T19:01:59.6802193Z   submodules: false
+2025-03-30T19:01:59.6802892Z   set-safe-directory: true
+2025-03-30T19:01:59.6804318Z ##[endgroup]
+2025-03-30T19:01:59.8786180Z Syncing repository: dalathegreat/Battery-Emulator
+2025-03-30T19:01:59.8788218Z ##[group]Getting Git version info
+2025-03-30T19:01:59.8789380Z Working directory is '/home/runner/work/Battery-Emulator/Battery-Emulator'
+2025-03-30T19:01:59.8790540Z [command]/usr/bin/git version
+2025-03-30T19:01:59.8840434Z git version 2.49.0
+2025-03-30T19:01:59.8867666Z ##[endgroup]
+2025-03-30T19:01:59.8883150Z Temporarily overriding HOME='/home/runner/work/_temp/514f2f95-07eb-42b7-be25-0556f16eccbe' before making global git config changes
+2025-03-30T19:01:59.8885754Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-30T19:01:59.8889948Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Battery-Emulator/Battery-Emulator
+2025-03-30T19:01:59.8923740Z Deleting the contents of '/home/runner/work/Battery-Emulator/Battery-Emulator'
+2025-03-30T19:01:59.8927794Z ##[group]Initializing the repository
+2025-03-30T19:01:59.8932589Z [command]/usr/bin/git init /home/runner/work/Battery-Emulator/Battery-Emulator
+2025-03-30T19:01:59.8990225Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-30T19:01:59.8991610Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-30T19:01:59.8992491Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-30T19:01:59.8993664Z hint:
+2025-03-30T19:01:59.8994499Z hint: 	git config --global init.defaultBranch <name>
+2025-03-30T19:01:59.8995268Z hint:
+2025-03-30T19:01:59.8995892Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-30T19:01:59.8997503Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-30T19:01:59.8998795Z hint:
+2025-03-30T19:01:59.8999469Z hint: 	git branch -m <name>
+2025-03-30T19:01:59.9000928Z Initialized empty Git repository in /home/runner/work/Battery-Emulator/Battery-Emulator/.git/
+2025-03-30T19:01:59.9008180Z [command]/usr/bin/git remote add origin https://github.com/dalathegreat/Battery-Emulator
+2025-03-30T19:01:59.9041980Z ##[endgroup]
+2025-03-30T19:01:59.9042678Z ##[group]Disabling automatic garbage collection
+2025-03-30T19:01:59.9046842Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-30T19:01:59.9076546Z ##[endgroup]
+2025-03-30T19:01:59.9077708Z ##[group]Setting up auth
+2025-03-30T19:01:59.9084023Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-30T19:01:59.9115249Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-30T19:01:59.9415624Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-30T19:01:59.9446416Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-30T19:01:59.9702498Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-30T19:01:59.9736982Z ##[endgroup]
+2025-03-30T19:01:59.9738557Z ##[group]Fetching the repository
+2025-03-30T19:01:59.9747109Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +f0977d2a45d5314e923e195d3923e8ec9a33f00c:refs/remotes/pull/971/merge
+2025-03-30T19:02:00.4778226Z From https://github.com/dalathegreat/Battery-Emulator
+2025-03-30T19:02:00.4779949Z  * [new ref]         f0977d2a45d5314e923e195d3923e8ec9a33f00c -> pull/971/merge
+2025-03-30T19:02:00.4804745Z ##[endgroup]
+2025-03-30T19:02:00.4805987Z ##[group]Determining the checkout info
+2025-03-30T19:02:00.4807308Z ##[endgroup]
+2025-03-30T19:02:00.4812881Z [command]/usr/bin/git sparse-checkout disable
+2025-03-30T19:02:00.4864027Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-30T19:02:00.4892903Z ##[group]Checking out the ref
+2025-03-30T19:02:00.4896951Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/971/merge
+2025-03-30T19:02:00.5195578Z Note: switching to 'refs/remotes/pull/971/merge'.
+2025-03-30T19:02:00.5196891Z 
+2025-03-30T19:02:00.5197783Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-30T19:02:00.5199886Z changes and commit them, and you can discard any commits you make in this
+2025-03-30T19:02:00.5201475Z state without impacting any branches by switching back to a branch.
+2025-03-30T19:02:00.5202668Z 
+2025-03-30T19:02:00.5203731Z If you want to create a new branch to retain commits you create, you may
+2025-03-30T19:02:00.5205180Z do so (now or later) by using -c with the switch command. Example:
+2025-03-30T19:02:00.5205988Z 
+2025-03-30T19:02:00.5206317Z   git switch -c <new-branch-name>
+2025-03-30T19:02:00.5206876Z 
+2025-03-30T19:02:00.5207189Z Or undo this operation with:
+2025-03-30T19:02:00.5207698Z 
+2025-03-30T19:02:00.5207968Z   git switch -
+2025-03-30T19:02:00.5208388Z 
+2025-03-30T19:02:00.5209157Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-30T19:02:00.5210238Z 
+2025-03-30T19:02:00.5211534Z HEAD is now at f0977d2 Merge f3b3bb92cfcc8f821305da5e5002bf7f83dd94b2 into 5dcaa1c0fddc8d2914172c16c643f5af05414cf4
+2025-03-30T19:02:00.5216106Z ##[endgroup]
+2025-03-30T19:02:00.5243508Z [command]/usr/bin/git log -1 --format=%H
+2025-03-30T19:02:00.5266943Z f0977d2a45d5314e923e195d3923e8ec9a33f00c
+2025-03-30T19:02:00.5497677Z ##[group]Run cp ./Software/USER_SECRETS.TEMPLATE.h ./Software/USER_SECRETS.h
+2025-03-30T19:02:00.5499778Z [36;1mcp ./Software/USER_SECRETS.TEMPLATE.h ./Software/USER_SECRETS.h[0m
+2025-03-30T19:02:00.5552354Z shell: /usr/bin/bash -e {0}
+2025-03-30T19:02:00.5553510Z ##[endgroup]
+2025-03-30T19:02:00.5755127Z ##[group]Run arduino/setup-arduino-cli@v2
+2025-03-30T19:02:00.5756229Z with:
+2025-03-30T19:02:00.5756884Z   version: 1.x
+2025-03-30T19:02:00.5757877Z   token: ***
+2025-03-30T19:02:00.5758570Z ##[endgroup]
+2025-03-30T19:02:01.3086244Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/7b866ed3-3dca-4812-93d6-5e1945515d5c -f /home/runner/work/_temp/9e3591ce-64a6-4cf4-ac23-350ccfc40638
+2025-03-30T19:02:01.5853058Z ##[group]Run arduino-cli core update-index
+2025-03-30T19:02:01.5853913Z [36;1marduino-cli core update-index[0m
+2025-03-30T19:02:01.5854431Z [36;1marduino-cli core install esp32:esp32[0m
+2025-03-30T19:02:01.5906759Z shell: /usr/bin/bash -e {0}
+2025-03-30T19:02:01.5907215Z ##[endgroup]
+2025-03-30T19:02:01.7919690Z 
+2025-03-30T19:02:01.7920573Z Downloading index: library_index.tar.bz2 0 B / 3.29 MiB    0.00%
+2025-03-30T19:02:01.7921666Z Downloading index: library_index.tar.bz2 downloaded
+2025-03-30T19:02:02.8711303Z 
+2025-03-30T19:02:02.8711879Z Downloading index: package_index.tar.bz2 0 B / 79.04 KiB    0.00%
+2025-03-30T19:02:02.8712471Z Downloading index: package_index.tar.bz2 downloaded
+2025-03-30T19:02:02.9091177Z Downloading missing tool builtin:serial-monitor@0.15.0...
+2025-03-30T19:02:03.0544636Z 
+2025-03-30T19:02:03.0545248Z builtin:serial-monitor@0.15.0 0 B / 2.33 MiB    0.00%
+2025-03-30T19:02:03.0545947Z builtin:serial-monitor@0.15.0 downloaded
+2025-03-30T19:02:03.0554350Z Installing builtin:serial-monitor@0.15.0...
+2025-03-30T19:02:03.0879409Z Skipping tool configuration....
+2025-03-30T19:02:03.0879962Z builtin:serial-monitor@0.15.0 installed
+2025-03-30T19:02:03.0880467Z Downloading missing tool builtin:ctags@5.8-arduino11...
+2025-03-30T19:02:03.1529960Z 
+2025-03-30T19:02:03.1532812Z builtin:ctags@5.8-arduino11 0 B / 108.99 KiB    0.00%
+2025-03-30T19:02:03.1533783Z builtin:ctags@5.8-arduino11 downloaded
+2025-03-30T19:02:03.1534348Z Installing builtin:ctags@5.8-arduino11...
+2025-03-30T19:02:03.1665949Z Skipping tool configuration....
+2025-03-30T19:02:03.1666514Z builtin:ctags@5.8-arduino11 installed
+2025-03-30T19:02:03.1667174Z Downloading missing tool builtin:dfu-discovery@0.1.2...
+2025-03-30T19:02:03.2177550Z 
+2025-03-30T19:02:03.2179331Z builtin:dfu-discovery@0.1.2 0 B / 1.65 MiB    0.00%
+2025-03-30T19:02:03.2180060Z builtin:dfu-discovery@0.1.2 downloaded
+2025-03-30T19:02:03.2180675Z Installing builtin:dfu-discovery@0.1.2...
+2025-03-30T19:02:03.2409123Z Skipping tool configuration....
+2025-03-30T19:02:03.2409681Z builtin:dfu-discovery@0.1.2 installed
+2025-03-30T19:02:03.2410318Z Downloading missing tool builtin:mdns-discovery@1.0.9...
+2025-03-30T19:02:03.3158735Z 
+2025-03-30T19:02:03.3159356Z builtin:mdns-discovery@1.0.9 0 B / 2.34 MiB    0.00%
+2025-03-30T19:02:03.3160056Z builtin:mdns-discovery@1.0.9 downloaded
+2025-03-30T19:02:03.3160706Z Installing builtin:mdns-discovery@1.0.9...
+2025-03-30T19:02:03.3502580Z Skipping tool configuration....
+2025-03-30T19:02:03.3503016Z builtin:mdns-discovery@1.0.9 installed
+2025-03-30T19:02:03.3503616Z Downloading missing tool builtin:serial-discovery@1.4.1...
+2025-03-30T19:02:03.4017000Z 
+2025-03-30T19:02:03.4018277Z builtin:serial-discovery@1.4.1 0 B / 1.63 MiB    0.00%
+2025-03-30T19:02:03.4018903Z builtin:serial-discovery@1.4.1 downloaded
+2025-03-30T19:02:03.4019440Z Installing builtin:serial-discovery@1.4.1...
+2025-03-30T19:02:03.4239689Z Skipping tool configuration....
+2025-03-30T19:02:03.6914233Z builtin:serial-discovery@1.4.1 installed
+2025-03-30T19:02:03.6915008Z 
+2025-03-30T19:02:03.6915258Z Downloading index: package_index.tar.bz2 0 B / 79.04 KiB    0.00%
+2025-03-30T19:02:03.6916411Z Downloading index: package_index.tar.bz2 downloaded
+2025-03-30T19:02:04.0685009Z Downloading packages...
+2025-03-30T19:02:04.1513351Z 
+2025-03-30T19:02:04.1513932Z arduino:dfu-util@0.11.0-arduino5 0 B / 2.18 MiB    0.00%
+2025-03-30T19:02:04.1515143Z arduino:dfu-util@0.11.0-arduino5 downloaded
+2025-03-30T19:02:04.2746669Z esp32:esp-rv32@2405 Get "https://objects.githubusercontent.com/github-production-release-asset-2e65be/66057540/76d25d29-065f-4a5b-96d8-01680c5af211?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250330%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250330T190204Z&X-Amz-Expires=300&X-Amz-Signature=a05af01f167ea4f4d4ff1dacd4f89801e3e90e84f685a0c98e252eae34b0f5b8&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Driscv32-esp-elf-13.2.0_20240530-x86_64-linux-gnu.tar.gz&response-content-type=application%2Foctet-stream": read tcp 10.1.0.128:41888->185.199.108.133:443: read: connection reset by peer
+2025-03-30T19:02:04.2754375Z Error during install: Get "https://objects.githubusercontent.com/github-production-release-asset-2e65be/66057540/76d25d29-065f-4a5b-96d8-01680c5af211?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250330%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250330T190204Z&X-Amz-Expires=300&X-Amz-Signature=a05af01f167ea4f4d4ff1dacd4f89801e3e90e84f685a0c98e252eae34b0f5b8&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Driscv32-esp-elf-13.2.0_20240530-x86_64-linux-gnu.tar.gz&response-content-type=application%2Foctet-stream": read tcp 10.1.0.128:41888->185.199.108.133:443: read: connection reset by peer
+2025-03-30T19:02:04.2781739Z ##[error]Process completed with exit code 1.
+2025-03-30T19:02:04.2880785Z Post job cleanup.
+2025-03-30T19:02:04.3795010Z [command]/usr/bin/git version
+2025-03-30T19:02:04.3836947Z git version 2.49.0
+2025-03-30T19:02:04.3877900Z Temporarily overriding HOME='/home/runner/work/_temp/49fde3cd-6ac3-46e0-8b9b-3c50a9f4d1ff' before making global git config changes
+2025-03-30T19:02:04.3878854Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-30T19:02:04.3883051Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Battery-Emulator/Battery-Emulator
+2025-03-30T19:02:04.3919760Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-30T19:02:04.3952837Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-30T19:02:04.4185403Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-30T19:02:04.4205587Z http.https://github.com/.extraheader
+2025-03-30T19:02:04.4217470Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-30T19:02:04.4248090Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-30T19:02:04.4574253Z Cleaning up orphan processes

@@ -1,0 +1,610 @@
+2025-03-16T16:28:45.1774812Z Requested labels: ubuntu-latest
+2025-03-16T16:28:45.1775130Z Job defined at: apache/fury/.github/workflows/ci.yml@refs/pull/2102/merge
+2025-03-16T16:28:45.1775227Z Waiting for a runner to pick up this job...
+2025-03-16T16:28:47.4329833Z Job is waiting for a hosted runner to come online.
+2025-03-16T16:28:51.0009323Z Job is about to start running on the hosted runner: GitHub Actions 307 (hosted)
+2025-03-16T16:28:53.5100008Z Current runner version: '2.322.0'
+2025-03-16T16:28:53.5125364Z ##[group]Operating System
+2025-03-16T16:28:53.5126190Z Ubuntu
+2025-03-16T16:28:53.5126867Z 24.04.2
+2025-03-16T16:28:53.5127383Z LTS
+2025-03-16T16:28:53.5127883Z ##[endgroup]
+2025-03-16T16:28:53.5128525Z ##[group]Runner Image
+2025-03-16T16:28:53.5129129Z Image: ubuntu-24.04
+2025-03-16T16:28:53.5129703Z Version: 20250309.1.0
+2025-03-16T16:28:53.5130729Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250309.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-16T16:28:53.5132097Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250309.1
+2025-03-16T16:28:53.5133041Z ##[endgroup]
+2025-03-16T16:28:53.5133862Z ##[group]Runner Image Provisioner
+2025-03-16T16:28:53.5134504Z 2.0.422.1
+2025-03-16T16:28:53.5135094Z ##[endgroup]
+2025-03-16T16:28:53.5137219Z ##[group]GITHUB_TOKEN Permissions
+2025-03-16T16:28:53.5139184Z Actions: read
+2025-03-16T16:28:53.5140015Z Attestations: read
+2025-03-16T16:28:53.5140731Z Checks: read
+2025-03-16T16:28:53.5141282Z Contents: read
+2025-03-16T16:28:53.5141820Z Deployments: read
+2025-03-16T16:28:53.5142480Z Discussions: read
+2025-03-16T16:28:53.5142999Z Issues: read
+2025-03-16T16:28:53.5143689Z Metadata: read
+2025-03-16T16:28:53.5144322Z Packages: read
+2025-03-16T16:28:53.5144874Z Pages: read
+2025-03-16T16:28:53.5145457Z PullRequests: read
+2025-03-16T16:28:53.5146008Z RepositoryProjects: read
+2025-03-16T16:28:53.5146607Z SecurityEvents: read
+2025-03-16T16:28:53.5147209Z Statuses: read
+2025-03-16T16:28:53.5147767Z ##[endgroup]
+2025-03-16T16:28:53.5150616Z Secret source: None
+2025-03-16T16:28:53.5151393Z Prepare workflow directory
+2025-03-16T16:28:53.5581688Z Prepare all required actions
+2025-03-16T16:28:53.5618638Z Getting action download info
+2025-03-16T16:28:53.7649537Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-16T16:28:53.8890402Z Download action repository 'actions/setup-java@v4' (SHA:3a4f6e1af504cf6a31855fa899c6aa5355ba6c12)
+2025-03-16T16:28:54.3226308Z Download action repository 'korandoru/hawkeye@v3' (SHA:98734beebec0344007f733c86affebcee3648a6f)
+2025-03-16T16:28:54.6996508Z Download action repository 'actions/setup-python@v5' (SHA:42375524e23c412d93fb67b49958b491fce71c38)
+2025-03-16T16:28:54.9608624Z Complete job name: Code Style Check
+2025-03-16T16:28:55.0080131Z ##[group]Pull down action image 'ghcr.io/korandoru/hawkeye-native:v3.6.1'
+2025-03-16T16:28:55.0137090Z ##[command]/usr/bin/docker pull ghcr.io/korandoru/hawkeye-native:v3.6.1
+2025-03-16T16:28:55.5288374Z v3.6.1: Pulling from korandoru/hawkeye-native
+2025-03-16T16:28:55.6587648Z 2f2fb3b0894f: Pulling fs layer
+2025-03-16T16:28:55.6588735Z d18d63d45328: Pulling fs layer
+2025-03-16T16:28:55.6589739Z b69cfc624024: Pulling fs layer
+2025-03-16T16:28:55.7999139Z b69cfc624024: Verifying Checksum
+2025-03-16T16:28:55.8750546Z b69cfc624024: Download complete
+2025-03-16T16:28:55.8751780Z d18d63d45328: Verifying Checksum
+2025-03-16T16:28:55.8753006Z d18d63d45328: Download complete
+2025-03-16T16:28:55.9788729Z 2f2fb3b0894f: Verifying Checksum
+2025-03-16T16:28:55.9790299Z 2f2fb3b0894f: Download complete
+2025-03-16T16:28:56.6994039Z 2f2fb3b0894f: Pull complete
+2025-03-16T16:28:56.9147558Z d18d63d45328: Pull complete
+2025-03-16T16:28:56.9276064Z b69cfc624024: Pull complete
+2025-03-16T16:28:56.9321784Z Digest: sha256:2d6d869b59b75c136c253e8381cc1b42612f70ad0bbf8d7e8962c804fbf44f23
+2025-03-16T16:28:56.9337414Z Status: Downloaded newer image for ghcr.io/korandoru/hawkeye-native:v3.6.1
+2025-03-16T16:28:56.9347253Z ghcr.io/korandoru/hawkeye-native:v3.6.1
+2025-03-16T16:28:56.9368421Z ##[endgroup]
+2025-03-16T16:28:56.9633469Z ##[group]Run actions/checkout@v4
+2025-03-16T16:28:56.9634376Z with:
+2025-03-16T16:28:56.9634665Z   repository: apache/fury
+2025-03-16T16:28:56.9635170Z   token: ***
+2025-03-16T16:28:56.9635443Z   ssh-strict: true
+2025-03-16T16:28:56.9635719Z   ssh-user: git
+2025-03-16T16:28:56.9636011Z   persist-credentials: true
+2025-03-16T16:28:56.9636336Z   clean: true
+2025-03-16T16:28:56.9636977Z   sparse-checkout-cone-mode: true
+2025-03-16T16:28:56.9637353Z   fetch-depth: 1
+2025-03-16T16:28:56.9637641Z   fetch-tags: false
+2025-03-16T16:28:56.9637935Z   show-progress: true
+2025-03-16T16:28:56.9638223Z   lfs: false
+2025-03-16T16:28:56.9638483Z   submodules: false
+2025-03-16T16:28:56.9638769Z   set-safe-directory: true
+2025-03-16T16:28:56.9639335Z ##[endgroup]
+2025-03-16T16:28:57.2187057Z Syncing repository: apache/fury
+2025-03-16T16:28:57.2188455Z ##[group]Getting Git version info
+2025-03-16T16:28:57.2188933Z Working directory is '/home/runner/work/fury/fury'
+2025-03-16T16:28:57.2189660Z [command]/usr/bin/git version
+2025-03-16T16:28:57.2284136Z git version 2.48.1
+2025-03-16T16:28:57.2313420Z ##[endgroup]
+2025-03-16T16:28:57.2326769Z Temporarily overriding HOME='/home/runner/work/_temp/fbd2d5f6-22bd-4798-984c-26415d59aa9d' before making global git config changes
+2025-03-16T16:28:57.2327870Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-16T16:28:57.2331622Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/fury/fury
+2025-03-16T16:28:57.2369536Z Deleting the contents of '/home/runner/work/fury/fury'
+2025-03-16T16:28:57.2373141Z ##[group]Initializing the repository
+2025-03-16T16:28:57.2377492Z [command]/usr/bin/git init /home/runner/work/fury/fury
+2025-03-16T16:28:57.2454825Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-16T16:28:57.2455837Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-16T16:28:57.2456690Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-16T16:28:57.2457250Z hint:
+2025-03-16T16:28:57.2457676Z hint: 	git config --global init.defaultBranch <name>
+2025-03-16T16:28:57.2458148Z hint:
+2025-03-16T16:28:57.2458621Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-16T16:28:57.2459367Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-16T16:28:57.2459967Z hint:
+2025-03-16T16:28:57.2460291Z hint: 	git branch -m <name>
+2025-03-16T16:28:57.2463985Z Initialized empty Git repository in /home/runner/work/fury/fury/.git/
+2025-03-16T16:28:57.2476028Z [command]/usr/bin/git remote add origin https://github.com/apache/fury
+2025-03-16T16:28:57.2511291Z ##[endgroup]
+2025-03-16T16:28:57.2512176Z ##[group]Disabling automatic garbage collection
+2025-03-16T16:28:57.2516638Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-16T16:28:57.2544143Z ##[endgroup]
+2025-03-16T16:28:57.2544787Z ##[group]Setting up auth
+2025-03-16T16:28:57.2550965Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-16T16:28:57.2580424Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-16T16:28:57.2931100Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-16T16:28:57.2960546Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-16T16:28:57.3184771Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-16T16:28:57.3220554Z ##[endgroup]
+2025-03-16T16:28:57.3221444Z ##[group]Fetching the repository
+2025-03-16T16:28:57.3260885Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +277de6c9e42752a1c0a71145a6bdbc60f9893538:refs/remotes/pull/2102/merge
+2025-03-16T16:28:57.8335492Z From https://github.com/apache/fury
+2025-03-16T16:28:57.8336292Z  * [new ref]         277de6c9e42752a1c0a71145a6bdbc60f9893538 -> pull/2102/merge
+2025-03-16T16:28:57.8364459Z ##[endgroup]
+2025-03-16T16:28:57.8364840Z ##[group]Determining the checkout info
+2025-03-16T16:28:57.8367146Z ##[endgroup]
+2025-03-16T16:28:57.8372156Z [command]/usr/bin/git sparse-checkout disable
+2025-03-16T16:28:57.8413282Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-16T16:28:57.8440281Z ##[group]Checking out the ref
+2025-03-16T16:28:57.8445007Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/2102/merge
+2025-03-16T16:28:57.9329406Z Note: switching to 'refs/remotes/pull/2102/merge'.
+2025-03-16T16:28:57.9329811Z 
+2025-03-16T16:28:57.9330188Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-16T16:28:57.9330975Z changes and commit them, and you can discard any commits you make in this
+2025-03-16T16:28:57.9331722Z state without impacting any branches by switching back to a branch.
+2025-03-16T16:28:57.9332210Z 
+2025-03-16T16:28:57.9332515Z If you want to create a new branch to retain commits you create, you may
+2025-03-16T16:28:57.9333210Z do so (now or later) by using -c with the switch command. Example:
+2025-03-16T16:28:57.9333867Z 
+2025-03-16T16:28:57.9334054Z   git switch -c <new-branch-name>
+2025-03-16T16:28:57.9334336Z 
+2025-03-16T16:28:57.9334496Z Or undo this operation with:
+2025-03-16T16:28:57.9334749Z 
+2025-03-16T16:28:57.9334886Z   git switch -
+2025-03-16T16:28:57.9335117Z 
+2025-03-16T16:28:57.9335466Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-16T16:28:57.9335952Z 
+2025-03-16T16:28:57.9336519Z HEAD is now at 277de6c Merge dbd9baea768bec2d9e49797a8cb22b443062d858 into 676c5742b94ec30137cf282b7ebfd69186d9f8b6
+2025-03-16T16:28:57.9341468Z ##[endgroup]
+2025-03-16T16:28:57.9379136Z [command]/usr/bin/git log -1 --format=%H
+2025-03-16T16:28:57.9401591Z 277de6c9e42752a1c0a71145a6bdbc60f9893538
+2025-03-16T16:28:57.9634111Z ##[group]Run actions/setup-java@v4
+2025-03-16T16:28:57.9634421Z with:
+2025-03-16T16:28:57.9634610Z   java-version: 21
+2025-03-16T16:28:57.9634816Z   distribution: oracle
+2025-03-16T16:28:57.9635027Z   java-package: jdk
+2025-03-16T16:28:57.9635246Z   check-latest: false
+2025-03-16T16:28:57.9635468Z   server-id: github
+2025-03-16T16:28:57.9635711Z   server-username: GITHUB_ACTOR
+2025-03-16T16:28:57.9635962Z   server-password: GITHUB_TOKEN
+2025-03-16T16:28:57.9636204Z   overwrite-settings: true
+2025-03-16T16:28:57.9636431Z   job-status: success
+2025-03-16T16:28:57.9636769Z   token: ***
+2025-03-16T16:28:57.9636960Z ##[endgroup]
+2025-03-16T16:28:58.1650242Z ##[group]Installed distributions
+2025-03-16T16:28:58.1675062Z Trying to resolve the latest version from remote
+2025-03-16T16:28:58.3033123Z Resolved latest version as 21
+2025-03-16T16:28:58.3034396Z Trying to download...
+2025-03-16T16:28:58.3035709Z Downloading Java 21 (Oracle) from https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.tar.gz ...
+2025-03-16T16:28:59.5315844Z Extracting Java archive...
+2025-03-16T16:28:59.5434788Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/29c52ed9-62d1-4010-8492-86cea4fd2e76 -f /home/runner/work/_temp/198d5ce8-901a-4240-99dd-56b75bdfe3b7
+2025-03-16T16:29:02.3422891Z Java 21 was downloaded
+2025-03-16T16:29:02.3423330Z Setting Java 21 as the default
+2025-03-16T16:29:02.3434649Z Creating toolchains.xml for JDK version 21 from oracle
+2025-03-16T16:29:02.3508960Z Writing to /home/runner/.m2/toolchains.xml
+2025-03-16T16:29:02.3510872Z 
+2025-03-16T16:29:02.3511309Z Java configuration:
+2025-03-16T16:29:02.3511731Z   Distribution: oracle
+2025-03-16T16:29:02.3512142Z   Version: 21
+2025-03-16T16:29:02.3512623Z   Path: /opt/hostedtoolcache/Java_Oracle_jdk/21/x64
+2025-03-16T16:29:02.3513062Z 
+2025-03-16T16:29:02.3513822Z ##[endgroup]
+2025-03-16T16:29:02.3529252Z Creating settings.xml with server-id: github
+2025-03-16T16:29:02.3529605Z Writing to /home/runner/.m2/settings.xml
+2025-03-16T16:29:02.3662713Z ##[group]Run korandoru/hawkeye@v3
+2025-03-16T16:29:02.3662988Z with:
+2025-03-16T16:29:02.3663177Z   config: licenserc.toml
+2025-03-16T16:29:02.3663393Z   mode: check
+2025-03-16T16:29:02.3663853Z env:
+2025-03-16T16:29:02.3664250Z   JAVA_HOME: /opt/hostedtoolcache/Java_Oracle_jdk/21/x64
+2025-03-16T16:29:02.3664885Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Oracle_jdk/21/x64
+2025-03-16T16:29:02.3665201Z ##[endgroup]
+2025-03-16T16:29:02.3764239Z ##[command]/usr/bin/docker run --name ghcriokorandoruhawkeyenativev361_63c792 --label 0114b2 --workdir /github/workspace --rm -e "JAVA_HOME" -e "JAVA_HOME_21_X64" -e "INPUT_CONFIG" -e "INPUT_MODE" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_RESULTS_URL" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/runner/work/fury/fury":"/github/workspace" ghcr.io/korandoru/hawkeye-native:v3.6.1  "check" "--config" "licenserc.toml"
+2025-03-16T16:29:04.5684480Z [main] WARN io.korandoru.hawkeye.command.HawkEyeCommandCheck - Processing unknown files: [/github/workspace/bazel/arrow/BUILD, /github/workspace/scala/build.sbt, /github/workspace/python/pyfury/format/encoder.pxi, /github/workspace/python/pyfury/includes/libabsl.pxd, /github/workspace/NOTICE, /github/workspace/java/benchmark/src/main/java/org/apache/fury/benchmark/state/bench.fbs, /github/workspace/python/pyfury/_util.pyx, /github/workspace/.yamllint, /github/workspace/bazel/grpc-cython-copts.patch, /github/workspace/cpp/fury/row/BUILD, /github/workspace/python/pyfury/format/row.pxi, /github/workspace/python/pyfury/_util.pxd, /github/workspace/javascript/packages/hps/binding.gyp, /github/workspace/java/fury-format/src/main/resources/META-INF/NOTICE, /github/workspace/docs/benchmarks/data/jmh-jdk-11-zerocopy.csv, /github/workspace/cpp/fury/benchmark/BUILD, /github/workspace/javascript/.eslintrc.cjs, /github/workspace/.bazelrc, /github/workspace/java/fury-core/src/main/resources/META-INF/DISCLAIMER, /github/workspace/.bazelversion, /github/workspace/python/pyfury/format/_format.pyx, /github/workspace/bazel/arrow/BUILD.tpl.bzl, /github/workspace/bazel/BUILD, /github/workspace/bazel/arrow/pyarrow_configure.bzl, /github/workspace/python/pyfury/format/vectorized.pxi, /github/workspace/python/pyfury/includes/__init__.pxd, /github/workspace/docs/benchmarks/data/jmh-jdk-11-serialization.csv, /github/workspace/cpp/fury/meta/BUILD, /github/workspace/.github/CODEOWNERS, /github/workspace/java/fury-core/src/main/resources/META-INF/NOTICE, /github/workspace/docs/benchmarks/data/jmh-jdk-11-deserialization.csv, /github/workspace/cpp/fury/util/BUILD, /github/workspace/.flake8, /github/workspace/python/pyfury/lib/mmh3/__init__.pxd, /github/workspace/cpp/fury/type/BUILD, /github/workspace/python/pyfury/lib/__init__.pxd, /github/workspace/WORKSPACE, /github/workspace/python/pyfury/includes/libformat.pxd, /github/workspace/python/pyfury/_serialization.pyx, /github/workspace/cpp/fury/python/BUILD, /github/workspace/javascript/.npmrc, /github/workspace/cpp/fury/thirdparty/BUILD, /github/workspace/BUILD, /github/workspace/bazel/arrow/BUILD.windows.bzl, /github/workspace/scala/project/plugins.sbt, /github/workspace/cpp/fury/encoder/BUILD, /github/workspace/bazel/grpc-python.patch, /github/workspace/python/pyfury/includes/libserialization.pxd, /github/workspace/python/pyfury/includes/libutil.pxd, /github/workspace/python/pyfury/lib/mmh3/mmh3.pxd, /github/workspace/cpp/fury/BUILD, /github/workspace/python/pyfury/__init__.pxd, /github/workspace/python/pyfury/lib/mmh3/mmh3.pyx, /github/workspace/java/fury-format/src/main/resources/META-INF/DISCLAIMER, /github/workspace/bazel/fury_deps_setup.bzl, /github/workspace/cpp/fury/columnar/BUILD, /github/workspace/DISCLAIMER]
+2025-03-16T16:29:04.5695431Z [main] INFO io.korandoru.hawkeye.command.HawkEyeCommandCheck - No missing header file has been found.
+2025-03-16T16:29:04.6621450Z ##[group]Run actions/setup-python@v5
+2025-03-16T16:29:04.6621737Z with:
+2025-03-16T16:29:04.6621916Z   python-version: 3.8
+2025-03-16T16:29:04.6622127Z   check-latest: false
+2025-03-16T16:29:04.6622434Z   token: ***
+2025-03-16T16:29:04.6622630Z   update-environment: true
+2025-03-16T16:29:04.6622877Z   allow-prereleases: false
+2025-03-16T16:29:04.6623079Z env:
+2025-03-16T16:29:04.6623305Z   JAVA_HOME: /opt/hostedtoolcache/Java_Oracle_jdk/21/x64
+2025-03-16T16:29:04.6623953Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Oracle_jdk/21/x64
+2025-03-16T16:29:04.6624264Z ##[endgroup]
+2025-03-16T16:29:04.8302191Z ##[group]Installed versions
+2025-03-16T16:29:04.8348689Z Version 3.8 was not found in the local cache
+2025-03-16T16:29:05.3611049Z Version 3.8 is available for downloading
+2025-03-16T16:29:05.3612431Z Download from "https://github.com/actions/python-versions/releases/download/3.8.18-12303122501/python-3.8.18-linux-24.04-x64.tar.gz"
+2025-03-16T16:29:05.9866833Z Extract downloaded archive
+2025-03-16T16:29:05.9964822Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/ac4613bd-3f2d-4fba-b1ab-9d87dfc3cdcb -f /home/runner/work/_temp/70189b61-b746-4981-830f-6cef13809c8e
+2025-03-16T16:29:07.2880788Z Execute installation script
+2025-03-16T16:29:07.2971466Z Check if Python hostedtoolcache folder exist...
+2025-03-16T16:29:07.2972056Z Create Python 3.8.18 folder
+2025-03-16T16:29:07.2985838Z Copy Python binaries to hostedtoolcache folder
+2025-03-16T16:29:07.7613860Z Create additional symlinks (Required for the UsePythonVersion Azure Pipelines task and the setup-python GitHub Action)
+2025-03-16T16:29:07.7656327Z Upgrading pip...
+2025-03-16T16:29:09.8054230Z Looking in links: /tmp/tmpzj2ajszl
+2025-03-16T16:29:09.8058210Z Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (56.0.0)
+2025-03-16T16:29:09.8062474Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (23.0.1)
+2025-03-16T16:29:11.2783456Z Collecting pip
+2025-03-16T16:29:11.3138518Z Downloading pip-25.0.1-py3-none-any.whl (1.8 MB)
+2025-03-16T16:29:11.3502761Z ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 54.3 MB/s eta 0:00:00
+2025-03-16T16:29:11.3503177Z 
+2025-03-16T16:29:11.3852193Z Installing collected packages: pip
+2025-03-16T16:29:11.3853872Z Attempting uninstall: pip
+2025-03-16T16:29:11.3859720Z Found existing installation: pip 23.0.1
+2025-03-16T16:29:11.5636854Z Uninstalling pip-23.0.1:
+2025-03-16T16:29:11.5707839Z Successfully uninstalled pip-23.0.1
+2025-03-16T16:29:12.2669245Z Successfully installed pip-25.0.1
+2025-03-16T16:29:12.3162785Z Create complete file
+2025-03-16T16:29:12.3209680Z Successfully set up CPython (3.8.18)
+2025-03-16T16:29:12.3210776Z ##[endgroup]
+2025-03-16T16:29:12.3353350Z ##[group]Run ./ci/run_ci.sh format
+2025-03-16T16:29:12.3354016Z [36;1m./ci/run_ci.sh format[0m
+2025-03-16T16:29:12.3405864Z shell: /usr/bin/bash -e {0}
+2025-03-16T16:29:12.3428324Z env:
+2025-03-16T16:29:12.3428774Z   JAVA_HOME: /opt/hostedtoolcache/Java_Oracle_jdk/21/x64
+2025-03-16T16:29:12.3429244Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Oracle_jdk/21/x64
+2025-03-16T16:29:12.3429638Z   pythonLocation: /opt/hostedtoolcache/Python/3.8.18/x64
+2025-03-16T16:29:12.3430186Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.8.18/x64/lib/pkgconfig
+2025-03-16T16:29:12.3430915Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.8.18/x64
+2025-03-16T16:29:12.3431281Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.8.18/x64
+2025-03-16T16:29:12.3431631Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.8.18/x64
+2025-03-16T16:29:12.3431992Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.18/x64/lib
+2025-03-16T16:29:12.3432300Z ##[endgroup]
+2025-03-16T16:29:12.3544081Z ++ git rev-parse --show-toplevel
+2025-03-16T16:29:12.3558404Z + ROOT=/home/runner/work/fury/fury
+2025-03-16T16:29:12.3559046Z + echo 'Root path: /home/runner/work/fury/fury, home path: /home/runner'
+2025-03-16T16:29:12.3559656Z + cd /home/runner/work/fury/fury
+2025-03-16T16:29:12.3560202Z Root path: /home/runner/work/fury/fury, home path: /home/runner
+2025-03-16T16:29:12.3562284Z + JDKS=("zulu21.28.85-ca-jdk21.0.0-linux_x64" "zulu17.44.17-ca-crac-jdk17.0.8-linux_x64" "zulu15.46.17-ca-jdk15.0.10-linux_x64" "zulu13.54.17-ca-jdk13.0.14-linux_x64" "zulu11.66.15-ca-jdk11.0.20-linux_x64" "zulu8.72.0.17-ca-jdk8.0.382-linux_x64")
+2025-03-16T16:29:12.3566179Z + case $1 in
+2025-03-16T16:29:12.3566522Z Install format tools
+2025-03-16T16:29:12.3566904Z + echo 'Install format tools'
+2025-03-16T16:29:12.3567508Z + pip install black==22.1.0 flake8==3.9.1 flake8-quotes flake8-bugbear click==8.0.2
+2025-03-16T16:29:12.8445126Z Collecting black==22.1.0
+2025-03-16T16:29:12.8587330Z   Downloading black-22.1.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (42 kB)
+2025-03-16T16:29:12.8995773Z Collecting flake8==3.9.1
+2025-03-16T16:29:12.9055684Z   Downloading flake8-3.9.1-py2.py3-none-any.whl.metadata (3.7 kB)
+2025-03-16T16:29:12.9266877Z Collecting flake8-quotes
+2025-03-16T16:29:12.9357201Z   Downloading flake8-quotes-3.4.0.tar.gz (14 kB)
+2025-03-16T16:29:12.9529522Z   Installing build dependencies: started
+2025-03-16T16:29:14.1431632Z   Installing build dependencies: finished with status 'done'
+2025-03-16T16:29:14.1442156Z   Getting requirements to build wheel: started
+2025-03-16T16:29:14.3166802Z   Getting requirements to build wheel: finished with status 'done'
+2025-03-16T16:29:14.3179823Z   Preparing metadata (pyproject.toml): started
+2025-03-16T16:29:14.4894832Z   Preparing metadata (pyproject.toml): finished with status 'done'
+2025-03-16T16:29:14.5224432Z Collecting flake8-bugbear
+2025-03-16T16:29:14.5289359Z   Downloading flake8_bugbear-24.12.12-py3-none-any.whl.metadata (34 kB)
+2025-03-16T16:29:14.5502889Z Collecting click==8.0.2
+2025-03-16T16:29:14.5555659Z   Downloading click-8.0.2-py3-none-any.whl.metadata (3.2 kB)
+2025-03-16T16:29:14.5803975Z Collecting platformdirs>=2 (from black==22.1.0)
+2025-03-16T16:29:14.5849878Z   Downloading platformdirs-4.3.6-py3-none-any.whl.metadata (11 kB)
+2025-03-16T16:29:14.6039685Z Collecting tomli>=1.1.0 (from black==22.1.0)
+2025-03-16T16:29:14.6085731Z   Downloading tomli-2.2.1-py3-none-any.whl.metadata (10 kB)
+2025-03-16T16:29:14.6245133Z Collecting pathspec>=0.9.0 (from black==22.1.0)
+2025-03-16T16:29:14.6291774Z   Downloading pathspec-0.12.1-py3-none-any.whl.metadata (21 kB)
+2025-03-16T16:29:14.6412777Z Collecting mypy-extensions>=0.4.3 (from black==22.1.0)
+2025-03-16T16:29:14.6460530Z   Downloading mypy_extensions-1.0.0-py3-none-any.whl.metadata (1.1 kB)
+2025-03-16T16:29:14.6641639Z Collecting typing-extensions>=3.10.0.0 (from black==22.1.0)
+2025-03-16T16:29:14.6690108Z   Downloading typing_extensions-4.12.2-py3-none-any.whl.metadata (3.0 kB)
+2025-03-16T16:29:14.6871689Z Collecting pyflakes<2.4.0,>=2.3.0 (from flake8==3.9.1)
+2025-03-16T16:29:14.6930574Z   Downloading pyflakes-2.3.1-py2.py3-none-any.whl.metadata (3.9 kB)
+2025-03-16T16:29:14.7083046Z Collecting pycodestyle<2.8.0,>=2.7.0 (from flake8==3.9.1)
+2025-03-16T16:29:14.7139844Z   Downloading pycodestyle-2.7.0-py2.py3-none-any.whl.metadata (30 kB)
+2025-03-16T16:29:14.7285917Z Collecting mccabe<0.7.0,>=0.6.0 (from flake8==3.9.1)
+2025-03-16T16:29:14.7330182Z   Downloading mccabe-0.6.1-py2.py3-none-any.whl.metadata (4.3 kB)
+2025-03-16T16:29:14.7382529Z Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (from flake8-quotes) (56.0.0)
+2025-03-16T16:29:14.7442605Z INFO: pip is looking at multiple versions of flake8-bugbear to determine which version is compatible with other requirements. This could take a while.
+2025-03-16T16:29:14.7446819Z Collecting flake8-bugbear
+2025-03-16T16:29:14.7509131Z   Downloading flake8_bugbear-24.10.31-py3-none-any.whl.metadata (32 kB)
+2025-03-16T16:29:14.7616194Z   Downloading flake8_bugbear-24.8.19-py3-none-any.whl.metadata (32 kB)
+2025-03-16T16:29:14.7729159Z   Downloading flake8_bugbear-24.4.26-py3-none-any.whl.metadata (31 kB)
+2025-03-16T16:29:14.7852129Z   Downloading flake8_bugbear-24.4.21-py3-none-any.whl.metadata (31 kB)
+2025-03-16T16:29:14.7962198Z   Downloading flake8_bugbear-24.2.6-py3-none-any.whl.metadata (31 kB)
+2025-03-16T16:29:14.8082830Z   Downloading flake8_bugbear-24.1.17-py3-none-any.whl.metadata (30 kB)
+2025-03-16T16:29:14.8198112Z   Downloading flake8_bugbear-23.12.2-py3-none-any.whl.metadata (29 kB)
+2025-03-16T16:29:14.8252161Z INFO: pip is still looking at multiple versions of flake8-bugbear to determine which version is compatible with other requirements. This could take a while.
+2025-03-16T16:29:14.8306319Z   Downloading flake8_bugbear-23.11.28-py3-none-any.whl.metadata (29 kB)
+2025-03-16T16:29:14.8429403Z   Downloading flake8_bugbear-23.11.26-py3-none-any.whl.metadata (29 kB)
+2025-03-16T16:29:14.8548226Z   Downloading flake8_bugbear-23.9.16-py3-none-any.whl.metadata (28 kB)
+2025-03-16T16:29:14.8659025Z   Downloading flake8_bugbear-23.7.10-py3-none-any.whl.metadata (27 kB)
+2025-03-16T16:29:14.8770887Z   Downloading flake8_bugbear-23.6.5-py3-none-any.whl.metadata (26 kB)
+2025-03-16T16:29:14.8824582Z INFO: This is taking longer than usual. You might need to provide the dependency resolver with stricter constraints to reduce runtime. See https://pip.pypa.io/warnings/backtracking for guidance. If you want to abort this run, press Ctrl + C.
+2025-03-16T16:29:14.8884048Z   Downloading flake8_bugbear-23.5.9-py3-none-any.whl.metadata (26 kB)
+2025-03-16T16:29:14.9005316Z   Downloading flake8_bugbear-23.3.23-py3-none-any.whl.metadata (25 kB)
+2025-03-16T16:29:14.9108508Z   Downloading flake8_bugbear-23.3.12-py3-none-any.whl.metadata (25 kB)
+2025-03-16T16:29:14.9338501Z Collecting attrs>=19.2.0 (from flake8-bugbear)
+2025-03-16T16:29:14.9386106Z   Downloading attrs-25.3.0-py3-none-any.whl.metadata (10 kB)
+2025-03-16T16:29:14.9738677Z Downloading black-22.1.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.5 MB)
+2025-03-16T16:29:14.9914177Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 119.1 MB/s eta 0:00:00
+2025-03-16T16:29:14.9973924Z Downloading flake8-3.9.1-py2.py3-none-any.whl (73 kB)
+2025-03-16T16:29:15.0055867Z Downloading click-8.0.2-py3-none-any.whl (97 kB)
+2025-03-16T16:29:15.0143849Z Downloading flake8_bugbear-23.3.12-py3-none-any.whl (28 kB)
+2025-03-16T16:29:15.0211275Z Downloading attrs-25.3.0-py3-none-any.whl (63 kB)
+2025-03-16T16:29:15.0280116Z Downloading mccabe-0.6.1-py2.py3-none-any.whl (8.6 kB)
+2025-03-16T16:29:15.0344044Z Downloading mypy_extensions-1.0.0-py3-none-any.whl (4.7 kB)
+2025-03-16T16:29:15.0408680Z Downloading pathspec-0.12.1-py3-none-any.whl (31 kB)
+2025-03-16T16:29:15.0486171Z Downloading platformdirs-4.3.6-py3-none-any.whl (18 kB)
+2025-03-16T16:29:15.0560872Z Downloading pycodestyle-2.7.0-py2.py3-none-any.whl (41 kB)
+2025-03-16T16:29:15.0666631Z Downloading pyflakes-2.3.1-py2.py3-none-any.whl (68 kB)
+2025-03-16T16:29:15.0737530Z Downloading tomli-2.2.1-py3-none-any.whl (14 kB)
+2025-03-16T16:29:15.0813210Z Downloading typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+2025-03-16T16:29:15.0984186Z Building wheels for collected packages: flake8-quotes
+2025-03-16T16:29:15.0994374Z   Building wheel for flake8-quotes (pyproject.toml): started
+2025-03-16T16:29:15.2920164Z   Building wheel for flake8-quotes (pyproject.toml): finished with status 'done'
+2025-03-16T16:29:15.2928568Z   Created wheel for flake8-quotes: filename=flake8_quotes-3.4.0-py3-none-any.whl size=9262 sha256=8875f87cf728cf457d3909d19133b9b988cad0a120b0cd30a3008d224f54423b
+2025-03-16T16:29:15.2930959Z   Stored in directory: /home/runner/.cache/pip/wheels/f3/d5/0e/e69d3c01b0c65962034213dd93929b8a02037f43059debb0af
+2025-03-16T16:29:15.2953811Z Successfully built flake8-quotes
+2025-03-16T16:29:15.3292089Z Installing collected packages: mccabe, typing-extensions, tomli, pyflakes, pycodestyle, platformdirs, pathspec, mypy-extensions, click, attrs, flake8, black, flake8-quotes, flake8-bugbear
+2025-03-16T16:29:15.6739017Z Successfully installed attrs-25.3.0 black-22.1.0 click-8.0.2 flake8-3.9.1 flake8-bugbear-23.3.12 flake8-quotes-3.4.0 mccabe-0.6.1 mypy-extensions-1.0.0 pathspec-0.12.1 platformdirs-4.3.6 pycodestyle-2.7.0 pyflakes-2.3.1 tomli-2.2.1 typing-extensions-4.12.2
+2025-03-16T16:29:15.7971838Z + echo 'Executing format check'
+2025-03-16T16:29:15.7972302Z + bash ci/format.sh
+2025-03-16T16:29:15.7972671Z Executing format check
+2025-03-16T16:29:15.7989855Z + FLAKE8_VERSION_REQUIRED=3.9.1
+2025-03-16T16:29:15.7990341Z + BLACK_VERSION_REQUIRED=22.1.0
+2025-03-16T16:29:15.7990762Z + SHELLCHECK_VERSION_REQUIRED=0.7.1
+2025-03-16T16:29:15.7991209Z + check_python_command_exist black
+2025-03-16T16:29:15.7991613Z + VERSION=
+2025-03-16T16:29:15.7991901Z + case "$1" in
+2025-03-16T16:29:15.7992219Z + VERSION=22.1.0
+2025-03-16T16:29:15.7994862Z ++ command -v black
+2025-03-16T16:29:15.7997366Z + '[' -x /opt/hostedtoolcache/Python/3.8.18/x64/bin/black ']'
+2025-03-16T16:29:15.7997891Z + check_python_command_exist flake8
+2025-03-16T16:29:15.7998203Z + VERSION=
+2025-03-16T16:29:15.7998422Z + case "$1" in
+2025-03-16T16:29:15.7998643Z + VERSION=3.9.1
+2025-03-16T16:29:15.8000342Z ++ command -v flake8
+2025-03-16T16:29:15.8003061Z + '[' -x /opt/hostedtoolcache/Python/3.8.18/x64/bin/flake8 ']'
+2025-03-16T16:29:15.8006230Z ++ dirname ci/format.sh
+2025-03-16T16:29:15.8016594Z + builtin cd ci
+2025-03-16T16:29:15.8019557Z ++ git rev-parse --show-toplevel
+2025-03-16T16:29:15.8034457Z + ROOT=/home/runner/work/fury/fury
+2025-03-16T16:29:15.8034928Z + builtin cd /home/runner/work/fury/fury
+2025-03-16T16:29:15.8039088Z ++ flake8 --version
+2025-03-16T16:29:15.8040405Z ++ head -n 1
+2025-03-16T16:29:15.8042221Z ++ awk '{print $1}'
+2025-03-16T16:29:15.9898572Z + FLAKE8_VERSION=3.9.1
+2025-03-16T16:29:15.9903187Z ++ black --version
+2025-03-16T16:29:15.9905787Z ++ awk '{print $2}'
+2025-03-16T16:29:16.1224088Z + BLACK_VERSION=22.1.0
+2025-03-16T16:29:16.1224584Z + tool_version_check flake8 3.9.1 3.9.1
+2025-03-16T16:29:16.1225016Z + '[' 3.9.1 '!=' 3.9.1 ']'
+2025-03-16T16:29:16.1225393Z + tool_version_check black 22.1.0 22.1.0
+2025-03-16T16:29:16.1225810Z + '[' 22.1.0 '!=' 22.1.0 ']'
+2025-03-16T16:29:16.1226168Z + command -v shellcheck
+2025-03-16T16:29:16.1232772Z ++ shellcheck --version
+2025-03-16T16:29:16.1234103Z ++ awk '/^version:/ {print $2}'
+2025-03-16T16:29:16.5255831Z + SHELLCHECK_VERSION=0.9.0
+2025-03-16T16:29:16.5256342Z + tool_version_check shellcheck 0.9.0 0.7.1
+2025-03-16T16:29:16.5256794Z + '[' 0.9.0 '!=' 0.7.1 ']'
+2025-03-16T16:29:16.5257577Z + echo 'WARNING: Fury uses shellcheck 0.7.1, You currently are using 0.9.0. This might generate different results.'
+2025-03-16T16:29:16.5258451Z + command -v clang-format
+2025-03-16T16:29:16.5259251Z WARNING: Fury uses shellcheck 0.7.1, You currently are using 0.9.0. This might generate different results.
+2025-03-16T16:29:16.5263474Z ++ clang-format --version
+2025-03-16T16:29:16.5264504Z ++ awk '{print $3}'
+2025-03-16T16:29:20.0404930Z + CLANG_FORMAT_VERSION=version
+2025-03-16T16:29:20.0405487Z + tool_version_check clang-format version 12.0.0
+2025-03-16T16:29:20.0405968Z + '[' version '!=' 12.0.0 ']'
+2025-03-16T16:29:20.0406749Z + echo 'WARNING: Fury uses clang-format 12.0.0, You currently are using version. This might generate different results.'
+2025-03-16T16:29:20.0407591Z + command -v node
+2025-03-16T16:29:20.0408127Z + '[' '!' -f /home/runner/work/fury/fury/javascript/node_modules/.bin/eslint ']'
+2025-03-16T16:29:20.0408819Z + echo 'eslint is not installed, start to install it.'
+2025-03-16T16:29:20.0409546Z + pushd /home/runner/work/fury/fury/javascript
+2025-03-16T16:29:20.0409913Z + npm install --registry=https://registry.npmmirror.com
+2025-03-16T16:29:20.0410471Z WARNING: Fury uses clang-format 12.0.0, You currently are using version. This might generate different results.
+2025-03-16T16:29:20.0410975Z eslint is not installed, start to install it.
+2025-03-16T16:29:20.0411279Z ~/work/fury/fury/javascript ~/work/fury/fury
+2025-03-16T16:30:07.8841224Z npm warn deprecated are-we-there-yet@3.0.1: This package is no longer supported.
+2025-03-16T16:30:08.1969523Z npm warn deprecated @npmcli/move-file@2.0.1: This functionality has been moved to @npmcli/fs
+2025-03-16T16:30:08.3643260Z npm warn deprecated gauge@4.0.4: This package is no longer supported.
+2025-03-16T16:30:08.5679742Z npm warn deprecated npmlog@6.0.2: This package is no longer supported.
+2025-03-16T16:30:10.8478697Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-03-16T16:30:11.8722820Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-03-16T16:30:12.7585277Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+2025-03-16T16:30:13.2154577Z npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+2025-03-16T16:30:13.6426914Z npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+2025-03-16T16:30:14.4155676Z npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+2025-03-16T16:30:15.0922633Z npm warn deprecated glob@8.1.0: Glob versions prior to v9 are no longer supported
+2025-03-16T16:30:16.9072680Z 
+2025-03-16T16:30:16.9073289Z added 576 packages in 57s
+2025-03-16T16:30:16.9073839Z 
+2025-03-16T16:30:16.9074037Z 84 packages are looking for funding
+2025-03-16T16:30:16.9074576Z   run `npm fund` for details
+2025-03-16T16:30:16.9528040Z + popd
+2025-03-16T16:30:16.9528376Z ~/work/fury/fury
+2025-03-16T16:30:16.9528738Z + command -v java
+2025-03-16T16:30:16.9529170Z + echo 'Java installed'
+2025-03-16T16:30:16.9529509Z Java installed
+2025-03-16T16:30:16.9529845Z + java -version
+2025-03-16T16:30:16.9779767Z java version "21.0.6" 2025-01-21 LTS
+2025-03-16T16:30:16.9780628Z Java(TM) SE Runtime Environment (build 21.0.6+8-LTS-188)
+2025-03-16T16:30:16.9781316Z Java HotSpot(TM) 64-Bit Server VM (build 21.0.6+8-LTS-188, mixed mode, sharing)
+2025-03-16T16:30:16.9828950Z ++ flake8 --version
+2025-03-16T16:30:17.1152250Z + [[ 3.9.1 (flake8-bugbear: 23.3.12, flake8_quotes: 3.4.0, mccabe: 0.6.1,
+2025-03-16T16:30:17.1152952Z pycodestyle: 2.7.0, pyflakes: 2.3.1) CPython 3.8.18 on Linux != *\f\l\a\k\e\8\_\q\u\o\t\e\s* ]]
+2025-03-16T16:30:17.1155499Z ++ flake8 --version
+2025-03-16T16:30:17.2426960Z + [[ 3.9.1 (flake8-bugbear: 23.3.12, flake8_quotes: 3.4.0, mccabe: 0.6.1,
+2025-03-16T16:30:17.2427771Z pycodestyle: 2.7.0, pyflakes: 2.3.1) CPython 3.8.18 on Linux != *\f\l\a\k\e\8\-\b\u\g\b\e\a\r* ]]
+2025-03-16T16:30:17.2428489Z + SHELLCHECK_FLAGS=(--exclude=1090 --exclude=1091 --exclude=2207)
+2025-03-16T16:30:17.2429073Z + BLACK_EXCLUDES=('--extend-exclude' 'python/build/*|examples/*')
+2025-03-16T16:30:17.2429570Z + GIT_LS_EXCLUDES=(':(exclude)src/thirdparty/')
+2025-03-16T16:30:17.2430561Z + FLAKE8_PYX_IGNORES=--ignore=C408,E121,E123,E126,E211,E225,E226,E227,E24,E402,E704,E999,W503,W504,W605
+2025-03-16T16:30:17.2432637Z + '[' '' == --files ']'
+2025-03-16T16:30:17.2433000Z + '[' '' == --all-scripts ']'
+2025-03-16T16:30:17.2433312Z + '[' '' == --all ']'
+2025-03-16T16:30:17.2433876Z + '[' '' == --java ']'
+2025-03-16T16:30:17.2436213Z + git remote -v
+2025-03-16T16:30:17.2437498Z + grep -q origin
+2025-03-16T16:30:17.2452856Z + git fetch origin main --unshallow
+2025-03-16T16:30:18.4876064Z From https://github.com/apache/fury
+2025-03-16T16:30:18.4876583Z  * branch              main       -> FETCH_HEAD
+2025-03-16T16:30:18.4880606Z  * [new branch]        main       -> origin/main
+2025-03-16T16:30:18.4902701Z + echo 'Format only the files that changed in last commit.'
+2025-03-16T16:30:18.4903358Z Format only the files that changed in last commit.
+2025-03-16T16:30:18.4904069Z + format_changed
+2025-03-16T16:30:18.4906638Z ++ git merge-base origin/main HEAD
+2025-03-16T16:30:18.4929395Z + MERGEBASE=676c5742b94ec30137cf282b7ebfd69186d9f8b6
+2025-03-16T16:30:18.4930262Z + git diff --diff-filter=ACRM --quiet --exit-code 676c5742b94ec30137cf282b7ebfd69186d9f8b6 -- '*.py'
+2025-03-16T16:30:18.4965548Z + git diff --diff-filter=ACRM --quiet --exit-code 676c5742b94ec30137cf282b7ebfd69186d9f8b6 -- '*.pyx' '*.pxd' '*.pxi'
+2025-03-16T16:30:18.4993983Z + which clang-format
+2025-03-16T16:30:18.5008297Z + git diff --diff-filter=ACRM --quiet --exit-code 676c5742b94ec30137cf282b7ebfd69186d9f8b6 -- '*.cc' '*.h'
+2025-03-16T16:30:18.5042653Z + command -v java
+2025-03-16T16:30:18.5043496Z + git diff --diff-filter=ACRM --quiet --exit-code 676c5742b94ec30137cf282b7ebfd69186d9f8b6 -- '*.java'
+2025-03-16T16:30:18.5211689Z + format_java
+2025-03-16T16:30:18.5212041Z + command -v mvn
+2025-03-16T16:30:18.5212929Z + echo 'Maven installed'
+2025-03-16T16:30:18.5213334Z Maven installed
+2025-03-16T16:30:18.5213897Z + cd /home/runner/work/fury/fury/java
+2025-03-16T16:30:18.5214462Z + mvn -T10 --no-transfer-progress spotless:apply
+2025-03-16T16:30:21.3218729Z [INFO] Scanning for projects...
+2025-03-16T16:30:21.9224416Z [INFO] ------------------------------------------------------------------------
+2025-03-16T16:30:21.9239558Z [INFO] Reactor Build Order:
+2025-03-16T16:30:21.9239954Z [INFO] 
+2025-03-16T16:30:21.9240405Z [INFO] Fury Project Parent POM                                            [pom]
+2025-03-16T16:30:21.9243890Z [INFO] fury-test-core                                                     [jar]
+2025-03-16T16:30:21.9248883Z [INFO] fury-core                                                          [jar]
+2025-03-16T16:30:21.9253728Z [INFO] fury-format                                                        [jar]
+2025-03-16T16:30:21.9258230Z [INFO] fury-extensions                                                    [jar]
+2025-03-16T16:30:21.9261791Z [INFO] fury-testsuite                                                     [jar]
+2025-03-16T16:30:22.2348789Z [INFO] 
+2025-03-16T16:30:22.2350391Z [INFO] Using the MultiThreadedBuilder implementation with a thread count of 10
+2025-03-16T16:30:22.2373723Z [INFO] 
+2025-03-16T16:30:22.2379127Z [INFO] --------------------< org.apache.fury:fury-parent >---------------------
+2025-03-16T16:30:22.2389354Z [INFO] Building Fury Project Parent POM 0.11.0-SNAPSHOT                   [1/6]
+2025-03-16T16:30:22.2390018Z [INFO]   from pom.xml
+2025-03-16T16:30:22.2390503Z [INFO] --------------------------------[ pom ]---------------------------------
+2025-03-16T16:30:22.2450237Z [INFO] 
+2025-03-16T16:30:22.2450721Z [INFO] --- spotless:2.41.1:apply (default-cli) @ fury-parent ---
+2025-03-16T16:30:22.9931402Z [INFO] Index file does not exist. Fallback to an empty index
+2025-03-16T16:30:22.9959528Z [INFO] 
+2025-03-16T16:30:22.9962989Z [INFO] -------------------< org.apache.fury:fury-test-core >-------------------
+2025-03-16T16:30:22.9970830Z [INFO] Building fury-test-core 0.11.0-SNAPSHOT                            [2/6]
+2025-03-16T16:30:22.9971500Z [INFO]   from fury-test-core/pom.xml
+2025-03-16T16:30:22.9974383Z [INFO] --------------------------------[ jar ]---------------------------------
+2025-03-16T16:30:22.9980301Z [INFO] 
+2025-03-16T16:30:22.9982271Z [INFO] --- spotless:2.41.1:apply (default-cli) @ fury-test-core ---
+2025-03-16T16:30:23.0844273Z [INFO] Index file does not exist. Fallback to an empty index
+2025-03-16T16:30:23.7023111Z [INFO] Spotless.Java is keeping 13 files clean - 0 were changed to be clean, 13 were already clean, 0 were skipped because caching determined they were already clean
+2025-03-16T16:30:23.7047943Z [INFO] 
+2025-03-16T16:30:23.7048762Z [INFO] ---------------------< org.apache.fury:fury-core >----------------------
+2025-03-16T16:30:23.7050433Z [INFO] Building fury-core 0.11.0-SNAPSHOT                                 [3/6]
+2025-03-16T16:30:23.7051905Z [INFO]   from fury-core/pom.xml
+2025-03-16T16:30:23.7053890Z [INFO] --------------------------------[ jar ]---------------------------------
+2025-03-16T16:30:23.7694747Z [INFO] 
+2025-03-16T16:30:23.7696398Z [INFO] --- spotless:2.41.1:apply (default-cli) @ fury-core ---
+2025-03-16T16:30:23.7941660Z [INFO] Index file does not exist. Fallback to an empty index
+2025-03-16T16:30:27.6707120Z [INFO] Spotless.Java is keeping 345 files clean - 0 were changed to be clean, 345 were already clean, 0 were skipped because caching determined they were already clean
+2025-03-16T16:30:27.6778702Z [INFO] 
+2025-03-16T16:30:27.6784242Z [INFO] --------------------< org.apache.fury:fury-format >---------------------
+2025-03-16T16:30:27.6787187Z [INFO] 
+2025-03-16T16:30:27.6787821Z [INFO] ------------------< org.apache.fury:fury-extensions >-------------------
+2025-03-16T16:30:27.6795484Z [INFO] Building fury-extensions 0.11.0-SNAPSHOT                           [5/6]
+2025-03-16T16:30:27.6796568Z [INFO]   from fury-extensions/pom.xml
+2025-03-16T16:30:27.6797369Z [INFO] Building fury-format 0.11.0-SNAPSHOT                               [4/6]
+2025-03-16T16:30:27.6798177Z [INFO]   from fury-format/pom.xml
+2025-03-16T16:30:27.6798870Z [INFO] --------------------------------[ jar ]---------------------------------
+2025-03-16T16:30:27.6799725Z [INFO] --------------------------------[ jar ]---------------------------------
+2025-03-16T16:30:27.6814205Z [INFO] 
+2025-03-16T16:30:27.6814852Z [INFO] --- spotless:2.41.1:apply (default-cli) @ fury-extensions ---
+2025-03-16T16:30:27.6815595Z [INFO] 
+2025-03-16T16:30:27.6816139Z [INFO] --- spotless:2.41.1:apply (default-cli) @ fury-format ---
+2025-03-16T16:30:27.6938894Z [INFO] Index file does not exist. Fallback to an empty index
+2025-03-16T16:30:27.6939613Z [INFO] Index file does not exist. Fallback to an empty index
+2025-03-16T16:30:27.7025314Z [INFO] Spotless.Java is keeping 2 files clean - 0 were changed to be clean, 2 were already clean, 0 were skipped because caching determined they were already clean
+2025-03-16T16:30:27.9382445Z [INFO] Spotless.Java is keeping 50 files clean - 0 were changed to be clean, 50 were already clean, 0 were skipped because caching determined they were already clean
+2025-03-16T16:30:27.9396363Z [INFO] 
+2025-03-16T16:30:27.9399468Z [INFO] -------------------< org.apache.fury:fury-testsuite >-------------------
+2025-03-16T16:30:27.9414919Z [INFO] Building fury-testsuite 0.11.0-SNAPSHOT                            [6/6]
+2025-03-16T16:30:27.9424992Z [INFO]   from fury-testsuite/pom.xml
+2025-03-16T16:30:27.9425723Z [INFO] --------------------------------[ jar ]---------------------------------
+2025-03-16T16:30:27.9426359Z [INFO] 
+2025-03-16T16:30:27.9426874Z [INFO] --- spotless:2.41.1:apply (default-cli) @ fury-testsuite ---
+2025-03-16T16:30:27.9495774Z [INFO] Index file does not exist. Fallback to an empty index
+2025-03-16T16:30:27.9787664Z [INFO] Spotless.Java is keeping 10 files clean - 0 were changed to be clean, 10 were already clean, 0 were skipped because caching determined they were already clean
+2025-03-16T16:30:27.9798894Z [INFO] ------------------------------------------------------------------------
+2025-03-16T16:30:27.9824300Z [INFO] Reactor Summary for Fury Project Parent POM 0.11.0-SNAPSHOT:
+2025-03-16T16:30:27.9825606Z [INFO] 
+2025-03-16T16:30:27.9826900Z [INFO] Fury Project Parent POM ............................ SUCCESS [  0.758 s]
+2025-03-16T16:30:27.9829203Z [INFO] fury-test-core ..................................... SUCCESS [  0.708 s]
+2025-03-16T16:30:27.9830510Z [INFO] fury-core .......................................... SUCCESS [  3.973 s]
+2025-03-16T16:30:27.9831228Z [INFO] fury-format ........................................ SUCCESS [  0.261 s]
+2025-03-16T16:30:27.9839613Z [INFO] fury-extensions .................................... SUCCESS [  0.023 s]
+2025-03-16T16:30:27.9840710Z [INFO] fury-testsuite ..................................... SUCCESS [  0.039 s]
+2025-03-16T16:30:27.9841398Z [INFO] ------------------------------------------------------------------------
+2025-03-16T16:30:27.9841915Z [INFO] BUILD SUCCESS
+2025-03-16T16:30:27.9842375Z [INFO] ------------------------------------------------------------------------
+2025-03-16T16:30:27.9842932Z [INFO] Total time:  6.722 s (Wall Clock)
+2025-03-16T16:30:27.9843413Z [INFO] Finished at: 2025-03-16T16:30:27Z
+2025-03-16T16:30:27.9844134Z [INFO] ------------------------------------------------------------------------
+2025-03-16T16:30:28.0144326Z + mvn -T10 --no-transfer-progress checkstyle:check
+2025-03-16T16:30:29.1247143Z [INFO] Scanning for projects...
+2025-03-16T16:30:29.2482994Z [INFO] ------------------------------------------------------------------------
+2025-03-16T16:30:29.2510552Z [INFO] Reactor Build Order:
+2025-03-16T16:30:29.2510928Z [INFO] 
+2025-03-16T16:30:29.2511385Z [INFO] Fury Project Parent POM                                            [pom]
+2025-03-16T16:30:29.2512133Z [INFO] fury-test-core                                                     [jar]
+2025-03-16T16:30:29.2512762Z [INFO] fury-core                                                          [jar]
+2025-03-16T16:30:29.2513368Z [INFO] fury-format                                                        [jar]
+2025-03-16T16:30:29.2514213Z [INFO] fury-extensions                                                    [jar]
+2025-03-16T16:30:29.2514915Z [INFO] fury-testsuite                                                     [jar]
+2025-03-16T16:30:29.3447952Z [INFO] 
+2025-03-16T16:30:29.3450954Z [INFO] Using the MultiThreadedBuilder implementation with a thread count of 10
+2025-03-16T16:30:29.3474904Z [INFO] 
+2025-03-16T16:30:29.3477048Z [INFO] --------------------< org.apache.fury:fury-parent >---------------------
+2025-03-16T16:30:29.3478323Z [INFO] Building Fury Project Parent POM 0.11.0-SNAPSHOT                   [1/6]
+2025-03-16T16:30:29.3479195Z [INFO]   from pom.xml
+2025-03-16T16:30:29.3480203Z [INFO] --------------------------------[ pom ]---------------------------------
+2025-03-16T16:30:29.3544817Z [INFO] 
+2025-03-16T16:30:29.3546832Z [INFO] --- checkstyle:3.1.0:check (default-cli) @ fury-parent ---
+2025-03-16T16:30:31.8780825Z [INFO] Starting audit...
+2025-03-16T16:30:31.8781276Z Audit done.
+2025-03-16T16:30:31.8849028Z [INFO] 
+2025-03-16T16:30:31.8852033Z [INFO] -------------------< org.apache.fury:fury-test-core >-------------------
+2025-03-16T16:30:31.8854540Z [INFO] Building fury-test-core 0.11.0-SNAPSHOT                            [2/6]
+2025-03-16T16:30:31.8855176Z [INFO]   from fury-test-core/pom.xml
+2025-03-16T16:30:31.8855713Z [INFO] --------------------------------[ jar ]---------------------------------
+2025-03-16T16:30:31.8870169Z [INFO] 
+2025-03-16T16:30:31.8870943Z [INFO] --- checkstyle:3.1.0:check (default-cli) @ fury-test-core ---
+2025-03-16T16:30:32.3089838Z [INFO] Starting audit...
+2025-03-16T16:30:32.3110490Z Audit done.
+2025-03-16T16:30:32.3111159Z [INFO] 
+2025-03-16T16:30:32.3115071Z [INFO] ---------------------< org.apache.fury:fury-core >----------------------
+2025-03-16T16:30:32.3115926Z [INFO] Building fury-core 0.11.0-SNAPSHOT                                 [3/6]
+2025-03-16T16:30:32.3116531Z [INFO]   from fury-core/pom.xml
+2025-03-16T16:30:32.3117030Z [INFO] --------------------------------[ jar ]---------------------------------
+2025-03-16T16:30:32.3291358Z [INFO] 
+2025-03-16T16:30:32.3293913Z [INFO] --- checkstyle:3.1.0:check (default-cli) @ fury-core ---
+2025-03-16T16:30:35.5592482Z [INFO] Starting audit...
+2025-03-16T16:30:35.5595973Z [WARN] /home/runner/work/fury/fury/java/fury-core/src/main/java/org/apache/fury/resolver/DisallowedList.java:68:9: Local variable name 'nRead' must match pattern '^[a-z]([a-z0-9][a-zA-Z0-9]*)?$'. [LocalVariableName]
+2025-03-16T16:30:35.5610234Z Audit done.
+2025-03-16T16:30:35.5611493Z [WARNING] src/main/java/org/apache/fury/resolver/DisallowedList.java:[68,9] (naming) LocalVariableName: Local variable name 'nRead' must match pattern '^[a-z]([a-z0-9][a-zA-Z0-9]*)?$'.
+2025-03-16T16:30:35.5703807Z [INFO] ------------------------------------------------------------------------
+2025-03-16T16:30:35.5706269Z [INFO] Reactor Summary for Fury Project Parent POM 0.11.0-SNAPSHOT:
+2025-03-16T16:30:35.5719338Z [INFO] 
+2025-03-16T16:30:35.5722087Z [INFO] Fury Project Parent POM ............................ SUCCESS [  2.536 s]
+2025-03-16T16:30:35.5722984Z [INFO] fury-test-core ..................................... SUCCESS [  0.426 s]
+2025-03-16T16:30:35.5723926Z [INFO] fury-core .......................................... FAILURE [  3.259 s]
+2025-03-16T16:30:35.5724563Z [INFO] fury-format ........................................ SKIPPED
+2025-03-16T16:30:35.5725190Z [INFO] fury-extensions .................................... SKIPPED
+2025-03-16T16:30:35.5725815Z [INFO] fury-testsuite ..................................... SKIPPED
+2025-03-16T16:30:35.5726431Z [INFO] ------------------------------------------------------------------------
+2025-03-16T16:30:35.5726961Z [INFO] BUILD FAILURE
+2025-03-16T16:30:35.5727400Z [INFO] ------------------------------------------------------------------------
+2025-03-16T16:30:35.5727934Z [INFO] Total time:  6.468 s (Wall Clock)
+2025-03-16T16:30:35.5728366Z [INFO] Finished at: 2025-03-16T16:30:35Z
+2025-03-16T16:30:35.5728908Z [INFO] ------------------------------------------------------------------------
+2025-03-16T16:30:35.5730194Z [ERROR] Failed to execute goal org.apache.maven.plugins:maven-checkstyle-plugin:3.1.0:check (default-cli) on project fury-core: You have 1 Checkstyle violation. -> [Help 1]
+2025-03-16T16:30:35.5731282Z [ERROR] 
+2025-03-16T16:30:35.5731797Z [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+2025-03-16T16:30:35.5732624Z [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+2025-03-16T16:30:35.5733156Z [ERROR] 
+2025-03-16T16:30:35.5734603Z [ERROR] For more information about the errors and possible solutions, please read the following articles:
+2025-03-16T16:30:35.5740060Z [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+2025-03-16T16:30:35.5741434Z [ERROR] 
+2025-03-16T16:30:35.5742568Z [ERROR] After correcting the problems, you can resume the build with the command
+2025-03-16T16:30:35.5743917Z [ERROR]   mvn <args> -rf :fury-core
+2025-03-16T16:30:35.6048675Z ##[error]Process completed with exit code 1.
+2025-03-16T16:30:35.6122150Z Post job cleanup.
+2025-03-16T16:30:35.7876455Z Post job cleanup.
+2025-03-16T16:30:35.8858499Z [command]/usr/bin/git version
+2025-03-16T16:30:35.8902646Z git version 2.48.1
+2025-03-16T16:30:35.8944743Z Temporarily overriding HOME='/home/runner/work/_temp/24e731f1-0a6b-4e9e-a505-ed163d9d18ae' before making global git config changes
+2025-03-16T16:30:35.8946086Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-16T16:30:35.8950074Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/fury/fury
+2025-03-16T16:30:35.8985285Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-16T16:30:35.9017083Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-16T16:30:35.9261363Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-16T16:30:35.9282880Z http.https://github.com/.extraheader
+2025-03-16T16:30:35.9295605Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-16T16:30:35.9328865Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-16T16:30:35.9679154Z Cleaning up orphan processes

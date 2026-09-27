@@ -1,0 +1,17 @@
+diff --git a/seacatauth/credentials/providers/client.py b/seacatauth/credentials/providers/client.py
+index cb52a970a..5b47a281c 100644
+--- a/seacatauth/credentials/providers/client.py
++++ b/seacatauth/credentials/providers/client.py
+@@ -70,9 +70,9 @@ async def search(self, filter: str = None, sort: dict = None, page: int = 0, lim
+ 	async def iterate(self, offset: int = 0, limit: int = None, filtr: str = None):
+ 		client_service = self.App.get_service("seacatauth.ClientService")
+ 		async for credentials in client_service.iterate(
+-			page = offset // limit if limit else 0,
+-			limit = limit,
+-			query_filter = filtr
++			page=offset // limit if limit else 0,
++			limit=limit,
++			query_filter=filtr
+ 		):
+ 			yield self._normalize_credentials(credentials)
+ 

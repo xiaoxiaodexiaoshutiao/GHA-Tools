@@ -1,0 +1,214 @@
+﻿2025-04-03T16:33:38.0668423Z Current runner version: '2.323.0'
+2025-04-03T16:33:38.0694539Z ##[group]Operating System
+2025-04-03T16:33:38.0695395Z Ubuntu
+2025-04-03T16:33:38.0695942Z 24.04.2
+2025-04-03T16:33:38.0696471Z LTS
+2025-04-03T16:33:38.0696901Z ##[endgroup]
+2025-04-03T16:33:38.0697473Z ##[group]Runner Image
+2025-04-03T16:33:38.0698035Z Image: ubuntu-24.04
+2025-04-03T16:33:38.0698555Z Version: 20250323.1.0
+2025-04-03T16:33:38.0699832Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-03T16:33:38.0701202Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-04-03T16:33:38.0702101Z ##[endgroup]
+2025-04-03T16:33:38.0702604Z ##[group]Runner Image Provisioner
+2025-04-03T16:33:38.0703216Z 2.0.422.1
+2025-04-03T16:33:38.0703633Z ##[endgroup]
+2025-04-03T16:33:38.0704656Z ##[group]GITHUB_TOKEN Permissions
+2025-04-03T16:33:38.0706708Z Contents: read
+2025-04-03T16:33:38.0707241Z Metadata: read
+2025-04-03T16:33:38.0707991Z ##[endgroup]
+2025-04-03T16:33:38.0710772Z Secret source: None
+2025-04-03T16:33:38.0711849Z Prepare workflow directory
+2025-04-03T16:33:38.1044174Z Prepare all required actions
+2025-04-03T16:33:38.1081651Z Getting action download info
+2025-04-03T16:33:38.7113527Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-03T16:33:38.7114620Z Version: 4.2.2
+2025-04-03T16:33:38.7115656Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-03T16:33:38.7116793Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-03T16:33:38.7117634Z ##[endgroup]
+2025-04-03T16:33:38.8061235Z ##[group]Download immutable action package 'actions/setup-node@v4'
+2025-04-03T16:33:38.8062011Z Version: 4.3.0
+2025-04-03T16:33:38.8062623Z Digest: sha256:9f9f8171ffc89cb7f6897e615e2b43b46bb55176fd279129eb0088157eace9b2
+2025-04-03T16:33:38.8063451Z Source commit SHA: cdca7365b2dadb8aad0a33bc7601856ffabcc48e
+2025-04-03T16:33:38.8064035Z ##[endgroup]
+2025-04-03T16:33:38.9012671Z ##[group]Download immutable action package 'actions/cache@v4'
+2025-04-03T16:33:38.9013344Z Version: 4.2.3
+2025-04-03T16:33:38.9013984Z Digest: sha256:c8a3bb963e1f1826d8fcc8d1354f0dd29d8ac1db1d4f6f20247055ae11b81ed9
+2025-04-03T16:33:38.9014837Z Source commit SHA: 5a3ec84eff668545956fd18022155c47e93e2684
+2025-04-03T16:33:38.9015427Z ##[endgroup]
+2025-04-03T16:33:39.2094509Z Download action repository 'codecov/codecov-action@v4' (SHA:b9fd7d16f6d7d1b5d2bec1a2887e65ceed900238)
+2025-04-03T16:33:39.8176418Z Complete job name: javascript_tests
+2025-04-03T16:33:39.9002662Z ##[group]Run actions/checkout@v4
+2025-04-03T16:33:39.9003975Z with:
+2025-04-03T16:33:39.9004762Z   repository: internetarchive/openlibrary
+2025-04-03T16:33:39.9006098Z   token: ***
+2025-04-03T16:33:39.9006825Z   ssh-strict: true
+2025-04-03T16:33:39.9007581Z   ssh-user: git
+2025-04-03T16:33:39.9008368Z   persist-credentials: true
+2025-04-03T16:33:39.9009396Z   clean: true
+2025-04-03T16:33:39.9010205Z   sparse-checkout-cone-mode: true
+2025-04-03T16:33:39.9011198Z   fetch-depth: 1
+2025-04-03T16:33:39.9011954Z   fetch-tags: false
+2025-04-03T16:33:39.9012734Z   show-progress: true
+2025-04-03T16:33:39.9013519Z   lfs: false
+2025-04-03T16:33:39.9014255Z   submodules: false
+2025-04-03T16:33:39.9015055Z   set-safe-directory: true
+2025-04-03T16:33:39.9016192Z ##[endgroup]
+2025-04-03T16:33:40.0796318Z Syncing repository: internetarchive/openlibrary
+2025-04-03T16:33:40.0799923Z ##[group]Getting Git version info
+2025-04-03T16:33:40.0801739Z Working directory is '/home/runner/work/openlibrary/openlibrary'
+2025-04-03T16:33:40.0804200Z [command]/usr/bin/git version
+2025-04-03T16:33:40.0846431Z git version 2.49.0
+2025-04-03T16:33:40.0875394Z ##[endgroup]
+2025-04-03T16:33:40.0890987Z Temporarily overriding HOME='/home/runner/work/_temp/13f3d7e0-e095-44bb-955f-a0f40c094826' before making global git config changes
+2025-04-03T16:33:40.0894001Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-03T16:33:40.0897649Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/openlibrary/openlibrary
+2025-04-03T16:33:40.0933605Z Deleting the contents of '/home/runner/work/openlibrary/openlibrary'
+2025-04-03T16:33:40.0937806Z ##[group]Initializing the repository
+2025-04-03T16:33:40.0942224Z [command]/usr/bin/git init /home/runner/work/openlibrary/openlibrary
+2025-04-03T16:33:40.1006042Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-03T16:33:40.1009389Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-03T16:33:40.1012246Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-03T16:33:40.1013549Z hint:
+2025-04-03T16:33:40.1014450Z hint: 	git config --global init.defaultBranch <name>
+2025-04-03T16:33:40.1015553Z hint:
+2025-04-03T16:33:40.1017080Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-03T16:33:40.1018799Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-03T16:33:40.1020366Z hint:
+2025-04-03T16:33:40.1021081Z hint: 	git branch -m <name>
+2025-04-03T16:33:40.1022935Z Initialized empty Git repository in /home/runner/work/openlibrary/openlibrary/.git/
+2025-04-03T16:33:40.1026555Z [command]/usr/bin/git remote add origin https://github.com/internetarchive/openlibrary
+2025-04-03T16:33:40.1057340Z ##[endgroup]
+2025-04-03T16:33:40.1058666Z ##[group]Disabling automatic garbage collection
+2025-04-03T16:33:40.1060938Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-03T16:33:40.1091722Z ##[endgroup]
+2025-04-03T16:33:40.1093004Z ##[group]Setting up auth
+2025-04-03T16:33:40.1099158Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-03T16:33:40.1131245Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-03T16:33:40.1440779Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-03T16:33:40.1479222Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-03T16:33:40.1753403Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-03T16:33:40.1794346Z ##[endgroup]
+2025-04-03T16:33:40.1796664Z ##[group]Fetching the repository
+2025-04-03T16:33:40.1805931Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +cb2e5699775a1828d008bc466bdbde4cbf0f868a:refs/remotes/pull/10654/merge
+2025-04-03T16:33:41.5558658Z From https://github.com/internetarchive/openlibrary
+2025-04-03T16:33:41.5561087Z  * [new ref]         cb2e5699775a1828d008bc466bdbde4cbf0f868a -> pull/10654/merge
+2025-04-03T16:33:41.5600665Z ##[endgroup]
+2025-04-03T16:33:41.5601467Z ##[group]Determining the checkout info
+2025-04-03T16:33:41.5603379Z ##[endgroup]
+2025-04-03T16:33:41.5608839Z [command]/usr/bin/git sparse-checkout disable
+2025-04-03T16:33:41.5649311Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-03T16:33:41.5676455Z ##[group]Checking out the ref
+2025-04-03T16:33:41.5680472Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/10654/merge
+2025-04-03T16:33:41.7057007Z Note: switching to 'refs/remotes/pull/10654/merge'.
+2025-04-03T16:33:41.7057560Z 
+2025-04-03T16:33:41.7058019Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-03T16:33:41.7058927Z changes and commit them, and you can discard any commits you make in this
+2025-04-03T16:33:41.7060184Z state without impacting any branches by switching back to a branch.
+2025-04-03T16:33:41.7060745Z 
+2025-04-03T16:33:41.7061152Z If you want to create a new branch to retain commits you create, you may
+2025-04-03T16:33:41.7061992Z do so (now or later) by using -c with the switch command. Example:
+2025-04-03T16:33:41.7062950Z 
+2025-04-03T16:33:41.7063174Z   git switch -c <new-branch-name>
+2025-04-03T16:33:41.7063515Z 
+2025-04-03T16:33:41.7063733Z Or undo this operation with:
+2025-04-03T16:33:41.7064055Z 
+2025-04-03T16:33:41.7064233Z   git switch -
+2025-04-03T16:33:41.7064551Z 
+2025-04-03T16:33:41.7064972Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-03T16:33:41.7065564Z 
+2025-04-03T16:33:41.7066223Z HEAD is now at cb2e569 Merge 393a1136f162bf307b63d2c723e10abc6689e0ae into 02d4a2f9be0eecdc516abcc34a48a094d0a70e1e
+2025-04-03T16:33:41.7075220Z ##[endgroup]
+2025-04-03T16:33:41.7117333Z [command]/usr/bin/git log -1 --format=%H
+2025-04-03T16:33:41.7141202Z cb2e5699775a1828d008bc466bdbde4cbf0f868a
+2025-04-03T16:33:41.7382418Z ##[group]Run actions/setup-node@v4
+2025-04-03T16:33:41.7382844Z with:
+2025-04-03T16:33:41.7383089Z   node-version: 20
+2025-04-03T16:33:41.7383354Z   always-auth: false
+2025-04-03T16:33:41.7383638Z   check-latest: false
+2025-04-03T16:33:41.7384093Z   token: ***
+2025-04-03T16:33:41.7384341Z ##[endgroup]
+2025-04-03T16:33:41.9154093Z Found in cache @ /opt/hostedtoolcache/node/20.19.0/x64
+2025-04-03T16:33:41.9155122Z ##[group]Environment details
+2025-04-03T16:33:42.2641679Z node: v20.19.0
+2025-04-03T16:33:42.2642232Z npm: 10.8.2
+2025-04-03T16:33:42.2642548Z yarn: 1.22.22
+2025-04-03T16:33:42.2643497Z ##[endgroup]
+2025-04-03T16:33:42.5077328Z ##[group]Run actions/cache@v4
+2025-04-03T16:33:42.5077577Z with:
+2025-04-03T16:33:42.5077743Z   path: node_modules
+2025-04-03T16:33:42.5078100Z   key: Linux-node20-81f0812ba1907fe7c93158194d5d7ac2d810d89c42220a7ce0512ada0018d6d0
+2025-04-03T16:33:42.5078499Z   enableCrossOsArchive: false
+2025-04-03T16:33:42.5078726Z   fail-on-cache-miss: false
+2025-04-03T16:33:42.5078924Z   lookup-only: false
+2025-04-03T16:33:42.5079531Z   save-always: false
+2025-04-03T16:33:42.5079710Z ##[endgroup]
+2025-04-03T16:33:42.9519954Z Cache hit for: Linux-node20-81f0812ba1907fe7c93158194d5d7ac2d810d89c42220a7ce0512ada0018d6d0
+2025-04-03T16:33:44.2536553Z Received 0 of 66580964 (0.0%), 0.0 MBs/sec
+2025-04-03T16:33:44.9173261Z Received 66580964 of 66580964 (100.0%), 38.2 MBs/sec
+2025-04-03T16:33:44.9175092Z Cache Size: ~63 MB (66580964 B)
+2025-04-03T16:33:44.9204005Z [command]/usr/bin/tar -xf /home/runner/work/_temp/ef6696b2-d7fd-4e9e-bc43-6745cd5c9ae8/cache.tzst -P -C /home/runner/work/openlibrary/openlibrary --use-compress-program unzstd
+2025-04-03T16:33:46.8027942Z Cache restored successfully
+2025-04-03T16:33:46.8375404Z Cache restored from key: Linux-node20-81f0812ba1907fe7c93158194d5d7ac2d810d89c42220a7ce0512ada0018d6d0
+2025-04-03T16:33:46.8512597Z ##[group]Run npm run lint
+2025-04-03T16:33:46.8512913Z [36;1mnpm run lint[0m
+2025-04-03T16:33:46.8564845Z shell: /usr/bin/bash -e {0}
+2025-04-03T16:33:46.8565091Z ##[endgroup]
+2025-04-03T16:33:46.9951085Z 
+2025-04-03T16:33:46.9951694Z > openlibrary@1.0.0 lint
+2025-04-03T16:33:46.9952482Z > npx concurrently --group npm:lint:js npm:lint:css
+2025-04-03T16:33:46.9952915Z 
+2025-04-03T16:33:48.3507754Z [lint:js] 
+2025-04-03T16:33:48.3516441Z [lint:js] > openlibrary@1.0.0 lint:js
+2025-04-03T16:33:48.3517012Z [lint:js] > eslint --ext js,vue .
+2025-04-03T16:33:48.3517433Z [lint:js] 
+2025-04-03T16:33:52.8250338Z [lint:js] 
+2025-04-03T16:33:52.8253110Z [lint:js] /home/runner/work/openlibrary/openlibrary/openlibrary/plugins/openlibrary/js/book-page-lists.js
+2025-04-03T16:33:52.8256791Z [lint:js]    8:49  error  Strings must use singlequote  quotes
+2025-04-03T16:33:52.8257498Z [lint:js]    9:39  error  Strings must use singlequote  quotes
+2025-04-03T16:33:52.8258280Z [lint:js]   30:69  error  Strings must use singlequote  quotes
+2025-04-03T16:33:52.8258955Z [lint:js]   39:68  error  Strings must use singlequote  quotes
+2025-04-03T16:33:52.8259815Z [lint:js]   41:62  error  Strings must use singlequote  quotes
+2025-04-03T16:33:52.8260472Z [lint:js]   49:21  error  Strings must use singlequote  quotes
+2025-04-03T16:33:52.8261140Z [lint:js]   57:34  error  Strings must use singlequote  quotes
+2025-04-03T16:33:52.8261990Z [lint:js] 
+2025-04-03T16:33:52.8262794Z [lint:js] /home/runner/work/openlibrary/openlibrary/openlibrary/plugins/openlibrary/js/index.js
+2025-04-03T16:33:52.8263756Z [lint:js]   568:48  error  Strings must use singlequote  quotes
+2025-04-03T16:33:52.8264433Z [lint:js]   570:58  error  Strings must use singlequote  quotes
+2025-04-03T16:33:52.8264958Z [lint:js] 
+2025-04-03T16:33:52.8265648Z [lint:js] ✖ 9 problems (9 errors, 0 warnings)
+2025-04-03T16:33:52.8266417Z [lint:js]   9 errors and 0 warnings potentially fixable with the `--fix` option.
+2025-04-03T16:33:52.8266970Z [lint:js] 
+2025-04-03T16:33:52.9356210Z [lint:js] npm run lint:js exited with code 1
+2025-04-03T16:33:52.9356740Z [lint:css] 
+2025-04-03T16:33:52.9357111Z [lint:css] > openlibrary@1.0.0 lint:css
+2025-04-03T16:33:52.9357592Z [lint:css] > stylelint ./**/*.less
+2025-04-03T16:33:52.9357986Z [lint:css] 
+2025-04-03T16:33:52.9360038Z [lint:css] 
+2025-04-03T16:33:52.9360757Z [lint:css] [33mDeprecation warnings:[39m
+2025-04-03T16:33:52.9361652Z [lint:css]  [2m-[22m The "declaration-bang-space-before" rule is deprecated.
+2025-04-03T16:33:52.9362794Z [lint:css]  [2m-[22m The "declaration-colon-space-after" rule is deprecated.
+2025-04-03T16:33:52.9363822Z [lint:css]  [2m-[22m The "max-empty-lines" rule is deprecated.
+2025-04-03T16:33:52.9364715Z [lint:css]  [2m-[22m The "max-line-length" rule is deprecated.
+2025-04-03T16:33:52.9365605Z [lint:css]  [2m-[22m The "no-eol-whitespace" rule is deprecated.
+2025-04-03T16:33:52.9366564Z [lint:css]  [2m-[22m The "no-extra-semicolons" rule is deprecated.
+2025-04-03T16:33:52.9367710Z [lint:css]  [2m-[22m The "no-missing-end-of-source-newline" rule is deprecated.
+2025-04-03T16:33:52.9368794Z [lint:css]  [2m-[22m The "number-leading-zero" rule is deprecated.
+2025-04-03T16:33:52.9369948Z [lint:css]  [2m-[22m The "string-quotes" rule is deprecated.
+2025-04-03T16:33:52.9370827Z [lint:css]  [2m-[22m The "indentation" rule is deprecated.
+2025-04-03T16:33:52.9371355Z [lint:css] 
+2025-04-03T16:33:52.9371851Z [lint:css] npm run lint:css exited with code 0
+2025-04-03T16:33:52.9563443Z ##[error]Process completed with exit code 1.
+2025-04-03T16:33:52.9656099Z Post job cleanup.
+2025-04-03T16:33:53.0583934Z [command]/usr/bin/git version
+2025-04-03T16:33:53.0621499Z git version 2.49.0
+2025-04-03T16:33:53.0672139Z Temporarily overriding HOME='/home/runner/work/_temp/d882a1a8-0ed0-406f-9767-63a933b537e4' before making global git config changes
+2025-04-03T16:33:53.0673599Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-03T16:33:53.0678512Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/openlibrary/openlibrary
+2025-04-03T16:33:53.0712956Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-03T16:33:53.0745428Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-03T16:33:53.0986577Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-03T16:33:53.1007597Z http.https://github.com/.extraheader
+2025-04-03T16:33:53.1020257Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-03T16:33:53.1052807Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-03T16:33:53.1385077Z Cleaning up orphan processes

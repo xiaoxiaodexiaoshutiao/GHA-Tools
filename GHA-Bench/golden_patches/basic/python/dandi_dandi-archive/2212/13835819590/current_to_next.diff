@@ -1,0 +1,13 @@
+diff --git a/web/src/views/DandisetLandingView/DandisetMain.vue b/web/src/views/DandisetLandingView/DandisetMain.vue
+index 7b9ad4052..49b2046d5 100644
+--- a/web/src/views/DandisetLandingView/DandisetMain.vue
++++ b/web/src/views/DandisetLandingView/DandisetMain.vue
+@@ -401,7 +401,7 @@ export default defineComponent({
+ 
+     const injectDataCiteMetadata = async () => {
+       if (meta.value?.doi) {
+-        const url = new URL(meta.value?.doi);
++        const url = new URL(`${meta.value?.doi}`);
+         const headers = new Headers({
+           'Accept': 'application/ld+json'
+         });

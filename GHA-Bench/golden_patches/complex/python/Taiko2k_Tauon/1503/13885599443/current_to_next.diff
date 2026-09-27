@@ -1,0 +1,39 @@
+diff --git a/.github/workflows/build_and_release.yaml b/.github/workflows/build_and_release.yaml
+index 186bcfb18e..5e0a27d2fa 100644
+--- a/.github/workflows/build_and_release.yaml
++++ b/.github/workflows/build_and_release.yaml
+@@ -105,10 +105,10 @@ jobs:
+           name: TauonMusicBox-linux
+           path: TauonMusicBox.7z
+ 
+-      - name: Run Tauon for testing
+-        run: |
+-          source .venv/bin/activate
+-          tauonmb
++      #- name: Run Tauon for testing
++      #  run: |
++      #    source .venv/bin/activate
++      #    tauonmb
+ 
+   build-flatpak:
+     name: "Flatpak"
+diff --git a/src/tauon/t_modules/t_main.py b/src/tauon/t_modules/t_main.py
+index 812ef1ee0e..02f7eb70fc 100644
+--- a/src/tauon/t_modules/t_main.py
++++ b/src/tauon/t_modules/t_main.py
+@@ -175,6 +175,7 @@
+ 
+ if sys.platform == "linux":
+ 	import gi
++	from gi.repository import GLib
+ 	try:
+ 		gi.require_version("Notify", "0.7")
+ 	except Exception:
+@@ -182,7 +183,6 @@
+ 		gi.require_version("Notify", "0.8")
+ 	from gi.repository import Notify
+ 	from gi.repository import GdkPixbuf
+-	from gi.repository import GLib
+ 
+ if TYPE_CHECKING:
+ 	from ctypes import CDLL

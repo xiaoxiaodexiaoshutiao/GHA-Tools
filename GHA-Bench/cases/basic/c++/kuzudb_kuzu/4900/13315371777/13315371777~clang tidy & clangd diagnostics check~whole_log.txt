@@ -1,0 +1,254 @@
+2025-02-13T19:17:52.8313352Z Requested labels: kuzu-self-hosted-testing
+2025-02-13T19:17:52.8313512Z Job defined at: kuzudb/kuzu/.github/workflows/ci-workflow.yml@refs/pull/4900/merge
+2025-02-13T19:17:52.8313580Z Waiting for a runner to pick up this job...
+2025-02-13T19:17:52.9061614Z Job is about to start running on the runner: a3dc17501598 (repository)
+2025-02-13T19:17:55.9841709Z Current runner version: '2.322.0'
+2025-02-13T19:17:55.9848280Z Runner name: 'a3dc17501598'
+2025-02-13T19:17:55.9849112Z Runner group name: 'Default'
+2025-02-13T19:17:55.9850114Z Machine name: 'a3dc17501598'
+2025-02-13T19:17:55.9854277Z ##[group]GITHUB_TOKEN Permissions
+2025-02-13T19:17:55.9856618Z Actions: write
+2025-02-13T19:17:55.9857259Z Attestations: write
+2025-02-13T19:17:55.9857925Z Checks: write
+2025-02-13T19:17:55.9858448Z Contents: write
+2025-02-13T19:17:55.9858988Z Deployments: write
+2025-02-13T19:17:55.9859564Z Discussions: write
+2025-02-13T19:17:55.9860086Z Issues: write
+2025-02-13T19:17:55.9860649Z Metadata: read
+2025-02-13T19:17:55.9861189Z Packages: write
+2025-02-13T19:17:55.9861678Z Pages: write
+2025-02-13T19:17:55.9862242Z PullRequests: write
+2025-02-13T19:17:55.9862803Z RepositoryProjects: write
+2025-02-13T19:17:55.9863357Z SecurityEvents: write
+2025-02-13T19:17:55.9864108Z Statuses: write
+2025-02-13T19:17:55.9864618Z ##[endgroup]
+2025-02-13T19:17:55.9868095Z Secret source: Actions
+2025-02-13T19:17:55.9868945Z Prepare workflow directory
+2025-02-13T19:17:56.0530919Z Prepare all required actions
+2025-02-13T19:17:56.0571631Z Getting action download info
+2025-02-13T19:17:56.2033824Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-02-13T19:17:56.6555407Z Complete job name: clang tidy & clangd diagnostics check
+2025-02-13T19:17:56.7078188Z ##[group]Run actions/checkout@v4
+2025-02-13T19:17:56.7079399Z with:
+2025-02-13T19:17:56.7079937Z   repository: kuzudb/kuzu
+2025-02-13T19:17:56.7080677Z   token: ***
+2025-02-13T19:17:56.7081138Z   ssh-strict: true
+2025-02-13T19:17:56.7081636Z   ssh-user: git
+2025-02-13T19:17:56.7082153Z   persist-credentials: true
+2025-02-13T19:17:56.7082750Z   clean: true
+2025-02-13T19:17:56.7083237Z   sparse-checkout-cone-mode: true
+2025-02-13T19:17:56.7083835Z   fetch-depth: 1
+2025-02-13T19:17:56.7084310Z   fetch-tags: false
+2025-02-13T19:17:56.7085382Z   show-progress: true
+2025-02-13T19:17:56.7085891Z   lfs: false
+2025-02-13T19:17:56.7086364Z   submodules: false
+2025-02-13T19:17:56.7086863Z   set-safe-directory: true
+2025-02-13T19:17:56.7087684Z env:
+2025-02-13T19:17:56.7088164Z   RUNTIME_CHECKS: 1
+2025-02-13T19:17:56.7088675Z   USE_EXISTING_BINARY_DATASET: 1
+2025-02-13T19:17:56.7089222Z   AUTO_CHECKPOINT: 
+2025-02-13T19:17:56.7089730Z   BUFFER_POOL_SIZE: 
+2025-02-13T19:17:56.7090356Z   MAX_NUM_THREADS: 
+2025-02-13T19:17:56.7090834Z   ENABLE_COMPRESSION: 
+2025-02-13T19:17:56.7091312Z   CHECKPOINT_THRESHOLD: 
+2025-02-13T19:17:56.7091818Z   WERROR: 1
+2025-02-13T19:17:56.7092305Z   RUSTFLAGS: --deny warnings
+2025-02-13T19:17:56.7092866Z   PIP_BREAK_SYSTEM_PACKAGES: 1
+2025-02-13T19:17:56.7093367Z   GEN: Ninja
+2025-02-13T19:17:56.7093849Z   NUM_THREADS: 32
+2025-02-13T19:17:56.7094327Z   CC: clang
+2025-02-13T19:17:56.7094791Z   CXX: clang++
+2025-02-13T19:17:56.7095257Z ##[endgroup]
+2025-02-13T19:17:56.8271478Z Syncing repository: kuzudb/kuzu
+2025-02-13T19:17:56.8274394Z ##[group]Getting Git version info
+2025-02-13T19:17:56.8275871Z Working directory is '/home/runner/actions-runner/_work/kuzu/kuzu'
+2025-02-13T19:17:56.8277861Z [command]/usr/bin/git version
+2025-02-13T19:17:56.8278763Z git version 2.43.0
+2025-02-13T19:17:56.8281488Z ##[endgroup]
+2025-02-13T19:17:56.8288656Z Temporarily overriding HOME='/home/runner/actions-runner/_work/_temp/8c31ad26-d105-4f8e-953f-45d347edaa14' before making global git config changes
+2025-02-13T19:17:56.8291306Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-13T19:17:56.8293375Z [command]/usr/bin/git config --global --add safe.directory /home/runner/actions-runner/_work/kuzu/kuzu
+2025-02-13T19:17:56.8299879Z [command]/usr/bin/git config --local --get remote.origin.url
+2025-02-13T19:17:56.8332290Z https://github.com/kuzudb/kuzu
+2025-02-13T19:17:56.8347129Z ##[group]Removing previously created refs, to avoid conflicts
+2025-02-13T19:17:56.8350636Z [command]/usr/bin/git rev-parse --symbolic-full-name --verify --quiet HEAD
+2025-02-13T19:17:56.8380341Z HEAD
+2025-02-13T19:17:56.8427874Z ##[endgroup]
+2025-02-13T19:17:56.8428970Z [command]/usr/bin/git submodule status
+2025-02-13T19:17:56.8836768Z ##[group]Cleaning the repository
+2025-02-13T19:17:56.8842031Z [command]/usr/bin/git clean -ffdx
+2025-02-13T19:17:59.1615063Z Removing build/
+2025-02-13T19:17:59.1618438Z Removing dataset/binary-demo/
+2025-02-13T19:17:59.1620388Z Removing dataset/ldbc-1/csv
+2025-02-13T19:17:59.1621954Z Removing history.txt
+2025-02-13T19:17:59.1623460Z Removing test/test_files/test_list
+2025-02-13T19:17:59.1625239Z Removing tools/nodejs_api/node_modules/
+2025-02-13T19:17:59.1627171Z Removing tools/nodejs_api/package-lock.json
+2025-02-13T19:17:59.1632169Z [command]/usr/bin/git reset --hard HEAD
+2025-02-13T19:17:59.2056007Z HEAD is now at 4690f09 Merge 18b0903ffcd037d5c86bfd4d58bb9c051610a768 into 5399489c9c70e09d78b45fb203bbf4b56404301e
+2025-02-13T19:17:59.2067175Z ##[endgroup]
+2025-02-13T19:17:59.2069681Z ##[group]Disabling automatic garbage collection
+2025-02-13T19:17:59.2072159Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-13T19:17:59.2116914Z ##[endgroup]
+2025-02-13T19:17:59.2119722Z ##[group]Setting up auth
+2025-02-13T19:17:59.2122768Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-13T19:17:59.2156646Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-13T19:17:59.2591386Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-13T19:17:59.2630909Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-13T19:17:59.2994563Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-13T19:17:59.3034178Z ##[endgroup]
+2025-02-13T19:17:59.3037719Z ##[group]Fetching the repository
+2025-02-13T19:17:59.3045350Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5a353b4f4786bd924d561b1a417054c781e58133:refs/remotes/pull/4900/merge
+2025-02-13T19:17:59.6047425Z From https://github.com/kuzudb/kuzu
+2025-02-13T19:17:59.6048650Z  * [new ref]         5a353b4f4786bd924d561b1a417054c781e58133 -> pull/4900/merge
+2025-02-13T19:17:59.6084293Z ##[endgroup]
+2025-02-13T19:17:59.6085483Z ##[group]Determining the checkout info
+2025-02-13T19:17:59.6087092Z ##[endgroup]
+2025-02-13T19:17:59.6094148Z [command]/usr/bin/git sparse-checkout disable
+2025-02-13T19:17:59.6195433Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-13T19:17:59.6231921Z ##[group]Checking out the ref
+2025-02-13T19:17:59.6233695Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/4900/merge
+2025-02-13T19:17:59.6663512Z Previous HEAD position was 4690f09 Merge 18b0903ffcd037d5c86bfd4d58bb9c051610a768 into 5399489c9c70e09d78b45fb203bbf4b56404301e
+2025-02-13T19:17:59.6665622Z HEAD is now at 5a353b4 Merge a8466c09982d2613197884af00f9dd61f96d6938 into 5399489c9c70e09d78b45fb203bbf4b56404301e
+2025-02-13T19:17:59.6672911Z ##[endgroup]
+2025-02-13T19:17:59.6724241Z [command]/usr/bin/git log -1 --format=%H
+2025-02-13T19:17:59.6758239Z 5a353b4f4786bd924d561b1a417054c781e58133
+2025-02-13T19:17:59.7100402Z ##[group]Run npm install --include=dev
+2025-02-13T19:17:59.7101464Z [36;1mnpm install --include=dev[0m
+2025-02-13T19:17:59.7334426Z shell: /usr/bin/bash -e {0}
+2025-02-13T19:17:59.7334944Z env:
+2025-02-13T19:17:59.7335278Z   RUNTIME_CHECKS: 1
+2025-02-13T19:17:59.7335640Z   USE_EXISTING_BINARY_DATASET: 1
+2025-02-13T19:17:59.7336054Z   AUTO_CHECKPOINT: 
+2025-02-13T19:17:59.7336427Z   BUFFER_POOL_SIZE: 
+2025-02-13T19:17:59.7336798Z   MAX_NUM_THREADS: 
+2025-02-13T19:17:59.7337112Z   ENABLE_COMPRESSION: 
+2025-02-13T19:17:59.7337468Z   CHECKPOINT_THRESHOLD: 
+2025-02-13T19:17:59.7337845Z   WERROR: 1
+2025-02-13T19:17:59.7338859Z   RUSTFLAGS: --deny warnings
+2025-02-13T19:17:59.7339399Z   PIP_BREAK_SYSTEM_PACKAGES: 1
+2025-02-13T19:17:59.7339878Z   GEN: Ninja
+2025-02-13T19:17:59.7340247Z   NUM_THREADS: 32
+2025-02-13T19:17:59.7340647Z   CC: clang
+2025-02-13T19:17:59.7341043Z   CXX: clang++
+2025-02-13T19:17:59.7341428Z ##[endgroup]
+2025-02-13T19:18:02.5395206Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-02-13T19:18:02.5490692Z npm warn deprecated npmlog@6.0.2: This package is no longer supported.
+2025-02-13T19:18:02.5566756Z npm warn deprecated are-we-there-yet@3.0.1: This package is no longer supported.
+2025-02-13T19:18:02.5586379Z npm warn deprecated glob@8.1.0: Glob versions prior to v9 are no longer supported
+2025-02-13T19:18:02.5720876Z npm warn deprecated gauge@4.0.4: This package is no longer supported.
+2025-02-13T19:18:02.6681987Z 
+2025-02-13T19:18:02.6682393Z added 133 packages, and audited 134 packages in 3s
+2025-02-13T19:18:02.6683021Z 
+2025-02-13T19:18:02.6683244Z 22 packages are looking for funding
+2025-02-13T19:18:02.6683880Z   run `npm fund` for details
+2025-02-13T19:18:02.6689107Z 
+2025-02-13T19:18:02.6689506Z found 0 vulnerabilities
+2025-02-13T19:18:02.7023803Z ##[group]Run make clangd-diagnostics
+2025-02-13T19:18:02.7024606Z [36;1mmake clangd-diagnostics[0m
+2025-02-13T19:18:02.7056074Z shell: /usr/bin/bash -e {0}
+2025-02-13T19:18:02.7056591Z env:
+2025-02-13T19:18:02.7056966Z   RUNTIME_CHECKS: 1
+2025-02-13T19:18:02.7057411Z   USE_EXISTING_BINARY_DATASET: 1
+2025-02-13T19:18:02.7057924Z   AUTO_CHECKPOINT: 
+2025-02-13T19:18:02.7058338Z   BUFFER_POOL_SIZE: 
+2025-02-13T19:18:02.7058787Z   MAX_NUM_THREADS: 
+2025-02-13T19:18:02.7059205Z   ENABLE_COMPRESSION: 
+2025-02-13T19:18:02.7059673Z   CHECKPOINT_THRESHOLD: 
+2025-02-13T19:18:02.7060107Z   WERROR: 1
+2025-02-13T19:18:02.7060537Z   RUSTFLAGS: --deny warnings
+2025-02-13T19:18:02.7061084Z   PIP_BREAK_SYSTEM_PACKAGES: 1
+2025-02-13T19:18:02.7061548Z   GEN: Ninja
+2025-02-13T19:18:02.7061912Z   NUM_THREADS: 32
+2025-02-13T19:18:02.7062308Z   CC: clang
+2025-02-13T19:18:02.7062740Z   CXX: clang++
+2025-02-13T19:18:02.7063149Z ##[endgroup]
+2025-02-13T19:18:02.7155847Z cmake -B build/release -G "Ninja" -DENABLE_RUNTIME_CHECKS=1 -DENABLE_WERROR=1 -DCMAKE_BUILD_TYPE=Release  -DBUILD_BENCHMARK=TRUE -DBUILD_EXAMPLES=TRUE -DBUILD_EXTENSIONS="httpfs;duckdb;json;postgres;sqlite;fts;delta;iceberg" -DBUILD_JAVA=TRUE -DBUILD_NODEJS=TRUE -DBUILD_PYTHON=TRUE -DBUILD_SHELL=TRUE -DBUILD_TESTS=TRUE  .
+2025-02-13T19:18:02.8762790Z -- The CXX compiler identification is Clang 18.1.3
+2025-02-13T19:18:02.9765102Z -- The C compiler identification is Clang 18.1.3
+2025-02-13T19:18:03.0413929Z -- Detecting CXX compiler ABI info
+2025-02-13T19:18:03.2590132Z -- Detecting CXX compiler ABI info - done
+2025-02-13T19:18:03.2727995Z -- Check for working CXX compiler: /usr/bin/clang++ - skipped
+2025-02-13T19:18:03.2734096Z -- Detecting CXX compile features
+2025-02-13T19:18:03.2745626Z -- Detecting CXX compile features - done
+2025-02-13T19:18:03.3281745Z -- Detecting C compiler ABI info
+2025-02-13T19:18:03.5216956Z -- Detecting C compiler ABI info - done
+2025-02-13T19:18:03.5346016Z -- Check for working C compiler: /usr/bin/clang - skipped
+2025-02-13T19:18:03.5350147Z -- Detecting C compile features
+2025-02-13T19:18:03.5360394Z -- Detecting C compile features - done
+2025-02-13T19:18:03.5390049Z -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+2025-02-13T19:18:03.6723249Z -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+2025-02-13T19:18:03.6739173Z -- Found Threads: TRUE  
+2025-02-13T19:18:03.6744694Z -- 64-bit architecture detected
+2025-02-13T19:18:03.6746495Z -- KUZU_PAGE_SIZE_LOG2: 12
+2025-02-13T19:18:03.6747031Z -- KUZU_VECTOR_CAPACITY_LOG2: 11
+2025-02-13T19:18:03.6808023Z -- Build type is 'Release'
+2025-02-13T19:18:03.6811484Z -- Performing Test BROTLI_EMSCRIPTEN
+2025-02-13T19:18:03.7994605Z -- Compiler is not EMSCRIPTEN
+2025-02-13T19:18:03.7996097Z -- Performing Test BROTLI_EMSCRIPTEN - Failed
+2025-02-13T19:18:03.8038236Z -- Looking for log2 in m
+2025-02-13T19:18:03.9305307Z -- Looking for log2 in m - found
+2025-02-13T19:18:03.9473384Z -- pybind11 v2.13.1 
+2025-02-13T19:18:03.9501865Z CMake Warning (dev) at third_party/pybind11/tools/FindPythonLibsNew.cmake:98 (find_package):
+2025-02-13T19:18:03.9503238Z   Policy CMP0148 is not set: The FindPythonInterp and FindPythonLibs modules
+2025-02-13T19:18:03.9504375Z   are removed.  Run "cmake --help-policy CMP0148" for policy details.  Use
+2025-02-13T19:18:03.9505660Z   the cmake_policy command to set the policy and suppress this warning.
+2025-02-13T19:18:03.9506421Z 
+2025-02-13T19:18:03.9506700Z Call Stack (most recent call first):
+2025-02-13T19:18:03.9507681Z   third_party/pybind11/tools/pybind11Tools.cmake:50 (find_package)
+2025-02-13T19:18:03.9508626Z   third_party/pybind11/tools/pybind11Common.cmake:180 (include)
+2025-02-13T19:18:03.9509376Z   third_party/pybind11/CMakeLists.txt:208 (include)
+2025-02-13T19:18:03.9510234Z This warning is for project developers.  Use -Wno-dev to suppress it.
+2025-02-13T19:18:03.9510804Z 
+2025-02-13T19:18:03.9680734Z -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.12.3", minimum required is "3.6") 
+2025-02-13T19:18:03.9902169Z -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.12.so
+2025-02-13T19:18:03.9919786Z -- Performing Test HAS_FLTO
+2025-02-13T19:18:04.1719373Z -- Performing Test HAS_FLTO - Success
+2025-02-13T19:18:04.1737255Z -- Performing Test HAS_FLTO_THIN
+2025-02-13T19:18:04.3586358Z -- Performing Test HAS_FLTO_THIN - Success
+2025-02-13T19:18:04.8622313Z -- Found Python3: /usr/bin/python3 (found suitable version "3.12.3", required range is "3.9...4") found components: Interpreter 
+2025-02-13T19:18:06.5706115Z -- Found Python: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+2025-02-13T19:18:06.6724639Z -- Found Java: /usr/lib/jvm/java-17-openjdk-amd64/bin/java (found version "17.0.13") 
+2025-02-13T19:18:06.7645430Z -- Found JNI: /usr/lib/jvm/java-17-openjdk-amd64/include  found components: AWT JVM 
+2025-02-13T19:18:06.7652067Z -- JNI_INCLUDE_DIRS=/usr/lib/jvm/java-17-openjdk-amd64/include;/usr/lib/jvm/java-17-openjdk-amd64/include/linux;/usr/lib/jvm/java-17-openjdk-amd64/include
+2025-02-13T19:18:06.7654623Z -- JNI_LIBRARIES=/usr/lib/jvm/java-17-openjdk-amd64/lib/libjawt.so;/usr/lib/jvm/java-17-openjdk-amd64/lib/server/libjvm.so
+2025-02-13T19:18:06.7700782Z -- OS_NAME=linux
+2025-02-13T19:18:06.7701279Z -- OS_ARCH=amd64
+2025-02-13T19:18:07.2244366Z info TOOL Using Ninja generator, because ninja is available.
+2025-02-13T19:18:07.7136395Z info TOOL Using Ninja generator, because ninja is available.
+2025-02-13T19:18:08.2145536Z info TOOL Using Ninja generator, because ninja is available.
+2025-02-13T19:18:08.2500348Z -- CMake.js configurations: LIB=, INC=/home/runner/.cmake-js/node-x64/v20.18.1/include/node, SRC=
+2025-02-13T19:18:08.2840060Z -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.a (found version "3.0.13")  
+2025-02-13T19:18:08.3366624Z -- Configuring done (5.6s)
+2025-02-13T19:18:08.7783175Z -- Generating done (0.3s)
+2025-02-13T19:18:08.7911190Z -- Build files have been written to: /home/runner/actions-runner/_work/kuzu/kuzu/build/release
+2025-02-13T19:18:08.8446669Z cmake --build build/release --target kuzu_java
+2025-02-13T19:18:09.5701104Z [1/3] Building Java objects for kuzu_java.jar
+2025-02-13T19:18:09.5704568Z warning: [options] bootstrap class path not set in conjunction with -source 8
+2025-02-13T19:18:09.5705267Z 1 warning
+2025-02-13T19:18:09.5884643Z [2/3] Generating CMakeFiles/kuzu_java.dir/java_class_filelist
+2025-02-13T19:18:09.7226454Z [3/3] Creating Java archive kuzu_java.jar
+2025-02-13T19:18:09.7264921Z find src -name *.h -or -name *.cpp | xargs \
+2025-02-13T19:18:09.7265519Z 	./scripts/get-clangd-diagnostics.py --compile-commands-dir build/release \
+2025-02-13T19:18:09.7266064Z 	-j 32 --instances 4
+2025-02-13T19:20:29.2698514Z /home/runner/actions-runner/_work/kuzu/kuzu/src/function/vector_cast_functions.cpp:843:Switch has 2 consecutive identical branches
+2025-02-13T19:20:29.2705968Z 
+2025-02-13T19:20:29.2706401Z vector_cast_functions.cpp:853:5: note: last of these clones ends here
+2025-02-13T19:20:29.2707901Z /home/runner/actions-runner/_work/kuzu/kuzu/src/function/vector_cast_functions.cpp:852:Last of these clones ends here
+2025-02-13T19:20:29.2708953Z 
+2025-02-13T19:20:29.2709531Z vector_cast_functions.cpp:844:5: error: switch has 2 consecutive identical branches
+2025-02-13T19:20:29.2792994Z make: *** [Makefile:254: clangd-diagnostics] Error 123
+2025-02-13T19:20:29.2823603Z ##[error]Process completed with exit code 2.
+2025-02-13T19:20:29.2990874Z Post job cleanup.
+2025-02-13T19:20:29.4055623Z [command]/usr/bin/git version
+2025-02-13T19:20:29.4105938Z git version 2.43.0
+2025-02-13T19:20:29.4153367Z Temporarily overriding HOME='/home/runner/actions-runner/_work/_temp/654fc9a4-74f2-46c5-9b9d-f1fe76758395' before making global git config changes
+2025-02-13T19:20:29.4154886Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-13T19:20:29.4158340Z [command]/usr/bin/git config --global --add safe.directory /home/runner/actions-runner/_work/kuzu/kuzu
+2025-02-13T19:20:29.4221624Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-13T19:20:29.4276576Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-13T19:20:29.4723520Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-13T19:20:29.4756346Z http.https://github.com/.extraheader
+2025-02-13T19:20:29.4770505Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-13T19:20:29.4818140Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-13T19:20:29.5431859Z Cleaning up orphan processes

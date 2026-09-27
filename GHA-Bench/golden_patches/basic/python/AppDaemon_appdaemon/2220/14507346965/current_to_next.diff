@@ -1,0 +1,22 @@
+diff --git a/appdaemon/models/config/app.py b/appdaemon/models/config/app.py
+index 5798b4816..8521afec3 100644
+--- a/appdaemon/models/config/app.py
++++ b/appdaemon/models/config/app.py
+@@ -6,7 +6,7 @@
+ from pathlib import Path
+ from typing import Annotated, Any, Literal
+ 
+-from pydantic import BaseModel, Discriminator, Field, RootModel, Tag, ValidationError, field_validator
++from pydantic import BaseModel, Discriminator, Field, RootModel, Tag, field_validator
+ from pydantic_core import PydanticUndefinedType
+ 
+ from ... import exceptions as ade
+@@ -104,7 +104,7 @@ def set_app_names(cls, values: dict):
+                         case _:
+                             cfg["name"] = app_name
+                             values[app_name] = cfg
+-                except Exception as e:
++                except Exception:
+                     raise ade.BadAppConfig(app_name, cfg)
+             return values
+ 

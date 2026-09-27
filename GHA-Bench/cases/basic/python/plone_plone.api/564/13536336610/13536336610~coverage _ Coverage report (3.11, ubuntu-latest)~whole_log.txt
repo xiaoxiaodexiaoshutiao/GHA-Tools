@@ -1,0 +1,261 @@
+2025-02-26T04:09:22.3723145Z Requested labels: ubuntu-latest
+2025-02-26T04:09:22.3723448Z Job defined at: plone/meta/.github/workflows/coverage.yml@refs/heads/main
+2025-02-26T04:09:22.3723750Z Reusable workflow chain:
+2025-02-26T04:09:22.3723879Z plone/plone.api/.github/workflows/meta.yml@refs/pull/564/merge (c6e51f381fb4bd80770ed4364e5654fbc3c12f50)
+2025-02-26T04:09:22.3724028Z -> plone/meta/.github/workflows/coverage.yml@refs/heads/main (999269c3e8b3316da0c066d036ec00668f339cc2)
+2025-02-26T04:09:22.3724182Z Waiting for a runner to pick up this job...
+2025-02-26T04:09:23.5823429Z Job is waiting for a hosted runner to come online.
+2025-02-26T04:09:25.5447824Z Job is about to start running on the hosted runner: GitHub Actions 57 (hosted)
+2025-02-26T04:09:27.1996476Z Current runner version: '2.322.0'
+2025-02-26T04:09:27.2028549Z ##[group]Operating System
+2025-02-26T04:09:27.2029883Z Ubuntu
+2025-02-26T04:09:27.2030771Z 24.04.1
+2025-02-26T04:09:27.2031699Z LTS
+2025-02-26T04:09:27.2032542Z ##[endgroup]
+2025-02-26T04:09:27.2033472Z ##[group]Runner Image
+2025-02-26T04:09:27.2034623Z Image: ubuntu-24.04
+2025-02-26T04:09:27.2035568Z Version: 20250209.1.0
+2025-02-26T04:09:27.2037453Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250209.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-26T04:09:27.2040373Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250209.1
+2025-02-26T04:09:27.2042082Z ##[endgroup]
+2025-02-26T04:09:27.2043169Z ##[group]Runner Image Provisioner
+2025-02-26T04:09:27.2044209Z 2.0.422.1
+2025-02-26T04:09:27.2045095Z ##[endgroup]
+2025-02-26T04:09:27.2047588Z ##[group]GITHUB_TOKEN Permissions
+2025-02-26T04:09:27.2050004Z Actions: write
+2025-02-26T04:09:27.2050831Z Attestations: write
+2025-02-26T04:09:27.2051476Z Checks: write
+2025-02-26T04:09:27.2052067Z Contents: write
+2025-02-26T04:09:27.2052627Z Deployments: write
+2025-02-26T04:09:27.2053137Z Discussions: write
+2025-02-26T04:09:27.2053728Z Issues: write
+2025-02-26T04:09:27.2054253Z Metadata: read
+2025-02-26T04:09:27.2054799Z Packages: write
+2025-02-26T04:09:27.2055355Z Pages: write
+2025-02-26T04:09:27.2055839Z PullRequests: write
+2025-02-26T04:09:27.2056427Z RepositoryProjects: write
+2025-02-26T04:09:27.2057050Z SecurityEvents: write
+2025-02-26T04:09:27.2057602Z Statuses: write
+2025-02-26T04:09:27.2058183Z ##[endgroup]
+2025-02-26T04:09:27.2060397Z Secret source: Actions
+2025-02-26T04:09:27.2061484Z Prepare workflow directory
+2025-02-26T04:09:27.2448685Z Prepare all required actions
+2025-02-26T04:09:27.2486138Z Getting action download info
+2025-02-26T04:09:27.3909290Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-02-26T04:09:27.4836936Z Download action repository 'actions/setup-python@v5' (SHA:42375524e23c412d93fb67b49958b491fce71c38)
+2025-02-26T04:09:27.7618136Z Download action repository 'actions/cache@v4' (SHA:0c907a75c2c80ebcb7f088228285e798b750cf8f)
+2025-02-26T04:09:28.1178466Z Uses: plone/meta/.github/workflows/coverage.yml@refs/heads/main (999269c3e8b3316da0c066d036ec00668f339cc2)
+2025-02-26T04:09:28.1182367Z ##[group] Inputs
+2025-02-26T04:09:28.1183285Z   os-packages: 
+2025-02-26T04:09:28.1184155Z ##[endgroup]
+2025-02-26T04:09:28.1185310Z Complete job name: coverage / Coverage report (3.11, ubuntu-latest)
+2025-02-26T04:09:28.2100296Z ##[group]Run actions/checkout@v4
+2025-02-26T04:09:28.2102062Z with:
+2025-02-26T04:09:28.2102848Z   repository: plone/plone.api
+2025-02-26T04:09:28.2104093Z   token: ***
+2025-02-26T04:09:28.2104821Z   ssh-strict: true
+2025-02-26T04:09:28.2105586Z   ssh-user: git
+2025-02-26T04:09:28.2106385Z   persist-credentials: true
+2025-02-26T04:09:28.2107269Z   clean: true
+2025-02-26T04:09:28.2108078Z   sparse-checkout-cone-mode: true
+2025-02-26T04:09:28.2109061Z   fetch-depth: 1
+2025-02-26T04:09:28.2110095Z   fetch-tags: false
+2025-02-26T04:09:28.2110879Z   show-progress: true
+2025-02-26T04:09:28.2111672Z   lfs: false
+2025-02-26T04:09:28.2112399Z   submodules: false
+2025-02-26T04:09:28.2113194Z   set-safe-directory: true
+2025-02-26T04:09:28.2114699Z ##[endgroup]
+2025-02-26T04:09:28.4420637Z Syncing repository: plone/plone.api
+2025-02-26T04:09:28.4423072Z ##[group]Getting Git version info
+2025-02-26T04:09:28.4424390Z Working directory is '/home/runner/work/plone.api/plone.api'
+2025-02-26T04:09:28.4426348Z [command]/usr/bin/git version
+2025-02-26T04:09:28.4507549Z git version 2.48.1
+2025-02-26T04:09:28.4536969Z ##[endgroup]
+2025-02-26T04:09:28.4621209Z Temporarily overriding HOME='/home/runner/work/_temp/1e09ddb6-0415-4f88-923e-456cc8d59422' before making global git config changes
+2025-02-26T04:09:28.4625258Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-26T04:09:28.4628052Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/plone.api/plone.api
+2025-02-26T04:09:28.4632318Z Deleting the contents of '/home/runner/work/plone.api/plone.api'
+2025-02-26T04:09:28.4634594Z ##[group]Initializing the repository
+2025-02-26T04:09:28.4636545Z [command]/usr/bin/git init /home/runner/work/plone.api/plone.api
+2025-02-26T04:09:28.4688940Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-26T04:09:28.4691013Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-26T04:09:28.4692789Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-26T04:09:28.4694083Z hint:
+2025-02-26T04:09:28.4694960Z hint: 	git config --global init.defaultBranch <name>
+2025-02-26T04:09:28.4696441Z hint:
+2025-02-26T04:09:28.4697713Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-26T04:09:28.4699637Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-26T04:09:28.4701020Z hint:
+2025-02-26T04:09:28.4701921Z hint: 	git branch -m <name>
+2025-02-26T04:09:28.4703359Z Initialized empty Git repository in /home/runner/work/plone.api/plone.api/.git/
+2025-02-26T04:09:28.4708144Z [command]/usr/bin/git remote add origin https://github.com/plone/plone.api
+2025-02-26T04:09:28.4742580Z ##[endgroup]
+2025-02-26T04:09:28.4743933Z ##[group]Disabling automatic garbage collection
+2025-02-26T04:09:28.4746010Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-26T04:09:28.4777053Z ##[endgroup]
+2025-02-26T04:09:28.4779288Z ##[group]Setting up auth
+2025-02-26T04:09:28.4784801Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-26T04:09:28.4817623Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-26T04:09:28.5144078Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-26T04:09:28.5171676Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-26T04:09:28.5397100Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-26T04:09:28.5433737Z ##[endgroup]
+2025-02-26T04:09:28.5436096Z ##[group]Fetching the repository
+2025-02-26T04:09:28.5446216Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +c6e51f381fb4bd80770ed4364e5654fbc3c12f50:refs/remotes/pull/564/merge
+2025-02-26T04:09:28.8145744Z From https://github.com/plone/plone.api
+2025-02-26T04:09:28.8146858Z  * [new ref]         c6e51f381fb4bd80770ed4364e5654fbc3c12f50 -> pull/564/merge
+2025-02-26T04:09:28.8178253Z ##[endgroup]
+2025-02-26T04:09:28.8178776Z ##[group]Determining the checkout info
+2025-02-26T04:09:28.8180960Z ##[endgroup]
+2025-02-26T04:09:28.8185970Z [command]/usr/bin/git sparse-checkout disable
+2025-02-26T04:09:28.8224349Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-26T04:09:28.8250460Z ##[group]Checking out the ref
+2025-02-26T04:09:28.8254186Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/564/merge
+2025-02-26T04:09:28.8347980Z Note: switching to 'refs/remotes/pull/564/merge'.
+2025-02-26T04:09:28.8348525Z 
+2025-02-26T04:09:28.8348926Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-26T04:09:28.8349860Z changes and commit them, and you can discard any commits you make in this
+2025-02-26T04:09:28.8350427Z state without impacting any branches by switching back to a branch.
+2025-02-26T04:09:28.8350744Z 
+2025-02-26T04:09:28.8350976Z If you want to create a new branch to retain commits you create, you may
+2025-02-26T04:09:28.8351469Z do so (now or later) by using -c with the switch command. Example:
+2025-02-26T04:09:28.8351748Z 
+2025-02-26T04:09:28.8351899Z   git switch -c <new-branch-name>
+2025-02-26T04:09:28.8352740Z 
+2025-02-26T04:09:28.8353008Z Or undo this operation with:
+2025-02-26T04:09:28.8353401Z 
+2025-02-26T04:09:28.8353639Z   git switch -
+2025-02-26T04:09:28.8353977Z 
+2025-02-26T04:09:28.8354457Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-26T04:09:28.8355188Z 
+2025-02-26T04:09:28.8355987Z HEAD is now at c6e51f3 Merge 689ded88a9001a6e8fa3ec6248cc7b6c2b24df62 into 7817da000bcffccbcd9b82564dfad76d9089bc85
+2025-02-26T04:09:28.8358596Z ##[endgroup]
+2025-02-26T04:09:28.8391834Z [command]/usr/bin/git log -1 --format=%H
+2025-02-26T04:09:28.8413329Z c6e51f381fb4bd80770ed4364e5654fbc3c12f50
+2025-02-26T04:09:28.8656705Z ##[group]Run actions/setup-python@v5
+2025-02-26T04:09:28.8657179Z with:
+2025-02-26T04:09:28.8657530Z   python-version: 3.11
+2025-02-26T04:09:28.8657923Z   check-latest: false
+2025-02-26T04:09:28.8658425Z   token: ***
+2025-02-26T04:09:28.8658790Z   update-environment: true
+2025-02-26T04:09:28.8659189Z   allow-prereleases: false
+2025-02-26T04:09:28.8659741Z ##[endgroup]
+2025-02-26T04:09:29.0336036Z ##[group]Installed versions
+2025-02-26T04:09:29.0394720Z Successfully set up CPython (3.11.11)
+2025-02-26T04:09:29.0395663Z ##[endgroup]
+2025-02-26T04:09:29.1088369Z ##[group]Run actions/cache@v4
+2025-02-26T04:09:29.1088777Z with:
+2025-02-26T04:09:29.1089072Z   path: ~/.cache/pip
+2025-02-26T04:09:29.1089994Z   key: Linux-pip-3.11-5508ffe17c125c4ce445cf586fbfe756ed75bc4eea021897966cfe7ab3d00ddb
+2025-02-26T04:09:29.1090630Z   restore-keys: Linux-pip-3.11-
+Linux-pip-
+
+2025-02-26T04:09:29.1091043Z   enableCrossOsArchive: false
+2025-02-26T04:09:29.1091413Z   fail-on-cache-miss: false
+2025-02-26T04:09:29.1091754Z   lookup-only: false
+2025-02-26T04:09:29.1092060Z   save-always: false
+2025-02-26T04:09:29.1092366Z env:
+2025-02-26T04:09:29.1092735Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-26T04:09:29.1093307Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-02-26T04:09:29.1093836Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-26T04:09:29.1094331Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-26T04:09:29.1094857Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-26T04:09:29.1095350Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-02-26T04:09:29.1095760Z ##[endgroup]
+2025-02-26T04:09:29.3121885Z Cache hit for: Linux-pip-3.11-5508ffe17c125c4ce445cf586fbfe756ed75bc4eea021897966cfe7ab3d00ddb
+2025-02-26T04:09:29.5056468Z Received 6937967 of 6937967 (100.0%), 47.6 MBs/sec
+2025-02-26T04:09:29.5057378Z Cache Size: ~7 MB (6937967 B)
+2025-02-26T04:09:29.5084985Z [command]/usr/bin/tar -xf /home/runner/work/_temp/333a8071-7135-461a-9ea9-8c465cbaef24/cache.tzst -P -C /home/runner/work/plone.api/plone.api --use-compress-program unzstd
+2025-02-26T04:09:29.5334718Z Cache restored successfully
+2025-02-26T04:09:29.5515653Z Cache restored from key: Linux-pip-3.11-1a70cecafdd5f9e184c321bc40aa7c3feb48c6972673f2c3daefaf0b00e121fc
+2025-02-26T04:09:29.5623054Z ##[group]Run python -m pip install tox
+2025-02-26T04:09:29.5623585Z [36;1mpython -m pip install tox[0m
+2025-02-26T04:09:29.5804168Z shell: /usr/bin/bash -e {0}
+2025-02-26T04:09:29.5804558Z env:
+2025-02-26T04:09:29.5804948Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-26T04:09:29.5805526Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-02-26T04:09:29.5806238Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-26T04:09:29.5806839Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-26T04:09:29.5807343Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-26T04:09:29.5807837Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-02-26T04:09:29.5808264Z ##[endgroup]
+2025-02-26T04:09:30.2621685Z Collecting tox
+2025-02-26T04:09:30.2636571Z   Using cached tox-4.24.1-py3-none-any.whl.metadata (3.7 kB)
+2025-02-26T04:09:30.2845179Z Collecting cachetools>=5.5 (from tox)
+2025-02-26T04:09:30.3356022Z   Downloading cachetools-5.5.2-py3-none-any.whl.metadata (5.4 kB)
+2025-02-26T04:09:30.3521147Z Collecting chardet>=5.2 (from tox)
+2025-02-26T04:09:30.3534464Z   Using cached chardet-5.2.0-py3-none-any.whl.metadata (3.4 kB)
+2025-02-26T04:09:30.3693091Z Collecting colorama>=0.4.6 (from tox)
+2025-02-26T04:09:30.3707163Z   Using cached colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+2025-02-26T04:09:30.3988033Z Collecting filelock>=3.16.1 (from tox)
+2025-02-26T04:09:30.4001343Z   Using cached filelock-3.17.0-py3-none-any.whl.metadata (2.9 kB)
+2025-02-26T04:09:30.4186075Z Collecting packaging>=24.2 (from tox)
+2025-02-26T04:09:30.4199068Z   Using cached packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+2025-02-26T04:09:30.4361723Z Collecting platformdirs>=4.3.6 (from tox)
+2025-02-26T04:09:30.4374613Z   Using cached platformdirs-4.3.6-py3-none-any.whl.metadata (11 kB)
+2025-02-26T04:09:30.4520885Z Collecting pluggy>=1.5 (from tox)
+2025-02-26T04:09:30.4533892Z   Using cached pluggy-1.5.0-py3-none-any.whl.metadata (4.8 kB)
+2025-02-26T04:09:30.4669900Z Collecting pyproject-api>=1.8 (from tox)
+2025-02-26T04:09:30.4682942Z   Using cached pyproject_api-1.9.0-py3-none-any.whl.metadata (2.7 kB)
+2025-02-26T04:09:30.5046748Z Collecting virtualenv>=20.27.1 (from tox)
+2025-02-26T04:09:30.5059865Z   Using cached virtualenv-20.29.2-py3-none-any.whl.metadata (4.5 kB)
+2025-02-26T04:09:30.5271255Z Collecting distlib<1,>=0.3.7 (from virtualenv>=20.27.1->tox)
+2025-02-26T04:09:30.5284218Z   Using cached distlib-0.3.9-py2.py3-none-any.whl.metadata (5.2 kB)
+2025-02-26T04:09:30.5402316Z Using cached tox-4.24.1-py3-none-any.whl (171 kB)
+2025-02-26T04:09:30.5478630Z Downloading cachetools-5.5.2-py3-none-any.whl (10 kB)
+2025-02-26T04:09:30.5517487Z Using cached chardet-5.2.0-py3-none-any.whl (199 kB)
+2025-02-26T04:09:30.5531917Z Using cached colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+2025-02-26T04:09:30.5544751Z Using cached filelock-3.17.0-py3-none-any.whl (16 kB)
+2025-02-26T04:09:30.5557547Z Using cached packaging-24.2-py3-none-any.whl (65 kB)
+2025-02-26T04:09:30.5570672Z Using cached platformdirs-4.3.6-py3-none-any.whl (18 kB)
+2025-02-26T04:09:30.5583364Z Using cached pluggy-1.5.0-py3-none-any.whl (20 kB)
+2025-02-26T04:09:30.5596154Z Using cached pyproject_api-1.9.0-py3-none-any.whl (13 kB)
+2025-02-26T04:09:30.5608625Z Using cached virtualenv-20.29.2-py3-none-any.whl (4.3 MB)
+2025-02-26T04:09:30.5654258Z Using cached distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+2025-02-26T04:09:30.6000137Z Installing collected packages: distlib, pluggy, platformdirs, packaging, filelock, colorama, chardet, cachetools, virtualenv, pyproject-api, tox
+2025-02-26T04:09:31.1781727Z Successfully installed cachetools-5.5.2 chardet-5.2.0 colorama-0.4.6 distlib-0.3.9 filelock-3.17.0 packaging-24.2 platformdirs-4.3.6 pluggy-1.5.0 pyproject-api-1.9.0 tox-4.24.1 virtualenv-20.29.2
+2025-02-26T04:09:31.3250270Z ##[group]Run if [ `tox list --no-desc -f init|wc -l` = 1 ]; then tox -e init;else true; fi
+2025-02-26T04:09:31.3250881Z [36;1mif [ `tox list --no-desc -f init|wc -l` = 1 ]; then tox -e init;else true; fi[0m
+2025-02-26T04:09:31.3306249Z shell: /usr/bin/bash -e {0}
+2025-02-26T04:09:31.3306484Z env:
+2025-02-26T04:09:31.3306736Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-26T04:09:31.3307147Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-02-26T04:09:31.3307536Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-26T04:09:31.3307896Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-26T04:09:31.3308259Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-26T04:09:31.3308613Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-02-26T04:09:31.3308914Z ##[endgroup]
+2025-02-26T04:09:32.2875974Z init: freeze> python -m pip freeze --all
+2025-02-26T04:09:32.7844469Z init: pip==25.0.1,setuptools==75.8.0,wheel==0.45.1
+2025-02-26T04:09:32.7847493Z init: commands[0]> echo 'Initial setup complete'
+2025-02-26T04:09:32.7862605Z Initial setup complete
+2025-02-26T04:09:32.7874076Z   init: OK (0.78=setup[0.78]+cmd[0.00] seconds)
+2025-02-26T04:09:32.7874421Z   congratulations :) (0.89 seconds)
+2025-02-26T04:09:32.8185920Z ##[group]Run tox -q -e coverage >> $GITHUB_STEP_SUMMARY
+2025-02-26T04:09:32.8186330Z [36;1mtox -q -e coverage >> $GITHUB_STEP_SUMMARY[0m
+2025-02-26T04:09:32.8241898Z shell: /usr/bin/bash -e {0}
+2025-02-26T04:09:32.8242142Z env:
+2025-02-26T04:09:32.8242398Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-26T04:09:32.8242821Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-02-26T04:09:32.8243232Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-26T04:09:32.8243617Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-26T04:09:32.8243974Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-26T04:09:32.8244337Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-02-26T04:09:32.8244636Z ##[endgroup]
+2025-02-26T04:09:46.7786354Z [31mERROR: Cannot install Zope because these package versions have conflicting dependencies.
+2025-02-26T04:09:46.7788338Z ERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts
+2025-02-26T04:09:46.8090372Z [39m
+2025-02-26T04:09:46.8100949Z ##[error]Process completed with exit code 1.
+2025-02-26T04:09:46.8275161Z Post job cleanup.
+2025-02-26T04:09:46.9208271Z [command]/usr/bin/git version
+2025-02-26T04:09:46.9245150Z git version 2.48.1
+2025-02-26T04:09:46.9286919Z Temporarily overriding HOME='/home/runner/work/_temp/7d7e4646-f8de-4d9e-94a8-4ec912efb54b' before making global git config changes
+2025-02-26T04:09:46.9287820Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-26T04:09:46.9300018Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/plone.api/plone.api
+2025-02-26T04:09:46.9334730Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-26T04:09:46.9367032Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-26T04:09:46.9598615Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-26T04:09:46.9618662Z http.https://github.com/.extraheader
+2025-02-26T04:09:46.9631818Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-26T04:09:46.9662512Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-26T04:09:46.9985566Z Cleaning up orphan processes

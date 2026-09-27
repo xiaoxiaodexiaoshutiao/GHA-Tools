@@ -1,0 +1,267 @@
+2025-03-05T08:17:29.0805718Z Requested labels: ubuntu-latest
+2025-03-05T08:17:29.0805925Z Job defined at: ical4j/ical4j/.github/workflows/run-build.yml@refs/pull/792/merge
+2025-03-05T08:17:29.0806020Z Waiting for a runner to pick up this job...
+2025-03-05T08:17:29.4061340Z Job is waiting for a hosted runner to come online.
+2025-03-05T08:17:33.5644931Z Job is about to start running on the hosted runner: GitHub Actions 8 (hosted)
+2025-03-05T08:17:36.1841654Z Current runner version: '2.322.0'
+2025-03-05T08:17:36.1865913Z ##[group]Operating System
+2025-03-05T08:17:36.1866681Z Ubuntu
+2025-03-05T08:17:36.1867146Z 24.04.2
+2025-03-05T08:17:36.1867726Z LTS
+2025-03-05T08:17:36.1868198Z ##[endgroup]
+2025-03-05T08:17:36.1868712Z ##[group]Runner Image
+2025-03-05T08:17:36.1869354Z Image: ubuntu-24.04
+2025-03-05T08:17:36.1870021Z Version: 20250302.1.0
+2025-03-05T08:17:36.1871028Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250302.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-05T08:17:36.1872559Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250302.1
+2025-03-05T08:17:36.1873455Z ##[endgroup]
+2025-03-05T08:17:36.1874036Z ##[group]Runner Image Provisioner
+2025-03-05T08:17:36.1874646Z 2.0.422.1
+2025-03-05T08:17:36.1875109Z ##[endgroup]
+2025-03-05T08:17:36.1876177Z ##[group]GITHUB_TOKEN Permissions
+2025-03-05T08:17:36.1877942Z Contents: read
+2025-03-05T08:17:36.1878574Z Metadata: read
+2025-03-05T08:17:36.1879275Z ##[endgroup]
+2025-03-05T08:17:36.1882474Z Secret source: None
+2025-03-05T08:17:36.1883183Z Prepare workflow directory
+2025-03-05T08:17:36.2191084Z Prepare all required actions
+2025-03-05T08:17:36.2228431Z Getting action download info
+2025-03-05T08:17:36.4349065Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-05T08:17:36.5232037Z Download action repository 'actions/setup-java@v4' (SHA:3a4f6e1af504cf6a31855fa899c6aa5355ba6c12)
+2025-03-05T08:17:37.1473845Z Download action repository 'gradle/actions@af1da67850ed9a4cedd57bfd976089dd991e2582' (SHA:af1da67850ed9a4cedd57bfd976089dd991e2582)
+2025-03-05T08:17:38.2431496Z Complete job name: dependency-submission
+2025-03-05T08:17:38.3231969Z ##[group]Run actions/checkout@v4
+2025-03-05T08:17:38.3233276Z with:
+2025-03-05T08:17:38.3234004Z   repository: ical4j/ical4j
+2025-03-05T08:17:38.3235193Z   token: ***
+2025-03-05T08:17:38.3235921Z   ssh-strict: true
+2025-03-05T08:17:38.3236666Z   ssh-user: git
+2025-03-05T08:17:38.3237485Z   persist-credentials: true
+2025-03-05T08:17:38.3238353Z   clean: true
+2025-03-05T08:17:38.3239120Z   sparse-checkout-cone-mode: true
+2025-03-05T08:17:38.3240365Z   fetch-depth: 1
+2025-03-05T08:17:38.3241111Z   fetch-tags: false
+2025-03-05T08:17:38.3241880Z   show-progress: true
+2025-03-05T08:17:38.3242654Z   lfs: false
+2025-03-05T08:17:38.3243400Z   submodules: false
+2025-03-05T08:17:38.3244177Z   set-safe-directory: true
+2025-03-05T08:17:38.3245320Z ##[endgroup]
+2025-03-05T08:17:38.5457217Z Syncing repository: ical4j/ical4j
+2025-03-05T08:17:38.5460094Z ##[group]Getting Git version info
+2025-03-05T08:17:38.5461342Z Working directory is '/home/runner/work/ical4j/ical4j'
+2025-03-05T08:17:38.5463230Z [command]/usr/bin/git version
+2025-03-05T08:17:38.5537512Z git version 2.48.1
+2025-03-05T08:17:38.5569099Z ##[endgroup]
+2025-03-05T08:17:38.5586881Z Temporarily overriding HOME='/home/runner/work/_temp/ffed3b2d-7ee1-4181-9332-b0ef131f1edd' before making global git config changes
+2025-03-05T08:17:38.5591974Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-05T08:17:38.5595666Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ical4j/ical4j
+2025-03-05T08:17:38.5637291Z Deleting the contents of '/home/runner/work/ical4j/ical4j'
+2025-03-05T08:17:38.5641872Z ##[group]Initializing the repository
+2025-03-05T08:17:38.5647428Z [command]/usr/bin/git init /home/runner/work/ical4j/ical4j
+2025-03-05T08:17:38.5719095Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-05T08:17:38.5721581Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-05T08:17:38.5724216Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-05T08:17:38.5726423Z hint:
+2025-03-05T08:17:38.5727915Z hint: 	git config --global init.defaultBranch <name>
+2025-03-05T08:17:38.5730036Z hint:
+2025-03-05T08:17:38.5731383Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-05T08:17:38.5733508Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-05T08:17:38.5734881Z hint:
+2025-03-05T08:17:38.5735601Z hint: 	git branch -m <name>
+2025-03-05T08:17:38.5737002Z Initialized empty Git repository in /home/runner/work/ical4j/ical4j/.git/
+2025-03-05T08:17:38.5746331Z [command]/usr/bin/git remote add origin https://github.com/ical4j/ical4j
+2025-03-05T08:17:38.5787756Z ##[endgroup]
+2025-03-05T08:17:38.5790320Z ##[group]Disabling automatic garbage collection
+2025-03-05T08:17:38.5792530Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-05T08:17:38.5824969Z ##[endgroup]
+2025-03-05T08:17:38.5827162Z ##[group]Setting up auth
+2025-03-05T08:17:38.5833315Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-05T08:17:38.5867896Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-05T08:17:38.6191550Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-05T08:17:38.6222422Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-05T08:17:38.6456883Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-05T08:17:38.6493095Z ##[endgroup]
+2025-03-05T08:17:38.6495421Z ##[group]Fetching the repository
+2025-03-05T08:17:38.6505330Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +45bc4df787ea45f1f41eb448048f2576cf4a9244:refs/remotes/pull/792/merge
+2025-03-05T08:17:39.4554049Z From https://github.com/ical4j/ical4j
+2025-03-05T08:17:39.4555056Z  * [new ref]         45bc4df787ea45f1f41eb448048f2576cf4a9244 -> pull/792/merge
+2025-03-05T08:17:39.4581329Z ##[endgroup]
+2025-03-05T08:17:39.4581938Z ##[group]Determining the checkout info
+2025-03-05T08:17:39.4583706Z ##[endgroup]
+2025-03-05T08:17:39.4588680Z [command]/usr/bin/git sparse-checkout disable
+2025-03-05T08:17:39.4630570Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-05T08:17:39.4658366Z ##[group]Checking out the ref
+2025-03-05T08:17:39.4662833Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/792/merge
+2025-03-05T08:17:39.5680669Z Note: switching to 'refs/remotes/pull/792/merge'.
+2025-03-05T08:17:39.5682965Z 
+2025-03-05T08:17:39.5683416Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-05T08:17:39.5684426Z changes and commit them, and you can discard any commits you make in this
+2025-03-05T08:17:39.5685392Z state without impacting any branches by switching back to a branch.
+2025-03-05T08:17:39.5685952Z 
+2025-03-05T08:17:39.5686334Z If you want to create a new branch to retain commits you create, you may
+2025-03-05T08:17:39.5687240Z do so (now or later) by using -c with the switch command. Example:
+2025-03-05T08:17:39.5687710Z 
+2025-03-05T08:17:39.5687959Z   git switch -c <new-branch-name>
+2025-03-05T08:17:39.5688316Z 
+2025-03-05T08:17:39.5688531Z Or undo this operation with:
+2025-03-05T08:17:39.5688852Z 
+2025-03-05T08:17:39.5689038Z   git switch -
+2025-03-05T08:17:39.5689324Z 
+2025-03-05T08:17:39.5690008Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-05T08:17:39.5690593Z 
+2025-03-05T08:17:39.5691273Z HEAD is now at 45bc4df Merge a221c8d2aca3678e3b67cd71f84d1e427ed2a321 into 0264d0c374dd0c446811a725d2b7fc1bc88843b4
+2025-03-05T08:17:39.5693406Z ##[endgroup]
+2025-03-05T08:17:39.5732743Z [command]/usr/bin/git log -1 --format=%H
+2025-03-05T08:17:39.5755718Z 45bc4df787ea45f1f41eb448048f2576cf4a9244
+2025-03-05T08:17:39.6040415Z ##[group]Run actions/setup-java@v4
+2025-03-05T08:17:39.6040796Z with:
+2025-03-05T08:17:39.6041033Z   java-version: 17
+2025-03-05T08:17:39.6041292Z   distribution: temurin
+2025-03-05T08:17:39.6041765Z   java-package: jdk
+2025-03-05T08:17:39.6042023Z   check-latest: false
+2025-03-05T08:17:39.6042274Z   server-id: github
+2025-03-05T08:17:39.6042519Z   server-username: GITHUB_ACTOR
+2025-03-05T08:17:39.6042810Z   server-password: GITHUB_TOKEN
+2025-03-05T08:17:39.6043092Z   overwrite-settings: true
+2025-03-05T08:17:39.6043351Z   job-status: success
+2025-03-05T08:17:39.6043738Z   token: ***
+2025-03-05T08:17:39.6043976Z ##[endgroup]
+2025-03-05T08:17:39.8102916Z ##[group]Installed distributions
+2025-03-05T08:17:39.8144762Z Resolved Java 17.0.14+7 from tool-cache
+2025-03-05T08:17:39.8145465Z Setting Java 17.0.14+7 as the default
+2025-03-05T08:17:39.8158199Z Creating toolchains.xml for JDK version 17 from temurin
+2025-03-05T08:17:39.8235844Z Writing to /home/runner/.m2/toolchains.xml
+2025-03-05T08:17:39.8236510Z 
+2025-03-05T08:17:39.8236751Z Java configuration:
+2025-03-05T08:17:39.8237288Z   Distribution: temurin
+2025-03-05T08:17:39.8237847Z   Version: 17.0.14+7
+2025-03-05T08:17:39.8238640Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.14-7/x64
+2025-03-05T08:17:39.8239300Z 
+2025-03-05T08:17:39.8240677Z ##[endgroup]
+2025-03-05T08:17:39.8257630Z Creating settings.xml with server-id: github
+2025-03-05T08:17:39.8278339Z Writing to /home/runner/.m2/settings.xml
+2025-03-05T08:17:39.8495056Z ##[group]Run gradle/actions/dependency-submission@af1da67850ed9a4cedd57bfd976089dd991e2582
+2025-03-05T08:17:39.8495596Z with:
+2025-03-05T08:17:39.8495839Z   cache-disabled: false
+2025-03-05T08:17:39.8496111Z   cache-read-only: true
+2025-03-05T08:17:39.8496375Z   cache-write-only: false
+2025-03-05T08:17:39.8496655Z   cache-overwrite-existing: false
+2025-03-05T08:17:39.8496957Z   cache-cleanup: on-success
+2025-03-05T08:17:39.8497291Z   gradle-home-cache-includes: caches
+notifications
+
+2025-03-05T08:17:39.8497642Z   add-job-summary: always
+2025-03-05T08:17:39.8497942Z   add-job-summary-as-pr-comment: never
+2025-03-05T08:17:39.8498284Z   dependency-graph: generate-and-submit
+2025-03-05T08:17:39.8498682Z   dependency-graph-report-dir: dependency-graph-reports
+2025-03-05T08:17:39.8499080Z   dependency-graph-continue-on-failure: false
+2025-03-05T08:17:39.8499421Z   artifact-retention-days: 1
+2025-03-05T08:17:39.8499715Z   build-scan-publish: false
+2025-03-05T08:17:39.8500209Z   validate-wrappers: false
+2025-03-05T08:17:39.8500509Z   allow-snapshot-wrappers: false
+2025-03-05T08:17:39.8500818Z   gradle-home-cache-strict-match: false
+2025-03-05T08:17:39.8501139Z   workflow-job-context: null
+2025-03-05T08:17:39.8501588Z   github-token: ***
+2025-03-05T08:17:39.8501836Z env:
+2025-03-05T08:17:39.8502172Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.14-7/x64
+2025-03-05T08:17:39.8502682Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.14-7/x64
+2025-03-05T08:17:39.8503072Z ##[endgroup]
+2025-03-05T08:17:41.1834589Z Merged default JDK locations into /home/runner/.m2/toolchains.xml
+2025-03-05T08:17:41.1838797Z ##[group]Restore Gradle state from cache
+2025-03-05T08:17:42.3982967Z Cache Size: ~0 MB (209916 B)
+2025-03-05T08:17:42.4011299Z [command]/usr/bin/tar -xf /home/runner/work/_temp/032f2c8e-877c-4f4f-8185-ba9bbe83eedd/cache.tzst -P -C /home/runner/work/ical4j/ical4j --use-compress-program unzstd
+2025-03-05T08:17:42.4496253Z Cache restored successfully
+2025-03-05T08:17:42.4503819Z Restored Gradle User Home from cache key: gradle-home-v1|Linux-X64|dependency-submission[04d8ed242d6e4f9366abd4632caf0523]-0264d0c374dd0c446811a725d2b7fc1bc88843b4
+2025-03-05T08:17:42.8414420Z Received 209916 of 209916 (100.0%), 0.2 MBs/sec
+2025-03-05T08:17:43.5559660Z Cache Size: ~0 MB (105421 B)
+2025-03-05T08:17:43.5578079Z [command]/usr/bin/tar -xf /home/runner/work/_temp/0ca1708f-9b33-4aca-97ea-3cd8f0896ba2/cache.tzst -P -C /home/runner/work/ical4j/ical4j --use-compress-program unzstd
+2025-03-05T08:17:43.5717926Z Cache restored successfully
+2025-03-05T08:17:43.5720902Z Restored groovy-dsl with key gradle-groovy-dsl-v1-0c59f1594cc3a95ba101967f3c139310 to /home/runner/.gradle/caches/*/groovy-dsl/*/
+2025-03-05T08:17:44.0404133Z Received 0 of 130134862 (0.0%), 0.0 MBs/sec
+2025-03-05T08:17:44.0611151Z Received 1129441 of 22100961 (5.1%), 1.1 MBs/sec
+2025-03-05T08:17:44.0667293Z Received 105421 of 105421 (100.0%), 0.1 MBs/sec
+2025-03-05T08:17:44.0967856Z Received 1563779 of 14146691 (11.1%), 1.5 MBs/sec
+2025-03-05T08:17:44.4345333Z Cache Size: ~13 MB (14146691 B)
+2025-03-05T08:17:44.4383330Z [command]/usr/bin/tar -xf /home/runner/work/_temp/d101e3f9-0d82-4e75-ac00-06a221bf6a48/cache.tzst -P -C /home/runner/work/ical4j/ical4j --use-compress-program unzstd
+2025-03-05T08:17:44.5185316Z Cache Size: ~21 MB (22100961 B)
+2025-03-05T08:17:44.5283068Z [command]/usr/bin/tar -xf /home/runner/work/_temp/d524323a-4c8e-4a54-a2b7-6c1bb1cfb1ed/cache.tzst -P -C /home/runner/work/ical4j/ical4j --use-compress-program unzstd
+2025-03-05T08:17:44.5604478Z Cache restored successfully
+2025-03-05T08:17:44.5663092Z Restored instrumented-jars with key gradle-instrumented-jars-v1-1f4c2688ac566e3c4f9bd4b182954311 to /home/runner/.gradle/caches/jars-*/*/
+2025-03-05T08:17:44.6227222Z Cache restored successfully
+2025-03-05T08:17:44.6273168Z Restored dependencies with key gradle-dependencies-v1-c0ffb20ee3cc45f389c44d15eb48258a to /home/runner/.gradle/caches/modules-*/files-*/*/*/*/*
+2025-03-05T08:17:45.0441741Z Received 88080384 of 130134862 (67.7%), 42.0 MBs/sec
+2025-03-05T08:17:45.0556585Z Received 22100961 of 22100961 (100.0%), 10.5 MBs/sec
+2025-03-05T08:17:45.0980297Z Received 14146691 of 14146691 (100.0%), 6.7 MBs/sec
+2025-03-05T08:17:45.4979558Z Cache Size: ~124 MB (130134862 B)
+2025-03-05T08:17:45.5017862Z [command]/usr/bin/tar -xf /home/runner/work/_temp/3460dddf-d3da-4e7e-8fc1-c10c9fe4790f/cache.tzst -P -C /home/runner/work/ical4j/ical4j --use-compress-program unzstd
+2025-03-05T08:17:45.7333537Z Cache restored successfully
+2025-03-05T08:17:45.7612579Z Restored wrapper-zips with key gradle-wrapper-zips-v1-f82d94dd741812d9afc7aad8d4ab116c to /home/runner/.gradle/wrapper/dists/gradle-8.4-bin/1w5dpkrfk8irigvoxmyhowfim
+2025-03-05T08:17:45.7696476Z ##[endgroup]
+2025-03-05T08:17:45.7707686Z Enabling dependency graph generation
+2025-03-05T08:17:45.7725643Z [command]/home/runner/work/ical4j/ical4j/gradlew -Dorg.gradle.configureondemand=false -Dorg.gradle.dependency.verification=off -Dorg.gradle.unsafe.isolated-projects=false :ForceDependencyResolutionPlugin_resolveAllDependencies
+2025-03-05T08:17:46.0413674Z Received 130134862 of 130134862 (100.0%), 41.4 MBs/sec
+2025-03-05T08:17:47.0731305Z Starting a Gradle Daemon (subsequent builds will be faster)
+2025-03-05T08:17:50.8733665Z Generating dependency graph into '/home/runner/work/ical4j/ical4j/dependency-graph-reports/java_ci_with_gradle-dependency-submission.json'
+2025-03-05T08:17:50.8761245Z Resolving dependency graph plugin 1.3.1 from plugin repository: https://plugins.gradle.org/m2
+2025-03-05T08:17:58.7744067Z > Task :ForceDependencyResolutionPlugin_resolveProjectDependencies
+2025-03-05T08:17:58.7751612Z > Task :ForceDependencyResolutionPlugin_resolveAllDependencies
+2025-03-05T08:17:58.7754130Z Constructing renderer: org.gradle.github.dependencygraph.GitHubDependencyGraphRenderer
+2025-03-05T08:17:59.5728080Z 
+2025-03-05T08:17:59.5728854Z GitHubDependencyGraphRenderer: Wrote dependency snapshot to 
+2025-03-05T08:17:59.5730284Z /home/runner/work/ical4j/ical4j/dependency-graph-reports/java_ci_with_gradle-dependency-submission.json
+2025-03-05T08:17:59.5731051Z 
+2025-03-05T08:17:59.5731520Z Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+2025-03-05T08:17:59.5732105Z 
+2025-03-05T08:17:59.5732789Z You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+2025-03-05T08:17:59.5733595Z 
+2025-03-05T08:17:59.5734550Z For more on this, please refer to https://docs.gradle.org/8.4/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+2025-03-05T08:17:59.5735457Z 
+2025-03-05T08:17:59.5735618Z BUILD SUCCESSFUL in 13s
+2025-03-05T08:17:59.5736015Z 1 actionable task: 1 executed
+2025-03-05T08:17:59.9172112Z Found dependency graph files: /home/runner/work/ical4j/ical4j/dependency-graph-reports/java_ci_with_gradle-dependency-submission.json
+2025-03-05T08:18:00.1751850Z Uploading dependency graph file: dependency-graph-reports/java_ci_with_gradle-dependency-submission.json
+2025-03-05T08:18:00.1755288Z Artifact name is valid!
+2025-03-05T08:18:00.1756427Z Root directory input is valid!
+2025-03-05T08:18:00.4500225Z Beginning upload of artifact content to blob storage
+2025-03-05T08:18:00.7616562Z Uploaded bytes 3368
+2025-03-05T08:18:00.8404259Z Finished uploading artifact content to blob storage!
+2025-03-05T08:18:00.8405480Z SHA256 hash of uploaded artifact zip is e2f91fb73b10da03811b2c53bc370c1d8fcc3bc85f08e844cfa8b64eddfdc8c7
+2025-03-05T08:18:00.8407519Z Finalizing artifact upload
+2025-03-05T08:18:01.1366073Z Artifact dependency-graph_java_ci_with_gradle-dependency-submission.json.zip successfully finalized. Artifact ID 2694445330
+2025-03-05T08:18:01.1395481Z ##[error]HttpError: Dependency submission failed for dependency-graph-reports/java_ci_with_gradle-dependency-submission.json.
+Resource not accessible by integration
+Please ensure that the 'contents: write' permission is available for the workflow job.
+Note that this permission is never available for a 'pull_request' trigger from a repository fork.
+        
+2025-03-05T08:18:01.1403385Z HttpError: Dependency submission failed for dependency-graph-reports/java_ci_with_gradle-dependency-submission.json.
+2025-03-05T08:18:01.1403982Z Resource not accessible by integration
+2025-03-05T08:18:01.1404416Z Please ensure that the 'contents: write' permission is available for the workflow job.
+2025-03-05T08:18:01.1404998Z Note that this permission is never available for a 'pull_request' trigger from a repository fork.
+2025-03-05T08:18:01.1405433Z         
+2025-03-05T08:18:01.1405995Z     at /home/runner/work/_actions/gradle/actions/af1da67850ed9a4cedd57bfd976089dd991e2582/dist/dependency-submission/main/index.js:57939:21
+2025-03-05T08:18:01.1406751Z     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-03-05T08:18:01.1407642Z     at async submitDependencyGraphFile (/home/runner/work/_actions/gradle/actions/af1da67850ed9a4cedd57bfd976089dd991e2582/dist/dependency-submission/main/index.js:156223:22)
+2025-03-05T08:18:01.1408827Z     at async submitDependencyGraphs (/home/runner/work/_actions/gradle/actions/af1da67850ed9a4cedd57bfd976089dd991e2582/dist/dependency-submission/main/index.js:156196:13)
+2025-03-05T08:18:01.1410254Z     at async findAndSubmitDependencyGraphs (/home/runner/work/_actions/gradle/actions/af1da67850ed9a4cedd57bfd976089dd991e2582/dist/dependency-submission/main/index.js:156119:9)
+2025-03-05T08:18:01.1411408Z     at async Object.complete (/home/runner/work/_actions/gradle/actions/af1da67850ed9a4cedd57bfd976089dd991e2582/dist/dependency-submission/main/index.js:156089:17)
+2025-03-05T08:18:01.1412447Z     at async run (/home/runner/work/_actions/gradle/actions/af1da67850ed9a4cedd57bfd976089dd991e2582/dist/dependency-submission/main/index.js:154110:9)
+2025-03-05T08:18:01.1625445Z Post job cleanup.
+2025-03-05T08:18:01.3832027Z In post-action step
+2025-03-05T08:18:01.3841025Z Cache is read-only: will not save state for use in subsequent builds.
+2025-03-05T08:18:01.3847052Z Generating Job Summary
+2025-03-05T08:18:01.3883004Z Completed post-action step
+2025-03-05T08:18:01.4038518Z Post job cleanup.
+2025-03-05T08:18:01.5902485Z Post job cleanup.
+2025-03-05T08:18:01.6882695Z [command]/usr/bin/git version
+2025-03-05T08:18:01.6926370Z git version 2.48.1
+2025-03-05T08:18:01.6984806Z Temporarily overriding HOME='/home/runner/work/_temp/58d804e0-a606-4e34-9435-a02b94276c5f' before making global git config changes
+2025-03-05T08:18:01.6986067Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-05T08:18:01.6991532Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ical4j/ical4j
+2025-03-05T08:18:01.7035229Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-05T08:18:01.7078609Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-05T08:18:01.7345301Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-05T08:18:01.7371814Z http.https://github.com/.extraheader
+2025-03-05T08:18:01.7385448Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-05T08:18:01.7427490Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-05T08:18:01.7855803Z Cleaning up orphan processes
+2025-03-05T08:18:01.8184382Z Terminate orphan process: pid (1979) (java)

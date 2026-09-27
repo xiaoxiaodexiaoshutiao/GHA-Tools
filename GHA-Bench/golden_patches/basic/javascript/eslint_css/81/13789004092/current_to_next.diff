@@ -1,0 +1,342 @@
+diff --git a/src/data/baseline-data.js b/src/data/baseline-data.js
+index 2282c5d7..83a71709 100644
+--- a/src/data/baseline-data.js
++++ b/src/data/baseline-data.js
+@@ -895,8 +895,8 @@ export const properties = new Map([
+ 	[
+ 		"font-stretch",
+ 		{
+-			status: 10,
+-			year: 2017,
++			status: 0,
++			year: null,
+ 		},
+ 	],
+ 	[
+@@ -1011,6 +1011,13 @@ export const properties = new Map([
+ 			year: 2015,
+ 		},
+ 	],
++	[
++		"font-width",
++		{
++			status: 0,
++			year: null,
++		},
++	],
+ 	[
+ 		"forced-color-adjust",
+ 		{
+@@ -2446,6 +2453,13 @@ export const properties = new Map([
+ 			year: null,
+ 		},
+ 	],
++	[
++		"scroll-initial-target",
++		{
++			status: 0,
++			year: null,
++		},
++	],
+ 	[
+ 		"scroll-margin",
+ 		{
+@@ -2971,6 +2985,13 @@ export const properties = new Map([
+ 			year: 2022,
+ 		},
+ 	],
++	[
++		"text-autospace",
++		{
++			status: 0,
++			year: null,
++		},
++	],
+ 	[
+ 		"text-box",
+ 		{
+@@ -3929,6 +3950,13 @@ export const types = new Map([
+ 			year: 2015,
+ 		},
+ 	],
++	[
++		"var",
++		{
++			status: 10,
++			year: 2017,
++		},
++	],
+ 	[
+ 		"exp",
+ 		{
+@@ -4076,6 +4104,13 @@ export const types = new Map([
+ 			year: 2024,
+ 		},
+ 	],
++	[
++		"env",
++		{
++			status: 10,
++			year: 2020,
++		},
++	],
+ 	[
+ 		"basic-shape",
+ 		{
+@@ -4529,7 +4564,7 @@ export const selectors = new Map([
+ 	[
+ 		"modal",
+ 		{
+-			status: 5,
++			status: 10,
+ 			year: 2022,
+ 		},
+ 	],
+@@ -7925,25 +7960,6 @@ export const propertyValues = new Map([
+ 			],
+ 		]),
+ 	],
+-	[
+-		"custom-property",
+-		new Map([
+-			[
+-				"var",
+-				{
+-					status: 10,
+-					year: 2017,
+-				},
+-			],
+-			[
+-				"env",
+-				{
+-					status: 10,
+-					year: 2020,
+-				},
+-			],
+-		]),
+-	],
+ 	[
+ 		"display",
+ 		new Map([
+@@ -8604,8 +8620,8 @@ export const propertyValues = new Map([
+ 			[
+ 				"percentage",
+ 				{
+-					status: 10,
+-					year: 2017,
++					status: 0,
++					year: null,
+ 				},
+ 			],
+ 		]),
+@@ -9210,6 +9226,74 @@ export const propertyValues = new Map([
+ 			],
+ 		]),
+ 	],
++	[
++		"font-width",
++		new Map([
++			[
++				"condensed",
++				{
++					status: 0,
++					year: null,
++				},
++			],
++			[
++				"expanded",
++				{
++					status: 0,
++					year: null,
++				},
++			],
++			[
++				"extra-condensed",
++				{
++					status: 0,
++					year: null,
++				},
++			],
++			[
++				"extra-expanded",
++				{
++					status: 0,
++					year: null,
++				},
++			],
++			[
++				"normal",
++				{
++					status: 0,
++					year: null,
++				},
++			],
++			[
++				"semi-condensed",
++				{
++					status: 0,
++					year: null,
++				},
++			],
++			[
++				"semi-expanded",
++				{
++					status: 0,
++					year: null,
++				},
++			],
++			[
++				"ultra-condensed",
++				{
++					status: 0,
++					year: null,
++				},
++			],
++			[
++				"ultra-expanded",
++				{
++					status: 0,
++					year: null,
++				},
++			],
++		]),
++	],
+ 	[
+ 		"forced-color-adjust",
+ 		new Map([
+@@ -11601,6 +11685,25 @@ export const propertyValues = new Map([
+ 			],
+ 		]),
+ 	],
++	[
++		"scroll-initial-target",
++		new Map([
++			[
++				"nearest",
++				{
++					status: 0,
++					year: null,
++				},
++			],
++			[
++				"none",
++				{
++					status: 0,
++					year: null,
++				},
++			],
++		]),
++	],
+ 	[
+ 		"scroll-padding-block-end",
+ 		new Map([
+@@ -12243,6 +12346,46 @@ export const propertyValues = new Map([
+ 			],
+ 		]),
+ 	],
++	[
++		"text-autospace",
++		new Map([
++			[
++				"auto",
++				{
++					status: 0,
++					year: null,
++				},
++			],
++			[
++				"ideograph-alpha",
++				{
++					status: 0,
++					year: null,
++				},
++			],
++			[
++				"ideograph-numeric",
++				{
++					status: 0,
++					year: null,
++				},
++			],
++			[
++				"no-autospace",
++				{
++					status: 0,
++					year: null,
++				},
++			],
++			[
++				"normal",
++				{
++					status: 0,
++					year: null,
++				},
++			],
++		]),
++	],
+ 	[
+ 		"text-box-edge",
+ 		new Map([
+diff --git a/src/rules/require-baseline.js b/src/rules/require-baseline.js
+index 0a595a20..c4039a05 100644
+--- a/src/rules/require-baseline.js
++++ b/src/rules/require-baseline.js
+@@ -339,17 +339,32 @@ class SupportsRules {
+ 	}
+ }
+ 
++/**
++ * Represents the required availability of a feature.
++ */
+ class BaselineAvailability {
++	/**
++	 * The preferred Baseline year.
++	 * @type {number}
++	 */
++	#baselineYear = undefined;
++
++	/**
++	 * The preferred Baseline status.
++	 * @type {number}
++	 */
++	#baselineStatus = undefined;
++
+ 	/**
+ 	 * @param {string | number} availability The required level of feature availability.
+ 	 */
+ 	constructor(availability) {
+ 		this.availability = availability;
+ 
+-		if (Number.isInteger(availability)) {
+-			this.baselineYear = availability;
++		if (typeof availability === "number") {
++			this.#baselineYear = availability;
+ 		} else {
+-			this.baselineStatus =
++			this.#baselineStatus =
+ 				availability === "widely" ? BASELINE_HIGH : BASELINE_LOW;
+ 		}
+ 	}
+@@ -360,11 +375,11 @@ class BaselineAvailability {
+ 	 * @returns {boolean} `true` if the feature is supported, `false` if not.
+ 	 */
+ 	isSupported(feature) {
+-		if (this.baselineYear) {
+-			return feature.year <= this.baselineYear;
++		if (this.#baselineYear) {
++			return feature.year <= this.#baselineYear;
+ 		}
+ 
+-		return feature.status >= this.baselineStatus;
++		return feature.status >= this.#baselineStatus;
+ 	}
+ }
+ 
+@@ -394,6 +409,7 @@ export default {
+ 								// baseline year
+ 								type: "integer",
+ 								minimum: 2000,
++								maximum: new Date().getFullYear() + 1,
+ 							},
+ 						],
+ 					},

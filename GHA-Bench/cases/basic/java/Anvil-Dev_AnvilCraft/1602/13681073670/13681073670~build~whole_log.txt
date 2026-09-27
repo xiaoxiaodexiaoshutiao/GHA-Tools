@@ -1,0 +1,477 @@
+2025-03-05T16:46:30.2137398Z Requested labels: ubuntu-latest
+2025-03-05T16:46:30.2137727Z Job defined at: Anvil-Dev/AnvilCraft/.github/workflows/pull_request.yml@refs/pull/1602/merge
+2025-03-05T16:46:30.2137856Z Waiting for a runner to pick up this job...
+2025-03-05T16:46:30.7896392Z Job is waiting for a hosted runner to come online.
+2025-03-05T16:46:34.8120918Z Job is about to start running on the hosted runner: GitHub Actions 9 (hosted)
+2025-03-05T16:46:37.1976270Z Current runner version: '2.322.0'
+2025-03-05T16:46:37.2019028Z ##[group]Operating System
+2025-03-05T16:46:37.2019945Z Ubuntu
+2025-03-05T16:46:37.2020489Z 24.04.2
+2025-03-05T16:46:37.2021011Z LTS
+2025-03-05T16:46:37.2021509Z ##[endgroup]
+2025-03-05T16:46:37.2022220Z ##[group]Runner Image
+2025-03-05T16:46:37.2023019Z Image: ubuntu-24.04
+2025-03-05T16:46:37.2023555Z Version: 20250302.1.0
+2025-03-05T16:46:37.2024555Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250302.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-05T16:46:37.2025973Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250302.1
+2025-03-05T16:46:37.2026877Z ##[endgroup]
+2025-03-05T16:46:37.2027408Z ##[group]Runner Image Provisioner
+2025-03-05T16:46:37.2028075Z 2.0.422.1
+2025-03-05T16:46:37.2028552Z ##[endgroup]
+2025-03-05T16:46:37.2030745Z ##[group]GITHUB_TOKEN Permissions
+2025-03-05T16:46:37.2033232Z Actions: read
+2025-03-05T16:46:37.2034126Z Attestations: read
+2025-03-05T16:46:37.2034767Z Checks: read
+2025-03-05T16:46:37.2035319Z Contents: read
+2025-03-05T16:46:37.2035874Z Deployments: read
+2025-03-05T16:46:37.2036401Z Discussions: read
+2025-03-05T16:46:37.2036921Z Issues: read
+2025-03-05T16:46:37.2037454Z Metadata: read
+2025-03-05T16:46:37.2037956Z Packages: read
+2025-03-05T16:46:37.2038532Z Pages: read
+2025-03-05T16:46:37.2039037Z PullRequests: read
+2025-03-05T16:46:37.2039545Z RepositoryProjects: read
+2025-03-05T16:46:37.2040201Z SecurityEvents: read
+2025-03-05T16:46:37.2040735Z Statuses: read
+2025-03-05T16:46:37.2041227Z ##[endgroup]
+2025-03-05T16:46:37.2045104Z Secret source: None
+2025-03-05T16:46:37.2046098Z Prepare workflow directory
+2025-03-05T16:46:37.2530453Z Prepare all required actions
+2025-03-05T16:46:37.2568057Z Getting action download info
+2025-03-05T16:46:37.5776045Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-05T16:46:37.6633264Z Download action repository 'gradle/actions@v3' (SHA:d9c87d481d55275bb5441eef3fe0e46805f9ef70)
+2025-03-05T16:46:38.6332375Z Download action repository 'christian-draeger/read-properties@1.1.1' (SHA:908f99d3334be3802ec7cb528395a69d19914e7b)
+2025-03-05T16:46:39.0472706Z Download action repository 'actions/setup-java@v3.6.0' (SHA:de1bb2b0c5634f0fc4438d7aa9944e68f9bf86cc)
+2025-03-05T16:46:39.5745594Z Download action repository 'actions/upload-artifact@v4.3.3' (SHA:65462800fd760344b1a7b4382951275a0abb4808)
+2025-03-05T16:46:40.0599416Z Download action repository 'Anvil-Dev/dedicated-server-launch-test@1.21.1-neoforge' (SHA:2b7eecb0a356de042333b2eece453060ca4f5a99)
+2025-03-05T16:46:40.6566548Z Complete job name: build
+2025-03-05T16:46:40.7148274Z ##[group]Build container for action use: '/home/runner/work/_actions/christian-draeger/read-properties/1.1.1/Dockerfile'.
+2025-03-05T16:46:40.7199070Z ##[command]/usr/bin/docker build -t 706959:76180d0d2eb545af92ba0e329e98e62d -f "/home/runner/work/_actions/christian-draeger/read-properties/1.1.1/Dockerfile" "/home/runner/work/_actions/christian-draeger/read-properties/1.1.1"
+2025-03-05T16:46:41.3213774Z #0 building with "default" instance using docker driver
+2025-03-05T16:46:41.3214317Z 
+2025-03-05T16:46:41.3215277Z #1 [internal] load build definition from Dockerfile
+2025-03-05T16:46:41.3215908Z #1 transferring dockerfile: 174B done
+2025-03-05T16:46:41.3216388Z #1 DONE 0.0s
+2025-03-05T16:46:41.3216594Z 
+2025-03-05T16:46:41.3216881Z #2 [internal] load metadata for docker.io/library/alpine:3.11
+2025-03-05T16:46:41.5660695Z #2 ...
+2025-03-05T16:46:41.5662740Z 
+2025-03-05T16:46:41.5663425Z #3 [auth] library/alpine:pull token for registry-1.docker.io
+2025-03-05T16:46:41.5665465Z #3 DONE 0.0s
+2025-03-05T16:46:41.7149364Z 
+2025-03-05T16:46:41.7150014Z #2 [internal] load metadata for docker.io/library/alpine:3.11
+2025-03-05T16:46:42.2078985Z #2 DONE 1.0s
+2025-03-05T16:46:42.3317367Z 
+2025-03-05T16:46:42.3317936Z #4 [internal] load .dockerignore
+2025-03-05T16:46:42.3318455Z #4 transferring context: 2B done
+2025-03-05T16:46:42.3318896Z #4 DONE 0.0s
+2025-03-05T16:46:42.3319573Z 
+2025-03-05T16:46:42.3319723Z #5 [internal] load build context
+2025-03-05T16:46:42.3320180Z #5 transferring context: 1.34kB done
+2025-03-05T16:46:42.3320630Z #5 DONE 0.0s
+2025-03-05T16:46:42.3320819Z 
+2025-03-05T16:46:42.3321432Z #6 [1/4] FROM docker.io/library/alpine:3.11@sha256:bcae378eacedab83da66079d9366c8f5df542d7ed9ab23bf487e3e1a8481375d
+2025-03-05T16:46:42.3323056Z #6 resolve docker.io/library/alpine:3.11@sha256:bcae378eacedab83da66079d9366c8f5df542d7ed9ab23bf487e3e1a8481375d done
+2025-03-05T16:46:42.3324419Z #6 sha256:bcae378eacedab83da66079d9366c8f5df542d7ed9ab23bf487e3e1a8481375d 1.64kB / 1.64kB done
+2025-03-05T16:46:42.3325607Z #6 sha256:a0ce0e57c6900f6f13cee6f1c1e0337cedd745ebc1bac226c61eb574667c6d04 528B / 528B done
+2025-03-05T16:46:42.3326714Z #6 sha256:a787cb9865032e5b5a407ecdf34b57a23a4a076aaa043d71742ddb6726ec9229 1.47kB / 1.47kB done
+2025-03-05T16:46:42.3327861Z #6 sha256:79e9f2f55bf5465a02ee6a6170e66005b20c7aa6b115af6fcd04fad706ea651a 0B / 2.82MB 0.1s
+2025-03-05T16:46:42.4571149Z #6 sha256:79e9f2f55bf5465a02ee6a6170e66005b20c7aa6b115af6fcd04fad706ea651a 2.82MB / 2.82MB 0.2s done
+2025-03-05T16:46:42.4572550Z #6 extracting sha256:79e9f2f55bf5465a02ee6a6170e66005b20c7aa6b115af6fcd04fad706ea651a 0.1s done
+2025-03-05T16:46:42.7025960Z #6 DONE 0.3s
+2025-03-05T16:46:42.7026828Z 
+2025-03-05T16:46:42.7027345Z #7 [2/4] COPY entrypoint.sh /usr/bin/
+2025-03-05T16:46:42.7027780Z #7 DONE 0.0s
+2025-03-05T16:46:42.7027961Z 
+2025-03-05T16:46:42.7028140Z #8 [3/4] RUN apk add --no-cache bash
+2025-03-05T16:46:42.7276275Z #8 0.175 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/main/x86_64/APKINDEX.tar.gz
+2025-03-05T16:46:42.9126999Z #8 0.360 fetch http://dl-cdn.alpinelinux.org/alpine/v3.11/community/x86_64/APKINDEX.tar.gz
+2025-03-05T16:46:43.1372938Z #8 0.585 (1/4) Installing ncurses-terminfo-base (6.1_p20200118-r4)
+2025-03-05T16:46:43.3627771Z #8 0.592 (2/4) Installing ncurses-libs (6.1_p20200118-r4)
+2025-03-05T16:46:43.3628532Z #8 0.600 (3/4) Installing readline (8.0.1-r0)
+2025-03-05T16:46:43.5140567Z #8 0.609 (4/4) Installing bash (5.0.11-r1)
+2025-03-05T16:46:43.5141299Z #8 0.622 Executing bash-5.0.11-r1.post-install
+2025-03-05T16:46:43.5142124Z #8 0.624 Executing busybox-1.31.1-r11.trigger
+2025-03-05T16:46:43.5142704Z #8 0.629 OK: 8 MiB in 18 packages
+2025-03-05T16:46:43.5143196Z #8 DONE 0.7s
+2025-03-05T16:46:43.5143415Z 
+2025-03-05T16:46:43.5143620Z #9 [4/4] RUN ln -s /usr/bin/entrypoint.sh
+2025-03-05T16:46:43.5143957Z #9 DONE 0.1s
+2025-03-05T16:46:43.5144092Z 
+2025-03-05T16:46:43.5144203Z #10 exporting to image
+2025-03-05T16:46:43.5144595Z #10 exporting layers
+2025-03-05T16:46:44.0138139Z #10 exporting layers 0.7s done
+2025-03-05T16:46:44.0420047Z #10 writing image sha256:1dc4f47725dab221021e077cdffdecfd2dc2e1aa37eb3c81e74223fbc7cd8d4f done
+2025-03-05T16:46:44.0421261Z #10 naming to docker.io/library/706959:76180d0d2eb545af92ba0e329e98e62d done
+2025-03-05T16:46:44.0421825Z #10 DONE 0.7s
+2025-03-05T16:46:44.0483944Z ##[endgroup]
+2025-03-05T16:46:44.0737682Z ##[group]Run actions/checkout@v4
+2025-03-05T16:46:44.0738278Z with:
+2025-03-05T16:46:44.0738493Z   repository: Anvil-Dev/AnvilCraft
+2025-03-05T16:46:44.0738944Z   token: ***
+2025-03-05T16:46:44.0739137Z   ssh-strict: true
+2025-03-05T16:46:44.0739339Z   ssh-user: git
+2025-03-05T16:46:44.0739542Z   persist-credentials: true
+2025-03-05T16:46:44.0739756Z   clean: true
+2025-03-05T16:46:44.0739953Z   sparse-checkout-cone-mode: true
+2025-03-05T16:46:44.0740209Z   fetch-depth: 1
+2025-03-05T16:46:44.0740398Z   fetch-tags: false
+2025-03-05T16:46:44.0740584Z   show-progress: true
+2025-03-05T16:46:44.0740798Z   lfs: false
+2025-03-05T16:46:44.0740973Z   submodules: false
+2025-03-05T16:46:44.0741162Z   set-safe-directory: true
+2025-03-05T16:46:44.0741548Z env:
+2025-03-05T16:46:44.0741721Z   CI_BUILD: true
+2025-03-05T16:46:44.0742064Z   PR_BUILD: true
+2025-03-05T16:46:44.0742254Z ##[endgroup]
+2025-03-05T16:46:44.2676029Z Syncing repository: Anvil-Dev/AnvilCraft
+2025-03-05T16:46:44.2677654Z ##[group]Getting Git version info
+2025-03-05T16:46:44.2678163Z Working directory is '/home/runner/work/AnvilCraft/AnvilCraft'
+2025-03-05T16:46:44.2679140Z [command]/usr/bin/git version
+2025-03-05T16:46:44.2709159Z git version 2.48.1
+2025-03-05T16:46:44.2736663Z ##[endgroup]
+2025-03-05T16:46:44.2750869Z Temporarily overriding HOME='/home/runner/work/_temp/a9286761-775d-4c7d-aeac-58b3a9b1dc3e' before making global git config changes
+2025-03-05T16:46:44.2751859Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-05T16:46:44.2756983Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/AnvilCraft/AnvilCraft
+2025-03-05T16:46:44.2792104Z Deleting the contents of '/home/runner/work/AnvilCraft/AnvilCraft'
+2025-03-05T16:46:44.2796140Z ##[group]Initializing the repository
+2025-03-05T16:46:44.2800719Z [command]/usr/bin/git init /home/runner/work/AnvilCraft/AnvilCraft
+2025-03-05T16:46:44.2866800Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-05T16:46:44.2867487Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-05T16:46:44.2868136Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-05T16:46:44.2868560Z hint:
+2025-03-05T16:46:44.2868845Z hint: 	git config --global init.defaultBranch <name>
+2025-03-05T16:46:44.2869144Z hint:
+2025-03-05T16:46:44.2869444Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-05T16:46:44.2869932Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-05T16:46:44.2870307Z hint:
+2025-03-05T16:46:44.2870500Z hint: 	git branch -m <name>
+2025-03-05T16:46:44.2873894Z Initialized empty Git repository in /home/runner/work/AnvilCraft/AnvilCraft/.git/
+2025-03-05T16:46:44.2885025Z [command]/usr/bin/git remote add origin https://github.com/Anvil-Dev/AnvilCraft
+2025-03-05T16:46:44.2918592Z ##[endgroup]
+2025-03-05T16:46:44.2924024Z ##[group]Disabling automatic garbage collection
+2025-03-05T16:46:44.2924676Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-05T16:46:44.2956424Z ##[endgroup]
+2025-03-05T16:46:44.2957044Z ##[group]Setting up auth
+2025-03-05T16:46:44.2964744Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-05T16:46:44.2998464Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-05T16:46:44.3307987Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-05T16:46:44.3342743Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-05T16:46:44.3598263Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-05T16:46:44.3655670Z ##[endgroup]
+2025-03-05T16:46:44.3656327Z ##[group]Fetching the repository
+2025-03-05T16:46:44.3666017Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +ecc8627b2cc2080e7ed9ff051fbd5f075d7fe390:refs/remotes/pull/1602/merge
+2025-03-05T16:46:45.2093598Z From https://github.com/Anvil-Dev/AnvilCraft
+2025-03-05T16:46:45.2095824Z  * [new ref]         ecc8627b2cc2080e7ed9ff051fbd5f075d7fe390 -> pull/1602/merge
+2025-03-05T16:46:45.2125090Z ##[endgroup]
+2025-03-05T16:46:45.2125814Z ##[group]Determining the checkout info
+2025-03-05T16:46:45.2127609Z ##[endgroup]
+2025-03-05T16:46:45.2133877Z [command]/usr/bin/git sparse-checkout disable
+2025-03-05T16:46:45.2183868Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-05T16:46:45.2217856Z ##[group]Checking out the ref
+2025-03-05T16:46:45.2223431Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1602/merge
+2025-03-05T16:46:45.4260124Z Note: switching to 'refs/remotes/pull/1602/merge'.
+2025-03-05T16:46:45.4260703Z 
+2025-03-05T16:46:45.4261485Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-05T16:46:45.4262801Z changes and commit them, and you can discard any commits you make in this
+2025-03-05T16:46:45.4263942Z state without impacting any branches by switching back to a branch.
+2025-03-05T16:46:45.4264565Z 
+2025-03-05T16:46:45.4265005Z If you want to create a new branch to retain commits you create, you may
+2025-03-05T16:46:45.4266030Z do so (now or later) by using -c with the switch command. Example:
+2025-03-05T16:46:45.4266566Z 
+2025-03-05T16:46:45.4266806Z   git switch -c <new-branch-name>
+2025-03-05T16:46:45.4267212Z 
+2025-03-05T16:46:45.4267421Z Or undo this operation with:
+2025-03-05T16:46:45.4267815Z 
+2025-03-05T16:46:45.4268013Z   git switch -
+2025-03-05T16:46:45.4268293Z 
+2025-03-05T16:46:45.4268758Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-05T16:46:45.4269506Z 
+2025-03-05T16:46:45.4270086Z HEAD is now at ecc8627 Merge 12d301fcb27e5fe6e4c8833906044161ca84f02f into ef7c5eef7ba464c20d6f46fbae9152731c2e4b6e
+2025-03-05T16:46:45.4272174Z ##[endgroup]
+2025-03-05T16:46:45.4314664Z [command]/usr/bin/git log -1 --format=%H
+2025-03-05T16:46:45.4340073Z ecc8627b2cc2080e7ed9ff051fbd5f075d7fe390
+2025-03-05T16:46:45.4521773Z ##[group]Run gradle/actions/wrapper-validation@v3
+2025-03-05T16:46:45.4522261Z with:
+2025-03-05T16:46:45.4522453Z   min-wrapper-count: 1
+2025-03-05T16:46:45.4522668Z   allow-snapshots: false
+2025-03-05T16:46:45.4522861Z env:
+2025-03-05T16:46:45.4523021Z   CI_BUILD: true
+2025-03-05T16:46:45.4523202Z   PR_BUILD: true
+2025-03-05T16:46:45.4523385Z ##[endgroup]
+2025-03-05T16:46:45.7036428Z ✓ Found known Gradle Wrapper JAR files:
+2025-03-05T16:46:45.7037398Z   498495120a03b9a6ab5d155f5de3c8f0d986a449153702fb80fc80e134484f17 gradle/wrapper/gradle-wrapper.jar
+2025-03-05T16:46:45.7159179Z ##[group]Run christian-draeger/read-properties@1.1.1
+2025-03-05T16:46:45.7159521Z with:
+2025-03-05T16:46:45.7159716Z   path: gradle.properties
+2025-03-05T16:46:45.7159972Z   properties: mod_id mod_name java_version
+2025-03-05T16:46:45.7160239Z env:
+2025-03-05T16:46:45.7160408Z   CI_BUILD: true
+2025-03-05T16:46:45.7160594Z   PR_BUILD: true
+2025-03-05T16:46:45.7160833Z   GRADLE_ACTION_ID: gradle/actions/wrapper-validation
+2025-03-05T16:46:45.7161122Z ##[endgroup]
+2025-03-05T16:46:45.7296104Z ##[command]/usr/bin/docker run --name d0d2eb545af92ba0e329e98e62d_e1efe9 --label 706959 --workdir /github/workspace --rm -e "CI_BUILD" -e "PR_BUILD" -e "GRADLE_ACTION_ID" -e "INPUT_PATH" -e "INPUT_PROPERTIES" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_RESULTS_URL" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/runner/work/AnvilCraft/AnvilCraft":"/github/workspace" 706959:76180d0d2eb545af92ba0e329e98e62d  "gradle.properties" "mod_id mod_name java_version"
+2025-03-05T16:46:46.0782724Z path to properties-file: gradle.properties
+2025-03-05T16:46:46.0783791Z property keys: mod_id mod_name java_version
+2025-03-05T16:46:46.0793874Z value of 'mod_id': anvilcraft
+2025-03-05T16:46:46.0816770Z value of 'mod_name': AnvilCraft
+2025-03-05T16:46:46.0837319Z value of 'java_version': 21
+2025-03-05T16:46:46.1762577Z ##[group]Run actions/setup-java@v3.6.0
+2025-03-05T16:46:46.1762876Z with:
+2025-03-05T16:46:46.1763054Z   distribution: zulu
+2025-03-05T16:46:46.1763266Z   java-version: 21
+2025-03-05T16:46:46.1763462Z   java-package: jdk
+2025-03-05T16:46:46.1763664Z   check-latest: false
+2025-03-05T16:46:46.1763864Z   server-id: github
+2025-03-05T16:46:46.1764062Z   server-username: GITHUB_ACTOR
+2025-03-05T16:46:46.1764306Z   server-password: GITHUB_TOKEN
+2025-03-05T16:46:46.1764542Z   overwrite-settings: true
+2025-03-05T16:46:46.1764753Z   job-status: success
+2025-03-05T16:46:46.1765077Z   token: ***
+2025-03-05T16:46:46.1765251Z env:
+2025-03-05T16:46:46.1765419Z   CI_BUILD: true
+2025-03-05T16:46:46.1765604Z   PR_BUILD: true
+2025-03-05T16:46:46.1765864Z   GRADLE_ACTION_ID: gradle/actions/wrapper-validation
+2025-03-05T16:46:46.1766147Z ##[endgroup]
+2025-03-05T16:46:46.3428997Z ##[group]Installed distributions
+2025-03-05T16:46:46.3458985Z Trying to resolve the latest version from remote
+2025-03-05T16:46:46.4464756Z Resolved latest version as 21.0.6+7
+2025-03-05T16:46:46.4465253Z Trying to download...
+2025-03-05T16:46:46.4466087Z Downloading Java 21.0.6+7 (Zulu) from https://cdn.azul.com/zulu/bin/zulu21.40.17-ca-crac-jdk21.0.6-linux_x64.tar.gz ...
+2025-03-05T16:46:48.1683334Z Extracting Java archive...
+2025-03-05T16:46:48.1786550Z [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /home/runner/work/_temp/edcb84a2-3aed-45cd-b0ad-72cc05021301 -f /home/runner/work/_temp/dff60a3f-719e-4036-a3f5-9357899133c9
+2025-03-05T16:46:51.0913212Z Java 21.0.6+7 was downloaded
+2025-03-05T16:46:51.0914031Z Setting Java 21.0.6+7 as the default
+2025-03-05T16:46:51.0926732Z Creating toolchains.xml for JDK version 21 from zulu
+2025-03-05T16:46:51.1001057Z Writing to /home/runner/.m2/toolchains.xml
+2025-03-05T16:46:51.1001432Z 
+2025-03-05T16:46:51.1001576Z Java configuration:
+2025-03-05T16:46:51.1002144Z   Distribution: zulu
+2025-03-05T16:46:51.1002519Z   Version: 21.0.6+7
+2025-03-05T16:46:51.1005825Z   Path: /opt/hostedtoolcache/Java_Zulu_jdk/21.0.6-7/x64
+2025-03-05T16:46:51.1006453Z 
+2025-03-05T16:46:51.1007692Z ##[endgroup]
+2025-03-05T16:46:51.1022458Z Creating settings.xml with server-id: github
+2025-03-05T16:46:51.1027271Z Writing to /home/runner/.m2/settings.xml
+2025-03-05T16:46:51.1181822Z ##[group]Run chmod +x ./gradlew
+2025-03-05T16:46:51.1182469Z [36;1mchmod +x ./gradlew[0m
+2025-03-05T16:46:51.1235617Z shell: /usr/bin/bash -e {0}
+2025-03-05T16:46:51.1235881Z env:
+2025-03-05T16:46:51.1236060Z   CI_BUILD: true
+2025-03-05T16:46:51.1236256Z   PR_BUILD: true
+2025-03-05T16:46:51.1236503Z   GRADLE_ACTION_ID: gradle/actions/wrapper-validation
+2025-03-05T16:46:51.1236889Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/21.0.6-7/x64
+2025-03-05T16:46:51.1237297Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Zulu_jdk/21.0.6-7/x64
+2025-03-05T16:46:51.1237609Z ##[endgroup]
+2025-03-05T16:46:51.1441010Z ##[group]Run gradle/actions/setup-gradle@v3
+2025-03-05T16:46:51.1441313Z with:
+2025-03-05T16:46:51.1441496Z   cache-disabled: false
+2025-03-05T16:46:51.1441714Z   cache-read-only: true
+2025-03-05T16:46:51.1442166Z   cache-write-only: false
+2025-03-05T16:46:51.1442533Z   cache-overwrite-existing: false
+2025-03-05T16:46:51.1442889Z   gradle-home-cache-includes: caches
+notifications
+
+2025-03-05T16:46:51.1443195Z   gradle-home-cache-cleanup: false
+2025-03-05T16:46:51.1443439Z   add-job-summary: always
+2025-03-05T16:46:51.1443674Z   add-job-summary-as-pr-comment: never
+2025-03-05T16:46:51.1443934Z   dependency-graph: disabled
+2025-03-05T16:46:51.1444186Z   dependency-graph-continue-on-failure: true
+2025-03-05T16:46:51.1444456Z   build-scan-publish: false
+2025-03-05T16:46:51.1444682Z   validate-wrappers: false
+2025-03-05T16:46:51.1444899Z   generate-job-summary: true
+2025-03-05T16:46:51.1445361Z   gradle-home-cache-strict-match: false
+2025-03-05T16:46:51.1445666Z   workflow-job-context: null
+2025-03-05T16:46:51.1446000Z   github-token: ***
+2025-03-05T16:46:51.1446181Z env:
+2025-03-05T16:46:51.1446339Z   CI_BUILD: true
+2025-03-05T16:46:51.1446525Z   PR_BUILD: true
+2025-03-05T16:46:51.1446754Z   GRADLE_ACTION_ID: gradle/actions/wrapper-validation
+2025-03-05T16:46:51.1447096Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/21.0.6-7/x64
+2025-03-05T16:46:51.1447485Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Zulu_jdk/21.0.6-7/x64
+2025-03-05T16:46:51.1447788Z ##[endgroup]
+2025-03-05T16:46:51.4925931Z Merged default JDK locations into /home/runner/.m2/toolchains.xml
+2025-03-05T16:46:51.4928170Z ##[group]Restore Gradle state from cache
+2025-03-05T16:46:53.1418940Z Received 0 of 273686107 (0.0%), 0.0 MBs/sec
+2025-03-05T16:46:54.1426491Z Received 100663296 of 273686107 (36.8%), 48.0 MBs/sec
+2025-03-05T16:46:55.1501832Z Received 234881024 of 273686107 (85.8%), 74.6 MBs/sec
+2025-03-05T16:46:55.4649690Z Cache Size: ~261 MB (273686107 B)
+2025-03-05T16:46:55.4788731Z [command]/usr/bin/tar -xf /home/runner/work/_temp/d7b3a2ab-8524-4d2e-83e1-992592135d05/cache.tzst -P -C /home/runner/work/AnvilCraft/AnvilCraft --use-compress-program unzstd
+2025-03-05T16:46:55.9384413Z Cache restored successfully
+2025-03-05T16:46:55.9981496Z Restored Gradle User Home from cache key: gradle-home-v1|Linux|build[797cc944f4636345fb06855dddae5b63]-e11a3032d685bfa69a400efd502dce15c30249ed
+2025-03-05T16:46:56.1439914Z Received 273686107 of 273686107 (100.0%), 65.2 MBs/sec
+2025-03-05T16:46:57.0947475Z Cache Size: ~0 MB (101601 B)
+2025-03-05T16:46:57.0967899Z [command]/usr/bin/tar -xf /home/runner/work/_temp/9f28abc9-ccd0-4cb1-a12f-80aecfe99f7b/cache.tzst -P -C /home/runner/work/AnvilCraft/AnvilCraft --use-compress-program unzstd
+2025-03-05T16:46:57.1111373Z Cache restored successfully
+2025-03-05T16:46:57.1113383Z Restored instrumented-jars with key gradle-instrumented-jars-v1-1346828e06ebacb739222fffa886a33a to /home/runner/.gradle/caches/jars-*/*/
+2025-03-05T16:46:57.1946221Z Cache Size: ~0 MB (154827 B)
+2025-03-05T16:46:57.2071358Z [command]/usr/bin/tar -xf /home/runner/work/_temp/c7b06b85-d6cb-4a2c-962e-73cd11afb9ce/cache.tzst -P -C /home/runner/work/AnvilCraft/AnvilCraft --use-compress-program unzstd
+2025-03-05T16:46:57.2303100Z Cache restored successfully
+2025-03-05T16:46:57.2305430Z Restored groovy-dsl with key gradle-groovy-dsl-v1-16e3089e3fb977403c55a405ede4ede9 to /home/runner/.gradle/caches/*/groovy-dsl/*/
+2025-03-05T16:46:57.6149503Z Received 0 of 3235643 (0.0%), 0.0 MBs/sec
+2025-03-05T16:46:57.6303234Z Received 0 of 134979509 (0.0%), 0.0 MBs/sec
+2025-03-05T16:46:57.6347181Z Received 0 of 156741297 (0.0%), 0.0 MBs/sec
+2025-03-05T16:46:57.6348222Z Cache Size: ~3 MB (3235643 B)
+2025-03-05T16:46:57.6409239Z [command]/usr/bin/tar -xf /home/runner/work/_temp/66736755-888e-4c3e-89fa-23339eee6c72/cache.tzst -P -C /home/runner/work/AnvilCraft/AnvilCraft --use-compress-program unzstd
+2025-03-05T16:46:57.6458440Z Received 101601 of 101601 (100.0%), 0.1 MBs/sec
+2025-03-05T16:46:57.6719081Z Received 154827 of 154827 (100.0%), 0.1 MBs/sec
+2025-03-05T16:46:57.6935477Z Cache restored successfully
+2025-03-05T16:46:57.6945679Z Restored transforms with key gradle-transforms-v1-6659a803b39c637bfe487517aab3ff3d to /home/runner/.gradle/caches/transforms-4/*/
+2025-03-05T16:46:57.6946559Z /home/runner/.gradle/caches/*/transforms/*/
+2025-03-05T16:46:58.6162376Z Received 3235643 of 3235643 (100.0%), 1.5 MBs/sec
+2025-03-05T16:46:58.6284314Z Received 104857600 of 134979509 (77.7%), 49.9 MBs/sec
+2025-03-05T16:46:58.6349240Z Received 96468992 of 156741297 (61.5%), 46.0 MBs/sec
+2025-03-05T16:46:59.0841011Z Cache Size: ~149 MB (156741297 B)
+2025-03-05T16:46:59.0867888Z [command]/usr/bin/tar -xf /home/runner/work/_temp/7a5f1d6d-d8c0-43be-b316-b7e9c21e60d6/cache.tzst -P -C /home/runner/work/AnvilCraft/AnvilCraft --use-compress-program unzstd
+2025-03-05T16:46:59.3574054Z Cache restored successfully
+2025-03-05T16:46:59.3902628Z Restored dependencies with key gradle-dependencies-v1-9ec418486a0c0ba5b01328c4a63678e4 to /home/runner/.gradle/caches/modules-*/files-*/*/*/*/*
+2025-03-05T16:46:59.6282514Z Received 134217728 of 134979509 (99.4%), 42.6 MBs/sec
+2025-03-05T16:46:59.6343401Z Received 156741297 of 156741297 (100.0%), 49.8 MBs/sec
+2025-03-05T16:46:59.7855599Z Cache Size: ~129 MB (134979509 B)
+2025-03-05T16:46:59.7873340Z [command]/usr/bin/tar -xf /home/runner/work/_temp/1d13cbfd-ee8d-41ea-96ee-f4129a56c88f/cache.tzst -P -C /home/runner/work/AnvilCraft/AnvilCraft --use-compress-program unzstd
+2025-03-05T16:47:00.0122516Z Cache restored successfully
+2025-03-05T16:47:00.0408091Z Restored wrapper-zips with key gradle-wrapper-zips-v1-df6ecc383658ce44d9cbac4d1bfd12bf to /home/runner/.gradle/wrapper/dists/gradle-8.9-bin/90cnw93cvbtalezasaz0blq0a
+2025-03-05T16:47:00.0418976Z ##[endgroup]
+2025-03-05T16:47:00.0600553Z ##[group]Run ./gradlew build
+2025-03-05T16:47:00.0600872Z [36;1m./gradlew build[0m
+2025-03-05T16:47:00.0648419Z shell: /usr/bin/bash -e {0}
+2025-03-05T16:47:00.0648734Z env:
+2025-03-05T16:47:00.0648933Z   CI_BUILD: true
+2025-03-05T16:47:00.0649159Z   PR_BUILD: true
+2025-03-05T16:47:00.0649419Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+2025-03-05T16:47:00.0649796Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/21.0.6-7/x64
+2025-03-05T16:47:00.0650209Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Zulu_jdk/21.0.6-7/x64
+2025-03-05T16:47:00.0650571Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+2025-03-05T16:47:00.0650879Z   GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+2025-03-05T16:47:00.0651312Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+2025-03-05T16:47:00.0651814Z   DEVELOCITY_AUTO_INJECTION_CUSTOM_VALUE: gradle-actions
+2025-03-05T16:47:00.0652388Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+2025-03-05T16:47:00.0652667Z ##[endgroup]
+2025-03-05T16:47:00.7500910Z To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.9/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+2025-03-05T16:47:01.9485081Z Daemon will be stopped at the end of the build 
+2025-03-05T16:47:13.0488638Z 
+2025-03-05T16:47:13.0507066Z > Configure project :
+2025-03-05T16:47:13.0530697Z Machete was disabled on this build through the `enabled` flag!
+2025-03-05T16:47:38.0484655Z 
+2025-03-05T16:47:38.0513058Z > Task :createMinecraftArtifacts
+2025-03-05T16:47:38.0514368Z Performing periodic cache maintenance on /home/runner/.gradle/caches/neoformruntime
+2025-03-05T16:47:38.0515850Z Cleaning intermediate results cache in /home/runner/.gradle/caches/neoformruntime/intermediate_results
+2025-03-05T16:47:38.0516996Z  Maximum age: 744h
+2025-03-05T16:47:38.0517547Z  Maximum cache size: 1 GiB
+2025-03-05T16:47:38.0521013Z  [0;2;3m37 files found[0m
+2025-03-05T16:47:38.0522570Z  [0;2;3m209 MiB overall size[0m
+2025-03-05T16:47:38.0523556Z  [0;2;3m16 expired keys found[0m
+2025-03-05T16:47:38.1485156Z Freed up [1m209 MiB[0m by deleting [1m37 expired entries[0m
+2025-03-05T16:47:38.1486803Z Loaded 110 artifacts from /home/runner/work/AnvilCraft/AnvilCraft/build/tmp/createMinecraftArtifacts/nfrt_artifact_manifest.properties
+2025-03-05T16:47:38.2496685Z [1m*** Started working on [4mdownloadJson[0m[0m
+2025-03-05T16:47:38.2497521Z  [1m[92m✓[0m Completed [4mdownloadJson[0m in 0.02s
+2025-03-05T16:47:38.2498292Z [1m*** Started working on [4mdownloadClientMappings[0m[0m
+2025-03-05T16:47:38.2498954Z [1m*** Started working on [4mdownloadServer[0m[0m
+2025-03-05T16:47:38.2499591Z [1m*** Started working on [4mdownloadClient[0m[0m
+2025-03-05T16:47:38.3503942Z [1m*** Started working on [4mlistLibraries[0m[0m
+2025-03-05T16:47:38.3529255Z  [1m[92m✓[0m Completed [4mdownloadClient[0m in 0.05s
+2025-03-05T16:47:38.3530144Z  [1m[92m✓[0m Completed [4mdownloadClientMappings[0m in 0.05s
+2025-03-05T16:47:38.3530915Z  [1m[92m✓[0m Completed [4mdownloadServer[0m in 0.05s
+2025-03-05T16:47:38.3531588Z  [1m[92m✓[0m Completed [4mlistLibraries[0m in 0.07s
+2025-03-05T16:47:38.3532811Z [1m*** Started working on [4mmergeMappings[0m[0m
+2025-03-05T16:47:38.4487777Z [1m*** Started working on [4mstripClient[0m[0m
+2025-03-05T16:47:38.4488990Z  ↳ Running external tool net.neoforged.installertools:installertools:2.1.2:fatjar
+2025-03-05T16:47:38.4491398Z [1m*** Started working on [4mextractServer[0m[0m
+2025-03-05T16:47:38.4497976Z  ↳ Running external tool net.neoforged.installertools:installertools:2.1.2:fatjar
+2025-03-05T16:47:39.3483371Z  [1m[92m✓[0m Completed [4mextractServer[0m in 0.89s
+2025-03-05T16:47:39.4495551Z [1m*** Started working on [4mstripServer[0m[0m
+2025-03-05T16:47:42.0484108Z  [1m[92m✓[0m Completed [4mstripServer[0m in 2.57s
+2025-03-05T16:47:42.2482860Z  [1m[92m✓[0m Completed [4mmergeMappings[0m in 3.81s
+2025-03-05T16:47:42.4484320Z  [1m[92m✓[0m Completed [4mstripClient[0m in 4.00s
+2025-03-05T16:47:42.4484897Z [1m*** Started working on [4mmerge[0m[0m
+2025-03-05T16:47:42.4485434Z  ↳ Running external tool net.neoforged:mergetool:2.0.3:fatjar
+2025-03-05T16:47:45.6483019Z  [1m[92m✓[0m Completed [4mmerge[0m in 3.15s
+2025-03-05T16:47:45.6483782Z [1m*** Started working on [4mrename[0m[0m
+2025-03-05T16:47:45.6484580Z  ↳ Running external tool net.neoforged:AutoRenamingTool:2.0.3:all
+2025-03-05T16:47:50.9483533Z  [1m[92m✓[0m Completed [4mrename[0m in 5.34s
+2025-03-05T16:47:50.9484456Z [1m*** Started working on [4mdecompile[0m[0m
+2025-03-05T16:47:50.9485568Z  ↳ Running external tool org.vineflower:vineflower:1.10.1
+2025-03-05T16:48:57.7486876Z  [1m[92m✓[0m Completed [4mdecompile[0m in 66.79s
+2025-03-05T16:48:57.7494126Z [1m*** Started working on [4minject[0m[0m
+2025-03-05T16:48:59.9489507Z  [1m[92m✓[0m Completed [4minject[0m in 2.12s
+2025-03-05T16:48:59.9503538Z [1m*** Started working on [4mpatch[0m[0m
+2025-03-05T16:48:59.9504684Z  ↳ Running external tool io.codechicken:DiffPatch:2.0.0.36:all
+2025-03-05T16:49:02.5482877Z  [1m[92m✓[0m Completed [4mpatch[0m in 2.64s
+2025-03-05T16:49:02.5483512Z [1m*** Started working on [4mapplyNeoforgePatches[0m[0m
+2025-03-05T16:49:02.5484123Z  ↳ Running external tool io.codechicken:DiffPatch:2.0.0.36:all
+2025-03-05T16:49:04.6484019Z  [1m[92m✓[0m Completed [4mapplyNeoforgePatches[0m in 2.07s
+2025-03-05T16:49:04.6484845Z [1m*** Started working on [4mtransformSources[0m[0m
+2025-03-05T16:49:04.6485583Z  ↳ Running external tool net.neoforged.jst:jst-cli-bundle:1.0.66
+2025-03-05T16:49:22.2533677Z  [1m[92m✓[0m Completed [4mtransformSources[0m in 17.56s
+2025-03-05T16:49:22.2534624Z [1m*** Started working on [4mrecompile[0m[0m
+2025-03-05T16:49:22.2538696Z  110 items on the compile classpath
+2025-03-05T16:49:22.2539215Z  0 items on the sourcepath
+2025-03-05T16:49:22.3485348Z [1m*** Started working on [4msourcesWithNeoForge[0m[0m
+2025-03-05T16:49:22.4494260Z  Compiling 5364 source files
+2025-03-05T16:49:27.1482969Z  [1m[92m✓[0m Completed [4msourcesWithNeoForge[0m in 4.86s
+2025-03-05T16:50:00.1495721Z Copied 0 resource files
+2025-03-05T16:50:00.2483857Z  [1m[92m✓[0m Completed [4mrecompile[0m in 37.96s
+2025-03-05T16:50:00.3497522Z [1m*** Started working on [4mcompiledWithNeoForge[0m[0m
+2025-03-05T16:50:03.7483042Z Cannot inject duplicate file mcp/client/Start.class
+2025-03-05T16:50:05.2484601Z  [1m[92m✓[0m Completed [4mcompiledWithNeoForge[0m in 4.94s
+2025-03-05T16:50:05.3482309Z [1m*** Started working on [4msourcesAndCompiledWithNeoForge[0m[0m
+2025-03-05T16:50:07.6483892Z  [1m[92m✓[0m Completed [4msourcesAndCompiledWithNeoForge[0m in 2.38s
+2025-03-05T16:50:07.7482540Z Total runtime: 149.97s
+2025-03-05T16:50:07.7482803Z 
+2025-03-05T16:50:10.2484380Z 
+2025-03-05T16:50:10.2485231Z > Task :processResources
+2025-03-05T16:50:10.3483430Z > Task :jarJar
+2025-03-05T16:50:10.3484066Z > Task :generateEffectiveLombokConfig
+2025-03-05T16:50:40.3483496Z > Task :compileJava
+2025-03-05T16:50:59.8493009Z /home/runner/work/AnvilCraft/AnvilCraft/src/main/java/dev/dubhe/anvilcraft/item/amulet/CogwheelAmuletItem.java:9: error: CogwheelAmuletItem is not abstract and does not override abstract method updateAccessory(ItemStack,Level,Entity,int,boolean) in AbstractAmuletItem
+2025-03-05T16:50:59.8501051Z public class CogwheelAmuletItem extends AbstractAmuletItem {
+2025-03-05T16:50:59.8501745Z        ^
+2025-03-05T16:50:59.8503418Z /home/runner/work/AnvilCraft/AnvilCraft/src/main/java/dev/dubhe/anvilcraft/item/amulet/CogwheelAmuletItem.java:14: error: method does not override or implement a method from a supertype
+2025-03-05T16:50:59.8504968Z     @Override
+2025-03-05T16:50:59.8505307Z     ^
+2025-03-05T16:51:02.1484979Z Note: Some input files use or override a deprecated API.
+2025-03-05T16:51:02.1495834Z Note: Recompile with -Xlint:deprecation for details.
+2025-03-05T16:51:02.1496614Z Note: Some input files use unchecked or unsafe operations.
+2025-03-05T16:51:02.1502894Z Note: Recompile with -Xlint:unchecked for details.
+2025-03-05T16:51:02.1503574Z 2 errors
+2025-03-05T16:51:02.3483412Z 
+2025-03-05T16:51:02.3487857Z > Task :compileJava FAILED
+2025-03-05T16:51:02.4491167Z 
+2025-03-05T16:51:02.4491852Z FAILURE: Build failed with an exception.
+2025-03-05T16:51:02.4492490Z 
+2025-03-05T16:51:02.4492643Z * What went wrong:
+2025-03-05T16:51:02.4493065Z Execution failed for task ':compileJava'.
+2025-03-05T16:51:02.4493728Z > Compilation failed; see the compiler error output for details.
+2025-03-05T16:51:02.4494164Z 
+2025-03-05T16:51:02.4513522Z * Try:
+2025-03-05T16:51:02.4514011Z > Run with --info option to get more log output.
+2025-03-05T16:51:02.4514585Z > Run with --scan to get full insights.
+2025-03-05T16:51:02.4514924Z 
+2025-03-05T16:51:02.4514946Z 
+2025-03-05T16:51:02.4522807Z BUILD FAILED in 4m 2s
+2025-03-05T16:51:02.4523559Z Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+2025-03-05T16:51:02.4524351Z 
+2025-03-05T16:51:02.4525229Z You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+2025-03-05T16:51:02.4526267Z 
+2025-03-05T16:51:02.4548299Z For more on this, please refer to https://docs.gradle.org/8.9/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+2025-03-05T16:51:02.4549453Z 5 actionable tasks: 5 executed
+2025-03-05T16:51:02.8956547Z ##[error]Process completed with exit code 1.
+2025-03-05T16:51:02.9056935Z Post job cleanup.
+2025-03-05T16:51:03.1492814Z In post-action step
+2025-03-05T16:51:03.1501837Z Cache is read-only: will not save state for use in subsequent builds.
+2025-03-05T16:51:03.1508205Z Generating Job Summary
+2025-03-05T16:51:03.1531116Z Completed post-action step
+2025-03-05T16:51:03.1692763Z Post job cleanup.
+2025-03-05T16:51:03.3146616Z Post job cleanup.
+2025-03-05T16:51:03.4112934Z [command]/usr/bin/git version
+2025-03-05T16:51:03.4153058Z git version 2.48.1
+2025-03-05T16:51:03.4209772Z Temporarily overriding HOME='/home/runner/work/_temp/141670c2-d4eb-4df4-a132-92dd4a701d44' before making global git config changes
+2025-03-05T16:51:03.4210801Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-05T16:51:03.4215610Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/AnvilCraft/AnvilCraft
+2025-03-05T16:51:03.4252750Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-05T16:51:03.4288242Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-05T16:51:03.4551396Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-05T16:51:03.4577415Z http.https://github.com/.extraheader
+2025-03-05T16:51:03.4591594Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-05T16:51:03.4629268Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-05T16:51:03.4999935Z Cleaning up orphan processes

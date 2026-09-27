@@ -1,0 +1,56 @@
+2025-02-19T10:22:36.9876822Z Requested labels: ubuntu-22.04
+2025-02-19T10:22:36.9877105Z Job defined at: TomographicImaging/CIL/.github/workflows/build.yml@refs/pull/2081/merge
+2025-02-19T10:22:36.9877207Z Waiting for a runner to pick up this job...
+2025-02-19T10:22:38.6783751Z Job is waiting for a hosted runner to come online.
+2025-02-19T10:22:41.2616500Z Job is about to start running on the hosted runner: GitHub Actions 7 (hosted)
+2025-02-19T10:22:43.6076367Z Current runner version: '2.322.0'
+2025-02-19T10:22:43.6100545Z ##[group]Operating System
+2025-02-19T10:22:43.6101334Z Ubuntu
+2025-02-19T10:22:43.6101803Z 22.04.5
+2025-02-19T10:22:43.6102446Z LTS
+2025-02-19T10:22:43.6102927Z ##[endgroup]
+2025-02-19T10:22:43.6103523Z ##[group]Runner Image
+2025-02-19T10:22:43.6104123Z Image: ubuntu-22.04
+2025-02-19T10:22:43.6104620Z Version: 20250209.1.0
+2025-02-19T10:22:43.6105712Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20250209.1/images/ubuntu/Ubuntu2204-Readme.md
+2025-02-19T10:22:43.6107139Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20250209.1
+2025-02-19T10:22:43.6108066Z ##[endgroup]
+2025-02-19T10:22:43.6108672Z ##[group]Runner Image Provisioner
+2025-02-19T10:22:43.6109277Z 2.0.422.1
+2025-02-19T10:22:43.6109750Z ##[endgroup]
+2025-02-19T10:22:43.6112078Z ##[group]GITHUB_TOKEN Permissions
+2025-02-19T10:22:43.6113975Z Actions: write
+2025-02-19T10:22:43.6114807Z Attestations: write
+2025-02-19T10:22:43.6115495Z Checks: write
+2025-02-19T10:22:43.6116112Z Contents: write
+2025-02-19T10:22:43.6116655Z Deployments: write
+2025-02-19T10:22:43.6117141Z Discussions: write
+2025-02-19T10:22:43.6117751Z Issues: write
+2025-02-19T10:22:43.6118272Z Metadata: read
+2025-02-19T10:22:43.6118830Z Packages: write
+2025-02-19T10:22:43.6119386Z Pages: write
+2025-02-19T10:22:43.6119857Z PullRequests: write
+2025-02-19T10:22:43.6120455Z RepositoryProjects: write
+2025-02-19T10:22:43.6121071Z SecurityEvents: write
+2025-02-19T10:22:43.6121625Z Statuses: write
+2025-02-19T10:22:43.6122205Z ##[endgroup]
+2025-02-19T10:22:43.6124936Z Secret source: Actions
+2025-02-19T10:22:43.6125649Z Prepare workflow directory
+2025-02-19T10:22:43.6429353Z Prepare all required actions
+2025-02-19T10:22:43.6519311Z Complete job name: conda-matrix
+2025-02-19T10:22:43.7320574Z ##[group]Run COMMIT_MESSAGE=$(git log -1 --pretty=%B)
+2025-02-19T10:22:43.7321381Z [36;1mCOMMIT_MESSAGE=$(git log -1 --pretty=%B)[0m
+2025-02-19T10:22:43.7321956Z [36;1m[0m
+2025-02-19T10:22:43.7322757Z [36;1mif [[ "$GITHUB_REF" == "refs/heads/master" || "$GITHUB_REF" == refs/tags/* || "$COMMIT_MESSAGE" == *"ALL_MATRIX"* ]]; then[0m
+2025-02-19T10:22:43.7323850Z [36;1m  echo "python-version=['3.10', 3.11]" >> $GITHUB_OUTPUT[0m
+2025-02-19T10:22:43.7325106Z [36;1m  echo "numpy-version=[1.23, 1.24, 1.25, 1.26]" >> $GITHUB_OUTPUT[0m
+2025-02-19T10:22:43.7325948Z [36;1melse[0m
+2025-02-19T10:22:43.7326440Z [36;1m  echo "python-version=['3.10']" >> $GITHUB_OUTPUT[0m
+2025-02-19T10:22:43.7327108Z [36;1m  echo "numpy-version=[1.23]" >> $GITHUB_OUTPUT[0m
+2025-02-19T10:22:43.7327661Z [36;1mfi[0m
+2025-02-19T10:22:43.7635795Z shell: /usr/bin/bash -e {0}
+2025-02-19T10:22:43.7636656Z ##[endgroup]
+2025-02-19T10:22:43.7855681Z fatal: not a git repository (or any of the parent directories): .git
+2025-02-19T10:22:43.7872499Z ##[error]Process completed with exit code 128.
+2025-02-19T10:22:43.7975237Z Evaluate and set job outputs
+2025-02-19T10:22:43.8015415Z Cleaning up orphan processes

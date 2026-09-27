@@ -1,0 +1,194 @@
+2025-02-28T19:05:49.7332291Z Requested labels: ubuntu-latest
+2025-02-28T19:05:49.7332670Z Job defined at: pajlads/DinkPlugin/.github/workflows/lint.yml@refs/pull/666/merge
+2025-02-28T19:05:49.7332804Z Waiting for a runner to pick up this job...
+2025-02-28T19:05:50.3879451Z Job is waiting for a hosted runner to come online.
+2025-02-28T19:05:52.7457257Z Job is about to start running on the hosted runner: GitHub Actions 17 (hosted)
+2025-02-28T19:05:54.5232424Z Current runner version: '2.322.0'
+2025-02-28T19:05:54.5259140Z ##[group]Operating System
+2025-02-28T19:05:54.5259956Z Ubuntu
+2025-02-28T19:05:54.5260425Z 24.04.2
+2025-02-28T19:05:54.5261046Z LTS
+2025-02-28T19:05:54.5261517Z ##[endgroup]
+2025-02-28T19:05:54.5262099Z ##[group]Runner Image
+2025-02-28T19:05:54.5262695Z Image: ubuntu-24.04
+2025-02-28T19:05:54.5263517Z Version: 20250223.1.0
+2025-02-28T19:05:54.5264649Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250223.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-28T19:05:54.5266057Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250223.1
+2025-02-28T19:05:54.5266969Z ##[endgroup]
+2025-02-28T19:05:54.5267541Z ##[group]Runner Image Provisioner
+2025-02-28T19:05:54.5268140Z 2.0.422.1
+2025-02-28T19:05:54.5268608Z ##[endgroup]
+2025-02-28T19:05:54.5270802Z ##[group]GITHUB_TOKEN Permissions
+2025-02-28T19:05:54.5273484Z Actions: read
+2025-02-28T19:05:54.5274355Z Attestations: read
+2025-02-28T19:05:54.5274965Z Checks: read
+2025-02-28T19:05:54.5275558Z Contents: read
+2025-02-28T19:05:54.5276099Z Deployments: read
+2025-02-28T19:05:54.5276651Z Discussions: read
+2025-02-28T19:05:54.5277157Z Issues: read
+2025-02-28T19:05:54.5277676Z Metadata: read
+2025-02-28T19:05:54.5278220Z Packages: read
+2025-02-28T19:05:54.5278758Z Pages: read
+2025-02-28T19:05:54.5279224Z PullRequests: read
+2025-02-28T19:05:54.5279797Z RepositoryProjects: read
+2025-02-28T19:05:54.5280405Z SecurityEvents: read
+2025-02-28T19:05:54.5280935Z Statuses: read
+2025-02-28T19:05:54.5281513Z ##[endgroup]
+2025-02-28T19:05:54.5284905Z Secret source: None
+2025-02-28T19:05:54.5285978Z Prepare workflow directory
+2025-02-28T19:05:54.5615427Z Prepare all required actions
+2025-02-28T19:05:54.5652676Z Getting action download info
+2025-02-28T19:05:54.7211729Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-02-28T19:05:54.8118270Z Download action repository 'Nerixyz/actionsx-prettier@v3-adj' (SHA:a143cb1ab634684b783fd7447b8e26ec65d01ced)
+2025-02-28T19:05:55.2891455Z Complete job name: lint
+2025-02-28T19:05:55.3604751Z ##[group]Run actions/checkout@v4
+2025-02-28T19:05:55.3605582Z with:
+2025-02-28T19:05:55.3606030Z   repository: pajlads/DinkPlugin
+2025-02-28T19:05:55.3606711Z   token: ***
+2025-02-28T19:05:55.3607107Z   ssh-strict: true
+2025-02-28T19:05:55.3607511Z   ssh-user: git
+2025-02-28T19:05:55.3607957Z   persist-credentials: true
+2025-02-28T19:05:55.3608441Z   clean: true
+2025-02-28T19:05:55.3608869Z   sparse-checkout-cone-mode: true
+2025-02-28T19:05:55.3609360Z   fetch-depth: 1
+2025-02-28T19:05:55.3609809Z   fetch-tags: false
+2025-02-28T19:05:55.3610223Z   show-progress: true
+2025-02-28T19:05:55.3610631Z   lfs: false
+2025-02-28T19:05:55.3611044Z   submodules: false
+2025-02-28T19:05:55.3611465Z   set-safe-directory: true
+2025-02-28T19:05:55.3612127Z ##[endgroup]
+2025-02-28T19:05:55.5501957Z Syncing repository: pajlads/DinkPlugin
+2025-02-28T19:05:55.5505199Z ##[group]Getting Git version info
+2025-02-28T19:05:55.5506661Z Working directory is '/home/runner/work/DinkPlugin/DinkPlugin'
+2025-02-28T19:05:55.5508897Z [command]/usr/bin/git version
+2025-02-28T19:05:55.5596486Z git version 2.48.1
+2025-02-28T19:05:55.5628808Z ##[endgroup]
+2025-02-28T19:05:55.5645553Z Temporarily overriding HOME='/home/runner/work/_temp/46982fca-b642-4c01-8aad-0672d41bbf36' before making global git config changes
+2025-02-28T19:05:55.5647319Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-28T19:05:55.5653600Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/DinkPlugin/DinkPlugin
+2025-02-28T19:05:55.5698131Z Deleting the contents of '/home/runner/work/DinkPlugin/DinkPlugin'
+2025-02-28T19:05:55.5702075Z ##[group]Initializing the repository
+2025-02-28T19:05:55.5708393Z [command]/usr/bin/git init /home/runner/work/DinkPlugin/DinkPlugin
+2025-02-28T19:05:55.5807279Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-28T19:05:55.5808836Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-28T19:05:55.5810318Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-28T19:05:55.5811741Z hint:
+2025-02-28T19:05:55.5812754Z hint: 	git config --global init.defaultBranch <name>
+2025-02-28T19:05:55.5814383Z hint:
+2025-02-28T19:05:55.5815546Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-28T19:05:55.5816973Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-28T19:05:55.5817870Z hint:
+2025-02-28T19:05:55.5818343Z hint: 	git branch -m <name>
+2025-02-28T19:05:55.5819291Z Initialized empty Git repository in /home/runner/work/DinkPlugin/DinkPlugin/.git/
+2025-02-28T19:05:55.5831952Z [command]/usr/bin/git remote add origin https://github.com/pajlads/DinkPlugin
+2025-02-28T19:05:55.5873578Z ##[endgroup]
+2025-02-28T19:05:55.5874588Z ##[group]Disabling automatic garbage collection
+2025-02-28T19:05:55.5879049Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-28T19:05:55.5914521Z ##[endgroup]
+2025-02-28T19:05:55.5915372Z ##[group]Setting up auth
+2025-02-28T19:05:55.5925077Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-28T19:05:55.5961756Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-28T19:05:55.6320384Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-28T19:05:55.6354047Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-28T19:05:55.6588507Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-28T19:05:55.6623199Z ##[endgroup]
+2025-02-28T19:05:55.6624205Z ##[group]Fetching the repository
+2025-02-28T19:05:55.6633119Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +c713266ed00e3d2ad947fa20fb0b788c61ebe0e7:refs/remotes/pull/666/merge
+2025-02-28T19:05:56.1636865Z From https://github.com/pajlads/DinkPlugin
+2025-02-28T19:05:56.1638600Z  * [new ref]         c713266ed00e3d2ad947fa20fb0b788c61ebe0e7 -> pull/666/merge
+2025-02-28T19:05:56.1665293Z ##[endgroup]
+2025-02-28T19:05:56.1666561Z ##[group]Determining the checkout info
+2025-02-28T19:05:56.1667860Z ##[endgroup]
+2025-02-28T19:05:56.1672247Z [command]/usr/bin/git sparse-checkout disable
+2025-02-28T19:05:56.1717221Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-28T19:05:56.1745752Z ##[group]Checking out the ref
+2025-02-28T19:05:56.1749541Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/666/merge
+2025-02-28T19:05:56.1924659Z Note: switching to 'refs/remotes/pull/666/merge'.
+2025-02-28T19:05:56.1926130Z 
+2025-02-28T19:05:56.1927407Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-28T19:05:56.1929450Z changes and commit them, and you can discard any commits you make in this
+2025-02-28T19:05:56.1932064Z state without impacting any branches by switching back to a branch.
+2025-02-28T19:05:56.1933973Z 
+2025-02-28T19:05:56.1934829Z If you want to create a new branch to retain commits you create, you may
+2025-02-28T19:05:56.1936356Z do so (now or later) by using -c with the switch command. Example:
+2025-02-28T19:05:56.1937209Z 
+2025-02-28T19:05:56.1937568Z   git switch -c <new-branch-name>
+2025-02-28T19:05:56.1938170Z 
+2025-02-28T19:05:56.1938517Z Or undo this operation with:
+2025-02-28T19:05:56.1939060Z 
+2025-02-28T19:05:56.1939371Z   git switch -
+2025-02-28T19:05:56.1939816Z 
+2025-02-28T19:05:56.1940542Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-28T19:05:56.1941745Z 
+2025-02-28T19:05:56.1943455Z HEAD is now at c713266 Merge b428fc43d8561d92ba61a3126b986cfd8f0d82ea into 7632812cc4793e87fcc79566bda3347a7be1270f
+2025-02-28T19:05:56.1948080Z ##[endgroup]
+2025-02-28T19:05:56.1970762Z [command]/usr/bin/git log -1 --format=%H
+2025-02-28T19:05:56.1994421Z c713266ed00e3d2ad947fa20fb0b788c61ebe0e7
+2025-02-28T19:05:56.2245708Z ##[group]Run Nerixyz/actionsx-prettier@v3-adj
+2025-02-28T19:05:56.2247073Z with:
+2025-02-28T19:05:56.2247924Z   args: --write .
+2025-02-28T19:05:56.2248844Z ##[endgroup]
+2025-02-28T19:05:56.3860530Z .github/dependabot.yml 26ms (unchanged)
+2025-02-28T19:05:56.4049613Z .github/ISSUE_TEMPLATE/a_make_a_report.yml 16ms (unchanged)
+2025-02-28T19:05:56.4118085Z .github/ISSUE_TEMPLATE/b_make_a_suggestion.yml 5ms (unchanged)
+2025-02-28T19:05:56.4216116Z .github/workflows/gradle-snapshot.yml 7ms (unchanged)
+2025-02-28T19:05:56.4330103Z .github/workflows/gradle.yml 9ms (unchanged)
+2025-02-28T19:05:56.4397675Z .github/workflows/lint.yml 4ms (unchanged)
+2025-02-28T19:05:56.4463647Z .github/workflows/update-resources.yml 5ms (unchanged)
+2025-02-28T19:05:56.4563963Z .prettierrc.yaml 3ms (unchanged)
+2025-02-28T19:05:56.6417533Z CHANGELOG.md 177ms (unchanged)
+2025-02-28T19:05:56.7379859Z docs/comparison.md 91ms (unchanged)
+2025-02-28T19:05:56.7595240Z docs/external-plugin-messaging.md 19ms
+2025-02-28T19:05:56.9352213Z docs/json-examples.md 170ms (unchanged)
+2025-02-28T19:05:56.9423248Z docs/MAKE-RELEASE.md 3ms (unchanged)
+2025-02-28T19:05:56.9507074Z docs/TESTING.md 6ms (unchanged)
+2025-02-28T19:05:57.0365765Z README.md 67ms (unchanged)
+2025-02-28T19:05:57.3351202Z ##[group]Run git --no-pager diff --exit-code --color=never
+2025-02-28T19:05:57.3351752Z [36;1mgit --no-pager diff --exit-code --color=never[0m
+2025-02-28T19:05:57.3403523Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-28T19:05:57.3403944Z ##[endgroup]
+2025-02-28T19:05:57.3578368Z diff --git a/docs/external-plugin-messaging.md b/docs/external-plugin-messaging.md
+2025-02-28T19:05:57.3579167Z index 12c7153..250041c 100644
+2025-02-28T19:05:57.3579676Z --- a/docs/external-plugin-messaging.md
+2025-02-28T19:05:57.3580345Z +++ b/docs/external-plugin-messaging.md
+2025-02-28T19:05:57.3581367Z @@ -19,16 +19,16 @@ The `namespace` for the `PluginMessage` should be `dink` and the `name` should b
+2025-02-28T19:05:57.3582413Z  
+2025-02-28T19:05:57.3617342Z  The `Map<String, Object>` that is supplied to `PluginMessage` will be converted into [`ExternalNotificationRequest`](../src/main/java/dinkplugin/domain/ExternalNotificationRequest.java).
+2025-02-28T19:05:57.3619114Z  
+2025-02-28T19:05:57.3620047Z -| Field            | Required | Type             | Description                                                                                                                                                                             |
+2025-02-28T19:05:57.3621818Z -| ---------------- | -------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+2025-02-28T19:05:57.3624852Z -| `text`           | Y        | String           | The body text of the notification. This field supports templating (see `replacements` below) and by default `%USERNAME%` is an available replacement.                                   |
+2025-02-28T19:05:57.3627811Z -| `sourcePlugin`   | Y        | String           | The human-facing name of the plugin submitting the webhook notification request.                                                                                                        |
+2025-02-28T19:05:57.3629936Z -| `urls`           | N        | String           | The Discord URLs that the notification should be sent to (newline separated).                                                                                                           |
+2025-02-28T19:05:57.3631576Z -| `title`          | N        | String           | The title for the Discord embed.                                                                                                                                                        |
+2025-02-28T19:05:57.3633298Z -| `thumbnail`      | N        | String           | A URL to an image for the thumbnail icon of the Discord embed.                                                                                                                          |
+2025-02-28T19:05:57.3634372Z -| `imageRequested` | N        | boolean          | Whether dink should include a screenshot with the notification.                                                                                                                         |
+2025-02-28T19:05:57.3635857Z -| `fields`         | N        | List             | A list of [embed fields](https://discord.com/developers/docs/resources/message#embed-object-embed-field-structure). The contained objects should have `name` and `value` properties.    |
+2025-02-28T19:05:57.3637269Z -| `replacements`   | N        | Map              | A map of strings to be replaced to objects containing `value` (and optionally `richValue`) that indicate what the template string should be replaced with for plain text and rich text. |
+2025-02-28T19:05:57.3638248Z +| Field            | Required | Type    | Description                                                                                                                                                                             |
+2025-02-28T19:05:57.3639163Z +| ---------------- | -------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+2025-02-28T19:05:57.3640195Z +| `text`           | Y        | String  | The body text of the notification. This field supports templating (see `replacements` below) and by default `%USERNAME%` is an available replacement.                                   |
+2025-02-28T19:05:57.3641349Z +| `sourcePlugin`   | Y        | String  | The human-facing name of the plugin submitting the webhook notification request.                                                                                                        |
+2025-02-28T19:05:57.3642348Z +| `urls`           | N        | String  | The Discord URLs that the notification should be sent to (newline separated).                                                                                                           |
+2025-02-28T19:05:57.3643332Z +| `title`          | N        | String  | The title for the Discord embed.                                                                                                                                                        |
+2025-02-28T19:05:57.3644109Z +| `thumbnail`      | N        | String  | A URL to an image for the thumbnail icon of the Discord embed.                                                                                                                          |
+2025-02-28T19:05:57.3645017Z +| `imageRequested` | N        | boolean | Whether dink should include a screenshot with the notification.                                                                                                                         |
+2025-02-28T19:05:57.3646232Z +| `fields`         | N        | List    | A list of [embed fields](https://discord.com/developers/docs/resources/message#embed-object-embed-field-structure). The contained objects should have `name` and `value` properties.    |
+2025-02-28T19:05:57.3647761Z +| `replacements`   | N        | Map     | A map of strings to be replaced to objects containing `value` (and optionally `richValue`) that indicate what the template string should be replaced with for plain text and rich text. |
+2025-02-28T19:05:57.3648726Z  
+2025-02-28T19:05:57.3648970Z  ## Example
+2025-02-28T19:05:57.3649205Z  
+2025-02-28T19:05:57.3660476Z ##[error]Process completed with exit code 1.
+2025-02-28T19:05:57.3764572Z Post job cleanup.
+2025-02-28T19:05:57.4707605Z [command]/usr/bin/git version
+2025-02-28T19:05:57.4744013Z git version 2.48.1
+2025-02-28T19:05:57.4789799Z Temporarily overriding HOME='/home/runner/work/_temp/78afd129-ad01-4298-953d-db652ce07d01' before making global git config changes
+2025-02-28T19:05:57.4791049Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-28T19:05:57.4804547Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/DinkPlugin/DinkPlugin
+2025-02-28T19:05:57.4843742Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-28T19:05:57.4880374Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-28T19:05:57.5137053Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-28T19:05:57.5159543Z http.https://github.com/.extraheader
+2025-02-28T19:05:57.5173527Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-28T19:05:57.5207566Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-28T19:05:57.5586890Z Cleaning up orphan processes

@@ -1,0 +1,12 @@
+diff --git a/.github/actions/setup-and-build/action.yml b/.github/actions/setup-and-build/action.yml
+index 2ec0853fe..cf1053d01 100644
+--- a/.github/actions/setup-and-build/action.yml
++++ b/.github/actions/setup-and-build/action.yml
+@@ -35,6 +35,7 @@ runs:
+       if: runner.os == 'macOS'
+       shell: bash
+       run: |
++        brew update
+         brew unlink brotli zstd
+ 
+     - name: Install dependencies (Windows)

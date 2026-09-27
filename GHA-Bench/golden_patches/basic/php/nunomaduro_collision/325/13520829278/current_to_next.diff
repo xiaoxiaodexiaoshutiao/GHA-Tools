@@ -1,0 +1,470 @@
+diff --git a/composer.json b/composer.json
+index 9fe4c969..42a98b35 100644
+--- a/composer.json
++++ b/composer.json
+@@ -15,7 +15,7 @@
+     ],
+     "require": {
+         "php": "^8.2.0",
+-        "filp/whoops": "^2.16.0",
++        "filp/whoops": "^2.17.0",
+         "nunomaduro/termwind": "^2.3.0",
+         "symfony/console": "^7.2.1"
+     },
+@@ -25,14 +25,14 @@
+     },
+     "require-dev": {
+         "brianium/paratest": "^7.0",
+-        "laravel/framework": "^11.39.1 || ^12.0",
+-        "laravel/pint": "^1.20.0",
+-        "laravel/tinker": "^2.10.0",
+-        "laravel/sail": "^1.40.0",
+-        "laravel/sanctum": "^4.0.7",
++        "laravel/framework": "^11.44.2 || ^12.0",
++        "laravel/pint": "^1.21.2",
++        "laravel/tinker": "^2.10.1",
++        "laravel/sail": "^1.41.0",
++        "laravel/sanctum": "^4.0.8",
+         "larastan/larastan": "^3.0",
+-        "orchestra/testbench-core": "^9.9.2 || ^10.0",
+-        "pestphp/pest": "^3.7.3",
++        "orchestra/testbench-core": "^9.12.0 || ^10.0",
++        "pestphp/pest": "^3.7.4",
+         "sebastian/environment": "^6.1.0 || ^7.2.0 || ^8.0"
+     },
+     "autoload-dev": {
+diff --git a/tests/LaravelApp/tests/Feature/EnvironmentTest.php b/tests/LaravelApp/tests/Feature/EnvironmentTest.php
+index ace84d34..c402f105 100644
+--- a/tests/LaravelApp/tests/Feature/EnvironmentTest.php
++++ b/tests/LaravelApp/tests/Feature/EnvironmentTest.php
+@@ -12,20 +12,20 @@
+ class EnvironmentTest extends TestCase
+ {
+     #[Test]
+-    public function variableOnlyInDotEnv()
++    public function variable_only_in_dot_env()
+     {
+         $this->assertEquals('VAL_IN_DOT_ENV', env('VAR_IN_DOT_ENV'));
+         $this->assertEquals(null, env('VAR_IN_DOT_ENV_TESTING'));
+     }
+ 
+     #[Test]
+-    public function variableOnlyInPhpunit()
++    public function variable_only_in_phpunit()
+     {
+         $this->assertEquals('VAL_IN_PHPUNIT', env('VAR_IN_PHPUNIT'));
+     }
+ 
+     #[Test]
+-    public function variableInDotEnvButOverriddenInPhpunit()
++    public function variable_in_dot_env_but_overridden_in_phpunit()
+     {
+         $this->assertEquals('VAL_OVERRIDDEN_IN_PHPUNIT', env('VAR_OVERRIDDEN_IN_PHPUNIT'));
+     }
+diff --git a/tests/LaravelApp/tests/Feature/EnvironmentTestingTest.php b/tests/LaravelApp/tests/Feature/EnvironmentTestingTest.php
+index 015f75cc..ae3a82e6 100644
+--- a/tests/LaravelApp/tests/Feature/EnvironmentTestingTest.php
++++ b/tests/LaravelApp/tests/Feature/EnvironmentTestingTest.php
+@@ -12,20 +12,20 @@
+ class EnvironmentTestingTest extends TestCase
+ {
+     #[Test]
+-    public function variableOnlyInDotEnv()
++    public function variable_only_in_dot_env()
+     {
+         $this->assertEquals(null, env('VAR_IN_DOT_ENV'));
+         $this->assertEquals('VAL_IN_DOT_ENV_TESTING', env('VAR_IN_DOT_ENV_TESTING'));
+     }
+ 
+     #[Test]
+-    public function variableOnlyInPhpunit()
++    public function variable_only_in_phpunit()
+     {
+         $this->assertEquals('VAL_IN_PHPUNIT', env('VAR_IN_PHPUNIT'));
+     }
+ 
+     #[Test]
+-    public function variableInDotEnvButOverriddenInPhpunit()
++    public function variable_in_dot_env_but_overridden_in_phpunit()
+     {
+         $this->assertEquals('VAL_OVERRIDDEN_IN_PHPUNIT', env('VAR_OVERRIDDEN_IN_PHPUNIT'));
+     }
+diff --git a/tests/Unit/Adapters/LaravelTest.php b/tests/Unit/Adapters/LaravelTest.php
+index 48b039b8..5b22011e 100755
+--- a/tests/Unit/Adapters/LaravelTest.php
++++ b/tests/Unit/Adapters/LaravelTest.php
+@@ -21,7 +21,7 @@
+ class LaravelTest extends TestCase
+ {
+     #[Test]
+-    public function itIsRegisteredOnArtisan(): void
++    public function it_is_registered_on_artisan(): void
+     {
+         $app = $this->createApplication();
+         $app->method('runningInConsole')->willReturn(true);
+@@ -33,7 +33,7 @@ public function itIsRegisteredOnArtisan(): void
+     }
+ 
+     #[Test]
+-    public function itIsNotRegisteredOnTesting(): void
++    public function it_is_not_registered_on_testing(): void
+     {
+         $app = $this->createApplication();
+         $app->method('runningInConsole')->willReturn(true);
+@@ -45,7 +45,7 @@ public function itIsNotRegisteredOnTesting(): void
+     }
+ 
+     #[Test]
+-    public function itIsNotRegisteredOnHttp(): void
++    public function it_is_not_registered_on_http(): void
+     {
+         $app = $this->createApplication();
+         $app->method('runningInConsole')->willReturn(false);
+@@ -57,7 +57,7 @@ public function itIsNotRegisteredOnHttp(): void
+     }
+ 
+     #[Test]
+-    public function exceptionHandlerRespectsIsContract(): void
++    public function exception_handler_respects_is_contract(): void
+     {
+         $app = $this->createApplication();
+ 
+@@ -68,7 +68,7 @@ public function exceptionHandlerRespectsIsContract(): void
+     }
+ 
+     #[Test]
+-    public function itReportsToTheOriginalExceptionHandler(): void
++    public function it_reports_to_the_original_exception_handler(): void
+     {
+         $app = $this->createApplication();
+         $exception = new Exception;
+@@ -80,7 +80,7 @@ public function itReportsToTheOriginalExceptionHandler(): void
+     }
+ 
+     #[Test]
+-    public function itRendersToTheOriginalExceptionHandler(): void
++    public function it_renders_to_the_original_exception_handler(): void
+     {
+         $app = $this->createApplication();
+         $exception = new Exception;
+@@ -93,7 +93,7 @@ public function itRendersToTheOriginalExceptionHandler(): void
+     }
+ 
+     #[Test]
+-    public function itRendersNonSymfonyConsoleExceptionsWithSymfony(): void
++    public function it_renders_non_symfony_console_exceptions_with_symfony(): void
+     {
+         $app = $this->createApplication();
+         $exception = new InvalidArgumentException;
+@@ -107,7 +107,7 @@ public function itRendersNonSymfonyConsoleExceptionsWithSymfony(): void
+     }
+ 
+     #[Test]
+-    public function isInspectorGetsTrace(): void
++    public function is_inspector_gets_trace(): void
+     {
+         $method = new ReflectionMethod(Inspector::class, 'getTrace');
+         $method->setAccessible(true);
+@@ -118,7 +118,7 @@ public function isInspectorGetsTrace(): void
+     }
+ 
+     #[Test]
+-    public function itProvidesOnlyTheProviderContract(): void
++    public function it_provides_only_the_provider_contract(): void
+     {
+         $app = $this->createApplication();
+         $provides = (new CollisionServiceProvider($app))->provides();
+diff --git a/tests/Unit/Adapters/PhpunitTest.php b/tests/Unit/Adapters/PhpunitTest.php
+index c67a949e..9b1477e9 100755
+--- a/tests/Unit/Adapters/PhpunitTest.php
++++ b/tests/Unit/Adapters/PhpunitTest.php
+@@ -12,7 +12,7 @@
+ class PhpunitTest extends TestCase
+ {
+     #[Test]
+-    public function itIsAPrinter(): void
++    public function it_is_a_printer(): void
+     {
+         $this->assertInstanceOf(DefaultPrinter::class, new DefaultPrinter(true));
+     }
+@@ -33,7 +33,7 @@ private function assertConsoleOutputNotContainsString(string $needle, string $co
+     }
+ 
+     #[Test]
+-    public function itHasTests(): void
++    public function it_has_tests(): void
+     {
+         $output = $this->runCollisionTests([
+             '--exclude-group',
+@@ -59,7 +59,7 @@ public function itHasTests(): void
+     }
+ 
+     #[Test]
+-    public function itHasCustomTestCaseName(): void
++    public function it_has_custom_test_case_name(): void
+     {
+         $output = $this->runCollisionTests([
+             '--group',
+@@ -78,7 +78,7 @@ public function itHasCustomTestCaseName(): void
+     }
+ 
+     #[Test]
+-    public function itPrintedUnexpectedOutput(): void
++    public function it_printed_unexpected_output(): void
+     {
+         $output = $this->runCollisionTests([
+             '--group',
+@@ -98,7 +98,7 @@ public function itPrintedUnexpectedOutput(): void
+     }
+ 
+     #[Test]
+-    public function itHasATodo(): void
++    public function it_has_a_todo(): void
+     {
+         $output = $this->runCollisionTests([
+             '--group',
+@@ -117,7 +117,7 @@ public function itHasATodo(): void
+     }
+ 
+     #[Test]
+-    public function itHasRecap(): void
++    public function it_has_recap(): void
+     {
+         $output = $this->runCollisionTests([
+             '--exclude-group',
+@@ -136,7 +136,7 @@ public function itHasRecap(): void
+     }
+ 
+     #[Test]
+-    public function itHasRecapWithRandomOrderSeed(): void
++    public function it_has_recap_with_random_order_seed(): void
+     {
+         $output = $this->runCollisionTests([
+             '--order-by=random',
+@@ -152,7 +152,7 @@ public function itHasRecapWithRandomOrderSeed(): void
+     }
+ 
+     #[Test]
+-    public function itInformsTheUserWhenNoTestsAreExecuted(): void
++    public function it_informs_the_user_when_no_tests_are_executed(): void
+     {
+         $output = $this->runCollisionTests([
+             '--filter',
+@@ -166,7 +166,7 @@ public function itInformsTheUserWhenNoTestsAreExecuted(): void
+     }
+ 
+     #[Test]
+-    public function itHasFailure(): void
++    public function it_has_failure(): void
+     {
+         $output = $this->runCollisionTests([], 1);
+ 
+@@ -226,7 +226,7 @@ private function runCollisionTests(array $arguments = [], int $exitCode = 0): st
+     }
+ 
+     #[Test]
+-    public function itHasOutputInStdoutWithBeStrictAboutOutputDuringTestsFalse(): void
++    public function it_has_output_in_stdout_with_be_strict_about_output_during_tests_false(): void
+     {
+         if (! file_exists('./vendor/bin/pest')) {
+             $this->markTestSkipped('Pest is not installed.');
+diff --git a/tests/Unit/ArgumentFormatterTest.php b/tests/Unit/ArgumentFormatterTest.php
+index 4fc1578a..92f7dd1e 100755
+--- a/tests/Unit/ArgumentFormatterTest.php
++++ b/tests/Unit/ArgumentFormatterTest.php
+@@ -11,7 +11,7 @@
+ class ArgumentFormatterTest extends TestCase
+ {
+     #[Test]
+-    public function itFormatsAString(): void
++    public function it_formats_a_string(): void
+     {
+         $argumentFormatter = new ArgumentFormatter;
+ 
+@@ -23,7 +23,7 @@ public function itFormatsAString(): void
+     }
+ 
+     #[Test]
+-    public function itFormatsALongString(): void
++    public function it_formats_a_long_string(): void
+     {
+         $argumentFormatter = new ArgumentFormatter;
+ 
+@@ -35,7 +35,7 @@ public function itFormatsALongString(): void
+     }
+ 
+     #[Test]
+-    public function itFormatsAArray(): void
++    public function it_formats_a_array(): void
+     {
+         $argumentFormatter = new ArgumentFormatter;
+ 
+@@ -47,7 +47,7 @@ public function itFormatsAArray(): void
+     }
+ 
+     #[Test]
+-    public function itFormatsAObject(): void
++    public function it_formats_a_object(): void
+     {
+         $argumentFormatter = new ArgumentFormatter;
+ 
+diff --git a/tests/Unit/HandlerTest.php b/tests/Unit/HandlerTest.php
+index b2cf14d0..ec4ec6e0 100755
+--- a/tests/Unit/HandlerTest.php
++++ b/tests/Unit/HandlerTest.php
+@@ -13,7 +13,7 @@
+ class HandlerTest extends TestCase
+ {
+     #[Test]
+-    public function itSetsTheOutput(): void
++    public function it_sets_the_output(): void
+     {
+         $output = new ConsoleOutput;
+         $handler = new Handler;
+@@ -23,7 +23,7 @@ public function itSetsTheOutput(): void
+     }
+ 
+     #[Test]
+-    public function itGetsTheWriter(): void
++    public function it_gets_the_writer(): void
+     {
+         $writer = new Writer;
+         $handler = new Handler($writer);
+diff --git a/tests/Unit/ProviderTest.php b/tests/Unit/ProviderTest.php
+index f200346d..5aa12e9f 100755
+--- a/tests/Unit/ProviderTest.php
++++ b/tests/Unit/ProviderTest.php
+@@ -14,7 +14,7 @@
+ class ProviderTest extends TestCase
+ {
+     #[Test]
+-    public function itRegistersTheErrorHandler(): void
++    public function it_registers_the_error_handler(): void
+     {
+         $handler = new Handler;
+ 
+@@ -32,7 +32,7 @@ public function itRegistersTheErrorHandler(): void
+     }
+ 
+     #[Test]
+-    public function itGetsTheHandler(): void
++    public function it_gets_the_handler(): void
+     {
+         $handler = new Handler;
+         $provider = new Provider(new Run, $handler);
+diff --git a/tests/Unit/TestExceptionTest.php b/tests/Unit/TestExceptionTest.php
+index aef1643d..2f1f2ae1 100644
+--- a/tests/Unit/TestExceptionTest.php
++++ b/tests/Unit/TestExceptionTest.php
+@@ -12,7 +12,7 @@
+ class TestExceptionTest extends TestCase
+ {
+     #[Test]
+-    public function itShortensContainsErrorMessages(): void
++    public function it_shortens_contains_error_messages(): void
+     {
+         $message = <<<'EOF'
+   Failed asserting that 'aaa
+@@ -38,7 +38,7 @@ public function itShortensContainsErrorMessages(): void
+     }
+ 
+     #[Test]
+-    public function itShortensNotContainErrorMessages(): void
++    public function it_shortens_not_contain_error_messages(): void
+     {
+         $message = <<<'EOF'
+   Failed asserting that 'aaa
+diff --git a/tests/Unit/WriterTest.php b/tests/Unit/WriterTest.php
+index 3b0edd3c..771d3c05 100755
+--- a/tests/Unit/WriterTest.php
++++ b/tests/Unit/WriterTest.php
+@@ -22,7 +22,7 @@
+ class WriterTest extends TestCase
+ {
+     #[Test]
+-    public function itGetsTheOutput(): void
++    public function it_gets_the_output(): void
+     {
+         $writer = new Writer(new NullSolutionsRepository, $output = new ConsoleOutput);
+ 
+@@ -30,7 +30,7 @@ public function itGetsTheOutput(): void
+     }
+ 
+     #[Test]
+-    public function itSetsTheOutput(): void
++    public function it_sets_the_output(): void
+     {
+         $writer = (new Writer)->setOutput($output = new ConsoleOutput);
+ 
+@@ -38,7 +38,7 @@ public function itSetsTheOutput(): void
+     }
+ 
+     #[Test]
+-    public function itWritesTheException(): void
++    public function it_writes_the_exception(): void
+     {
+         $inspector = new Inspector(HelloWorldFile1::say());
+ 
+@@ -78,7 +78,7 @@ public function itWritesTheException(): void
+     }
+ 
+     #[Test]
+-    public function itWritesDetails(): void
++    public function it_writes_details(): void
+     {
+         $inspector = new Inspector(HelloWorldFile1::say());
+ 
+@@ -117,7 +117,7 @@ public function itWritesDetails(): void
+     }
+ 
+     #[Test]
+-    public function itIgnoresClosures(): void
++    public function it_ignores_closures(): void
+     {
+         $inspector = new Inspector(HelloWorldFile1::say());
+ 
+@@ -144,7 +144,7 @@ public function itIgnoresClosures(): void
+     }
+ 
+     #[Test]
+-    public function itIgnoresFolders(): void
++    public function it_ignores_folders(): void
+     {
+         $inspector = new Inspector(HelloWorldFile1::say());
+ 
+@@ -170,7 +170,7 @@ public function itIgnoresFolders(): void
+     }
+ 
+     #[Test]
+-    public function itHidesEditor(): void
++    public function it_hides_editor(): void
+     {
+         $inspector = new Inspector(HelloWorldFile1::say());
+ 
+@@ -200,7 +200,7 @@ public function itHidesEditor(): void
+     }
+ 
+     #[Test]
+-    public function itHidesTrace(): void
++    public function it_hides_trace(): void
+     {
+         $inspector = new Inspector(HelloWorldFile1::say());
+ 
+@@ -235,7 +235,7 @@ public function itHidesTrace(): void
+     }
+ 
+     #[Test]
+-    public function itSupportsRenderlessContracts(): void
++    public function it_supports_renderless_contracts(): void
+     {
+         $inspector = new Inspector(HelloWorldFile4::say());
+ 
+@@ -255,7 +255,7 @@ public function itSupportsRenderlessContracts(): void
+     }
+ 
+     #[Test]
+-    public function itSupportsCustomEditorContracts(): void
++    public function it_supports_custom_editor_contracts(): void
+     {
+         $inspector = new Inspector(HelloWorldFile5::say());
+ 

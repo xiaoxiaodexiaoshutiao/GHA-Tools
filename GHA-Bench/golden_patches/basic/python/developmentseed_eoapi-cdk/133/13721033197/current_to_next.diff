@@ -1,0 +1,43 @@
+diff --git a/lib/ingestor-api/runtime/tests/test_registration.py b/lib/ingestor-api/runtime/tests/test_registration.py
+index 9f8c672..bc0d48c 100644
+--- a/lib/ingestor-api/runtime/tests/test_registration.py
++++ b/lib/ingestor-api/runtime/tests/test_registration.py
+@@ -93,9 +93,9 @@ def test_validates_missing_collection(
+             collection_id=self.example_ingestion.item.collection
+         )
+         assert response.status_code == 422, "should get validation error"
+-        assert len(self.db.fetch_many(status="queued")["items"]) == 0, (
+-            "data should not be stored in DB"
+-        )
++        assert (
++            len(self.db.fetch_many(status="queued")["items"]) == 0
++        ), "data should not be stored in DB"
+ 
+     def test_validates_no_collection_id(
+         self, client_authenticated, collection_exists, asset_exists
+@@ -108,9 +108,9 @@ def test_validates_no_collection_id(
+             json=item_sans_id.model_dump(mode="json"),
+         )
+         assert response.status_code == 422, "should get validation error"
+-        assert len(self.db.fetch_many(status="queued")["items"]) == 0, (
+-            "data should not be stored in DB"
+-        )
++        assert (
++            len(self.db.fetch_many(status="queued")["items"]) == 0
++        ), "data should not be stored in DB"
+ 
+     def test_validates_missing_assets(
+         self, client_authenticated, collection_exists, asset_missing
+@@ -136,9 +136,9 @@ def test_validates_missing_assets(
+                 err["loc"] == ["body", "assets", asset_type, "href"]
+                 for err in response.json()["detail"]
+             ), "should reference asset type in validation error response"
+-        assert len(self.db.fetch_many(status="queued")["items"]) == 0, (
+-            "data should not be stored in DB"
+-        )
++        assert (
++            len(self.db.fetch_many(status="queued")["items"]) == 0
++        ), "data should not be stored in DB"
+ 
+ 
+ class TestList:

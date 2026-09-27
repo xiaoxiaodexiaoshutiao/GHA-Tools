@@ -1,0 +1,280 @@
+2025-03-11T03:34:46.4801548Z Requested labels: ubuntu-latest
+2025-03-11T03:34:46.4801815Z Job defined at: secondlife/viewer/.github/workflows/pre-commit.yaml@refs/pull/3708/merge
+2025-03-11T03:34:46.4801892Z Waiting for a runner to pick up this job...
+2025-03-11T03:34:47.2567598Z Job is waiting for a hosted runner to come online.
+2025-03-11T03:34:50.4399471Z Job is about to start running on the hosted runner: GitHub Actions 490 (hosted)
+2025-03-11T03:34:53.1117288Z Current runner version: '2.322.0'
+2025-03-11T03:34:53.1151198Z ##[group]Operating System
+2025-03-11T03:34:53.1152008Z Ubuntu
+2025-03-11T03:34:53.1152555Z 24.04.2
+2025-03-11T03:34:53.1153209Z LTS
+2025-03-11T03:34:53.1153729Z ##[endgroup]
+2025-03-11T03:34:53.1154346Z ##[group]Runner Image
+2025-03-11T03:34:53.1154941Z Image: ubuntu-24.04
+2025-03-11T03:34:53.1155501Z Version: 20250302.1.0
+2025-03-11T03:34:53.1156609Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250302.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-11T03:34:53.1158022Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250302.1
+2025-03-11T03:34:53.1158983Z ##[endgroup]
+2025-03-11T03:34:53.1159757Z ##[group]Runner Image Provisioner
+2025-03-11T03:34:53.1160369Z 2.0.422.1
+2025-03-11T03:34:53.1160916Z ##[endgroup]
+2025-03-11T03:34:53.1163232Z ##[group]GITHUB_TOKEN Permissions
+2025-03-11T03:34:53.1165239Z Actions: write
+2025-03-11T03:34:53.1166080Z Attestations: write
+2025-03-11T03:34:53.1166736Z Checks: write
+2025-03-11T03:34:53.1167398Z Contents: write
+2025-03-11T03:34:53.1167943Z Deployments: write
+2025-03-11T03:34:53.1168549Z Discussions: write
+2025-03-11T03:34:53.1169168Z Issues: write
+2025-03-11T03:34:53.1170213Z Metadata: read
+2025-03-11T03:34:53.1170938Z Packages: write
+2025-03-11T03:34:53.1171483Z Pages: write
+2025-03-11T03:34:53.1172049Z PullRequests: write
+2025-03-11T03:34:53.1172655Z RepositoryProjects: write
+2025-03-11T03:34:53.1173301Z SecurityEvents: write
+2025-03-11T03:34:53.1173876Z Statuses: write
+2025-03-11T03:34:53.1174411Z ##[endgroup]
+2025-03-11T03:34:53.1176530Z Secret source: Actions
+2025-03-11T03:34:53.1177271Z Prepare workflow directory
+2025-03-11T03:34:53.1570616Z Prepare all required actions
+2025-03-11T03:34:53.1606944Z Getting action download info
+2025-03-11T03:34:53.4414048Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-11T03:34:53.5558723Z Download action repository 'actions/setup-python@v4' (SHA:65d7f2d534ac1bc67fcd62888c5f4f3d2cb2b236)
+2025-03-11T03:34:53.6640162Z Download action repository 'pre-commit/action@v3.0.0' (SHA:646c83fcd040023954eafda54b4db0192ce70507)
+2025-03-11T03:34:54.1671221Z Getting action download info
+2025-03-11T03:34:54.3422507Z Download action repository 'actions/cache@v3' (SHA:2f8e54208210a422b2efd51efaa6bd6d7ca8920f)
+2025-03-11T03:34:55.2555536Z Complete job name: pre-commit
+2025-03-11T03:34:55.3313007Z ##[group]Run actions/checkout@v4
+2025-03-11T03:34:55.3314198Z with:
+2025-03-11T03:34:55.3314979Z   repository: secondlife/viewer
+2025-03-11T03:34:55.3316010Z   token: ***
+2025-03-11T03:34:55.3316785Z   ssh-strict: true
+2025-03-11T03:34:55.3317557Z   ssh-user: git
+2025-03-11T03:34:55.3318349Z   persist-credentials: true
+2025-03-11T03:34:55.3319164Z   clean: true
+2025-03-11T03:34:55.3320123Z   sparse-checkout-cone-mode: true
+2025-03-11T03:34:55.3320980Z   fetch-depth: 1
+2025-03-11T03:34:55.3321751Z   fetch-tags: false
+2025-03-11T03:34:55.3322561Z   show-progress: true
+2025-03-11T03:34:55.3323375Z   lfs: false
+2025-03-11T03:34:55.3324121Z   submodules: false
+2025-03-11T03:34:55.3324897Z   set-safe-directory: true
+2025-03-11T03:34:55.3325943Z ##[endgroup]
+2025-03-11T03:34:55.5790596Z Syncing repository: secondlife/viewer
+2025-03-11T03:34:55.5793117Z ##[group]Getting Git version info
+2025-03-11T03:34:55.5794142Z Working directory is '/home/runner/work/viewer/viewer'
+2025-03-11T03:34:55.5795639Z [command]/usr/bin/git version
+2025-03-11T03:34:55.5895083Z git version 2.48.1
+2025-03-11T03:34:55.5926655Z ##[endgroup]
+2025-03-11T03:34:55.5941755Z Temporarily overriding HOME='/home/runner/work/_temp/e6017202-0d72-4b3f-a020-998ce3e76ab8' before making global git config changes
+2025-03-11T03:34:55.5944325Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-11T03:34:55.5948691Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/viewer/viewer
+2025-03-11T03:34:55.5985807Z Deleting the contents of '/home/runner/work/viewer/viewer'
+2025-03-11T03:34:55.5990536Z ##[group]Initializing the repository
+2025-03-11T03:34:55.5995197Z [command]/usr/bin/git init /home/runner/work/viewer/viewer
+2025-03-11T03:34:55.6137205Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-11T03:34:55.6138479Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-11T03:34:55.6139970Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-11T03:34:55.6141149Z hint:
+2025-03-11T03:34:55.6142045Z hint: 	git config --global init.defaultBranch <name>
+2025-03-11T03:34:55.6142939Z hint:
+2025-03-11T03:34:55.6143829Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-11T03:34:55.6145003Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-11T03:34:55.6145975Z hint:
+2025-03-11T03:34:55.6146725Z hint: 	git branch -m <name>
+2025-03-11T03:34:55.6156212Z Initialized empty Git repository in /home/runner/work/viewer/viewer/.git/
+2025-03-11T03:34:55.6168342Z [command]/usr/bin/git remote add origin https://github.com/secondlife/viewer
+2025-03-11T03:34:55.6286379Z ##[endgroup]
+2025-03-11T03:34:55.6288802Z ##[group]Disabling automatic garbage collection
+2025-03-11T03:34:55.6290747Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-11T03:34:55.6294622Z ##[endgroup]
+2025-03-11T03:34:55.6296604Z ##[group]Setting up auth
+2025-03-11T03:34:55.6298291Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-11T03:34:55.6301903Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-11T03:34:55.6648219Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-11T03:34:55.6679073Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-11T03:34:55.6900040Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-11T03:34:55.6954797Z ##[endgroup]
+2025-03-11T03:34:55.6956950Z ##[group]Fetching the repository
+2025-03-11T03:34:55.6965103Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +c77f7911f39a180aac391e4c5c2af162900f5707:refs/remotes/pull/3708/merge
+2025-03-11T03:34:59.2952486Z From https://github.com/secondlife/viewer
+2025-03-11T03:34:59.2953244Z  * [new ref]         c77f7911f39a180aac391e4c5c2af162900f5707 -> pull/3708/merge
+2025-03-11T03:34:59.2980135Z ##[endgroup]
+2025-03-11T03:34:59.2980804Z ##[group]Determining the checkout info
+2025-03-11T03:34:59.2982308Z ##[endgroup]
+2025-03-11T03:34:59.2987745Z [command]/usr/bin/git sparse-checkout disable
+2025-03-11T03:34:59.3032492Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-11T03:34:59.3061623Z ##[group]Checking out the ref
+2025-03-11T03:34:59.3065854Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/3708/merge
+2025-03-11T03:34:59.9031972Z Note: switching to 'refs/remotes/pull/3708/merge'.
+2025-03-11T03:34:59.9032553Z 
+2025-03-11T03:34:59.9032950Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-11T03:34:59.9033991Z changes and commit them, and you can discard any commits you make in this
+2025-03-11T03:34:59.9034999Z state without impacting any branches by switching back to a branch.
+2025-03-11T03:34:59.9035569Z 
+2025-03-11T03:34:59.9036001Z If you want to create a new branch to retain commits you create, you may
+2025-03-11T03:34:59.9036729Z do so (now or later) by using -c with the switch command. Example:
+2025-03-11T03:34:59.9037117Z 
+2025-03-11T03:34:59.9037279Z   git switch -c <new-branch-name>
+2025-03-11T03:34:59.9037567Z 
+2025-03-11T03:34:59.9037740Z Or undo this operation with:
+2025-03-11T03:34:59.9038038Z 
+2025-03-11T03:34:59.9038544Z   git switch -
+2025-03-11T03:34:59.9038825Z 
+2025-03-11T03:34:59.9039188Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-11T03:34:59.9039966Z 
+2025-03-11T03:34:59.9040551Z HEAD is now at c77f791 Merge 4132a13972b3a76af22ba3d274be30be3680acc2 into 573ca63e0f837fd52cbfc8adc3546d8971d21b12
+2025-03-11T03:34:59.9054518Z ##[endgroup]
+2025-03-11T03:34:59.9095396Z [command]/usr/bin/git log -1 --format=%H
+2025-03-11T03:34:59.9118745Z c77f7911f39a180aac391e4c5c2af162900f5707
+2025-03-11T03:34:59.9338265Z ##[group]Run actions/setup-python@v4
+2025-03-11T03:34:59.9338565Z with:
+2025-03-11T03:34:59.9338768Z   python-version: 3.x
+2025-03-11T03:34:59.9338987Z   check-latest: false
+2025-03-11T03:34:59.9339305Z   token: ***
+2025-03-11T03:34:59.9339671Z   update-environment: true
+2025-03-11T03:34:59.9339912Z   allow-prereleases: false
+2025-03-11T03:34:59.9340165Z ##[endgroup]
+2025-03-11T03:35:00.0604062Z ##[group]Installed versions
+2025-03-11T03:35:00.0660959Z Successfully set up CPython (3.13.2)
+2025-03-11T03:35:00.0661900Z ##[endgroup]
+2025-03-11T03:35:00.0770235Z ##[group]Run pre-commit/action@v3.0.0
+2025-03-11T03:35:00.0770541Z with:
+2025-03-11T03:35:00.0770744Z   extra_args: --all-files
+2025-03-11T03:35:00.0770965Z env:
+2025-03-11T03:35:00.0771211Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-11T03:35:00.0771634Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-11T03:35:00.0772033Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-11T03:35:00.0772397Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-11T03:35:00.0772753Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-11T03:35:00.0773117Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-11T03:35:00.0773419Z ##[endgroup]
+2025-03-11T03:35:00.0852604Z ##[group]Run python -m pip install pre-commit
+2025-03-11T03:35:00.0852994Z [36;1mpython -m pip install pre-commit[0m
+2025-03-11T03:35:00.0904735Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-11T03:35:00.0905166Z env:
+2025-03-11T03:35:00.0905429Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-11T03:35:00.0905847Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-11T03:35:00.0906304Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-11T03:35:00.0906664Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-11T03:35:00.0907050Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-11T03:35:00.0907423Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-11T03:35:00.0907734Z ##[endgroup]
+2025-03-11T03:35:02.9045147Z Collecting pre-commit
+2025-03-11T03:35:02.9648350Z   Downloading pre_commit-4.1.0-py2.py3-none-any.whl.metadata (1.3 kB)
+2025-03-11T03:35:02.9929712Z Collecting cfgv>=2.0.0 (from pre-commit)
+2025-03-11T03:35:03.0030581Z   Downloading cfgv-3.4.0-py2.py3-none-any.whl.metadata (8.5 kB)
+2025-03-11T03:35:03.0495610Z Collecting identify>=1.0.0 (from pre-commit)
+2025-03-11T03:35:03.0605256Z   Downloading identify-2.6.9-py2.py3-none-any.whl.metadata (4.4 kB)
+2025-03-11T03:35:03.0879006Z Collecting nodeenv>=0.11.1 (from pre-commit)
+2025-03-11T03:35:03.0981528Z   Downloading nodeenv-1.9.1-py2.py3-none-any.whl.metadata (21 kB)
+2025-03-11T03:35:03.1407367Z Collecting pyyaml>=5.1 (from pre-commit)
+2025-03-11T03:35:03.1519033Z   Downloading PyYAML-6.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+2025-03-11T03:35:03.1993551Z Collecting virtualenv>=20.10.0 (from pre-commit)
+2025-03-11T03:35:03.2093658Z   Downloading virtualenv-20.29.3-py3-none-any.whl.metadata (4.5 kB)
+2025-03-11T03:35:03.2398905Z Collecting distlib<1,>=0.3.7 (from virtualenv>=20.10.0->pre-commit)
+2025-03-11T03:35:03.2506834Z   Downloading distlib-0.3.9-py2.py3-none-any.whl.metadata (5.2 kB)
+2025-03-11T03:35:03.2816860Z Collecting filelock<4,>=3.12.2 (from virtualenv>=20.10.0->pre-commit)
+2025-03-11T03:35:03.2919044Z   Downloading filelock-3.17.0-py3-none-any.whl.metadata (2.9 kB)
+2025-03-11T03:35:03.3210167Z Collecting platformdirs<5,>=3.9.1 (from virtualenv>=20.10.0->pre-commit)
+2025-03-11T03:35:03.3319529Z   Downloading platformdirs-4.3.6-py3-none-any.whl.metadata (11 kB)
+2025-03-11T03:35:03.3516886Z Downloading pre_commit-4.1.0-py2.py3-none-any.whl (220 kB)
+2025-03-11T03:35:03.3837945Z Downloading cfgv-3.4.0-py2.py3-none-any.whl (7.2 kB)
+2025-03-11T03:35:03.3969834Z Downloading identify-2.6.9-py2.py3-none-any.whl (99 kB)
+2025-03-11T03:35:03.4109785Z Downloading nodeenv-1.9.1-py2.py3-none-any.whl (22 kB)
+2025-03-11T03:35:03.4251228Z Downloading PyYAML-6.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (759 kB)
+2025-03-11T03:35:03.4443281Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 759.5/759.5 kB 53.5 MB/s eta 0:00:00
+2025-03-11T03:35:03.4542923Z Downloading virtualenv-20.29.3-py3-none-any.whl (4.3 MB)
+2025-03-11T03:35:03.4877601Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 131.5 MB/s eta 0:00:00
+2025-03-11T03:35:03.4979112Z Downloading distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+2025-03-11T03:35:03.5123331Z Downloading filelock-3.17.0-py3-none-any.whl (16 kB)
+2025-03-11T03:35:03.5251536Z Downloading platformdirs-4.3.6-py3-none-any.whl (18 kB)
+2025-03-11T03:35:03.5690886Z Installing collected packages: distlib, pyyaml, platformdirs, nodeenv, identify, filelock, cfgv, virtualenv, pre-commit
+2025-03-11T03:35:03.9711345Z Successfully installed cfgv-3.4.0 distlib-0.3.9 filelock-3.17.0 identify-2.6.9 nodeenv-1.9.1 platformdirs-4.3.6 pre-commit-4.1.0 pyyaml-6.0.2 virtualenv-20.29.3
+2025-03-11T03:35:04.1659303Z ##[group]Run python -m pip freeze --local
+2025-03-11T03:35:04.1659837Z [36;1mpython -m pip freeze --local[0m
+2025-03-11T03:35:04.1704897Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-11T03:35:04.1705221Z env:
+2025-03-11T03:35:04.1705475Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-11T03:35:04.1705902Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-11T03:35:04.1706327Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-11T03:35:04.1706681Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-11T03:35:04.1707047Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-11T03:35:04.1707404Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-11T03:35:04.1707698Z ##[endgroup]
+2025-03-11T03:35:04.3830095Z cfgv==3.4.0
+2025-03-11T03:35:04.3830453Z distlib==0.3.9
+2025-03-11T03:35:04.3830782Z filelock==3.17.0
+2025-03-11T03:35:04.3831151Z identify==2.6.9
+2025-03-11T03:35:04.3831482Z nodeenv==1.9.1
+2025-03-11T03:35:04.3831828Z platformdirs==4.3.6
+2025-03-11T03:35:04.3832186Z pre_commit==4.1.0
+2025-03-11T03:35:04.3832514Z PyYAML==6.0.2
+2025-03-11T03:35:04.3832841Z virtualenv==20.29.3
+2025-03-11T03:35:04.4696626Z ##[group]Run actions/cache@v3
+2025-03-11T03:35:04.4696869Z with:
+2025-03-11T03:35:04.4697064Z   path: ~/.cache/pre-commit
+2025-03-11T03:35:04.4697625Z   key: pre-commit-3|/opt/hostedtoolcache/Python/3.13.2/x64|860f7b2d7e0a9805616bd514915ca18c03665bf0a4b6f3e36887a65b13a578be
+2025-03-11T03:35:04.4698211Z   enableCrossOsArchive: false
+2025-03-11T03:35:04.4698458Z   fail-on-cache-miss: false
+2025-03-11T03:35:04.4698773Z   lookup-only: false
+2025-03-11T03:35:04.4698971Z env:
+2025-03-11T03:35:04.4699213Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-11T03:35:04.4699819Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-11T03:35:04.4700239Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-11T03:35:04.4700608Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-11T03:35:04.4700978Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-11T03:35:04.4701350Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-11T03:35:04.4701661Z ##[endgroup]
+2025-03-11T03:35:04.8493718Z Cache not found for input keys: pre-commit-3|/opt/hostedtoolcache/Python/3.13.2/x64|860f7b2d7e0a9805616bd514915ca18c03665bf0a4b6f3e36887a65b13a578be
+2025-03-11T03:35:04.8560428Z ##[group]Run pre-commit run --show-diff-on-failure --color=always --all-files
+2025-03-11T03:35:04.8560940Z [36;1mpre-commit run --show-diff-on-failure --color=always --all-files[0m
+2025-03-11T03:35:04.8606803Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-11T03:35:04.8607133Z env:
+2025-03-11T03:35:04.8607381Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-11T03:35:04.8607786Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-11T03:35:04.8608207Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-11T03:35:04.8608576Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-11T03:35:04.8608936Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-11T03:35:04.8609292Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-11T03:35:04.8609925Z ##[endgroup]
+2025-03-11T03:35:05.2009841Z [INFO][m Initializing environment for https://github.com/secondlife/git-hooks.git.
+2025-03-11T03:35:05.7143724Z [INFO][m Initializing environment for https://github.com/pre-commit/pre-commit-hooks.
+2025-03-11T03:35:06.1931890Z [43;30m[WARNING][m repo `https://github.com/pre-commit/pre-commit-hooks` uses deprecated stage names (commit, push) which will be removed in a future version.  Hint: often `pre-commit autoupdate --repo https://github.com/pre-commit/pre-commit-hooks` will fix this.  if it does not -- consider reporting an issue to that repo.
+2025-03-11T03:35:06.1963580Z [INFO][m Installing environment for https://github.com/secondlife/git-hooks.git.
+2025-03-11T03:35:06.1964454Z [INFO][m Once installed this environment will be reused.
+2025-03-11T03:35:06.1964912Z [INFO][m This may take a few minutes...
+2025-03-11T03:35:10.7550455Z [INFO][m Installing environment for https://github.com/pre-commit/pre-commit-hooks.
+2025-03-11T03:35:10.7551413Z [INFO][m Once installed this environment will be reused.
+2025-03-11T03:35:10.7551828Z [INFO][m This may take a few minutes...
+2025-03-11T03:35:15.2073646Z Code Has Opensource License..............................................[42mPassed[m
+2025-03-11T03:35:15.9205747Z Check LLSD...............................................................[42mPassed[m
+2025-03-11T03:35:16.3442650Z Check for Trigraphs......................................................[42mPassed[m
+2025-03-11T03:35:16.7685938Z Copyright................................................................[42mPassed[m
+2025-03-11T03:35:17.1810732Z Fix end of files.........................................................[42mPassed[m
+2025-03-11T03:35:17.6422419Z Check Indentation (Spaces)...............................................[41mFailed[m
+2025-03-11T03:35:17.6422949Z [2m- hook id: indent-with-spaces[m
+2025-03-11T03:35:17.6423248Z [2m- exit code: 1[m
+2025-03-11T03:35:17.6423389Z 
+2025-03-11T03:35:17.6423603Z indra/newview/llviewerjointmesh.cpp: 4 lines starting with tabs found
+2025-03-11T03:35:17.6424080Z indra/llappearance/llpolymesh.cpp: 1 line starting with tabs found
+2025-03-11T03:35:17.6424610Z indra/newview/llfloatercreatelandmark.cpp: 1 line starting with tabs found
+2025-03-11T03:35:17.6424912Z 
+2025-03-11T03:35:18.3717128Z check xml................................................................[42mPassed[m
+2025-03-11T03:35:19.0987661Z mixed line ending........................................................[42mPassed[m
+2025-03-11T03:35:19.7671851Z trim trailing whitespace.................................................[42mPassed[m
+2025-03-11T03:35:19.7894046Z ##[error]Process completed with exit code 1.
+2025-03-11T03:35:19.7948623Z Post job cleanup.
+2025-03-11T03:35:19.8000900Z Post job cleanup.
+2025-03-11T03:35:19.8940419Z [command]/usr/bin/git version
+2025-03-11T03:35:19.8976804Z git version 2.48.1
+2025-03-11T03:35:19.9024639Z Temporarily overriding HOME='/home/runner/work/_temp/874f4a63-6566-4448-b4b7-8cb52cd8d915' before making global git config changes
+2025-03-11T03:35:19.9025821Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-11T03:35:19.9030064Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/viewer/viewer
+2025-03-11T03:35:19.9064051Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-11T03:35:19.9095856Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-11T03:35:19.9336850Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-11T03:35:19.9358462Z http.https://github.com/.extraheader
+2025-03-11T03:35:19.9371313Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-11T03:35:19.9403203Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-11T03:35:19.9746570Z Cleaning up orphan processes

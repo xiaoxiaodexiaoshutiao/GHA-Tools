@@ -1,0 +1,305 @@
+﻿2025-03-29T11:43:10.5700187Z Current runner version: '2.323.0'
+2025-03-29T11:43:10.5723731Z ##[group]Operating System
+2025-03-29T11:43:10.5724607Z Ubuntu
+2025-03-29T11:43:10.5725074Z 24.04.2
+2025-03-29T11:43:10.5725561Z LTS
+2025-03-29T11:43:10.5726036Z ##[endgroup]
+2025-03-29T11:43:10.5726620Z ##[group]Runner Image
+2025-03-29T11:43:10.5727352Z Image: ubuntu-24.04
+2025-03-29T11:43:10.5727928Z Version: 20250323.1.0
+2025-03-29T11:43:10.5728964Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-29T11:43:10.5730311Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-03-29T11:43:10.5731235Z ##[endgroup]
+2025-03-29T11:43:10.5731721Z ##[group]Runner Image Provisioner
+2025-03-29T11:43:10.5732317Z 2.0.422.1
+2025-03-29T11:43:10.5732711Z ##[endgroup]
+2025-03-29T11:43:10.5735011Z ##[group]GITHUB_TOKEN Permissions
+2025-03-29T11:43:10.5737065Z Actions: read
+2025-03-29T11:43:10.5738012Z Attestations: read
+2025-03-29T11:43:10.5738569Z Checks: read
+2025-03-29T11:43:10.5739131Z Contents: read
+2025-03-29T11:43:10.5739581Z Deployments: read
+2025-03-29T11:43:10.5740072Z Discussions: read
+2025-03-29T11:43:10.5740600Z Issues: read
+2025-03-29T11:43:10.5741067Z Metadata: read
+2025-03-29T11:43:10.5741503Z Models: read
+2025-03-29T11:43:10.5742031Z Packages: read
+2025-03-29T11:43:10.5742475Z Pages: read
+2025-03-29T11:43:10.5742959Z PullRequests: read
+2025-03-29T11:43:10.5743538Z RepositoryProjects: read
+2025-03-29T11:43:10.5744051Z SecurityEvents: read
+2025-03-29T11:43:10.5744557Z Statuses: read
+2025-03-29T11:43:10.5745049Z ##[endgroup]
+2025-03-29T11:43:10.5747562Z Secret source: None
+2025-03-29T11:43:10.5748305Z Prepare workflow directory
+2025-03-29T11:43:10.6064301Z Prepare all required actions
+2025-03-29T11:43:10.6100730Z Getting action download info
+2025-03-29T11:43:11.1872695Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-03-29T11:43:11.1873570Z Version: 4.2.2
+2025-03-29T11:43:11.1874380Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-03-29T11:43:11.1875390Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-03-29T11:43:11.1875985Z ##[endgroup]
+2025-03-29T11:43:11.2722639Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-03-29T11:43:11.2723328Z Version: 5.5.0
+2025-03-29T11:43:11.2723947Z Digest: sha256:1fac95d751afd58314aebd2ab01d4bf3b3109a441917bd2cac2a22898ec494f7
+2025-03-29T11:43:11.2724805Z Source commit SHA: 8d9ed9ac5c53483de85588cdf95a591a75ab9f55
+2025-03-29T11:43:11.2725390Z ##[endgroup]
+2025-03-29T11:43:11.5595931Z Download action repository 'coverallsapp/github-action@v2' (SHA:648a8eb78e6d50909eff900e4ec85cab4524a45b)
+2025-03-29T11:43:12.0710439Z Complete job name: test (3.13)
+2025-03-29T11:43:12.1417098Z ##[group]Run actions/checkout@v4
+2025-03-29T11:43:12.1418451Z with:
+2025-03-29T11:43:12.1419234Z   repository: agronholm/sqlacodegen
+2025-03-29T11:43:12.1420448Z   token: ***
+2025-03-29T11:43:12.1421191Z   ssh-strict: true
+2025-03-29T11:43:12.1421996Z   ssh-user: git
+2025-03-29T11:43:12.1422781Z   persist-credentials: true
+2025-03-29T11:43:12.1423685Z   clean: true
+2025-03-29T11:43:12.1424482Z   sparse-checkout-cone-mode: true
+2025-03-29T11:43:12.1425426Z   fetch-depth: 1
+2025-03-29T11:43:12.1426192Z   fetch-tags: false
+2025-03-29T11:43:12.1427115Z   show-progress: true
+2025-03-29T11:43:12.1427901Z   lfs: false
+2025-03-29T11:43:12.1428643Z   submodules: false
+2025-03-29T11:43:12.1429440Z   set-safe-directory: true
+2025-03-29T11:43:12.1430540Z ##[endgroup]
+2025-03-29T11:43:12.3095136Z Syncing repository: agronholm/sqlacodegen
+2025-03-29T11:43:12.3098043Z ##[group]Getting Git version info
+2025-03-29T11:43:12.3099527Z Working directory is '/home/runner/work/sqlacodegen/sqlacodegen'
+2025-03-29T11:43:12.3101515Z [command]/usr/bin/git version
+2025-03-29T11:43:12.3173649Z git version 2.49.0
+2025-03-29T11:43:12.3203339Z ##[endgroup]
+2025-03-29T11:43:12.3220779Z Temporarily overriding HOME='/home/runner/work/_temp/c096672f-6243-45f9-a57c-fedc79fec8cb' before making global git config changes
+2025-03-29T11:43:12.3225648Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-29T11:43:12.3229532Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/sqlacodegen/sqlacodegen
+2025-03-29T11:43:12.3266053Z Deleting the contents of '/home/runner/work/sqlacodegen/sqlacodegen'
+2025-03-29T11:43:12.3270970Z ##[group]Initializing the repository
+2025-03-29T11:43:12.3275554Z [command]/usr/bin/git init /home/runner/work/sqlacodegen/sqlacodegen
+2025-03-29T11:43:12.3337443Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-29T11:43:12.3340284Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-29T11:43:12.3341983Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-29T11:43:12.3343270Z hint:
+2025-03-29T11:43:12.3344136Z hint: 	git config --global init.defaultBranch <name>
+2025-03-29T11:43:12.3345392Z hint:
+2025-03-29T11:43:12.3346820Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-29T11:43:12.3348894Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-29T11:43:12.3350215Z hint:
+2025-03-29T11:43:12.3350917Z hint: 	git branch -m <name>
+2025-03-29T11:43:12.3352390Z Initialized empty Git repository in /home/runner/work/sqlacodegen/sqlacodegen/.git/
+2025-03-29T11:43:12.3356319Z [command]/usr/bin/git remote add origin https://github.com/agronholm/sqlacodegen
+2025-03-29T11:43:12.3398966Z ##[endgroup]
+2025-03-29T11:43:12.3400549Z ##[group]Disabling automatic garbage collection
+2025-03-29T11:43:12.3402297Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-29T11:43:12.3437770Z ##[endgroup]
+2025-03-29T11:43:12.3439279Z ##[group]Setting up auth
+2025-03-29T11:43:12.3445098Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-29T11:43:12.3478341Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-29T11:43:12.3776840Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-29T11:43:12.3807671Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-29T11:43:12.4043401Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-29T11:43:12.4078479Z ##[endgroup]
+2025-03-29T11:43:12.4080471Z ##[group]Fetching the repository
+2025-03-29T11:43:12.4089014Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +fc90a8b70d7ac0a6123630212e42ae6b47794143:refs/remotes/pull/391/merge
+2025-03-29T11:43:12.9842288Z From https://github.com/agronholm/sqlacodegen
+2025-03-29T11:43:12.9843000Z  * [new ref]         fc90a8b70d7ac0a6123630212e42ae6b47794143 -> pull/391/merge
+2025-03-29T11:43:12.9866516Z ##[endgroup]
+2025-03-29T11:43:12.9867545Z ##[group]Determining the checkout info
+2025-03-29T11:43:12.9869631Z ##[endgroup]
+2025-03-29T11:43:12.9875057Z [command]/usr/bin/git sparse-checkout disable
+2025-03-29T11:43:12.9913531Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-29T11:43:12.9941222Z ##[group]Checking out the ref
+2025-03-29T11:43:12.9946106Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/391/merge
+2025-03-29T11:43:13.0004198Z Note: switching to 'refs/remotes/pull/391/merge'.
+2025-03-29T11:43:13.0004770Z 
+2025-03-29T11:43:13.0005079Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-29T11:43:13.0005629Z changes and commit them, and you can discard any commits you make in this
+2025-03-29T11:43:13.0006167Z state without impacting any branches by switching back to a branch.
+2025-03-29T11:43:13.0006817Z 
+2025-03-29T11:43:13.0007273Z If you want to create a new branch to retain commits you create, you may
+2025-03-29T11:43:13.0007776Z do so (now or later) by using -c with the switch command. Example:
+2025-03-29T11:43:13.0008054Z 
+2025-03-29T11:43:13.0008210Z   git switch -c <new-branch-name>
+2025-03-29T11:43:13.0008572Z 
+2025-03-29T11:43:13.0008799Z Or undo this operation with:
+2025-03-29T11:43:13.0009178Z 
+2025-03-29T11:43:13.0009381Z   git switch -
+2025-03-29T11:43:13.0009707Z 
+2025-03-29T11:43:13.0010159Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-29T11:43:13.0010824Z 
+2025-03-29T11:43:13.0011583Z HEAD is now at fc90a8b Merge bb70a81e6803fdab3373245b6eb78ed28ad5d9a4 into 636680d7948ee40710f13e6a451ccd771f2c7f1f
+2025-03-29T11:43:13.0013728Z ##[endgroup]
+2025-03-29T11:43:13.0050719Z [command]/usr/bin/git log -1 --format=%H
+2025-03-29T11:43:13.0073974Z fc90a8b70d7ac0a6123630212e42ae6b47794143
+2025-03-29T11:43:13.0377978Z ##[group]Run actions/setup-python@v5
+2025-03-29T11:43:13.0378376Z with:
+2025-03-29T11:43:13.0378621Z   python-version: 3.13
+2025-03-29T11:43:13.0378914Z   allow-prereleases: true
+2025-03-29T11:43:13.0379191Z   cache: pip
+2025-03-29T11:43:13.0379467Z   cache-dependency-path: pyproject.toml
+2025-03-29T11:43:13.0379798Z   check-latest: false
+2025-03-29T11:43:13.0380200Z   token: ***
+2025-03-29T11:43:13.0380457Z   update-environment: true
+2025-03-29T11:43:13.0380754Z   freethreaded: false
+2025-03-29T11:43:13.0381022Z ##[endgroup]
+2025-03-29T11:43:13.2021887Z ##[group]Installed versions
+2025-03-29T11:43:13.2080617Z Successfully set up CPython (3.13.2)
+2025-03-29T11:43:13.2081468Z ##[endgroup]
+2025-03-29T11:43:13.2363428Z [command]/opt/hostedtoolcache/Python/3.13.2/x64/bin/pip cache dir
+2025-03-29T11:43:14.7227868Z /home/runner/.cache/pip
+2025-03-29T11:43:15.0135246Z Cache hit for: setup-python-Linux-x64-24.04-Ubuntu-python-3.13.2-pip-7d29bd43c6bcc9d552c65bd212a5412892ac62f28ef98e081e2276599d807150
+2025-03-29T11:43:16.2785448Z Received 16777216 of 67364160 (24.9%), 16.0 MBs/sec
+2025-03-29T11:43:16.6874593Z Received 67364160 of 67364160 (100.0%), 45.6 MBs/sec
+2025-03-29T11:43:16.6877413Z Cache Size: ~64 MB (67364160 B)
+2025-03-29T11:43:16.6918831Z [command]/usr/bin/tar -xf /home/runner/work/_temp/db1439c6-1640-4d00-8a05-4584d3a68683/cache.tzst -P -C /home/runner/work/sqlacodegen/sqlacodegen --use-compress-program unzstd
+2025-03-29T11:43:16.8092877Z Cache restored successfully
+2025-03-29T11:43:16.8240746Z Cache restored from key: setup-python-Linux-x64-24.04-Ubuntu-python-3.13.2-pip-7d29bd43c6bcc9d552c65bd212a5412892ac62f28ef98e081e2276599d807150
+2025-03-29T11:43:16.8399197Z ##[group]Run pip install -e .[test]
+2025-03-29T11:43:16.8399563Z [36;1mpip install -e .[test][0m
+2025-03-29T11:43:16.8454241Z shell: /usr/bin/bash -e {0}
+2025-03-29T11:43:16.8454511Z env:
+2025-03-29T11:43:16.8454774Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-29T11:43:16.8455212Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-29T11:43:16.8455660Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-29T11:43:16.8456057Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-29T11:43:16.8456444Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-29T11:43:16.8456827Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-29T11:43:16.8457430Z ##[endgroup]
+2025-03-29T11:43:17.8138345Z Obtaining file:///home/runner/work/sqlacodegen/sqlacodegen
+2025-03-29T11:43:17.8160451Z   Installing build dependencies: started
+2025-03-29T11:43:19.4160853Z   Installing build dependencies: finished with status 'done'
+2025-03-29T11:43:19.4168998Z   Checking if build backend supports build_editable: started
+2025-03-29T11:43:19.6677709Z   Checking if build backend supports build_editable: finished with status 'done'
+2025-03-29T11:43:19.6685651Z   Getting requirements to build editable: started
+2025-03-29T11:43:19.9393649Z   Getting requirements to build editable: finished with status 'done'
+2025-03-29T11:43:19.9402570Z   Preparing editable metadata (pyproject.toml): started
+2025-03-29T11:43:20.2007777Z   Preparing editable metadata (pyproject.toml): finished with status 'done'
+2025-03-29T11:43:20.4441540Z Collecting SQLAlchemy>=2.0.23 (from sqlacodegen==0.0.post1)
+2025-03-29T11:43:20.4749684Z   Downloading sqlalchemy-2.0.40-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.6 kB)
+2025-03-29T11:43:20.5457668Z Collecting inflect>=4.0.0 (from sqlacodegen==0.0.post1)
+2025-03-29T11:43:20.5468382Z   Using cached inflect-7.5.0-py3-none-any.whl.metadata (24 kB)
+2025-03-29T11:43:20.5802038Z Collecting pytest>=7.4 (from sqlacodegen==0.0.post1)
+2025-03-29T11:43:20.5827306Z   Downloading pytest-8.3.5-py3-none-any.whl.metadata (7.6 kB)
+2025-03-29T11:43:20.7880842Z Collecting coverage>=7 (from sqlacodegen==0.0.post1)
+2025-03-29T11:43:20.7908813Z   Downloading coverage-7.7.1-cp313-cp313-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (8.5 kB)
+2025-03-29T11:43:20.8074084Z Collecting psycopg[binary] (from sqlacodegen==0.0.post1)
+2025-03-29T11:43:20.8127494Z   Downloading psycopg-3.2.6-py3-none-any.whl.metadata (4.4 kB)
+2025-03-29T11:43:20.8518724Z Collecting mysql-connector-python (from sqlacodegen==0.0.post1)
+2025-03-29T11:43:20.8530165Z   Using cached mysql_connector_python-9.2.0-cp313-cp313-manylinux_2_28_x86_64.whl.metadata (6.0 kB)
+2025-03-29T11:43:20.8696040Z Collecting more_itertools>=8.5.0 (from inflect>=4.0.0->sqlacodegen==0.0.post1)
+2025-03-29T11:43:20.8707536Z   Using cached more_itertools-10.6.0-py3-none-any.whl.metadata (37 kB)
+2025-03-29T11:43:20.8938146Z Collecting typeguard>=4.0.1 (from inflect>=4.0.0->sqlacodegen==0.0.post1)
+2025-03-29T11:43:20.8950689Z   Using cached typeguard-4.4.2-py3-none-any.whl.metadata (3.8 kB)
+2025-03-29T11:43:20.9057462Z Collecting iniconfig (from pytest>=7.4->sqlacodegen==0.0.post1)
+2025-03-29T11:43:20.9083360Z   Downloading iniconfig-2.1.0-py3-none-any.whl.metadata (2.7 kB)
+2025-03-29T11:43:20.9228804Z Collecting packaging (from pytest>=7.4->sqlacodegen==0.0.post1)
+2025-03-29T11:43:20.9239625Z   Using cached packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+2025-03-29T11:43:20.9339556Z Collecting pluggy<2,>=1.5 (from pytest>=7.4->sqlacodegen==0.0.post1)
+2025-03-29T11:43:20.9350676Z   Using cached pluggy-1.5.0-py3-none-any.whl.metadata (4.8 kB)
+2025-03-29T11:43:21.0099583Z Collecting greenlet>=1 (from SQLAlchemy>=2.0.23->sqlacodegen==0.0.post1)
+2025-03-29T11:43:21.0112037Z   Using cached greenlet-3.1.1-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+2025-03-29T11:43:21.0260417Z Collecting typing-extensions>=4.6.0 (from SQLAlchemy>=2.0.23->sqlacodegen==0.0.post1)
+2025-03-29T11:43:21.0285518Z   Downloading typing_extensions-4.13.0-py3-none-any.whl.metadata (3.0 kB)
+2025-03-29T11:43:21.1266361Z Collecting psycopg-binary==3.2.6 (from psycopg[binary]; extra == "test"->sqlacodegen==0.0.post1)
+2025-03-29T11:43:21.1297824Z   Downloading psycopg_binary-3.2.6-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.8 kB)
+2025-03-29T11:43:21.2099944Z Collecting sqlmodel>=0.0.22 (from sqlacodegen==0.0.post1)
+2025-03-29T11:43:21.2135744Z   Downloading sqlmodel-0.0.24-py3-none-any.whl.metadata (10 kB)
+2025-03-29T11:43:21.2268968Z Collecting pgvector>=0.2.4 (from sqlacodegen==0.0.post1)
+2025-03-29T11:43:21.2301810Z   Downloading pgvector-0.4.0-py3-none-any.whl.metadata (17 kB)
+2025-03-29T11:43:21.3473365Z Collecting numpy (from pgvector>=0.2.4->sqlacodegen==0.0.post1)
+2025-03-29T11:43:21.3500627Z   Downloading numpy-2.2.4-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)
+2025-03-29T11:43:21.4572834Z Collecting pydantic<3.0.0,>=1.10.13 (from sqlmodel>=0.0.22->sqlacodegen==0.0.post1)
+2025-03-29T11:43:21.4600462Z   Downloading pydantic-2.11.1-py3-none-any.whl.metadata (63 kB)
+2025-03-29T11:43:21.4799792Z Collecting annotated-types>=0.6.0 (from pydantic<3.0.0,>=1.10.13->sqlmodel>=0.0.22->sqlacodegen==0.0.post1)
+2025-03-29T11:43:21.4810528Z   Using cached annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+2025-03-29T11:43:21.8974801Z Collecting pydantic-core==2.33.0 (from pydantic<3.0.0,>=1.10.13->sqlmodel>=0.0.22->sqlacodegen==0.0.post1)
+2025-03-29T11:43:21.9002600Z   Downloading pydantic_core-2.33.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+2025-03-29T11:43:21.9142502Z Collecting typing-inspection>=0.4.0 (from pydantic<3.0.0,>=1.10.13->sqlmodel>=0.0.22->sqlacodegen==0.0.post1)
+2025-03-29T11:43:21.9167595Z   Downloading typing_inspection-0.4.0-py3-none-any.whl.metadata (2.6 kB)
+2025-03-29T11:43:21.9351772Z Downloading coverage-7.7.1-cp313-cp313-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (244 kB)
+2025-03-29T11:43:21.9404216Z Using cached inflect-7.5.0-py3-none-any.whl (35 kB)
+2025-03-29T11:43:21.9429604Z Downloading pytest-8.3.5-py3-none-any.whl (343 kB)
+2025-03-29T11:43:21.9496698Z Downloading sqlalchemy-2.0.40-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.2 MB)
+2025-03-29T11:43:21.9749966Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 149.2 MB/s eta 0:00:00
+2025-03-29T11:43:21.9761482Z Using cached mysql_connector_python-9.2.0-cp313-cp313-manylinux_2_28_x86_64.whl (34.0 MB)
+2025-03-29T11:43:22.0045022Z Downloading psycopg_binary-3.2.6-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.3 MB)
+2025-03-29T11:43:22.0297954Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 175.7 MB/s eta 0:00:00
+2025-03-29T11:43:22.0308817Z Using cached greenlet-3.1.1-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (615 kB)
+2025-03-29T11:43:22.0323866Z Using cached more_itertools-10.6.0-py3-none-any.whl (63 kB)
+2025-03-29T11:43:22.0350215Z Downloading pgvector-0.4.0-py3-none-any.whl (27 kB)
+2025-03-29T11:43:22.0382837Z Using cached pluggy-1.5.0-py3-none-any.whl (20 kB)
+2025-03-29T11:43:22.0415135Z Downloading sqlmodel-0.0.24-py3-none-any.whl (28 kB)
+2025-03-29T11:43:22.0446027Z Using cached typeguard-4.4.2-py3-none-any.whl (35 kB)
+2025-03-29T11:43:22.0474548Z Downloading typing_extensions-4.13.0-py3-none-any.whl (45 kB)
+2025-03-29T11:43:22.0524352Z Downloading iniconfig-2.1.0-py3-none-any.whl (6.0 kB)
+2025-03-29T11:43:22.0589066Z Using cached packaging-24.2-py3-none-any.whl (65 kB)
+2025-03-29T11:43:22.0614503Z Downloading psycopg-3.2.6-py3-none-any.whl (199 kB)
+2025-03-29T11:43:22.0737118Z Downloading pydantic-2.11.1-py3-none-any.whl (442 kB)
+2025-03-29T11:43:22.0804716Z Downloading pydantic_core-2.33.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+2025-03-29T11:43:22.0952922Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 140.1 MB/s eta 0:00:00
+2025-03-29T11:43:22.0980823Z Downloading numpy-2.2.4-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.1 MB)
+2025-03-29T11:43:22.2095810Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.1/16.1 MB 145.5 MB/s eta 0:00:00
+2025-03-29T11:43:22.2108113Z Using cached annotated_types-0.7.0-py3-none-any.whl (13 kB)
+2025-03-29T11:43:22.2136059Z Downloading typing_inspection-0.4.0-py3-none-any.whl (14 kB)
+2025-03-29T11:43:22.2836237Z Building wheels for collected packages: sqlacodegen
+2025-03-29T11:43:22.2844963Z   Building editable for sqlacodegen (pyproject.toml): started
+2025-03-29T11:43:22.5837258Z   Building editable for sqlacodegen (pyproject.toml): finished with status 'done'
+2025-03-29T11:43:22.5842526Z   Created wheel for sqlacodegen: filename=sqlacodegen-0.0.post1-0.editable-py3-none-any.whl size=6140 sha256=6cf9bb3e8aa7647750c78a0a27106a8cec5c07c7581fe94d7be46272bd73fb02
+2025-03-29T11:43:22.5844295Z   Stored in directory: /tmp/pip-ephem-wheel-cache-ta1g9p7u/wheels/41/59/e8/b980eb053779f083c9480a0a8cc0fa9f95dcbc7c2ccff3c936
+2025-03-29T11:43:22.5866323Z Successfully built sqlacodegen
+2025-03-29T11:43:22.6341582Z Installing collected packages: typing-extensions, psycopg-binary, psycopg, pluggy, packaging, numpy, mysql-connector-python, more_itertools, iniconfig, greenlet, coverage, annotated-types, typing-inspection, typeguard, SQLAlchemy, pytest, pydantic-core, pgvector, pydantic, inflect, sqlmodel, sqlacodegen
+2025-03-29T11:43:27.3370559Z Successfully installed SQLAlchemy-2.0.40 annotated-types-0.7.0 coverage-7.7.1 greenlet-3.1.1 inflect-7.5.0 iniconfig-2.1.0 more_itertools-10.6.0 mysql-connector-python-9.2.0 numpy-2.2.4 packaging-24.2 pgvector-0.4.0 pluggy-1.5.0 psycopg-3.2.6 psycopg-binary-3.2.6 pydantic-2.11.1 pydantic-core-2.33.0 pytest-8.3.5 sqlacodegen-0.0.post1 sqlmodel-0.0.24 typeguard-4.4.2 typing-extensions-4.13.0 typing-inspection-0.4.0
+2025-03-29T11:43:27.5584999Z ##[group]Run coverage run -m pytest
+2025-03-29T11:43:27.5585337Z [36;1mcoverage run -m pytest[0m
+2025-03-29T11:43:27.5632514Z shell: /usr/bin/bash -e {0}
+2025-03-29T11:43:27.5632735Z env:
+2025-03-29T11:43:27.5632968Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-29T11:43:27.5633376Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-29T11:43:27.5633773Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-29T11:43:27.5634126Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-29T11:43:27.5634475Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-29T11:43:27.5634836Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-29T11:43:27.5635136Z ##[endgroup]
+2025-03-29T11:43:32.7480883Z ============================= test session starts ==============================
+2025-03-29T11:43:32.7481528Z platform linux -- Python 3.13.2, pytest-8.3.5, pluggy-1.5.0
+2025-03-29T11:43:32.7482306Z rootdir: /home/runner/work/sqlacodegen/sqlacodegen
+2025-03-29T11:43:32.7482771Z configfile: pyproject.toml
+2025-03-29T11:43:32.7483106Z testpaths: tests
+2025-03-29T11:43:32.7483414Z plugins: typeguard-4.4.2
+2025-03-29T11:43:32.7483733Z collected 97 items
+2025-03-29T11:43:32.7483917Z 
+2025-03-29T11:43:44.9070096Z tests/test_cli.py .....F.                                                [  7%]
+2025-03-29T11:43:44.9892366Z tests/test_generator_dataclass.py ......                                 [ 13%]
+2025-03-29T11:43:45.3400229Z tests/test_generator_declarative.py .................................... [ 50%]
+2025-03-29T11:43:45.3767227Z .....                                                                    [ 55%]
+2025-03-29T11:43:45.5848903Z tests/test_generator_sqlmodel.py ....                                    [ 59%]
+2025-03-29T11:43:46.0842066Z tests/test_generator_tables.py .......................................   [100%]
+2025-03-29T11:43:46.0842708Z 
+2025-03-29T11:43:46.0842976Z =================================== FAILURES ===================================
+2025-03-29T11:43:46.0843548Z _________________________ test_cli_invalid_engine_arg __________________________
+2025-03-29T11:43:46.0844019Z tests/test_cli.py:207: in test_cli_invalid_engine_arg
+2025-03-29T11:43:46.0844389Z     assert (
+2025-03-29T11:43:46.0845661Z E   assert "TypeError: 'this_arg_does_not_exist' is an invalid keyword argument" in 'Traceback (most recent call last):\n  File "/opt/hostedtoolcache/Python/3.13.2/x64/bin/sqlacodegen", line 8, in <modu...~~~~~~~~~^^^^^^^^^^^^^^^^^^^\nTypeError: Connection() got an unexpected keyword argument \'this_arg_does_not_exist\'\n'
+2025-03-29T11:43:46.0848179Z E    +  where 'Traceback (most recent call last):\n  File "/opt/hostedtoolcache/Python/3.13.2/x64/bin/sqlacodegen", line 8, in <modu...~~~~~~~~~^^^^^^^^^^^^^^^^^^^\nTypeError: Connection() got an unexpected keyword argument \'this_arg_does_not_exist\'\n' = <built-in method decode of bytes object at 0x55db53fb5b70>()
+2025-03-29T11:43:46.0850391Z E    +    where <built-in method decode of bytes object at 0x55db53fb5b70> = b'Traceback (most recent call last):\n  File "/opt/hostedtoolcache/Python/3.13.2/x64/bin/sqlacodegen", line 8, in <mod...~~~~~~~~~^^^^^^^^^^^^^^^^^^^\nTypeError: Connection() got an unexpected keyword argument \'this_arg_does_not_exist\'\n'.decode
+2025-03-29T11:43:46.0853328Z E    +      where b'Traceback (most recent call last):\n  File "/opt/hostedtoolcache/Python/3.13.2/x64/bin/sqlacodegen", line 8, in <mod...~~~~~~~~~^^^^^^^^^^^^^^^^^^^\nTypeError: Connection() got an unexpected keyword argument \'this_arg_does_not_exist\'\n' = CalledProcessError(1, ['sqlacodegen', 'sqlite:////tmp/pytest-of-runner/pytest-0/test_cli_invalid_engine_arg0/test.db',...={"this_arg_does_not_exist": 10}', '--outfile', '/tmp/pytest-of-runner/pytest-0/test_cli_invalid_engine_arg0/outfile']).stderr
+2025-03-29T11:43:46.0856980Z E    +        where CalledProcessError(1, ['sqlacodegen', 'sqlite:////tmp/pytest-of-runner/pytest-0/test_cli_invalid_engine_arg0/test.db',...={"this_arg_does_not_exist": 10}', '--outfile', '/tmp/pytest-of-runner/pytest-0/test_cli_invalid_engine_arg0/outfile']) = <ExceptionInfo CalledProcessError(1, ['sqlacodegen', 'sqlite:////tmp/pytest-of-runner/pytest-0/test_cli_invalid_engine...rg_does_not_exist": 10}', '--outfile', '/tmp/pytest-of-runner/pytest-0/test_cli_invalid_engine_arg0/outfile']) tblen=2>.value
+2025-03-29T11:43:46.0858724Z =========================== short test summary info ============================
+2025-03-29T11:43:46.0860123Z FAILED tests/test_cli.py::test_cli_invalid_engine_arg - assert "TypeError: 'this_arg_does_not_exist' is an invalid keyword argument" in 'Traceback (most recent call last):\n  File "/opt/hostedtoolcache/Python/3.13.2/x64/bin/sqlacodegen", line 8, in <modu...~~~~~~~~~^^^^^^^^^^^^^^^^^^^\nTypeError: Connection() got an unexpected keyword argument \'this_arg_does_not_exist\'\n'
+2025-03-29T11:43:46.0862079Z  +  where 'Traceback (most recent call last):\n  File "/opt/hostedtoolcache/Python/3.13.2/x64/bin/sqlacodegen", line 8, in <modu...~~~~~~~~~^^^^^^^^^^^^^^^^^^^\nTypeError: Connection() got an unexpected keyword argument \'this_arg_does_not_exist\'\n' = <built-in method decode of bytes object at 0x55db53fb5b70>()
+2025-03-29T11:43:46.0864916Z  +    where <built-in method decode of bytes object at 0x55db53fb5b70> = b'Traceback (most recent call last):\n  File "/opt/hostedtoolcache/Python/3.13.2/x64/bin/sqlacodegen", line 8, in <mod...~~~~~~~~~^^^^^^^^^^^^^^^^^^^\nTypeError: Connection() got an unexpected keyword argument \'this_arg_does_not_exist\'\n'.decode
+2025-03-29T11:43:46.0869000Z  +      where b'Traceback (most recent call last):\n  File "/opt/hostedtoolcache/Python/3.13.2/x64/bin/sqlacodegen", line 8, in <mod...~~~~~~~~~^^^^^^^^^^^^^^^^^^^\nTypeError: Connection() got an unexpected keyword argument \'this_arg_does_not_exist\'\n' = CalledProcessError(1, ['sqlacodegen', 'sqlite:////tmp/pytest-of-runner/pytest-0/test_cli_invalid_engine_arg0/test.db',...={"this_arg_does_not_exist": 10}', '--outfile', '/tmp/pytest-of-runner/pytest-0/test_cli_invalid_engine_arg0/outfile']).stderr
+2025-03-29T11:43:46.0873051Z  +        where CalledProcessError(1, ['sqlacodegen', 'sqlite:////tmp/pytest-of-runner/pytest-0/test_cli_invalid_engine_arg0/test.db',...={"this_arg_does_not_exist": 10}', '--outfile', '/tmp/pytest-of-runner/pytest-0/test_cli_invalid_engine_arg0/outfile']) = <ExceptionInfo CalledProcessError(1, ['sqlacodegen', 'sqlite:////tmp/pytest-of-runner/pytest-0/test_cli_invalid_engine...rg_does_not_exist": 10}', '--outfile', '/tmp/pytest-of-runner/pytest-0/test_cli_invalid_engine_arg0/outfile']) tblen=2>.value
+2025-03-29T11:43:46.0874640Z ======================== 1 failed, 96 passed in 17.01s =========================
+2025-03-29T11:43:46.2168029Z ##[error]Process completed with exit code 1.
+2025-03-29T11:43:46.2272053Z Post job cleanup.
+2025-03-29T11:43:46.3199560Z [command]/usr/bin/git version
+2025-03-29T11:43:46.3235620Z git version 2.49.0
+2025-03-29T11:43:46.3285703Z Temporarily overriding HOME='/home/runner/work/_temp/14b153aa-8a55-475f-82c0-41d69b5d7cfe' before making global git config changes
+2025-03-29T11:43:46.3287323Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-29T11:43:46.3292233Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/sqlacodegen/sqlacodegen
+2025-03-29T11:43:46.3327648Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-29T11:43:46.3360984Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-29T11:43:46.3599302Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-29T11:43:46.3620827Z http.https://github.com/.extraheader
+2025-03-29T11:43:46.3633452Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-29T11:43:46.3663835Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-29T11:43:46.3996821Z Cleaning up orphan processes

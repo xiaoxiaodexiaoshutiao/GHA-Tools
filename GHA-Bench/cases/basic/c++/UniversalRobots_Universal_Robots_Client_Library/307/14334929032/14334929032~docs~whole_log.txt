@@ -1,0 +1,343 @@
+2025-04-08T13:34:09.0822445Z Requested labels: ubuntu-latest
+2025-04-08T13:34:09.0822743Z Job defined at: UniversalRobots/Universal_Robots_Client_Library/.github/workflows/sphinx_build.yml@refs/pull/307/merge
+2025-04-08T13:34:09.0822846Z Waiting for a runner to pick up this job...
+2025-04-08T13:34:13.5059841Z Job is waiting for a hosted runner to come online.
+2025-04-08T13:34:14.1625544Z Job is about to start running on the hosted runner: GitHub Actions 150 (hosted)
+2025-04-08T13:34:16.5578148Z Current runner version: '2.323.0'
+2025-04-08T13:34:16.5606059Z ##[group]Operating System
+2025-04-08T13:34:16.5606853Z Ubuntu
+2025-04-08T13:34:16.5607349Z 24.04.2
+2025-04-08T13:34:16.5607907Z LTS
+2025-04-08T13:34:16.5608385Z ##[endgroup]
+2025-04-08T13:34:16.5609082Z ##[group]Runner Image
+2025-04-08T13:34:16.5609766Z Image: ubuntu-24.04
+2025-04-08T13:34:16.5610303Z Version: 20250323.1.0
+2025-04-08T13:34:16.5611308Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-08T13:34:16.5612777Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-04-08T13:34:16.5613691Z ##[endgroup]
+2025-04-08T13:34:16.5614176Z ##[group]Runner Image Provisioner
+2025-04-08T13:34:16.5614858Z 2.0.422.1
+2025-04-08T13:34:16.5615346Z ##[endgroup]
+2025-04-08T13:34:16.5616423Z ##[group]GITHUB_TOKEN Permissions
+2025-04-08T13:34:16.5618894Z Contents: read
+2025-04-08T13:34:16.5619472Z Metadata: read
+2025-04-08T13:34:16.5620304Z ##[endgroup]
+2025-04-08T13:34:16.5623747Z Secret source: None
+2025-04-08T13:34:16.5624714Z Prepare workflow directory
+2025-04-08T13:34:16.5946154Z Prepare all required actions
+2025-04-08T13:34:16.5984357Z Getting action download info
+2025-04-08T13:34:16.9424573Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-08T13:34:16.9425592Z Version: 4.2.2
+2025-04-08T13:34:16.9426705Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-08T13:34:16.9427883Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-08T13:34:16.9428597Z ##[endgroup]
+2025-04-08T13:34:17.0395128Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-04-08T13:34:17.0395932Z Version: 5.5.0
+2025-04-08T13:34:17.0396634Z Digest: sha256:1fac95d751afd58314aebd2ab01d4bf3b3109a441917bd2cac2a22898ec494f7
+2025-04-08T13:34:17.0397592Z Source commit SHA: 8d9ed9ac5c53483de85588cdf95a591a75ab9f55
+2025-04-08T13:34:17.0398248Z ##[endgroup]
+2025-04-08T13:34:17.3547573Z Complete job name: docs
+2025-04-08T13:34:17.4334766Z ##[group]Run actions/checkout@v4
+2025-04-08T13:34:17.4335731Z with:
+2025-04-08T13:34:17.4336326Z   repository: UniversalRobots/Universal_Robots_Client_Library
+2025-04-08T13:34:17.4337320Z   token: ***
+2025-04-08T13:34:17.4337757Z   ssh-strict: true
+2025-04-08T13:34:17.4338201Z   ssh-user: git
+2025-04-08T13:34:17.4338662Z   persist-credentials: true
+2025-04-08T13:34:17.4339333Z   clean: true
+2025-04-08T13:34:17.4339808Z   sparse-checkout-cone-mode: true
+2025-04-08T13:34:17.4340345Z   fetch-depth: 1
+2025-04-08T13:34:17.4340794Z   fetch-tags: false
+2025-04-08T13:34:17.4341250Z   show-progress: true
+2025-04-08T13:34:17.4341697Z   lfs: false
+2025-04-08T13:34:17.4342118Z   submodules: false
+2025-04-08T13:34:17.4342572Z   set-safe-directory: true
+2025-04-08T13:34:17.4343344Z ##[endgroup]
+2025-04-08T13:34:17.6555724Z Syncing repository: UniversalRobots/Universal_Robots_Client_Library
+2025-04-08T13:34:17.6557954Z ##[group]Getting Git version info
+2025-04-08T13:34:17.6559392Z Working directory is '/home/runner/work/Universal_Robots_Client_Library/Universal_Robots_Client_Library'
+2025-04-08T13:34:17.6560810Z [command]/usr/bin/git version
+2025-04-08T13:34:17.6629319Z git version 2.49.0
+2025-04-08T13:34:17.6659052Z ##[endgroup]
+2025-04-08T13:34:17.6674249Z Temporarily overriding HOME='/home/runner/work/_temp/f1b8780a-4ad9-47d2-b024-25faa7576b32' before making global git config changes
+2025-04-08T13:34:17.6675742Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-08T13:34:17.6680605Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Universal_Robots_Client_Library/Universal_Robots_Client_Library
+2025-04-08T13:34:17.6734924Z Deleting the contents of '/home/runner/work/Universal_Robots_Client_Library/Universal_Robots_Client_Library'
+2025-04-08T13:34:17.6739458Z ##[group]Initializing the repository
+2025-04-08T13:34:17.6744845Z [command]/usr/bin/git init /home/runner/work/Universal_Robots_Client_Library/Universal_Robots_Client_Library
+2025-04-08T13:34:17.6824272Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-08T13:34:17.6825751Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-08T13:34:17.6827552Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-08T13:34:17.6829540Z hint:
+2025-04-08T13:34:17.6830427Z hint: 	git config --global init.defaultBranch <name>
+2025-04-08T13:34:17.6831494Z hint:
+2025-04-08T13:34:17.6832120Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-08T13:34:17.6833080Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-08T13:34:17.6833880Z hint:
+2025-04-08T13:34:17.6834302Z hint: 	git branch -m <name>
+2025-04-08T13:34:17.6835413Z Initialized empty Git repository in /home/runner/work/Universal_Robots_Client_Library/Universal_Robots_Client_Library/.git/
+2025-04-08T13:34:17.6844683Z [command]/usr/bin/git remote add origin https://github.com/UniversalRobots/Universal_Robots_Client_Library
+2025-04-08T13:34:17.6885873Z ##[endgroup]
+2025-04-08T13:34:17.6887549Z ##[group]Disabling automatic garbage collection
+2025-04-08T13:34:17.6891142Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-08T13:34:17.6930173Z ##[endgroup]
+2025-04-08T13:34:17.6930965Z ##[group]Setting up auth
+2025-04-08T13:34:17.6938558Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-08T13:34:17.6976875Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-08T13:34:17.7313618Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-08T13:34:17.7347841Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-08T13:34:17.7602972Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-08T13:34:17.7644222Z ##[endgroup]
+2025-04-08T13:34:17.7645166Z ##[group]Fetching the repository
+2025-04-08T13:34:17.7654832Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +7faf48620ec5dd63565fa089a70640e0dab4965a:refs/remotes/pull/307/merge
+2025-04-08T13:34:18.4447141Z From https://github.com/UniversalRobots/Universal_Robots_Client_Library
+2025-04-08T13:34:18.4449592Z  * [new ref]         7faf48620ec5dd63565fa089a70640e0dab4965a -> pull/307/merge
+2025-04-08T13:34:18.4471903Z ##[endgroup]
+2025-04-08T13:34:18.4473331Z ##[group]Determining the checkout info
+2025-04-08T13:34:18.4474698Z ##[endgroup]
+2025-04-08T13:34:18.4478644Z [command]/usr/bin/git sparse-checkout disable
+2025-04-08T13:34:18.4521736Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-08T13:34:18.4551504Z ##[group]Checking out the ref
+2025-04-08T13:34:18.4555471Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/307/merge
+2025-04-08T13:34:18.4889531Z Note: switching to 'refs/remotes/pull/307/merge'.
+2025-04-08T13:34:18.4890625Z 
+2025-04-08T13:34:18.4891287Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-08T13:34:18.4893737Z changes and commit them, and you can discard any commits you make in this
+2025-04-08T13:34:18.4896362Z state without impacting any branches by switching back to a branch.
+2025-04-08T13:34:18.4897877Z 
+2025-04-08T13:34:18.4899317Z If you want to create a new branch to retain commits you create, you may
+2025-04-08T13:34:18.4901844Z do so (now or later) by using -c with the switch command. Example:
+2025-04-08T13:34:18.4903207Z 
+2025-04-08T13:34:18.4903859Z   git switch -c <new-branch-name>
+2025-04-08T13:34:18.4904905Z 
+2025-04-08T13:34:18.4905462Z Or undo this operation with:
+2025-04-08T13:34:18.4906461Z 
+2025-04-08T13:34:18.4907471Z   git switch -
+2025-04-08T13:34:18.4908193Z 
+2025-04-08T13:34:18.4909628Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-08T13:34:18.4911461Z 
+2025-04-08T13:34:18.4913381Z HEAD is now at 7faf486 Merge 57bd94fd2c33c120541012900dd86fa426a45cdc into daed2434827febccc9830d914faf36027518bb65
+2025-04-08T13:34:18.4918008Z ##[endgroup]
+2025-04-08T13:34:18.4943802Z [command]/usr/bin/git log -1 --format=%H
+2025-04-08T13:34:18.4966872Z 7faf48620ec5dd63565fa089a70640e0dab4965a
+2025-04-08T13:34:18.5303176Z ##[group]Run actions/setup-python@v5
+2025-04-08T13:34:18.5304445Z with:
+2025-04-08T13:34:18.5305279Z   cache: pip
+2025-04-08T13:34:18.5306200Z   check-latest: false
+2025-04-08T13:34:18.5307504Z   token: ***
+2025-04-08T13:34:18.5308446Z   update-environment: true
+2025-04-08T13:34:18.5309706Z   allow-prereleases: false
+2025-04-08T13:34:18.5310788Z   freethreaded: false
+2025-04-08T13:34:18.5311752Z ##[endgroup]
+2025-04-08T13:34:18.7094777Z [warning]Neither 'python-version' nor 'python-version-file' inputs were supplied. Attempting to find '.python-version' file.
+2025-04-08T13:34:18.7098929Z [warning].python-version doesn't exist.
+2025-04-08T13:34:18.7122672Z ##[warning]The `python-version` input is not set.  The version of Python currently in `PATH` will be used.
+2025-04-08T13:34:18.7252624Z ##[group]Run python -m pip install --upgrade pip
+2025-04-08T13:34:18.7254136Z [36;1mpython -m pip install --upgrade pip[0m
+2025-04-08T13:34:18.7255443Z [36;1mpip install -r doc_requirements.txt[0m
+2025-04-08T13:34:18.7309986Z shell: /usr/bin/bash -e {0}
+2025-04-08T13:34:18.7310990Z ##[endgroup]
+2025-04-08T13:34:19.1670780Z Defaulting to user installation because normal site-packages is not writeable
+2025-04-08T13:34:19.4595297Z Requirement already satisfied: pip in /usr/lib/python3/dist-packages (24.0)
+2025-04-08T13:34:19.5870292Z Collecting pip
+2025-04-08T13:34:19.6307101Z   Downloading pip-25.0.1-py3-none-any.whl.metadata (3.7 kB)
+2025-04-08T13:34:19.6404974Z Downloading pip-25.0.1-py3-none-any.whl (1.8 MB)
+2025-04-08T13:34:19.6835686Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 46.4 MB/s eta 0:00:00
+2025-04-08T13:34:19.9364740Z Installing collected packages: pip
+2025-04-08T13:34:20.7597891Z Successfully installed pip-25.0.1
+2025-04-08T13:34:21.1030513Z Defaulting to user installation because normal site-packages is not writeable
+2025-04-08T13:34:21.3115101Z Collecting sphinx (from -r doc_requirements.txt (line 1))
+2025-04-08T13:34:21.3461500Z   Downloading sphinx-8.2.3-py3-none-any.whl.metadata (7.0 kB)
+2025-04-08T13:34:21.3674490Z Collecting sphinx-copybutton (from -r doc_requirements.txt (line 2))
+2025-04-08T13:34:21.3723868Z   Downloading sphinx_copybutton-0.5.2-py3-none-any.whl.metadata (3.2 kB)
+2025-04-08T13:34:21.3924541Z Collecting sphinx-tabs (from -r doc_requirements.txt (line 3))
+2025-04-08T13:34:21.3970145Z   Downloading sphinx_tabs-3.4.7-py3-none-any.whl.metadata (6.3 kB)
+2025-04-08T13:34:21.4193675Z Collecting sphinx_rtd_theme (from -r doc_requirements.txt (line 4))
+2025-04-08T13:34:21.4245817Z   Downloading sphinx_rtd_theme-3.0.2-py2.py3-none-any.whl.metadata (4.4 kB)
+2025-04-08T13:34:21.4651372Z Collecting catkin-pkg (from -r doc_requirements.txt (line 5))
+2025-04-08T13:34:21.4702502Z   Downloading catkin_pkg-1.0.0-py3-none-any.whl.metadata (1.3 kB)
+2025-04-08T13:34:21.4889306Z Collecting sphinxcontrib-applehelp>=1.0.7 (from sphinx->-r doc_requirements.txt (line 1))
+2025-04-08T13:34:21.4931400Z   Downloading sphinxcontrib_applehelp-2.0.0-py3-none-any.whl.metadata (2.3 kB)
+2025-04-08T13:34:21.5068229Z Collecting sphinxcontrib-devhelp>=1.0.6 (from sphinx->-r doc_requirements.txt (line 1))
+2025-04-08T13:34:21.5109775Z   Downloading sphinxcontrib_devhelp-2.0.0-py3-none-any.whl.metadata (2.3 kB)
+2025-04-08T13:34:21.5233070Z Collecting sphinxcontrib-htmlhelp>=2.0.6 (from sphinx->-r doc_requirements.txt (line 1))
+2025-04-08T13:34:21.5291084Z   Downloading sphinxcontrib_htmlhelp-2.1.0-py3-none-any.whl.metadata (2.3 kB)
+2025-04-08T13:34:21.5424961Z Collecting sphinxcontrib-jsmath>=1.0.1 (from sphinx->-r doc_requirements.txt (line 1))
+2025-04-08T13:34:21.5464379Z   Downloading sphinxcontrib_jsmath-1.0.1-py2.py3-none-any.whl.metadata (1.4 kB)
+2025-04-08T13:34:21.5611114Z Collecting sphinxcontrib-qthelp>=1.0.6 (from sphinx->-r doc_requirements.txt (line 1))
+2025-04-08T13:34:21.5849639Z   Downloading sphinxcontrib_qthelp-2.0.0-py3-none-any.whl.metadata (2.3 kB)
+2025-04-08T13:34:21.6011272Z Collecting sphinxcontrib-serializinghtml>=1.1.9 (from sphinx->-r doc_requirements.txt (line 1))
+2025-04-08T13:34:21.6065407Z   Downloading sphinxcontrib_serializinghtml-2.0.0-py3-none-any.whl.metadata (2.4 kB)
+2025-04-08T13:34:21.6142656Z Requirement already satisfied: Jinja2>=3.1 in /usr/lib/python3/dist-packages (from sphinx->-r doc_requirements.txt (line 1)) (3.1.2)
+2025-04-08T13:34:21.6148439Z Requirement already satisfied: Pygments>=2.17 in /usr/lib/python3/dist-packages (from sphinx->-r doc_requirements.txt (line 1)) (2.17.2)
+2025-04-08T13:34:21.6324563Z Collecting docutils<0.22,>=0.20 (from sphinx->-r doc_requirements.txt (line 1))
+2025-04-08T13:34:21.6366393Z   Downloading docutils-0.21.2-py3-none-any.whl.metadata (2.8 kB)
+2025-04-08T13:34:21.6513508Z Collecting snowballstemmer>=2.2 (from sphinx->-r doc_requirements.txt (line 1))
+2025-04-08T13:34:21.6560260Z   Downloading snowballstemmer-2.2.0-py2.py3-none-any.whl.metadata (6.5 kB)
+2025-04-08T13:34:21.6895781Z Collecting babel>=2.13 (from sphinx->-r doc_requirements.txt (line 1))
+2025-04-08T13:34:21.6935991Z   Downloading babel-2.17.0-py3-none-any.whl.metadata (2.0 kB)
+2025-04-08T13:34:21.7084059Z Collecting alabaster>=0.7.14 (from sphinx->-r doc_requirements.txt (line 1))
+2025-04-08T13:34:21.7121007Z   Downloading alabaster-1.0.0-py3-none-any.whl.metadata (2.8 kB)
+2025-04-08T13:34:21.7251007Z Collecting imagesize>=1.3 (from sphinx->-r doc_requirements.txt (line 1))
+2025-04-08T13:34:21.7288337Z   Downloading imagesize-1.4.1-py2.py3-none-any.whl.metadata (1.5 kB)
+2025-04-08T13:34:21.7336358Z Requirement already satisfied: requests>=2.30.0 in /usr/lib/python3/dist-packages (from sphinx->-r doc_requirements.txt (line 1)) (2.31.0)
+2025-04-08T13:34:21.7417251Z Collecting roman-numerals-py>=1.0.0 (from sphinx->-r doc_requirements.txt (line 1))
+2025-04-08T13:34:21.7455330Z   Downloading roman_numerals_py-3.1.0-py3-none-any.whl.metadata (3.6 kB)
+2025-04-08T13:34:21.7505754Z Requirement already satisfied: packaging>=23.0 in /usr/lib/python3/dist-packages (from sphinx->-r doc_requirements.txt (line 1)) (24.0)
+2025-04-08T13:34:21.8088661Z Collecting sphinxcontrib-jquery<5,>=4 (from sphinx_rtd_theme->-r doc_requirements.txt (line 4))
+2025-04-08T13:34:21.8142556Z   Downloading sphinxcontrib_jquery-4.1-py2.py3-none-any.whl.metadata (2.6 kB)
+2025-04-08T13:34:21.8201193Z Requirement already satisfied: python-dateutil in /usr/lib/python3/dist-packages (from catkin-pkg->-r doc_requirements.txt (line 5)) (2.8.2)
+2025-04-08T13:34:21.8204246Z Requirement already satisfied: pyparsing in /usr/lib/python3/dist-packages (from catkin-pkg->-r doc_requirements.txt (line 5)) (3.1.1)
+2025-04-08T13:34:21.8211669Z Requirement already satisfied: setuptools in /usr/lib/python3/dist-packages (from catkin-pkg->-r doc_requirements.txt (line 5)) (68.1.2)
+2025-04-08T13:34:21.8430735Z Downloading sphinx-8.2.3-py3-none-any.whl (3.6 MB)
+2025-04-08T13:34:21.8895992Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.6/3.6 MB 85.9 MB/s eta 0:00:00
+2025-04-08T13:34:21.8937556Z Downloading sphinx_copybutton-0.5.2-py3-none-any.whl (13 kB)
+2025-04-08T13:34:21.9037576Z Downloading sphinx_tabs-3.4.7-py3-none-any.whl (9.7 kB)
+2025-04-08T13:34:21.9156011Z Downloading sphinx_rtd_theme-3.0.2-py2.py3-none-any.whl (7.7 MB)
+2025-04-08T13:34:21.9714575Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.7/7.7 MB 141.3 MB/s eta 0:00:00
+2025-04-08T13:34:21.9762817Z Downloading catkin_pkg-1.0.0-py3-none-any.whl (75 kB)
+2025-04-08T13:34:21.9833750Z Downloading alabaster-1.0.0-py3-none-any.whl (13 kB)
+2025-04-08T13:34:21.9899357Z Downloading babel-2.17.0-py3-none-any.whl (10.2 MB)
+2025-04-08T13:34:22.0414119Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.2/10.2 MB 203.2 MB/s eta 0:00:00
+2025-04-08T13:34:22.0454384Z Downloading docutils-0.21.2-py3-none-any.whl (587 kB)
+2025-04-08T13:34:22.0551410Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 587.4/587.4 kB 45.3 MB/s eta 0:00:00
+2025-04-08T13:34:22.0591715Z Downloading imagesize-1.4.1-py2.py3-none-any.whl (8.8 kB)
+2025-04-08T13:34:22.0663884Z Downloading roman_numerals_py-3.1.0-py3-none-any.whl (7.7 kB)
+2025-04-08T13:34:22.0732233Z Downloading snowballstemmer-2.2.0-py2.py3-none-any.whl (93 kB)
+2025-04-08T13:34:22.0808465Z Downloading sphinxcontrib_applehelp-2.0.0-py3-none-any.whl (119 kB)
+2025-04-08T13:34:22.0872654Z Downloading sphinxcontrib_devhelp-2.0.0-py3-none-any.whl (82 kB)
+2025-04-08T13:34:22.0942468Z Downloading sphinxcontrib_htmlhelp-2.1.0-py3-none-any.whl (98 kB)
+2025-04-08T13:34:22.1005818Z Downloading sphinxcontrib_jquery-4.1-py2.py3-none-any.whl (121 kB)
+2025-04-08T13:34:22.1067563Z Downloading sphinxcontrib_jsmath-1.0.1-py2.py3-none-any.whl (5.1 kB)
+2025-04-08T13:34:22.1126956Z Downloading sphinxcontrib_qthelp-2.0.0-py3-none-any.whl (88 kB)
+2025-04-08T13:34:22.1193546Z Downloading sphinxcontrib_serializinghtml-2.0.0-py3-none-any.whl (92 kB)
+2025-04-08T13:34:22.2566605Z Installing collected packages: snowballstemmer, sphinxcontrib-serializinghtml, sphinxcontrib-qthelp, sphinxcontrib-jsmath, sphinxcontrib-htmlhelp, sphinxcontrib-devhelp, sphinxcontrib-applehelp, roman-numerals-py, imagesize, docutils, babel, alabaster, sphinx, catkin-pkg, sphinxcontrib-jquery, sphinx-tabs, sphinx-copybutton, sphinx_rtd_theme
+2025-04-08T13:34:23.9535732Z Successfully installed alabaster-1.0.0 babel-2.17.0 catkin-pkg-1.0.0 docutils-0.21.2 imagesize-1.4.1 roman-numerals-py-3.1.0 snowballstemmer-2.2.0 sphinx-8.2.3 sphinx-copybutton-0.5.2 sphinx-tabs-3.4.7 sphinx_rtd_theme-3.0.2 sphinxcontrib-applehelp-2.0.0 sphinxcontrib-devhelp-2.0.0 sphinxcontrib-htmlhelp-2.1.0 sphinxcontrib-jquery-4.1 sphinxcontrib-jsmath-1.0.1 sphinxcontrib-qthelp-2.0.0 sphinxcontrib-serializinghtml-2.0.0
+2025-04-08T13:34:24.0542682Z ##[group]Run sphinx-build -W -b html doc _doc_build
+2025-04-08T13:34:24.0543098Z [36;1msphinx-build -W -b html doc _doc_build[0m
+2025-04-08T13:34:24.0590237Z shell: /usr/bin/bash -e {0}
+2025-04-08T13:34:24.0590489Z ##[endgroup]
+2025-04-08T13:34:24.9853468Z [01mRunning Sphinx v8.2.3[39;49;00m
+2025-04-08T13:34:25.0185923Z [01mloading translations [en]... [39;49;00mdone
+2025-04-08T13:34:25.2135018Z Converting `source_suffix = '.rst'` to `source_suffix = {'.rst': 'restructuredtext'}`.
+2025-04-08T13:34:25.2286655Z [01mbuilding [mo]: [39;49;00mtargets for 0 po files that are out of date
+2025-04-08T13:34:25.2287192Z [01mwriting output... [39;49;00m
+2025-04-08T13:34:25.2306269Z [01mbuilding [html]: [39;49;00mtargets for 31 source files that are out of date
+2025-04-08T13:34:25.2333394Z [01mupdating environment: [39;49;00m[new config] 31 added, 0 changed, 0 removed
+2025-04-08T13:34:25.2525712Z [2K[01mreading sources... [39;49;00m[  3%] [35marchitecture[39;49;00m
+2025-04-08T13:34:25.2579566Z [2K[01mreading sources... [39;49;00m[  6%] [35marchitecture/dashboard_client[39;49;00m
+2025-04-08T13:34:25.2627261Z [2K[01mreading sources... [39;49;00m[ 10%] [35marchitecture/instruction_executor[39;49;00m
+2025-04-08T13:34:25.2771685Z [2K[01mreading sources... [39;49;00m[ 13%] [35marchitecture/reverse_interface[39;49;00m
+2025-04-08T13:34:25.2842502Z [2K[01mreading sources... [39;49;00m[ 16%] [35marchitecture/rtde_client[39;49;00m
+2025-04-08T13:34:25.3053260Z [2K[01mreading sources... [39;49;00m[ 19%] [35marchitecture/script_command_interface[39;49;00m
+2025-04-08T13:34:25.3098176Z [2K[01mreading sources... [39;49;00m[ 23%] [35marchitecture/script_sender[39;49;00m
+2025-04-08T13:34:25.3196089Z [2K[01mreading sources... [39;49;00m[ 26%] [35marchitecture/trajectory_point_interface[39;49;00m
+2025-04-08T13:34:25.3266865Z [2K[01mreading sources... [39;49;00m[ 29%] [35marchitecture/ur_driver[39;49;00m
+2025-04-08T13:34:25.3302097Z [2K[01mreading sources... [39;49;00m[ 32%] [35mexamples[39;49;00m
+2025-04-08T13:34:25.3431683Z [2K[01mreading sources... [39;49;00m[ 35%] [35mexamples/dashboard_client[39;49;00m
+2025-04-08T13:34:25.3535834Z [2K[01mreading sources... [39;49;00m[ 39%] [35mexamples/force_mode[39;49;00m
+2025-04-08T13:34:25.3643940Z [2K[01mreading sources... [39;49;00m[ 42%] [35mexamples/freedrive[39;49;00m
+2025-04-08T13:34:25.3740990Z [2K[01mreading sources... [39;49;00m[ 45%] [35mexamples/instruction_executor[39;49;00m
+2025-04-08T13:34:25.3854830Z [2K[01mreading sources... [39;49;00m[ 48%] [35mexamples/primary_pipeline[39;49;00m
+2025-04-08T13:34:25.3936580Z [2K[01mreading sources... [39;49;00m[ 52%] [35mexamples/primary_pipeline_calibration[39;49;00m
+2025-04-08T13:34:25.4050751Z [2K[01mreading sources... [39;49;00m[ 55%] [35mexamples/rtde_client[39;49;00m
+2025-04-08T13:34:25.4102247Z [2K[01mreading sources... [39;49;00m[ 58%] [35mexamples/script_sender[39;49;00m
+2025-04-08T13:34:25.4136875Z [2K[01mreading sources... [39;49;00m[ 61%] [35mexamples/spline_example[39;49;00m
+2025-04-08T13:34:25.4229357Z [2K[01mreading sources... [39;49;00m[ 65%] [35mexamples/tool_contact_example[39;49;00m
+2025-04-08T13:34:25.4637165Z [2K[01mreading sources... [39;49;00m[ 68%] [35mexamples/trajectory_point_interface[39;49;00m
+2025-04-08T13:34:25.4745929Z [2K[01mreading sources... [39;49;00m[ 71%] [35mexamples/ur_driver[39;49;00m
+2025-04-08T13:34:25.4773708Z [2K[01mreading sources... [39;49;00m[ 74%] [35mindex[39;49;00m
+2025-04-08T13:34:25.4871298Z [2K[01mreading sources... [39;49;00m[ 77%] [35minstallation[39;49;00m
+2025-04-08T13:34:25.4922899Z [2K[01mreading sources... [39;49;00m[ 81%] [35mmigration_notes[39;49;00m
+2025-04-08T13:34:25.5007233Z [2K[01mreading sources... [39;49;00m[ 84%] [35mpolyscope_compatibility[39;49;00m
+2025-04-08T13:34:25.5233834Z [2K[01mreading sources... [39;49;00m[ 87%] [35mreal_time[39;49;00m
+2025-04-08T13:34:25.5264766Z [2K[01mreading sources... [39;49;00m[ 90%] [35msetup[39;49;00m
+2025-04-08T13:34:25.5315924Z [2K[01mreading sources... [39;49;00m[ 94%] [35msetup/network_setup[39;49;00m
+2025-04-08T13:34:25.5696898Z [2K[01mreading sources... [39;49;00m[ 97%] [35msetup/robot_setup[39;49;00m
+2025-04-08T13:34:25.5824553Z [2K[01mreading sources... [39;49;00m[100%] [35msetup/ursim_docker[39;49;00m
+2025-04-08T13:34:25.5825647Z [01mlooking for now-outdated files... [39;49;00mnone found
+2025-04-08T13:34:25.5855498Z [01mpickling environment... [39;49;00mdone
+2025-04-08T13:34:25.5858348Z [91m/home/runner/work/Universal_Robots_Client_Library/Universal_Robots_Client_Library/doc/migration_notes.rst: WARNING: document isn't included in any toctree [toc.not_included][39;49;00m
+2025-04-08T13:34:25.5859772Z [01mchecking consistency... [39;49;00mdone
+2025-04-08T13:34:25.5874102Z [01mpreparing documents... [39;49;00mdone
+2025-04-08T13:34:25.5874554Z [01mcopying assets... [39;49;00m
+2025-04-08T13:34:25.5874981Z [01mcopying static files... [39;49;00m
+2025-04-08T13:34:25.5915302Z Writing evaluated template result to /home/runner/work/Universal_Robots_Client_Library/Universal_Robots_Client_Library/_doc_build/_static/language_data.js
+2025-04-08T13:34:25.5944737Z Writing evaluated template result to /home/runner/work/Universal_Robots_Client_Library/Universal_Robots_Client_Library/_doc_build/_static/documentation_options.js
+2025-04-08T13:34:25.5971870Z Writing evaluated template result to /home/runner/work/Universal_Robots_Client_Library/Universal_Robots_Client_Library/_doc_build/_static/basic.css
+2025-04-08T13:34:25.6017570Z Writing evaluated template result to /home/runner/work/Universal_Robots_Client_Library/Universal_Robots_Client_Library/_doc_build/_static/js/versions.js
+2025-04-08T13:34:25.6205649Z Writing evaluated template result to /home/runner/work/Universal_Robots_Client_Library/Universal_Robots_Client_Library/_doc_build/_static/copybutton.js
+2025-04-08T13:34:25.6216722Z [01mcopying static files: [39;49;00mdone
+2025-04-08T13:34:25.6217349Z [01mcopying extra files... [39;49;00m
+2025-04-08T13:34:25.6218146Z [01mcopying extra files: [39;49;00mdone
+2025-04-08T13:34:25.6219022Z [01mcopying assets: [39;49;00mdone
+2025-04-08T13:34:25.6827206Z [2K[01mwriting output... [39;49;00m[  3%] [32marchitecture[39;49;00m
+2025-04-08T13:34:25.7033413Z [2K[01mwriting output... [39;49;00m[  6%] [32marchitecture/dashboard_client[39;49;00m
+2025-04-08T13:34:25.7123621Z [2K[01mwriting output... [39;49;00m[ 10%] [32marchitecture/instruction_executor[39;49;00m
+2025-04-08T13:34:25.7275405Z [2K[01mwriting output... [39;49;00m[ 13%] [32marchitecture/reverse_interface[39;49;00m
+2025-04-08T13:34:25.7428280Z [2K[01mwriting output... [39;49;00m[ 16%] [32marchitecture/rtde_client[39;49;00m
+2025-04-08T13:34:25.7604066Z [2K[01mwriting output... [39;49;00m[ 19%] [32marchitecture/script_command_interface[39;49;00m
+2025-04-08T13:34:25.7691659Z [2K[01mwriting output... [39;49;00m[ 23%] [32marchitecture/script_sender[39;49;00m
+2025-04-08T13:34:25.7807720Z [2K[01mwriting output... [39;49;00m[ 26%] [32marchitecture/trajectory_point_interface[39;49;00m
+2025-04-08T13:34:25.7945924Z [2K[01mwriting output... [39;49;00m[ 29%] [32marchitecture/ur_driver[39;49;00m
+2025-04-08T13:34:25.8059213Z [2K[01mwriting output... [39;49;00m[ 32%] [32mexamples[39;49;00m
+2025-04-08T13:34:25.8224305Z [2K[01mwriting output... [39;49;00m[ 35%] [32mexamples/dashboard_client[39;49;00m
+2025-04-08T13:34:25.8420923Z [2K[01mwriting output... [39;49;00m[ 39%] [32mexamples/force_mode[39;49;00m
+2025-04-08T13:34:25.8576867Z [2K[01mwriting output... [39;49;00m[ 42%] [32mexamples/freedrive[39;49;00m
+2025-04-08T13:34:25.8787648Z [2K[01mwriting output... [39;49;00m[ 45%] [32mexamples/instruction_executor[39;49;00m
+2025-04-08T13:34:25.8945287Z [2K[01mwriting output... [39;49;00m[ 48%] [32mexamples/primary_pipeline[39;49;00m
+2025-04-08T13:34:25.9105668Z [2K[01mwriting output... [39;49;00m[ 52%] [32mexamples/primary_pipeline_calibration[39;49;00m
+2025-04-08T13:34:25.9317035Z [2K[01mwriting output... [39;49;00m[ 55%] [32mexamples/rtde_client[39;49;00m
+2025-04-08T13:34:25.9443028Z [2K[01mwriting output... [39;49;00m[ 58%] [32mexamples/script_sender[39;49;00m
+2025-04-08T13:34:25.9522425Z [2K[01mwriting output... [39;49;00m[ 61%] [32mexamples/spline_example[39;49;00m
+2025-04-08T13:34:25.9687434Z [2K[01mwriting output... [39;49;00m[ 65%] [32mexamples/tool_contact_example[39;49;00m
+2025-04-08T13:34:25.9959402Z [2K[01mwriting output... [39;49;00m[ 68%] [32mexamples/trajectory_point_interface[39;49;00m
+2025-04-08T13:34:26.0153653Z [2K[01mwriting output... [39;49;00m[ 71%] [32mexamples/ur_driver[39;49;00m
+2025-04-08T13:34:26.0766227Z [2K[01mwriting output... [39;49;00m[ 74%] [32mindex[39;49;00m
+2025-04-08T13:34:26.1250683Z [2K[01mwriting output... [39;49;00m[ 77%] [32minstallation[39;49;00m
+2025-04-08T13:34:26.1336938Z [2K[01mwriting output... [39;49;00m[ 81%] [32mmigration_notes[39;49;00m
+2025-04-08T13:34:26.1440088Z [2K[01mwriting output... [39;49;00m[ 84%] [32mpolyscope_compatibility[39;49;00m
+2025-04-08T13:34:26.1869125Z [2K[01mwriting output... [39;49;00m[ 87%] [32mreal_time[39;49;00m
+2025-04-08T13:34:26.1935488Z [2K[01mwriting output... [39;49;00m[ 90%] [32msetup[39;49;00m
+2025-04-08T13:34:26.2326836Z [2K[01mwriting output... [39;49;00m[ 94%] [32msetup/network_setup[39;49;00m
+2025-04-08T13:34:26.2535025Z [2K[01mwriting output... [39;49;00m[ 97%] [32msetup/robot_setup[39;49;00m
+2025-04-08T13:34:26.2735806Z [2K[01mwriting output... [39;49;00m[100%] [32msetup/ursim_docker[39;49;00m
+2025-04-08T13:34:26.2859050Z [01mgenerating indices... [39;49;00mgenindex done
+2025-04-08T13:34:26.2932405Z [01mwriting additional pages... [39;49;00msearch done
+2025-04-08T13:34:26.2946278Z [2K[01mcopying images... [39;49;00m[  5%] [33mimages/urcl_architecture.svg[39;49;00m
+2025-04-08T13:34:26.2950775Z [2K[01mcopying images... [39;49;00m[ 10%] [33mimages/trajectory_interface.svg[39;49;00m
+2025-04-08T13:34:26.2955398Z [2K[01mcopying images... [39;49;00m[ 15%] [33mimages/initial_setup_images/remote_control.png[39;49;00m
+2025-04-08T13:34:26.2960169Z [2K[01mcopying images... [39;49;00m[ 20%] [33mimages/initial_setup_images/services_polyscope5.png[39;49;00m
+2025-04-08T13:34:26.2965153Z [2K[01mcopying images... [39;49;00m[ 25%] [33mimages/initial_setup_images/services_polyscopex.png[39;49;00m
+2025-04-08T13:34:26.2969443Z [2K[01mcopying images... [39;49;00m[ 30%] [33mimages/initial_setup_images/cb3_01_welcome.png[39;49;00m
+2025-04-08T13:34:26.2973938Z [2K[01mcopying images... [39;49;00m[ 35%] [33mimages/initial_setup_images/cb3_05_urcaps_installed.png[39;49;00m
+2025-04-08T13:34:26.2978261Z [2K[01mcopying images... [39;49;00m[ 40%] [33mimages/initial_setup_images/cb3_07_installation_excontrol.png[39;49;00m
+2025-04-08T13:34:26.2982774Z [2K[01mcopying images... [39;49;00m[ 45%] [33mimages/initial_setup_images/cb3_10_prog_structure_urcaps.png[39;49;00m
+2025-04-08T13:34:26.2987026Z [2K[01mcopying images... [39;49;00m[ 50%] [33mimages/initial_setup_images/cb3_11_program_view_excontrol.png[39;49;00m
+2025-04-08T13:34:26.2991431Z [2K[01mcopying images... [39;49;00m[ 55%] [33mimages/initial_setup_images/es_01_welcome.png[39;49;00m
+2025-04-08T13:34:26.2995889Z [2K[01mcopying images... [39;49;00m[ 60%] [33mimages/initial_setup_images/es_05_urcaps_installed.png[39;49;00m
+2025-04-08T13:34:26.3000232Z [2K[01mcopying images... [39;49;00m[ 65%] [33mimages/initial_setup_images/es_07_installation_excontrol.png[39;49;00m
+2025-04-08T13:34:26.3004682Z [2K[01mcopying images... [39;49;00m[ 70%] [33mimages/initial_setup_images/es_10_prog_structure_urcaps.png[39;49;00m
+2025-04-08T13:34:26.3009236Z [2K[01mcopying images... [39;49;00m[ 75%] [33mimages/initial_setup_images/es_11_program_view_excontrol.png[39;49;00m
+2025-04-08T13:34:26.3013842Z [2K[01mcopying images... [39;49;00m[ 80%] [33mimages/initial_setup_images/px_01_welcome.png[39;49;00m
+2025-04-08T13:34:26.3018964Z [2K[01mcopying images... [39;49;00m[ 85%] [33mimages/initial_setup_images/px_05_urcaps_installed.png[39;49;00m
+2025-04-08T13:34:26.3023457Z [2K[01mcopying images... [39;49;00m[ 90%] [33mimages/initial_setup_images/px_07_installation_excontrol.png[39;49;00m
+2025-04-08T13:34:26.3027947Z [2K[01mcopying images... [39;49;00m[ 95%] [33mimages/initial_setup_images/px_10_prog_structure_urcaps.png[39;49;00m
+2025-04-08T13:34:26.3032650Z [2K[01mcopying images... [39;49;00m[100%] [33mimages/initial_setup_images/px_11_program_view_excontrol.png[39;49;00m
+2025-04-08T13:34:26.3083364Z [01mdumping search index in English (code: en)... [39;49;00mdone
+2025-04-08T13:34:26.3091186Z [01mdumping object inventory... [39;49;00mdone
+2025-04-08T13:34:26.3092239Z [01mbuild finished with problems, 1 warning (with warnings treated as errors).[39;49;00m
+2025-04-08T13:34:26.4544212Z ##[error]Process completed with exit code 1.
+2025-04-08T13:34:26.4629576Z Post job cleanup.
+2025-04-08T13:34:26.5643030Z [command]/usr/bin/git version
+2025-04-08T13:34:26.5681170Z git version 2.49.0
+2025-04-08T13:34:26.5733787Z Temporarily overriding HOME='/home/runner/work/_temp/65e18001-9b83-43aa-872f-0ef8b078281c' before making global git config changes
+2025-04-08T13:34:26.5734703Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-08T13:34:26.5740097Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Universal_Robots_Client_Library/Universal_Robots_Client_Library
+2025-04-08T13:34:26.5778361Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-08T13:34:26.5814697Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-08T13:34:26.6055108Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-08T13:34:26.6078999Z http.https://github.com/.extraheader
+2025-04-08T13:34:26.6092740Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-08T13:34:26.6127449Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-08T13:34:26.6471602Z Cleaning up orphan processes

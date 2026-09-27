@@ -1,0 +1,12 @@
+diff --git a/tests/Functional/Command/ParallelCommandTest.php b/tests/Functional/Command/ParallelCommandTest.php
+index 10d2d5f8..7c8005cc 100644
+--- a/tests/Functional/Command/ParallelCommandTest.php
++++ b/tests/Functional/Command/ParallelCommandTest.php
+@@ -280,7 +280,6 @@ public function testExecutionWithDeprecationHidden(): void
+         $this->assertStringContainsString('1 files with DEPRECATIONS:', $output);
+         $this->assertStringNotContainsString(RaisingDeprecationTestStub::DEPRECATION_MESSAGE, $output);
+         $this->assertStringNotContainsString('3x Tests\Stub\RaisingDeprecationTestStub::testDeprecation', $output);
+-
+     }
+ 
+     public function testExecutionWithDeprecationListener(): void

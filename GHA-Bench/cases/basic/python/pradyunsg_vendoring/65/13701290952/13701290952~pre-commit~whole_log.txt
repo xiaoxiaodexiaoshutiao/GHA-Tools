@@ -1,0 +1,344 @@
+﻿2025-03-06T20:22:24.3825925Z Current runner version: '2.322.0'
+2025-03-06T20:22:24.3851728Z ##[group]Operating System
+2025-03-06T20:22:24.3852545Z Ubuntu
+2025-03-06T20:22:24.3853065Z 24.04.2
+2025-03-06T20:22:24.3853516Z LTS
+2025-03-06T20:22:24.3854043Z ##[endgroup]
+2025-03-06T20:22:24.3854579Z ##[group]Runner Image
+2025-03-06T20:22:24.3855209Z Image: ubuntu-24.04
+2025-03-06T20:22:24.3855824Z Version: 20250302.1.0
+2025-03-06T20:22:24.3856861Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250302.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-06T20:22:24.3858259Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250302.1
+2025-03-06T20:22:24.3859116Z ##[endgroup]
+2025-03-06T20:22:24.3859700Z ##[group]Runner Image Provisioner
+2025-03-06T20:22:24.3860301Z 2.0.422.1
+2025-03-06T20:22:24.3860705Z ##[endgroup]
+2025-03-06T20:22:24.3863190Z ##[group]GITHUB_TOKEN Permissions
+2025-03-06T20:22:24.3865097Z Actions: read
+2025-03-06T20:22:24.3865912Z Attestations: read
+2025-03-06T20:22:24.3866489Z Checks: read
+2025-03-06T20:22:24.3867052Z Contents: read
+2025-03-06T20:22:24.3867559Z Deployments: read
+2025-03-06T20:22:24.3868033Z Discussions: read
+2025-03-06T20:22:24.3868587Z Issues: read
+2025-03-06T20:22:24.3869019Z Metadata: read
+2025-03-06T20:22:24.3869499Z Packages: read
+2025-03-06T20:22:24.3870044Z Pages: read
+2025-03-06T20:22:24.3870477Z PullRequests: read
+2025-03-06T20:22:24.3871181Z RepositoryProjects: read
+2025-03-06T20:22:24.3871749Z SecurityEvents: read
+2025-03-06T20:22:24.3872292Z Statuses: read
+2025-03-06T20:22:24.3872733Z ##[endgroup]
+2025-03-06T20:22:24.3874885Z Secret source: None
+2025-03-06T20:22:24.3875555Z Prepare workflow directory
+2025-03-06T20:22:24.4202722Z Prepare all required actions
+2025-03-06T20:22:24.4241751Z Getting action download info
+2025-03-06T20:22:24.9613763Z Download action repository 'actions/checkout@v2' (SHA:ee0669bd1cc54295c223e0bb666b733df41de1c5)
+2025-03-06T20:22:25.0637582Z Download action repository 'actions/setup-python@v2' (SHA:e9aba2c848f5ebd159c070c61ea2c4e2b122355e)
+2025-03-06T20:22:25.2646605Z Download action repository 'pre-commit/action@v2.0.0' (SHA:0764670bf370aab253130d534e1eda7ff497dc60)
+2025-03-06T20:22:25.7805337Z Complete job name: pre-commit
+2025-03-06T20:22:25.8497679Z ##[group]Run actions/checkout@v2
+2025-03-06T20:22:25.8498589Z with:
+2025-03-06T20:22:25.8499010Z   repository: pradyunsg/vendoring
+2025-03-06T20:22:25.8499706Z   token: ***
+2025-03-06T20:22:25.8500106Z   ssh-strict: true
+2025-03-06T20:22:25.8500543Z   persist-credentials: true
+2025-03-06T20:22:25.8501185Z   clean: true
+2025-03-06T20:22:25.8501766Z   fetch-depth: 1
+2025-03-06T20:22:25.8502184Z   lfs: false
+2025-03-06T20:22:25.8502592Z   submodules: false
+2025-03-06T20:22:25.8503019Z   set-safe-directory: true
+2025-03-06T20:22:25.8503788Z ##[endgroup]
+2025-03-06T20:22:26.0279789Z Syncing repository: pradyunsg/vendoring
+2025-03-06T20:22:26.0282458Z ##[group]Getting Git version info
+2025-03-06T20:22:26.0283458Z Working directory is '/home/runner/work/vendoring/vendoring'
+2025-03-06T20:22:26.0285012Z [command]/usr/bin/git version
+2025-03-06T20:22:26.0318432Z git version 2.48.1
+2025-03-06T20:22:26.0345456Z ##[endgroup]
+2025-03-06T20:22:26.0362499Z Temporarily overriding HOME='/home/runner/work/_temp/4f69fde2-e9a3-4516-af23-16a76d309bf0' before making global git config changes
+2025-03-06T20:22:26.0364882Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-06T20:22:26.0367305Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/vendoring/vendoring
+2025-03-06T20:22:26.0405995Z Deleting the contents of '/home/runner/work/vendoring/vendoring'
+2025-03-06T20:22:26.0409302Z ##[group]Initializing the repository
+2025-03-06T20:22:26.0412644Z [command]/usr/bin/git init /home/runner/work/vendoring/vendoring
+2025-03-06T20:22:26.0476041Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-06T20:22:26.0478319Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-06T20:22:26.0480717Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-06T20:22:26.0482971Z hint:
+2025-03-06T20:22:26.0484285Z hint: 	git config --global init.defaultBranch <name>
+2025-03-06T20:22:26.0485804Z hint:
+2025-03-06T20:22:26.0487050Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-06T20:22:26.0489103Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-06T20:22:26.0490721Z hint:
+2025-03-06T20:22:26.0491896Z hint: 	git branch -m <name>
+2025-03-06T20:22:26.0493970Z Initialized empty Git repository in /home/runner/work/vendoring/vendoring/.git/
+2025-03-06T20:22:26.0496479Z [command]/usr/bin/git remote add origin https://github.com/pradyunsg/vendoring
+2025-03-06T20:22:26.0529883Z ##[endgroup]
+2025-03-06T20:22:26.0531849Z ##[group]Disabling automatic garbage collection
+2025-03-06T20:22:26.0533776Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-06T20:22:26.0562190Z ##[endgroup]
+2025-03-06T20:22:26.0563877Z ##[group]Setting up auth
+2025-03-06T20:22:26.0568288Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-06T20:22:26.0599028Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-06T20:22:26.0904861Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-06T20:22:26.0937275Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-06T20:22:26.1175586Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-06T20:22:26.1213913Z ##[endgroup]
+2025-03-06T20:22:26.1215607Z ##[group]Fetching the repository
+2025-03-06T20:22:26.1223759Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +2f3d94bbf0a955f7731f284de5d7256b7df57b8b:refs/remotes/pull/65/merge
+2025-03-06T20:22:26.6725406Z remote: Enumerating objects: 63, done.        
+2025-03-06T20:22:26.6727379Z remote: Counting objects:   1% (1/63)        
+2025-03-06T20:22:26.6728941Z remote: Counting objects:   3% (2/63)        
+2025-03-06T20:22:26.6730330Z remote: Counting objects:   4% (3/63)        
+2025-03-06T20:22:26.6732000Z remote: Counting objects:   6% (4/63)        
+2025-03-06T20:22:26.6733415Z remote: Counting objects:   7% (5/63)        
+2025-03-06T20:22:26.6734771Z remote: Counting objects:   9% (6/63)        
+2025-03-06T20:22:26.6736164Z remote: Counting objects:  11% (7/63)        
+2025-03-06T20:22:26.6737533Z remote: Counting objects:  12% (8/63)        
+2025-03-06T20:22:26.6738906Z remote: Counting objects:  14% (9/63)        
+2025-03-06T20:22:26.6740205Z remote: Counting objects:  15% (10/63)        
+2025-03-06T20:22:26.6741632Z remote: Counting objects:  17% (11/63)        
+2025-03-06T20:22:26.6742985Z remote: Counting objects:  19% (12/63)        
+2025-03-06T20:22:26.6744285Z remote: Counting objects:  20% (13/63)        
+2025-03-06T20:22:26.6745619Z remote: Counting objects:  22% (14/63)        
+2025-03-06T20:22:26.6747549Z remote: Counting objects:  23% (15/63)        
+2025-03-06T20:22:26.6749125Z remote: Counting objects:  25% (16/63)        
+2025-03-06T20:22:26.6750445Z remote: Counting objects:  26% (17/63)        
+2025-03-06T20:22:26.6752015Z remote: Counting objects:  28% (18/63)        
+2025-03-06T20:22:26.6753317Z remote: Counting objects:  30% (19/63)        
+2025-03-06T20:22:26.6754623Z remote: Counting objects:  31% (20/63)        
+2025-03-06T20:22:26.6756495Z remote: Counting objects:  33% (21/63)        
+2025-03-06T20:22:26.6758313Z remote: Counting objects:  34% (22/63)        
+2025-03-06T20:22:26.6759624Z remote: Counting objects:  36% (23/63)        
+2025-03-06T20:22:26.6760938Z remote: Counting objects:  38% (24/63)        
+2025-03-06T20:22:26.6762631Z remote: Counting objects:  39% (25/63)        
+2025-03-06T20:22:26.6763946Z remote: Counting objects:  41% (26/63)        
+2025-03-06T20:22:26.6765238Z remote: Counting objects:  42% (27/63)        
+2025-03-06T20:22:26.6766582Z remote: Counting objects:  44% (28/63)        
+2025-03-06T20:22:26.6768003Z remote: Counting objects:  46% (29/63)        
+2025-03-06T20:22:26.6769331Z remote: Counting objects:  47% (30/63)        
+2025-03-06T20:22:26.6770665Z remote: Counting objects:  49% (31/63)        
+2025-03-06T20:22:26.6772129Z remote: Counting objects:  50% (32/63)        
+2025-03-06T20:22:26.6773449Z remote: Counting objects:  52% (33/63)        
+2025-03-06T20:22:26.6774779Z remote: Counting objects:  53% (34/63)        
+2025-03-06T20:22:26.6776101Z remote: Counting objects:  55% (35/63)        
+2025-03-06T20:22:26.6777420Z remote: Counting objects:  57% (36/63)        
+2025-03-06T20:22:26.6778729Z remote: Counting objects:  58% (37/63)        
+2025-03-06T20:22:26.6780043Z remote: Counting objects:  60% (38/63)        
+2025-03-06T20:22:26.6781440Z remote: Counting objects:  61% (39/63)        
+2025-03-06T20:22:26.6782742Z remote: Counting objects:  63% (40/63)        
+2025-03-06T20:22:26.6784057Z remote: Counting objects:  65% (41/63)        
+2025-03-06T20:22:26.6785354Z remote: Counting objects:  66% (42/63)        
+2025-03-06T20:22:26.6786648Z remote: Counting objects:  68% (43/63)        
+2025-03-06T20:22:26.6787941Z remote: Counting objects:  69% (44/63)        
+2025-03-06T20:22:26.6789232Z remote: Counting objects:  71% (45/63)        
+2025-03-06T20:22:26.6790540Z remote: Counting objects:  73% (46/63)        
+2025-03-06T20:22:26.6791933Z remote: Counting objects:  74% (47/63)        
+2025-03-06T20:22:26.6793201Z remote: Counting objects:  76% (48/63)        
+2025-03-06T20:22:26.6794457Z remote: Counting objects:  77% (49/63)        
+2025-03-06T20:22:26.6795680Z remote: Counting objects:  79% (50/63)        
+2025-03-06T20:22:26.6796913Z remote: Counting objects:  80% (51/63)        
+2025-03-06T20:22:26.6798183Z remote: Counting objects:  82% (52/63)        
+2025-03-06T20:22:26.6799431Z remote: Counting objects:  84% (53/63)        
+2025-03-06T20:22:26.6800870Z remote: Counting objects:  85% (54/63)        
+2025-03-06T20:22:26.6802249Z remote: Counting objects:  87% (55/63)        
+2025-03-06T20:22:26.6803493Z remote: Counting objects:  88% (56/63)        
+2025-03-06T20:22:26.6804751Z remote: Counting objects:  90% (57/63)        
+2025-03-06T20:22:26.6805999Z remote: Counting objects:  92% (58/63)        
+2025-03-06T20:22:26.6807491Z remote: Counting objects:  93% (59/63)        
+2025-03-06T20:22:26.6808748Z remote: Counting objects:  95% (60/63)        
+2025-03-06T20:22:26.6809978Z remote: Counting objects:  96% (61/63)        
+2025-03-06T20:22:26.6811305Z remote: Counting objects:  98% (62/63)        
+2025-03-06T20:22:26.6812536Z remote: Counting objects: 100% (63/63)        
+2025-03-06T20:22:26.6813813Z remote: Counting objects: 100% (63/63), done.        
+2025-03-06T20:22:26.6815771Z remote: Compressing objects:   2% (1/47)        
+2025-03-06T20:22:26.6817706Z remote: Compressing objects:   4% (2/47)        
+2025-03-06T20:22:26.6819764Z remote: Compressing objects:   6% (3/47)        
+2025-03-06T20:22:26.6822016Z remote: Compressing objects:   8% (4/47)        
+2025-03-06T20:22:26.6824067Z remote: Compressing objects:  10% (5/47)        
+2025-03-06T20:22:26.6826111Z remote: Compressing objects:  12% (6/47)        
+2025-03-06T20:22:26.6828150Z remote: Compressing objects:  14% (7/47)        
+2025-03-06T20:22:26.6830181Z remote: Compressing objects:  17% (8/47)        
+2025-03-06T20:22:26.6832409Z remote: Compressing objects:  19% (9/47)        
+2025-03-06T20:22:26.6834460Z remote: Compressing objects:  21% (10/47)        
+2025-03-06T20:22:26.6836517Z remote: Compressing objects:  23% (11/47)        
+2025-03-06T20:22:26.6838578Z remote: Compressing objects:  25% (12/47)        
+2025-03-06T20:22:26.6840589Z remote: Compressing objects:  27% (13/47)        
+2025-03-06T20:22:26.6842673Z remote: Compressing objects:  29% (14/47)        
+2025-03-06T20:22:26.6845037Z remote: Compressing objects:  31% (15/47)        
+2025-03-06T20:22:26.6847103Z remote: Compressing objects:  34% (16/47)        
+2025-03-06T20:22:26.6849137Z remote: Compressing objects:  36% (17/47)        
+2025-03-06T20:22:26.6851335Z remote: Compressing objects:  38% (18/47)        
+2025-03-06T20:22:26.6853217Z remote: Compressing objects:  40% (19/47)        
+2025-03-06T20:22:26.6855240Z remote: Compressing objects:  42% (20/47)        
+2025-03-06T20:22:26.6857268Z remote: Compressing objects:  44% (21/47)        
+2025-03-06T20:22:26.6859354Z remote: Compressing objects:  46% (22/47)        
+2025-03-06T20:22:26.6861662Z remote: Compressing objects:  48% (23/47)        
+2025-03-06T20:22:26.6863597Z remote: Compressing objects:  51% (24/47)        
+2025-03-06T20:22:26.6865401Z remote: Compressing objects:  53% (25/47)        
+2025-03-06T20:22:26.6867220Z remote: Compressing objects:  55% (26/47)        
+2025-03-06T20:22:26.6869121Z remote: Compressing objects:  57% (27/47)        
+2025-03-06T20:22:26.6871395Z remote: Compressing objects:  59% (28/47)        
+2025-03-06T20:22:26.6873570Z remote: Compressing objects:  61% (29/47)        
+2025-03-06T20:22:26.6875738Z remote: Compressing objects:  63% (30/47)        
+2025-03-06T20:22:26.6877874Z remote: Compressing objects:  65% (31/47)        
+2025-03-06T20:22:26.6879933Z remote: Compressing objects:  68% (32/47)        
+2025-03-06T20:22:26.6882258Z remote: Compressing objects:  70% (33/47)        
+2025-03-06T20:22:26.6884448Z remote: Compressing objects:  72% (34/47)        
+2025-03-06T20:22:26.6886565Z remote: Compressing objects:  74% (35/47)        
+2025-03-06T20:22:26.6888681Z remote: Compressing objects:  76% (36/47)        
+2025-03-06T20:22:26.6890869Z remote: Compressing objects:  78% (37/47)        
+2025-03-06T20:22:26.6893211Z remote: Compressing objects:  80% (38/47)        
+2025-03-06T20:22:26.6895411Z remote: Compressing objects:  82% (39/47)        
+2025-03-06T20:22:26.6897539Z remote: Compressing objects:  85% (40/47)        
+2025-03-06T20:22:26.6899770Z remote: Compressing objects:  87% (41/47)        
+2025-03-06T20:22:26.6902310Z remote: Compressing objects:  89% (42/47)        
+2025-03-06T20:22:26.6904544Z remote: Compressing objects:  91% (43/47)        
+2025-03-06T20:22:26.6906697Z remote: Compressing objects:  93% (44/47)        
+2025-03-06T20:22:26.6908846Z remote: Compressing objects:  95% (45/47)        
+2025-03-06T20:22:26.6911213Z remote: Compressing objects:  97% (46/47)        
+2025-03-06T20:22:26.6913353Z remote: Compressing objects: 100% (47/47)        
+2025-03-06T20:22:26.6915597Z remote: Compressing objects: 100% (47/47), done.        
+2025-03-06T20:22:26.6942110Z remote: Total 63 (delta 5), reused 43 (delta 5), pack-reused 0 (from 0)        
+2025-03-06T20:22:26.7094371Z From https://github.com/pradyunsg/vendoring
+2025-03-06T20:22:26.7096222Z  * [new ref]         2f3d94bbf0a955f7731f284de5d7256b7df57b8b -> pull/65/merge
+2025-03-06T20:22:26.7121515Z ##[endgroup]
+2025-03-06T20:22:26.7124652Z ##[group]Determining the checkout info
+2025-03-06T20:22:26.7127213Z ##[endgroup]
+2025-03-06T20:22:26.7129382Z ##[group]Checking out the ref
+2025-03-06T20:22:26.7132142Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/65/merge
+2025-03-06T20:22:26.7209362Z Note: switching to 'refs/remotes/pull/65/merge'.
+2025-03-06T20:22:26.7210735Z 
+2025-03-06T20:22:26.7211805Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-06T20:22:26.7213668Z changes and commit them, and you can discard any commits you make in this
+2025-03-06T20:22:26.7215507Z state without impacting any branches by switching back to a branch.
+2025-03-06T20:22:26.7216742Z 
+2025-03-06T20:22:26.7217457Z If you want to create a new branch to retain commits you create, you may
+2025-03-06T20:22:26.7219132Z do so (now or later) by using -c with the switch command. Example:
+2025-03-06T20:22:26.7220109Z 
+2025-03-06T20:22:26.7220520Z   git switch -c <new-branch-name>
+2025-03-06T20:22:26.7221662Z 
+2025-03-06T20:22:26.7222033Z Or undo this operation with:
+2025-03-06T20:22:26.7222657Z 
+2025-03-06T20:22:26.7222973Z   git switch -
+2025-03-06T20:22:26.7223421Z 
+2025-03-06T20:22:26.7224224Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-06T20:22:26.7225396Z 
+2025-03-06T20:22:26.7226889Z HEAD is now at 2f3d94b Merge ead515dcc6404f8d374dfb2e4377823f9ffed9a2 into b7436be6e28116b7cef74127baf1118c319bb30f
+2025-03-06T20:22:26.7229522Z ##[endgroup]
+2025-03-06T20:22:26.7253210Z [command]/usr/bin/git log -1 --format='%H'
+2025-03-06T20:22:26.7277502Z '2f3d94bbf0a955f7731f284de5d7256b7df57b8b'
+2025-03-06T20:22:26.7548052Z ##[group]Run actions/setup-python@v2
+2025-03-06T20:22:26.7549042Z with:
+2025-03-06T20:22:26.7549705Z   python-version: 3.8
+2025-03-06T20:22:26.7550719Z   token: ***
+2025-03-06T20:22:26.7551553Z ##[endgroup]
+2025-03-06T20:22:26.8742007Z Version 3.8 was not found in the local cache
+2025-03-06T20:22:27.4211945Z Version 3.8 is available for downloading
+2025-03-06T20:22:27.4212901Z Download from "https://github.com/actions/python-versions/releases/download/3.8.18-12303122501/python-3.8.18-linux-24.04-x64.tar.gz"
+2025-03-06T20:22:28.3534371Z Extract downloaded archive
+2025-03-06T20:22:28.3720017Z [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /home/runner/work/_temp/6b550ece-cac5-40ac-93d6-0699ffca2794 -f /home/runner/work/_temp/003b301c-0de9-4711-b0d6-8580753e9ccd
+2025-03-06T20:22:29.6906667Z Execute installation script
+2025-03-06T20:22:29.6997898Z Check if Python hostedtoolcache folder exist...
+2025-03-06T20:22:29.6999736Z Create Python 3.8.18 folder
+2025-03-06T20:22:29.7014085Z Copy Python binaries to hostedtoolcache folder
+2025-03-06T20:22:30.1690539Z Create additional symlinks (Required for the UsePythonVersion Azure Pipelines task and the setup-python GitHub Action)
+2025-03-06T20:22:30.1733652Z Upgrading pip...
+2025-03-06T20:22:31.8432208Z Looking in links: /tmp/tmpq0bm21gh
+2025-03-06T20:22:31.8436407Z Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (56.0.0)
+2025-03-06T20:22:31.8440286Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (23.0.1)
+2025-03-06T20:22:32.9019434Z Collecting pip
+2025-03-06T20:22:32.9344345Z Downloading pip-25.0.1-py3-none-any.whl (1.8 MB)
+2025-03-06T20:22:32.9757629Z ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 47.9 MB/s eta 0:00:00
+2025-03-06T20:22:32.9771850Z 
+2025-03-06T20:22:33.0177890Z Installing collected packages: pip
+2025-03-06T20:22:33.0178437Z Attempting uninstall: pip
+2025-03-06T20:22:33.0187605Z Found existing installation: pip 23.0.1
+2025-03-06T20:22:33.1983163Z Uninstalling pip-23.0.1:
+2025-03-06T20:22:33.2058500Z Successfully uninstalled pip-23.0.1
+2025-03-06T20:22:33.9236796Z Successfully installed pip-25.0.1
+2025-03-06T20:22:33.9816210Z Create complete file
+2025-03-06T20:22:33.9863672Z Successfully setup CPython (3.8.18)
+2025-03-06T20:22:34.0001391Z ##[group]Run pre-commit/action@v2.0.0
+2025-03-06T20:22:34.0001713Z with:
+2025-03-06T20:22:34.0001900Z   extra_args: --all-files
+2025-03-06T20:22:34.0002104Z env:
+2025-03-06T20:22:34.0002339Z   pythonLocation: /opt/hostedtoolcache/Python/3.8.18/x64
+2025-03-06T20:22:34.0002732Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.18/x64/lib
+2025-03-06T20:22:34.0003048Z ##[endgroup]
+2025-03-06T20:22:34.0438281Z ##[group]install pre-commit
+2025-03-06T20:22:34.0455137Z [command]/opt/hostedtoolcache/Python/3.8.18/x64/bin/pip install pre-commit
+2025-03-06T20:22:34.4714337Z Collecting pre-commit
+2025-03-06T20:22:34.4830916Z   Downloading pre_commit-3.5.0-py2.py3-none-any.whl.metadata (1.3 kB)
+2025-03-06T20:22:34.4991530Z Collecting cfgv>=2.0.0 (from pre-commit)
+2025-03-06T20:22:34.5032815Z   Downloading cfgv-3.4.0-py2.py3-none-any.whl.metadata (8.5 kB)
+2025-03-06T20:22:34.5612258Z Collecting identify>=1.0.0 (from pre-commit)
+2025-03-06T20:22:34.5659254Z   Downloading identify-2.6.1-py2.py3-none-any.whl.metadata (4.4 kB)
+2025-03-06T20:22:34.5869046Z Collecting nodeenv>=0.11.1 (from pre-commit)
+2025-03-06T20:22:34.5931818Z   Downloading nodeenv-1.9.1-py2.py3-none-any.whl.metadata (21 kB)
+2025-03-06T20:22:34.6319960Z Collecting pyyaml>=5.1 (from pre-commit)
+2025-03-06T20:22:34.6361836Z   Downloading PyYAML-6.0.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+2025-03-06T20:22:34.6829439Z Collecting virtualenv>=20.10.0 (from pre-commit)
+2025-03-06T20:22:34.6871786Z   Downloading virtualenv-20.29.3-py3-none-any.whl.metadata (4.5 kB)
+2025-03-06T20:22:34.7113224Z Collecting distlib<1,>=0.3.7 (from virtualenv>=20.10.0->pre-commit)
+2025-03-06T20:22:34.7149839Z   Downloading distlib-0.3.9-py2.py3-none-any.whl.metadata (5.2 kB)
+2025-03-06T20:22:34.7364716Z Collecting filelock<4,>=3.12.2 (from virtualenv>=20.10.0->pre-commit)
+2025-03-06T20:22:34.7400587Z   Downloading filelock-3.16.1-py3-none-any.whl.metadata (2.9 kB)
+2025-03-06T20:22:34.7619267Z Collecting platformdirs<5,>=3.9.1 (from virtualenv>=20.10.0->pre-commit)
+2025-03-06T20:22:34.7656166Z   Downloading platformdirs-4.3.6-py3-none-any.whl.metadata (11 kB)
+2025-03-06T20:22:34.7772756Z Downloading pre_commit-3.5.0-py2.py3-none-any.whl (203 kB)
+2025-03-06T20:22:34.7851271Z Downloading cfgv-3.4.0-py2.py3-none-any.whl (7.2 kB)
+2025-03-06T20:22:34.7906404Z Downloading identify-2.6.1-py2.py3-none-any.whl (98 kB)
+2025-03-06T20:22:34.7967891Z Downloading nodeenv-1.9.1-py2.py3-none-any.whl (22 kB)
+2025-03-06T20:22:34.8033013Z Downloading PyYAML-6.0.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (746 kB)
+2025-03-06T20:22:34.8142410Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 746.5/746.5 kB 87.8 MB/s eta 0:00:00
+2025-03-06T20:22:34.8184542Z Downloading virtualenv-20.29.3-py3-none-any.whl (4.3 MB)
+2025-03-06T20:22:34.8506511Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 140.1 MB/s eta 0:00:00
+2025-03-06T20:22:34.8549462Z Downloading distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+2025-03-06T20:22:34.8635824Z Downloading filelock-3.16.1-py3-none-any.whl (16 kB)
+2025-03-06T20:22:34.8692174Z Downloading platformdirs-4.3.6-py3-none-any.whl (18 kB)
+2025-03-06T20:22:34.9126112Z Installing collected packages: distlib, pyyaml, platformdirs, nodeenv, identify, filelock, cfgv, virtualenv, pre-commit
+2025-03-06T20:22:35.2278776Z Successfully installed cfgv-3.4.0 distlib-0.3.9 filelock-3.16.1 identify-2.6.1 nodeenv-1.9.1 platformdirs-4.3.6 pre-commit-3.5.0 pyyaml-6.0.2 virtualenv-20.29.3
+2025-03-06T20:22:35.3272715Z [command]/opt/hostedtoolcache/Python/3.8.18/x64/bin/pip freeze --local
+2025-03-06T20:22:35.5356420Z cfgv==3.4.0
+2025-03-06T20:22:35.5356876Z distlib==0.3.9
+2025-03-06T20:22:35.5357243Z filelock==3.16.1
+2025-03-06T20:22:35.5357641Z identify==2.6.1
+2025-03-06T20:22:35.5358058Z nodeenv==1.9.1
+2025-03-06T20:22:35.5358466Z platformdirs==4.3.6
+2025-03-06T20:22:35.5358886Z pre-commit==3.5.0
+2025-03-06T20:22:35.5359296Z PyYAML==6.0.2
+2025-03-06T20:22:35.5359722Z virtualenv==20.29.3
+2025-03-06T20:22:35.5626035Z ##[endgroup]
+2025-03-06T20:22:35.9305193Z [command]/opt/hostedtoolcache/Python/3.8.18/x64/bin/pre-commit run --show-diff-on-failure --color=always --all-files
+2025-03-06T20:22:36.0688625Z [INFO][m Initializing environment for https://github.com/psf/black.
+2025-03-06T20:22:36.6982357Z [INFO][m Initializing environment for https://github.com/PyCQA/isort.
+2025-03-06T20:22:37.3003984Z [INFO][m Initializing environment for https://github.com/pre-commit/mirrors-mypy.
+2025-03-06T20:22:37.7636456Z [INFO][m Initializing environment for https://github.com/pre-commit/mirrors-mypy:click,nox,pytest,types-requests.
+2025-03-06T20:22:38.1911463Z [INFO][m Initializing environment for https://github.com/PyCQA/flake8.
+2025-03-06T20:22:38.7255217Z [INFO][m Initializing environment for https://github.com/pre-commit/pre-commit-hooks.
+2025-03-06T20:22:39.1885829Z [INFO][m Initializing environment for https://github.com/pre-commit/mirrors-prettier.
+2025-03-06T20:22:39.6225746Z [INFO][m Initializing environment for https://github.com/pre-commit/mirrors-prettier:prettier@4.0.0-alpha.8.
+2025-03-06T20:22:40.0562567Z [INFO][m Installing environment for https://github.com/psf/black.
+2025-03-06T20:22:40.0563397Z [INFO][m Once installed this environment will be reused.
+2025-03-06T20:22:40.0563972Z [INFO][m This may take a few minutes...
+2025-03-06T20:22:40.3631352Z An unexpected error has occurred: CalledProcessError: command: ('/opt/hostedtoolcache/Python/3.8.18/x64/bin/python', '-mvirtualenv', '/home/runner/.cache/pre-commit/repo8px1w1p4/py_env-python3.9', '-p', 'python3.9')
+2025-03-06T20:22:40.3632819Z return code: 1
+2025-03-06T20:22:40.3633122Z stdout:
+2025-03-06T20:22:40.3633699Z     RuntimeError: failed to find interpreter for Builtin discover of python_spec='python3.9'
+2025-03-06T20:22:40.3634405Z stderr: (none)
+2025-03-06T20:22:40.3663744Z Check the log at /home/runner/.cache/pre-commit/pre-commit.log
+2025-03-06T20:22:40.3840666Z ##[error]The process '/opt/hostedtoolcache/Python/3.8.18/x64/bin/pre-commit' failed with exit code 3
+2025-03-06T20:22:40.3943545Z Post job cleanup.
+2025-03-06T20:22:40.4845303Z [command]/usr/bin/git version
+2025-03-06T20:22:40.4886410Z git version 2.48.1
+2025-03-06T20:22:40.4930330Z Temporarily overriding HOME='/home/runner/work/_temp/db0ebd9f-a3d8-4b26-b656-d12b9399eaa7' before making global git config changes
+2025-03-06T20:22:40.4931274Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-06T20:22:40.4934307Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/vendoring/vendoring
+2025-03-06T20:22:40.4969148Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-06T20:22:40.5002074Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-06T20:22:40.5239375Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-06T20:22:40.5263669Z http.https://github.com/.extraheader
+2025-03-06T20:22:40.5274085Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-06T20:22:40.5306438Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-06T20:22:40.5679028Z Cleaning up orphan processes

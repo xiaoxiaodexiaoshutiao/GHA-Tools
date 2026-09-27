@@ -1,0 +1,212 @@
+﻿2025-04-04T17:11:51.6913264Z Current runner version: '2.323.0'
+2025-04-04T17:11:51.6937518Z ##[group]Operating System
+2025-04-04T17:11:51.6938328Z Ubuntu
+2025-04-04T17:11:51.6938787Z 24.04.2
+2025-04-04T17:11:51.6939336Z LTS
+2025-04-04T17:11:51.6939795Z ##[endgroup]
+2025-04-04T17:11:51.6940330Z ##[group]Runner Image
+2025-04-04T17:11:51.6940870Z Image: ubuntu-24.04
+2025-04-04T17:11:51.6941478Z Version: 20250323.1.0
+2025-04-04T17:11:51.6942472Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-04T17:11:51.6943860Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-04-04T17:11:51.6944999Z ##[endgroup]
+2025-04-04T17:11:51.6945498Z ##[group]Runner Image Provisioner
+2025-04-04T17:11:51.6946082Z 2.0.422.1
+2025-04-04T17:11:51.6946589Z ##[endgroup]
+2025-04-04T17:11:51.6948979Z ##[group]GITHUB_TOKEN Permissions
+2025-04-04T17:11:51.6950947Z Actions: write
+2025-04-04T17:11:51.6951715Z Attestations: write
+2025-04-04T17:11:51.6952357Z Checks: write
+2025-04-04T17:11:51.6952827Z Contents: write
+2025-04-04T17:11:51.6953385Z Deployments: write
+2025-04-04T17:11:51.6953946Z Discussions: write
+2025-04-04T17:11:51.6954439Z Issues: write
+2025-04-04T17:11:51.6955113Z Metadata: read
+2025-04-04T17:11:51.6955624Z Models: read
+2025-04-04T17:11:51.6956151Z Packages: write
+2025-04-04T17:11:51.6956612Z Pages: write
+2025-04-04T17:11:51.6957131Z PullRequests: write
+2025-04-04T17:11:51.6957655Z RepositoryProjects: write
+2025-04-04T17:11:51.6958207Z SecurityEvents: write
+2025-04-04T17:11:51.6958760Z Statuses: write
+2025-04-04T17:11:51.6959254Z ##[endgroup]
+2025-04-04T17:11:51.6961228Z Secret source: Actions
+2025-04-04T17:11:51.6962190Z Prepare workflow directory
+2025-04-04T17:11:51.7292710Z Prepare all required actions
+2025-04-04T17:11:51.7330479Z Getting action download info
+2025-04-04T17:11:52.2488564Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-04T17:11:52.2489696Z Version: 4.2.2
+2025-04-04T17:11:52.2490695Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-04T17:11:52.2491948Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-04T17:11:52.2492764Z ##[endgroup]
+2025-04-04T17:11:52.3421663Z Download action repository 'psf/black@stable' (SHA:8a737e727ac5ab2f1d4cf5876720ed276dc8dc4b)
+2025-04-04T17:11:53.2874755Z Complete job name: black
+2025-04-04T17:11:53.3576441Z ##[group]Run actions/checkout@v4
+2025-04-04T17:11:53.3577320Z with:
+2025-04-04T17:11:53.3577774Z   repository: svalinn/parastell
+2025-04-04T17:11:53.3578461Z   token: ***
+2025-04-04T17:11:53.3578872Z   ssh-strict: true
+2025-04-04T17:11:53.3579291Z   ssh-user: git
+2025-04-04T17:11:53.3579729Z   persist-credentials: true
+2025-04-04T17:11:53.3580206Z   clean: true
+2025-04-04T17:11:53.3580637Z   sparse-checkout-cone-mode: true
+2025-04-04T17:11:53.3581142Z   fetch-depth: 1
+2025-04-04T17:11:53.3581556Z   fetch-tags: false
+2025-04-04T17:11:53.3581993Z   show-progress: true
+2025-04-04T17:11:53.3582422Z   lfs: false
+2025-04-04T17:11:53.3582869Z   submodules: false
+2025-04-04T17:11:53.3583314Z   set-safe-directory: true
+2025-04-04T17:11:53.3583996Z ##[endgroup]
+2025-04-04T17:11:53.5283415Z Syncing repository: svalinn/parastell
+2025-04-04T17:11:53.5285504Z ##[group]Getting Git version info
+2025-04-04T17:11:53.5286281Z Working directory is '/home/runner/work/parastell/parastell'
+2025-04-04T17:11:53.5287528Z [command]/usr/bin/git version
+2025-04-04T17:11:53.5334222Z git version 2.49.0
+2025-04-04T17:11:53.5363639Z ##[endgroup]
+2025-04-04T17:11:53.5377336Z Temporarily overriding HOME='/home/runner/work/_temp/4a88bb6a-6232-4d05-bb2a-9bd17a6b0b8d' before making global git config changes
+2025-04-04T17:11:53.5379719Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-04T17:11:53.5382098Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/parastell/parastell
+2025-04-04T17:11:53.5414985Z Deleting the contents of '/home/runner/work/parastell/parastell'
+2025-04-04T17:11:53.5419022Z ##[group]Initializing the repository
+2025-04-04T17:11:53.5423120Z [command]/usr/bin/git init /home/runner/work/parastell/parastell
+2025-04-04T17:11:53.5490787Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-04T17:11:53.5492511Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-04T17:11:53.5493876Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-04T17:11:53.5494571Z hint:
+2025-04-04T17:11:53.5495797Z hint: 	git config --global init.defaultBranch <name>
+2025-04-04T17:11:53.5496827Z hint:
+2025-04-04T17:11:53.5497802Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-04T17:11:53.5499140Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-04T17:11:53.5499872Z hint:
+2025-04-04T17:11:53.5500333Z hint: 	git branch -m <name>
+2025-04-04T17:11:53.5501594Z Initialized empty Git repository in /home/runner/work/parastell/parastell/.git/
+2025-04-04T17:11:53.5507001Z [command]/usr/bin/git remote add origin https://github.com/svalinn/parastell
+2025-04-04T17:11:53.5540486Z ##[endgroup]
+2025-04-04T17:11:53.5541323Z ##[group]Disabling automatic garbage collection
+2025-04-04T17:11:53.5546094Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-04T17:11:53.5575725Z ##[endgroup]
+2025-04-04T17:11:53.5577380Z ##[group]Setting up auth
+2025-04-04T17:11:53.5583601Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-04T17:11:53.5615850Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-04T17:11:53.5900983Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-04T17:11:53.5931878Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-04T17:11:53.6160458Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-04T17:11:53.6193300Z ##[endgroup]
+2025-04-04T17:11:53.6202239Z ##[group]Fetching the repository
+2025-04-04T17:11:53.6203933Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +10ce233388d05153c2fec852decfad08f5416a0d:refs/remotes/pull/208/merge
+2025-04-04T17:11:54.9159904Z From https://github.com/svalinn/parastell
+2025-04-04T17:11:54.9161709Z  * [new ref]         10ce233388d05153c2fec852decfad08f5416a0d -> pull/208/merge
+2025-04-04T17:11:54.9185763Z ##[endgroup]
+2025-04-04T17:11:54.9186760Z ##[group]Determining the checkout info
+2025-04-04T17:11:54.9188113Z ##[endgroup]
+2025-04-04T17:11:54.9192886Z [command]/usr/bin/git sparse-checkout disable
+2025-04-04T17:11:54.9233641Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-04T17:11:54.9262371Z ##[group]Checking out the ref
+2025-04-04T17:11:54.9266809Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/208/merge
+2025-04-04T17:11:55.0294253Z Note: switching to 'refs/remotes/pull/208/merge'.
+2025-04-04T17:11:55.0295503Z 
+2025-04-04T17:11:55.0296169Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-04T17:11:55.0298298Z changes and commit them, and you can discard any commits you make in this
+2025-04-04T17:11:55.0300830Z state without impacting any branches by switching back to a branch.
+2025-04-04T17:11:55.0302253Z 
+2025-04-04T17:11:55.0303225Z If you want to create a new branch to retain commits you create, you may
+2025-04-04T17:11:55.0305653Z do so (now or later) by using -c with the switch command. Example:
+2025-04-04T17:11:55.0306934Z 
+2025-04-04T17:11:55.0307476Z   git switch -c <new-branch-name>
+2025-04-04T17:11:55.0308471Z 
+2025-04-04T17:11:55.0309003Z Or undo this operation with:
+2025-04-04T17:11:55.0309886Z 
+2025-04-04T17:11:55.0310694Z   git switch -
+2025-04-04T17:11:55.0311342Z 
+2025-04-04T17:11:55.0312409Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-04T17:11:55.0314034Z 
+2025-04-04T17:11:55.0315946Z HEAD is now at 10ce233 Merge bb098addb5d49c993f1d122a01d4d5c6a7ce03dc into ca82364a377b6d4680ca0154e3369526b23b6e38
+2025-04-04T17:11:55.0319852Z ##[endgroup]
+2025-04-04T17:11:55.0344157Z [command]/usr/bin/git log -1 --format=%H
+2025-04-04T17:11:55.0366722Z 10ce233388d05153c2fec852decfad08f5416a0d
+2025-04-04T17:11:55.0695827Z ##[group]Run psf/black@stable
+2025-04-04T17:11:55.0696821Z with:
+2025-04-04T17:11:55.0697622Z   options: --check --verbose --line-length 79
+2025-04-04T17:11:55.0698711Z   src: .
+2025-04-04T17:11:55.0699393Z   jupyter: false
+2025-04-04T17:11:55.0700163Z   use_pyproject: false
+2025-04-04T17:11:55.0700987Z   summary: true
+2025-04-04T17:11:55.0701741Z ##[endgroup]
+2025-04-04T17:11:55.0834413Z ##[group]Run # Even when black fails, do not close the shell
+2025-04-04T17:11:55.0836115Z [36;1m# Even when black fails, do not close the shell[0m
+2025-04-04T17:11:55.0837299Z [36;1mset +e[0m
+2025-04-04T17:11:55.0838010Z [36;1m[0m
+2025-04-04T17:11:55.0838782Z [36;1mif [ "$RUNNER_OS" == "Windows" ]; then[0m
+2025-04-04T17:11:55.0839874Z [36;1m  runner="python"[0m
+2025-04-04T17:11:55.0840740Z [36;1melse[0m
+2025-04-04T17:11:55.0841474Z [36;1m  runner="python3"[0m
+2025-04-04T17:11:55.0842328Z [36;1mfi[0m
+2025-04-04T17:11:55.0842984Z [36;1m[0m
+2025-04-04T17:11:55.0843941Z [36;1mout=$(${runner} $GITHUB_ACTION_PATH/action/main.py)[0m
+2025-04-04T17:11:55.0845269Z [36;1mexit_code=$?[0m
+2025-04-04T17:11:55.0846034Z [36;1m[0m
+2025-04-04T17:11:55.0846796Z [36;1m# Display the raw output in the step[0m
+2025-04-04T17:11:55.0847853Z [36;1mecho "${out}"[0m
+2025-04-04T17:11:55.0848654Z [36;1m[0m
+2025-04-04T17:11:55.0849345Z [36;1mif [ "true" == "true" ]; then[0m
+2025-04-04T17:11:55.0850532Z [36;1m  # Display the Markdown output in the job summary[0m
+2025-04-04T17:11:55.0851850Z [36;1m  echo "\`\`\`python" >> $GITHUB_STEP_SUMMARY[0m
+2025-04-04T17:11:55.0853060Z [36;1m  echo "${out}" >> $GITHUB_STEP_SUMMARY[0m
+2025-04-04T17:11:55.0854205Z [36;1m  echo "\`\`\`" >> $GITHUB_STEP_SUMMARY[0m
+2025-04-04T17:11:55.0855508Z [36;1mfi[0m
+2025-04-04T17:11:55.0856167Z [36;1m[0m
+2025-04-04T17:11:55.0856972Z [36;1m# Exit with the exit-code returned by Black[0m
+2025-04-04T17:11:55.0858085Z [36;1mexit ${exit_code}[0m
+2025-04-04T17:11:55.0913424Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-04T17:11:55.0914671Z env:
+2025-04-04T17:11:55.0915628Z   INPUT_OPTIONS: --check --verbose --line-length 79
+2025-04-04T17:11:55.0916741Z   INPUT_SRC: .
+2025-04-04T17:11:55.0917460Z   INPUT_JUPYTER: false
+2025-04-04T17:11:55.0918232Z   INPUT_BLACK_ARGS: 
+2025-04-04T17:11:55.0918983Z   INPUT_VERSION: 
+2025-04-04T17:11:55.0919726Z   INPUT_USE_PYPROJECT: false
+2025-04-04T17:11:55.0920648Z   pythonioencoding: utf-8
+2025-04-04T17:11:55.0921462Z ##[endgroup]
+2025-04-04T17:11:59.9729092Z Installing black[colorama]==25.1.0...
+2025-04-04T17:11:59.9729993Z Identified `/home/runner/work/parastell/parastell` as project root containing a .git directory.
+2025-04-04T17:11:59.9730990Z Found input source directory: "/home/runner/work/parastell/parastell"
+2025-04-04T17:11:59.9732178Z /home/runner/work/parastell/parastell/.git ignored: matches the --exclude regular expression
+2025-04-04T17:11:59.9733762Z /home/runner/work/parastell/parastell/Examples/nwl_plot_example.py already well formatted, good job.
+2025-04-04T17:11:59.9735497Z /home/runner/work/parastell/parastell/Examples/custom_source_example.py already well formatted, good job.
+2025-04-04T17:11:59.9736525Z /home/runner/work/parastell/parastell/Examples/nwl_geom_example.py already well formatted, good job.
+2025-04-04T17:11:59.9737282Z /home/runner/work/parastell/parastell/Examples/parastell_cad_to_dagmc_example.py already well formatted, good job.
+2025-04-04T17:11:59.9738011Z /home/runner/work/parastell/parastell/parastell/__init__.py already well formatted, good job.
+2025-04-04T17:11:59.9738942Z /home/runner/work/parastell/parastell/Examples/parastell_cubit_example.py already well formatted, good job.
+2025-04-04T17:11:59.9739719Z /home/runner/work/parastell/parastell/Examples/parastell_pydagmc_example.py already well formatted, good job.
+2025-04-04T17:11:59.9740507Z /home/runner/work/parastell/parastell/Examples/radial_distance_example.py already well formatted, good job.
+2025-04-04T17:11:59.9741362Z /home/runner/work/parastell/parastell/parastell/log.py already well formatted, good job.
+2025-04-04T17:11:59.9742020Z /home/runner/work/parastell/parastell/parastell/cubit_utils.py already well formatted, good job.
+2025-04-04T17:11:59.9742703Z /home/runner/work/parastell/parastell/parastell/nwl_utils.py already well formatted, good job.
+2025-04-04T17:11:59.9743442Z /home/runner/work/parastell/parastell/parastell/radial_distance_utils.py already well formatted, good job.
+2025-04-04T17:11:59.9744195Z /home/runner/work/parastell/parastell/parastell/parastell.py already well formatted, good job.
+2025-04-04T17:11:59.9745110Z /home/runner/work/parastell/parastell/parastell/invessel_build.py already well formatted, good job.
+2025-04-04T17:11:59.9745883Z /home/runner/work/parastell/parastell/tests/test_invessel_build.py already well formatted, good job.
+2025-04-04T17:11:59.9746553Z /home/runner/work/parastell/parastell/parastell/utils.py already well formatted, good job.
+2025-04-04T17:11:59.9747182Z /home/runner/work/parastell/parastell/parastell/source_mesh.py already well formatted, good job.
+2025-04-04T17:11:59.9747837Z /home/runner/work/parastell/parastell/tests/test_magnet_coils.py already well formatted, good job.
+2025-04-04T17:11:59.9748467Z /home/runner/work/parastell/parastell/tests/test_source_mesh.py already well formatted, good job.
+2025-04-04T17:11:59.9749079Z /home/runner/work/parastell/parastell/tests/test_utils.py already well formatted, good job.
+2025-04-04T17:11:59.9749691Z /home/runner/work/parastell/parastell/tests/test_parastell.py already well formatted, good job.
+2025-04-04T17:11:59.9750259Z would reformat /home/runner/work/parastell/parastell/parastell/magnet_coils.py
+2025-04-04T17:11:59.9750557Z 
+2025-04-04T17:11:59.9750849Z Oh no! 💥 💔 💥
+2025-04-04T17:11:59.9751104Z 1 file would be reformatted, 21 files would be left unchanged.
+2025-04-04T17:11:59.9762634Z ##[error]Process completed with exit code 1.
+2025-04-04T17:11:59.9883974Z Post job cleanup.
+2025-04-04T17:12:00.0814131Z [command]/usr/bin/git version
+2025-04-04T17:12:00.0850668Z git version 2.49.0
+2025-04-04T17:12:00.0896295Z Temporarily overriding HOME='/home/runner/work/_temp/3b42b948-22a8-45d7-8a1f-7726a79eddb3' before making global git config changes
+2025-04-04T17:12:00.0897585Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-04T17:12:00.0909987Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/parastell/parastell
+2025-04-04T17:12:00.0944604Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-04T17:12:00.0977676Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-04T17:12:00.1210328Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-04T17:12:00.1231967Z http.https://github.com/.extraheader
+2025-04-04T17:12:00.1244384Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-04T17:12:00.1276322Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-04T17:12:00.1613152Z Cleaning up orphan processes

@@ -1,0 +1,318 @@
+2025-03-11T03:41:04.5946131Z Requested labels: ubuntu-latest
+2025-03-11T03:41:04.5946307Z Job defined at: jakartaee/platform-tck/.github/workflows/maven.yml@refs/pull/2058/merge
+2025-03-11T03:41:04.5946446Z Waiting for a runner to pick up this job...
+2025-03-11T03:41:05.1822966Z Job is waiting for a hosted runner to come online.
+2025-03-11T03:41:07.4132785Z Job is about to start running on the hosted runner: GitHub Actions 241 (hosted)
+2025-03-11T03:41:09.8384315Z Current runner version: '2.322.0'
+2025-03-11T03:41:09.8408823Z ##[group]Operating System
+2025-03-11T03:41:09.8409724Z Ubuntu
+2025-03-11T03:41:09.8410349Z 24.04.2
+2025-03-11T03:41:09.8410865Z LTS
+2025-03-11T03:41:09.8411380Z ##[endgroup]
+2025-03-11T03:41:09.8411946Z ##[group]Runner Image
+2025-03-11T03:41:09.8412496Z Image: ubuntu-24.04
+2025-03-11T03:41:09.8413068Z Version: 20250302.1.0
+2025-03-11T03:41:09.8414136Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250302.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-11T03:41:09.8415543Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250302.1
+2025-03-11T03:41:09.8416527Z ##[endgroup]
+2025-03-11T03:41:09.8417068Z ##[group]Runner Image Provisioner
+2025-03-11T03:41:09.8417727Z 2.0.422.1
+2025-03-11T03:41:09.8418277Z ##[endgroup]
+2025-03-11T03:41:09.8419673Z ##[group]GITHUB_TOKEN Permissions
+2025-03-11T03:41:09.8421592Z Actions: read
+2025-03-11T03:41:09.8422139Z Checks: write
+2025-03-11T03:41:09.8422911Z Contents: write
+2025-03-11T03:41:09.8423496Z Metadata: read
+2025-03-11T03:41:09.8424026Z SecurityEvents: read
+2025-03-11T03:41:09.8424657Z ##[endgroup]
+2025-03-11T03:41:09.8427408Z Secret source: Actions
+2025-03-11T03:41:09.8428445Z Prepare workflow directory
+2025-03-11T03:41:09.8736674Z Prepare all required actions
+2025-03-11T03:41:09.8852161Z Getting action download info
+2025-03-11T03:41:10.0685491Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-11T03:41:10.1793679Z Download action repository 'actions/setup-java@v4' (SHA:3a4f6e1af504cf6a31855fa899c6aa5355ba6c12)
+2025-03-11T03:41:11.1388697Z Complete job name: build (ubuntu-latest, 17)
+2025-03-11T03:41:11.2120872Z ##[group]Run actions/checkout@v4
+2025-03-11T03:41:11.2121758Z with:
+2025-03-11T03:41:11.2122224Z   repository: jakartaee/platform-tck
+2025-03-11T03:41:11.2122974Z   token: ***
+2025-03-11T03:41:11.2123410Z   ssh-strict: true
+2025-03-11T03:41:11.2123863Z   ssh-user: git
+2025-03-11T03:41:11.2124349Z   persist-credentials: true
+2025-03-11T03:41:11.2124865Z   clean: true
+2025-03-11T03:41:11.2125327Z   sparse-checkout-cone-mode: true
+2025-03-11T03:41:11.2125931Z   fetch-depth: 1
+2025-03-11T03:41:11.2126390Z   fetch-tags: false
+2025-03-11T03:41:11.2126852Z   show-progress: true
+2025-03-11T03:41:11.2127311Z   lfs: false
+2025-03-11T03:41:11.2127739Z   submodules: false
+2025-03-11T03:41:11.2128203Z   set-safe-directory: true
+2025-03-11T03:41:11.2129078Z ##[endgroup]
+2025-03-11T03:41:11.4218464Z Syncing repository: jakartaee/platform-tck
+2025-03-11T03:41:11.4220577Z ##[group]Getting Git version info
+2025-03-11T03:41:11.4221603Z Working directory is '/home/runner/work/platform-tck/platform-tck'
+2025-03-11T03:41:11.4223260Z [command]/usr/bin/git version
+2025-03-11T03:41:11.4305341Z git version 2.48.1
+2025-03-11T03:41:11.4334817Z ##[endgroup]
+2025-03-11T03:41:11.4349974Z Temporarily overriding HOME='/home/runner/work/_temp/37087e74-ee37-42d6-bceb-203bb53f003d' before making global git config changes
+2025-03-11T03:41:11.4352805Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-11T03:41:11.4356227Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/platform-tck/platform-tck
+2025-03-11T03:41:11.4393053Z Deleting the contents of '/home/runner/work/platform-tck/platform-tck'
+2025-03-11T03:41:11.4396944Z ##[group]Initializing the repository
+2025-03-11T03:41:11.4402054Z [command]/usr/bin/git init /home/runner/work/platform-tck/platform-tck
+2025-03-11T03:41:11.4487802Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-11T03:41:11.4489538Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-11T03:41:11.4490540Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-11T03:41:11.4491267Z hint:
+2025-03-11T03:41:11.4491823Z hint: 	git config --global init.defaultBranch <name>
+2025-03-11T03:41:11.4492998Z hint:
+2025-03-11T03:41:11.4494113Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-11T03:41:11.4496168Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-11T03:41:11.4497362Z hint:
+2025-03-11T03:41:11.4497810Z hint: 	git branch -m <name>
+2025-03-11T03:41:11.4498672Z Initialized empty Git repository in /home/runner/work/platform-tck/platform-tck/.git/
+2025-03-11T03:41:11.4507164Z [command]/usr/bin/git remote add origin https://github.com/jakartaee/platform-tck
+2025-03-11T03:41:11.4542416Z ##[endgroup]
+2025-03-11T03:41:11.4543228Z ##[group]Disabling automatic garbage collection
+2025-03-11T03:41:11.4546541Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-11T03:41:11.4576141Z ##[endgroup]
+2025-03-11T03:41:11.4577748Z ##[group]Setting up auth
+2025-03-11T03:41:11.4583862Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-11T03:41:11.4615049Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-11T03:41:11.4917442Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-11T03:41:11.4948754Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-11T03:41:11.5182205Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-11T03:41:11.5217599Z ##[endgroup]
+2025-03-11T03:41:11.5218414Z ##[group]Fetching the repository
+2025-03-11T03:41:11.5227121Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5322e9b42edc6b3cdbde43a16a5338d43c176db3:refs/remotes/pull/2058/merge
+2025-03-11T03:41:15.5522532Z From https://github.com/jakartaee/platform-tck
+2025-03-11T03:41:15.5525727Z  * [new ref]           5322e9b42edc6b3cdbde43a16a5338d43c176db3 -> pull/2058/merge
+2025-03-11T03:41:15.5547964Z ##[endgroup]
+2025-03-11T03:41:15.5548679Z ##[group]Determining the checkout info
+2025-03-11T03:41:15.5551385Z ##[endgroup]
+2025-03-11T03:41:15.5556524Z [command]/usr/bin/git sparse-checkout disable
+2025-03-11T03:41:15.5595481Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-11T03:41:15.5623055Z ##[group]Checking out the ref
+2025-03-11T03:41:15.5627464Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/2058/merge
+2025-03-11T03:41:16.6048777Z Note: switching to 'refs/remotes/pull/2058/merge'.
+2025-03-11T03:41:16.6049554Z 
+2025-03-11T03:41:16.6049927Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-11T03:41:16.6050458Z changes and commit them, and you can discard any commits you make in this
+2025-03-11T03:41:16.6051031Z state without impacting any branches by switching back to a branch.
+2025-03-11T03:41:16.6051541Z 
+2025-03-11T03:41:16.6051780Z If you want to create a new branch to retain commits you create, you may
+2025-03-11T03:41:16.6053268Z do so (now or later) by using -c with the switch command. Example:
+2025-03-11T03:41:16.6053536Z 
+2025-03-11T03:41:16.6053668Z   git switch -c <new-branch-name>
+2025-03-11T03:41:16.6053858Z 
+2025-03-11T03:41:16.6053984Z Or undo this operation with:
+2025-03-11T03:41:16.6054159Z 
+2025-03-11T03:41:16.6054257Z   git switch -
+2025-03-11T03:41:16.6054410Z 
+2025-03-11T03:41:16.6055100Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-11T03:41:16.6055702Z 
+2025-03-11T03:41:16.6056338Z HEAD is now at 5322e9b4 Merge 81d4139790f7200b4b610b4d3ad99d6155f9faf9 into cdffd06661c38c99db1b7014ce3c49ca3a1f0571
+2025-03-11T03:41:16.6117381Z ##[endgroup]
+2025-03-11T03:41:16.6159569Z [command]/usr/bin/git log -1 --format=%H
+2025-03-11T03:41:16.6183522Z 5322e9b42edc6b3cdbde43a16a5338d43c176db3
+2025-03-11T03:41:16.6441005Z ##[group]Run actions/setup-java@v4
+2025-03-11T03:41:16.6441293Z with:
+2025-03-11T03:41:16.6441725Z   java-version: 17
+2025-03-11T03:41:16.6441920Z   distribution: temurin
+2025-03-11T03:41:16.6442124Z   cache: maven
+2025-03-11T03:41:16.6442312Z   java-package: jdk
+2025-03-11T03:41:16.6442511Z   check-latest: false
+2025-03-11T03:41:16.6442728Z   server-id: github
+2025-03-11T03:41:16.6442922Z   server-username: GITHUB_ACTOR
+2025-03-11T03:41:16.6443161Z   server-password: GITHUB_TOKEN
+2025-03-11T03:41:16.6443391Z   overwrite-settings: true
+2025-03-11T03:41:16.6443614Z   job-status: success
+2025-03-11T03:41:16.6443929Z   token: ***
+2025-03-11T03:41:16.6444110Z ##[endgroup]
+2025-03-11T03:41:16.8393020Z ##[group]Installed distributions
+2025-03-11T03:41:16.8436792Z Resolved Java 17.0.14+7 from tool-cache
+2025-03-11T03:41:16.8437313Z Setting Java 17.0.14+7 as the default
+2025-03-11T03:41:16.8450600Z Creating toolchains.xml for JDK version 17 from temurin
+2025-03-11T03:41:16.8528079Z Writing to /home/runner/.m2/toolchains.xml
+2025-03-11T03:41:16.8528889Z 
+2025-03-11T03:41:16.8529568Z Java configuration:
+2025-03-11T03:41:16.8529951Z   Distribution: temurin
+2025-03-11T03:41:16.8530322Z   Version: 17.0.14+7
+2025-03-11T03:41:16.8532110Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.14-7/x64
+2025-03-11T03:41:16.8532606Z 
+2025-03-11T03:41:16.8533635Z ##[endgroup]
+2025-03-11T03:41:16.8550380Z Creating settings.xml with server-id: github
+2025-03-11T03:41:16.8567987Z Writing to /home/runner/.m2/settings.xml
+2025-03-11T03:41:19.0466412Z ##[warning]Cache not found for keys: setup-java-Linux-x64-maven-6096b66049c47380c3df3253d1d6210bcb0345d452e9753a263837e8b7b3110d
+2025-03-11T03:41:19.0472902Z maven cache is not found
+2025-03-11T03:41:19.0620692Z ##[group]Run mvn --errors --batch-mode --show-version org.apache.maven.plugins:maven-wrapper-plugin:3.1.0:wrapper -Dmaven=3.9.1
+2025-03-11T03:41:19.0621583Z [36;1mmvn --errors --batch-mode --show-version org.apache.maven.plugins:maven-wrapper-plugin:3.1.0:wrapper -Dmaven=3.9.1[0m
+2025-03-11T03:41:19.0675141Z shell: /usr/bin/bash -e {0}
+2025-03-11T03:41:19.0675397Z env:
+2025-03-11T03:41:19.0675677Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.14-7/x64
+2025-03-11T03:41:19.0676143Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.14-7/x64
+2025-03-11T03:41:19.0676491Z ##[endgroup]
+2025-03-11T03:41:19.4290285Z Apache Maven 3.9.9 (8e8579a9e76f7d015ee5ec7bfcdc97d260186937)
+2025-03-11T03:41:19.4290970Z Maven home: /usr/share/apache-maven-3.9.9
+2025-03-11T03:41:19.4291545Z Java version: 17.0.14, vendor: Eclipse Adoptium, runtime: /usr/lib/jvm/temurin-17-jdk-amd64
+2025-03-11T03:41:19.4292013Z Default locale: en, platform encoding: UTF-8
+2025-03-11T03:41:19.4292453Z OS name: "linux", version: "6.8.0-1021-azure", arch: "amd64", family: "unix"
+2025-03-11T03:41:20.4521788Z [INFO] Error stacktraces are turned on.
+2025-03-11T03:41:20.5013527Z [INFO] Scanning for projects...
+2025-03-11T03:41:20.8024407Z [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/ee4j/project/1.0.9/project-1.0.9.pom
+2025-03-11T03:41:21.1002919Z [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/ee4j/project/1.0.9/project-1.0.9.pom (16 kB at 54 kB/s)
+2025-03-11T03:41:21.3350438Z [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.11.4/junit-bom-5.11.4.pom
+2025-03-11T03:41:21.3491484Z [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.11.4/junit-bom-5.11.4.pom (5.6 kB at 404 kB/s)
+2025-03-11T03:41:21.3525786Z [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/arquillian-bom/1.9.3.Final/arquillian-bom-1.9.3.Final.pom
+2025-03-11T03:41:21.3718079Z [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/arquillian/arquillian-bom/1.9.3.Final/arquillian-bom-1.9.3.Final.pom (8.6 kB at 452 kB/s)
+2025-03-11T03:41:21.3748340Z [INFO] Downloading from central: https://repo.maven.apache.org/maven2/jakarta/platform/jakarta.jakartaee-bom/11.0.0/jakarta.jakartaee-bom-11.0.0.pom
+2025-03-11T03:41:21.4533136Z [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/shrinkwrap-bom/2.0.0-beta-2/shrinkwrap-bom-2.0.0-beta-2.pom
+2025-03-11T03:41:21.4672247Z [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/shrinkwrap-bom/2.0.0-beta-2/shrinkwrap-bom-2.0.0-beta-2.pom (3.4 kB at 260 kB/s)
+2025-03-11T03:41:21.4702862Z [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-bom/2.0.0/shrinkwrap-descriptors-bom-2.0.0.pom
+2025-03-11T03:41:21.4926560Z [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-bom/2.0.0/shrinkwrap-descriptors-bom-2.0.0.pom (5.2 kB at 227 kB/s)
+2025-03-11T03:41:21.4979210Z [ERROR] [ERROR] Some problems were encountered while processing the POMs:
+2025-03-11T03:41:21.4982208Z [ERROR] Non-resolvable import POM: The following artifacts could not be resolved: jakarta.platform:jakarta.jakartaee-bom:pom:11.0.0 (absent): Could not find artifact jakarta.platform:jakarta.jakartaee-bom:pom:11.0.0 in central (https://repo.maven.apache.org/maven2) @ jakarta.tck:artifacts-bom:11.0.0-SNAPSHOT, /home/runner/work/platform-tck/platform-tck/bom/pom.xml, line 71, column 19
+2025-03-11T03:41:21.4984934Z  @ 
+2025-03-11T03:41:21.4985521Z [ERROR] The build could not read 1 project -> [Help 1]
+2025-03-11T03:41:21.4993591Z org.apache.maven.project.ProjectBuildingException: Some problems were encountered while processing the POMs:
+2025-03-11T03:41:21.4996901Z [ERROR] Non-resolvable import POM: The following artifacts could not be resolved: jakarta.platform:jakarta.jakartaee-bom:pom:11.0.0 (absent): Could not find artifact jakarta.platform:jakarta.jakartaee-bom:pom:11.0.0 in central (https://repo.maven.apache.org/maven2) @ jakarta.tck:artifacts-bom:11.0.0-SNAPSHOT, /home/runner/work/platform-tck/platform-tck/bom/pom.xml, line 71, column 19
+2025-03-11T03:41:21.4999410Z 
+2025-03-11T03:41:21.4999920Z     at org.apache.maven.project.DefaultProjectBuilder.build (DefaultProjectBuilder.java:389)
+2025-03-11T03:41:21.5001116Z     at org.apache.maven.graph.DefaultGraphBuilder.collectProjects (DefaultGraphBuilder.java:349)
+2025-03-11T03:41:21.5002447Z     at org.apache.maven.graph.DefaultGraphBuilder.getProjectsForMavenReactor (DefaultGraphBuilder.java:340)
+2025-03-11T03:41:21.5003685Z     at org.apache.maven.graph.DefaultGraphBuilder.build (DefaultGraphBuilder.java:76)
+2025-03-11T03:41:21.5004611Z     at org.apache.maven.DefaultMaven.buildGraph (DefaultMaven.java:448)
+2025-03-11T03:41:21.5012282Z     at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:197)
+2025-03-11T03:41:21.5016709Z     at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:173)
+2025-03-11T03:41:21.5033349Z     at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:101)
+2025-03-11T03:41:21.5037160Z     at org.apache.maven.cli.MavenCli.execute (MavenCli.java:906)
+2025-03-11T03:41:21.5038419Z     at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:283)
+2025-03-11T03:41:21.5039307Z     at org.apache.maven.cli.MavenCli.main (MavenCli.java:206)
+2025-03-11T03:41:21.5040094Z     at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+2025-03-11T03:41:21.5041145Z     at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:77)
+2025-03-11T03:41:21.5042360Z     at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+2025-03-11T03:41:21.5043287Z     at java.lang.reflect.Method.invoke (Method.java:569)
+2025-03-11T03:41:21.5044129Z     at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:255)
+2025-03-11T03:41:21.5045167Z     at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:201)
+2025-03-11T03:41:21.5046214Z     at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:361)
+2025-03-11T03:41:21.5047243Z     at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:314)
+2025-03-11T03:41:21.5048208Z [ERROR]   
+2025-03-11T03:41:21.5051566Z [ERROR]   The project jakarta.tck:project:11.0.0-SNAPSHOT (/home/runner/work/platform-tck/platform-tck/pom.xml) has 1 error
+2025-03-11T03:41:21.5054714Z [ERROR]     Non-resolvable import POM: The following artifacts could not be resolved: jakarta.platform:jakarta.jakartaee-bom:pom:11.0.0 (absent): Could not find artifact jakarta.platform:jakarta.jakartaee-bom:pom:11.0.0 in central (https://repo.maven.apache.org/maven2) @ jakarta.tck:artifacts-bom:11.0.0-SNAPSHOT, /home/runner/work/platform-tck/platform-tck/bom/pom.xml, line 71, column 19 -> [Help 2]
+2025-03-11T03:41:21.5058798Z org.apache.maven.model.resolution.UnresolvableModelException: The following artifacts could not be resolved: jakarta.platform:jakarta.jakartaee-bom:pom:11.0.0 (absent): Could not find artifact jakarta.platform:jakarta.jakartaee-bom:pom:11.0.0 in central (https://repo.maven.apache.org/maven2)
+2025-03-11T03:41:21.5061408Z     at org.apache.maven.project.ProjectModelResolver.resolveModel (ProjectModelResolver.java:174)
+2025-03-11T03:41:21.5062818Z     at org.apache.maven.model.building.DefaultModelBuilder.importDependencyManagement (DefaultModelBuilder.java:1202)
+2025-03-11T03:41:21.5064221Z     at org.apache.maven.model.building.DefaultModelBuilder.build (DefaultModelBuilder.java:528)
+2025-03-11T03:41:21.5065420Z     at org.apache.maven.model.building.DefaultModelBuilder.build (DefaultModelBuilder.java:419)
+2025-03-11T03:41:21.5066824Z     at org.apache.maven.model.building.DefaultModelBuilder.importDependencyManagement (DefaultModelBuilder.java:1232)
+2025-03-11T03:41:21.5068493Z     at org.apache.maven.model.building.DefaultModelBuilder.build (DefaultModelBuilder.java:528)
+2025-03-11T03:41:21.5069915Z     at org.apache.maven.model.building.DefaultModelBuilder.build (DefaultModelBuilder.java:497)
+2025-03-11T03:41:21.5101432Z     at org.apache.maven.project.DefaultProjectBuilder.build (DefaultProjectBuilder.java:612)
+2025-03-11T03:41:21.5102673Z     at org.apache.maven.project.DefaultProjectBuilder.build (DefaultProjectBuilder.java:375)
+2025-03-11T03:41:21.5103910Z     at org.apache.maven.graph.DefaultGraphBuilder.collectProjects (DefaultGraphBuilder.java:349)
+2025-03-11T03:41:21.5105235Z     at org.apache.maven.graph.DefaultGraphBuilder.getProjectsForMavenReactor (DefaultGraphBuilder.java:340)
+2025-03-11T03:41:21.5106479Z     at org.apache.maven.graph.DefaultGraphBuilder.build (DefaultGraphBuilder.java:76)
+2025-03-11T03:41:21.5107414Z     at org.apache.maven.DefaultMaven.buildGraph (DefaultMaven.java:448)
+2025-03-11T03:41:21.5108238Z     at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:197)
+2025-03-11T03:41:21.5109218Z     at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:173)
+2025-03-11T03:41:21.5110011Z     at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:101)
+2025-03-11T03:41:21.5110754Z     at org.apache.maven.cli.MavenCli.execute (MavenCli.java:906)
+2025-03-11T03:41:21.5111454Z     at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:283)
+2025-03-11T03:41:21.5112131Z     at org.apache.maven.cli.MavenCli.main (MavenCli.java:206)
+2025-03-11T03:41:21.5112902Z     at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+2025-03-11T03:41:21.5113962Z     at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:77)
+2025-03-11T03:41:21.5115214Z     at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+2025-03-11T03:41:21.5116226Z     at java.lang.reflect.Method.invoke (Method.java:569)
+2025-03-11T03:41:21.5117133Z     at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:255)
+2025-03-11T03:41:21.5118233Z     at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:201)
+2025-03-11T03:41:21.5119553Z     at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:361)
+2025-03-11T03:41:21.5120643Z     at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:314)
+2025-03-11T03:41:21.5123242Z Caused by: org.eclipse.aether.resolution.ArtifactResolutionException: The following artifacts could not be resolved: jakarta.platform:jakarta.jakartaee-bom:pom:11.0.0 (absent): Could not find artifact jakarta.platform:jakarta.jakartaee-bom:pom:11.0.0 in central (https://repo.maven.apache.org/maven2)
+2025-03-11T03:41:21.5125851Z     at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve (DefaultArtifactResolver.java:473)
+2025-03-11T03:41:21.5127349Z     at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts (DefaultArtifactResolver.java:261)
+2025-03-11T03:41:21.5129136Z     at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact (DefaultArtifactResolver.java:243)
+2025-03-11T03:41:21.5130707Z     at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveArtifact (DefaultRepositorySystem.java:278)
+2025-03-11T03:41:21.5132164Z     at org.apache.maven.project.ProjectModelResolver.resolveModel (ProjectModelResolver.java:172)
+2025-03-11T03:41:21.5133619Z     at org.apache.maven.model.building.DefaultModelBuilder.importDependencyManagement (DefaultModelBuilder.java:1202)
+2025-03-11T03:41:21.5135018Z     at org.apache.maven.model.building.DefaultModelBuilder.build (DefaultModelBuilder.java:528)
+2025-03-11T03:41:21.5136186Z     at org.apache.maven.model.building.DefaultModelBuilder.build (DefaultModelBuilder.java:419)
+2025-03-11T03:41:21.5137559Z     at org.apache.maven.model.building.DefaultModelBuilder.importDependencyManagement (DefaultModelBuilder.java:1232)
+2025-03-11T03:41:21.5140945Z     at org.apache.maven.model.building.DefaultModelBuilder.build (DefaultModelBuilder.java:528)
+2025-03-11T03:41:21.5142215Z     at org.apache.maven.model.building.DefaultModelBuilder.build (DefaultModelBuilder.java:497)
+2025-03-11T03:41:21.5143381Z     at org.apache.maven.project.DefaultProjectBuilder.build (DefaultProjectBuilder.java:612)
+2025-03-11T03:41:21.5144477Z     at org.apache.maven.project.DefaultProjectBuilder.build (DefaultProjectBuilder.java:375)
+2025-03-11T03:41:21.5145630Z     at org.apache.maven.graph.DefaultGraphBuilder.collectProjects (DefaultGraphBuilder.java:349)
+2025-03-11T03:41:21.5147013Z     at org.apache.maven.graph.DefaultGraphBuilder.getProjectsForMavenReactor (DefaultGraphBuilder.java:340)
+2025-03-11T03:41:21.5148181Z     at org.apache.maven.graph.DefaultGraphBuilder.build (DefaultGraphBuilder.java:76)
+2025-03-11T03:41:21.5149270Z     at org.apache.maven.DefaultMaven.buildGraph (DefaultMaven.java:448)
+2025-03-11T03:41:21.5150035Z     at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:197)
+2025-03-11T03:41:21.5150780Z     at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:173)
+2025-03-11T03:41:21.5151526Z     at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:101)
+2025-03-11T03:41:21.5152263Z     at org.apache.maven.cli.MavenCli.execute (MavenCli.java:906)
+2025-03-11T03:41:21.5152956Z     at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:283)
+2025-03-11T03:41:21.5153633Z     at org.apache.maven.cli.MavenCli.main (MavenCli.java:206)
+2025-03-11T03:41:21.5154446Z     at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+2025-03-11T03:41:21.5155535Z     at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:77)
+2025-03-11T03:41:21.5156804Z     at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+2025-03-11T03:41:21.5157798Z     at java.lang.reflect.Method.invoke (Method.java:569)
+2025-03-11T03:41:21.5158706Z     at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:255)
+2025-03-11T03:41:21.5160056Z     at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:201)
+2025-03-11T03:41:21.5161201Z     at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:361)
+2025-03-11T03:41:21.5162284Z     at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:314)
+2025-03-11T03:41:21.5163920Z Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Could not find artifact jakarta.platform:jakarta.jakartaee-bom:pom:11.0.0 in central (https://repo.maven.apache.org/maven2)
+2025-03-11T03:41:21.5166227Z     at org.eclipse.aether.connector.basic.ArtifactTransportListener.transferFailed (ArtifactTransportListener.java:42)
+2025-03-11T03:41:21.5167854Z     at org.eclipse.aether.connector.basic.BasicRepositoryConnector$TaskRunner.run (BasicRepositoryConnector.java:417)
+2025-03-11T03:41:21.5169379Z     at org.eclipse.aether.connector.basic.BasicRepositoryConnector.get (BasicRepositoryConnector.java:260)
+2025-03-11T03:41:21.5170199Z     at org.eclipse.aether.internal.impl.DefaultArtifactResolver.performDownloads (DefaultArtifactResolver.java:537)
+2025-03-11T03:41:21.5170983Z     at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve (DefaultArtifactResolver.java:449)
+2025-03-11T03:41:21.5171769Z     at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts (DefaultArtifactResolver.java:261)
+2025-03-11T03:41:21.5172586Z     at org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact (DefaultArtifactResolver.java:243)
+2025-03-11T03:41:21.5173386Z     at org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveArtifact (DefaultRepositorySystem.java:278)
+2025-03-11T03:41:21.5174132Z     at org.apache.maven.project.ProjectModelResolver.resolveModel (ProjectModelResolver.java:172)
+2025-03-11T03:41:21.5174902Z     at org.apache.maven.model.building.DefaultModelBuilder.importDependencyManagement (DefaultModelBuilder.java:1202)
+2025-03-11T03:41:21.5175811Z     at org.apache.maven.model.building.DefaultModelBuilder.build (DefaultModelBuilder.java:528)
+2025-03-11T03:41:21.5176471Z     at org.apache.maven.model.building.DefaultModelBuilder.build (DefaultModelBuilder.java:419)
+2025-03-11T03:41:21.5177209Z     at org.apache.maven.model.building.DefaultModelBuilder.importDependencyManagement (DefaultModelBuilder.java:1232)
+2025-03-11T03:41:21.5177934Z     at org.apache.maven.model.building.DefaultModelBuilder.build (DefaultModelBuilder.java:528)
+2025-03-11T03:41:21.5178561Z     at org.apache.maven.model.building.DefaultModelBuilder.build (DefaultModelBuilder.java:497)
+2025-03-11T03:41:21.5179401Z     at org.apache.maven.project.DefaultProjectBuilder.build (DefaultProjectBuilder.java:612)
+2025-03-11T03:41:21.5180015Z     at org.apache.maven.project.DefaultProjectBuilder.build (DefaultProjectBuilder.java:375)
+2025-03-11T03:41:21.5180632Z     at org.apache.maven.graph.DefaultGraphBuilder.collectProjects (DefaultGraphBuilder.java:349)
+2025-03-11T03:41:21.5181336Z     at org.apache.maven.graph.DefaultGraphBuilder.getProjectsForMavenReactor (DefaultGraphBuilder.java:340)
+2025-03-11T03:41:21.5181988Z     at org.apache.maven.graph.DefaultGraphBuilder.build (DefaultGraphBuilder.java:76)
+2025-03-11T03:41:21.5182496Z     at org.apache.maven.DefaultMaven.buildGraph (DefaultMaven.java:448)
+2025-03-11T03:41:21.5182940Z     at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:197)
+2025-03-11T03:41:21.5183371Z     at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:173)
+2025-03-11T03:41:21.5183794Z     at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:101)
+2025-03-11T03:41:21.5184193Z     at org.apache.maven.cli.MavenCli.execute (MavenCli.java:906)
+2025-03-11T03:41:21.5184577Z     at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:283)
+2025-03-11T03:41:21.5184954Z     at org.apache.maven.cli.MavenCli.main (MavenCli.java:206)
+2025-03-11T03:41:21.5185384Z     at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+2025-03-11T03:41:21.5185950Z     at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:77)
+2025-03-11T03:41:21.5186609Z     at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+2025-03-11T03:41:21.5187137Z     at java.lang.reflect.Method.invoke (Method.java:569)
+2025-03-11T03:41:21.5187612Z     at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:255)
+2025-03-11T03:41:21.5188330Z     at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:201)
+2025-03-11T03:41:21.5189061Z     at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:361)
+2025-03-11T03:41:21.5189697Z     at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:314)
+2025-03-11T03:41:21.5190067Z [ERROR] 
+2025-03-11T03:41:21.5190335Z [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+2025-03-11T03:41:21.5190659Z [ERROR] 
+2025-03-11T03:41:21.5191038Z [ERROR] For more information about the errors and possible solutions, please read the following articles:
+2025-03-11T03:41:21.5191645Z [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/ProjectBuildingException
+2025-03-11T03:41:21.5192211Z [ERROR] [Help 2] http://cwiki.apache.org/confluence/display/MAVEN/UnresolvableModelException
+2025-03-11T03:41:21.5366636Z ##[error]Process completed with exit code 1.
+2025-03-11T03:41:21.5455446Z Post job cleanup.
+2025-03-11T03:41:21.7226793Z Post job cleanup.
+2025-03-11T03:41:21.8233726Z [command]/usr/bin/git version
+2025-03-11T03:41:21.8274049Z git version 2.48.1
+2025-03-11T03:41:21.8318075Z Temporarily overriding HOME='/home/runner/work/_temp/e8b83744-c4c0-4f95-b9fa-1a1b9ac2cb04' before making global git config changes
+2025-03-11T03:41:21.8320240Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-11T03:41:21.8341369Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/platform-tck/platform-tck
+2025-03-11T03:41:21.8370876Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-11T03:41:21.8402285Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-11T03:41:21.8653628Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-11T03:41:21.8673360Z http.https://github.com/.extraheader
+2025-03-11T03:41:21.8685245Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-11T03:41:21.8715042Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-11T03:41:21.9057538Z Cleaning up orphan processes

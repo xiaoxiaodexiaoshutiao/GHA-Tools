@@ -1,0 +1,219 @@
+﻿2025-03-20T14:08:19.2146034Z Current runner version: '2.322.0'
+2025-03-20T14:08:19.2169604Z ##[group]Operating System
+2025-03-20T14:08:19.2170451Z Ubuntu
+2025-03-20T14:08:19.2171179Z 24.04.2
+2025-03-20T14:08:19.2171754Z LTS
+2025-03-20T14:08:19.2172235Z ##[endgroup]
+2025-03-20T14:08:19.2172762Z ##[group]Runner Image
+2025-03-20T14:08:19.2173304Z Image: ubuntu-24.04
+2025-03-20T14:08:19.2173910Z Version: 20250316.1.0
+2025-03-20T14:08:19.2174958Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250316.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-20T14:08:19.2176286Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250316.1
+2025-03-20T14:08:19.2177263Z ##[endgroup]
+2025-03-20T14:08:19.2177768Z ##[group]Runner Image Provisioner
+2025-03-20T14:08:19.2178358Z 2.0.422.1
+2025-03-20T14:08:19.2178850Z ##[endgroup]
+2025-03-20T14:08:19.2181277Z ##[group]GITHUB_TOKEN Permissions
+2025-03-20T14:08:19.2183413Z Actions: read
+2025-03-20T14:08:19.2184175Z Attestations: read
+2025-03-20T14:08:19.2184831Z Checks: read
+2025-03-20T14:08:19.2185316Z Contents: read
+2025-03-20T14:08:19.2185795Z Deployments: read
+2025-03-20T14:08:19.2186355Z Discussions: read
+2025-03-20T14:08:19.2186812Z Issues: read
+2025-03-20T14:08:19.2187314Z Metadata: read
+2025-03-20T14:08:19.2187795Z Models: read
+2025-03-20T14:08:19.2188293Z Packages: read
+2025-03-20T14:08:19.2188764Z Pages: read
+2025-03-20T14:08:19.2189270Z PullRequests: read
+2025-03-20T14:08:19.2189807Z RepositoryProjects: read
+2025-03-20T14:08:19.2190337Z SecurityEvents: read
+2025-03-20T14:08:19.2190881Z Statuses: read
+2025-03-20T14:08:19.2191569Z ##[endgroup]
+2025-03-20T14:08:19.2193770Z Secret source: Actions
+2025-03-20T14:08:19.2194743Z Prepare workflow directory
+2025-03-20T14:08:19.2509736Z Prepare all required actions
+2025-03-20T14:08:19.2546257Z Getting action download info
+2025-03-20T14:08:19.8957652Z Download action repository 'actions/checkout@v4.2.2' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-20T14:08:20.0244200Z Download action repository 'actions/setup-node@v4' (SHA:cdca7365b2dadb8aad0a33bc7601856ffabcc48e)
+2025-03-20T14:08:20.6465387Z Download action repository 'actions/cache@v4' (SHA:5a3ec84eff668545956fd18022155c47e93e2684)
+2025-03-20T14:08:21.3315628Z Complete job name: frontend-tests
+2025-03-20T14:08:21.4127948Z ##[group]Run actions/checkout@v4.2.2
+2025-03-20T14:08:21.4129323Z with:
+2025-03-20T14:08:21.4130141Z   repository: intelowlproject/IntelOwl
+2025-03-20T14:08:21.4131786Z   token: ***
+2025-03-20T14:08:21.4132593Z   ssh-strict: true
+2025-03-20T14:08:21.4133405Z   ssh-user: git
+2025-03-20T14:08:21.4134227Z   persist-credentials: true
+2025-03-20T14:08:21.4135196Z   clean: true
+2025-03-20T14:08:21.4136021Z   sparse-checkout-cone-mode: true
+2025-03-20T14:08:21.4137024Z   fetch-depth: 1
+2025-03-20T14:08:21.4137822Z   fetch-tags: false
+2025-03-20T14:08:21.4138646Z   show-progress: true
+2025-03-20T14:08:21.4139476Z   lfs: false
+2025-03-20T14:08:21.4140251Z   submodules: false
+2025-03-20T14:08:21.4141277Z   set-safe-directory: true
+2025-03-20T14:08:21.4142544Z ##[endgroup]
+2025-03-20T14:08:23.3507069Z Syncing repository: intelowlproject/IntelOwl
+2025-03-20T14:08:23.3508557Z ##[group]Getting Git version info
+2025-03-20T14:08:23.3509140Z Working directory is '/home/runner/work/IntelOwl/IntelOwl'
+2025-03-20T14:08:23.3509852Z [command]/usr/bin/git version
+2025-03-20T14:08:23.6270227Z git version 2.48.1
+2025-03-20T14:08:23.6340104Z ##[endgroup]
+2025-03-20T14:08:23.6355038Z Temporarily overriding HOME='/home/runner/work/_temp/4eaaf0fa-c71e-46e7-a787-4faf91ec9e33' before making global git config changes
+2025-03-20T14:08:23.6356504Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-20T14:08:23.6361759Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/IntelOwl/IntelOwl
+2025-03-20T14:08:23.6441597Z Deleting the contents of '/home/runner/work/IntelOwl/IntelOwl'
+2025-03-20T14:08:23.6445476Z ##[group]Initializing the repository
+2025-03-20T14:08:23.6449980Z [command]/usr/bin/git init /home/runner/work/IntelOwl/IntelOwl
+2025-03-20T14:08:23.6817877Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-20T14:08:23.6819168Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-20T14:08:23.6819897Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-20T14:08:23.6820383Z hint:
+2025-03-20T14:08:23.6820763Z hint: 	git config --global init.defaultBranch <name>
+2025-03-20T14:08:23.6821479Z hint:
+2025-03-20T14:08:23.6821875Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-20T14:08:23.6822546Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-20T14:08:23.6823026Z hint:
+2025-03-20T14:08:23.6823334Z hint: 	git branch -m <name>
+2025-03-20T14:08:23.6903945Z Initialized empty Git repository in /home/runner/work/IntelOwl/IntelOwl/.git/
+2025-03-20T14:08:23.6915169Z [command]/usr/bin/git remote add origin https://github.com/intelowlproject/IntelOwl
+2025-03-20T14:08:23.7194924Z ##[endgroup]
+2025-03-20T14:08:23.7195690Z ##[group]Disabling automatic garbage collection
+2025-03-20T14:08:23.7200028Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-20T14:08:23.7228508Z ##[endgroup]
+2025-03-20T14:08:23.7229288Z ##[group]Setting up auth
+2025-03-20T14:08:23.7236153Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-20T14:08:23.7266999Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-20T14:08:23.9062217Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-20T14:08:23.9096429Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-20T14:08:23.9365181Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-20T14:08:23.9405731Z ##[endgroup]
+2025-03-20T14:08:23.9406390Z ##[group]Fetching the repository
+2025-03-20T14:08:23.9418974Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +afce391a8b64fe783ef0b4c6f296fe33c59d5117:refs/remotes/pull/2799/merge
+2025-03-20T14:08:26.2712703Z From https://github.com/intelowlproject/IntelOwl
+2025-03-20T14:08:26.2713555Z  * [new ref]         afce391a8b64fe783ef0b4c6f296fe33c59d5117 -> pull/2799/merge
+2025-03-20T14:08:26.2782882Z ##[endgroup]
+2025-03-20T14:08:26.2783426Z ##[group]Determining the checkout info
+2025-03-20T14:08:26.2785667Z ##[endgroup]
+2025-03-20T14:08:26.2790600Z [command]/usr/bin/git sparse-checkout disable
+2025-03-20T14:08:26.2943701Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-20T14:08:26.2971889Z ##[group]Checking out the ref
+2025-03-20T14:08:26.2977661Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/2799/merge
+2025-03-20T14:08:26.5168904Z Note: switching to 'refs/remotes/pull/2799/merge'.
+2025-03-20T14:08:26.5177696Z 
+2025-03-20T14:08:26.5178134Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-20T14:08:26.5179016Z changes and commit them, and you can discard any commits you make in this
+2025-03-20T14:08:26.5179773Z state without impacting any branches by switching back to a branch.
+2025-03-20T14:08:26.5180219Z 
+2025-03-20T14:08:26.5180520Z If you want to create a new branch to retain commits you create, you may
+2025-03-20T14:08:26.5181382Z do so (now or later) by using -c with the switch command. Example:
+2025-03-20T14:08:26.5181808Z 
+2025-03-20T14:08:26.5181983Z   git switch -c <new-branch-name>
+2025-03-20T14:08:26.5182263Z 
+2025-03-20T14:08:26.5182406Z Or undo this operation with:
+2025-03-20T14:08:26.5182656Z 
+2025-03-20T14:08:26.5182790Z   git switch -
+2025-03-20T14:08:26.5183007Z 
+2025-03-20T14:08:26.5183342Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-20T14:08:26.5184240Z 
+2025-03-20T14:08:26.5184808Z HEAD is now at afce391 Merge fe42d947fe34f1f91eff5226a8b9bbca3ff20dcc into 40f8b4078aa9f074ca9378236faeefe5162c938e
+2025-03-20T14:08:26.5199303Z ##[endgroup]
+2025-03-20T14:08:26.5241901Z [command]/usr/bin/git log -1 --format=%H
+2025-03-20T14:08:26.5264607Z afce391a8b64fe783ef0b4c6f296fe33c59d5117
+2025-03-20T14:08:26.5529746Z ##[group]Run actions/setup-node@v4
+2025-03-20T14:08:26.5530070Z with:
+2025-03-20T14:08:26.5530249Z   node-version: 18
+2025-03-20T14:08:26.5530449Z   always-auth: false
+2025-03-20T14:08:26.5530654Z   check-latest: false
+2025-03-20T14:08:26.5531218Z   token: ***
+2025-03-20T14:08:26.5531424Z ##[endgroup]
+2025-03-20T14:08:26.7223839Z Found in cache @ /opt/hostedtoolcache/node/18.20.7/x64
+2025-03-20T14:08:26.7229975Z ##[group]Environment details
+2025-03-20T14:08:28.6324964Z node: v18.20.7
+2025-03-20T14:08:28.6325338Z npm: 10.8.2
+2025-03-20T14:08:28.6325627Z yarn: 1.22.22
+2025-03-20T14:08:28.6326831Z ##[endgroup]
+2025-03-20T14:08:28.7705044Z ##[group]Run actions/cache@v4
+2025-03-20T14:08:28.7705302Z with:
+2025-03-20T14:08:28.7705473Z   path: ~/.npm
+2025-03-20T14:08:28.7705803Z   key: npm-build-9829e911040f7000ba35827ea51378755492ad1cc3850833ff1a07dc910d5798
+2025-03-20T14:08:28.7706431Z   restore-keys: npm-build-9829e911040f7000ba35827ea51378755492ad1cc3850833ff1a07dc910d5798
+npm-build-
+npm
+
+2025-03-20T14:08:28.7706921Z   enableCrossOsArchive: false
+2025-03-20T14:08:28.7707152Z   fail-on-cache-miss: false
+2025-03-20T14:08:28.7707364Z   lookup-only: false
+2025-03-20T14:08:28.7707548Z   save-always: false
+2025-03-20T14:08:28.7707736Z ##[endgroup]
+2025-03-20T14:08:29.2896902Z Cache hit for: npm-build-9829e911040f7000ba35827ea51378755492ad1cc3850833ff1a07dc910d5798
+2025-03-20T14:08:30.5901820Z Received 0 of 154441505 (0.0%), 0.0 MBs/sec
+2025-03-20T14:08:31.5899484Z Received 117440512 of 154441505 (76.0%), 56.0 MBs/sec
+2025-03-20T14:08:32.0157684Z Received 154441505 of 154441505 (100.0%), 60.7 MBs/sec
+2025-03-20T14:08:32.0166194Z Cache Size: ~147 MB (154441505 B)
+2025-03-20T14:08:32.0264020Z [command]/usr/bin/tar -xf /home/runner/work/_temp/053f2343-7dfb-4fac-a05e-a1b0094fcb5f/cache.tzst -P -C /home/runner/work/IntelOwl/IntelOwl --use-compress-program unzstd
+2025-03-20T14:08:32.5625723Z Cache restored successfully
+2025-03-20T14:08:32.8772527Z Cache restored from key: npm-build-9829e911040f7000ba35827ea51378755492ad1cc3850833ff1a07dc910d5798
+2025-03-20T14:08:32.8891711Z ##[group]Run npm i --no-optional --no-audit --no-fund
+2025-03-20T14:08:32.8892161Z [36;1mnpm i --no-optional --no-audit --no-fund[0m
+2025-03-20T14:08:32.8944913Z shell: /usr/bin/bash -e {0}
+2025-03-20T14:08:32.8945168Z ##[endgroup]
+2025-03-20T14:08:32.9989382Z npm warn config optional Use `--omit=optional` to exclude optional dependencies, or
+2025-03-20T14:08:32.9990420Z npm warn config `--include=optional` to include them.
+2025-03-20T14:08:32.9991266Z npm warn config
+2025-03-20T14:08:32.9992113Z npm warn config       Default value does install optional deps unless otherwise omitted.
+2025-03-20T14:08:35.5675041Z npm warn EBADENGINE Unsupported engine {
+2025-03-20T14:08:35.5675938Z npm warn EBADENGINE   package: '@certego/certego-ui@0.1.16',
+2025-03-20T14:08:35.5676507Z npm warn EBADENGINE   required: { node: '>=20' },
+2025-03-20T14:08:35.5677069Z npm warn EBADENGINE   current: { node: 'v18.20.7', npm: '10.8.2' }
+2025-03-20T14:08:35.5677510Z npm warn EBADENGINE }
+2025-03-20T14:08:35.9783100Z npm warn skipping integrity check for git dependency ssh://git@github.com/certego/certego-ui.git
+2025-03-20T14:08:40.5228368Z npm warn deprecated stable@0.1.8: Modern JS already guarantees Array#sort() is a stable sort, so this library is deprecated. See the compatibility table on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#browser_compatibility
+2025-03-20T14:08:40.5395339Z npm warn deprecated lodash.get@4.4.2: This package is deprecated. Use the optional chaining (?.) operator instead.
+2025-03-20T14:08:40.7110406Z npm warn deprecated rollup-plugin-terser@7.0.2: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-terser
+2025-03-20T14:08:40.7236588Z npm warn deprecated lodash.isequal@4.5.0: This package is deprecated. Use require('node:util').isDeepStrictEqual instead.
+2025-03-20T14:08:40.7493067Z npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+2025-03-20T14:08:41.0080708Z npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+2025-03-20T14:08:41.0854523Z npm warn deprecated w3c-hr-time@1.0.2: Use your platform's native performance.now() and performance.timeOrigin.
+2025-03-20T14:08:41.1793275Z npm warn deprecated sourcemap-codec@1.4.8: Please use @jridgewell/sourcemap-codec instead
+2025-03-20T14:08:41.4197533Z npm warn deprecated babel-eslint@10.1.0: babel-eslint is now @babel/eslint-parser. This package will no longer receive updates.
+2025-03-20T14:08:41.7465120Z npm warn deprecated workbox-cacheable-response@6.6.0: workbox-background-sync@6.6.0
+2025-03-20T14:08:42.8033073Z npm warn deprecated svgo@1.3.2: This SVGO version is no longer supported. Upgrade to v2.x.x.
+2025-03-20T14:08:43.5026653Z npm warn deprecated popper.js@1.16.1: You can find the new Popper v2 at @popperjs/core, this package is dedicated to the legacy v1
+2025-03-20T14:08:45.4227395Z npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+2025-03-20T14:09:14.6674213Z 
+2025-03-20T14:09:14.6674727Z added 2024 packages in 42s
+2025-03-20T14:09:14.7556861Z ##[group]Run npm run lint
+2025-03-20T14:09:14.7557130Z [36;1mnpm run lint[0m
+2025-03-20T14:09:14.7604009Z shell: /usr/bin/bash -e {0}
+2025-03-20T14:09:14.7604247Z ##[endgroup]
+2025-03-20T14:09:14.8837387Z 
+2025-03-20T14:09:19.6271525Z > intelowl@6.3.1 lint
+2025-03-20T14:09:19.6271894Z > eslint src/ --ext .js,.jsx
+2025-03-20T14:09:19.6272074Z 
+2025-03-20T14:09:19.6296260Z ##[group]Run npm run prettier:check
+2025-03-20T14:09:19.6296585Z [36;1mnpm run prettier:check[0m
+2025-03-20T14:09:19.6344105Z shell: /usr/bin/bash -e {0}
+2025-03-20T14:09:19.6344349Z ##[endgroup]
+2025-03-20T14:09:19.7618329Z 
+2025-03-20T14:09:19.7618866Z > intelowl@6.3.1 prettier:check
+2025-03-20T14:09:19.7619216Z > prettier --check .
+2025-03-20T14:09:19.7619359Z 
+2025-03-20T14:09:19.8578529Z Checking formatting...
+2025-03-20T14:09:22.3471713Z [warn] tests/components/common/TimePicker.test.jsx
+2025-03-20T14:09:23.0924776Z [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+2025-03-20T14:09:23.1165873Z ##[error]Process completed with exit code 1.
+2025-03-20T14:09:23.1246340Z Post job cleanup.
+2025-03-20T14:09:23.2178608Z [command]/usr/bin/git version
+2025-03-20T14:09:23.2217482Z git version 2.48.1
+2025-03-20T14:09:23.2265791Z Temporarily overriding HOME='/home/runner/work/_temp/4de2ffa5-a657-482b-b75b-674d9de0019a' before making global git config changes
+2025-03-20T14:09:23.2266677Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-20T14:09:23.2271053Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/IntelOwl/IntelOwl
+2025-03-20T14:09:23.2305216Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-20T14:09:23.2337203Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-20T14:09:23.2621663Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-20T14:09:23.2641174Z http.https://github.com/.extraheader
+2025-03-20T14:09:23.2654444Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-20T14:09:23.2685032Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-20T14:09:23.3017563Z Cleaning up orphan processes

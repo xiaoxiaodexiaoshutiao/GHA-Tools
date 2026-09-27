@@ -1,0 +1,1271 @@
+2025-04-16T09:39:18.5327501Z Requested labels: ubuntu-latest
+2025-04-16T09:39:18.5327804Z Job defined at: woocommerce/google-listings-and-ads/.github/workflows/php-unit-tests.yml@refs/pull/2857/merge
+2025-04-16T09:39:18.5327897Z Waiting for a runner to pick up this job...
+2025-04-16T09:39:18.8145215Z Job is waiting for a hosted runner to come online.
+2025-04-16T09:39:20.8867282Z Job is about to start running on the hosted runner: GitHub Actions 3 (hosted)
+2025-04-16T09:39:25.2024460Z Current runner version: '2.323.0'
+2025-04-16T09:39:25.2050381Z ##[group]Operating System
+2025-04-16T09:39:25.2051171Z Ubuntu
+2025-04-16T09:39:25.2051716Z 24.04.2
+2025-04-16T09:39:25.2052253Z LTS
+2025-04-16T09:39:25.2052745Z ##[endgroup]
+2025-04-16T09:39:25.2053359Z ##[group]Runner Image
+2025-04-16T09:39:25.2053956Z Image: ubuntu-24.04
+2025-04-16T09:39:25.2054495Z Version: 20250406.1.0
+2025-04-16T09:39:25.2055633Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250406.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-16T09:39:25.2057087Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250406.1
+2025-04-16T09:39:25.2058203Z ##[endgroup]
+2025-04-16T09:39:25.2058860Z ##[group]Runner Image Provisioner
+2025-04-16T09:39:25.2059484Z 2.0.422.1
+2025-04-16T09:39:25.2060023Z ##[endgroup]
+2025-04-16T09:39:25.2062344Z ##[group]GITHUB_TOKEN Permissions
+2025-04-16T09:39:25.2064386Z Actions: write
+2025-04-16T09:39:25.2065153Z Attestations: write
+2025-04-16T09:39:25.2065906Z Checks: write
+2025-04-16T09:39:25.2066445Z Contents: write
+2025-04-16T09:39:25.2067000Z Deployments: write
+2025-04-16T09:39:25.2067793Z Discussions: write
+2025-04-16T09:39:25.2068381Z Issues: write
+2025-04-16T09:39:25.2068863Z Metadata: read
+2025-04-16T09:39:25.2069462Z Models: read
+2025-04-16T09:39:25.2070010Z Packages: write
+2025-04-16T09:39:25.2070576Z Pages: write
+2025-04-16T09:39:25.2071118Z PullRequests: write
+2025-04-16T09:39:25.2071711Z RepositoryProjects: write
+2025-04-16T09:39:25.2072367Z SecurityEvents: write
+2025-04-16T09:39:25.2072904Z Statuses: write
+2025-04-16T09:39:25.2073432Z ##[endgroup]
+2025-04-16T09:39:25.2076799Z Secret source: Actions
+2025-04-16T09:39:25.2078153Z Prepare workflow directory
+2025-04-16T09:39:25.2527009Z Prepare all required actions
+2025-04-16T09:39:25.2563680Z Getting action download info
+2025-04-16T09:39:25.5233490Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-16T09:39:25.5234462Z Version: 4.2.2
+2025-04-16T09:39:25.5235375Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-16T09:39:25.5236497Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-16T09:39:25.5237187Z ##[endgroup]
+2025-04-16T09:39:25.6354757Z Download action repository 'woocommerce/grow@actions-v2' (SHA:51585d923741ebe9330e1de5ba119671b3bf049b)
+2025-04-16T09:39:26.0229089Z Download action repository 'codecov/codecov-action@v4' (SHA:b9fd7d16f6d7d1b5d2bec1a2887e65ceed900238)
+2025-04-16T09:39:26.3974822Z Getting action download info
+2025-04-16T09:39:26.5510178Z Download action repository 'shivammathur/setup-php@v2' (SHA:cf4cade2721270509d5b1c766ab3549210a39a2a)
+2025-04-16T09:39:26.8244201Z ##[group]Download immutable action package 'actions/cache@v4'
+2025-04-16T09:39:26.8245497Z Version: 4.2.3
+2025-04-16T09:39:26.8246802Z Digest: sha256:c8a3bb963e1f1826d8fcc8d1354f0dd29d8ac1db1d4f6f20247055ae11b81ed9
+2025-04-16T09:39:26.8248818Z Source commit SHA: 5a3ec84eff668545956fd18022155c47e93e2684
+2025-04-16T09:39:26.8250036Z ##[endgroup]
+2025-04-16T09:39:26.9810795Z Complete job name: PHP unit tests - PHP 7.4, WP 6.6.2, WC 9.6.2
+2025-04-16T09:39:27.0639525Z ##[group]Run actions/checkout@v4
+2025-04-16T09:39:27.0640848Z with:
+2025-04-16T09:39:27.0641788Z   repository: woocommerce/google-listings-and-ads
+2025-04-16T09:39:27.0643209Z   token: ***
+2025-04-16T09:39:27.0644013Z   ssh-strict: true
+2025-04-16T09:39:27.0644848Z   ssh-user: git
+2025-04-16T09:39:27.0645684Z   persist-credentials: true
+2025-04-16T09:39:27.0646622Z   clean: true
+2025-04-16T09:39:27.0647746Z   sparse-checkout-cone-mode: true
+2025-04-16T09:39:27.0648805Z   fetch-depth: 1
+2025-04-16T09:39:27.0649647Z   fetch-tags: false
+2025-04-16T09:39:27.0650498Z   show-progress: true
+2025-04-16T09:39:27.0651356Z   lfs: false
+2025-04-16T09:39:27.0652177Z   submodules: false
+2025-04-16T09:39:27.0653051Z   set-safe-directory: true
+2025-04-16T09:39:27.0654266Z env:
+2025-04-16T09:39:27.0655073Z   WP_CORE_DIR: /tmp/wordpress/src
+2025-04-16T09:39:27.0656165Z   WP_TESTS_DIR: /tmp/wordpress/tests/phpunit
+2025-04-16T09:39:27.0657751Z   generate_coverage: false
+2025-04-16T09:39:27.0658708Z ##[endgroup]
+2025-04-16T09:39:27.3342482Z Syncing repository: woocommerce/google-listings-and-ads
+2025-04-16T09:39:27.3346698Z ##[group]Getting Git version info
+2025-04-16T09:39:27.3349002Z Working directory is '/home/runner/work/google-listings-and-ads/google-listings-and-ads'
+2025-04-16T09:39:27.3351310Z [command]/usr/bin/git version
+2025-04-16T09:39:27.3470617Z git version 2.49.0
+2025-04-16T09:39:27.3502400Z ##[endgroup]
+2025-04-16T09:39:27.3518467Z Temporarily overriding HOME='/home/runner/work/_temp/478ec094-98fe-4003-9c13-863731cac773' before making global git config changes
+2025-04-16T09:39:27.3523328Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-16T09:39:27.3528170Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/google-listings-and-ads/google-listings-and-ads
+2025-04-16T09:39:27.3561397Z Deleting the contents of '/home/runner/work/google-listings-and-ads/google-listings-and-ads'
+2025-04-16T09:39:27.3564117Z ##[group]Initializing the repository
+2025-04-16T09:39:27.3568749Z [command]/usr/bin/git init /home/runner/work/google-listings-and-ads/google-listings-and-ads
+2025-04-16T09:39:27.3658336Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-16T09:39:27.3661699Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-16T09:39:27.3664898Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-16T09:39:27.3667589Z hint:
+2025-04-16T09:39:27.3669272Z hint: 	git config --global init.defaultBranch <name>
+2025-04-16T09:39:27.3671316Z hint:
+2025-04-16T09:39:27.3673309Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-16T09:39:27.3676518Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-16T09:39:27.3679295Z hint:
+2025-04-16T09:39:27.3680706Z hint: 	git branch -m <name>
+2025-04-16T09:39:27.3684038Z Initialized empty Git repository in /home/runner/work/google-listings-and-ads/google-listings-and-ads/.git/
+2025-04-16T09:39:27.3690806Z [command]/usr/bin/git remote add origin https://github.com/woocommerce/google-listings-and-ads
+2025-04-16T09:39:27.3719277Z ##[endgroup]
+2025-04-16T09:39:27.3721706Z ##[group]Disabling automatic garbage collection
+2025-04-16T09:39:27.3723842Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-16T09:39:27.3753680Z ##[endgroup]
+2025-04-16T09:39:27.3755034Z ##[group]Setting up auth
+2025-04-16T09:39:27.3760392Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-16T09:39:27.3790077Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-16T09:39:27.4130875Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-16T09:39:27.4165537Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-16T09:39:27.4394303Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-16T09:39:27.4431095Z ##[endgroup]
+2025-04-16T09:39:27.4432620Z ##[group]Fetching the repository
+2025-04-16T09:39:27.4441794Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +3dad4f01b381b25b8ccacc187e4a313768aa2367:refs/remotes/pull/2857/merge
+2025-04-16T09:39:28.1650367Z From https://github.com/woocommerce/google-listings-and-ads
+2025-04-16T09:39:28.1654104Z  * [new ref]         3dad4f01b381b25b8ccacc187e4a313768aa2367 -> pull/2857/merge
+2025-04-16T09:39:28.1682228Z ##[endgroup]
+2025-04-16T09:39:28.1683817Z ##[group]Determining the checkout info
+2025-04-16T09:39:28.1685400Z ##[endgroup]
+2025-04-16T09:39:28.1689423Z [command]/usr/bin/git sparse-checkout disable
+2025-04-16T09:39:28.1730711Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-16T09:39:28.1759081Z ##[group]Checking out the ref
+2025-04-16T09:39:28.1761843Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/2857/merge
+2025-04-16T09:39:28.2656800Z Note: switching to 'refs/remotes/pull/2857/merge'.
+2025-04-16T09:39:28.2658355Z 
+2025-04-16T09:39:28.2659449Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-16T09:39:28.2661757Z changes and commit them, and you can discard any commits you make in this
+2025-04-16T09:39:28.2663430Z state without impacting any branches by switching back to a branch.
+2025-04-16T09:39:28.2664815Z 
+2025-04-16T09:39:28.2665579Z If you want to create a new branch to retain commits you create, you may
+2025-04-16T09:39:28.2667109Z do so (now or later) by using -c with the switch command. Example:
+2025-04-16T09:39:28.2668190Z 
+2025-04-16T09:39:28.2668728Z   git switch -c <new-branch-name>
+2025-04-16T09:39:28.2669497Z 
+2025-04-16T09:39:28.2669907Z Or undo this operation with:
+2025-04-16T09:39:28.2670491Z 
+2025-04-16T09:39:28.2670838Z   git switch -
+2025-04-16T09:39:28.2671294Z 
+2025-04-16T09:39:28.2672023Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-16T09:39:28.2673106Z 
+2025-04-16T09:39:28.2674249Z HEAD is now at 3dad4f0 Merge 7460384f6ad1724ca0e3168345f3f209ae34ef07 into 1c24933eb138b126e219206d5fa1dbf698f61037
+2025-04-16T09:39:28.2677911Z ##[endgroup]
+2025-04-16T09:39:28.2703381Z [command]/usr/bin/git log -1 --format=%H
+2025-04-16T09:39:28.2725412Z 3dad4f01b381b25b8ccacc187e4a313768aa2367
+2025-04-16T09:39:28.3107862Z ##[group]Run woocommerce/grow/prepare-php@actions-v2
+2025-04-16T09:39:28.3109009Z with:
+2025-04-16T09:39:28.3109723Z   php-version: 7.4
+2025-04-16T09:39:28.3110510Z   coverage: none
+2025-04-16T09:39:28.3111281Z   install-deps: yes
+2025-04-16T09:39:28.3112049Z env:
+2025-04-16T09:39:28.3112786Z   WP_CORE_DIR: /tmp/wordpress/src
+2025-04-16T09:39:28.3113824Z   WP_TESTS_DIR: /tmp/wordpress/tests/phpunit
+2025-04-16T09:39:28.3114872Z   generate_coverage: false
+2025-04-16T09:39:28.3115722Z ##[endgroup]
+2025-04-16T09:39:28.3245848Z ##[group]Run shivammathur/setup-php@v2
+2025-04-16T09:39:28.3246849Z with:
+2025-04-16T09:39:28.3247730Z   php-version: 7.4
+2025-04-16T09:39:28.3248508Z   coverage: none
+2025-04-16T09:39:28.3249276Z   ini-file: production
+2025-04-16T09:39:28.3250074Z env:
+2025-04-16T09:39:28.3250811Z   WP_CORE_DIR: /tmp/wordpress/src
+2025-04-16T09:39:28.3251825Z   WP_TESTS_DIR: /tmp/wordpress/tests/phpunit
+2025-04-16T09:39:28.3252858Z   generate_coverage: false
+2025-04-16T09:39:28.3253743Z ##[endgroup]
+2025-04-16T09:39:28.3964784Z [command]/usr/bin/bash /home/runner/work/_actions/shivammathur/setup-php/v2/src/scripts/run.sh
+2025-04-16T09:39:28.4211114Z 
+2025-04-16T09:39:31.8975349Z [90;1m==> [0m[37;1mSetup PHP[0m
+2025-04-16T09:39:31.8976385Z [32;1m✓ [0m[34;1mPHP [0m[90;1mInstalled PHP 7.4.33[0m
+2025-04-16T09:39:31.8977015Z 
+2025-04-16T09:39:31.8977271Z [90;1m==> [0m[37;1mSetup Tools[0m
+2025-04-16T09:39:32.2282269Z [32;1m✓ [0m[34;1mcomposer [0m[90;1mAdded composer 2.8.6[0m
+2025-04-16T09:39:32.2282815Z 
+2025-04-16T09:39:32.2283091Z [90;1m==> [0m[37;1mSetup Coverage[0m
+2025-04-16T09:39:32.4662926Z [32;1m✓ [0m[34;1mnone [0m[90;1mDisabled Xdebug and PCOV[0m
+2025-04-16T09:39:32.4665051Z 
+2025-04-16T09:39:32.4665456Z [90;1m==> [0m[37;1mSponsor setup-php[0m
+2025-04-16T09:39:32.4666520Z [32;1m✓ [0m[34;1msetup-php [0m[90;1mhttps://setup-php.com/sponsor[0m
+2025-04-16T09:39:32.4849735Z ##[group]Run php --version
+2025-04-16T09:39:32.4850070Z [36;1mphp --version[0m
+2025-04-16T09:39:32.4850312Z [36;1mcomposer --version[0m
+2025-04-16T09:39:32.4904449Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-16T09:39:32.4904841Z env:
+2025-04-16T09:39:32.4905048Z   WP_CORE_DIR: /tmp/wordpress/src
+2025-04-16T09:39:32.4905340Z   WP_TESTS_DIR: /tmp/wordpress/tests/phpunit
+2025-04-16T09:39:32.4905871Z   generate_coverage: false
+2025-04-16T09:39:32.4906109Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-16T09:39:32.4906356Z   COMPOSER_NO_INTERACTION: 1
+2025-04-16T09:39:32.4906587Z   COMPOSER_NO_AUDIT: 1
+2025-04-16T09:39:32.4906788Z ##[endgroup]
+2025-04-16T09:39:32.5323778Z PHP 7.4.33 (cli) (built: Oct 17 2024 20:26:40) ( NTS )
+2025-04-16T09:39:32.5324260Z Copyright (c) The PHP Group
+2025-04-16T09:39:32.5324648Z Zend Engine v3.4.0, Copyright (c) Zend Technologies
+2025-04-16T09:39:32.5325118Z     with Zend OPcache v7.4.33, Copyright (c), by Zend Technologies
+2025-04-16T09:39:32.6203552Z PHP version 7.4.33 (/usr/bin/php7.4)
+2025-04-16T09:39:32.6204217Z Run the "diagnose" command to get more detailed diagnostics output.
+2025-04-16T09:39:32.6204765Z Composer version 2.8.6 2025-02-25 13:03:50
+2025-04-16T09:39:32.6317306Z ##[group]Run echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+2025-04-16T09:39:32.6318012Z [36;1mecho "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT[0m
+2025-04-16T09:39:32.6366146Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-16T09:39:32.6366524Z env:
+2025-04-16T09:39:32.6366722Z   WP_CORE_DIR: /tmp/wordpress/src
+2025-04-16T09:39:32.6366992Z   WP_TESTS_DIR: /tmp/wordpress/tests/phpunit
+2025-04-16T09:39:32.6367263Z   generate_coverage: false
+2025-04-16T09:39:32.6367690Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-16T09:39:32.6367933Z   COMPOSER_NO_INTERACTION: 1
+2025-04-16T09:39:32.6368156Z   COMPOSER_NO_AUDIT: 1
+2025-04-16T09:39:32.6368356Z ##[endgroup]
+2025-04-16T09:39:32.9970860Z ##[group]Run actions/cache@v4
+2025-04-16T09:39:32.9971112Z with:
+2025-04-16T09:39:32.9971556Z   path: /home/runner/.cache/composer/files
+2025-04-16T09:39:32.9972013Z   key: Linux-composer-16950604ec10745ca103f65f3fc163e7a96bc289b95a06bf9d79e02111a442c9
+2025-04-16T09:39:32.9972469Z   restore-keys: Linux-composer-
+2025-04-16T09:39:32.9972722Z   enableCrossOsArchive: false
+2025-04-16T09:39:32.9972970Z   fail-on-cache-miss: false
+2025-04-16T09:39:32.9973190Z   lookup-only: false
+2025-04-16T09:39:32.9973414Z   save-always: false
+2025-04-16T09:39:32.9973608Z env:
+2025-04-16T09:39:32.9973795Z   WP_CORE_DIR: /tmp/wordpress/src
+2025-04-16T09:39:32.9974068Z   WP_TESTS_DIR: /tmp/wordpress/tests/phpunit
+2025-04-16T09:39:32.9974340Z   generate_coverage: false
+2025-04-16T09:39:32.9974564Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-16T09:39:32.9974789Z   COMPOSER_NO_INTERACTION: 1
+2025-04-16T09:39:32.9975017Z   COMPOSER_NO_AUDIT: 1
+2025-04-16T09:39:32.9975220Z ##[endgroup]
+2025-04-16T09:39:33.2357138Z Cache hit for: Linux-composer-16950604ec10745ca103f65f3fc163e7a96bc289b95a06bf9d79e02111a442c9
+2025-04-16T09:39:33.8821490Z Received 43859463 of 43859463 (100.0%), 79.4 MBs/sec
+2025-04-16T09:39:33.8822492Z Cache Size: ~42 MB (43859463 B)
+2025-04-16T09:39:33.8853918Z [command]/usr/bin/tar -xf /home/runner/work/_temp/ef72194d-47f5-40b7-8c90-bc197b54fb0d/cache.tzst -P -C /home/runner/work/google-listings-and-ads/google-listings-and-ads --use-compress-program unzstd
+2025-04-16T09:39:33.9761639Z Cache restored successfully
+2025-04-16T09:39:34.0070698Z Cache restored from key: Linux-composer-16950604ec10745ca103f65f3fc163e7a96bc289b95a06bf9d79e02111a442c9
+2025-04-16T09:39:34.0168754Z ##[group]Run COMPOSER_VER=$(composer --version | awk '{ print $3 }')
+2025-04-16T09:39:34.0169232Z [36;1mCOMPOSER_VER=$(composer --version | awk '{ print $3 }')[0m
+2025-04-16T09:39:34.0169563Z [36;1m[0m
+2025-04-16T09:39:34.0169761Z [36;1mCOLOR_INFO="\033[38;5;39m"[0m
+2025-04-16T09:39:34.0170011Z [36;1mCOLOR_END="\033[0m"[0m
+2025-04-16T09:39:34.0170227Z [36;1m[0m
+2025-04-16T09:39:34.0170430Z [36;1mif [ $INSTALL_DEPS = "yes" ]; then[0m
+2025-04-16T09:39:34.0170957Z [36;1m  composer install --prefer-dist --no-interaction `if [[ $COMPOSER_VER == 1.* ]]; then printf %s "--no-suggest"; fi`[0m
+2025-04-16T09:39:34.0171470Z [36;1m  echo "${PWD}/vendor/bin" >> $GITHUB_PATH[0m
+2025-04-16T09:39:34.0171741Z [36;1melse[0m
+2025-04-16T09:39:34.0172012Z [36;1m  echo -e "${COLOR_INFO}Skip composer install${COLOR_END}"[0m
+2025-04-16T09:39:34.0172522Z [36;1mfi[0m
+2025-04-16T09:39:34.0219037Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-16T09:39:34.0219368Z env:
+2025-04-16T09:39:34.0219574Z   WP_CORE_DIR: /tmp/wordpress/src
+2025-04-16T09:39:34.0219856Z   WP_TESTS_DIR: /tmp/wordpress/tests/phpunit
+2025-04-16T09:39:34.0220135Z   generate_coverage: false
+2025-04-16T09:39:34.0220366Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-16T09:39:34.0220604Z   COMPOSER_NO_INTERACTION: 1
+2025-04-16T09:39:34.0220838Z   COMPOSER_NO_AUDIT: 1
+2025-04-16T09:39:34.0221044Z   INSTALL_DEPS: yes
+2025-04-16T09:39:34.0221280Z ##[endgroup]
+2025-04-16T09:39:34.1098883Z PHP version 7.4.33 (/usr/bin/php7.4)
+2025-04-16T09:39:34.1099514Z Run the "diagnose" command to get more detailed diagnostics output.
+2025-04-16T09:39:34.2461682Z Installing dependencies from lock file (including require-dev)
+2025-04-16T09:39:34.2494118Z Verifying lock file contents can be installed on current platform.
+2025-04-16T09:39:34.2663876Z Package operations: 80 installs, 0 updates, 0 removals
+2025-04-16T09:39:34.3354771Z   - Installing squizlabs/php_codesniffer (3.7.2): Extracting archive
+2025-04-16T09:39:34.4843707Z   - Installing dealerdirect/phpcodesniffer-composer-installer (v0.7.2): Extracting archive
+2025-04-16T09:39:34.4980621Z   - Installing dg/bypass-finals (v1.6.0): Extracting archive
+2025-04-16T09:39:34.5002208Z   - Installing doctrine/instantiator (1.5.0): Extracting archive
+2025-04-16T09:39:34.5026101Z   - Installing gettext/languages (2.10.0): Extracting archive
+2025-04-16T09:39:34.5055200Z   - Installing paragonie/random_compat (v9.99.100): Extracting archive
+2025-04-16T09:39:34.5083989Z   - Installing paragonie/constant_time_encoding (v2.7.0): Extracting archive
+2025-04-16T09:39:34.5108275Z   - Installing phpseclib/phpseclib (3.0.43): Extracting archive
+2025-04-16T09:39:34.5136967Z   - Installing psr/log (1.1.4): Extracting archive
+2025-04-16T09:39:34.5166036Z   - Installing monolog/monolog (2.10.0): Extracting archive
+2025-04-16T09:39:34.5198285Z   - Installing ralouphie/getallheaders (3.0.3): Extracting archive
+2025-04-16T09:39:34.5218841Z   - Installing psr/http-message (2.0): Extracting archive
+2025-04-16T09:39:34.5268206Z   - Installing psr/http-factory (1.1.0): Extracting archive
+2025-04-16T09:39:34.5269116Z   - Installing guzzlehttp/psr7 (2.7.0): Extracting archive
+2025-04-16T09:39:34.5269792Z   - Installing symfony/deprecation-contracts (v2.5.4): Extracting archive
+2025-04-16T09:39:34.5270239Z   - Installing psr/http-client (1.0.3): Extracting archive
+2025-04-16T09:39:34.5270619Z   - Installing guzzlehttp/promises (2.0.4): Extracting archive
+2025-04-16T09:39:34.5271008Z   - Installing guzzlehttp/guzzle (7.9.2): Extracting archive
+2025-04-16T09:39:34.5271764Z   - Installing psr/cache (1.0.1): Extracting archive
+2025-04-16T09:39:34.5293917Z   - Installing firebase/php-jwt (v6.10.0): Extracting archive
+2025-04-16T09:39:34.5294727Z   - Installing google/auth (v1.37.2): Extracting archive
+2025-04-16T09:39:34.5295449Z   - Installing google/apiclient-services (v0.350.0): Extracting archive
+2025-04-16T09:39:34.5296204Z   - Installing google/apiclient (v2.16.1): Extracting archive
+2025-04-16T09:39:34.5296853Z   - Installing google/protobuf (v3.25.5): Extracting archive
+2025-04-16T09:39:34.5297732Z   - Installing google/common-protos (v4.5.0): Extracting archive
+2025-04-16T09:39:34.5308869Z   - Installing google/longrunning (0.4.6): Extracting archive
+2025-04-16T09:39:34.5310043Z   - Installing google/gax (v1.29.2): Extracting archive
+2025-04-16T09:39:34.5314537Z   - Installing googleads/google-ads-php (dev-legacy-v25.0.0 3f4ea59): Extracting archive
+2025-04-16T09:39:34.5317933Z   - Installing psr/container (1.1.2): Extracting archive
+2025-04-16T09:39:34.5321763Z   - Installing league/container (4.2.4): Extracting archive
+2025-04-16T09:39:34.5328986Z   - Installing symfony/polyfill-mbstring (v1.31.0): Extracting archive
+2025-04-16T09:39:34.5330203Z   - Installing league/iso3166 (4.3.1): Extracting archive
+2025-04-16T09:39:34.5331138Z   - Installing myclabs/deep-copy (1.12.1): Extracting archive
+2025-04-16T09:39:34.5333353Z   - Installing phar-io/version (3.2.1): Extracting archive
+2025-04-16T09:39:34.5336306Z   - Installing phar-io/manifest (2.0.4): Extracting archive
+2025-04-16T09:39:34.5341091Z   - Installing phpseclib/bcmath_compat (2.0.2): Extracting archive
+2025-04-16T09:39:34.5358350Z   - Installing theseer/tokenizer (1.2.3): Extracting archive
+2025-04-16T09:39:34.5359063Z   - Installing sebastian/version (3.0.2): Extracting archive
+2025-04-16T09:39:34.5359820Z   - Installing symfony/polyfill-ctype (v1.31.0): Extracting archive
+2025-04-16T09:39:34.5360560Z   - Installing nikic/php-parser (v5.3.1): Extracting archive
+2025-04-16T09:39:34.5361283Z   - Installing sebastian/lines-of-code (1.0.4): Extracting archive
+2025-04-16T09:39:34.5362015Z   - Installing sebastian/environment (5.1.5): Extracting archive
+2025-04-16T09:39:34.5362779Z   - Installing sebastian/complexity (2.0.3): Extracting archive
+2025-04-16T09:39:34.5366856Z   - Installing sebastian/code-unit-reverse-lookup (2.0.3): Extracting archive
+2025-04-16T09:39:34.5369890Z   - Installing phpunit/php-text-template (2.0.4): Extracting archive
+2025-04-16T09:39:34.5374504Z   - Installing phpunit/php-file-iterator (3.0.6): Extracting archive
+2025-04-16T09:39:34.5376790Z   - Installing phpunit/php-code-coverage (9.2.32): Extracting archive
+2025-04-16T09:39:34.5377985Z   - Installing phpunit/php-invoker (3.1.1): Extracting archive
+2025-04-16T09:39:34.5379373Z   - Installing phpunit/php-timer (5.0.3): Extracting archive
+2025-04-16T09:39:34.5382541Z   - Installing sebastian/cli-parser (1.0.2): Extracting archive
+2025-04-16T09:39:34.5385400Z   - Installing sebastian/code-unit (1.0.8): Extracting archive
+2025-04-16T09:39:34.5388916Z   - Installing sebastian/recursion-context (4.0.5): Extracting archive
+2025-04-16T09:39:34.5392026Z   - Installing sebastian/exporter (4.0.6): Extracting archive
+2025-04-16T09:39:34.5394598Z   - Installing sebastian/diff (4.0.6): Extracting archive
+2025-04-16T09:39:34.5397886Z   - Installing sebastian/comparator (4.0.8): Extracting archive
+2025-04-16T09:39:34.5402838Z   - Installing sebastian/object-reflector (2.0.4): Extracting archive
+2025-04-16T09:39:34.5405610Z   - Installing sebastian/global-state (5.0.7): Extracting archive
+2025-04-16T09:39:34.5408908Z   - Installing sebastian/object-enumerator (4.0.4): Extracting archive
+2025-04-16T09:39:34.5411939Z   - Installing sebastian/resource-operations (3.0.4): Extracting archive
+2025-04-16T09:39:34.5415119Z   - Installing sebastian/type (3.2.1): Extracting archive
+2025-04-16T09:39:34.5418754Z   - Installing symfony/polyfill-intl-normalizer (v1.31.0): Extracting archive
+2025-04-16T09:39:34.5421924Z   - Installing symfony/translation-contracts (v2.5.4): Extracting archive
+2025-04-16T09:39:34.5423541Z   - Installing symfony/polyfill-php81 (v1.31.0): Extracting archive
+2025-04-16T09:39:34.5426537Z   - Installing symfony/polyfill-php80 (v1.31.0): Extracting archive
+2025-04-16T09:39:34.5428805Z   - Installing symfony/polyfill-php73 (v1.31.0): Extracting archive
+2025-04-16T09:39:34.5432135Z   - Installing symfony/validator (v5.4.48): Extracting archive
+2025-04-16T09:39:34.5434903Z   - Installing wp-cli/php-cli-tools (v0.11.21): Extracting archive
+2025-04-16T09:39:34.5437879Z   - Installing wp-cli/mustangostang-spyc (0.6.3): Extracting archive
+2025-04-16T09:39:34.5440685Z   - Installing symfony/finder (v5.4.27): Extracting archive
+2025-04-16T09:39:34.5443332Z   - Installing mustache/mustache (v2.14.2): Extracting archive
+2025-04-16T09:39:34.5445902Z   - Installing wp-cli/wp-cli (v2.9.0): Extracting archive
+2025-04-16T09:39:34.5448493Z   - Installing mck89/peast (v1.15.4): Extracting archive
+2025-04-16T09:39:34.5451450Z   - Installing gettext/gettext (v4.8.11): Extracting archive
+2025-04-16T09:39:34.5454223Z   - Installing eftec/bladeone (3.52): Extracting archive
+2025-04-16T09:39:34.5456886Z   - Installing wp-cli/i18n-command (v2.4.4): Extracting archive
+2025-04-16T09:39:34.5460322Z   - Installing phpcsstandards/phpcsutils (1.0.8): Extracting archive
+2025-04-16T09:39:34.5463285Z   - Installing phpcsstandards/phpcsextra (1.1.2): Extracting archive
+2025-04-16T09:39:34.5465287Z   - Installing wp-coding-standards/wpcs (3.0.1): Extracting archive
+2025-04-16T09:39:34.5468186Z   - Installing phpunit/phpunit (9.6.21): Extracting archive
+2025-04-16T09:39:34.5471096Z   - Installing yoast/phpunit-polyfills (1.1.0): Extracting archive
+2025-04-16T09:39:37.9584605Z Generating autoload files
+2025-04-16T09:39:38.0847974Z The following "files" autoload rules are included multiple times, this may cause issues and should be resolved:
+2025-04-16T09:39:38.0849210Z  - $vendorDir . '/guzzlehttp/guzzle/src/functions_include.php'
+2025-04-16T09:39:38.0881261Z 45 packages you are using are looking for funding.
+2025-04-16T09:39:38.0881946Z Use the `composer fund` command to find out more!
+2025-04-16T09:39:38.4003484Z PHP CodeSniffer Config installed_paths set to ../../phpcsstandards/phpcsextra,../../phpcsstandards/phpcsutils,../../wp-coding-standards/wpcs
+2025-04-16T09:39:38.6321135Z > Google\Task\Composer::cleanup
+2025-04-16T09:39:38.6372920Z Removing 288 google services
+2025-04-16T09:39:39.4056746Z > Automattic\WooCommerce\GoogleListingsAndAds\Util\SymfonyPolyfillCleanup::remove
+2025-04-16T09:39:39.4057819Z Removing PHP 8.0 specific code for symfony polyfills
+2025-04-16T09:39:39.4066849Z > Automattic\WooCommerce\GoogleListingsAndAds\Util\GoogleAdsCleanupServices::remove
+2025-04-16T09:39:39.4067829Z Removing unused services and resources from Google Ads library V18
+2025-04-16T09:39:39.4376651Z Removing service AccountBudgetProposal
+2025-04-16T09:39:39.4393575Z Removing service AdGroupAsset
+2025-04-16T09:39:39.4409718Z Removing service AdGroupAssetSet
+2025-04-16T09:39:39.4427014Z Removing service AdGroupBidModifier
+2025-04-16T09:39:39.4443468Z Removing service AdGroupCriterionCustomizer
+2025-04-16T09:39:39.4459946Z Removing service AdGroupCriterionLabel
+2025-04-16T09:39:39.4474980Z Removing service AdGroupCustomizer
+2025-04-16T09:39:39.4490417Z Removing service AdGroupExtensionSetting
+2025-04-16T09:39:39.4511043Z Removing service AdGroupFeed
+2025-04-16T09:39:39.4527647Z Removing service AdGroupLabel
+2025-04-16T09:39:39.4543080Z Removing service AdParameter
+2025-04-16T09:39:39.4558333Z Removing service AssetGroupSignal
+2025-04-16T09:39:39.4572612Z Removing service AssetSetAsset
+2025-04-16T09:39:39.4588209Z Removing service AssetSet
+2025-04-16T09:39:39.4604246Z Removing service AudienceInsights
+2025-04-16T09:39:39.4614240Z Removing service Audience
+2025-04-16T09:39:39.4630918Z Removing service BatchJob
+2025-04-16T09:39:39.4647999Z Removing service BiddingDataExclusion
+2025-04-16T09:39:39.4662744Z Removing service BiddingSeasonalityAdjustment
+2025-04-16T09:39:39.4678195Z Removing service BiddingStrategy
+2025-04-16T09:39:39.4692120Z Removing service BrandSuggestion
+2025-04-16T09:39:39.4701030Z Removing service CampaignAsset
+2025-04-16T09:39:39.4714903Z Removing service CampaignAssetSet
+2025-04-16T09:39:39.4730745Z Removing service CampaignBidModifier
+2025-04-16T09:39:39.4745395Z Removing service CampaignConversionGoal
+2025-04-16T09:39:39.4760680Z Removing service CampaignCustomizer
+2025-04-16T09:39:39.4775317Z Removing service CampaignDraft
+2025-04-16T09:39:39.4789344Z Removing service CampaignExtensionSetting
+2025-04-16T09:39:39.4804171Z Removing service CampaignFeed
+2025-04-16T09:39:39.4818625Z Removing service CampaignGroup
+2025-04-16T09:39:39.4835114Z Removing service CampaignLifecycleGoal
+2025-04-16T09:39:39.4850123Z Removing service CampaignSharedSet
+2025-04-16T09:39:39.4865854Z Removing service ContentCreatorInsights
+2025-04-16T09:39:39.4875160Z Removing service ConversionAdjustmentUpload
+2025-04-16T09:39:39.4884362Z Removing service ConversionCustomVariable
+2025-04-16T09:39:39.4898568Z Removing service ConversionGoalCampaignConfig
+2025-04-16T09:39:39.4912440Z Removing service ConversionUpload
+2025-04-16T09:39:39.4922248Z Removing service ConversionValueRule
+2025-04-16T09:39:39.4934962Z Removing service ConversionValueRuleSet
+2025-04-16T09:39:39.4947328Z Removing service CustomAudience
+2025-04-16T09:39:39.4960036Z Removing service CustomConversionGoal
+2025-04-16T09:39:39.4973681Z Removing service CustomInterest
+2025-04-16T09:39:39.4986128Z Removing service CustomerAsset
+2025-04-16T09:39:39.4999070Z Removing service CustomerAssetSet
+2025-04-16T09:39:39.5012421Z Removing service CustomerClientLink
+2025-04-16T09:39:39.5027833Z Removing service CustomerConversionGoal
+2025-04-16T09:39:39.5043185Z Removing service CustomerCustomizer
+2025-04-16T09:39:39.5058193Z Removing service CustomerExtensionSetting
+2025-04-16T09:39:39.5070832Z Removing service CustomerFeed
+2025-04-16T09:39:39.5084018Z Removing service CustomerLabel
+2025-04-16T09:39:39.5096094Z Removing service CustomerLifecycleGoal
+2025-04-16T09:39:39.5110107Z Removing service CustomerManagerLink
+2025-04-16T09:39:39.5121528Z Removing service CustomerNegativeCriterion
+2025-04-16T09:39:39.5133937Z Removing service CustomerSkAdNetworkConversionValueSchema
+2025-04-16T09:39:39.5146329Z Removing service CustomerUserAccessInvitation
+2025-04-16T09:39:39.5158806Z Removing service CustomizerAttribute
+2025-04-16T09:39:39.5171343Z Removing service DataLink
+2025-04-16T09:39:39.5183664Z Removing service ExperimentArm
+2025-04-16T09:39:39.5195483Z Removing service Experiment
+2025-04-16T09:39:39.5209414Z Skip Removing service ExtensionFeedItem
+2025-04-16T09:39:39.5209981Z Removing service FeedItem
+2025-04-16T09:39:39.5233767Z Removing service FeedItemSetLink
+2025-04-16T09:39:39.5245522Z Removing service FeedItemSet
+2025-04-16T09:39:39.5257240Z Removing service FeedItemTarget
+2025-04-16T09:39:39.5271766Z Removing service FeedMapping
+2025-04-16T09:39:39.5286258Z Removing service Feed
+2025-04-16T09:39:39.5298159Z Removing service GoogleAdsField
+2025-04-16T09:39:39.5310704Z Removing service IdentityVerification
+2025-04-16T09:39:39.5319359Z Removing service Invoice
+2025-04-16T09:39:39.5327744Z Removing service KeywordPlanAdGroupKeyword
+2025-04-16T09:39:39.5339309Z Removing service KeywordPlanAdGroup
+2025-04-16T09:39:39.5352026Z Removing service KeywordPlanCampaignKeyword
+2025-04-16T09:39:39.5363357Z Removing service KeywordPlanCampaign
+2025-04-16T09:39:39.5375150Z Removing service KeywordPlanIdea
+2025-04-16T09:39:39.5382505Z Removing service KeywordPlan
+2025-04-16T09:39:39.5395484Z Removing service KeywordThemeConstant
+2025-04-16T09:39:39.5405554Z Removing service LocalServicesLead
+2025-04-16T09:39:39.5416171Z Removing service OfflineUserDataJob
+2025-04-16T09:39:39.5427985Z Removing service PaymentsAccount
+2025-04-16T09:39:39.5436230Z Removing service ProductLink
+2025-04-16T09:39:39.5448291Z Removing service ReachPlan
+2025-04-16T09:39:39.5455940Z Removing service Recommendation
+2025-04-16T09:39:39.5467341Z Removing service RecommendationSubscription
+2025-04-16T09:39:39.5480915Z Removing service RemarketingAction
+2025-04-16T09:39:39.5492586Z Removing service ShareablePreview
+2025-04-16T09:39:39.5500490Z Removing service SharedCriterion
+2025-04-16T09:39:39.5512195Z Removing service SharedSet
+2025-04-16T09:39:39.5524518Z Removing service SmartCampaignSetting
+2025-04-16T09:39:39.5537134Z Removing service SmartCampaignSuggest
+2025-04-16T09:39:39.5545082Z Removing service ThirdPartyAppAnalyticsLink
+2025-04-16T09:39:39.5555089Z Removing service TravelAssetSuggestion
+2025-04-16T09:39:39.5562180Z Removing service UserData
+2025-04-16T09:39:39.5571465Z Removing service UserListCustomerType
+2025-04-16T09:39:39.5584871Z Removing service UserList
+2025-04-16T09:39:39.5596121Z Removing service AccessibleBiddingStrategy
+2025-04-16T09:39:39.5601380Z Removing service AccountBudget
+2025-04-16T09:39:39.5606177Z Removing service AdGroupAdAssetCombinationView
+2025-04-16T09:39:39.5610588Z Removing service AdGroupAdAssetView
+2025-04-16T09:39:39.5614362Z Removing service AdGroupAudienceView
+2025-04-16T09:39:39.5618451Z Removing service AdGroupCriterionSimulation
+2025-04-16T09:39:39.5622428Z Removing service AdGroupSimulation
+2025-04-16T09:39:39.5626249Z Removing service AdScheduleView
+2025-04-16T09:39:39.5630322Z Removing service AgeRangeView
+2025-04-16T09:39:39.5634251Z Removing service AndroidPrivacySharedKeyGoogleAdGroup
+2025-04-16T09:39:39.5638419Z Removing service AndroidPrivacySharedKeyGoogleCampaign
+2025-04-16T09:39:39.5642272Z Removing service AndroidPrivacySharedKeyGoogleNetworkType
+2025-04-16T09:39:39.5646284Z Removing service AssetFieldTypeView
+2025-04-16T09:39:39.5650321Z Removing service AssetGroupProductGroupView
+2025-04-16T09:39:39.5654149Z Removing service AssetGroupTopCombinationView
+2025-04-16T09:39:39.5658194Z Removing service AssetSetTypeView
+2025-04-16T09:39:39.5662138Z Removing service BiddingStrategySimulation
+2025-04-16T09:39:39.5665997Z Removing service CallView
+2025-04-16T09:39:39.5670045Z Removing service CampaignAggregateAssetView
+2025-04-16T09:39:39.5674387Z Removing service CampaignAudienceView
+2025-04-16T09:39:39.5678484Z Removing service CampaignSearchTermInsight
+2025-04-16T09:39:39.5682041Z Removing service CampaignSimulation
+2025-04-16T09:39:39.5685686Z Removing service CarrierConstant
+2025-04-16T09:39:39.5690503Z Removing service ChangeEvent
+2025-04-16T09:39:39.5694544Z Removing service ChangeStatus
+2025-04-16T09:39:39.5698484Z Removing service ChannelAggregateAssetView
+2025-04-16T09:39:39.5702048Z Removing service ClickView
+2025-04-16T09:39:39.5705780Z Removing service CombinedAudience
+2025-04-16T09:39:39.5710613Z Removing service ContentCriterionView
+2025-04-16T09:39:39.5714198Z Removing service CurrencyConstant
+2025-04-16T09:39:39.5717889Z Removing service CustomerClient
+2025-04-16T09:39:39.5721529Z Removing service CustomerSearchTermInsight
+2025-04-16T09:39:39.5725099Z Removing service DetailPlacementView
+2025-04-16T09:39:39.5728904Z Removing service DetailedDemographic
+2025-04-16T09:39:39.5733549Z Removing service DisplayKeywordView
+2025-04-16T09:39:39.5737306Z Removing service DistanceView
+2025-04-16T09:39:39.5740942Z Removing service DomainCategory
+2025-04-16T09:39:39.5744591Z Removing service DynamicSearchAdsSearchTermView
+2025-04-16T09:39:39.5748415Z Removing service ExpandedLandingPageView
+2025-04-16T09:39:39.5751970Z Removing service FeedPlaceholderView
+2025-04-16T09:39:39.5755464Z Removing service GenderView
+2025-04-16T09:39:39.5759157Z Removing service GeographicView
+2025-04-16T09:39:39.5762794Z Removing service GroupPlacementView
+2025-04-16T09:39:39.5766361Z Removing service HotelGroupView
+2025-04-16T09:39:39.5770123Z Removing service HotelPerformanceView
+2025-04-16T09:39:39.5773694Z Removing service HotelReconciliation
+2025-04-16T09:39:39.5777273Z Removing service IncomeRangeView
+2025-04-16T09:39:39.5781069Z Removing service KeywordView
+2025-04-16T09:39:39.5784564Z Removing service LandingPageView
+2025-04-16T09:39:39.5788590Z Removing service LanguageConstant
+2025-04-16T09:39:39.5793319Z Removing service LeadFormSubmissionData
+2025-04-16T09:39:39.5797250Z Removing service LifeEvent
+2025-04-16T09:39:39.5803159Z Removing service LocalServicesEmployee
+2025-04-16T09:39:39.5806953Z Removing service LocalServicesLeadConversation
+2025-04-16T09:39:39.5810931Z Removing service LocalServicesVerificationArtifact
+2025-04-16T09:39:39.5814474Z Removing service LocationView
+2025-04-16T09:39:39.5818185Z Removing service ManagedPlacementView
+2025-04-16T09:39:39.5821791Z Removing service MediaFile
+2025-04-16T09:39:39.5825418Z Removing service MobileAppCategoryConstant
+2025-04-16T09:39:39.5830386Z Removing service MobileDeviceConstant
+2025-04-16T09:39:39.5835236Z Removing service OfflineConversionUploadClientSummary
+2025-04-16T09:39:39.5839158Z Removing service OfflineConversionUploadConversionActionSummary
+2025-04-16T09:39:39.5842875Z Removing service OperatingSystemVersionConstant
+2025-04-16T09:39:39.5847689Z Removing service PaidOrganicSearchTermView
+2025-04-16T09:39:39.5851420Z Removing service ParentalStatusView
+2025-04-16T09:39:39.5854961Z Removing service PerStoreView
+2025-04-16T09:39:39.5859091Z Removing service PerformanceMaxPlacementView
+2025-04-16T09:39:39.5862743Z Removing service ProductCategoryConstant
+2025-04-16T09:39:39.5866297Z Removing service ProductGroupView
+2025-04-16T09:39:39.5870032Z Removing service QualifyingQuestion
+2025-04-16T09:39:39.5873626Z Removing service SearchTermView
+2025-04-16T09:39:39.5877173Z Removing service ShoppingProduct
+2025-04-16T09:39:39.5881239Z Removing service SmartCampaignSearchTermView
+2025-04-16T09:39:39.5884771Z Removing service TopicConstant
+2025-04-16T09:39:39.5889558Z Removing service TopicView
+2025-04-16T09:39:39.5893382Z Removing service TravelActivityGroupView
+2025-04-16T09:39:39.5897056Z Removing service TravelActivityPerformanceView
+2025-04-16T09:39:39.5900975Z Removing service UserInterest
+2025-04-16T09:39:39.5905617Z Removing service UserLocationView
+2025-04-16T09:39:39.5909340Z Removing service Video
+2025-04-16T09:39:39.5912911Z Removing service WebpageView
+2025-04-16T09:39:39.5916539Z Removing unused enums from Google Ads library V18
+2025-04-16T09:39:39.6033530Z Removing enum AccessInvitationStatus
+2025-04-16T09:39:39.6035568Z Removing enum AccessReason
+2025-04-16T09:39:39.6036980Z Removing enum AccountBudgetProposalStatus
+2025-04-16T09:39:39.6038690Z Removing enum AccountBudgetProposalType
+2025-04-16T09:39:39.6040142Z Removing enum AccountBudgetStatus
+2025-04-16T09:39:39.6041572Z Removing enum AccountLinkStatus
+2025-04-16T09:39:39.6043044Z Removing enum AdCustomizerPlaceholderField
+2025-04-16T09:39:39.6044430Z Removing enum AdDestinationType
+2025-04-16T09:39:39.6045823Z Removing enum AdFormatType
+2025-04-16T09:39:39.6047590Z Removing enum AdGroupAdPrimaryStatus
+2025-04-16T09:39:39.6049158Z Removing enum AdGroupAdPrimaryStatusReason
+2025-04-16T09:39:39.6050639Z Removing enum AdGroupAdRotationMode
+2025-04-16T09:39:39.6052072Z Removing enum AdGroupAdStatus
+2025-04-16T09:39:39.6053582Z Removing enum AdGroupCriterionApprovalStatus
+2025-04-16T09:39:39.6055032Z Removing enum AdGroupCriterionPrimaryStatus
+2025-04-16T09:39:39.6056736Z Removing enum AdGroupCriterionPrimaryStatusReason
+2025-04-16T09:39:39.6058034Z Removing enum AdGroupCriterionStatus
+2025-04-16T09:39:39.6059590Z Removing enum AdGroupPrimaryStatus
+2025-04-16T09:39:39.6061058Z Removing enum AdGroupPrimaryStatusReason
+2025-04-16T09:39:39.6062535Z Removing enum AdGroupStatus
+2025-04-16T09:39:39.6063997Z Removing enum AdGroupType
+2025-04-16T09:39:39.6065453Z Removing enum AdNetworkType
+2025-04-16T09:39:39.6066952Z Removing enum AdServingOptimizationStatus
+2025-04-16T09:39:39.6068584Z Removing enum AdStrength
+2025-04-16T09:39:39.6070671Z Removing enum AdType
+2025-04-16T09:39:39.6072663Z Removing enum AdvertisingChannelSubType
+2025-04-16T09:39:39.6074670Z Removing enum AffiliateLocationFeedRelationshipType
+2025-04-16T09:39:39.6076237Z Removing enum AffiliateLocationPlaceholderField
+2025-04-16T09:39:39.6077889Z Removing enum AgeRangeType
+2025-04-16T09:39:39.6079655Z Removing enum AndroidPrivacyInteractionType
+2025-04-16T09:39:39.6081157Z Removing enum AndroidPrivacyNetworkType
+2025-04-16T09:39:39.6082693Z Removing enum AppBiddingGoal
+2025-04-16T09:39:39.6084249Z Removing enum AppCampaignAppStore
+2025-04-16T09:39:39.6085834Z Removing enum AppCampaignBiddingStrategyGoalType
+2025-04-16T09:39:39.6087499Z Removing enum AppPaymentModelType
+2025-04-16T09:39:39.6089400Z Removing enum AppPlaceholderField
+2025-04-16T09:39:39.6090899Z Removing enum AppStore
+2025-04-16T09:39:39.6092474Z Removing enum AppUrlOperatingSystemType
+2025-04-16T09:39:39.6093984Z Removing enum AssetAutomationStatus
+2025-04-16T09:39:39.6095503Z Removing enum AssetAutomationType
+2025-04-16T09:39:39.6097096Z Removing enum AssetGroupPrimaryStatus
+2025-04-16T09:39:39.6098775Z Removing enum AssetGroupPrimaryStatusReason
+2025-04-16T09:39:39.6100313Z Removing enum AssetGroupSignalApprovalStatus
+2025-04-16T09:39:39.6101831Z Removing enum AssetLinkPrimaryStatus
+2025-04-16T09:39:39.6103370Z Removing enum AssetLinkPrimaryStatusReason
+2025-04-16T09:39:39.6104921Z Removing enum AssetLinkStatus
+2025-04-16T09:39:39.6106483Z Removing enum AssetOfflineEvaluationErrorReasons
+2025-04-16T09:39:39.6108254Z Removing enum AssetPerformanceLabel
+2025-04-16T09:39:39.6109809Z Removing enum AssetSetAssetStatus
+2025-04-16T09:39:39.6111341Z Removing enum AssetSetLinkStatus
+2025-04-16T09:39:39.6112833Z Removing enum AssetSetStatus
+2025-04-16T09:39:39.6114399Z Removing enum AssetSetType
+2025-04-16T09:39:39.6115976Z Removing enum AssetSource
+2025-04-16T09:39:39.6117850Z Removing enum AsyncActionStatus
+2025-04-16T09:39:39.6119587Z Removing enum AttributionModel
+2025-04-16T09:39:39.6121024Z Removing enum AudienceInsightsDimension
+2025-04-16T09:39:39.6122526Z Removing enum AudienceInsightsMarketingObjective
+2025-04-16T09:39:39.6123704Z Removing enum AudienceScope
+2025-04-16T09:39:39.6125208Z Removing enum AudienceStatus
+2025-04-16T09:39:39.6126642Z Removing enum BatchJobStatus
+2025-04-16T09:39:39.6128271Z Removing enum BidModifierSource
+2025-04-16T09:39:39.6129687Z Removing enum BiddingSource
+2025-04-16T09:39:39.6131117Z Removing enum BiddingStrategyStatus
+2025-04-16T09:39:39.6132544Z Removing enum BiddingStrategySystemStatus
+2025-04-16T09:39:39.6133994Z Removing enum BiddingStrategyType
+2025-04-16T09:39:39.6135471Z Removing enum BrandRequestRejectionReason
+2025-04-16T09:39:39.6136885Z Removing enum BrandSafetySuitability
+2025-04-16T09:39:39.6138470Z Removing enum BrandState
+2025-04-16T09:39:39.6139945Z Removing enum BudgetCampaignAssociationStatus
+2025-04-16T09:39:39.6141175Z Removing enum BudgetDeliveryMethod
+2025-04-16T09:39:39.6142672Z Removing enum BudgetPeriod
+2025-04-16T09:39:39.6144033Z Removing enum BudgetStatus
+2025-04-16T09:39:39.6145421Z Removing enum BudgetType
+2025-04-16T09:39:39.6146915Z Removing enum CallConversionReportingState
+2025-04-16T09:39:39.6148587Z Removing enum CallPlaceholderField
+2025-04-16T09:39:39.6150009Z Removing enum CallTrackingDisplayLocation
+2025-04-16T09:39:39.6151390Z Removing enum CallType
+2025-04-16T09:39:39.6152828Z Removing enum CalloutPlaceholderField
+2025-04-16T09:39:39.6154221Z Removing enum CampaignDraftStatus
+2025-04-16T09:39:39.6155999Z Removing enum CampaignExperimentType
+2025-04-16T09:39:39.6157013Z Removing enum CampaignGroupStatus
+2025-04-16T09:39:39.6159024Z Removing enum CampaignKeywordMatchType
+2025-04-16T09:39:39.6160477Z Removing enum CampaignPrimaryStatus
+2025-04-16T09:39:39.6161941Z Removing enum CampaignPrimaryStatusReason
+2025-04-16T09:39:39.6163424Z Removing enum CampaignServingStatus
+2025-04-16T09:39:39.6164876Z Removing enum CampaignSharedSetStatus
+2025-04-16T09:39:39.6166356Z Removing enum ChainRelationshipType
+2025-04-16T09:39:39.6167993Z Removing enum ChangeClientType
+2025-04-16T09:39:39.6169602Z Removing enum ChangeEventResourceType
+2025-04-16T09:39:39.6171146Z Removing enum ChangeStatusOperation
+2025-04-16T09:39:39.6172631Z Removing enum ChangeStatusResourceType
+2025-04-16T09:39:39.6174088Z Removing enum ClickType
+2025-04-16T09:39:39.6175649Z Removing enum CombinedAudienceStatus
+2025-04-16T09:39:39.6177077Z Removing enum ConsentStatus
+2025-04-16T09:39:39.6178862Z Removing enum ContentLabelType
+2025-04-16T09:39:39.6180388Z Removing enum ConversionActionCountingType
+2025-04-16T09:39:39.6181821Z Removing enum ConversionAdjustmentType
+2025-04-16T09:39:39.6183333Z Removing enum ConversionAttributionEventType
+2025-04-16T09:39:39.6184794Z Removing enum ConversionCustomVariableStatus
+2025-04-16T09:39:39.6186250Z Removing enum ConversionEnvironmentEnum
+2025-04-16T09:39:39.6186785Z Removing enum ConversionLagBucket
+2025-04-16T09:39:39.6189307Z Removing enum ConversionOrAdjustmentLagBucket
+2025-04-16T09:39:39.6190788Z Removing enum ConversionOrigin
+2025-04-16T09:39:39.6192270Z Removing enum ConversionTrackingStatusEnum
+2025-04-16T09:39:39.6192831Z Removing enum ConversionValueRulePrimaryDimension
+2025-04-16T09:39:39.6194430Z Removing enum ConversionValueRuleSetStatus
+2025-04-16T09:39:39.6195856Z Removing enum ConversionValueRuleStatus
+2025-04-16T09:39:39.6197574Z Removing enum ConvertingUserPriorEngagementTypeAndLtvBucket
+2025-04-16T09:39:39.6198938Z Removing enum CriterionCategoryChannelAvailabilityMode
+2025-04-16T09:39:39.6200480Z Removing enum CriterionCategoryLocaleAvailabilityMode
+2025-04-16T09:39:39.6201734Z Removing enum CriterionSystemServingStatus
+2025-04-16T09:39:39.6203237Z Removing enum CriterionType
+2025-04-16T09:39:39.6204754Z Removing enum CustomAudienceMemberType
+2025-04-16T09:39:39.6206194Z Removing enum CustomAudienceStatus
+2025-04-16T09:39:39.6207657Z Removing enum CustomAudienceType
+2025-04-16T09:39:39.6209258Z Removing enum CustomConversionGoalStatus
+2025-04-16T09:39:39.6210669Z Removing enum CustomInterestMemberType
+2025-04-16T09:39:39.6211979Z Removing enum CustomInterestStatus
+2025-04-16T09:39:39.6213402Z Removing enum CustomInterestType
+2025-04-16T09:39:39.6214800Z Removing enum CustomPlaceholderField
+2025-04-16T09:39:39.6216331Z Removing enum CustomerAcquisitionOptimizationMode
+2025-04-16T09:39:39.6217693Z Removing enum CustomerMatchUploadKeyType
+2025-04-16T09:39:39.6219525Z Removing enum CustomerPayPerConversionEligibilityFailureReason
+2025-04-16T09:39:39.6220676Z Removing enum CustomerStatus
+2025-04-16T09:39:39.6222233Z Removing enum CustomizerAttributeStatus
+2025-04-16T09:39:39.6223655Z Removing enum CustomizerAttributeType
+2025-04-16T09:39:39.6225122Z Removing enum CustomizerValueStatus
+2025-04-16T09:39:39.6226547Z Removing enum DataDrivenModelStatus
+2025-04-16T09:39:39.6228955Z Removing enum DataLinkStatus
+2025-04-16T09:39:39.6230423Z Removing enum DataLinkType
+2025-04-16T09:39:39.6231861Z Removing enum DayOfWeek
+2025-04-16T09:39:39.6233333Z Removing enum Device
+2025-04-16T09:39:39.6234814Z Removing enum DisplayAdFormatSetting
+2025-04-16T09:39:39.6236265Z Removing enum DisplayUploadProductType
+2025-04-16T09:39:39.6237869Z Removing enum DistanceBucket
+2025-04-16T09:39:39.6239411Z Removing enum DsaPageFeedCriterionField
+2025-04-16T09:39:39.6240853Z Removing enum EducationPlaceholderField
+2025-04-16T09:39:39.6242303Z Removing enum ExperimentMetric
+2025-04-16T09:39:39.6243814Z Removing enum ExperimentMetricDirection
+2025-04-16T09:39:39.6245248Z Removing enum ExperimentStatus
+2025-04-16T09:39:39.6246880Z Removing enum ExperimentType
+2025-04-16T09:39:39.6248458Z Removing enum ExtensionSettingDevice
+2025-04-16T09:39:39.6249794Z Removing enum ExtensionType
+2025-04-16T09:39:39.6251200Z Removing enum ExternalConversionSource
+2025-04-16T09:39:39.6252611Z Removing enum FeedAttributeType
+2025-04-16T09:39:39.6254052Z Removing enum FeedItemQualityApprovalStatus
+2025-04-16T09:39:39.6255324Z Removing enum FeedItemQualityDisapprovalReason
+2025-04-16T09:39:39.6256767Z Removing enum FeedItemSetStatus
+2025-04-16T09:39:39.6258597Z Removing enum FeedItemSetStringFilterType
+2025-04-16T09:39:39.6260009Z Removing enum FeedItemStatus
+2025-04-16T09:39:39.6261444Z Removing enum FeedItemTargetDevice
+2025-04-16T09:39:39.6262890Z Removing enum FeedItemTargetStatus
+2025-04-16T09:39:39.6264336Z Removing enum FeedItemTargetType
+2025-04-16T09:39:39.6265805Z Removing enum FeedItemValidationStatus
+2025-04-16T09:39:39.6267206Z Removing enum FeedLinkStatus
+2025-04-16T09:39:39.6269005Z Removing enum FeedMappingCriterionType
+2025-04-16T09:39:39.6270431Z Removing enum FeedMappingStatus
+2025-04-16T09:39:39.6271863Z Removing enum FeedOrigin
+2025-04-16T09:39:39.6273298Z Removing enum FeedStatus
+2025-04-16T09:39:39.6274726Z Removing enum FixedCpmGoal
+2025-04-16T09:39:39.6276215Z Removing enum FixedCpmTargetFrequencyTimeUnit
+2025-04-16T09:39:39.6277592Z Removing enum FlightPlaceholderField
+2025-04-16T09:39:39.6279221Z Removing enum FrequencyCapEventType
+2025-04-16T09:39:39.6280638Z Removing enum FrequencyCapLevel
+2025-04-16T09:39:39.6282109Z Removing enum FrequencyCapTimeUnit
+2025-04-16T09:39:39.6283547Z Removing enum GenderType
+2025-04-16T09:39:39.6284985Z Removing enum GeoTargetConstantStatus
+2025-04-16T09:39:39.6286412Z Removing enum GeoTargetingRestriction
+2025-04-16T09:39:39.6287737Z Removing enum GeoTargetingType
+2025-04-16T09:39:39.6289280Z Removing enum GoalConfigLevel
+2025-04-16T09:39:39.6290687Z Removing enum GoogleAdsFieldCategory
+2025-04-16T09:39:39.6292068Z Removing enum GoogleAdsFieldDataType
+2025-04-16T09:39:39.6293482Z Removing enum GoogleVoiceCallStatus
+2025-04-16T09:39:39.6294879Z Removing enum HotelAssetSuggestionStatus
+2025-04-16T09:39:39.6296267Z Removing enum HotelDateSelectionType
+2025-04-16T09:39:39.6297670Z Removing enum HotelPlaceholderField
+2025-04-16T09:39:39.6299337Z Removing enum HotelPriceBucket
+2025-04-16T09:39:39.6300787Z Removing enum HotelRateType
+2025-04-16T09:39:39.6302145Z Removing enum HotelReconciliationStatus
+2025-04-16T09:39:39.6303637Z Removing enum IdentityVerificationProgram
+2025-04-16T09:39:39.6305110Z Removing enum IdentityVerificationProgramStatus
+2025-04-16T09:39:39.6306456Z Removing enum ImagePlaceholderField
+2025-04-16T09:39:39.6307932Z Removing enum IncomeRangeType
+2025-04-16T09:39:39.6309460Z Removing enum InteractionEventType
+2025-04-16T09:39:39.6310877Z Removing enum InteractionType
+2025-04-16T09:39:39.6312315Z Removing enum InvoiceType
+2025-04-16T09:39:39.6313787Z Removing enum JobPlaceholderField
+2025-04-16T09:39:39.6315239Z Removing enum KeywordMatchType
+2025-04-16T09:39:39.6316738Z Removing enum KeywordPlanAggregateMetricType
+2025-04-16T09:39:39.6318320Z Removing enum KeywordPlanCompetitionLevel
+2025-04-16T09:39:39.6319767Z Removing enum KeywordPlanConceptGroupType
+2025-04-16T09:39:39.6321218Z Removing enum KeywordPlanForecastInterval
+2025-04-16T09:39:39.6322662Z Removing enum KeywordPlanKeywordAnnotation
+2025-04-16T09:39:39.6324063Z Removing enum KeywordPlanNetwork
+2025-04-16T09:39:39.6325497Z Removing enum LabelStatus
+2025-04-16T09:39:39.6326940Z Removing enum LeadFormCallToActionType
+2025-04-16T09:39:39.6328596Z Removing enum LeadFormDesiredIntent
+2025-04-16T09:39:39.6330012Z Removing enum LeadFormFieldUserInputType
+2025-04-16T09:39:39.6331540Z Removing enum LeadFormPostSubmitCallToActionType
+2025-04-16T09:39:39.6332787Z Removing enum LegacyAppInstallAdAppStore
+2025-04-16T09:39:39.6334338Z Removing enum LinkedAccountType
+2025-04-16T09:39:39.6335716Z Removing enum LinkedProductType
+2025-04-16T09:39:39.6337212Z Removing enum ListingGroupFilterCustomAttributeIndex
+2025-04-16T09:39:39.6339135Z Removing enum ListingGroupFilterProductCategoryLevel
+2025-04-16T09:39:39.6340241Z Removing enum ListingGroupFilterProductChannel
+2025-04-16T09:39:39.6341785Z Removing enum ListingGroupFilterProductCondition
+2025-04-16T09:39:39.6343069Z Removing enum ListingGroupFilterProductTypeLevel
+2025-04-16T09:39:39.6344557Z Removing enum ListingGroupFilterTypeEnum
+2025-04-16T09:39:39.6345026Z Removing enum ListingGroupType
+2025-04-16T09:39:39.6346609Z Removing enum ListingType
+2025-04-16T09:39:39.6348189Z Removing enum LocalPlaceholderField
+2025-04-16T09:39:39.6349863Z Removing enum LocalServicesBusinessRegistrationCheckRejectionReason
+2025-04-16T09:39:39.6351093Z Removing enum LocalServicesBusinessRegistrationType
+2025-04-16T09:39:39.6352615Z Removing enum LocalServicesConversationType
+2025-04-16T09:39:39.6353120Z Removing enum LocalServicesEmployeeStatus
+2025-04-16T09:39:39.6354720Z Removing enum LocalServicesEmployeeType
+2025-04-16T09:39:39.6356199Z Removing enum LocalServicesInsuranceRejectionReason
+2025-04-16T09:39:39.6357621Z Removing enum LocalServicesLeadCreditState
+2025-04-16T09:39:39.6358265Z Removing enum LocalServicesLeadStatus
+2025-04-16T09:39:39.6359296Z Removing enum LocalServicesLeadType
+2025-04-16T09:39:39.6360345Z Removing enum LocalServicesLicenseRejectionReason
+2025-04-16T09:39:39.6361835Z Removing enum LocalServicesParticipantType
+2025-04-16T09:39:39.6362794Z Removing enum LocalServicesVerificationArtifactStatus
+2025-04-16T09:39:39.6364310Z Removing enum LocalServicesVerificationArtifactType
+2025-04-16T09:39:39.6365583Z Removing enum LocalServicesVerificationStatus
+2025-04-16T09:39:39.6367188Z Removing enum LocationExtensionTargetingCriterionField
+2025-04-16T09:39:39.6368815Z Removing enum LocationGroupRadiusUnits
+2025-04-16T09:39:39.6370129Z Removing enum LocationOwnershipType
+2025-04-16T09:39:39.6371572Z Removing enum LocationPlaceholderField
+2025-04-16T09:39:39.6372952Z Removing enum LocationSourceType
+2025-04-16T09:39:39.6374360Z Removing enum LocationStringFilterType
+2025-04-16T09:39:39.6375749Z Removing enum LookalikeExpansionLevel
+2025-04-16T09:39:39.6377125Z Removing enum ManagerLinkStatus
+2025-04-16T09:39:39.6378904Z Removing enum MatchingFunctionContextType
+2025-04-16T09:39:39.6380331Z Removing enum MatchingFunctionOperator
+2025-04-16T09:39:39.6381728Z Removing enum MediaType
+2025-04-16T09:39:39.6383196Z Removing enum MessagePlaceholderField
+2025-04-16T09:39:39.6384465Z Removing enum MimeType
+2025-04-16T09:39:39.6385998Z Removing enum MinuteOfHour
+2025-04-16T09:39:39.6387583Z Removing enum MobileAppVendor
+2025-04-16T09:39:39.6389094Z Removing enum MobileDeviceType
+2025-04-16T09:39:39.6390533Z Removing enum MonthOfYear
+2025-04-16T09:39:39.6391983Z Removing enum NegativeGeoTargetType
+2025-04-16T09:39:39.6393473Z Removing enum OfflineConversionDiagnosticStatusEnum
+2025-04-16T09:39:39.6394023Z Removing enum OfflineEventUploadClientEnum
+2025-04-16T09:39:39.6394602Z Removing enum OfflineUserDataJobFailureReason
+2025-04-16T09:39:39.6396228Z Removing enum OfflineUserDataJobMatchRateRange
+2025-04-16T09:39:39.6397675Z Removing enum OfflineUserDataJobStatus
+2025-04-16T09:39:39.6399263Z Removing enum OfflineUserDataJobType
+2025-04-16T09:39:39.6400757Z Removing enum OperatingSystemVersionOperatorType
+2025-04-16T09:39:39.6401982Z Removing enum OptimizationGoalType
+2025-04-16T09:39:39.6403510Z Removing enum ParentalStatusType
+2025-04-16T09:39:39.6404938Z Removing enum PaymentMode
+2025-04-16T09:39:39.6406449Z Removing enum PerformanceMaxUpgradeStatus
+2025-04-16T09:39:39.6407733Z Removing enum PlaceholderType
+2025-04-16T09:39:39.6409303Z Removing enum PlacementType
+2025-04-16T09:39:39.6410710Z Removing enum PolicyApprovalStatus
+2025-04-16T09:39:39.6412091Z Removing enum PolicyReviewStatus
+2025-04-16T09:39:39.6413487Z Removing enum PolicyTopicEntryType
+2025-04-16T09:39:39.6414997Z Removing enum PolicyTopicEvidenceDestinationMismatchUrlType
+2025-04-16T09:39:39.6416265Z Removing enum PolicyTopicEvidenceDestinationNotWorkingDevice
+2025-04-16T09:39:39.6417954Z Removing enum PolicyTopicEvidenceDestinationNotWorkingDnsErrorType
+2025-04-16T09:39:39.6419179Z Removing enum PositiveGeoTargetType
+2025-04-16T09:39:39.6420707Z Removing enum PriceExtensionPriceQualifier
+2025-04-16T09:39:39.6422138Z Removing enum PriceExtensionPriceUnit
+2025-04-16T09:39:39.6423554Z Removing enum PriceExtensionType
+2025-04-16T09:39:39.6424977Z Removing enum PricePlaceholderField
+2025-04-16T09:39:39.6426447Z Removing enum ProductAvailability
+2025-04-16T09:39:39.6427800Z Removing enum ProductCategoryLevel
+2025-04-16T09:39:39.6429508Z Removing enum ProductCategoryState
+2025-04-16T09:39:39.6430919Z Removing enum ProductChannel
+2025-04-16T09:39:39.6432372Z Removing enum ProductChannelExclusivity
+2025-04-16T09:39:39.6433843Z Removing enum ProductCondition
+2025-04-16T09:39:39.6435321Z Removing enum ProductCustomAttributeIndex
+2025-04-16T09:39:39.6436724Z Removing enum ProductIssueSeverity
+2025-04-16T09:39:39.6438831Z Removing enum ProductStatus
+2025-04-16T09:39:39.6440315Z Removing enum ProductTypeLevel
+2025-04-16T09:39:39.6441833Z Removing enum PromotionExtensionDiscountModifier
+2025-04-16T09:39:39.6443080Z Removing enum PromotionExtensionOccasion
+2025-04-16T09:39:39.6444618Z Removing enum PromotionPlaceholderField
+2025-04-16T09:39:39.6446073Z Removing enum ProximityRadiusUnits
+2025-04-16T09:39:39.6447625Z Removing enum QualityScoreBucket
+2025-04-16T09:39:39.6449116Z Removing enum ReachPlanAgeRange
+2025-04-16T09:39:39.6450562Z Removing enum ReachPlanNetwork
+2025-04-16T09:39:39.6451983Z Removing enum ReachPlanSurface
+2025-04-16T09:39:39.6453457Z Removing enum RealEstatePlaceholderField
+2025-04-16T09:39:39.6454944Z Removing enum RecommendationSubscriptionStatus
+2025-04-16T09:39:39.6456273Z Removing enum RecommendationType
+2025-04-16T09:39:39.6458035Z Removing enum ResourceChangeOperation
+2025-04-16T09:39:39.6459409Z Removing enum ResourceLimitType
+2025-04-16T09:39:39.6460953Z Removing enum ResponseContentType
+2025-04-16T09:39:39.6462406Z Removing enum SearchEngineResultsPageType
+2025-04-16T09:39:39.6463799Z Removing enum SearchTermMatchType
+2025-04-16T09:39:39.6465255Z Removing enum SearchTermTargetingStatus
+2025-04-16T09:39:39.6466667Z Removing enum SeasonalityEventScope
+2025-04-16T09:39:39.6470683Z Removing enum SeasonalityEventStatus
+2025-04-16T09:39:39.6472157Z Removing enum ServedAssetFieldType
+2025-04-16T09:39:39.6473577Z Removing enum SharedSetStatus
+2025-04-16T09:39:39.6474995Z Removing enum SharedSetType
+2025-04-16T09:39:39.6476456Z Removing enum ShoppingAddProductsToCampaignRecommendationEnum
+2025-04-16T09:39:39.6477087Z Removing enum SimulationModificationMethod
+2025-04-16T09:39:39.6478706Z Removing enum SimulationType
+2025-04-16T09:39:39.6480149Z Removing enum SitelinkPlaceholderField
+2025-04-16T09:39:39.6481573Z Removing enum SkAdNetworkAdEventType
+2025-04-16T09:39:39.6483020Z Removing enum SkAdNetworkAttributionCredit
+2025-04-16T09:39:39.6484472Z Removing enum SkAdNetworkCoarseConversionValue
+2025-04-16T09:39:39.6485809Z Removing enum SkAdNetworkSourceType
+2025-04-16T09:39:39.6487280Z Removing enum SkAdNetworkUserType
+2025-04-16T09:39:39.6488882Z Removing enum Slot
+2025-04-16T09:39:39.6490347Z Removing enum SmartCampaignNotEligibleReason
+2025-04-16T09:39:39.6491745Z Removing enum SmartCampaignStatus
+2025-04-16T09:39:39.6493157Z Removing enum SpendingLimitType
+2025-04-16T09:39:39.6494636Z Removing enum StructuredSnippetPlaceholderField
+2025-04-16T09:39:39.6495942Z Removing enum SummaryRowSetting
+2025-04-16T09:39:39.6497581Z Removing enum SystemManagedEntitySource
+2025-04-16T09:39:39.6498198Z Removing enum TargetCpaOptInRecommendationGoal
+2025-04-16T09:39:39.6499716Z Removing enum TargetFrequencyTimeUnit
+2025-04-16T09:39:39.6501154Z Removing enum TargetImpressionShareLocation
+2025-04-16T09:39:39.6502549Z Removing enum TargetingDimension
+2025-04-16T09:39:39.6503958Z Removing enum TimeType
+2025-04-16T09:39:39.6505405Z Removing enum TravelPlaceholderField
+2025-04-16T09:39:39.6506877Z Removing enum UserIdentifierSource
+2025-04-16T09:39:39.6508682Z Removing enum UserInterestTaxonomyType
+2025-04-16T09:39:39.6510312Z Removing enum UserListAccessStatus
+2025-04-16T09:39:39.6511989Z Removing enum UserListClosingReason
+2025-04-16T09:39:39.6513428Z Removing enum UserListCrmDataSourceType
+2025-04-16T09:39:39.6514940Z Removing enum UserListCustomerTypeCategory
+2025-04-16T09:39:39.6516502Z Removing enum UserListDateRuleItemOperator
+2025-04-16T09:39:39.6518225Z Removing enum UserListFlexibleRuleOperator
+2025-04-16T09:39:39.6519793Z Removing enum UserListLogicalRuleOperator
+2025-04-16T09:39:39.6521326Z Removing enum UserListMembershipStatus
+2025-04-16T09:39:39.6522884Z Removing enum UserListNumberRuleItemOperator
+2025-04-16T09:39:39.6524396Z Removing enum UserListPrepopulationStatus
+2025-04-16T09:39:39.6525901Z Removing enum UserListRuleType
+2025-04-16T09:39:39.6527639Z Removing enum UserListSizeRange
+2025-04-16T09:39:39.6529271Z Removing enum UserListStringRuleItemOperator
+2025-04-16T09:39:39.6530725Z Removing enum UserListType
+2025-04-16T09:39:39.6532228Z Removing enum ValueRuleDeviceType
+2025-04-16T09:39:39.6533792Z Removing enum ValueRuleGeoLocationMatchType
+2025-04-16T09:39:39.6535284Z Removing enum ValueRuleOperation
+2025-04-16T09:39:39.6536903Z Removing enum ValueRuleSetAttachmentType
+2025-04-16T09:39:39.6538665Z Removing enum ValueRuleSetDimension
+2025-04-16T09:39:39.6540278Z Removing enum VanityPharmaDisplayUrlMode
+2025-04-16T09:39:39.6541766Z Removing enum VanityPharmaText
+2025-04-16T09:39:39.6543306Z Removing enum VideoThumbnail
+2025-04-16T09:39:39.6544855Z Removing enum WebpageConditionOperand
+2025-04-16T09:39:39.6546395Z Removing enum WebpageConditionOperator
+2025-04-16T09:39:39.6549426Z > composer run-script remove-google-ads-api-version-support -- 16 17
+2025-04-16T09:39:40.0513858Z > Google\Ads\GoogleAds\Util\ApiVersionSupport::remove
+2025-04-16T09:39:40.0514519Z Removing support for the version 16 of Google Ads API...
+2025-04-16T09:39:40.3250177Z Done
+2025-04-16T09:39:40.3250651Z Removing support for the version 17 of Google Ads API...
+2025-04-16T09:39:40.6032469Z Done
+2025-04-16T09:39:40.6137000Z > php ./bin/prefix-vendor-namespace.php
+2025-04-16T09:39:40.9027728Z > bash ./bin/cleanup-vendor-files.sh
+2025-04-16T09:39:40.9085647Z Removing unused vendor files to reduce space
+2025-04-16T09:39:40.9111621Z Removing vendor files that prints php information
+2025-04-16T09:39:40.9125894Z > composer dump-autoload
+2025-04-16T09:39:41.0468946Z Generating autoload files
+2025-04-16T09:39:41.1727038Z Generated autoload files
+2025-04-16T09:39:41.2025622Z ##[group]Run woocommerce/grow/prepare-mysql@actions-v2
+2025-04-16T09:39:41.2025946Z env:
+2025-04-16T09:39:41.2026146Z   WP_CORE_DIR: /tmp/wordpress/src
+2025-04-16T09:39:41.2026431Z   WP_TESTS_DIR: /tmp/wordpress/tests/phpunit
+2025-04-16T09:39:41.2026710Z   generate_coverage: false
+2025-04-16T09:39:41.2026941Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-16T09:39:41.2027180Z   COMPOSER_NO_INTERACTION: 1
+2025-04-16T09:39:41.2027644Z   COMPOSER_NO_AUDIT: 1
+2025-04-16T09:39:41.2027857Z ##[endgroup]
+2025-04-16T09:39:41.2043515Z ##[group]Run echo "[mysqld]" | sudo tee -a /etc/mysql/my.cnf
+2025-04-16T09:39:41.2044006Z [36;1mecho "[mysqld]" | sudo tee -a /etc/mysql/my.cnf[0m
+2025-04-16T09:39:41.2044574Z [36;1mecho "default_authentication_plugin=mysql_native_password" | sudo tee -a /etc/mysql/my.cnf[0m
+2025-04-16T09:39:41.2045192Z [36;1msudo systemctl start mysql.service[0m
+2025-04-16T09:39:41.2045873Z [36;1mmysql -u root -proot -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';"[0m
+2025-04-16T09:39:41.2111068Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-16T09:39:41.2111394Z env:
+2025-04-16T09:39:41.2111589Z   WP_CORE_DIR: /tmp/wordpress/src
+2025-04-16T09:39:41.2111868Z   WP_TESTS_DIR: /tmp/wordpress/tests/phpunit
+2025-04-16T09:39:41.2112146Z   generate_coverage: false
+2025-04-16T09:39:41.2112382Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-16T09:39:41.2112629Z   COMPOSER_NO_INTERACTION: 1
+2025-04-16T09:39:41.2112858Z   COMPOSER_NO_AUDIT: 1
+2025-04-16T09:39:41.2113062Z ##[endgroup]
+2025-04-16T09:39:41.2243629Z [mysqld]
+2025-04-16T09:39:41.2319917Z default_authentication_plugin=mysql_native_password
+2025-04-16T09:39:45.5284982Z mysql: [Warning] Using a password on the command line interface can be insecure.
+2025-04-16T09:39:45.5716311Z ##[group]Run mysql --version
+2025-04-16T09:39:45.5716598Z [36;1mmysql --version[0m
+2025-04-16T09:39:45.5763345Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-16T09:39:45.5763695Z env:
+2025-04-16T09:39:45.5763910Z   WP_CORE_DIR: /tmp/wordpress/src
+2025-04-16T09:39:45.5764200Z   WP_TESTS_DIR: /tmp/wordpress/tests/phpunit
+2025-04-16T09:39:45.5764631Z   generate_coverage: false
+2025-04-16T09:39:45.5764878Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-16T09:39:45.5765120Z   COMPOSER_NO_INTERACTION: 1
+2025-04-16T09:39:45.5765346Z   COMPOSER_NO_AUDIT: 1
+2025-04-16T09:39:45.5765556Z ##[endgroup]
+2025-04-16T09:39:45.5861180Z mysql  Ver 8.0.41-0ubuntu0.24.04.1 for Linux on x86_64 ((Ubuntu))
+2025-04-16T09:39:45.5894372Z ##[group]Run sudo apt-get -y install subversion
+2025-04-16T09:39:45.5894743Z [36;1msudo apt-get -y install subversion[0m
+2025-04-16T09:39:45.5936243Z shell: /usr/bin/bash -e {0}
+2025-04-16T09:39:45.5936493Z env:
+2025-04-16T09:39:45.5936694Z   WP_CORE_DIR: /tmp/wordpress/src
+2025-04-16T09:39:45.5936983Z   WP_TESTS_DIR: /tmp/wordpress/tests/phpunit
+2025-04-16T09:39:45.5937271Z   generate_coverage: false
+2025-04-16T09:39:45.5937725Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-16T09:39:45.5937985Z   COMPOSER_NO_INTERACTION: 1
+2025-04-16T09:39:45.5938281Z   COMPOSER_NO_AUDIT: 1
+2025-04-16T09:39:45.5938528Z ##[endgroup]
+2025-04-16T09:39:45.6221527Z Reading package lists...
+2025-04-16T09:39:45.7618135Z Building dependency tree...
+2025-04-16T09:39:45.7622281Z Reading state information...
+2025-04-16T09:39:45.8943914Z The following additional packages will be installed:
+2025-04-16T09:39:45.8946249Z   libserf-1-1 libsvn1 libutf8proc3
+2025-04-16T09:39:45.8951805Z Suggested packages:
+2025-04-16T09:39:45.8952549Z   db5.3-util libapache2-mod-svn subversion-tools
+2025-04-16T09:39:45.9130713Z The following NEW packages will be installed:
+2025-04-16T09:39:45.9132823Z   libserf-1-1 libsvn1 libutf8proc3 subversion
+2025-04-16T09:39:45.9335708Z 0 upgraded, 4 newly installed, 0 to remove and 138 not upgraded.
+2025-04-16T09:39:45.9336363Z Need to get 2372 kB of archives.
+2025-04-16T09:39:45.9336969Z After this operation, 9705 kB of additional disk space will be used.
+2025-04-16T09:39:45.9337925Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [142 B]
+2025-04-16T09:39:45.9849846Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 libserf-1-1 amd64 1.3.10-1ubuntu0.24.04.1 [48.2 kB]
+2025-04-16T09:39:46.0216974Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libutf8proc3 amd64 2.9.0-1build1 [70.6 kB]
+2025-04-16T09:39:46.0594518Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libsvn1 amd64 1.14.3-1build4 [1345 kB]
+2025-04-16T09:39:46.1606857Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 subversion amd64 1.14.3-1build4 [908 kB]
+2025-04-16T09:39:46.4623482Z Fetched 2372 kB in 0s (8259 kB/s)
+2025-04-16T09:39:46.4854519Z Selecting previously unselected package libserf-1-1:amd64.
+2025-04-16T09:39:46.4995022Z (Reading database ... 
+2025-04-16T09:39:46.4995946Z dpkg: warning: files list file for package 'libltdl-dev:amd64' missing; assuming package has no files currently installed
+2025-04-16T09:39:46.4996880Z dpkg: warning: files list file for package 'liblzma-dev:amd64' missing; assuming package has no files currently installed
+2025-04-16T09:39:46.5008047Z (Reading database ... 5%
+2025-04-16T09:39:46.5010482Z (Reading database ... 10%
+2025-04-16T09:39:46.5012581Z (Reading database ... 15%
+2025-04-16T09:39:46.5014641Z (Reading database ... 20%
+2025-04-16T09:39:46.5016755Z (Reading database ... 25%
+2025-04-16T09:39:46.5019932Z (Reading database ... 30%
+2025-04-16T09:39:46.5022238Z (Reading database ... 35%
+2025-04-16T09:39:46.5024102Z (Reading database ... 40%
+2025-04-16T09:39:46.5025269Z (Reading database ... 45%
+2025-04-16T09:39:46.5027777Z (Reading database ... 50%
+2025-04-16T09:39:46.5028860Z (Reading database ... 55%
+2025-04-16T09:39:46.5260196Z (Reading database ... 60%
+2025-04-16T09:39:46.5592369Z (Reading database ... 65%
+2025-04-16T09:39:46.5860822Z (Reading database ... 70%
+2025-04-16T09:39:46.6146303Z (Reading database ... 75%
+2025-04-16T09:39:46.6515756Z (Reading database ... 80%
+2025-04-16T09:39:46.7163225Z (Reading database ... 85%
+2025-04-16T09:39:46.7640161Z (Reading database ... 90%
+2025-04-16T09:39:46.8343552Z (Reading database ... 95%
+2025-04-16T09:39:46.8344071Z (Reading database ... 100%
+2025-04-16T09:39:46.8344736Z (Reading database ... 225420 files and directories currently installed.)
+2025-04-16T09:39:46.8389762Z Preparing to unpack .../libserf-1-1_1.3.10-1ubuntu0.24.04.1_amd64.deb ...
+2025-04-16T09:39:46.8446448Z Unpacking libserf-1-1:amd64 (1.3.10-1ubuntu0.24.04.1) ...
+2025-04-16T09:39:46.8681394Z Selecting previously unselected package libutf8proc3:amd64.
+2025-04-16T09:39:46.8825523Z Preparing to unpack .../libutf8proc3_2.9.0-1build1_amd64.deb ...
+2025-04-16T09:39:46.8834898Z Unpacking libutf8proc3:amd64 (2.9.0-1build1) ...
+2025-04-16T09:39:46.9064130Z Selecting previously unselected package libsvn1:amd64.
+2025-04-16T09:39:46.9210760Z Preparing to unpack .../libsvn1_1.14.3-1build4_amd64.deb ...
+2025-04-16T09:39:46.9222568Z Unpacking libsvn1:amd64 (1.14.3-1build4) ...
+2025-04-16T09:39:46.9630603Z Selecting previously unselected package subversion.
+2025-04-16T09:39:46.9776314Z Preparing to unpack .../subversion_1.14.3-1build4_amd64.deb ...
+2025-04-16T09:39:46.9848793Z Unpacking subversion (1.14.3-1build4) ...
+2025-04-16T09:39:47.0688428Z Setting up libutf8proc3:amd64 (2.9.0-1build1) ...
+2025-04-16T09:39:47.0713361Z Setting up libserf-1-1:amd64 (1.3.10-1ubuntu0.24.04.1) ...
+2025-04-16T09:39:47.0739653Z Setting up libsvn1:amd64 (1.14.3-1build4) ...
+2025-04-16T09:39:47.0763824Z Setting up subversion (1.14.3-1build4) ...
+2025-04-16T09:39:47.0852081Z Processing triggers for libc-bin (2.39-0ubuntu8.4) ...
+2025-04-16T09:39:47.9397619Z 
+2025-04-16T09:39:47.9398152Z Running kernel seems to be up-to-date.
+2025-04-16T09:39:47.9398545Z 
+2025-04-16T09:39:47.9398691Z Restarting services...
+2025-04-16T09:39:48.0066814Z  /etc/needrestart/restart.d/systemd-manager
+2025-04-16T09:39:48.3372855Z  systemctl restart cron.service multipathd.service php8.3-fpm.service polkit.service systemd-journald.service systemd-networkd.service systemd-resolved.service systemd-udevd.service udisks2.service
+2025-04-16T09:39:48.5871038Z 
+2025-04-16T09:39:48.5871789Z Service restarts being deferred:
+2025-04-16T09:39:48.5872342Z  systemctl restart ModemManager.service
+2025-04-16T09:39:48.5872844Z  /etc/needrestart/restart.d/dbus.service
+2025-04-16T09:39:48.5873365Z  systemctl restart networkd-dispatcher.service
+2025-04-16T09:39:48.5873882Z  systemctl restart systemd-logind.service
+2025-04-16T09:39:48.5874195Z 
+2025-04-16T09:39:48.5874362Z No containers need to be restarted.
+2025-04-16T09:39:48.5874683Z 
+2025-04-16T09:39:48.5874858Z User sessions running outdated binaries:
+2025-04-16T09:39:48.5875326Z  runner @ user manager service: systemd[1083]
+2025-04-16T09:39:48.5940217Z 
+2025-04-16T09:39:48.5940942Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2025-04-16T09:39:49.3923150Z ##[group]Run ./bin/install-wp-tests.sh wordpress_test root root localhost 6.6.2 9.6.2
+2025-04-16T09:39:49.3923738Z [36;1m./bin/install-wp-tests.sh wordpress_test root root localhost 6.6.2 9.6.2[0m
+2025-04-16T09:39:49.3970125Z shell: /usr/bin/bash -e {0}
+2025-04-16T09:39:49.3970370Z env:
+2025-04-16T09:39:49.3970569Z   WP_CORE_DIR: /tmp/wordpress/src
+2025-04-16T09:39:49.3970850Z   WP_TESTS_DIR: /tmp/wordpress/tests/phpunit
+2025-04-16T09:39:49.3971129Z   generate_coverage: false
+2025-04-16T09:39:49.3971364Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-16T09:39:49.3971606Z   COMPOSER_NO_INTERACTION: 1
+2025-04-16T09:39:49.3971834Z   COMPOSER_NO_AUDIT: 1
+2025-04-16T09:39:49.3972043Z ##[endgroup]
+2025-04-16T09:39:49.4080560Z + install_wp
+2025-04-16T09:39:49.4080948Z + '[' -d /tmp/wordpress/src ']'
+2025-04-16T09:39:49.4081382Z + mkdir -p /tmp/wordpress/src
+2025-04-16T09:39:49.4094500Z + [[ 6.6.2 == \n\i\g\h\t\l\y ]]
+2025-04-16T09:39:49.4094905Z + [[ 6.6.2 == \t\r\u\n\k ]]
+2025-04-16T09:39:49.4095356Z + '[' 6.6.2 == latest ']'
+2025-04-16T09:39:49.4095747Z + [[ 6.6.2 =~ [0-9]+\.[0-9]+ ]]
+2025-04-16T09:39:49.4096438Z + download https://api.wordpress.org/core/version-check/1.7/ /tmp/wp-latest.json
+2025-04-16T09:39:49.4098198Z ++ which curl
+2025-04-16T09:39:49.4111152Z + '[' /usr/bin/curl ']'
+2025-04-16T09:39:49.4111675Z + curl -s https://api.wordpress.org/core/version-check/1.7/
+2025-04-16T09:39:49.4527085Z + [[ 6.6.2 =~ [0-9]+\.[0-9]+\.[0] ]]
+2025-04-16T09:39:49.4532377Z ++ echo 6.6.2
+2025-04-16T09:39:49.4534365Z ++ sed 's/\./\\\\./g'
+2025-04-16T09:39:49.4548170Z + local 'VERSION_ESCAPED=6\\.6\\.2'
+2025-04-16T09:39:49.4553010Z ++ grep -o '"version":"6\\.6\\.2[^"]*' /tmp/wp-latest.json
+2025-04-16T09:39:49.4554287Z ++ sed 's/"version":"//'
+2025-04-16T09:39:49.4556010Z ++ head -1
+2025-04-16T09:39:49.4575414Z + LATEST_VERSION=
+2025-04-16T09:39:49.4575822Z + [[ -z '' ]]
+2025-04-16T09:39:49.4576180Z + local ARCHIVE_NAME=wordpress-6.6.2
+2025-04-16T09:39:49.4576819Z + download https://wordpress.org/wordpress-6.6.2.tar.gz /tmp/wordpress.tar.gz
+2025-04-16T09:39:49.4578595Z ++ which curl
+2025-04-16T09:39:49.4587997Z + '[' /usr/bin/curl ']'
+2025-04-16T09:39:49.4588492Z + curl -s https://wordpress.org/wordpress-6.6.2.tar.gz
+2025-04-16T09:39:49.5860981Z + tar --strip-components=1 -zxmf /tmp/wordpress.tar.gz -C /tmp/wordpress/src
+2025-04-16T09:39:49.9956167Z + download https://raw.github.com/markoheijnen/wp-mysqli/master/db.php /tmp/wordpress/src/wp-content/db.php
+2025-04-16T09:39:49.9959078Z ++ which curl
+2025-04-16T09:39:49.9970164Z + '[' /usr/bin/curl ']'
+2025-04-16T09:39:49.9970880Z + curl -s https://raw.github.com/markoheijnen/wp-mysqli/master/db.php
+2025-04-16T09:39:50.1910024Z + install_wc
+2025-04-16T09:39:50.1914742Z ++ echo 9.6.2
+2025-04-16T09:39:50.1915804Z ++ sed -e 's/\//-/'
+2025-04-16T09:39:50.1932005Z + WC_VERSION_FILE=/tmp/wordpress/src/wp-content/plugins/woocommerce/version-9.6.2
+2025-04-16T09:39:50.1932914Z + '[' '!' -f /tmp/wordpress/src/wp-content/plugins/woocommerce/version-9.6.2 ']'
+2025-04-16T09:39:50.1933656Z + rm -rf /tmp/wordpress/src/wp-content/plugins/woocommerce
+2025-04-16T09:39:50.1942741Z + echo 'Installing WooCommerce (9.6.2).'
+2025-04-16T09:39:50.1943235Z Installing WooCommerce (9.6.2).
+2025-04-16T09:39:50.1943990Z + WC_TMPDIR=/tmp/woocommerce-9.6.2
+2025-04-16T09:39:50.1944277Z + rm -rf /tmp/woocommerce-9.6.2
+2025-04-16T09:39:50.1954352Z + git clone --quiet --depth=1 --branch=9.6.2 https://github.com/woocommerce/woocommerce.git /tmp/woocommerce-9.6.2
+2025-04-16T09:39:52.0593135Z Note: switching to '10aa8d876b76e5a70113461ce924e7282e2bfc0f'.
+2025-04-16T09:39:52.0593535Z 
+2025-04-16T09:39:52.0593735Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-16T09:39:52.0594221Z changes and commit them, and you can discard any commits you make in this
+2025-04-16T09:39:52.0594665Z state without impacting any branches by switching back to a branch.
+2025-04-16T09:39:52.0594915Z 
+2025-04-16T09:39:52.0595529Z If you want to create a new branch to retain commits you create, you may
+2025-04-16T09:39:52.0596194Z do so (now or later) by using -c with the switch command. Example:
+2025-04-16T09:39:52.0596554Z 
+2025-04-16T09:39:52.0596722Z   git switch -c <new-branch-name>
+2025-04-16T09:39:52.0597160Z 
+2025-04-16T09:39:52.0597330Z Or undo this operation with:
+2025-04-16T09:39:52.0597780Z 
+2025-04-16T09:39:52.0597915Z   git switch -
+2025-04-16T09:39:52.0598096Z 
+2025-04-16T09:39:52.0598416Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-16T09:39:52.0598851Z 
+2025-04-16T09:39:52.7992308Z + ln -s /tmp/woocommerce-9.6.2/plugins/woocommerce /tmp/wordpress/src/wp-content/plugins/woocommerce
+2025-04-16T09:39:52.8005458Z + touch /tmp/wordpress/src/wp-content/plugins/woocommerce/version-9.6.2
+2025-04-16T09:39:52.8016836Z + cd /tmp/wordpress/src/wp-content/plugins/woocommerce
+2025-04-16T09:39:52.8017741Z + composer install --ignore-platform-reqs --no-interaction --no-dev
+2025-04-16T09:39:52.9113557Z Installing dependencies from lock file
+2025-04-16T09:39:52.9121339Z Verifying lock file contents can be installed on current platform.
+2025-04-16T09:39:52.9166092Z Warning: The lock file is not up to date with the latest changes in composer.json. You may be getting outdated dependencies. It is recommended that you run `composer update` or `composer update <package name>`.
+2025-04-16T09:39:52.9228101Z Package operations: 21 installs, 0 updates, 0 removals
+2025-04-16T09:39:52.9302327Z   - Installing automattic/jetpack-autoloader (v5.0.0): Extracting archive
+2025-04-16T09:39:53.0248015Z   - Installing composer/installers (v1.12.0): Extracting archive
+2025-04-16T09:39:53.1112948Z   - Installing automattic/jetpack-config (v3.0.0): Extracting archive
+2025-04-16T09:39:53.1134258Z   - Installing automattic/jetpack-constants (v3.0.1): Extracting archive
+2025-04-16T09:39:53.1158043Z   - Installing automattic/jetpack-status (v5.0.1): Extracting archive
+2025-04-16T09:39:53.1185317Z   - Installing automattic/jetpack-roles (v3.0.1): Extracting archive
+2025-04-16T09:39:53.1213394Z   - Installing automattic/jetpack-redirect (v3.0.1): Extracting archive
+2025-04-16T09:39:53.1241746Z   - Installing automattic/jetpack-assets (v4.0.1): Extracting archive
+2025-04-16T09:39:53.1268871Z   - Installing automattic/jetpack-admin-ui (v0.5.1): Extracting archive
+2025-04-16T09:39:53.1318260Z   - Installing automattic/jetpack-a8c-mc-stats (v3.0.0): Extracting archive
+2025-04-16T09:39:53.1328893Z   - Installing automattic/jetpack-connection (v6.2.0): Extracting archive
+2025-04-16T09:39:53.1363009Z   - Installing maxmind-db/reader (v1.11.1): Extracting archive
+2025-04-16T09:39:53.1392017Z   - Installing opis/string (2.0.1): Extracting archive
+2025-04-16T09:39:53.1396569Z   - Installing opis/uri (1.1.0): Extracting archive
+2025-04-16T09:39:53.1399921Z   - Installing symfony/polyfill-php80 (v1.30.0): Extracting archive
+2025-04-16T09:39:53.1403708Z   - Installing symfony/css-selector (v5.4.40): Extracting archive
+2025-04-16T09:39:53.1406851Z   - Installing sabberworm/php-css-parser (v8.6.0): Extracting archive
+2025-04-16T09:39:53.1429731Z   - Installing pelago/emogrifier (v6.0.0): Extracting archive
+2025-04-16T09:39:53.1439004Z   - Installing woocommerce/action-scheduler (3.9.0): Extracting archive
+2025-04-16T09:39:53.1440013Z   - Installing opis/json-schema (2.3.0): Extracting archive
+2025-04-16T09:39:53.1554543Z   - Installing woocommerce/blueprint (dev-add/blueprint-package-1): Mirroring from ../../packages/php/blueprint
+2025-04-16T09:39:53.5785118Z Generating autoload files
+2025-04-16T09:39:53.7580417Z Generating jetpack autoloader (/tmp/woocommerce-9.6.2/plugins/woocommerce/vendor/jetpack-autoloader/)
+2025-04-16T09:39:53.7583948Z   Generated: ../autoload_packages.php
+2025-04-16T09:39:53.7584515Z   Generated: class-autoloader-handler.php
+2025-04-16T09:39:53.7585081Z   Generated: class-autoloader-locator.php
+2025-04-16T09:39:53.7586055Z   Generated: class-autoloader.php
+2025-04-16T09:39:53.7586990Z   Generated: class-container.php
+2025-04-16T09:39:53.7588070Z   Generated: class-hook-manager.php
+2025-04-16T09:39:53.7589321Z   Generated: class-latest-autoloader-guard.php
+2025-04-16T09:39:53.7589975Z   Generated: class-manifest-reader.php
+2025-04-16T09:39:53.7590692Z   Generated: class-path-processor.php
+2025-04-16T09:39:53.7591437Z   Generated: class-php-autoloader.php
+2025-04-16T09:39:53.7592270Z   Generated: class-plugin-locator.php
+2025-04-16T09:39:53.7593285Z   Generated: class-plugins-handler.php
+2025-04-16T09:39:53.7594207Z   Generated: class-shutdown-handler.php
+2025-04-16T09:39:53.7595145Z   Generated: class-version-loader.php
+2025-04-16T09:39:53.7595999Z   Generated: class-version-selector.php
+2025-04-16T09:39:53.7596862Z Generating jetpack autoloader manifests (/tmp/woocommerce-9.6.2/plugins/woocommerce/vendor/composer)
+2025-04-16T09:39:53.7600414Z   Generated: jetpack_autoload_classmap.php
+2025-04-16T09:39:53.7600981Z   Generated: jetpack_autoload_psr4.php
+2025-04-16T09:39:53.7601723Z   Generated: jetpack_autoload_filemap.php
+2025-04-16T09:39:53.7602560Z You are generating an unoptimized autoloader. If this is a production build, consider using the -o option.
+2025-04-16T09:39:53.7603665Z 3 packages you are using are looking for funding.
+2025-04-16T09:39:53.7604238Z Use the `composer fund` command to find out more!
+2025-04-16T09:39:53.8416031Z > sh ./bin/post-install.sh
+2025-04-16T09:39:54.1898397Z > echo 'bin not installed' 'all' 'install'
+2025-04-16T09:39:54.1953620Z bin not installed all install
+2025-04-16T09:39:54.4130876Z + GENERATE_FEATURE_CONFIG=bin/generate-feature-config.php
+2025-04-16T09:39:54.4131542Z + '[' -f bin/generate-feature-config.php ']'
+2025-04-16T09:39:54.4132123Z + php bin/generate-feature-config.php
+2025-04-16T09:39:54.4524518Z + cd -
+2025-04-16T09:39:54.4525113Z /home/runner/work/google-listings-and-ads/google-listings-and-ads
+2025-04-16T09:39:54.4525721Z + install_test_suite
+2025-04-16T09:39:54.4529057Z ++ uname -s
+2025-04-16T09:39:54.4540651Z + [[ Linux == \D\a\r\w\i\n ]]
+2025-04-16T09:39:54.4541090Z + local ioption=-i
+2025-04-16T09:39:54.4541512Z + '[' '!' -d /tmp/wordpress/tests/phpunit ']'
+2025-04-16T09:39:54.4541993Z + mkdir -p /tmp/wordpress/tests/phpunit
+2025-04-16T09:39:54.4555649Z + rm -rf /tmp/wordpress/tests/phpunit/includes /tmp/wordpress/tests/phpunit/data
+2025-04-16T09:39:54.4566879Z + svn export --quiet --ignore-externals https://develop.svn.wordpress.org/tags/6.6.2/tests/phpunit/includes/ /tmp/wordpress/tests/phpunit/includes
+2025-04-16T09:39:55.4572362Z + svn export --quiet --ignore-externals https://develop.svn.wordpress.org/tags/6.6.2/tests/phpunit/data/ /tmp/wordpress/tests/phpunit/data
+2025-04-16T09:39:55.8325660Z + '[' '!' -f wp-tests-config.php ']'
+2025-04-16T09:39:55.8326479Z + download https://develop.svn.wordpress.org/tags/6.6.2/wp-tests-config-sample.php /tmp/wordpress/tests/phpunit/wp-tests-config.php
+2025-04-16T09:39:55.8329158Z ++ which curl
+2025-04-16T09:39:55.8340164Z + '[' /usr/bin/curl ']'
+2025-04-16T09:39:55.8340645Z + curl -s https://develop.svn.wordpress.org/tags/6.6.2/wp-tests-config-sample.php
+2025-04-16T09:39:55.8735300Z ++ echo /tmp/wordpress/src
+2025-04-16T09:39:55.8736500Z ++ sed 's:/\+$::'
+2025-04-16T09:39:55.8752081Z + WP_CORE_DIR=/tmp/wordpress/src
+2025-04-16T09:39:55.8752844Z + sed -i 's:dirname( __FILE__ ) . '\''/src/'\'':'\''/tmp/wordpress/src/'\'':' /tmp/wordpress/tests/phpunit/wp-tests-config.php
+2025-04-16T09:39:55.8769237Z + sed -i 's:__DIR__ . '\''/src/'\'':'\''/tmp/wordpress/src/'\'':' /tmp/wordpress/tests/phpunit/wp-tests-config.php
+2025-04-16T09:39:55.8783811Z + sed -i s/youremptytestdbnamehere/wordpress_test/ /tmp/wordpress/tests/phpunit/wp-tests-config.php
+2025-04-16T09:39:55.8798939Z + sed -i s/yourusernamehere/root/ /tmp/wordpress/tests/phpunit/wp-tests-config.php
+2025-04-16T09:39:55.8813685Z + sed -i s/yourpasswordhere/root/ /tmp/wordpress/tests/phpunit/wp-tests-config.php
+2025-04-16T09:39:55.8828659Z + sed -i 's|localhost|localhost|' /tmp/wordpress/tests/phpunit/wp-tests-config.php
+2025-04-16T09:39:55.8843238Z + install_db
+2025-04-16T09:39:55.8843595Z + '[' false = true ']'
+2025-04-16T09:39:55.8843953Z + PARTS=('localhost')
+2025-04-16T09:39:55.8844563Z + local PARTS
+2025-04-16T09:39:55.8844935Z + local DB_HOSTNAME=localhost
+2025-04-16T09:39:55.8845323Z + local DB_SOCK_OR_PORT=
+2025-04-16T09:39:55.8845683Z + local EXTRA=
+2025-04-16T09:39:55.8846004Z + '[' -z localhost ']'
+2025-04-16T09:39:55.8849911Z ++ echo
+2025-04-16T09:39:55.8851048Z ++ grep -e '^[0-9]\{1,\}$'
+2025-04-16T09:39:55.8865228Z + '[' ']'
+2025-04-16T09:39:55.8865571Z + '[' -z ']'
+2025-04-16T09:39:55.8865901Z + '[' -z localhost ']'
+2025-04-16T09:39:55.8866327Z + EXTRA=' --host=localhost --protocol=tcp'
+2025-04-16T09:39:55.8871732Z ++ mysql --user=root --*** --host=localhost --protocol=tcp '--execute=show databases;'
+2025-04-16T09:39:55.8875393Z ++ grep '^wordpress_test$'
+2025-04-16T09:39:55.8903561Z mysql: [Warning] Using a password on the command line interface can be insecure.
+2025-04-16T09:39:55.9523732Z + '[' ']'
+2025-04-16T09:39:55.9524088Z + create_db
+2025-04-16T09:39:55.9524660Z + mysqladmin create wordpress_test --user=root --*** --host=localhost --protocol=tcp
+2025-04-16T09:39:55.9548586Z mysqladmin: [Warning] Using a password on the command line interface can be insecure.
+2025-04-16T09:39:55.9918677Z ##[group]Run composer test-unit
+2025-04-16T09:39:55.9918991Z [36;1mcomposer test-unit[0m
+2025-04-16T09:39:55.9965906Z shell: /usr/bin/bash -e {0}
+2025-04-16T09:39:55.9966159Z env:
+2025-04-16T09:39:55.9966359Z   WP_CORE_DIR: /tmp/wordpress/src
+2025-04-16T09:39:55.9966700Z   WP_TESTS_DIR: /tmp/wordpress/tests/phpunit
+2025-04-16T09:39:55.9967045Z   generate_coverage: false
+2025-04-16T09:39:55.9967281Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-16T09:39:55.9967788Z   COMPOSER_NO_INTERACTION: 1
+2025-04-16T09:39:55.9968022Z   COMPOSER_NO_AUDIT: 1
+2025-04-16T09:39:55.9968227Z ##[endgroup]
+2025-04-16T09:39:56.2584265Z > ./vendor/bin/phpunit
+2025-04-16T09:39:56.5488203Z Installing...
+2025-04-16T09:39:57.0424774Z Running as single site... To run multisite, use -c tests/phpunit/multisite.xml
+2025-04-16T09:40:00.1065574Z Installing WooCommerce...
+2025-04-16T09:40:00.4221992Z Not running ajax tests. To execute these, use --group ajax.
+2025-04-16T09:40:00.4223079Z Not running ms-files tests. To execute these, use --group ms-files.
+2025-04-16T09:40:00.4223719Z Not running external-http tests. To execute these, use --group external-http.
+2025-04-16T09:40:17.1341178Z PHPUnit 9.6.21 by Sebastian Bergmann and contributors.
+2025-04-16T09:40:17.1346448Z 
+2025-04-16T09:40:17.7410247Z .............................................................   61 / 1367 (  4%)
+2025-04-16T09:40:17.9143693Z .............................................................  122 / 1367 (  8%)
+2025-04-16T09:40:18.2766673Z .............................................................  183 / 1367 ( 13%)
+2025-04-16T09:40:18.6283275Z .............................................................  244 / 1367 ( 17%)
+2025-04-16T09:40:18.8778822Z .............................................................  305 / 1367 ( 22%)
+2025-04-16T09:40:19.5085363Z .............................................................  366 / 1367 ( 26%)
+2025-04-16T09:40:19.6152209Z .............................................................  427 / 1367 ( 31%)
+2025-04-16T09:40:19.6814422Z .............................................................  488 / 1367 ( 35%)
+2025-04-16T09:40:20.3859411Z .............................................................  549 / 1367 ( 40%)
+2025-04-16T09:40:22.0022879Z .............................................................  610 / 1367 ( 44%)
+2025-04-16T09:40:25.3272577Z .............................................................  671 / 1367 ( 49%)
+2025-04-16T09:40:25.9400856Z .............................................................  732 / 1367 ( 53%)
+2025-04-16T09:40:26.0101197Z ......E.......................E..............................  793 / 1367 ( 58%)
+2025-04-16T09:40:27.6704042Z .............................................................  854 / 1367 ( 62%)
+2025-04-16T09:40:29.8793419Z .............................................................  915 / 1367 ( 66%)
+2025-04-16T09:40:36.6461604Z .............................................................  976 / 1367 ( 71%)
+2025-04-16T09:40:41.6507327Z ............................................................. 1037 / 1367 ( 75%)
+2025-04-16T09:40:45.5858121Z ............................................................. 1098 / 1367 ( 80%)
+2025-04-16T09:40:52.8389651Z ............................................................. 1159 / 1367 ( 84%)
+2025-04-16T09:40:54.3785550Z ............................................................. 1220 / 1367 ( 89%)
+2025-04-16T09:40:54.7777826Z ............................................................. 1281 / 1367 ( 93%)
+2025-04-16T09:40:55.0613200Z ............................................................. 1342 / 1367 ( 98%)
+2025-04-16T09:40:55.1043259Z .........................                                     1367 / 1367 (100%)
+2025-04-16T09:40:55.1043672Z 
+2025-04-16T09:40:55.1043819Z Time: 00:37.970, Memory: 209.00 MB
+2025-04-16T09:40:55.1044070Z 
+2025-04-16T09:40:55.1044159Z There were 2 errors:
+2025-04-16T09:40:55.1044303Z 
+2025-04-16T09:40:55.1045111Z 1) Automattic\WooCommerce\GoogleListingsAndAds\Tests\Unit\MerchantCenter\AccountServiceTest::test_setup_account_step_set_id_already_created
+2025-04-16T09:40:55.1365029Z Automattic\WooCommerce\GoogleListingsAndAds\Vendor\League\Container\Exception\NotFoundException: Alias (Automattic\WooCommerce\GoogleListingsAndAds\DB\Table\MerchantPriceBenchmarksTable) is not being managed by the container or delegates
+2025-04-16T09:40:55.1366696Z 
+2025-04-16T09:40:55.1367592Z /home/runner/work/google-listings-and-ads/google-listings-and-ads/vendor/league/container/src/Container.php:208
+2025-04-16T09:40:55.1369200Z /home/runner/work/google-listings-and-ads/google-listings-and-ads/vendor/league/container/src/Container.php:118
+2025-04-16T09:40:55.1370645Z /home/runner/work/google-listings-and-ads/google-listings-and-ads/src/MerchantCenter/AccountService.php:277
+2025-04-16T09:40:55.1371639Z /home/runner/work/google-listings-and-ads/google-listings-and-ads/src/MerchantCenter/AccountService.php:440
+2025-04-16T09:40:55.1372617Z /home/runner/work/google-listings-and-ads/google-listings-and-ads/src/MerchantCenter/AccountService.php:161
+2025-04-16T09:40:55.1373556Z /home/runner/work/google-listings-and-ads/google-listings-and-ads/tests/Unit/MerchantCenter/AccountServiceTest.php:356
+2025-04-16T09:40:55.1374545Z phpvfscomposer:///home/runner/work/google-listings-and-ads/google-listings-and-ads/vendor/phpunit/phpunit/phpunit:106
+2025-04-16T09:40:55.1375082Z 
+2025-04-16T09:40:55.1375510Z 2) Automattic\WooCommerce\GoogleListingsAndAds\Tests\Unit\MerchantCenter\AccountServiceTest::test_disconnect
+2025-04-16T09:40:55.1376927Z Automattic\WooCommerce\GoogleListingsAndAds\Vendor\League\Container\Exception\NotFoundException: Alias (Automattic\WooCommerce\GoogleListingsAndAds\DB\Table\MerchantPriceBenchmarksTable) is not being managed by the container or delegates
+2025-04-16T09:40:55.1378158Z 
+2025-04-16T09:40:55.1378564Z /home/runner/work/google-listings-and-ads/google-listings-and-ads/vendor/league/container/src/Container.php:208
+2025-04-16T09:40:55.1379479Z /home/runner/work/google-listings-and-ads/google-listings-and-ads/vendor/league/container/src/Container.php:118
+2025-04-16T09:40:55.1380634Z /home/runner/work/google-listings-and-ads/google-listings-and-ads/src/MerchantCenter/AccountService.php:277
+2025-04-16T09:40:55.1381566Z /home/runner/work/google-listings-and-ads/google-listings-and-ads/tests/Unit/MerchantCenter/AccountServiceTest.php:951
+2025-04-16T09:40:55.1382547Z phpvfscomposer:///home/runner/work/google-listings-and-ads/google-listings-and-ads/vendor/phpunit/phpunit/phpunit:106
+2025-04-16T09:40:55.1383075Z 
+2025-04-16T09:40:55.1383166Z ERRORS!
+2025-04-16T09:40:55.1383366Z Tests: 1367, Assertions: 4234, Errors: 2.
+2025-04-16T09:40:55.1949990Z Script ./vendor/bin/phpunit handling the test-unit event returned with error code 2
+2025-04-16T09:40:55.2074625Z ##[error]Process completed with exit code 2.
+2025-04-16T09:40:55.2156308Z Post job cleanup.
+2025-04-16T09:40:55.2204993Z Post job cleanup.
+2025-04-16T09:40:55.3139697Z [command]/usr/bin/git version
+2025-04-16T09:40:55.3181113Z git version 2.49.0
+2025-04-16T09:40:55.3224334Z Temporarily overriding HOME='/home/runner/work/_temp/298d1508-d10c-4c37-937a-3e5b57393f04' before making global git config changes
+2025-04-16T09:40:55.3225650Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-16T09:40:55.3230925Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/google-listings-and-ads/google-listings-and-ads
+2025-04-16T09:40:55.3265121Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-16T09:40:55.3298135Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-16T09:40:55.3529040Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-16T09:40:55.3548850Z http.https://github.com/.extraheader
+2025-04-16T09:40:55.3562073Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-16T09:40:55.3593039Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-16T09:40:55.3922710Z Cleaning up orphan processes

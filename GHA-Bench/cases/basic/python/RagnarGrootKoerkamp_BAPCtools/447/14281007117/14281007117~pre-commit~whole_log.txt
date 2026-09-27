@@ -1,0 +1,260 @@
+2025-04-05T10:26:44.2870769Z Requested labels: ubuntu-latest
+2025-04-05T10:26:44.2871104Z Job defined at: RagnarGrootKoerkamp/BAPCtools/.github/workflows/ci.yaml@refs/pull/447/merge
+2025-04-05T10:26:44.2871214Z Waiting for a runner to pick up this job...
+2025-04-05T10:26:44.5996045Z Job is waiting for a hosted runner to come online.
+2025-04-05T10:26:47.8843565Z Job is about to start running on the hosted runner: GitHub Actions 19 (hosted)
+2025-04-05T10:26:49.6026388Z Current runner version: '2.323.0'
+2025-04-05T10:26:49.6053287Z ##[group]Operating System
+2025-04-05T10:26:49.6054125Z Ubuntu
+2025-04-05T10:26:49.6054656Z 24.04.2
+2025-04-05T10:26:49.6055154Z LTS
+2025-04-05T10:26:49.6055692Z ##[endgroup]
+2025-04-05T10:26:49.6056215Z ##[group]Runner Image
+2025-04-05T10:26:49.6056774Z Image: ubuntu-24.04
+2025-04-05T10:26:49.6057398Z Version: 20250323.1.0
+2025-04-05T10:26:49.6058443Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-05T10:26:49.6059812Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-04-05T10:26:49.6060823Z ##[endgroup]
+2025-04-05T10:26:49.6061397Z ##[group]Runner Image Provisioner
+2025-04-05T10:26:49.6061947Z 2.0.422.1
+2025-04-05T10:26:49.6062806Z ##[endgroup]
+2025-04-05T10:26:49.6065120Z ##[group]GITHUB_TOKEN Permissions
+2025-04-05T10:26:49.6067163Z Actions: write
+2025-04-05T10:26:49.6067981Z Attestations: write
+2025-04-05T10:26:49.6068798Z Checks: write
+2025-04-05T10:26:49.6069301Z Contents: write
+2025-04-05T10:26:49.6069959Z Deployments: write
+2025-04-05T10:26:49.6070521Z Discussions: write
+2025-04-05T10:26:49.6071162Z Issues: write
+2025-04-05T10:26:49.6071759Z Metadata: read
+2025-04-05T10:26:49.6072661Z Models: read
+2025-04-05T10:26:49.6073213Z Packages: write
+2025-04-05T10:26:49.6073855Z Pages: write
+2025-04-05T10:26:49.6074417Z PullRequests: write
+2025-04-05T10:26:49.6074999Z RepositoryProjects: write
+2025-04-05T10:26:49.6075675Z SecurityEvents: write
+2025-04-05T10:26:49.6076237Z Statuses: write
+2025-04-05T10:26:49.6076702Z ##[endgroup]
+2025-04-05T10:26:49.6079942Z Secret source: Actions
+2025-04-05T10:26:49.6080784Z Prepare workflow directory
+2025-04-05T10:26:49.6415913Z Prepare all required actions
+2025-04-05T10:26:49.6454222Z Getting action download info
+2025-04-05T10:26:49.8862356Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-05T10:26:49.8863306Z Version: 4.2.2
+2025-04-05T10:26:49.8864148Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-05T10:26:49.8865189Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-05T10:26:49.8865801Z ##[endgroup]
+2025-04-05T10:26:49.9781375Z ##[group]Download immutable action package 'actions/setup-python@v3'
+2025-04-05T10:26:49.9782378Z Version: 3.1.4
+2025-04-05T10:26:49.9783057Z Digest: sha256:c38760e8593fa88d59adc0ce68544ff9cd0355b44f44bcfe40b2d626bb6f1420
+2025-04-05T10:26:49.9783928Z Source commit SHA: 3542bca2639a428e1796aaa6a2ffef0c0f575566
+2025-04-05T10:26:49.9784545Z ##[endgroup]
+2025-04-05T10:26:50.0434766Z Download action repository 'pre-commit/action@v3.0.1' (SHA:2c7b3805fd2a0fd8c1884dcaebf91fc102a13ecd)
+2025-04-05T10:26:50.4386682Z Getting action download info
+2025-04-05T10:26:50.5729488Z ##[group]Download immutable action package 'actions/cache@v4'
+2025-04-05T10:26:50.5730262Z Version: 4.2.3
+2025-04-05T10:26:50.5731009Z Digest: sha256:c8a3bb963e1f1826d8fcc8d1354f0dd29d8ac1db1d4f6f20247055ae11b81ed9
+2025-04-05T10:26:50.5732036Z Source commit SHA: 5a3ec84eff668545956fd18022155c47e93e2684
+2025-04-05T10:26:50.5734749Z ##[endgroup]
+2025-04-05T10:26:50.8324063Z Complete job name: pre-commit
+2025-04-05T10:26:50.9055399Z ##[group]Run actions/checkout@v4
+2025-04-05T10:26:50.9056302Z with:
+2025-04-05T10:26:50.9056751Z   repository: RagnarGrootKoerkamp/BAPCtools
+2025-04-05T10:26:50.9057526Z   token: ***
+2025-04-05T10:26:50.9057930Z   ssh-strict: true
+2025-04-05T10:26:50.9058346Z   ssh-user: git
+2025-04-05T10:26:50.9058768Z   persist-credentials: true
+2025-04-05T10:26:50.9059234Z   clean: true
+2025-04-05T10:26:50.9059675Z   sparse-checkout-cone-mode: true
+2025-04-05T10:26:50.9060171Z   fetch-depth: 1
+2025-04-05T10:26:50.9060582Z   fetch-tags: false
+2025-04-05T10:26:50.9061001Z   show-progress: true
+2025-04-05T10:26:50.9061425Z   lfs: false
+2025-04-05T10:26:50.9061806Z   submodules: false
+2025-04-05T10:26:50.9062436Z   set-safe-directory: true
+2025-04-05T10:26:50.9063375Z ##[endgroup]
+2025-04-05T10:26:51.0915993Z Syncing repository: RagnarGrootKoerkamp/BAPCtools
+2025-04-05T10:26:51.0918351Z ##[group]Getting Git version info
+2025-04-05T10:26:51.0919165Z Working directory is '/home/runner/work/BAPCtools/BAPCtools'
+2025-04-05T10:26:51.0920567Z [command]/usr/bin/git version
+2025-04-05T10:26:51.0968434Z git version 2.49.0
+2025-04-05T10:26:51.0998071Z ##[endgroup]
+2025-04-05T10:26:51.1014775Z Temporarily overriding HOME='/home/runner/work/_temp/22393908-70cb-46e2-b3c8-0a34525c3dea' before making global git config changes
+2025-04-05T10:26:51.1016245Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-05T10:26:51.1020329Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/BAPCtools/BAPCtools
+2025-04-05T10:26:51.1057766Z Deleting the contents of '/home/runner/work/BAPCtools/BAPCtools'
+2025-04-05T10:26:51.1062482Z ##[group]Initializing the repository
+2025-04-05T10:26:51.1067447Z [command]/usr/bin/git init /home/runner/work/BAPCtools/BAPCtools
+2025-04-05T10:26:51.1128818Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-05T10:26:51.1130347Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-05T10:26:51.1131930Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-05T10:26:51.1133290Z hint:
+2025-04-05T10:26:51.1134070Z hint: 	git config --global init.defaultBranch <name>
+2025-04-05T10:26:51.1134979Z hint:
+2025-04-05T10:26:51.1135561Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-05T10:26:51.1136469Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-05T10:26:51.1137159Z hint:
+2025-04-05T10:26:51.1137546Z hint: 	git branch -m <name>
+2025-04-05T10:26:51.1138293Z Initialized empty Git repository in /home/runner/work/BAPCtools/BAPCtools/.git/
+2025-04-05T10:26:51.1145808Z [command]/usr/bin/git remote add origin https://github.com/RagnarGrootKoerkamp/BAPCtools
+2025-04-05T10:26:51.1182470Z ##[endgroup]
+2025-04-05T10:26:51.1183321Z ##[group]Disabling automatic garbage collection
+2025-04-05T10:26:51.1188054Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-05T10:26:51.1218996Z ##[endgroup]
+2025-04-05T10:26:51.1320315Z ##[group]Setting up auth
+2025-04-05T10:26:51.1321974Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-05T10:26:51.1325230Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-05T10:26:51.1564102Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-05T10:26:51.1595332Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-05T10:26:51.1840066Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-05T10:26:51.1879416Z ##[endgroup]
+2025-04-05T10:26:51.1880197Z ##[group]Fetching the repository
+2025-04-05T10:26:51.1888999Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +6843529e5d209855890e2b0509f6ce2b04d420d3:refs/remotes/pull/447/merge
+2025-04-05T10:26:51.7534746Z From https://github.com/RagnarGrootKoerkamp/BAPCtools
+2025-04-05T10:26:51.7537504Z  * [new ref]         6843529e5d209855890e2b0509f6ce2b04d420d3 -> pull/447/merge
+2025-04-05T10:26:51.7573967Z ##[endgroup]
+2025-04-05T10:26:51.7576073Z ##[group]Determining the checkout info
+2025-04-05T10:26:51.7578687Z ##[endgroup]
+2025-04-05T10:26:51.7580079Z [command]/usr/bin/git sparse-checkout disable
+2025-04-05T10:26:51.7621775Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-05T10:26:51.7652646Z ##[group]Checking out the ref
+2025-04-05T10:26:51.7656210Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/447/merge
+2025-04-05T10:26:51.8326539Z Note: switching to 'refs/remotes/pull/447/merge'.
+2025-04-05T10:26:51.8327711Z 
+2025-04-05T10:26:51.8328529Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-05T10:26:51.8331392Z changes and commit them, and you can discard any commits you make in this
+2025-04-05T10:26:51.8334804Z state without impacting any branches by switching back to a branch.
+2025-04-05T10:26:51.8337125Z 
+2025-04-05T10:26:51.8338385Z If you want to create a new branch to retain commits you create, you may
+2025-04-05T10:26:51.8341505Z do so (now or later) by using -c with the switch command. Example:
+2025-04-05T10:26:51.8343564Z 
+2025-04-05T10:26:51.8344332Z   git switch -c <new-branch-name>
+2025-04-05T10:26:51.8345523Z 
+2025-04-05T10:26:51.8346243Z Or undo this operation with:
+2025-04-05T10:26:51.8347398Z 
+2025-04-05T10:26:51.8348057Z   git switch -
+2025-04-05T10:26:51.8348943Z 
+2025-04-05T10:26:51.8350551Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-05T10:26:51.8352727Z 
+2025-04-05T10:26:51.8354997Z HEAD is now at 6843529 Merge 13fdfaa8388edf4239d66174cbf00194f20eb2ea into 9091a8d4ccc85d1616601c6deaf1c049d0ee9f2d
+2025-04-05T10:26:51.8360973Z ##[endgroup]
+2025-04-05T10:26:51.8387077Z [command]/usr/bin/git log -1 --format=%H
+2025-04-05T10:26:51.8410858Z 6843529e5d209855890e2b0509f6ce2b04d420d3
+2025-04-05T10:26:51.8694790Z ##[group]Run actions/setup-python@v3
+2025-04-05T10:26:51.8696696Z with:
+2025-04-05T10:26:51.8697941Z   python-version: 3.10
+2025-04-05T10:26:51.8699756Z   token: ***
+2025-04-05T10:26:51.8701062Z ##[endgroup]
+2025-04-05T10:26:51.9862777Z Successfully setup CPython (3.10.16)
+2025-04-05T10:26:52.0062576Z ##[group]Run pre-commit/action@v3.0.1
+2025-04-05T10:26:52.0063742Z with:
+2025-04-05T10:26:52.0064545Z   extra_args: --all-files
+2025-04-05T10:26:52.0065462Z env:
+2025-04-05T10:26:52.0066478Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-04-05T10:26:52.0068036Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib
+2025-04-05T10:26:52.0069371Z ##[endgroup]
+2025-04-05T10:26:52.0179741Z ##[group]Run python -m pip install pre-commit
+2025-04-05T10:26:52.0181099Z [36;1mpython -m pip install pre-commit[0m
+2025-04-05T10:26:52.0237516Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-05T10:26:52.0238813Z env:
+2025-04-05T10:26:52.0239795Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-04-05T10:26:52.0241314Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib
+2025-04-05T10:26:52.0242821Z ##[endgroup]
+2025-04-05T10:26:52.7126112Z Collecting pre-commit
+2025-04-05T10:26:52.7498317Z   Downloading pre_commit-4.2.0-py2.py3-none-any.whl.metadata (1.3 kB)
+2025-04-05T10:26:52.7662004Z Collecting cfgv>=2.0.0 (from pre-commit)
+2025-04-05T10:26:52.7699098Z   Downloading cfgv-3.4.0-py2.py3-none-any.whl.metadata (8.5 kB)
+2025-04-05T10:26:52.8263065Z Collecting identify>=1.0.0 (from pre-commit)
+2025-04-05T10:26:52.8303765Z   Downloading identify-2.6.9-py2.py3-none-any.whl.metadata (4.4 kB)
+2025-04-05T10:26:52.8498839Z Collecting nodeenv>=0.11.1 (from pre-commit)
+2025-04-05T10:26:52.8539076Z   Downloading nodeenv-1.9.1-py2.py3-none-any.whl.metadata (21 kB)
+2025-04-05T10:26:52.8926139Z Collecting pyyaml>=5.1 (from pre-commit)
+2025-04-05T10:26:52.8970833Z   Downloading PyYAML-6.0.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+2025-04-05T10:26:52.9422855Z Collecting virtualenv>=20.10.0 (from pre-commit)
+2025-04-05T10:26:52.9465195Z   Downloading virtualenv-20.30.0-py3-none-any.whl.metadata (4.5 kB)
+2025-04-05T10:26:52.9689196Z Collecting distlib<1,>=0.3.7 (from virtualenv>=20.10.0->pre-commit)
+2025-04-05T10:26:52.9730122Z   Downloading distlib-0.3.9-py2.py3-none-any.whl.metadata (5.2 kB)
+2025-04-05T10:26:52.9940865Z Collecting filelock<4,>=3.12.2 (from virtualenv>=20.10.0->pre-commit)
+2025-04-05T10:26:52.9990609Z   Downloading filelock-3.18.0-py3-none-any.whl.metadata (2.9 kB)
+2025-04-05T10:26:53.0224003Z Collecting platformdirs<5,>=3.9.1 (from virtualenv>=20.10.0->pre-commit)
+2025-04-05T10:26:53.0264099Z   Downloading platformdirs-4.3.7-py3-none-any.whl.metadata (11 kB)
+2025-04-05T10:26:53.0382711Z Downloading pre_commit-4.2.0-py2.py3-none-any.whl (220 kB)
+2025-04-05T10:26:53.0509936Z Downloading cfgv-3.4.0-py2.py3-none-any.whl (7.2 kB)
+2025-04-05T10:26:53.0571601Z Downloading identify-2.6.9-py2.py3-none-any.whl (99 kB)
+2025-04-05T10:26:53.0640966Z Downloading nodeenv-1.9.1-py2.py3-none-any.whl (22 kB)
+2025-04-05T10:26:53.0706696Z Downloading PyYAML-6.0.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (751 kB)
+2025-04-05T10:26:53.0817343Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 751.2/751.2 kB 62.3 MB/s eta 0:00:00
+2025-04-05T10:26:53.0858840Z Downloading virtualenv-20.30.0-py3-none-any.whl (4.3 MB)
+2025-04-05T10:26:53.1127284Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 174.0 MB/s eta 0:00:00
+2025-04-05T10:26:53.1170554Z Downloading distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+2025-04-05T10:26:53.1259529Z Downloading filelock-3.18.0-py3-none-any.whl (16 kB)
+2025-04-05T10:26:53.1323441Z Downloading platformdirs-4.3.7-py3-none-any.whl (18 kB)
+2025-04-05T10:26:53.1776911Z Installing collected packages: distlib, pyyaml, platformdirs, nodeenv, identify, filelock, cfgv, virtualenv, pre-commit
+2025-04-05T10:26:53.5579168Z Successfully installed cfgv-3.4.0 distlib-0.3.9 filelock-3.18.0 identify-2.6.9 nodeenv-1.9.1 platformdirs-4.3.7 pre-commit-4.2.0 pyyaml-6.0.2 virtualenv-20.30.0
+2025-04-05T10:26:53.7203881Z ##[group]Run python -m pip freeze --local
+2025-04-05T10:26:53.7204265Z [36;1mpython -m pip freeze --local[0m
+2025-04-05T10:26:53.7254577Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-05T10:26:53.7254979Z env:
+2025-04-05T10:26:53.7255270Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-04-05T10:26:53.7255695Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib
+2025-04-05T10:26:53.7256033Z ##[endgroup]
+2025-04-05T10:26:53.9389618Z cfgv==3.4.0
+2025-04-05T10:26:53.9390163Z distlib==0.3.9
+2025-04-05T10:26:53.9390631Z filelock==3.18.0
+2025-04-05T10:26:53.9391029Z identify==2.6.9
+2025-04-05T10:26:53.9391434Z nodeenv==1.9.1
+2025-04-05T10:26:53.9391877Z platformdirs==4.3.7
+2025-04-05T10:26:53.9392571Z pre_commit==4.2.0
+2025-04-05T10:26:53.9392999Z PyYAML==6.0.2
+2025-04-05T10:26:53.9393410Z virtualenv==20.30.0
+2025-04-05T10:26:54.0330696Z ##[group]Run actions/cache@v4
+2025-04-05T10:26:54.0330964Z with:
+2025-04-05T10:26:54.0331166Z   path: ~/.cache/pre-commit
+2025-04-05T10:26:54.0331708Z   key: pre-commit-3|/opt/hostedtoolcache/Python/3.10.16/x64|1eee273e496e1fa43cec7106d09337fd399e824eebb079f1f5a79de2a66ade33
+2025-04-05T10:26:54.0332611Z   enableCrossOsArchive: false
+2025-04-05T10:26:54.0332868Z   fail-on-cache-miss: false
+2025-04-05T10:26:54.0333100Z   lookup-only: false
+2025-04-05T10:26:54.0333315Z   save-always: false
+2025-04-05T10:26:54.0333524Z env:
+2025-04-05T10:26:54.0333777Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-04-05T10:26:54.0334168Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib
+2025-04-05T10:26:54.0334493Z ##[endgroup]
+2025-04-05T10:26:54.2983878Z Cache hit for: pre-commit-3|/opt/hostedtoolcache/Python/3.10.16/x64|1eee273e496e1fa43cec7106d09337fd399e824eebb079f1f5a79de2a66ade33
+2025-04-05T10:26:55.1303952Z Received 77282160 of 77282160 (100.0%), 102.6 MBs/sec
+2025-04-05T10:26:55.1306210Z Cache Size: ~74 MB (77282160 B)
+2025-04-05T10:26:55.1338359Z [command]/usr/bin/tar -xf /home/runner/work/_temp/556b02a7-7ae3-4cc2-898b-b36c77e2e759/cache.tzst -P -C /home/runner/work/BAPCtools/BAPCtools --use-compress-program unzstd
+2025-04-05T10:26:55.8908088Z Cache restored successfully
+2025-04-05T10:26:55.9286086Z Cache restored from key: pre-commit-3|/opt/hostedtoolcache/Python/3.10.16/x64|1eee273e496e1fa43cec7106d09337fd399e824eebb079f1f5a79de2a66ade33
+2025-04-05T10:26:55.9378629Z ##[group]Run pre-commit run --show-diff-on-failure --color=always --all-files
+2025-04-05T10:26:55.9379144Z [36;1mpre-commit run --show-diff-on-failure --color=always --all-files[0m
+2025-04-05T10:26:55.9426987Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-05T10:26:55.9427307Z env:
+2025-04-05T10:26:55.9427571Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-04-05T10:26:55.9427955Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib
+2025-04-05T10:26:55.9428254Z ##[endgroup]
+2025-04-05T10:26:56.2780838Z fix end of files.........................................................[42mPassed[m
+2025-04-05T10:26:56.3714546Z trim trailing whitespace.................................................[42mPassed[m
+2025-04-05T10:26:56.4317948Z ruff.....................................................................[42mPassed[m
+2025-04-05T10:26:56.4998950Z ruff-format..............................................................[42mPassed[m
+2025-04-05T10:27:08.5943430Z mypy.....................................................................[41mFailed[m
+2025-04-05T10:27:08.5943835Z [2m- hook id: mypy[m
+2025-04-05T10:27:08.5944078Z [2m- exit code: 1[m
+2025-04-05T10:27:08.5944236Z 
+2025-04-05T10:27:08.5944536Z bin/tools.py:238: error: Missing positional argument "fall_back" in call to "key" of "ProblemStat"  [call-arg]
+2025-04-05T10:27:08.5945044Z Found 1 error in 1 file (checked 31 source files)
+2025-04-05T10:27:08.5945250Z 
+2025-04-05T10:27:08.6122716Z ##[error]Process completed with exit code 1.
+2025-04-05T10:27:08.6179581Z Post job cleanup.
+2025-04-05T10:27:08.6233543Z Post job cleanup.
+2025-04-05T10:27:08.7160930Z [command]/usr/bin/git version
+2025-04-05T10:27:08.7198622Z git version 2.49.0
+2025-04-05T10:27:08.7248091Z Temporarily overriding HOME='/home/runner/work/_temp/6b31b9cf-3343-4a4e-a299-8a304b34a6c6' before making global git config changes
+2025-04-05T10:27:08.7249332Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-05T10:27:08.7253660Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/BAPCtools/BAPCtools
+2025-04-05T10:27:08.7289143Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-05T10:27:08.7323158Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-05T10:27:08.7559483Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-05T10:27:08.7580555Z http.https://github.com/.extraheader
+2025-04-05T10:27:08.7593629Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-05T10:27:08.7623268Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-05T10:27:08.7953497Z Cleaning up orphan processes

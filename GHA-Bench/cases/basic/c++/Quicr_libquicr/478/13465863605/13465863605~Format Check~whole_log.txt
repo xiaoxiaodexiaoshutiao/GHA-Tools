@@ -1,0 +1,203 @@
+2025-02-21T21:54:14.2050753Z Requested labels: ubuntu-latest
+2025-02-21T21:54:14.2050963Z Job defined at: Quicr/libquicr/.github/workflows/cmake.yml@refs/pull/478/merge
+2025-02-21T21:54:14.2051096Z Waiting for a runner to pick up this job...
+2025-02-21T21:54:15.5048031Z Job is waiting for a hosted runner to come online.
+2025-02-21T21:54:18.9186046Z Job is about to start running on the hosted runner: GitHub Actions 11 (hosted)
+2025-02-21T21:54:21.3139530Z Current runner version: '2.322.0'
+2025-02-21T21:54:21.3162957Z ##[group]Operating System
+2025-02-21T21:54:21.3163845Z Ubuntu
+2025-02-21T21:54:21.3164509Z 24.04.1
+2025-02-21T21:54:21.3164986Z LTS
+2025-02-21T21:54:21.3165544Z ##[endgroup]
+2025-02-21T21:54:21.3166075Z ##[group]Runner Image
+2025-02-21T21:54:21.3166684Z Image: ubuntu-24.04
+2025-02-21T21:54:21.3167223Z Version: 20250209.1.0
+2025-02-21T21:54:21.3168212Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250209.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-21T21:54:21.3169616Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250209.1
+2025-02-21T21:54:21.3170526Z ##[endgroup]
+2025-02-21T21:54:21.3171058Z ##[group]Runner Image Provisioner
+2025-02-21T21:54:21.3171699Z 2.0.422.1
+2025-02-21T21:54:21.3172191Z ##[endgroup]
+2025-02-21T21:54:21.3174531Z ##[group]GITHUB_TOKEN Permissions
+2025-02-21T21:54:21.3176479Z Actions: write
+2025-02-21T21:54:21.3177298Z Attestations: write
+2025-02-21T21:54:21.3177930Z Checks: write
+2025-02-21T21:54:21.3178424Z Contents: write
+2025-02-21T21:54:21.3179021Z Deployments: write
+2025-02-21T21:54:21.3179541Z Discussions: write
+2025-02-21T21:54:21.3180078Z Issues: write
+2025-02-21T21:54:21.3180563Z Metadata: read
+2025-02-21T21:54:21.3181069Z Packages: write
+2025-02-21T21:54:21.3181615Z Pages: write
+2025-02-21T21:54:21.3182149Z PullRequests: write
+2025-02-21T21:54:21.3182687Z RepositoryProjects: write
+2025-02-21T21:54:21.3183262Z SecurityEvents: write
+2025-02-21T21:54:21.3183843Z Statuses: write
+2025-02-21T21:54:21.3184508Z ##[endgroup]
+2025-02-21T21:54:21.3187384Z Secret source: Actions
+2025-02-21T21:54:21.3188094Z Prepare workflow directory
+2025-02-21T21:54:21.3554729Z Prepare all required actions
+2025-02-21T21:54:21.3592136Z Getting action download info
+2025-02-21T21:54:21.5893028Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-02-21T21:54:21.5893933Z Version: 4.2.2
+2025-02-21T21:54:21.5894990Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-02-21T21:54:21.5896080Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-02-21T21:54:21.5896700Z ##[endgroup]
+2025-02-21T21:54:21.6626810Z Download action repository 'jidicula/clang-format-action@v4.13.0' (SHA:c74383674bf5f7c69f60ce562019c1c94bc1421a)
+2025-02-21T21:54:22.4114867Z Complete job name: Format Check
+2025-02-21T21:54:22.4778515Z ##[group]Run actions/checkout@v4
+2025-02-21T21:54:22.4779348Z with:
+2025-02-21T21:54:22.4779744Z   repository: Quicr/libquicr
+2025-02-21T21:54:22.4780374Z   token: ***
+2025-02-21T21:54:22.4780764Z   ssh-strict: true
+2025-02-21T21:54:22.4781168Z   ssh-user: git
+2025-02-21T21:54:22.4781639Z   persist-credentials: true
+2025-02-21T21:54:22.4782151Z   clean: true
+2025-02-21T21:54:22.4782620Z   sparse-checkout-cone-mode: true
+2025-02-21T21:54:22.4783102Z   fetch-depth: 1
+2025-02-21T21:54:22.4783500Z   fetch-tags: false
+2025-02-21T21:54:22.4783901Z   show-progress: true
+2025-02-21T21:54:22.4784521Z   lfs: false
+2025-02-21T21:54:22.4785042Z   submodules: false
+2025-02-21T21:54:22.4785517Z   set-safe-directory: true
+2025-02-21T21:54:22.4786243Z env:
+2025-02-21T21:54:22.4786689Z   BUILD_TYPE: Release
+2025-02-21T21:54:22.4787103Z ##[endgroup]
+2025-02-21T21:54:22.6466206Z Syncing repository: Quicr/libquicr
+2025-02-21T21:54:22.6469381Z ##[group]Getting Git version info
+2025-02-21T21:54:22.6470294Z Working directory is '/home/runner/work/libquicr/libquicr'
+2025-02-21T21:54:22.6471504Z [command]/usr/bin/git version
+2025-02-21T21:54:22.6493255Z git version 2.48.1
+2025-02-21T21:54:22.6521204Z ##[endgroup]
+2025-02-21T21:54:22.6536610Z Temporarily overriding HOME='/home/runner/work/_temp/a117ada7-b76c-4a9b-8111-6986f2709138' before making global git config changes
+2025-02-21T21:54:22.6539434Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-21T21:54:22.6543221Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/libquicr/libquicr
+2025-02-21T21:54:22.6579009Z Deleting the contents of '/home/runner/work/libquicr/libquicr'
+2025-02-21T21:54:22.6583192Z ##[group]Initializing the repository
+2025-02-21T21:54:22.6588172Z [command]/usr/bin/git init /home/runner/work/libquicr/libquicr
+2025-02-21T21:54:22.6647536Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-21T21:54:22.6648971Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-21T21:54:22.6649934Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-21T21:54:22.6650844Z hint:
+2025-02-21T21:54:22.6651883Z hint: 	git config --global init.defaultBranch <name>
+2025-02-21T21:54:22.6652550Z hint:
+2025-02-21T21:54:22.6653654Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-21T21:54:22.6655814Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-21T21:54:22.6657363Z hint:
+2025-02-21T21:54:22.6658257Z hint: 	git branch -m <name>
+2025-02-21T21:54:22.6659805Z Initialized empty Git repository in /home/runner/work/libquicr/libquicr/.git/
+2025-02-21T21:54:22.6665963Z [command]/usr/bin/git remote add origin https://github.com/Quicr/libquicr
+2025-02-21T21:54:22.6754203Z ##[endgroup]
+2025-02-21T21:54:22.6755363Z ##[group]Disabling automatic garbage collection
+2025-02-21T21:54:22.6756058Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-21T21:54:22.6757487Z ##[endgroup]
+2025-02-21T21:54:22.6758206Z ##[group]Setting up auth
+2025-02-21T21:54:22.6758933Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-21T21:54:22.6771370Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-21T21:54:22.7046713Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-21T21:54:22.7075350Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-21T21:54:22.7299835Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-21T21:54:22.7346848Z ##[endgroup]
+2025-02-21T21:54:22.7348732Z ##[group]Fetching the repository
+2025-02-21T21:54:22.7357383Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +2155f7e8fadc947a3d9e1880531b315c05cbc6d6:refs/remotes/pull/478/merge
+2025-02-21T21:54:23.4115136Z From https://github.com/Quicr/libquicr
+2025-02-21T21:54:23.4118013Z  * [new ref]         2155f7e8fadc947a3d9e1880531b315c05cbc6d6 -> pull/478/merge
+2025-02-21T21:54:23.4142353Z ##[endgroup]
+2025-02-21T21:54:23.4144859Z ##[group]Determining the checkout info
+2025-02-21T21:54:23.4147195Z ##[endgroup]
+2025-02-21T21:54:23.4150714Z [command]/usr/bin/git sparse-checkout disable
+2025-02-21T21:54:23.4191821Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-21T21:54:23.4220948Z ##[group]Checking out the ref
+2025-02-21T21:54:23.4224256Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/478/merge
+2025-02-21T21:54:23.4359661Z Note: switching to 'refs/remotes/pull/478/merge'.
+2025-02-21T21:54:23.4360992Z 
+2025-02-21T21:54:23.4361830Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-21T21:54:23.4363854Z changes and commit them, and you can discard any commits you make in this
+2025-02-21T21:54:23.4366221Z state without impacting any branches by switching back to a branch.
+2025-02-21T21:54:23.4367742Z 
+2025-02-21T21:54:23.4368525Z If you want to create a new branch to retain commits you create, you may
+2025-02-21T21:54:23.4370395Z do so (now or later) by using -c with the switch command. Example:
+2025-02-21T21:54:23.4371538Z 
+2025-02-21T21:54:23.4372039Z   git switch -c <new-branch-name>
+2025-02-21T21:54:23.4372854Z 
+2025-02-21T21:54:23.4373328Z Or undo this operation with:
+2025-02-21T21:54:23.4374629Z 
+2025-02-21T21:54:23.4375103Z   git switch -
+2025-02-21T21:54:23.4375741Z 
+2025-02-21T21:54:23.4376721Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-21T21:54:23.4378188Z 
+2025-02-21T21:54:23.4379888Z HEAD is now at 2155f7e Merge bba6333c4e7c8a8d34e86b6e87d6ee0a466ab007 into 64b73a7c521849c9739210d196e98e1518050d34
+2025-02-21T21:54:23.4384729Z ##[endgroup]
+2025-02-21T21:54:23.4402890Z [command]/usr/bin/git log -1 --format=%H
+2025-02-21T21:54:23.4424982Z 2155f7e8fadc947a3d9e1880531b315c05cbc6d6
+2025-02-21T21:54:23.4734738Z ##[group]Run jidicula/clang-format-action@v4.13.0
+2025-02-21T21:54:23.4736072Z with:
+2025-02-21T21:54:23.4736943Z   clang-format-version: 18
+2025-02-21T21:54:23.4738025Z   exclude-regex: (dependencies)
+2025-02-21T21:54:23.4739095Z   check-path: .
+2025-02-21T21:54:23.4740004Z   fallback-style: llvm
+2025-02-21T21:54:23.4740943Z env:
+2025-02-21T21:54:23.4741758Z   BUILD_TYPE: Release
+2025-02-21T21:54:23.4742694Z ##[endgroup]
+2025-02-21T21:54:23.4871752Z ##[group]Run "/home/runner/work/_actions/jidicula/clang-format-action/v4.13.0/check.sh" "18" "." "llvm" "(dependencies)" ""
+2025-02-21T21:54:23.4875431Z [36;1m"/home/runner/work/_actions/jidicula/clang-format-action/v4.13.0/check.sh" "18" "." "llvm" "(dependencies)" ""[0m
+2025-02-21T21:54:23.5021783Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-21T21:54:23.5023167Z env:
+2025-02-21T21:54:23.5023932Z   BUILD_TYPE: Release
+2025-02-21T21:54:23.5025123Z ##[endgroup]
+2025-02-21T21:54:23.5577658Z Unable to find image 'ghcr.io/jidicula/clang-format:18' locally
+2025-02-21T21:54:24.3010237Z 18: Pulling from jidicula/clang-format
+2025-02-21T21:54:24.3012420Z 107a4fb0af38: Pulling fs layer
+2025-02-21T21:54:24.3013056Z 05d0e448d54d: Pulling fs layer
+2025-02-21T21:54:24.3013644Z d57b5af86a4f: Pulling fs layer
+2025-02-21T21:54:24.5602111Z d57b5af86a4f: Verifying Checksum
+2025-02-21T21:54:24.5602685Z d57b5af86a4f: Download complete
+2025-02-21T21:54:24.5932523Z 107a4fb0af38: Verifying Checksum
+2025-02-21T21:54:24.5933079Z 107a4fb0af38: Download complete
+2025-02-21T21:54:25.6755128Z 107a4fb0af38: Pull complete
+2025-02-21T21:54:25.8118866Z 05d0e448d54d: Verifying Checksum
+2025-02-21T21:54:25.8119384Z 05d0e448d54d: Download complete
+2025-02-21T21:54:27.9499753Z 05d0e448d54d: Pull complete
+2025-02-21T21:54:27.9585151Z d57b5af86a4f: Pull complete
+2025-02-21T21:54:27.9615761Z Digest: sha256:95f1d491d40469aa86a36db31be5a787d91df87dfb44eaa601bc3824200f2a4f
+2025-02-21T21:54:27.9629392Z Status: Downloaded newer image for ghcr.io/jidicula/clang-format:18
+2025-02-21T21:54:28.1684270Z Ubuntu clang-format version 18.1.3 (1ubuntu1)
+2025-02-21T21:54:30.0552315Z ./src/server.cpp:333:18: error: code should be clang-formatted [-Wclang-format-violations]
+2025-02-21T21:54:30.0553036Z                 }
+2025-02-21T21:54:30.0553324Z                  ^
+2025-02-21T21:54:30.1275874Z Failed on file: ./src/server.cpp
+2025-02-21T21:54:30.1276258Z 
+2025-02-21T21:54:32.6782590Z ./cmd/examples/server.cpp:516:35: error: code should be clang-formatted [-Wclang-format-violations]
+2025-02-21T21:54:32.6789754Z             for (auto& [ns, conns]: qserver_vars::subscribes_announces) {
+2025-02-21T21:54:32.6790322Z                                   ^
+2025-02-21T21:54:32.7495924Z Failed on file: ./cmd/examples/server.cpp
+2025-02-21T21:54:32.7496362Z 
+2025-02-21T21:54:43.9584469Z ##[error]Process completed with exit code 1.
+2025-02-21T21:54:43.9639660Z ##[group]Run SHA="bba6333c4e7c8a8d34e86b6e87d6ee0a466ab007"
+2025-02-21T21:54:43.9640106Z [36;1mSHA="bba6333c4e7c8a8d34e86b6e87d6ee0a466ab007"[0m
+2025-02-21T21:54:43.9640441Z [36;1mecho "SHA=$SHA" >> $GITHUB_ENV[0m
+2025-02-21T21:54:43.9697371Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-21T21:54:43.9697707Z env:
+2025-02-21T21:54:43.9697914Z   BUILD_TYPE: Release
+2025-02-21T21:54:43.9698119Z ##[endgroup]
+2025-02-21T21:54:43.9803425Z ##[group]Run DEEPLINK="https://github.com/Quicr/libquicr/commit/bba6333c4e7c8a8d34e86b6e87d6ee0a466ab007"
+2025-02-21T21:54:43.9804667Z [36;1mDEEPLINK="https://github.com/Quicr/libquicr/commit/bba6333c4e7c8a8d34e86b6e87d6ee0a466ab007"[0m
+2025-02-21T21:54:43.9805467Z [36;1mecho -e "Format check failed on commit [${GITHUB_SHA:0:8}]($DEEPLINK) with files:\n$(<$GITHUB_WORKSPACE/failing-files.txt)" >> $GITHUB_STEP_SUMMARY[0m
+2025-02-21T21:54:43.9855281Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-21T21:54:43.9855602Z env:
+2025-02-21T21:54:43.9855778Z   BUILD_TYPE: Release
+2025-02-21T21:54:43.9856018Z   SHA: bba6333c4e7c8a8d34e86b6e87d6ee0a466ab007
+2025-02-21T21:54:43.9856478Z ##[endgroup]
+2025-02-21T21:54:44.0025164Z Post job cleanup.
+2025-02-21T21:54:44.0952943Z [command]/usr/bin/git version
+2025-02-21T21:54:44.0988712Z git version 2.48.1
+2025-02-21T21:54:44.1032459Z Temporarily overriding HOME='/home/runner/work/_temp/892dc0e3-90c3-4612-a274-c195a2e6f934' before making global git config changes
+2025-02-21T21:54:44.1033790Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-21T21:54:44.1045541Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/libquicr/libquicr
+2025-02-21T21:54:44.1078461Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-21T21:54:44.1109789Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-21T21:54:44.1339812Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-21T21:54:44.1359242Z http.https://github.com/.extraheader
+2025-02-21T21:54:44.1371111Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-21T21:54:44.1400734Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-21T21:54:44.1729490Z Cleaning up orphan processes

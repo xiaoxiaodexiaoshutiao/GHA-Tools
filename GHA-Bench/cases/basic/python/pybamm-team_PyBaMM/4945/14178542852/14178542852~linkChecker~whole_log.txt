@@ -1,0 +1,257 @@
+﻿2025-03-31T18:21:06.4637191Z Current runner version: '2.323.0'
+2025-03-31T18:21:06.4673363Z ##[group]Operating System
+2025-03-31T18:21:06.4674474Z Ubuntu
+2025-03-31T18:21:06.4675356Z 24.04.2
+2025-03-31T18:21:06.4675916Z LTS
+2025-03-31T18:21:06.4676383Z ##[endgroup]
+2025-03-31T18:21:06.4676954Z ##[group]Runner Image
+2025-03-31T18:21:06.4677571Z Image: ubuntu-24.04
+2025-03-31T18:21:06.4678086Z Version: 20250330.1.0
+2025-03-31T18:21:06.4679385Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250330.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-31T18:21:06.4680802Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250330.1
+2025-03-31T18:21:06.4681647Z ##[endgroup]
+2025-03-31T18:21:06.4682239Z ##[group]Runner Image Provisioner
+2025-03-31T18:21:06.4682783Z 2.0.422.1
+2025-03-31T18:21:06.4683242Z ##[endgroup]
+2025-03-31T18:21:06.4684260Z ##[group]GITHUB_TOKEN Permissions
+2025-03-31T18:21:06.4686058Z Contents: read
+2025-03-31T18:21:06.4686562Z Metadata: read
+2025-03-31T18:21:06.4687369Z ##[endgroup]
+2025-03-31T18:21:06.4689765Z Secret source: None
+2025-03-31T18:21:06.4690438Z Prepare workflow directory
+2025-03-31T18:21:06.5109198Z Prepare all required actions
+2025-03-31T18:21:06.5164539Z Getting action download info
+2025-03-31T18:21:06.9540306Z Download action repository 'actions/cache@5a3ec84eff668545956fd18022155c47e93e2684' (SHA:5a3ec84eff668545956fd18022155c47e93e2684)
+2025-03-31T18:21:07.2120179Z Download action repository 'actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-31T18:21:07.2488267Z Download action repository 'lycheeverse/lychee-action@f613c4a64e50d792e0b31ec34bbcbba12263c6a6' (SHA:f613c4a64e50d792e0b31ec34bbcbba12263c6a6)
+2025-03-31T18:21:07.6842887Z Complete job name: linkChecker
+2025-03-31T18:21:07.7520836Z ##[group]Run actions/cache@5a3ec84eff668545956fd18022155c47e93e2684
+2025-03-31T18:21:07.7521807Z with:
+2025-03-31T18:21:07.7522180Z   path: .lycheecache
+2025-03-31T18:21:07.7522716Z   key: cache-lychee-ef95bb49ad510c9edf62856abf1c5f01c89ebe80
+2025-03-31T18:21:07.7523344Z   restore-keys: cache-lychee-
+2025-03-31T18:21:07.7523808Z   enableCrossOsArchive: false
+2025-03-31T18:21:07.7524256Z   fail-on-cache-miss: false
+2025-03-31T18:21:07.7524696Z   lookup-only: false
+2025-03-31T18:21:07.7525087Z   save-always: false
+2025-03-31T18:21:07.7525655Z ##[endgroup]
+2025-03-31T18:21:08.0859402Z Cache hit for: cache-lychee-ef95bb49ad510c9edf62856abf1c5f01c89ebe80
+2025-03-31T18:21:08.2288896Z Received 5319 of 5319 (100.0%), 0.2 MBs/sec
+2025-03-31T18:21:08.2290227Z Cache Size: ~0 MB (5319 B)
+2025-03-31T18:21:08.2328807Z [command]/usr/bin/tar -xf /home/runner/work/_temp/099920c0-bfa1-42d7-80a3-820302010626/cache.tzst -P -C /home/runner/work/PyBaMM/PyBaMM --use-compress-program unzstd
+2025-03-31T18:21:08.2379401Z Cache restored successfully
+2025-03-31T18:21:08.2613629Z Cache restored from key: cache-lychee-e994d345a98fa1b39810814ec66a4d2546a36740
+2025-03-31T18:21:08.2857762Z ##[group]Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+2025-03-31T18:21:08.2858856Z with:
+2025-03-31T18:21:08.2859278Z   persist-credentials: false
+2025-03-31T18:21:08.2859862Z   repository: pybamm-team/PyBaMM
+2025-03-31T18:21:08.2860618Z   token: ***
+2025-03-31T18:21:08.2861033Z   ssh-strict: true
+2025-03-31T18:21:08.2861458Z   ssh-user: git
+2025-03-31T18:21:08.2861878Z   clean: true
+2025-03-31T18:21:08.2862316Z   sparse-checkout-cone-mode: true
+2025-03-31T18:21:08.2862875Z   fetch-depth: 1
+2025-03-31T18:21:08.2863303Z   fetch-tags: false
+2025-03-31T18:21:08.2863747Z   show-progress: true
+2025-03-31T18:21:08.2864199Z   lfs: false
+2025-03-31T18:21:08.2864599Z   submodules: false
+2025-03-31T18:21:08.2865058Z   set-safe-directory: true
+2025-03-31T18:21:08.2865549Z ##[endgroup]
+2025-03-31T18:21:08.3901044Z Syncing repository: pybamm-team/PyBaMM
+2025-03-31T18:21:08.3903372Z ##[group]Getting Git version info
+2025-03-31T18:21:08.3904427Z Working directory is '/home/runner/work/PyBaMM/PyBaMM'
+2025-03-31T18:21:08.3905790Z [command]/usr/bin/git version
+2025-03-31T18:21:08.3978134Z git version 2.49.0
+2025-03-31T18:21:08.4004466Z ##[endgroup]
+2025-03-31T18:21:08.4019825Z Temporarily overriding HOME='/home/runner/work/_temp/668546a6-b121-4833-b075-b7ad034fef0b' before making global git config changes
+2025-03-31T18:21:08.4023031Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-31T18:21:08.4025743Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/PyBaMM/PyBaMM
+2025-03-31T18:21:08.4060647Z Deleting the contents of '/home/runner/work/PyBaMM/PyBaMM'
+2025-03-31T18:21:08.4073220Z ##[group]Initializing the repository
+2025-03-31T18:21:08.4078076Z [command]/usr/bin/git init /home/runner/work/PyBaMM/PyBaMM
+2025-03-31T18:21:08.4136926Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-31T18:21:08.4138560Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-31T18:21:08.4140003Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-31T18:21:08.4141299Z hint:
+2025-03-31T18:21:08.4142045Z hint: 	git config --global init.defaultBranch <name>
+2025-03-31T18:21:08.4142928Z hint:
+2025-03-31T18:21:08.4144079Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-31T18:21:08.4146119Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-31T18:21:08.4147732Z hint:
+2025-03-31T18:21:08.4148537Z hint: 	git branch -m <name>
+2025-03-31T18:21:08.4150281Z Initialized empty Git repository in /home/runner/work/PyBaMM/PyBaMM/.git/
+2025-03-31T18:21:08.4154683Z [command]/usr/bin/git remote add origin https://github.com/pybamm-team/PyBaMM
+2025-03-31T18:21:08.4188203Z ##[endgroup]
+2025-03-31T18:21:08.4189852Z ##[group]Disabling automatic garbage collection
+2025-03-31T18:21:08.4193361Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-31T18:21:08.4222845Z ##[endgroup]
+2025-03-31T18:21:08.4224222Z ##[group]Setting up auth
+2025-03-31T18:21:08.4230705Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-31T18:21:08.4262758Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-31T18:21:08.4553936Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-31T18:21:08.4586693Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-31T18:21:08.4838003Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-31T18:21:08.4878281Z ##[endgroup]
+2025-03-31T18:21:08.4881351Z ##[group]Fetching the repository
+2025-03-31T18:21:08.4890464Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +ef95bb49ad510c9edf62856abf1c5f01c89ebe80:refs/remotes/pull/4945/merge
+2025-03-31T18:21:09.6831848Z From https://github.com/pybamm-team/PyBaMM
+2025-03-31T18:21:09.6835136Z  * [new ref]         ef95bb49ad510c9edf62856abf1c5f01c89ebe80 -> pull/4945/merge
+2025-03-31T18:21:09.6861017Z ##[endgroup]
+2025-03-31T18:21:09.6862086Z ##[group]Determining the checkout info
+2025-03-31T18:21:09.6863732Z ##[endgroup]
+2025-03-31T18:21:09.6868244Z [command]/usr/bin/git sparse-checkout disable
+2025-03-31T18:21:09.6907187Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-31T18:21:09.6935203Z ##[group]Checking out the ref
+2025-03-31T18:21:09.6939019Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/4945/merge
+2025-03-31T18:21:09.8005588Z Note: switching to 'refs/remotes/pull/4945/merge'.
+2025-03-31T18:21:09.8006877Z 
+2025-03-31T18:21:09.8007940Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-31T18:21:09.8010793Z changes and commit them, and you can discard any commits you make in this
+2025-03-31T18:21:09.8013310Z state without impacting any branches by switching back to a branch.
+2025-03-31T18:21:09.8014392Z 
+2025-03-31T18:21:09.8015135Z If you want to create a new branch to retain commits you create, you may
+2025-03-31T18:21:09.8016901Z do so (now or later) by using -c with the switch command. Example:
+2025-03-31T18:21:09.8017844Z 
+2025-03-31T18:21:09.8018208Z   git switch -c <new-branch-name>
+2025-03-31T18:21:09.8019095Z 
+2025-03-31T18:21:09.8019473Z Or undo this operation with:
+2025-03-31T18:21:09.8020058Z 
+2025-03-31T18:21:09.8020378Z   git switch -
+2025-03-31T18:21:09.8020952Z 
+2025-03-31T18:21:09.8021880Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-31T18:21:09.8023097Z 
+2025-03-31T18:21:09.8024601Z HEAD is now at ef95bb4 Merge cfd8c93958bf4d025a259569ab89795385746360 into 0bd606c209103ebc217b37f4c60243db5c646bf0
+2025-03-31T18:21:09.8029294Z ##[endgroup]
+2025-03-31T18:21:09.8058725Z [command]/usr/bin/git log -1 --format=%H
+2025-03-31T18:21:09.8082128Z ef95bb49ad510c9edf62856abf1c5f01c89ebe80
+2025-03-31T18:21:09.8094298Z ##[group]Removing auth
+2025-03-31T18:21:09.8099332Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-31T18:21:09.8130418Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-31T18:21:09.8364342Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-31T18:21:09.8385261Z http.https://github.com/.extraheader
+2025-03-31T18:21:09.8394814Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-31T18:21:09.8425624Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-31T18:21:09.8650132Z ##[endgroup]
+2025-03-31T18:21:09.9023400Z ##[group]Run lycheeverse/lychee-action@f613c4a64e50d792e0b31ec34bbcbba12263c6a6
+2025-03-31T18:21:09.9025089Z with:
+2025-03-31T18:21:09.9031316Z   args: --cache --no-progress --max-cache-age 2d --timeout 10 --max-retries 5 --skip-missing --exclude-loopback --exclude https://twitter.com/pybamm_ --exclude "https://doi\.org|www.sciencedirect\.com/*" --exclude https://www.rse.ox.ac.uk --accept 200,429 --exclude-path ./CHANGELOG.md --exclude-path ./scripts/update_version.py --exclude-path asv.conf.json --exclude-path docs/conf.py --exclude-path all_contributors.md './**/*.rst' './**/*.md' './**/*.py' './**/*.ipynb' './**/*.json' './**/*.toml'
+2025-03-31T18:21:09.9037448Z   fail: true
+2025-03-31T18:21:09.9038309Z   jobSummary: true
+2025-03-31T18:21:09.9039330Z   format: markdown
+2025-03-31T18:21:09.9040230Z   debug: false
+2025-03-31T18:21:09.9041101Z   failIfEmpty: true
+2025-03-31T18:21:09.9042005Z   lycheeVersion: v0.18.0
+2025-03-31T18:21:09.9043006Z   output: lychee/out.md
+2025-03-31T18:21:09.9044230Z   token: ***
+2025-03-31T18:21:09.9045022Z env:
+2025-03-31T18:21:09.9046058Z   GITHUB_TOKEN: ***
+2025-03-31T18:21:09.9046896Z ##[endgroup]
+2025-03-31T18:21:09.9162255Z ##[group]Run echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+2025-03-31T18:21:09.9163660Z [36;1mecho "$HOME/.local/bin" >> "$GITHUB_PATH"[0m
+2025-03-31T18:21:09.9164880Z [36;1mmkdir -p "$HOME/.local/bin"[0m
+2025-03-31T18:21:09.9219461Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-31T18:21:09.9220768Z env:
+2025-03-31T18:21:09.9221857Z   GITHUB_TOKEN: ***
+2025-03-31T18:21:09.9222696Z ##[endgroup]
+2025-03-31T18:21:09.9399718Z ##[group]Run # Remove any existing lychee binaries or archives to prevent conflicts
+2025-03-31T18:21:09.9402108Z [36;1m# Remove any existing lychee binaries or archives to prevent conflicts[0m
+2025-03-31T18:21:09.9403698Z [36;1mrm -f "$HOME/.local/bin/lychee"[0m
+2025-03-31T18:21:09.9404798Z [36;1mrm -rf lychee[0m
+2025-03-31T18:21:09.9406322Z [36;1mrm -f ""[0m
+2025-03-31T18:21:09.9454323Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-31T18:21:09.9455586Z env:
+2025-03-31T18:21:09.9456674Z   GITHUB_TOKEN: ***
+2025-03-31T18:21:09.9457512Z ##[endgroup]
+2025-03-31T18:21:09.9619831Z ##[group]Run ARCH=$(uname -m)
+2025-03-31T18:21:09.9620861Z [36;1mARCH=$(uname -m)[0m
+2025-03-31T18:21:09.9622082Z [36;1m# Determine filename and download URL based on version[0m
+2025-03-31T18:21:09.9623615Z [36;1mif [[ "${LYCHEE_VERSION}" =~ ^v0\.0|^v0\.1[0-5]\. ]]; then[0m
+2025-03-31T18:21:09.9625364Z [36;1m  FILENAME="lychee-${LYCHEE_VERSION}-${ARCH}-unknown-linux-gnu.tar.gz"[0m
+2025-03-31T18:21:09.9627785Z [36;1m  DOWNLOAD_URL="https://github.com/lycheeverse/lychee/releases/download/${LYCHEE_VERSION}/${FILENAME}"[0m
+2025-03-31T18:21:09.9629859Z [36;1melse[0m
+2025-03-31T18:21:09.9630922Z [36;1m  FILENAME="lychee-${ARCH}-unknown-linux-gnu.tar.gz"[0m
+2025-03-31T18:21:09.9632338Z [36;1m  if [[ "${LYCHEE_VERSION}" == 'nightly' ]]; then[0m
+2025-03-31T18:21:09.9634324Z [36;1m    DOWNLOAD_URL="https://github.com/lycheeverse/lychee/releases/download/nightly/${FILENAME}"[0m
+2025-03-31T18:21:09.9636267Z [36;1m  elif [[ "${LYCHEE_VERSION}" == 'latest' ]]; then[0m
+2025-03-31T18:21:09.9638214Z [36;1m    DOWNLOAD_URL="https://github.com/lycheeverse/lychee/releases/latest/download/${FILENAME}"[0m
+2025-03-31T18:21:09.9640123Z [36;1m  else[0m
+2025-03-31T18:21:09.9641981Z [36;1m    DOWNLOAD_URL="https://github.com/lycheeverse/lychee/releases/download/lychee-${LYCHEE_VERSION}/${FILENAME}"[0m
+2025-03-31T18:21:09.9644013Z [36;1m  fi[0m
+2025-03-31T18:21:09.9644791Z [36;1mfi[0m
+2025-03-31T18:21:09.9645558Z [36;1m[0m
+2025-03-31T18:21:09.9646446Z [36;1mecho "Downloading from: ${DOWNLOAD_URL}"[0m
+2025-03-31T18:21:09.9647655Z [36;1mcurl -sfLO "${DOWNLOAD_URL}"[0m
+2025-03-31T18:21:09.9648875Z [36;1m[0m
+2025-03-31T18:21:09.9649700Z [36;1mecho "Extracting ${FILENAME}"[0m
+2025-03-31T18:21:09.9650787Z [36;1mtar -xvzf "${FILENAME}"[0m
+2025-03-31T18:21:09.9651773Z [36;1m[0m
+2025-03-31T18:21:09.9652864Z [36;1m# Output filename for use in later steps[0m
+2025-03-31T18:21:09.9654192Z [36;1mecho "filename=${FILENAME}" >> $GITHUB_OUTPUT[0m
+2025-03-31T18:21:09.9700411Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-31T18:21:09.9701672Z env:
+2025-03-31T18:21:09.9702752Z   GITHUB_TOKEN: ***
+2025-03-31T18:21:09.9703615Z   LYCHEE_VERSION: v0.18.0
+2025-03-31T18:21:09.9704515Z ##[endgroup]
+2025-03-31T18:21:09.9795601Z Downloading from: https://github.com/lycheeverse/lychee/releases/download/lychee-v0.18.0/lychee-x86_64-unknown-linux-gnu.tar.gz
+2025-03-31T18:21:10.2749011Z Extracting lychee-x86_64-unknown-linux-gnu.tar.gz
+2025-03-31T18:21:10.2777260Z lychee
+2025-03-31T18:21:10.4660047Z ##[group]Run install -t "$HOME/.local/bin" -D lychee
+2025-03-31T18:21:10.4660419Z [36;1minstall -t "$HOME/.local/bin" -D lychee[0m
+2025-03-31T18:21:10.4708964Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-31T18:21:10.4709314Z env:
+2025-03-31T18:21:10.4709737Z   GITHUB_TOKEN: ***
+2025-03-31T18:21:10.4709942Z ##[endgroup]
+2025-03-31T18:21:10.5014973Z ##[group]Run # Remove the downloaded archive and any unnecessary files after installation
+2025-03-31T18:21:10.5015542Z [36;1m# Remove the downloaded archive and any unnecessary files after installation[0m
+2025-03-31T18:21:10.5015976Z [36;1mrm -f "lychee-x86_64-unknown-linux-gnu.tar.gz"[0m
+2025-03-31T18:21:10.5016262Z [36;1mshopt -s extglob[0m
+2025-03-31T18:21:10.5016499Z [36;1mrm -f lychee!(*-bin|*-lib|*.toml)[0m
+2025-03-31T18:21:10.5064855Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-31T18:21:10.5065178Z env:
+2025-03-31T18:21:10.5065579Z   GITHUB_TOKEN: ***
+2025-03-31T18:21:10.5065773Z ##[endgroup]
+2025-03-31T18:21:10.5268835Z ##[group]Run /home/runner/work/_actions/lycheeverse/lychee-action/f613c4a64e50d792e0b31ec34bbcbba12263c6a6/entrypoint.sh
+2025-03-31T18:21:10.5269685Z [36;1m/home/runner/work/_actions/lycheeverse/lychee-action/f613c4a64e50d792e0b31ec34bbcbba12263c6a6/entrypoint.sh[0m
+2025-03-31T18:21:10.5319903Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-31T18:21:10.5320246Z env:
+2025-03-31T18:21:10.5320677Z   GITHUB_TOKEN: ***
+2025-03-31T18:21:10.5320970Z   INPUT_TOKEN: ***
+2025-03-31T18:21:10.5322636Z   INPUT_ARGS: --cache --no-progress --max-cache-age 2d --timeout 10 --max-retries 5 --skip-missing --exclude-loopback --exclude https://twitter.com/pybamm_ --exclude "https://doi\.org|www.sciencedirect\.com/*" --exclude https://www.rse.ox.ac.uk --accept 200,429 --exclude-path ./CHANGELOG.md --exclude-path ./scripts/update_version.py --exclude-path asv.conf.json --exclude-path docs/conf.py --exclude-path all_contributors.md './**/*.rst' './**/*.md' './**/*.py' './**/*.ipynb' './**/*.json' './**/*.toml'
+2025-03-31T18:21:10.5324371Z   INPUT_DEBUG: false
+2025-03-31T18:21:10.5324580Z   INPUT_FAIL: true
+2025-03-31T18:21:10.5324774Z   INPUT_FAILIFEMPTY: true
+2025-03-31T18:21:10.5325002Z   INPUT_FORMAT: markdown
+2025-03-31T18:21:10.5325230Z   INPUT_JOBSUMMARY: true
+2025-03-31T18:21:10.5325452Z   INPUT_OUTPUT: lychee/out.md
+2025-03-31T18:21:10.5325681Z ##[endgroup]
+2025-03-31T18:21:11.0582633Z [403] https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v2.json | Network error: Forbidden
+2025-03-31T18:21:12.6702377Z # Summary
+2025-03-31T18:21:12.6702622Z 
+2025-03-31T18:21:12.6702769Z | Status        | Count |
+2025-03-31T18:21:12.6703226Z |---------------|-------|
+2025-03-31T18:21:12.6703922Z | 🔍 Total      | 419   |
+2025-03-31T18:21:12.6704450Z | ✅ Successful | 383   |
+2025-03-31T18:21:12.6704966Z | ⏳ Timeouts   | 0     |
+2025-03-31T18:21:12.6705613Z | 🔀 Redirected | 0     |
+2025-03-31T18:21:12.6706213Z | 👻 Excluded   | 35    |
+2025-03-31T18:21:12.6706568Z | ❓ Unknown    | 0     |
+2025-03-31T18:21:12.6706858Z | 🚫 Errors     | 1     |
+2025-03-31T18:21:12.6707025Z 
+2025-03-31T18:21:12.6707131Z ## Errors per input
+2025-03-31T18:21:12.6707297Z 
+2025-03-31T18:21:12.6707404Z ### Errors in README.md
+2025-03-31T18:21:12.6707712Z 
+2025-03-31T18:21:12.6709451Z * [403] [https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v2.json](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v2.json) | Network error: Forbidden
+2025-03-31T18:21:12.6710877Z 
+2025-03-31T18:21:12.6745509Z ##[error]Process completed with exit code 2.
+2025-03-31T18:21:12.6852863Z Post job cleanup.
+2025-03-31T18:21:12.7794943Z [command]/usr/bin/git version
+2025-03-31T18:21:12.7830403Z git version 2.49.0
+2025-03-31T18:21:12.7872307Z Temporarily overriding HOME='/home/runner/work/_temp/311263e8-30a7-4425-b412-1b11651160a8' before making global git config changes
+2025-03-31T18:21:12.7873299Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-31T18:21:12.7884885Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/PyBaMM/PyBaMM
+2025-03-31T18:21:12.7919014Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-31T18:21:12.7952806Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-31T18:21:12.8184009Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-31T18:21:12.8216447Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-31T18:21:12.8554631Z Cleaning up orphan processes

@@ -1,0 +1,17 @@
+diff --git a/Microsoft.Azure.Cosmos/src/DocumentClient.cs b/Microsoft.Azure.Cosmos/src/DocumentClient.cs
+index 63b1c46466..7772dcd5a1 100644
+--- a/Microsoft.Azure.Cosmos/src/DocumentClient.cs
++++ b/Microsoft.Azure.Cosmos/src/DocumentClient.cs
+@@ -1098,9 +1098,9 @@ private async Task<bool> GetInitializationTaskAsync(IStoreClientFactory storeCli
+             this.partitionKeyRangeCache = new PartitionKeyRangeCache(this, this.GatewayStoreModel, this.collectionCache, this.GlobalEndpointManager, this.enableAsyncCacheExceptionNoSharing);
+             this.ResetSessionTokenRetryPolicy = new ResetSessionTokenRetryPolicyFactory(this.sessionContainer, this.collectionCache, this.retryPolicy);
+ 
+-            gatewayStoreModel.SetCaches(this.partitionKeyRangeCache, this.collectionCache);
+-
+-            if (this.isThinClientEnabled)
++            gatewayStoreModel.SetCaches(this.partitionKeyRangeCache, this.collectionCache);
++
++            if (this.ConnectionPolicy.ConnectionMode == ConnectionMode.Gateway && this.isThinClientEnabled)
+             {
+                 ThinClientStoreModel thinClientStoreModel = new (
+                     endpointManager: this.GlobalEndpointManager,

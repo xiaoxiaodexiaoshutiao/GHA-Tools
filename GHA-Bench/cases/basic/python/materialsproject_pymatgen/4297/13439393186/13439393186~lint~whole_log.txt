@@ -1,0 +1,226 @@
+2025-02-20T15:58:37.3629347Z Requested labels: ubuntu-latest
+2025-02-20T15:58:37.3629575Z Job defined at: materialsproject/pymatgen/.github/workflows/lint.yml@refs/pull/4297/merge
+2025-02-20T15:58:37.3629721Z Waiting for a runner to pick up this job...
+2025-02-20T15:58:39.5684538Z Job is waiting for a hosted runner to come online.
+2025-02-20T15:58:42.4308242Z Job is about to start running on the hosted runner: GitHub Actions 14 (hosted)
+2025-02-20T15:58:45.5806331Z Current runner version: '2.322.0'
+2025-02-20T15:58:45.5830512Z ##[group]Operating System
+2025-02-20T15:58:45.5831325Z Ubuntu
+2025-02-20T15:58:45.5831867Z 24.04.1
+2025-02-20T15:58:45.5832387Z LTS
+2025-02-20T15:58:45.5832895Z ##[endgroup]
+2025-02-20T15:58:45.5833449Z ##[group]Runner Image
+2025-02-20T15:58:45.5834083Z Image: ubuntu-24.04
+2025-02-20T15:58:45.5834621Z Version: 20250209.1.0
+2025-02-20T15:58:45.5835639Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250209.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-20T15:58:45.5837077Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250209.1
+2025-02-20T15:58:45.5837993Z ##[endgroup]
+2025-02-20T15:58:45.5838531Z ##[group]Runner Image Provisioner
+2025-02-20T15:58:45.5839430Z 2.0.422.1
+2025-02-20T15:58:45.5839956Z ##[endgroup]
+2025-02-20T15:58:45.5841015Z ##[group]GITHUB_TOKEN Permissions
+2025-02-20T15:58:45.5843311Z Contents: read
+2025-02-20T15:58:45.5843876Z Metadata: read
+2025-02-20T15:58:45.5844662Z ##[endgroup]
+2025-02-20T15:58:45.5847866Z Secret source: None
+2025-02-20T15:58:45.5849073Z Prepare workflow directory
+2025-02-20T15:58:45.6238592Z Prepare all required actions
+2025-02-20T15:58:45.6275528Z Getting action download info
+2025-02-20T15:58:45.8419054Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-02-20T15:58:45.8419982Z Version: 4.2.2
+2025-02-20T15:58:45.8420822Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-02-20T15:58:45.8421849Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-02-20T15:58:45.8422473Z ##[endgroup]
+2025-02-20T15:58:45.9193726Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-02-20T15:58:45.9194434Z Version: 5.4.0
+2025-02-20T15:58:45.9195075Z Digest: sha256:6003df952c8106bcd378d2ba997eef202da924317a57269dfa72449b135adb7f
+2025-02-20T15:58:45.9195913Z Source commit SHA: 42375524e23c412d93fb67b49958b491fce71c38
+2025-02-20T15:58:45.9196522Z ##[endgroup]
+2025-02-20T15:58:46.4115884Z Complete job name: lint
+2025-02-20T15:58:46.4804253Z ##[group]Run actions/checkout@v4
+2025-02-20T15:58:46.4805095Z with:
+2025-02-20T15:58:46.4805529Z   repository: materialsproject/pymatgen
+2025-02-20T15:58:46.4806223Z   token: ***
+2025-02-20T15:58:46.4806628Z   ssh-strict: true
+2025-02-20T15:58:46.4807043Z   ssh-user: git
+2025-02-20T15:58:46.4807476Z   persist-credentials: true
+2025-02-20T15:58:46.4807931Z   clean: true
+2025-02-20T15:58:46.4808350Z   sparse-checkout-cone-mode: true
+2025-02-20T15:58:46.4809123Z   fetch-depth: 1
+2025-02-20T15:58:46.4809559Z   fetch-tags: false
+2025-02-20T15:58:46.4809973Z   show-progress: true
+2025-02-20T15:58:46.4810380Z   lfs: false
+2025-02-20T15:58:46.4810764Z   submodules: false
+2025-02-20T15:58:46.4811186Z   set-safe-directory: true
+2025-02-20T15:58:46.4811941Z ##[endgroup]
+2025-02-20T15:58:46.6877954Z Syncing repository: materialsproject/pymatgen
+2025-02-20T15:58:46.6880720Z ##[group]Getting Git version info
+2025-02-20T15:58:46.6881898Z Working directory is '/home/runner/work/pymatgen/pymatgen'
+2025-02-20T15:58:46.6883115Z [command]/usr/bin/git version
+2025-02-20T15:58:46.6958525Z git version 2.48.1
+2025-02-20T15:58:46.6988277Z ##[endgroup]
+2025-02-20T15:58:46.7000457Z Temporarily overriding HOME='/home/runner/work/_temp/f50f4f46-602d-42dc-9c08-1576edbdbee5' before making global git config changes
+2025-02-20T15:58:46.7002051Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-20T15:58:46.7005795Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pymatgen/pymatgen
+2025-02-20T15:58:46.7042485Z Deleting the contents of '/home/runner/work/pymatgen/pymatgen'
+2025-02-20T15:58:46.7046216Z ##[group]Initializing the repository
+2025-02-20T15:58:46.7050262Z [command]/usr/bin/git init /home/runner/work/pymatgen/pymatgen
+2025-02-20T15:58:46.7122196Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-20T15:58:46.7123744Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-20T15:58:46.7124964Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-20T15:58:46.7125633Z hint:
+2025-02-20T15:58:46.7126129Z hint: 	git config --global init.defaultBranch <name>
+2025-02-20T15:58:46.7126715Z hint:
+2025-02-20T15:58:46.7127270Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-20T15:58:46.7128158Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-20T15:58:46.7129119Z hint:
+2025-02-20T15:58:46.7129549Z hint: 	git branch -m <name>
+2025-02-20T15:58:46.7147373Z Initialized empty Git repository in /home/runner/work/pymatgen/pymatgen/.git/
+2025-02-20T15:58:46.7160109Z [command]/usr/bin/git remote add origin https://github.com/materialsproject/pymatgen
+2025-02-20T15:58:46.7194114Z ##[endgroup]
+2025-02-20T15:58:46.7194859Z ##[group]Disabling automatic garbage collection
+2025-02-20T15:58:46.7198491Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-20T15:58:46.7227393Z ##[endgroup]
+2025-02-20T15:58:46.7228108Z ##[group]Setting up auth
+2025-02-20T15:58:46.7234562Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-20T15:58:46.7265719Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-20T15:58:46.7560386Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-20T15:58:46.7589937Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-20T15:58:46.7829328Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-20T15:58:46.7869479Z ##[endgroup]
+2025-02-20T15:58:46.7870280Z ##[group]Fetching the repository
+2025-02-20T15:58:46.7878338Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +747a89a808f952dcd2b86ce41d9430031b8ea260:refs/remotes/pull/4297/merge
+2025-02-20T15:58:53.8207564Z From https://github.com/materialsproject/pymatgen
+2025-02-20T15:58:53.8209783Z  * [new ref]         747a89a808f952dcd2b86ce41d9430031b8ea260 -> pull/4297/merge
+2025-02-20T15:58:53.8235247Z ##[endgroup]
+2025-02-20T15:58:53.8236964Z ##[group]Determining the checkout info
+2025-02-20T15:58:53.8238705Z ##[endgroup]
+2025-02-20T15:58:53.8243767Z [command]/usr/bin/git sparse-checkout disable
+2025-02-20T15:58:53.8285230Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-20T15:58:53.8314436Z ##[group]Checking out the ref
+2025-02-20T15:58:53.8319177Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/4297/merge
+2025-02-20T15:58:54.8455314Z Updating files:  73% (2000/2712)
+2025-02-20T15:58:54.8525542Z Updating files:  74% (2007/2712)
+2025-02-20T15:58:54.9622394Z Updating files:  75% (2034/2712)
+2025-02-20T15:58:54.9741015Z Updating files:  76% (2062/2712)
+2025-02-20T15:58:55.2658393Z Updating files:  77% (2089/2712)
+2025-02-20T15:58:55.3025381Z Updating files:  78% (2116/2712)
+2025-02-20T15:58:55.3425598Z Updating files:  79% (2143/2712)
+2025-02-20T15:58:55.3581678Z Updating files:  80% (2170/2712)
+2025-02-20T15:58:55.4784957Z Updating files:  81% (2197/2712)
+2025-02-20T15:58:55.5224403Z Updating files:  82% (2224/2712)
+2025-02-20T15:58:55.5233413Z Updating files:  83% (2251/2712)
+2025-02-20T15:58:55.5269245Z Updating files:  84% (2279/2712)
+2025-02-20T15:58:55.5314466Z Updating files:  85% (2306/2712)
+2025-02-20T15:58:55.5737100Z Updating files:  86% (2333/2712)
+2025-02-20T15:58:55.5987050Z Updating files:  87% (2360/2712)
+2025-02-20T15:58:55.6263747Z Updating files:  88% (2387/2712)
+2025-02-20T15:58:55.7467421Z Updating files:  89% (2414/2712)
+2025-02-20T15:58:55.8123686Z Updating files:  90% (2441/2712)
+2025-02-20T15:58:55.8134694Z Updating files:  91% (2468/2712)
+2025-02-20T15:58:55.8209399Z Updating files:  92% (2496/2712)
+2025-02-20T15:58:55.8844262Z Updating files:  93% (2523/2712)
+2025-02-20T15:58:55.8853399Z Updating files:  93% (2543/2712)
+2025-02-20T15:58:55.8865753Z Updating files:  94% (2550/2712)
+2025-02-20T15:58:55.8880955Z Updating files:  95% (2577/2712)
+2025-02-20T15:58:55.8901462Z Updating files:  96% (2604/2712)
+2025-02-20T15:58:55.8919482Z Updating files:  97% (2631/2712)
+2025-02-20T15:58:55.8941664Z Updating files:  98% (2658/2712)
+2025-02-20T15:58:55.8957432Z Updating files:  99% (2685/2712)
+2025-02-20T15:58:55.8958026Z Updating files: 100% (2712/2712)
+2025-02-20T15:58:55.8958452Z Updating files: 100% (2712/2712), done.
+2025-02-20T15:58:55.8988319Z Note: switching to 'refs/remotes/pull/4297/merge'.
+2025-02-20T15:58:55.8989205Z 
+2025-02-20T15:58:55.8989621Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-20T15:58:55.8990496Z changes and commit them, and you can discard any commits you make in this
+2025-02-20T15:58:55.8991362Z state without impacting any branches by switching back to a branch.
+2025-02-20T15:58:55.8991827Z 
+2025-02-20T15:58:55.8992120Z If you want to create a new branch to retain commits you create, you may
+2025-02-20T15:58:55.8992823Z do so (now or later) by using -c with the switch command. Example:
+2025-02-20T15:58:55.8993266Z 
+2025-02-20T15:58:55.8993441Z   git switch -c <new-branch-name>
+2025-02-20T15:58:55.8993728Z 
+2025-02-20T15:58:55.8993882Z Or undo this operation with:
+2025-02-20T15:58:55.8994146Z 
+2025-02-20T15:58:55.8994278Z   git switch -
+2025-02-20T15:58:55.8994500Z 
+2025-02-20T15:58:55.8994857Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-20T15:58:55.8995355Z 
+2025-02-20T15:58:55.8995931Z HEAD is now at 747a89a Merge ec003c910dc3547c08b09a16600d5cda5f506614 into c76c7a671479a8752800f00d0fdf02ebf18771cb
+2025-02-20T15:58:55.9115450Z ##[endgroup]
+2025-02-20T15:58:55.9158295Z [command]/usr/bin/git log -1 --format=%H
+2025-02-20T15:58:55.9182530Z 747a89a808f952dcd2b86ce41d9430031b8ea260
+2025-02-20T15:58:55.9407065Z ##[group]Run actions/setup-python@v5
+2025-02-20T15:58:55.9407358Z with:
+2025-02-20T15:58:55.9407553Z   python-version: 3.x
+2025-02-20T15:58:55.9407782Z   check-latest: false
+2025-02-20T15:58:55.9408113Z   token: ***
+2025-02-20T15:58:55.9408314Z   update-environment: true
+2025-02-20T15:58:55.9408547Z   allow-prereleases: false
+2025-02-20T15:58:55.9408985Z ##[endgroup]
+2025-02-20T15:58:56.1077230Z ##[group]Installed versions
+2025-02-20T15:58:56.1132968Z Successfully set up CPython (3.13.2)
+2025-02-20T15:58:56.1133624Z ##[endgroup]
+2025-02-20T15:58:56.1251986Z ##[group]Run pip install --upgrade ruff mypy pyright
+2025-02-20T15:58:56.1252437Z [36;1mpip install --upgrade ruff mypy pyright[0m
+2025-02-20T15:58:56.1401184Z shell: /usr/bin/bash -e {0}
+2025-02-20T15:58:56.1401449Z env:
+2025-02-20T15:58:56.1401707Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T15:58:56.1402127Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-02-20T15:58:56.1402572Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T15:58:56.1402927Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T15:58:56.1403283Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T15:58:56.1403638Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-02-20T15:58:56.1403935Z ##[endgroup]
+2025-02-20T15:58:57.1415941Z Collecting ruff
+2025-02-20T15:58:57.2130167Z   Downloading ruff-0.9.7-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (25 kB)
+2025-02-20T15:58:57.3024580Z Collecting mypy
+2025-02-20T15:58:57.3134355Z   Downloading mypy-1.15.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl.metadata (2.1 kB)
+2025-02-20T15:58:57.3550653Z Collecting pyright
+2025-02-20T15:58:57.3677880Z   Downloading pyright-1.1.394-py3-none-any.whl.metadata (6.6 kB)
+2025-02-20T15:58:57.3925218Z Collecting typing_extensions>=4.6.0 (from mypy)
+2025-02-20T15:58:57.4025829Z   Downloading typing_extensions-4.12.2-py3-none-any.whl.metadata (3.0 kB)
+2025-02-20T15:58:57.4217546Z Collecting mypy_extensions>=1.0.0 (from mypy)
+2025-02-20T15:58:57.4317134Z   Downloading mypy_extensions-1.0.0-py3-none-any.whl.metadata (1.1 kB)
+2025-02-20T15:58:57.4541834Z Collecting nodeenv>=1.6.0 (from pyright)
+2025-02-20T15:58:57.4641800Z   Downloading nodeenv-1.9.1-py2.py3-none-any.whl.metadata (21 kB)
+2025-02-20T15:58:57.4878375Z Downloading ruff-0.9.7-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.6 MB)
+2025-02-20T15:58:57.6018309Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.6/12.6 MB 131.5 MB/s eta 0:00:00
+2025-02-20T15:58:57.6125351Z Downloading mypy-1.15.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl (12.4 MB)
+2025-02-20T15:58:57.6777304Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.4/12.4 MB 194.7 MB/s eta 0:00:00
+2025-02-20T15:58:57.6913275Z Downloading pyright-1.1.394-py3-none-any.whl (5.7 MB)
+2025-02-20T15:58:57.7234872Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.7/5.7 MB 185.2 MB/s eta 0:00:00
+2025-02-20T15:58:57.7365310Z Downloading mypy_extensions-1.0.0-py3-none-any.whl (4.7 kB)
+2025-02-20T15:58:57.7488239Z Downloading nodeenv-1.9.1-py2.py3-none-any.whl (22 kB)
+2025-02-20T15:58:57.7615860Z Downloading typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+2025-02-20T15:58:57.8584296Z Installing collected packages: typing_extensions, ruff, nodeenv, mypy_extensions, pyright, mypy
+2025-02-20T15:59:00.0485318Z Successfully installed mypy-1.15.0 mypy_extensions-1.0.0 nodeenv-1.9.1 pyright-1.1.394 ruff-0.9.7 typing_extensions-4.12.2
+2025-02-20T15:59:00.2289784Z ##[group]Run ruff check .
+2025-02-20T15:59:00.2290082Z [36;1mruff check .[0m
+2025-02-20T15:59:00.2290307Z [36;1mruff format --check .[0m
+2025-02-20T15:59:00.2348139Z shell: /usr/bin/bash -e {0}
+2025-02-20T15:59:00.2348377Z env:
+2025-02-20T15:59:00.2348631Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T15:59:00.2349211Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-02-20T15:59:00.2349623Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T15:59:00.2349967Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T15:59:00.2350309Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T15:59:00.2350656Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-02-20T15:59:00.2350948Z ##[endgroup]
+2025-02-20T15:59:00.6384915Z src/pymatgen/io/ase.py:6:1: I001 [*] Import block is un-sorted or un-formatted
+2025-02-20T15:59:00.6390929Z Found 1 error.
+2025-02-20T15:59:00.6391382Z [*] 1 fixable with the `--fix` option.
+2025-02-20T15:59:00.6424010Z ##[error]Process completed with exit code 1.
+2025-02-20T15:59:00.6537786Z Post job cleanup.
+2025-02-20T15:59:00.7481471Z [command]/usr/bin/git version
+2025-02-20T15:59:00.7528648Z git version 2.48.1
+2025-02-20T15:59:00.7575362Z Temporarily overriding HOME='/home/runner/work/_temp/2cb4e96f-d0ef-4d77-8ab5-e9bac64d078a' before making global git config changes
+2025-02-20T15:59:00.7576694Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-20T15:59:00.7580390Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pymatgen/pymatgen
+2025-02-20T15:59:00.7617295Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-20T15:59:00.7652893Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-20T15:59:00.7902666Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-20T15:59:00.7926333Z http.https://github.com/.extraheader
+2025-02-20T15:59:00.7939204Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-20T15:59:00.7973139Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-20T15:59:00.8322973Z Cleaning up orphan processes

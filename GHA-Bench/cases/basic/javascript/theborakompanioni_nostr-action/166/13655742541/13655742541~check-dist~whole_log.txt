@@ -1,0 +1,258 @@
+2025-03-04T14:19:32.0284036Z Requested labels: ubuntu-latest
+2025-03-04T14:19:32.0284311Z Job defined at: theborakompanioni/nostr-action/.github/workflows/check-dist.yml@refs/pull/166/merge
+2025-03-04T14:19:32.0284451Z Waiting for a runner to pick up this job...
+2025-03-04T14:19:33.1777469Z Job is waiting for a hosted runner to come online.
+2025-03-04T14:19:36.0964874Z Job is about to start running on the hosted runner: GitHub Actions 18 (hosted)
+2025-03-04T14:19:38.5385662Z Current runner version: '2.322.0'
+2025-03-04T14:19:38.5411009Z ##[group]Operating System
+2025-03-04T14:19:38.5412049Z Ubuntu
+2025-03-04T14:19:38.5412597Z 24.04.2
+2025-03-04T14:19:38.5413107Z LTS
+2025-03-04T14:19:38.5413581Z ##[endgroup]
+2025-03-04T14:19:38.5414138Z ##[group]Runner Image
+2025-03-04T14:19:38.5414705Z Image: ubuntu-24.04
+2025-03-04T14:19:38.5415286Z Version: 20250223.1.0
+2025-03-04T14:19:38.5416315Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250223.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-04T14:19:38.5417610Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250223.1
+2025-03-04T14:19:38.5418561Z ##[endgroup]
+2025-03-04T14:19:38.5419104Z ##[group]Runner Image Provisioner
+2025-03-04T14:19:38.5419682Z 2.0.422.1
+2025-03-04T14:19:38.5420261Z ##[endgroup]
+2025-03-04T14:19:38.5422566Z ##[group]GITHUB_TOKEN Permissions
+2025-03-04T14:19:38.5424955Z Actions: write
+2025-03-04T14:19:38.5425724Z Attestations: write
+2025-03-04T14:19:38.5426417Z Checks: write
+2025-03-04T14:19:38.5426924Z Contents: write
+2025-03-04T14:19:38.5427489Z Deployments: write
+2025-03-04T14:19:38.5428036Z Discussions: write
+2025-03-04T14:19:38.5428564Z Issues: write
+2025-03-04T14:19:38.5429062Z Metadata: read
+2025-03-04T14:19:38.5429589Z Packages: write
+2025-03-04T14:19:38.5430110Z Pages: write
+2025-03-04T14:19:38.5430655Z PullRequests: write
+2025-03-04T14:19:38.5431202Z RepositoryProjects: write
+2025-03-04T14:19:38.5431924Z SecurityEvents: write
+2025-03-04T14:19:38.5432532Z Statuses: write
+2025-03-04T14:19:38.5433028Z ##[endgroup]
+2025-03-04T14:19:38.5436013Z Secret source: Actions
+2025-03-04T14:19:38.5437061Z Prepare workflow directory
+2025-03-04T14:19:38.5843086Z Prepare all required actions
+2025-03-04T14:19:38.5879985Z Getting action download info
+2025-03-04T14:19:38.8384812Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-04T14:19:38.9320802Z Download action repository 'actions/setup-node@v4' (SHA:1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a)
+2025-03-04T14:19:39.0374123Z Download action repository 'actions/upload-artifact@v4' (SHA:4cec3d8aa04e39d1a68397de0c4cd6fb9dce8ec1)
+2025-03-04T14:19:39.7083903Z Complete job name: check-dist
+2025-03-04T14:19:39.7792118Z ##[group]Run actions/checkout@v4
+2025-03-04T14:19:39.7793054Z with:
+2025-03-04T14:19:39.7793499Z   repository: theborakompanioni/nostr-action
+2025-03-04T14:19:39.7794216Z   token: ***
+2025-03-04T14:19:39.7794607Z   ssh-strict: true
+2025-03-04T14:19:39.7795013Z   ssh-user: git
+2025-03-04T14:19:39.7795419Z   persist-credentials: true
+2025-03-04T14:19:39.7795859Z   clean: true
+2025-03-04T14:19:39.7796276Z   sparse-checkout-cone-mode: true
+2025-03-04T14:19:39.7796762Z   fetch-depth: 1
+2025-03-04T14:19:39.7797142Z   fetch-tags: false
+2025-03-04T14:19:39.7797547Z   show-progress: true
+2025-03-04T14:19:39.7797940Z   lfs: false
+2025-03-04T14:19:39.7798310Z   submodules: false
+2025-03-04T14:19:39.7798718Z   set-safe-directory: true
+2025-03-04T14:19:39.7799365Z ##[endgroup]
+2025-03-04T14:19:40.0186227Z Syncing repository: theborakompanioni/nostr-action
+2025-03-04T14:19:40.0188289Z ##[group]Getting Git version info
+2025-03-04T14:19:40.0189080Z Working directory is '/home/runner/work/nostr-action/nostr-action'
+2025-03-04T14:19:40.0190644Z [command]/usr/bin/git version
+2025-03-04T14:19:40.0270545Z git version 2.48.1
+2025-03-04T14:19:40.0299154Z ##[endgroup]
+2025-03-04T14:19:40.0313479Z Temporarily overriding HOME='/home/runner/work/_temp/bf267fa2-a6ff-430b-a8b9-17e9a19e8273' before making global git config changes
+2025-03-04T14:19:40.0314962Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-04T14:19:40.0318800Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nostr-action/nostr-action
+2025-03-04T14:19:40.0357505Z Deleting the contents of '/home/runner/work/nostr-action/nostr-action'
+2025-03-04T14:19:40.0360927Z ##[group]Initializing the repository
+2025-03-04T14:19:40.0366489Z [command]/usr/bin/git init /home/runner/work/nostr-action/nostr-action
+2025-03-04T14:19:40.0440398Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-04T14:19:40.0442018Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-04T14:19:40.0442931Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-04T14:19:40.0443579Z hint:
+2025-03-04T14:19:40.0444053Z hint: 	git config --global init.defaultBranch <name>
+2025-03-04T14:19:40.0444619Z hint:
+2025-03-04T14:19:40.0445160Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-04T14:19:40.0446031Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-04T14:19:40.0446725Z hint:
+2025-03-04T14:19:40.0447104Z hint: 	git branch -m <name>
+2025-03-04T14:19:40.0450020Z Initialized empty Git repository in /home/runner/work/nostr-action/nostr-action/.git/
+2025-03-04T14:19:40.0460433Z [command]/usr/bin/git remote add origin https://github.com/theborakompanioni/nostr-action
+2025-03-04T14:19:40.0493660Z ##[endgroup]
+2025-03-04T14:19:40.0494374Z ##[group]Disabling automatic garbage collection
+2025-03-04T14:19:40.0497668Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-04T14:19:40.0526309Z ##[endgroup]
+2025-03-04T14:19:40.0527346Z ##[group]Setting up auth
+2025-03-04T14:19:40.0533159Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-04T14:19:40.0561899Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-04T14:19:40.0905676Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-04T14:19:40.0934815Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-04T14:19:40.1176620Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-04T14:19:40.1213359Z ##[endgroup]
+2025-03-04T14:19:40.1214999Z ##[group]Fetching the repository
+2025-03-04T14:19:40.1223285Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e5fe5dc7378536637c99c8e0548ff0aadfbf31b4:refs/remotes/pull/166/merge
+2025-03-04T14:19:40.8269220Z From https://github.com/theborakompanioni/nostr-action
+2025-03-04T14:19:40.8270719Z  * [new ref]         e5fe5dc7378536637c99c8e0548ff0aadfbf31b4 -> pull/166/merge
+2025-03-04T14:19:40.8354970Z ##[endgroup]
+2025-03-04T14:19:40.8356245Z ##[group]Determining the checkout info
+2025-03-04T14:19:40.8357877Z ##[endgroup]
+2025-03-04T14:19:40.8358740Z [command]/usr/bin/git sparse-checkout disable
+2025-03-04T14:19:40.8361238Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-04T14:19:40.8377752Z ##[group]Checking out the ref
+2025-03-04T14:19:40.8383252Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/166/merge
+2025-03-04T14:19:40.8520801Z Note: switching to 'refs/remotes/pull/166/merge'.
+2025-03-04T14:19:40.8522316Z 
+2025-03-04T14:19:40.8523197Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-04T14:19:40.8524887Z changes and commit them, and you can discard any commits you make in this
+2025-03-04T14:19:40.8526590Z state without impacting any branches by switching back to a branch.
+2025-03-04T14:19:40.8527570Z 
+2025-03-04T14:19:40.8528270Z If you want to create a new branch to retain commits you create, you may
+2025-03-04T14:19:40.8529815Z do so (now or later) by using -c with the switch command. Example:
+2025-03-04T14:19:40.8530718Z 
+2025-03-04T14:19:40.8531153Z   git switch -c <new-branch-name>
+2025-03-04T14:19:40.8531995Z 
+2025-03-04T14:19:40.8532441Z Or undo this operation with:
+2025-03-04T14:19:40.8533071Z 
+2025-03-04T14:19:40.8533471Z   git switch -
+2025-03-04T14:19:40.8533934Z 
+2025-03-04T14:19:40.8535013Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-04T14:19:40.8536065Z 
+2025-03-04T14:19:40.8537310Z HEAD is now at e5fe5dc Merge 11b8193ffc0ea0b8d47126ecdead86691579c1cf into fb77ace1c63b9cc6336bf40d717fb8188399f284
+2025-03-04T14:19:40.8540894Z ##[endgroup]
+2025-03-04T14:19:40.8568166Z [command]/usr/bin/git log -1 --format=%H
+2025-03-04T14:19:40.8590191Z e5fe5dc7378536637c99c8e0548ff0aadfbf31b4
+2025-03-04T14:19:40.8861085Z ##[group]Run actions/setup-node@v4
+2025-03-04T14:19:40.8862214Z with:
+2025-03-04T14:19:40.8863003Z   node-version: 22.11.0
+2025-03-04T14:19:40.8863829Z   always-auth: false
+2025-03-04T14:19:40.8864645Z   check-latest: false
+2025-03-04T14:19:40.8865614Z   token: ***
+2025-03-04T14:19:40.8866370Z ##[endgroup]
+2025-03-04T14:19:41.0592497Z Attempting to download 22.11.0...
+2025-03-04T14:19:41.6497148Z Acquiring 22.11.0 - x64 from https://github.com/actions/node-versions/releases/download/22.11.0-11593095476/node-22.11.0-linux-x64.tar.gz
+2025-03-04T14:19:42.4559802Z Extracting ...
+2025-03-04T14:19:42.4664925Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/f4fcddf7-367c-492b-b791-dd8be201938d -f /home/runner/work/_temp/6700c97e-5418-4541-9327-c0bc62fe7d1b
+2025-03-04T14:19:43.5973216Z Adding to the cache ...
+2025-03-04T14:19:45.5098623Z ##[group]Environment details
+2025-03-04T14:19:45.7205147Z node: v22.11.0
+2025-03-04T14:19:45.7207299Z npm: 10.9.0
+2025-03-04T14:19:45.7207751Z yarn: 1.22.22
+2025-03-04T14:19:45.7208588Z ##[endgroup]
+2025-03-04T14:19:45.7377140Z ##[group]Run npm ci
+2025-03-04T14:19:45.7377444Z [36;1mnpm ci[0m
+2025-03-04T14:19:45.7430289Z shell: /usr/bin/bash -e {0}
+2025-03-04T14:19:45.7430565Z ##[endgroup]
+2025-03-04T14:19:48.4197352Z npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+2025-03-04T14:19:48.4486240Z npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+2025-03-04T14:19:49.3382373Z npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+2025-03-04T14:19:49.5535907Z 
+2025-03-04T14:19:49.5536371Z > nostr-action@1.1.0 prepare
+2025-03-04T14:19:49.5536829Z > npm run build
+2025-03-04T14:19:49.5536975Z 
+2025-03-04T14:19:49.6557091Z 
+2025-03-04T14:19:49.6558055Z > nostr-action@1.1.0 build
+2025-03-04T14:19:49.6558779Z > ncc build index.js --out dist --source-map --license licenses.txt && npm run fix-ncc-out
+2025-03-04T14:19:49.6559223Z 
+2025-03-04T14:19:49.8729145Z ncc: Version 0.38.3
+2025-03-04T14:19:49.8731086Z ncc: Compiling file index.js into CJS
+2025-03-04T14:19:51.2944251Z   13kB  dist/licenses.txt
+2025-03-04T14:19:51.2944715Z   40kB  dist/sourcemap-register.js
+2025-03-04T14:19:51.2945061Z  606kB  dist/index.js
+2025-03-04T14:19:51.2945455Z  709kB  dist/index.js.map
+2025-03-04T14:19:51.2947077Z  709kB  dist/index.js.map
+2025-03-04T14:19:51.2947710Z 1368kB  [1602ms] - ncc 0.38.3
+2025-03-04T14:19:51.4456798Z 
+2025-03-04T14:19:51.4457442Z > nostr-action@1.1.0 fix-ncc-out
+2025-03-04T14:19:51.4458121Z > sed -i 's/\x0D$//' ./dist/*.js
+2025-03-04T14:19:51.4458378Z 
+2025-03-04T14:19:51.4701339Z 
+2025-03-04T14:19:51.4702014Z added 374 packages, and audited 375 packages in 6s
+2025-03-04T14:19:51.4702649Z 
+2025-03-04T14:19:51.4702900Z 61 packages are looking for funding
+2025-03-04T14:19:51.4703349Z   run `npm fund` for details
+2025-03-04T14:19:51.4727252Z 
+2025-03-04T14:19:51.4727482Z 1 high severity vulnerability
+2025-03-04T14:19:51.4727793Z 
+2025-03-04T14:19:51.4727996Z To address all issues, run:
+2025-03-04T14:19:51.4728393Z   npm audit fix
+2025-03-04T14:19:51.4728562Z 
+2025-03-04T14:19:51.4728714Z Run `npm audit` for details.
+2025-03-04T14:19:51.4941686Z ##[group]Run npm run prepare
+2025-03-04T14:19:51.4942135Z [36;1mnpm run prepare[0m
+2025-03-04T14:19:51.4991163Z shell: /usr/bin/bash -e {0}
+2025-03-04T14:19:51.4991405Z ##[endgroup]
+2025-03-04T14:19:51.6043883Z 
+2025-03-04T14:19:51.6044263Z > nostr-action@1.1.0 prepare
+2025-03-04T14:19:51.6045167Z > npm run build
+2025-03-04T14:19:51.6045380Z 
+2025-03-04T14:19:51.7111827Z 
+2025-03-04T14:19:51.7112182Z > nostr-action@1.1.0 build
+2025-03-04T14:19:51.7112976Z > ncc build index.js --out dist --source-map --license licenses.txt && npm run fix-ncc-out
+2025-03-04T14:19:51.7113332Z 
+2025-03-04T14:19:51.7904360Z ncc: Version 0.38.3
+2025-03-04T14:19:51.7906803Z ncc: Compiling file index.js into CJS
+2025-03-04T14:19:53.0367401Z   13kB  dist/licenses.txt
+2025-03-04T14:19:53.0367910Z   40kB  dist/sourcemap-register.js
+2025-03-04T14:19:53.0368332Z  606kB  dist/index.js
+2025-03-04T14:19:53.0368685Z  709kB  dist/index.js.map
+2025-03-04T14:19:53.0369043Z  709kB  dist/index.js.map
+2025-03-04T14:19:53.0369615Z 1368kB  [1295ms] - ncc 0.38.3
+2025-03-04T14:19:53.1896688Z 
+2025-03-04T14:19:53.1897525Z > nostr-action@1.1.0 fix-ncc-out
+2025-03-04T14:19:53.1898107Z > sed -i 's/\x0D$//' ./dist/*.js
+2025-03-04T14:19:53.1898371Z 
+2025-03-04T14:19:53.2178764Z ##[group]Run if [ "$(git diff --ignore-space-at-eol dist/ | wc -l)" -gt "0" ]; then
+2025-03-04T14:19:53.2179339Z [36;1mif [ "$(git diff --ignore-space-at-eol dist/ | wc -l)" -gt "0" ]; then[0m
+2025-03-04T14:19:53.2179799Z [36;1m  echo "Detected uncommitted changes after build.  See status below:"[0m
+2025-03-04T14:19:53.2180143Z [36;1m  git diff[0m
+2025-03-04T14:19:53.2180329Z [36;1m  exit 1[0m
+2025-03-04T14:19:53.2180503Z [36;1mfi[0m
+2025-03-04T14:19:53.2227537Z shell: /usr/bin/bash -e {0}
+2025-03-04T14:19:53.2227771Z ##[endgroup]
+2025-03-04T14:19:53.2318422Z warning: in the working copy of 'dist/index.js', LF will be replaced by CRLF the next time Git touches it
+2025-03-04T14:19:53.2405778Z Detected uncommitted changes after build.  See status below:
+2025-03-04T14:19:53.2432557Z warning: in the working copy of 'dist/index.js', LF will be replaced by CRLF the next time Git touches it
+2025-03-04T14:19:53.2499010Z diff --git a/dist/index.js b/dist/index.js
+2025-03-04T14:19:53.2499606Z index 7f889c9..616b28c 100644
+2025-03-04T14:19:53.2500268Z Binary files a/dist/index.js and b/dist/index.js differ
+2025-03-04T14:19:53.2500985Z diff --git a/dist/index.js.map b/dist/index.js.map
+2025-03-04T14:19:53.2501635Z index 31c16d2..10dc368 100644
+2025-03-04T14:19:53.2502328Z Binary files a/dist/index.js.map and b/dist/index.js.map differ
+2025-03-04T14:19:53.2514687Z ##[error]Process completed with exit code 1.
+2025-03-04T14:19:53.2587320Z ##[group]Run actions/upload-artifact@v4
+2025-03-04T14:19:53.2587601Z with:
+2025-03-04T14:19:53.2587771Z   name: dist
+2025-03-04T14:19:53.2587946Z   path: dist/
+2025-03-04T14:19:53.2588137Z   if-no-files-found: warn
+2025-03-04T14:19:53.2588368Z   compression-level: 6
+2025-03-04T14:19:53.2588572Z   overwrite: false
+2025-03-04T14:19:53.2588773Z   include-hidden-files: false
+2025-03-04T14:19:53.2588992Z ##[endgroup]
+2025-03-04T14:19:53.4746863Z With the provided path, there will be 4 files uploaded
+2025-03-04T14:19:53.4761085Z Artifact name is valid!
+2025-03-04T14:19:53.4761897Z Root directory input is valid!
+2025-03-04T14:19:53.7795343Z Beginning upload of artifact content to blob storage
+2025-03-04T14:19:54.3923783Z Uploaded bytes 307903
+2025-03-04T14:19:54.4695967Z Finished uploading artifact content to blob storage!
+2025-03-04T14:19:54.4699288Z SHA256 hash of uploaded artifact zip is d760b471d40b8e287422a012e3e9c7fe1c710ac039e64447589cfe57bfe392e9
+2025-03-04T14:19:54.4701000Z Finalizing artifact upload
+2025-03-04T14:19:54.6135834Z Artifact dist.zip successfully finalized. Artifact ID 2689161783
+2025-03-04T14:19:54.6137361Z Artifact dist has been successfully uploaded! Final size is 307903 bytes. Artifact ID is 2689161783
+2025-03-04T14:19:54.6144486Z Artifact download URL: https://github.com/theborakompanioni/nostr-action/actions/runs/13655742541/artifacts/2689161783
+2025-03-04T14:19:54.6276751Z Post job cleanup.
+2025-03-04T14:19:54.7227706Z [command]/usr/bin/git version
+2025-03-04T14:19:54.7265943Z git version 2.48.1
+2025-03-04T14:19:54.7318927Z Temporarily overriding HOME='/home/runner/work/_temp/03790819-1ab6-4204-ac95-3017b044ec00' before making global git config changes
+2025-03-04T14:19:54.7320582Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-04T14:19:54.7324605Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nostr-action/nostr-action
+2025-03-04T14:19:54.7358385Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-04T14:19:54.7390291Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-04T14:19:54.7622193Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-04T14:19:54.7643844Z http.https://github.com/.extraheader
+2025-03-04T14:19:54.7656535Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-04T14:19:54.7687490Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-04T14:19:54.8013540Z Cleaning up orphan processes

@@ -1,0 +1,217 @@
+2025-03-01T20:35:24.9108534Z Requested labels: ubuntu-latest
+2025-03-01T20:35:24.9108901Z Job defined at: chemprop/chemprop/.github/workflows/ci.yml@refs/pull/1179/merge
+2025-03-01T20:35:24.9109016Z Waiting for a runner to pick up this job...
+2025-03-01T20:35:25.1166700Z Job is waiting for a hosted runner to come online.
+2025-03-01T20:35:27.8653361Z Job is about to start running on the hosted runner: GitHub Actions 13 (hosted)
+2025-03-01T20:35:29.3558983Z Current runner version: '2.322.0'
+2025-03-01T20:35:29.3585052Z ##[group]Operating System
+2025-03-01T20:35:29.3585902Z Ubuntu
+2025-03-01T20:35:29.3586463Z 24.04.2
+2025-03-01T20:35:29.3586984Z LTS
+2025-03-01T20:35:29.3587419Z ##[endgroup]
+2025-03-01T20:35:29.3587984Z ##[group]Runner Image
+2025-03-01T20:35:29.3588584Z Image: ubuntu-24.04
+2025-03-01T20:35:29.3589105Z Version: 20250223.1.0
+2025-03-01T20:35:29.3590167Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250223.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-01T20:35:29.3591785Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250223.1
+2025-03-01T20:35:29.3592725Z ##[endgroup]
+2025-03-01T20:35:29.3593332Z ##[group]Runner Image Provisioner
+2025-03-01T20:35:29.3593927Z 2.0.422.1
+2025-03-01T20:35:29.3594403Z ##[endgroup]
+2025-03-01T20:35:29.3596566Z ##[group]GITHUB_TOKEN Permissions
+2025-03-01T20:35:29.3598704Z Actions: read
+2025-03-01T20:35:29.3599545Z Attestations: read
+2025-03-01T20:35:29.3600143Z Checks: read
+2025-03-01T20:35:29.3600726Z Contents: read
+2025-03-01T20:35:29.3601256Z Deployments: read
+2025-03-01T20:35:29.3602039Z Discussions: read
+2025-03-01T20:35:29.3602581Z Issues: read
+2025-03-01T20:35:29.3603070Z Metadata: read
+2025-03-01T20:35:29.3603610Z Packages: read
+2025-03-01T20:35:29.3604151Z Pages: read
+2025-03-01T20:35:29.3604672Z PullRequests: read
+2025-03-01T20:35:29.3605260Z RepositoryProjects: read
+2025-03-01T20:35:29.3605814Z SecurityEvents: read
+2025-03-01T20:35:29.3606361Z Statuses: read
+2025-03-01T20:35:29.3606905Z ##[endgroup]
+2025-03-01T20:35:29.3609710Z Secret source: None
+2025-03-01T20:35:29.3610384Z Prepare workflow directory
+2025-03-01T20:35:29.4064164Z Prepare all required actions
+2025-03-01T20:35:29.4100839Z Getting action download info
+2025-03-01T20:35:29.5120164Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-01T20:35:29.6636564Z Complete job name: Check Formatting
+2025-03-01T20:35:29.7378057Z ##[group]Run actions/checkout@v4
+2025-03-01T20:35:29.7378920Z with:
+2025-03-01T20:35:29.7379342Z   repository: chemprop/chemprop
+2025-03-01T20:35:29.7379980Z   token: ***
+2025-03-01T20:35:29.7380371Z   ssh-strict: true
+2025-03-01T20:35:29.7380761Z   ssh-user: git
+2025-03-01T20:35:29.7381212Z   persist-credentials: true
+2025-03-01T20:35:29.7381843Z   clean: true
+2025-03-01T20:35:29.7382266Z   sparse-checkout-cone-mode: true
+2025-03-01T20:35:29.7382762Z   fetch-depth: 1
+2025-03-01T20:35:29.7383161Z   fetch-tags: false
+2025-03-01T20:35:29.7383570Z   show-progress: true
+2025-03-01T20:35:29.7383983Z   lfs: false
+2025-03-01T20:35:29.7384356Z   submodules: false
+2025-03-01T20:35:29.7384768Z   set-safe-directory: true
+2025-03-01T20:35:29.7385540Z env:
+2025-03-01T20:35:29.7385921Z   USE_LIBUV: 0
+2025-03-01T20:35:29.7386309Z ##[endgroup]
+2025-03-01T20:35:29.9334424Z Syncing repository: chemprop/chemprop
+2025-03-01T20:35:29.9336352Z ##[group]Getting Git version info
+2025-03-01T20:35:29.9337220Z Working directory is '/home/runner/work/chemprop/chemprop'
+2025-03-01T20:35:29.9338374Z [command]/usr/bin/git version
+2025-03-01T20:35:29.9445438Z git version 2.48.1
+2025-03-01T20:35:29.9473562Z ##[endgroup]
+2025-03-01T20:35:29.9488084Z Temporarily overriding HOME='/home/runner/work/_temp/ef832631-3188-44b0-84af-84310fe49712' before making global git config changes
+2025-03-01T20:35:29.9489776Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-01T20:35:29.9494420Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chemprop/chemprop
+2025-03-01T20:35:29.9534679Z Deleting the contents of '/home/runner/work/chemprop/chemprop'
+2025-03-01T20:35:29.9539084Z ##[group]Initializing the repository
+2025-03-01T20:35:29.9544033Z [command]/usr/bin/git init /home/runner/work/chemprop/chemprop
+2025-03-01T20:35:29.9649790Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-01T20:35:29.9651665Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-01T20:35:29.9653681Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-01T20:35:29.9654926Z hint:
+2025-03-01T20:35:29.9655760Z hint: 	git config --global init.defaultBranch <name>
+2025-03-01T20:35:29.9656813Z hint:
+2025-03-01T20:35:29.9657793Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-01T20:35:29.9659356Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-01T20:35:29.9660587Z hint:
+2025-03-01T20:35:29.9661302Z hint: 	git branch -m <name>
+2025-03-01T20:35:29.9662859Z Initialized empty Git repository in /home/runner/work/chemprop/chemprop/.git/
+2025-03-01T20:35:29.9671715Z [command]/usr/bin/git remote add origin https://github.com/chemprop/chemprop
+2025-03-01T20:35:29.9707222Z ##[endgroup]
+2025-03-01T20:35:29.9707941Z ##[group]Disabling automatic garbage collection
+2025-03-01T20:35:29.9711327Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-01T20:35:29.9741649Z ##[endgroup]
+2025-03-01T20:35:29.9742994Z ##[group]Setting up auth
+2025-03-01T20:35:29.9749210Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-01T20:35:29.9780500Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-01T20:35:30.0121094Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-01T20:35:30.0152007Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-01T20:35:30.0382819Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-01T20:35:30.0420196Z ##[endgroup]
+2025-03-01T20:35:30.0421572Z ##[group]Fetching the repository
+2025-03-01T20:35:30.0429133Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e97f7b2499d41371eb339f010e2c345d8b2a2f03:refs/remotes/pull/1179/merge
+2025-03-01T20:35:33.9760682Z From https://github.com/chemprop/chemprop
+2025-03-01T20:35:33.9762922Z  * [new ref]         e97f7b2499d41371eb339f010e2c345d8b2a2f03 -> pull/1179/merge
+2025-03-01T20:35:33.9787160Z ##[endgroup]
+2025-03-01T20:35:33.9788289Z ##[group]Determining the checkout info
+2025-03-01T20:35:33.9789738Z ##[endgroup]
+2025-03-01T20:35:33.9795877Z [command]/usr/bin/git sparse-checkout disable
+2025-03-01T20:35:33.9842803Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-01T20:35:33.9872588Z ##[group]Checking out the ref
+2025-03-01T20:35:33.9876152Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1179/merge
+2025-03-01T20:35:34.2276063Z Note: switching to 'refs/remotes/pull/1179/merge'.
+2025-03-01T20:35:34.2277636Z 
+2025-03-01T20:35:34.2278571Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-01T20:35:34.2279442Z changes and commit them, and you can discard any commits you make in this
+2025-03-01T20:35:34.2279987Z state without impacting any branches by switching back to a branch.
+2025-03-01T20:35:34.2280316Z 
+2025-03-01T20:35:34.2280529Z If you want to create a new branch to retain commits you create, you may
+2025-03-01T20:35:34.2281009Z do so (now or later) by using -c with the switch command. Example:
+2025-03-01T20:35:34.2281272Z 
+2025-03-01T20:35:34.2281653Z   git switch -c <new-branch-name>
+2025-03-01T20:35:34.2281879Z 
+2025-03-01T20:35:34.2282015Z Or undo this operation with:
+2025-03-01T20:35:34.2282199Z 
+2025-03-01T20:35:34.2282357Z   git switch -
+2025-03-01T20:35:34.2282517Z 
+2025-03-01T20:35:34.2282759Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-01T20:35:34.2283088Z 
+2025-03-01T20:35:34.2283455Z HEAD is now at e97f7b2 Merge 76e686d2b01fa22570276b74e8b86ec071b1688f into 1d877663ed45e3d8567d878ac168dc586d846436
+2025-03-01T20:35:34.2297180Z ##[endgroup]
+2025-03-01T20:35:34.2338033Z [command]/usr/bin/git log -1 --format=%H
+2025-03-01T20:35:34.2360776Z e97f7b2499d41371eb339f010e2c345d8b2a2f03
+2025-03-01T20:35:34.2540142Z ##[group]Run python -m pip install black==23.* flake8 isort
+2025-03-01T20:35:34.2540677Z [36;1mpython -m pip install black==23.* flake8 isort[0m
+2025-03-01T20:35:34.2592564Z shell: /usr/bin/bash -e {0}
+2025-03-01T20:35:34.2592865Z env:
+2025-03-01T20:35:34.2593080Z   USE_LIBUV: 0
+2025-03-01T20:35:34.2593305Z ##[endgroup]
+2025-03-01T20:35:34.6476934Z Defaulting to user installation because normal site-packages is not writeable
+2025-03-01T20:35:35.0636207Z Collecting black==23.*
+2025-03-01T20:35:35.1219671Z   Downloading black-23.12.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (68 kB)
+2025-03-01T20:35:35.1362650Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 69.0/69.0 kB 4.9 MB/s eta 0:00:00
+2025-03-01T20:35:35.1762609Z Collecting flake8
+2025-03-01T20:35:35.1841161Z   Downloading flake8-7.1.2-py2.py3-none-any.whl.metadata (3.8 kB)
+2025-03-01T20:35:35.2329386Z Collecting isort
+2025-03-01T20:35:35.2402989Z   Downloading isort-6.0.1-py3-none-any.whl.metadata (11 kB)
+2025-03-01T20:35:35.2568871Z Requirement already satisfied: click>=8.0.0 in /usr/lib/python3/dist-packages (from black==23.*) (8.1.6)
+2025-03-01T20:35:35.2731869Z Collecting mypy-extensions>=0.4.3 (from black==23.*)
+2025-03-01T20:35:35.2805053Z   Downloading mypy_extensions-1.0.0-py3-none-any.whl.metadata (1.1 kB)
+2025-03-01T20:35:35.2854103Z Requirement already satisfied: packaging>=22.0 in /usr/lib/python3/dist-packages (from black==23.*) (24.0)
+2025-03-01T20:35:35.3049588Z Collecting pathspec>=0.9.0 (from black==23.*)
+2025-03-01T20:35:35.3123322Z   Downloading pathspec-0.12.1-py3-none-any.whl.metadata (21 kB)
+2025-03-01T20:35:35.3185940Z Requirement already satisfied: platformdirs>=2 in /usr/local/lib/python3.12/dist-packages (from black==23.*) (4.3.6)
+2025-03-01T20:35:35.3390740Z Collecting mccabe<0.8.0,>=0.7.0 (from flake8)
+2025-03-01T20:35:35.3463687Z   Downloading mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+2025-03-01T20:35:35.3708764Z Collecting pycodestyle<2.13.0,>=2.12.0 (from flake8)
+2025-03-01T20:35:35.3781798Z   Downloading pycodestyle-2.12.1-py2.py3-none-any.whl.metadata (4.5 kB)
+2025-03-01T20:35:35.4042635Z Collecting pyflakes<3.3.0,>=3.2.0 (from flake8)
+2025-03-01T20:35:35.4119010Z   Downloading pyflakes-3.2.0-py2.py3-none-any.whl.metadata (3.5 kB)
+2025-03-01T20:35:35.4404841Z Downloading black-23.12.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.7 MB)
+2025-03-01T20:35:35.4715333Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 59.0 MB/s eta 0:00:00
+2025-03-01T20:35:35.4797664Z Downloading flake8-7.1.2-py2.py3-none-any.whl (57 kB)
+2025-03-01T20:35:35.4846006Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.7/57.7 kB 15.4 MB/s eta 0:00:00
+2025-03-01T20:35:35.4920119Z Downloading isort-6.0.1-py3-none-any.whl (94 kB)
+2025-03-01T20:35:35.4970602Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 94.2/94.2 kB 26.5 MB/s eta 0:00:00
+2025-03-01T20:35:35.5052868Z Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+2025-03-01T20:35:35.5151739Z Downloading mypy_extensions-1.0.0-py3-none-any.whl (4.7 kB)
+2025-03-01T20:35:35.5245217Z Downloading pathspec-0.12.1-py3-none-any.whl (31 kB)
+2025-03-01T20:35:35.5338820Z Downloading pycodestyle-2.12.1-py2.py3-none-any.whl (31 kB)
+2025-03-01T20:35:35.5449153Z Downloading pyflakes-3.2.0-py2.py3-none-any.whl (62 kB)
+2025-03-01T20:35:35.5490378Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.7/62.7 kB 22.2 MB/s eta 0:00:00
+2025-03-01T20:35:35.8050349Z Installing collected packages: pyflakes, pycodestyle, pathspec, mypy-extensions, mccabe, isort, flake8, black
+2025-03-01T20:35:36.1294506Z Successfully installed black-23.12.1 flake8-7.1.2 isort-6.0.1 mccabe-0.7.0 mypy-extensions-1.0.0 pathspec-0.12.1 pycodestyle-2.12.1 pyflakes-3.2.0
+2025-03-01T20:35:36.1945089Z ##[group]Run black --check .
+2025-03-01T20:35:36.1945389Z [36;1mblack --check .[0m
+2025-03-01T20:35:36.1994051Z shell: /usr/bin/bash -e {0}
+2025-03-01T20:35:36.1994296Z env:
+2025-03-01T20:35:36.1994472Z   USE_LIBUV: 0
+2025-03-01T20:35:36.1994661Z ##[endgroup]
+2025-03-01T20:35:37.4817313Z All done! ✨ 🍰 ✨
+2025-03-01T20:35:37.4817600Z 99 files would be left unchanged.
+2025-03-01T20:35:37.5059097Z ##[group]Run flake8 .
+2025-03-01T20:35:37.5059356Z [36;1mflake8 .[0m
+2025-03-01T20:35:37.5105884Z shell: /usr/bin/bash -e {0}
+2025-03-01T20:35:37.5106120Z env:
+2025-03-01T20:35:37.5106288Z   USE_LIBUV: 0
+2025-03-01T20:35:37.5106463Z ##[endgroup]
+2025-03-01T20:35:37.9232998Z <unknown>:248: SyntaxWarning: invalid escape sequence '\m'
+2025-03-01T20:35:37.9233658Z <unknown>:320: SyntaxWarning: invalid escape sequence '\m'
+2025-03-01T20:35:37.9261255Z <unknown>:116: SyntaxWarning: invalid escape sequence '\i'
+2025-03-01T20:35:37.9289386Z <unknown>:526: SyntaxWarning: invalid escape sequence '\h'
+2025-03-01T20:35:37.9690906Z <unknown>:280: SyntaxWarning: invalid escape sequence '\s'
+2025-03-01T20:35:37.9693194Z <unknown>:313: SyntaxWarning: invalid escape sequence '\s'
+2025-03-01T20:35:38.0728360Z <unknown>:125: SyntaxWarning: invalid escape sequence '\s'
+2025-03-01T20:35:38.1786087Z <unknown>:127: SyntaxWarning: invalid escape sequence '\m'
+2025-03-01T20:35:38.2056290Z <unknown>:12: SyntaxWarning: invalid escape sequence '\s'
+2025-03-01T20:35:38.2061045Z <unknown>:46: SyntaxWarning: invalid escape sequence '\s'
+2025-03-01T20:35:38.2092238Z <unknown>:68: SyntaxWarning: invalid escape sequence '\s'
+2025-03-01T20:35:38.2289864Z <unknown>:14: SyntaxWarning: invalid escape sequence '\s'
+2025-03-01T20:35:38.2332191Z <unknown>:21: SyntaxWarning: invalid escape sequence '\s'
+2025-03-01T20:35:38.2333162Z <unknown>:64: SyntaxWarning: invalid escape sequence '\s'
+2025-03-01T20:35:38.2334136Z <unknown>:150: SyntaxWarning: invalid escape sequence '\s'
+2025-03-01T20:35:38.2347904Z <unknown>:322: SyntaxWarning: invalid escape sequence '\s'
+2025-03-01T20:35:38.2402210Z <unknown>:382: SyntaxWarning: invalid escape sequence '\s'
+2025-03-01T20:35:38.2832124Z <unknown>:21: SyntaxWarning: invalid escape sequence '\s'
+2025-03-01T20:35:38.2916946Z <unknown>:101: SyntaxWarning: invalid escape sequence '\s'
+2025-03-01T20:35:38.3483759Z <unknown>:18: SyntaxWarning: invalid escape sequence '\s'
+2025-03-01T20:35:38.4034549Z ./chemprop/models/multi.py:11:1: F401 'chemprop.utils.registry.Factory' imported but unused
+2025-03-01T20:35:38.4214217Z ##[error]Process completed with exit code 1.
+2025-03-01T20:35:38.4308115Z Post job cleanup.
+2025-03-01T20:35:38.5235545Z [command]/usr/bin/git version
+2025-03-01T20:35:38.5274601Z git version 2.48.1
+2025-03-01T20:35:38.5322860Z Temporarily overriding HOME='/home/runner/work/_temp/b2cee711-91cd-4f51-9ad0-a33ab0a27540' before making global git config changes
+2025-03-01T20:35:38.5324167Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-01T20:35:38.5328159Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/chemprop/chemprop
+2025-03-01T20:35:38.5362218Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-01T20:35:38.5393798Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-01T20:35:38.5626627Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-01T20:35:38.5646978Z http.https://github.com/.extraheader
+2025-03-01T20:35:38.5659643Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-01T20:35:38.5690531Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-01T20:35:38.6024299Z Cleaning up orphan processes

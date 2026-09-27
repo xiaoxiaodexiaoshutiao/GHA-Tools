@@ -1,0 +1,361 @@
+2025-04-16T18:37:40.1989006Z Requested labels: ubuntu-latest
+2025-04-16T18:37:40.1989245Z Job defined at: svthalia/concrexit/.github/workflows/test.yaml@refs/pull/3931/merge
+2025-04-16T18:37:40.1989378Z Waiting for a runner to pick up this job...
+2025-04-16T18:37:40.6113906Z Job is waiting for a hosted runner to come online.
+2025-04-16T18:37:44.4161302Z Job is about to start running on the hosted runner: GitHub Actions 27 (hosted)
+2025-04-16T18:37:46.6126725Z Current runner version: '2.323.0'
+2025-04-16T18:37:46.6155461Z ##[group]Operating System
+2025-04-16T18:37:46.6156376Z Ubuntu
+2025-04-16T18:37:46.6156897Z 24.04.2
+2025-04-16T18:37:46.6157371Z LTS
+2025-04-16T18:37:46.6157923Z ##[endgroup]
+2025-04-16T18:37:46.6158473Z ##[group]Runner Image
+2025-04-16T18:37:46.6159048Z Image: ubuntu-24.04
+2025-04-16T18:37:46.6159654Z Version: 20250413.1.0
+2025-04-16T18:37:46.6160680Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250413.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-16T18:37:46.6162040Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250413.1
+2025-04-16T18:37:46.6163193Z ##[endgroup]
+2025-04-16T18:37:46.6163764Z ##[group]Runner Image Provisioner
+2025-04-16T18:37:46.6164417Z 2.0.422.1
+2025-04-16T18:37:46.6164955Z ##[endgroup]
+2025-04-16T18:37:46.6167248Z ##[group]GITHUB_TOKEN Permissions
+2025-04-16T18:37:46.6169635Z Actions: write
+2025-04-16T18:37:46.6170427Z Attestations: write
+2025-04-16T18:37:46.6171160Z Checks: write
+2025-04-16T18:37:46.6171670Z Contents: write
+2025-04-16T18:37:46.6172260Z Deployments: write
+2025-04-16T18:37:46.6173002Z Discussions: write
+2025-04-16T18:37:46.6173509Z Issues: write
+2025-04-16T18:37:46.6174105Z Metadata: read
+2025-04-16T18:37:46.6174619Z Models: read
+2025-04-16T18:37:46.6175123Z Packages: write
+2025-04-16T18:37:46.6175724Z Pages: write
+2025-04-16T18:37:46.6176213Z PullRequests: write
+2025-04-16T18:37:46.6176773Z RepositoryProjects: write
+2025-04-16T18:37:46.6177438Z SecurityEvents: write
+2025-04-16T18:37:46.6177979Z Statuses: write
+2025-04-16T18:37:46.6178553Z ##[endgroup]
+2025-04-16T18:37:46.6182153Z Secret source: Actions
+2025-04-16T18:37:46.6183580Z Prepare workflow directory
+2025-04-16T18:37:46.6613756Z Prepare all required actions
+2025-04-16T18:37:46.6651839Z Getting action download info
+2025-04-16T18:37:46.9181872Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-16T18:37:46.9182959Z Version: 4.2.2
+2025-04-16T18:37:46.9183918Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-16T18:37:46.9184964Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-16T18:37:46.9185579Z ##[endgroup]
+2025-04-16T18:37:47.0038401Z Download action repository 'astral-sh/setup-uv@v3' (SHA:caf0cab7a618c569241d31dcd442f54681755d39)
+2025-04-16T18:37:47.6773330Z Complete job name: Linting
+2025-04-16T18:37:47.7542297Z ##[group]Run actions/checkout@v4
+2025-04-16T18:37:47.7543562Z with:
+2025-04-16T18:37:47.7544041Z   repository: svthalia/concrexit
+2025-04-16T18:37:47.7544865Z   token: ***
+2025-04-16T18:37:47.7545328Z   ssh-strict: true
+2025-04-16T18:37:47.7545798Z   ssh-user: git
+2025-04-16T18:37:47.7546287Z   persist-credentials: true
+2025-04-16T18:37:47.7546814Z   clean: true
+2025-04-16T18:37:47.7547279Z   sparse-checkout-cone-mode: true
+2025-04-16T18:37:47.7547828Z   fetch-depth: 1
+2025-04-16T18:37:47.7548283Z   fetch-tags: false
+2025-04-16T18:37:47.7548748Z   show-progress: true
+2025-04-16T18:37:47.7549229Z   lfs: false
+2025-04-16T18:37:47.7549716Z   submodules: false
+2025-04-16T18:37:47.7550182Z   set-safe-directory: true
+2025-04-16T18:37:47.7550928Z ##[endgroup]
+2025-04-16T18:37:47.9280947Z Syncing repository: svthalia/concrexit
+2025-04-16T18:37:47.9283400Z ##[group]Getting Git version info
+2025-04-16T18:37:47.9284243Z Working directory is '/home/runner/work/concrexit/concrexit'
+2025-04-16T18:37:47.9285533Z [command]/usr/bin/git version
+2025-04-16T18:37:47.9328499Z git version 2.49.0
+2025-04-16T18:37:47.9357380Z ##[endgroup]
+2025-04-16T18:37:47.9371022Z Temporarily overriding HOME='/home/runner/work/_temp/0df5536f-1fab-482d-8d9b-7335775673bd' before making global git config changes
+2025-04-16T18:37:47.9372697Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-16T18:37:47.9376365Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/concrexit/concrexit
+2025-04-16T18:37:47.9413378Z Deleting the contents of '/home/runner/work/concrexit/concrexit'
+2025-04-16T18:37:47.9417204Z ##[group]Initializing the repository
+2025-04-16T18:37:47.9421062Z [command]/usr/bin/git init /home/runner/work/concrexit/concrexit
+2025-04-16T18:37:47.9481691Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-16T18:37:47.9483994Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-16T18:37:47.9485835Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-16T18:37:47.9486950Z hint:
+2025-04-16T18:37:47.9487984Z hint: 	git config --global init.defaultBranch <name>
+2025-04-16T18:37:47.9489319Z hint:
+2025-04-16T18:37:47.9490694Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-16T18:37:47.9493071Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-16T18:37:47.9493898Z hint:
+2025-04-16T18:37:47.9494342Z hint: 	git branch -m <name>
+2025-04-16T18:37:47.9495182Z Initialized empty Git repository in /home/runner/work/concrexit/concrexit/.git/
+2025-04-16T18:37:47.9502742Z [command]/usr/bin/git remote add origin https://github.com/svthalia/concrexit
+2025-04-16T18:37:47.9534329Z ##[endgroup]
+2025-04-16T18:37:47.9535180Z ##[group]Disabling automatic garbage collection
+2025-04-16T18:37:47.9538204Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-16T18:37:47.9573761Z ##[endgroup]
+2025-04-16T18:37:47.9574603Z ##[group]Setting up auth
+2025-04-16T18:37:47.9575393Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-16T18:37:47.9606664Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-16T18:37:47.9902344Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-16T18:37:47.9933147Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-16T18:37:48.0170614Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-16T18:37:48.0222357Z ##[endgroup]
+2025-04-16T18:37:48.0223981Z ##[group]Fetching the repository
+2025-04-16T18:37:48.0231811Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +1110fe26a1a835d51485c3b3cfd989b8871d4470:refs/remotes/pull/3931/merge
+2025-04-16T18:37:49.1006772Z From https://github.com/svthalia/concrexit
+2025-04-16T18:37:49.1009991Z  * [new ref]         1110fe26a1a835d51485c3b3cfd989b8871d4470 -> pull/3931/merge
+2025-04-16T18:37:49.1183592Z ##[endgroup]
+2025-04-16T18:37:49.1185353Z ##[group]Determining the checkout info
+2025-04-16T18:37:49.1187439Z ##[endgroup]
+2025-04-16T18:37:49.1189478Z [command]/usr/bin/git sparse-checkout disable
+2025-04-16T18:37:49.1232579Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-16T18:37:49.1260581Z ##[group]Checking out the ref
+2025-04-16T18:37:49.1264392Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/3931/merge
+2025-04-16T18:37:49.2708821Z Note: switching to 'refs/remotes/pull/3931/merge'.
+2025-04-16T18:37:49.2711580Z 
+2025-04-16T18:37:49.2713159Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-16T18:37:49.2717710Z changes and commit them, and you can discard any commits you make in this
+2025-04-16T18:37:49.2720851Z state without impacting any branches by switching back to a branch.
+2025-04-16T18:37:49.2722868Z 
+2025-04-16T18:37:49.2723757Z If you want to create a new branch to retain commits you create, you may
+2025-04-16T18:37:49.2725672Z do so (now or later) by using -c with the switch command. Example:
+2025-04-16T18:37:49.2726873Z 
+2025-04-16T18:37:49.2727593Z   git switch -c <new-branch-name>
+2025-04-16T18:37:49.2728504Z 
+2025-04-16T18:37:49.2728988Z Or undo this operation with:
+2025-04-16T18:37:49.2730071Z 
+2025-04-16T18:37:49.2730527Z   git switch -
+2025-04-16T18:37:49.2731124Z 
+2025-04-16T18:37:49.2732184Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-16T18:37:49.2733761Z 
+2025-04-16T18:37:49.2735328Z HEAD is now at 1110fe2 Merge 8237d797fe2d562ddd627f91108d27b5b527da1c into 871a3dd9b07adaa5cbcea7f7ea36ca9d61a3a957
+2025-04-16T18:37:49.2739902Z ##[endgroup]
+2025-04-16T18:37:49.2772804Z [command]/usr/bin/git log -1 --format=%H
+2025-04-16T18:37:49.2796319Z 1110fe26a1a835d51485c3b3cfd989b8871d4470
+2025-04-16T18:37:49.3090214Z ##[group]Run astral-sh/setup-uv@v3
+2025-04-16T18:37:49.3091372Z with:
+2025-04-16T18:37:49.3092202Z   enable-cache: true
+2025-04-16T18:37:49.3093295Z   version: latest
+2025-04-16T18:37:49.3094576Z   github-token: ***
+2025-04-16T18:37:49.3095530Z   cache-dependency-glob: **/uv.lock
+2025-04-16T18:37:49.3096622Z   prune-cache: true
+2025-04-16T18:37:49.3097484Z ##[endgroup]
+2025-04-16T18:37:49.4749449Z Downloading uv from "https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2025-04-16T18:37:50.0937969Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/7c2380f9-3c6a-4104-a6a9-b0dbba0dbaa7 -f /home/runner/work/_temp/1f60927f-9f81-4e8d-b172-be2680ae73b1
+2025-04-16T18:37:50.4380639Z Added /opt/hostedtoolcache/uv/0.6.14/x86_64 to the path
+2025-04-16T18:37:50.4383740Z Added /home/runner/.local/bin to the path
+2025-04-16T18:37:50.4387791Z Successfully installed uv version 0.6.14
+2025-04-16T18:37:50.4416139Z Set UV_CACHE_DIR to /home/runner/work/_temp/setup-uv-cache
+2025-04-16T18:37:50.4418747Z Searching files using cache dependency glob: **/uv.lock
+2025-04-16T18:37:50.4616505Z /home/runner/work/concrexit/concrexit/uv.lock
+2025-04-16T18:37:50.6487745Z Found 1 files to hash.
+2025-04-16T18:37:50.6491021Z Trying to restore uv cache from GitHub Actions cache with key: setup-uv-1-x86_64-unknown-linux-gnu-0.6.14-402c35164c24e11bb4cebbd7bd93298e073f23a6396c584378bd98aa6cbb24e0
+2025-04-16T18:37:50.8778915Z ##[warning]Failed to restore: Cache service responded with 422
+2025-04-16T18:37:50.8787419Z No GitHub Actions cache found for key: setup-uv-1-x86_64-unknown-linux-gnu-0.6.14-402c35164c24e11bb4cebbd7bd93298e073f23a6396c584378bd98aa6cbb24e0
+2025-04-16T18:37:50.8907357Z ##[group]Run uv python install
+2025-04-16T18:37:50.8907778Z [36;1muv python install[0m
+2025-04-16T18:37:50.8962367Z shell: /usr/bin/bash -e {0}
+2025-04-16T18:37:50.8962965Z env:
+2025-04-16T18:37:50.8963266Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-04-16T18:37:50.8963631Z ##[endgroup]
+2025-04-16T18:37:51.2160936Z Downloading cpython-3.13.3-linux-x86_64-gnu (20.3MiB)
+2025-04-16T18:37:51.9313572Z  Downloaded cpython-3.13.3-linux-x86_64-gnu
+2025-04-16T18:37:51.9399397Z Installed Python 3.13.3 in 1.02s
+2025-04-16T18:37:51.9400009Z  + cpython-3.13.3-linux-x86_64-gnu
+2025-04-16T18:37:51.9463917Z ##[group]Run uv sync --frozen
+2025-04-16T18:37:51.9464236Z [36;1muv sync --frozen[0m
+2025-04-16T18:37:51.9511506Z shell: /usr/bin/bash -e {0}
+2025-04-16T18:37:51.9511792Z env:
+2025-04-16T18:37:51.9512023Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-04-16T18:37:51.9512316Z ##[endgroup]
+2025-04-16T18:37:52.1224434Z Using CPython 3.13.3
+2025-04-16T18:37:52.1224910Z Creating virtual environment at: .venv
+2025-04-16T18:37:52.1931628Z Downloading python-stdnum (1.0MiB)
+2025-04-16T18:37:52.1932064Z Downloading django (7.9MiB)
+2025-04-16T18:37:52.1934939Z Downloading django-localflavor (2.8MiB)
+2025-04-16T18:37:52.1935916Z Downloading libsass (9.0MiB)
+2025-04-16T18:37:52.1938906Z Downloading cryptography (3.8MiB)
+2025-04-16T18:37:52.1941214Z Downloading virtualenv (3.0MiB)
+2025-04-16T18:37:52.1943070Z Downloading botocore (12.2MiB)
+2025-04-16T18:37:52.1948169Z Downloading ruff (10.5MiB)
+2025-04-16T18:37:52.1950029Z Downloading django-tinymce (1.3MiB)
+2025-04-16T18:37:52.1951138Z Downloading psycopg-binary (4.0MiB)
+2025-04-16T18:37:52.1952117Z Downloading phonenumbers (2.5MiB)
+2025-04-16T18:37:52.1955607Z Downloading grpcio (5.6MiB)
+2025-04-16T18:37:52.1956437Z Downloading pillow (4.2MiB)
+2025-04-16T18:37:52.1958324Z Downloading google-api-python-client (11.5MiB)
+2025-04-16T18:37:52.1959345Z Downloading faker (1.6MiB)
+2025-04-16T18:37:52.2000416Z Downloading djangorestframework (1.0MiB)
+2025-04-16T18:37:52.8748115Z    Building django-filepond-widget==0.9.0
+2025-04-16T18:37:52.8893449Z    Building google-crc32c==1.6.0
+2025-04-16T18:37:52.9226407Z    Building pydenticon==0.3.1
+2025-04-16T18:37:52.9556814Z  Downloaded django-tinymce
+2025-04-16T18:37:52.9871942Z  Downloaded djangorestframework
+2025-04-16T18:37:53.1754579Z  Downloaded python-stdnum
+2025-04-16T18:37:53.2094405Z  Downloaded virtualenv
+2025-04-16T18:37:53.3096131Z  Downloaded django-localflavor
+2025-04-16T18:37:53.3482130Z  Downloaded psycopg-binary
+2025-04-16T18:37:53.3858875Z  Downloaded cryptography
+2025-04-16T18:37:53.4086091Z  Downloaded pillow
+2025-04-16T18:37:53.4115960Z  Downloaded phonenumbers
+2025-04-16T18:37:53.4811085Z  Downloaded grpcio
+2025-04-16T18:37:53.8064660Z  Downloaded libsass
+2025-04-16T18:37:53.8858748Z  Downloaded faker
+2025-04-16T18:37:53.9106430Z  Downloaded ruff
+2025-04-16T18:37:54.0435359Z  Downloaded google-api-python-client
+2025-04-16T18:37:54.4166811Z  Downloaded botocore
+2025-04-16T18:37:54.7999401Z  Downloaded django
+2025-04-16T18:37:55.0192918Z       Built pydenticon==0.3.1
+2025-04-16T18:37:55.2140777Z       Built google-crc32c==1.6.0
+2025-04-16T18:37:55.2276999Z       Built django-filepond-widget==0.9.0
+2025-04-16T18:37:55.2289554Z Prepared 131 packages in 3.10s
+2025-04-16T18:37:55.5557780Z Installed 131 packages in 326ms
+2025-04-16T18:37:55.5559261Z  + amqp==5.3.1
+2025-04-16T18:37:55.5559648Z  + argon2-cffi==21.3.0
+2025-04-16T18:37:55.5560035Z  + argon2-cffi-bindings==21.2.0
+2025-04-16T18:37:55.5560383Z  + asgiref==3.8.1
+2025-04-16T18:37:55.5560686Z  + asn1crypto==1.5.1
+2025-04-16T18:37:55.5563401Z  + bcrypt==4.0.1
+2025-04-16T18:37:55.5564309Z  + beautifulsoup4==4.11.2
+2025-04-16T18:37:55.5564779Z  + billiard==4.2.1
+2025-04-16T18:37:55.5565183Z  + bleach==6.1.0
+2025-04-16T18:37:55.5565543Z  + boto3==1.35.62
+2025-04-16T18:37:55.5565922Z  + botocore==1.35.62
+2025-04-16T18:37:55.5566314Z  + cachecontrol==0.14.1
+2025-04-16T18:37:55.5566721Z  + cachetools==5.5.0
+2025-04-16T18:37:55.5567107Z  + cbor2==5.6.5
+2025-04-16T18:37:55.5567477Z  + celery==5.3.6
+2025-04-16T18:37:55.5567867Z  + certifi==2024.8.30
+2025-04-16T18:37:55.5568275Z  + cffi==1.17.1
+2025-04-16T18:37:55.5568647Z  + cfgv==3.4.0
+2025-04-16T18:37:55.5569069Z  + charset-normalizer==3.4.0
+2025-04-16T18:37:55.5569516Z  + click==8.1.7
+2025-04-16T18:37:55.5569949Z  + click-didyoumean==0.3.1
+2025-04-16T18:37:55.5570448Z  + click-plugins==1.1.1
+2025-04-16T18:37:55.5570879Z  + click-repl==0.3.0
+2025-04-16T18:37:55.5571304Z  + coverage==7.6.7
+2025-04-16T18:37:55.5571712Z  + cryptography==43.0.3
+2025-04-16T18:37:55.5572145Z  + da-vinci==0.4.0
+2025-04-16T18:37:55.5573112Z  + distlib==0.3.9
+2025-04-16T18:37:55.5573561Z  + django==5.1.5
+2025-04-16T18:37:55.5574053Z  + django-admin-autocomplete-filter==0.7.1
+2025-04-16T18:37:55.5574684Z  + django-appconf==1.0.6
+2025-04-16T18:37:55.5575191Z  + django-bootstrap5==22.2
+2025-04-16T18:37:55.5575704Z  + django-compressor==4.5.1
+2025-04-16T18:37:55.5576209Z  + django-cors-headers==3.14.0
+2025-04-16T18:37:55.5576665Z  + django-debug-toolbar==4.4.6
+2025-04-16T18:37:55.5577092Z  + django-drf-filepond==0.5.0
+2025-04-16T18:37:55.5577532Z  + django-extensions==3.2.3
+2025-04-16T18:37:55.5577973Z  + django-filepond-widget==0.9.0
+2025-04-16T18:37:55.5578439Z  + django-formtools==2.5.1
+2025-04-16T18:37:55.5578843Z  + django-ical==1.9.2
+2025-04-16T18:37:55.5579220Z  + django-localflavor==4.0
+2025-04-16T18:37:55.5579638Z  + django-oauth-toolkit==2.4.0
+2025-04-16T18:37:55.5580056Z  + django-otp==1.5.1
+2025-04-16T18:37:55.5580454Z  + django-phonenumber-field==7.3.0
+2025-04-16T18:37:55.5580963Z  + django-queryable-properties==1.8.5
+2025-04-16T18:37:55.5581424Z  + django-ratelimit==4.1.0
+2025-04-16T18:37:55.5581825Z  + django-recurrence==1.11.1
+2025-04-16T18:37:55.5582760Z  + django-sass-processor==1.4.1
+2025-04-16T18:37:55.5583229Z  + django-sendfile2==0.7.1
+2025-04-16T18:37:55.5583637Z  + django-storages==1.14.3
+2025-04-16T18:37:55.5584039Z  + django-template-check==0.4.0
+2025-04-16T18:37:55.5584510Z  + django-thumbnails==0.8.0
+2025-04-16T18:37:55.5584947Z  + django-tinymce==4.1.0
+2025-04-16T18:37:55.5585360Z  + django-two-factor-auth==1.16.0
+2025-04-16T18:37:55.5585826Z  + djangorestframework==3.15.2
+2025-04-16T18:37:55.5586251Z  + factory-boy==3.3.0
+2025-04-16T18:37:55.5586613Z  + faker==18.13.0
+2025-04-16T18:37:55.5586958Z  + filelock==3.16.1
+2025-04-16T18:37:55.5587306Z  + firebase-admin==6.2.0
+2025-04-16T18:37:55.5587693Z  + freezegun==1.5.1
+2025-04-16T18:37:55.5588046Z  + google-api-core==2.23.0
+2025-04-16T18:37:55.5588483Z  + google-api-python-client==2.118.0
+2025-04-16T18:37:55.5588944Z  + google-auth==2.36.0
+2025-04-16T18:37:55.5589356Z  + google-auth-httplib2==0.2.0
+2025-04-16T18:37:55.5589796Z  + google-cloud-core==2.4.1
+2025-04-16T18:37:55.5590281Z  + google-cloud-firestore==2.19.0
+2025-04-16T18:37:55.5590814Z  + google-cloud-storage==2.18.2
+2025-04-16T18:37:55.5591230Z  + google-crc32c==1.6.0
+2025-04-16T18:37:55.5591622Z  + google-resumable-media==2.7.2
+2025-04-16T18:37:55.5592096Z  + googleapis-common-protos==1.66.0
+2025-04-16T18:37:55.5592661Z  + grpcio==1.67.1
+2025-04-16T18:37:55.5593014Z  + grpcio-status==1.67.1
+2025-04-16T18:37:55.5593404Z  + gunicorn==22.0.0
+2025-04-16T18:37:55.5593747Z  + httplib2==0.22.0
+2025-04-16T18:37:55.5594092Z  + icalendar==6.0.1
+2025-04-16T18:37:55.5594430Z  + identify==2.6.2
+2025-04-16T18:37:55.5594758Z  + idna==3.10
+2025-04-16T18:37:55.5595092Z  + inflection==0.5.1
+2025-04-16T18:37:55.5595441Z  + jmespath==1.0.1
+2025-04-16T18:37:55.5595782Z  + jwcrypto==1.5.6
+2025-04-16T18:37:55.5596182Z  + kombu==5.4.2
+2025-04-16T18:37:55.5596497Z  + libsass==0.23.0
+2025-04-16T18:37:55.5596824Z  + msgpack==1.1.0
+2025-04-16T18:37:55.5597147Z  + nodeenv==1.9.1
+2025-04-16T18:37:55.5597455Z  + oauthlib==3.2.2
+2025-04-16T18:37:55.5597774Z  + packaging==24.2
+2025-04-16T18:37:55.5598126Z  + phonenumbers==8.13.49
+2025-04-16T18:37:55.5598483Z  + pillow==11.0.0
+2025-04-16T18:37:55.5598804Z  + platformdirs==4.3.6
+2025-04-16T18:37:55.5599228Z  + pre-commit==3.5.0
+2025-04-16T18:37:55.5599605Z  + prompt-toolkit==3.0.48
+2025-04-16T18:37:55.5599840Z  + proto-plus==1.25.0
+2025-04-16T18:37:55.5600048Z  + protobuf==5.28.3
+2025-04-16T18:37:55.5600238Z  + psycopg==3.2.3
+2025-04-16T18:37:55.5600433Z  + psycopg-binary==3.2.3
+2025-04-16T18:37:55.5600647Z  + puremagic==1.28
+2025-04-16T18:37:55.5600834Z  + pyasn1==0.6.1
+2025-04-16T18:37:55.5601026Z  + pyasn1-modules==0.4.1
+2025-04-16T18:37:55.5601236Z  + pycparser==2.22
+2025-04-16T18:37:55.5601423Z  + pydenticon==0.3.1
+2025-04-16T18:37:55.5601609Z  + pydot==1.4.2
+2025-04-16T18:37:55.5601782Z  + pyjwt==2.9.0
+2025-04-16T18:37:55.5601958Z  + pyopenssl==24.2.1
+2025-04-16T18:37:55.5602584Z  + pyparsing==3.0.9
+2025-04-16T18:37:55.5604199Z  + pypng==0.20220715.0
+2025-04-16T18:37:55.5605502Z  + python-dateutil==2.9.0.post0
+2025-04-16T18:37:55.5605941Z  + python-stdnum==1.20
+2025-04-16T18:37:55.5606281Z  + pytz==2024.2
+2025-04-16T18:37:55.5606562Z  + pyyaml==6.0.2
+2025-04-16T18:37:55.5606832Z  + qrcode==7.4.2
+2025-04-16T18:37:55.5607092Z  + rcssmin==1.1.3
+2025-04-16T18:37:55.5607375Z  + redis==5.2.0
+2025-04-16T18:37:55.5607654Z  + requests==2.32.3
+2025-04-16T18:37:55.5607953Z  + rjsmin==1.2.3
+2025-04-16T18:37:55.5608240Z  + rsa==4.9
+2025-04-16T18:37:55.5608500Z  + ruff==0.7.1
+2025-04-16T18:37:55.5608793Z  + s3transfer==0.10.3
+2025-04-16T18:37:55.5609120Z  + sentry-sdk==2.12.0
+2025-04-16T18:37:55.5609455Z  + shortuuid==1.0.13
+2025-04-16T18:37:55.5609762Z  + six==1.16.0
+2025-04-16T18:37:55.5610033Z  + soupsieve==2.6
+2025-04-16T18:37:55.5610337Z  + sqlparse==0.5.2
+2025-04-16T18:37:55.5610605Z  + tinycss2==1.2.1
+2025-04-16T18:37:55.5610918Z  + typing-extensions==4.12.2
+2025-04-16T18:37:55.5611270Z  + tzdata==2024.2
+2025-04-16T18:37:55.5611559Z  + uritemplate==4.1.1
+2025-04-16T18:37:55.5611868Z  + urllib3==2.2.3
+2025-04-16T18:37:55.5612658Z  + vine==5.1.0
+2025-04-16T18:37:55.5612952Z  + virtualenv==20.27.1
+2025-04-16T18:37:55.5613264Z  + wcwidth==0.2.13
+2025-04-16T18:37:55.5613559Z  + webauthn==2.2.0
+2025-04-16T18:37:55.5613863Z  + webencodings==0.5.1
+2025-04-16T18:37:55.5680307Z ##[group]Run uv run ruff check --output-format=github
+2025-04-16T18:37:55.5680709Z [36;1muv run ruff check --output-format=github[0m
+2025-04-16T18:37:55.5728657Z shell: /usr/bin/bash -e {0}
+2025-04-16T18:37:55.5728891Z env:
+2025-04-16T18:37:55.5729114Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-04-16T18:37:55.5729411Z ##[endgroup]
+2025-04-16T18:37:55.7019884Z ##[error]website/payments/services.py:279:1: W293 Blank line contains whitespace
+2025-04-16T18:37:55.7063855Z ##[error]Process completed with exit code 1.
+2025-04-16T18:37:55.7172993Z Post job cleanup.
+2025-04-16T18:37:55.8112064Z [command]/usr/bin/git version
+2025-04-16T18:37:55.8148962Z git version 2.49.0
+2025-04-16T18:37:55.8199071Z Temporarily overriding HOME='/home/runner/work/_temp/0b43e8c7-5e52-4ee0-bc9c-dfbd96e21093' before making global git config changes
+2025-04-16T18:37:55.8200116Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-16T18:37:55.8204852Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/concrexit/concrexit
+2025-04-16T18:37:55.8240566Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-16T18:37:55.8273664Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-16T18:37:55.8511773Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-16T18:37:55.8533942Z http.https://github.com/.extraheader
+2025-04-16T18:37:55.8547402Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-16T18:37:55.8578417Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-16T18:37:55.8912910Z Cleaning up orphan processes

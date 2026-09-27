@@ -1,0 +1,12 @@
+diff --git a/tests/test_run_parallel.py b/tests/test_run_parallel.py
+index 1e8e883..bbdeb84 100644
+--- a/tests/test_run_parallel.py
++++ b/tests/test_run_parallel.py
+@@ -875,6 +875,7 @@ def test_incompatible_item():
+     )
+     assert "warnings" not in result.parseoutcomes().keys()
+ 
++
+ def test_thread_unsafe_function_attr(pytester):
+     pytester.makepyfile(
+         mod_1="""

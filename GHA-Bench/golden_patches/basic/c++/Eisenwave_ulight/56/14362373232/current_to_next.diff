@@ -1,0 +1,44 @@
+diff --git a/include/ulight/impl/platform.h b/include/ulight/impl/platform.h
+index f2d85674..c08c7002 100644
+--- a/include/ulight/impl/platform.h
++++ b/include/ulight/impl/platform.h
+@@ -20,6 +20,10 @@
+ #define ULIGHT_CLANG __clang__
+ #endif
+ 
++#if defined(__GNUC__) && !defined(__clang__)
++#define ULIGHT_GCC __GNUC__
++#endif
++
+ #ifdef _MSC_VER
+ #define ULIGHT_MSVC _MSC_VER
+ #endif
+@@ -54,4 +58,11 @@ using Underlying = unsigned char;
+ #define ULIGHT_EXPORT
+ #endif
+ 
++#ifdef ULIGHT_GCC
++#define ULIGHT_SUPPRESS_MISSING_DECLARATIONS_WARNING()                                             \
++    _Pragma("GCC diagnostic ignored \"-Wmissing-declarations\"")
++#else
++#define ULIGHT_SUPPRESS_MISSING_DECLARATIONS_WARNING()
++#endif
++
+ #endif
+diff --git a/src/test/cpp/test_cpp.cpp b/src/test/cpp/test_cpp.cpp
+index de749424..01e1cf6e 100644
+--- a/src/test/cpp/test_cpp.cpp
++++ b/src/test/cpp/test_cpp.cpp
+@@ -3,9 +3,12 @@
+ #include <gtest/gtest.h>
+ 
+ #include "ulight/impl/cpp.hpp"
++#include "ulight/impl/platform.h"
+ 
+ namespace ulight::cpp {
+ 
++ULIGHT_SUPPRESS_MISSING_DECLARATIONS_WARNING()
++
+ // NOLINTNEXTLINE(misc-use-internal-linkage)
+ std::ostream& operator<<(std::ostream& out, Escape_Type type)
+ {

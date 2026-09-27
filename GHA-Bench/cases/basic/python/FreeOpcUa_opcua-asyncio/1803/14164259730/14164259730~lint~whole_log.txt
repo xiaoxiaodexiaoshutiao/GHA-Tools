@@ -1,0 +1,305 @@
+﻿2025-03-31T04:44:51.4629277Z Current runner version: '2.323.0'
+2025-03-31T04:44:51.4652916Z ##[group]Operating System
+2025-03-31T04:44:51.4653706Z Ubuntu
+2025-03-31T04:44:51.4654291Z 24.04.2
+2025-03-31T04:44:51.4654752Z LTS
+2025-03-31T04:44:51.4655205Z ##[endgroup]
+2025-03-31T04:44:51.4655757Z ##[group]Runner Image
+2025-03-31T04:44:51.4656341Z Image: ubuntu-24.04
+2025-03-31T04:44:51.4657021Z Version: 20250316.1.0
+2025-03-31T04:44:51.4658092Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250316.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-31T04:44:51.4659447Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250316.1
+2025-03-31T04:44:51.4660294Z ##[endgroup]
+2025-03-31T04:44:51.4660847Z ##[group]Runner Image Provisioner
+2025-03-31T04:44:51.4661433Z 2.0.422.1
+2025-03-31T04:44:51.4661850Z ##[endgroup]
+2025-03-31T04:44:51.4664130Z ##[group]GITHUB_TOKEN Permissions
+2025-03-31T04:44:51.4666542Z Actions: read
+2025-03-31T04:44:51.4667471Z Attestations: read
+2025-03-31T04:44:51.4668127Z Checks: read
+2025-03-31T04:44:51.4668648Z Contents: read
+2025-03-31T04:44:51.4669162Z Deployments: read
+2025-03-31T04:44:51.4669619Z Discussions: read
+2025-03-31T04:44:51.4670131Z Issues: read
+2025-03-31T04:44:51.4670576Z Metadata: read
+2025-03-31T04:44:51.4671060Z Models: read
+2025-03-31T04:44:51.4671553Z Packages: read
+2025-03-31T04:44:51.4672042Z Pages: read
+2025-03-31T04:44:51.4672510Z PullRequests: read
+2025-03-31T04:44:51.4672960Z RepositoryProjects: read
+2025-03-31T04:44:51.4673586Z SecurityEvents: read
+2025-03-31T04:44:51.4674058Z Statuses: read
+2025-03-31T04:44:51.4674515Z ##[endgroup]
+2025-03-31T04:44:51.4676935Z Secret source: None
+2025-03-31T04:44:51.4677998Z Prepare workflow directory
+2025-03-31T04:44:51.4995927Z Prepare all required actions
+2025-03-31T04:44:51.5032601Z Getting action download info
+2025-03-31T04:44:52.1075605Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-03-31T04:44:52.1076563Z Version: 4.2.2
+2025-03-31T04:44:52.1077932Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-03-31T04:44:52.1079115Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-03-31T04:44:52.1079834Z ##[endgroup]
+2025-03-31T04:44:52.2074500Z Download action repository 'astral-sh/setup-uv@v3' (SHA:caf0cab7a618c569241d31dcd442f54681755d39)
+2025-03-31T04:44:52.7562730Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-03-31T04:44:52.7563409Z Version: 5.5.0
+2025-03-31T04:44:52.7564043Z Digest: sha256:1fac95d751afd58314aebd2ab01d4bf3b3109a441917bd2cac2a22898ec494f7
+2025-03-31T04:44:52.7564885Z Source commit SHA: 8d9ed9ac5c53483de85588cdf95a591a75ab9f55
+2025-03-31T04:44:52.7565464Z ##[endgroup]
+2025-03-31T04:44:53.1138108Z Complete job name: lint
+2025-03-31T04:44:53.1811988Z ##[group]Run actions/checkout@v4
+2025-03-31T04:44:53.1812789Z with:
+2025-03-31T04:44:53.1813192Z   submodules: true
+2025-03-31T04:44:53.1813614Z   repository: FreeOpcUa/opcua-asyncio
+2025-03-31T04:44:53.1814242Z   token: ***
+2025-03-31T04:44:53.1814615Z   ssh-strict: true
+2025-03-31T04:44:53.1815066Z   ssh-user: git
+2025-03-31T04:44:53.1815459Z   persist-credentials: true
+2025-03-31T04:44:53.1815889Z   clean: true
+2025-03-31T04:44:53.1816278Z   sparse-checkout-cone-mode: true
+2025-03-31T04:44:53.1816879Z   fetch-depth: 1
+2025-03-31T04:44:53.1817255Z   fetch-tags: false
+2025-03-31T04:44:53.1817642Z   show-progress: true
+2025-03-31T04:44:53.1818028Z   lfs: false
+2025-03-31T04:44:53.1818402Z   set-safe-directory: true
+2025-03-31T04:44:53.1819069Z ##[endgroup]
+2025-03-31T04:44:53.3695947Z Syncing repository: FreeOpcUa/opcua-asyncio
+2025-03-31T04:44:53.3698515Z ##[group]Getting Git version info
+2025-03-31T04:44:53.3699615Z Working directory is '/home/runner/work/opcua-asyncio/opcua-asyncio'
+2025-03-31T04:44:53.3701006Z [command]/usr/bin/git version
+2025-03-31T04:44:53.3735141Z git version 2.48.1
+2025-03-31T04:44:53.3763967Z ##[endgroup]
+2025-03-31T04:44:53.3779727Z Temporarily overriding HOME='/home/runner/work/_temp/098f6518-9ca4-433d-b933-e0056cb487cc' before making global git config changes
+2025-03-31T04:44:53.3782790Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-31T04:44:53.3785926Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/opcua-asyncio/opcua-asyncio
+2025-03-31T04:44:53.3821658Z Deleting the contents of '/home/runner/work/opcua-asyncio/opcua-asyncio'
+2025-03-31T04:44:53.3825616Z ##[group]Initializing the repository
+2025-03-31T04:44:53.3830685Z [command]/usr/bin/git init /home/runner/work/opcua-asyncio/opcua-asyncio
+2025-03-31T04:44:53.3942722Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-31T04:44:53.3944092Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-31T04:44:53.3945024Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-31T04:44:53.3945734Z hint:
+2025-03-31T04:44:53.3946224Z hint: 	git config --global init.defaultBranch <name>
+2025-03-31T04:44:53.3947438Z hint:
+2025-03-31T04:44:53.3948297Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-31T04:44:53.3949644Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-31T04:44:53.3951118Z hint:
+2025-03-31T04:44:53.3951928Z hint: 	git branch -m <name>
+2025-03-31T04:44:53.3953513Z Initialized empty Git repository in /home/runner/work/opcua-asyncio/opcua-asyncio/.git/
+2025-03-31T04:44:53.3961373Z [command]/usr/bin/git remote add origin https://github.com/FreeOpcUa/opcua-asyncio
+2025-03-31T04:44:53.3997681Z ##[endgroup]
+2025-03-31T04:44:53.3999096Z ##[group]Disabling automatic garbage collection
+2025-03-31T04:44:53.4002560Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-31T04:44:53.4031310Z ##[endgroup]
+2025-03-31T04:44:53.4032782Z ##[group]Setting up auth
+2025-03-31T04:44:53.4039008Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-31T04:44:53.4069780Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-31T04:44:53.4411443Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-31T04:44:53.4444462Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-31T04:44:53.4674842Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-31T04:44:53.4709973Z ##[endgroup]
+2025-03-31T04:44:53.4711501Z ##[group]Fetching the repository
+2025-03-31T04:44:53.4720989Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e3462ba2333181bc918ec880fdc2c61a3b763622:refs/remotes/pull/1803/merge
+2025-03-31T04:44:54.3699629Z From https://github.com/FreeOpcUa/opcua-asyncio
+2025-03-31T04:44:54.3701865Z  * [new ref]         e3462ba2333181bc918ec880fdc2c61a3b763622 -> pull/1803/merge
+2025-03-31T04:44:54.3726164Z ##[endgroup]
+2025-03-31T04:44:54.3728082Z ##[group]Determining the checkout info
+2025-03-31T04:44:54.3730125Z ##[endgroup]
+2025-03-31T04:44:54.3735555Z [command]/usr/bin/git sparse-checkout disable
+2025-03-31T04:44:54.3786148Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-31T04:44:54.3817678Z ##[group]Checking out the ref
+2025-03-31T04:44:54.3819039Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1803/merge
+2025-03-31T04:44:54.4310740Z Note: switching to 'refs/remotes/pull/1803/merge'.
+2025-03-31T04:44:54.4311963Z 
+2025-03-31T04:44:54.4312685Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-31T04:44:54.4314306Z changes and commit them, and you can discard any commits you make in this
+2025-03-31T04:44:54.4317055Z state without impacting any branches by switching back to a branch.
+2025-03-31T04:44:54.4318994Z 
+2025-03-31T04:44:54.4320014Z If you want to create a new branch to retain commits you create, you may
+2025-03-31T04:44:54.4322310Z do so (now or later) by using -c with the switch command. Example:
+2025-03-31T04:44:54.4323687Z 
+2025-03-31T04:44:54.4324211Z   git switch -c <new-branch-name>
+2025-03-31T04:44:54.4325191Z 
+2025-03-31T04:44:54.4325691Z Or undo this operation with:
+2025-03-31T04:44:54.4326524Z 
+2025-03-31T04:44:54.4327175Z   git switch -
+2025-03-31T04:44:54.4327875Z 
+2025-03-31T04:44:54.4329023Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-31T04:44:54.4330797Z 
+2025-03-31T04:44:54.4332844Z HEAD is now at e3462ba Merge b297413360e1c48eaccbb2fcfc0ba1c42174938c into e6d646d12f1db1e59229034439f9b0baf9d2da6e
+2025-03-31T04:44:54.4338837Z ##[endgroup]
+2025-03-31T04:44:54.4340663Z ##[group]Setting up auth for fetching submodules
+2025-03-31T04:44:54.4343870Z [command]/usr/bin/git config --global http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-31T04:44:54.4371840Z [command]/usr/bin/git config --global --unset-all url.https://github.com/.insteadOf
+2025-03-31T04:44:54.4402152Z [command]/usr/bin/git config --global --add url.https://github.com/.insteadOf git@github.com:
+2025-03-31T04:44:54.4434807Z [command]/usr/bin/git config --global --add url.https://github.com/.insteadOf org-7480453@github.com:
+2025-03-31T04:44:54.4462428Z ##[endgroup]
+2025-03-31T04:44:54.4464906Z ##[group]Fetching submodules
+2025-03-31T04:44:54.4467050Z [command]/usr/bin/git submodule sync
+2025-03-31T04:44:54.4698002Z [command]/usr/bin/git -c protocol.version=2 submodule update --init --force --depth=1
+2025-03-31T04:44:54.4923896Z Submodule 'nodeset' (https://github.com/OPCFoundation/UA-Nodeset.git) registered for path 'nodeset'
+2025-03-31T04:44:54.4949986Z Cloning into '/home/runner/work/opcua-asyncio/opcua-asyncio/nodeset'...
+2025-03-31T04:45:03.1631662Z From https://github.com/OPCFoundation/UA-Nodeset
+2025-03-31T04:45:03.1632249Z  * branch            526c5e59e7ba9e54f9dc7848ce2baa249395d3ef -> FETCH_HEAD
+2025-03-31T04:45:03.4742062Z Submodule path 'nodeset': checked out '526c5e59e7ba9e54f9dc7848ce2baa249395d3ef'
+2025-03-31T04:45:03.4757984Z [command]/usr/bin/git submodule foreach git config --local gc.auto 0
+2025-03-31T04:45:03.4978642Z Entering 'nodeset'
+2025-03-31T04:45:03.5010032Z ##[endgroup]
+2025-03-31T04:45:03.5010455Z ##[group]Persisting credentials for submodules
+2025-03-31T04:45:03.5017108Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'url\.https\:\/\/github\.com\/\.insteadOf' && git config --local --unset-all 'url.https://github.com/.insteadOf' || :"
+2025-03-31T04:45:03.5229284Z Entering 'nodeset'
+2025-03-31T04:45:03.5285736Z [command]/usr/bin/git submodule foreach sh -c "git config --local 'http.https://github.com/.extraheader' 'AUTHORIZATION: basic ***' && git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2025-03-31T04:45:03.5499489Z Entering 'nodeset'
+2025-03-31T04:45:03.5538025Z file:/home/runner/work/opcua-asyncio/opcua-asyncio/.git/modules/nodeset/config	remote.origin.url
+2025-03-31T04:45:03.5560551Z [command]/usr/bin/git submodule foreach git config --local --add 'url.https://github.com/.insteadOf' 'git@github.com:'
+2025-03-31T04:45:03.5772922Z Entering 'nodeset'
+2025-03-31T04:45:03.5807963Z [command]/usr/bin/git submodule foreach git config --local --add 'url.https://github.com/.insteadOf' 'org-7480453@github.com:'
+2025-03-31T04:45:03.6036690Z Entering 'nodeset'
+2025-03-31T04:45:03.6068889Z ##[endgroup]
+2025-03-31T04:45:03.6125436Z [command]/usr/bin/git log -1 --format=%H
+2025-03-31T04:45:03.6152852Z e3462ba2333181bc918ec880fdc2c61a3b763622
+2025-03-31T04:45:03.6408705Z ##[group]Run astral-sh/setup-uv@v3
+2025-03-31T04:45:03.6408953Z with:
+2025-03-31T04:45:03.6409118Z   version: latest
+2025-03-31T04:45:03.6409442Z   github-token: ***
+2025-03-31T04:45:03.6409631Z   enable-cache: false
+2025-03-31T04:45:03.6409833Z   cache-dependency-glob: **/uv.lock
+2025-03-31T04:45:03.6410249Z   prune-cache: true
+2025-03-31T04:45:03.6410431Z ##[endgroup]
+2025-03-31T04:45:03.7971107Z Downloading uv from "https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2025-03-31T04:45:04.5510500Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/09d66e56-3596-49bb-8d19-27007b30b002 -f /home/runner/work/_temp/c5f9e240-9cef-4f03-b265-58451ac718b8
+2025-03-31T04:45:04.9039028Z Added /opt/hostedtoolcache/uv/0.6.11/x86_64 to the path
+2025-03-31T04:45:04.9040376Z Added /home/runner/.local/bin to the path
+2025-03-31T04:45:04.9044903Z Successfully installed uv version 0.6.11
+2025-03-31T04:45:04.9065527Z Set UV_CACHE_DIR to /home/runner/work/_temp/setup-uv-cache
+2025-03-31T04:45:04.9208102Z ##[group]Run actions/setup-python@v5
+2025-03-31T04:45:04.9208379Z with:
+2025-03-31T04:45:04.9208562Z   python-version: 3.13
+2025-03-31T04:45:04.9208760Z   check-latest: false
+2025-03-31T04:45:04.9209064Z   token: ***
+2025-03-31T04:45:04.9209264Z   update-environment: true
+2025-03-31T04:45:04.9209479Z   allow-prereleases: false
+2025-03-31T04:45:04.9209671Z   freethreaded: false
+2025-03-31T04:45:04.9209856Z env:
+2025-03-31T04:45:04.9210052Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-03-31T04:45:04.9210321Z ##[endgroup]
+2025-03-31T04:45:05.0835763Z ##[group]Installed versions
+2025-03-31T04:45:05.0889831Z Successfully set up CPython (3.13.2)
+2025-03-31T04:45:05.0890511Z ##[endgroup]
+2025-03-31T04:45:05.0997907Z ##[group]Run uv sync --all-extras --dev
+2025-03-31T04:45:05.0998269Z [36;1muv sync --all-extras --dev[0m
+2025-03-31T04:45:05.0998530Z [36;1muv tool install pre-commit[0m
+2025-03-31T04:45:05.1050283Z shell: /usr/bin/bash -e {0}
+2025-03-31T04:45:05.1050515Z env:
+2025-03-31T04:45:05.1050744Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-03-31T04:45:05.1051090Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-31T04:45:05.1051503Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-31T04:45:05.1051888Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-31T04:45:05.1052223Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-31T04:45:05.1052551Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-31T04:45:05.1052892Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-31T04:45:05.1053180Z ##[endgroup]
+2025-03-31T04:45:05.1933176Z Using CPython 3.13.2 interpreter at: /opt/hostedtoolcache/Python/3.13.2/x64/bin/python3
+2025-03-31T04:45:05.1933767Z Creating virtual environment at: .venv
+2025-03-31T04:45:06.0831220Z Resolved 45 packages in 889ms
+2025-03-31T04:45:06.0898839Z    Building asyncua @ file:///home/runner/work/opcua-asyncio/opcua-asyncio
+2025-03-31T04:45:06.1097913Z Downloading cryptography (4.0MiB)
+2025-03-31T04:45:06.1099978Z Downloading setuptools (1.2MiB)
+2025-03-31T04:45:06.1264360Z Downloading ruff (10.8MiB)
+2025-03-31T04:45:06.2978540Z  Downloaded ruff
+2025-03-31T04:45:06.3239815Z  Downloaded cryptography
+2025-03-31T04:45:06.3815521Z  Downloaded setuptools
+2025-03-31T04:45:06.6105598Z       Built asyncua @ file:///home/runner/work/opcua-asyncio/opcua-asyncio
+2025-03-31T04:45:06.6113277Z Prepared 30 packages in 524ms
+2025-03-31T04:45:06.6330859Z Installed 30 packages in 21ms
+2025-03-31T04:45:06.6331630Z  + aiofiles==24.1.0
+2025-03-31T04:45:06.6332103Z  + aiosqlite==0.21.0
+2025-03-31T04:45:06.6332455Z  + asynctest==0.13.0
+2025-03-31T04:45:06.6333176Z  + asyncua==1.1.5 (from file:///home/runner/work/opcua-asyncio/opcua-asyncio)
+2025-03-31T04:45:06.6333752Z  + cffi==1.17.1
+2025-03-31T04:45:06.6334041Z  + coverage==7.8.0
+2025-03-31T04:45:06.6334371Z  + cryptography==44.0.2
+2025-03-31T04:45:06.6334690Z  + iniconfig==2.1.0
+2025-03-31T04:45:06.6334999Z  + packaging==24.2
+2025-03-31T04:45:06.6335293Z  + pluggy==1.5.0
+2025-03-31T04:45:06.6335603Z  + pycparser==2.22
+2025-03-31T04:45:06.6335921Z  + pyopenssl==25.0.0
+2025-03-31T04:45:06.6336222Z  + pytest==8.3.5
+2025-03-31T04:45:06.6336538Z  + pytest-asyncio==0.21.2
+2025-03-31T04:45:06.6337452Z  + pytest-cov==6.0.0
+2025-03-31T04:45:06.6337786Z  + pytest-mock==3.14.0
+2025-03-31T04:45:06.6338124Z  + pytest-repeat==0.9.3
+2025-03-31T04:45:06.6338475Z  + python-dateutil==2.9.0.post0
+2025-03-31T04:45:06.6338850Z  + pytz==2025.2
+2025-03-31T04:45:06.6339128Z  + ruff==0.11.2
+2025-03-31T04:45:06.6339422Z  + setuptools==78.1.0
+2025-03-31T04:45:06.6339734Z  + six==1.17.0
+2025-03-31T04:45:06.6340056Z  + sortedcontainers==2.4.0
+2025-03-31T04:45:06.6340427Z  + types-aiofiles==24.1.0.20250326
+2025-03-31T04:45:06.6340815Z  + types-cffi==1.17.0.20250326
+2025-03-31T04:45:06.6341202Z  + types-pyopenssl==24.1.0.20240722
+2025-03-31T04:45:06.6341622Z  + types-python-dateutil==2.9.0.20241206
+2025-03-31T04:45:06.6342047Z  + types-pytz==2025.2.0.20250326
+2025-03-31T04:45:06.6342360Z  + types-setuptools==78.1.0.20250329
+2025-03-31T04:45:06.6342591Z  + typing-extensions==4.13.0
+2025-03-31T04:45:06.6995747Z Resolved 9 packages in 10ms
+2025-03-31T04:45:06.7092118Z Downloading virtualenv (4.1MiB)
+2025-03-31T04:45:06.7570194Z  Downloaded virtualenv
+2025-03-31T04:45:06.7572317Z Prepared 9 packages in 56ms
+2025-03-31T04:45:06.7641513Z Installed 9 packages in 6ms
+2025-03-31T04:45:06.7641884Z  + cfgv==3.4.0
+2025-03-31T04:45:06.7642204Z  + distlib==0.3.9
+2025-03-31T04:45:06.7642500Z  + filelock==3.18.0
+2025-03-31T04:45:06.7642783Z  + identify==2.6.9
+2025-03-31T04:45:06.7643066Z  + nodeenv==1.9.1
+2025-03-31T04:45:06.7643350Z  + platformdirs==4.3.7
+2025-03-31T04:45:06.7643972Z  + pre-commit==4.2.0
+2025-03-31T04:45:06.7644264Z  + pyyaml==6.0.2
+2025-03-31T04:45:06.7644444Z  + virtualenv==20.29.3
+2025-03-31T04:45:06.7647282Z Installed 1 executable: pre-commit
+2025-03-31T04:45:06.7714639Z ##[group]Run uvx ruff format --diff
+2025-03-31T04:45:06.7714948Z [36;1muvx ruff format --diff[0m
+2025-03-31T04:45:06.7715194Z [36;1muvx pre-commit run -a[0m
+2025-03-31T04:45:06.7765052Z shell: /usr/bin/bash -e {0}
+2025-03-31T04:45:06.7765272Z env:
+2025-03-31T04:45:06.7765493Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-03-31T04:45:06.7765850Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-31T04:45:06.7766241Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-31T04:45:06.7766633Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-31T04:45:06.7767235Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-31T04:45:06.7767567Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-31T04:45:06.7767897Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-31T04:45:06.7768188Z ##[endgroup]
+2025-03-31T04:45:06.8057792Z Installed 1 package in 1ms
+2025-03-31T04:45:06.8544086Z warning: The following rules have been removed and ignoring them has no effect:
+2025-03-31T04:45:06.8544725Z     - UP027
+2025-03-31T04:45:06.8545051Z 
+2025-03-31T04:45:06.9589256Z 1 file would be reformatted, 152 files already formatted
+2025-03-31T04:45:06.9589800Z --- tests/test_unit.py
+2025-03-31T04:45:06.9590109Z +++ tests/test_unit.py
+2025-03-31T04:45:06.9590450Z @@ -566,7 +566,7 @@
+2025-03-31T04:45:06.9590838Z      # which some old OPC/UA implementations mistakenly do.
+2025-03-31T04:45:06.9591440Z      # Bytes 0-4 are the node ID, byte 4 is the encoding mask, so the length
+2025-03-31T04:45:06.9591922Z      # is bytes 5-8.
+2025-03-31T04:45:06.9592227Z -    binary[5:9] = b'\xff\xff\xff\xff'
+2025-03-31T04:45:06.9592610Z +    binary[5:9] = b"\xff\xff\xff\xff"
+2025-03-31T04:45:06.9592972Z  
+2025-03-31T04:45:06.9593376Z      obj2 = extensionobject_from_binary(ua.utils.Buffer(bytes(binary)))
+2025-03-31T04:45:06.9593932Z      assert type(obj) is type(obj2)
+2025-03-31T04:45:06.9594192Z 
+2025-03-31T04:45:06.9651623Z ##[error]Process completed with exit code 1.
+2025-03-31T04:45:06.9727315Z Post job cleanup.
+2025-03-31T04:45:07.0651288Z [command]/usr/bin/git version
+2025-03-31T04:45:07.0687172Z git version 2.48.1
+2025-03-31T04:45:07.0738489Z Temporarily overriding HOME='/home/runner/work/_temp/005ad6b9-2318-4ef4-9e02-58c5dfc23d4b' before making global git config changes
+2025-03-31T04:45:07.0740058Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-31T04:45:07.0744956Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/opcua-asyncio/opcua-asyncio
+2025-03-31T04:45:07.0781914Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-31T04:45:07.0816602Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-31T04:45:07.1055818Z Entering 'nodeset'
+2025-03-31T04:45:07.1116394Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-31T04:45:07.1140490Z http.https://github.com/.extraheader
+2025-03-31T04:45:07.1154600Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-31T04:45:07.1188290Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-31T04:45:07.1421493Z Entering 'nodeset'
+2025-03-31T04:45:07.1447914Z http.https://github.com/.extraheader
+2025-03-31T04:45:07.1599467Z Cleaning up orphan processes

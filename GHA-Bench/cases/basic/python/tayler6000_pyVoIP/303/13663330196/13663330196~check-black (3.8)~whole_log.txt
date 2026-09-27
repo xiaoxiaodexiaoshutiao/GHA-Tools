@@ -1,0 +1,343 @@
+﻿2025-03-04T21:31:16.2336151Z Current runner version: '2.322.0'
+2025-03-04T21:31:16.2370123Z ##[group]Operating System
+2025-03-04T21:31:16.2371145Z Ubuntu
+2025-03-04T21:31:16.2371965Z 24.04.2
+2025-03-04T21:31:16.2372764Z LTS
+2025-03-04T21:31:16.2373519Z ##[endgroup]
+2025-03-04T21:31:16.2374236Z ##[group]Runner Image
+2025-03-04T21:31:16.2375199Z Image: ubuntu-24.04
+2025-03-04T21:31:16.2376284Z Version: 20250223.1.0
+2025-03-04T21:31:16.2377935Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250223.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-04T21:31:16.2380375Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250223.1
+2025-03-04T21:31:16.2381862Z ##[endgroup]
+2025-03-04T21:31:16.2382723Z ##[group]Runner Image Provisioner
+2025-03-04T21:31:16.2383651Z 2.0.422.1
+2025-03-04T21:31:16.2384427Z ##[endgroup]
+2025-03-04T21:31:16.2388686Z ##[group]GITHUB_TOKEN Permissions
+2025-03-04T21:31:16.2391267Z Actions: write
+2025-03-04T21:31:16.2392437Z Attestations: write
+2025-03-04T21:31:16.2393328Z Checks: write
+2025-03-04T21:31:16.2394079Z Contents: write
+2025-03-04T21:31:16.2395014Z Deployments: write
+2025-03-04T21:31:16.2396068Z Discussions: write
+2025-03-04T21:31:16.2396859Z Issues: write
+2025-03-04T21:31:16.2397694Z Metadata: read
+2025-03-04T21:31:16.2398524Z Packages: write
+2025-03-04T21:31:16.2399286Z Pages: write
+2025-03-04T21:31:16.2400114Z PullRequests: write
+2025-03-04T21:31:16.2400969Z RepositoryProjects: write
+2025-03-04T21:31:16.2401858Z SecurityEvents: write
+2025-03-04T21:31:16.2402803Z Statuses: write
+2025-03-04T21:31:16.2403503Z ##[endgroup]
+2025-03-04T21:31:16.2406498Z Secret source: Actions
+2025-03-04T21:31:16.2407644Z Prepare workflow directory
+2025-03-04T21:31:16.2861867Z Prepare all required actions
+2025-03-04T21:31:16.2916670Z Getting action download info
+2025-03-04T21:31:16.6841227Z Download action repository 'actions/checkout@v3.0.2' (SHA:2541b1294d2704b0964813337f33b291d3f8596b)
+2025-03-04T21:31:16.8777594Z Download action repository 'actions/setup-python@v4.0.0' (SHA:d09bd5e6005b175076f227b13d9730d56e9dcfcb)
+2025-03-04T21:31:17.2086658Z Complete job name: check-black (3.8)
+2025-03-04T21:31:17.2738800Z ##[group]Run actions/checkout@v3.0.2
+2025-03-04T21:31:17.2740293Z with:
+2025-03-04T21:31:17.2740926Z   fetch-depth: 2
+2025-03-04T21:31:17.2741572Z   repository: tayler6000/pyVoIP
+2025-03-04T21:31:17.2742505Z   token: ***
+2025-03-04T21:31:17.2743143Z   ssh-strict: true
+2025-03-04T21:31:17.2743815Z   persist-credentials: true
+2025-03-04T21:31:17.2744487Z   clean: true
+2025-03-04T21:31:17.2745082Z   lfs: false
+2025-03-04T21:31:17.2745822Z   submodules: false
+2025-03-04T21:31:17.2746460Z   set-safe-directory: true
+2025-03-04T21:31:17.2747477Z ##[endgroup]
+2025-03-04T21:31:17.4418789Z ##[warning]The `save-state` command is deprecated and will be disabled soon. Please upgrade to using Environment Files. For more information see: https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
+2025-03-04T21:31:17.4870605Z Syncing repository: tayler6000/pyVoIP
+2025-03-04T21:31:17.4874043Z ##[group]Getting Git version info
+2025-03-04T21:31:17.4875936Z Working directory is '/home/runner/work/pyVoIP/pyVoIP'
+2025-03-04T21:31:17.4878378Z [command]/usr/bin/git version
+2025-03-04T21:31:17.4941674Z git version 2.48.1
+2025-03-04T21:31:17.4972773Z ##[endgroup]
+2025-03-04T21:31:17.4991872Z Temporarily overriding HOME='/home/runner/work/_temp/6b23e354-0d12-4144-a890-5ed9cfb6b74d' before making global git config changes
+2025-03-04T21:31:17.4994986Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-04T21:31:17.4997716Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pyVoIP/pyVoIP
+2025-03-04T21:31:17.5036673Z ##[warning]The `save-state` command is deprecated and will be disabled soon. Please upgrade to using Environment Files. For more information see: https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
+2025-03-04T21:31:17.5042717Z Deleting the contents of '/home/runner/work/pyVoIP/pyVoIP'
+2025-03-04T21:31:17.5050554Z ##[warning]The `save-state` command is deprecated and will be disabled soon. Please upgrade to using Environment Files. For more information see: https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
+2025-03-04T21:31:17.5054037Z ##[group]Initializing the repository
+2025-03-04T21:31:17.5055118Z [command]/usr/bin/git init /home/runner/work/pyVoIP/pyVoIP
+2025-03-04T21:31:17.5118052Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-04T21:31:17.5119326Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-04T21:31:17.5120845Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-04T21:31:17.5121756Z hint:
+2025-03-04T21:31:17.5122449Z hint: 	git config --global init.defaultBranch <name>
+2025-03-04T21:31:17.5123410Z hint:
+2025-03-04T21:31:17.5124821Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-04T21:31:17.5127102Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-04T21:31:17.5128561Z hint:
+2025-03-04T21:31:17.5129196Z hint: 	git branch -m <name>
+2025-03-04T21:31:17.5130126Z Initialized empty Git repository in /home/runner/work/pyVoIP/pyVoIP/.git/
+2025-03-04T21:31:17.5137289Z [command]/usr/bin/git remote add origin https://github.com/tayler6000/pyVoIP
+2025-03-04T21:31:17.5171994Z ##[endgroup]
+2025-03-04T21:31:17.5173133Z ##[group]Disabling automatic garbage collection
+2025-03-04T21:31:17.5175227Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-04T21:31:17.5203440Z ##[endgroup]
+2025-03-04T21:31:17.5204486Z ##[group]Setting up auth
+2025-03-04T21:31:17.5209601Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-04T21:31:17.5239329Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :
+2025-03-04T21:31:17.5578208Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-04T21:31:17.5605348Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :
+2025-03-04T21:31:17.5836647Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-04T21:31:17.5870184Z ##[endgroup]
+2025-03-04T21:31:17.5871469Z ##[group]Fetching the repository
+2025-03-04T21:31:17.5878519Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=2 origin +420bb7494eac40ed25074557efde031dd633a1d0:refs/remotes/pull/303/merge
+2025-03-04T21:31:17.7806002Z remote: Enumerating objects: 51, done.        
+2025-03-04T21:31:17.7807252Z remote: Counting objects:   1% (1/51)        
+2025-03-04T21:31:17.7808723Z remote: Counting objects:   3% (2/51)        
+2025-03-04T21:31:17.7809903Z remote: Counting objects:   5% (3/51)        
+2025-03-04T21:31:17.7811003Z remote: Counting objects:   7% (4/51)        
+2025-03-04T21:31:17.7811777Z remote: Counting objects:   9% (5/51)        
+2025-03-04T21:31:17.7812547Z remote: Counting objects:  11% (6/51)        
+2025-03-04T21:31:17.7813295Z remote: Counting objects:  13% (7/51)        
+2025-03-04T21:31:17.7814034Z remote: Counting objects:  15% (8/51)        
+2025-03-04T21:31:17.7814972Z remote: Counting objects:  17% (9/51)        
+2025-03-04T21:31:17.7816234Z remote: Counting objects:  19% (10/51)        
+2025-03-04T21:31:17.7817358Z remote: Counting objects:  21% (11/51)        
+2025-03-04T21:31:17.7818146Z remote: Counting objects:  23% (12/51)        
+2025-03-04T21:31:17.7818937Z remote: Counting objects:  25% (13/51)        
+2025-03-04T21:31:17.7819783Z remote: Counting objects:  27% (14/51)        
+2025-03-04T21:31:17.7820783Z remote: Counting objects:  29% (15/51)        
+2025-03-04T21:31:17.7822680Z remote: Counting objects:  31% (16/51)        
+2025-03-04T21:31:17.7823976Z remote: Counting objects:  33% (17/51)        
+2025-03-04T21:31:17.7824927Z remote: Counting objects:  35% (18/51)        
+2025-03-04T21:31:17.7825967Z remote: Counting objects:  37% (19/51)        
+2025-03-04T21:31:17.7827047Z remote: Counting objects:  39% (20/51)        
+2025-03-04T21:31:17.7828239Z remote: Counting objects:  41% (21/51)        
+2025-03-04T21:31:17.7829368Z remote: Counting objects:  43% (22/51)        
+2025-03-04T21:31:17.7830370Z remote: Counting objects:  45% (23/51)        
+2025-03-04T21:31:17.7831396Z remote: Counting objects:  47% (24/51)        
+2025-03-04T21:31:17.7832432Z remote: Counting objects:  49% (25/51)        
+2025-03-04T21:31:17.7833625Z remote: Counting objects:  50% (26/51)        
+2025-03-04T21:31:17.7835179Z remote: Counting objects:  52% (27/51)        
+2025-03-04T21:31:17.7837178Z remote: Counting objects:  54% (28/51)        
+2025-03-04T21:31:17.7839215Z remote: Counting objects:  56% (29/51)        
+2025-03-04T21:31:17.7840986Z remote: Counting objects:  58% (30/51)        
+2025-03-04T21:31:17.7842467Z remote: Counting objects:  60% (31/51)        
+2025-03-04T21:31:17.7843632Z remote: Counting objects:  62% (32/51)        
+2025-03-04T21:31:17.7844858Z remote: Counting objects:  64% (33/51)        
+2025-03-04T21:31:17.7846416Z remote: Counting objects:  66% (34/51)        
+2025-03-04T21:31:17.7847429Z remote: Counting objects:  68% (35/51)        
+2025-03-04T21:31:17.7848986Z remote: Counting objects:  70% (36/51)        
+2025-03-04T21:31:17.7850486Z remote: Counting objects:  72% (37/51)        
+2025-03-04T21:31:17.7851521Z remote: Counting objects:  74% (38/51)        
+2025-03-04T21:31:17.7852761Z remote: Counting objects:  76% (39/51)        
+2025-03-04T21:31:17.7854190Z remote: Counting objects:  78% (40/51)        
+2025-03-04T21:31:17.7855223Z remote: Counting objects:  80% (41/51)        
+2025-03-04T21:31:17.7856505Z remote: Counting objects:  82% (42/51)        
+2025-03-04T21:31:17.7857544Z remote: Counting objects:  84% (43/51)        
+2025-03-04T21:31:17.7859254Z remote: Counting objects:  86% (44/51)        
+2025-03-04T21:31:17.7860527Z remote: Counting objects:  88% (45/51)        
+2025-03-04T21:31:17.7861712Z remote: Counting objects:  90% (46/51)        
+2025-03-04T21:31:17.7862801Z remote: Counting objects:  92% (47/51)        
+2025-03-04T21:31:17.7863978Z remote: Counting objects:  94% (48/51)        
+2025-03-04T21:31:17.7865062Z remote: Counting objects:  96% (49/51)        
+2025-03-04T21:31:17.7866277Z remote: Counting objects:  98% (50/51)        
+2025-03-04T21:31:17.7867741Z remote: Counting objects: 100% (51/51)        
+2025-03-04T21:31:17.7868953Z remote: Counting objects: 100% (51/51), done.        
+2025-03-04T21:31:17.7870102Z remote: Compressing objects:   2% (1/47)        
+2025-03-04T21:31:17.7871254Z remote: Compressing objects:   4% (2/47)        
+2025-03-04T21:31:17.7872984Z remote: Compressing objects:   6% (3/47)        
+2025-03-04T21:31:17.7875120Z remote: Compressing objects:   8% (4/47)        
+2025-03-04T21:31:17.7876951Z remote: Compressing objects:  10% (5/47)        
+2025-03-04T21:31:17.7878887Z remote: Compressing objects:  12% (6/47)        
+2025-03-04T21:31:17.7880837Z remote: Compressing objects:  14% (7/47)        
+2025-03-04T21:31:17.7882482Z remote: Compressing objects:  17% (8/47)        
+2025-03-04T21:31:17.7884097Z remote: Compressing objects:  19% (9/47)        
+2025-03-04T21:31:17.7885923Z remote: Compressing objects:  21% (10/47)        
+2025-03-04T21:31:17.7887576Z remote: Compressing objects:  23% (11/47)        
+2025-03-04T21:31:17.7889211Z remote: Compressing objects:  25% (12/47)        
+2025-03-04T21:31:17.7890870Z remote: Compressing objects:  27% (13/47)        
+2025-03-04T21:31:17.7892515Z remote: Compressing objects:  29% (14/47)        
+2025-03-04T21:31:17.7894200Z remote: Compressing objects:  31% (15/47)        
+2025-03-04T21:31:17.7896341Z remote: Compressing objects:  34% (16/47)        
+2025-03-04T21:31:17.7898577Z remote: Compressing objects:  36% (17/47)        
+2025-03-04T21:31:17.7900289Z remote: Compressing objects:  38% (18/47)        
+2025-03-04T21:31:17.7901940Z remote: Compressing objects:  40% (19/47)        
+2025-03-04T21:31:17.7903590Z remote: Compressing objects:  42% (20/47)        
+2025-03-04T21:31:17.7905248Z remote: Compressing objects:  44% (21/47)        
+2025-03-04T21:31:17.7907044Z remote: Compressing objects:  46% (22/47)        
+2025-03-04T21:31:17.7908682Z remote: Compressing objects:  48% (23/47)        
+2025-03-04T21:31:17.7910532Z remote: Compressing objects:  51% (24/47)        
+2025-03-04T21:31:17.7913012Z remote: Compressing objects:  53% (25/47)        
+2025-03-04T21:31:17.7914930Z remote: Compressing objects:  55% (26/47)        
+2025-03-04T21:31:17.7916713Z remote: Compressing objects:  57% (27/47)        
+2025-03-04T21:31:17.7918323Z remote: Compressing objects:  59% (28/47)        
+2025-03-04T21:31:17.7919929Z remote: Compressing objects:  61% (29/47)        
+2025-03-04T21:31:17.7921566Z remote: Compressing objects:  63% (30/47)        
+2025-03-04T21:31:17.7923250Z remote: Compressing objects:  65% (31/47)        
+2025-03-04T21:31:17.7924899Z remote: Compressing objects:  68% (32/47)        
+2025-03-04T21:31:17.7926751Z remote: Compressing objects:  70% (33/47)        
+2025-03-04T21:31:17.7928559Z remote: Compressing objects:  72% (34/47)        
+2025-03-04T21:31:17.7930207Z remote: Compressing objects:  74% (35/47)        
+2025-03-04T21:31:17.7931854Z remote: Compressing objects:  76% (36/47)        
+2025-03-04T21:31:17.7933518Z remote: Compressing objects:  78% (37/47)        
+2025-03-04T21:31:17.7935162Z remote: Compressing objects:  80% (38/47)        
+2025-03-04T21:31:17.7937031Z remote: Compressing objects:  82% (39/47)        
+2025-03-04T21:31:17.7938671Z remote: Compressing objects:  85% (40/47)        
+2025-03-04T21:31:17.7940333Z remote: Compressing objects:  87% (41/47)        
+2025-03-04T21:31:17.7941955Z remote: Compressing objects:  89% (42/47)        
+2025-03-04T21:31:17.7943661Z remote: Compressing objects:  91% (43/47)        
+2025-03-04T21:31:17.7945765Z remote: Compressing objects:  93% (44/47)        
+2025-03-04T21:31:17.7947468Z remote: Compressing objects:  95% (45/47)        
+2025-03-04T21:31:17.7949096Z remote: Compressing objects:  97% (46/47)        
+2025-03-04T21:31:17.7950686Z remote: Compressing objects: 100% (47/47)        
+2025-03-04T21:31:17.7952442Z remote: Compressing objects: 100% (47/47), done.        
+2025-03-04T21:31:17.7954702Z remote: Total 51 (delta 4), reused 20 (delta 0), pack-reused 0 (from 0)        
+2025-03-04T21:31:17.8081038Z From https://github.com/tayler6000/pyVoIP
+2025-03-04T21:31:17.8082661Z  * [new ref]         420bb7494eac40ed25074557efde031dd633a1d0 -> pull/303/merge
+2025-03-04T21:31:17.8109839Z ##[endgroup]
+2025-03-04T21:31:17.8110837Z ##[group]Determining the checkout info
+2025-03-04T21:31:17.8112268Z ##[endgroup]
+2025-03-04T21:31:17.8113138Z ##[group]Checking out the ref
+2025-03-04T21:31:17.8117156Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/303/merge
+2025-03-04T21:31:17.8190491Z Note: switching to 'refs/remotes/pull/303/merge'.
+2025-03-04T21:31:17.8191823Z 
+2025-03-04T21:31:17.8192464Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-04T21:31:17.8194148Z changes and commit them, and you can discard any commits you make in this
+2025-03-04T21:31:17.8197080Z state without impacting any branches by switching back to a branch.
+2025-03-04T21:31:17.8198798Z 
+2025-03-04T21:31:17.8199737Z If you want to create a new branch to retain commits you create, you may
+2025-03-04T21:31:17.8202081Z do so (now or later) by using -c with the switch command. Example:
+2025-03-04T21:31:17.8203529Z 
+2025-03-04T21:31:17.8203959Z   git switch -c <new-branch-name>
+2025-03-04T21:31:17.8204869Z 
+2025-03-04T21:31:17.8205222Z Or undo this operation with:
+2025-03-04T21:31:17.8206266Z 
+2025-03-04T21:31:17.8206542Z   git switch -
+2025-03-04T21:31:17.8207021Z 
+2025-03-04T21:31:17.8208099Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-04T21:31:17.8210052Z 
+2025-03-04T21:31:17.8211442Z HEAD is now at 420bb74 Merge cab3912415a8d2194030ea10c95626412655bb85 into ea67797e07476e5876d7e9acbb8ff73be8978f77
+2025-03-04T21:31:17.8213830Z ##[endgroup]
+2025-03-04T21:31:17.8239002Z [command]/usr/bin/git log -1 --format='%H'
+2025-03-04T21:31:17.8263009Z '420bb7494eac40ed25074557efde031dd633a1d0'
+2025-03-04T21:31:17.8528706Z ##[group]Run actions/setup-python@v4.0.0
+2025-03-04T21:31:17.8529491Z with:
+2025-03-04T21:31:17.8529891Z   python-version: 3.8
+2025-03-04T21:31:17.8530668Z   token: ***
+2025-03-04T21:31:17.8531078Z ##[endgroup]
+2025-03-04T21:31:17.9790749Z Version 3.8 was not found in the local cache
+2025-03-04T21:31:18.3217304Z Version 3.8 is available for downloading
+2025-03-04T21:31:18.3220655Z Download from "https://github.com/actions/python-versions/releases/download/3.8.18-12303122501/python-3.8.18-linux-24.04-x64.tar.gz"
+2025-03-04T21:31:18.8665000Z Extract downloaded archive
+2025-03-04T21:31:18.8792667Z [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /home/runner/work/_temp/88133429-4491-4ed5-b1f6-a5e346185c49 -f /home/runner/work/_temp/b1f19fef-08b1-4bec-976c-baf1a0204a2e
+2025-03-04T21:31:20.2442595Z Execute installation script
+2025-03-04T21:31:20.2531109Z Check if Python hostedtoolcache folder exist...
+2025-03-04T21:31:20.2531794Z Create Python 3.8.18 folder
+2025-03-04T21:31:20.2545642Z Copy Python binaries to hostedtoolcache folder
+2025-03-04T21:31:20.7221451Z Create additional symlinks (Required for the UsePythonVersion Azure Pipelines task and the setup-python GitHub Action)
+2025-03-04T21:31:20.7266375Z Upgrading pip...
+2025-03-04T21:31:22.3986771Z Looking in links: /tmp/tmpuw6e0f5z
+2025-03-04T21:31:22.3990805Z Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (56.0.0)
+2025-03-04T21:31:22.3996242Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (23.0.1)
+2025-03-04T21:31:23.4194940Z Collecting pip
+2025-03-04T21:31:23.4528184Z Downloading pip-25.0.1-py3-none-any.whl (1.8 MB)
+2025-03-04T21:31:23.5018192Z ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 39.9 MB/s eta 0:00:00
+2025-03-04T21:31:23.5025260Z 
+2025-03-04T21:31:23.5373326Z Installing collected packages: pip
+2025-03-04T21:31:23.5375854Z Attempting uninstall: pip
+2025-03-04T21:31:23.5382127Z Found existing installation: pip 23.0.1
+2025-03-04T21:31:23.7173252Z Uninstalling pip-23.0.1:
+2025-03-04T21:31:23.7246110Z Successfully uninstalled pip-23.0.1
+2025-03-04T21:31:24.4323843Z Successfully installed pip-25.0.1
+2025-03-04T21:31:24.4790588Z Create complete file
+2025-03-04T21:31:24.4840916Z ##[warning]The `set-output` command is deprecated and will be disabled soon. Please upgrade to using Environment Files. For more information see: https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
+2025-03-04T21:31:24.4848461Z ##[warning]The `set-output` command is deprecated and will be disabled soon. Please upgrade to using Environment Files. For more information see: https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
+2025-03-04T21:31:24.4850766Z Successfully set up CPython (3.8.18)
+2025-03-04T21:31:24.4990957Z ##[group]Run python -m pip install --upgrade pip
+2025-03-04T21:31:24.4991400Z [36;1mpython -m pip install --upgrade pip[0m
+2025-03-04T21:31:24.4991735Z [36;1mpip install -e . -r requirements-test.txt[0m
+2025-03-04T21:31:24.5045270Z shell: /usr/bin/bash -e {0}
+2025-03-04T21:31:24.5045734Z env:
+2025-03-04T21:31:24.5045993Z   pythonLocation: /opt/hostedtoolcache/Python/3.8.18/x64
+2025-03-04T21:31:24.5046454Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.8.18/x64/lib/pkgconfig
+2025-03-04T21:31:24.5046854Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.18/x64/lib
+2025-03-04T21:31:24.5047151Z ##[endgroup]
+2025-03-04T21:31:24.8583484Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.8.18/x64/lib/python3.8/site-packages (25.0.1)
+2025-03-04T21:31:25.3377767Z Obtaining file:///home/runner/work/pyVoIP/pyVoIP
+2025-03-04T21:31:25.3403491Z   Installing build dependencies: started
+2025-03-04T21:31:26.5992870Z   Installing build dependencies: finished with status 'done'
+2025-03-04T21:31:26.6003029Z   Checking if build backend supports build_editable: started
+2025-03-04T21:31:26.7424914Z   Checking if build backend supports build_editable: finished with status 'done'
+2025-03-04T21:31:26.7437196Z   Getting requirements to build editable: started
+2025-03-04T21:31:26.8994931Z   Getting requirements to build editable: finished with status 'done'
+2025-03-04T21:31:26.9009360Z   Preparing editable metadata (pyproject.toml): started
+2025-03-04T21:31:27.0726419Z   Preparing editable metadata (pyproject.toml): finished with status 'done'
+2025-03-04T21:31:27.1348250Z Collecting black (from -r requirements-test.txt (line 1))
+2025-03-04T21:31:27.1468401Z   Downloading black-24.8.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl.metadata (78 kB)
+2025-03-04T21:31:27.2010730Z Collecting pytest (from -r requirements-test.txt (line 2))
+2025-03-04T21:31:27.2045356Z   Downloading pytest-8.3.5-py3-none-any.whl.metadata (7.6 kB)
+2025-03-04T21:31:27.2267815Z Collecting click>=8.0.0 (from black->-r requirements-test.txt (line 1))
+2025-03-04T21:31:27.2304698Z   Downloading click-8.1.8-py3-none-any.whl.metadata (2.3 kB)
+2025-03-04T21:31:27.2424324Z Collecting mypy-extensions>=0.4.3 (from black->-r requirements-test.txt (line 1))
+2025-03-04T21:31:27.2456257Z   Downloading mypy_extensions-1.0.0-py3-none-any.whl.metadata (1.1 kB)
+2025-03-04T21:31:27.2617436Z Collecting packaging>=22.0 (from black->-r requirements-test.txt (line 1))
+2025-03-04T21:31:27.2652386Z   Downloading packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+2025-03-04T21:31:27.2782850Z Collecting pathspec>=0.9.0 (from black->-r requirements-test.txt (line 1))
+2025-03-04T21:31:27.2814701Z   Downloading pathspec-0.12.1-py3-none-any.whl.metadata (21 kB)
+2025-03-04T21:31:27.3007696Z Collecting platformdirs>=2 (from black->-r requirements-test.txt (line 1))
+2025-03-04T21:31:27.3045627Z   Downloading platformdirs-4.3.6-py3-none-any.whl.metadata (11 kB)
+2025-03-04T21:31:27.3217690Z Collecting tomli>=1.1.0 (from black->-r requirements-test.txt (line 1))
+2025-03-04T21:31:27.3252632Z   Downloading tomli-2.2.1-py3-none-any.whl.metadata (10 kB)
+2025-03-04T21:31:27.3421177Z Collecting typing-extensions>=4.0.1 (from black->-r requirements-test.txt (line 1))
+2025-03-04T21:31:27.3455662Z   Downloading typing_extensions-4.12.2-py3-none-any.whl.metadata (3.0 kB)
+2025-03-04T21:31:27.3597798Z Collecting exceptiongroup>=1.0.0rc8 (from pytest->-r requirements-test.txt (line 2))
+2025-03-04T21:31:27.3635018Z   Downloading exceptiongroup-1.2.2-py3-none-any.whl.metadata (6.6 kB)
+2025-03-04T21:31:27.3732349Z Collecting iniconfig (from pytest->-r requirements-test.txt (line 2))
+2025-03-04T21:31:27.3765566Z   Downloading iniconfig-2.0.0-py3-none-any.whl.metadata (2.6 kB)
+2025-03-04T21:31:27.3895063Z Collecting pluggy<2,>=1.5 (from pytest->-r requirements-test.txt (line 2))
+2025-03-04T21:31:27.3929308Z   Downloading pluggy-1.5.0-py3-none-any.whl.metadata (4.8 kB)
+2025-03-04T21:31:27.4096565Z Downloading black-24.8.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl (1.7 MB)
+2025-03-04T21:31:27.4286573Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 94.1 MB/s eta 0:00:00
+2025-03-04T21:31:27.4363774Z Downloading pytest-8.3.5-py3-none-any.whl (343 kB)
+2025-03-04T21:31:27.4432736Z Downloading click-8.1.8-py3-none-any.whl (98 kB)
+2025-03-04T21:31:27.4497248Z Downloading exceptiongroup-1.2.2-py3-none-any.whl (16 kB)
+2025-03-04T21:31:27.4553144Z Downloading mypy_extensions-1.0.0-py3-none-any.whl (4.7 kB)
+2025-03-04T21:31:27.4607904Z Downloading packaging-24.2-py3-none-any.whl (65 kB)
+2025-03-04T21:31:27.4676995Z Downloading pathspec-0.12.1-py3-none-any.whl (31 kB)
+2025-03-04T21:31:27.4737432Z Downloading platformdirs-4.3.6-py3-none-any.whl (18 kB)
+2025-03-04T21:31:27.4792801Z Downloading pluggy-1.5.0-py3-none-any.whl (20 kB)
+2025-03-04T21:31:27.4851819Z Downloading tomli-2.2.1-py3-none-any.whl (14 kB)
+2025-03-04T21:31:27.4905971Z Downloading typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+2025-03-04T21:31:27.4962309Z Downloading iniconfig-2.0.0-py3-none-any.whl (5.9 kB)
+2025-03-04T21:31:27.5129184Z Building wheels for collected packages: pyVoIP
+2025-03-04T21:31:27.5138386Z   Building editable for pyVoIP (pyproject.toml): started
+2025-03-04T21:31:27.7040993Z   Building editable for pyVoIP (pyproject.toml): finished with status 'done'
+2025-03-04T21:31:27.7049393Z   Created wheel for pyVoIP: filename=pyVoIP-1.6.8-0.editable-py3-none-any.whl size=16054 sha256=8fcc4c80573f3c08506538230d884cff2f5064258dde754dae3822cb2adb9695
+2025-03-04T21:31:27.7051533Z   Stored in directory: /tmp/pip-ephem-wheel-cache-zf0gpsb7/wheels/c8/45/1e/0297572ef91ae82a5e91499f090f332030ced8c88bdb543e9b
+2025-03-04T21:31:27.7074658Z Successfully built pyVoIP
+2025-03-04T21:31:27.7349610Z Installing collected packages: typing-extensions, tomli, pyVoIP, pluggy, platformdirs, pathspec, packaging, mypy-extensions, iniconfig, exceptiongroup, click, pytest, black
+2025-03-04T21:31:28.1808161Z Successfully installed black-24.8.0 click-8.1.8 exceptiongroup-1.2.2 iniconfig-2.0.0 mypy-extensions-1.0.0 packaging-24.2 pathspec-0.12.1 platformdirs-4.3.6 pluggy-1.5.0 pyVoIP-1.6.8 pytest-8.3.5 tomli-2.2.1 typing-extensions-4.12.2
+2025-03-04T21:31:28.2616915Z ##[group]Run black --check pyVoIP
+2025-03-04T21:31:28.2617213Z [36;1mblack --check pyVoIP[0m
+2025-03-04T21:31:28.2663676Z shell: /usr/bin/bash -e {0}
+2025-03-04T21:31:28.2663884Z env:
+2025-03-04T21:31:28.2664118Z   pythonLocation: /opt/hostedtoolcache/Python/3.8.18/x64
+2025-03-04T21:31:28.2664513Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.8.18/x64/lib/pkgconfig
+2025-03-04T21:31:28.2664893Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.18/x64/lib
+2025-03-04T21:31:28.2665171Z ##[endgroup]
+2025-03-04T21:31:29.3429748Z would reformat /home/runner/work/pyVoIP/pyVoIP/pyVoIP/SIP.py
+2025-03-04T21:31:29.3482616Z 
+2025-03-04T21:31:29.3483261Z Oh no! 💥 💔 💥
+2025-03-04T21:31:29.3483587Z 1 file would be reformatted, 6 files would be left unchanged.
+2025-03-04T21:31:29.3670824Z ##[error]Process completed with exit code 1.
+2025-03-04T21:31:29.3743434Z Post job cleanup.
+2025-03-04T21:31:29.4621134Z [command]/usr/bin/git version
+2025-03-04T21:31:29.4662941Z git version 2.48.1
+2025-03-04T21:31:29.4709672Z Temporarily overriding HOME='/home/runner/work/_temp/ba9c204b-ed13-4329-8129-71c034796eb8' before making global git config changes
+2025-03-04T21:31:29.4710907Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-04T21:31:29.4714761Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pyVoIP/pyVoIP
+2025-03-04T21:31:29.4747649Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-04T21:31:29.4780016Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :
+2025-03-04T21:31:29.5016812Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-04T21:31:29.5039321Z http.https://github.com/.extraheader
+2025-03-04T21:31:29.5049144Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-04T21:31:29.5079311Z [command]/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :
+2025-03-04T21:31:29.5438099Z Cleaning up orphan processes

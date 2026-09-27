@@ -1,0 +1,320 @@
+﻿2025-04-08T17:01:22.7237775Z Current runner version: '2.323.0'
+2025-04-08T17:01:22.7267104Z ##[group]Operating System
+2025-04-08T17:01:22.7267972Z Ubuntu
+2025-04-08T17:01:22.7268465Z 22.04.5
+2025-04-08T17:01:22.7268929Z LTS
+2025-04-08T17:01:22.7269460Z ##[endgroup]
+2025-04-08T17:01:22.7269936Z ##[group]Runner Image
+2025-04-08T17:01:22.7270522Z Image: ubuntu-22.04
+2025-04-08T17:01:22.7271090Z Version: 20250323.1.0
+2025-04-08T17:01:22.7272074Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20250323.1/images/ubuntu/Ubuntu2204-Readme.md
+2025-04-08T17:01:22.7273608Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20250323.1
+2025-04-08T17:01:22.7274532Z ##[endgroup]
+2025-04-08T17:01:22.7275063Z ##[group]Runner Image Provisioner
+2025-04-08T17:01:22.7275611Z 2.0.422.1
+2025-04-08T17:01:22.7276098Z ##[endgroup]
+2025-04-08T17:01:22.7278472Z ##[group]GITHUB_TOKEN Permissions
+2025-04-08T17:01:22.7280655Z Actions: write
+2025-04-08T17:01:22.7281456Z Attestations: write
+2025-04-08T17:01:22.7282103Z Checks: write
+2025-04-08T17:01:22.7282635Z Contents: write
+2025-04-08T17:01:22.7283155Z Deployments: write
+2025-04-08T17:01:22.7283790Z Discussions: write
+2025-04-08T17:01:22.7284356Z Issues: write
+2025-04-08T17:01:22.7284805Z Metadata: read
+2025-04-08T17:01:22.7285267Z Models: read
+2025-04-08T17:01:22.7285760Z Packages: write
+2025-04-08T17:01:22.7286266Z Pages: write
+2025-04-08T17:01:22.7286715Z PullRequests: write
+2025-04-08T17:01:22.7287288Z RepositoryProjects: write
+2025-04-08T17:01:22.7287871Z SecurityEvents: write
+2025-04-08T17:01:22.7288351Z Statuses: write
+2025-04-08T17:01:22.7288886Z ##[endgroup]
+2025-04-08T17:01:22.7290903Z Secret source: Actions
+2025-04-08T17:01:22.7291744Z Prepare workflow directory
+2025-04-08T17:01:22.7622412Z Prepare all required actions
+2025-04-08T17:01:22.7660361Z Getting action download info
+2025-04-08T17:01:23.3662733Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-08T17:01:23.3664185Z Version: 4.2.2
+2025-04-08T17:01:23.3665249Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-08T17:01:23.3666498Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-08T17:01:23.3667186Z ##[endgroup]
+2025-04-08T17:01:23.4976286Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-04-08T17:01:23.4977059Z Version: 5.5.0
+2025-04-08T17:01:23.4977881Z Digest: sha256:1fac95d751afd58314aebd2ab01d4bf3b3109a441917bd2cac2a22898ec494f7
+2025-04-08T17:01:23.4978820Z Source commit SHA: 8d9ed9ac5c53483de85588cdf95a591a75ab9f55
+2025-04-08T17:01:23.4979503Z ##[endgroup]
+2025-04-08T17:01:23.7998349Z Download action repository 'pre-commit/action@v3.0.1' (SHA:2c7b3805fd2a0fd8c1884dcaebf91fc102a13ecd)
+2025-04-08T17:01:24.1235344Z Download action repository 'pre-commit-ci/lite-action@v1.1.0' (SHA:5d6cc0eb514c891a40562a58a8e71576c5c7fb43)
+2025-04-08T17:01:24.8265676Z Getting action download info
+2025-04-08T17:01:24.9941350Z ##[group]Download immutable action package 'actions/cache@v4'
+2025-04-08T17:01:24.9943645Z Version: 4.2.3
+2025-04-08T17:01:24.9945857Z Digest: sha256:c8a3bb963e1f1826d8fcc8d1354f0dd29d8ac1db1d4f6f20247055ae11b81ed9
+2025-04-08T17:01:24.9948806Z Source commit SHA: 5a3ec84eff668545956fd18022155c47e93e2684
+2025-04-08T17:01:24.9950788Z ##[endgroup]
+2025-04-08T17:01:25.3198531Z Complete job name: pre-commit
+2025-04-08T17:01:25.3875853Z ##[group]Run actions/checkout@v4
+2025-04-08T17:01:25.3876500Z with:
+2025-04-08T17:01:25.3876736Z   fetch-depth: 0
+2025-04-08T17:01:25.3877045Z   repository: Quansight-Labs/pytest-run-parallel
+2025-04-08T17:01:25.3877602Z   token: ***
+2025-04-08T17:01:25.3877845Z   ssh-strict: true
+2025-04-08T17:01:25.3878092Z   ssh-user: git
+2025-04-08T17:01:25.3878334Z   persist-credentials: true
+2025-04-08T17:01:25.3878592Z   clean: true
+2025-04-08T17:01:25.3878831Z   sparse-checkout-cone-mode: true
+2025-04-08T17:01:25.3879106Z   fetch-tags: false
+2025-04-08T17:01:25.3879346Z   show-progress: true
+2025-04-08T17:01:25.3879582Z   lfs: false
+2025-04-08T17:01:25.3879797Z   submodules: false
+2025-04-08T17:01:25.3880305Z   set-safe-directory: true
+2025-04-08T17:01:25.3880813Z ##[endgroup]
+2025-04-08T17:01:25.6513703Z Syncing repository: Quansight-Labs/pytest-run-parallel
+2025-04-08T17:01:25.6515164Z ##[group]Getting Git version info
+2025-04-08T17:01:25.6515719Z Working directory is '/home/runner/work/pytest-run-parallel/pytest-run-parallel'
+2025-04-08T17:01:25.6516385Z [command]/usr/bin/git version
+2025-04-08T17:01:25.6607724Z git version 2.49.0
+2025-04-08T17:01:25.6637928Z ##[endgroup]
+2025-04-08T17:01:25.6651603Z Temporarily overriding HOME='/home/runner/work/_temp/c84edbe2-9429-4484-948c-891701b51187' before making global git config changes
+2025-04-08T17:01:25.6652518Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-08T17:01:25.6657368Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pytest-run-parallel/pytest-run-parallel
+2025-04-08T17:01:25.6695723Z Deleting the contents of '/home/runner/work/pytest-run-parallel/pytest-run-parallel'
+2025-04-08T17:01:25.6699459Z ##[group]Initializing the repository
+2025-04-08T17:01:25.6704032Z [command]/usr/bin/git init /home/runner/work/pytest-run-parallel/pytest-run-parallel
+2025-04-08T17:01:25.6806235Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-08T17:01:25.6807084Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-08T17:01:25.6807664Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-08T17:01:25.6808346Z hint:
+2025-04-08T17:01:25.6808739Z hint: 	git config --global init.defaultBranch <name>
+2025-04-08T17:01:25.6809145Z hint:
+2025-04-08T17:01:25.6809483Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-08T17:01:25.6810047Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-08T17:01:25.6810488Z hint:
+2025-04-08T17:01:25.6810729Z hint: 	git branch -m <name>
+2025-04-08T17:01:25.6814743Z Initialized empty Git repository in /home/runner/work/pytest-run-parallel/pytest-run-parallel/.git/
+2025-04-08T17:01:25.6826007Z [command]/usr/bin/git remote add origin https://github.com/Quansight-Labs/pytest-run-parallel
+2025-04-08T17:01:25.6860346Z ##[endgroup]
+2025-04-08T17:01:25.6860792Z ##[group]Disabling automatic garbage collection
+2025-04-08T17:01:25.6864693Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-08T17:01:25.6892298Z ##[endgroup]
+2025-04-08T17:01:25.6892699Z ##[group]Setting up auth
+2025-04-08T17:01:25.6899356Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-08T17:01:25.6929600Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-08T17:01:25.7326293Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-08T17:01:25.7355889Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-08T17:01:25.7582127Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-08T17:01:25.7620277Z ##[endgroup]
+2025-04-08T17:01:25.7621121Z ##[group]Fetching the repository
+2025-04-08T17:01:25.7630306Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* +4864702df1deb68d9205157c434518f55c96e88b:refs/remotes/pull/37/merge
+2025-04-08T17:01:26.3817744Z From https://github.com/Quansight-Labs/pytest-run-parallel
+2025-04-08T17:01:26.3818863Z  * [new branch]      extend_skip_functions                    -> origin/extend_skip_functions
+2025-04-08T17:01:26.3819905Z  * [new branch]      main                                     -> origin/main
+2025-04-08T17:01:26.3820526Z  * [new tag]         v0.1.0                                   -> v0.1.0
+2025-04-08T17:01:26.3821632Z  * [new tag]         v0.2.0                                   -> v0.2.0
+2025-04-08T17:01:26.3823644Z  * [new tag]         v0.3.0                                   -> v0.3.0
+2025-04-08T17:01:26.3824205Z  * [new tag]         v0.3.1                                   -> v0.3.1
+2025-04-08T17:01:26.3826704Z  * [new ref]         4864702df1deb68d9205157c434518f55c96e88b -> pull/37/merge
+2025-04-08T17:01:26.3863248Z ##[endgroup]
+2025-04-08T17:01:26.3864179Z ##[group]Determining the checkout info
+2025-04-08T17:01:26.3865074Z ##[endgroup]
+2025-04-08T17:01:26.3869918Z [command]/usr/bin/git sparse-checkout disable
+2025-04-08T17:01:26.3928806Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-08T17:01:26.3955894Z ##[group]Checking out the ref
+2025-04-08T17:01:26.3959200Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/37/merge
+2025-04-08T17:01:26.4005225Z Note: switching to 'refs/remotes/pull/37/merge'.
+2025-04-08T17:01:26.4005699Z 
+2025-04-08T17:01:26.4006101Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-08T17:01:26.4006958Z changes and commit them, and you can discard any commits you make in this
+2025-04-08T17:01:26.4007815Z state without impacting any branches by switching back to a branch.
+2025-04-08T17:01:26.4008295Z 
+2025-04-08T17:01:26.4008510Z If you want to create a new branch to retain commits you create, you may
+2025-04-08T17:01:26.4009242Z do so (now or later) by using -c with the switch command. Example:
+2025-04-08T17:01:26.4009820Z 
+2025-04-08T17:01:26.4010054Z   git switch -c <new-branch-name>
+2025-04-08T17:01:26.4010432Z 
+2025-04-08T17:01:26.4010646Z Or undo this operation with:
+2025-04-08T17:01:26.4010986Z 
+2025-04-08T17:01:26.4011179Z   git switch -
+2025-04-08T17:01:26.4011425Z 
+2025-04-08T17:01:26.4011863Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-08T17:01:26.4012464Z 
+2025-04-08T17:01:26.4013128Z HEAD is now at 4864702 Merge 85d281df4331d10020d205d4551f2a1ae7925745 into 64d3c670e619dbf1b93d17e3d357fe2761a45638
+2025-04-08T17:01:26.4015360Z ##[endgroup]
+2025-04-08T17:01:26.4053629Z [command]/usr/bin/git log -1 --format=%H
+2025-04-08T17:01:26.4077172Z 4864702df1deb68d9205157c434518f55c96e88b
+2025-04-08T17:01:26.4294521Z ##[group]Run actions/setup-python@v5
+2025-04-08T17:01:26.4294868Z with:
+2025-04-08T17:01:26.4295112Z   python-version: 3.12
+2025-04-08T17:01:26.4295374Z   check-latest: false
+2025-04-08T17:01:26.4295768Z   token: ***
+2025-04-08T17:01:26.4296015Z   update-environment: true
+2025-04-08T17:01:26.4296308Z   allow-prereleases: false
+2025-04-08T17:01:26.4296574Z   freethreaded: false
+2025-04-08T17:01:26.4296829Z ##[endgroup]
+2025-04-08T17:01:26.6208015Z ##[group]Installed versions
+2025-04-08T17:01:26.6271275Z Successfully set up CPython (3.12.9)
+2025-04-08T17:01:26.6272398Z ##[endgroup]
+2025-04-08T17:01:26.6411313Z ##[group]Run pre-commit/action@v3.0.1
+2025-04-08T17:01:26.6411599Z with:
+2025-04-08T17:01:26.6411876Z   extra_args: --all-files
+2025-04-08T17:01:26.6412174Z env:
+2025-04-08T17:01:26.6412413Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-08T17:01:26.6412828Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib/pkgconfig
+2025-04-08T17:01:26.6413216Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-08T17:01:26.6413811Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-08T17:01:26.6414158Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-08T17:01:26.6414507Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib
+2025-04-08T17:01:26.6414792Z ##[endgroup]
+2025-04-08T17:01:26.6499601Z ##[group]Run python -m pip install pre-commit
+2025-04-08T17:01:26.6499989Z [36;1mpython -m pip install pre-commit[0m
+2025-04-08T17:01:26.6605240Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-08T17:01:26.6605629Z env:
+2025-04-08T17:01:26.6605885Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-08T17:01:26.6606481Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib/pkgconfig
+2025-04-08T17:01:26.6606871Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-08T17:01:26.6607259Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-08T17:01:26.6607600Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-08T17:01:26.6607949Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib
+2025-04-08T17:01:26.6608235Z ##[endgroup]
+2025-04-08T17:01:28.6804542Z Collecting pre-commit
+2025-04-08T17:01:28.6919194Z   Downloading pre_commit-4.2.0-py2.py3-none-any.whl.metadata (1.3 kB)
+2025-04-08T17:01:28.7067255Z Collecting cfgv>=2.0.0 (from pre-commit)
+2025-04-08T17:01:28.7096066Z   Downloading cfgv-3.4.0-py2.py3-none-any.whl.metadata (8.5 kB)
+2025-04-08T17:01:28.7549844Z Collecting identify>=1.0.0 (from pre-commit)
+2025-04-08T17:01:28.7580818Z   Downloading identify-2.6.9-py2.py3-none-any.whl.metadata (4.4 kB)
+2025-04-08T17:01:28.7805648Z Collecting nodeenv>=0.11.1 (from pre-commit)
+2025-04-08T17:01:28.7835857Z   Downloading nodeenv-1.9.1-py2.py3-none-any.whl.metadata (21 kB)
+2025-04-08T17:01:28.8211283Z Collecting pyyaml>=5.1 (from pre-commit)
+2025-04-08T17:01:28.8241971Z   Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+2025-04-08T17:01:28.8722419Z Collecting virtualenv>=20.10.0 (from pre-commit)
+2025-04-08T17:01:28.8752202Z   Downloading virtualenv-20.30.0-py3-none-any.whl.metadata (4.5 kB)
+2025-04-08T17:01:28.9094004Z Collecting distlib<1,>=0.3.7 (from virtualenv>=20.10.0->pre-commit)
+2025-04-08T17:01:28.9121185Z   Downloading distlib-0.3.9-py2.py3-none-any.whl.metadata (5.2 kB)
+2025-04-08T17:01:28.9342082Z Collecting filelock<4,>=3.12.2 (from virtualenv>=20.10.0->pre-commit)
+2025-04-08T17:01:28.9370277Z   Downloading filelock-3.18.0-py3-none-any.whl.metadata (2.9 kB)
+2025-04-08T17:01:28.9600612Z Collecting platformdirs<5,>=3.9.1 (from virtualenv>=20.10.0->pre-commit)
+2025-04-08T17:01:28.9641504Z   Downloading platformdirs-4.3.7-py3-none-any.whl.metadata (11 kB)
+2025-04-08T17:01:28.9769908Z Downloading pre_commit-4.2.0-py2.py3-none-any.whl (220 kB)
+2025-04-08T17:01:28.9855260Z Downloading cfgv-3.4.0-py2.py3-none-any.whl (7.2 kB)
+2025-04-08T17:01:28.9907293Z Downloading identify-2.6.9-py2.py3-none-any.whl (99 kB)
+2025-04-08T17:01:28.9966114Z Downloading nodeenv-1.9.1-py2.py3-none-any.whl (22 kB)
+2025-04-08T17:01:29.0028147Z Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (767 kB)
+2025-04-08T17:01:29.0134424Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 767.5/767.5 kB 68.5 MB/s eta 0:00:00
+2025-04-08T17:01:29.0168996Z Downloading virtualenv-20.30.0-py3-none-any.whl (4.3 MB)
+2025-04-08T17:01:29.1324920Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 36.2 MB/s eta 0:00:00
+2025-04-08T17:01:29.1354043Z Downloading distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+2025-04-08T17:01:29.1445914Z Downloading filelock-3.18.0-py3-none-any.whl (16 kB)
+2025-04-08T17:01:29.1502388Z Downloading platformdirs-4.3.7-py3-none-any.whl (18 kB)
+2025-04-08T17:01:29.1881073Z Installing collected packages: distlib, pyyaml, platformdirs, nodeenv, identify, filelock, cfgv, virtualenv, pre-commit
+2025-04-08T17:01:29.6275880Z Successfully installed cfgv-3.4.0 distlib-0.3.9 filelock-3.18.0 identify-2.6.9 nodeenv-1.9.1 platformdirs-4.3.7 pre-commit-4.2.0 pyyaml-6.0.2 virtualenv-20.30.0
+2025-04-08T17:01:29.8083750Z ##[group]Run python -m pip freeze --local
+2025-04-08T17:01:29.8084069Z [36;1mpython -m pip freeze --local[0m
+2025-04-08T17:01:29.8142856Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-08T17:01:29.8143173Z env:
+2025-04-08T17:01:29.8143636Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-08T17:01:29.8144035Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib/pkgconfig
+2025-04-08T17:01:29.8144474Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-08T17:01:29.8144826Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-08T17:01:29.8145363Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-08T17:01:29.8145720Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib
+2025-04-08T17:01:29.8146001Z ##[endgroup]
+2025-04-08T17:01:30.0495757Z cfgv==3.4.0
+2025-04-08T17:01:30.0496216Z distlib==0.3.9
+2025-04-08T17:01:30.0496490Z filelock==3.18.0
+2025-04-08T17:01:30.0496750Z identify==2.6.9
+2025-04-08T17:01:30.0497021Z nodeenv==1.9.1
+2025-04-08T17:01:30.0497283Z platformdirs==4.3.7
+2025-04-08T17:01:30.0497572Z pre_commit==4.2.0
+2025-04-08T17:01:30.0497835Z PyYAML==6.0.2
+2025-04-08T17:01:30.0498091Z virtualenv==20.30.0
+2025-04-08T17:01:30.1422575Z ##[group]Run actions/cache@v4
+2025-04-08T17:01:30.1422795Z with:
+2025-04-08T17:01:30.1422963Z   path: ~/.cache/pre-commit
+2025-04-08T17:01:30.1423715Z   key: pre-commit-3|/opt/hostedtoolcache/Python/3.12.9/x64|90fc4c805b3a8622198c166aa58d6932852459a51d9650605ca4ce0e9b182035
+2025-04-08T17:01:30.1424228Z   enableCrossOsArchive: false
+2025-04-08T17:01:30.1424468Z   fail-on-cache-miss: false
+2025-04-08T17:01:30.1424681Z   lookup-only: false
+2025-04-08T17:01:30.1424854Z   save-always: false
+2025-04-08T17:01:30.1425022Z env:
+2025-04-08T17:01:30.1425237Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-08T17:01:30.1425624Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib/pkgconfig
+2025-04-08T17:01:30.1425981Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-08T17:01:30.1426306Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-08T17:01:30.1426629Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-08T17:01:30.1426955Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib
+2025-04-08T17:01:30.1427228Z ##[endgroup]
+2025-04-08T17:01:30.5755915Z Cache hit for: pre-commit-3|/opt/hostedtoolcache/Python/3.12.9/x64|90fc4c805b3a8622198c166aa58d6932852459a51d9650605ca4ce0e9b182035
+2025-04-08T17:01:31.8466009Z Received 4194304 of 43320966 (9.7%), 4.0 MBs/sec
+2025-04-08T17:01:32.2158189Z Received 43320966 of 43320966 (100.0%), 30.2 MBs/sec
+2025-04-08T17:01:32.2158792Z Cache Size: ~41 MB (43320966 B)
+2025-04-08T17:01:32.2189487Z [command]/usr/bin/tar -xf /home/runner/work/_temp/24914de1-33c2-4d22-9ecf-98bbdbb4964d/cache.tzst -P -C /home/runner/work/pytest-run-parallel/pytest-run-parallel --use-compress-program unzstd
+2025-04-08T17:01:32.6905513Z Cache restored successfully
+2025-04-08T17:01:32.7290374Z Cache restored from key: pre-commit-3|/opt/hostedtoolcache/Python/3.12.9/x64|90fc4c805b3a8622198c166aa58d6932852459a51d9650605ca4ce0e9b182035
+2025-04-08T17:01:32.7396118Z ##[group]Run pre-commit run --show-diff-on-failure --color=always --all-files
+2025-04-08T17:01:32.7396612Z [36;1mpre-commit run --show-diff-on-failure --color=always --all-files[0m
+2025-04-08T17:01:32.7456685Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-08T17:01:32.7456996Z env:
+2025-04-08T17:01:32.7457439Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-08T17:01:32.7457853Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib/pkgconfig
+2025-04-08T17:01:32.7458251Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-08T17:01:32.7458597Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-08T17:01:32.7458962Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-08T17:01:32.7459305Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib
+2025-04-08T17:01:32.7459584Z ##[endgroup]
+2025-04-08T17:01:33.1492409Z fix end of files.........................................................[42mPassed[m
+2025-04-08T17:01:33.2006039Z trim trailing whitespace.................................................[42mPassed[m
+2025-04-08T17:01:34.5814458Z rstcheck.................................................................[42mPassed[m
+2025-04-08T17:01:34.5945290Z ruff.....................................................................[42mPassed[m
+2025-04-08T17:01:34.6084119Z ruff-format..............................................................[41mFailed[m
+2025-04-08T17:01:34.6085306Z [2m- hook id: ruff-format[m
+2025-04-08T17:01:34.6085829Z [2m- files were modified by this hook[m
+2025-04-08T17:01:34.6086141Z 
+2025-04-08T17:01:34.6086314Z 1 file reformatted, 4 files left unchanged
+2025-04-08T17:01:34.6086652Z 
+2025-04-08T17:01:34.6086823Z pre-commit hook(s) made changes.
+2025-04-08T17:01:34.6087520Z If you are seeing this message in CI, reproduce locally with: `pre-commit run --all-files`.
+2025-04-08T17:01:34.6088498Z To run `pre-commit` as part of git workflow, use `pre-commit install`.
+2025-04-08T17:01:34.6089099Z All changes made by hooks:
+2025-04-08T17:01:34.6110525Z [1mdiff --git a/tests/test_run_parallel.py b/tests/test_run_parallel.py[m
+2025-04-08T17:01:34.6111307Z [1mindex 1e8e883..bbdeb84 100644[m
+2025-04-08T17:01:34.6111812Z [1m--- a/tests/test_run_parallel.py[m
+2025-04-08T17:01:34.6112304Z [1m+++ b/tests/test_run_parallel.py[m
+2025-04-08T17:01:34.6112815Z [36m@@ -875,6 +875,7 @@[m [mdef test_known_incompatible_test_item_doesnt_warn(pytester):[m
+2025-04-08T17:01:34.6113204Z      )[m
+2025-04-08T17:01:34.6114053Z      assert "warnings" not in result.parseoutcomes().keys()[m
+2025-04-08T17:01:34.6114372Z  [m
+2025-04-08T17:01:34.6114547Z [32m+[m
+2025-04-08T17:01:34.6114809Z  def test_thread_unsafe_function_attr(pytester):[m
+2025-04-08T17:01:34.6115135Z      pytester.makepyfile([m
+2025-04-08T17:01:34.6115388Z          mod_1="""[m
+2025-04-08T17:01:34.6306443Z ##[error]Process completed with exit code 1.
+2025-04-08T17:01:34.6369011Z ##[group]Run pre-commit-ci/lite-action@v1.1.0
+2025-04-08T17:01:34.6369312Z with:
+2025-04-08T17:01:34.6369524Z   msg: [pre-commit.ci lite] apply automatic fixes
+2025-04-08T17:01:34.6369788Z env:
+2025-04-08T17:01:34.6370022Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-08T17:01:34.6370414Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib/pkgconfig
+2025-04-08T17:01:34.6370795Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-08T17:01:34.6371128Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-08T17:01:34.6371476Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-04-08T17:01:34.6371808Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib
+2025-04-08T17:01:34.6372091Z ##[endgroup]
+2025-04-08T17:01:34.7068276Z tests/test_run_parallel.py: needs update
+2025-04-08T17:01:34.7088957Z fetching pr...
+2025-04-08T17:01:35.2152465Z saving artifact...
+2025-04-08T17:01:36.6604583Z artifact published!
+2025-04-08T17:01:36.6759061Z Post job cleanup.
+2025-04-08T17:01:36.7077618Z Post job cleanup.
+2025-04-08T17:01:36.7128613Z Post job cleanup.
+2025-04-08T17:01:36.8089724Z [command]/usr/bin/git version
+2025-04-08T17:01:36.8127544Z git version 2.49.0
+2025-04-08T17:01:36.8178456Z Temporarily overriding HOME='/home/runner/work/_temp/7fb4bb29-5def-4436-9842-829340e991b0' before making global git config changes
+2025-04-08T17:01:36.8179772Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-08T17:01:36.8184221Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pytest-run-parallel/pytest-run-parallel
+2025-04-08T17:01:36.8224560Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-08T17:01:36.8258728Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-08T17:01:36.8514152Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-08T17:01:36.8537047Z http.https://github.com/.extraheader
+2025-04-08T17:01:36.8551724Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-08T17:01:36.8585964Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-08T17:01:36.8926820Z Cleaning up orphan processes

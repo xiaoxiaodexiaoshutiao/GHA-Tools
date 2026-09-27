@@ -1,0 +1,279 @@
+2025-04-11T10:48:28.4322591Z Requested labels: ubuntu-latest
+2025-04-11T10:48:28.4323051Z Job defined at: matomo-org/matomo-log-analytics/.github/workflows/tests.yml@refs/pull/384/merge
+2025-04-11T10:48:28.4323172Z Waiting for a runner to pick up this job...
+2025-04-11T10:48:28.7841776Z Job is waiting for a hosted runner to come online.
+2025-04-11T10:48:31.8900387Z Job is about to start running on the hosted runner: GitHub Actions 272 (hosted)
+2025-04-11T10:48:33.5964957Z Current runner version: '2.323.0'
+2025-04-11T10:48:33.5993672Z ##[group]Operating System
+2025-04-11T10:48:33.5994542Z Ubuntu
+2025-04-11T10:48:33.5995123Z 24.04.2
+2025-04-11T10:48:33.5995624Z LTS
+2025-04-11T10:48:33.5996119Z ##[endgroup]
+2025-04-11T10:48:33.5996666Z ##[group]Runner Image
+2025-04-11T10:48:33.5997260Z Image: ubuntu-24.04
+2025-04-11T10:48:33.5997781Z Version: 20250406.1.0
+2025-04-11T10:48:33.5998802Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250406.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-11T10:48:33.6000273Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250406.1
+2025-04-11T10:48:33.6001189Z ##[endgroup]
+2025-04-11T10:48:33.6001775Z ##[group]Runner Image Provisioner
+2025-04-11T10:48:33.6002381Z 2.0.422.1
+2025-04-11T10:48:33.6002826Z ##[endgroup]
+2025-04-11T10:48:33.6004360Z ##[group]GITHUB_TOKEN Permissions
+2025-04-11T10:48:33.6006230Z Actions: read
+2025-04-11T10:48:33.6006894Z Checks: read
+2025-04-11T10:48:33.6007872Z Contents: read
+2025-04-11T10:48:33.6008911Z Issues: read
+2025-04-11T10:48:33.6009639Z Metadata: read
+2025-04-11T10:48:33.6010405Z PullRequests: read
+2025-04-11T10:48:33.6011310Z ##[endgroup]
+2025-04-11T10:48:33.6015744Z Secret source: Actions
+2025-04-11T10:48:33.6016944Z Prepare workflow directory
+2025-04-11T10:48:33.6462641Z Prepare all required actions
+2025-04-11T10:48:33.6502848Z Getting action download info
+2025-04-11T10:48:33.8410194Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-11T10:48:33.8411100Z Version: 4.2.2
+2025-04-11T10:48:33.8411931Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-11T10:48:33.8412971Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-11T10:48:33.8413759Z ##[endgroup]
+2025-04-11T10:48:33.9561466Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-04-11T10:48:33.9562192Z Version: 5.5.0
+2025-04-11T10:48:33.9562854Z Digest: sha256:1fac95d751afd58314aebd2ab01d4bf3b3109a441917bd2cac2a22898ec494f7
+2025-04-11T10:48:33.9564013Z Source commit SHA: 8d9ed9ac5c53483de85588cdf95a591a75ab9f55
+2025-04-11T10:48:33.9564619Z ##[endgroup]
+2025-04-11T10:48:34.2709344Z Complete job name: Tests (Python 3.9)
+2025-04-11T10:48:34.3456956Z ##[group]Run actions/checkout@v4
+2025-04-11T10:48:34.3457806Z with:
+2025-04-11T10:48:34.3458242Z   repository: matomo-org/matomo-log-analytics
+2025-04-11T10:48:34.3459042Z   token: ***
+2025-04-11T10:48:34.3459426Z   ssh-strict: true
+2025-04-11T10:48:34.3459820Z   ssh-user: git
+2025-04-11T10:48:34.3460227Z   persist-credentials: true
+2025-04-11T10:48:34.3460673Z   clean: true
+2025-04-11T10:48:34.3461079Z   sparse-checkout-cone-mode: true
+2025-04-11T10:48:34.3461566Z   fetch-depth: 1
+2025-04-11T10:48:34.3461956Z   fetch-tags: false
+2025-04-11T10:48:34.3462354Z   show-progress: true
+2025-04-11T10:48:34.3462759Z   lfs: false
+2025-04-11T10:48:34.3463133Z   submodules: false
+2025-04-11T10:48:34.3463715Z   set-safe-directory: true
+2025-04-11T10:48:34.3464470Z ##[endgroup]
+2025-04-11T10:48:34.6428818Z Syncing repository: matomo-org/matomo-log-analytics
+2025-04-11T10:48:34.6431955Z ##[group]Getting Git version info
+2025-04-11T10:48:34.6433789Z Working directory is '/home/runner/work/matomo-log-analytics/matomo-log-analytics'
+2025-04-11T10:48:34.6435904Z [command]/usr/bin/git version
+2025-04-11T10:48:34.6562427Z git version 2.49.0
+2025-04-11T10:48:34.6595170Z ##[endgroup]
+2025-04-11T10:48:34.6609415Z Temporarily overriding HOME='/home/runner/work/_temp/49468ad0-cd46-4d7d-9562-f235346dc351' before making global git config changes
+2025-04-11T10:48:34.6610897Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-11T10:48:34.6616058Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/matomo-log-analytics/matomo-log-analytics
+2025-04-11T10:48:34.6658188Z Deleting the contents of '/home/runner/work/matomo-log-analytics/matomo-log-analytics'
+2025-04-11T10:48:34.6661739Z ##[group]Initializing the repository
+2025-04-11T10:48:34.6666456Z [command]/usr/bin/git init /home/runner/work/matomo-log-analytics/matomo-log-analytics
+2025-04-11T10:48:34.6787686Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-11T10:48:34.6788945Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-11T10:48:34.6789979Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-11T10:48:34.6790887Z hint:
+2025-04-11T10:48:34.6791454Z hint: 	git config --global init.defaultBranch <name>
+2025-04-11T10:48:34.6792096Z hint:
+2025-04-11T10:48:34.6792731Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-11T10:48:34.6794003Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-11T10:48:34.6794832Z hint:
+2025-04-11T10:48:34.6795277Z hint: 	git branch -m <name>
+2025-04-11T10:48:34.6809145Z Initialized empty Git repository in /home/runner/work/matomo-log-analytics/matomo-log-analytics/.git/
+2025-04-11T10:48:34.6822694Z [command]/usr/bin/git remote add origin https://github.com/matomo-org/matomo-log-analytics
+2025-04-11T10:48:34.6863110Z ##[endgroup]
+2025-04-11T10:48:34.6864824Z ##[group]Disabling automatic garbage collection
+2025-04-11T10:48:34.6868679Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-11T10:48:34.6899851Z ##[endgroup]
+2025-04-11T10:48:34.6901309Z ##[group]Setting up auth
+2025-04-11T10:48:34.6908163Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-11T10:48:34.6940818Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-11T10:48:34.7367207Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-11T10:48:34.7400196Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-11T10:48:34.7641645Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-11T10:48:34.7685597Z ##[endgroup]
+2025-04-11T10:48:34.7686756Z ##[group]Fetching the repository
+2025-04-11T10:48:34.7695682Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +077fdc1f60c26ff02f3c5b313f8019c7e766771f:refs/remotes/pull/384/merge
+2025-04-11T10:48:35.1608538Z From https://github.com/matomo-org/matomo-log-analytics
+2025-04-11T10:48:35.1610025Z  * [new ref]         077fdc1f60c26ff02f3c5b313f8019c7e766771f -> pull/384/merge
+2025-04-11T10:48:35.1640040Z ##[endgroup]
+2025-04-11T10:48:35.1641374Z ##[group]Determining the checkout info
+2025-04-11T10:48:35.1642773Z ##[endgroup]
+2025-04-11T10:48:35.1647026Z [command]/usr/bin/git sparse-checkout disable
+2025-04-11T10:48:35.1689840Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-11T10:48:35.1720536Z ##[group]Checking out the ref
+2025-04-11T10:48:35.1725002Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/384/merge
+2025-04-11T10:48:35.1799890Z Note: switching to 'refs/remotes/pull/384/merge'.
+2025-04-11T10:48:35.1800912Z 
+2025-04-11T10:48:35.1801542Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-11T10:48:35.1803591Z changes and commit them, and you can discard any commits you make in this
+2025-04-11T10:48:35.1806272Z state without impacting any branches by switching back to a branch.
+2025-04-11T10:48:35.1807811Z 
+2025-04-11T10:48:35.1808819Z If you want to create a new branch to retain commits you create, you may
+2025-04-11T10:48:35.1811194Z do so (now or later) by using -c with the switch command. Example:
+2025-04-11T10:48:35.1812549Z 
+2025-04-11T10:48:35.1813172Z   git switch -c <new-branch-name>
+2025-04-11T10:48:35.1814429Z 
+2025-04-11T10:48:35.1815012Z Or undo this operation with:
+2025-04-11T10:48:35.1816410Z 
+2025-04-11T10:48:35.1816889Z   git switch -
+2025-04-11T10:48:35.1817574Z 
+2025-04-11T10:48:35.1818706Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-11T10:48:35.1820498Z 
+2025-04-11T10:48:35.1822598Z HEAD is now at 077fdc1 Merge d1051b0a3aea6f53da7293c37c7f6aa86348ea65 into bedcde8764ae6a79aeb9cbe841fbf2a76a3187b9
+2025-04-11T10:48:35.1827307Z ##[endgroup]
+2025-04-11T10:48:35.1852209Z [command]/usr/bin/git log -1 --format=%H
+2025-04-11T10:48:35.1876261Z 077fdc1f60c26ff02f3c5b313f8019c7e766771f
+2025-04-11T10:48:35.2320364Z ##[group]Run actions/setup-python@v5
+2025-04-11T10:48:35.2321624Z with:
+2025-04-11T10:48:35.2322516Z   python-version: 3.9
+2025-04-11T10:48:35.2323712Z   check-latest: false
+2025-04-11T10:48:35.2325035Z   token: ***
+2025-04-11T10:48:35.2325965Z   update-environment: true
+2025-04-11T10:48:35.2327081Z   allow-prereleases: false
+2025-04-11T10:48:35.2328173Z   freethreaded: false
+2025-04-11T10:48:35.2329139Z env:
+2025-04-11T10:48:35.2330371Z   PIP_TRUSTED_HOST: pypi.python.org pypi.org files.pythonhosted.org
+2025-04-11T10:48:35.2331978Z ##[endgroup]
+2025-04-11T10:48:35.4032551Z ##[group]Installed versions
+2025-04-11T10:48:35.4096900Z Successfully set up CPython (3.9.21)
+2025-04-11T10:48:35.4099738Z ##[endgroup]
+2025-04-11T10:48:35.4251963Z ##[group]Run pip install --upgrade pip
+2025-04-11T10:48:35.4253275Z [36;1mpip install --upgrade pip[0m
+2025-04-11T10:48:35.4255144Z [36;1mpip install pytest[0m
+2025-04-11T10:48:35.4256468Z [36;1mpython --version ; pip --version ; pytest --version[0m
+2025-04-11T10:48:35.4314380Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-11T10:48:35.4315764Z env:
+2025-04-11T10:48:35.4316766Z   pythonLocation: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-04-11T10:48:35.4318466Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib/pkgconfig
+2025-04-11T10:48:35.4320159Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-04-11T10:48:35.4321727Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-04-11T10:48:35.4323417Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-04-11T10:48:35.4324968Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib
+2025-04-11T10:48:35.4326268Z ##[endgroup]
+2025-04-11T10:48:36.1720725Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.9.21/x64/lib/python3.9/site-packages (25.0.1)
+2025-04-11T10:48:36.7462463Z Collecting pytest
+2025-04-11T10:48:36.8095381Z   Downloading pytest-8.3.5-py3-none-any.whl.metadata (7.6 kB)
+2025-04-11T10:48:36.8313633Z Collecting exceptiongroup>=1.0.0rc8 (from pytest)
+2025-04-11T10:48:36.8528521Z   Downloading exceptiongroup-1.2.2-py3-none-any.whl.metadata (6.6 kB)
+2025-04-11T10:48:36.8665591Z Collecting iniconfig (from pytest)
+2025-04-11T10:48:36.8868101Z   Downloading iniconfig-2.1.0-py3-none-any.whl.metadata (2.7 kB)
+2025-04-11T10:48:36.9075640Z Collecting packaging (from pytest)
+2025-04-11T10:48:36.9388660Z   Downloading packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+2025-04-11T10:48:36.9569941Z Collecting pluggy<2,>=1.5 (from pytest)
+2025-04-11T10:48:36.9773230Z   Downloading pluggy-1.5.0-py3-none-any.whl.metadata (4.8 kB)
+2025-04-11T10:48:36.9981525Z Collecting tomli>=1 (from pytest)
+2025-04-11T10:48:37.0183962Z   Downloading tomli-2.2.1-py3-none-any.whl.metadata (10 kB)
+2025-04-11T10:48:37.0462577Z Downloading pytest-8.3.5-py3-none-any.whl (343 kB)
+2025-04-11T10:48:37.1255238Z Downloading exceptiongroup-1.2.2-py3-none-any.whl (16 kB)
+2025-04-11T10:48:37.1502990Z Downloading pluggy-1.5.0-py3-none-any.whl (20 kB)
+2025-04-11T10:48:37.1744270Z Downloading tomli-2.2.1-py3-none-any.whl (14 kB)
+2025-04-11T10:48:37.1979294Z Downloading iniconfig-2.1.0-py3-none-any.whl (6.0 kB)
+2025-04-11T10:48:37.2213650Z Downloading packaging-24.2-py3-none-any.whl (65 kB)
+2025-04-11T10:48:37.2462132Z Installing collected packages: tomli, pluggy, packaging, iniconfig, exceptiongroup, pytest
+2025-04-11T10:48:37.5368067Z Successfully installed exceptiongroup-1.2.2 iniconfig-2.1.0 packaging-24.2 pluggy-1.5.0 pytest-8.3.5 tomli-2.2.1
+2025-04-11T10:48:37.5914694Z Python 3.9.21
+2025-04-11T10:48:37.7562219Z pip 25.0.1 from /opt/hostedtoolcache/Python/3.9.21/x64/lib/python3.9/site-packages/pip (python 3.9)
+2025-04-11T10:48:38.0151469Z pytest 8.3.5
+2025-04-11T10:48:38.0340733Z ##[group]Run cd tests
+2025-04-11T10:48:38.0341041Z [36;1mcd tests[0m
+2025-04-11T10:48:38.0341243Z [36;1m./run_tests.sh[0m
+2025-04-11T10:48:38.0390448Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-11T10:48:38.0390796Z env:
+2025-04-11T10:48:38.0391055Z   pythonLocation: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-04-11T10:48:38.0391507Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib/pkgconfig
+2025-04-11T10:48:38.0391959Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-04-11T10:48:38.0392313Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-04-11T10:48:38.0392677Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-04-11T10:48:38.0393038Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib
+2025-04-11T10:48:38.0393580Z ##[endgroup]
+2025-04-11T10:48:38.6457497Z ============================= test session starts ==============================
+2025-04-11T10:48:38.6458192Z platform linux -- Python 3.9.21, pytest-8.3.5, pluggy-1.5.0
+2025-04-11T10:48:38.6458824Z rootdir: /home/runner/work/matomo-log-analytics/matomo-log-analytics/tests
+2025-04-11T10:48:38.6459326Z collected 28 items
+2025-04-11T10:48:38.6459691Z 
+2025-04-11T10:48:39.0043656Z test_main.py .............F..............                                [100%]
+2025-04-11T10:48:39.0044358Z 
+2025-04-11T10:48:39.0044597Z =================================== FAILURES ===================================
+2025-04-11T10:48:39.0045335Z ______________________________ test_gandi_parsing ______________________________
+2025-04-11T10:48:39.0045845Z 
+2025-04-11T10:48:39.0046031Z     def test_gandi_parsing():
+2025-04-11T10:48:39.0046795Z         """test parsing of gandi logs (which needs to be forced, as it's not autodetected)"""
+2025-04-11T10:48:39.0047584Z     
+2025-04-11T10:48:39.0047943Z         file_ = 'logs/gandi.log'
+2025-04-11T10:48:39.0048390Z     
+2025-04-11T10:48:39.0048867Z         # have to override previous globals override for this test
+2025-04-11T10:48:39.0049645Z         import_logs.config.options.custom_w3c_fields = {}
+2025-04-11T10:48:39.0050052Z         Recorder.recorders = []
+2025-04-11T10:48:39.0050438Z         import_logs.parser = import_logs.Parser()
+2025-04-11T10:48:39.0050874Z         import_logs.config.format = import_logs.FORMATS['gandi']
+2025-04-11T10:48:39.0051308Z         import_logs.config.options.log_hostname = None
+2025-04-11T10:48:39.0051739Z         import_logs.config.options.enable_http_redirects = True
+2025-04-11T10:48:39.0052188Z         import_logs.config.options.enable_http_errors = True
+2025-04-11T10:48:39.0052622Z         import_logs.config.options.replay_tracking = False
+2025-04-11T10:48:39.0053279Z         import_logs.config.options.w3c_time_taken_in_millisecs = False
+2025-04-11T10:48:39.0053867Z         import_logs.parser.parse(file_)
+2025-04-11T10:48:39.0054127Z     
+2025-04-11T10:48:39.0054349Z         hits = [hit.__dict__ for hit in Recorder.recorders]
+2025-04-11T10:48:39.0054669Z     
+2025-04-11T10:48:39.0054941Z         assert hits[0]['status'] == u'301'
+2025-04-11T10:48:39.0055219Z         assert hits[0]['userid'] == 'theuser'
+2025-04-11T10:48:39.0055495Z         assert hits[0]['is_error'] == False
+2025-04-11T10:48:39.0055763Z         assert hits[0]['extension'] == '/'
+2025-04-11T10:48:39.0056034Z         assert hits[0]['is_download'] == False
+2025-04-11T10:48:39.0056301Z         assert hits[0]['referrer'] == ''
+2025-04-11T10:48:39.0056657Z         assert hits[0]['args'] == {'cvar': {1: ['HTTP-method', 'GET']}, 'uid': 'theuser'}
+2025-04-11T10:48:39.0057041Z         assert hits[0]['generation_time_milli'] == 0
+2025-04-11T10:48:39.0057359Z         assert hits[0]['host'] == 'www.example.com'
+2025-04-11T10:48:39.0057667Z         assert hits[0]['filename'] == 'logs/gandi.log'
+2025-04-11T10:48:39.0058215Z         assert hits[0]['is_redirect'] == True
+2025-04-11T10:48:39.0058559Z         assert hits[0]['date'] == datetime.datetime(2012, 2, 10, 21, 42, 0o7)
+2025-04-11T10:48:39.0058901Z         assert hits[0]['lineno'] == 0
+2025-04-11T10:48:39.0059326Z         assert hits[0]['ip'] == '1.2.3.4'
+2025-04-11T10:48:39.0059606Z         assert hits[0]['query_string'] == ''
+2025-04-11T10:48:39.0059871Z         assert hits[0]['path'] == '/'
+2025-04-11T10:48:39.0060122Z         assert hits[0]['is_robot'] == False
+2025-04-11T10:48:39.0060385Z         assert hits[0]['full_path'] == '/'
+2025-04-11T10:48:39.0060955Z         assert hits[0]['user_agent'] == 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11'
+2025-04-11T10:48:39.0061469Z     
+2025-04-11T10:48:39.0061659Z         assert hits[1]['status'] == u'200'
+2025-04-11T10:48:39.0061925Z         assert hits[1]['userid'] == None
+2025-04-11T10:48:39.0062237Z         assert hits[1]['is_error'] == False
+2025-04-11T10:48:39.0062509Z         assert hits[1]['extension'] == '/'
+2025-04-11T10:48:39.0062778Z         assert hits[1]['is_download'] == False
+2025-04-11T10:48:39.0063133Z         assert hits[1]['referrer'] == u'https://www.example.com/'
+2025-04-11T10:48:39.0063675Z         assert hits[0]['args'] == {'cvar': {1: ['HTTP-method', 'GET']}, 'uid': 'theuser'}
+2025-04-11T10:48:39.0064041Z         assert hits[1]['length'] == 1124
+2025-04-11T10:48:39.0064325Z         assert hits[1]['generation_time_milli'] == 0
+2025-04-11T10:48:39.0064624Z         assert hits[1]['host'] == 'www.example.com'
+2025-04-11T10:48:39.0064915Z         assert hits[1]['filename'] == 'logs/gandi.log'
+2025-04-11T10:48:39.0065193Z         assert hits[1]['is_redirect'] == False
+2025-04-11T10:48:39.0065506Z         assert hits[1]['date'] == datetime.datetime(2012, 2, 10, 21, 42, 0o7)
+2025-04-11T10:48:39.0065824Z         assert hits[1]['lineno'] == 1
+2025-04-11T10:48:39.0066077Z >       assert hits[1]['ip'] == u'125.125.125.125'
+2025-04-11T10:48:39.0066429Z E       AssertionError: assert '2001:0db8:85...a2e:0370:7334' == '125.125.125.125'
+2025-04-11T10:48:39.0066768Z E         
+2025-04-11T10:48:39.0066939Z E         - 125.125.125.125
+2025-04-11T10:48:39.0067167Z E         + 2001:0db8:85a3:0000:0000:8a2e:0370:7334
+2025-04-11T10:48:39.0067345Z 
+2025-04-11T10:48:39.0067435Z test_main.py:942: AssertionError
+2025-04-11T10:48:39.0067708Z =========================== short test summary info ============================
+2025-04-11T10:48:39.0068309Z FAILED test_main.py::test_gandi_parsing - AssertionError: assert '2001:0db8:85...a2e:0370:7334' == '125.125.125.125'
+2025-04-11T10:48:39.0068748Z   
+2025-04-11T10:48:39.0068931Z   - 125.125.125.125
+2025-04-11T10:48:39.0069207Z   + 2001:0db8:85a3:0000:0000:8a2e:0370:7334
+2025-04-11T10:48:39.0069489Z ========================= 1 failed, 27 passed in 0.63s =========================
+2025-04-11T10:48:39.0276062Z ##[error]Process completed with exit code 1.
+2025-04-11T10:48:39.0374517Z Post job cleanup.
+2025-04-11T10:48:39.1345636Z [command]/usr/bin/git version
+2025-04-11T10:48:39.1390146Z git version 2.49.0
+2025-04-11T10:48:39.1434481Z Temporarily overriding HOME='/home/runner/work/_temp/ed923b96-4f2c-4d28-88a5-785f236d6692' before making global git config changes
+2025-04-11T10:48:39.1435824Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-11T10:48:39.1441382Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/matomo-log-analytics/matomo-log-analytics
+2025-04-11T10:48:39.1479312Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-11T10:48:39.1514114Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-11T10:48:39.1754635Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-11T10:48:39.1778001Z http.https://github.com/.extraheader
+2025-04-11T10:48:39.1790890Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-11T10:48:39.1824749Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-11T10:48:39.2196154Z Cleaning up orphan processes

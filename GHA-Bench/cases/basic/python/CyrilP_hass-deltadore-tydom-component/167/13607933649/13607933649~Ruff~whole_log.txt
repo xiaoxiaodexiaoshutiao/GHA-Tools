@@ -1,0 +1,319 @@
+2025-03-01T19:08:28.3183805Z Requested labels: ubuntu-latest
+2025-03-01T19:08:28.3184846Z Job defined at: CyrilP/hass-deltadore-tydom-component/.github/workflows/lint.yml@refs/pull/167/merge
+2025-03-01T19:08:28.3185054Z Waiting for a runner to pick up this job...
+2025-03-01T19:08:29.1318062Z Job is waiting for a hosted runner to come online.
+2025-03-01T19:08:31.4687168Z Job is about to start running on the hosted runner: GitHub Actions 17 (hosted)
+2025-03-01T19:08:33.0302682Z Current runner version: '2.322.0'
+2025-03-01T19:08:33.0328537Z ##[group]Operating System
+2025-03-01T19:08:33.0329360Z Ubuntu
+2025-03-01T19:08:33.0329923Z 24.04.2
+2025-03-01T19:08:33.0330506Z LTS
+2025-03-01T19:08:33.0330975Z ##[endgroup]
+2025-03-01T19:08:33.0331543Z ##[group]Runner Image
+2025-03-01T19:08:33.0332195Z Image: ubuntu-24.04
+2025-03-01T19:08:33.0332749Z Version: 20250223.1.0
+2025-03-01T19:08:33.0333801Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250223.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-01T19:08:33.0335270Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250223.1
+2025-03-01T19:08:33.0336181Z ##[endgroup]
+2025-03-01T19:08:33.0336736Z ##[group]Runner Image Provisioner
+2025-03-01T19:08:33.0337715Z 2.0.422.1
+2025-03-01T19:08:33.0338247Z ##[endgroup]
+2025-03-01T19:08:33.0339437Z ##[group]GITHUB_TOKEN Permissions
+2025-03-01T19:08:33.0341781Z Contents: read
+2025-03-01T19:08:33.0342358Z Metadata: read
+2025-03-01T19:08:33.0343160Z Packages: read
+2025-03-01T19:08:33.0343839Z ##[endgroup]
+2025-03-01T19:08:33.0346959Z Secret source: None
+2025-03-01T19:08:33.0348255Z Prepare workflow directory
+2025-03-01T19:08:33.0653002Z Prepare all required actions
+2025-03-01T19:08:33.0689838Z Getting action download info
+2025-03-01T19:08:33.2168162Z Download action repository 'actions/checkout@v4.2.2' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-01T19:08:33.3072816Z Download action repository 'actions/setup-python@v5.4.0' (SHA:42375524e23c412d93fb67b49958b491fce71c38)
+2025-03-01T19:08:33.4629355Z Complete job name: Ruff
+2025-03-01T19:08:33.5351260Z ##[group]Run actions/checkout@v4.2.2
+2025-03-01T19:08:33.5352205Z with:
+2025-03-01T19:08:33.5352695Z   repository: CyrilP/hass-deltadore-tydom-component
+2025-03-01T19:08:33.5353505Z   token: ***
+2025-03-01T19:08:33.5353904Z   ssh-strict: true
+2025-03-01T19:08:33.5354319Z   ssh-user: git
+2025-03-01T19:08:33.5354739Z   persist-credentials: true
+2025-03-01T19:08:33.5355248Z   clean: true
+2025-03-01T19:08:33.5355753Z   sparse-checkout-cone-mode: true
+2025-03-01T19:08:33.5356243Z   fetch-depth: 1
+2025-03-01T19:08:33.5356648Z   fetch-tags: false
+2025-03-01T19:08:33.5357066Z   show-progress: true
+2025-03-01T19:08:33.5357798Z   lfs: false
+2025-03-01T19:08:33.5358201Z   submodules: false
+2025-03-01T19:08:33.5358625Z   set-safe-directory: true
+2025-03-01T19:08:33.5359403Z ##[endgroup]
+2025-03-01T19:08:33.7325289Z Syncing repository: CyrilP/hass-deltadore-tydom-component
+2025-03-01T19:08:33.7327496Z ##[group]Getting Git version info
+2025-03-01T19:08:33.7328590Z Working directory is '/home/runner/work/hass-deltadore-tydom-component/hass-deltadore-tydom-component'
+2025-03-01T19:08:33.7329838Z [command]/usr/bin/git version
+2025-03-01T19:08:33.7391796Z git version 2.48.1
+2025-03-01T19:08:33.7419187Z ##[endgroup]
+2025-03-01T19:08:33.7432876Z Temporarily overriding HOME='/home/runner/work/_temp/98b18c28-2971-4c0d-b2ce-7e56e39cbe12' before making global git config changes
+2025-03-01T19:08:33.7434245Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-01T19:08:33.7438455Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/hass-deltadore-tydom-component/hass-deltadore-tydom-component
+2025-03-01T19:08:33.7473602Z Deleting the contents of '/home/runner/work/hass-deltadore-tydom-component/hass-deltadore-tydom-component'
+2025-03-01T19:08:33.7476983Z ##[group]Initializing the repository
+2025-03-01T19:08:33.7481407Z [command]/usr/bin/git init /home/runner/work/hass-deltadore-tydom-component/hass-deltadore-tydom-component
+2025-03-01T19:08:33.7557874Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-01T19:08:33.7559178Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-01T19:08:33.7560300Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-01T19:08:33.7561058Z hint:
+2025-03-01T19:08:33.7561676Z hint: 	git config --global init.defaultBranch <name>
+2025-03-01T19:08:33.7562710Z hint:
+2025-03-01T19:08:33.7563339Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-01T19:08:33.7564680Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-01T19:08:33.7565895Z hint:
+2025-03-01T19:08:33.7566557Z hint: 	git branch -m <name>
+2025-03-01T19:08:33.7568806Z Initialized empty Git repository in /home/runner/work/hass-deltadore-tydom-component/hass-deltadore-tydom-component/.git/
+2025-03-01T19:08:33.7576932Z [command]/usr/bin/git remote add origin https://github.com/CyrilP/hass-deltadore-tydom-component
+2025-03-01T19:08:33.7610173Z ##[endgroup]
+2025-03-01T19:08:33.7611396Z ##[group]Disabling automatic garbage collection
+2025-03-01T19:08:33.7615052Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-01T19:08:33.7644491Z ##[endgroup]
+2025-03-01T19:08:33.7645721Z ##[group]Setting up auth
+2025-03-01T19:08:33.7652194Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-01T19:08:33.7683429Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-01T19:08:33.7972517Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-01T19:08:33.8000926Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-01T19:08:33.8227716Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-01T19:08:33.8261607Z ##[endgroup]
+2025-03-01T19:08:33.8262637Z ##[group]Fetching the repository
+2025-03-01T19:08:33.8270481Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +7f12edfeacf204079f7e87428fd2166d2a1bc3a6:refs/remotes/pull/167/merge
+2025-03-01T19:08:34.1541688Z From https://github.com/CyrilP/hass-deltadore-tydom-component
+2025-03-01T19:08:34.1543398Z  * [new ref]         7f12edfeacf204079f7e87428fd2166d2a1bc3a6 -> pull/167/merge
+2025-03-01T19:08:34.1570604Z ##[endgroup]
+2025-03-01T19:08:34.1572197Z ##[group]Determining the checkout info
+2025-03-01T19:08:34.1573919Z ##[endgroup]
+2025-03-01T19:08:34.1578121Z [command]/usr/bin/git sparse-checkout disable
+2025-03-01T19:08:34.1616766Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-01T19:08:34.1646027Z ##[group]Checking out the ref
+2025-03-01T19:08:34.1649684Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/167/merge
+2025-03-01T19:08:34.1734776Z Note: switching to 'refs/remotes/pull/167/merge'.
+2025-03-01T19:08:34.1735657Z 
+2025-03-01T19:08:34.1736379Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-01T19:08:34.1738278Z changes and commit them, and you can discard any commits you make in this
+2025-03-01T19:08:34.1739910Z state without impacting any branches by switching back to a branch.
+2025-03-01T19:08:34.1740524Z 
+2025-03-01T19:08:34.1740905Z If you want to create a new branch to retain commits you create, you may
+2025-03-01T19:08:34.1741757Z do so (now or later) by using -c with the switch command. Example:
+2025-03-01T19:08:34.1742463Z 
+2025-03-01T19:08:34.1742884Z   git switch -c <new-branch-name>
+2025-03-01T19:08:34.1743441Z 
+2025-03-01T19:08:34.1743678Z Or undo this operation with:
+2025-03-01T19:08:34.1744009Z 
+2025-03-01T19:08:34.1744218Z   git switch -
+2025-03-01T19:08:34.1744492Z 
+2025-03-01T19:08:34.1744920Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-01T19:08:34.1745507Z 
+2025-03-01T19:08:34.1746178Z HEAD is now at 7f12edf Merge 101922d36e3a083a3732bbad7086e7e34f7e6e8d into 8624fb3ef0dc3ba4bc8d35768a62175d4613ee2f
+2025-03-01T19:08:34.1748674Z ##[endgroup]
+2025-03-01T19:08:34.1778765Z [command]/usr/bin/git log -1 --format=%H
+2025-03-01T19:08:34.1801133Z 7f12edfeacf204079f7e87428fd2166d2a1bc3a6
+2025-03-01T19:08:34.2138276Z ##[group]Run actions/setup-python@v5.4.0
+2025-03-01T19:08:34.2138929Z with:
+2025-03-01T19:08:34.2139351Z   python-version: 3.10
+2025-03-01T19:08:34.2139826Z   cache: pip
+2025-03-01T19:08:34.2140265Z   check-latest: false
+2025-03-01T19:08:34.2140912Z   token: ***
+2025-03-01T19:08:34.2141356Z   update-environment: true
+2025-03-01T19:08:34.2141898Z   allow-prereleases: false
+2025-03-01T19:08:34.2142389Z ##[endgroup]
+2025-03-01T19:08:34.3828708Z ##[group]Installed versions
+2025-03-01T19:08:34.3888129Z Successfully set up CPython (3.10.16)
+2025-03-01T19:08:34.3889344Z ##[endgroup]
+2025-03-01T19:08:34.4492337Z [command]/opt/hostedtoolcache/Python/3.10.16/x64/bin/pip cache dir
+2025-03-01T19:08:34.7127768Z /home/runner/.cache/pip
+2025-03-01T19:08:34.8342865Z Cache hit for: setup-python-Linux-x64-24.04-Ubuntu-python-3.10.16-pip-833352f898db968c03f016de092c4eee37cf3e63315b11b2d258b9ab9aa9a940
+2025-03-01T19:08:35.2493159Z Received 49525322 of 49525322 (100.0%), 130.5 MBs/sec
+2025-03-01T19:08:35.2495773Z Cache Size: ~47 MB (49525322 B)
+2025-03-01T19:08:35.2522670Z [command]/usr/bin/tar -xf /home/runner/work/_temp/16a50983-c157-428b-92d8-129c777adeb3/cache.tzst -P -C /home/runner/work/hass-deltadore-tydom-component/hass-deltadore-tydom-component --use-compress-program unzstd
+2025-03-01T19:08:35.3623260Z Cache restored successfully
+2025-03-01T19:08:35.3779993Z Cache restored from key: setup-python-Linux-x64-24.04-Ubuntu-python-3.10.16-pip-833352f898db968c03f016de092c4eee37cf3e63315b11b2d258b9ab9aa9a940
+2025-03-01T19:08:35.3985065Z ##[group]Run python3 -m pip install -r requirements.txt
+2025-03-01T19:08:35.3986702Z [36;1mpython3 -m pip install -r requirements.txt[0m
+2025-03-01T19:08:35.4042728Z shell: /usr/bin/bash -e {0}
+2025-03-01T19:08:35.4043811Z env:
+2025-03-01T19:08:35.4044899Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-03-01T19:08:35.4046689Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib/pkgconfig
+2025-03-01T19:08:35.4048625Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-03-01T19:08:35.4050235Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-03-01T19:08:35.4051821Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-03-01T19:08:35.4053415Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib
+2025-03-01T19:08:35.4054795Z ##[endgroup]
+2025-03-01T19:08:36.0119665Z Collecting colorlog==6.9.0 (from -r requirements.txt (line 1))
+2025-03-01T19:08:36.0134297Z   Using cached colorlog-6.9.0-py3-none-any.whl.metadata (10 kB)
+2025-03-01T19:08:36.2473119Z Collecting homeassistant>=2023.7.3 (from -r requirements.txt (line 2))
+2025-03-01T19:08:36.2488271Z   Using cached homeassistant-2023.7.3-py3-none-any.whl.metadata (3.8 kB)
+2025-03-01T19:08:36.2530140Z Requirement already satisfied: pip<25.1,>=21.0 in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (from -r requirements.txt (line 3)) (25.0.1)
+2025-03-01T19:08:36.5851327Z Collecting ruff==0.4.5 (from -r requirements.txt (line 4))
+2025-03-01T19:08:36.5866892Z   Using cached ruff-0.4.5-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (24 kB)
+2025-03-01T19:08:36.9379200Z Collecting aiohttp==3.8.5 (from homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:36.9394421Z   Using cached aiohttp-3.8.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.7 kB)
+2025-03-01T19:08:36.9596281Z Collecting astral==2.2 (from homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:36.9610091Z   Using cached astral-2.2-py2.py3-none-any.whl.metadata (1.5 kB)
+2025-03-01T19:08:36.9912755Z Collecting async-timeout==4.0.2 (from homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:36.9926906Z   Using cached async_timeout-4.0.2-py3-none-any.whl.metadata (4.2 kB)
+2025-03-01T19:08:37.0089805Z Collecting attrs==22.2.0 (from homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:37.0102771Z   Using cached attrs-22.2.0-py3-none-any.whl.metadata (13 kB)
+2025-03-01T19:08:37.0281253Z Collecting atomicwrites-homeassistant==1.4.1 (from homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:37.0294268Z   Using cached atomicwrites_homeassistant-1.4.1-py2.py3-none-any.whl.metadata (6.0 kB)
+2025-03-01T19:08:37.0499124Z Collecting awesomeversion==22.9.0 (from homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:37.0511880Z   Using cached awesomeversion-22.9.0-py3-none-any.whl.metadata (4.2 kB)
+2025-03-01T19:08:37.0907966Z Collecting bcrypt==4.0.1 (from homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:37.0920873Z   Using cached bcrypt-4.0.1-cp36-abi3-manylinux_2_28_x86_64.whl.metadata (9.0 kB)
+2025-03-01T19:08:37.1127596Z Collecting certifi>=2021.5.30 (from homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:37.1140716Z   Using cached certifi-2025.1.31-py3-none-any.whl.metadata (2.5 kB)
+2025-03-01T19:08:37.1339184Z Collecting ciso8601==2.3.0 (from homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:37.1352797Z   Using cached ciso8601-2.3.0-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (28 kB)
+2025-03-01T19:08:37.1570380Z Collecting httpx==0.24.1 (from homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:37.1583176Z   Using cached httpx-0.24.1-py3-none-any.whl.metadata (7.4 kB)
+2025-03-01T19:08:37.1762728Z Collecting home-assistant-bluetooth==1.10.0 (from homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:37.1776256Z   Using cached home_assistant_bluetooth-1.10.0-cp310-cp310-manylinux_2_31_x86_64.whl.metadata (5.5 kB)
+2025-03-01T19:08:37.1897741Z Collecting ifaddr==0.2.0 (from homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:37.1910490Z   Using cached ifaddr-0.2.0-py3-none-any.whl.metadata (4.9 kB)
+2025-03-01T19:08:37.2073280Z Collecting Jinja2==3.1.2 (from homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:37.2086230Z   Using cached Jinja2-3.1.2-py3-none-any.whl.metadata (3.5 kB)
+2025-03-01T19:08:37.2300797Z Collecting lru-dict==1.2.0 (from homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:37.2314139Z   Using cached lru_dict-1.2.0-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.5 kB)
+2025-03-01T19:08:37.2497730Z Collecting PyJWT==2.7.0 (from homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:37.2510380Z   Using cached PyJWT-2.7.0-py3-none-any.whl.metadata (4.1 kB)
+2025-03-01T19:08:37.3852026Z Collecting cryptography==41.0.1 (from homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:37.3867349Z   Using cached cryptography-41.0.1-cp37-abi3-manylinux_2_28_x86_64.whl.metadata (5.2 kB)
+2025-03-01T19:08:37.4078591Z Collecting pyOpenSSL==23.2.0 (from homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:37.4091569Z   Using cached pyOpenSSL-23.2.0-py3-none-any.whl.metadata (10 kB)
+2025-03-01T19:08:37.6257380Z Collecting orjson==3.9.1 (from homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:37.6272487Z   Using cached orjson-3.9.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (49 kB)
+2025-03-01T19:08:37.6646600Z Collecting pip<25.1,>=21.0 (from -r requirements.txt (line 3))
+2025-03-01T19:08:37.6659935Z   Using cached pip-23.1.2-py3-none-any.whl.metadata (4.1 kB)
+2025-03-01T19:08:37.6819386Z Collecting python-slugify==4.0.1 (from homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:37.6820895Z   Using cached python_slugify-4.0.1-py2.py3-none-any.whl
+2025-03-01T19:08:37.7196967Z Collecting PyYAML==6.0.1 (from homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:37.7209671Z   Using cached PyYAML-6.0.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+2025-03-01T19:08:37.7481230Z Collecting requests==2.31.0 (from homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:37.7493437Z   Using cached requests-2.31.0-py3-none-any.whl.metadata (4.6 kB)
+2025-03-01T19:08:37.7683158Z Collecting typing-extensions<5.0,>=4.6.3 (from homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:37.7695327Z   Using cached typing_extensions-4.12.2-py3-none-any.whl.metadata (3.0 kB)
+2025-03-01T19:08:37.8094225Z Collecting ulid-transform==0.7.2 (from homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:37.8106764Z   Using cached ulid_transform-0.7.2-cp310-cp310-manylinux_2_31_x86_64.whl.metadata (5.0 kB)
+2025-03-01T19:08:37.8256648Z Collecting voluptuous==0.13.1 (from homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:37.8268827Z   Using cached voluptuous-0.13.1-py3-none-any.whl.metadata (20 kB)
+2025-03-01T19:08:37.8404193Z Collecting voluptuous-serialize==2.6.0 (from homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:37.8416353Z   Using cached voluptuous_serialize-2.6.0-py3-none-any.whl.metadata (316 bytes)
+2025-03-01T19:08:38.0424282Z Collecting yarl==1.9.2 (from homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:38.0439007Z   Using cached yarl-1.9.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (23 kB)
+2025-03-01T19:08:38.1421268Z Collecting charset-normalizer<4.0,>=2.0 (from aiohttp==3.8.5->homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:38.1435219Z   Using cached charset_normalizer-3.4.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (35 kB)
+2025-03-01T19:08:38.2711580Z Collecting multidict<7.0,>=4.5 (from aiohttp==3.8.5->homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:38.2725992Z   Using cached multidict-6.1.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.0 kB)
+2025-03-01T19:08:38.3246596Z Collecting frozenlist>=1.1.1 (from aiohttp==3.8.5->homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:38.3260712Z   Using cached frozenlist-1.5.0-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (13 kB)
+2025-03-01T19:08:38.3390208Z Collecting aiosignal>=1.1.2 (from aiohttp==3.8.5->homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:38.3403028Z   Using cached aiosignal-1.3.2-py2.py3-none-any.whl.metadata (3.8 kB)
+2025-03-01T19:08:38.3804162Z Collecting pytz (from astral==2.2->homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:38.3816679Z   Using cached pytz-2025.1-py2.py3-none-any.whl.metadata (22 kB)
+2025-03-01T19:08:38.4746365Z Collecting cffi>=1.12 (from cryptography==41.0.1->homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:38.4759921Z   Using cached cffi-1.17.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.5 kB)
+2025-03-01T19:08:38.4988942Z Collecting httpcore<0.18.0,>=0.15.0 (from httpx==0.24.1->homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:38.5001519Z   Using cached httpcore-0.17.3-py3-none-any.whl.metadata (18 kB)
+2025-03-01T19:08:38.5160686Z Collecting idna (from httpx==0.24.1->homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:38.5175047Z   Using cached idna-3.10-py3-none-any.whl.metadata (10 kB)
+2025-03-01T19:08:38.5298133Z Collecting sniffio (from httpx==0.24.1->homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:38.5310923Z   Using cached sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+2025-03-01T19:08:38.5785988Z Collecting MarkupSafe>=2.0 (from Jinja2==3.1.2->homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:38.5799649Z   Using cached MarkupSafe-3.0.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
+2025-03-01T19:08:38.6058564Z Collecting text-unidecode>=1.3 (from python-slugify==4.0.1->homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:38.6071527Z   Using cached text_unidecode-1.3-py2.py3-none-any.whl.metadata (2.4 kB)
+2025-03-01T19:08:38.6422012Z Collecting urllib3<3,>=1.21.1 (from requests==2.31.0->homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:38.6435084Z   Using cached urllib3-2.3.0-py3-none-any.whl.metadata (6.5 kB)
+2025-03-01T19:08:38.6842519Z Collecting pycparser (from cffi>=1.12->cryptography==41.0.1->homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:38.6855625Z   Using cached pycparser-2.22-py3-none-any.whl.metadata (943 bytes)
+2025-03-01T19:08:38.7024926Z Collecting h11<0.15,>=0.13 (from httpcore<0.18.0,>=0.15.0->httpx==0.24.1->homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:38.7036797Z   Using cached h11-0.14.0-py3-none-any.whl.metadata (8.2 kB)
+2025-03-01T19:08:38.7266246Z Collecting anyio<5.0,>=3.0 (from httpcore<0.18.0,>=0.15.0->httpx==0.24.1->homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:38.7278626Z   Using cached anyio-4.8.0-py3-none-any.whl.metadata (4.6 kB)
+2025-03-01T19:08:38.7592260Z Collecting exceptiongroup>=1.0.2 (from anyio<5.0,>=3.0->httpcore<0.18.0,>=0.15.0->httpx==0.24.1->homeassistant>=2023.7.3->-r requirements.txt (line 2))
+2025-03-01T19:08:38.7604209Z   Using cached exceptiongroup-1.2.2-py3-none-any.whl.metadata (6.6 kB)
+2025-03-01T19:08:38.7785184Z Using cached colorlog-6.9.0-py3-none-any.whl (11 kB)
+2025-03-01T19:08:38.7797582Z Using cached ruff-0.4.5-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (8.8 MB)
+2025-03-01T19:08:38.7876727Z Using cached homeassistant-2023.7.3-py3-none-any.whl (27.4 MB)
+2025-03-01T19:08:38.8089438Z Using cached aiohttp-3.8.5-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.0 MB)
+2025-03-01T19:08:38.8109043Z Using cached astral-2.2-py2.py3-none-any.whl (30 kB)
+2025-03-01T19:08:38.8121340Z Using cached async_timeout-4.0.2-py3-none-any.whl (5.8 kB)
+2025-03-01T19:08:38.8133642Z Using cached atomicwrites_homeassistant-1.4.1-py2.py3-none-any.whl (7.1 kB)
+2025-03-01T19:08:38.8145202Z Using cached attrs-22.2.0-py3-none-any.whl (60 kB)
+2025-03-01T19:08:38.8157954Z Using cached awesomeversion-22.9.0-py3-none-any.whl (12 kB)
+2025-03-01T19:08:38.8170115Z Using cached bcrypt-4.0.1-cp36-abi3-manylinux_2_28_x86_64.whl (593 kB)
+2025-03-01T19:08:38.8187051Z Using cached ciso8601-2.3.0-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (38 kB)
+2025-03-01T19:08:38.8199580Z Using cached cryptography-41.0.1-cp37-abi3-manylinux_2_28_x86_64.whl (4.3 MB)
+2025-03-01T19:08:38.8243439Z Using cached home_assistant_bluetooth-1.10.0-cp310-cp310-manylinux_2_31_x86_64.whl (301 kB)
+2025-03-01T19:08:38.8257377Z Using cached httpx-0.24.1-py3-none-any.whl (75 kB)
+2025-03-01T19:08:38.8270123Z Using cached ifaddr-0.2.0-py3-none-any.whl (12 kB)
+2025-03-01T19:08:38.8282170Z Using cached Jinja2-3.1.2-py3-none-any.whl (133 kB)
+2025-03-01T19:08:38.8295647Z Using cached lru_dict-1.2.0-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (28 kB)
+2025-03-01T19:08:38.8308114Z Using cached orjson-3.9.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (136 kB)
+2025-03-01T19:08:38.8320785Z Using cached PyJWT-2.7.0-py3-none-any.whl (22 kB)
+2025-03-01T19:08:38.8333031Z Using cached pyOpenSSL-23.2.0-py3-none-any.whl (59 kB)
+2025-03-01T19:08:38.8345665Z Using cached PyYAML-6.0.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (705 kB)
+2025-03-01T19:08:38.8362697Z Using cached requests-2.31.0-py3-none-any.whl (62 kB)
+2025-03-01T19:08:38.8375332Z Using cached ulid_transform-0.7.2-cp310-cp310-manylinux_2_31_x86_64.whl (162 kB)
+2025-03-01T19:08:38.8388482Z Using cached voluptuous-0.13.1-py3-none-any.whl (29 kB)
+2025-03-01T19:08:38.8400740Z Using cached voluptuous_serialize-2.6.0-py3-none-any.whl (6.8 kB)
+2025-03-01T19:08:38.8412825Z Using cached yarl-1.9.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (268 kB)
+2025-03-01T19:08:38.8426555Z Using cached pip-23.1.2-py3-none-any.whl (2.1 MB)
+2025-03-01T19:08:38.8453905Z Using cached certifi-2025.1.31-py3-none-any.whl (166 kB)
+2025-03-01T19:08:38.8466963Z Using cached typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+2025-03-01T19:08:38.8479483Z Using cached aiosignal-1.3.2-py2.py3-none-any.whl (7.6 kB)
+2025-03-01T19:08:38.8491743Z Using cached cffi-1.17.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (446 kB)
+2025-03-01T19:08:38.8507238Z Using cached charset_normalizer-3.4.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (146 kB)
+2025-03-01T19:08:38.8522217Z Using cached frozenlist-1.5.0-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (241 kB)
+2025-03-01T19:08:38.8535735Z Using cached httpcore-0.17.3-py3-none-any.whl (74 kB)
+2025-03-01T19:08:38.8548779Z Using cached sniffio-1.3.1-py3-none-any.whl (10 kB)
+2025-03-01T19:08:38.8561031Z Using cached idna-3.10-py3-none-any.whl (70 kB)
+2025-03-01T19:08:38.8574186Z Using cached MarkupSafe-3.0.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (20 kB)
+2025-03-01T19:08:38.8586865Z Using cached multidict-6.1.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (124 kB)
+2025-03-01T19:08:38.8600291Z Using cached text_unidecode-1.3-py2.py3-none-any.whl (78 kB)
+2025-03-01T19:08:38.8613105Z Using cached urllib3-2.3.0-py3-none-any.whl (128 kB)
+2025-03-01T19:08:38.8626668Z Using cached pytz-2025.1-py2.py3-none-any.whl (507 kB)
+2025-03-01T19:08:38.8642921Z Using cached anyio-4.8.0-py3-none-any.whl (96 kB)
+2025-03-01T19:08:38.8655861Z Using cached h11-0.14.0-py3-none-any.whl (58 kB)
+2025-03-01T19:08:38.8668853Z Using cached pycparser-2.22-py3-none-any.whl (117 kB)
+2025-03-01T19:08:38.8682173Z Using cached exceptiongroup-1.2.2-py3-none-any.whl (16 kB)
+2025-03-01T19:08:39.4568361Z Installing collected packages: voluptuous, text-unidecode, pytz, lru-dict, ifaddr, ciso8601, voluptuous-serialize, urllib3, ulid-transform, typing-extensions, sniffio, ruff, PyYAML, python-slugify, PyJWT, pycparser, pip, orjson, MarkupSafe, idna, home-assistant-bluetooth, h11, frozenlist, exceptiongroup, colorlog, charset-normalizer, certifi, bcrypt, awesomeversion, attrs, atomicwrites-homeassistant, async-timeout, astral, requests, multidict, Jinja2, cffi, anyio, aiosignal, yarl, httpcore, cryptography, pyOpenSSL, httpx, aiohttp, homeassistant
+2025-03-01T19:08:40.0192227Z   Attempting uninstall: pip
+2025-03-01T19:08:40.0198218Z     Found existing installation: pip 25.0.1
+2025-03-01T19:08:40.0749622Z     Uninstalling pip-25.0.1:
+2025-03-01T19:08:40.0810960Z       Successfully uninstalled pip-25.0.1
+2025-03-01T19:08:52.4433255Z Successfully installed Jinja2-3.1.2 MarkupSafe-3.0.2 PyJWT-2.7.0 PyYAML-6.0.1 aiohttp-3.8.5 aiosignal-1.3.2 anyio-4.8.0 astral-2.2 async-timeout-4.0.2 atomicwrites-homeassistant-1.4.1 attrs-22.2.0 awesomeversion-22.9.0 bcrypt-4.0.1 certifi-2025.1.31 cffi-1.17.1 charset-normalizer-3.4.1 ciso8601-2.3.0 colorlog-6.9.0 cryptography-41.0.1 exceptiongroup-1.2.2 frozenlist-1.5.0 h11-0.14.0 home-assistant-bluetooth-1.10.0 homeassistant-2023.7.3 httpcore-0.17.3 httpx-0.24.1 idna-3.10 ifaddr-0.2.0 lru-dict-1.2.0 multidict-6.1.0 orjson-3.9.1 pip-23.1.2 pyOpenSSL-23.2.0 pycparser-2.22 python-slugify-4.0.1 pytz-2025.1 requests-2.31.0 ruff-0.4.5 sniffio-1.3.1 text-unidecode-1.3 typing-extensions-4.12.2 ulid-transform-0.7.2 urllib3-2.3.0 voluptuous-0.13.1 voluptuous-serialize-2.6.0 yarl-1.9.2
+2025-03-01T19:08:52.6662317Z ##[group]Run python3 -m ruff check .
+2025-03-01T19:08:52.6662651Z [36;1mpython3 -m ruff check .[0m
+2025-03-01T19:08:52.6711810Z shell: /usr/bin/bash -e {0}
+2025-03-01T19:08:52.6712050Z env:
+2025-03-01T19:08:52.6712299Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-03-01T19:08:52.6712720Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib/pkgconfig
+2025-03-01T19:08:52.6713138Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-03-01T19:08:52.6713505Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-03-01T19:08:52.6713860Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-03-01T19:08:52.6714219Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib
+2025-03-01T19:08:52.6714519Z ##[endgroup]
+2025-03-01T19:08:52.7050396Z custom_components/deltadore_tydom/ha_entities.py:997:9: D400 First line should end with a period
+2025-03-01T19:08:52.7052191Z custom_components/deltadore_tydom/ha_entities.py:997:9: D415 First line should end with a period, question mark, or exclamation point
+2025-03-01T19:08:52.7053081Z Found 2 errors.
+2025-03-01T19:08:52.7053617Z No fixes available (2 hidden fixes can be enabled with the `--unsafe-fixes` option).
+2025-03-01T19:08:52.7075937Z ##[error]Process completed with exit code 1.
+2025-03-01T19:08:52.7179218Z Post job cleanup.
+2025-03-01T19:08:52.8125551Z [command]/usr/bin/git version
+2025-03-01T19:08:52.8164051Z git version 2.48.1
+2025-03-01T19:08:52.8214648Z Temporarily overriding HOME='/home/runner/work/_temp/912ae1ae-e6f4-439f-8659-2945de2303f4' before making global git config changes
+2025-03-01T19:08:52.8215952Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-01T19:08:52.8221253Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/hass-deltadore-tydom-component/hass-deltadore-tydom-component
+2025-03-01T19:08:52.8256178Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-01T19:08:52.8289035Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-01T19:08:52.8527040Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-01T19:08:52.8547961Z http.https://github.com/.extraheader
+2025-03-01T19:08:52.8560963Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-01T19:08:52.8593249Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-01T19:08:52.8935324Z Cleaning up orphan processes

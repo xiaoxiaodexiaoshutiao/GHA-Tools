@@ -1,0 +1,237 @@
+﻿2025-03-19T21:32:20.6296842Z Current runner version: '2.322.0'
+2025-03-19T21:32:20.6324444Z ##[group]Operating System
+2025-03-19T21:32:20.6325169Z Ubuntu
+2025-03-19T21:32:20.6325982Z 24.04.2
+2025-03-19T21:32:20.6326505Z LTS
+2025-03-19T21:32:20.6326989Z ##[endgroup]
+2025-03-19T21:32:20.6327467Z ##[group]Runner Image
+2025-03-19T21:32:20.6328087Z Image: ubuntu-24.04
+2025-03-19T21:32:20.6328594Z Version: 20250316.1.0
+2025-03-19T21:32:20.6329613Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250316.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-19T21:32:20.6331033Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250316.1
+2025-03-19T21:32:20.6331909Z ##[endgroup]
+2025-03-19T21:32:20.6332443Z ##[group]Runner Image Provisioner
+2025-03-19T21:32:20.6332971Z 2.0.422.1
+2025-03-19T21:32:20.6333481Z ##[endgroup]
+2025-03-19T21:32:20.6334427Z ##[group]GITHUB_TOKEN Permissions
+2025-03-19T21:32:20.6336856Z Contents: read
+2025-03-19T21:32:20.6337358Z Metadata: read
+2025-03-19T21:32:20.6337979Z ##[endgroup]
+2025-03-19T21:32:20.6340062Z Secret source: None
+2025-03-19T21:32:20.6340736Z Prepare workflow directory
+2025-03-19T21:32:20.6732301Z Prepare all required actions
+2025-03-19T21:32:20.6770497Z Getting action download info
+2025-03-19T21:32:21.1084734Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-19T21:32:21.2312415Z Download action repository 'actions/setup-node@v4' (SHA:cdca7365b2dadb8aad0a33bc7601856ffabcc48e)
+2025-03-19T21:32:21.7022238Z Complete job name: Browser
+2025-03-19T21:32:21.7682691Z ##[group]Run actions/checkout@v4
+2025-03-19T21:32:21.7683523Z with:
+2025-03-19T21:32:21.7683937Z   repository: openlayers/openlayers
+2025-03-19T21:32:21.7684601Z   token: ***
+2025-03-19T21:32:21.7684984Z   ssh-strict: true
+2025-03-19T21:32:21.7685562Z   ssh-user: git
+2025-03-19T21:32:21.7685973Z   persist-credentials: true
+2025-03-19T21:32:21.7686423Z   clean: true
+2025-03-19T21:32:21.7686820Z   sparse-checkout-cone-mode: true
+2025-03-19T21:32:21.7687328Z   fetch-depth: 1
+2025-03-19T21:32:21.7687756Z   fetch-tags: false
+2025-03-19T21:32:21.7688159Z   show-progress: true
+2025-03-19T21:32:21.7688556Z   lfs: false
+2025-03-19T21:32:21.7688942Z   submodules: false
+2025-03-19T21:32:21.7689340Z   set-safe-directory: true
+2025-03-19T21:32:21.7690023Z env:
+2025-03-19T21:32:21.7690375Z   CI: true
+2025-03-19T21:32:21.7690730Z ##[endgroup]
+2025-03-19T21:32:22.0410445Z Syncing repository: openlayers/openlayers
+2025-03-19T21:32:22.0413500Z ##[group]Getting Git version info
+2025-03-19T21:32:22.0415010Z Working directory is '/home/runner/work/openlayers/openlayers'
+2025-03-19T21:32:22.0417273Z [command]/usr/bin/git version
+2025-03-19T21:32:22.0468795Z git version 2.48.1
+2025-03-19T21:32:22.0507217Z ##[endgroup]
+2025-03-19T21:32:22.0522730Z Temporarily overriding HOME='/home/runner/work/_temp/8932e77d-63ac-48d0-9e56-15cd2791740d' before making global git config changes
+2025-03-19T21:32:22.0525701Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-19T21:32:22.0529836Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/openlayers/openlayers
+2025-03-19T21:32:22.0567835Z Deleting the contents of '/home/runner/work/openlayers/openlayers'
+2025-03-19T21:32:22.0571589Z ##[group]Initializing the repository
+2025-03-19T21:32:22.0576425Z [command]/usr/bin/git init /home/runner/work/openlayers/openlayers
+2025-03-19T21:32:22.0646960Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-19T21:32:22.0648834Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-19T21:32:22.0649831Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-19T21:32:22.0651072Z hint:
+2025-03-19T21:32:22.0652000Z hint: 	git config --global init.defaultBranch <name>
+2025-03-19T21:32:22.0653179Z hint:
+2025-03-19T21:32:22.0654185Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-19T21:32:22.0655930Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-19T21:32:22.0657170Z hint:
+2025-03-19T21:32:22.0657729Z hint: 	git branch -m <name>
+2025-03-19T21:32:22.0658701Z Initialized empty Git repository in /home/runner/work/openlayers/openlayers/.git/
+2025-03-19T21:32:22.0668196Z [command]/usr/bin/git remote add origin https://github.com/openlayers/openlayers
+2025-03-19T21:32:22.0703279Z ##[endgroup]
+2025-03-19T21:32:22.0704091Z ##[group]Disabling automatic garbage collection
+2025-03-19T21:32:22.0707695Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-19T21:32:22.0738361Z ##[endgroup]
+2025-03-19T21:32:22.0739088Z ##[group]Setting up auth
+2025-03-19T21:32:22.0746642Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-19T21:32:22.0779166Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-19T21:32:22.1104672Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-19T21:32:22.1132945Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-19T21:32:22.1375848Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-19T21:32:22.1411204Z ##[endgroup]
+2025-03-19T21:32:22.1413182Z ##[group]Fetching the repository
+2025-03-19T21:32:22.1421819Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +fd63b25cd4b73910048074d2c10380f8c681996b:refs/remotes/pull/16739/merge
+2025-03-19T21:32:23.8649115Z From https://github.com/openlayers/openlayers
+2025-03-19T21:32:23.8650439Z  * [new ref]         fd63b25cd4b73910048074d2c10380f8c681996b -> pull/16739/merge
+2025-03-19T21:32:23.8676954Z ##[endgroup]
+2025-03-19T21:32:23.8677772Z ##[group]Determining the checkout info
+2025-03-19T21:32:23.8679822Z ##[endgroup]
+2025-03-19T21:32:23.8685689Z [command]/usr/bin/git sparse-checkout disable
+2025-03-19T21:32:23.8724103Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-19T21:32:23.8751445Z ##[group]Checking out the ref
+2025-03-19T21:32:23.8756022Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/16739/merge
+2025-03-19T21:32:24.1596646Z Note: switching to 'refs/remotes/pull/16739/merge'.
+2025-03-19T21:32:24.1597287Z 
+2025-03-19T21:32:24.1597633Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-19T21:32:24.1598474Z changes and commit them, and you can discard any commits you make in this
+2025-03-19T21:32:24.1599316Z state without impacting any branches by switching back to a branch.
+2025-03-19T21:32:24.1599996Z 
+2025-03-19T21:32:24.1600350Z If you want to create a new branch to retain commits you create, you may
+2025-03-19T21:32:24.1601129Z do so (now or later) by using -c with the switch command. Example:
+2025-03-19T21:32:24.1601679Z 
+2025-03-19T21:32:24.1601922Z   git switch -c <new-branch-name>
+2025-03-19T21:32:24.1602279Z 
+2025-03-19T21:32:24.1602516Z Or undo this operation with:
+2025-03-19T21:32:24.1602858Z 
+2025-03-19T21:32:24.1603046Z   git switch -
+2025-03-19T21:32:24.1603326Z 
+2025-03-19T21:32:24.1603762Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-19T21:32:24.1604410Z 
+2025-03-19T21:32:24.1605093Z HEAD is now at fd63b25 Merge a4cc5b06119cd16340985e1d50180ac43ae7091e into 5d2bedd1f7e9ff9c130417270a3b31a984b016a8
+2025-03-19T21:32:24.1616391Z ##[endgroup]
+2025-03-19T21:32:24.1663911Z [command]/usr/bin/git log -1 --format=%H
+2025-03-19T21:32:24.1689762Z fd63b25cd4b73910048074d2c10380f8c681996b
+2025-03-19T21:32:24.1916046Z ##[group]Run actions/setup-node@v4
+2025-03-19T21:32:24.1916334Z with:
+2025-03-19T21:32:24.1916526Z   node-version: 20
+2025-03-19T21:32:24.1916717Z   always-auth: false
+2025-03-19T21:32:24.1917169Z   check-latest: false
+2025-03-19T21:32:24.1917497Z   token: ***
+2025-03-19T21:32:24.1917670Z env:
+2025-03-19T21:32:24.1917842Z   CI: true
+2025-03-19T21:32:24.1917995Z ##[endgroup]
+2025-03-19T21:32:24.3629975Z Found in cache @ /opt/hostedtoolcache/node/20.19.0/x64
+2025-03-19T21:32:24.3636630Z ##[group]Environment details
+2025-03-19T21:32:24.6914261Z node: v20.19.0
+2025-03-19T21:32:24.6914611Z npm: 10.8.2
+2025-03-19T21:32:24.6914921Z yarn: 1.22.22
+2025-03-19T21:32:24.6915892Z ##[endgroup]
+2025-03-19T21:32:24.7020896Z ##[group]Run npm ci
+2025-03-19T21:32:24.7021196Z [36;1mnpm ci[0m
+2025-03-19T21:32:24.7074477Z shell: /usr/bin/bash -e {0}
+2025-03-19T21:32:24.7074710Z env:
+2025-03-19T21:32:24.7074881Z   CI: true
+2025-03-19T21:32:24.7075050Z ##[endgroup]
+2025-03-19T21:32:28.9603528Z npm warn deprecated multibase@3.1.2: This module has been superseded by the multiformats module
+2025-03-19T21:32:39.4137838Z 
+2025-03-19T21:32:39.4138594Z added 1001 packages, and audited 1002 packages in 15s
+2025-03-19T21:32:39.4139055Z 
+2025-03-19T21:32:39.4139305Z 196 packages are looking for funding
+2025-03-19T21:32:39.4139777Z   run `npm fund` for details
+2025-03-19T21:32:39.4169324Z 
+2025-03-19T21:32:39.4170033Z 2 vulnerabilities (1 moderate, 1 high)
+2025-03-19T21:32:39.4170384Z 
+2025-03-19T21:32:39.4170587Z To address all issues, run:
+2025-03-19T21:32:39.4170963Z   npm audit fix
+2025-03-19T21:32:39.4171146Z 
+2025-03-19T21:32:39.4171339Z Run `npm audit` for details.
+2025-03-19T21:32:39.4464926Z ##[group]Run npm run test-browser
+2025-03-19T21:32:39.4465537Z [36;1mnpm run test-browser[0m
+2025-03-19T21:32:39.4514264Z shell: /usr/bin/bash -e {0}
+2025-03-19T21:32:39.4514539Z env:
+2025-03-19T21:32:39.4514703Z   CI: true
+2025-03-19T21:32:39.4514868Z ##[endgroup]
+2025-03-19T21:32:39.5603001Z 
+2025-03-19T21:32:39.5603566Z > ol@10.4.1-dev test-browser
+2025-03-19T21:32:39.5604386Z > npm run karma -- --single-run --log-level error
+2025-03-19T21:32:39.5604782Z 
+2025-03-19T21:32:39.6734198Z 
+2025-03-19T21:32:39.6735708Z > ol@10.4.1-dev karma
+2025-03-19T21:32:39.6736661Z > karma start test/browser/karma.config.cjs --single-run --log-level error
+2025-03-19T21:32:39.6737218Z 
+2025-03-19T21:32:40.1924578Z Webpack bundling...
+2025-03-19T21:32:44.3828743Z asset [1m[32mcommons.js[39m[22m 19.9 MiB [1m[32m[emitted][39m[22m (name: commons) (id hint: commons)
+2025-03-19T21:32:44.3887618Z asset [1m[32mruntime.js[39m[22m 14.1 KiB [1m[32m[emitted][39m[22m (name: runtime)
+2025-03-19T21:32:44.3889390Z asset [1m[32mVectorStyleRenderer.test.1195188717.js[39m[22m 533 bytes [1m[32m[emitted][39m[22m (name: VectorStyleRenderer.test.1195188717)
+2025-03-19T21:32:44.3891234Z asset [1m[32mMixedGeometryBatch.test.817470033.js[39m[22m 530 bytes [1m[32m[emitted][39m[22m (name: MixedGeometryBatch.test.817470033)
+2025-03-19T21:32:44.3892939Z asset [1m[32mrenderinstructions.test.500301491.js[39m[22m 530 bytes [1m[32m[emitted][39m[22m (name: renderinstructions.test.500301491)
+2025-03-19T21:32:44.3894647Z asset [1m[32mdragrotateandzoom.test.1450751434.js[39m[22m 528 bytes [1m[32m[emitted][39m[22m (name: dragrotateandzoom.test.1450751434)
+2025-03-19T21:32:44.3896523Z asset [1m[32mvectortilelayer.test.2047034618.js[39m[22m 528 bytes [1m[32m[emitted][39m[22m (name: vectortilelayer.test.2047034618)
+2025-03-19T21:32:44.3898215Z asset [1m[32mVectorTileLayer.test.4175796815.js[39m[22m 527 bytes [1m[32m[emitted][39m[22m (name: VectorTileLayer.test.4175796815)
+2025-03-19T21:32:44.3900013Z asset [1m[32mMapBrowserEventHandler.test.2662870142.js[39m[22m 526 bytes [1m[32m[emitted][39m[22m (name: MapBrowserEventHandler.test.2662870142)
+2025-03-19T21:32:44.3901742Z asset [1m[32mdblclickdragzoom.test.273059106.js[39m[22m 525 bytes [1m[32m[emitted][39m[22m (name: dblclickdragzoom.test.273059106)
+2025-03-19T21:32:44.3903377Z asset [1m[32mexecutorgroup.test.4288306978.js[39m[22m 522 bytes [1m[32m[emitted][39m[22m (name: executorgroup.test.4288306978)
+2025-03-19T21:32:44.3904991Z asset [1m[32mmousewheelzoom.test.3247798423.js[39m[22m 522 bytes [1m[32m[emitted][39m[22m (name: mousewheelzoom.test.3247798423)
+2025-03-19T21:32:44.3907445Z asset [1m[32mzindexcontext.test.4166716304.js[39m[22m 522 bytes [1m[32m[emitted][39m[22m (name: zindexcontext.test.4166716304)
+2025-03-19T21:32:44.3909312Z asset [1m[32mresolutionconstraint.test.869788510.js[39m[22m 521 bytes [1m[32m[emitted][39m[22m (name: resolutionconstraint.test.869788510)
+2025-03-19T21:32:44.3910294Z + 162 assets
+2025-03-19T21:32:44.3911040Z webpack 5.98.0 compiled [1m[32msuccessfully[39m[22m in 3600 ms
+2025-03-19T21:32:48.4658757Z ................................................................................
+2025-03-19T21:32:49.6203659Z ................................................................................
+2025-03-19T21:32:49.9995386Z ................................................................................
+2025-03-19T21:32:50.6266988Z ................................................................................
+2025-03-19T21:32:51.9892464Z ................................................................................
+2025-03-19T21:32:54.6475929Z ................................................................................
+2025-03-19T21:32:54.8467654Z ................................................................................
+2025-03-19T21:32:55.7360345Z ................................................................................
+2025-03-19T21:32:57.7301041Z ................................................................................
+2025-03-19T21:33:00.9069715Z ................................................................................
+2025-03-19T21:33:05.5911660Z ................................................................................
+2025-03-19T21:33:13.2511455Z ....................................................................
+2025-03-19T21:33:13.2512576Z Chrome Headless 134.0.0.0 (Linux x86_64) ol/renderer/webgl/VectorTileLayer #createTileRepresentation "before each" hook for "creates a TileGeometry instance" FAILED
+2025-03-19T21:33:13.2513603Z 	Error: A VectorTile source can only be rendered if it has a projection compatible with the view projection.
+2025-03-19T21:33:13.2514259Z 	    at assert (/tmp/_karma_webpack_300153/webpack:/ol/src/ol/asserts.js:11:1)
+2025-03-19T21:33:13.2514965Z 	    at VectorTile.getTileGridForProjection (/tmp/_karma_webpack_300153/webpack:/ol/src/ol/source/VectorTile.js:371:13)
+2025-03-19T21:33:13.2516177Z 	    at Context.<anonymous> (/tmp/_karma_webpack_300153/webpack:/ol/test/browser/spec/ol/renderer/webgl/VectorTileLayer.test.js:276:1)
+2025-03-19T21:33:13.2666518Z Chrome Headless 134.0.0.0 (Linux x86_64) ol/renderer/webgl/VectorTileLayer #renderFrame "before each" hook for "sets the size of the tile mask target according to frame state" FAILED
+2025-03-19T21:33:13.2667818Z 	Error: A VectorTile source can only be rendered if it has a projection compatible with the view projection.
+2025-03-19T21:33:13.2668482Z 	    at assert (/tmp/_karma_webpack_300153/webpack:/ol/src/ol/asserts.js:11:1)
+2025-03-19T21:33:13.2669207Z 	    at VectorTile.getTileGridForProjection (/tmp/_karma_webpack_300153/webpack:/ol/src/ol/source/VectorTile.js:371:13)
+2025-03-19T21:33:13.2670148Z 	    at WebGLVectorTileLayerRenderer.renderFrame (/tmp/_karma_webpack_300153/webpack:/ol/src/ol/renderer/webgl/TileLayerBase.js:546:1)
+2025-03-19T21:33:13.2671166Z 	    at Context.<anonymous> (/tmp/_karma_webpack_300153/webpack:/ol/test/browser/spec/ol/renderer/webgl/VectorTileLayer.test.js:307:1)
+2025-03-19T21:33:13.9109307Z ................................................................................
+2025-03-19T21:33:15.0676402Z ................................................................................
+2025-03-19T21:33:25.3784526Z ................................................................................
+2025-03-19T21:33:25.4720894Z ................................................................................
+2025-03-19T21:33:25.4865076Z ................................................................................
+2025-03-19T21:33:25.7312449Z ................................................................................
+2025-03-19T21:33:25.7797378Z ................................................................................
+2025-03-19T21:33:25.8616799Z ................................................................................
+2025-03-19T21:33:26.0532785Z ................................................................................
+2025-03-19T21:33:27.2649843Z ................................................................................
+2025-03-19T21:33:30.8059057Z ................................................................................
+2025-03-19T21:33:30.8724375Z ................................................................................
+2025-03-19T21:33:31.5473756Z ................................................................................
+2025-03-19T21:33:32.3309561Z ................................................................................
+2025-03-19T21:33:35.5887494Z ................................................................................
+2025-03-19T21:33:36.2896262Z ................................................................................
+2025-03-19T21:33:36.4043607Z ................................................................................
+2025-03-19T21:33:36.6126884Z ................................................................................
+2025-03-19T21:33:37.5846663Z ................................................................................
+2025-03-19T21:33:37.8029015Z ................................................................................
+2025-03-19T21:33:42.2183567Z ................................................................................
+2025-03-19T21:33:42.3933539Z ................................................................................
+2025-03-19T21:33:42.3946521Z .............................
+2025-03-19T21:33:42.3947703Z Chrome Headless 134.0.0.0 (Linux x86_64): Executed 2739 of 2747 (2 FAILED) (56.564 secs / 33.047 secs)
+2025-03-19T21:33:42.5072246Z ##[error]Process completed with exit code 1.
+2025-03-19T21:33:42.5166947Z Post job cleanup.
+2025-03-19T21:33:42.6106004Z [command]/usr/bin/git version
+2025-03-19T21:33:42.6142294Z git version 2.48.1
+2025-03-19T21:33:42.6192014Z Temporarily overriding HOME='/home/runner/work/_temp/df8a35f3-8b06-4776-9adf-3f7b48334883' before making global git config changes
+2025-03-19T21:33:42.6193447Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-19T21:33:42.6198397Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/openlayers/openlayers
+2025-03-19T21:33:42.6234028Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-19T21:33:42.6266899Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-19T21:33:42.6504751Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-19T21:33:42.6525633Z http.https://github.com/.extraheader
+2025-03-19T21:33:42.6538499Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-19T21:33:42.6569961Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-19T21:33:42.6909803Z Cleaning up orphan processes

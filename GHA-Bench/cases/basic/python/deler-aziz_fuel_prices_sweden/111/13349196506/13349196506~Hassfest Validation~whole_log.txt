@@ -1,0 +1,216 @@
+2025-02-15T22:27:56.2089741Z Requested labels: ubuntu-latest
+2025-02-15T22:27:56.2089996Z Job defined at: deler-aziz/fuel_prices_sweden/.github/workflows/validate.yml@refs/pull/111/merge
+2025-02-15T22:27:56.2090093Z Waiting for a runner to pick up this job...
+2025-02-15T22:27:56.8695896Z Job is waiting for a hosted runner to come online.
+2025-02-15T22:28:01.1976942Z Job is about to start running on the hosted runner: GitHub Actions 19 (hosted)
+2025-02-15T22:28:03.2377342Z Current runner version: '2.322.0'
+2025-02-15T22:28:03.2402653Z ##[group]Operating System
+2025-02-15T22:28:03.2403473Z Ubuntu
+2025-02-15T22:28:03.2404015Z 24.04.1
+2025-02-15T22:28:03.2404590Z LTS
+2025-02-15T22:28:03.2405051Z ##[endgroup]
+2025-02-15T22:28:03.2405609Z ##[group]Runner Image
+2025-02-15T22:28:03.2406265Z Image: ubuntu-24.04
+2025-02-15T22:28:03.2406815Z Version: 20250209.1.0
+2025-02-15T22:28:03.2407848Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250209.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-15T22:28:03.2409244Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250209.1
+2025-02-15T22:28:03.2410159Z ##[endgroup]
+2025-02-15T22:28:03.2410701Z ##[group]Runner Image Provisioner
+2025-02-15T22:28:03.2411556Z 2.0.422.1
+2025-02-15T22:28:03.2412082Z ##[endgroup]
+2025-02-15T22:28:03.2413252Z ##[group]GITHUB_TOKEN Permissions
+2025-02-15T22:28:03.2415063Z Contents: read
+2025-02-15T22:28:03.2415625Z Metadata: read
+2025-02-15T22:28:03.2416438Z Packages: read
+2025-02-15T22:28:03.2417099Z ##[endgroup]
+2025-02-15T22:28:03.2420211Z Secret source: Actions
+2025-02-15T22:28:03.2420948Z Prepare workflow directory
+2025-02-15T22:28:03.2729802Z Prepare all required actions
+2025-02-15T22:28:03.2766016Z Getting action download info
+2025-02-15T22:28:03.4603544Z ##[group]Download immutable action package 'actions/checkout@v4.2.2'
+2025-02-15T22:28:03.4605459Z Version: 4.2.2
+2025-02-15T22:28:03.4607292Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-02-15T22:28:03.4609449Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-02-15T22:28:03.4610812Z ##[endgroup]
+2025-02-15T22:28:03.5446875Z Download action repository 'home-assistant/actions@master' (SHA:a19f5f4e08ef2786e4604a948f62addd937a6bc9)
+2025-02-15T22:28:04.1295875Z Complete job name: Hassfest Validation
+2025-02-15T22:28:04.2005679Z ##[group]Run actions/checkout@v4.2.2
+2025-02-15T22:28:04.2006631Z with:
+2025-02-15T22:28:04.2007137Z   repository: deler-aziz/fuel_prices_sweden
+2025-02-15T22:28:04.2007966Z   token: ***
+2025-02-15T22:28:04.2008425Z   ssh-strict: true
+2025-02-15T22:28:04.2008890Z   ssh-user: git
+2025-02-15T22:28:04.2009366Z   persist-credentials: true
+2025-02-15T22:28:04.2009882Z   clean: true
+2025-02-15T22:28:04.2010355Z   sparse-checkout-cone-mode: true
+2025-02-15T22:28:04.2010909Z   fetch-depth: 1
+2025-02-15T22:28:04.2011535Z   fetch-tags: false
+2025-02-15T22:28:04.2012004Z   show-progress: true
+2025-02-15T22:28:04.2012479Z   lfs: false
+2025-02-15T22:28:04.2012924Z   submodules: false
+2025-02-15T22:28:04.2013397Z   set-safe-directory: true
+2025-02-15T22:28:04.2014171Z ##[endgroup]
+2025-02-15T22:28:04.3841885Z Syncing repository: deler-aziz/fuel_prices_sweden
+2025-02-15T22:28:04.3843864Z ##[group]Getting Git version info
+2025-02-15T22:28:04.3844834Z Working directory is '/home/runner/work/fuel_prices_sweden/fuel_prices_sweden'
+2025-02-15T22:28:04.3846047Z [command]/usr/bin/git version
+2025-02-15T22:28:04.3901322Z git version 2.48.1
+2025-02-15T22:28:04.3928632Z ##[endgroup]
+2025-02-15T22:28:04.3942693Z Temporarily overriding HOME='/home/runner/work/_temp/50b27d82-13b3-4bea-86a5-4d75c85a7709' before making global git config changes
+2025-02-15T22:28:04.3944241Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-15T22:28:04.3948141Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/fuel_prices_sweden/fuel_prices_sweden
+2025-02-15T22:28:04.3983053Z Deleting the contents of '/home/runner/work/fuel_prices_sweden/fuel_prices_sweden'
+2025-02-15T22:28:04.3986993Z ##[group]Initializing the repository
+2025-02-15T22:28:04.3991156Z [command]/usr/bin/git init /home/runner/work/fuel_prices_sweden/fuel_prices_sweden
+2025-02-15T22:28:04.4050153Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-15T22:28:04.4051527Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-15T22:28:04.4052562Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-15T22:28:04.4053588Z hint:
+2025-02-15T22:28:04.4054331Z hint: 	git config --global init.defaultBranch <name>
+2025-02-15T22:28:04.4055484Z hint:
+2025-02-15T22:28:04.4056128Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-15T22:28:04.4057127Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-15T22:28:04.4057911Z hint:
+2025-02-15T22:28:04.4058345Z hint: 	git branch -m <name>
+2025-02-15T22:28:04.4059292Z Initialized empty Git repository in /home/runner/work/fuel_prices_sweden/fuel_prices_sweden/.git/
+2025-02-15T22:28:04.4066288Z [command]/usr/bin/git remote add origin https://github.com/deler-aziz/fuel_prices_sweden
+2025-02-15T22:28:04.4098177Z ##[endgroup]
+2025-02-15T22:28:04.4098981Z ##[group]Disabling automatic garbage collection
+2025-02-15T22:28:04.4102630Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-15T22:28:04.4130376Z ##[endgroup]
+2025-02-15T22:28:04.4131503Z ##[group]Setting up auth
+2025-02-15T22:28:04.4137689Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-15T22:28:04.4167695Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-15T22:28:04.4469902Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-15T22:28:04.4500370Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-15T22:28:04.4733656Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-15T22:28:04.4787375Z ##[endgroup]
+2025-02-15T22:28:04.4788271Z ##[group]Fetching the repository
+2025-02-15T22:28:04.4796140Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +ecbf116fceff0c8989e3a13fe10075baa03d1bd4:refs/remotes/pull/111/merge
+2025-02-15T22:28:04.9596480Z From https://github.com/deler-aziz/fuel_prices_sweden
+2025-02-15T22:28:04.9598946Z  * [new ref]         ecbf116fceff0c8989e3a13fe10075baa03d1bd4 -> pull/111/merge
+2025-02-15T22:28:04.9622227Z ##[endgroup]
+2025-02-15T22:28:04.9623545Z ##[group]Determining the checkout info
+2025-02-15T22:28:04.9625111Z ##[endgroup]
+2025-02-15T22:28:04.9629101Z [command]/usr/bin/git sparse-checkout disable
+2025-02-15T22:28:04.9668018Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-15T22:28:04.9696765Z ##[group]Checking out the ref
+2025-02-15T22:28:04.9700661Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/111/merge
+2025-02-15T22:28:04.9776344Z Note: switching to 'refs/remotes/pull/111/merge'.
+2025-02-15T22:28:04.9779230Z 
+2025-02-15T22:28:04.9780499Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-15T22:28:04.9782704Z changes and commit them, and you can discard any commits you make in this
+2025-02-15T22:28:04.9785463Z state without impacting any branches by switching back to a branch.
+2025-02-15T22:28:04.9786668Z 
+2025-02-15T22:28:04.9787431Z If you want to create a new branch to retain commits you create, you may
+2025-02-15T22:28:04.9789904Z do so (now or later) by using -c with the switch command. Example:
+2025-02-15T22:28:04.9791581Z 
+2025-02-15T22:28:04.9792175Z   git switch -c <new-branch-name>
+2025-02-15T22:28:04.9793201Z 
+2025-02-15T22:28:04.9793753Z Or undo this operation with:
+2025-02-15T22:28:04.9794777Z 
+2025-02-15T22:28:04.9795307Z   git switch -
+2025-02-15T22:28:04.9795931Z 
+2025-02-15T22:28:04.9796937Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-15T22:28:04.9798624Z 
+2025-02-15T22:28:04.9800904Z HEAD is now at ecbf116 Merge 1a637f4d18448d4927c81c4120c06606dcff3775 into d63aea5fdfdf96a855a17eab765c87faebe52fbf
+2025-02-15T22:28:04.9808074Z ##[endgroup]
+2025-02-15T22:28:04.9825277Z [command]/usr/bin/git log -1 --format=%H
+2025-02-15T22:28:04.9850159Z ecbf116fceff0c8989e3a13fe10075baa03d1bd4
+2025-02-15T22:28:05.0100938Z ##[group]Run home-assistant/actions/hassfest@master
+2025-02-15T22:28:05.0102691Z ##[endgroup]
+2025-02-15T22:28:05.0335834Z ##[group]Run echo "::add-matcher::/home/runner/work/_actions/home-assistant/actions/master/hassfest/problem-matcher.json"
+2025-02-15T22:28:05.0339644Z [36;1mecho "::add-matcher::/home/runner/work/_actions/home-assistant/actions/master/hassfest/problem-matcher.json"[0m
+2025-02-15T22:28:05.0498419Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-15T22:28:05.0499973Z ##[endgroup]
+2025-02-15T22:28:05.0678598Z ##[group]Run docker run --rm -v /home/runner/work/fuel_prices_sweden/fuel_prices_sweden://github/workspace ghcr.io/home-assistant/hassfest
+2025-02-15T22:28:05.0682834Z [36;1mdocker run --rm -v /home/runner/work/fuel_prices_sweden/fuel_prices_sweden://github/workspace ghcr.io/home-assistant/hassfest[0m
+2025-02-15T22:28:05.0737048Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-15T22:28:05.0738504Z ##[endgroup]
+2025-02-15T22:28:05.1264366Z Unable to find image 'ghcr.io/home-assistant/hassfest:latest' locally
+2025-02-15T22:28:05.9806935Z latest: Pulling from home-assistant/hassfest
+2025-02-15T22:28:05.9813486Z 1f3e46996e29: Pulling fs layer
+2025-02-15T22:28:05.9815272Z 465162ce757d: Pulling fs layer
+2025-02-15T22:28:05.9817020Z 56f470c1f353: Pulling fs layer
+2025-02-15T22:28:05.9818471Z 19f2ebd6b42b: Pulling fs layer
+2025-02-15T22:28:05.9819911Z dbb6e6ff571b: Pulling fs layer
+2025-02-15T22:28:05.9821533Z f329d71a2d69: Pulling fs layer
+2025-02-15T22:28:05.9822981Z 6e742bec896f: Pulling fs layer
+2025-02-15T22:28:05.9835202Z dbb6e6ff571b: Waiting
+2025-02-15T22:28:05.9836786Z f329d71a2d69: Waiting
+2025-02-15T22:28:05.9838348Z 6e742bec896f: Waiting
+2025-02-15T22:28:05.9839912Z 19f2ebd6b42b: Waiting
+2025-02-15T22:28:06.2603231Z 1f3e46996e29: Verifying Checksum
+2025-02-15T22:28:06.2605184Z 1f3e46996e29: Download complete
+2025-02-15T22:28:06.3075486Z 465162ce757d: Verifying Checksum
+2025-02-15T22:28:06.3077391Z 465162ce757d: Download complete
+2025-02-15T22:28:06.3686155Z 1f3e46996e29: Pull complete
+2025-02-15T22:28:06.4644017Z 56f470c1f353: Download complete
+2025-02-15T22:28:06.5419100Z 19f2ebd6b42b: Download complete
+2025-02-15T22:28:06.6504596Z 465162ce757d: Pull complete
+2025-02-15T22:28:06.7751767Z dbb6e6ff571b: Verifying Checksum
+2025-02-15T22:28:06.7753602Z dbb6e6ff571b: Download complete
+2025-02-15T22:28:06.9219379Z f329d71a2d69: Verifying Checksum
+2025-02-15T22:28:06.9220141Z f329d71a2d69: Download complete
+2025-02-15T22:28:07.3727755Z 56f470c1f353: Pull complete
+2025-02-15T22:28:07.3896874Z 19f2ebd6b42b: Pull complete
+2025-02-15T22:28:07.4031508Z dbb6e6ff571b: Pull complete
+2025-02-15T22:28:08.2075551Z 6e742bec896f: Verifying Checksum
+2025-02-15T22:28:08.2076152Z 6e742bec896f: Download complete
+2025-02-15T22:28:10.4639367Z f329d71a2d69: Pull complete
+2025-02-15T22:28:13.8281327Z 6e742bec896f: Pull complete
+2025-02-15T22:28:13.8315428Z Digest: sha256:117965c9d2d88215a9d902147c9ed3117126a3893ef738fb86e4d7b4f286d4cc
+2025-02-15T22:28:13.8326990Z Status: Downloaded newer image for ghcr.io/home-assistant/hassfest:latest
+2025-02-15T22:28:18.0925572Z Error loading libturbojpeg; Camera snapshot performance will be sub-optimal
+2025-02-15T22:28:18.0926751Z Traceback (most recent call last):
+2025-02-15T22:28:18.0931189Z   File "/usr/src/homeassistant/homeassistant/components/camera/img_util.py", line 100, in __init__
+2025-02-15T22:28:18.0932306Z     TurboJPEGSingleton.__instance = TurboJPEG()
+2025-02-15T22:28:18.0932920Z                                     ~~~~~~~~~^^
+2025-02-15T22:28:18.0933484Z   File "/usr/local/lib/python3.13/site-packages/turbojpeg.py", line 300, in __init__
+2025-02-15T22:28:18.0934072Z     self.__find_turbojpeg() if lib_path is None else lib_path)
+2025-02-15T22:28:18.0934424Z     ~~~~~~~~~~~~~~~~~~~~~^^
+2025-02-15T22:28:18.0934922Z   File "/usr/local/lib/python3.13/site-packages/turbojpeg.py", line 967, in __find_turbojpeg
+2025-02-15T22:28:18.0935907Z     raise RuntimeError(
+2025-02-15T22:28:18.0936415Z     ...<2 lines>...
+2025-02-15T22:28:18.0936713Z         'e.g. jpeg = TurboJPEG(lib_path)')
+2025-02-15T22:28:18.0937398Z RuntimeError: Unable to locate turbojpeg library automatically. You may specify the turbojpeg library path manually.
+2025-02-15T22:28:18.0937991Z e.g. jpeg = TurboJPEG(lib_path)
+2025-02-15T22:28:18.2160338Z Validating application_credentials... done in 0.00s
+2025-02-15T22:28:18.2199274Z Validating bluetooth... done in 0.00s
+2025-02-15T22:28:18.2200577Z Validating codeowners... done in 0.00s
+2025-02-15T22:28:18.2213302Z Validating config_schema... done in 0.00s
+2025-02-15T22:28:18.2903637Z Validating dependencies... done in 0.07s
+2025-02-15T22:28:18.2939427Z Validating dhcp... done in 0.00s
+2025-02-15T22:28:18.2940315Z Validating icons... done in 0.00s
+2025-02-15T22:28:18.2950085Z Validating json... done in 0.00s
+2025-02-15T22:28:18.2955498Z Validating manifest... done in 0.00s
+2025-02-15T22:28:18.2988862Z Validating mqtt... done in 0.00s
+2025-02-15T22:28:18.2989433Z Validating quality_scale... done in 0.00s
+2025-02-15T22:28:18.2991387Z Validating requirements... done in 0.00s
+2025-02-15T22:28:18.3009643Z Validating services... done in 0.00s
+2025-02-15T22:28:18.3042092Z Validating ssdp... done in 0.00s
+2025-02-15T22:28:18.3126973Z Validating translations... done in 0.01s
+2025-02-15T22:28:18.3158203Z Validating usb... done in 0.00s
+2025-02-15T22:28:18.3200104Z Validating zeroconf... done in 0.00s
+2025-02-15T22:28:18.3237937Z Validating config_flow... done in 0.00s
+2025-02-15T22:28:18.3238277Z 
+2025-02-15T22:28:18.3238417Z Integrations: 1
+2025-02-15T22:28:18.3238749Z Invalid integrations: 1
+2025-02-15T22:28:18.3238957Z 
+2025-02-15T22:28:18.3239354Z Integration fuel_prices_sweden - /github/workspace/custom_components/fuel_prices_sweden:
+2025-02-15T22:28:18.3264711Z ##[error]* [ERROR] [TRANSLATIONS] Invalid translations/en.json: extra keys not allowed @ data['flow_title']. Got 'Fuel Prices Sweden Setup'
+2025-02-15T22:28:18.3265659Z 
+2025-02-15T22:28:18.6929413Z ##[error]Process completed with exit code 1.
+2025-02-15T22:28:18.7039030Z Post job cleanup.
+2025-02-15T22:28:18.7990300Z [command]/usr/bin/git version
+2025-02-15T22:28:18.8026941Z git version 2.48.1
+2025-02-15T22:28:18.8070305Z Temporarily overriding HOME='/home/runner/work/_temp/ed504225-3724-4e18-b9cc-e7ae50135479' before making global git config changes
+2025-02-15T22:28:18.8071853Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-15T22:28:18.8083660Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/fuel_prices_sweden/fuel_prices_sweden
+2025-02-15T22:28:18.8118636Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-15T22:28:18.8151972Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-15T22:28:18.8386844Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-15T22:28:18.8409604Z http.https://github.com/.extraheader
+2025-02-15T22:28:18.8422330Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-15T22:28:18.8452471Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-15T22:28:18.8789397Z Cleaning up orphan processes

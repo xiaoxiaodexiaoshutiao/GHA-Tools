@@ -1,0 +1,203 @@
+﻿2025-04-09T07:54:02.7731298Z Current runner version: '2.323.0'
+2025-04-09T07:54:02.7755418Z ##[group]Operating System
+2025-04-09T07:54:02.7756312Z Ubuntu
+2025-04-09T07:54:02.7756777Z 24.04.2
+2025-04-09T07:54:02.7757257Z LTS
+2025-04-09T07:54:02.7757674Z ##[endgroup]
+2025-04-09T07:54:02.7758600Z ##[group]Runner Image
+2025-04-09T07:54:02.7759203Z Image: ubuntu-24.04
+2025-04-09T07:54:02.7759676Z Version: 20250323.1.0
+2025-04-09T07:54:02.7760803Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-09T07:54:02.7762194Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-04-09T07:54:02.7763084Z ##[endgroup]
+2025-04-09T07:54:02.7763617Z ##[group]Runner Image Provisioner
+2025-04-09T07:54:02.7764205Z 2.0.422.1
+2025-04-09T07:54:02.7764638Z ##[endgroup]
+2025-04-09T07:54:02.7765628Z ##[group]GITHUB_TOKEN Permissions
+2025-04-09T07:54:02.7767389Z Contents: read
+2025-04-09T07:54:02.7768181Z Metadata: read
+2025-04-09T07:54:02.7768861Z ##[endgroup]
+2025-04-09T07:54:02.7771261Z Secret source: None
+2025-04-09T07:54:02.7772244Z Prepare workflow directory
+2025-04-09T07:54:02.8103549Z Prepare all required actions
+2025-04-09T07:54:02.8140920Z Getting action download info
+2025-04-09T07:54:03.3248358Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-09T07:54:03.3249389Z Version: 4.2.2
+2025-04-09T07:54:03.3250333Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-09T07:54:03.3251582Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-09T07:54:03.3252290Z ##[endgroup]
+2025-04-09T07:54:03.4382380Z Download action repository 'psf/black@stable' (SHA:8a737e727ac5ab2f1d4cf5876720ed276dc8dc4b)
+2025-04-09T07:54:04.1265417Z Complete job name: python-linter / lint
+2025-04-09T07:54:04.1916306Z ##[group]Run actions/checkout@v4
+2025-04-09T07:54:04.1917126Z with:
+2025-04-09T07:54:04.1917508Z   repository: secretflow/spu
+2025-04-09T07:54:04.1918313Z   token: ***
+2025-04-09T07:54:04.1918707Z   ssh-strict: true
+2025-04-09T07:54:04.1919091Z   ssh-user: git
+2025-04-09T07:54:04.1919484Z   persist-credentials: true
+2025-04-09T07:54:04.1919917Z   clean: true
+2025-04-09T07:54:04.1920306Z   sparse-checkout-cone-mode: true
+2025-04-09T07:54:04.1920773Z   fetch-depth: 1
+2025-04-09T07:54:04.1921151Z   fetch-tags: false
+2025-04-09T07:54:04.1921530Z   show-progress: true
+2025-04-09T07:54:04.1921922Z   lfs: false
+2025-04-09T07:54:04.1922267Z   submodules: false
+2025-04-09T07:54:04.1922714Z   set-safe-directory: true
+2025-04-09T07:54:04.1923369Z ##[endgroup]
+2025-04-09T07:54:04.4280909Z Syncing repository: secretflow/spu
+2025-04-09T07:54:04.4282969Z ##[group]Getting Git version info
+2025-04-09T07:54:04.4283639Z Working directory is '/home/runner/work/spu/spu'
+2025-04-09T07:54:04.4284716Z [command]/usr/bin/git version
+2025-04-09T07:54:04.4381601Z git version 2.49.0
+2025-04-09T07:54:04.4409739Z ##[endgroup]
+2025-04-09T07:54:04.4423714Z Temporarily overriding HOME='/home/runner/work/_temp/a20602db-1b2f-4f65-b7df-493dbad14b91' before making global git config changes
+2025-04-09T07:54:04.4426268Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-09T07:54:04.4428762Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/spu/spu
+2025-04-09T07:54:04.4465158Z Deleting the contents of '/home/runner/work/spu/spu'
+2025-04-09T07:54:04.4469395Z ##[group]Initializing the repository
+2025-04-09T07:54:04.4473228Z [command]/usr/bin/git init /home/runner/work/spu/spu
+2025-04-09T07:54:04.4574215Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-09T07:54:04.4575845Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-09T07:54:04.4577311Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-09T07:54:04.4578512Z hint:
+2025-04-09T07:54:04.4579241Z hint: 	git config --global init.defaultBranch <name>
+2025-04-09T07:54:04.4580139Z hint:
+2025-04-09T07:54:04.4580990Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-09T07:54:04.4582723Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-09T07:54:04.4583850Z hint:
+2025-04-09T07:54:04.4584416Z hint: 	git branch -m <name>
+2025-04-09T07:54:04.4586029Z Initialized empty Git repository in /home/runner/work/spu/spu/.git/
+2025-04-09T07:54:04.4598077Z [command]/usr/bin/git remote add origin https://github.com/secretflow/spu
+2025-04-09T07:54:04.4635558Z ##[endgroup]
+2025-04-09T07:54:04.4636529Z ##[group]Disabling automatic garbage collection
+2025-04-09T07:54:04.4640260Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-09T07:54:04.4676504Z ##[endgroup]
+2025-04-09T07:54:04.4677400Z ##[group]Setting up auth
+2025-04-09T07:54:04.4678519Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-09T07:54:04.4706678Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-09T07:54:04.5061942Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-09T07:54:04.5092315Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-09T07:54:04.5333142Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-09T07:54:04.5368464Z ##[endgroup]
+2025-04-09T07:54:04.5369897Z ##[group]Fetching the repository
+2025-04-09T07:54:04.5379068Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +f01503692fa131cadd15c839a99f745a9f374113:refs/remotes/pull/1094/merge
+2025-04-09T07:54:05.5944959Z From https://github.com/secretflow/spu
+2025-04-09T07:54:05.5946230Z  * [new ref]         f01503692fa131cadd15c839a99f745a9f374113 -> pull/1094/merge
+2025-04-09T07:54:05.5972785Z ##[endgroup]
+2025-04-09T07:54:05.5973663Z ##[group]Determining the checkout info
+2025-04-09T07:54:05.5975562Z ##[endgroup]
+2025-04-09T07:54:05.5981801Z [command]/usr/bin/git sparse-checkout disable
+2025-04-09T07:54:05.6023560Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-09T07:54:05.6053271Z ##[group]Checking out the ref
+2025-04-09T07:54:05.6057341Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1094/merge
+2025-04-09T07:54:05.7254605Z Note: switching to 'refs/remotes/pull/1094/merge'.
+2025-04-09T07:54:05.7255420Z 
+2025-04-09T07:54:05.7255834Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-09T07:54:05.7256675Z changes and commit them, and you can discard any commits you make in this
+2025-04-09T07:54:05.7257456Z state without impacting any branches by switching back to a branch.
+2025-04-09T07:54:05.7258209Z 
+2025-04-09T07:54:05.7258597Z If you want to create a new branch to retain commits you create, you may
+2025-04-09T07:54:05.7259318Z do so (now or later) by using -c with the switch command. Example:
+2025-04-09T07:54:05.7259723Z 
+2025-04-09T07:54:05.7259909Z   git switch -c <new-branch-name>
+2025-04-09T07:54:05.7260201Z 
+2025-04-09T07:54:05.7260410Z Or undo this operation with:
+2025-04-09T07:54:05.7260685Z 
+2025-04-09T07:54:05.7260834Z   git switch -
+2025-04-09T07:54:05.7261058Z 
+2025-04-09T07:54:05.7261574Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-09T07:54:05.7262413Z 
+2025-04-09T07:54:05.7263456Z HEAD is now at f015036 Merge e38f572d27356a444b9ed888d1163fca7361ea64 into f1615241dbefa10cbfef75e4f2a19b0bf7767613
+2025-04-09T07:54:05.7267261Z ##[endgroup]
+2025-04-09T07:54:05.7307415Z [command]/usr/bin/git log -1 --format=%H
+2025-04-09T07:54:05.7330832Z f01503692fa131cadd15c839a99f745a9f374113
+2025-04-09T07:54:05.7565113Z ##[group]Run psf/black@stable
+2025-04-09T07:54:05.7565435Z with:
+2025-04-09T07:54:05.7565658Z   jupyter: true
+2025-04-09T07:54:05.7566080Z   version: 24.2.0
+2025-04-09T07:54:05.7566337Z   options: --check --diff
+2025-04-09T07:54:05.7566591Z   src: .
+2025-04-09T07:54:05.7566801Z   use_pyproject: false
+2025-04-09T07:54:05.7567073Z   summary: true
+2025-04-09T07:54:05.7567292Z ##[endgroup]
+2025-04-09T07:54:05.7677618Z ##[group]Run # Even when black fails, do not close the shell
+2025-04-09T07:54:05.7678447Z [36;1m# Even when black fails, do not close the shell[0m
+2025-04-09T07:54:05.7678781Z [36;1mset +e[0m
+2025-04-09T07:54:05.7679000Z [36;1m[0m
+2025-04-09T07:54:05.7679235Z [36;1mif [ "$RUNNER_OS" == "Windows" ]; then[0m
+2025-04-09T07:54:05.7679559Z [36;1m  runner="python"[0m
+2025-04-09T07:54:05.7679813Z [36;1melse[0m
+2025-04-09T07:54:05.7680037Z [36;1m  runner="python3"[0m
+2025-04-09T07:54:05.7680289Z [36;1mfi[0m
+2025-04-09T07:54:05.7680488Z [36;1m[0m
+2025-04-09T07:54:05.7680809Z [36;1mout=$(${runner} $GITHUB_ACTION_PATH/action/main.py)[0m
+2025-04-09T07:54:05.7681155Z [36;1mexit_code=$?[0m
+2025-04-09T07:54:05.7681387Z [36;1m[0m
+2025-04-09T07:54:05.7681621Z [36;1m# Display the raw output in the step[0m
+2025-04-09T07:54:05.7681927Z [36;1mecho "${out}"[0m
+2025-04-09T07:54:05.7682146Z [36;1m[0m
+2025-04-09T07:54:05.7682353Z [36;1mif [ "true" == "true" ]; then[0m
+2025-04-09T07:54:05.7682678Z [36;1m  # Display the Markdown output in the job summary[0m
+2025-04-09T07:54:05.7683047Z [36;1m  echo "\`\`\`python" >> $GITHUB_STEP_SUMMARY[0m
+2025-04-09T07:54:05.7683378Z [36;1m  echo "${out}" >> $GITHUB_STEP_SUMMARY[0m
+2025-04-09T07:54:05.7683701Z [36;1m  echo "\`\`\`" >> $GITHUB_STEP_SUMMARY[0m
+2025-04-09T07:54:05.7683982Z [36;1mfi[0m
+2025-04-09T07:54:05.7684177Z [36;1m[0m
+2025-04-09T07:54:05.7684421Z [36;1m# Exit with the exit-code returned by Black[0m
+2025-04-09T07:54:05.7684728Z [36;1mexit ${exit_code}[0m
+2025-04-09T07:54:05.7738436Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-09T07:54:05.7738842Z env:
+2025-04-09T07:54:05.7739075Z   INPUT_OPTIONS: --check --diff
+2025-04-09T07:54:05.7739373Z   INPUT_SRC: .
+2025-04-09T07:54:05.7739597Z   INPUT_JUPYTER: true
+2025-04-09T07:54:05.7739841Z   INPUT_BLACK_ARGS: 
+2025-04-09T07:54:05.7740075Z   INPUT_VERSION: 24.2.0
+2025-04-09T07:54:05.7740333Z   INPUT_USE_PYPROJECT: false
+2025-04-09T07:54:05.7740633Z   pythonioencoding: utf-8
+2025-04-09T07:54:05.7740925Z ##[endgroup]
+2025-04-09T07:54:17.2853571Z Installing black[colorama,jupyter]==24.2.0...
+2025-04-09T07:54:17.2854642Z --- /home/runner/work/spu/spu/sml/preprocessing/emulations/preprocessing_emul.py	2025-04-09 07:54:05.675579+00:00
+2025-04-09T07:54:17.2856135Z +++ /home/runner/work/spu/spu/sml/preprocessing/emulations/preprocessing_emul.py	2025-04-09 07:54:17.013227+00:00
+2025-04-09T07:54:17.2857025Z @@ -14,14 +14,20 @@
+2025-04-09T07:54:17.2857337Z  
+2025-04-09T07:54:17.2857620Z  import jax.numpy as jnp
+2025-04-09T07:54:17.2858366Z  import numpy as np
+2025-04-09T07:54:17.2858761Z  import sml.utils.emulation as emulation
+2025-04-09T07:54:17.2859254Z  from sklearn import preprocessing
+2025-04-09T07:54:17.2859854Z -from sml.preprocessing.preprocessing import (Binarizer, KBinsDiscretizer,
+2025-04-09T07:54:17.2860371Z -                                             LabelBinarizer, MaxAbsScaler,
+2025-04-09T07:54:17.2860745Z -                                             MinMaxScaler, Normalizer,
+2025-04-09T07:54:17.2861095Z -                                             OneHotEncoder, RobustScaler)
+2025-04-09T07:54:17.2861474Z +from sml.preprocessing.preprocessing import (
+2025-04-09T07:54:17.2861795Z +    Binarizer,
+2025-04-09T07:54:17.2862012Z +    KBinsDiscretizer,
+2025-04-09T07:54:17.2862240Z +    LabelBinarizer,
+2025-04-09T07:54:17.2862462Z +    MaxAbsScaler,
+2025-04-09T07:54:17.2862672Z +    MinMaxScaler,
+2025-04-09T07:54:17.2862884Z +    Normalizer,
+2025-04-09T07:54:17.2863092Z +    OneHotEncoder,
+2025-04-09T07:54:17.2863310Z +    RobustScaler,
+2025-04-09T07:54:17.2863823Z +)
+2025-04-09T07:54:17.2864012Z  
+2025-04-09T07:54:17.2864195Z  
+2025-04-09T07:54:17.2864398Z  def emul_labelbinarizer():
+2025-04-09T07:54:17.2864827Z      def labelbinarize(X, Y):
+2025-04-09T07:54:17.2865149Z          transformer = LabelBinarizer(neg_label=-2, pos_label=3)
+2025-04-09T07:54:17.2865695Z would reformat /home/runner/work/spu/spu/sml/preprocessing/emulations/preprocessing_emul.py
+2025-04-09T07:54:17.2866115Z 
+2025-04-09T07:54:17.2866417Z Oh no! 💥 💔 💥
+2025-04-09T07:54:17.2866710Z 1 file would be reformatted, 174 files would be left unchanged.
+2025-04-09T07:54:17.2881602Z ##[error]Process completed with exit code 1.
+2025-04-09T07:54:17.3018235Z Post job cleanup.
+2025-04-09T07:54:17.3962478Z [command]/usr/bin/git version
+2025-04-09T07:54:17.4009484Z git version 2.49.0
+2025-04-09T07:54:17.4052494Z Temporarily overriding HOME='/home/runner/work/_temp/bfd31e45-22a5-4405-a00d-ded18cb15dce' before making global git config changes
+2025-04-09T07:54:17.4053533Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-09T07:54:17.4059276Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/spu/spu
+2025-04-09T07:54:17.4094671Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-09T07:54:17.4127756Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-09T07:54:17.4366775Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-09T07:54:17.4388471Z http.https://github.com/.extraheader
+2025-04-09T07:54:17.4401028Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-09T07:54:17.4431650Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-09T07:54:17.4770934Z Cleaning up orphan processes

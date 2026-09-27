@@ -1,0 +1,168 @@
+2025-03-03T03:29:06.7552306Z Requested labels: ubuntu-22.04
+2025-03-03T03:29:06.7552635Z Job defined at: freqtrade/freqtrade/.github/workflows/ci.yml@refs/pull/11448/merge
+2025-03-03T03:29:06.7552751Z Waiting for a runner to pick up this job...
+2025-03-03T03:29:07.3885608Z Job is waiting for a hosted runner to come online.
+2025-03-03T03:29:11.9561850Z Job is about to start running on the hosted runner: GitHub Actions 8 (hosted)
+2025-03-03T03:29:14.1480698Z Current runner version: '2.322.0'
+2025-03-03T03:29:14.1506202Z ##[group]Operating System
+2025-03-03T03:29:14.1506991Z Ubuntu
+2025-03-03T03:29:14.1507516Z 22.04.5
+2025-03-03T03:29:14.1508079Z LTS
+2025-03-03T03:29:14.1508578Z ##[endgroup]
+2025-03-03T03:29:14.1509117Z ##[group]Runner Image
+2025-03-03T03:29:14.1509750Z Image: ubuntu-22.04
+2025-03-03T03:29:14.1510250Z Version: 20250223.1.0
+2025-03-03T03:29:14.1511300Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20250223.1/images/ubuntu/Ubuntu2204-Readme.md
+2025-03-03T03:29:14.1512751Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20250223.1
+2025-03-03T03:29:14.1513860Z ##[endgroup]
+2025-03-03T03:29:14.1514384Z ##[group]Runner Image Provisioner
+2025-03-03T03:29:14.1515024Z 2.0.422.1
+2025-03-03T03:29:14.1515523Z ##[endgroup]
+2025-03-03T03:29:14.1516612Z ##[group]GITHUB_TOKEN Permissions
+2025-03-03T03:29:14.1519005Z Metadata: read
+2025-03-03T03:29:14.1519831Z RepositoryProjects: read
+2025-03-03T03:29:14.1520505Z ##[endgroup]
+2025-03-03T03:29:14.1524104Z Secret source: Dependabot
+2025-03-03T03:29:14.1525162Z Prepare workflow directory
+2025-03-03T03:29:14.1841665Z Prepare all required actions
+2025-03-03T03:29:14.1883133Z Getting action download info
+2025-03-03T03:29:14.3754106Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-03T03:29:14.4687170Z Download action repository 'actions/setup-python@v5' (SHA:42375524e23c412d93fb67b49958b491fce71c38)
+2025-03-03T03:29:14.6199696Z Complete job name: mypy-version-check
+2025-03-03T03:29:14.7003684Z ##[group]Run actions/checkout@v4
+2025-03-03T03:29:14.7004791Z with:
+2025-03-03T03:29:14.7005221Z   persist-credentials: false
+2025-03-03T03:29:14.7005734Z   repository: freqtrade/freqtrade
+2025-03-03T03:29:14.7006399Z   token: ***
+2025-03-03T03:29:14.7006798Z   ssh-strict: true
+2025-03-03T03:29:14.7007203Z   ssh-user: git
+2025-03-03T03:29:14.7007593Z   clean: true
+2025-03-03T03:29:14.7008003Z   sparse-checkout-cone-mode: true
+2025-03-03T03:29:14.7008567Z   fetch-depth: 1
+2025-03-03T03:29:14.7008962Z   fetch-tags: false
+2025-03-03T03:29:14.7009369Z   show-progress: true
+2025-03-03T03:29:14.7009777Z   lfs: false
+2025-03-03T03:29:14.7010152Z   submodules: false
+2025-03-03T03:29:14.7010558Z   set-safe-directory: true
+2025-03-03T03:29:14.7011240Z ##[endgroup]
+2025-03-03T03:29:14.8920299Z Syncing repository: freqtrade/freqtrade
+2025-03-03T03:29:14.8922538Z ##[group]Getting Git version info
+2025-03-03T03:29:14.8923268Z Working directory is '/home/runner/work/freqtrade/freqtrade'
+2025-03-03T03:29:14.8924695Z [command]/usr/bin/git version
+2025-03-03T03:29:14.9003029Z git version 2.48.1
+2025-03-03T03:29:14.9031013Z ##[endgroup]
+2025-03-03T03:29:14.9045035Z Temporarily overriding HOME='/home/runner/work/_temp/4a999dad-da24-4ef1-9468-61e2cc2ae958' before making global git config changes
+2025-03-03T03:29:14.9046427Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-03T03:29:14.9050425Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/freqtrade/freqtrade
+2025-03-03T03:29:14.9084294Z Deleting the contents of '/home/runner/work/freqtrade/freqtrade'
+2025-03-03T03:29:14.9088324Z ##[group]Initializing the repository
+2025-03-03T03:29:14.9092128Z [command]/usr/bin/git init /home/runner/work/freqtrade/freqtrade
+2025-03-03T03:29:14.9160559Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-03T03:29:14.9161757Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-03T03:29:14.9162702Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-03T03:29:14.9163552Z hint:
+2025-03-03T03:29:14.9164040Z hint: 	git config --global init.defaultBranch <name>
+2025-03-03T03:29:14.9164626Z hint:
+2025-03-03T03:29:14.9165190Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-03T03:29:14.9166237Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-03T03:29:14.9167617Z hint:
+2025-03-03T03:29:14.9168043Z hint: 	git branch -m <name>
+2025-03-03T03:29:14.9168773Z Initialized empty Git repository in /home/runner/work/freqtrade/freqtrade/.git/
+2025-03-03T03:29:14.9178690Z [command]/usr/bin/git remote add origin https://github.com/freqtrade/freqtrade
+2025-03-03T03:29:14.9212068Z ##[endgroup]
+2025-03-03T03:29:14.9213303Z ##[group]Disabling automatic garbage collection
+2025-03-03T03:29:14.9217563Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-03T03:29:14.9246425Z ##[endgroup]
+2025-03-03T03:29:14.9247140Z ##[group]Setting up auth
+2025-03-03T03:29:14.9253066Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-03T03:29:14.9282866Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-03T03:29:14.9571243Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-03T03:29:14.9602723Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-03T03:29:14.9838700Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-03T03:29:14.9879975Z ##[endgroup]
+2025-03-03T03:29:14.9881289Z ##[group]Fetching the repository
+2025-03-03T03:29:14.9890262Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +4c581160040f65982aa7be439f9904c4dc4919b7:refs/remotes/pull/11448/merge
+2025-03-03T03:29:17.1062662Z From https://github.com/freqtrade/freqtrade
+2025-03-03T03:29:17.1064888Z  * [new ref]         4c581160040f65982aa7be439f9904c4dc4919b7 -> pull/11448/merge
+2025-03-03T03:29:17.1090458Z ##[endgroup]
+2025-03-03T03:29:17.1091759Z ##[group]Determining the checkout info
+2025-03-03T03:29:17.1093339Z ##[endgroup]
+2025-03-03T03:29:17.1098437Z [command]/usr/bin/git sparse-checkout disable
+2025-03-03T03:29:17.1141086Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-03T03:29:17.1172961Z ##[group]Checking out the ref
+2025-03-03T03:29:17.1176738Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/11448/merge
+2025-03-03T03:29:17.3819574Z Note: switching to 'refs/remotes/pull/11448/merge'.
+2025-03-03T03:29:17.3820544Z 
+2025-03-03T03:29:17.3821257Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-03T03:29:17.3822643Z changes and commit them, and you can discard any commits you make in this
+2025-03-03T03:29:17.3824056Z state without impacting any branches by switching back to a branch.
+2025-03-03T03:29:17.3824748Z 
+2025-03-03T03:29:17.3825253Z If you want to create a new branch to retain commits you create, you may
+2025-03-03T03:29:17.3826354Z do so (now or later) by using -c with the switch command. Example:
+2025-03-03T03:29:17.3826987Z 
+2025-03-03T03:29:17.3827313Z   git switch -c <new-branch-name>
+2025-03-03T03:29:17.3827787Z 
+2025-03-03T03:29:17.3828112Z Or undo this operation with:
+2025-03-03T03:29:17.3828581Z 
+2025-03-03T03:29:17.3828862Z   git switch -
+2025-03-03T03:29:17.3829271Z 
+2025-03-03T03:29:17.3829875Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-03T03:29:17.3830718Z 
+2025-03-03T03:29:17.3831622Z HEAD is now at 4c58116 Merge cdd1273ed0aeb68d952c2c4ff488821850c3a9f2 into ccfc690281f257b40ecf09d1dfd48a5666b4294d
+2025-03-03T03:29:17.3844588Z ##[endgroup]
+2025-03-03T03:29:17.3884397Z [command]/usr/bin/git log -1 --format=%H
+2025-03-03T03:29:17.3907237Z 4c581160040f65982aa7be439f9904c4dc4919b7
+2025-03-03T03:29:17.3917597Z ##[group]Removing auth
+2025-03-03T03:29:17.3920939Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-03T03:29:17.3949621Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-03T03:29:17.4179650Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-03T03:29:17.4201177Z http.https://github.com/.extraheader
+2025-03-03T03:29:17.4211977Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-03T03:29:17.4246385Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-03T03:29:17.4464657Z ##[endgroup]
+2025-03-03T03:29:17.4878357Z ##[group]Run actions/setup-python@v5
+2025-03-03T03:29:17.4879551Z with:
+2025-03-03T03:29:17.4880410Z   python-version: 3.12
+2025-03-03T03:29:17.4881409Z   check-latest: false
+2025-03-03T03:29:17.4882676Z   token: ***
+2025-03-03T03:29:17.4883744Z   update-environment: true
+2025-03-03T03:29:17.4884839Z   allow-prereleases: false
+2025-03-03T03:29:17.4885856Z ##[endgroup]
+2025-03-03T03:29:17.6600441Z ##[group]Installed versions
+2025-03-03T03:29:17.6661288Z Successfully set up CPython (3.12.9)
+2025-03-03T03:29:17.6663301Z ##[endgroup]
+2025-03-03T03:29:17.6809010Z ##[group]Run pip install pyaml
+2025-03-03T03:29:17.6810137Z [36;1mpip install pyaml[0m
+2025-03-03T03:29:17.6811276Z [36;1mpython build_helpers/pre_commit_update.py[0m
+2025-03-03T03:29:17.6866794Z shell: /usr/bin/bash -e {0}
+2025-03-03T03:29:17.6867759Z env:
+2025-03-03T03:29:17.6868744Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-03T03:29:17.6870307Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib/pkgconfig
+2025-03-03T03:29:17.6871836Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-03T03:29:17.6873243Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-03T03:29:17.6874977Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-03T03:29:17.6876407Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib
+2025-03-03T03:29:17.6877640Z ##[endgroup]
+2025-03-03T03:29:20.6222933Z Collecting pyaml
+2025-03-03T03:29:20.6365543Z   Downloading pyaml-25.1.0-py3-none-any.whl.metadata (12 kB)
+2025-03-03T03:29:20.6738081Z Collecting PyYAML (from pyaml)
+2025-03-03T03:29:20.6777321Z   Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+2025-03-03T03:29:20.6865845Z Downloading pyaml-25.1.0-py3-none-any.whl (26 kB)
+2025-03-03T03:29:20.6946612Z Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (767 kB)
+2025-03-03T03:29:20.7088412Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 767.5/767.5 kB 77.5 MB/s eta 0:00:00
+2025-03-03T03:29:20.7250749Z Installing collected packages: PyYAML, pyaml
+2025-03-03T03:29:20.8179493Z Successfully installed PyYAML-6.0.2 pyaml-25.1.0
+2025-03-03T03:29:21.0083330Z types-requests==2.32.0.20241016 is missing in requirements-dev.txt.
+2025-03-03T03:29:21.0084806Z types-requests==2.32.0.20250301 is missing in pre-config file.
+2025-03-03T03:29:21.0151306Z ##[error]Process completed with exit code 1.
+2025-03-03T03:29:21.0267675Z Post job cleanup.
+2025-03-03T03:29:21.1227827Z [command]/usr/bin/git version
+2025-03-03T03:29:21.1265040Z git version 2.48.1
+2025-03-03T03:29:21.1317593Z Temporarily overriding HOME='/home/runner/work/_temp/d10a1d65-d196-47c5-b6be-4b83e34dc689' before making global git config changes
+2025-03-03T03:29:21.1318785Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-03T03:29:21.1323243Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/freqtrade/freqtrade
+2025-03-03T03:29:21.1361581Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-03T03:29:21.1395998Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-03T03:29:21.1635420Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-03T03:29:21.1667526Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-03T03:29:21.2005506Z Cleaning up orphan processes

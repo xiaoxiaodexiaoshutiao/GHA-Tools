@@ -1,0 +1,168 @@
+﻿2025-03-26T19:07:30.7196753Z Current runner version: '2.323.0'
+2025-03-26T19:07:30.7222299Z ##[group]Operating System
+2025-03-26T19:07:30.7223145Z Ubuntu
+2025-03-26T19:07:30.7223745Z 24.04.2
+2025-03-26T19:07:30.7224354Z LTS
+2025-03-26T19:07:30.7224826Z ##[endgroup]
+2025-03-26T19:07:30.7225281Z ##[group]Runner Image
+2025-03-26T19:07:30.7225948Z Image: ubuntu-24.04
+2025-03-26T19:07:30.7226438Z Version: 20250316.1.0
+2025-03-26T19:07:30.7227431Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250316.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-26T19:07:30.7228921Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250316.1
+2025-03-26T19:07:30.7229810Z ##[endgroup]
+2025-03-26T19:07:30.7230307Z ##[group]Runner Image Provisioner
+2025-03-26T19:07:30.7230930Z 2.0.422.1
+2025-03-26T19:07:30.7231393Z ##[endgroup]
+2025-03-26T19:07:30.7232309Z ##[group]GITHUB_TOKEN Permissions
+2025-03-26T19:07:30.7234474Z Contents: read
+2025-03-26T19:07:30.7235030Z Metadata: read
+2025-03-26T19:07:30.7235771Z ##[endgroup]
+2025-03-26T19:07:30.7238211Z Secret source: None
+2025-03-26T19:07:30.7239223Z Prepare workflow directory
+2025-03-26T19:07:30.7622939Z Prepare all required actions
+2025-03-26T19:07:30.7661856Z Getting action download info
+2025-03-26T19:07:31.2374704Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-03-26T19:07:31.2375788Z Version: 4.2.2
+2025-03-26T19:07:31.2376813Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-03-26T19:07:31.2378211Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-03-26T19:07:31.2379021Z ##[endgroup]
+2025-03-26T19:07:31.3375228Z ##[group]Download immutable action package 'actions/setup-node@v4'
+2025-03-26T19:07:31.3375971Z Version: 4.3.0
+2025-03-26T19:07:31.3376639Z Digest: sha256:9f9f8171ffc89cb7f6897e615e2b43b46bb55176fd279129eb0088157eace9b2
+2025-03-26T19:07:31.3377531Z Source commit SHA: cdca7365b2dadb8aad0a33bc7601856ffabcc48e
+2025-03-26T19:07:31.3378167Z ##[endgroup]
+2025-03-26T19:07:31.7779652Z Complete job name: Test build process on node 18
+2025-03-26T19:07:31.8411195Z ##[group]Run actions/checkout@v4
+2025-03-26T19:07:31.8412104Z with:
+2025-03-26T19:07:31.8412561Z   repository: fomantic/Fomantic-UI
+2025-03-26T19:07:31.8413285Z   token: ***
+2025-03-26T19:07:31.8413935Z   ssh-strict: true
+2025-03-26T19:07:31.8414370Z   ssh-user: git
+2025-03-26T19:07:31.8414821Z   persist-credentials: true
+2025-03-26T19:07:31.8415326Z   clean: true
+2025-03-26T19:07:31.8415777Z   sparse-checkout-cone-mode: true
+2025-03-26T19:07:31.8416315Z   fetch-depth: 1
+2025-03-26T19:07:31.8416755Z   fetch-tags: false
+2025-03-26T19:07:31.8417202Z   show-progress: true
+2025-03-26T19:07:31.8417648Z   lfs: false
+2025-03-26T19:07:31.8418060Z   submodules: false
+2025-03-26T19:07:31.8418512Z   set-safe-directory: true
+2025-03-26T19:07:31.8419271Z ##[endgroup]
+2025-03-26T19:07:32.0322403Z Syncing repository: fomantic/Fomantic-UI
+2025-03-26T19:07:32.0324589Z ##[group]Getting Git version info
+2025-03-26T19:07:32.0325474Z Working directory is '/home/runner/work/Fomantic-UI/Fomantic-UI'
+2025-03-26T19:07:32.0326975Z [command]/usr/bin/git version
+2025-03-26T19:07:32.0376402Z git version 2.48.1
+2025-03-26T19:07:32.0403433Z ##[endgroup]
+2025-03-26T19:07:32.0417335Z Temporarily overriding HOME='/home/runner/work/_temp/ca64b158-800d-4355-888e-2857e77ba70b' before making global git config changes
+2025-03-26T19:07:32.0422535Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-26T19:07:32.0424269Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Fomantic-UI/Fomantic-UI
+2025-03-26T19:07:32.0460540Z Deleting the contents of '/home/runner/work/Fomantic-UI/Fomantic-UI'
+2025-03-26T19:07:32.0464204Z ##[group]Initializing the repository
+2025-03-26T19:07:32.0468440Z [command]/usr/bin/git init /home/runner/work/Fomantic-UI/Fomantic-UI
+2025-03-26T19:07:32.0534022Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-26T19:07:32.0535593Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-26T19:07:32.0538231Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-26T19:07:32.0539893Z hint:
+2025-03-26T19:07:32.0540986Z hint: 	git config --global init.defaultBranch <name>
+2025-03-26T19:07:32.0541937Z hint:
+2025-03-26T19:07:32.0542810Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-26T19:07:32.0544371Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-26T19:07:32.0545849Z hint:
+2025-03-26T19:07:32.0546508Z hint: 	git branch -m <name>
+2025-03-26T19:07:32.0547649Z Initialized empty Git repository in /home/runner/work/Fomantic-UI/Fomantic-UI/.git/
+2025-03-26T19:07:32.0550959Z [command]/usr/bin/git remote add origin https://github.com/fomantic/Fomantic-UI
+2025-03-26T19:07:32.0583001Z ##[endgroup]
+2025-03-26T19:07:32.0584386Z ##[group]Disabling automatic garbage collection
+2025-03-26T19:07:32.0586749Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-26T19:07:32.0615238Z ##[endgroup]
+2025-03-26T19:07:32.0616314Z ##[group]Setting up auth
+2025-03-26T19:07:32.0621615Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-26T19:07:32.0653428Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-26T19:07:32.0969450Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-26T19:07:32.1002597Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-26T19:07:32.1253693Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-26T19:07:32.1290499Z ##[endgroup]
+2025-03-26T19:07:32.1292257Z ##[group]Fetching the repository
+2025-03-26T19:07:32.1301283Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +4a15e478da38d73819796395afc375864f368bbc:refs/remotes/pull/3205/merge
+2025-03-26T19:07:33.1086957Z From https://github.com/fomantic/Fomantic-UI
+2025-03-26T19:07:33.1089343Z  * [new ref]         4a15e478da38d73819796395afc375864f368bbc -> pull/3205/merge
+2025-03-26T19:07:33.1114354Z ##[endgroup]
+2025-03-26T19:07:33.1116522Z ##[group]Determining the checkout info
+2025-03-26T19:07:33.1119086Z ##[endgroup]
+2025-03-26T19:07:33.1122203Z [command]/usr/bin/git sparse-checkout disable
+2025-03-26T19:07:33.1164484Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-26T19:07:33.1192850Z ##[group]Checking out the ref
+2025-03-26T19:07:33.1196607Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/3205/merge
+2025-03-26T19:07:33.2145990Z Note: switching to 'refs/remotes/pull/3205/merge'.
+2025-03-26T19:07:33.2148777Z 
+2025-03-26T19:07:33.2150058Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-26T19:07:33.2153033Z changes and commit them, and you can discard any commits you make in this
+2025-03-26T19:07:33.2155822Z state without impacting any branches by switching back to a branch.
+2025-03-26T19:07:33.2157028Z 
+2025-03-26T19:07:33.2157809Z If you want to create a new branch to retain commits you create, you may
+2025-03-26T19:07:33.2160212Z do so (now or later) by using -c with the switch command. Example:
+2025-03-26T19:07:33.2161540Z 
+2025-03-26T19:07:33.2161975Z   git switch -c <new-branch-name>
+2025-03-26T19:07:33.2162777Z 
+2025-03-26T19:07:33.2163212Z Or undo this operation with:
+2025-03-26T19:07:33.2164291Z 
+2025-03-26T19:07:33.2164700Z   git switch -
+2025-03-26T19:07:33.2165251Z 
+2025-03-26T19:07:33.2166191Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-26T19:07:33.2167836Z 
+2025-03-26T19:07:33.2169537Z HEAD is now at 4a15e47 Merge 23d95e7cb9d311c186b825d232fce03f5a3f513b into 40d7f140f48123dd08b133447f5c75f0a7eec335
+2025-03-26T19:07:33.2175975Z ##[endgroup]
+2025-03-26T19:07:33.2205638Z [command]/usr/bin/git log -1 --format=%H
+2025-03-26T19:07:33.2228664Z 4a15e478da38d73819796395afc375864f368bbc
+2025-03-26T19:07:33.2536736Z ##[group]Run actions/setup-node@v4
+2025-03-26T19:07:33.2537819Z with:
+2025-03-26T19:07:33.2538564Z   node-version: 18
+2025-03-26T19:07:33.2539404Z   always-auth: false
+2025-03-26T19:07:33.2540284Z   check-latest: false
+2025-03-26T19:07:33.2541423Z   token: ***
+2025-03-26T19:07:33.2542195Z ##[endgroup]
+2025-03-26T19:07:33.4286691Z Found in cache @ /opt/hostedtoolcache/node/18.20.7/x64
+2025-03-26T19:07:33.4291350Z ##[group]Environment details
+2025-03-26T19:07:33.7824154Z node: v18.20.7
+2025-03-26T19:07:33.7825583Z npm: 10.8.2
+2025-03-26T19:07:33.7826786Z yarn: 1.22.22
+2025-03-26T19:07:33.7829276Z ##[endgroup]
+2025-03-26T19:07:33.7967720Z ##[group]Run sh ./scripts/preinstall.sh
+2025-03-26T19:07:33.7968925Z [36;1msh ./scripts/preinstall.sh[0m
+2025-03-26T19:07:33.8026986Z shell: /usr/bin/bash -e {0}
+2025-03-26T19:07:33.8027938Z ##[endgroup]
+2025-03-26T19:07:33.8248040Z ##[group]Run yarn
+2025-03-26T19:07:33.8248862Z [36;1myarn[0m
+2025-03-26T19:07:33.8299877Z shell: /usr/bin/bash -e {0}
+2025-03-26T19:07:33.8300775Z ##[endgroup]
+2025-03-26T19:07:33.9747434Z yarn install v1.22.22
+2025-03-26T19:07:34.0458233Z [1/5] Validating package.json...
+2025-03-26T19:07:34.0495866Z [2/5] Resolving packages...
+2025-03-26T19:07:34.2839204Z [3/5] Fetching packages...
+2025-03-26T19:07:35.7134228Z error Error: https://registry.npmjs.org/liftoff/-/liftoff-5.0.0.tgz: Request failed "500 Internal Server Error"
+2025-03-26T19:07:35.7135351Z     at ResponseError.ExtendableBuiltin (/usr/local/lib/node_modules/yarn/lib/cli.js:696:66)
+2025-03-26T19:07:35.7136039Z     at new ResponseError (/usr/local/lib/node_modules/yarn/lib/cli.js:802:124)
+2025-03-26T19:07:35.7136790Z     at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:66750:16)
+2025-03-26T19:07:35.7137515Z     at Request.emit (node:events:517:28)
+2025-03-26T19:07:35.7138473Z     at module.exports.Request.onRequestResponse (/usr/local/lib/node_modules/yarn/lib/cli.js:142287:10)
+2025-03-26T19:07:35.7139337Z     at ClientRequest.emit (node:events:517:28)
+2025-03-26T19:07:35.7140154Z     at HTTPParser.parserOnIncomingClient [as onIncoming] (node:_http_client:700:27)
+2025-03-26T19:07:35.7141072Z     at HTTPParser.parserOnHeadersComplete (node:_http_common:119:17)
+2025-03-26T19:07:35.7141880Z     at TLSSocket.socketOnData (node:_http_client:541:22)
+2025-03-26T19:07:35.7142490Z     at TLSSocket.emit (node:events:517:28)
+2025-03-26T19:07:35.7143502Z info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.
+2025-03-26T19:07:44.8208722Z ##[error]Process completed with exit code 1.
+2025-03-26T19:07:44.8310435Z Post job cleanup.
+2025-03-26T19:07:44.9250753Z [command]/usr/bin/git version
+2025-03-26T19:07:44.9289811Z git version 2.48.1
+2025-03-26T19:07:44.9344301Z Temporarily overriding HOME='/home/runner/work/_temp/8c222dd5-086b-4ab6-8e8f-378ff8ddca6e' before making global git config changes
+2025-03-26T19:07:44.9345917Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-26T19:07:44.9351048Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Fomantic-UI/Fomantic-UI
+2025-03-26T19:07:44.9390110Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-26T19:07:44.9426940Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-26T19:07:44.9677204Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-26T19:07:44.9701597Z http.https://github.com/.extraheader
+2025-03-26T19:07:44.9716492Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-26T19:07:44.9752151Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-26T19:07:45.0119558Z Cleaning up orphan processes

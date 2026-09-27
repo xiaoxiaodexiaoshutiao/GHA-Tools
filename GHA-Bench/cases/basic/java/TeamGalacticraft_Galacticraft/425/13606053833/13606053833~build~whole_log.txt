@@ -1,0 +1,321 @@
+2025-03-01T15:08:17.3589003Z Requested labels: ubuntu-24.04
+2025-03-01T15:08:17.3589612Z Job defined at: TeamGalacticraft/Galacticraft/.github/workflows/pr_check.yml@refs/pull/425/merge
+2025-03-01T15:08:17.3589762Z Waiting for a runner to pick up this job...
+2025-03-01T15:08:17.6571540Z Job is waiting for a hosted runner to come online.
+2025-03-01T15:08:20.7472872Z Job is about to start running on the hosted runner: GitHub Actions 5 (hosted)
+2025-03-01T15:08:23.3184769Z Current runner version: '2.322.0'
+2025-03-01T15:08:23.3213058Z ##[group]Operating System
+2025-03-01T15:08:23.3213862Z Ubuntu
+2025-03-01T15:08:23.3214405Z 24.04.2
+2025-03-01T15:08:23.3214955Z LTS
+2025-03-01T15:08:23.3215434Z ##[endgroup]
+2025-03-01T15:08:23.3215937Z ##[group]Runner Image
+2025-03-01T15:08:23.3216561Z Image: ubuntu-24.04
+2025-03-01T15:08:23.3217088Z Version: 20250223.1.0
+2025-03-01T15:08:23.3218492Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250223.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-01T15:08:23.3219972Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250223.1
+2025-03-01T15:08:23.3220889Z ##[endgroup]
+2025-03-01T15:08:23.3221452Z ##[group]Runner Image Provisioner
+2025-03-01T15:08:23.3222032Z 2.0.422.1
+2025-03-01T15:08:23.3222518Z ##[endgroup]
+2025-03-01T15:08:23.3224689Z ##[group]GITHUB_TOKEN Permissions
+2025-03-01T15:08:23.3226804Z Actions: read
+2025-03-01T15:08:23.3227648Z Attestations: read
+2025-03-01T15:08:23.3228499Z Checks: read
+2025-03-01T15:08:23.3229112Z Contents: read
+2025-03-01T15:08:23.3229629Z Deployments: read
+2025-03-01T15:08:23.3230152Z Discussions: read
+2025-03-01T15:08:23.3230722Z Issues: read
+2025-03-01T15:08:23.3231223Z Metadata: read
+2025-03-01T15:08:23.3231702Z Packages: read
+2025-03-01T15:08:23.3232229Z Pages: read
+2025-03-01T15:08:23.3232747Z PullRequests: read
+2025-03-01T15:08:23.3233272Z RepositoryProjects: read
+2025-03-01T15:08:23.3233915Z SecurityEvents: read
+2025-03-01T15:08:23.3234444Z Statuses: read
+2025-03-01T15:08:23.3234883Z ##[endgroup]
+2025-03-01T15:08:23.3238298Z Secret source: None
+2025-03-01T15:08:23.3239030Z Prepare workflow directory
+2025-03-01T15:08:23.3679055Z Prepare all required actions
+2025-03-01T15:08:23.3716957Z Getting action download info
+2025-03-01T15:08:23.5875211Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-01T15:08:23.6751673Z Download action repository 'gradle/actions@v4' (SHA:94baf225fe0a508e581a564467443d0e2379123b)
+2025-03-01T15:08:24.8824506Z Download action repository 'actions/setup-java@v4' (SHA:3a4f6e1af504cf6a31855fa899c6aa5355ba6c12)
+2025-03-01T15:08:25.4682946Z Download action repository 'actions/cache@v4' (SHA:d4323d4df104b026a6aa633fdb11d772146be0bf)
+2025-03-01T15:08:26.1223158Z Complete job name: build
+2025-03-01T15:08:26.2110151Z ##[group]Run actions/checkout@v4
+2025-03-01T15:08:26.2111183Z with:
+2025-03-01T15:08:26.2111684Z   repository: TeamGalacticraft/Galacticraft
+2025-03-01T15:08:26.2112685Z   token: ***
+2025-03-01T15:08:26.2113125Z   ssh-strict: true
+2025-03-01T15:08:26.2113573Z   ssh-user: git
+2025-03-01T15:08:26.2114038Z   persist-credentials: true
+2025-03-01T15:08:26.2114543Z   clean: true
+2025-03-01T15:08:26.2114954Z   sparse-checkout-cone-mode: true
+2025-03-01T15:08:26.2115443Z   fetch-depth: 1
+2025-03-01T15:08:26.2115808Z   fetch-tags: false
+2025-03-01T15:08:26.2116226Z   show-progress: true
+2025-03-01T15:08:26.2116621Z   lfs: false
+2025-03-01T15:08:26.2116953Z   submodules: false
+2025-03-01T15:08:26.2117370Z   set-safe-directory: true
+2025-03-01T15:08:26.2118477Z ##[endgroup]
+2025-03-01T15:08:26.4128462Z Syncing repository: TeamGalacticraft/Galacticraft
+2025-03-01T15:08:26.4130771Z ##[group]Getting Git version info
+2025-03-01T15:08:26.4131691Z Working directory is '/home/runner/work/Galacticraft/Galacticraft'
+2025-03-01T15:08:26.4132844Z [command]/usr/bin/git version
+2025-03-01T15:08:26.4174696Z git version 2.48.1
+2025-03-01T15:08:26.4220783Z ##[endgroup]
+2025-03-01T15:08:26.4230131Z Temporarily overriding HOME='/home/runner/work/_temp/24f6f459-d8b8-451b-becc-8de7b3e4661b' before making global git config changes
+2025-03-01T15:08:26.4233084Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-01T15:08:26.4237423Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Galacticraft/Galacticraft
+2025-03-01T15:08:26.4282806Z Deleting the contents of '/home/runner/work/Galacticraft/Galacticraft'
+2025-03-01T15:08:26.4286368Z ##[group]Initializing the repository
+2025-03-01T15:08:26.4292194Z [command]/usr/bin/git init /home/runner/work/Galacticraft/Galacticraft
+2025-03-01T15:08:26.4399209Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-01T15:08:26.4400020Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-01T15:08:26.4400828Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-01T15:08:26.4401533Z hint:
+2025-03-01T15:08:26.4402132Z hint: 	git config --global init.defaultBranch <name>
+2025-03-01T15:08:26.4402755Z hint:
+2025-03-01T15:08:26.4403301Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-01T15:08:26.4404244Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-01T15:08:26.4404973Z hint:
+2025-03-01T15:08:26.4405361Z hint: 	git branch -m <name>
+2025-03-01T15:08:26.4406561Z Initialized empty Git repository in /home/runner/work/Galacticraft/Galacticraft/.git/
+2025-03-01T15:08:26.4427040Z [command]/usr/bin/git remote add origin https://github.com/TeamGalacticraft/Galacticraft
+2025-03-01T15:08:26.4488783Z ##[endgroup]
+2025-03-01T15:08:26.4491459Z ##[group]Disabling automatic garbage collection
+2025-03-01T15:08:26.4493212Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-01T15:08:26.4550175Z ##[endgroup]
+2025-03-01T15:08:26.4551066Z ##[group]Setting up auth
+2025-03-01T15:08:26.4551894Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-01T15:08:26.4593576Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-01T15:08:26.4980535Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-01T15:08:26.5026671Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-01T15:08:26.5310979Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-01T15:08:26.5355071Z ##[endgroup]
+2025-03-01T15:08:26.5356321Z ##[group]Fetching the repository
+2025-03-01T15:08:26.5367191Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +53553969ad6a6b7a4be74e2068f519c823cd00f2:refs/remotes/pull/425/merge
+2025-03-01T15:08:28.5383568Z From https://github.com/TeamGalacticraft/Galacticraft
+2025-03-01T15:08:28.5384241Z  * [new ref]         53553969ad6a6b7a4be74e2068f519c823cd00f2 -> pull/425/merge
+2025-03-01T15:08:28.5410094Z ##[endgroup]
+2025-03-01T15:08:28.5410516Z ##[group]Determining the checkout info
+2025-03-01T15:08:28.5412611Z ##[endgroup]
+2025-03-01T15:08:28.5417753Z [command]/usr/bin/git sparse-checkout disable
+2025-03-01T15:08:28.5461192Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-01T15:08:28.5493192Z ##[group]Checking out the ref
+2025-03-01T15:08:28.5499126Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/425/merge
+2025-03-01T15:08:29.0052383Z Note: switching to 'refs/remotes/pull/425/merge'.
+2025-03-01T15:08:29.0053218Z 
+2025-03-01T15:08:29.0053759Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-01T15:08:29.0054937Z changes and commit them, and you can discard any commits you make in this
+2025-03-01T15:08:29.0056091Z state without impacting any branches by switching back to a branch.
+2025-03-01T15:08:29.0056864Z 
+2025-03-01T15:08:29.0057264Z If you want to create a new branch to retain commits you create, you may
+2025-03-01T15:08:29.0058281Z do so (now or later) by using -c with the switch command. Example:
+2025-03-01T15:08:29.0058782Z 
+2025-03-01T15:08:29.0058973Z   git switch -c <new-branch-name>
+2025-03-01T15:08:29.0059304Z 
+2025-03-01T15:08:29.0059515Z Or undo this operation with:
+2025-03-01T15:08:29.0060180Z 
+2025-03-01T15:08:29.0060346Z   git switch -
+2025-03-01T15:08:29.0060609Z 
+2025-03-01T15:08:29.0060996Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-01T15:08:29.0061618Z 
+2025-03-01T15:08:29.0062239Z HEAD is now at 5355396 Merge 0e7b00060f639f5fdb1516e041e46689c6dcad37 into fac47b6c9f3a6ac0700fb4c545a9fa49c5bf26fc
+2025-03-01T15:08:29.0099580Z ##[endgroup]
+2025-03-01T15:08:29.0146909Z [command]/usr/bin/git log -1 --format=%H
+2025-03-01T15:08:29.0174628Z 53553969ad6a6b7a4be74e2068f519c823cd00f2
+2025-03-01T15:08:29.0390297Z ##[group]Run gradle/actions/wrapper-validation@v4
+2025-03-01T15:08:29.0390642Z with:
+2025-03-01T15:08:29.0390832Z   min-wrapper-count: 1
+2025-03-01T15:08:29.0391068Z   allow-snapshots: false
+2025-03-01T15:08:29.0391278Z ##[endgroup]
+2025-03-01T15:08:29.3953274Z ✓ Found known Gradle Wrapper JAR files:
+2025-03-01T15:08:29.3954137Z   2db75c40782f5e8ba1fc278a5574bab070adccb2d21ca5a6e5ed840888448046 gradle/wrapper/gradle-wrapper.jar
+2025-03-01T15:08:29.4192135Z ##[group]Run actions/setup-java@v4
+2025-03-01T15:08:29.4192418Z with:
+2025-03-01T15:08:29.4192598Z   java-version: 21
+2025-03-01T15:08:29.4192791Z   distribution: temurin
+2025-03-01T15:08:29.4193002Z   java-package: jdk
+2025-03-01T15:08:29.4193197Z   check-latest: false
+2025-03-01T15:08:29.4193394Z   server-id: github
+2025-03-01T15:08:29.4193592Z   server-username: GITHUB_ACTOR
+2025-03-01T15:08:29.4193831Z   server-password: GITHUB_TOKEN
+2025-03-01T15:08:29.4194063Z   overwrite-settings: true
+2025-03-01T15:08:29.4194282Z   job-status: success
+2025-03-01T15:08:29.4194648Z   token: ***
+2025-03-01T15:08:29.4194827Z env:
+2025-03-01T15:08:29.4195048Z   GRADLE_ACTION_ID: gradle/actions/wrapper-validation
+2025-03-01T15:08:29.4195331Z ##[endgroup]
+2025-03-01T15:08:29.6299417Z ##[group]Installed distributions
+2025-03-01T15:08:29.6343982Z Resolved Java 21.0.6+7 from tool-cache
+2025-03-01T15:08:29.6344540Z Setting Java 21.0.6+7 as the default
+2025-03-01T15:08:29.6358531Z Creating toolchains.xml for JDK version 21 from temurin
+2025-03-01T15:08:29.6444486Z Writing to /home/runner/.m2/toolchains.xml
+2025-03-01T15:08:29.6444979Z 
+2025-03-01T15:08:29.6445130Z Java configuration:
+2025-03-01T15:08:29.6445472Z   Distribution: temurin
+2025-03-01T15:08:29.6445820Z   Version: 21.0.6+7
+2025-03-01T15:08:29.6446816Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-01T15:08:29.6447320Z 
+2025-03-01T15:08:29.6449207Z ##[endgroup]
+2025-03-01T15:08:29.6468317Z Creating settings.xml with server-id: github
+2025-03-01T15:08:29.6492516Z Writing to /home/runner/.m2/settings.xml
+2025-03-01T15:08:30.6336071Z ##[group]Run actions/cache@v4
+2025-03-01T15:08:30.6336346Z with:
+2025-03-01T15:08:30.6336577Z   path: ~/.gradle/caches
+~/.gradle/wrapper
+.gradle
+
+2025-03-01T15:08:30.6337081Z   key: Linux-gradle-PR425-a46e4162c920ab2c96f6e1c97e3a616be61680e66caa8a633eeaa69ec9dea060
+2025-03-01T15:08:30.6338118Z   restore-keys: Linux-gradle-a46e4162c920ab2c96f6e1c97e3a616be61680e66caa8a633eeaa69ec9dea060
+Linux-gradle-PR425-
+Linux-gradle-
+
+2025-03-01T15:08:30.6338750Z   enableCrossOsArchive: false
+2025-03-01T15:08:30.6338992Z   fail-on-cache-miss: false
+2025-03-01T15:08:30.6339217Z   lookup-only: false
+2025-03-01T15:08:30.6339412Z   save-always: false
+2025-03-01T15:08:30.6339602Z env:
+2025-03-01T15:08:30.6339817Z   GRADLE_ACTION_ID: gradle/actions/wrapper-validation
+2025-03-01T15:08:30.6340223Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-01T15:08:30.6340686Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-01T15:08:30.6341094Z ##[endgroup]
+2025-03-01T15:08:31.0655906Z Cache hit for: Linux-gradle-PR425-a46e4162c920ab2c96f6e1c97e3a616be61680e66caa8a633eeaa69ec9dea060
+2025-03-01T15:08:32.3709256Z Received 0 of 496678255 (0.0%), 0.0 MBs/sec
+2025-03-01T15:08:33.3712351Z Received 100663296 of 496678255 (20.3%), 48.0 MBs/sec
+2025-03-01T15:08:34.3715733Z Received 197132288 of 496678255 (39.7%), 62.6 MBs/sec
+2025-03-01T15:08:35.3750018Z Received 310378496 of 496678255 (62.5%), 74.0 MBs/sec
+2025-03-01T15:08:36.3723252Z Received 419430400 of 496678255 (84.4%), 80.0 MBs/sec
+2025-03-01T15:08:37.0257126Z Received 496678255 of 496678255 (100.0%), 83.8 MBs/sec
+2025-03-01T15:08:37.0260343Z Cache Size: ~474 MB (496678255 B)
+2025-03-01T15:08:37.0372817Z [command]/usr/bin/tar -xf /home/runner/work/_temp/60acf45e-d1a9-4270-8ddd-760dd9a1684d/cache.tzst -P -C /home/runner/work/Galacticraft/Galacticraft --use-compress-program unzstd
+2025-03-01T15:08:38.3204005Z Cache restored successfully
+2025-03-01T15:08:38.4459504Z Cache restored from key: Linux-gradle-76d85a12e6e395d1c61ad01c46a8fa90e515ad299cb686a8a566ba294b158260
+2025-03-01T15:08:38.4619404Z ##[group]Run ./gradlew
+2025-03-01T15:08:38.4619701Z [36;1m./gradlew[0m
+2025-03-01T15:08:38.4672157Z shell: /usr/bin/bash -e {0}
+2025-03-01T15:08:38.4672412Z env:
+2025-03-01T15:08:38.4672658Z   GRADLE_ACTION_ID: gradle/actions/wrapper-validation
+2025-03-01T15:08:38.4673078Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-01T15:08:38.4673574Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-01T15:08:38.4673935Z ##[endgroup]
+2025-03-01T15:08:41.0395379Z 
+2025-03-01T15:08:41.0396998Z Welcome to Gradle 8.10.2!
+2025-03-01T15:08:41.0397337Z 
+2025-03-01T15:08:41.0399163Z Here are the highlights of this release:
+2025-03-01T15:08:41.0400253Z  - Support for Java 23
+2025-03-01T15:08:41.0401046Z  - Faster configuration cache
+2025-03-01T15:08:41.0402546Z  - Better configuration cache reports
+2025-03-01T15:08:41.0403325Z 
+2025-03-01T15:08:41.0404487Z For more details see https://docs.gradle.org/8.10.2/release-notes.html
+2025-03-01T15:08:41.0405067Z 
+2025-03-01T15:08:41.4390806Z Starting a Gradle Daemon (subsequent builds will be faster)
+2025-03-01T15:08:52.7394858Z 
+2025-03-01T15:08:52.7420091Z > Configure project :
+2025-03-01T15:08:52.7424163Z Fabric Loom: 1.7.4
+2025-03-01T15:08:53.8386088Z Galacticraft: 5.0.0-prealpha+622
+2025-03-01T15:08:56.0393542Z 
+2025-03-01T15:08:56.0395110Z > Task :help
+2025-03-01T15:08:56.0414249Z 
+2025-03-01T15:08:56.0414762Z Welcome to Gradle 8.10.2.
+2025-03-01T15:08:56.0415252Z 
+2025-03-01T15:08:56.0415675Z To run a build, run gradlew <task> ...
+2025-03-01T15:08:56.0416215Z 
+2025-03-01T15:08:56.0416598Z To see a list of available tasks, run gradlew tasks
+2025-03-01T15:08:56.0417197Z 
+2025-03-01T15:08:56.0417642Z To see more detail about a task, run gradlew help --task <task>
+2025-03-01T15:08:56.0418477Z 
+2025-03-01T15:08:56.0418895Z To see a list of command-line options, run gradlew --help
+2025-03-01T15:08:56.0419494Z 
+2025-03-01T15:08:56.0420045Z For more detail on using Gradle, see https://docs.gradle.org/8.10.2/userguide/command_line_interface.html
+2025-03-01T15:08:56.0420692Z 
+2025-03-01T15:08:56.0420914Z For troubleshooting, visit https://help.gradle.org
+2025-03-01T15:08:56.0421286Z 
+2025-03-01T15:08:56.0421427Z BUILD SUCCESSFUL in 16s
+2025-03-01T15:08:56.0421855Z 1 actionable task: 1 executed
+2025-03-01T15:08:56.4163194Z ##[group]Run ./gradlew checkLicenses
+2025-03-01T15:08:56.4163540Z [36;1m./gradlew checkLicenses[0m
+2025-03-01T15:08:56.4210161Z shell: /usr/bin/bash -e {0}
+2025-03-01T15:08:56.4210395Z env:
+2025-03-01T15:08:56.4210626Z   GRADLE_ACTION_ID: gradle/actions/wrapper-validation
+2025-03-01T15:08:56.4211035Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-01T15:08:56.4211484Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-01T15:08:56.4211824Z ##[endgroup]
+2025-03-01T15:08:57.8793093Z 
+2025-03-01T15:08:57.8793907Z > Configure project :
+2025-03-01T15:08:57.8794753Z Fabric Loom: 1.7.4
+2025-03-01T15:08:57.8797639Z Galacticraft: 5.0.0-prealpha+622
+2025-03-01T15:08:58.4492448Z 
+2025-03-01T15:08:58.4505029Z > Task :checkLicenseMain
+2025-03-01T15:08:58.4512182Z > Task :checkLicenseTest
+2025-03-01T15:08:58.4517711Z > Task :checkLicenses
+2025-03-01T15:08:58.4521234Z 
+2025-03-01T15:08:58.4526684Z Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+2025-03-01T15:08:58.4540315Z 
+2025-03-01T15:08:58.4554903Z You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+2025-03-01T15:08:58.4558881Z 
+2025-03-01T15:08:58.4579719Z For more on this, please refer to https://docs.gradle.org/8.10.2/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+2025-03-01T15:08:58.4580598Z 
+2025-03-01T15:08:58.4580734Z BUILD SUCCESSFUL in 1s
+2025-03-01T15:08:58.4581102Z 2 actionable tasks: 2 executed
+2025-03-01T15:08:58.4732120Z ##[group]Run ./gradlew assemble testClasses -x checkLicenses
+2025-03-01T15:08:58.4732833Z [36;1m./gradlew assemble testClasses -x checkLicenses[0m
+2025-03-01T15:08:58.4795760Z shell: /usr/bin/bash -e {0}
+2025-03-01T15:08:58.4796145Z env:
+2025-03-01T15:08:58.4796509Z   GRADLE_ACTION_ID: gradle/actions/wrapper-validation
+2025-03-01T15:08:58.4797149Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-01T15:08:58.4798088Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-01T15:08:58.4798646Z ##[endgroup]
+2025-03-01T15:08:59.8686387Z 
+2025-03-01T15:08:59.8687207Z > Configure project :
+2025-03-01T15:08:59.8690851Z Fabric Loom: 1.7.4
+2025-03-01T15:08:59.8699679Z Galacticraft: 5.0.0-prealpha+622
+2025-03-01T15:09:01.8673693Z 
+2025-03-01T15:09:01.8674187Z > Task :compileJava FAILED
+2025-03-01T15:09:01.8681785Z /home/runner/work/Galacticraft/Galacticraft/src/main/java/dev/galacticraft/mod/content/entity/orbital/RocketEntity.java:513: error: ')' or ',' expected
+2025-03-01T15:09:01.8683331Z                             this.position().z + (level().random.nextDouble() - 0.5 * 4)
+2025-03-01T15:09:01.8691217Z                                                                                        ^
+2025-03-01T15:09:01.8693008Z /home/runner/work/Galacticraft/Galacticraft/src/main/java/dev/galacticraft/mod/content/entity/orbital/RocketEntity.java:515: error: not a statement
+2025-03-01T15:09:01.8694654Z                             createFire,
+2025-03-01T15:09:01.8695124Z                             ^
+2025-03-01T15:09:01.8696323Z /home/runner/work/Galacticraft/Galacticraft/src/main/java/dev/galacticraft/mod/content/entity/orbital/RocketEntity.java:515: error: ';' expected
+2025-03-01T15:09:01.8697554Z                             createFire,
+2025-03-01T15:09:01.8698092Z                                       ^
+2025-03-01T15:09:01.8699208Z /home/runner/work/Galacticraft/Galacticraft/src/main/java/dev/galacticraft/mod/content/entity/orbital/RocketEntity.java:516: error: not a statement
+2025-03-01T15:09:01.8700431Z                             Level.ExplosionInteraction.TNT
+2025-03-01T15:09:01.8700889Z                                                       ^
+2025-03-01T15:09:01.8702081Z /home/runner/work/Galacticraft/Galacticraft/src/main/java/dev/galacticraft/mod/content/entity/orbital/RocketEntity.java:516: error: ';' expected
+2025-03-01T15:09:01.8703306Z                             Level.ExplosionInteraction.TNT
+2025-03-01T15:09:01.8730942Z                                                           ^
+2025-03-01T15:09:01.8735196Z 5 errors
+2025-03-01T15:09:01.8739175Z 
+2025-03-01T15:09:01.8741143Z FAILURE: Build failed with an exception.
+2025-03-01T15:09:01.8743080Z 
+2025-03-01T15:09:01.8744818Z * What went wrong:
+2025-03-01T15:09:01.8746364Z Execution failed for task ':compileJava'.
+2025-03-01T15:09:01.8749494Z > Compilation failed; see the compiler error output for details.
+2025-03-01T15:09:01.8751516Z 
+2025-03-01T15:09:01.8753011Z * Try:
+2025-03-01T15:09:01.8753412Z 1 actionable task: 1 executed
+2025-03-01T15:09:01.8756192Z > Run with --info option to get more log output.
+2025-03-01T15:09:01.8757270Z > Run with --scan to get full insights.
+2025-03-01T15:09:01.8758220Z 
+2025-03-01T15:09:01.8758573Z BUILD FAILED in 3s
+2025-03-01T15:09:01.9775316Z ##[error]Process completed with exit code 1.
+2025-03-01T15:09:01.9861958Z Post job cleanup.
+2025-03-01T15:09:02.1722224Z Post job cleanup.
+2025-03-01T15:09:02.2735975Z [command]/usr/bin/git version
+2025-03-01T15:09:02.2775562Z git version 2.48.1
+2025-03-01T15:09:02.2832789Z Temporarily overriding HOME='/home/runner/work/_temp/279be4fa-b30f-4cd9-a7a6-403a81e9d9b9' before making global git config changes
+2025-03-01T15:09:02.2839686Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-01T15:09:02.2840773Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Galacticraft/Galacticraft
+2025-03-01T15:09:02.2880092Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-01T15:09:02.2920249Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-01T15:09:02.3192833Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-01T15:09:02.3217017Z http.https://github.com/.extraheader
+2025-03-01T15:09:02.3230433Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-01T15:09:02.3267139Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-01T15:09:02.3633947Z Cleaning up orphan processes
+2025-03-01T15:09:02.3962942Z Terminate orphan process: pid (2015) (java)

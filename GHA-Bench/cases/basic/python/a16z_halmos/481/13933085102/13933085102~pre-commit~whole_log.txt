@@ -1,0 +1,317 @@
+2025-03-18T20:41:09.8447810Z Requested labels: ubuntu-latest
+2025-03-18T20:41:09.8448071Z Job defined at: a16z/halmos/.github/workflows/pre-commit.yml@refs/pull/481/merge
+2025-03-18T20:41:09.8448167Z Waiting for a runner to pick up this job...
+2025-03-18T20:41:13.4604279Z Job is waiting for a hosted runner to come online.
+2025-03-18T20:41:15.4584537Z Job is about to start running on the hosted runner: GitHub Actions 144 (hosted)
+2025-03-18T20:41:17.8974762Z Current runner version: '2.322.0'
+2025-03-18T20:41:17.8998434Z ##[group]Operating System
+2025-03-18T20:41:17.8999188Z Ubuntu
+2025-03-18T20:41:17.8999771Z 24.04.2
+2025-03-18T20:41:17.9000315Z LTS
+2025-03-18T20:41:17.9000780Z ##[endgroup]
+2025-03-18T20:41:17.9001369Z ##[group]Runner Image
+2025-03-18T20:41:17.9001948Z Image: ubuntu-24.04
+2025-03-18T20:41:17.9002671Z Version: 20250309.1.0
+2025-03-18T20:41:17.9003794Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250309.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-18T20:41:17.9005177Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250309.1
+2025-03-18T20:41:17.9006071Z ##[endgroup]
+2025-03-18T20:41:17.9006669Z ##[group]Runner Image Provisioner
+2025-03-18T20:41:17.9007237Z 2.0.422.1
+2025-03-18T20:41:17.9007722Z ##[endgroup]
+2025-03-18T20:41:17.9008873Z ##[group]GITHUB_TOKEN Permissions
+2025-03-18T20:41:17.9010866Z Contents: read
+2025-03-18T20:41:17.9011514Z Metadata: read
+2025-03-18T20:41:17.9012392Z Packages: read
+2025-03-18T20:41:17.9013086Z ##[endgroup]
+2025-03-18T20:41:17.9016169Z Secret source: Actions
+2025-03-18T20:41:17.9017028Z Prepare workflow directory
+2025-03-18T20:41:17.9325687Z Prepare all required actions
+2025-03-18T20:41:17.9362630Z Getting action download info
+2025-03-18T20:41:18.1488070Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-18T20:41:18.2382601Z Download action repository 'actions/setup-python@v5' (SHA:42375524e23c412d93fb67b49958b491fce71c38)
+2025-03-18T20:41:18.3208203Z Download action repository 'pre-commit/action@v3.0.1' (SHA:2c7b3805fd2a0fd8c1884dcaebf91fc102a13ecd)
+2025-03-18T20:41:18.8431463Z Getting action download info
+2025-03-18T20:41:19.0214046Z Download action repository 'actions/cache@v4' (SHA:d4323d4df104b026a6aa633fdb11d772146be0bf)
+2025-03-18T20:41:19.9970320Z Complete job name: pre-commit
+2025-03-18T20:41:20.0635987Z ##[group]Run actions/checkout@v4
+2025-03-18T20:41:20.0636662Z with:
+2025-03-18T20:41:20.0636967Z   repository: a16z/halmos
+2025-03-18T20:41:20.0637455Z   token: ***
+2025-03-18T20:41:20.0637739Z   ssh-strict: true
+2025-03-18T20:41:20.0638028Z   ssh-user: git
+2025-03-18T20:41:20.0638317Z   persist-credentials: true
+2025-03-18T20:41:20.0638631Z   clean: true
+2025-03-18T20:41:20.0638916Z   sparse-checkout-cone-mode: true
+2025-03-18T20:41:20.0639253Z   fetch-depth: 1
+2025-03-18T20:41:20.0639524Z   fetch-tags: false
+2025-03-18T20:41:20.0639799Z   show-progress: true
+2025-03-18T20:41:20.0640089Z   lfs: false
+2025-03-18T20:41:20.0640348Z   submodules: false
+2025-03-18T20:41:20.0640628Z   set-safe-directory: true
+2025-03-18T20:41:20.0641136Z ##[endgroup]
+2025-03-18T20:41:20.2359060Z Syncing repository: a16z/halmos
+2025-03-18T20:41:20.2360376Z ##[group]Getting Git version info
+2025-03-18T20:41:20.2360802Z Working directory is '/home/runner/work/halmos/halmos'
+2025-03-18T20:41:20.2361441Z [command]/usr/bin/git version
+2025-03-18T20:41:20.2412765Z git version 2.48.1
+2025-03-18T20:41:20.2440639Z ##[endgroup]
+2025-03-18T20:41:20.2453919Z Temporarily overriding HOME='/home/runner/work/_temp/858df773-5950-4e0d-b935-edeb486990ab' before making global git config changes
+2025-03-18T20:41:20.2454834Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-18T20:41:20.2458964Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/halmos/halmos
+2025-03-18T20:41:20.2492223Z Deleting the contents of '/home/runner/work/halmos/halmos'
+2025-03-18T20:41:20.2495943Z ##[group]Initializing the repository
+2025-03-18T20:41:20.2499807Z [command]/usr/bin/git init /home/runner/work/halmos/halmos
+2025-03-18T20:41:20.2555754Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-18T20:41:20.2556698Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-18T20:41:20.2557584Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-18T20:41:20.2558246Z hint:
+2025-03-18T20:41:20.2558630Z hint: 	git config --global init.defaultBranch <name>
+2025-03-18T20:41:20.2559197Z hint:
+2025-03-18T20:41:20.2559518Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-18T20:41:20.2560217Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-18T20:41:20.2560920Z hint:
+2025-03-18T20:41:20.2561299Z hint: 	git branch -m <name>
+2025-03-18T20:41:20.2561972Z Initialized empty Git repository in /home/runner/work/halmos/halmos/.git/
+2025-03-18T20:41:20.2571260Z [command]/usr/bin/git remote add origin https://github.com/a16z/halmos
+2025-03-18T20:41:20.2603287Z ##[endgroup]
+2025-03-18T20:41:20.2604078Z ##[group]Disabling automatic garbage collection
+2025-03-18T20:41:20.2608115Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-18T20:41:20.2635686Z ##[endgroup]
+2025-03-18T20:41:20.2636239Z ##[group]Setting up auth
+2025-03-18T20:41:20.2642880Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-18T20:41:20.2673779Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-18T20:41:20.2965605Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-18T20:41:20.2995700Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-18T20:41:20.3220180Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-18T20:41:20.3266642Z ##[endgroup]
+2025-03-18T20:41:20.3346774Z ##[group]Fetching the repository
+2025-03-18T20:41:20.3348940Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +99af3d2bbd1aa1c8987317be7bc074721aef83ff:refs/remotes/pull/481/merge
+2025-03-18T20:41:21.0192844Z From https://github.com/a16z/halmos
+2025-03-18T20:41:21.0193618Z  * [new ref]         99af3d2bbd1aa1c8987317be7bc074721aef83ff -> pull/481/merge
+2025-03-18T20:41:21.0216952Z ##[endgroup]
+2025-03-18T20:41:21.0217744Z ##[group]Determining the checkout info
+2025-03-18T20:41:21.0219860Z ##[endgroup]
+2025-03-18T20:41:21.0225681Z [command]/usr/bin/git sparse-checkout disable
+2025-03-18T20:41:21.0263089Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-18T20:41:21.0290116Z ##[group]Checking out the ref
+2025-03-18T20:41:21.0294462Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/481/merge
+2025-03-18T20:41:21.0435822Z Note: switching to 'refs/remotes/pull/481/merge'.
+2025-03-18T20:41:21.0436280Z 
+2025-03-18T20:41:21.0436529Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-18T20:41:21.0437092Z changes and commit them, and you can discard any commits you make in this
+2025-03-18T20:41:21.0437610Z state without impacting any branches by switching back to a branch.
+2025-03-18T20:41:21.0437900Z 
+2025-03-18T20:41:21.0438097Z If you want to create a new branch to retain commits you create, you may
+2025-03-18T20:41:21.0438537Z do so (now or later) by using -c with the switch command. Example:
+2025-03-18T20:41:21.0438807Z 
+2025-03-18T20:41:21.0438926Z   git switch -c <new-branch-name>
+2025-03-18T20:41:21.0439129Z 
+2025-03-18T20:41:21.0439239Z Or undo this operation with:
+2025-03-18T20:41:21.0439416Z 
+2025-03-18T20:41:21.0439513Z   git switch -
+2025-03-18T20:41:21.0439671Z 
+2025-03-18T20:41:21.0439899Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-18T20:41:21.0440439Z 
+2025-03-18T20:41:21.0441102Z HEAD is now at 99af3d2 Merge dfc57b0b02a2610eb9fdcc38ff1cb033aa0966a7 into 68565874929522282ce85d1e0490bf4dc1c9dfea
+2025-03-18T20:41:21.0444992Z ##[endgroup]
+2025-03-18T20:41:21.0478942Z [command]/usr/bin/git log -1 --format=%H
+2025-03-18T20:41:21.0500424Z 99af3d2bbd1aa1c8987317be7bc074721aef83ff
+2025-03-18T20:41:21.0726902Z ##[group]Run actions/setup-python@v5
+2025-03-18T20:41:21.0727245Z with:
+2025-03-18T20:41:21.0727484Z   check-latest: false
+2025-03-18T20:41:21.0727857Z   token: ***
+2025-03-18T20:41:21.0728099Z   update-environment: true
+2025-03-18T20:41:21.0728369Z   allow-prereleases: false
+2025-03-18T20:41:21.0728619Z ##[endgroup]
+2025-03-18T20:41:21.2404917Z [warning]Neither 'python-version' nor 'python-version-file' inputs were supplied. Attempting to find '.python-version' file.
+2025-03-18T20:41:21.2406008Z [warning].python-version doesn't exist.
+2025-03-18T20:41:21.2424615Z ##[warning]The `python-version` input is not set.  The version of Python currently in `PATH` will be used.
+2025-03-18T20:41:21.2539356Z ##[group]Run pre-commit/action@v3.0.1
+2025-03-18T20:41:21.2539697Z with:
+2025-03-18T20:41:21.2539941Z   extra_args: --all-files
+2025-03-18T20:41:21.2540200Z ##[endgroup]
+2025-03-18T20:41:21.2631560Z ##[group]Run python -m pip install pre-commit
+2025-03-18T20:41:21.2632133Z [36;1mpython -m pip install pre-commit[0m
+2025-03-18T20:41:21.2684685Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-18T20:41:21.2685074Z ##[endgroup]
+2025-03-18T20:41:21.6373410Z Defaulting to user installation because normal site-packages is not writeable
+2025-03-18T20:41:21.9537118Z Collecting pre-commit
+2025-03-18T20:41:22.0068782Z   Downloading pre_commit-4.1.0-py2.py3-none-any.whl.metadata (1.3 kB)
+2025-03-18T20:41:22.0461048Z Collecting cfgv>=2.0.0 (from pre-commit)
+2025-03-18T20:41:22.0569890Z   Downloading cfgv-3.4.0-py2.py3-none-any.whl.metadata (8.5 kB)
+2025-03-18T20:41:22.1331214Z Collecting identify>=1.0.0 (from pre-commit)
+2025-03-18T20:41:22.1432567Z   Downloading identify-2.6.9-py2.py3-none-any.whl.metadata (4.4 kB)
+2025-03-18T20:41:22.1711886Z Collecting nodeenv>=0.11.1 (from pre-commit)
+2025-03-18T20:41:22.1815287Z   Downloading nodeenv-1.9.1-py2.py3-none-any.whl.metadata (21 kB)
+2025-03-18T20:41:22.1903159Z Requirement already satisfied: pyyaml>=5.1 in /usr/lib/python3/dist-packages (from pre-commit) (6.0.1)
+2025-03-18T20:41:22.2726284Z Collecting virtualenv>=20.10.0 (from pre-commit)
+2025-03-18T20:41:22.2823757Z   Downloading virtualenv-20.29.3-py3-none-any.whl.metadata (4.5 kB)
+2025-03-18T20:41:22.3280358Z Collecting distlib<1,>=0.3.7 (from virtualenv>=20.10.0->pre-commit)
+2025-03-18T20:41:22.3384682Z   Downloading distlib-0.3.9-py2.py3-none-any.whl.metadata (5.2 kB)
+2025-03-18T20:41:22.3776710Z Collecting filelock<4,>=3.12.2 (from virtualenv>=20.10.0->pre-commit)
+2025-03-18T20:41:22.3874442Z   Downloading filelock-3.18.0-py3-none-any.whl.metadata (2.9 kB)
+2025-03-18T20:41:22.3920261Z Requirement already satisfied: platformdirs<5,>=3.9.1 in /usr/local/lib/python3.12/dist-packages (from virtualenv>=20.10.0->pre-commit) (4.3.6)
+2025-03-18T20:41:22.4207957Z Downloading pre_commit-4.1.0-py2.py3-none-any.whl (220 kB)
+2025-03-18T20:41:22.4447351Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 220.6/220.6 kB 9.8 MB/s eta 0:00:00
+2025-03-18T20:41:22.4543649Z Downloading cfgv-3.4.0-py2.py3-none-any.whl (7.2 kB)
+2025-03-18T20:41:22.4678477Z Downloading identify-2.6.9-py2.py3-none-any.whl (99 kB)
+2025-03-18T20:41:22.4723451Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.1/99.1 kB 32.8 MB/s eta 0:00:00
+2025-03-18T20:41:22.4831619Z Downloading nodeenv-1.9.1-py2.py3-none-any.whl (22 kB)
+2025-03-18T20:41:22.4973439Z Downloading virtualenv-20.29.3-py3-none-any.whl (4.3 MB)
+2025-03-18T20:41:22.5429512Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 97.6 MB/s eta 0:00:00
+2025-03-18T20:41:22.5534186Z Downloading distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+2025-03-18T20:41:22.5596899Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 469.0/469.0 kB 97.6 MB/s eta 0:00:00
+2025-03-18T20:41:22.5692722Z Downloading filelock-3.18.0-py3-none-any.whl (16 kB)
+2025-03-18T20:41:22.8590540Z Installing collected packages: distlib, nodeenv, identify, filelock, cfgv, virtualenv, pre-commit
+2025-03-18T20:41:23.1501958Z Successfully installed cfgv-3.4.0 distlib-0.3.9 filelock-3.18.0 identify-2.6.9 nodeenv-1.9.1 pre-commit-4.1.0 virtualenv-20.29.3
+2025-03-18T20:41:23.2118092Z ##[group]Run python -m pip freeze --local
+2025-03-18T20:41:23.2118470Z [36;1mpython -m pip freeze --local[0m
+2025-03-18T20:41:23.2165442Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-18T20:41:23.2165785Z ##[endgroup]
+2025-03-18T20:41:23.6038644Z argcomplete==3.6.0
+2025-03-18T20:41:23.6039360Z attrs==23.2.0
+2025-03-18T20:41:23.6039805Z Automat==22.10.0
+2025-03-18T20:41:23.6040247Z Babel==2.10.3
+2025-03-18T20:41:23.6040661Z bcc==0.29.1
+2025-03-18T20:41:23.6041055Z bcrypt==3.2.2
+2025-03-18T20:41:23.6041476Z blinker==1.7.0
+2025-03-18T20:41:23.6041887Z boto3==1.34.46
+2025-03-18T20:41:23.6042558Z botocore==1.34.46
+2025-03-18T20:41:23.6043341Z certifi==2023.11.17
+2025-03-18T20:41:23.6043775Z cfgv==3.4.0
+2025-03-18T20:41:23.6044177Z chardet==5.2.0
+2025-03-18T20:41:23.6044596Z click==8.1.6
+2025-03-18T20:41:23.6044997Z cloud-init==24.4
+2025-03-18T20:41:23.6045350Z colorama==0.4.6
+2025-03-18T20:41:23.6045719Z command-not-found==0.3
+2025-03-18T20:41:23.6046136Z configobj==5.0.8
+2025-03-18T20:41:23.6046493Z constantly==23.10.4
+2025-03-18T20:41:23.6046863Z cryptography==41.0.7
+2025-03-18T20:41:23.6047219Z dbus-python==1.3.2
+2025-03-18T20:41:23.6047561Z distlib==0.3.9
+2025-03-18T20:41:23.6047885Z distro==1.9.0
+2025-03-18T20:41:23.6048229Z distro-info==1.7+build1
+2025-03-18T20:41:23.6048602Z filelock==3.18.0
+2025-03-18T20:41:23.6048919Z httplib2==0.20.4
+2025-03-18T20:41:23.6049247Z hyperlink==21.0.0
+2025-03-18T20:41:23.6049575Z identify==2.6.9
+2025-03-18T20:41:23.6049896Z idna==3.6
+2025-03-18T20:41:23.6050274Z incremental==22.10.0
+2025-03-18T20:41:23.6050623Z Jinja2==3.1.2
+2025-03-18T20:41:23.6050935Z jmespath==1.0.1
+2025-03-18T20:41:23.6051274Z jsonpatch==1.32
+2025-03-18T20:41:23.6051610Z jsonpointer==2.0
+2025-03-18T20:41:23.6051950Z jsonschema==4.10.3
+2025-03-18T20:41:23.6052509Z launchpadlib==1.11.0
+2025-03-18T20:41:23.6052888Z lazr.restfulclient==0.14.6
+2025-03-18T20:41:23.6053274Z lazr.uri==1.0.6
+2025-03-18T20:41:23.6053632Z markdown-it-py==3.0.0
+2025-03-18T20:41:23.6054018Z MarkupSafe==2.1.5
+2025-03-18T20:41:23.6054350Z mdurl==0.1.2
+2025-03-18T20:41:23.6054676Z mercurial==6.7.2
+2025-03-18T20:41:23.6055016Z netaddr==0.8.0
+2025-03-18T20:41:23.6055349Z netifaces==0.11.0
+2025-03-18T20:41:23.6055600Z nodeenv==1.9.1
+2025-03-18T20:41:23.6055788Z oauthlib==3.2.2
+2025-03-18T20:41:23.6055976Z packaging==24.0
+2025-03-18T20:41:23.6056168Z pexpect==4.9.0
+2025-03-18T20:41:23.6056361Z pipx==1.7.1
+2025-03-18T20:41:23.6056548Z platformdirs==4.3.6
+2025-03-18T20:41:23.6056750Z pre_commit==4.1.0
+2025-03-18T20:41:23.6056943Z ptyprocess==0.7.0
+2025-03-18T20:41:23.6057132Z pyasn1==0.4.8
+2025-03-18T20:41:23.6057327Z pyasn1-modules==0.2.8
+2025-03-18T20:41:23.6057542Z Pygments==2.17.2
+2025-03-18T20:41:23.6057736Z PyGObject==3.48.2
+2025-03-18T20:41:23.6057917Z PyHamcrest==2.1.0
+2025-03-18T20:41:23.6058104Z PyJWT==2.7.0
+2025-03-18T20:41:23.6058284Z pyOpenSSL==23.2.0
+2025-03-18T20:41:23.6058477Z pyparsing==3.1.1
+2025-03-18T20:41:23.6058662Z pyparted==3.12.0
+2025-03-18T20:41:23.6058848Z pyrsistent==0.20.0
+2025-03-18T20:41:23.6059045Z pyserial==3.5
+2025-03-18T20:41:23.6059243Z python-apt==2.7.7+ubuntu4
+2025-03-18T20:41:23.6059467Z python-dateutil==2.8.2
+2025-03-18T20:41:23.6059686Z python-debian==0.1.49+ubuntu2
+2025-03-18T20:41:23.6059941Z python-magic==0.4.27
+2025-03-18T20:41:23.6060181Z pytz==2024.1
+2025-03-18T20:41:23.6060359Z PyYAML==6.0.1
+2025-03-18T20:41:23.6060537Z requests==2.31.0
+2025-03-18T20:41:23.6060762Z rich==13.7.1
+2025-03-18T20:41:23.6060940Z s3transfer==0.10.1
+2025-03-18T20:41:23.6061139Z service-identity==24.1.0
+2025-03-18T20:41:23.6061351Z setuptools==68.1.2
+2025-03-18T20:41:23.6061542Z six==1.16.0
+2025-03-18T20:41:23.6061713Z sos==4.7.2
+2025-03-18T20:41:23.6061897Z ssh-import-id==5.11
+2025-03-18T20:41:23.6062281Z systemd-python==235
+2025-03-18T20:41:23.6062477Z Twisted==24.3.0
+2025-03-18T20:41:23.6062671Z typing_extensions==4.10.0
+2025-03-18T20:41:23.6062891Z ubuntu-pro-client==8001
+2025-03-18T20:41:23.6063094Z ufw==0.36.2
+2025-03-18T20:41:23.6063271Z urllib3==2.0.7
+2025-03-18T20:41:23.6063662Z userpath==1.9.2
+2025-03-18T20:41:23.6063851Z virtualenv==20.29.3
+2025-03-18T20:41:23.6064039Z wadllib==1.3.6
+2025-03-18T20:41:23.6064222Z WALinuxAgent==2.9.1.1
+2025-03-18T20:41:23.6064417Z wheel==0.42.0
+2025-03-18T20:41:23.6064608Z zope.interface==6.1
+2025-03-18T20:41:23.6064799Z zstandard==0.22.0
+2025-03-18T20:41:23.7013160Z ##[group]Run actions/cache@v4
+2025-03-18T20:41:23.7013390Z with:
+2025-03-18T20:41:23.7013577Z   path: ~/.cache/pre-commit
+2025-03-18T20:41:23.7013939Z   key: pre-commit-3||f18a28c9727e1a9437e2ec28c64758f4444606e7e05ea40151576c0045ccfdab
+2025-03-18T20:41:23.7014333Z   enableCrossOsArchive: false
+2025-03-18T20:41:23.7014778Z   fail-on-cache-miss: false
+2025-03-18T20:41:23.7015015Z   lookup-only: false
+2025-03-18T20:41:23.7015214Z   save-always: false
+2025-03-18T20:41:23.7015405Z ##[endgroup]
+2025-03-18T20:41:24.0647536Z Cache hit for: pre-commit-3||f18a28c9727e1a9437e2ec28c64758f4444606e7e05ea40151576c0045ccfdab
+2025-03-18T20:41:25.2799020Z Received 12571647 of 12571647 (100.0%), 12.5 MBs/sec
+2025-03-18T20:41:25.2799762Z Cache Size: ~12 MB (12571647 B)
+2025-03-18T20:41:25.2826781Z [command]/usr/bin/tar -xf /home/runner/work/_temp/c5a4db74-6737-4fbc-9c6b-05eee72797d7/cache.tzst -P -C /home/runner/work/halmos/halmos --use-compress-program unzstd
+2025-03-18T20:41:25.3780828Z Cache restored successfully
+2025-03-18T20:41:25.3932400Z Cache restored from key: pre-commit-3||f18a28c9727e1a9437e2ec28c64758f4444606e7e05ea40151576c0045ccfdab
+2025-03-18T20:41:25.4048566Z ##[group]Run pre-commit run --show-diff-on-failure --color=always --all-files
+2025-03-18T20:41:25.4049085Z [36;1mpre-commit run --show-diff-on-failure --color=always --all-files[0m
+2025-03-18T20:41:25.4094466Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-18T20:41:25.4094792Z ##[endgroup]
+2025-03-18T20:41:25.5801201Z ruff.....................................................................[42mPassed[m
+2025-03-18T20:41:25.6093428Z ruff-format..............................................................[41mFailed[m
+2025-03-18T20:41:25.6094255Z [2m- hook id: ruff-format[m
+2025-03-18T20:41:25.6096915Z [2m- files were modified by this hook[m
+2025-03-18T20:41:25.6097545Z 
+2025-03-18T20:41:25.6098912Z 1 file reformatted, 30 files left unchanged
+2025-03-18T20:41:25.6099250Z 
+2025-03-18T20:41:25.6099423Z pre-commit hook(s) made changes.
+2025-03-18T20:41:25.6100096Z If you are seeing this message in CI, reproduce locally with: `pre-commit run --all-files`.
+2025-03-18T20:41:25.6100914Z To run `pre-commit` as part of git workflow, use `pre-commit install`.
+2025-03-18T20:41:25.6101496Z All changes made by hooks:
+2025-03-18T20:41:25.6160092Z [1mdiff --git a/src/halmos/__main__.py b/src/halmos/__main__.py[m
+2025-03-18T20:41:25.6160794Z [1mindex 79d9c31..f61406f 100644[m
+2025-03-18T20:41:25.6161817Z [1m--- a/src/halmos/__main__.py[m
+2025-03-18T20:41:25.6162512Z [1m+++ b/src/halmos/__main__.py[m
+2025-03-18T20:41:25.6163272Z [36m@@ -259,7 +259,7 @@[m [mdef deploy_test(ctx: FunctionContext, sevm: SEVM) -> Exec:[m
+2025-03-18T20:41:25.6163876Z      )[m
+2025-03-18T20:41:25.6164148Z  [m
+2025-03-18T20:41:25.6164545Z      # foundry default balance for the test contract[m
+2025-03-18T20:41:25.6165213Z [31m-    ex.balance_update(this, con(0xffffffffffffffffffffffff))[m
+2025-03-18T20:41:25.6165994Z [32m+[m[32m    ex.balance_update(this, con(0xFFFFFFFFFFFFFFFFFFFFFFFF))[m
+2025-03-18T20:41:25.6166563Z  [m
+2025-03-18T20:41:25.6167056Z      # deploy libraries and resolve library placeholders in hexcode[m
+2025-03-18T20:41:25.6167659Z      contract_ctx = ctx.contract_ctx[m
+2025-03-18T20:41:25.6322499Z ##[error]Process completed with exit code 1.
+2025-03-18T20:41:25.6378318Z Post job cleanup.
+2025-03-18T20:41:25.6431288Z Post job cleanup.
+2025-03-18T20:41:25.7353129Z [command]/usr/bin/git version
+2025-03-18T20:41:25.7388042Z git version 2.48.1
+2025-03-18T20:41:25.7438017Z Temporarily overriding HOME='/home/runner/work/_temp/1427fde2-fc47-4c80-8de8-19161c0f8d96' before making global git config changes
+2025-03-18T20:41:25.7439635Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-18T20:41:25.7444371Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/halmos/halmos
+2025-03-18T20:41:25.7478176Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-18T20:41:25.7510209Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-18T20:41:25.7740312Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-18T20:41:25.7761736Z http.https://github.com/.extraheader
+2025-03-18T20:41:25.7774612Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-18T20:41:25.7804866Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-18T20:41:25.8124552Z Cleaning up orphan processes

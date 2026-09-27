@@ -1,0 +1,29 @@
+diff --git a/pandas-stubs/io/formats/style.pyi b/pandas-stubs/io/formats/style.pyi
+index 2e63deeca..295363421 100644
+--- a/pandas-stubs/io/formats/style.pyi
++++ b/pandas-stubs/io/formats/style.pyi
+@@ -11,9 +11,9 @@ from typing import (
+ 
+ from matplotlib.colors import Colormap
+ import numpy as np
++from pandas import Index
+ from pandas.core.frame import DataFrame
+ from pandas.core.series import Series
+-from pandas import Index
+ 
+ from pandas._typing import (
+     Axis,
+diff --git a/tests/test_styler.py b/tests/test_styler.py
+index e3c420eba..976b5a110 100644
+--- a/tests/test_styler.py
++++ b/tests/test_styler.py
+@@ -13,8 +13,8 @@
+ import numpy.typing as npt
+ from pandas import (
+     DataFrame,
++    Index,
+     Series,
+-    Index
+ )
+ from pandas._testing import ensure_clean
+ import pytest

@@ -1,0 +1,180 @@
+﻿2025-04-24T16:40:19.1535967Z Current runner version: '2.323.0'
+2025-04-24T16:40:19.1562922Z ##[group]Operating System
+2025-04-24T16:40:19.1563777Z Ubuntu
+2025-04-24T16:40:19.1564241Z 24.04.2
+2025-04-24T16:40:19.1565084Z LTS
+2025-04-24T16:40:19.1565808Z ##[endgroup]
+2025-04-24T16:40:19.1566424Z ##[group]Runner Image
+2025-04-24T16:40:19.1567005Z Image: ubuntu-24.04
+2025-04-24T16:40:19.1567625Z Version: 20250420.1.0
+2025-04-24T16:40:19.1568618Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250420.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-24T16:40:19.1570030Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250420.1
+2025-04-24T16:40:19.1570948Z ##[endgroup]
+2025-04-24T16:40:19.1571425Z ##[group]Runner Image Provisioner
+2025-04-24T16:40:19.1572077Z 2.0.422.1
+2025-04-24T16:40:19.1572529Z ##[endgroup]
+2025-04-24T16:40:19.1573492Z ##[group]GITHUB_TOKEN Permissions
+2025-04-24T16:40:19.1575797Z Contents: read
+2025-04-24T16:40:19.1576369Z Metadata: read
+2025-04-24T16:40:19.1577200Z ##[endgroup]
+2025-04-24T16:40:19.1579233Z Secret source: None
+2025-04-24T16:40:19.1580185Z Prepare workflow directory
+2025-04-24T16:40:19.1906370Z Prepare all required actions
+2025-04-24T16:40:19.1943504Z Getting action download info
+2025-04-24T16:40:19.6819095Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-24T16:40:19.6820092Z Version: 4.2.2
+2025-04-24T16:40:19.6821025Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-24T16:40:19.6822259Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-24T16:40:19.6822946Z ##[endgroup]
+2025-04-24T16:40:19.7658163Z ##[group]Download immutable action package 'actions/setup-node@v4'
+2025-04-24T16:40:19.7658840Z Version: 4.4.0
+2025-04-24T16:40:19.7659468Z Digest: sha256:9427cefe82346e992fb5b949e3569b39d537ae41aa3086483b14eceebfc16bc1
+2025-04-24T16:40:19.7660298Z Source commit SHA: 49933ea5288caeca8642d1e84afbd3f7d6820020
+2025-04-24T16:40:19.7660872Z ##[endgroup]
+2025-04-24T16:40:19.9245909Z Complete job name: lint / lint-folder
+2025-04-24T16:40:19.9887489Z ##[group]Run actions/checkout@v4
+2025-04-24T16:40:19.9888284Z with:
+2025-04-24T16:40:19.9888684Z   repository: ThePansmith/CABIN
+2025-04-24T16:40:19.9889296Z   token: ***
+2025-04-24T16:40:19.9889664Z   ssh-strict: true
+2025-04-24T16:40:19.9890039Z   ssh-user: git
+2025-04-24T16:40:19.9890425Z   persist-credentials: true
+2025-04-24T16:40:19.9890850Z   clean: true
+2025-04-24T16:40:19.9891234Z   sparse-checkout-cone-mode: true
+2025-04-24T16:40:19.9891694Z   fetch-depth: 1
+2025-04-24T16:40:19.9892077Z   fetch-tags: false
+2025-04-24T16:40:19.9892454Z   show-progress: true
+2025-04-24T16:40:19.9892848Z   lfs: false
+2025-04-24T16:40:19.9893195Z   submodules: false
+2025-04-24T16:40:19.9893594Z   set-safe-directory: true
+2025-04-24T16:40:19.9894211Z ##[endgroup]
+2025-04-24T16:40:20.2292773Z Syncing repository: ThePansmith/CABIN
+2025-04-24T16:40:20.2294425Z ##[group]Getting Git version info
+2025-04-24T16:40:20.2295094Z Working directory is '/home/runner/work/CABIN/CABIN'
+2025-04-24T16:40:20.2296328Z [command]/usr/bin/git version
+2025-04-24T16:40:20.2409770Z git version 2.49.0
+2025-04-24T16:40:20.2442847Z ##[endgroup]
+2025-04-24T16:40:20.2457874Z Temporarily overriding HOME='/home/runner/work/_temp/9a6c5c2b-ae86-43ad-8c8a-24941009b801' before making global git config changes
+2025-04-24T16:40:20.2460254Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-24T16:40:20.2464454Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/CABIN/CABIN
+2025-04-24T16:40:20.2502924Z Deleting the contents of '/home/runner/work/CABIN/CABIN'
+2025-04-24T16:40:20.2507071Z ##[group]Initializing the repository
+2025-04-24T16:40:20.2511760Z [command]/usr/bin/git init /home/runner/work/CABIN/CABIN
+2025-04-24T16:40:20.2618326Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-24T16:40:20.2619799Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-24T16:40:20.2621190Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-24T16:40:20.2622000Z hint:
+2025-04-24T16:40:20.2622533Z hint: 	git config --global init.defaultBranch <name>
+2025-04-24T16:40:20.2623225Z hint:
+2025-04-24T16:40:20.2623778Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-24T16:40:20.2624807Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-24T16:40:20.2626205Z hint:
+2025-04-24T16:40:20.2626637Z hint: 	git branch -m <name>
+2025-04-24T16:40:20.2627699Z Initialized empty Git repository in /home/runner/work/CABIN/CABIN/.git/
+2025-04-24T16:40:20.2638930Z [command]/usr/bin/git remote add origin https://github.com/ThePansmith/CABIN
+2025-04-24T16:40:20.2676715Z ##[endgroup]
+2025-04-24T16:40:20.2677977Z ##[group]Disabling automatic garbage collection
+2025-04-24T16:40:20.2681679Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-24T16:40:20.2712125Z ##[endgroup]
+2025-04-24T16:40:20.2713306Z ##[group]Setting up auth
+2025-04-24T16:40:20.2719701Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-24T16:40:20.2749883Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-24T16:40:20.3076555Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-24T16:40:20.3106534Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-24T16:40:20.3338066Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-24T16:40:20.3376789Z ##[endgroup]
+2025-04-24T16:40:20.3378406Z ##[group]Fetching the repository
+2025-04-24T16:40:20.3388472Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +50a476862c8e347ab8826e9b33302e83f23bb8e9:refs/remotes/pull/250/merge
+2025-04-24T16:40:21.6531041Z From https://github.com/ThePansmith/CABIN
+2025-04-24T16:40:21.6532223Z  * [new ref]         50a476862c8e347ab8826e9b33302e83f23bb8e9 -> pull/250/merge
+2025-04-24T16:40:21.6566043Z ##[endgroup]
+2025-04-24T16:40:21.6566976Z ##[group]Determining the checkout info
+2025-04-24T16:40:21.6568766Z ##[endgroup]
+2025-04-24T16:40:21.6576262Z [command]/usr/bin/git sparse-checkout disable
+2025-04-24T16:40:21.6621289Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-24T16:40:21.6651099Z ##[group]Checking out the ref
+2025-04-24T16:40:21.6656218Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/250/merge
+2025-04-24T16:40:21.7912729Z Note: switching to 'refs/remotes/pull/250/merge'.
+2025-04-24T16:40:21.7914853Z 
+2025-04-24T16:40:21.7916067Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-24T16:40:21.7918086Z changes and commit them, and you can discard any commits you make in this
+2025-04-24T16:40:21.7919990Z state without impacting any branches by switching back to a branch.
+2025-04-24T16:40:21.7921087Z 
+2025-04-24T16:40:21.7921870Z If you want to create a new branch to retain commits you create, you may
+2025-04-24T16:40:21.7923437Z do so (now or later) by using -c with the switch command. Example:
+2025-04-24T16:40:21.7924118Z 
+2025-04-24T16:40:21.7924442Z   git switch -c <new-branch-name>
+2025-04-24T16:40:21.7924889Z 
+2025-04-24T16:40:21.7925200Z Or undo this operation with:
+2025-04-24T16:40:21.7925883Z 
+2025-04-24T16:40:21.7926338Z   git switch -
+2025-04-24T16:40:21.7926992Z 
+2025-04-24T16:40:21.7927790Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-24T16:40:21.7928623Z 
+2025-04-24T16:40:21.7929491Z HEAD is now at 50a4768 Merge 7aa784defe62285a2a9872749f44e432f42bf4d7 into a1707945f9ec6b624d7c5ad8a7f360f51e6a417b
+2025-04-24T16:40:21.7932712Z ##[endgroup]
+2025-04-24T16:40:21.7969201Z [command]/usr/bin/git log -1 --format=%H
+2025-04-24T16:40:21.7993077Z 50a476862c8e347ab8826e9b33302e83f23bb8e9
+2025-04-24T16:40:21.8313863Z ##[group]Run actions/setup-node@v4
+2025-04-24T16:40:21.8314996Z with:
+2025-04-24T16:40:21.8316041Z   node-version: 23
+2025-04-24T16:40:21.8316907Z   cache: npm
+2025-04-24T16:40:21.8317903Z   cache-dependency-path: kubejs/package-lock.json
+2025-04-24T16:40:21.8319142Z   always-auth: false
+2025-04-24T16:40:21.8320052Z   check-latest: false
+2025-04-24T16:40:21.8321225Z   token: ***
+2025-04-24T16:40:21.8322040Z ##[endgroup]
+2025-04-24T16:40:22.0037024Z Attempting to download 23...
+2025-04-24T16:40:22.6139650Z Not found in manifest. Falling back to download directly from Node
+2025-04-24T16:40:22.8160181Z Acquiring 23.11.0 - x64 from https://nodejs.org/dist/v23.11.0/node-v23.11.0-linux-x64.tar.gz
+2025-04-24T16:40:23.7364414Z Extracting ...
+2025-04-24T16:40:23.7470933Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/1cf3395e-030d-42b6-b328-8a7ba4a65a1a -f /home/runner/work/_temp/725efab3-78a3-4cc4-a310-c5879a108630
+2025-04-24T16:40:24.8921493Z Adding to the cache ...
+2025-04-24T16:40:26.6804800Z Done
+2025-04-24T16:40:26.6809845Z ##[group]Environment details
+2025-04-24T16:40:26.9006243Z node: v23.11.0
+2025-04-24T16:40:26.9006603Z npm: 10.9.2
+2025-04-24T16:40:26.9006789Z yarn: 1.22.22
+2025-04-24T16:40:26.9007512Z ##[endgroup]
+2025-04-24T16:40:26.9028279Z [command]/opt/hostedtoolcache/node/23.11.0/x64/bin/npm config get cache
+2025-04-24T16:40:26.9927626Z /home/runner/.npm
+2025-04-24T16:40:27.1923526Z Cache hit for: node-cache-Linux-x64-npm-08747819921ecac3580df907c727c7b95948edcbb9a607d6220fd29d1c94aa2a
+2025-04-24T16:40:27.9999965Z Received 7251367 of 7251367 (100.0%), 10.5 MBs/sec
+2025-04-24T16:40:28.0000753Z Cache Size: ~7 MB (7251367 B)
+2025-04-24T16:40:28.0027068Z [command]/usr/bin/tar -xf /home/runner/work/_temp/3987059f-6362-40ec-ae5b-f2804564f155/cache.tzst -P -C /home/runner/work/CABIN/CABIN --use-compress-program unzstd
+2025-04-24T16:40:28.0432702Z Cache restored successfully
+2025-04-24T16:40:28.0450930Z Cache restored from key: node-cache-Linux-x64-npm-08747819921ecac3580df907c727c7b95948edcbb9a607d6220fd29d1c94aa2a
+2025-04-24T16:40:28.0614531Z ##[group]Run cd /home/runner/work/CABIN/CABIN/kubejs
+2025-04-24T16:40:28.0614953Z [36;1mcd /home/runner/work/CABIN/CABIN/kubejs[0m
+2025-04-24T16:40:28.0615232Z [36;1mnpm install[0m
+2025-04-24T16:40:28.0615428Z [36;1mnpx eslint[0m
+2025-04-24T16:40:28.0652511Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-24T16:40:28.0652855Z ##[endgroup]
+2025-04-24T16:40:29.2078699Z 
+2025-04-24T16:40:29.2085430Z added 112 packages, and audited 113 packages in 1s
+2025-04-24T16:40:29.2086118Z 
+2025-04-24T16:40:29.2086325Z 31 packages are looking for funding
+2025-04-24T16:40:29.2086680Z   run `npm fund` for details
+2025-04-24T16:40:29.2089426Z 
+2025-04-24T16:40:29.2089610Z found 0 vulnerabilities
+2025-04-24T16:40:30.4860783Z 
+2025-04-24T16:40:30.4862822Z /home/runner/work/CABIN/CABIN/kubejs/client_scripts/bulkhide.js
+2025-04-24T16:40:30.4897356Z ##[error]  20:1  error  Trailing spaces not allowed  @stylistic/js/no-trailing-spaces
+2025-04-24T16:40:30.4906168Z 
+2025-04-24T16:40:30.4906795Z ✖ 1 problem (1 error, 0 warnings)
+2025-04-24T16:40:30.4907478Z   1 error and 0 warnings potentially fixable with the `--fix` option.
+2025-04-24T16:40:30.4907981Z 
+2025-04-24T16:40:30.5544380Z ##[error]Process completed with exit code 1.
+2025-04-24T16:40:30.5640621Z Post job cleanup.
+2025-04-24T16:40:30.6558771Z [command]/usr/bin/git version
+2025-04-24T16:40:30.6596475Z git version 2.49.0
+2025-04-24T16:40:30.6643160Z Temporarily overriding HOME='/home/runner/work/_temp/d65d04f4-f1e4-4cd6-bd98-bb880339c68b' before making global git config changes
+2025-04-24T16:40:30.6644067Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-24T16:40:30.6654846Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/CABIN/CABIN
+2025-04-24T16:40:30.6687338Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-24T16:40:30.6719186Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-24T16:40:30.6950382Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-24T16:40:30.6973367Z http.https://github.com/.extraheader
+2025-04-24T16:40:30.6986391Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-24T16:40:30.7019160Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-24T16:40:30.7383351Z Cleaning up orphan processes

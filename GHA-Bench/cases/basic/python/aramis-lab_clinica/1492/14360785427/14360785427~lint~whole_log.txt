@@ -1,0 +1,308 @@
+﻿2025-04-09T15:15:33.9898231Z Current runner version: '2.323.0'
+2025-04-09T15:15:33.9922891Z ##[group]Operating System
+2025-04-09T15:15:33.9923839Z Ubuntu
+2025-04-09T15:15:33.9924308Z 24.04.2
+2025-04-09T15:15:33.9924799Z LTS
+2025-04-09T15:15:33.9925223Z ##[endgroup]
+2025-04-09T15:15:33.9925995Z ##[group]Runner Image
+2025-04-09T15:15:33.9926592Z Image: ubuntu-24.04
+2025-04-09T15:15:33.9927099Z Version: 20250406.1.0
+2025-04-09T15:15:33.9928226Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250406.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-09T15:15:33.9929609Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250406.1
+2025-04-09T15:15:33.9930495Z ##[endgroup]
+2025-04-09T15:15:33.9931049Z ##[group]Runner Image Provisioner
+2025-04-09T15:15:33.9931636Z 2.0.422.1
+2025-04-09T15:15:33.9932050Z ##[endgroup]
+2025-04-09T15:15:33.9933065Z ##[group]GITHUB_TOKEN Permissions
+2025-04-09T15:15:33.9935095Z Contents: read
+2025-04-09T15:15:33.9935954Z Metadata: read
+2025-04-09T15:15:33.9936740Z ##[endgroup]
+2025-04-09T15:15:33.9938874Z Secret source: None
+2025-04-09T15:15:33.9939627Z Prepare workflow directory
+2025-04-09T15:15:34.0279352Z Prepare all required actions
+2025-04-09T15:15:34.0334384Z Getting action download info
+2025-04-09T15:15:34.6283688Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-09T15:15:34.6284662Z Version: 4.2.2
+2025-04-09T15:15:34.6285853Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-09T15:15:34.6287109Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-09T15:15:34.6287784Z ##[endgroup]
+2025-04-09T15:15:35.0813963Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-04-09T15:15:35.0814666Z Version: 5.5.0
+2025-04-09T15:15:35.0815303Z Digest: sha256:1fac95d751afd58314aebd2ab01d4bf3b3109a441917bd2cac2a22898ec494f7
+2025-04-09T15:15:35.0816431Z Source commit SHA: 8d9ed9ac5c53483de85588cdf95a591a75ab9f55
+2025-04-09T15:15:35.0817025Z ##[endgroup]
+2025-04-09T15:15:35.3835516Z Download action repository 'pre-commit/action@v3.0.1' (SHA:2c7b3805fd2a0fd8c1884dcaebf91fc102a13ecd)
+2025-04-09T15:15:35.8630008Z Getting action download info
+2025-04-09T15:15:36.0407682Z ##[group]Download immutable action package 'actions/cache@v4'
+2025-04-09T15:15:36.0409080Z Version: 4.2.3
+2025-04-09T15:15:36.0410443Z Digest: sha256:c8a3bb963e1f1826d8fcc8d1354f0dd29d8ac1db1d4f6f20247055ae11b81ed9
+2025-04-09T15:15:36.0412619Z Source commit SHA: 5a3ec84eff668545956fd18022155c47e93e2684
+2025-04-09T15:15:36.0413957Z ##[endgroup]
+2025-04-09T15:15:36.3246212Z Complete job name: lint
+2025-04-09T15:15:36.3997600Z ##[group]Run actions/checkout@v4
+2025-04-09T15:15:36.3998852Z with:
+2025-04-09T15:15:36.3999569Z   repository: aramis-lab/clinica
+2025-04-09T15:15:36.4000783Z   token: ***
+2025-04-09T15:15:36.4001505Z   ssh-strict: true
+2025-04-09T15:15:36.4002270Z   ssh-user: git
+2025-04-09T15:15:36.4003062Z   persist-credentials: true
+2025-04-09T15:15:36.4003932Z   clean: true
+2025-04-09T15:15:36.4004726Z   sparse-checkout-cone-mode: true
+2025-04-09T15:15:36.4005964Z   fetch-depth: 1
+2025-04-09T15:15:36.4006747Z   fetch-tags: false
+2025-04-09T15:15:36.4007548Z   show-progress: true
+2025-04-09T15:15:36.4008344Z   lfs: false
+2025-04-09T15:15:36.4009070Z   submodules: false
+2025-04-09T15:15:36.4009877Z   set-safe-directory: true
+2025-04-09T15:15:36.4010983Z ##[endgroup]
+2025-04-09T15:15:38.3381055Z Syncing repository: aramis-lab/clinica
+2025-04-09T15:15:38.3382839Z ##[group]Getting Git version info
+2025-04-09T15:15:38.3383337Z Working directory is '/home/runner/work/clinica/clinica'
+2025-04-09T15:15:38.3384325Z [command]/usr/bin/git version
+2025-04-09T15:15:38.4504518Z git version 2.49.0
+2025-04-09T15:15:38.4584629Z ##[endgroup]
+2025-04-09T15:15:38.4600701Z Temporarily overriding HOME='/home/runner/work/_temp/1db43453-4553-49bd-9664-c71c6ea41fbd' before making global git config changes
+2025-04-09T15:15:38.4602201Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-09T15:15:38.4607612Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/clinica/clinica
+2025-04-09T15:15:38.4696376Z Deleting the contents of '/home/runner/work/clinica/clinica'
+2025-04-09T15:15:38.4700425Z ##[group]Initializing the repository
+2025-04-09T15:15:38.4704369Z [command]/usr/bin/git init /home/runner/work/clinica/clinica
+2025-04-09T15:15:38.5093978Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-09T15:15:38.5095335Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-09T15:15:38.5096459Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-09T15:15:38.5096991Z hint:
+2025-04-09T15:15:38.5097405Z hint: 	git config --global init.defaultBranch <name>
+2025-04-09T15:15:38.5097862Z hint:
+2025-04-09T15:15:38.5098231Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-09T15:15:38.5098842Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-09T15:15:38.5099305Z hint:
+2025-04-09T15:15:38.5099560Z hint: 	git branch -m <name>
+2025-04-09T15:15:38.5189220Z Initialized empty Git repository in /home/runner/work/clinica/clinica/.git/
+2025-04-09T15:15:38.5200180Z [command]/usr/bin/git remote add origin https://github.com/aramis-lab/clinica
+2025-04-09T15:15:38.5280293Z ##[endgroup]
+2025-04-09T15:15:38.5280752Z ##[group]Disabling automatic garbage collection
+2025-04-09T15:15:38.5284714Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-09T15:15:38.5312663Z ##[endgroup]
+2025-04-09T15:15:38.5313090Z ##[group]Setting up auth
+2025-04-09T15:15:38.5320065Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-09T15:15:38.5353274Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-09T15:15:38.7139054Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-09T15:15:38.7170818Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-09T15:15:38.7425999Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-09T15:15:38.7463646Z ##[endgroup]
+2025-04-09T15:15:38.7464422Z ##[group]Fetching the repository
+2025-04-09T15:15:38.7473987Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +1419abad6f964b3824eca4a8965a5da44ca5c4eb:refs/remotes/pull/1492/merge
+2025-04-09T15:15:39.8854482Z From https://github.com/aramis-lab/clinica
+2025-04-09T15:15:39.8855376Z  * [new ref]         1419abad6f964b3824eca4a8965a5da44ca5c4eb -> pull/1492/merge
+2025-04-09T15:15:39.8931466Z ##[endgroup]
+2025-04-09T15:15:39.8932069Z ##[group]Determining the checkout info
+2025-04-09T15:15:39.8934492Z ##[endgroup]
+2025-04-09T15:15:39.8940197Z [command]/usr/bin/git sparse-checkout disable
+2025-04-09T15:15:39.9030862Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-09T15:15:39.9058311Z ##[group]Checking out the ref
+2025-04-09T15:15:39.9062711Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1492/merge
+2025-04-09T15:15:39.9685375Z Note: switching to 'refs/remotes/pull/1492/merge'.
+2025-04-09T15:15:39.9686104Z 
+2025-04-09T15:15:39.9686434Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-09T15:15:39.9687241Z changes and commit them, and you can discard any commits you make in this
+2025-04-09T15:15:39.9687987Z state without impacting any branches by switching back to a branch.
+2025-04-09T15:15:39.9688434Z 
+2025-04-09T15:15:39.9688743Z If you want to create a new branch to retain commits you create, you may
+2025-04-09T15:15:39.9689443Z do so (now or later) by using -c with the switch command. Example:
+2025-04-09T15:15:39.9690111Z 
+2025-04-09T15:15:39.9690255Z   git switch -c <new-branch-name>
+2025-04-09T15:15:39.9690538Z 
+2025-04-09T15:15:39.9690680Z Or undo this operation with:
+2025-04-09T15:15:39.9690918Z 
+2025-04-09T15:15:39.9691030Z   git switch -
+2025-04-09T15:15:39.9691213Z 
+2025-04-09T15:15:39.9691529Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-09T15:15:39.9691970Z 
+2025-04-09T15:15:39.9692360Z HEAD is now at 1419aba Merge e349d9dd57ddcca079f298359cdb02264c28fe60 into 4f907bc5f4f79fd28c6be8602bb685f0321dbe06
+2025-04-09T15:15:39.9698485Z ##[endgroup]
+2025-04-09T15:15:39.9743838Z [command]/usr/bin/git log -1 --format=%H
+2025-04-09T15:15:39.9771190Z 1419abad6f964b3824eca4a8965a5da44ca5c4eb
+2025-04-09T15:15:40.0130812Z ##[group]Run actions/setup-python@v5
+2025-04-09T15:15:40.0131088Z with:
+2025-04-09T15:15:40.0131259Z   python-version: 3.x
+2025-04-09T15:15:40.0131455Z   check-latest: false
+2025-04-09T15:15:40.0131761Z   token: ***
+2025-04-09T15:15:40.0131947Z   update-environment: true
+2025-04-09T15:15:40.0132164Z   allow-prereleases: false
+2025-04-09T15:15:40.0132393Z   freethreaded: false
+2025-04-09T15:15:40.0132572Z ##[endgroup]
+2025-04-09T15:15:40.1790517Z ##[group]Installed versions
+2025-04-09T15:15:40.1845972Z Successfully set up CPython (3.13.2)
+2025-04-09T15:15:40.1846756Z ##[endgroup]
+2025-04-09T15:15:40.1982958Z ##[group]Run pre-commit/action@v3.0.1
+2025-04-09T15:15:40.1983233Z with:
+2025-04-09T15:15:40.1983413Z   extra_args: --all-files
+2025-04-09T15:15:40.1983598Z env:
+2025-04-09T15:15:40.1983823Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-09T15:15:40.1984212Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-04-09T15:15:40.1984594Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-09T15:15:40.1984926Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-09T15:15:40.1985249Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-09T15:15:40.1985581Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-04-09T15:15:40.1986072Z ##[endgroup]
+2025-04-09T15:15:40.2068370Z ##[group]Run python -m pip install pre-commit
+2025-04-09T15:15:40.2068730Z [36;1mpython -m pip install pre-commit[0m
+2025-04-09T15:15:40.2121111Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-09T15:15:40.2121496Z env:
+2025-04-09T15:15:40.2121739Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-09T15:15:40.2122138Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-04-09T15:15:40.2122528Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-09T15:15:40.2122884Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-09T15:15:40.2123237Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-09T15:15:40.2123588Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-04-09T15:15:40.2123878Z ##[endgroup]
+2025-04-09T15:15:43.0936372Z Collecting pre-commit
+2025-04-09T15:15:43.1290265Z   Downloading pre_commit-4.2.0-py2.py3-none-any.whl.metadata (1.3 kB)
+2025-04-09T15:15:43.1447283Z Collecting cfgv>=2.0.0 (from pre-commit)
+2025-04-09T15:15:43.1471035Z   Downloading cfgv-3.4.0-py2.py3-none-any.whl.metadata (8.5 kB)
+2025-04-09T15:15:43.1891680Z Collecting identify>=1.0.0 (from pre-commit)
+2025-04-09T15:15:43.1917122Z   Downloading identify-2.6.9-py2.py3-none-any.whl.metadata (4.4 kB)
+2025-04-09T15:15:43.2086567Z Collecting nodeenv>=0.11.1 (from pre-commit)
+2025-04-09T15:15:43.2150335Z   Downloading nodeenv-1.9.1-py2.py3-none-any.whl.metadata (21 kB)
+2025-04-09T15:15:43.2452461Z Collecting pyyaml>=5.1 (from pre-commit)
+2025-04-09T15:15:43.2498062Z   Downloading PyYAML-6.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+2025-04-09T15:15:43.2897832Z Collecting virtualenv>=20.10.0 (from pre-commit)
+2025-04-09T15:15:43.2927190Z   Downloading virtualenv-20.30.0-py3-none-any.whl.metadata (4.5 kB)
+2025-04-09T15:15:43.3120148Z Collecting distlib<1,>=0.3.7 (from virtualenv>=20.10.0->pre-commit)
+2025-04-09T15:15:43.3144116Z   Downloading distlib-0.3.9-py2.py3-none-any.whl.metadata (5.2 kB)
+2025-04-09T15:15:43.3354225Z Collecting filelock<4,>=3.12.2 (from virtualenv>=20.10.0->pre-commit)
+2025-04-09T15:15:43.3378100Z   Downloading filelock-3.18.0-py3-none-any.whl.metadata (2.9 kB)
+2025-04-09T15:15:43.3567858Z Collecting platformdirs<5,>=3.9.1 (from virtualenv>=20.10.0->pre-commit)
+2025-04-09T15:15:43.3592058Z   Downloading platformdirs-4.3.7-py3-none-any.whl.metadata (11 kB)
+2025-04-09T15:15:43.3695984Z Downloading pre_commit-4.2.0-py2.py3-none-any.whl (220 kB)
+2025-04-09T15:15:43.3819118Z Downloading cfgv-3.4.0-py2.py3-none-any.whl (7.2 kB)
+2025-04-09T15:15:43.3866196Z Downloading identify-2.6.9-py2.py3-none-any.whl (99 kB)
+2025-04-09T15:15:43.3924854Z Downloading nodeenv-1.9.1-py2.py3-none-any.whl (22 kB)
+2025-04-09T15:15:43.3973246Z Downloading PyYAML-6.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (759 kB)
+2025-04-09T15:15:43.4099312Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 759.5/759.5 kB 61.8 MB/s eta 0:00:00
+2025-04-09T15:15:43.4122143Z Downloading virtualenv-20.30.0-py3-none-any.whl (4.3 MB)
+2025-04-09T15:15:43.4474405Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 128.9 MB/s eta 0:00:00
+2025-04-09T15:15:43.4496632Z Downloading distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+2025-04-09T15:15:43.4581568Z Downloading filelock-3.18.0-py3-none-any.whl (16 kB)
+2025-04-09T15:15:43.4630146Z Downloading platformdirs-4.3.7-py3-none-any.whl (18 kB)
+2025-04-09T15:15:43.5435967Z Installing collected packages: distlib, pyyaml, platformdirs, nodeenv, identify, filelock, cfgv, virtualenv, pre-commit
+2025-04-09T15:15:43.9508551Z Successfully installed cfgv-3.4.0 distlib-0.3.9 filelock-3.18.0 identify-2.6.9 nodeenv-1.9.1 platformdirs-4.3.7 pre-commit-4.2.0 pyyaml-6.0.2 virtualenv-20.30.0
+2025-04-09T15:15:44.0964587Z ##[group]Run python -m pip freeze --local
+2025-04-09T15:15:44.0964890Z [36;1mpython -m pip freeze --local[0m
+2025-04-09T15:15:44.1012966Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-09T15:15:44.1013291Z env:
+2025-04-09T15:15:44.1013534Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-09T15:15:44.1013943Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-04-09T15:15:44.1014343Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-09T15:15:44.1014666Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-09T15:15:44.1015004Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-09T15:15:44.1015336Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-04-09T15:15:44.1015609Z ##[endgroup]
+2025-04-09T15:15:44.3510127Z cfgv==3.4.0
+2025-04-09T15:15:44.3510653Z distlib==0.3.9
+2025-04-09T15:15:44.3511026Z filelock==3.18.0
+2025-04-09T15:15:44.3511398Z identify==2.6.9
+2025-04-09T15:15:44.3511736Z nodeenv==1.9.1
+2025-04-09T15:15:44.3512088Z platformdirs==4.3.7
+2025-04-09T15:15:44.3512468Z pre_commit==4.2.0
+2025-04-09T15:15:44.3512817Z PyYAML==6.0.2
+2025-04-09T15:15:44.3513189Z virtualenv==20.30.0
+2025-04-09T15:15:44.4643379Z ##[group]Run actions/cache@v4
+2025-04-09T15:15:44.4643591Z with:
+2025-04-09T15:15:44.4643756Z   path: ~/.cache/pre-commit
+2025-04-09T15:15:44.4644266Z   key: pre-commit-3|/opt/hostedtoolcache/Python/3.13.2/x64|02ae2af033bbbf9a8a5cdedc54e977124cca2e6d9a5bb57784e55145fa905d88
+2025-04-09T15:15:44.4644783Z   enableCrossOsArchive: false
+2025-04-09T15:15:44.4644999Z   fail-on-cache-miss: false
+2025-04-09T15:15:44.4645198Z   lookup-only: false
+2025-04-09T15:15:44.4645370Z   save-always: false
+2025-04-09T15:15:44.4645536Z env:
+2025-04-09T15:15:44.4645963Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-09T15:15:44.4646355Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-04-09T15:15:44.4646724Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-09T15:15:44.4647044Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-09T15:15:44.4647371Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-09T15:15:44.4647912Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-04-09T15:15:44.4648195Z ##[endgroup]
+2025-04-09T15:15:44.9803355Z Cache hit for: pre-commit-3|/opt/hostedtoolcache/Python/3.13.2/x64|02ae2af033bbbf9a8a5cdedc54e977124cca2e6d9a5bb57784e55145fa905d88
+2025-04-09T15:15:46.3008934Z Received 0 of 48834562 (0.0%), 0.0 MBs/sec
+2025-04-09T15:15:46.9464423Z Received 48834562 of 48834562 (100.0%), 28.3 MBs/sec
+2025-04-09T15:15:46.9465363Z Cache Size: ~47 MB (48834562 B)
+2025-04-09T15:15:46.9564240Z [command]/usr/bin/tar -xf /home/runner/work/_temp/8915221c-94c6-432f-b2b2-f53056c5a6d5/cache.tzst -P -C /home/runner/work/clinica/clinica --use-compress-program unzstd
+2025-04-09T15:15:47.4012629Z Cache restored successfully
+2025-04-09T15:15:47.5771649Z Cache restored from key: pre-commit-3|/opt/hostedtoolcache/Python/3.13.2/x64|02ae2af033bbbf9a8a5cdedc54e977124cca2e6d9a5bb57784e55145fa905d88
+2025-04-09T15:15:47.5868601Z ##[group]Run pre-commit run --show-diff-on-failure --color=always --all-files
+2025-04-09T15:15:47.5869094Z [36;1mpre-commit run --show-diff-on-failure --color=always --all-files[0m
+2025-04-09T15:15:47.5916741Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-09T15:15:47.5917045Z env:
+2025-04-09T15:15:47.5917493Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-09T15:15:47.5917907Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-04-09T15:15:47.5918301Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-09T15:15:47.5918626Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-09T15:15:47.5918954Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-09T15:15:47.5919286Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-04-09T15:15:47.5919566Z ##[endgroup]
+2025-04-09T15:15:48.4139676Z check yaml...............................................................[42mPassed[m
+2025-04-09T15:15:48.5313555Z ruff.....................................................................[41mFailed[m
+2025-04-09T15:15:48.5314004Z [2m- hook id: ruff[m
+2025-04-09T15:15:48.5314274Z [2m- files were modified by this hook[m
+2025-04-09T15:15:48.5314453Z 
+2025-04-09T15:15:48.5314557Z Found 2 errors (2 fixed, 0 remaining).
+2025-04-09T15:15:48.5314745Z 
+2025-04-09T15:15:48.6581240Z ruff-format..............................................................[41mFailed[m
+2025-04-09T15:15:48.6581695Z [2m- hook id: ruff-format[m
+2025-04-09T15:15:48.6581986Z [2m- files were modified by this hook[m
+2025-04-09T15:15:48.6582173Z 
+2025-04-09T15:15:48.6582288Z 1 file reformatted, 419 files left unchanged
+2025-04-09T15:15:48.6582476Z 
+2025-04-09T15:15:49.1569032Z codespell................................................................[42mPassed[m
+2025-04-09T15:15:50.5491084Z poetry-check.............................................................[42mPassed[m
+2025-04-09T15:15:50.5491525Z pre-commit hook(s) made changes.
+2025-04-09T15:15:50.5492180Z If you are seeing this message in CI, reproduce locally with: `pre-commit run --all-files`.
+2025-04-09T15:15:50.5493011Z To run `pre-commit` as part of git workflow, use `pre-commit install`.
+2025-04-09T15:15:50.5493502Z All changes made by hooks:
+2025-04-09T15:15:50.5783364Z [1mdiff --git a/test/unittests/converters/test_oasis_to_bids_utils.py b/test/unittests/converters/test_oasis_to_bids_utils.py[m
+2025-04-09T15:15:50.5784505Z [1mindex 2660c9a..b358d60 100644[m
+2025-04-09T15:15:50.5785263Z [1m--- a/test/unittests/converters/test_oasis_to_bids_utils.py[m
+2025-04-09T15:15:50.5786496Z [1m+++ b/test/unittests/converters/test_oasis_to_bids_utils.py[m
+2025-04-09T15:15:50.5787466Z [36m@@ -365,12 +365,21 @@[m [mdef test_get_subjects_list_from_file(tmp_path) -> None:[m
+2025-04-09T15:15:50.5788125Z      ][m
+2025-04-09T15:15:50.5788454Z  [m
+2025-04-09T15:15:50.5788746Z  [m
+2025-04-09T15:15:50.5789620Z [31m-@pytest.mark.parametrize("input, expected", [(0, "CN"), (0.5, "AD"), (1, "AD"), (1.5, "AD"), (2, "AD"), (np.nan, "n/a"), (4, "n/a")])[m
+2025-04-09T15:15:50.5790894Z [31m-[m
+2025-04-09T15:15:50.5791409Z [31m-def test_mapping_diagnosis(input, expected) -> None :[m
+2025-04-09T15:15:50.5791994Z [31m-    [m
+2025-04-09T15:15:50.5792433Z [32m+[m[32m@pytest.mark.parametrize([m
+2025-04-09T15:15:50.5792994Z [32m+[m[32m    "input, expected",[m
+2025-04-09T15:15:50.5793462Z [32m+[m[32m    [[m
+2025-04-09T15:15:50.5793870Z [32m+[m[32m        (0, "CN"),[m
+2025-04-09T15:15:50.5794312Z [32m+[m[32m        (0.5, "AD"),[m
+2025-04-09T15:15:50.5794687Z [32m+[m[32m        (1, "AD"),[m
+2025-04-09T15:15:50.5795053Z [32m+[m[32m        (1.5, "AD"),[m
+2025-04-09T15:15:50.5795421Z [32m+[m[32m        (2, "AD"),[m
+2025-04-09T15:15:50.5795980Z [32m+[m[32m        (np.nan, "n/a"),[m
+2025-04-09T15:15:50.5796382Z [32m+[m[32m        (4, "n/a"),[m
+2025-04-09T15:15:50.5796751Z [32m+[m[32m    ],[m
+2025-04-09T15:15:50.5797055Z [32m+[m[32m)[m
+2025-04-09T15:15:50.5797523Z [32m+[m[32mdef test_mapping_diagnosis(input, expected) -> None:[m
+2025-04-09T15:15:50.5798281Z      from clinica.converters.oasis_to_bids._utils import mapping_diagnosis[m
+2025-04-09T15:15:50.5798896Z [31m-    [m
+2025-04-09T15:15:50.5799185Z [32m+[m
+2025-04-09T15:15:50.5799803Z      assert expected == mapping_diagnosis(input)[m
+2025-04-09T15:15:50.5800466Z  [m
+2025-04-09T15:15:50.5800725Z  [m
+2025-04-09T15:15:50.5974095Z ##[error]Process completed with exit code 1.
+2025-04-09T15:15:50.6042285Z Post job cleanup.
+2025-04-09T15:15:50.6114854Z Post job cleanup.
+2025-04-09T15:15:50.7044182Z [command]/usr/bin/git version
+2025-04-09T15:15:50.7079968Z git version 2.49.0
+2025-04-09T15:15:50.7127933Z Temporarily overriding HOME='/home/runner/work/_temp/9615f1dd-ba04-41f8-a3d4-d30ca08915fa' before making global git config changes
+2025-04-09T15:15:50.7129060Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-09T15:15:50.7133118Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/clinica/clinica
+2025-04-09T15:15:50.7167406Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-09T15:15:50.7201850Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-09T15:15:50.7481185Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-09T15:15:50.7502553Z http.https://github.com/.extraheader
+2025-04-09T15:15:50.7515477Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-09T15:15:50.7546899Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-09T15:15:50.7878635Z Cleaning up orphan processes

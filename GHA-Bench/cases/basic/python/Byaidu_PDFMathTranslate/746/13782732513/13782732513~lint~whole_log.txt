@@ -1,0 +1,261 @@
+2025-03-11T07:37:32.6043231Z Requested labels: ubuntu-latest
+2025-03-11T07:37:32.6043526Z Job defined at: Byaidu/PDFMathTranslate/.github/workflows/black.format.yml@refs/pull/746/merge
+2025-03-11T07:37:32.6043638Z Waiting for a runner to pick up this job...
+2025-03-11T07:37:34.1006797Z Job is waiting for a hosted runner to come online.
+2025-03-11T07:37:36.2610939Z Job is about to start running on the hosted runner: GitHub Actions 19 (hosted)
+2025-03-11T07:37:38.7047384Z Current runner version: '2.322.0'
+2025-03-11T07:37:38.7073459Z ##[group]Operating System
+2025-03-11T07:37:38.7074255Z Ubuntu
+2025-03-11T07:37:38.7074865Z 24.04.2
+2025-03-11T07:37:38.7075390Z LTS
+2025-03-11T07:37:38.7075854Z ##[endgroup]
+2025-03-11T07:37:38.7076388Z ##[group]Runner Image
+2025-03-11T07:37:38.7077037Z Image: ubuntu-24.04
+2025-03-11T07:37:38.7077590Z Version: 20250302.1.0
+2025-03-11T07:37:38.7078694Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250302.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-11T07:37:38.7080275Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250302.1
+2025-03-11T07:37:38.7081202Z ##[endgroup]
+2025-03-11T07:37:38.7081805Z ##[group]Runner Image Provisioner
+2025-03-11T07:37:38.7082411Z 2.0.422.1
+2025-03-11T07:37:38.7082900Z ##[endgroup]
+2025-03-11T07:37:38.7084038Z ##[group]GITHUB_TOKEN Permissions
+2025-03-11T07:37:38.7086061Z Contents: read
+2025-03-11T07:37:38.7086727Z Metadata: read
+2025-03-11T07:37:38.7087457Z Packages: read
+2025-03-11T07:37:38.7088077Z ##[endgroup]
+2025-03-11T07:37:38.7091123Z Secret source: None
+2025-03-11T07:37:38.7091884Z Prepare workflow directory
+2025-03-11T07:37:38.7406695Z Prepare all required actions
+2025-03-11T07:37:38.7447469Z Getting action download info
+2025-03-11T07:37:38.9515096Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-11T07:37:39.0575322Z Download action repository 'psf/black@stable' (SHA:8a737e727ac5ab2f1d4cf5876720ed276dc8dc4b)
+2025-03-11T07:37:39.7173717Z Complete job name: lint
+2025-03-11T07:37:39.7876075Z ##[group]Run actions/checkout@v4
+2025-03-11T07:37:39.7876947Z with:
+2025-03-11T07:37:39.7877382Z   repository: Byaidu/PDFMathTranslate
+2025-03-11T07:37:39.7878090Z   token: ***
+2025-03-11T07:37:39.7878479Z   ssh-strict: true
+2025-03-11T07:37:39.7878891Z   ssh-user: git
+2025-03-11T07:37:39.7879307Z   persist-credentials: true
+2025-03-11T07:37:39.7879915Z   clean: true
+2025-03-11T07:37:39.7880344Z   sparse-checkout-cone-mode: true
+2025-03-11T07:37:39.7880860Z   fetch-depth: 1
+2025-03-11T07:37:39.7881259Z   fetch-tags: false
+2025-03-11T07:37:39.7881674Z   show-progress: true
+2025-03-11T07:37:39.7882091Z   lfs: false
+2025-03-11T07:37:39.7882467Z   submodules: false
+2025-03-11T07:37:39.7882882Z   set-safe-directory: true
+2025-03-11T07:37:39.7883595Z ##[endgroup]
+2025-03-11T07:37:40.0074923Z Syncing repository: Byaidu/PDFMathTranslate
+2025-03-11T07:37:40.0076747Z ##[group]Getting Git version info
+2025-03-11T07:37:40.0077607Z Working directory is '/home/runner/work/PDFMathTranslate/PDFMathTranslate'
+2025-03-11T07:37:40.0078647Z [command]/usr/bin/git version
+2025-03-11T07:37:40.0160499Z git version 2.48.1
+2025-03-11T07:37:40.0190448Z ##[endgroup]
+2025-03-11T07:37:40.0206894Z Temporarily overriding HOME='/home/runner/work/_temp/30612216-cd7b-4472-8e83-b1c2d49a0d07' before making global git config changes
+2025-03-11T07:37:40.0209278Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-11T07:37:40.0214294Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/PDFMathTranslate/PDFMathTranslate
+2025-03-11T07:37:40.0252065Z Deleting the contents of '/home/runner/work/PDFMathTranslate/PDFMathTranslate'
+2025-03-11T07:37:40.0256176Z ##[group]Initializing the repository
+2025-03-11T07:37:40.0261053Z [command]/usr/bin/git init /home/runner/work/PDFMathTranslate/PDFMathTranslate
+2025-03-11T07:37:40.0327915Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-11T07:37:40.0329221Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-11T07:37:40.0330366Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-11T07:37:40.0331031Z hint:
+2025-03-11T07:37:40.0331516Z hint: 	git config --global init.defaultBranch <name>
+2025-03-11T07:37:40.0332086Z hint:
+2025-03-11T07:37:40.0332637Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-11T07:37:40.0333492Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-11T07:37:40.0335221Z hint:
+2025-03-11T07:37:40.0335891Z hint: 	git branch -m <name>
+2025-03-11T07:37:40.0337388Z Initialized empty Git repository in /home/runner/work/PDFMathTranslate/PDFMathTranslate/.git/
+2025-03-11T07:37:40.0348490Z [command]/usr/bin/git remote add origin https://github.com/Byaidu/PDFMathTranslate
+2025-03-11T07:37:40.0384796Z ##[endgroup]
+2025-03-11T07:37:40.0386044Z ##[group]Disabling automatic garbage collection
+2025-03-11T07:37:40.0389233Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-11T07:37:40.0417852Z ##[endgroup]
+2025-03-11T07:37:40.0418536Z ##[group]Setting up auth
+2025-03-11T07:37:40.0425035Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-11T07:37:40.0455158Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-11T07:37:40.0782995Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-11T07:37:40.0812960Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-11T07:37:40.1050872Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-11T07:37:40.1091906Z ##[endgroup]
+2025-03-11T07:37:40.1093592Z ##[group]Fetching the repository
+2025-03-11T07:37:40.1102276Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +27bf837a478684c9872a884b740f4d8c64cc3e01:refs/remotes/pull/746/merge
+2025-03-11T07:37:40.9390157Z From https://github.com/Byaidu/PDFMathTranslate
+2025-03-11T07:37:40.9392942Z  * [new ref]         27bf837a478684c9872a884b740f4d8c64cc3e01 -> pull/746/merge
+2025-03-11T07:37:40.9419074Z ##[endgroup]
+2025-03-11T07:37:40.9421026Z ##[group]Determining the checkout info
+2025-03-11T07:37:40.9422638Z ##[endgroup]
+2025-03-11T07:37:40.9426066Z [command]/usr/bin/git sparse-checkout disable
+2025-03-11T07:37:40.9466354Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-11T07:37:40.9493526Z ##[group]Checking out the ref
+2025-03-11T07:37:40.9496643Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/746/merge
+2025-03-11T07:37:40.9832593Z Note: switching to 'refs/remotes/pull/746/merge'.
+2025-03-11T07:37:40.9834260Z 
+2025-03-11T07:37:40.9835892Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-11T07:37:40.9839369Z changes and commit them, and you can discard any commits you make in this
+2025-03-11T07:37:40.9843350Z state without impacting any branches by switching back to a branch.
+2025-03-11T07:37:40.9845375Z 
+2025-03-11T07:37:40.9846801Z If you want to create a new branch to retain commits you create, you may
+2025-03-11T07:37:40.9850148Z do so (now or later) by using -c with the switch command. Example:
+2025-03-11T07:37:40.9851895Z 
+2025-03-11T07:37:40.9852623Z   git switch -c <new-branch-name>
+2025-03-11T07:37:40.9853847Z 
+2025-03-11T07:37:40.9854447Z Or undo this operation with:
+2025-03-11T07:37:40.9855250Z 
+2025-03-11T07:37:40.9855798Z   git switch -
+2025-03-11T07:37:40.9856428Z 
+2025-03-11T07:37:40.9857419Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-11T07:37:40.9858868Z 
+2025-03-11T07:37:40.9861419Z HEAD is now at 27bf837 Merge 18431981f346e0de82268dce21c86ae563e4d3d4 into 436abb3acb734c086b8a8a027fc3ed1c7d2b8edc
+2025-03-11T07:37:40.9873886Z ##[endgroup]
+2025-03-11T07:37:40.9907780Z [command]/usr/bin/git log -1 --format=%H
+2025-03-11T07:37:40.9911902Z 27bf837a478684c9872a884b740f4d8c64cc3e01
+2025-03-11T07:37:41.0314706Z ##[group]Run psf/black@stable
+2025-03-11T07:37:41.0316421Z with:
+2025-03-11T07:37:41.0317820Z   options: --check --diff
+2025-03-11T07:37:41.0319107Z   src: .
+2025-03-11T07:37:41.0320473Z   jupyter: false
+2025-03-11T07:37:41.0321402Z   use_pyproject: false
+2025-03-11T07:37:41.0322373Z   summary: true
+2025-03-11T07:37:41.0323293Z ##[endgroup]
+2025-03-11T07:37:41.0471807Z ##[group]Run # Even when black fails, do not close the shell
+2025-03-11T07:37:41.0473495Z [36;1m# Even when black fails, do not close the shell[0m
+2025-03-11T07:37:41.0474764Z [36;1mset +e[0m
+2025-03-11T07:37:41.0475602Z [36;1m[0m
+2025-03-11T07:37:41.0476489Z [36;1mif [ "$RUNNER_OS" == "Windows" ]; then[0m
+2025-03-11T07:37:41.0477692Z [36;1m  runner="python"[0m
+2025-03-11T07:37:41.0478666Z [36;1melse[0m
+2025-03-11T07:37:41.0479509Z [36;1m  runner="python3"[0m
+2025-03-11T07:37:41.0480621Z [36;1mfi[0m
+2025-03-11T07:37:41.0481403Z [36;1m[0m
+2025-03-11T07:37:41.0482471Z [36;1mout=$(${runner} $GITHUB_ACTION_PATH/action/main.py)[0m
+2025-03-11T07:37:41.0483844Z [36;1mexit_code=$?[0m
+2025-03-11T07:37:41.0484723Z [36;1m[0m
+2025-03-11T07:37:41.0485611Z [36;1m# Display the raw output in the step[0m
+2025-03-11T07:37:41.0486797Z [36;1mecho "${out}"[0m
+2025-03-11T07:37:41.0487686Z [36;1m[0m
+2025-03-11T07:37:41.0488502Z [36;1mif [ "true" == "true" ]; then[0m
+2025-03-11T07:37:41.0489893Z [36;1m  # Display the Markdown output in the job summary[0m
+2025-03-11T07:37:41.0491344Z [36;1m  echo "\`\`\`python" >> $GITHUB_STEP_SUMMARY[0m
+2025-03-11T07:37:41.0492672Z [36;1m  echo "${out}" >> $GITHUB_STEP_SUMMARY[0m
+2025-03-11T07:37:41.0493954Z [36;1m  echo "\`\`\`" >> $GITHUB_STEP_SUMMARY[0m
+2025-03-11T07:37:41.0495110Z [36;1mfi[0m
+2025-03-11T07:37:41.0495902Z [36;1m[0m
+2025-03-11T07:37:41.0496827Z [36;1m# Exit with the exit-code returned by Black[0m
+2025-03-11T07:37:41.0498081Z [36;1mexit ${exit_code}[0m
+2025-03-11T07:37:41.0550236Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-11T07:37:41.0551646Z env:
+2025-03-11T07:37:41.0552455Z   INPUT_OPTIONS: --check --diff
+2025-03-11T07:37:41.0553463Z   INPUT_SRC: .
+2025-03-11T07:37:41.0554304Z   INPUT_JUPYTER: false
+2025-03-11T07:37:41.0555226Z   INPUT_BLACK_ARGS: 
+2025-03-11T07:37:41.0556110Z   INPUT_VERSION: 
+2025-03-11T07:37:41.0557000Z   INPUT_USE_PYPROJECT: false
+2025-03-11T07:37:41.0558016Z   pythonioencoding: utf-8
+2025-03-11T07:37:41.0559040Z ##[endgroup]
+2025-03-11T07:37:46.9246420Z Installing black[colorama]==25.1.0...
+2025-03-11T07:37:46.9247841Z --- /home/runner/work/PDFMathTranslate/PDFMathTranslate/pdf2zh/gui.py	2025-03-11 07:37:40.975163+00:00
+2025-03-11T07:37:46.9249644Z +++ /home/runner/work/PDFMathTranslate/PDFMathTranslate/pdf2zh/gui.py	2025-03-11 07:37:46.845167+00:00
+2025-03-11T07:37:46.9250995Z @@ -115,22 +115,27 @@
+2025-03-11T07:37:46.9251443Z  
+2025-03-11T07:37:46.9251981Z  
+2025-03-11T07:37:46.9252448Z  # Limit Enabled Services
+2025-03-11T07:37:46.9253333Z  enabled_services: T.Optional[T.List[str]] = ConfigManager.get("ENABLED_SERVICES")
+2025-03-11T07:37:46.9254346Z  if isinstance(enabled_services, list):
+2025-03-11T07:37:46.9254953Z -    default_services = ['Google', 'Bing']
+2025-03-11T07:37:46.9255586Z +    default_services = ["Google", "Bing"]
+2025-03-11T07:37:46.9256180Z      enabled_services_names = [str(_).lower().strip() for _ in enabled_services]
+2025-03-11T07:37:46.9256981Z -    enabled_services = [k for k in service_map.keys() if str(k).lower().strip() in enabled_services_names]
+2025-03-11T07:37:46.9257615Z +    enabled_services = [
+2025-03-11T07:37:46.9257984Z +        k
+2025-03-11T07:37:46.9258287Z +        for k in service_map.keys()
+2025-03-11T07:37:46.9258722Z +        if str(k).lower().strip() in enabled_services_names
+2025-03-11T07:37:46.9259128Z +    ]
+2025-03-11T07:37:46.9259413Z      if len(enabled_services) == 0:
+2025-03-11T07:37:46.9260084Z -        raise RuntimeError(f'No services available.')
+2025-03-11T07:37:46.9260537Z +        raise RuntimeError(f"No services available.")
+2025-03-11T07:37:46.9261233Z      enabled_services = default_services + enabled_services
+2025-03-11T07:37:46.9261588Z  else:
+2025-03-11T07:37:46.9261841Z      enabled_services = list(service_map.keys())
+2025-03-11T07:37:46.9262304Z  
+2025-03-11T07:37:46.9262502Z  
+2025-03-11T07:37:46.9262725Z  # Configure about Gradio show keys
+2025-03-11T07:37:46.9263146Z  hidden_gradio_details: bool = bool(ConfigManager.get("HIDDEN_GRADIO_DETAILS"))
+2025-03-11T07:37:46.9263552Z +
+2025-03-11T07:37:46.9263825Z  
+2025-03-11T07:37:46.9264185Z  # Public demo control
+2025-03-11T07:37:46.9264462Z  def verify_recaptcha(response):
+2025-03-11T07:37:46.9264732Z      """
+2025-03-11T07:37:46.9264992Z      This function verifies the reCAPTCHA response.
+2025-03-11T07:37:46.9265317Z @@ -283,18 +288,18 @@
+2025-03-11T07:37:46.9265572Z      lang_to = lang_map[lang_to]
+2025-03-11T07:37:46.9265823Z  
+2025-03-11T07:37:46.9266030Z      _envs = {}
+2025-03-11T07:37:46.9266313Z      for i, env in enumerate(translator.envs.items()):
+2025-03-11T07:37:46.9266648Z          _envs[env[0]] = envs[i]
+2025-03-11T07:37:46.9266920Z -    for k,v in _envs.items():
+2025-03-11T07:37:46.9267192Z +    for k, v in _envs.items():
+2025-03-11T07:37:46.9267524Z          if str(k).upper().endswith("API_KEY") and str(v) == "***":
+2025-03-11T07:37:46.9267913Z              # Load Real API_KEYs from local configure file
+2025-03-11T07:37:46.9268301Z              real_keys: str = ConfigManager.get_env_by_translatername(
+2025-03-11T07:37:46.9268665Z -                    translator, k, None
+2025-03-11T07:37:46.9268940Z -                )
+2025-03-11T07:37:46.9269178Z +                translator, k, None
+2025-03-11T07:37:46.9269442Z +            )
+2025-03-11T07:37:46.9269670Z              _envs[k] = real_keys
+2025-03-11T07:37:46.9270118Z -    
+2025-03-11T07:37:46.9270319Z +
+2025-03-11T07:37:46.9270596Z      print(f"Files before translation: {os.listdir(output)}")
+2025-03-11T07:37:46.9270919Z  
+2025-03-11T07:37:46.9271137Z      def progress_bar(t: tqdm.tqdm):
+2025-03-11T07:37:46.9271476Z          desc = getattr(t, "desc", "Translating...")
+2025-03-11T07:37:46.9271782Z          if desc == "":
+2025-03-11T07:37:46.9272021Z @@ -646,19 +651,23 @@
+2025-03-11T07:37:46.9272266Z                  for i in range(4):
+2025-03-11T07:37:46.9272603Z                      _envs.append(gr.update(visible=False, value=""))
+2025-03-11T07:37:46.9272977Z                  for i, env in enumerate(translator.envs.items()):
+2025-03-11T07:37:46.9273307Z                      label = env[0]
+2025-03-11T07:37:46.9273627Z                      value = ConfigManager.get_env_by_translatername(
+2025-03-11T07:37:46.9273981Z -                            translator, env[0], env[1]
+2025-03-11T07:37:46.9274280Z -                        )
+2025-03-11T07:37:46.9274549Z +                        translator, env[0], env[1]
+2025-03-11T07:37:46.9274831Z +                    )
+2025-03-11T07:37:46.9275074Z                      visible = True
+2025-03-11T07:37:46.9275362Z                      if hidden_gradio_details:
+2025-03-11T07:37:46.9275787Z -                        if "MODEL" not in str(label).upper() and value and hidden_gradio_details:
+2025-03-11T07:37:46.9276166Z +                        if (
+2025-03-11T07:37:46.9276445Z +                            "MODEL" not in str(label).upper()
+2025-03-11T07:37:46.9276762Z +                            and value
+2025-03-11T07:37:46.9277059Z +                            and hidden_gradio_details
+2025-03-11T07:37:46.9277352Z +                        ):
+2025-03-11T07:37:46.9277617Z                              visible = False
+2025-03-11T07:37:46.9277910Z                          # Hidden Keys From Gradio
+2025-03-11T07:37:46.9278233Z                          if "API_KEY" in label.upper():
+2025-03-11T07:37:46.9278587Z -                            value = "***"   # We use "***" Present Real API_KEY
+2025-03-11T07:37:46.9278963Z +                            value = "***"  # We use "***" Present Real API_KEY
+2025-03-11T07:37:46.9279298Z                      _envs[i] = gr.update(
+2025-03-11T07:37:46.9279951Z                          visible=visible,
+2025-03-11T07:37:46.9280344Z                          label=label,
+2025-03-11T07:37:46.9280648Z                          value=value,
+2025-03-11T07:37:46.9280927Z                      )
+2025-03-11T07:37:46.9281483Z would reformat /home/runner/work/PDFMathTranslate/PDFMathTranslate/pdf2zh/gui.py
+2025-03-11T07:37:46.9281837Z 
+2025-03-11T07:37:46.9282152Z Oh no! 💥 💔 💥
+2025-03-11T07:37:46.9282469Z 1 file would be reformatted, 14 files would be left unchanged.
+2025-03-11T07:37:46.9294680Z ##[error]Process completed with exit code 1.
+2025-03-11T07:37:46.9429292Z Post job cleanup.
+2025-03-11T07:37:47.0380664Z [command]/usr/bin/git version
+2025-03-11T07:37:47.0424639Z git version 2.48.1
+2025-03-11T07:37:47.0466686Z Temporarily overriding HOME='/home/runner/work/_temp/25fa40ca-9df4-40bc-bf0f-ee3bf9c319f5' before making global git config changes
+2025-03-11T07:37:47.0467682Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-11T07:37:47.0472197Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/PDFMathTranslate/PDFMathTranslate
+2025-03-11T07:37:47.0508440Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-11T07:37:47.0541603Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-11T07:37:47.0770588Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-11T07:37:47.0791419Z http.https://github.com/.extraheader
+2025-03-11T07:37:47.0803655Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-11T07:37:47.0835849Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-11T07:37:47.1166997Z Cleaning up orphan processes

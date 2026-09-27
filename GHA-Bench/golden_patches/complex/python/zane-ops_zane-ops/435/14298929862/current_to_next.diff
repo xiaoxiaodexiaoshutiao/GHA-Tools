@@ -1,0 +1,13 @@
+diff --git a/backend/zane_api/tests/git_service_builder.py b/backend/zane_api/tests/git_service_builder.py
+index 8bb40aba9..cb4fe5406 100644
+--- a/backend/zane_api/tests/git_service_builder.py
++++ b/backend/zane_api/tests/git_service_builder.py
+@@ -361,7 +361,7 @@ async def test_redeploy_service_reapply_changes_correctly(self):
+         self.assertEqual(status.HTTP_200_OK, response.status_code)
+ 
+         # Redeploy
+-        response = self.client.put(
++        response = await self.async_client.put(
+             reverse(
+                 "zane_api:services.git.redeploy_service",
+                 kwargs={

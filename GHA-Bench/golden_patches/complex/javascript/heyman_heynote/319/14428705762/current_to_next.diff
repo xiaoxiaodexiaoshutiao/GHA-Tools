@@ -1,0 +1,24 @@
+diff --git a/src/editor/keymap.js b/src/editor/keymap.js
+index 211a0d38..ca52817c 100644
+--- a/src/editor/keymap.js
++++ b/src/editor/keymap.js
+@@ -160,6 +160,6 @@ export function getKeymapExtensions(editor, keymap, keyBindings) {
+     return heynoteKeymap(
+         editor, 
+         keymap === "emacs" ? EMACS_KEYMAP.concat(DEFAULT_KEYMAP) : DEFAULT_KEYMAP,
+-        keyBindings,
++        keyBindings || [],
+     )
+ }
+diff --git a/webapp/bridge.js b/webapp/bridge.js
+index 1d5f09fd..48944bca 100644
+--- a/webapp/bridge.js
++++ b/webapp/bridge.js
+@@ -89,6 +89,7 @@ let initialSettings = {
+     showLineNumberGutter: true,
+     showFoldGutter: true,
+     bracketClosing: false,
++    keyBindings: [],
+ }
+ if (settingsData !== null) {
+     initialSettings = Object.assign(initialSettings, JSON.parse(settingsData))

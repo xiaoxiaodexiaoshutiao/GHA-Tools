@@ -1,0 +1,264 @@
+2025-04-10T22:31:54.3184342Z Requested labels: ubuntu-latest
+2025-04-10T22:31:54.3184576Z Job defined at: open-telemetry/opentelemetry-python-contrib/.github/workflows/misc_0.yml@refs/pull/3408/merge
+2025-04-10T22:31:54.3184677Z Waiting for a runner to pick up this job...
+2025-04-10T22:32:37.3862628Z Job is waiting for a hosted runner to come online.
+2025-04-10T22:32:40.3857450Z Job is about to start running on the hosted runner: GitHub Actions 84 (hosted)
+2025-04-10T22:32:51.3869069Z Current runner version: '2.323.0'
+2025-04-10T22:32:51.3892488Z ##[group]Operating System
+2025-04-10T22:32:51.3893331Z Ubuntu
+2025-04-10T22:32:51.3893854Z 24.04.2
+2025-04-10T22:32:51.3894338Z LTS
+2025-04-10T22:32:51.3894859Z ##[endgroup]
+2025-04-10T22:32:51.3895360Z ##[group]Runner Image
+2025-04-10T22:32:51.3895921Z Image: ubuntu-24.04
+2025-04-10T22:32:51.3896501Z Version: 20250406.1.0
+2025-04-10T22:32:51.3897687Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250406.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-10T22:32:51.3899083Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250406.1
+2025-04-10T22:32:51.3900083Z ##[endgroup]
+2025-04-10T22:32:51.3900574Z ##[group]Runner Image Provisioner
+2025-04-10T22:32:51.3901162Z 2.0.422.1
+2025-04-10T22:32:51.3901721Z ##[endgroup]
+2025-04-10T22:32:51.3903880Z ##[group]GITHUB_TOKEN Permissions
+2025-04-10T22:32:51.3905876Z Actions: read
+2025-04-10T22:32:51.3906594Z Attestations: read
+2025-04-10T22:32:51.3907318Z Checks: read
+2025-04-10T22:32:51.3908251Z Contents: read
+2025-04-10T22:32:51.3908823Z Deployments: read
+2025-04-10T22:32:51.3909383Z Discussions: read
+2025-04-10T22:32:51.3909887Z Issues: read
+2025-04-10T22:32:51.3910441Z Metadata: read
+2025-04-10T22:32:51.3910934Z Models: read
+2025-04-10T22:32:51.3911388Z Packages: read
+2025-04-10T22:32:51.3911950Z Pages: read
+2025-04-10T22:32:51.3912444Z PullRequests: read
+2025-04-10T22:32:51.3913041Z RepositoryProjects: read
+2025-04-10T22:32:51.3913659Z SecurityEvents: read
+2025-04-10T22:32:51.3914149Z Statuses: read
+2025-04-10T22:32:51.3914644Z ##[endgroup]
+2025-04-10T22:32:51.3917487Z Secret source: None
+2025-04-10T22:32:51.3918576Z Prepare workflow directory
+2025-04-10T22:32:51.4363980Z Prepare all required actions
+2025-04-10T22:32:51.4401276Z Getting action download info
+2025-04-10T22:32:51.6456721Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-10T22:32:51.6457766Z Version: 4.2.2
+2025-04-10T22:32:51.6458658Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-10T22:32:51.6459694Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-10T22:32:51.6460311Z ##[endgroup]
+2025-04-10T22:32:51.7443881Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-04-10T22:32:51.7444598Z Version: 5.5.0
+2025-04-10T22:32:51.7445253Z Digest: sha256:1fac95d751afd58314aebd2ab01d4bf3b3109a441917bd2cac2a22898ec494f7
+2025-04-10T22:32:51.7446116Z Source commit SHA: 8d9ed9ac5c53483de85588cdf95a591a75ab9f55
+2025-04-10T22:32:51.7446722Z ##[endgroup]
+2025-04-10T22:32:52.2299065Z Complete job name: ruff
+2025-04-10T22:32:52.2896959Z ##[group]Run actions/checkout@v4
+2025-04-10T22:32:52.2897968Z with:
+2025-04-10T22:32:52.2898489Z   repository: open-telemetry/opentelemetry-python-contrib
+2025-04-10T22:32:52.2899271Z   token: ***
+2025-04-10T22:32:52.2899665Z   ssh-strict: true
+2025-04-10T22:32:52.2900068Z   ssh-user: git
+2025-04-10T22:32:52.2900485Z   persist-credentials: true
+2025-04-10T22:32:52.2900936Z   clean: true
+2025-04-10T22:32:52.2901366Z   sparse-checkout-cone-mode: true
+2025-04-10T22:32:52.2901859Z   fetch-depth: 1
+2025-04-10T22:32:52.2902258Z   fetch-tags: false
+2025-04-10T22:32:52.2902669Z   show-progress: true
+2025-04-10T22:32:52.2903070Z   lfs: false
+2025-04-10T22:32:52.2903444Z   submodules: false
+2025-04-10T22:32:52.2903853Z   set-safe-directory: true
+2025-04-10T22:32:52.2904644Z env:
+2025-04-10T22:32:52.2905044Z   CORE_REPO_SHA: main
+2025-04-10T22:32:52.2905467Z   CONTRIB_REPO_SHA: main
+2025-04-10T22:32:52.2905936Z   PIP_EXISTS_ACTION: w
+2025-04-10T22:32:52.2906348Z ##[endgroup]
+2025-04-10T22:32:52.4987388Z Syncing repository: open-telemetry/opentelemetry-python-contrib
+2025-04-10T22:32:52.4990368Z ##[group]Getting Git version info
+2025-04-10T22:32:52.4991746Z Working directory is '/home/runner/work/opentelemetry-python-contrib/opentelemetry-python-contrib'
+2025-04-10T22:32:52.4993019Z [command]/usr/bin/git version
+2025-04-10T22:32:52.5058538Z git version 2.49.0
+2025-04-10T22:32:52.5087755Z ##[endgroup]
+2025-04-10T22:32:52.5103805Z Temporarily overriding HOME='/home/runner/work/_temp/650674d5-b614-4c39-9781-d58316f446c7' before making global git config changes
+2025-04-10T22:32:52.5106204Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-10T22:32:52.5111396Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/opentelemetry-python-contrib/opentelemetry-python-contrib
+2025-04-10T22:32:52.5147387Z Deleting the contents of '/home/runner/work/opentelemetry-python-contrib/opentelemetry-python-contrib'
+2025-04-10T22:32:52.5151056Z ##[group]Initializing the repository
+2025-04-10T22:32:52.5156426Z [command]/usr/bin/git init /home/runner/work/opentelemetry-python-contrib/opentelemetry-python-contrib
+2025-04-10T22:32:52.5225468Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-10T22:32:52.5226810Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-10T22:32:52.5228034Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-10T22:32:52.5228743Z hint:
+2025-04-10T22:32:52.5229358Z hint: 	git config --global init.defaultBranch <name>
+2025-04-10T22:32:52.5230449Z hint:
+2025-04-10T22:32:52.5231051Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-10T22:32:52.5232489Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-10T22:32:52.5233858Z hint:
+2025-04-10T22:32:52.5234612Z hint: 	git branch -m <name>
+2025-04-10T22:32:52.5236465Z Initialized empty Git repository in /home/runner/work/opentelemetry-python-contrib/opentelemetry-python-contrib/.git/
+2025-04-10T22:32:52.5244680Z [command]/usr/bin/git remote add origin https://github.com/open-telemetry/opentelemetry-python-contrib
+2025-04-10T22:32:52.5285068Z ##[endgroup]
+2025-04-10T22:32:52.5286206Z ##[group]Disabling automatic garbage collection
+2025-04-10T22:32:52.5289114Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-10T22:32:52.5318246Z ##[endgroup]
+2025-04-10T22:32:52.5319359Z ##[group]Setting up auth
+2025-04-10T22:32:52.5324932Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-10T22:32:52.5354418Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-10T22:32:52.5689387Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-10T22:32:52.5722505Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-10T22:32:52.5952819Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-10T22:32:52.5993060Z ##[endgroup]
+2025-04-10T22:32:52.6001528Z ##[group]Fetching the repository
+2025-04-10T22:32:52.6004021Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e10a665ea4124582c7979ae3b3ccf1013db0e87d:refs/remotes/pull/3408/merge
+2025-04-10T22:32:53.5795531Z From https://github.com/open-telemetry/opentelemetry-python-contrib
+2025-04-10T22:32:53.5796294Z  * [new ref]         e10a665ea4124582c7979ae3b3ccf1013db0e87d -> pull/3408/merge
+2025-04-10T22:32:53.5824271Z ##[endgroup]
+2025-04-10T22:32:53.5825154Z ##[group]Determining the checkout info
+2025-04-10T22:32:53.5826887Z ##[endgroup]
+2025-04-10T22:32:53.5832803Z [command]/usr/bin/git sparse-checkout disable
+2025-04-10T22:32:53.5873144Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-10T22:32:53.5900302Z ##[group]Checking out the ref
+2025-04-10T22:32:53.5903834Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/3408/merge
+2025-04-10T22:32:53.6665431Z Note: switching to 'refs/remotes/pull/3408/merge'.
+2025-04-10T22:32:53.6665997Z 
+2025-04-10T22:32:53.6666716Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-10T22:32:53.6667837Z changes and commit them, and you can discard any commits you make in this
+2025-04-10T22:32:53.6668743Z state without impacting any branches by switching back to a branch.
+2025-04-10T22:32:53.6669283Z 
+2025-04-10T22:32:53.6669635Z If you want to create a new branch to retain commits you create, you may
+2025-04-10T22:32:53.6670389Z do so (now or later) by using -c with the switch command. Example:
+2025-04-10T22:32:53.6670749Z 
+2025-04-10T22:32:53.6670884Z   git switch -c <new-branch-name>
+2025-04-10T22:32:53.6671119Z 
+2025-04-10T22:32:53.6671301Z Or undo this operation with:
+2025-04-10T22:32:53.6671489Z 
+2025-04-10T22:32:53.6671594Z   git switch -
+2025-04-10T22:32:53.6671760Z 
+2025-04-10T22:32:53.6671998Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-10T22:32:53.6672319Z 
+2025-04-10T22:32:53.6672672Z HEAD is now at e10a665 Merge 787e31e49b8e8b141d784d9087de386f4b14f199 into 6587485d05a12b6c851bf93ef35284b148190ffe
+2025-04-10T22:32:53.6675740Z ##[endgroup]
+2025-04-10T22:32:53.6713985Z [command]/usr/bin/git log -1 --format=%H
+2025-04-10T22:32:53.6736131Z e10a665ea4124582c7979ae3b3ccf1013db0e87d
+2025-04-10T22:32:53.6964188Z ##[group]Run actions/setup-python@v5
+2025-04-10T22:32:53.6964563Z with:
+2025-04-10T22:32:53.6964805Z   python-version: 3.11
+2025-04-10T22:32:53.6965080Z   check-latest: false
+2025-04-10T22:32:53.6965487Z   token: ***
+2025-04-10T22:32:53.6965747Z   update-environment: true
+2025-04-10T22:32:53.6966040Z   allow-prereleases: false
+2025-04-10T22:32:53.6966329Z   freethreaded: false
+2025-04-10T22:32:53.6966567Z env:
+2025-04-10T22:32:53.6966782Z   CORE_REPO_SHA: main
+2025-04-10T22:32:53.6967033Z   CONTRIB_REPO_SHA: main
+2025-04-10T22:32:53.6967298Z   PIP_EXISTS_ACTION: w
+2025-04-10T22:32:53.6967752Z ##[endgroup]
+2025-04-10T22:32:53.8588653Z ##[group]Installed versions
+2025-04-10T22:32:53.8648036Z Successfully set up CPython (3.11.11)
+2025-04-10T22:32:53.8649923Z ##[endgroup]
+2025-04-10T22:32:53.8763178Z ##[group]Run pip install tox-uv
+2025-04-10T22:32:53.8763614Z [36;1mpip install tox-uv[0m
+2025-04-10T22:32:53.8817064Z shell: /usr/bin/bash -e {0}
+2025-04-10T22:32:53.8817391Z env:
+2025-04-10T22:32:53.8817832Z   CORE_REPO_SHA: main
+2025-04-10T22:32:53.8818103Z   CONTRIB_REPO_SHA: main
+2025-04-10T22:32:53.8818371Z   PIP_EXISTS_ACTION: w
+2025-04-10T22:32:53.8818711Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T22:32:53.8819203Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-04-10T22:32:53.8819684Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T22:32:53.8820113Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T22:32:53.8820535Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T22:32:53.8820955Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-04-10T22:32:53.8821302Z ##[endgroup]
+2025-04-10T22:32:54.6734986Z Collecting tox-uv
+2025-04-10T22:32:54.7269325Z   Downloading tox_uv-1.25.0-py3-none-any.whl.metadata (9.2 kB)
+2025-04-10T22:32:54.7546321Z Collecting packaging>=24.2 (from tox-uv)
+2025-04-10T22:32:54.7648477Z   Downloading packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+2025-04-10T22:32:54.8318511Z Collecting tox<5,>=4.24.1 (from tox-uv)
+2025-04-10T22:32:54.8420587Z   Downloading tox-4.25.0-py3-none-any.whl.metadata (3.7 kB)
+2025-04-10T22:32:54.9852853Z Collecting uv<1,>=0.5.31 (from tox-uv)
+2025-04-10T22:32:54.9957979Z   Downloading uv-0.6.14-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (11 kB)
+2025-04-10T22:32:55.0282835Z Collecting cachetools>=5.5.1 (from tox<5,>=4.24.1->tox-uv)
+2025-04-10T22:32:55.0383899Z   Downloading cachetools-5.5.2-py3-none-any.whl.metadata (5.4 kB)
+2025-04-10T22:32:55.0583727Z Collecting chardet>=5.2 (from tox<5,>=4.24.1->tox-uv)
+2025-04-10T22:32:55.0727406Z   Downloading chardet-5.2.0-py3-none-any.whl.metadata (3.4 kB)
+2025-04-10T22:32:55.0968846Z Collecting colorama>=0.4.6 (from tox<5,>=4.24.1->tox-uv)
+2025-04-10T22:32:55.1071133Z   Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+2025-04-10T22:32:55.1346883Z Collecting filelock>=3.16.1 (from tox<5,>=4.24.1->tox-uv)
+2025-04-10T22:32:55.1447870Z   Downloading filelock-3.18.0-py3-none-any.whl.metadata (2.9 kB)
+2025-04-10T22:32:55.1692847Z Collecting platformdirs>=4.3.6 (from tox<5,>=4.24.1->tox-uv)
+2025-04-10T22:32:55.1795651Z   Downloading platformdirs-4.3.7-py3-none-any.whl.metadata (11 kB)
+2025-04-10T22:32:55.2008288Z Collecting pluggy>=1.5 (from tox<5,>=4.24.1->tox-uv)
+2025-04-10T22:32:55.2108356Z   Downloading pluggy-1.5.0-py3-none-any.whl.metadata (4.8 kB)
+2025-04-10T22:32:55.2309999Z Collecting pyproject-api>=1.8 (from tox<5,>=4.24.1->tox-uv)
+2025-04-10T22:32:55.2415353Z   Downloading pyproject_api-1.9.0-py3-none-any.whl.metadata (2.7 kB)
+2025-04-10T22:32:55.2833242Z Collecting virtualenv>=20.29.1 (from tox<5,>=4.24.1->tox-uv)
+2025-04-10T22:32:55.2932927Z   Downloading virtualenv-20.30.0-py3-none-any.whl.metadata (4.5 kB)
+2025-04-10T22:32:55.3229513Z Collecting distlib<1,>=0.3.7 (from virtualenv>=20.29.1->tox<5,>=4.24.1->tox-uv)
+2025-04-10T22:32:55.3331181Z   Downloading distlib-0.3.9-py2.py3-none-any.whl.metadata (5.2 kB)
+2025-04-10T22:32:55.3553070Z Downloading tox_uv-1.25.0-py3-none-any.whl (16 kB)
+2025-04-10T22:32:55.3694830Z Downloading packaging-24.2-py3-none-any.whl (65 kB)
+2025-04-10T22:32:55.3912932Z Downloading tox-4.25.0-py3-none-any.whl (172 kB)
+2025-04-10T22:32:55.4134459Z Downloading uv-0.6.14-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.9 MB)
+2025-04-10T22:32:55.5199366Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.9/16.9 MB 164.7 MB/s eta 0:00:00
+2025-04-10T22:32:55.5301485Z Downloading cachetools-5.5.2-py3-none-any.whl (10 kB)
+2025-04-10T22:32:55.5428756Z Downloading chardet-5.2.0-py3-none-any.whl (199 kB)
+2025-04-10T22:32:55.5579005Z Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+2025-04-10T22:32:55.5704876Z Downloading filelock-3.18.0-py3-none-any.whl (16 kB)
+2025-04-10T22:32:55.5839198Z Downloading platformdirs-4.3.7-py3-none-any.whl (18 kB)
+2025-04-10T22:32:55.5962506Z Downloading pluggy-1.5.0-py3-none-any.whl (20 kB)
+2025-04-10T22:32:55.6092187Z Downloading pyproject_api-1.9.0-py3-none-any.whl (13 kB)
+2025-04-10T22:32:55.6217427Z Downloading virtualenv-20.30.0-py3-none-any.whl (4.3 MB)
+2025-04-10T22:32:55.6509844Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 159.6 MB/s eta 0:00:00
+2025-04-10T22:32:55.6612623Z Downloading distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+2025-04-10T22:32:55.7171570Z Installing collected packages: distlib, uv, pluggy, platformdirs, packaging, filelock, colorama, chardet, cachetools, virtualenv, pyproject-api, tox, tox-uv
+2025-04-10T22:32:56.5323245Z Successfully installed cachetools-5.5.2 chardet-5.2.0 colorama-0.4.6 distlib-0.3.9 filelock-3.18.0 packaging-24.2 platformdirs-4.3.7 pluggy-1.5.0 pyproject-api-1.9.0 tox-4.25.0 tox-uv-1.25.0 uv-0.6.14 virtualenv-20.30.0
+2025-04-10T22:32:56.7068329Z ##[group]Run tox -e ruff
+2025-04-10T22:32:56.7068634Z [36;1mtox -e ruff[0m
+2025-04-10T22:32:56.7117949Z shell: /usr/bin/bash -e {0}
+2025-04-10T22:32:56.7118196Z env:
+2025-04-10T22:32:56.7118377Z   CORE_REPO_SHA: main
+2025-04-10T22:32:56.7118583Z   CONTRIB_REPO_SHA: main
+2025-04-10T22:32:56.7118797Z   PIP_EXISTS_ACTION: w
+2025-04-10T22:32:56.7119063Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T22:32:56.7119480Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-04-10T22:32:56.7119875Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T22:32:56.7120227Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T22:32:56.7120575Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T22:32:56.7120924Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-04-10T22:32:56.7121211Z ##[endgroup]
+2025-04-10T22:32:57.2491174Z ruff: venv> /opt/hostedtoolcache/Python/3.11.11/x64/bin/uv venv -p cpython3 --allow-existing --python-preference system /home/runner/work/opentelemetry-python-contrib/opentelemetry-python-contrib/.tox/ruff
+2025-04-10T22:32:57.3080940Z ruff: install_deps> /opt/hostedtoolcache/Python/3.11.11/x64/bin/uv pip install pre-commit -c /home/runner/work/opentelemetry-python-contrib/opentelemetry-python-contrib/dev-requirements.txt
+2025-04-10T22:32:57.5752600Z ruff: freeze> /opt/hostedtoolcache/Python/3.11.11/x64/bin/uv --color never pip freeze
+2025-04-10T22:32:57.5825509Z ruff: cfgv==3.4.0,distlib==0.3.9,filelock==3.18.0,identify==2.6.9,nodeenv==1.9.1,platformdirs==4.3.7,pre-commit==3.7.0,pyyaml==6.0.2,virtualenv==20.30.0
+2025-04-10T22:32:57.5831600Z ruff: commands[0]> pre-commit run --color=always --all-files
+2025-04-10T22:32:57.8013553Z [INFO][m Initializing environment for https://github.com/astral-sh/ruff-pre-commit.
+2025-04-10T22:32:58.2226460Z [INFO][m Initializing environment for https://github.com/astral-sh/uv-pre-commit.
+2025-04-10T22:32:58.6602608Z [INFO][m Installing environment for https://github.com/astral-sh/ruff-pre-commit.
+2025-04-10T22:32:58.6603969Z [INFO][m Once installed this environment will be reused.
+2025-04-10T22:32:58.6604844Z [INFO][m This may take a few minutes...
+2025-04-10T22:33:03.7379203Z [INFO][m Installing environment for https://github.com/astral-sh/uv-pre-commit.
+2025-04-10T22:33:03.7380244Z [INFO][m Once installed this environment will be reused.
+2025-04-10T22:33:03.7380913Z [INFO][m This may take a few minutes...
+2025-04-10T22:33:07.5065638Z ruff.....................................................................[42mPassed[m
+2025-04-10T22:33:07.6501241Z ruff-format..............................................................[41mFailed[m
+2025-04-10T22:33:07.6502007Z [2m- hook id: ruff-format[m
+2025-04-10T22:33:07.6502520Z [2m- files were modified by this hook[m
+2025-04-10T22:33:07.6502842Z 
+2025-04-10T22:33:07.6503030Z 1 file reformatted, 574 files left unchanged
+2025-04-10T22:33:07.6503350Z 
+2025-04-10T22:33:08.5724635Z uv-lock..................................................................[42mPassed[m
+2025-04-10T22:33:08.5900743Z ruff: exit 1 (11.01 seconds) /home/runner/work/opentelemetry-python-contrib/opentelemetry-python-contrib> pre-commit run --color=always --all-files pid=1946
+2025-04-10T22:33:08.5905072Z   ruff: FAIL code 1 (11.34=setup[0.34]+cmd[11.01] seconds)
+2025-04-10T22:33:08.5905621Z   evaluation failed :( (11.72 seconds)
+2025-04-10T22:33:08.6463591Z ##[error]Process completed with exit code 1.
+2025-04-10T22:33:08.6563223Z Post job cleanup.
+2025-04-10T22:33:08.7494732Z [command]/usr/bin/git version
+2025-04-10T22:33:08.7537275Z git version 2.49.0
+2025-04-10T22:33:08.7580953Z Temporarily overriding HOME='/home/runner/work/_temp/ad8e9986-a1c7-4d14-ba5f-f9b169d66737' before making global git config changes
+2025-04-10T22:33:08.7582288Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-10T22:33:08.7587409Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/opentelemetry-python-contrib/opentelemetry-python-contrib
+2025-04-10T22:33:08.7622048Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-10T22:33:08.7654558Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-10T22:33:08.7885888Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-10T22:33:08.7906560Z http.https://github.com/.extraheader
+2025-04-10T22:33:08.7920277Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-10T22:33:08.7951855Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-10T22:33:08.8292215Z Cleaning up orphan processes

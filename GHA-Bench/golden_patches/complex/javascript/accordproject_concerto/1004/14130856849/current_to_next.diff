@@ -1,0 +1,20 @@
+diff --git a/packages/concerto-core/test/data/decoratorcommands/extract-test-vocab-without-declaration-term.json b/packages/concerto-core/test/data/decoratorcommands/extract-test-vocab-without-declaration-term.json
+index 70501eb296..0ea12336f6 100644
+--- a/packages/concerto-core/test/data/decoratorcommands/extract-test-vocab-without-declaration-term.json
++++ b/packages/concerto-core/test/data/decoratorcommands/extract-test-vocab-without-declaration-term.json
+@@ -1 +1 @@
+-["locale: en\nnamespace: test@1.0.0\ndeclarations:\n  - mapName: mapName\n    properties:\n      - KEY: some key\n        desc: some key description\n  - Person: Person\n    desc: Person Class Description\n    properties:\n      - firstName: HI\n      - bio: some\n        cus: con\n"]
++["locale: en\nnamespace: test@1.0.0\ndeclarations:\n  - mapName: mapName\n    properties:\n      - KEY: some key\n        desc: some key description\n      - VALUE: some value\n        desc: some value description\n  - Person: Person\n    desc: Person Class Description\n    properties:\n      - firstName: HI\n      - bio: some\n        cus: con\n"]
+diff --git a/packages/concerto-core/test/data/decoratorcommands/extract-test-without-declaration-term.cto b/packages/concerto-core/test/data/decoratorcommands/extract-test-without-declaration-term.cto
+index 8f383123b0..1b667d2ca8 100644
+--- a/packages/concerto-core/test/data/decoratorcommands/extract-test-without-declaration-term.cto
++++ b/packages/concerto-core/test/data/decoratorcommands/extract-test-without-declaration-term.cto
+@@ -23,6 +23,8 @@ map mapName {
+     @Term_desc("some key description")
+     @deco(1)
+     o String
++    @Term("some value")
++    @Term_desc("some value description")
+     o String
+ }
+ 

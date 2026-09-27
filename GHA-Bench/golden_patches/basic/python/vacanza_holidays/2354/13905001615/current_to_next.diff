@@ -1,0 +1,26 @@
+diff --git a/README.rst b/README.rst
+index 1288e91902..fc61d37922 100644
+--- a/README.rst
++++ b/README.rst
+@@ -152,7 +152,7 @@ Available Countries
+ .. _ISO 639-1 code: https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+ .. _ISO 639-2 code: https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes
+ 
+-We currently support 160 country codes. The standard way to refer to a country
++We currently support 161 country codes. The standard way to refer to a country
+ is by using its `ISO 3166-1 alpha-2 code`_, the same used for domain names, and
+ for a subdivision its `ISO 3166-2 code`_. Some countries have common or foreign
+ names or abbreviations as aliases for their subdivisions. These are defined in
+diff --git a/tests/countries/test_fiji.py b/tests/countries/test_fiji.py
+index a59065c9b5..dedaff2036 100644
+--- a/tests/countries/test_fiji.py
++++ b/tests/countries/test_fiji.py
+@@ -107,7 +107,7 @@ def test_fiji_day(self):
+         years_found = {dt.year for dt in self.holidays.get_named(name, lookup="startswith")}
+         self.assertEqual(set(range(1970, 2050)), years_found)
+ 
+-    def test_diwali_and_holi(self):
++    def test_diwali(self):
+         dt = (
+             "2015-11-11",
+             "2016-10-27",

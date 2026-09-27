@@ -1,0 +1,84 @@
+diff --git a/.github/workflows/build_gcc.yml b/.github/workflows/build_gcc.yml
+index db823185..79d091bc 100644
+--- a/.github/workflows/build_gcc.yml
++++ b/.github/workflows/build_gcc.yml
+@@ -33,10 +33,10 @@ jobs:
+         uses: mpi4py/setup-mpi@v1
+         with:
+           mpi: openmpi
+-      - name: Set up Python 3.9.15
++      - name: Set up Python 3.11.11
+         uses: actions/setup-python@v3
+         with:
+-          python-version: 3.9.15
++          python-version: 3.11.11
+       # Run pyLOM compilation and deployment
+       - name: Set up configuration
+         run: |
+diff --git a/.github/workflows/build_intel.yml b/.github/workflows/build_intel.yml
+index d8915308..56340bba 100644
+--- a/.github/workflows/build_intel.yml
++++ b/.github/workflows/build_intel.yml
+@@ -45,10 +45,10 @@ jobs:
+         run: |
+           source /opt/intel/oneapi/setvars.sh
+           printenv >> $GITHUB_ENV
+-      - name: Set up Python 3.9.15
++      - name: Set up Python 3.11.11
+         uses: actions/setup-python@v3
+         with:
+-          python-version: 3.9.15
++          python-version: 3.11.11
+       # Run pyLOM compilation and deployment
+       - name: Set up configuration
+         run: |
+diff --git a/.github/workflows/package.yml b/.github/workflows/package.yml
+index 6e18a259..794ffe06 100644
+--- a/.github/workflows/package.yml
++++ b/.github/workflows/package.yml
+@@ -38,8 +38,10 @@ jobs:
+         uses: mpi4py/setup-mpi@v1
+         with:
+           mpi: openmpi
+-      - name: Set up Python 3.x
++      - name: Set up Python 3.11.11
+         uses: actions/setup-python@v3
++        with:
++          python-version: 3.11.11
+       # Install dependencies, build and install
+       - name: Install dependencies
+         run: |
+diff --git a/.github/workflows/run_testsuite.yml b/.github/workflows/run_testsuite.yml
+index b80e7b75..eabd0a3d 100644
+--- a/.github/workflows/run_testsuite.yml
++++ b/.github/workflows/run_testsuite.yml
+@@ -31,10 +31,10 @@ jobs:
+         uses: mpi4py/setup-mpi@v1
+         with:
+           mpi: openmpi
+-      - name: Set up Python 3.9.15
++      - name: Set up Python 3.11.11
+         uses: actions/setup-python@v3
+         with:
+-          python-version: 3.9.15
++          python-version: 3.11.11
+       # Run pyLOM compilation and deployment
+       - name: Set up configuration
+         run: |
+diff --git a/.github/workflows/run_testsuite_NN.yml b/.github/workflows/run_testsuite_NN.yml
+index 1e7577a7..855131e1 100644
+--- a/.github/workflows/run_testsuite_NN.yml
++++ b/.github/workflows/run_testsuite_NN.yml
+@@ -31,10 +31,10 @@ jobs:
+         uses: mpi4py/setup-mpi@v1
+         with:
+           mpi: openmpi
+-      - name: Set up Python 3.9.15
++      - name: Set up Python 3.11.11
+         uses: actions/setup-python@v3
+         with:
+-          python-version: 3.9.15
++          python-version: 3.11.11
+       # Run pyLOM compilation and deployment
+       - name: Set up configuration
+         run: |

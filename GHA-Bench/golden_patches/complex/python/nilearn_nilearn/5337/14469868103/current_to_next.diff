@@ -1,0 +1,28 @@
+diff --git a/nilearn/reporting/data/html/glm_report.html b/nilearn/reporting/data/html/glm_report.html
+index 662e4330d7f..a82834ca77f 100644
+--- a/nilearn/reporting/data/html/glm_report.html
++++ b/nilearn/reporting/data/html/glm_report.html
+@@ -199,16 +199,16 @@ <h2>Mask</h2>
+         style="min-width: 600px"
+       />
+     </div>
+-      {{if n_elements }}
+-      <div class="pure-u-1 pure-u-md-3-3">
+-        <p>
+-          The mask includes {{ n_elements }} voxels ({{ coverage }} %) of the image.
+-        </p>
+-      </div>
+-      {{endif}}
+     {{else}}
+     <p>No mask was provided.</p>
+     {{endif}}
++    {{if n_elements }}
++    <div class="pure-u-1 pure-u-md-3-3">
++      <p>
++        The mask includes {{ n_elements }} voxels ({{ coverage }} %) of the image.
++      </p>
++    </div>
++    {{endif}}
+   </section>
+ 
+   <section id="statistical-maps-{{unique_id}}">

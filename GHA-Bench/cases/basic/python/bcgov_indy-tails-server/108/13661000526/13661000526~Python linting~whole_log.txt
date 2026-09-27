@@ -1,0 +1,329 @@
+2025-03-04T19:24:32.1976225Z Requested labels: ubuntu-latest
+2025-03-04T19:24:32.1976504Z Job defined at: bcgov/indy-tails-server/.github/workflows/lint-and-test.yaml@refs/pull/108/merge
+2025-03-04T19:24:32.1976600Z Waiting for a runner to pick up this job...
+2025-03-04T19:24:32.8747500Z Job is waiting for a hosted runner to come online.
+2025-03-04T19:24:36.5989997Z Job is about to start running on the hosted runner: GitHub Actions 348 (hosted)
+2025-03-04T19:24:39.1027201Z Current runner version: '2.322.0'
+2025-03-04T19:24:39.1052454Z ##[group]Operating System
+2025-03-04T19:24:39.1053407Z Ubuntu
+2025-03-04T19:24:39.1053917Z 24.04.2
+2025-03-04T19:24:39.1054406Z LTS
+2025-03-04T19:24:39.1054919Z ##[endgroup]
+2025-03-04T19:24:39.1055454Z ##[group]Runner Image
+2025-03-04T19:24:39.1056024Z Image: ubuntu-24.04
+2025-03-04T19:24:39.1056611Z Version: 20250223.1.0
+2025-03-04T19:24:39.1057651Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250223.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-04T19:24:39.1059077Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250223.1
+2025-03-04T19:24:39.1060194Z ##[endgroup]
+2025-03-04T19:24:39.1060758Z ##[group]Runner Image Provisioner
+2025-03-04T19:24:39.1061397Z 2.0.422.1
+2025-03-04T19:24:39.1061909Z ##[endgroup]
+2025-03-04T19:24:39.1064136Z ##[group]GITHUB_TOKEN Permissions
+2025-03-04T19:24:39.1066663Z Actions: write
+2025-03-04T19:24:39.1067406Z Attestations: write
+2025-03-04T19:24:39.1068102Z Checks: write
+2025-03-04T19:24:39.1068601Z Contents: write
+2025-03-04T19:24:39.1069241Z Deployments: write
+2025-03-04T19:24:39.1069820Z Discussions: write
+2025-03-04T19:24:39.1070581Z Issues: write
+2025-03-04T19:24:39.1071187Z Metadata: read
+2025-03-04T19:24:39.1071756Z Packages: write
+2025-03-04T19:24:39.1072298Z Pages: write
+2025-03-04T19:24:39.1072933Z PullRequests: write
+2025-03-04T19:24:39.1073532Z RepositoryProjects: write
+2025-03-04T19:24:39.1074208Z SecurityEvents: write
+2025-03-04T19:24:39.1074789Z Statuses: write
+2025-03-04T19:24:39.1075344Z ##[endgroup]
+2025-03-04T19:24:39.1078588Z Secret source: Actions
+2025-03-04T19:24:39.1079683Z Prepare workflow directory
+2025-03-04T19:24:39.1483517Z Prepare all required actions
+2025-03-04T19:24:39.1521276Z Getting action download info
+2025-03-04T19:24:39.3738647Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-04T19:24:39.4543918Z Download action repository 'actions/setup-python@v5' (SHA:42375524e23c412d93fb67b49958b491fce71c38)
+2025-03-04T19:24:39.7513804Z Complete job name: Python linting
+2025-03-04T19:24:39.8225080Z ##[group]Run actions/checkout@v4
+2025-03-04T19:24:39.8225938Z with:
+2025-03-04T19:24:39.8226368Z   repository: bcgov/indy-tails-server
+2025-03-04T19:24:39.8227051Z   token: ***
+2025-03-04T19:24:39.8227440Z   ssh-strict: true
+2025-03-04T19:24:39.8227840Z   ssh-user: git
+2025-03-04T19:24:39.8228251Z   persist-credentials: true
+2025-03-04T19:24:39.8228700Z   clean: true
+2025-03-04T19:24:39.8229109Z   sparse-checkout-cone-mode: true
+2025-03-04T19:24:39.8229588Z   fetch-depth: 1
+2025-03-04T19:24:39.8230157Z   fetch-tags: false
+2025-03-04T19:24:39.8230580Z   show-progress: true
+2025-03-04T19:24:39.8230993Z   lfs: false
+2025-03-04T19:24:39.8231369Z   submodules: false
+2025-03-04T19:24:39.8231855Z   set-safe-directory: true
+2025-03-04T19:24:39.8232614Z ##[endgroup]
+2025-03-04T19:24:39.9944409Z Syncing repository: bcgov/indy-tails-server
+2025-03-04T19:24:39.9946254Z ##[group]Getting Git version info
+2025-03-04T19:24:39.9947130Z Working directory is '/home/runner/work/indy-tails-server/indy-tails-server'
+2025-03-04T19:24:39.9948268Z [command]/usr/bin/git version
+2025-03-04T19:24:40.0008736Z git version 2.48.1
+2025-03-04T19:24:40.0048991Z ##[endgroup]
+2025-03-04T19:24:40.0066258Z Temporarily overriding HOME='/home/runner/work/_temp/e54ea1be-ac26-4d54-82fe-0a070077fee6' before making global git config changes
+2025-03-04T19:24:40.0068679Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-04T19:24:40.0073320Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/indy-tails-server/indy-tails-server
+2025-03-04T19:24:40.0109147Z Deleting the contents of '/home/runner/work/indy-tails-server/indy-tails-server'
+2025-03-04T19:24:40.0112944Z ##[group]Initializing the repository
+2025-03-04T19:24:40.0117460Z [command]/usr/bin/git init /home/runner/work/indy-tails-server/indy-tails-server
+2025-03-04T19:24:40.0183423Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-04T19:24:40.0185243Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-04T19:24:40.0186868Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-04T19:24:40.0188017Z hint:
+2025-03-04T19:24:40.0188767Z hint: 	git config --global init.defaultBranch <name>
+2025-03-04T19:24:40.0189707Z hint:
+2025-03-04T19:24:40.0190587Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-04T19:24:40.0191484Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-04T19:24:40.0192186Z hint:
+2025-03-04T19:24:40.0192560Z hint: 	git branch -m <name>
+2025-03-04T19:24:40.0193391Z Initialized empty Git repository in /home/runner/work/indy-tails-server/indy-tails-server/.git/
+2025-03-04T19:24:40.0200536Z [command]/usr/bin/git remote add origin https://github.com/bcgov/indy-tails-server
+2025-03-04T19:24:40.0234569Z ##[endgroup]
+2025-03-04T19:24:40.0235375Z ##[group]Disabling automatic garbage collection
+2025-03-04T19:24:40.0238525Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-04T19:24:40.0267461Z ##[endgroup]
+2025-03-04T19:24:40.0268138Z ##[group]Setting up auth
+2025-03-04T19:24:40.0274706Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-04T19:24:40.0304802Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-04T19:24:40.0588222Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-04T19:24:40.0621187Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-04T19:24:40.0854465Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-04T19:24:40.0897603Z ##[endgroup]
+2025-03-04T19:24:40.0899238Z ##[group]Fetching the repository
+2025-03-04T19:24:40.0908078Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +9f908566a1c849481c9369d33f7ded47193bc920:refs/remotes/pull/108/merge
+2025-03-04T19:24:40.6464382Z From https://github.com/bcgov/indy-tails-server
+2025-03-04T19:24:40.6466275Z  * [new ref]         9f908566a1c849481c9369d33f7ded47193bc920 -> pull/108/merge
+2025-03-04T19:24:40.6490710Z ##[endgroup]
+2025-03-04T19:24:40.6491532Z ##[group]Determining the checkout info
+2025-03-04T19:24:40.6493010Z ##[endgroup]
+2025-03-04T19:24:40.6497970Z [command]/usr/bin/git sparse-checkout disable
+2025-03-04T19:24:40.6535504Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-04T19:24:40.6563482Z ##[group]Checking out the ref
+2025-03-04T19:24:40.6566564Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/108/merge
+2025-03-04T19:24:40.6620461Z Note: switching to 'refs/remotes/pull/108/merge'.
+2025-03-04T19:24:40.6621440Z 
+2025-03-04T19:24:40.6622134Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-04T19:24:40.6623813Z changes and commit them, and you can discard any commits you make in this
+2025-03-04T19:24:40.6625270Z state without impacting any branches by switching back to a branch.
+2025-03-04T19:24:40.6625830Z 
+2025-03-04T19:24:40.6626199Z If you want to create a new branch to retain commits you create, you may
+2025-03-04T19:24:40.6627044Z do so (now or later) by using -c with the switch command. Example:
+2025-03-04T19:24:40.6627918Z 
+2025-03-04T19:24:40.6628278Z   git switch -c <new-branch-name>
+2025-03-04T19:24:40.6628805Z 
+2025-03-04T19:24:40.6629014Z Or undo this operation with:
+2025-03-04T19:24:40.6629347Z 
+2025-03-04T19:24:40.6629537Z   git switch -
+2025-03-04T19:24:40.6629802Z 
+2025-03-04T19:24:40.6630523Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-04T19:24:40.6631626Z 
+2025-03-04T19:24:40.6632506Z HEAD is now at 9f90856 Merge 4379f14c094a50ca4e1745bb8346148fc1619b54 into e1dbc67e47f5d1e9b228ac4eee3a2de51b0e2e0e
+2025-03-04T19:24:40.6634473Z ##[endgroup]
+2025-03-04T19:24:40.6662730Z [command]/usr/bin/git log -1 --format=%H
+2025-03-04T19:24:40.6684096Z 9f908566a1c849481c9369d33f7ded47193bc920
+2025-03-04T19:24:40.7013512Z ##[group]Run actions/setup-python@v5
+2025-03-04T19:24:40.7014116Z with:
+2025-03-04T19:24:40.7014540Z   python-version: 3.9
+2025-03-04T19:24:40.7015016Z   check-latest: false
+2025-03-04T19:24:40.7015623Z   token: ***
+2025-03-04T19:24:40.7016057Z   update-environment: true
+2025-03-04T19:24:40.7016561Z   allow-prereleases: false
+2025-03-04T19:24:40.7017053Z ##[endgroup]
+2025-03-04T19:24:40.8717757Z ##[group]Installed versions
+2025-03-04T19:24:40.8782232Z Successfully set up CPython (3.9.21)
+2025-03-04T19:24:40.8784475Z ##[endgroup]
+2025-03-04T19:24:40.8934615Z ##[group]Run python -m pip install --upgrade pip
+2025-03-04T19:24:40.8936413Z [36;1mpython -m pip install --upgrade pip[0m
+2025-03-04T19:24:40.8937915Z [36;1mpip install \[0m
+2025-03-04T19:24:40.8939104Z [36;1m  isort~=5.13.2 \[0m
+2025-03-04T19:24:40.8940562Z [36;1m  black~=24.2.0[0m
+2025-03-04T19:24:40.8995255Z shell: /usr/bin/bash -e {0}
+2025-03-04T19:24:40.8996478Z env:
+2025-03-04T19:24:40.8997665Z   pythonLocation: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-04T19:24:40.8999649Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib/pkgconfig
+2025-03-04T19:24:40.9001838Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-04T19:24:40.9003601Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-04T19:24:40.9005395Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-04T19:24:40.9007169Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib
+2025-03-04T19:24:40.9008659Z ##[endgroup]
+2025-03-04T19:24:44.7341927Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.9.21/x64/lib/python3.9/site-packages (25.0.1)
+2025-03-04T19:24:45.7248277Z Collecting isort~=5.13.2
+2025-03-04T19:24:45.7402629Z   Downloading isort-5.13.2-py3-none-any.whl.metadata (12 kB)
+2025-03-04T19:24:45.7982575Z Collecting black~=24.2.0
+2025-03-04T19:24:45.8030504Z   Downloading black-24.2.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (74 kB)
+2025-03-04T19:24:45.8287584Z Collecting click>=8.0.0 (from black~=24.2.0)
+2025-03-04T19:24:45.8319285Z   Downloading click-8.1.8-py3-none-any.whl.metadata (2.3 kB)
+2025-03-04T19:24:45.8419330Z Collecting mypy-extensions>=0.4.3 (from black~=24.2.0)
+2025-03-04T19:24:45.8460797Z   Downloading mypy_extensions-1.0.0-py3-none-any.whl.metadata (1.1 kB)
+2025-03-04T19:24:45.8631815Z Collecting packaging>=22.0 (from black~=24.2.0)
+2025-03-04T19:24:45.8664509Z   Downloading packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+2025-03-04T19:24:45.8789446Z Collecting pathspec>=0.9.0 (from black~=24.2.0)
+2025-03-04T19:24:45.8857737Z   Downloading pathspec-0.12.1-py3-none-any.whl.metadata (21 kB)
+2025-03-04T19:24:45.9046851Z Collecting platformdirs>=2 (from black~=24.2.0)
+2025-03-04T19:24:45.9079038Z   Downloading platformdirs-4.3.6-py3-none-any.whl.metadata (11 kB)
+2025-03-04T19:24:45.9247298Z Collecting tomli>=1.1.0 (from black~=24.2.0)
+2025-03-04T19:24:45.9285805Z   Downloading tomli-2.2.1-py3-none-any.whl.metadata (10 kB)
+2025-03-04T19:24:45.9460650Z Collecting typing-extensions>=4.0.1 (from black~=24.2.0)
+2025-03-04T19:24:45.9496258Z   Downloading typing_extensions-4.12.2-py3-none-any.whl.metadata (3.0 kB)
+2025-03-04T19:24:45.9588906Z Downloading isort-5.13.2-py3-none-any.whl (92 kB)
+2025-03-04T19:24:45.9665827Z Downloading black-24.2.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.7 MB)
+2025-03-04T19:24:46.0473007Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 31.8 MB/s eta 0:00:00
+2025-03-04T19:24:46.0507290Z Downloading click-8.1.8-py3-none-any.whl (98 kB)
+2025-03-04T19:24:46.0568238Z Downloading mypy_extensions-1.0.0-py3-none-any.whl (4.7 kB)
+2025-03-04T19:24:46.0630383Z Downloading packaging-24.2-py3-none-any.whl (65 kB)
+2025-03-04T19:24:46.0692127Z Downloading pathspec-0.12.1-py3-none-any.whl (31 kB)
+2025-03-04T19:24:46.0750502Z Downloading platformdirs-4.3.6-py3-none-any.whl (18 kB)
+2025-03-04T19:24:46.0806462Z Downloading tomli-2.2.1-py3-none-any.whl (14 kB)
+2025-03-04T19:24:46.0862142Z Downloading typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+2025-03-04T19:24:46.1221483Z Installing collected packages: typing-extensions, tomli, platformdirs, pathspec, packaging, mypy-extensions, isort, click, black
+2025-03-04T19:24:46.4948233Z Successfully installed black-24.2.0 click-8.1.8 isort-5.13.2 mypy-extensions-1.0.0 packaging-24.2 pathspec-0.12.1 platformdirs-4.3.6 tomli-2.2.1 typing-extensions-4.12.2
+2025-03-04T19:24:46.5449568Z ##[group]Run isort . --check --profile black --diff
+2025-03-04T19:24:46.5450224Z [36;1misort . --check --profile black --diff[0m
+2025-03-04T19:24:46.5498741Z shell: /usr/bin/bash -e {0}
+2025-03-04T19:24:46.5498982Z env:
+2025-03-04T19:24:46.5499245Z   pythonLocation: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-04T19:24:46.5499686Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib/pkgconfig
+2025-03-04T19:24:46.5500391Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-04T19:24:46.5500742Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-04T19:24:46.5501105Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-04T19:24:46.5501471Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib
+2025-03-04T19:24:46.5501767Z ##[endgroup]
+2025-03-04T19:24:46.7315908Z Skipped 1 files
+2025-03-04T19:24:46.7434082Z ##[group]Run black . --check --diff
+2025-03-04T19:24:46.7434407Z [36;1mblack . --check --diff[0m
+2025-03-04T19:24:46.7482652Z shell: /usr/bin/bash -e {0}
+2025-03-04T19:24:46.7482883Z env:
+2025-03-04T19:24:46.7483125Z   pythonLocation: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-04T19:24:46.7483529Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib/pkgconfig
+2025-03-04T19:24:46.7483924Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-04T19:24:46.7484265Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-04T19:24:46.7484596Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-04T19:24:46.7484932Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib
+2025-03-04T19:24:46.7485218Z ##[endgroup]
+2025-03-04T19:24:47.7630760Z --- /home/runner/work/indy-tails-server/indy-tails-server/test/integration.py	2025-03-04 19:24:40.660155+00:00
+2025-03-04T19:24:47.7632322Z +++ /home/runner/work/indy-tails-server/indy-tails-server/test/integration.py	2025-03-04 19:24:47.760030+00:00
+2025-03-04T19:24:47.7633308Z @@ -232,13 +232,14 @@
+2025-03-04T19:24:47.7636745Z  
+2025-03-04T19:24:47.7637271Z  async def test_happy_path(genesis_path, tails_server_url, revo_reg_def):
+2025-03-04T19:24:47.7637990Z      log_event("Testing happy path...", panel=True)
+2025-03-04T19:24:47.7638504Z      session = aiohttp.ClientSession()
+2025-03-04T19:24:47.7638948Z  
+2025-03-04T19:24:47.7639407Z -    with open(revo_reg_def["value"]["tailsLocation"], "rb") as tails_file, open(
+2025-03-04T19:24:47.7640232Z -        genesis_path, "rb"
+2025-03-04T19:24:47.7640604Z -    ) as genesis_file:
+2025-03-04T19:24:47.7640930Z +    with (
+2025-03-04T19:24:47.7641356Z +        open(revo_reg_def["value"]["tailsLocation"], "rb") as tails_file,
+2025-03-04T19:24:47.7641949Z +        open(genesis_path, "rb") as genesis_file,
+2025-03-04T19:24:47.7642381Z +    ):
+2025-03-04T19:24:47.7642683Z          async with session.put(
+2025-03-04T19:24:47.7643141Z              f"{tails_server_url}/{revo_reg_def['id']}",
+2025-03-04T19:24:47.7643681Z              data={"genesis": genesis_file, "tails": tails_file},
+2025-03-04T19:24:47.7644138Z          ) as resp:
+2025-03-04T19:24:47.7644374Z              assert resp.status == 200
+2025-03-04T19:24:47.7644651Z @@ -256,13 +257,14 @@
+2025-03-04T19:24:47.7644860Z  
+2025-03-04T19:24:47.7645181Z  async def test_bad_revoc_reg_id_404(genesis_path, tails_server_url, revo_reg_def):
+2025-03-04T19:24:47.7646387Z      log_event("Testing bad revocation registry id...", panel=True)
+2025-03-04T19:24:47.7646974Z      session = aiohttp.ClientSession()
+2025-03-04T19:24:47.7647397Z  
+2025-03-04T19:24:47.7647871Z -    with open(revo_reg_def["value"]["tailsLocation"], "rb") as tails_file, open(
+2025-03-04T19:24:47.7648490Z -        genesis_path, "rb"
+2025-03-04T19:24:47.7648878Z -    ) as genesis_file:
+2025-03-04T19:24:47.7649086Z +    with (
+2025-03-04T19:24:47.7649531Z +        open(revo_reg_def["value"]["tailsLocation"], "rb") as tails_file,
+2025-03-04T19:24:47.7650333Z +        open(genesis_path, "rb") as genesis_file,
+2025-03-04T19:24:47.7650783Z +    ):
+2025-03-04T19:24:47.7651099Z          async with session.put(
+2025-03-04T19:24:47.7651393Z              f"{tails_server_url}/bad-id",
+2025-03-04T19:24:47.7651932Z              data={"genesis": genesis_file, "tails": tails_file},
+2025-03-04T19:24:47.7652370Z          ) as resp:
+2025-03-04T19:24:47.7652928Z would reformat /home/runner/work/indy-tails-server/indy-tails-server/test/integration.py
+2025-03-04T19:24:47.7653511Z              assert resp.status == 400
+2025-03-04T19:24:47.7653947Z @@ -272,23 +274,25 @@
+2025-03-04T19:24:47.7654261Z  
+2025-03-04T19:24:47.7654773Z  async def test_upload_already_exist(genesis_path, tails_server_url, revo_reg_def):
+2025-03-04T19:24:47.7655227Z      log_event("Testing upload already exists...", panel=True)
+2025-03-04T19:24:47.7655544Z      session = aiohttp.ClientSession()
+2025-03-04T19:24:47.7655776Z  
+2025-03-04T19:24:47.7656324Z -    with open(revo_reg_def["value"]["tailsLocation"], "rb") as tails_file, open(
+2025-03-04T19:24:47.7656696Z -        genesis_path, "rb"
+2025-03-04T19:24:47.7656911Z -    ) as genesis_file:
+2025-03-04T19:24:47.7657101Z +    with (
+2025-03-04T19:24:47.7657396Z +        open(revo_reg_def["value"]["tailsLocation"], "rb") as tails_file,
+2025-03-04T19:24:47.7657978Z +        open(genesis_path, "rb") as genesis_file,
+2025-03-04T19:24:47.7658407Z +    ):
+2025-03-04T19:24:47.7658594Z          # First upload
+2025-03-04T19:24:47.7658809Z          async with session.put(
+2025-03-04T19:24:47.7659072Z              f"{tails_server_url}/{revo_reg_def['id']}",
+2025-03-04T19:24:47.7659382Z              data={"genesis": genesis_file, "tails": tails_file},
+2025-03-04T19:24:47.7659659Z          ) as resp:
+2025-03-04T19:24:47.7660042Z              assert resp.status == 200
+2025-03-04T19:24:47.7660359Z  
+2025-03-04T19:24:47.7660637Z -    with open(revo_reg_def["value"]["tailsLocation"], "rb") as tails_file, open(
+2025-03-04T19:24:47.7661092Z -        genesis_path, "rb"
+2025-03-04T19:24:47.7661473Z -    ) as genesis_file:
+2025-03-04T19:24:47.7661831Z +    with (
+2025-03-04T19:24:47.7662275Z +        open(revo_reg_def["value"]["tailsLocation"], "rb") as tails_file,
+2025-03-04T19:24:47.7662847Z +        open(genesis_path, "rb") as genesis_file,
+2025-03-04T19:24:47.7663211Z +    ):
+2025-03-04T19:24:47.7663436Z          # Second upload
+2025-03-04T19:24:47.7663655Z          async with session.put(
+2025-03-04T19:24:47.7663982Z              f"{tails_server_url}/{revo_reg_def['id']}",
+2025-03-04T19:24:47.7664392Z              data={"genesis": genesis_file, "tails": tails_file},
+2025-03-04T19:24:47.7664751Z          ) as resp:
+2025-03-04T19:24:47.7665012Z @@ -313,13 +317,14 @@
+2025-03-04T19:24:47.7665265Z  
+2025-03-04T19:24:47.7665586Z  async def test_bad_content_type(genesis_path, tails_server_url, revo_reg_def):
+2025-03-04T19:24:47.7666307Z      log_event("Testing bad content type...", panel=True)
+2025-03-04T19:24:47.7666681Z      session = aiohttp.ClientSession()
+2025-03-04T19:24:47.7666962Z  
+2025-03-04T19:24:47.7667332Z -    with open(revo_reg_def["value"]["tailsLocation"], "rb") as tails_file, open(
+2025-03-04T19:24:47.7667813Z -        genesis_path, "rb"
+2025-03-04T19:24:47.7668039Z -    ) as genesis_file:
+2025-03-04T19:24:47.7668377Z +    with (
+2025-03-04T19:24:47.7668633Z +        open(revo_reg_def["value"]["tailsLocation"], "rb") as tails_file,
+2025-03-04T19:24:47.7668965Z +        open(genesis_path, "rb") as genesis_file,
+2025-03-04T19:24:47.7669653Z +    ):
+2025-03-04T19:24:47.7670149Z          async with session.put(
+2025-03-04T19:24:47.7670603Z              f"{tails_server_url}/{revo_reg_def['id']}",
+2025-03-04T19:24:47.7671154Z              data={"genesis": genesis_file, "tails": tails_file},
+2025-03-04T19:24:47.7671641Z              headers={"Content-Type": "bad"},
+2025-03-04T19:24:47.7671897Z          ) as resp:
+2025-03-04T19:24:47.7672076Z @@ -330,13 +335,14 @@
+2025-03-04T19:24:47.7672249Z  
+2025-03-04T19:24:47.7672530Z  async def test_bad_field_order(genesis_path, tails_server_url, revo_reg_def):
+2025-03-04T19:24:47.7672913Z      log_event("Testing happy path...", panel=True)
+2025-03-04T19:24:47.7673199Z      session = aiohttp.ClientSession()
+2025-03-04T19:24:47.7673427Z  
+2025-03-04T19:24:47.7673681Z -    with open(revo_reg_def["value"]["tailsLocation"], "rb") as tails_file, open(
+2025-03-04T19:24:47.7674022Z -        genesis_path, "rb"
+2025-03-04T19:24:47.7674232Z -    ) as genesis_file:
+2025-03-04T19:24:47.7674428Z +    with (
+2025-03-04T19:24:47.7674672Z +        open(revo_reg_def["value"]["tailsLocation"], "rb") as tails_file,
+2025-03-04T19:24:47.7675000Z +        open(genesis_path, "rb") as genesis_file,
+2025-03-04T19:24:47.7675247Z +    ):
+2025-03-04T19:24:47.7675422Z          async with session.put(
+2025-03-04T19:24:47.7675678Z              f"{tails_server_url}/{revo_reg_def['id']}",
+2025-03-04T19:24:47.7675984Z              data={"tails": tails_file, "genesis": genesis_file},
+2025-03-04T19:24:47.7676249Z          ) as resp:
+2025-03-04T19:24:47.7676624Z              assert resp.status == 400
+2025-03-04T19:24:47.7720253Z 
+2025-03-04T19:24:47.7720780Z Oh no! 💥 💔 💥
+2025-03-04T19:24:47.7721258Z 1 file would be reformatted, 7 files would be left unchanged.
+2025-03-04T19:24:47.7946099Z ##[error]Process completed with exit code 1.
+2025-03-04T19:24:47.8045671Z Post job cleanup.
+2025-03-04T19:24:47.8981541Z [command]/usr/bin/git version
+2025-03-04T19:24:47.9019398Z git version 2.48.1
+2025-03-04T19:24:47.9068586Z Temporarily overriding HOME='/home/runner/work/_temp/4db6cd45-9f24-46d7-8e4f-567017e0709a' before making global git config changes
+2025-03-04T19:24:47.9069752Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-04T19:24:47.9074201Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/indy-tails-server/indy-tails-server
+2025-03-04T19:24:47.9109009Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-04T19:24:47.9141273Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-04T19:24:47.9390758Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-04T19:24:47.9394082Z http.https://github.com/.extraheader
+2025-03-04T19:24:47.9406545Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-04T19:24:47.9437852Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-04T19:24:47.9769035Z Cleaning up orphan processes

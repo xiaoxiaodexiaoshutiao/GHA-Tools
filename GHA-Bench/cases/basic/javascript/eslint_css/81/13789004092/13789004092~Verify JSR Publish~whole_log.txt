@@ -1,0 +1,240 @@
+2025-03-11T13:17:31.4894931Z Requested labels: ubuntu-latest
+2025-03-11T13:17:31.4895242Z Job defined at: eslint/css/.github/workflows/ci.yml@refs/pull/81/merge
+2025-03-11T13:17:31.4895337Z Waiting for a runner to pick up this job...
+2025-03-11T13:17:32.3025233Z Job is waiting for a hosted runner to come online.
+2025-03-11T13:17:36.0105976Z Job is about to start running on the hosted runner: GitHub Actions 39 (hosted)
+2025-03-11T13:17:38.0809882Z Current runner version: '2.322.0'
+2025-03-11T13:17:38.0835701Z ##[group]Operating System
+2025-03-11T13:17:38.0836509Z Ubuntu
+2025-03-11T13:17:38.0837108Z 24.04.2
+2025-03-11T13:17:38.0837660Z LTS
+2025-03-11T13:17:38.0838153Z ##[endgroup]
+2025-03-11T13:17:38.0838688Z ##[group]Runner Image
+2025-03-11T13:17:38.0839320Z Image: ubuntu-24.04
+2025-03-11T13:17:38.0839866Z Version: 20250309.1.0
+2025-03-11T13:17:38.0841287Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250309.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-11T13:17:38.0842708Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250309.1
+2025-03-11T13:17:38.0843627Z ##[endgroup]
+2025-03-11T13:17:38.0844244Z ##[group]Runner Image Provisioner
+2025-03-11T13:17:38.0844891Z 2.0.422.1
+2025-03-11T13:17:38.0845397Z ##[endgroup]
+2025-03-11T13:17:38.0847587Z ##[group]GITHUB_TOKEN Permissions
+2025-03-11T13:17:38.0849551Z Actions: read
+2025-03-11T13:17:38.0850598Z Attestations: read
+2025-03-11T13:17:38.0851350Z Checks: read
+2025-03-11T13:17:38.0851909Z Contents: read
+2025-03-11T13:17:38.0852430Z Deployments: read
+2025-03-11T13:17:38.0853021Z Discussions: read
+2025-03-11T13:17:38.0853574Z Issues: read
+2025-03-11T13:17:38.0854112Z Metadata: read
+2025-03-11T13:17:38.0854716Z Packages: read
+2025-03-11T13:17:38.0855210Z Pages: read
+2025-03-11T13:17:38.0855753Z PullRequests: read
+2025-03-11T13:17:38.0856369Z RepositoryProjects: read
+2025-03-11T13:17:38.0856989Z SecurityEvents: read
+2025-03-11T13:17:38.0857547Z Statuses: read
+2025-03-11T13:17:38.0858100Z ##[endgroup]
+2025-03-11T13:17:38.0861227Z Secret source: None
+2025-03-11T13:17:38.0861930Z Prepare workflow directory
+2025-03-11T13:17:38.1177815Z Prepare all required actions
+2025-03-11T13:17:38.1215887Z Getting action download info
+2025-03-11T13:17:38.2645579Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-11T13:17:38.3481563Z Download action repository 'actions/setup-node@v4' (SHA:1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a)
+2025-03-11T13:17:38.5109170Z Complete job name: Verify JSR Publish
+2025-03-11T13:17:38.5843432Z ##[group]Run actions/checkout@v4
+2025-03-11T13:17:38.5844293Z with:
+2025-03-11T13:17:38.5844717Z   repository: eslint/css
+2025-03-11T13:17:38.5845358Z   token: ***
+2025-03-11T13:17:38.5845781Z   ssh-strict: true
+2025-03-11T13:17:38.5846206Z   ssh-user: git
+2025-03-11T13:17:38.5846642Z   persist-credentials: true
+2025-03-11T13:17:38.5847123Z   clean: true
+2025-03-11T13:17:38.5847553Z   sparse-checkout-cone-mode: true
+2025-03-11T13:17:38.5848060Z   fetch-depth: 1
+2025-03-11T13:17:38.5848471Z   fetch-tags: false
+2025-03-11T13:17:38.5848903Z   show-progress: true
+2025-03-11T13:17:38.5849328Z   lfs: false
+2025-03-11T13:17:38.5849730Z   submodules: false
+2025-03-11T13:17:38.5850166Z   set-safe-directory: true
+2025-03-11T13:17:38.5851099Z ##[endgroup]
+2025-03-11T13:17:38.7714343Z Syncing repository: eslint/css
+2025-03-11T13:17:38.7716332Z ##[group]Getting Git version info
+2025-03-11T13:17:38.7717014Z Working directory is '/home/runner/work/css/css'
+2025-03-11T13:17:38.7718019Z [command]/usr/bin/git version
+2025-03-11T13:17:38.7785640Z git version 2.48.1
+2025-03-11T13:17:38.7813138Z ##[endgroup]
+2025-03-11T13:17:38.7826725Z Temporarily overriding HOME='/home/runner/work/_temp/48d9cd7d-b006-4abb-a255-fcc9b63b8181' before making global git config changes
+2025-03-11T13:17:38.7831595Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-11T13:17:38.7832944Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/css/css
+2025-03-11T13:17:38.7864963Z Deleting the contents of '/home/runner/work/css/css'
+2025-03-11T13:17:38.7868997Z ##[group]Initializing the repository
+2025-03-11T13:17:38.7872772Z [command]/usr/bin/git init /home/runner/work/css/css
+2025-03-11T13:17:38.7932483Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-11T13:17:38.7933824Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-11T13:17:38.7935281Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-11T13:17:38.7936233Z hint:
+2025-03-11T13:17:38.7937204Z hint: 	git config --global init.defaultBranch <name>
+2025-03-11T13:17:38.7937997Z hint:
+2025-03-11T13:17:38.7938630Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-11T13:17:38.7939640Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-11T13:17:38.7940997Z hint:
+2025-03-11T13:17:38.7941454Z hint: 	git branch -m <name>
+2025-03-11T13:17:38.7942577Z Initialized empty Git repository in /home/runner/work/css/css/.git/
+2025-03-11T13:17:38.7948053Z [command]/usr/bin/git remote add origin https://github.com/eslint/css
+2025-03-11T13:17:38.7980238Z ##[endgroup]
+2025-03-11T13:17:38.7981693Z ##[group]Disabling automatic garbage collection
+2025-03-11T13:17:38.7985244Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-11T13:17:38.8014948Z ##[endgroup]
+2025-03-11T13:17:38.8016219Z ##[group]Setting up auth
+2025-03-11T13:17:38.8022831Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-11T13:17:38.8053609Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-11T13:17:38.8346378Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-11T13:17:38.8377084Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-11T13:17:38.8599815Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-11T13:17:38.8646764Z ##[endgroup]
+2025-03-11T13:17:38.8654779Z ##[group]Fetching the repository
+2025-03-11T13:17:38.8656874Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +78d255572b4a5b30bf46c3b6ea2d8743362d687f:refs/remotes/pull/81/merge
+2025-03-11T13:17:39.1489984Z From https://github.com/eslint/css
+2025-03-11T13:17:39.1493429Z  * [new ref]         78d255572b4a5b30bf46c3b6ea2d8743362d687f -> pull/81/merge
+2025-03-11T13:17:39.1518137Z ##[endgroup]
+2025-03-11T13:17:39.1519795Z ##[group]Determining the checkout info
+2025-03-11T13:17:39.1521708Z ##[endgroup]
+2025-03-11T13:17:39.1526619Z [command]/usr/bin/git sparse-checkout disable
+2025-03-11T13:17:39.1567386Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-11T13:17:39.1594524Z ##[group]Checking out the ref
+2025-03-11T13:17:39.1599626Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/81/merge
+2025-03-11T13:17:39.1698291Z Note: switching to 'refs/remotes/pull/81/merge'.
+2025-03-11T13:17:39.1699193Z 
+2025-03-11T13:17:39.1699801Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-11T13:17:39.1701185Z changes and commit them, and you can discard any commits you make in this
+2025-03-11T13:17:39.1702392Z state without impacting any branches by switching back to a branch.
+2025-03-11T13:17:39.1703581Z 
+2025-03-11T13:17:39.1704379Z If you want to create a new branch to retain commits you create, you may
+2025-03-11T13:17:39.1706233Z do so (now or later) by using -c with the switch command. Example:
+2025-03-11T13:17:39.1707412Z 
+2025-03-11T13:17:39.1707868Z   git switch -c <new-branch-name>
+2025-03-11T13:17:39.1708702Z 
+2025-03-11T13:17:39.1709178Z Or undo this operation with:
+2025-03-11T13:17:39.1709894Z 
+2025-03-11T13:17:39.1710288Z   git switch -
+2025-03-11T13:17:39.1711048Z 
+2025-03-11T13:17:39.1711987Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-11T13:17:39.1713385Z 
+2025-03-11T13:17:39.1714741Z HEAD is now at 78d2555 Merge 5bf41e320675ba3a31c712f266a1278dfea9abcb into a3600462132138847471a0bb9346533f2d8d1bde
+2025-03-11T13:17:39.1718211Z ##[endgroup]
+2025-03-11T13:17:39.1745102Z [command]/usr/bin/git log -1 --format=%H
+2025-03-11T13:17:39.1767130Z 78d255572b4a5b30bf46c3b6ea2d8743362d687f
+2025-03-11T13:17:39.2106993Z ##[group]Run actions/setup-node@v4
+2025-03-11T13:17:39.2107613Z with:
+2025-03-11T13:17:39.2108037Z   node-version: lts/*
+2025-03-11T13:17:39.2108507Z   always-auth: false
+2025-03-11T13:17:39.2108986Z   check-latest: false
+2025-03-11T13:17:39.2109624Z   token: ***
+2025-03-11T13:17:39.2110055Z ##[endgroup]
+2025-03-11T13:17:39.3886451Z Attempt to resolve LTS alias from manifest...
+2025-03-11T13:17:39.7077564Z Found in cache @ /opt/hostedtoolcache/node/22.14.0/x64
+2025-03-11T13:17:39.7084588Z ##[group]Environment details
+2025-03-11T13:17:40.0575419Z node: v22.14.0
+2025-03-11T13:17:40.0576771Z npm: 10.9.2
+2025-03-11T13:17:40.0577565Z yarn: 1.22.22
+2025-03-11T13:17:40.0579059Z ##[endgroup]
+2025-03-11T13:17:40.0750857Z ##[group]Run npm install
+2025-03-11T13:17:40.0752180Z [36;1mnpm install[0m
+2025-03-11T13:17:40.0808254Z shell: /usr/bin/bash -e {0}
+2025-03-11T13:17:40.0809430Z ##[endgroup]
+2025-03-11T13:17:50.2192894Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-03-11T13:17:50.4185051Z npm warn deprecated glob@8.1.0: Glob versions prior to v9 are no longer supported
+2025-03-11T13:17:51.0838759Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-03-11T13:17:51.1632845Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-03-11T13:17:52.0411438Z 
+2025-03-11T13:17:52.0412647Z added 416 packages, and audited 418 packages in 12s
+2025-03-11T13:17:52.0413280Z 
+2025-03-11T13:17:52.0413647Z 136 packages are looking for funding
+2025-03-11T13:17:52.0414250Z   run `npm fund` for details
+2025-03-11T13:17:52.0433411Z 
+2025-03-11T13:17:52.0434106Z 3 high severity vulnerabilities
+2025-03-11T13:17:52.0434514Z 
+2025-03-11T13:17:52.0434882Z Some issues need review, and may require choosing
+2025-03-11T13:17:52.0435500Z a different dependency.
+2025-03-11T13:17:52.0435790Z 
+2025-03-11T13:17:52.0436023Z Run `npm audit` for details.
+2025-03-11T13:17:52.0994526Z ##[group]Run npm run build
+2025-03-11T13:17:52.0994855Z [36;1mnpm run build[0m
+2025-03-11T13:17:52.0995086Z [36;1mnpm run test:jsr[0m
+2025-03-11T13:17:52.1045996Z shell: /usr/bin/bash -e {0}
+2025-03-11T13:17:52.1046289Z ##[endgroup]
+2025-03-11T13:17:52.2030714Z 
+2025-03-11T13:17:52.2031314Z > @eslint/css@0.4.0 build
+2025-03-11T13:17:52.2033044Z > rollup -c && npm run build:dedupe-types && tsc -p tsconfig.esm.json && npm run build:cts && tsc -p tsconfig.syntax.json && npm run build:syntax-cts
+2025-03-11T13:17:52.2034079Z 
+2025-03-11T13:17:52.2731226Z [36m
+2025-03-11T13:17:52.2732260Z [1msrc/index.js[22m → [1mdist/cjs/index.cjs, dist/esm/index.js[22m...[39m
+2025-03-11T13:17:52.4707741Z [1m[33m(!) Unresolved dependencies[39m[22m
+2025-03-11T13:17:52.4708882Z [90mhttps://rollupjs.org/troubleshooting/#warning-treating-module-as-external-dependency[39m
+2025-03-11T13:17:52.4709693Z [1m@eslint/plugin-kit[22m (imported by "src/languages/css-source-code.js")
+2025-03-11T13:17:52.4710985Z [1mcss-tree[22m (imported by "src/languages/css-language.js")
+2025-03-11T13:17:52.4711560Z [1m[33m(!) Mixing named and default exports[39m[22m
+2025-03-11T13:17:52.4712104Z [90mhttps://rollupjs.org/configuration-options/#output-exports[39m
+2025-03-11T13:17:52.4712958Z [1mThe following entry modules are using named and default exports together:[22m
+2025-03-11T13:17:52.4713373Z src/index.js
+2025-03-11T13:17:52.4713504Z 
+2025-03-11T13:17:52.4714196Z Consumers of your bundle will have to use chunk.default to access their default export, which may not be what you want. Use `output.exports: "named"` to disable this warning.
+2025-03-11T13:17:52.4718123Z [32mcreated [1mdist/cjs/index.cjs, dist/esm/index.js[22m in [1m199ms[22m[39m
+2025-03-11T13:17:52.4719765Z [36m
+2025-03-11T13:17:52.4721258Z [1msrc/syntax/index.js[22m → [1mdist/cjs/syntax/index.cjs, dist/esm/syntax/index.js[22m...[39m
+2025-03-11T13:17:52.4760040Z [32mcreated [1mdist/cjs/syntax/index.cjs, dist/esm/syntax/index.js[22m in [1m4ms[22m[39m
+2025-03-11T13:17:52.5743609Z 
+2025-03-11T13:17:52.5744477Z > @eslint/css@0.4.0 build:dedupe-types
+2025-03-11T13:17:52.5745251Z > node tools/dedupe-types.js dist/cjs/index.cjs dist/esm/index.js
+2025-03-11T13:17:52.5745681Z 
+2025-03-11T13:17:56.3942042Z 
+2025-03-11T13:17:56.3942624Z > @eslint/css@0.4.0 build:cts
+2025-03-11T13:17:56.3943466Z > node -e "fs.copyFileSync('dist/esm/index.d.ts', 'dist/cjs/index.d.cts')"
+2025-03-11T13:17:56.3943940Z 
+2025-03-11T13:17:59.3115605Z 
+2025-03-11T13:17:59.3116457Z > @eslint/css@0.4.0 build:syntax-cts
+2025-03-11T13:17:59.3117933Z > node -e "fs.copyFileSync('dist/esm/syntax/index.d.ts', 'dist/cjs/syntax/index.d.cts')"
+2025-03-11T13:17:59.3118924Z 
+2025-03-11T13:17:59.4384503Z 
+2025-03-11T13:17:59.4385122Z > @eslint/css@0.4.0 test:jsr
+2025-03-11T13:17:59.4385773Z > npx jsr@latest publish --dry-run
+2025-03-11T13:17:59.4386140Z 
+2025-03-11T13:18:00.3381722Z npm warn exec The following package was not found and will be installed: jsr@0.13.4
+2025-03-11T13:18:01.3481223Z Downloading JSR release binary...
+2025-03-11T13:18:03.1116885Z Download completed
+2025-03-11T13:18:03.1547353Z Checking for slow types in the public API...
+2025-03-11T13:18:03.1604163Z [0m[1m[31merror[unsupported-ambient-module][0m: [0m[1mfound an ambient module, which is a global augmentation, which are not unsupported[0m
+2025-03-11T13:18:03.1606196Z  [0m[38;5;12m-->[0m [0m[36m/home/runner/work/css/css/typings/css-tree/index.d.ts[0m[0m[33m:1:16[0m
+2025-03-11T13:18:03.1607180Z  [0m[38;5;12m | [0m
+2025-03-11T13:18:03.1607901Z [0m[38;5;12m1 | [0mdeclare module "css-tree" {
+2025-03-11T13:18:03.1608760Z  [0m[38;5;12m | [0m               [0m[1m[31m^^^^^^^^^^[0m
+2025-03-11T13:18:03.1609744Z   [0m[38;5;12m=[0m [0m[1mhint[0m: remove the ambient module declaration
+2025-03-11T13:18:03.1610336Z 
+2025-03-11T13:18:03.1611635Z   [0m[38;5;12minfo[0m: ambient modules are not supported because they can modify the types of a module from outside of that module
+2025-03-11T13:18:03.1613469Z   [0m[38;5;12mdocs[0m: https://jsr.io/go/slow-type-unsupported-ambient-module
+2025-03-11T13:18:03.1614112Z 
+2025-03-11T13:18:03.1614668Z This package contains errors for slow types. Fixing these errors will:
+2025-03-11T13:18:03.1615166Z 
+2025-03-11T13:18:03.1615593Z   1. Significantly improve your package users' type checking performance.
+2025-03-11T13:18:03.1616357Z   2. Improve the automatic documentation generation.
+2025-03-11T13:18:03.1616977Z   3. Enable automatic .d.ts generation for Node.js.
+2025-03-11T13:18:03.1617337Z 
+2025-03-11T13:18:03.1617688Z Don't want to bother? You can choose to skip this step by
+2025-03-11T13:18:03.1618340Z providing the --allow-slow-types flag.
+2025-03-11T13:18:03.1618657Z 
+2025-03-11T13:18:03.1623147Z [0m[1m[31merror[0m: Found 1 problem
+2025-03-11T13:18:03.1649903Z [31mChild process exited with: 1[39m
+2025-03-11T13:18:03.1914130Z ##[error]Process completed with exit code 1.
+2025-03-11T13:18:03.2063049Z Post job cleanup.
+2025-03-11T13:18:03.3004700Z [command]/usr/bin/git version
+2025-03-11T13:18:03.3041927Z git version 2.48.1
+2025-03-11T13:18:03.3094630Z Temporarily overriding HOME='/home/runner/work/_temp/01877db2-092d-4aba-8c7e-3012ac387369' before making global git config changes
+2025-03-11T13:18:03.3096225Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-11T13:18:03.3101949Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/css/css
+2025-03-11T13:18:03.3136861Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-11T13:18:03.3171099Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-11T13:18:03.3402550Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-11T13:18:03.3424974Z http.https://github.com/.extraheader
+2025-03-11T13:18:03.3437250Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-11T13:18:03.3466748Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-11T13:18:03.3795226Z Cleaning up orphan processes

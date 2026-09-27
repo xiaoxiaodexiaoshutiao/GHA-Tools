@@ -1,0 +1,353 @@
+﻿2025-03-28T12:56:59.8602544Z Current runner version: '2.323.0'
+2025-03-28T12:56:59.8634719Z ##[group]Operating System
+2025-03-28T12:56:59.8636154Z Ubuntu
+2025-03-28T12:56:59.8637140Z 24.04.2
+2025-03-28T12:56:59.8637926Z LTS
+2025-03-28T12:56:59.8638616Z ##[endgroup]
+2025-03-28T12:56:59.8639681Z ##[group]Runner Image
+2025-03-28T12:56:59.8640653Z Image: ubuntu-24.04
+2025-03-28T12:56:59.8641439Z Version: 20250323.1.0
+2025-03-28T12:56:59.8643156Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-28T12:56:59.8645477Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-03-28T12:56:59.8647027Z ##[endgroup]
+2025-03-28T12:56:59.8647952Z ##[group]Runner Image Provisioner
+2025-03-28T12:56:59.8649016Z 2.0.422.1
+2025-03-28T12:56:59.8649807Z ##[endgroup]
+2025-03-28T12:56:59.8653853Z ##[group]GITHUB_TOKEN Permissions
+2025-03-28T12:56:59.8657125Z Actions: read
+2025-03-28T12:56:59.8658246Z Attestations: read
+2025-03-28T12:56:59.8659359Z Checks: read
+2025-03-28T12:56:59.8660305Z Contents: read
+2025-03-28T12:56:59.8661079Z Deployments: read
+2025-03-28T12:56:59.8661937Z Discussions: read
+2025-03-28T12:56:59.8662753Z Issues: read
+2025-03-28T12:56:59.8663548Z Metadata: read
+2025-03-28T12:56:59.8664411Z Models: read
+2025-03-28T12:56:59.8665144Z Packages: read
+2025-03-28T12:56:59.8665918Z Pages: read
+2025-03-28T12:56:59.8666662Z PullRequests: read
+2025-03-28T12:56:59.8667626Z RepositoryProjects: read
+2025-03-28T12:56:59.8668463Z SecurityEvents: read
+2025-03-28T12:56:59.8669573Z Statuses: read
+2025-03-28T12:56:59.8670418Z ##[endgroup]
+2025-03-28T12:56:59.8673735Z Secret source: None
+2025-03-28T12:56:59.8675295Z Prepare workflow directory
+2025-03-28T12:56:59.9138500Z Prepare all required actions
+2025-03-28T12:56:59.9192765Z Getting action download info
+2025-03-28T12:57:00.3170499Z ##[group]Download immutable action package 'actions/checkout@v2'
+2025-03-28T12:57:00.3171564Z Version: 2.7.0
+2025-03-28T12:57:00.3172579Z Digest: sha256:95d28907bc868c0bab52f05f1f84cf8416c9415fba4c92519bc0b83bdce1eae3
+2025-03-28T12:57:00.3173801Z Source commit SHA: ee0669bd1cc54295c223e0bb666b733df41de1c5
+2025-03-28T12:57:00.3174548Z ##[endgroup]
+2025-03-28T12:57:00.4307880Z Download action repository 'peter-evans/autopep8@v1' (SHA:921e8f57f62a70ba5dd9fac0d1f4834e4d819c22)
+2025-03-28T12:57:00.7717924Z Complete job name: autopep8
+2025-03-28T12:57:00.8151953Z ##[group]Pull down action image 'peterevans/autopep8:1.2.2'
+2025-03-28T12:57:00.8203527Z ##[command]/usr/bin/docker pull peterevans/autopep8:1.2.2
+2025-03-28T12:57:01.1217977Z 1.2.2: Pulling from peterevans/autopep8
+2025-03-28T12:57:01.1218938Z 21c83c524219: Pulling fs layer
+2025-03-28T12:57:01.1219505Z 9a80d14c35bd: Pulling fs layer
+2025-03-28T12:57:01.1219979Z 0d32a27dde5a: Pulling fs layer
+2025-03-28T12:57:01.1220423Z 2cb80a514e07: Pulling fs layer
+2025-03-28T12:57:01.1220887Z d5d3b19aaadd: Pulling fs layer
+2025-03-28T12:57:01.1221356Z c5aa1bc618a4: Pulling fs layer
+2025-03-28T12:57:01.1221822Z 433e430d6d56: Pulling fs layer
+2025-03-28T12:57:01.1222323Z 5fc459e2c672: Pulling fs layer
+2025-03-28T12:57:01.1222780Z 1423d653e49b: Pulling fs layer
+2025-03-28T12:57:01.1223223Z c5aa1bc618a4: Waiting
+2025-03-28T12:57:01.1223619Z 433e430d6d56: Waiting
+2025-03-28T12:57:01.1224021Z 5fc459e2c672: Waiting
+2025-03-28T12:57:01.1224410Z 2cb80a514e07: Waiting
+2025-03-28T12:57:01.1224859Z d5d3b19aaadd: Waiting
+2025-03-28T12:57:01.1225252Z 1423d653e49b: Waiting
+2025-03-28T12:57:01.2177848Z 21c83c524219: Verifying Checksum
+2025-03-28T12:57:01.2179181Z 21c83c524219: Download complete
+2025-03-28T12:57:01.2364858Z 9a80d14c35bd: Verifying Checksum
+2025-03-28T12:57:01.2366531Z 9a80d14c35bd: Download complete
+2025-03-28T12:57:01.2720098Z 2cb80a514e07: Download complete
+2025-03-28T12:57:01.2989206Z d5d3b19aaadd: Verifying Checksum
+2025-03-28T12:57:01.2990842Z d5d3b19aaadd: Download complete
+2025-03-28T12:57:01.3173245Z 21c83c524219: Pull complete
+2025-03-28T12:57:01.3280891Z c5aa1bc618a4: Download complete
+2025-03-28T12:57:01.3719422Z 433e430d6d56: Verifying Checksum
+2025-03-28T12:57:01.3722764Z 433e430d6d56: Download complete
+2025-03-28T12:57:01.4249287Z 0d32a27dde5a: Verifying Checksum
+2025-03-28T12:57:01.4251219Z 0d32a27dde5a: Download complete
+2025-03-28T12:57:01.4409416Z 1423d653e49b: Download complete
+2025-03-28T12:57:01.4639070Z 5fc459e2c672: Verifying Checksum
+2025-03-28T12:57:01.4639828Z 5fc459e2c672: Download complete
+2025-03-28T12:57:01.5067082Z 9a80d14c35bd: Pull complete
+2025-03-28T12:57:02.0996675Z 0d32a27dde5a: Pull complete
+2025-03-28T12:57:02.1098232Z 2cb80a514e07: Pull complete
+2025-03-28T12:57:02.3065754Z d5d3b19aaadd: Pull complete
+2025-03-28T12:57:02.3166515Z c5aa1bc618a4: Pull complete
+2025-03-28T12:57:02.3256597Z 433e430d6d56: Pull complete
+2025-03-28T12:57:02.5480945Z 5fc459e2c672: Pull complete
+2025-03-28T12:57:02.5576607Z 1423d653e49b: Pull complete
+2025-03-28T12:57:02.5608904Z Digest: sha256:89166fce6461524399cf958f5e8292caea7cdfc4315f93a3d38db5306920e7ca
+2025-03-28T12:57:02.5619058Z Status: Downloaded newer image for peterevans/autopep8:1.2.2
+2025-03-28T12:57:02.5629924Z docker.io/peterevans/autopep8:1.2.2
+2025-03-28T12:57:02.5650974Z ##[endgroup]
+2025-03-28T12:57:02.5899212Z ##[group]Run actions/checkout@v2
+2025-03-28T12:57:02.5899850Z with:
+2025-03-28T12:57:02.5900105Z   repository: precice/fenicsx-adapter
+2025-03-28T12:57:02.5900552Z   token: ***
+2025-03-28T12:57:02.5900814Z   ssh-strict: true
+2025-03-28T12:57:02.5901043Z   persist-credentials: true
+2025-03-28T12:57:02.5901291Z   clean: true
+2025-03-28T12:57:02.5901488Z   fetch-depth: 1
+2025-03-28T12:57:02.5901709Z   lfs: false
+2025-03-28T12:57:02.5901913Z   submodules: false
+2025-03-28T12:57:02.5902144Z   set-safe-directory: true
+2025-03-28T12:57:02.5902589Z ##[endgroup]
+2025-03-28T12:57:02.7440917Z Syncing repository: precice/fenicsx-adapter
+2025-03-28T12:57:02.7442256Z ##[group]Getting Git version info
+2025-03-28T12:57:02.7442706Z Working directory is '/home/runner/work/fenicsx-adapter/fenicsx-adapter'
+2025-03-28T12:57:02.7443307Z [command]/usr/bin/git version
+2025-03-28T12:57:02.7485745Z git version 2.49.0
+2025-03-28T12:57:02.7512122Z ##[endgroup]
+2025-03-28T12:57:02.7527479Z Temporarily overriding HOME='/home/runner/work/_temp/382291c5-3689-4b8a-aa1a-eb2009ce5df9' before making global git config changes
+2025-03-28T12:57:02.7531398Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-28T12:57:02.7532151Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/fenicsx-adapter/fenicsx-adapter
+2025-03-28T12:57:02.7567032Z Deleting the contents of '/home/runner/work/fenicsx-adapter/fenicsx-adapter'
+2025-03-28T12:57:02.7570608Z ##[group]Initializing the repository
+2025-03-28T12:57:02.7573820Z [command]/usr/bin/git init /home/runner/work/fenicsx-adapter/fenicsx-adapter
+2025-03-28T12:57:02.7629491Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-28T12:57:02.7630292Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-28T12:57:02.7631065Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-28T12:57:02.7631796Z hint:
+2025-03-28T12:57:02.7632319Z hint: 	git config --global init.defaultBranch <name>
+2025-03-28T12:57:02.7632875Z hint:
+2025-03-28T12:57:02.7633417Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-28T12:57:02.7634237Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-28T12:57:02.7634884Z hint:
+2025-03-28T12:57:02.7635245Z hint: 	git branch -m <name>
+2025-03-28T12:57:02.7635970Z Initialized empty Git repository in /home/runner/work/fenicsx-adapter/fenicsx-adapter/.git/
+2025-03-28T12:57:02.7643797Z [command]/usr/bin/git remote add origin https://github.com/precice/fenicsx-adapter
+2025-03-28T12:57:02.7681176Z ##[endgroup]
+2025-03-28T12:57:02.7681870Z ##[group]Disabling automatic garbage collection
+2025-03-28T12:57:02.7685148Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-28T12:57:02.7713867Z ##[endgroup]
+2025-03-28T12:57:02.7714417Z ##[group]Setting up auth
+2025-03-28T12:57:02.7719666Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-28T12:57:02.7748507Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-28T12:57:02.8019181Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-28T12:57:02.8047334Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-28T12:57:02.8275699Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-28T12:57:02.8311010Z ##[endgroup]
+2025-03-28T12:57:02.8315489Z ##[group]Fetching the repository
+2025-03-28T12:57:02.8320547Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +98647773525bc042ed9f827951b0b5e33bc83b45:refs/remotes/pull/34/merge
+2025-03-28T12:57:03.0807047Z remote: Enumerating objects: 70, done.        
+2025-03-28T12:57:03.0808013Z remote: Counting objects:   1% (1/70)        
+2025-03-28T12:57:03.0809147Z remote: Counting objects:   2% (2/70)        
+2025-03-28T12:57:03.0809928Z remote: Counting objects:   4% (3/70)        
+2025-03-28T12:57:03.0810852Z remote: Counting objects:   5% (4/70)        
+2025-03-28T12:57:03.0811511Z remote: Counting objects:   7% (5/70)        
+2025-03-28T12:57:03.0812044Z remote: Counting objects:   8% (6/70)        
+2025-03-28T12:57:03.0812417Z remote: Counting objects:  10% (7/70)        
+2025-03-28T12:57:03.0812784Z remote: Counting objects:  11% (8/70)        
+2025-03-28T12:57:03.0813148Z remote: Counting objects:  12% (9/70)        
+2025-03-28T12:57:03.0813518Z remote: Counting objects:  14% (10/70)        
+2025-03-28T12:57:03.0813892Z remote: Counting objects:  15% (11/70)        
+2025-03-28T12:57:03.0814305Z remote: Counting objects:  17% (12/70)        
+2025-03-28T12:57:03.0814686Z remote: Counting objects:  18% (13/70)        
+2025-03-28T12:57:03.0815055Z remote: Counting objects:  20% (14/70)        
+2025-03-28T12:57:03.0815421Z remote: Counting objects:  21% (15/70)        
+2025-03-28T12:57:03.0815789Z remote: Counting objects:  22% (16/70)        
+2025-03-28T12:57:03.0816161Z remote: Counting objects:  24% (17/70)        
+2025-03-28T12:57:03.0816522Z remote: Counting objects:  25% (18/70)        
+2025-03-28T12:57:03.0816888Z remote: Counting objects:  27% (19/70)        
+2025-03-28T12:57:03.0817253Z remote: Counting objects:  28% (20/70)        
+2025-03-28T12:57:03.0817616Z remote: Counting objects:  30% (21/70)        
+2025-03-28T12:57:03.0818371Z remote: Counting objects:  31% (22/70)        
+2025-03-28T12:57:03.0819069Z remote: Counting objects:  32% (23/70)        
+2025-03-28T12:57:03.0819792Z remote: Counting objects:  34% (24/70)        
+2025-03-28T12:57:03.0820451Z remote: Counting objects:  35% (25/70)        
+2025-03-28T12:57:03.0821392Z remote: Counting objects:  37% (26/70)        
+2025-03-28T12:57:03.0822149Z remote: Counting objects:  38% (27/70)        
+2025-03-28T12:57:03.0822733Z remote: Counting objects:  40% (28/70)        
+2025-03-28T12:57:03.0823043Z remote: Counting objects:  41% (29/70)        
+2025-03-28T12:57:03.0823517Z remote: Counting objects:  42% (30/70)        
+2025-03-28T12:57:03.0824040Z remote: Counting objects:  44% (31/70)        
+2025-03-28T12:57:03.0824408Z remote: Counting objects:  45% (32/70)        
+2025-03-28T12:57:03.0824681Z remote: Counting objects:  47% (33/70)        
+2025-03-28T12:57:03.0824934Z remote: Counting objects:  48% (34/70)        
+2025-03-28T12:57:03.0825194Z remote: Counting objects:  50% (35/70)        
+2025-03-28T12:57:03.0825649Z remote: Counting objects:  51% (36/70)        
+2025-03-28T12:57:03.0825916Z remote: Counting objects:  52% (37/70)        
+2025-03-28T12:57:03.0826369Z remote: Counting objects:  54% (38/70)        
+2025-03-28T12:57:03.0827213Z remote: Counting objects:  55% (39/70)        
+2025-03-28T12:57:03.0827504Z remote: Counting objects:  57% (40/70)        
+2025-03-28T12:57:03.0827933Z remote: Counting objects:  58% (41/70)        
+2025-03-28T12:57:03.0828200Z remote: Counting objects:  60% (42/70)        
+2025-03-28T12:57:03.0828503Z remote: Counting objects:  61% (43/70)        
+2025-03-28T12:57:03.0829165Z remote: Counting objects:  62% (44/70)        
+2025-03-28T12:57:03.0829853Z remote: Counting objects:  64% (45/70)        
+2025-03-28T12:57:03.0830183Z remote: Counting objects:  65% (46/70)        
+2025-03-28T12:57:03.0830623Z remote: Counting objects:  67% (47/70)        
+2025-03-28T12:57:03.0830889Z remote: Counting objects:  68% (48/70)        
+2025-03-28T12:57:03.0831210Z remote: Counting objects:  70% (49/70)        
+2025-03-28T12:57:03.0831645Z remote: Counting objects:  71% (50/70)        
+2025-03-28T12:57:03.0832076Z remote: Counting objects:  72% (51/70)        
+2025-03-28T12:57:03.0832442Z remote: Counting objects:  74% (52/70)        
+2025-03-28T12:57:03.0832894Z remote: Counting objects:  75% (53/70)        
+2025-03-28T12:57:03.0833359Z remote: Counting objects:  77% (54/70)        
+2025-03-28T12:57:03.0834007Z remote: Counting objects:  78% (55/70)        
+2025-03-28T12:57:03.0834526Z remote: Counting objects:  80% (56/70)        
+2025-03-28T12:57:03.0835190Z remote: Counting objects:  81% (57/70)        
+2025-03-28T12:57:03.0835834Z remote: Counting objects:  82% (58/70)        
+2025-03-28T12:57:03.0836544Z remote: Counting objects:  84% (59/70)        
+2025-03-28T12:57:03.0836995Z remote: Counting objects:  85% (60/70)        
+2025-03-28T12:57:03.0837499Z remote: Counting objects:  87% (61/70)        
+2025-03-28T12:57:03.0837999Z remote: Counting objects:  88% (62/70)        
+2025-03-28T12:57:03.0838991Z remote: Counting objects:  90% (63/70)        
+2025-03-28T12:57:03.0839748Z remote: Counting objects:  91% (64/70)        
+2025-03-28T12:57:03.0840549Z remote: Counting objects:  92% (65/70)        
+2025-03-28T12:57:03.0841378Z remote: Counting objects:  94% (66/70)        
+2025-03-28T12:57:03.0842189Z remote: Counting objects:  95% (67/70)        
+2025-03-28T12:57:03.0842978Z remote: Counting objects:  97% (68/70)        
+2025-03-28T12:57:03.0843724Z remote: Counting objects:  98% (69/70)        
+2025-03-28T12:57:03.0844671Z remote: Counting objects: 100% (70/70)        
+2025-03-28T12:57:03.0845272Z remote: Counting objects: 100% (70/70), done.        
+2025-03-28T12:57:03.0845849Z remote: Compressing objects:   1% (1/58)        
+2025-03-28T12:57:03.0846318Z remote: Compressing objects:   3% (2/58)        
+2025-03-28T12:57:03.0846603Z remote: Compressing objects:   5% (3/58)        
+2025-03-28T12:57:03.0846870Z remote: Compressing objects:   6% (4/58)        
+2025-03-28T12:57:03.0847129Z remote: Compressing objects:   8% (5/58)        
+2025-03-28T12:57:03.0847390Z remote: Compressing objects:  10% (6/58)        
+2025-03-28T12:57:03.0847647Z remote: Compressing objects:  12% (7/58)        
+2025-03-28T12:57:03.0847941Z remote: Compressing objects:  13% (8/58)        
+2025-03-28T12:57:03.0848214Z remote: Compressing objects:  15% (9/58)        
+2025-03-28T12:57:03.0848512Z remote: Compressing objects:  17% (10/58)        
+2025-03-28T12:57:03.0849017Z remote: Compressing objects:  18% (11/58)        
+2025-03-28T12:57:03.0849331Z remote: Compressing objects:  20% (12/58)        
+2025-03-28T12:57:03.0849604Z remote: Compressing objects:  22% (13/58)        
+2025-03-28T12:57:03.0849867Z remote: Compressing objects:  24% (14/58)        
+2025-03-28T12:57:03.0850137Z remote: Compressing objects:  25% (15/58)        
+2025-03-28T12:57:03.0850408Z remote: Compressing objects:  27% (16/58)        
+2025-03-28T12:57:03.0850682Z remote: Compressing objects:  29% (17/58)        
+2025-03-28T12:57:03.0850949Z remote: Compressing objects:  31% (18/58)        
+2025-03-28T12:57:03.0851209Z remote: Compressing objects:  32% (19/58)        
+2025-03-28T12:57:03.0851476Z remote: Compressing objects:  34% (20/58)        
+2025-03-28T12:57:03.0851942Z remote: Compressing objects:  36% (21/58)        
+2025-03-28T12:57:03.0852398Z remote: Compressing objects:  37% (22/58)        
+2025-03-28T12:57:03.0852807Z remote: Compressing objects:  39% (23/58)        
+2025-03-28T12:57:03.0853198Z remote: Compressing objects:  41% (24/58)        
+2025-03-28T12:57:03.0854030Z remote: Compressing objects:  43% (25/58)        
+2025-03-28T12:57:03.0854605Z remote: Compressing objects:  44% (26/58)        
+2025-03-28T12:57:03.0854906Z remote: Compressing objects:  46% (27/58)        
+2025-03-28T12:57:03.0855174Z remote: Compressing objects:  48% (28/58)        
+2025-03-28T12:57:03.0856141Z remote: Compressing objects:  50% (29/58)        
+2025-03-28T12:57:03.0856613Z remote: Compressing objects:  51% (30/58)        
+2025-03-28T12:57:03.0857088Z remote: Compressing objects:  53% (31/58)        
+2025-03-28T12:57:03.0857552Z remote: Compressing objects:  55% (32/58)        
+2025-03-28T12:57:03.0858027Z remote: Compressing objects:  56% (33/58)        
+2025-03-28T12:57:03.0858339Z remote: Compressing objects:  58% (34/58)        
+2025-03-28T12:57:03.0858993Z remote: Compressing objects:  60% (35/58)        
+2025-03-28T12:57:03.0859326Z remote: Compressing objects:  62% (36/58)        
+2025-03-28T12:57:03.0859594Z remote: Compressing objects:  63% (37/58)        
+2025-03-28T12:57:03.0859859Z remote: Compressing objects:  65% (38/58)        
+2025-03-28T12:57:03.0860125Z remote: Compressing objects:  67% (39/58)        
+2025-03-28T12:57:03.0860387Z remote: Compressing objects:  68% (40/58)        
+2025-03-28T12:57:03.0860751Z remote: Compressing objects:  70% (41/58)        
+2025-03-28T12:57:03.0861167Z remote: Compressing objects:  72% (42/58)        
+2025-03-28T12:57:03.0861442Z remote: Compressing objects:  74% (43/58)        
+2025-03-28T12:57:03.0861705Z remote: Compressing objects:  75% (44/58)        
+2025-03-28T12:57:03.0861975Z remote: Compressing objects:  77% (45/58)        
+2025-03-28T12:57:03.0862237Z remote: Compressing objects:  79% (46/58)        
+2025-03-28T12:57:03.0862517Z remote: Compressing objects:  81% (47/58)        
+2025-03-28T12:57:03.0862795Z remote: Compressing objects:  82% (48/58)        
+2025-03-28T12:57:03.0863057Z remote: Compressing objects:  84% (49/58)        
+2025-03-28T12:57:03.0863328Z remote: Compressing objects:  86% (50/58)        
+2025-03-28T12:57:03.0863590Z remote: Compressing objects:  87% (51/58)        
+2025-03-28T12:57:03.0863858Z remote: Compressing objects:  89% (52/58)        
+2025-03-28T12:57:03.0864118Z remote: Compressing objects:  91% (53/58)        
+2025-03-28T12:57:03.0864388Z remote: Compressing objects:  93% (54/58)        
+2025-03-28T12:57:03.0865103Z remote: Compressing objects:  94% (55/58)        
+2025-03-28T12:57:03.0865533Z remote: Compressing objects:  96% (56/58)        
+2025-03-28T12:57:03.0866012Z remote: Compressing objects:  98% (57/58)        
+2025-03-28T12:57:03.0866345Z remote: Compressing objects: 100% (58/58)        
+2025-03-28T12:57:03.0866647Z remote: Compressing objects: 100% (58/58), done.        
+2025-03-28T12:57:03.0878674Z remote: Total 70 (delta 7), reused 32 (delta 2), pack-reused 0 (from 0)        
+2025-03-28T12:57:03.1076811Z From https://github.com/precice/fenicsx-adapter
+2025-03-28T12:57:03.1077476Z  * [new ref]         98647773525bc042ed9f827951b0b5e33bc83b45 -> pull/34/merge
+2025-03-28T12:57:03.1104834Z ##[endgroup]
+2025-03-28T12:57:03.1105471Z ##[group]Determining the checkout info
+2025-03-28T12:57:03.1107974Z ##[endgroup]
+2025-03-28T12:57:03.1108591Z ##[group]Checking out the ref
+2025-03-28T12:57:03.1112830Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/34/merge
+2025-03-28T12:57:03.1196019Z Note: switching to 'refs/remotes/pull/34/merge'.
+2025-03-28T12:57:03.1196429Z 
+2025-03-28T12:57:03.1196769Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-28T12:57:03.1197575Z changes and commit them, and you can discard any commits you make in this
+2025-03-28T12:57:03.1198365Z state without impacting any branches by switching back to a branch.
+2025-03-28T12:57:03.1199311Z 
+2025-03-28T12:57:03.1199648Z If you want to create a new branch to retain commits you create, you may
+2025-03-28T12:57:03.1200383Z do so (now or later) by using -c with the switch command. Example:
+2025-03-28T12:57:03.1200788Z 
+2025-03-28T12:57:03.1201010Z   git switch -c <new-branch-name>
+2025-03-28T12:57:03.1201282Z 
+2025-03-28T12:57:03.1201427Z Or undo this operation with:
+2025-03-28T12:57:03.1201683Z 
+2025-03-28T12:57:03.1201813Z   git switch -
+2025-03-28T12:57:03.1201999Z 
+2025-03-28T12:57:03.1202355Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-28T12:57:03.1202968Z 
+2025-03-28T12:57:03.1203640Z HEAD is now at 9864777 Merge 69270e617560c44bec613148bda45c060fd30178 into 54233d17e097edff678ad7c819822b871f27efd6
+2025-03-28T12:57:03.1206254Z ##[endgroup]
+2025-03-28T12:57:03.1240362Z [command]/usr/bin/git log -1 --format='%H'
+2025-03-28T12:57:03.1263971Z '98647773525bc042ed9f827951b0b5e33bc83b45'
+2025-03-28T12:57:03.1535749Z ##[group]Run peter-evans/autopep8@v1
+2025-03-28T12:57:03.1536051Z with:
+2025-03-28T12:57:03.1536447Z   args: --recursive --diff --aggressive --aggressive --exit-code --ignore E402 --max-line-length 120 .
+2025-03-28T12:57:03.1536889Z ##[endgroup]
+2025-03-28T12:57:03.1635186Z ##[command]/usr/bin/docker run --name peterevansautopep8122_971c43 --label 9d70e3 --workdir /github/workspace --rm -e "INPUT_ARGS" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_RESULTS_URL" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/runner/work/fenicsx-adapter/fenicsx-adapter":"/github/workspace" peterevans/autopep8:1.2.2  "--recursive --diff --aggressive --aggressive --exit-code --ignore E402 --max-line-length 120 ."
+2025-03-28T12:57:05.3560624Z --- original/./fenicsxprecice/fenicsxprecice.py
+2025-03-28T12:57:05.3561508Z +++ fixed/./fenicsxprecice/fenicsxprecice.py
+2025-03-28T12:57:05.3562117Z @@ -249,8 +249,9 @@
+2025-03-28T12:57:05.3562538Z              elif write_object is None:
+2025-03-28T12:57:05.3563056Z                  pass
+2025-03-28T12:57:05.3563448Z              else:
+2025-03-28T12:57:05.3564290Z -                raise Exception(f"Given write object of {c_mesh} is neither of type dolfinx.functions.function.Function or "
+2025-03-28T12:57:05.3564856Z -                                "dolfinx.functions.functionspace.FunctionSpace")
+2025-03-28T12:57:05.3565193Z +                raise Exception(
+2025-03-28T12:57:05.3565585Z +                    f"Given write object of {c_mesh} is neither of type dolfinx.functions.function.Function or "
+2025-03-28T12:57:05.3566045Z +                    "dolfinx.functions.functionspace.FunctionSpace")
+2025-03-28T12:57:05.3566338Z  
+2025-03-28T12:57:05.3566498Z              # [1]: read_function_space
+2025-03-28T12:57:05.3566784Z              read_function_space = coupling_meshes[c_mesh][1]
+2025-03-28T12:57:05.3567352Z @@ -277,11 +278,12 @@
+2025-03-28T12:57:05.3567706Z                  assert (self._config.get_read_data_name(c_mesh) and self._config.get_write_data_name(c_mesh))
+2025-03-28T12:57:05.3568133Z                  function_space = read_function_space
+2025-03-28T12:57:05.3568478Z              elif read_function_space is None and write_function_space is None:
+2025-03-28T12:57:05.3569513Z -                raise Exception(f"Neither read_function_space nor write_function_space for {c_mesh} is provided. Please provide a "
+2025-03-28T12:57:05.3570578Z -                                "write_object if this participant is used in one-way coupling and only writes data. "
+2025-03-28T12:57:05.3571669Z -                                "Please provide a read_function_space if this participant is used in one-way coupling and "
+2025-03-28T12:57:05.3572566Z -                                "only reads data. If two-way coupling is implemented then both read_function_space"
+2025-03-28T12:57:05.3573376Z -                                " and write_object need to be provided.")
+2025-03-28T12:57:05.3573669Z +                raise Exception(
+2025-03-28T12:57:05.3574091Z +                    f"Neither read_function_space nor write_function_space for {c_mesh} is provided. Please provide a "
+2025-03-28T12:57:05.3574646Z +                    "write_object if this participant is used in one-way coupling and only writes data. "
+2025-03-28T12:57:05.3575185Z +                    "Please provide a read_function_space if this participant is used in one-way coupling and "
+2025-03-28T12:57:05.3575700Z +                    "only reads data. If two-way coupling is implemented then both read_function_space"
+2025-03-28T12:57:05.3576110Z +                    " and write_object need to be provided.")
+2025-03-28T12:57:05.3576434Z              else:
+2025-03-28T12:57:05.3576813Z                  raise Exception(f"Incorrect read and write function space combination provided for {
+2025-03-28T12:57:05.3577281Z                                  c_mesh}. Please check input " "parameters in initialization")
+2025-03-28T12:57:06.0258578Z ##[group]Run exit 1
+2025-03-28T12:57:06.0259182Z [36;1mexit 1[0m
+2025-03-28T12:57:06.0311129Z shell: /usr/bin/bash -e {0}
+2025-03-28T12:57:06.0311372Z ##[endgroup]
+2025-03-28T12:57:06.0410669Z ##[error]Process completed with exit code 1.
+2025-03-28T12:57:06.0498081Z Post job cleanup.
+2025-03-28T12:57:06.1368399Z [command]/usr/bin/git version
+2025-03-28T12:57:06.1405263Z git version 2.49.0
+2025-03-28T12:57:06.1451594Z Temporarily overriding HOME='/home/runner/work/_temp/ddd7d4af-2394-4f3d-b24f-39208fc9df65' before making global git config changes
+2025-03-28T12:57:06.1452929Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-28T12:57:06.1456599Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/fenicsx-adapter/fenicsx-adapter
+2025-03-28T12:57:06.1491304Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-28T12:57:06.1523352Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-28T12:57:06.1754733Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-28T12:57:06.1776662Z http.https://github.com/.extraheader
+2025-03-28T12:57:06.1787140Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-28T12:57:06.1817896Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-28T12:57:06.2173221Z Cleaning up orphan processes

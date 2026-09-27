@@ -1,0 +1,244 @@
+2025-02-28T17:05:45.1156944Z Requested labels: ubuntu-latest
+2025-02-28T17:05:45.1157145Z Job defined at: TheOdinProject/odin-bot-v2/.github/workflows/prettier.yml@refs/pull/670/merge
+2025-02-28T17:05:45.1157289Z Waiting for a runner to pick up this job...
+2025-02-28T17:05:45.7783834Z Job is waiting for a hosted runner to come online.
+2025-02-28T17:05:49.3978617Z Job is about to start running on the hosted runner: GitHub Actions 1 (hosted)
+2025-02-28T17:05:51.3950504Z Current runner version: '2.322.0'
+2025-02-28T17:05:51.3986427Z ##[group]Operating System
+2025-02-28T17:05:51.3987672Z Ubuntu
+2025-02-28T17:05:51.3988645Z 24.04.2
+2025-02-28T17:05:51.3989535Z LTS
+2025-02-28T17:05:51.3990388Z ##[endgroup]
+2025-02-28T17:05:51.3991474Z ##[group]Runner Image
+2025-02-28T17:05:51.3992547Z Image: ubuntu-24.04
+2025-02-28T17:05:51.3993475Z Version: 20250223.1.0
+2025-02-28T17:05:51.3995445Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250223.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-28T17:05:51.3997184Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250223.1
+2025-02-28T17:05:51.3998135Z ##[endgroup]
+2025-02-28T17:05:51.3998798Z ##[group]Runner Image Provisioner
+2025-02-28T17:05:51.3999406Z 2.0.422.1
+2025-02-28T17:05:51.3999945Z ##[endgroup]
+2025-02-28T17:05:51.4002159Z ##[group]GITHUB_TOKEN Permissions
+2025-02-28T17:05:51.4004390Z Actions: read
+2025-02-28T17:05:51.4005289Z Attestations: read
+2025-02-28T17:05:51.4006266Z Checks: read
+2025-02-28T17:05:51.4006828Z Contents: read
+2025-02-28T17:05:51.4007366Z Deployments: read
+2025-02-28T17:05:51.4007955Z Discussions: read
+2025-02-28T17:05:51.4008484Z Issues: read
+2025-02-28T17:05:51.4008963Z Metadata: read
+2025-02-28T17:05:51.4009520Z Packages: read
+2025-02-28T17:05:51.4010039Z Pages: read
+2025-02-28T17:05:51.4010528Z PullRequests: read
+2025-02-28T17:05:51.4011186Z RepositoryProjects: read
+2025-02-28T17:05:51.4011746Z SecurityEvents: read
+2025-02-28T17:05:51.4012272Z Statuses: read
+2025-02-28T17:05:51.4012828Z ##[endgroup]
+2025-02-28T17:05:51.4015834Z Secret source: None
+2025-02-28T17:05:51.4017214Z Prepare workflow directory
+2025-02-28T17:05:51.4333246Z Prepare all required actions
+2025-02-28T17:05:51.4459016Z Getting action download info
+2025-02-28T17:05:51.6165074Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-02-28T17:05:52.1280702Z Download action repository 'tj-actions/changed-files@v41' (SHA:cbda684547adc8c052d50711417fa61b428a9f88)
+2025-02-28T17:05:52.3496336Z Download action repository 'creyD/prettier_action@v4.3' (SHA:31355f8eef017f8aeba2e0bc09d8502b13dbbad1)
+2025-02-28T17:05:52.6189222Z Complete job name: Check formatting
+2025-02-28T17:05:52.6968259Z ##[group]Run actions/checkout@v4
+2025-02-28T17:05:52.6969552Z with:
+2025-02-28T17:05:52.6970386Z   repository: TheOdinProject/odin-bot-v2
+2025-02-28T17:05:52.6971744Z   token: ***
+2025-02-28T17:05:52.6972501Z   ssh-strict: true
+2025-02-28T17:05:52.6973280Z   ssh-user: git
+2025-02-28T17:05:52.6974106Z   persist-credentials: true
+2025-02-28T17:05:52.6975002Z   clean: true
+2025-02-28T17:05:52.6975824Z   sparse-checkout-cone-mode: true
+2025-02-28T17:05:52.6977107Z   fetch-depth: 1
+2025-02-28T17:05:52.6977914Z   fetch-tags: false
+2025-02-28T17:05:52.6978813Z   show-progress: true
+2025-02-28T17:05:52.6979692Z   lfs: false
+2025-02-28T17:05:52.6980430Z   submodules: false
+2025-02-28T17:05:52.6981247Z   set-safe-directory: true
+2025-02-28T17:05:52.6982450Z ##[endgroup]
+2025-02-28T17:05:55.1165188Z Syncing repository: TheOdinProject/odin-bot-v2
+2025-02-28T17:05:55.1167232Z ##[group]Getting Git version info
+2025-02-28T17:05:55.1167804Z Working directory is '/home/runner/work/odin-bot-v2/odin-bot-v2'
+2025-02-28T17:05:55.1168473Z [command]/usr/bin/git version
+2025-02-28T17:05:55.2432136Z git version 2.48.1
+2025-02-28T17:05:55.2511855Z ##[endgroup]
+2025-02-28T17:05:55.2527130Z Temporarily overriding HOME='/home/runner/work/_temp/c2d9151a-b6cb-4202-9a35-e3d9f8523156' before making global git config changes
+2025-02-28T17:05:55.2528525Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-28T17:05:55.2532987Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/odin-bot-v2/odin-bot-v2
+2025-02-28T17:05:55.2623811Z Deleting the contents of '/home/runner/work/odin-bot-v2/odin-bot-v2'
+2025-02-28T17:05:55.2628202Z ##[group]Initializing the repository
+2025-02-28T17:05:55.2632359Z [command]/usr/bin/git init /home/runner/work/odin-bot-v2/odin-bot-v2
+2025-02-28T17:05:55.3136973Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-28T17:05:55.3138123Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-28T17:05:55.3139140Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-28T17:05:55.3139678Z hint:
+2025-02-28T17:05:55.3140047Z hint: 	git config --global init.defaultBranch <name>
+2025-02-28T17:05:55.3140446Z hint:
+2025-02-28T17:05:55.3140837Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-28T17:05:55.3141448Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-28T17:05:55.3141928Z hint:
+2025-02-28T17:05:55.3142205Z hint: 	git branch -m <name>
+2025-02-28T17:05:55.3245171Z Initialized empty Git repository in /home/runner/work/odin-bot-v2/odin-bot-v2/.git/
+2025-02-28T17:05:55.3258593Z [command]/usr/bin/git remote add origin https://github.com/TheOdinProject/odin-bot-v2
+2025-02-28T17:05:55.3381912Z ##[endgroup]
+2025-02-28T17:05:55.3382785Z ##[group]Disabling automatic garbage collection
+2025-02-28T17:05:55.3386329Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-28T17:05:55.3416283Z ##[endgroup]
+2025-02-28T17:05:55.3416873Z ##[group]Setting up auth
+2025-02-28T17:05:55.3424787Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-28T17:05:55.3454591Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-28T17:05:55.5328709Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-28T17:05:55.5361251Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-28T17:05:55.5598150Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-28T17:05:55.5637924Z ##[endgroup]
+2025-02-28T17:05:55.5638731Z ##[group]Fetching the repository
+2025-02-28T17:05:55.5647271Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +15698eeb0522ba09fbba2300efe47d3df3686f82:refs/remotes/pull/670/merge
+2025-02-28T17:05:56.0553114Z From https://github.com/TheOdinProject/odin-bot-v2
+2025-02-28T17:05:56.0554000Z  * [new ref]         15698eeb0522ba09fbba2300efe47d3df3686f82 -> pull/670/merge
+2025-02-28T17:05:56.0655813Z ##[endgroup]
+2025-02-28T17:05:56.0656771Z ##[group]Determining the checkout info
+2025-02-28T17:05:56.0657904Z ##[endgroup]
+2025-02-28T17:05:56.0663532Z [command]/usr/bin/git sparse-checkout disable
+2025-02-28T17:05:56.0858598Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-28T17:05:56.0888561Z ##[group]Checking out the ref
+2025-02-28T17:05:56.0893084Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/670/merge
+2025-02-28T17:05:56.1119513Z Note: switching to 'refs/remotes/pull/670/merge'.
+2025-02-28T17:05:56.1120190Z 
+2025-02-28T17:05:56.1120615Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-28T17:05:56.1121449Z changes and commit them, and you can discard any commits you make in this
+2025-02-28T17:05:56.1122288Z state without impacting any branches by switching back to a branch.
+2025-02-28T17:05:56.1122672Z 
+2025-02-28T17:05:56.1122881Z If you want to create a new branch to retain commits you create, you may
+2025-02-28T17:05:56.1123388Z do so (now or later) by using -c with the switch command. Example:
+2025-02-28T17:05:56.1123678Z 
+2025-02-28T17:05:56.1123812Z   git switch -c <new-branch-name>
+2025-02-28T17:05:56.1124018Z 
+2025-02-28T17:05:56.1124144Z Or undo this operation with:
+2025-02-28T17:05:56.1124329Z 
+2025-02-28T17:05:56.1124426Z   git switch -
+2025-02-28T17:05:56.1124622Z 
+2025-02-28T17:05:56.1124870Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-28T17:05:56.1125553Z 
+2025-02-28T17:05:56.1126248Z HEAD is now at 15698ee Merge ea39b836215978cd4d8ca99e72baca1eaea2609b into a906cac5c46040a349436d29cd604bcc33cd9238
+2025-02-28T17:05:56.1128070Z ##[endgroup]
+2025-02-28T17:05:56.1186502Z [command]/usr/bin/git log -1 --format=%H
+2025-02-28T17:05:56.1208922Z 15698eeb0522ba09fbba2300efe47d3df3686f82
+2025-02-28T17:05:56.1572388Z ##[group]Run tj-actions/changed-files@v41
+2025-02-28T17:05:56.1572715Z with:
+2025-02-28T17:05:56.1572931Z   files: **/*.js
+**/*.json
+**/*.yml
+**/*.yaml
+
+2025-02-28T17:05:56.1573193Z   separator:  
+2025-02-28T17:05:56.1573410Z   include_all_old_new_renamed_files: false
+2025-02-28T17:05:56.1573674Z   old_new_separator: ,
+2025-02-28T17:05:56.1573886Z   old_new_files_separator:  
+2025-02-28T17:05:56.1574130Z   files_from_source_file_separator: 
+
+2025-02-28T17:05:56.1574377Z   files_separator: 
+
+2025-02-28T17:05:56.1574605Z   files_yaml_from_source_file_separator: 
+
+2025-02-28T17:05:56.1574921Z   files_ignore_yaml_from_source_file_separator: 
+
+2025-02-28T17:05:56.1575204Z   files_ignore_separator: 
+
+2025-02-28T17:05:56.1575456Z   files_ignore_from_source_file_separator: 
+
+2025-02-28T17:05:56.1575716Z   path: .
+2025-02-28T17:05:56.1576052Z   quotepath: true
+2025-02-28T17:05:56.1576253Z   diff_relative: true
+2025-02-28T17:05:56.1576451Z   dir_names: false
+2025-02-28T17:05:56.1576711Z   dir_names_exclude_current_dir: false
+2025-02-28T17:05:56.1576986Z   dir_names_include_files_separator: 
+
+2025-02-28T17:05:56.1577287Z   dir_names_deleted_files_include_only_deleted_dirs: false
+2025-02-28T17:05:56.1577582Z   json: false
+2025-02-28T17:05:56.1577770Z   escape_json: true
+2025-02-28T17:05:56.1577967Z   safe_output: true
+2025-02-28T17:05:56.1578158Z   fetch_depth: 50
+2025-02-28T17:05:56.1578354Z   skip_initial_fetch: false
+2025-02-28T17:05:56.1578605Z   fetch_additional_submodule_history: false
+2025-02-28T17:05:56.1578883Z   since_last_remote_commit: false
+2025-02-28T17:05:56.1579138Z   write_output_files: false
+2025-02-28T17:05:56.1579363Z   output_dir: .github/outputs
+2025-02-28T17:05:56.1579632Z   output_renamed_files_as_deleted_and_added: false
+2025-02-28T17:05:56.1579918Z   recover_deleted_files: false
+2025-02-28T17:05:56.1580153Z   recover_files_separator: 
+
+2025-02-28T17:05:56.1580392Z   recover_files_ignore_separator: 
+
+2025-02-28T17:05:56.1580762Z   token: ***
+2025-02-28T17:05:56.1580977Z   api_url: https://api.github.com
+2025-02-28T17:05:56.1581232Z   use_rest_api: false
+2025-02-28T17:05:56.1581450Z   fail_on_initial_diff_error: false
+2025-02-28T17:05:56.1581709Z   fail_on_submodule_diff_error: false
+2025-02-28T17:05:56.1581966Z   negation_patterns_first: false
+2025-02-28T17:05:56.1582193Z ##[endgroup]
+2025-02-28T17:05:56.2717146Z ##[group]changed-files
+2025-02-28T17:05:56.2853917Z Using local .git directory
+2025-02-28T17:05:56.3296214Z Running on a pull_request (opened) event...
+2025-02-28T17:05:56.3301828Z Repository is shallow, fetching more history...
+2025-02-28T17:05:58.3442005Z Completed fetching more history.
+2025-02-28T17:05:58.3901344Z Retrieving changes between a906cac5c46040a349436d29cd604bcc33cd9238 (main) → ea39b836215978cd4d8ca99e72baca1eaea2609b (feat/imposter-syndrome)
+2025-02-28T17:05:58.3949763Z All Done!
+2025-02-28T17:05:58.3956885Z ##[endgroup]
+2025-02-28T17:05:58.3957482Z ##[group]changed-files-patterns
+2025-02-28T17:05:58.4039762Z All Done!
+2025-02-28T17:05:58.4040539Z ##[endgroup]
+2025-02-28T17:05:58.4220959Z ##[group]Run creyD/prettier_action@v4.3
+2025-02-28T17:05:58.4221260Z with:
+2025-02-28T17:05:58.4221440Z   dry: true
+2025-02-28T17:05:58.4221704Z   prettier_options: --check bot-commands/slash/imposter.js
+2025-02-28T17:05:58.4222040Z   commit_message: Prettified Code!
+2025-02-28T17:05:58.4222289Z   same_commit: false
+2025-02-28T17:05:58.4222493Z   file_pattern: *
+2025-02-28T17:05:58.4222693Z   prettier_version: false
+2025-02-28T17:05:58.4222911Z   working_directory: false
+2025-02-28T17:05:58.4223126Z   only_changed: false
+2025-02-28T17:05:58.4223664Z   github_token: ***
+2025-02-28T17:05:58.4223879Z   clean_node_folder: true
+2025-02-28T17:05:58.4224102Z ##[endgroup]
+2025-02-28T17:05:58.4308439Z ##[group]Run PATH=$GITHUB_ACTION_PATH/node_modules/.bin:$PATH /home/runner/work/_actions/creyD/prettier_action/v4.3/entrypoint.sh
+2025-02-28T17:05:58.4309320Z [36;1mPATH=$GITHUB_ACTION_PATH/node_modules/.bin:$PATH /home/runner/work/_actions/creyD/prettier_action/v4.3/entrypoint.sh[0m
+2025-02-28T17:05:58.4361369Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-28T17:05:58.4361715Z env:
+2025-02-28T17:05:58.4361916Z   INPUT_COMMIT_MESSAGE: Prettified Code!
+2025-02-28T17:05:58.4362194Z   INPUT_COMMIT_DESCRIPTION: 
+2025-02-28T17:05:58.4362428Z   INPUT_SAME_COMMIT: false
+2025-02-28T17:05:58.4362651Z   INPUT_COMMIT_OPTIONS: 
+2025-02-28T17:05:58.4362861Z   INPUT_FILE_PATTERN: *
+2025-02-28T17:05:58.4363146Z   INPUT_PRETTIER_OPTIONS: --check bot-commands/slash/imposter.js
+2025-02-28T17:05:58.4363467Z   INPUT_DRY: true
+2025-02-28T17:05:58.4363670Z   INPUT_PRETTIER_VERSION: false
+2025-02-28T17:05:58.4363918Z   INPUT_ONLY_CHANGED: false
+2025-02-28T17:05:58.4364147Z   INPUT_PRETTIER_PLUGINS: 
+2025-02-28T17:05:58.4364375Z   INPUT_WORKING_DIRECTORY: false
+2025-02-28T17:05:58.4364777Z   INPUT_GITHUB_TOKEN: ***
+2025-02-28T17:05:58.4365008Z   INPUT_CLEAN_NODE_FOLDER: true
+2025-02-28T17:05:58.4365238Z ##[endgroup]
+2025-02-28T17:05:58.4467881Z Installing prettier...
+2025-02-28T17:06:04.3279829Z Prettifying files...
+2025-02-28T17:06:04.3280262Z Files:
+2025-02-28T17:06:04.4087795Z Checking formatting...
+2025-02-28T17:06:04.4838656Z [warn] bot-commands/slash/imposter.js
+2025-02-28T17:06:04.4839471Z [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+2025-02-28T17:06:04.4890795Z Problem running prettier with --check bot-commands/slash/imposter.js
+2025-02-28T17:06:04.4908761Z ##[error]Process completed with exit code 1.
+2025-02-28T17:06:04.5005660Z Post job cleanup.
+2025-02-28T17:06:04.5934716Z [command]/usr/bin/git version
+2025-02-28T17:06:04.5970635Z git version 2.48.1
+2025-02-28T17:06:04.6015109Z Copying '/home/runner/.gitconfig' to '/home/runner/work/_temp/163a9280-5ef1-4a70-a2cc-1936b151df61/.gitconfig'
+2025-02-28T17:06:04.6024643Z Temporarily overriding HOME='/home/runner/work/_temp/163a9280-5ef1-4a70-a2cc-1936b151df61' before making global git config changes
+2025-02-28T17:06:04.6026126Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-28T17:06:04.6031097Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/odin-bot-v2/odin-bot-v2
+2025-02-28T17:06:04.6064778Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-28T17:06:04.6095743Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-28T17:06:04.6324849Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-28T17:06:04.6345217Z http.https://github.com/.extraheader
+2025-02-28T17:06:04.6358650Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-28T17:06:04.6389679Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-28T17:06:04.6718420Z Cleaning up orphan processes

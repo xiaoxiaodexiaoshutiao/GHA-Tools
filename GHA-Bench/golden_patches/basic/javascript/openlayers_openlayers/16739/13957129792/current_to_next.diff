@@ -1,0 +1,31 @@
+diff --git a/test/browser/spec/ol/renderer/webgl/VectorTileLayer.test.js b/test/browser/spec/ol/renderer/webgl/VectorTileLayer.test.js
+index e3696eedf88..0bb3552a253 100644
+--- a/test/browser/spec/ol/renderer/webgl/VectorTileLayer.test.js
++++ b/test/browser/spec/ol/renderer/webgl/VectorTileLayer.test.js
+@@ -74,8 +74,14 @@ describe('ol/renderer/webgl/VectorTileLayer', function () {
+   let map;
+ 
+   beforeEach(function () {
++    const proj = new Projection({
++      code: 'custom',
++      units: 'pixels',
++      extent: [-128, -128, 128, 128],
++    });
+     vectorTileLayer = new VectorTileLayer({
+       source: new VectorTileSource({
++        projection: proj,
+         tileGrid: createXYZ({
+           tileSize: [256, 256],
+           maxZoom: 5,
+@@ -120,11 +126,6 @@ describe('ol/renderer/webgl/VectorTileLayer', function () {
+       style: SAMPLE_RULES,
+     });
+ 
+-    const proj = new Projection({
+-      code: 'custom',
+-      units: 'pixels',
+-      extent: [-128, -128, 128, 128],
+-    });
+     frameState = {
+       layerStatesArray: [vectorTileLayer.getLayerState()],
+       layerIndex: 0,

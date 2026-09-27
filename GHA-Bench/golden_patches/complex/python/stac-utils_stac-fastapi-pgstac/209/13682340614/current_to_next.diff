@@ -1,0 +1,102 @@
+diff --git a/tests/clients/test_postgres.py b/tests/clients/test_postgres.py
+index 690e9e26..b3501bcb 100644
+--- a/tests/clients/test_postgres.py
++++ b/tests/clients/test_postgres.py
+@@ -525,17 +525,6 @@ async def test_create_bulk_items_id_mismatch(
+ #         assert item.collection == coll.id
+ 
+ 
+-@asynccontextmanager
+-async def custom_get_connection(
+-    request: Request,
+-    readwrite: Literal["r", "w"],
+-):
+-    """An example of customizing the connection getter"""
+-    async with get_connection(request, readwrite) as conn:
+-        await conn.execute("SELECT set_config('api.test', 'added-config', false)")
+-        yield conn
+-
+-
+ async def test_db_setup_works_with_env_vars(api_client, database, monkeypatch):
+     """Test that the application starts successfully if the POSTGRES_* environment variables are set"""
+     monkeypatch.setenv("POSTGRES_USER", database.user)
+@@ -546,12 +535,27 @@ async def test_db_setup_works_with_env_vars(api_client, database, monkeypatch):
+     monkeypatch.setenv("POSTGRES_DBNAME", database.dbname)
+ 
+     await connect_to_db(api_client.app)
++    await close_db_connection(api_client.app)
+ 
+ 
+ async def test_db_setup_fails_without_env_vars(api_client):
+     """Test that the application fails to start if database environment variables are not set."""
+-    with pytest.raises(ValidationError):
++    try:
+         await connect_to_db(api_client.app)
++    except ValidationError:
++        await close_db_connection(api_client.app)
++        pytest.raises(ValidationError)
++
++
++@asynccontextmanager
++async def custom_get_connection(
++    request: Request,
++    readwrite: Literal["r", "w"],
++):
++    """An example of customizing the connection getter"""
++    async with get_connection(request, readwrite) as conn:
++        await conn.execute("SELECT set_config('api.test', 'added-config', false)")
++        yield conn
+ 
+ 
+ class TestDbConnect:
+diff --git a/tests/conftest.py b/tests/conftest.py
+index ba49100f..79f64e8f 100644
+--- a/tests/conftest.py
++++ b/tests/conftest.py
+@@ -117,7 +117,7 @@ async def pgstac(database):
+     ],
+     scope="session",
+ )
+-def api_client(request, database):
++def api_client(request):
+     hydrate, prefix, response_model = request.param
+     api_settings = Settings(
+         enable_response_models=response_model,
+@@ -298,14 +298,8 @@ async def load_test2_item(app_client, load_test_data, load_test2_collection):
+ @pytest.fixture(
+     scope="session",
+ )
+-def api_client_no_ext(database):
++def api_client_no_ext():
+     api_settings = Settings(
+-        postgres_user=database.user,
+-        postgres_pass=database.password,
+-        postgres_host_reader=database.host,
+-        postgres_host_writer=database.host,
+-        postgres_port=database.port,
+-        postgres_dbname=database.dbname,
+         testing=True,
+     )
+     return StacApi(
+@@ -318,11 +312,19 @@ def api_client_no_ext(database):
+ 
+ 
+ @pytest.fixture(scope="function")
+-async def app_no_ext(api_client_no_ext):
++async def app_no_ext(api_client_no_ext, database):
++    postgres_settings = PostgresSettings(
++        postgres_user=database.user,
++        postgres_pass=database.password,
++        postgres_host_reader=database.host,
++        postgres_host_writer=database.host,
++        postgres_port=database.port,
++        postgres_dbname=database.dbname,
++    )
+     logger.info("Creating app Fixture")
+     time.time()
+     app = api_client_no_ext.app
+-    await connect_to_db(app)
++    await connect_to_db(app, postgres_settings=postgres_settings)
+ 
+     yield app
+ 

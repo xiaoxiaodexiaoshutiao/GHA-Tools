@@ -1,0 +1,35 @@
+diff --git a/ckanext/dcat/converters.py b/ckanext/dcat/converters.py
+index 0b9fd09d..cb0d89e2 100644
+--- a/ckanext/dcat/converters.py
++++ b/ckanext/dcat/converters.py
+@@ -23,7 +23,7 @@ def dcat_to_ckan(dcat_dict):
+     package_dict['extras'].append({'key': 'guid', 'value': dcat_dict.get('identifier')})
+ 
+     dcat_publisher = dcat_dict.get('publisher')
+-    if isinstance(dcat_publisher, basestring):
++    if isinstance(dcat_publisher, str):
+         package_dict['extras'].append({'key': 'dcat_publisher_name', 'value': dcat_publisher})
+     elif isinstance(dcat_publisher, dict) and dcat_publisher.get('name'):
+         package_dict['extras'].append({'key': 'dcat_publisher_name', 'value': dcat_publisher.get('name')})
+@@ -38,7 +38,7 @@ def dcat_to_ckan(dcat_dict):
+             })
+ 
+     dcat_creator = dcat_dict.get('creator')
+-    if isinstance(dcat_creator, basestring):
++    if isinstance(dcat_creator, str):
+         package_dict['extras'].append({'key': 'dcat_creator_name', 'value': dcat_creator})
+     elif isinstance(dcat_creator, dict) and dcat_creator.get('name'):
+         if dcat_creator.get('name'):
+diff --git a/ckanext/dcat/harvesters/rdf.py b/ckanext/dcat/harvesters/rdf.py
+index 0381da5d..a22e0b97 100644
+--- a/ckanext/dcat/harvesters/rdf.py
++++ b/ckanext/dcat/harvesters/rdf.py
+@@ -134,7 +134,7 @@ def validate_config(self, source_config):
+         source_config_obj = json.loads(source_config)
+         if 'rdf_format' in source_config_obj:
+             rdf_format = source_config_obj['rdf_format']
+-            if not isinstance(rdf_format, basestring):
++            if not isinstance(rdf_format, str):
+                 raise ValueError('rdf_format must be a string')
+             supported_formats = RDFParser().supported_formats()
+             if rdf_format not in supported_formats:

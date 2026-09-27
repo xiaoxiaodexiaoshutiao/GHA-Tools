@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/pr.yml b/.github/workflows/pr.yml
+index bc3561a7e..98c731b58 100644
+--- a/.github/workflows/pr.yml
++++ b/.github/workflows/pr.yml
+@@ -46,9 +46,6 @@ jobs:
+     needs: build
+     runs-on: ubuntu-latest
+     environment: build.cake
+-    env:
+-      # https://github.com/actions/setup-dotnet/blob/main/README.md#environment-variables
+-      DOTNET_INSTALL_DIR: "/usr/lib/dotnet" # override /usr/share/dotnet
+     steps:
+     - name: .NET Version 
+       run: dotnet --version

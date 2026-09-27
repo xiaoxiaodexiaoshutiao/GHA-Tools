@@ -1,0 +1,28 @@
+diff --git a/src/scipp/core/assignments.py b/src/scipp/core/assignments.py
+index 95d264f5d3..7060422d92 100644
+--- a/src/scipp/core/assignments.py
++++ b/src/scipp/core/assignments.py
+@@ -25,8 +25,8 @@ def _assign(
+     return out
+ 
+ 
+-def assign_data(self: _T, data: Variable) -> _T:
+-    """Return new object with updated data.
++def assign_data(self: DataArray, data: Variable) -> DataArray:
++    """Return new data array with updated data.
+ 
+     Parameters
+     ----------
+diff --git a/src/scipp/core/bins.py b/src/scipp/core/bins.py
+index cb1270429f..0825af05c6 100644
+--- a/src/scipp/core/bins.py
++++ b/src/scipp/core/bins.py
+@@ -278,7 +278,7 @@ def assign(self, data: Variable) -> _O:
+         if isinstance(self._obj, Dataset):
+             raise NotImplementedError("bins.assign does not support datasets")
+         out = self._map_constituents_data(lambda data: data)
+-        out.bins.data = data
++        out.bins.data = data  # type: ignore[union-attr]  # we know that out has bins
+         return out
+ 
+     @property

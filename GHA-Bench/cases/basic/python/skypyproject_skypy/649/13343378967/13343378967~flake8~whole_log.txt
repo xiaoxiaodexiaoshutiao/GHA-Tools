@@ -1,0 +1,230 @@
+2025-02-15T08:30:44.7653495Z Requested labels: ubuntu-latest
+2025-02-15T08:30:44.7653911Z Job defined at: skypyproject/skypy/.github/workflows/codestyle.yaml@refs/pull/649/merge
+2025-02-15T08:30:44.7654028Z Waiting for a runner to pick up this job...
+2025-02-15T08:30:45.2446058Z Job is waiting for a hosted runner to come online.
+2025-02-15T08:30:47.6155991Z Job is about to start running on the hosted runner: GitHub Actions 14 (hosted)
+2025-02-15T08:30:49.0617996Z Current runner version: '2.322.0'
+2025-02-15T08:30:49.0644535Z ##[group]Operating System
+2025-02-15T08:30:49.0645335Z Ubuntu
+2025-02-15T08:30:49.0645973Z 24.04.1
+2025-02-15T08:30:49.0646489Z LTS
+2025-02-15T08:30:49.0647048Z ##[endgroup]
+2025-02-15T08:30:49.0647590Z ##[group]Runner Image
+2025-02-15T08:30:49.0648192Z Image: ubuntu-24.04
+2025-02-15T08:30:49.0648777Z Version: 20250209.1.0
+2025-02-15T08:30:49.0649953Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250209.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-15T08:30:49.0651414Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250209.1
+2025-02-15T08:30:49.0652399Z ##[endgroup]
+2025-02-15T08:30:49.0653215Z ##[group]Runner Image Provisioner
+2025-02-15T08:30:49.0653873Z 2.0.422.1
+2025-02-15T08:30:49.0654459Z ##[endgroup]
+2025-02-15T08:30:49.0656665Z ##[group]GITHUB_TOKEN Permissions
+2025-02-15T08:30:49.0659327Z Actions: read
+2025-02-15T08:30:49.0660076Z Attestations: read
+2025-02-15T08:30:49.0660801Z Checks: read
+2025-02-15T08:30:49.0661329Z Contents: read
+2025-02-15T08:30:49.0661836Z Deployments: read
+2025-02-15T08:30:49.0662446Z Discussions: read
+2025-02-15T08:30:49.0663168Z Issues: read
+2025-02-15T08:30:49.0663734Z Metadata: read
+2025-02-15T08:30:49.0664275Z Packages: read
+2025-02-15T08:30:49.0664785Z Pages: read
+2025-02-15T08:30:49.0665352Z PullRequests: read
+2025-02-15T08:30:49.0665927Z RepositoryProjects: read
+2025-02-15T08:30:49.0666541Z SecurityEvents: read
+2025-02-15T08:30:49.0667132Z Statuses: read
+2025-02-15T08:30:49.0667615Z ##[endgroup]
+2025-02-15T08:30:49.0670808Z Secret source: None
+2025-02-15T08:30:49.0671905Z Prepare workflow directory
+2025-02-15T08:30:49.1065611Z Prepare all required actions
+2025-02-15T08:30:49.1102171Z Getting action download info
+2025-02-15T08:30:49.2649670Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-02-15T08:30:49.2650596Z Version: 4.2.2
+2025-02-15T08:30:49.2651545Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-02-15T08:30:49.2652644Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-02-15T08:30:49.2653469Z ##[endgroup]
+2025-02-15T08:30:49.3415847Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-02-15T08:30:49.3416648Z Version: 5.4.0
+2025-02-15T08:30:49.3417406Z Digest: sha256:6003df952c8106bcd378d2ba997eef202da924317a57269dfa72449b135adb7f
+2025-02-15T08:30:49.3418349Z Source commit SHA: 42375524e23c412d93fb67b49958b491fce71c38
+2025-02-15T08:30:49.3419046Z ##[endgroup]
+2025-02-15T08:30:49.6619441Z Complete job name: flake8
+2025-02-15T08:30:49.7383338Z ##[group]Run actions/checkout@v4
+2025-02-15T08:30:49.7384295Z with:
+2025-02-15T08:30:49.7384760Z   repository: skypyproject/skypy
+2025-02-15T08:30:49.7385494Z   token: ***
+2025-02-15T08:30:49.7385947Z   ssh-strict: true
+2025-02-15T08:30:49.7386407Z   ssh-user: git
+2025-02-15T08:30:49.7386867Z   persist-credentials: true
+2025-02-15T08:30:49.7387373Z   clean: true
+2025-02-15T08:30:49.7387854Z   sparse-checkout-cone-mode: true
+2025-02-15T08:30:49.7388454Z   fetch-depth: 1
+2025-02-15T08:30:49.7388916Z   fetch-tags: false
+2025-02-15T08:30:49.7389381Z   show-progress: true
+2025-02-15T08:30:49.7389837Z   lfs: false
+2025-02-15T08:30:49.7390276Z   submodules: false
+2025-02-15T08:30:49.7390748Z   set-safe-directory: true
+2025-02-15T08:30:49.7391487Z ##[endgroup]
+2025-02-15T08:30:49.9065015Z Syncing repository: skypyproject/skypy
+2025-02-15T08:30:49.9066849Z ##[group]Getting Git version info
+2025-02-15T08:30:49.9067591Z Working directory is '/home/runner/work/skypy/skypy'
+2025-02-15T08:30:49.9068941Z [command]/usr/bin/git version
+2025-02-15T08:30:49.9115698Z git version 2.48.1
+2025-02-15T08:30:49.9142721Z ##[endgroup]
+2025-02-15T08:30:49.9158518Z Temporarily overriding HOME='/home/runner/work/_temp/70fc8fcd-35b6-4e95-a9ee-bf446385b8da' before making global git config changes
+2025-02-15T08:30:49.9161074Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-15T08:30:49.9165109Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/skypy/skypy
+2025-02-15T08:30:49.9199894Z Deleting the contents of '/home/runner/work/skypy/skypy'
+2025-02-15T08:30:49.9204463Z ##[group]Initializing the repository
+2025-02-15T08:30:49.9208340Z [command]/usr/bin/git init /home/runner/work/skypy/skypy
+2025-02-15T08:30:49.9326872Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-15T08:30:49.9328496Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-15T08:30:49.9329496Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-15T08:30:49.9330374Z hint:
+2025-02-15T08:30:49.9331383Z hint: 	git config --global init.defaultBranch <name>
+2025-02-15T08:30:49.9332064Z hint:
+2025-02-15T08:30:49.9333245Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-15T08:30:49.9335068Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-15T08:30:49.9336512Z hint:
+2025-02-15T08:30:49.9337402Z hint: 	git branch -m <name>
+2025-02-15T08:30:49.9338825Z Initialized empty Git repository in /home/runner/work/skypy/skypy/.git/
+2025-02-15T08:30:49.9345339Z [command]/usr/bin/git remote add origin https://github.com/skypyproject/skypy
+2025-02-15T08:30:49.9379316Z ##[endgroup]
+2025-02-15T08:30:49.9380687Z ##[group]Disabling automatic garbage collection
+2025-02-15T08:30:49.9384221Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-15T08:30:49.9413568Z ##[endgroup]
+2025-02-15T08:30:49.9415026Z ##[group]Setting up auth
+2025-02-15T08:30:49.9421130Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-15T08:30:49.9452387Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-15T08:30:49.9731573Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-15T08:30:49.9760551Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-15T08:30:49.9988266Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-15T08:30:50.0023450Z ##[endgroup]
+2025-02-15T08:30:50.0024299Z ##[group]Fetching the repository
+2025-02-15T08:30:50.0032580Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5263a86c06cf27154c1f0fd9ae840ae2edc9d796:refs/remotes/pull/649/merge
+2025-02-15T08:30:50.3198594Z From https://github.com/skypyproject/skypy
+2025-02-15T08:30:50.3199636Z  * [new ref]         5263a86c06cf27154c1f0fd9ae840ae2edc9d796 -> pull/649/merge
+2025-02-15T08:30:50.3224078Z ##[endgroup]
+2025-02-15T08:30:50.3225513Z ##[group]Determining the checkout info
+2025-02-15T08:30:50.3227152Z ##[endgroup]
+2025-02-15T08:30:50.3232515Z [command]/usr/bin/git sparse-checkout disable
+2025-02-15T08:30:50.3281373Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-15T08:30:50.3309208Z ##[group]Checking out the ref
+2025-02-15T08:30:50.3313726Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/649/merge
+2025-02-15T08:30:50.3502270Z Note: switching to 'refs/remotes/pull/649/merge'.
+2025-02-15T08:30:50.3503455Z 
+2025-02-15T08:30:50.3504045Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-15T08:30:50.3505264Z changes and commit them, and you can discard any commits you make in this
+2025-02-15T08:30:50.3506745Z state without impacting any branches by switching back to a branch.
+2025-02-15T08:30:50.3508017Z 
+2025-02-15T08:30:50.3508868Z If you want to create a new branch to retain commits you create, you may
+2025-02-15T08:30:50.3510643Z do so (now or later) by using -c with the switch command. Example:
+2025-02-15T08:30:50.3511574Z 
+2025-02-15T08:30:50.3512286Z   git switch -c <new-branch-name>
+2025-02-15T08:30:50.3513148Z 
+2025-02-15T08:30:50.3513538Z Or undo this operation with:
+2025-02-15T08:30:50.3514114Z 
+2025-02-15T08:30:50.3514469Z   git switch -
+2025-02-15T08:30:50.3514961Z 
+2025-02-15T08:30:50.3515748Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-15T08:30:50.3516872Z 
+2025-02-15T08:30:50.3518075Z HEAD is now at 5263a86 Merge 8c2ff7b1ce4eaf7baf44826faaf9434796b8ac64 into b1d768584c3eb459a913ab87b02c0f4094614b30
+2025-02-15T08:30:50.3521291Z ##[endgroup]
+2025-02-15T08:30:50.3548806Z [command]/usr/bin/git log -1 --format=%H
+2025-02-15T08:30:50.3570597Z 5263a86c06cf27154c1f0fd9ae840ae2edc9d796
+2025-02-15T08:30:50.3821331Z ##[group]Run actions/setup-python@v5
+2025-02-15T08:30:50.3821932Z with:
+2025-02-15T08:30:50.3822346Z   python-version: 3.x
+2025-02-15T08:30:50.3822975Z   check-latest: false
+2025-02-15T08:30:50.3823598Z   token: ***
+2025-02-15T08:30:50.3824032Z   update-environment: true
+2025-02-15T08:30:50.3824556Z   allow-prereleases: false
+2025-02-15T08:30:50.3825025Z ##[endgroup]
+2025-02-15T08:30:50.5509857Z ##[group]Installed versions
+2025-02-15T08:30:50.5562709Z Successfully set up CPython (3.13.2)
+2025-02-15T08:30:50.5564283Z ##[endgroup]
+2025-02-15T08:30:50.5691672Z ##[group]Run pip install tox
+2025-02-15T08:30:50.5692325Z [36;1mpip install tox[0m
+2025-02-15T08:30:50.5839863Z shell: /usr/bin/bash -e {0}
+2025-02-15T08:30:50.5840395Z env:
+2025-02-15T08:30:50.5840922Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-15T08:30:50.5841770Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-02-15T08:30:50.5842577Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-15T08:30:50.5843591Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-15T08:30:50.5844321Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-15T08:30:50.5845070Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-02-15T08:30:50.5845701Z ##[endgroup]
+2025-02-15T08:30:51.2915501Z Collecting tox
+2025-02-15T08:30:51.3371539Z   Downloading tox-4.24.1-py3-none-any.whl.metadata (3.7 kB)
+2025-02-15T08:30:51.3603151Z Collecting cachetools>=5.5 (from tox)
+2025-02-15T08:30:51.3674015Z   Downloading cachetools-5.5.1-py3-none-any.whl.metadata (5.4 kB)
+2025-02-15T08:30:51.3823898Z Collecting chardet>=5.2 (from tox)
+2025-02-15T08:30:51.3890152Z   Downloading chardet-5.2.0-py3-none-any.whl.metadata (3.4 kB)
+2025-02-15T08:30:51.4075186Z Collecting colorama>=0.4.6 (from tox)
+2025-02-15T08:30:51.4142514Z   Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+2025-02-15T08:30:51.4388729Z Collecting filelock>=3.16.1 (from tox)
+2025-02-15T08:30:51.4458045Z   Downloading filelock-3.17.0-py3-none-any.whl.metadata (2.9 kB)
+2025-02-15T08:30:51.4664670Z Collecting packaging>=24.2 (from tox)
+2025-02-15T08:30:51.4735862Z   Downloading packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+2025-02-15T08:30:51.4925361Z Collecting platformdirs>=4.3.6 (from tox)
+2025-02-15T08:30:51.4994284Z   Downloading platformdirs-4.3.6-py3-none-any.whl.metadata (11 kB)
+2025-02-15T08:30:51.5167304Z Collecting pluggy>=1.5 (from tox)
+2025-02-15T08:30:51.5234556Z   Downloading pluggy-1.5.0-py3-none-any.whl.metadata (4.8 kB)
+2025-02-15T08:30:51.5405078Z Collecting pyproject-api>=1.8 (from tox)
+2025-02-15T08:30:51.5473961Z   Downloading pyproject_api-1.9.0-py3-none-any.whl.metadata (2.7 kB)
+2025-02-15T08:30:51.5912156Z Collecting virtualenv>=20.27.1 (from tox)
+2025-02-15T08:30:51.5981700Z   Downloading virtualenv-20.29.2-py3-none-any.whl.metadata (4.5 kB)
+2025-02-15T08:30:51.6232332Z Collecting distlib<1,>=0.3.7 (from virtualenv>=20.27.1->tox)
+2025-02-15T08:30:51.6301967Z   Downloading distlib-0.3.9-py2.py3-none-any.whl.metadata (5.2 kB)
+2025-02-15T08:30:51.6479873Z Downloading tox-4.24.1-py3-none-any.whl (171 kB)
+2025-02-15T08:30:51.6701758Z Downloading cachetools-5.5.1-py3-none-any.whl (9.5 kB)
+2025-02-15T08:30:51.6793061Z Downloading chardet-5.2.0-py3-none-any.whl (199 kB)
+2025-02-15T08:30:51.6911025Z Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+2025-02-15T08:30:51.7008574Z Downloading filelock-3.17.0-py3-none-any.whl (16 kB)
+2025-02-15T08:30:51.7097833Z Downloading packaging-24.2-py3-none-any.whl (65 kB)
+2025-02-15T08:30:51.7188699Z Downloading platformdirs-4.3.6-py3-none-any.whl (18 kB)
+2025-02-15T08:30:51.7279571Z Downloading pluggy-1.5.0-py3-none-any.whl (20 kB)
+2025-02-15T08:30:51.7374113Z Downloading pyproject_api-1.9.0-py3-none-any.whl (13 kB)
+2025-02-15T08:30:51.7467497Z Downloading virtualenv-20.29.2-py3-none-any.whl (4.3 MB)
+2025-02-15T08:30:51.7790798Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 137.7 MB/s eta 0:00:00
+2025-02-15T08:30:51.7859407Z Downloading distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+2025-02-15T08:30:51.8247533Z Installing collected packages: distlib, pluggy, platformdirs, packaging, filelock, colorama, chardet, cachetools, virtualenv, pyproject-api, tox
+2025-02-15T08:30:52.4941537Z Successfully installed cachetools-5.5.1 chardet-5.2.0 colorama-0.4.6 distlib-0.3.9 filelock-3.17.0 packaging-24.2 platformdirs-4.3.6 pluggy-1.5.0 pyproject-api-1.9.0 tox-4.24.1 virtualenv-20.29.2
+2025-02-15T08:30:52.6687508Z ##[group]Run tox -e codestyle
+2025-02-15T08:30:52.6688679Z [36;1mtox -e codestyle[0m
+2025-02-15T08:30:52.6751076Z shell: /usr/bin/bash -e {0}
+2025-02-15T08:30:52.6752128Z env:
+2025-02-15T08:30:52.6753366Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-15T08:30:52.6755185Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-02-15T08:30:52.6757005Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-15T08:30:52.6758630Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-15T08:30:52.6760271Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-15T08:30:52.6761931Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-02-15T08:30:52.6763423Z ##[endgroup]
+2025-02-15T08:30:53.0371124Z ROOT: will run in automatically provisioned tox, host /opt/hostedtoolcache/Python/3.13.2/x64/bin/python is missing [requires (has)]: setuptools>=30.3.0
+2025-02-15T08:30:53.2106605Z ROOT: install_deps> python -I -m pip install 'pip>=19.3.1' 'setuptools>=30.3.0' tox
+2025-02-15T08:30:56.2096350Z ROOT: freeze> python -m pip freeze --all
+2025-02-15T08:30:56.4465598Z ROOT: cachetools==5.5.1,chardet==5.2.0,colorama==0.4.6,distlib==0.3.9,filelock==3.17.0,packaging==24.2,pip==25.0.1,platformdirs==4.3.6,pluggy==1.5.0,pyproject-api==1.9.0,setuptools==75.8.0,tox==4.24.1,virtualenv==20.29.2
+2025-02-15T08:30:56.4467231Z ROOT: provision> .tox/.tox/bin/python -m tox -e codestyle
+2025-02-15T08:30:56.9145282Z codestyle: install_deps> python -I -m pip install flake8
+2025-02-15T08:30:58.2231779Z codestyle: freeze> python -m pip freeze --all
+2025-02-15T08:30:58.4540402Z codestyle: flake8==7.1.1,mccabe==0.7.0,pip==25.0.1,pycodestyle==2.12.1,pyflakes==3.2.0
+2025-02-15T08:30:58.4544553Z codestyle: commands[0]> flake8 skypy
+2025-02-15T08:30:59.0421286Z skypy/_astropy_init.py:2:1: F401 'os' imported but unused
+2025-02-15T08:30:59.0638018Z codestyle: exit 1 (0.61 seconds) /home/runner/work/skypy/skypy> flake8 skypy pid=1963
+2025-02-15T08:30:59.0644385Z   codestyle: FAIL code 1 (2.28=setup[1.67]+cmd[0.61] seconds)
+2025-02-15T08:30:59.0644974Z   evaluation failed :( (2.45 seconds)
+2025-02-15T08:30:59.1326872Z ##[error]Process completed with exit code 1.
+2025-02-15T08:30:59.1419412Z Post job cleanup.
+2025-02-15T08:30:59.2359322Z [command]/usr/bin/git version
+2025-02-15T08:30:59.2395262Z git version 2.48.1
+2025-02-15T08:30:59.2442533Z Temporarily overriding HOME='/home/runner/work/_temp/1e1661f2-3b6c-4ca5-a343-96055f8120de' before making global git config changes
+2025-02-15T08:30:59.2443931Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-15T08:30:59.2447928Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/skypy/skypy
+2025-02-15T08:30:59.2481526Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-15T08:30:59.2515128Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-15T08:30:59.2750710Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-15T08:30:59.2771811Z http.https://github.com/.extraheader
+2025-02-15T08:30:59.2784424Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-15T08:30:59.2814993Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-15T08:30:59.3144778Z Cleaning up orphan processes

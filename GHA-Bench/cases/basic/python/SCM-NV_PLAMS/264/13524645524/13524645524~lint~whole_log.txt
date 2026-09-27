@@ -1,0 +1,355 @@
+2025-02-25T15:19:23.4636251Z Requested labels: ubuntu-latest
+2025-02-25T15:19:23.4683189Z Job defined at: SCM-NV/PLAMS/.github/workflows/ci.yml@refs/pull/231/merge
+2025-02-25T15:19:23.4707695Z Waiting for a runner to pick up this job...
+2025-02-25T15:19:24.9318092Z Job is waiting for a hosted runner to come online.
+2025-02-25T15:19:27.7740277Z Job is about to start running on the hosted runner: GitHub Actions 7 (hosted)
+2025-02-25T15:19:29.9005144Z Current runner version: '2.322.0'
+2025-02-25T15:19:29.9030935Z ##[group]Operating System
+2025-02-25T15:19:29.9031807Z Ubuntu
+2025-02-25T15:19:29.9032300Z 24.04.1
+2025-02-25T15:19:29.9032799Z LTS
+2025-02-25T15:19:29.9033326Z ##[endgroup]
+2025-02-25T15:19:29.9033992Z ##[group]Runner Image
+2025-02-25T15:19:29.9034561Z Image: ubuntu-24.04
+2025-02-25T15:19:29.9035122Z Version: 20250209.1.0
+2025-02-25T15:19:29.9036156Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250209.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-25T15:19:29.9037499Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250209.1
+2025-02-25T15:19:29.9038637Z ##[endgroup]
+2025-02-25T15:19:29.9039174Z ##[group]Runner Image Provisioner
+2025-02-25T15:19:29.9039807Z 2.0.422.1
+2025-02-25T15:19:29.9040288Z ##[endgroup]
+2025-02-25T15:19:29.9042692Z ##[group]GITHUB_TOKEN Permissions
+2025-02-25T15:19:29.9044957Z Actions: write
+2025-02-25T15:19:29.9046007Z Attestations: write
+2025-02-25T15:19:29.9046767Z Checks: write
+2025-02-25T15:19:29.9047270Z Contents: write
+2025-02-25T15:19:29.9048101Z Deployments: write
+2025-02-25T15:19:29.9048663Z Discussions: write
+2025-02-25T15:19:29.9049142Z Issues: write
+2025-02-25T15:19:29.9049725Z Metadata: read
+2025-02-25T15:19:29.9050240Z Packages: write
+2025-02-25T15:19:29.9050734Z Pages: write
+2025-02-25T15:19:29.9051340Z PullRequests: write
+2025-02-25T15:19:29.9051848Z RepositoryProjects: write
+2025-02-25T15:19:29.9052442Z SecurityEvents: write
+2025-02-25T15:19:29.9053042Z Statuses: write
+2025-02-25T15:19:29.9053545Z ##[endgroup]
+2025-02-25T15:19:29.9056571Z Secret source: Actions
+2025-02-25T15:19:29.9057288Z Prepare workflow directory
+2025-02-25T15:19:29.9371169Z Prepare all required actions
+2025-02-25T15:19:29.9408396Z Getting action download info
+2025-02-25T15:19:30.1015581Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-02-25T15:19:30.1971214Z Download action repository 'actions/setup-python@v5' (SHA:42375524e23c412d93fb67b49958b491fce71c38)
+2025-02-25T15:19:30.5091588Z Complete job name: lint
+2025-02-25T15:19:30.5857506Z ##[group]Run actions/checkout@v4
+2025-02-25T15:19:30.5858699Z with:
+2025-02-25T15:19:30.5859178Z   repository: SCM-NV/PLAMS
+2025-02-25T15:19:30.5859870Z   token: ***
+2025-02-25T15:19:30.5860289Z   ssh-strict: true
+2025-02-25T15:19:30.5860723Z   ssh-user: git
+2025-02-25T15:19:30.5861161Z   persist-credentials: true
+2025-02-25T15:19:30.5861648Z   clean: true
+2025-02-25T15:19:30.5862083Z   sparse-checkout-cone-mode: true
+2025-02-25T15:19:30.5862622Z   fetch-depth: 1
+2025-02-25T15:19:30.5863060Z   fetch-tags: false
+2025-02-25T15:19:30.5863508Z   show-progress: true
+2025-02-25T15:19:30.5863949Z   lfs: false
+2025-02-25T15:19:30.5864352Z   submodules: false
+2025-02-25T15:19:30.5864798Z   set-safe-directory: true
+2025-02-25T15:19:30.5865506Z ##[endgroup]
+2025-02-25T15:19:30.8354118Z Syncing repository: SCM-NV/PLAMS
+2025-02-25T15:19:30.8357217Z ##[group]Getting Git version info
+2025-02-25T15:19:30.8358580Z Working directory is '/home/runner/work/PLAMS/PLAMS'
+2025-02-25T15:19:30.8360479Z [command]/usr/bin/git version
+2025-02-25T15:19:30.8445454Z git version 2.48.1
+2025-02-25T15:19:30.8476584Z ##[endgroup]
+2025-02-25T15:19:30.8493556Z Temporarily overriding HOME='/home/runner/work/_temp/8a650699-94c2-46d4-9927-f65a255ae4c2' before making global git config changes
+2025-02-25T15:19:30.8496068Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-25T15:19:30.8500743Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/PLAMS/PLAMS
+2025-02-25T15:19:30.8544450Z Deleting the contents of '/home/runner/work/PLAMS/PLAMS'
+2025-02-25T15:19:30.8549113Z ##[group]Initializing the repository
+2025-02-25T15:19:30.8554293Z [command]/usr/bin/git init /home/runner/work/PLAMS/PLAMS
+2025-02-25T15:19:30.8639597Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-25T15:19:30.8640953Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-25T15:19:30.8642309Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-25T15:19:30.8642996Z hint:
+2025-02-25T15:19:30.8643564Z hint: 	git config --global init.defaultBranch <name>
+2025-02-25T15:19:30.8644177Z hint:
+2025-02-25T15:19:30.8644759Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-25T15:19:30.8645662Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-25T15:19:30.8646379Z hint:
+2025-02-25T15:19:30.8646790Z hint: 	git branch -m <name>
+2025-02-25T15:19:30.8664038Z Initialized empty Git repository in /home/runner/work/PLAMS/PLAMS/.git/
+2025-02-25T15:19:30.8676813Z [command]/usr/bin/git remote add origin https://github.com/SCM-NV/PLAMS
+2025-02-25T15:19:30.8719525Z ##[endgroup]
+2025-02-25T15:19:30.8720968Z ##[group]Disabling automatic garbage collection
+2025-02-25T15:19:30.8724169Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-25T15:19:30.8765188Z ##[endgroup]
+2025-02-25T15:19:30.8766623Z ##[group]Setting up auth
+2025-02-25T15:19:30.8773517Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-25T15:19:30.8816102Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-25T15:19:30.9174543Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-25T15:19:30.9204758Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-25T15:19:30.9447472Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-25T15:19:30.9485294Z ##[endgroup]
+2025-02-25T15:19:30.9487054Z ##[group]Fetching the repository
+2025-02-25T15:19:30.9496343Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e0a88a0e27f7d4ac5cc4d35cc53444a5d1020e1d:refs/remotes/pull/231/merge
+2025-02-25T15:19:31.9163514Z From https://github.com/SCM-NV/PLAMS
+2025-02-25T15:19:31.9166189Z  * [new ref]         e0a88a0e27f7d4ac5cc4d35cc53444a5d1020e1d -> pull/231/merge
+2025-02-25T15:19:31.9192131Z ##[endgroup]
+2025-02-25T15:19:31.9193429Z ##[group]Determining the checkout info
+2025-02-25T15:19:31.9194847Z ##[endgroup]
+2025-02-25T15:19:31.9198872Z [command]/usr/bin/git sparse-checkout disable
+2025-02-25T15:19:31.9241013Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-25T15:19:31.9272364Z ##[group]Checking out the ref
+2025-02-25T15:19:31.9273527Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/231/merge
+2025-02-25T15:19:32.0708936Z Note: switching to 'refs/remotes/pull/231/merge'.
+2025-02-25T15:19:32.0710191Z 
+2025-02-25T15:19:32.0711156Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-25T15:19:32.0713678Z changes and commit them, and you can discard any commits you make in this
+2025-02-25T15:19:32.0716174Z state without impacting any branches by switching back to a branch.
+2025-02-25T15:19:32.0717619Z 
+2025-02-25T15:19:32.0718780Z If you want to create a new branch to retain commits you create, you may
+2025-02-25T15:19:32.0721062Z do so (now or later) by using -c with the switch command. Example:
+2025-02-25T15:19:32.0722335Z 
+2025-02-25T15:19:32.0722703Z   git switch -c <new-branch-name>
+2025-02-25T15:19:32.0723304Z 
+2025-02-25T15:19:32.0723645Z Or undo this operation with:
+2025-02-25T15:19:32.0724249Z 
+2025-02-25T15:19:32.0724554Z   git switch -
+2025-02-25T15:19:32.0724991Z 
+2025-02-25T15:19:32.0725944Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-25T15:19:32.0727579Z 
+2025-02-25T15:19:32.0729209Z HEAD is now at e0a88a0 Merge 8e929775e75d029ae39386fe9c6dfbc2fc15607c into 651556767c0b9d506915489ea04b728e532dc487
+2025-02-25T15:19:32.0734291Z ##[endgroup]
+2025-02-25T15:19:32.0767731Z [command]/usr/bin/git log -1 --format=%H
+2025-02-25T15:19:32.0789737Z e0a88a0e27f7d4ac5cc4d35cc53444a5d1020e1d
+2025-02-25T15:19:32.1210643Z ##[group]Run actions/setup-python@v5
+2025-02-25T15:19:32.1211894Z with:
+2025-02-25T15:19:32.1212761Z   python-version: 3.x
+2025-02-25T15:19:32.1213763Z   check-latest: false
+2025-02-25T15:19:32.1215053Z   token: ***
+2025-02-25T15:19:32.1215975Z   update-environment: true
+2025-02-25T15:19:32.1217071Z   allow-prereleases: false
+2025-02-25T15:19:32.1218343Z ##[endgroup]
+2025-02-25T15:19:32.2951091Z ##[group]Installed versions
+2025-02-25T15:19:32.3004584Z Successfully set up CPython (3.13.2)
+2025-02-25T15:19:32.3007226Z ##[endgroup]
+2025-02-25T15:19:32.3157534Z ##[group]Run python -m pip install --upgrade pip
+2025-02-25T15:19:32.3159316Z [36;1mpython -m pip install --upgrade pip[0m
+2025-02-25T15:19:32.3160581Z [36;1mpip install ".[dev]"[0m
+2025-02-25T15:19:32.3355646Z shell: /usr/bin/bash -e {0}
+2025-02-25T15:19:32.3356756Z env:
+2025-02-25T15:19:32.3357948Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-25T15:19:32.3359745Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-02-25T15:19:32.3361484Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-25T15:19:32.3363042Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-25T15:19:32.3364617Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-25T15:19:32.3366202Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-02-25T15:19:32.3367532Z ##[endgroup]
+2025-02-25T15:19:34.2140147Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages (25.0.1)
+2025-02-25T15:19:34.8061209Z Processing /home/runner/work/PLAMS/PLAMS
+2025-02-25T15:19:34.8082667Z   Installing build dependencies: started
+2025-02-25T15:19:36.4809063Z   Installing build dependencies: finished with status 'done'
+2025-02-25T15:19:36.4816202Z   Getting requirements to build wheel: started
+2025-02-25T15:19:36.8124130Z   Getting requirements to build wheel: finished with status 'done'
+2025-02-25T15:19:36.8133534Z   Preparing metadata (pyproject.toml): started
+2025-02-25T15:19:37.0486715Z   Preparing metadata (pyproject.toml): finished with status 'done'
+2025-02-25T15:19:37.2213040Z Collecting numpy>=1.21.2 (from plams==2025.101)
+2025-02-25T15:19:37.2557984Z   Downloading numpy-2.2.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)
+2025-02-25T15:19:37.2893326Z Collecting dill>=0.3.6 (from plams==2025.101)
+2025-02-25T15:19:37.2924593Z   Downloading dill-0.3.9-py3-none-any.whl.metadata (10 kB)
+2025-02-25T15:19:37.3283679Z Collecting pytest>=7.4.0 (from plams==2025.101)
+2025-02-25T15:19:37.3318786Z   Downloading pytest-8.3.4-py3-none-any.whl.metadata (7.5 kB)
+2025-02-25T15:19:37.5267660Z Collecting coverage>=7.5.3 (from plams==2025.101)
+2025-02-25T15:19:37.5309599Z   Downloading coverage-7.6.12-cp313-cp313-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (8.5 kB)
+2025-02-25T15:19:37.5699092Z Collecting black==24.8.0 (from plams==2025.101)
+2025-02-25T15:19:37.5734514Z   Downloading black-24.8.0-py3-none-any.whl.metadata (78 kB)
+2025-02-25T15:19:37.6021426Z Collecting flake8==5.0.4 (from plams==2025.101)
+2025-02-25T15:19:37.6059040Z   Downloading flake8-5.0.4-py2.py3-none-any.whl.metadata (4.1 kB)
+2025-02-25T15:19:37.6754369Z Collecting mypy==1.12.0 (from plams==2025.101)
+2025-02-25T15:19:37.6805012Z   Downloading mypy-1.12.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl.metadata (2.0 kB)
+2025-02-25T15:19:37.6994134Z Collecting click>=8.0.0 (from black==24.8.0->plams==2025.101)
+2025-02-25T15:19:37.7025812Z   Downloading click-8.1.8-py3-none-any.whl.metadata (2.3 kB)
+2025-02-25T15:19:37.7138409Z Collecting mypy-extensions>=0.4.3 (from black==24.8.0->plams==2025.101)
+2025-02-25T15:19:37.7170560Z   Downloading mypy_extensions-1.0.0-py3-none-any.whl.metadata (1.1 kB)
+2025-02-25T15:19:37.7328370Z Collecting packaging>=22.0 (from black==24.8.0->plams==2025.101)
+2025-02-25T15:19:37.7360383Z   Downloading packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+2025-02-25T15:19:37.7514096Z Collecting pathspec>=0.9.0 (from black==24.8.0->plams==2025.101)
+2025-02-25T15:19:37.7559295Z   Downloading pathspec-0.12.1-py3-none-any.whl.metadata (21 kB)
+2025-02-25T15:19:37.7750595Z Collecting platformdirs>=2 (from black==24.8.0->plams==2025.101)
+2025-02-25T15:19:37.7782066Z   Downloading platformdirs-4.3.6-py3-none-any.whl.metadata (11 kB)
+2025-02-25T15:19:37.8201212Z Collecting ipython>=7.8.0 (from black[jupyter]==24.8.0; extra == "dev"->plams==2025.101)
+2025-02-25T15:19:37.8233800Z   Downloading ipython-8.32.0-py3-none-any.whl.metadata (5.0 kB)
+2025-02-25T15:19:37.8463754Z Collecting tokenize-rt>=3.2.0 (from black[jupyter]==24.8.0; extra == "dev"->plams==2025.101)
+2025-02-25T15:19:37.8496011Z   Downloading tokenize_rt-6.1.0-py2.py3-none-any.whl.metadata (4.1 kB)
+2025-02-25T15:19:37.8633539Z Collecting mccabe<0.8.0,>=0.7.0 (from flake8==5.0.4->plams==2025.101)
+2025-02-25T15:19:37.8669296Z   Downloading mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+2025-02-25T15:19:37.8807167Z Collecting pycodestyle<2.10.0,>=2.9.0 (from flake8==5.0.4->plams==2025.101)
+2025-02-25T15:19:37.8854212Z   Downloading pycodestyle-2.9.1-py2.py3-none-any.whl.metadata (31 kB)
+2025-02-25T15:19:37.9033624Z Collecting pyflakes<2.6.0,>=2.5.0 (from flake8==5.0.4->plams==2025.101)
+2025-02-25T15:19:37.9083443Z   Downloading pyflakes-2.5.0-py2.py3-none-any.whl.metadata (3.8 kB)
+2025-02-25T15:19:37.9243595Z Collecting typing-extensions>=4.6.0 (from mypy==1.12.0->plams==2025.101)
+2025-02-25T15:19:37.9280721Z   Downloading typing_extensions-4.12.2-py3-none-any.whl.metadata (3.0 kB)
+2025-02-25T15:19:37.9411846Z Collecting iniconfig (from pytest>=7.4.0->plams==2025.101)
+2025-02-25T15:19:37.9443580Z   Downloading iniconfig-2.0.0-py3-none-any.whl.metadata (2.6 kB)
+2025-02-25T15:19:37.9567502Z Collecting pluggy<2,>=1.5 (from pytest>=7.4.0->plams==2025.101)
+2025-02-25T15:19:37.9598058Z   Downloading pluggy-1.5.0-py3-none-any.whl.metadata (4.8 kB)
+2025-02-25T15:19:37.9755479Z Collecting decorator (from ipython>=7.8.0->black[jupyter]==24.8.0; extra == "dev"->plams==2025.101)
+2025-02-25T15:19:37.9788350Z   Downloading decorator-5.2.1-py3-none-any.whl.metadata (3.9 kB)
+2025-02-25T15:19:37.9933006Z Collecting jedi>=0.16 (from ipython>=7.8.0->black[jupyter]==24.8.0; extra == "dev"->plams==2025.101)
+2025-02-25T15:19:37.9965689Z   Downloading jedi-0.19.2-py2.py3-none-any.whl.metadata (22 kB)
+2025-02-25T15:19:38.0118676Z Collecting matplotlib-inline (from ipython>=7.8.0->black[jupyter]==24.8.0; extra == "dev"->plams==2025.101)
+2025-02-25T15:19:38.0151063Z   Downloading matplotlib_inline-0.1.7-py3-none-any.whl.metadata (3.9 kB)
+2025-02-25T15:19:38.0261985Z Collecting pexpect>4.3 (from ipython>=7.8.0->black[jupyter]==24.8.0; extra == "dev"->plams==2025.101)
+2025-02-25T15:19:38.0291925Z   Downloading pexpect-4.9.0-py2.py3-none-any.whl.metadata (2.5 kB)
+2025-02-25T15:19:38.0611762Z Collecting prompt_toolkit<3.1.0,>=3.0.41 (from ipython>=7.8.0->black[jupyter]==24.8.0; extra == "dev"->plams==2025.101)
+2025-02-25T15:19:38.0674505Z   Downloading prompt_toolkit-3.0.50-py3-none-any.whl.metadata (6.6 kB)
+2025-02-25T15:19:38.0874423Z Collecting pygments>=2.4.0 (from ipython>=7.8.0->black[jupyter]==24.8.0; extra == "dev"->plams==2025.101)
+2025-02-25T15:19:38.0906130Z   Downloading pygments-2.19.1-py3-none-any.whl.metadata (2.5 kB)
+2025-02-25T15:19:38.1033754Z Collecting stack_data (from ipython>=7.8.0->black[jupyter]==24.8.0; extra == "dev"->plams==2025.101)
+2025-02-25T15:19:38.1074614Z   Downloading stack_data-0.6.3-py3-none-any.whl.metadata (18 kB)
+2025-02-25T15:19:38.1269183Z Collecting traitlets>=5.13.0 (from ipython>=7.8.0->black[jupyter]==24.8.0; extra == "dev"->plams==2025.101)
+2025-02-25T15:19:38.1305874Z   Downloading traitlets-5.14.3-py3-none-any.whl.metadata (10 kB)
+2025-02-25T15:19:38.1578220Z Collecting parso<0.9.0,>=0.8.4 (from jedi>=0.16->ipython>=7.8.0->black[jupyter]==24.8.0; extra == "dev"->plams==2025.101)
+2025-02-25T15:19:38.1615827Z   Downloading parso-0.8.4-py2.py3-none-any.whl.metadata (7.7 kB)
+2025-02-25T15:19:38.1750476Z Collecting ptyprocess>=0.5 (from pexpect>4.3->ipython>=7.8.0->black[jupyter]==24.8.0; extra == "dev"->plams==2025.101)
+2025-02-25T15:19:38.1784022Z   Downloading ptyprocess-0.7.0-py2.py3-none-any.whl.metadata (1.3 kB)
+2025-02-25T15:19:38.1916561Z Collecting wcwidth (from prompt_toolkit<3.1.0,>=3.0.41->ipython>=7.8.0->black[jupyter]==24.8.0; extra == "dev"->plams==2025.101)
+2025-02-25T15:19:38.1953233Z   Downloading wcwidth-0.2.13-py2.py3-none-any.whl.metadata (14 kB)
+2025-02-25T15:19:38.2152739Z Collecting executing>=1.2.0 (from stack_data->ipython>=7.8.0->black[jupyter]==24.8.0; extra == "dev"->plams==2025.101)
+2025-02-25T15:19:38.2186092Z   Downloading executing-2.2.0-py2.py3-none-any.whl.metadata (8.9 kB)
+2025-02-25T15:19:38.2336060Z Collecting asttokens>=2.1.0 (from stack_data->ipython>=7.8.0->black[jupyter]==24.8.0; extra == "dev"->plams==2025.101)
+2025-02-25T15:19:38.2366941Z   Downloading asttokens-3.0.0-py3-none-any.whl.metadata (4.7 kB)
+2025-02-25T15:19:38.2481018Z Collecting pure-eval (from stack_data->ipython>=7.8.0->black[jupyter]==24.8.0; extra == "dev"->plams==2025.101)
+2025-02-25T15:19:38.2513293Z   Downloading pure_eval-0.2.3-py3-none-any.whl.metadata (6.3 kB)
+2025-02-25T15:19:38.2655387Z Downloading black-24.8.0-py3-none-any.whl (206 kB)
+2025-02-25T15:19:38.2743899Z Downloading flake8-5.0.4-py2.py3-none-any.whl (61 kB)
+2025-02-25T15:19:38.2843252Z Downloading mypy-1.12.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl (12.6 MB)
+2025-02-25T15:19:38.3719627Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.6/12.6 MB 146.4 MB/s eta 0:00:00
+2025-02-25T15:19:38.3757031Z Downloading coverage-7.6.12-cp313-cp313-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (241 kB)
+2025-02-25T15:19:38.3829213Z Downloading dill-0.3.9-py3-none-any.whl (119 kB)
+2025-02-25T15:19:38.3899387Z Downloading numpy-2.2.3-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.1 MB)
+2025-02-25T15:19:38.4760516Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.1/16.1 MB 190.3 MB/s eta 0:00:00
+2025-02-25T15:19:38.4792091Z Downloading pytest-8.3.4-py3-none-any.whl (343 kB)
+2025-02-25T15:19:38.4865803Z Downloading click-8.1.8-py3-none-any.whl (98 kB)
+2025-02-25T15:19:38.4919952Z Downloading ipython-8.32.0-py3-none-any.whl (825 kB)
+2025-02-25T15:19:38.4999020Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 825.5/825.5 kB 105.5 MB/s eta 0:00:00
+2025-02-25T15:19:38.5027670Z Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+2025-02-25T15:19:38.5085166Z Downloading mypy_extensions-1.0.0-py3-none-any.whl (4.7 kB)
+2025-02-25T15:19:38.5142096Z Downloading packaging-24.2-py3-none-any.whl (65 kB)
+2025-02-25T15:19:38.5200042Z Downloading pathspec-0.12.1-py3-none-any.whl (31 kB)
+2025-02-25T15:19:38.5252360Z Downloading platformdirs-4.3.6-py3-none-any.whl (18 kB)
+2025-02-25T15:19:38.5316433Z Downloading pluggy-1.5.0-py3-none-any.whl (20 kB)
+2025-02-25T15:19:38.5393643Z Downloading pycodestyle-2.9.1-py2.py3-none-any.whl (41 kB)
+2025-02-25T15:19:38.5448711Z Downloading pyflakes-2.5.0-py2.py3-none-any.whl (66 kB)
+2025-02-25T15:19:38.5504085Z Downloading tokenize_rt-6.1.0-py2.py3-none-any.whl (6.0 kB)
+2025-02-25T15:19:38.5556360Z Downloading typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+2025-02-25T15:19:38.5641726Z Downloading iniconfig-2.0.0-py3-none-any.whl (5.9 kB)
+2025-02-25T15:19:38.5694912Z Downloading jedi-0.19.2-py2.py3-none-any.whl (1.6 MB)
+2025-02-25T15:19:38.5808838Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 147.9 MB/s eta 0:00:00
+2025-02-25T15:19:38.5840598Z Downloading pexpect-4.9.0-py2.py3-none-any.whl (63 kB)
+2025-02-25T15:19:38.5903282Z Downloading prompt_toolkit-3.0.50-py3-none-any.whl (387 kB)
+2025-02-25T15:19:38.5991504Z Downloading pygments-2.19.1-py3-none-any.whl (1.2 MB)
+2025-02-25T15:19:38.6095927Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 122.6 MB/s eta 0:00:00
+2025-02-25T15:19:38.6131007Z Downloading traitlets-5.14.3-py3-none-any.whl (85 kB)
+2025-02-25T15:19:38.6192959Z Downloading decorator-5.2.1-py3-none-any.whl (9.2 kB)
+2025-02-25T15:19:38.6251689Z Downloading matplotlib_inline-0.1.7-py3-none-any.whl (9.9 kB)
+2025-02-25T15:19:38.6319047Z Downloading stack_data-0.6.3-py3-none-any.whl (24 kB)
+2025-02-25T15:19:38.6391421Z Downloading asttokens-3.0.0-py3-none-any.whl (26 kB)
+2025-02-25T15:19:38.6454834Z Downloading executing-2.2.0-py2.py3-none-any.whl (26 kB)
+2025-02-25T15:19:38.6511563Z Downloading parso-0.8.4-py2.py3-none-any.whl (103 kB)
+2025-02-25T15:19:38.6572677Z Downloading ptyprocess-0.7.0-py2.py3-none-any.whl (13 kB)
+2025-02-25T15:19:38.6630822Z Downloading pure_eval-0.2.3-py3-none-any.whl (11 kB)
+2025-02-25T15:19:38.6693809Z Downloading wcwidth-0.2.13-py2.py3-none-any.whl (34 kB)
+2025-02-25T15:19:38.7434053Z Building wheels for collected packages: plams
+2025-02-25T15:19:38.7442546Z   Building wheel for plams (pyproject.toml): started
+2025-02-25T15:19:39.8086605Z   Building wheel for plams (pyproject.toml): finished with status 'done'
+2025-02-25T15:19:39.8161045Z   Created wheel for plams: filename=plams-2025.101-py3-none-any.whl size=9379558 sha256=9bc367d7510ae8e0d9c116c6b8bbba364427e372b6ccca236cd95239a684fd1e
+2025-02-25T15:19:39.8163222Z   Stored in directory: /tmp/pip-ephem-wheel-cache-tj0auqfv/wheels/f3/fc/62/eb4101a5fd667b7190c13f8611398ead4a09e79c580a296a0b
+2025-02-25T15:19:39.8197684Z Successfully built plams
+2025-02-25T15:19:39.9034487Z Installing collected packages: wcwidth, pure-eval, ptyprocess, typing-extensions, traitlets, tokenize-rt, pygments, pyflakes, pycodestyle, prompt_toolkit, pluggy, platformdirs, pexpect, pathspec, parso, packaging, numpy, mypy-extensions, mccabe, iniconfig, executing, dill, decorator, coverage, click, asttokens, stack_data, pytest, plams, mypy, matplotlib-inline, jedi, flake8, black, ipython
+2025-02-25T15:19:46.8687586Z Successfully installed asttokens-3.0.0 black-24.8.0 click-8.1.8 coverage-7.6.12 decorator-5.2.1 dill-0.3.9 executing-2.2.0 flake8-5.0.4 iniconfig-2.0.0 ipython-8.32.0 jedi-0.19.2 matplotlib-inline-0.1.7 mccabe-0.7.0 mypy-1.12.0 mypy-extensions-1.0.0 numpy-2.2.3 packaging-24.2 parso-0.8.4 pathspec-0.12.1 pexpect-4.9.0 plams-2025.101 platformdirs-4.3.6 pluggy-1.5.0 prompt_toolkit-3.0.50 ptyprocess-0.7.0 pure-eval-0.2.3 pycodestyle-2.9.1 pyflakes-2.5.0 pygments-2.19.1 pytest-8.3.4 stack_data-0.6.3 tokenize-rt-6.1.0 traitlets-5.14.3 typing-extensions-4.12.2 wcwidth-0.2.13
+2025-02-25T15:19:47.0297661Z ##[group]Run black --check -t py38 -l 120 .
+2025-02-25T15:19:47.0298303Z [36;1mblack --check -t py38 -l 120 .[0m
+2025-02-25T15:19:47.0355711Z shell: /usr/bin/bash -e {0}
+2025-02-25T15:19:47.0355970Z env:
+2025-02-25T15:19:47.0356232Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-25T15:19:47.0356655Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-02-25T15:19:47.0357044Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-25T15:19:47.0357404Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-25T15:19:47.0357889Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-25T15:19:47.0358242Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-02-25T15:19:47.0358535Z ##[endgroup]
+2025-02-25T15:19:55.1981183Z All done! ✨ 🍰 ✨
+2025-02-25T15:19:55.1981462Z 244 files would be left unchanged.
+2025-02-25T15:19:55.2269979Z ##[group]Run flake8 --color never --count --config .flake8 .
+2025-02-25T15:19:55.2270429Z [36;1mflake8 --color never --count --config .flake8 .[0m
+2025-02-25T15:19:55.2326566Z shell: /usr/bin/bash -e {0}
+2025-02-25T15:19:55.2326811Z env:
+2025-02-25T15:19:55.2327069Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-25T15:19:55.2327500Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-02-25T15:19:55.2328059Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-25T15:19:55.2328415Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-25T15:19:55.2328977Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-25T15:19:55.2329325Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-02-25T15:19:55.2329623Z ##[endgroup]
+2025-02-25T15:19:55.7849462Z <unknown>:14: SyntaxWarning: invalid escape sequence '\*'
+2025-02-25T15:19:55.9186513Z <unknown>:14: SyntaxWarning: invalid escape sequence '\*'
+2025-02-25T15:19:55.9461442Z <unknown>:153: SyntaxWarning: invalid escape sequence '\*'
+2025-02-25T15:19:55.9606139Z <unknown>:1001: SyntaxWarning: invalid escape sequence '\s'
+2025-02-25T15:19:55.9709905Z <unknown>:2329: SyntaxWarning: invalid escape sequence '\s'
+2025-02-25T15:19:56.4558224Z <unknown>:276: SyntaxWarning: invalid escape sequence '\*'
+2025-02-25T15:19:56.8022498Z <unknown>:1724: SyntaxWarning: invalid escape sequence '\d'
+2025-02-25T15:19:56.8833338Z <unknown>:2505: SyntaxWarning: invalid escape sequence '\*'
+2025-02-25T15:19:57.1102174Z <unknown>:684: SyntaxWarning: invalid escape sequence '\['
+2025-02-25T15:19:57.1103223Z <unknown>:686: SyntaxWarning: invalid escape sequence '\['
+2025-02-25T15:19:57.1104046Z <unknown>:688: SyntaxWarning: invalid escape sequence '\['
+2025-02-25T15:19:57.1104832Z <unknown>:690: SyntaxWarning: invalid escape sequence '\d'
+2025-02-25T15:19:57.3638187Z <unknown>:412: SyntaxWarning: invalid escape sequence '\d'
+2025-02-25T15:19:57.3847597Z <unknown>:20: SyntaxWarning: invalid escape sequence '\*'
+2025-02-25T15:19:57.6315471Z <unknown>:14: SyntaxWarning: invalid escape sequence '\*'
+2025-02-25T15:19:57.6608474Z <unknown>:1001: SyntaxWarning: invalid escape sequence '\s'
+2025-02-25T15:19:57.6709228Z <unknown>:2329: SyntaxWarning: invalid escape sequence '\s'
+2025-02-25T15:19:57.7194556Z <unknown>:253: SyntaxWarning: invalid escape sequence '\*'
+2025-02-25T15:19:57.7680678Z <unknown>:153: SyntaxWarning: invalid escape sequence '\*'
+2025-02-25T15:19:58.2417197Z <unknown>:276: SyntaxWarning: invalid escape sequence '\*'
+2025-02-25T15:19:58.2869194Z <unknown>:258: SyntaxWarning: invalid escape sequence '\['
+2025-02-25T15:19:58.2870145Z <unknown>:260: SyntaxWarning: invalid escape sequence '\['
+2025-02-25T15:19:58.2871017Z <unknown>:262: SyntaxWarning: invalid escape sequence '\['
+2025-02-25T15:19:58.2888589Z <unknown>:492: SyntaxWarning: invalid escape sequence '\d'
+2025-02-25T15:19:58.2889288Z <unknown>:494: SyntaxWarning: invalid escape sequence '\d'
+2025-02-25T15:19:58.2889955Z <unknown>:496: SyntaxWarning: invalid escape sequence '\d'
+2025-02-25T15:19:58.5334347Z <unknown>:1724: SyntaxWarning: invalid escape sequence '\d'
+2025-02-25T15:19:58.8829139Z <unknown>:684: SyntaxWarning: invalid escape sequence '\['
+2025-02-25T15:19:58.8830042Z <unknown>:686: SyntaxWarning: invalid escape sequence '\['
+2025-02-25T15:19:58.8830805Z <unknown>:688: SyntaxWarning: invalid escape sequence '\['
+2025-02-25T15:19:58.8831573Z <unknown>:690: SyntaxWarning: invalid escape sequence '\d'
+2025-02-25T15:19:59.1273163Z <unknown>:412: SyntaxWarning: invalid escape sequence '\d'
+2025-02-25T15:19:59.1625368Z <unknown>:20: SyntaxWarning: invalid escape sequence '\*'
+2025-02-25T15:19:59.9269127Z <unknown>:2505: SyntaxWarning: invalid escape sequence '\*'
+2025-02-25T15:19:59.9632516Z <unknown>:258: SyntaxWarning: invalid escape sequence '\['
+2025-02-25T15:19:59.9636915Z <unknown>:260: SyntaxWarning: invalid escape sequence '\['
+2025-02-25T15:19:59.9638201Z <unknown>:262: SyntaxWarning: invalid escape sequence '\['
+2025-02-25T15:19:59.9650959Z <unknown>:492: SyntaxWarning: invalid escape sequence '\d'
+2025-02-25T15:19:59.9652812Z <unknown>:494: SyntaxWarning: invalid escape sequence '\d'
+2025-02-25T15:19:59.9653344Z <unknown>:496: SyntaxWarning: invalid escape sequence '\d'
+2025-02-25T15:20:00.4189265Z <unknown>:14: SyntaxWarning: invalid escape sequence '\*'
+2025-02-25T15:20:00.5198947Z <unknown>:253: SyntaxWarning: invalid escape sequence '\*'
+2025-02-25T15:20:01.3450268Z ./build/lib/scm/plams/unit_tests/test_job_analysis.py:861:65: F632 use ==/!= to compare constant literals (str, bytes, int, float, tuple)
+2025-02-25T15:20:01.3452019Z ./unit_tests/test_job_analysis.py:861:65: F632 use ==/!= to compare constant literals (str, bytes, int, float, tuple)
+2025-02-25T15:20:01.3452722Z 2
+2025-02-25T15:20:01.3674160Z ##[error]Process completed with exit code 1.
+2025-02-25T15:20:01.3792731Z Post job cleanup.
+2025-02-25T15:20:01.4775173Z [command]/usr/bin/git version
+2025-02-25T15:20:01.4814665Z git version 2.48.1
+2025-02-25T15:20:01.4866036Z Temporarily overriding HOME='/home/runner/work/_temp/c58d7a0b-74ab-4148-b38b-1d5542e1d307' before making global git config changes
+2025-02-25T15:20:01.4867721Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-25T15:20:01.4871882Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/PLAMS/PLAMS
+2025-02-25T15:20:01.4911406Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-25T15:20:01.4945862Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-25T15:20:01.5189531Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-25T15:20:01.5212216Z http.https://github.com/.extraheader
+2025-02-25T15:20:01.5225084Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-25T15:20:01.5257418Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-25T15:20:01.5609314Z Cleaning up orphan processes

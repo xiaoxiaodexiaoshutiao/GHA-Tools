@@ -1,0 +1,47 @@
+diff --git a/buildSrc/src/main/resources/minecraft_specific_words.txt b/buildSrc/src/main/resources/minecraft_specific_words.txt
+index fe3a853ed5..2ffcc83eea 100644
+--- a/buildSrc/src/main/resources/minecraft_specific_words.txt
++++ b/buildSrc/src/main/resources/minecraft_specific_words.txt
+@@ -261,6 +261,7 @@ seagrass
+ shroomlight
+ terracotta
+ torchflower
++eyeblossom
+ 
+ // pot patterns
+ guster
+diff --git a/mappings/net/minecraft/block/Block.mapping b/mappings/net/minecraft/block/Block.mapping
+index 387cfb4bc6..2dacf12c90 100644
+--- a/mappings/net/minecraft/block/Block.mapping
++++ b/mappings/net/minecraft/block/Block.mapping
+@@ -38,8 +38,8 @@ CLASS net/minecraft/unmapped/C_mmxmpdoq net/minecraft/block/Block
+ 	FIELD f_nexeeilp stateManager Lnet/minecraft/unmapped/C_ezfeikaq;
+ 	FIELD f_ngtlhrdq FULL_CUBE_SHAPE_CACHE Lcom/google/common/cache/LoadingCache;
+ 	FIELD f_okywtldq STATE_IDS Lnet/minecraft/unmapped/C_lwiadjvw;
+-	FIELD f_pelzkawq SKIP_UPDATE_BLOCK_ENTITY_SIDEEFFECTS I
+-	FIELD f_rnbszkxo SKIP_ALL_UPDATE_SIDEEFFECTS I
++	FIELD f_pelzkawq SKIP_UPDATE_BLOCK_ENTITY_SIDE_EFFECTS I
++	FIELD f_rnbszkxo SKIP_ALL_UPDATE_SIDE_EFFECTS I
+ 	FIELD f_sqfncgqq LOGGER Lorg/slf4j/Logger;
+ 	FIELD f_utymbzpn REDRAW_ON_MAIN_THREAD I
+ 		COMMENT Forces a synchronous redraw on clients.
+diff --git a/mappings/net/minecraft/block/EyeBlossomBlock.mapping b/mappings/net/minecraft/block/EyeBlossomBlock.mapping
+index 472f2bb67e..aac5f2cbb0 100644
+--- a/mappings/net/minecraft/block/EyeBlossomBlock.mapping
++++ b/mappings/net/minecraft/block/EyeBlossomBlock.mapping
+@@ -1,4 +1,4 @@
+-CLASS net/minecraft/unmapped/C_bwtojyjm net/minecraft/block/EyeBlossomBlock
++CLASS net/minecraft/unmapped/C_bwtojyjm net/minecraft/block/EyeblossomBlock
+ 	FIELD f_jpmpisag type Lnet/minecraft/unmapped/C_bwtojyjm$C_hiadigjk;
+ 	FIELD f_ntaxtxyf HORIZONTAL_PROPAGATION_RANGE I
+ 	FIELD f_oqzugvyg VERTICAL_PROPAGATION_RANGE I
+diff --git a/mappings/net/minecraft/block/FireFlyBushBlock.mapping b/mappings/net/minecraft/block/FireFlyBushBlock.mapping
+index 496cce29d6..74b7bc66f4 100644
+--- a/mappings/net/minecraft/block/FireFlyBushBlock.mapping
++++ b/mappings/net/minecraft/block/FireFlyBushBlock.mapping
+@@ -1,4 +1,4 @@
+-CLASS net/minecraft/unmapped/C_qdmklpvw net/minecraft/block/FireFlyBushBlock
++CLASS net/minecraft/unmapped/C_qdmklpvw net/minecraft/block/FireflyBushBlock
+ 	FIELD f_khgevxxa UPWARD_PARTICLE_SPREAD D
+ 	FIELD f_pgixjpfw MAX_LIGHT_FOR_PARTICLE_SPAWN I
+ 	FIELD f_rzgapzda INVERSE_SOUND_CHANCE I

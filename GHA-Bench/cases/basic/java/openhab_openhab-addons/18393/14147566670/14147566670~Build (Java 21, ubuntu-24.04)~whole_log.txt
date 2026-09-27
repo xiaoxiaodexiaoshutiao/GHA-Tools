@@ -1,0 +1,614 @@
+﻿2025-03-29T16:47:36.6627932Z Current runner version: '2.323.0'
+2025-03-29T16:47:36.6654467Z ##[group]Operating System
+2025-03-29T16:47:36.6655379Z Ubuntu
+2025-03-29T16:47:36.6655830Z 24.04.2
+2025-03-29T16:47:36.6656320Z LTS
+2025-03-29T16:47:36.6656844Z ##[endgroup]
+2025-03-29T16:47:36.6657368Z ##[group]Runner Image
+2025-03-29T16:47:36.6657933Z Image: ubuntu-24.04
+2025-03-29T16:47:36.6658489Z Version: 20250323.1.0
+2025-03-29T16:47:36.6659513Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-29T16:47:36.6660890Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-03-29T16:47:36.6661853Z ##[endgroup]
+2025-03-29T16:47:36.6662333Z ##[group]Runner Image Provisioner
+2025-03-29T16:47:36.6662936Z 2.0.422.1
+2025-03-29T16:47:36.6663448Z ##[endgroup]
+2025-03-29T16:47:36.6665834Z ##[group]GITHUB_TOKEN Permissions
+2025-03-29T16:47:36.6668086Z Actions: read
+2025-03-29T16:47:36.6668794Z Attestations: read
+2025-03-29T16:47:36.6669414Z Checks: read
+2025-03-29T16:47:36.6669922Z Contents: read
+2025-03-29T16:47:36.6670394Z Deployments: read
+2025-03-29T16:47:36.6670935Z Discussions: read
+2025-03-29T16:47:36.6671409Z Issues: read
+2025-03-29T16:47:36.6671912Z Metadata: read
+2025-03-29T16:47:36.6672348Z Models: read
+2025-03-29T16:47:36.6672895Z Packages: read
+2025-03-29T16:47:36.6673405Z Pages: read
+2025-03-29T16:47:36.6674168Z PullRequests: read
+2025-03-29T16:47:36.6674803Z RepositoryProjects: read
+2025-03-29T16:47:36.6675339Z SecurityEvents: read
+2025-03-29T16:47:36.6675859Z Statuses: read
+2025-03-29T16:47:36.6676380Z ##[endgroup]
+2025-03-29T16:47:36.6678378Z Secret source: None
+2025-03-29T16:47:36.6679113Z Prepare workflow directory
+2025-03-29T16:47:36.7004773Z Prepare all required actions
+2025-03-29T16:47:36.7042982Z Getting action download info
+2025-03-29T16:47:37.2887620Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-03-29T16:47:37.2888585Z Version: 4.2.2
+2025-03-29T16:47:37.2889509Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-03-29T16:47:37.2890638Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-03-29T16:47:37.2891325Z ##[endgroup]
+2025-03-29T16:47:37.3858492Z ##[group]Download immutable action package 'actions/cache@v4'
+2025-03-29T16:47:37.3859223Z Version: 4.2.3
+2025-03-29T16:47:37.3859926Z Digest: sha256:c8a3bb963e1f1826d8fcc8d1354f0dd29d8ac1db1d4f6f20247055ae11b81ed9
+2025-03-29T16:47:37.3860855Z Source commit SHA: 5a3ec84eff668545956fd18022155c47e93e2684
+2025-03-29T16:47:37.3861515Z ##[endgroup]
+2025-03-29T16:47:37.8098304Z ##[group]Download immutable action package 'actions/setup-java@v4'
+2025-03-29T16:47:37.8099076Z Version: 4.7.0
+2025-03-29T16:47:37.8099778Z Digest: sha256:5f5c07139c6dc32a599e9e0b973af500cb67a72aa7e5c437df96130dd73c8479
+2025-03-29T16:47:37.8100736Z Source commit SHA: 3a4f6e1af504cf6a31855fa899c6aa5355ba6c12
+2025-03-29T16:47:37.8101399Z ##[endgroup]
+2025-03-29T16:47:38.2384942Z Download action repository 'stCarolas/setup-maven@d6af6abeda15e98926a57b5aa970a96bb37f97d1' (SHA:d6af6abeda15e98926a57b5aa970a96bb37f97d1)
+2025-03-29T16:47:39.7586019Z Download action repository 'Ana06/get-changed-files@25f79e676e7ea1868813e21465014798211fad8c' (SHA:25f79e676e7ea1868813e21465014798211fad8c)
+2025-03-29T16:47:40.3642096Z ##[group]Download immutable action package 'actions/upload-artifact@v4'
+2025-03-29T16:47:40.3642485Z Version: 4.6.2
+2025-03-29T16:47:40.3642805Z Digest: sha256:290722aa3281d5caf23d0acdc3dbeb3424786a1a01a9cc97e72f147225e37c38
+2025-03-29T16:47:40.3643237Z Source commit SHA: ea165f8d65b6e75b540449e92b4886f43607fa02
+2025-03-29T16:47:40.3643520Z ##[endgroup]
+2025-03-29T16:47:40.7988605Z Download action repository 'ghys/checkstyle-github-action@main' (SHA:bd34573c2add8a11e78be993ca937a7bb2e97d05)
+2025-03-29T16:47:41.6187932Z Complete job name: Build (Java 21, ubuntu-24.04)
+2025-03-29T16:47:41.6788227Z ##[group]Run actions/checkout@v4
+2025-03-29T16:47:41.6788889Z with:
+2025-03-29T16:47:41.6789092Z   ref: refs/pull/18393/merge
+2025-03-29T16:47:41.6789556Z   repository: openhab/openhab-addons
+2025-03-29T16:47:41.6789967Z   token: ***
+2025-03-29T16:47:41.6790152Z   ssh-strict: true
+2025-03-29T16:47:41.6790357Z   ssh-user: git
+2025-03-29T16:47:41.6790538Z   persist-credentials: true
+2025-03-29T16:47:41.6790747Z   clean: true
+2025-03-29T16:47:41.6790927Z   sparse-checkout-cone-mode: true
+2025-03-29T16:47:41.6791152Z   fetch-depth: 1
+2025-03-29T16:47:41.6791324Z   fetch-tags: false
+2025-03-29T16:47:41.6791498Z   show-progress: true
+2025-03-29T16:47:41.6791682Z   lfs: false
+2025-03-29T16:47:41.6791834Z   submodules: false
+2025-03-29T16:47:41.6792014Z   set-safe-directory: true
+2025-03-29T16:47:41.6792466Z ##[endgroup]
+2025-03-29T16:47:41.8684134Z Syncing repository: openhab/openhab-addons
+2025-03-29T16:47:41.8685867Z ##[group]Getting Git version info
+2025-03-29T16:47:41.8686578Z Working directory is '/home/runner/work/openhab-addons/openhab-addons'
+2025-03-29T16:47:41.8687497Z [command]/usr/bin/git version
+2025-03-29T16:47:41.8752096Z git version 2.49.0
+2025-03-29T16:47:41.8783441Z ##[endgroup]
+2025-03-29T16:47:41.8798576Z Temporarily overriding HOME='/home/runner/work/_temp/c3576bc3-78ad-4172-aed7-245940c6e903' before making global git config changes
+2025-03-29T16:47:41.8799951Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-29T16:47:41.8804976Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/openhab-addons/openhab-addons
+2025-03-29T16:47:41.8841558Z Deleting the contents of '/home/runner/work/openhab-addons/openhab-addons'
+2025-03-29T16:47:41.8845487Z ##[group]Initializing the repository
+2025-03-29T16:47:41.8850063Z [command]/usr/bin/git init /home/runner/work/openhab-addons/openhab-addons
+2025-03-29T16:47:41.8922486Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-29T16:47:41.8923435Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-29T16:47:41.8924346Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-29T16:47:41.8924926Z hint:
+2025-03-29T16:47:41.8925308Z hint: 	git config --global init.defaultBranch <name>
+2025-03-29T16:47:41.8925586Z hint:
+2025-03-29T16:47:41.8925961Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-29T16:47:41.8926806Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-29T16:47:41.8927429Z hint:
+2025-03-29T16:47:41.8927756Z hint: 	git branch -m <name>
+2025-03-29T16:47:41.8929882Z Initialized empty Git repository in /home/runner/work/openhab-addons/openhab-addons/.git/
+2025-03-29T16:47:41.8940706Z [command]/usr/bin/git remote add origin https://github.com/openhab/openhab-addons
+2025-03-29T16:47:41.8972474Z ##[endgroup]
+2025-03-29T16:47:41.8973064Z ##[group]Disabling automatic garbage collection
+2025-03-29T16:47:41.8976896Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-29T16:47:41.9005110Z ##[endgroup]
+2025-03-29T16:47:41.9005499Z ##[group]Setting up auth
+2025-03-29T16:47:41.9011795Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-29T16:47:41.9041657Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-29T16:47:41.9346626Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-29T16:47:41.9377249Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-29T16:47:41.9614092Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-29T16:47:41.9648827Z ##[endgroup]
+2025-03-29T16:47:41.9649476Z ##[group]Fetching the repository
+2025-03-29T16:47:41.9657414Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/pull/18393/merge:refs/remotes/pull/18393/merge
+2025-03-29T16:47:49.0768408Z From https://github.com/openhab/openhab-addons
+2025-03-29T16:47:49.0769420Z  * [new ref]           refs/pull/18393/merge -> pull/18393/merge
+2025-03-29T16:47:49.0794086Z ##[endgroup]
+2025-03-29T16:47:49.0794454Z ##[group]Determining the checkout info
+2025-03-29T16:47:49.0797053Z ##[endgroup]
+2025-03-29T16:47:49.0802853Z [command]/usr/bin/git sparse-checkout disable
+2025-03-29T16:47:49.0844550Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-29T16:47:49.0873399Z ##[group]Checking out the ref
+2025-03-29T16:47:49.0878389Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/18393/merge
+2025-03-29T16:47:50.1272178Z Updating files:  68% (14065/20515)
+2025-03-29T16:47:50.1378041Z Updating files:  69% (14156/20515)
+2025-03-29T16:47:50.1513425Z Updating files:  70% (14361/20515)
+2025-03-29T16:47:50.1648020Z Updating files:  71% (14566/20515)
+2025-03-29T16:47:50.1786862Z Updating files:  72% (14771/20515)
+2025-03-29T16:47:50.2003600Z Updating files:  73% (14976/20515)
+2025-03-29T16:47:50.2151733Z Updating files:  74% (15182/20515)
+2025-03-29T16:47:50.2271738Z Updating files:  75% (15387/20515)
+2025-03-29T16:47:50.2412778Z Updating files:  76% (15592/20515)
+2025-03-29T16:47:50.2569612Z Updating files:  77% (15797/20515)
+2025-03-29T16:47:50.2674643Z Updating files:  78% (16002/20515)
+2025-03-29T16:47:50.2808510Z Updating files:  79% (16207/20515)
+2025-03-29T16:47:50.2936877Z Updating files:  80% (16412/20515)
+2025-03-29T16:47:50.3077299Z Updating files:  81% (16618/20515)
+2025-03-29T16:47:50.3216575Z Updating files:  82% (16823/20515)
+2025-03-29T16:47:50.3352338Z Updating files:  83% (17028/20515)
+2025-03-29T16:47:50.3451419Z Updating files:  84% (17233/20515)
+2025-03-29T16:47:50.3607002Z Updating files:  85% (17438/20515)
+2025-03-29T16:47:50.3781458Z Updating files:  86% (17643/20515)
+2025-03-29T16:47:50.3883329Z Updating files:  87% (17849/20515)
+2025-03-29T16:47:50.4330759Z Updating files:  88% (18054/20515)
+2025-03-29T16:47:50.4495309Z Updating files:  89% (18259/20515)
+2025-03-29T16:47:50.4637477Z Updating files:  90% (18464/20515)
+2025-03-29T16:47:50.4771778Z Updating files:  91% (18669/20515)
+2025-03-29T16:47:50.4918154Z Updating files:  92% (18874/20515)
+2025-03-29T16:47:50.5056663Z Updating files:  93% (19079/20515)
+2025-03-29T16:47:50.5330562Z Updating files:  94% (19285/20515)
+2025-03-29T16:47:50.5706726Z Updating files:  95% (19490/20515)
+2025-03-29T16:47:50.5829159Z Updating files:  96% (19695/20515)
+2025-03-29T16:47:50.5993249Z Updating files:  97% (19900/20515)
+2025-03-29T16:47:50.6155616Z Updating files:  98% (20105/20515)
+2025-03-29T16:47:50.7015376Z Updating files:  99% (20310/20515)
+2025-03-29T16:47:50.7015894Z Updating files: 100% (20515/20515)
+2025-03-29T16:47:50.7016388Z Updating files: 100% (20515/20515), done.
+2025-03-29T16:47:50.7386939Z Note: switching to 'refs/remotes/pull/18393/merge'.
+2025-03-29T16:47:50.7387321Z 
+2025-03-29T16:47:50.7387641Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-29T16:47:50.7388427Z changes and commit them, and you can discard any commits you make in this
+2025-03-29T16:47:50.7389121Z state without impacting any branches by switching back to a branch.
+2025-03-29T16:47:50.7389546Z 
+2025-03-29T16:47:50.7389818Z If you want to create a new branch to retain commits you create, you may
+2025-03-29T16:47:50.7390444Z do so (now or later) by using -c with the switch command. Example:
+2025-03-29T16:47:50.7390813Z 
+2025-03-29T16:47:50.7390962Z   git switch -c <new-branch-name>
+2025-03-29T16:47:50.7391242Z 
+2025-03-29T16:47:50.7391375Z Or undo this operation with:
+2025-03-29T16:47:50.7391594Z 
+2025-03-29T16:47:50.7391704Z   git switch -
+2025-03-29T16:47:50.7391877Z 
+2025-03-29T16:47:50.7392451Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-29T16:47:50.7392897Z 
+2025-03-29T16:47:50.7393423Z HEAD is now at f5e99d07 Merge 196305f50de904dc30e0484c10984ca9a05ebba8 into e04a743e6d095f9aab13e53a9f60b2095a688075
+2025-03-29T16:47:50.7438522Z ##[endgroup]
+2025-03-29T16:47:50.7481837Z [command]/usr/bin/git log -1 --format=%H
+2025-03-29T16:47:50.7505291Z f5e99d07ce977d21553d47aead9f54afa353cf9e
+2025-03-29T16:47:53.5061254Z ##[group]Run actions/cache@v4
+2025-03-29T16:47:53.5061501Z with:
+2025-03-29T16:47:53.5061712Z   path: ~/.m2/repository
+!~/.m2/repository/org/openhab
+
+2025-03-29T16:47:53.5062153Z   key: Linux-maven-80998ed37c0917a029282c8f5b5b76da30aa63e507cc9efdbda4be68b5d8637e
+2025-03-29T16:47:53.5062599Z   restore-keys: Linux-maven-
+
+2025-03-29T16:47:53.5062823Z   enableCrossOsArchive: false
+2025-03-29T16:47:53.5063033Z   fail-on-cache-miss: false
+2025-03-29T16:47:53.5063240Z   lookup-only: false
+2025-03-29T16:47:53.5063417Z   save-always: false
+2025-03-29T16:47:53.5063592Z ##[endgroup]
+2025-03-29T16:47:53.8885530Z Cache hit for: Linux-maven-80998ed37c0917a029282c8f5b5b76da30aa63e507cc9efdbda4be68b5d8637e
+2025-03-29T16:47:55.1372669Z Received 29360128 of 1148062669 (2.6%), 28.0 MBs/sec
+2025-03-29T16:47:56.1373547Z Received 138412032 of 1148062669 (12.1%), 66.0 MBs/sec
+2025-03-29T16:47:57.1377878Z Received 285212672 of 1148062669 (24.8%), 90.7 MBs/sec
+2025-03-29T16:47:58.1398589Z Received 402653184 of 1148062669 (35.1%), 96.0 MBs/sec
+2025-03-29T16:47:59.1400506Z Received 536870912 of 1148062669 (46.8%), 102.4 MBs/sec
+2025-03-29T16:48:00.1403073Z Received 671088640 of 1148062669 (58.5%), 106.6 MBs/sec
+2025-03-29T16:48:01.2095365Z Received 805306368 of 1148062669 (70.1%), 108.6 MBs/sec
+2025-03-29T16:48:02.2417827Z Received 939524096 of 1148062669 (81.8%), 110.6 MBs/sec
+2025-03-29T16:48:03.2619299Z Received 1073741824 of 1148062669 (93.5%), 112.2 MBs/sec
+2025-03-29T16:48:04.2619523Z Received 1145044992 of 1148062669 (99.7%), 107.9 MBs/sec
+2025-03-29T16:48:04.5241227Z Received 1148062669 of 1148062669 (100.0%), 105.4 MBs/sec
+2025-03-29T16:48:04.5244207Z Cache Size: ~1095 MB (1148062669 B)
+2025-03-29T16:48:04.5286115Z [command]/usr/bin/tar -xf /home/runner/work/_temp/240bfc76-fce3-4e99-b421-de3637b1f209/cache.tzst -P -C /home/runner/work/openhab-addons/openhab-addons --use-compress-program unzstd
+2025-03-29T16:48:07.8863527Z Cache restored successfully
+2025-03-29T16:48:08.1382725Z Cache restored from key: Linux-maven-72b6e1bcf7c0197466ed07dcc21a3cb1809b57d8245d074ffef65322f167690b
+2025-03-29T16:48:08.1608708Z ##[group]Run actions/setup-java@v4
+2025-03-29T16:48:08.1609117Z with:
+2025-03-29T16:48:08.1609400Z   distribution: temurin
+2025-03-29T16:48:08.1609722Z   java-version: 21
+2025-03-29T16:48:08.1610025Z   java-package: jdk
+2025-03-29T16:48:08.1610325Z   check-latest: false
+2025-03-29T16:48:08.1610651Z   server-id: github
+2025-03-29T16:48:08.1610962Z   server-username: GITHUB_ACTOR
+2025-03-29T16:48:08.1611347Z   server-password: GITHUB_TOKEN
+2025-03-29T16:48:08.1611718Z   overwrite-settings: true
+2025-03-29T16:48:08.1612065Z   job-status: success
+2025-03-29T16:48:08.1612513Z   token: ***
+2025-03-29T16:48:08.1612786Z ##[endgroup]
+2025-03-29T16:48:08.3561872Z ##[group]Installed distributions
+2025-03-29T16:48:08.3605989Z Resolved Java 21.0.6+7 from tool-cache
+2025-03-29T16:48:08.3606444Z Setting Java 21.0.6+7 as the default
+2025-03-29T16:48:08.3619319Z Creating toolchains.xml for JDK version 21 from temurin
+2025-03-29T16:48:08.3699164Z Writing to /home/runner/.m2/toolchains.xml
+2025-03-29T16:48:08.3699707Z 
+2025-03-29T16:48:08.3700008Z Java configuration:
+2025-03-29T16:48:08.3701271Z   Distribution: temurin
+2025-03-29T16:48:08.3701594Z   Version: 21.0.6+7
+2025-03-29T16:48:08.3702090Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-29T16:48:08.3702637Z 
+2025-03-29T16:48:08.3704233Z ##[endgroup]
+2025-03-29T16:48:08.3719888Z Creating settings.xml with server-id: github
+2025-03-29T16:48:08.3723913Z Writing to /home/runner/.m2/settings.xml
+2025-03-29T16:48:08.3841303Z ##[group]Run stCarolas/setup-maven@d6af6abeda15e98926a57b5aa970a96bb37f97d1
+2025-03-29T16:48:08.3841681Z with:
+2025-03-29T16:48:08.3841858Z   maven-version: 3.9.9
+2025-03-29T16:48:08.3842042Z env:
+2025-03-29T16:48:08.3842482Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-29T16:48:08.3842916Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-29T16:48:08.3843244Z ##[endgroup]
+2025-03-29T16:48:08.4370610Z downloading https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.9/apache-maven-3.9.9-bin.tar.gz
+2025-03-29T16:48:08.6415711Z [command]tar --version
+2025-03-29T16:48:08.6450279Z tar (GNU tar) 1.35
+2025-03-29T16:48:08.6450737Z Copyright (C) 2023 Free Software Foundation, Inc.
+2025-03-29T16:48:08.6451544Z License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+2025-03-29T16:48:08.6452396Z This is free software: you are free to change and redistribute it.
+2025-03-29T16:48:08.6453184Z There is NO WARRANTY, to the extent permitted by law.
+2025-03-29T16:48:08.6453582Z 
+2025-03-29T16:48:08.6453992Z Written by John Gilmore and Jay Fenlason.
+2025-03-29T16:48:08.6461704Z [command]tar xz --warning=no-unknown-keyword -C /home/runner/work/_temp/8056bcf0-adab-49d6-a403-10bceddb83cf -f /home/runner/work/_temp/43012d0c-6ccb-4760-9a4d-8d0b373f5d12
+2025-03-29T16:48:08.7841050Z ##[group]Run echo "::add-matcher::.github/openhab-compile-problems.json"
+2025-03-29T16:48:08.7841610Z [36;1mecho "::add-matcher::.github/openhab-compile-problems.json"[0m
+2025-03-29T16:48:08.7891343Z shell: /usr/bin/bash -e {0}
+2025-03-29T16:48:08.7891582Z env:
+2025-03-29T16:48:08.7891872Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-29T16:48:08.7892353Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-29T16:48:08.7892708Z ##[endgroup]
+2025-03-29T16:48:08.8032754Z ##[group]Run Ana06/get-changed-files@25f79e676e7ea1868813e21465014798211fad8c
+2025-03-29T16:48:08.8033121Z with:
+2025-03-29T16:48:08.8033280Z   format: csv
+2025-03-29T16:48:08.8033566Z   token: ***
+2025-03-29T16:48:08.8034007Z   filter: *
+2025-03-29T16:48:08.8034261Z env:
+2025-03-29T16:48:08.8034538Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-29T16:48:08.8035001Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-29T16:48:08.8035339Z ##[endgroup]
+2025-03-29T16:48:08.8858798Z Base commit: e04a743e6d095f9aab13e53a9f60b2095a688075
+2025-03-29T16:48:08.8859461Z Head commit: 196305f50de904dc30e0484c10984ca9a05ebba8
+2025-03-29T16:48:09.3086600Z All: bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/WLedHelper.java,bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/api/WledApi.java,bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/api/WledApiV0110.java,bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/api/WledApiV084.java,bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/handlers/WLedSegmentHandler.java
+2025-03-29T16:48:09.3090449Z Added: 
+2025-03-29T16:48:09.3094474Z Modified: bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/WLedHelper.java,bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/api/WledApi.java,bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/api/WledApiV0110.java,bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/api/WledApiV084.java,bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/handlers/WLedSegmentHandler.java
+2025-03-29T16:48:09.3098207Z Removed: 
+2025-03-29T16:48:09.3098497Z Renamed: 
+2025-03-29T16:48:09.3102153Z Added or modified: bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/WLedHelper.java,bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/api/WledApi.java,bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/api/WledApiV0110.java,bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/api/WledApiV084.java,bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/handlers/WLedSegmentHandler.java
+2025-03-29T16:48:09.3109907Z Added, modified or renamed: bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/WLedHelper.java,bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/api/WledApi.java,bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/api/WledApiV0110.java,bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/api/WledApiV084.java,bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/handlers/WLedSegmentHandler.java
+2025-03-29T16:48:09.3206550Z ##[group]Run ./.github/scripts/maven-build
+2025-03-29T16:48:09.3206883Z [36;1m./.github/scripts/maven-build[0m
+2025-03-29T16:48:09.3253964Z shell: /usr/bin/bash -e {0}
+2025-03-29T16:48:09.3254188Z env:
+2025-03-29T16:48:09.3254472Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-29T16:48:09.3254936Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-29T16:48:09.3257183Z   CHANGED_FILES: bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/WLedHelper.java,bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/api/WledApi.java,bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/api/WledApiV0110.java,bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/api/WledApiV084.java,bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/handlers/WLedSegmentHandler.java
+2025-03-29T16:48:09.3259950Z   MAVEN_OPTS: -Xmx2g -Dmaven.wagon.http.retryHandler.count=5 -Dmaven.wagon.httpconnectionManager.ttlSeconds=25 -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
+2025-03-29T16:48:09.3260763Z ##[endgroup]
+2025-03-29T16:48:09.6275814Z Apache Maven 3.9.9 (8e8579a9e76f7d015ee5ec7bfcdc97d260186937)
+2025-03-29T16:48:09.6276877Z Maven home: /opt/hostedtoolcache/maven/3.9.9/x64
+2025-03-29T16:48:09.6277928Z Java version: 21.0.6, vendor: Eclipse Adoptium, runtime: /usr/lib/jvm/temurin-21-jdk-amd64
+2025-03-29T16:48:09.6278766Z Default locale: en, platform encoding: UTF-8
+2025-03-29T16:48:09.6279408Z OS name: "linux", version: "6.8.0-1021-azure", arch: "amd64", family: "unix"
+2025-03-29T16:48:09.6563176Z 
+2025-03-29T16:48:09.6563422Z Building add-on: org.openhab.binding.wled
+2025-03-29T16:48:09.6563852Z 
+2025-03-29T16:48:09.6565587Z + mvn clean verify -B -T 1.5C -U -am -amd -pl :org.openhab.binding.wled,:org.openhab.addons.bom.openhab-core-index,:org.openhab.addons.bom.runtime-index,:org.openhab.addons.bom.test-index,-:org.openhab.addons.reactor.features.karaf,-:org.openhab.addons.features.karaf.openhab-addons,-:org.openhab.addons.features.karaf.openhab-addons-external
+2025-03-29T16:48:09.6567797Z 
+2025-03-29T16:48:10.8280817Z [INFO] Scanning for projects...
+2025-03-29T16:48:14.4355527Z [INFO] ------------------------------------------------------------------------
+2025-03-29T16:48:14.4356742Z [INFO] Reactor Build Order:
+2025-03-29T16:48:14.4358104Z [INFO] 
+2025-03-29T16:48:14.4363346Z [INFO] openHAB Add-ons                                                    [pom]
+2025-03-29T16:48:14.4364985Z [INFO] openHAB Add-ons :: BOM                                             [pom]
+2025-03-29T16:48:14.4365774Z [INFO] openHAB Add-ons :: BOM :: Runtime Index                            [pom]
+2025-03-29T16:48:14.4366556Z [INFO] openHAB Add-ons :: BOM :: Test Index                               [pom]
+2025-03-29T16:48:14.4375534Z [INFO] openHAB Add-ons :: BOM :: openHAB Core Index                       [pom]
+2025-03-29T16:48:14.4376696Z [INFO] openHAB Add-ons :: Bundles                                         [pom]
+2025-03-29T16:48:14.4377864Z [INFO] openHAB Add-ons :: Bundles :: WLed Binding                         [jar]
+2025-03-29T16:48:14.4379863Z [INFO] openHAB Add-ons :: BOM :: openHAB Add-ons                          [pom]
+2025-03-29T16:48:14.4436116Z [INFO] 
+2025-03-29T16:48:14.4438118Z [INFO] Using the MultiThreadedBuilder implementation with a thread count of 6
+2025-03-29T16:48:14.5203118Z [INFO] 
+2025-03-29T16:48:14.5204486Z [INFO] -----------< org.openhab.addons:org.openhab.addons.reactor >------------
+2025-03-29T16:48:14.5206239Z [INFO] Building openHAB Add-ons 5.0.0-SNAPSHOT                            [1/8]
+2025-03-29T16:48:14.5206848Z [INFO]   from pom.xml
+2025-03-29T16:48:14.5207319Z [INFO] --------------------------------[ pom ]---------------------------------
+2025-03-29T16:48:14.5654404Z [INFO] 
+2025-03-29T16:48:14.5661749Z [INFO] --- clean:3.4.0:clean (default-clean) @ org.openhab.addons.reactor ---
+2025-03-29T16:48:14.8332750Z [INFO] 
+2025-03-29T16:48:14.8333894Z [INFO] --- enforcer:3.5.0:enforce (enforce-java) @ org.openhab.addons.reactor ---
+2025-03-29T16:48:14.9485855Z [INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+2025-03-29T16:48:14.9797700Z [INFO] Rule 1: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+2025-03-29T16:48:14.9799754Z [INFO] 
+2025-03-29T16:48:14.9800325Z [INFO] --- directory:1.0:directory-of (directories) @ org.openhab.addons.reactor ---
+2025-03-29T16:48:15.0607286Z [INFO] Directory of org.openhab.addons:org.openhab.addons.reactor set to: /home/runner/work/openhab-addons/openhab-addons
+2025-03-29T16:48:15.0608280Z [INFO] 
+2025-03-29T16:48:15.0608837Z [INFO] --- spotless:2.44.3:check (codestyle_check) @ org.openhab.addons.reactor ---
+2025-03-29T16:48:16.1056650Z [INFO] Index file does not exist. Fallback to an empty index
+2025-03-29T16:48:16.1276086Z [INFO] Sorting file /tmp/pom5331622502504905932.xml
+2025-03-29T16:48:16.2514484Z [INFO] Pom file is already sorted, exiting
+2025-03-29T16:48:16.2542526Z [INFO] Spotless.Pom is keeping 1 files clean - 0 needs changes to be clean, 1 were already clean, 0 were skipped because caching determined they were already clean
+2025-03-29T16:48:16.2543805Z [INFO] 
+2025-03-29T16:48:16.2544279Z [INFO] --- sat:0.17.0:checkstyle (sat-all) @ org.openhab.addons.reactor ---
+2025-03-29T16:48:16.6448431Z [INFO] Rendering content with org.apache.maven.skins:maven-default-skin:jar:1.3 skin.
+2025-03-29T16:48:18.9585525Z [INFO] 
+2025-03-29T16:48:18.9588128Z [INFO] --- sat:0.17.0:pmd (sat-all) @ org.openhab.addons.reactor ---
+2025-03-29T16:48:19.4314690Z [INFO] Skipping org.apache.maven.plugins:maven-pmd-plugin:3.26.0:pmd report goal
+2025-03-29T16:48:19.4315416Z [INFO] 
+2025-03-29T16:48:19.4315882Z [INFO] --- sat:0.17.0:spotbugs (sat-all) @ org.openhab.addons.reactor ---
+2025-03-29T16:48:20.1101118Z [INFO] 
+2025-03-29T16:48:20.1102348Z [INFO] --- sat:0.17.0:report (sat-all) @ org.openhab.addons.reactor ---
+2025-03-29T16:48:20.3275414Z [INFO] Empty report will not be appended to the summary report.
+2025-03-29T16:48:20.3323375Z [INFO] 
+2025-03-29T16:48:20.3354848Z [INFO] -------< org.openhab.addons.bom:org.openhab.addons.reactor.bom >--------
+2025-03-29T16:48:20.3356413Z [INFO] Building openHAB Add-ons :: BOM 5.0.0-SNAPSHOT                     [2/8]
+2025-03-29T16:48:20.3357341Z [INFO]   from bom/pom.xml
+2025-03-29T16:48:20.3358119Z [INFO] --------------------------------[ pom ]---------------------------------
+2025-03-29T16:48:20.3358851Z [INFO] 
+2025-03-29T16:48:20.3359560Z [INFO] --- clean:3.4.0:clean (default-clean) @ org.openhab.addons.reactor.bom ---
+2025-03-29T16:48:20.3382129Z [INFO] 
+2025-03-29T16:48:20.3382979Z [INFO] ---< org.openhab.addons.bundles:org.openhab.addons.reactor.bundles >----
+2025-03-29T16:48:20.3384250Z [INFO] Building openHAB Add-ons :: Bundles 5.0.0-SNAPSHOT                 [3/8]
+2025-03-29T16:48:20.3389109Z [INFO]   from bundles/pom.xml
+2025-03-29T16:48:20.3389784Z [INFO] --------------------------------[ pom ]---------------------------------
+2025-03-29T16:48:20.3390591Z [INFO] 
+2025-03-29T16:48:20.3391810Z [INFO] --- enforcer:3.5.0:enforce (enforce-java) @ org.openhab.addons.reactor.bom ---
+2025-03-29T16:48:20.3400008Z [INFO] 
+2025-03-29T16:48:20.3405320Z [INFO] --- directory:1.0:directory-of (directories) @ org.openhab.addons.reactor.bom ---
+2025-03-29T16:48:20.3415893Z [INFO] Directory of org.openhab.addons:org.openhab.addons.reactor set to: /home/runner/work/openhab-addons/openhab-addons
+2025-03-29T16:48:20.3421750Z [INFO] 
+2025-03-29T16:48:20.3427295Z [INFO] --- spotless:2.44.3:check (codestyle_check) @ org.openhab.addons.reactor.bom ---
+2025-03-29T16:48:20.3946914Z [INFO] Index file does not exist. Fallback to an empty index
+2025-03-29T16:48:20.3989312Z [INFO] Sorting file /tmp/pom3839660413595001317.xml
+2025-03-29T16:48:20.4165336Z [INFO] Pom file is already sorted, exiting
+2025-03-29T16:48:20.4168610Z [INFO] Spotless.Pom is keeping 1 files clean - 0 needs changes to be clean, 1 were already clean, 0 were skipped because caching determined they were already clean
+2025-03-29T16:48:20.4184797Z [INFO] 
+2025-03-29T16:48:20.4189085Z [INFO] ----< org.openhab.addons.bom:org.openhab.addons.bom.runtime-index >-----
+2025-03-29T16:48:20.4190737Z [INFO] Building openHAB Add-ons :: BOM :: Runtime Index 5.0.0-SNAPSHOT    [4/8]
+2025-03-29T16:48:20.4191802Z [INFO]   from bom/runtime-index/pom.xml
+2025-03-29T16:48:20.4218824Z [INFO] --------------------------------[ pom ]---------------------------------
+2025-03-29T16:48:20.4235185Z [INFO] 
+2025-03-29T16:48:20.4236017Z [INFO] ------< org.openhab.addons.bom:org.openhab.addons.bom.test-index >------
+2025-03-29T16:48:20.4237127Z [INFO] Building openHAB Add-ons :: BOM :: Test Index 5.0.0-SNAPSHOT       [5/8]
+2025-03-29T16:48:20.4238023Z [INFO] 
+2025-03-29T16:48:20.4238845Z [INFO] --< org.openhab.addons.bom:org.openhab.addons.bom.openhab-core-index >--
+2025-03-29T16:48:20.4239797Z [INFO] Building openHAB Add-ons :: BOM :: openHAB Core Index 5.0.0-SNAPSHOT [6/8]
+2025-03-29T16:48:20.4240494Z [INFO]   from bom/openhab-core-index/pom.xml
+2025-03-29T16:48:20.4241100Z [INFO] --------------------------------[ pom ]---------------------------------
+2025-03-29T16:48:20.4241682Z [INFO]   from bom/test-index/pom.xml
+2025-03-29T16:48:20.4242234Z [INFO] --------------------------------[ pom ]---------------------------------
+2025-03-29T16:48:21.2185253Z [INFO] 
+2025-03-29T16:48:21.2195071Z [INFO] --- clean:3.4.0:clean (default-clean) @ org.openhab.addons.bom.test-index ---
+2025-03-29T16:48:21.2214086Z [INFO] 
+2025-03-29T16:48:21.2235843Z [INFO] --- enforcer:3.5.0:enforce (enforce-java) @ org.openhab.addons.bom.test-index ---
+2025-03-29T16:48:21.2357677Z [INFO] 
+2025-03-29T16:48:21.2384690Z [INFO] --- directory:1.0:directory-of (directories) @ org.openhab.addons.bom.test-index ---
+2025-03-29T16:48:21.2386075Z [INFO] Directory of org.openhab.addons:org.openhab.addons.reactor set to: /home/runner/work/openhab-addons/openhab-addons
+2025-03-29T16:48:21.2387101Z [INFO] 
+2025-03-29T16:48:21.2387743Z [INFO] --- spotless:2.44.3:check (codestyle_check) @ org.openhab.addons.bom.test-index ---
+2025-03-29T16:48:21.2766935Z [INFO] Index file does not exist. Fallback to an empty index
+2025-03-29T16:48:21.2784969Z [INFO] Sorting file /tmp/pom15685479732700663562.xml
+2025-03-29T16:48:21.2929385Z [INFO] Pom file is already sorted, exiting
+2025-03-29T16:48:21.2930878Z [INFO] Spotless.Pom is keeping 1 files clean - 0 needs changes to be clean, 1 were already clean, 0 were skipped because caching determined they were already clean
+2025-03-29T16:48:21.2932264Z [INFO] 
+2025-03-29T16:48:21.2932916Z [INFO] --- bnd:7.1.0:bnd-process (default) @ org.openhab.addons.bom.test-index ---
+2025-03-29T16:48:21.3485043Z [INFO] 
+2025-03-29T16:48:21.3488044Z [INFO] --- bnd-indexer:7.1.0:index (index) @ org.openhab.addons.bom.test-index ---
+2025-03-29T16:48:21.3901281Z [WARNING] The POM for org.eclipse.orbit.bundles:com.google.inject:jar:5.0.1.v20210324-2015 is missing, no dependency information available
+2025-03-29T16:48:21.4012257Z [INFO] Resolved all Dependencies for org.openhab.addons.bom:org.openhab.addons.bom.test-index:pom:5.0.0-SNAPSHOT. Checked: 53, Skipped(no need to revisit): 0, Failed: 0, Resulting Dependencies: 53
+2025-03-29T16:48:21.9235288Z [INFO] 
+2025-03-29T16:48:21.9247844Z [INFO] --- bnd-indexer:7.1.0:index (test-index) @ org.openhab.addons.bom.test-index ---
+2025-03-29T16:48:21.9421462Z [INFO] Resolved all Dependencies for org.openhab.addons.bom:org.openhab.addons.bom.test-index:pom:5.0.0-SNAPSHOT. Checked: 53, Skipped(no need to revisit): 0, Failed: 0, Resulting Dependencies: 0
+2025-03-29T16:48:22.1594877Z [INFO] 
+2025-03-29T16:48:22.1619661Z [INFO] --- clean:3.4.0:clean (default-clean) @ org.openhab.addons.bom.runtime-index ---
+2025-03-29T16:48:22.1620582Z [INFO] 
+2025-03-29T16:48:22.1621292Z [INFO] --- enforcer:3.5.0:enforce (enforce-java) @ org.openhab.addons.bom.runtime-index ---
+2025-03-29T16:48:22.1622107Z [INFO] 
+2025-03-29T16:48:22.1623204Z [INFO] --- directory:1.0:directory-of (directories) @ org.openhab.addons.bom.runtime-index ---
+2025-03-29T16:48:22.1624831Z [INFO] Directory of org.openhab.addons:org.openhab.addons.reactor set to: /home/runner/work/openhab-addons/openhab-addons
+2025-03-29T16:48:22.1625825Z [INFO] 
+2025-03-29T16:48:22.1626517Z [INFO] --- spotless:2.44.3:check (codestyle_check) @ org.openhab.addons.bom.runtime-index ---
+2025-03-29T16:48:22.1824620Z [INFO] Index file does not exist. Fallback to an empty index
+2025-03-29T16:48:22.1839071Z [INFO] Sorting file /tmp/pom5453964228743715381.xml
+2025-03-29T16:48:22.1915569Z [INFO] Pom file is already sorted, exiting
+2025-03-29T16:48:22.1924823Z [INFO] Spotless.Pom is keeping 1 files clean - 0 needs changes to be clean, 1 were already clean, 0 were skipped because caching determined they were already clean
+2025-03-29T16:48:22.1925919Z [INFO] 
+2025-03-29T16:48:22.1926440Z [INFO] --- bnd:7.1.0:bnd-process (default) @ org.openhab.addons.bom.runtime-index ---
+2025-03-29T16:48:22.1927092Z [INFO] 
+2025-03-29T16:48:22.1927641Z [INFO] --- bnd-indexer:7.1.0:index (index) @ org.openhab.addons.bom.runtime-index ---
+2025-03-29T16:48:22.2870998Z [INFO] Resolved all Dependencies for org.openhab.addons.bom:org.openhab.addons.bom.runtime-index:pom:5.0.0-SNAPSHOT. Checked: 254, Skipped(no need to revisit): 0, Failed: 0, Resulting Dependencies: 254
+2025-03-29T16:48:23.0119597Z [INFO] 
+2025-03-29T16:48:23.0120319Z [INFO] --- bnd-indexer:7.1.0:index (test-index) @ org.openhab.addons.bom.runtime-index ---
+2025-03-29T16:48:23.0906443Z [INFO] Resolved all Dependencies for org.openhab.addons.bom:org.openhab.addons.bom.runtime-index:pom:5.0.0-SNAPSHOT. Checked: 254, Skipped(no need to revisit): 0, Failed: 0, Resulting Dependencies: 0
+2025-03-29T16:48:27.6030751Z [INFO] 
+2025-03-29T16:48:27.6031438Z [INFO] --- clean:3.4.0:clean (default-clean) @ org.openhab.addons.bom.openhab-core-index ---
+2025-03-29T16:48:27.6068173Z [INFO] 
+2025-03-29T16:48:27.6099937Z [INFO] --- enforcer:3.5.0:enforce (enforce-java) @ org.openhab.addons.bom.openhab-core-index ---
+2025-03-29T16:48:27.6106428Z [INFO] 
+2025-03-29T16:48:27.6107118Z [INFO] --- directory:1.0:directory-of (directories) @ org.openhab.addons.bom.openhab-core-index ---
+2025-03-29T16:48:27.6108366Z [INFO] Directory of org.openhab.addons:org.openhab.addons.reactor set to: /home/runner/work/openhab-addons/openhab-addons
+2025-03-29T16:48:27.6109235Z [INFO] 
+2025-03-29T16:48:27.6109855Z [INFO] --- spotless:2.44.3:check (codestyle_check) @ org.openhab.addons.bom.openhab-core-index ---
+2025-03-29T16:48:27.6198556Z [INFO] 
+2025-03-29T16:48:27.6200568Z [INFO] --- clean:3.4.0:clean (default-clean) @ org.openhab.addons.reactor.bundles ---
+2025-03-29T16:48:27.6386376Z [INFO] 
+2025-03-29T16:48:27.6388465Z [INFO] --- enforcer:3.5.0:enforce (enforce-java) @ org.openhab.addons.reactor.bundles ---
+2025-03-29T16:48:27.6390612Z [INFO] Index file does not exist. Fallback to an empty index
+2025-03-29T16:48:27.6414918Z [INFO] Sorting file /tmp/pom13080981931314408119.xml
+2025-03-29T16:48:27.6567506Z [INFO] Pom file is already sorted, exiting
+2025-03-29T16:48:27.6584974Z [INFO] Spotless.Pom is keeping 1 files clean - 0 needs changes to be clean, 1 were already clean, 0 were skipped because caching determined they were already clean
+2025-03-29T16:48:27.6586257Z [INFO] 
+2025-03-29T16:48:27.6587155Z [INFO] --- bnd:7.1.0:bnd-process (default) @ org.openhab.addons.bom.openhab-core-index ---
+2025-03-29T16:48:27.6597370Z [INFO] 
+2025-03-29T16:48:27.6598414Z [INFO] --- bnd-indexer:7.1.0:index (index) @ org.openhab.addons.bom.openhab-core-index ---
+2025-03-29T16:48:27.7151302Z [INFO] Resolved all Dependencies for org.openhab.addons.bom:org.openhab.addons.bom.openhab-core-index:pom:5.0.0-SNAPSHOT. Checked: 164, Skipped(no need to revisit): 0, Failed: 0, Resulting Dependencies: 119
+2025-03-29T16:48:27.7205302Z [INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+2025-03-29T16:48:27.7288322Z [INFO] Rule 1: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+2025-03-29T16:48:27.7289384Z [INFO] 
+2025-03-29T16:48:27.7290710Z [INFO] --- directory:1.0:directory-of (directories) @ org.openhab.addons.reactor.bundles ---
+2025-03-29T16:48:27.7534782Z [INFO] Directory of org.openhab.addons:org.openhab.addons.reactor set to: /home/runner/work/openhab-addons/openhab-addons
+2025-03-29T16:48:27.7545520Z [INFO] 
+2025-03-29T16:48:27.7551074Z [INFO] --- spotless:2.44.3:check (codestyle_check) @ org.openhab.addons.reactor.bundles ---
+2025-03-29T16:48:27.9744951Z [INFO] 
+2025-03-29T16:48:27.9745628Z [INFO] --- bnd-indexer:7.1.0:index (test-index) @ org.openhab.addons.bom.openhab-core-index ---
+2025-03-29T16:48:28.0225711Z [INFO] Resolved all Dependencies for org.openhab.addons.bom:org.openhab.addons.bom.openhab-core-index:pom:5.0.0-SNAPSHOT. Checked: 164, Skipped(no need to revisit): 0, Failed: 0, Resulting Dependencies: 45
+2025-03-29T16:48:28.1479383Z [INFO] Index file does not exist. Fallback to an empty index
+2025-03-29T16:48:28.1787005Z [INFO] Sorting file /tmp/pom17908724427213279012.xml
+2025-03-29T16:48:28.2939408Z [INFO] Pom file is already sorted, exiting
+2025-03-29T16:48:28.2954693Z [INFO] Spotless.Pom is keeping 1 files clean - 0 needs changes to be clean, 1 were already clean, 0 were skipped because caching determined they were already clean
+2025-03-29T16:48:28.2974187Z [INFO] 
+2025-03-29T16:48:28.2984811Z [INFO] --- dependency:3.8.1:unpack-dependencies (embed-dependencies) @ org.openhab.addons.reactor.bundles ---
+2025-03-29T16:48:28.5397379Z [INFO] 
+2025-03-29T16:48:28.5398058Z [INFO] --- dependency:3.8.1:unpack (unpack-eea) @ org.openhab.addons.reactor.bundles ---
+2025-03-29T16:48:28.5421525Z [INFO] Configured Artifact: org.lastnpe.eea:eea-all:2.4.0:jar
+2025-03-29T16:48:28.7057336Z [INFO] 
+2025-03-29T16:48:28.7070168Z [INFO] --- karaf:4.4.7:features-generate-descriptor (compile) @ org.openhab.addons.reactor.bundles ---
+2025-03-29T16:48:28.7223252Z [INFO] Generating feature descriptor file /home/runner/work/openhab-addons/openhab-addons/bundles/target/feature/feature.xml
+2025-03-29T16:48:28.8111788Z [INFO] ...done!
+2025-03-29T16:48:28.8113034Z [INFO] Attaching features XML
+2025-03-29T16:48:28.8143489Z [INFO] 
+2025-03-29T16:48:28.8144630Z [INFO] --- bnd:7.1.0:bnd-process (default) @ org.openhab.addons.reactor.bundles ---
+2025-03-29T16:48:28.8490934Z [INFO] 
+2025-03-29T16:48:28.8491913Z [INFO] --- source:3.3.1:jar-no-fork (attach-sources) @ org.openhab.addons.reactor.bundles ---
+2025-03-29T16:48:28.9307090Z [INFO] 
+2025-03-29T16:48:28.9310419Z [INFO] --- karaf:4.4.7:verify (karaf-feature-verification) @ org.openhab.addons.reactor.bundles ---
+2025-03-29T16:48:28.9334284Z [INFO] Using repositories: https://openhab.jfrog.io/openhab/libs-release@id=openhab-release,https://openhab.jfrog.io/openhab/libs-snapshot@id=openhab-snapshot@noreleases@snapshots,https://repo1.maven.org/maven2@id=central
+2025-03-29T16:48:29.2111598Z [INFO] Features verified: 0, failures: 0, ignored: 0, skipped: 0
+2025-03-29T16:48:29.2116788Z [INFO] 
+2025-03-29T16:48:29.2121072Z [INFO] --------< org.openhab.addons.bundles:org.openhab.binding.wled >---------
+2025-03-29T16:48:29.2125860Z [INFO] Building openHAB Add-ons :: Bundles :: WLed Binding 5.0.0-SNAPSHOT [7/8]
+2025-03-29T16:48:29.2128010Z [INFO]   from bundles/org.openhab.binding.wled/pom.xml
+2025-03-29T16:48:29.2129328Z [INFO] --------------------------------[ jar ]---------------------------------
+2025-03-29T16:48:29.2570530Z [INFO] 
+2025-03-29T16:48:29.2575618Z [INFO] --- clean:3.4.0:clean (default-clean) @ org.openhab.binding.wled ---
+2025-03-29T16:48:29.2583506Z [INFO] 
+2025-03-29T16:48:29.2594544Z [INFO] --- enforcer:3.5.0:enforce (enforce-java) @ org.openhab.binding.wled ---
+2025-03-29T16:48:29.2607822Z [INFO] 
+2025-03-29T16:48:29.2613144Z [INFO] --- directory:1.0:directory-of (directories) @ org.openhab.binding.wled ---
+2025-03-29T16:48:29.2618167Z [INFO] Directory of org.openhab.addons:org.openhab.addons.reactor set to: /home/runner/work/openhab-addons/openhab-addons
+2025-03-29T16:48:29.2618963Z [INFO] 
+2025-03-29T16:48:29.2619951Z [INFO] --- spotless:2.44.3:check (codestyle_check) @ org.openhab.binding.wled ---
+2025-03-29T16:48:29.2826440Z [INFO] Index file does not exist. Fallback to an empty index
+2025-03-29T16:48:29.7881811Z [INFO] Spotless.Format is keeping 2 files clean - 0 needs changes to be clean, 2 were already clean, 0 were skipped because caching determined they were already clean
+2025-03-29T16:48:30.1344651Z [INFO] Spotless.Format is keeping 1 files clean - 0 needs changes to be clean, 1 were already clean, 0 were skipped because caching determined they were already clean
+2025-03-29T16:48:31.1675630Z [INFO] Spotless.Java is keeping 18 files clean - 1 needs changes to be clean, 17 were already clean, 0 were skipped because caching determined they were already clean
+2025-03-29T16:48:31.2950305Z [INFO] ------------------------------------------------------------------------
+2025-03-29T16:48:31.2953524Z [INFO] Reactor Summary for openHAB Add-ons 5.0.0-SNAPSHOT:
+2025-03-29T16:48:31.2955442Z [INFO] 
+2025-03-29T16:48:31.2957103Z [INFO] openHAB Add-ons .................................... SUCCESS [  5.812 s]
+2025-03-29T16:48:31.2959013Z [INFO] openHAB Add-ons :: BOM ............................. SUCCESS [  0.085 s]
+2025-03-29T16:48:31.2960929Z [INFO] openHAB Add-ons :: BOM :: Runtime Index ............ SUCCESS [  2.673 s]
+2025-03-29T16:48:31.2963217Z [INFO] openHAB Add-ons :: BOM :: Test Index ............... SUCCESS [  1.523 s]
+2025-03-29T16:48:31.2970495Z [INFO] openHAB Add-ons :: BOM :: openHAB Core Index ....... SUCCESS [  7.664 s]
+2025-03-29T16:48:31.2971186Z [INFO] openHAB Add-ons :: Bundles ......................... SUCCESS [  8.874 s]
+2025-03-29T16:48:31.2971905Z [INFO] openHAB Add-ons :: Bundles :: WLed Binding ......... FAILURE [  2.082 s]
+2025-03-29T16:48:31.2972577Z [INFO] openHAB Add-ons :: BOM :: openHAB Add-ons .......... SKIPPED
+2025-03-29T16:48:31.2973164Z [INFO] ------------------------------------------------------------------------
+2025-03-29T16:48:31.2973895Z [INFO] BUILD FAILURE
+2025-03-29T16:48:31.2974315Z [INFO] ------------------------------------------------------------------------
+2025-03-29T16:48:31.2974862Z [INFO] Total time:  20.493 s (Wall Clock)
+2025-03-29T16:48:31.3234574Z [INFO] Finished at: 2025-03-29T16:48:31Z
+2025-03-29T16:48:31.3235159Z [INFO] ------------------------------------------------------------------------
+2025-03-29T16:48:31.3645761Z [INFO] Static code analysis summary report is available in:
+2025-03-29T16:48:31.3658556Z [INFO] file:/home/runner/work/openhab-addons/openhab-addons/target/summary_report.html
+2025-03-29T16:48:31.3664281Z [ERROR] Failed to execute goal com.diffplug.spotless:spotless-maven-plugin:2.44.3:check (codestyle_check) on project org.openhab.binding.wled: The following files had format violations:
+2025-03-29T16:48:31.3670648Z [ERROR]     src/main/java/org/openhab/binding/wled/internal/api/WledApiV084.java
+2025-03-29T16:48:31.3671399Z [ERROR]         @@ -298,10 +298,10 @@
+2025-03-29T16:48:31.3672129Z [ERROR]          ········}
+2025-03-29T16:48:31.3680584Z [ERROR]          ········HSBType·tempHSB·=·WLedHelper.parseToHSBType(state.stateResponse.seg[segmentIndex].col[0].toString());
+2025-03-29T16:48:31.3681418Z [ERROR]          ········handler.update(segmentIndex,·CHANNEL_PRIMARY_COLOR,·tempHSB);
+2025-03-29T16:48:31.3682068Z [ERROR]         -········handler.update(segmentIndex,·CHANNEL_SECONDARY_COLOR,·WLedHelper.parseToHSBType(
+2025-03-29T16:48:31.3682684Z [ERROR]         -················state.stateResponse.seg[segmentIndex].col[1].toString()));
+2025-03-29T16:48:31.3683565Z [ERROR]         -········handler.update(segmentIndex,·CHANNEL_THIRD_COLOR,·WLedHelper.parseToHSBType(
+2025-03-29T16:48:31.3684439Z [ERROR]         -················state.stateResponse.seg[segmentIndex].col[2].toString()));
+2025-03-29T16:48:31.3684935Z [ERROR]         +········handler.update(segmentIndex,·CHANNEL_SECONDARY_COLOR,
+2025-03-29T16:48:31.3685549Z [ERROR]         +················WLedHelper.parseToHSBType(state.stateResponse.seg[segmentIndex].col[1].toString()));
+2025-03-29T16:48:31.3686123Z [ERROR]         +········handler.update(segmentIndex,·CHANNEL_THIRD_COLOR,
+2025-03-29T16:48:31.3686886Z [ERROR]         +················WLedHelper.parseToHSBType(state.stateResponse.seg[segmentIndex].col[2].toString()));
+2025-03-29T16:48:31.3687421Z [ERROR]          ········if·(state.ledInfo.rgbw)·{
+2025-03-29T16:48:31.3687849Z [ERROR]          ············handler.update(segmentIndex,·CHANNEL_PRIMARY_WHITE,
+2025-03-29T16:48:31.3688487Z [ERROR]          ····················WLedHelper.parseWhitePercent(state.stateResponse.seg[segmentIndex].col[0].toString()));
+2025-03-29T16:48:31.3689003Z [ERROR] Run 'mvn spotless:apply' to fix these violations.
+2025-03-29T16:48:31.3689283Z [ERROR] -> [Help 1]
+2025-03-29T16:48:31.3689462Z [ERROR] 
+2025-03-29T16:48:31.3689746Z [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+2025-03-29T16:48:31.3690179Z [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+2025-03-29T16:48:31.3690489Z [ERROR] 
+2025-03-29T16:48:31.3690858Z [ERROR] For more information about the errors and possible solutions, please read the following articles:
+2025-03-29T16:48:31.3691466Z [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+2025-03-29T16:48:31.3691869Z [ERROR] 
+2025-03-29T16:48:31.3692167Z [ERROR] After correcting the problems, you can resume the build with the command
+2025-03-29T16:48:31.3692591Z [ERROR]   mvn <args> -rf :org.openhab.binding.wled
+2025-03-29T16:48:31.4210986Z ##[error]Process completed with exit code 1.
+2025-03-29T16:48:31.4271833Z ##[group]Run actions/upload-artifact@v4
+2025-03-29T16:48:31.4272094Z with:
+2025-03-29T16:48:31.4272280Z   name: build-log-java-21-ubuntu-24.04
+2025-03-29T16:48:31.4272526Z   path: build.log
+2025-03-29T16:48:31.4272711Z   if-no-files-found: warn
+2025-03-29T16:48:31.4272918Z   compression-level: 6
+2025-03-29T16:48:31.4273108Z   overwrite: false
+2025-03-29T16:48:31.4273292Z   include-hidden-files: false
+2025-03-29T16:48:31.4273494Z env:
+2025-03-29T16:48:31.4274017Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-29T16:48:31.4274454Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-29T16:48:31.4274784Z ##[endgroup]
+2025-03-29T16:48:31.6387531Z With the provided path, there will be 1 file uploaded
+2025-03-29T16:48:31.6392813Z Artifact name is valid!
+2025-03-29T16:48:31.6394480Z Root directory input is valid!
+2025-03-29T16:48:31.8981932Z Beginning upload of artifact content to blob storage
+2025-03-29T16:48:32.1725552Z Uploaded bytes 2896
+2025-03-29T16:48:32.2400072Z Finished uploading artifact content to blob storage!
+2025-03-29T16:48:32.2403585Z SHA256 digest of uploaded artifact zip is bf0159705ec62ff6409917cce29b0a1fd4f1e778774ff45745b0ef348e1c0335
+2025-03-29T16:48:32.2405107Z Finalizing artifact upload
+2025-03-29T16:48:32.3687459Z Artifact build-log-java-21-ubuntu-24.04.zip successfully finalized. Artifact ID 2844572029
+2025-03-29T16:48:32.3688744Z Artifact build-log-java-21-ubuntu-24.04 has been successfully uploaded! Final size is 2896 bytes. Artifact ID is 2844572029
+2025-03-29T16:48:32.3694974Z Artifact download URL: https://github.com/openhab/openhab-addons/actions/runs/14147566670/artifacts/2844572029
+2025-03-29T16:48:32.3829717Z ##[group]Run actions/upload-artifact@v4
+2025-03-29T16:48:32.3830203Z with:
+2025-03-29T16:48:32.3830512Z   name: sat-summary-report
+2025-03-29T16:48:32.3830916Z   path: target/summary_report.html
+2025-03-29T16:48:32.3831638Z   if-no-files-found: warn
+2025-03-29T16:48:32.3832021Z   compression-level: 6
+2025-03-29T16:48:32.3832380Z   overwrite: false
+2025-03-29T16:48:32.3832718Z   include-hidden-files: false
+2025-03-29T16:48:32.3833101Z env:
+2025-03-29T16:48:32.3833595Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-29T16:48:32.3834661Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-29T16:48:32.3835318Z ##[endgroup]
+2025-03-29T16:48:32.5914013Z With the provided path, there will be 1 file uploaded
+2025-03-29T16:48:32.5919952Z Artifact name is valid!
+2025-03-29T16:48:32.5921124Z Root directory input is valid!
+2025-03-29T16:48:32.8107848Z Beginning upload of artifact content to blob storage
+2025-03-29T16:48:33.0740175Z Uploaded bytes 993
+2025-03-29T16:48:33.1437699Z Finished uploading artifact content to blob storage!
+2025-03-29T16:48:33.1441431Z SHA256 digest of uploaded artifact zip is 4e9784e17363d6c5fb1f8107a2da19a36414251114d1f29bb9f34404499b6a71
+2025-03-29T16:48:33.1443484Z Finalizing artifact upload
+2025-03-29T16:48:33.2597142Z Artifact sat-summary-report.zip successfully finalized. Artifact ID 2844572065
+2025-03-29T16:48:33.2598263Z Artifact sat-summary-report has been successfully uploaded! Final size is 993 bytes. Artifact ID is 2844572065
+2025-03-29T16:48:33.2599384Z Artifact download URL: https://github.com/openhab/openhab-addons/actions/runs/14147566670/artifacts/2844572065
+2025-03-29T16:48:33.2729342Z ##[group]Run ghys/checkstyle-github-action@main
+2025-03-29T16:48:33.2729873Z with:
+2025-03-29T16:48:33.2730212Z   title: CheckStyle Violations
+2025-03-29T16:48:33.2730657Z   path: **/checkstyle-result.xml
+2025-03-29T16:48:33.2731079Z   mode: inline
+2025-03-29T16:48:33.2731413Z   name: Checkstyle
+2025-03-29T16:48:33.2731925Z   token: ***
+2025-03-29T16:48:33.2732246Z env:
+2025-03-29T16:48:33.2732759Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-29T16:48:33.2733616Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-29T16:48:33.2734511Z ##[endgroup]
+2025-03-29T16:48:36.3655213Z With the provided path, there will be 1 results uploaded
+2025-03-29T16:48:36.3657450Z Creating annotations for /home/runner/work/openhab-addons/openhab-addons/target/code-analysis/checkstyle-result.xml
+2025-03-29T16:48:36.3809267Z Post job cleanup.
+2025-03-29T16:48:36.5620017Z Post job cleanup.
+2025-03-29T16:48:36.6632801Z [command]/usr/bin/git version
+2025-03-29T16:48:36.6673560Z git version 2.49.0
+2025-03-29T16:48:36.6729634Z Temporarily overriding HOME='/home/runner/work/_temp/9af2e16d-a28e-4a76-a357-fc39d76fad86' before making global git config changes
+2025-03-29T16:48:36.6730979Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-29T16:48:36.6735759Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/openhab-addons/openhab-addons
+2025-03-29T16:48:36.6771932Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-29T16:48:36.6806812Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-29T16:48:36.7095278Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-29T16:48:36.7117657Z http.https://github.com/.extraheader
+2025-03-29T16:48:36.7130533Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-29T16:48:36.7162248Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-29T16:48:36.7527401Z Cleaning up orphan processes

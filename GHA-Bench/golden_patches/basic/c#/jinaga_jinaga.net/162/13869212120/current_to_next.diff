@@ -1,0 +1,14 @@
+diff --git a/Jinaga/Repository/SpecificationProcessor.cs b/Jinaga/Repository/SpecificationProcessor.cs
+index 8be47fe..914973f 100644
+--- a/Jinaga/Repository/SpecificationProcessor.cs
++++ b/Jinaga/Repository/SpecificationProcessor.cs
+@@ -24,8 +24,7 @@ public static (ImmutableList<Label> given, ImmutableList<Match> matches, Project
+             var nonRepositoryParameters = specExpression.Parameters
+                 .Where(parameter => parameter.Type != typeof(FactRepository));
+             var symbolTable = processor.Given(nonRepositoryParameters);
+-            var labelsUsed = processor.givenLabels.Select(g => g.Name).ToImmutableList();
+-            var result = processor.ProcessSource(specExpression.Body, symbolTable, labelsUsed);
++            var result = processor.ProcessSource(specExpression.Body, symbolTable);
+             processor.ValidateMatches(result.Matches);
+             return (processor.givenLabels, result.Matches, result.Projection);
+         }

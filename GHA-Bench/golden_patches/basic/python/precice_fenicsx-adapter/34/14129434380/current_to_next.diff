@@ -1,0 +1,54 @@
+diff --git a/.github/workflows/check-pep8.yml b/.github/workflows/check-pep8.yml
+index a085e67..875ec38 100644
+--- a/.github/workflows/check-pep8.yml
++++ b/.github/workflows/check-pep8.yml
+@@ -7,7 +7,7 @@ jobs:
+       - uses: actions/checkout@v2
+       - name: autopep8 
+         id: autopep8
+-        uses: peter-evans/autopep8@v1
++        uses: peter-evans/autopep8@v2
+         with:
+           args: --recursive --diff --aggressive --aggressive --exit-code --ignore E402 --max-line-length 120 .
+       - name: Fail if autopep8 made changes
+diff --git a/.github/workflows/run-tutorials.yml b/.github/workflows/run-tutorials.yml
+index fff7625..6eed7a4 100644
+--- a/.github/workflows/run-tutorials.yml
++++ b/.github/workflows/run-tutorials.yml
+@@ -25,8 +25,21 @@ jobs:
+           rm -rf /var/lib/apt/lists/*
+       - name: Check FEniCSx version
+         run: python3 -c "import dolfinx; print('FEniCS-X version '+dolfinx.__version__)"
+-      - name: Install adapter
+-        run:  pip3 install --user .
++      - name: Create venv for Dirichlet participants and install adapter
++        run: |
++          cd tutorials/partitioned-heat-conduction/dirichlet-fenicsx
++          python3 -m venv .venv
++          . .venv/bin/activate
++          pip3 install ../../..
++      - name: Create venv for Neumann participants and install adapter
++        run: |
++          cd tutorials/partitioned-heat-conduction/neumann-fenicsx
++          python3 -m venv .venv
++          . .venv/bin/activate
++          pip3 install ../../..
++      - name: Remove fenicsxadapter from requirements to avoid overwriting develop version
++        run: |
++          sed -i '/fenicsxprecice/d' tutorials/partitioned-heat-conduction/solver-fenicsx/requirements.txt
+       # Tutorial is currently hosted under https://github.com/precice/fenicsx-adapter, should be moved to https://github.com/precice/tutorials when working. See https://github.com/precice/tutorials/issues/491
+       # - name: Get tutorials
+       #   run: git clone -b develop https://github.com/precice/tutorials.git
+diff --git a/setup.py b/setup.py
+index 126183e..c8baa2a 100644
+--- a/setup.py
++++ b/setup.py
+@@ -39,7 +39,7 @@
+       author_email='info@precice.org',
+       license='LGPL-3.0',
+       packages=['fenicsxprecice'],
+-      install_requires=['pyprecice~=3.0', 'scipy<1.15.0', 'numpy>=1.13.3', 'mpi4py'],
++      install_requires=['pyprecice~=3.0', 'scipy<1.15.0', 'numpy>=1.13.3', 'mpi4py<4'],
+       tests_require=['sympy'],
+       test_suite='tests',
+       zip_safe=False)

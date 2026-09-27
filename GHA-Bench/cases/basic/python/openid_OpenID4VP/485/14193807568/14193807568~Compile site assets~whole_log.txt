@@ -1,0 +1,216 @@
+﻿2025-04-01T10:54:53.0665296Z Current runner version: '2.323.0'
+2025-04-01T10:54:53.0694984Z ##[group]Operating System
+2025-04-01T10:54:53.0695759Z Ubuntu
+2025-04-01T10:54:53.0696250Z 24.04.2
+2025-04-01T10:54:53.0696698Z LTS
+2025-04-01T10:54:53.0697281Z ##[endgroup]
+2025-04-01T10:54:53.0697796Z ##[group]Runner Image
+2025-04-01T10:54:53.0698397Z Image: ubuntu-24.04
+2025-04-01T10:54:53.0699013Z Version: 20250323.1.0
+2025-04-01T10:54:53.0700165Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-01T10:54:53.0701588Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-04-01T10:54:53.0702562Z ##[endgroup]
+2025-04-01T10:54:53.0703088Z ##[group]Runner Image Provisioner
+2025-04-01T10:54:53.0703637Z 2.0.422.1
+2025-04-01T10:54:53.0704174Z ##[endgroup]
+2025-04-01T10:54:53.0706559Z ##[group]GITHUB_TOKEN Permissions
+2025-04-01T10:54:53.0708515Z Actions: write
+2025-04-01T10:54:53.0709247Z Attestations: write
+2025-04-01T10:54:53.0710205Z Checks: write
+2025-04-01T10:54:53.0710704Z Contents: write
+2025-04-01T10:54:53.0711208Z Deployments: write
+2025-04-01T10:54:53.0711730Z Discussions: write
+2025-04-01T10:54:53.0712262Z Issues: write
+2025-04-01T10:54:53.0712707Z Metadata: read
+2025-04-01T10:54:53.0713224Z Models: read
+2025-04-01T10:54:53.0713765Z Packages: write
+2025-04-01T10:54:53.0714227Z Pages: write
+2025-04-01T10:54:53.0714745Z PullRequests: write
+2025-04-01T10:54:53.0715266Z RepositoryProjects: write
+2025-04-01T10:54:53.0715821Z SecurityEvents: write
+2025-04-01T10:54:53.0716288Z Statuses: write
+2025-04-01T10:54:53.0716859Z ##[endgroup]
+2025-04-01T10:54:53.0719210Z Secret source: Actions
+2025-04-01T10:54:53.0720467Z Prepare workflow directory
+2025-04-01T10:54:53.1166188Z Prepare all required actions
+2025-04-01T10:54:53.1220529Z Getting action download info
+2025-04-01T10:54:53.5799648Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-01T10:54:53.5801114Z Version: 4.2.2
+2025-04-01T10:54:53.5802067Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-01T10:54:53.5803245Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-01T10:54:53.5804102Z ##[endgroup]
+2025-04-01T10:54:53.6754922Z ##[group]Download immutable action package 'actions/upload-artifact@v4'
+2025-04-01T10:54:53.6755634Z Version: 4.6.2
+2025-04-01T10:54:53.6756267Z Digest: sha256:290722aa3281d5caf23d0acdc3dbeb3424786a1a01a9cc97e72f147225e37c38
+2025-04-01T10:54:53.6757099Z Source commit SHA: ea165f8d65b6e75b540449e92b4886f43607fa02
+2025-04-01T10:54:53.6757668Z ##[endgroup]
+2025-04-01T10:54:53.9997945Z Complete job name: Compile site assets
+2025-04-01T10:54:54.0655828Z ##[group]Run actions/checkout@v4
+2025-04-01T10:54:54.0656671Z with:
+2025-04-01T10:54:54.0657063Z   repository: openid/OpenID4VP
+2025-04-01T10:54:54.0657685Z   token: ***
+2025-04-01T10:54:54.0658070Z   ssh-strict: true
+2025-04-01T10:54:54.0658468Z   ssh-user: git
+2025-04-01T10:54:54.0658879Z   persist-credentials: true
+2025-04-01T10:54:54.0659333Z   clean: true
+2025-04-01T10:54:54.0659990Z   sparse-checkout-cone-mode: true
+2025-04-01T10:54:54.0660473Z   fetch-depth: 1
+2025-04-01T10:54:54.0660867Z   fetch-tags: false
+2025-04-01T10:54:54.0661280Z   show-progress: true
+2025-04-01T10:54:54.0661687Z   lfs: false
+2025-04-01T10:54:54.0662036Z   submodules: false
+2025-04-01T10:54:54.0662443Z   set-safe-directory: true
+2025-04-01T10:54:54.0663132Z ##[endgroup]
+2025-04-01T10:54:54.2887512Z Syncing repository: openid/OpenID4VP
+2025-04-01T10:54:54.2889148Z ##[group]Getting Git version info
+2025-04-01T10:54:54.2890075Z Working directory is '/home/runner/work/OpenID4VP/OpenID4VP'
+2025-04-01T10:54:54.2891108Z [command]/usr/bin/git version
+2025-04-01T10:54:54.2988452Z git version 2.49.0
+2025-04-01T10:54:54.3016613Z ##[endgroup]
+2025-04-01T10:54:54.3029278Z Temporarily overriding HOME='/home/runner/work/_temp/323c60bf-fbb7-4b31-a5f7-ca6ec912983b' before making global git config changes
+2025-04-01T10:54:54.3034555Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-01T10:54:54.3035974Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/OpenID4VP/OpenID4VP
+2025-04-01T10:54:54.3070016Z Deleting the contents of '/home/runner/work/OpenID4VP/OpenID4VP'
+2025-04-01T10:54:54.3073548Z ##[group]Initializing the repository
+2025-04-01T10:54:54.3077534Z [command]/usr/bin/git init /home/runner/work/OpenID4VP/OpenID4VP
+2025-04-01T10:54:54.3182771Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-01T10:54:54.3183998Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-01T10:54:54.3184914Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-01T10:54:54.3185573Z hint:
+2025-04-01T10:54:54.3186039Z hint: 	git config --global init.defaultBranch <name>
+2025-04-01T10:54:54.3186628Z hint:
+2025-04-01T10:54:54.3187176Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-01T10:54:54.3188520Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-01T10:54:54.3189963Z hint:
+2025-04-01T10:54:54.3190631Z hint: 	git branch -m <name>
+2025-04-01T10:54:54.3191852Z Initialized empty Git repository in /home/runner/work/OpenID4VP/OpenID4VP/.git/
+2025-04-01T10:54:54.3202751Z [command]/usr/bin/git remote add origin https://github.com/openid/OpenID4VP
+2025-04-01T10:54:54.3233571Z ##[endgroup]
+2025-04-01T10:54:54.3234293Z ##[group]Disabling automatic garbage collection
+2025-04-01T10:54:54.3237349Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-01T10:54:54.3265379Z ##[endgroup]
+2025-04-01T10:54:54.3266055Z ##[group]Setting up auth
+2025-04-01T10:54:54.3272060Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-01T10:54:54.3301600Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-01T10:54:54.3622805Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-01T10:54:54.3651373Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-01T10:54:54.3884160Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-01T10:54:54.3916678Z ##[endgroup]
+2025-04-01T10:54:54.3917486Z ##[group]Fetching the repository
+2025-04-01T10:54:54.3925731Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +b469b3d5afd958a7ae24b8ff3b2f82fb6e788a28:refs/remotes/pull/485/merge
+2025-04-01T10:54:54.7522123Z From https://github.com/openid/OpenID4VP
+2025-04-01T10:54:54.7523762Z  * [new ref]         b469b3d5afd958a7ae24b8ff3b2f82fb6e788a28 -> pull/485/merge
+2025-04-01T10:54:54.7561948Z ##[endgroup]
+2025-04-01T10:54:54.7563289Z ##[group]Determining the checkout info
+2025-04-01T10:54:54.7564952Z ##[endgroup]
+2025-04-01T10:54:54.7570419Z [command]/usr/bin/git sparse-checkout disable
+2025-04-01T10:54:54.7610590Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-01T10:54:54.7639626Z ##[group]Checking out the ref
+2025-04-01T10:54:54.7643700Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/485/merge
+2025-04-01T10:54:54.7720854Z Note: switching to 'refs/remotes/pull/485/merge'.
+2025-04-01T10:54:54.7721873Z 
+2025-04-01T10:54:54.7722616Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-01T10:54:54.7724047Z changes and commit them, and you can discard any commits you make in this
+2025-04-01T10:54:54.7725140Z state without impacting any branches by switching back to a branch.
+2025-04-01T10:54:54.7725807Z 
+2025-04-01T10:54:54.7726241Z If you want to create a new branch to retain commits you create, you may
+2025-04-01T10:54:54.7727217Z do so (now or later) by using -c with the switch command. Example:
+2025-04-01T10:54:54.7728602Z 
+2025-04-01T10:54:54.7728970Z   git switch -c <new-branch-name>
+2025-04-01T10:54:54.7729490Z 
+2025-04-01T10:54:54.7729914Z Or undo this operation with:
+2025-04-01T10:54:54.7730340Z 
+2025-04-01T10:54:54.7730540Z   git switch -
+2025-04-01T10:54:54.7730881Z 
+2025-04-01T10:54:54.7731404Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-01T10:54:54.7732217Z 
+2025-04-01T10:54:54.7733132Z HEAD is now at b469b3d Merge f8109ae753effe5f7e62378396c7694c4aca7cb0 into 8eefd874890f2edf72111a2aa9fbf1dcc6a3ad2a
+2025-04-01T10:54:54.7735720Z ##[endgroup]
+2025-04-01T10:54:54.7763135Z [command]/usr/bin/git log -1 --format=%H
+2025-04-01T10:54:54.7785198Z b469b3d5afd958a7ae24b8ff3b2f82fb6e788a28
+2025-04-01T10:54:54.8018446Z ##[group]Run docker run \
+2025-04-01T10:54:54.8019258Z [36;1mdocker run \[0m
+2025-04-01T10:54:54.8020711Z [36;1m-v //home/runner/work/OpenID4VP/OpenID4VP:/data danielfett/markdown2rfc \[0m
+2025-04-01T10:54:54.8022400Z [36;1mopenid-4-verifiable-presentations-1_0.md[0m
+2025-04-01T10:54:54.8073996Z shell: /usr/bin/bash -e {0}
+2025-04-01T10:54:54.8074745Z ##[endgroup]
+2025-04-01T10:54:54.9062145Z Unable to find image 'danielfett/markdown2rfc:latest' locally
+2025-04-01T10:54:55.3368591Z latest: Pulling from danielfett/markdown2rfc
+2025-04-01T10:54:55.3370771Z 72a69066d2fe: Pulling fs layer
+2025-04-01T10:54:55.3372328Z c8da7e1588a5: Pulling fs layer
+2025-04-01T10:54:55.3375730Z 7941d9b78fbd: Pulling fs layer
+2025-04-01T10:54:55.3377819Z 09fe4a85269f: Pulling fs layer
+2025-04-01T10:54:55.3378831Z 74e61c8eb7cf: Pulling fs layer
+2025-04-01T10:54:55.3380037Z fdffa5060c89: Pulling fs layer
+2025-04-01T10:54:55.3381099Z 053a70863905: Pulling fs layer
+2025-04-01T10:54:55.3382206Z 8d25741070b2: Pulling fs layer
+2025-04-01T10:54:55.3382830Z 4c8e98d94409: Pulling fs layer
+2025-04-01T10:54:55.3383449Z 5c932b9f3316: Pulling fs layer
+2025-04-01T10:54:55.3384089Z fdffa5060c89: Waiting
+2025-04-01T10:54:55.3384729Z 053a70863905: Waiting
+2025-04-01T10:54:55.3385319Z 8d25741070b2: Waiting
+2025-04-01T10:54:55.3385944Z 4c8e98d94409: Waiting
+2025-04-01T10:54:55.3386549Z 5c932b9f3316: Waiting
+2025-04-01T10:54:55.3387128Z 09fe4a85269f: Waiting
+2025-04-01T10:54:55.3387716Z 74e61c8eb7cf: Waiting
+2025-04-01T10:54:55.4680722Z c8da7e1588a5: Verifying Checksum
+2025-04-01T10:54:55.4681887Z c8da7e1588a5: Download complete
+2025-04-01T10:54:55.5546126Z 7941d9b78fbd: Verifying Checksum
+2025-04-01T10:54:55.5548444Z 7941d9b78fbd: Download complete
+2025-04-01T10:54:55.5678732Z 72a69066d2fe: Verifying Checksum
+2025-04-01T10:54:55.5681835Z 72a69066d2fe: Download complete
+2025-04-01T10:54:55.5853377Z 09fe4a85269f: Verifying Checksum
+2025-04-01T10:54:55.5857208Z 09fe4a85269f: Download complete
+2025-04-01T10:54:55.6807602Z 74e61c8eb7cf: Verifying Checksum
+2025-04-01T10:54:55.6809667Z 74e61c8eb7cf: Download complete
+2025-04-01T10:54:55.7817478Z fdffa5060c89: Verifying Checksum
+2025-04-01T10:54:55.7836379Z fdffa5060c89: Download complete
+2025-04-01T10:54:55.8440688Z 8d25741070b2: Verifying Checksum
+2025-04-01T10:54:55.8444734Z 8d25741070b2: Download complete
+2025-04-01T10:54:55.8871841Z 4c8e98d94409: Verifying Checksum
+2025-04-01T10:54:55.8873152Z 4c8e98d94409: Download complete
+2025-04-01T10:54:55.9502667Z 5c932b9f3316: Verifying Checksum
+2025-04-01T10:54:55.9503154Z 5c932b9f3316: Download complete
+2025-04-01T10:54:55.9935630Z 053a70863905: Verifying Checksum
+2025-04-01T10:54:55.9936039Z 053a70863905: Download complete
+2025-04-01T10:54:56.6911339Z 72a69066d2fe: Pull complete
+2025-04-01T10:54:57.0277695Z c8da7e1588a5: Pull complete
+2025-04-01T10:54:57.4605659Z 7941d9b78fbd: Pull complete
+2025-04-01T10:54:57.4715627Z 09fe4a85269f: Pull complete
+2025-04-01T10:54:57.7008346Z 74e61c8eb7cf: Pull complete
+2025-04-01T10:54:57.8724366Z fdffa5060c89: Pull complete
+2025-04-01T10:54:59.0422981Z 053a70863905: Pull complete
+2025-04-01T10:54:59.0891964Z 8d25741070b2: Pull complete
+2025-04-01T10:54:59.0998031Z 4c8e98d94409: Pull complete
+2025-04-01T10:54:59.1112851Z 5c932b9f3316: Pull complete
+2025-04-01T10:54:59.1147628Z Digest: sha256:7b4412559d6ba5db45a14174a28da5b240512e7c2a886a5e4adb44e5e67f34ca
+2025-04-01T10:54:59.1161153Z Status: Downloaded newer image for danielfett/markdown2rfc:latest
+2025-04-01T10:54:59.3191896Z Dockerfile danielfett/markdown2rfc
+2025-04-01T10:54:59.3192486Z Using versions:
+2025-04-01T10:54:59.3208927Z mmark: 2.2.31
+2025-04-01T10:54:59.5921266Z xml2rfc 3.16.0
+2025-04-01T10:54:59.6165433Z ---------------------
+2025-04-01T10:54:59.8777839Z 2025/04/01 10:54:59 Failed to unmarshal reference: "DID-Core": XML syntax error on line 2: unescaped < inside quoted string, assuming <referencegroup>
+2025-04-01T10:54:59.8784245Z 2025/04/01 10:54:59 Empty 'stream' in [seriesInfo], resulting XML may fail to parse.
+2025-04-01T10:55:00.1522424Z Error: Unable to parse the XML document: ./openid-4-verifiable-presentations-1_0-25.xml
+2025-04-01T10:55:00.1523850Z  /data/openid-4-verifiable-presentations-1_0-25.xml: Line 2134: Unescaped '<' not allowed in attributes values
+2025-04-01T10:55:00.1525258Z  /data/openid-4-verifiable-presentations-1_0-25.xml: Line 2134: attributes construct error
+2025-04-01T10:55:00.1526673Z  /data/openid-4-verifiable-presentations-1_0-25.xml: Line 2134: Couldn't find end of Start Tag reference line 2133
+2025-04-01T10:55:00.1528225Z  /data/openid-4-verifiable-presentations-1_0-25.xml: Line 2150: Opening and ending tag mismatch: references line 2123 and reference
+2025-04-01T10:55:00.1529355Z  /data/openid-4-verifiable-presentations-1_0-25.xml: Line 2287: Opening and ending tag mismatch: back line 2122 and references
+2025-04-01T10:55:00.1530439Z  /data/openid-4-verifiable-presentations-1_0-25.xml: Line 4435: Opening and ending tag mismatch: rfc line 3 and back
+2025-04-01T10:55:00.1531233Z  /data/openid-4-verifiable-presentations-1_0-25.xml: Line 4437: Extra content at the end of the document
+2025-04-01T10:55:00.2580739Z ##[error]Process completed with exit code 1.
+2025-04-01T10:55:00.2686224Z Post job cleanup.
+2025-04-01T10:55:00.3617708Z [command]/usr/bin/git version
+2025-04-01T10:55:00.3654172Z git version 2.49.0
+2025-04-01T10:55:00.3704336Z Temporarily overriding HOME='/home/runner/work/_temp/5423ae00-f704-402c-803f-e5105ea6cf6f' before making global git config changes
+2025-04-01T10:55:00.3705622Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-01T10:55:00.3710572Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/OpenID4VP/OpenID4VP
+2025-04-01T10:55:00.3744821Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-01T10:55:00.3777567Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-01T10:55:00.4011137Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-01T10:55:00.4031807Z http.https://github.com/.extraheader
+2025-04-01T10:55:00.4043969Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-01T10:55:00.4074256Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-01T10:55:00.4401382Z Cleaning up orphan processes

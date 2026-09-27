@@ -1,0 +1,352 @@
+2025-03-06T05:03:08.9086606Z Requested labels: ubuntu-latest
+2025-03-06T05:03:08.9086771Z Job defined at: joshuadavidthomas/django-bird/.github/workflows/test.yml@refs/pull/212/merge
+2025-03-06T05:03:08.9086862Z Waiting for a runner to pick up this job...
+2025-03-06T05:03:10.1402753Z Job is waiting for a hosted runner to come online.
+2025-03-06T05:03:13.6705402Z Job is about to start running on the hosted runner: GitHub Actions 15 (hosted)
+2025-03-06T05:03:15.3715259Z Current runner version: '2.322.0'
+2025-03-06T05:03:15.3738362Z ##[group]Operating System
+2025-03-06T05:03:15.3739143Z Ubuntu
+2025-03-06T05:03:15.3739641Z 24.04.2
+2025-03-06T05:03:15.3740516Z LTS
+2025-03-06T05:03:15.3740978Z ##[endgroup]
+2025-03-06T05:03:15.3741505Z ##[group]Runner Image
+2025-03-06T05:03:15.3742155Z Image: ubuntu-24.04
+2025-03-06T05:03:15.3742688Z Version: 20250302.1.0
+2025-03-06T05:03:15.3743762Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250302.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-06T05:03:15.3745163Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250302.1
+2025-03-06T05:03:15.3746030Z ##[endgroup]
+2025-03-06T05:03:15.3746605Z ##[group]Runner Image Provisioner
+2025-03-06T05:03:15.3747218Z 2.0.422.1
+2025-03-06T05:03:15.3747708Z ##[endgroup]
+2025-03-06T05:03:15.3748810Z ##[group]GITHUB_TOKEN Permissions
+2025-03-06T05:03:15.3751486Z Contents: read
+2025-03-06T05:03:15.3752128Z Metadata: read
+2025-03-06T05:03:15.3752876Z Packages: read
+2025-03-06T05:03:15.3753514Z ##[endgroup]
+2025-03-06T05:03:15.3756533Z Secret source: Actions
+2025-03-06T05:03:15.3757489Z Prepare workflow directory
+2025-03-06T05:03:15.4116561Z Prepare all required actions
+2025-03-06T05:03:15.4153092Z Getting action download info
+2025-03-06T05:03:15.5830502Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-06T05:03:15.6630461Z Download action repository 'astral-sh/setup-uv@v5' (SHA:f94ec6bedd8674c4426838e6b50417d36b6ab231)
+2025-03-06T05:03:16.0244729Z Complete job name: coverage
+2025-03-06T05:03:16.0957946Z ##[group]Run actions/checkout@v4
+2025-03-06T05:03:16.0958865Z with:
+2025-03-06T05:03:16.0959344Z   repository: joshuadavidthomas/django-bird
+2025-03-06T05:03:16.0960334Z   token: ***
+2025-03-06T05:03:16.0960778Z   ssh-strict: true
+2025-03-06T05:03:16.0961208Z   ssh-user: git
+2025-03-06T05:03:16.0961662Z   persist-credentials: true
+2025-03-06T05:03:16.0962157Z   clean: true
+2025-03-06T05:03:16.0962617Z   sparse-checkout-cone-mode: true
+2025-03-06T05:03:16.0963187Z   fetch-depth: 1
+2025-03-06T05:03:16.0963623Z   fetch-tags: false
+2025-03-06T05:03:16.0964080Z   show-progress: true
+2025-03-06T05:03:16.0964539Z   lfs: false
+2025-03-06T05:03:16.0964959Z   submodules: false
+2025-03-06T05:03:16.0965451Z   set-safe-directory: true
+2025-03-06T05:03:16.0966193Z env:
+2025-03-06T05:03:16.0966610Z   PYTHONUNBUFFERED: 1
+2025-03-06T05:03:16.0967073Z   FORCE_COLOR: 1
+2025-03-06T05:03:16.0967496Z ##[endgroup]
+2025-03-06T05:03:16.2590880Z Syncing repository: joshuadavidthomas/django-bird
+2025-03-06T05:03:16.2592892Z ##[group]Getting Git version info
+2025-03-06T05:03:16.2593688Z Working directory is '/home/runner/work/django-bird/django-bird'
+2025-03-06T05:03:16.2594730Z [command]/usr/bin/git version
+2025-03-06T05:03:16.2645691Z git version 2.48.1
+2025-03-06T05:03:16.2687162Z ##[endgroup]
+2025-03-06T05:03:16.2703941Z Temporarily overriding HOME='/home/runner/work/_temp/030d472c-1b06-4c1a-aeec-6f993220a12c' before making global git config changes
+2025-03-06T05:03:16.2711411Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-06T05:03:16.2712833Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/django-bird/django-bird
+2025-03-06T05:03:16.2752033Z Deleting the contents of '/home/runner/work/django-bird/django-bird'
+2025-03-06T05:03:16.2757203Z ##[group]Initializing the repository
+2025-03-06T05:03:16.2761616Z [command]/usr/bin/git init /home/runner/work/django-bird/django-bird
+2025-03-06T05:03:16.2815467Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-06T05:03:16.2816899Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-06T05:03:16.2817849Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-06T05:03:16.2818722Z hint:
+2025-03-06T05:03:16.2819767Z hint: 	git config --global init.defaultBranch <name>
+2025-03-06T05:03:16.2820783Z hint:
+2025-03-06T05:03:16.2822375Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-06T05:03:16.2824312Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-06T05:03:16.2825871Z hint:
+2025-03-06T05:03:16.2826761Z hint: 	git branch -m <name>
+2025-03-06T05:03:16.2828247Z Initialized empty Git repository in /home/runner/work/django-bird/django-bird/.git/
+2025-03-06T05:03:16.2834069Z [command]/usr/bin/git remote add origin https://github.com/joshuadavidthomas/django-bird
+2025-03-06T05:03:16.2870859Z ##[endgroup]
+2025-03-06T05:03:16.2871687Z ##[group]Disabling automatic garbage collection
+2025-03-06T05:03:16.2872378Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-06T05:03:16.2898461Z ##[endgroup]
+2025-03-06T05:03:16.2899192Z ##[group]Setting up auth
+2025-03-06T05:03:16.2905268Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-06T05:03:16.2936949Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-06T05:03:16.3205839Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-06T05:03:16.3233884Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-06T05:03:16.3475938Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-06T05:03:16.3521721Z ##[endgroup]
+2025-03-06T05:03:16.3522656Z ##[group]Fetching the repository
+2025-03-06T05:03:16.3535042Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +dabc34071d897b4447f7ae182b1c42582d6c5689:refs/remotes/pull/212/merge
+2025-03-06T05:03:16.6122341Z From https://github.com/joshuadavidthomas/django-bird
+2025-03-06T05:03:16.6123470Z  * [new ref]         dabc34071d897b4447f7ae182b1c42582d6c5689 -> pull/212/merge
+2025-03-06T05:03:16.6147156Z ##[endgroup]
+2025-03-06T05:03:16.6147942Z ##[group]Determining the checkout info
+2025-03-06T05:03:16.6149380Z ##[endgroup]
+2025-03-06T05:03:16.6154605Z [command]/usr/bin/git sparse-checkout disable
+2025-03-06T05:03:16.6193975Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-06T05:03:16.6220475Z ##[group]Checking out the ref
+2025-03-06T05:03:16.6223930Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/212/merge
+2025-03-06T05:03:16.6311387Z Note: switching to 'refs/remotes/pull/212/merge'.
+2025-03-06T05:03:16.6312208Z 
+2025-03-06T05:03:16.6312671Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-06T05:03:16.6313634Z changes and commit them, and you can discard any commits you make in this
+2025-03-06T05:03:16.6314543Z state without impacting any branches by switching back to a branch.
+2025-03-06T05:03:16.6315557Z 
+2025-03-06T05:03:16.6316318Z If you want to create a new branch to retain commits you create, you may
+2025-03-06T05:03:16.6318097Z do so (now or later) by using -c with the switch command. Example:
+2025-03-06T05:03:16.6319130Z 
+2025-03-06T05:03:16.6319538Z   git switch -c <new-branch-name>
+2025-03-06T05:03:16.6320423Z 
+2025-03-06T05:03:16.6320834Z Or undo this operation with:
+2025-03-06T05:03:16.6321452Z 
+2025-03-06T05:03:16.6321807Z   git switch -
+2025-03-06T05:03:16.6322278Z 
+2025-03-06T05:03:16.6323100Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-06T05:03:16.6324343Z 
+2025-03-06T05:03:16.6325642Z HEAD is now at dabc340 Merge 1abeaaa407c672dc2c733d4cb2775e21d740bea3 into 491290b6e095329549e639b73d431417bfd8d43d
+2025-03-06T05:03:16.6329084Z ##[endgroup]
+2025-03-06T05:03:16.6356336Z [command]/usr/bin/git log -1 --format=%H
+2025-03-06T05:03:16.6377919Z dabc34071d897b4447f7ae182b1c42582d6c5689
+2025-03-06T05:03:16.6604819Z ##[group]Run astral-sh/setup-uv@v5
+2025-03-06T05:03:16.6605569Z with:
+2025-03-06T05:03:16.6605985Z   enable-cache: true
+2025-03-06T05:03:16.6606474Z   pyproject-file: pyproject.toml
+2025-03-06T05:03:16.6607206Z   github-token: ***
+2025-03-06T05:03:16.6607768Z   cache-dependency-glob: **/uv.lock
+**/requirements*.txt
+
+2025-03-06T05:03:16.6608414Z   prune-cache: true
+2025-03-06T05:03:16.6608864Z   ignore-nothing-to-cache: false
+2025-03-06T05:03:16.6609350Z env:
+2025-03-06T05:03:16.6609739Z   PYTHONUNBUFFERED: 1
+2025-03-06T05:03:16.6610445Z   FORCE_COLOR: 1
+2025-03-06T05:03:16.6610865Z ##[endgroup]
+2025-03-06T05:03:16.8787435Z Found required-version for uv in pyproject.toml: 0.6.*
+2025-03-06T05:03:20.7494095Z Downloading uv from "https://github.com/astral-sh/uv/releases/download/0.6.4/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2025-03-06T05:03:21.0128248Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/3f6d7c06-6616-48c2-84ec-bdee837fda62 -f /home/runner/work/_temp/4041d075-f3bc-454f-a72a-cf359b0a316e
+2025-03-06T05:03:21.3547150Z Added /opt/hostedtoolcache/uv/0.6.4/x86_64 to the path
+2025-03-06T05:03:21.3549793Z Added /home/runner/.local/bin to the path
+2025-03-06T05:03:21.3573867Z Set UV_CACHE_DIR to /home/runner/work/_temp/setup-uv-cache
+2025-03-06T05:03:21.3574271Z Successfully installed uv version 0.6.4
+2025-03-06T05:03:21.3574700Z Searching files using cache dependency glob: **/uv.lock,**/requirements*.txt
+2025-03-06T05:03:21.3776833Z /home/runner/work/django-bird/django-bird/uv.lock
+2025-03-06T05:03:21.3798288Z Found 1 files to hash.
+2025-03-06T05:03:21.4435443Z Trying to restore uv cache from GitHub Actions cache with key: setup-uv-1-x86_64-unknown-linux-gnu-3.12.3-4a5b2d7f7352b258da0f135ff69a2f6d378ddf4dfa6629e49046b2008fbdb3e7
+2025-03-06T05:03:21.4881460Z Cache hit for: setup-uv-1-x86_64-unknown-linux-gnu-3.12.3-4a5b2d7f7352b258da0f135ff69a2f6d378ddf4dfa6629e49046b2008fbdb3e7
+2025-03-06T05:03:21.5291780Z Received 70994 of 70994 (100.0%), 6.8 MBs/sec
+2025-03-06T05:03:21.5292463Z Cache Size: ~0 MB (70994 B)
+2025-03-06T05:03:21.5316012Z [command]/usr/bin/tar -xf /home/runner/work/_temp/bcf678e8-9575-4a70-bcb1-d6cba7c8b39d/cache.tzst -P -C /home/runner/work/django-bird/django-bird --use-compress-program unzstd
+2025-03-06T05:03:21.5383714Z Cache restored successfully
+2025-03-06T05:03:21.5388999Z uv cache restored from GitHub Actions cache with key: setup-uv-1-x86_64-unknown-linux-gnu-3.12.3-4a5b2d7f7352b258da0f135ff69a2f6d378ddf4dfa6629e49046b2008fbdb3e7
+2025-03-06T05:03:21.5520437Z ##[group]Run uv run nox --session "coverage"
+2025-03-06T05:03:21.5520857Z [36;1muv run nox --session "coverage"[0m
+2025-03-06T05:03:21.5573052Z shell: /usr/bin/bash -e {0}
+2025-03-06T05:03:21.5573315Z env:
+2025-03-06T05:03:21.5573506Z   PYTHONUNBUFFERED: 1
+2025-03-06T05:03:21.5573729Z   FORCE_COLOR: 1
+2025-03-06T05:03:21.5573974Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-03-06T05:03:21.5574290Z ##[endgroup]
+2025-03-06T05:03:21.5764656Z Using CPython 3.12.3 interpreter at: [36m/usr/bin/python3[39m
+2025-03-06T05:03:21.5765201Z Creating virtual environment at: [36m.venv[39m
+2025-03-06T05:03:21.5909791Z    [36m[1mBuilding[0m[39m django-bird[2m @ file:///home/runner/work/django-bird/django-bird[0m
+2025-03-06T05:03:21.6286441Z [36m[1mDownloading[0m[39m ruff [2m(11.9MiB)[0m
+2025-03-06T05:03:21.6287257Z [36m[1mDownloading[0m[39m virtualenv [2m(4.1MiB)[0m
+2025-03-06T05:03:21.6289331Z [36m[1mDownloading[0m[39m pygments [2m(1.2MiB)[0m
+2025-03-06T05:03:21.6291502Z [36m[1mDownloading[0m[39m django [2m(7.9MiB)[0m
+2025-03-06T05:03:21.6295444Z [36m[1mDownloading[0m[39m pydantic-core [2m(1.9MiB)[0m
+2025-03-06T05:03:21.6300361Z [36m[1mDownloading[0m[39m uv [2m(15.5MiB)[0m
+2025-03-06T05:03:21.6301401Z [36m[1mDownloading[0m[39m faker [2m(1.8MiB)[0m
+2025-03-06T05:03:21.8332304Z  [32m[1mDownloaded[0m[39m pydantic-core
+2025-03-06T05:03:21.9668523Z  [32m[1mDownloaded[0m[39m virtualenv
+2025-03-06T05:03:22.1871714Z  [32m[1mDownloaded[0m[39m ruff
+2025-03-06T05:03:22.2101310Z  [32m[1mDownloaded[0m[39m uv
+2025-03-06T05:03:22.2307486Z  [32m[1mDownloaded[0m[39m pygments
+2025-03-06T05:03:22.2831701Z       [32m[1mBuilt[0m[39m django-bird[2m @ file:///home/runner/work/django-bird/django-bird[0m
+2025-03-06T05:03:22.3815855Z  [32m[1mDownloaded[0m[39m faker
+2025-03-06T05:03:22.8178644Z  [32m[1mDownloaded[0m[39m django
+2025-03-06T05:03:23.0193145Z [2mInstalled [1m50 packages[0m [2min 200ms[0m[0m
+2025-03-06T05:03:23.2417410Z [36mnox > [33mRunning session coverage[0m
+2025-03-06T05:03:23.2421818Z [36mnox > [34mCreating virtual environment (uv) using python in .nox/coverage[0m
+2025-03-06T05:03:23.2982830Z [36mnox > [34muv sync --frozen --python 3.10[0m
+2025-03-06T05:03:23.6882290Z [36m[1mDownloading[0m[39m cpython-3.10.16-linux-x86_64-gnu [2m(19.8MiB)[0m
+2025-03-06T05:03:24.3645844Z  [32m[1mDownloaded[0m[39m cpython-3.10.16-linux-x86_64-gnu
+2025-03-06T05:03:24.5711918Z Using CPython [36m3.10.16[39m
+2025-03-06T05:03:24.5717067Z Removed virtual environment at: [36m.nox/coverage[39m
+2025-03-06T05:03:24.5717911Z Creating virtual environment at: [36m.nox/coverage[39m
+2025-03-06T05:03:24.6187318Z [36m[1mDownloading[0m[39m virtualenv [2m(4.1MiB)[0m
+2025-03-06T05:03:24.6188696Z [36m[1mDownloading[0m[39m pydantic-core [2m(1.9MiB)[0m
+2025-03-06T05:03:24.6189560Z [36m[1mDownloading[0m[39m django [2m(7.9MiB)[0m
+2025-03-06T05:03:24.6206035Z [36m[1mDownloading[0m[39m faker [2m(1.8MiB)[0m
+2025-03-06T05:03:24.6206958Z [36m[1mDownloading[0m[39m pygments [2m(1.2MiB)[0m
+2025-03-06T05:03:24.6208241Z [36m[1mDownloading[0m[39m ruff [2m(11.9MiB)[0m
+2025-03-06T05:03:24.6210929Z [36m[1mDownloading[0m[39m uv [2m(15.5MiB)[0m
+2025-03-06T05:03:24.8106762Z  [32m[1mDownloaded[0m[39m pydantic-core
+2025-03-06T05:03:24.9325077Z  [32m[1mDownloaded[0m[39m virtualenv
+2025-03-06T05:03:25.0789286Z  [32m[1mDownloaded[0m[39m ruff
+2025-03-06T05:03:25.0959166Z  [32m[1mDownloaded[0m[39m uv
+2025-03-06T05:03:25.1112409Z  [32m[1mDownloaded[0m[39m pygments
+2025-03-06T05:03:25.2330878Z  [32m[1mDownloaded[0m[39m faker
+2025-03-06T05:03:25.6685208Z  [32m[1mDownloaded[0m[39m django
+2025-03-06T05:03:25.6687574Z [2mPrepared [1m51 packages[0m [2min 1.09s[0m[0m
+2025-03-06T05:03:25.8934884Z [2mInstalled [1m52 packages[0m [2min 224ms[0m[0m
+2025-03-06T05:03:25.8935717Z  [32m+[39m [1mannotated-types[0m[2m==0.7.0[0m
+2025-03-06T05:03:25.8936688Z  [32m+[39m [1margcomplete[0m[2m==3.5.3[0m
+2025-03-06T05:03:25.8937252Z  [32m+[39m [1masgiref[0m[2m==3.8.1[0m
+2025-03-06T05:03:25.8937776Z  [32m+[39m [1mattrs[0m[2m==25.1.0[0m
+2025-03-06T05:03:25.8938366Z  [32m+[39m [1mcolorama[0m[2m==0.4.6[0m
+2025-03-06T05:03:25.8938892Z  [32m+[39m [1mcolorlog[0m[2m==6.9.0[0m
+2025-03-06T05:03:25.8939400Z  [32m+[39m [1mcopier[0m[2m==9.5.0[0m
+2025-03-06T05:03:25.8940213Z  [32m+[39m [1mcopier-templates-extensions[0m[2m==0.3.0[0m
+2025-03-06T05:03:25.8940866Z  [32m+[39m [1mcoverage[0m[2m==7.6.12[0m
+2025-03-06T05:03:25.8941454Z  [32m+[39m [1mdependency-groups[0m[2m==1.3.0[0m
+2025-03-06T05:03:25.8942020Z  [32m+[39m [1mdistlib[0m[2m==0.3.9[0m
+2025-03-06T05:03:25.8942529Z  [32m+[39m [1mdjango[0m[2m==5.1.6[0m
+2025-03-06T05:03:25.8943361Z  [32m+[39m [1mdjango-bird[0m[2m==0.16.2 (from file:///home/runner/work/django-bird/django-bird)[0m
+2025-03-06T05:03:25.8944186Z  [32m+[39m [1mdjango-stubs[0m[2m==5.1.3[0m
+2025-03-06T05:03:25.8944754Z  [32m+[39m [1mdjango-stubs-ext[0m[2m==5.1.3[0m
+2025-03-06T05:03:25.8945283Z  [32m+[39m [1mdunamai[0m[2m==1.23.0[0m
+2025-03-06T05:03:25.8945841Z  [32m+[39m [1mexceptiongroup[0m[2m==1.2.2[0m
+2025-03-06T05:03:25.8946378Z  [32m+[39m [1mexecnet[0m[2m==2.1.1[0m
+2025-03-06T05:03:25.8946850Z  [32m+[39m [1mfaker[0m[2m==36.1.1[0m
+2025-03-06T05:03:25.8947326Z  [32m+[39m [1mfilelock[0m[2m==3.17.0[0m
+2025-03-06T05:03:25.8947804Z  [32m+[39m [1mfuncy[0m[2m==2.0[0m
+2025-03-06T05:03:25.8948278Z  [32m+[39m [1miniconfig[0m[2m==2.0.0[0m
+2025-03-06T05:03:25.8949040Z  [32m+[39m [1mjinja2[0m[2m==3.1.5[0m
+2025-03-06T05:03:25.8949599Z  [32m+[39m [1mjinja2-ansible-filters[0m[2m==1.3.2[0m
+2025-03-06T05:03:25.8950390Z  [32m+[39m [1mmarkupsafe[0m[2m==3.0.2[0m
+2025-03-06T05:03:25.8950960Z  [32m+[39m [1mmodel-bakery[0m[2m==1.20.3[0m
+2025-03-06T05:03:25.8951510Z  [32m+[39m [1mnox[0m[2m==2025.2.9[0m
+2025-03-06T05:03:25.8952050Z  [32m+[39m [1mpackaging[0m[2m==24.2[0m
+2025-03-06T05:03:25.8952605Z  [32m+[39m [1mpathspec[0m[2m==0.12.1[0m
+2025-03-06T05:03:25.8953173Z  [32m+[39m [1mplatformdirs[0m[2m==4.3.6[0m
+2025-03-06T05:03:25.8953762Z  [32m+[39m [1mpluggy[0m[2m==1.5.0[0m
+2025-03-06T05:03:25.8954230Z  [32m+[39m [1mplumbum[0m[2m==1.9.0[0m
+2025-03-06T05:03:25.8954781Z  [32m+[39m [1mprompt-toolkit[0m[2m==3.0.50[0m
+2025-03-06T05:03:25.8955328Z  [32m+[39m [1mpydantic[0m[2m==2.10.6[0m
+2025-03-06T05:03:25.8955877Z  [32m+[39m [1mpydantic-core[0m[2m==2.27.2[0m
+2025-03-06T05:03:25.8956419Z  [32m+[39m [1mpygments[0m[2m==2.19.1[0m
+2025-03-06T05:03:25.8957156Z  [32m+[39m [1mpytest[0m[2m==8.3.4[0m
+2025-03-06T05:03:25.8957684Z  [32m+[39m [1mpytest-cov[0m[2m==6.0.0[0m
+2025-03-06T05:03:25.8958233Z  [32m+[39m [1mpytest-django[0m[2m==4.10.0[0m
+2025-03-06T05:03:25.8958801Z  [32m+[39m [1mpytest-randomly[0m[2m==3.16.0[0m
+2025-03-06T05:03:25.8959368Z  [32m+[39m [1mpytest-xdist[0m[2m==3.6.1[0m
+2025-03-06T05:03:25.8959913Z  [32m+[39m [1mpyyaml[0m[2m==6.0.2[0m
+2025-03-06T05:03:25.8960595Z  [32m+[39m [1mquestionary[0m[2m==2.1.0[0m
+2025-03-06T05:03:25.8961113Z  [32m+[39m [1mruff[0m[2m==0.9.6[0m
+2025-03-06T05:03:25.8961619Z  [32m+[39m [1msqlparse[0m[2m==0.5.3[0m
+2025-03-06T05:03:25.8962124Z  [32m+[39m [1mtomli[0m[2m==2.2.1[0m
+2025-03-06T05:03:25.8962679Z  [32m+[39m [1mtypes-pyyaml[0m[2m==6.0.12.20241230[0m
+2025-03-06T05:03:25.8963285Z  [32m+[39m [1mtyping-extensions[0m[2m==4.12.2[0m
+2025-03-06T05:03:25.8963839Z  [32m+[39m [1mtzdata[0m[2m==2025.1[0m
+2025-03-06T05:03:25.8964340Z  [32m+[39m [1muv[0m[2m==0.6.1[0m
+2025-03-06T05:03:25.8964852Z  [32m+[39m [1mvirtualenv[0m[2m==20.29.2[0m
+2025-03-06T05:03:25.8965376Z  [32m+[39m [1mwcwidth[0m[2m==0.2.13[0m
+2025-03-06T05:03:25.8995387Z [36mnox > [34mpython -m pytest --cov --cov-report=[0m
+2025-03-06T05:03:27.8338137Z /home/runner/work/django-bird/django-bird/src/django_bird/apps.py:26: DeprecationWarning: Autoconfiguration of django-bird is deprecated and has been moved to the django-bird-autoconf plugin. Please install the new plugin from PyPI in your project if you wish to keep this behavior, as this will be removed from the core library in a future version.
+2025-03-06T05:03:27.8339460Z   app_settings.autoconfigure()
+2025-03-06T05:03:27.8802675Z /home/runner/work/django-bird/django-bird/src/django_bird/conf.py:58: DeprecationWarning: Autoconfiguration of django-bird is deprecated and has been moved to the django-bird-autoconf plugin. Please install the new plugin from PyPI in your project if you wish to keep this behavior, as this will be removed from the core library in a future version.
+2025-03-06T05:03:27.8804912Z   app_settings.autoconfigure()
+2025-03-06T05:03:27.8946331Z [1m============================= test session starts ==============================[0m
+2025-03-06T05:03:27.8947063Z platform linux -- Python 3.10.16, pytest-8.3.4, pluggy-1.5.0
+2025-03-06T05:03:27.9072422Z Using --randomly-seed=4067143812
+2025-03-06T05:03:27.9072920Z django: version: 5.1.6
+2025-03-06T05:03:27.9073403Z rootdir: /home/runner/work/django-bird/django-bird
+2025-03-06T05:03:27.9073942Z configfile: pyproject.toml
+2025-03-06T05:03:27.9074340Z testpaths: tests
+2025-03-06T05:03:27.9074886Z plugins: Faker-36.1.1, cov-6.0.0, randomly-3.16.0, xdist-3.6.1, django-4.10.0
+2025-03-06T05:03:27.9079717Z created: 4/4 workers
+2025-03-06T05:03:28.6793070Z /home/runner/work/django-bird/django-bird/src/django_bird/apps.py:26: DeprecationWarning: Autoconfiguration of django-bird is deprecated and has been moved to the django-bird-autoconf plugin. Please install the new plugin from PyPI in your project if you wish to keep this behavior, as this will be removed from the core library in a future version.
+2025-03-06T05:03:28.6795700Z   app_settings.autoconfigure()
+2025-03-06T05:03:28.7289854Z /home/runner/work/django-bird/django-bird/src/django_bird/conf.py:58: DeprecationWarning: Autoconfiguration of django-bird is deprecated and has been moved to the django-bird-autoconf plugin. Please install the new plugin from PyPI in your project if you wish to keep this behavior, as this will be removed from the core library in a future version.
+2025-03-06T05:03:28.7292408Z   app_settings.autoconfigure()
+2025-03-06T05:03:28.7586170Z /home/runner/work/django-bird/django-bird/src/django_bird/apps.py:26: DeprecationWarning: Autoconfiguration of django-bird is deprecated and has been moved to the django-bird-autoconf plugin. Please install the new plugin from PyPI in your project if you wish to keep this behavior, as this will be removed from the core library in a future version.
+2025-03-06T05:03:28.7588436Z   app_settings.autoconfigure()
+2025-03-06T05:03:28.8023228Z /home/runner/work/django-bird/django-bird/src/django_bird/apps.py:26: DeprecationWarning: Autoconfiguration of django-bird is deprecated and has been moved to the django-bird-autoconf plugin. Please install the new plugin from PyPI in your project if you wish to keep this behavior, as this will be removed from the core library in a future version.
+2025-03-06T05:03:28.8025482Z   app_settings.autoconfigure()
+2025-03-06T05:03:28.8102947Z /home/runner/work/django-bird/django-bird/src/django_bird/conf.py:58: DeprecationWarning: Autoconfiguration of django-bird is deprecated and has been moved to the django-bird-autoconf plugin. Please install the new plugin from PyPI in your project if you wish to keep this behavior, as this will be removed from the core library in a future version.
+2025-03-06T05:03:28.8105184Z   app_settings.autoconfigure()
+2025-03-06T05:03:28.8501463Z /home/runner/work/django-bird/django-bird/src/django_bird/conf.py:58: DeprecationWarning: Autoconfiguration of django-bird is deprecated and has been moved to the django-bird-autoconf plugin. Please install the new plugin from PyPI in your project if you wish to keep this behavior, as this will be removed from the core library in a future version.
+2025-03-06T05:03:28.8503796Z   app_settings.autoconfigure()
+2025-03-06T05:03:28.8614967Z /home/runner/work/django-bird/django-bird/src/django_bird/apps.py:26: DeprecationWarning: Autoconfiguration of django-bird is deprecated and has been moved to the django-bird-autoconf plugin. Please install the new plugin from PyPI in your project if you wish to keep this behavior, as this will be removed from the core library in a future version.
+2025-03-06T05:03:28.8617238Z   app_settings.autoconfigure()
+2025-03-06T05:03:28.9116972Z /home/runner/work/django-bird/django-bird/src/django_bird/conf.py:58: DeprecationWarning: Autoconfiguration of django-bird is deprecated and has been moved to the django-bird-autoconf plugin. Please install the new plugin from PyPI in your project if you wish to keep this behavior, as this will be removed from the core library in a future version.
+2025-03-06T05:03:28.9119416Z   app_settings.autoconfigure()
+2025-03-06T05:03:29.7642000Z 4 workers [305 items]
+2025-03-06T05:03:29.7643194Z 
+2025-03-06T05:03:30.2159266Z [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[33ms[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m [ 23%]
+2025-03-06T05:03:30.3971879Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m [ 47%]
+2025-03-06T05:03:30.7017051Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m [ 70%]
+2025-03-06T05:03:31.0434493Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m [ 94%]
+2025-03-06T05:03:31.4034276Z [0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[31m[1m
+2025-03-06T05:03:31.4035300Z ERROR: Coverage failure: total of 96 is less than fail-under=98
+2025-03-06T05:03:31.4037262Z [0m/home/runner/work/django-bird/django-bird/.nox/coverage/lib/python3.10/site-packages/pytest_cov/plugin.py:355: CovFailUnderWarning: Coverage failure: total of 96 is less than fail-under=98
+2025-03-06T05:03:31.4038989Z   warnings.warn(CovFailUnderWarning(message), stacklevel=1)
+2025-03-06T05:03:31.5604908Z [33m                                                                         [100%][0m
+2025-03-06T05:03:31.5605738Z [33m=============================== warnings summary ===============================[0m
+2025-03-06T05:03:31.5606454Z tests/test_apps.py::test_ready_scans_components
+2025-03-06T05:03:31.5608619Z   /home/runner/work/django-bird/django-bird/src/django_bird/apps.py:26: DeprecationWarning: Autoconfiguration of django-bird is deprecated and has been moved to the django-bird-autoconf plugin. Please install the new plugin from PyPI in your project if you wish to keep this behavior, as this will be removed from the core library in a future version.
+2025-03-06T05:03:31.5610868Z     app_settings.autoconfigure()
+2025-03-06T05:03:31.5611150Z 
+2025-03-06T05:03:31.5611365Z tests/test_apps.py::test_ready_scans_components
+2025-03-06T05:03:31.5613451Z   /home/runner/work/django-bird/django-bird/src/django_bird/conf.py:58: DeprecationWarning: Autoconfiguration of django-bird is deprecated and has been moved to the django-bird-autoconf plugin. Please install the new plugin from PyPI in your project if you wish to keep this behavior, as this will be removed from the core library in a future version.
+2025-03-06T05:03:31.5615835Z     app_settings.autoconfigure()
+2025-03-06T05:03:31.5616128Z 
+2025-03-06T05:03:31.5616486Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2025-03-06T05:03:31.5617562Z [31m[1mFAIL Required test coverage of 98.0% not reached. Total coverage: 96.42%
+2025-03-06T05:03:31.5618769Z [0m[33m================== [32m303 passed[0m, [33m[1m2 skipped[0m, [33m[1m2 warnings[0m[33m in 3.67s[0m[33m ==================[0m
+2025-03-06T05:03:31.6392844Z [36mnox > [31mCommand python -m pytest --cov --cov-report= failed with exit code 1[0m
+2025-03-06T05:03:31.6394972Z [36mnox > [34mpython -m coverage report[0m
+2025-03-06T05:03:31.7950442Z Name                                                             Stmts   Miss  Cover
+2025-03-06T05:03:31.7951193Z ------------------------------------------------------------------------------------
+2025-03-06T05:03:31.7952056Z src/django_bird/__init__.py                                          4      0   100%
+2025-03-06T05:03:31.7952881Z src/django_bird/apps.py                                             22      2    91%
+2025-03-06T05:03:31.7953744Z src/django_bird/components.py                                      156      0   100%
+2025-03-06T05:03:31.7954683Z src/django_bird/conf.py                                             69      0   100%
+2025-03-06T05:03:31.7955600Z src/django_bird/management/__init__.py                               0      0   100%
+2025-03-06T05:03:31.7956606Z src/django_bird/management/commands/__init__.py                      0      0   100%
+2025-03-06T05:03:31.7957498Z src/django_bird/management/commands/generate_asset_manifest.py      16     16     0%
+2025-03-06T05:03:31.7958049Z src/django_bird/manifest.py                                         56      9    84%
+2025-03-06T05:03:31.7958504Z src/django_bird/params.py                                           85      1    99%
+2025-03-06T05:03:31.7958955Z src/django_bird/plugins/__init__.py                                  3      0   100%
+2025-03-06T05:03:31.7959423Z src/django_bird/plugins/hookspecs.py                                17      0   100%
+2025-03-06T05:03:31.7959900Z src/django_bird/plugins/manager.py                                  11      0   100%
+2025-03-06T05:03:31.7960731Z src/django_bird/staticfiles.py                                     151      4    97%
+2025-03-06T05:03:31.7961186Z src/django_bird/templates.py                                        60      1    98%
+2025-03-06T05:03:31.7961642Z src/django_bird/templatetags/__init__.py                             0      0   100%
+2025-03-06T05:03:31.7962133Z src/django_bird/templatetags/django_bird.py                         15      0   100%
+2025-03-06T05:03:31.7962630Z src/django_bird/templatetags/tags/__init__.py                        0      0   100%
+2025-03-06T05:03:31.7963134Z src/django_bird/templatetags/tags/asset.py                          50      0   100%
+2025-03-06T05:03:31.7963638Z src/django_bird/templatetags/tags/bird.py                           57      0   100%
+2025-03-06T05:03:31.7964123Z src/django_bird/templatetags/tags/prop.py                           30      0   100%
+2025-03-06T05:03:31.7964608Z src/django_bird/templatetags/tags/slot.py                           42      0   100%
+2025-03-06T05:03:31.7965113Z src/django_bird/templatetags/tags/var.py                            59      0   100%
+2025-03-06T05:03:31.7965567Z src/django_bird/urls.py                                              4      0   100%
+2025-03-06T05:03:31.7965970Z src/django_bird/utils.py                                            14      0   100%
+2025-03-06T05:03:31.7966365Z ------------------------------------------------------------------------------------
+2025-03-06T05:03:31.7966739Z TOTAL                                                              921     33    96%
+2025-03-06T05:03:31.7967072Z Coverage failure: total of 96 is less than fail-under=98
+2025-03-06T05:03:31.8094292Z [36mnox > [34mpython -m coverage report --skip-covered --skip-empty --format=markdown[0m
+2025-03-06T05:03:31.9662295Z [36mnox > [31mSession coverage failed.[0m
+2025-03-06T05:03:31.9905864Z ##[error]Process completed with exit code 1.
+2025-03-06T05:03:32.0006453Z Post job cleanup.
+2025-03-06T05:03:32.0928385Z [command]/usr/bin/git version
+2025-03-06T05:03:32.0963163Z git version 2.48.1
+2025-03-06T05:03:32.1010195Z Temporarily overriding HOME='/home/runner/work/_temp/c71c0d49-f9c7-4a4c-b303-5638d181be5f' before making global git config changes
+2025-03-06T05:03:32.1011389Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-06T05:03:32.1015360Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/django-bird/django-bird
+2025-03-06T05:03:32.1070141Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-06T05:03:32.1085836Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-06T05:03:32.1312690Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-06T05:03:32.1333520Z http.https://github.com/.extraheader
+2025-03-06T05:03:32.1345530Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-06T05:03:32.1375902Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-06T05:03:32.1697918Z Cleaning up orphan processes

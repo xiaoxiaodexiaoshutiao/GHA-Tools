@@ -1,0 +1,13 @@
+diff --git a/openmdao/docs/openmdao_book/features/core_features/working_with_derivatives/basic_check_partials.ipynb b/openmdao/docs/openmdao_book/features/core_features/working_with_derivatives/basic_check_partials.ipynb
+index 0983867610..f148068843 100644
+--- a/openmdao/docs/openmdao_book/features/core_features/working_with_derivatives/basic_check_partials.ipynb
++++ b/openmdao/docs/openmdao_book/features/core_features/working_with_derivatives/basic_check_partials.ipynb
+@@ -136,7 +136,7 @@
+    "source": [
+     "from openmdao.utils.assert_utils import assert_near_equal\n",
+     "\n",
+-    "assert_near_equal(x1_error.forward, 1.0000000004688445)\n"
++    "assert_near_equal(x1_error.forward, 1.0000000004688445, tolerance=3e-6)\n"
+    ]
+   },
+   {

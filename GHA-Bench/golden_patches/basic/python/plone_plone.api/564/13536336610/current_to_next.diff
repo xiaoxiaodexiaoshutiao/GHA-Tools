@@ -1,0 +1,14 @@
+diff --git a/tox.ini b/tox.ini
+index bef39ff8..d6cc86bf 100644
+--- a/tox.ini
++++ b/tox.ini
+@@ -165,8 +165,7 @@ set_env =
+ ##
+ deps =
+     coverage
+-    zope.testrunner
+-    -c https://dist.plone.org/release/6.0-dev/constraints.txt
++    zope.testrunner -c https://dist.plone.org/release/6.0-dev/constraints.txt
+ 
+ commands =
+     coverage run --branch --source plone.api {envbindir}/zope-testrunner --quiet --all --test-path={toxinidir}/src -s plone.api {posargs}

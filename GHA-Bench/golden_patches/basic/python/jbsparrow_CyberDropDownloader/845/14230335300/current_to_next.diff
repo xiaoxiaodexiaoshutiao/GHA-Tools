@@ -1,0 +1,41 @@
+diff --git a/cyberdrop_dl/env.py b/cyberdrop_dl/env.py
+index 440eeb2b88..1ea5c89393 100644
+--- a/cyberdrop_dl/env.py
++++ b/cyberdrop_dl/env.py
+@@ -2,7 +2,9 @@
+ from hashlib import sha256
+ 
+ RUNNING_IN_IDE = bool(os.getenv("PYCHARM_HOSTED") or os.getenv("TERM_PROGRAM") == "vscode")
+-RUNNING_IN_TERMUX = bool(os.getenv("TERMUX_VERSION") or os.getenv("TERMUX_MAIN_PACKAGE_FORMAT") or "com.termux" in os.getenv("$PREFIX", ""))
++RUNNING_IN_TERMUX = bool(
++    os.getenv("TERMUX_VERSION") or os.getenv("TERMUX_MAIN_PACKAGE_FORMAT") or "com.termux" in os.getenv("$PREFIX", "")
++)
+ PORTRAIT_MODE = bool(RUNNING_IN_TERMUX or os.getenv("CDL_PORTRAIT_MODE"))
+ ENABLE_DEBUG_CRAWLERS = os.getenv("CDL_ENABLE_DEBUG_CRAWLERS")
+ if ENABLE_DEBUG_CRAWLERS:
+diff --git a/cyberdrop_dl/utils/args.py b/cyberdrop_dl/utils/args.py
+index 1e6651696b..dff15f6b53 100644
+--- a/cyberdrop_dl/utils/args.py
++++ b/cyberdrop_dl/utils/args.py
+@@ -5,9 +5,9 @@
+ from argparse import _ArgumentGroup as ArgGroup
+ from collections.abc import Iterable
+ from datetime import date
+-from shutil import get_terminal_size
+ from enum import StrEnum, auto
+ from pathlib import Path
++from shutil import get_terminal_size
+ from typing import TYPE_CHECKING, Self
+ 
+ from pydantic import BaseModel, Field, ValidationError, computed_field, field_validator, model_validator
+@@ -39,8 +39,10 @@ def _check_mutually_exclusive(group: Iterable, msg: str) -> None:
+     if sum(1 for value in group if value) >= 2:
+         raise ValueError(msg)
+ 
++
+ def check_for_portrait() -> bool:
+     """Check if CDL is being run in portrait mode based on a few conditions."""
++
+     def check_terminal_size():
+         terminal_size = get_terminal_size()
+         width, height = terminal_size.columns, terminal_size.lines

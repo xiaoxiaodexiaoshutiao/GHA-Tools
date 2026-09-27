@@ -1,0 +1,339 @@
+﻿2025-03-20T16:00:31.2128302Z Current runner version: '2.322.0'
+2025-03-20T16:00:31.2152295Z ##[group]Operating System
+2025-03-20T16:00:31.2153139Z Ubuntu
+2025-03-20T16:00:31.2153586Z 24.04.2
+2025-03-20T16:00:31.2154067Z LTS
+2025-03-20T16:00:31.2154587Z ##[endgroup]
+2025-03-20T16:00:31.2155046Z ##[group]Runner Image
+2025-03-20T16:00:31.2155621Z Image: ubuntu-24.04
+2025-03-20T16:00:31.2156130Z Version: 20250316.1.0
+2025-03-20T16:00:31.2157172Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250316.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-20T16:00:31.2158575Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250316.1
+2025-03-20T16:00:31.2159527Z ##[endgroup]
+2025-03-20T16:00:31.2160312Z ##[group]Runner Image Provisioner
+2025-03-20T16:00:31.2160870Z 2.0.422.1
+2025-03-20T16:00:31.2161374Z ##[endgroup]
+2025-03-20T16:00:31.2163864Z ##[group]GITHUB_TOKEN Permissions
+2025-03-20T16:00:31.2166210Z Actions: write
+2025-03-20T16:00:31.2167023Z Attestations: write
+2025-03-20T16:00:31.2167585Z Checks: write
+2025-03-20T16:00:31.2168137Z Contents: write
+2025-03-20T16:00:31.2168603Z Deployments: write
+2025-03-20T16:00:31.2169085Z Discussions: write
+2025-03-20T16:00:31.2169600Z Issues: write
+2025-03-20T16:00:31.2170329Z Metadata: read
+2025-03-20T16:00:31.2170790Z Models: read
+2025-03-20T16:00:31.2171295Z Packages: write
+2025-03-20T16:00:31.2171784Z Pages: write
+2025-03-20T16:00:31.2172219Z PullRequests: write
+2025-03-20T16:00:31.2172776Z RepositoryProjects: write
+2025-03-20T16:00:31.2173295Z SecurityEvents: write
+2025-03-20T16:00:31.2173803Z Statuses: write
+2025-03-20T16:00:31.2174277Z ##[endgroup]
+2025-03-20T16:00:31.2176274Z Secret source: Actions
+2025-03-20T16:00:31.2177022Z Prepare workflow directory
+2025-03-20T16:00:31.2897386Z Prepare all required actions
+2025-03-20T16:00:31.2952369Z Getting action download info
+2025-03-20T16:00:31.6664301Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-20T16:00:31.8123790Z Complete job name: changelog
+2025-03-20T16:00:31.8701208Z ##[group]Run actions/checkout@v4
+2025-03-20T16:00:31.8702011Z with:
+2025-03-20T16:00:31.8702366Z   fetch-depth: 0
+2025-03-20T16:00:31.8702783Z   repository: cta-observatory/ctapipe
+2025-03-20T16:00:31.8703421Z   token: ***
+2025-03-20T16:00:31.8703780Z   ssh-strict: true
+2025-03-20T16:00:31.8704156Z   ssh-user: git
+2025-03-20T16:00:31.8704535Z   persist-credentials: true
+2025-03-20T16:00:31.8704965Z   clean: true
+2025-03-20T16:00:31.8705336Z   sparse-checkout-cone-mode: true
+2025-03-20T16:00:31.8705800Z   fetch-tags: false
+2025-03-20T16:00:31.8706184Z   show-progress: true
+2025-03-20T16:00:31.8706560Z   lfs: false
+2025-03-20T16:00:31.8706912Z   submodules: false
+2025-03-20T16:00:31.8707295Z   set-safe-directory: true
+2025-03-20T16:00:31.8707907Z env:
+2025-03-20T16:00:31.8708285Z   FRAGMENT_NAME_PREFIX: docs/changes/2722
+2025-03-20T16:00:31.8708784Z ##[endgroup]
+2025-03-20T16:00:32.0416681Z Syncing repository: cta-observatory/ctapipe
+2025-03-20T16:00:32.0418926Z ##[group]Getting Git version info
+2025-03-20T16:00:32.0419922Z Working directory is '/home/runner/work/ctapipe/ctapipe'
+2025-03-20T16:00:32.0421045Z [command]/usr/bin/git version
+2025-03-20T16:00:32.0473084Z git version 2.48.1
+2025-03-20T16:00:32.0500483Z ##[endgroup]
+2025-03-20T16:00:32.0515993Z Temporarily overriding HOME='/home/runner/work/_temp/5c60023a-7fc3-4d21-8a36-09a24d911ba2' before making global git config changes
+2025-03-20T16:00:32.0518718Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-20T16:00:32.0522703Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ctapipe/ctapipe
+2025-03-20T16:00:32.0558833Z Deleting the contents of '/home/runner/work/ctapipe/ctapipe'
+2025-03-20T16:00:32.0563363Z ##[group]Initializing the repository
+2025-03-20T16:00:32.0568201Z [command]/usr/bin/git init /home/runner/work/ctapipe/ctapipe
+2025-03-20T16:00:32.0638068Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-20T16:00:32.0640511Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-20T16:00:32.0641937Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-20T16:00:32.0643185Z hint:
+2025-03-20T16:00:32.0644007Z hint: 	git config --global init.defaultBranch <name>
+2025-03-20T16:00:32.0645011Z hint:
+2025-03-20T16:00:32.0645621Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-20T16:00:32.0646537Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-20T16:00:32.0647586Z hint:
+2025-03-20T16:00:32.0648243Z hint: 	git branch -m <name>
+2025-03-20T16:00:32.0649089Z Initialized empty Git repository in /home/runner/work/ctapipe/ctapipe/.git/
+2025-03-20T16:00:32.0654186Z [command]/usr/bin/git remote add origin https://github.com/cta-observatory/ctapipe
+2025-03-20T16:00:32.0688951Z ##[endgroup]
+2025-03-20T16:00:32.0690719Z ##[group]Disabling automatic garbage collection
+2025-03-20T16:00:32.0694372Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-20T16:00:32.0724188Z ##[endgroup]
+2025-03-20T16:00:32.0725566Z ##[group]Setting up auth
+2025-03-20T16:00:32.0732262Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-20T16:00:32.0763613Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-20T16:00:32.1045611Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-20T16:00:32.1078053Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-20T16:00:32.1312252Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-20T16:00:32.1349118Z ##[endgroup]
+2025-03-20T16:00:32.1350895Z ##[group]Fetching the repository
+2025-03-20T16:00:32.1362257Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* +6da925316c11a699265a8041be1b0418d5167796:refs/remotes/pull/2722/merge
+2025-03-20T16:00:34.9279968Z From https://github.com/cta-observatory/ctapipe
+2025-03-20T16:00:34.9284377Z  * [new branch]        2158-make-qualityquery-a-telescopecomponent-and-list-of-checks-a-telescopeparameter -> origin/2158-make-qualityquery-a-telescopecomponent-and-list-of-checks-a-telescopeparameter
+2025-03-20T16:00:34.9289110Z  * [new branch]        2d_coordinates          -> origin/2d_coordinates
+2025-03-20T16:00:34.9291061Z  * [new branch]        3.10docs                -> origin/3.10docs
+2025-03-20T16:00:34.9292900Z  * [new branch]        ImPACT_multisite        -> origin/ImPACT_multisite
+2025-03-20T16:00:34.9294877Z  * [new branch]        ImPACT_tests            -> origin/ImPACT_tests
+2025-03-20T16:00:34.9296813Z  * [new branch]        ManyRecos               -> origin/ManyRecos
+2025-03-20T16:00:34.9298733Z  * [new branch]        Pointing                -> origin/Pointing
+2025-03-20T16:00:34.9301018Z  * [new branch]        PointingCalculator      -> origin/PointingCalculator
+2025-03-20T16:00:34.9303640Z  * [new branch]        StabilizeMuonIntensityFit -> origin/StabilizeMuonIntensityFit
+2025-03-20T16:00:34.9306207Z  * [new branch]        StarFitter              -> origin/StarFitter
+2025-03-20T16:00:34.9308612Z  * [new branch]        acada_lst_integration_tests -> origin/acada_lst_integration_tests
+2025-03-20T16:00:34.9311297Z  * [new branch]        add_mono_dl2_guide      -> origin/add_mono_dl2_guide
+2025-03-20T16:00:34.9313636Z  * [new branch]        algorithm_prefixes_ml   -> origin/algorithm_prefixes_ml
+2025-03-20T16:00:34.9316192Z  * [new branch]        amplitude_correction    -> origin/amplitude_correction
+2025-03-20T16:00:34.9318608Z  * [new branch]        angle_hist              -> origin/angle_hist
+2025-03-20T16:00:34.9321672Z  * [new branch]        angular-error-regressor -> origin/angular-error-regressor
+2025-03-20T16:00:34.9324825Z  * [new branch]        apply-models-check-subarrays -> origin/apply-models-check-subarrays
+2025-03-20T16:00:34.9327736Z  * [new branch]        astropy-6.1rc1          -> origin/astropy-6.1rc1
+2025-03-20T16:00:34.9330244Z  * [new branch]        astropy5.1              -> origin/astropy5.1
+2025-03-20T16:00:34.9332580Z  * [new branch]        astropy6                -> origin/astropy6
+2025-03-20T16:00:34.9335250Z  * [new branch]        atmosphere_improvements -> origin/atmosphere_improvements
+2025-03-20T16:00:34.9338237Z  * [new branch]        better_release_drafter  -> origin/better_release_drafter
+2025-03-20T16:00:34.9341087Z  * [new branch]        build_on_windows        -> origin/build_on_windows
+2025-03-20T16:00:34.9343710Z  * [new branch]        calibpipe_nightly       -> origin/calibpipe_nightly
+2025-03-20T16:00:34.9346492Z  * [new branch]        cep04-module-structure  -> origin/cep04-module-structure
+2025-03-20T16:00:34.9349433Z  * [new branch]        cep2_acceptance         -> origin/cep2_acceptance
+2025-03-20T16:00:34.9352498Z  * [new branch]        changelog_check_main    -> origin/changelog_check_main
+2025-03-20T16:00:34.9355882Z  * [new branch]        ci_pipeline_for_ctao_sonarqube -> origin/ci_pipeline_for_ctao_sonarqube
+2025-03-20T16:00:34.9359397Z  * [new branch]        cleaning_component      -> origin/cleaning_component
+2025-03-20T16:00:34.9362577Z  * [new branch]        codecov-v3              -> origin/codecov-v3
+2025-03-20T16:00:34.9365431Z  * [new branch]        container_reprs         -> origin/container_reprs
+2025-03-20T16:00:34.9368442Z  * [new branch]        container_structure     -> origin/container_structure
+2025-03-20T16:00:34.9372015Z  * [new branch]        curved_cameras          -> origin/curved_cameras
+2025-03-20T16:00:34.9374446Z  * [new branch]        debug_cache             -> origin/debug_cache
+2025-03-20T16:00:34.9377029Z  * [new branch]        debug_ci_failure        -> origin/debug_ci_failure
+2025-03-20T16:00:34.9379536Z  * [new branch]        deep_copy_event         -> origin/deep_copy_event
+2025-03-20T16:00:34.9382278Z  * [new branch]        default_config          -> origin/default_config
+2025-03-20T16:00:34.9384763Z  * [new branch]        dict_reader             -> origin/dict_reader
+2025-03-20T16:00:34.9387080Z  * [new branch]        docs_fixup              -> origin/docs_fixup
+2025-03-20T16:00:34.9389428Z  * [new branch]        drop_camera_frame       -> origin/drop_camera_frame
+2025-03-20T16:00:34.9392409Z  * [new branch]        error-deprecationwarnings -> origin/error-deprecationwarnings
+2025-03-20T16:00:34.9395550Z  * [new branch]        error_camera_from_name  -> origin/error_camera_from_name
+2025-03-20T16:00:34.9398060Z  * [new branch]        event_pointing          -> origin/event_pointing
+2025-03-20T16:00:34.9400841Z  * [new branch]        event_type_enum         -> origin/event_type_enum
+2025-03-20T16:00:34.9403406Z  * [new branch]        eventio2                -> origin/eventio2
+2025-03-20T16:00:34.9405763Z  * [new branch]        eventio_2               -> origin/eventio_2
+2025-03-20T16:00:34.9408223Z  * [new branch]        eventsource_dl2         -> origin/eventsource_dl2
+2025-03-20T16:00:34.9410851Z  * [new branch]        ex_meta_join_tables     -> origin/ex_meta_join_tables
+2025-03-20T16:00:34.9413276Z  * [new branch]        faster-tests            -> origin/faster-tests
+2025-03-20T16:00:34.9415925Z  * [new branch]        feature/context_metadata -> origin/feature/context_metadata
+2025-03-20T16:00:34.9418752Z  * [new branch]        feature/write_dl0       -> origin/feature/write_dl0
+2025-03-20T16:00:34.9421587Z  * [new branch]        feature_aggregator      -> origin/feature_aggregator
+2025-03-20T16:00:34.9424056Z  * [new branch]        feature_gen_overwrite   -> origin/feature_gen_overwrite
+2025-03-20T16:00:34.9426992Z  * [new branch]        feature_generator_no_mutation -> origin/feature_generator_no_mutation
+2025-03-20T16:00:34.9430165Z  * [new branch]        fill_missing_true_image -> origin/fill_missing_true_image
+2025-03-20T16:00:34.9432777Z  * [new branch]        fix-1785                -> origin/fix-1785
+2025-03-20T16:00:34.9435453Z  * [new branch]        fix-impact_predict_docstring -> origin/fix-impact_predict_docstring
+2025-03-20T16:00:34.9438523Z  * [new branch]        fix_2366_def_progress_bar -> origin/fix_2366_def_progress_bar
+2025-03-20T16:00:34.9441321Z  * [new branch]        fix_deprecated_setup_keys -> origin/fix_deprecated_setup_keys
+2025-03-20T16:00:34.9443948Z  * [new branch]        fix_docs_build          -> origin/fix_docs_build
+2025-03-20T16:00:34.9446290Z  * [new branch]        fix_docstring           -> origin/fix_docstring
+2025-03-20T16:00:34.9448901Z  * [new branch]        fix_hdf5eventsource_len -> origin/fix_hdf5eventsource_len
+2025-03-20T16:00:34.9451567Z  * [new branch]        fix_logging             -> origin/fix_logging
+2025-03-20T16:00:34.9453785Z  * [new branch]        fix_show_config         -> origin/fix_show_config
+2025-03-20T16:00:34.9456056Z  * [new branch]        fix_sonar_forks         -> origin/fix_sonar_forks
+2025-03-20T16:00:34.9458404Z  * [new branch]        fix_subarray_info       -> origin/fix_subarray_info
+2025-03-20T16:00:34.9460860Z  * [new branch]        fix_tableloader         -> origin/fix_tableloader
+2025-03-20T16:00:34.9463155Z  * [new branch]        fix_tables_ci           -> origin/fix_tables_ci
+2025-03-20T16:00:34.9465413Z  * [new branch]        fix_tel_grouping        -> origin/fix_tel_grouping
+2025-03-20T16:00:34.9467648Z  * [new branch]        fix_traits              -> origin/fix_traits
+2025-03-20T16:00:34.9470228Z  * [new branch]        fix_transforms_camgeom  -> origin/fix_transforms_camgeom
+2025-03-20T16:00:34.9472728Z  * [new branch]        gh-pages                -> origin/gh-pages
+2025-03-20T16:00:34.9475019Z  * [new branch]        hdf5_high_res_time      -> origin/hdf5_high_res_time
+2025-03-20T16:00:34.9477723Z  * [new branch]        hillas_main_island      -> origin/hillas_main_island
+2025-03-20T16:00:34.9480451Z  * [new branch]        hillas_psi_uncertainty_ruo -> origin/hillas_psi_uncertainty_ruo
+2025-03-20T16:00:34.9484263Z  * [new branch]        import_ltschain_flatfield_and_pedestal_components -> origin/import_ltschain_flatfield_and_pedestal_components
+2025-03-20T16:00:34.9487629Z  * [new branch]        improve_peak_index      -> origin/improve_peak_index
+2025-03-20T16:00:34.9490171Z  * [new branch]        info_woraround          -> origin/info_woraround
+2025-03-20T16:00:34.9492321Z  * [new branch]        ipdb                    -> origin/ipdb
+2025-03-20T16:00:34.9494371Z  * [new branch]        irf-tool                -> origin/irf-tool
+2025-03-20T16:00:34.9496518Z  * [new branch]        jit_eigvals             -> origin/jit_eigvals
+2025-03-20T16:00:34.9498837Z  * [new branch]        json_config_provenance  -> origin/json_config_provenance
+2025-03-20T16:00:34.9501297Z  * [new branch]        jupytext                -> origin/jupytext
+2025-03-20T16:00:34.9503528Z  * [new branch]        mailmap_update          -> origin/mailmap_update
+2025-03-20T16:00:34.9505686Z  * [new branch]        main                    -> origin/main
+2025-03-20T16:00:34.9507804Z  * [new branch]        main_tools              -> origin/main_tools
+2025-03-20T16:00:34.9510450Z  * [new branch]        merge-simulated-impact  -> origin/merge-simulated-impact
+2025-03-20T16:00:34.9513313Z  * [new branch]        merge_chunks_single_obs_id -> origin/merge_chunks_single_obs_id
+2025-03-20T16:00:34.9515770Z  * [new branch]        micromamba2             -> origin/micromamba2
+2025-03-20T16:00:34.9518296Z  * [new branch]        mon_data_storage        -> origin/mon_data_storage
+2025-03-20T16:00:34.9521551Z  * [new branch]        more_pytest_header_packages -> origin/more_pytest_header_packages
+2025-03-20T16:00:34.9525015Z  * [new branch]        move_interpolator       -> origin/move_interpolator
+2025-03-20T16:00:34.9527871Z  * [new branch]        multiplicities          -> origin/multiplicities
+2025-03-20T16:00:34.9530676Z  * [new branch]        muon-parameters-update  -> origin/muon-parameters-update
+2025-03-20T16:00:34.9533357Z  * [new branch]        nousersite              -> origin/nousersite
+2025-03-20T16:00:34.9535549Z  * [new branch]        numba_muon_fitter       -> origin/numba_muon_fitter
+2025-03-20T16:00:34.9537680Z  * [new branch]        numba_rng               -> origin/numba_rng
+2025-03-20T16:00:34.9539830Z  * [new branch]        numpy_int               -> origin/numpy_int
+2025-03-20T16:00:34.9541825Z  * [new branch]        oldest_deps             -> origin/oldest_deps
+2025-03-20T16:00:34.9544026Z  * [new branch]        only_main_island        -> origin/only_main_island
+2025-03-20T16:00:34.9546330Z  * [new branch]        only_subarray_merge     -> origin/only_subarray_merge
+2025-03-20T16:00:34.9548540Z  * [new branch]        plugins                 -> origin/plugins
+2025-03-20T16:00:34.9550960Z  * [new branch]        pointing_info_obs_block -> origin/pointing_info_obs_block
+2025-03-20T16:00:34.9553314Z  * [new branch]        py311-mamba             -> origin/py311-mamba
+2025-03-20T16:00:34.9555538Z  * [new branch]        quality_query_numexpr   -> origin/quality_query_numexpr
+2025-03-20T16:00:34.9557853Z  * [new branch]        reader_random_access    -> origin/reader_random_access
+2025-03-20T16:00:34.9560251Z  * [new branch]        reco_plot               -> origin/reco_plot
+2025-03-20T16:00:34.9562389Z  * [new branch]        rect_converter          -> origin/rect_converter
+2025-03-20T16:00:34.9564602Z  * [new branch]        remove_from_config      -> origin/remove_from_config
+2025-03-20T16:00:34.9566986Z  * [new branch]        remove_hillas_cameraframe -> origin/remove_hillas_cameraframe
+2025-03-20T16:00:34.9569400Z  * [new branch]        remove_old_dm           -> origin/remove_old_dm
+2025-03-20T16:00:34.9572013Z  * [new branch]        rename_camera_containers -> origin/rename_camera_containers
+2025-03-20T16:00:34.9574594Z  * [new branch]        replace-codacy-with-ruff -> origin/replace-codacy-with-ruff
+2025-03-20T16:00:34.9577684Z  * [new branch]        revert-2131-set_line_hillas -> origin/revert-2131-set_line_hillas
+2025-03-20T16:00:34.9580288Z  * [new branch]        rtd_config              -> origin/rtd_config
+2025-03-20T16:00:34.9582191Z  * [new branch]        run_ruff                -> origin/run_ruff
+2025-03-20T16:00:34.9584076Z  * [new branch]        scipy_rotvec            -> origin/scipy_rotvec
+2025-03-20T16:00:34.9586256Z  * [new branch]        shortform_aliases       -> origin/shortform_aliases
+2025-03-20T16:00:34.9588623Z  * [new branch]        shower_axis_least_squares -> origin/shower_axis_least_squares
+2025-03-20T16:00:34.9591115Z  * [new branch]        sim_pointing            -> origin/sim_pointing
+2025-03-20T16:00:34.9593263Z  * [new branch]        simtel_adc_sums         -> origin/simtel_adc_sums
+2025-03-20T16:00:34.9595538Z  * [new branch]        simtel_metadata_warning -> origin/simtel_metadata_warning
+2025-03-20T16:00:34.9597810Z  * [new branch]        sonar_smells            -> origin/sonar_smells
+2025-03-20T16:00:34.9600155Z  * [new branch]        sphinx5                 -> origin/sphinx5
+2025-03-20T16:00:34.9602428Z  * [new branch]        stale-action            -> origin/stale-action
+2025-03-20T16:00:34.9604904Z  * [new branch]        stereo_combiner         -> origin/stereo_combiner
+2025-03-20T16:00:34.9607221Z  * [new branch]        subarray_id             -> origin/subarray_id
+2025-03-20T16:00:34.9609792Z  * [new branch]        subarray_selection      -> origin/subarray_selection
+2025-03-20T16:00:34.9612606Z  * [new branch]        support_earth_location  -> origin/support_earth_location
+2025-03-20T16:00:34.9615353Z  * [new branch]        table-quality-query     -> origin/table-quality-query
+2025-03-20T16:00:34.9618071Z  * [new branch]        tel_trigger_indices     -> origin/tel_trigger_indices
+2025-03-20T16:00:34.9621049Z  * [new branch]        tool_raise_exception_debug -> origin/tool_raise_exception_debug
+2025-03-20T16:00:34.9623887Z  * [new branch]        true_image_dtype        -> origin/true_image_dtype
+2025-03-20T16:00:34.9626735Z  * [new branch]        typed_fields            -> origin/typed_fields
+2025-03-20T16:00:34.9629254Z  * [new branch]        update_citation         -> origin/update_citation
+2025-03-20T16:00:34.9632074Z  * [new branch]        update_citation-1       -> origin/update_citation-1
+2025-03-20T16:00:34.9634499Z  * [new branch]        update_env              -> origin/update_env
+2025-03-20T16:00:34.9636967Z  * [new branch]        update_mailmap          -> origin/update_mailmap
+2025-03-20T16:00:34.9639510Z  * [new branch]        update_mailmap_2        -> origin/update_mailmap_2
+2025-03-20T16:00:34.9642385Z  * [new branch]        update_update_impact    -> origin/update_update_impact
+2025-03-20T16:00:34.9645258Z  * [new branch]        upload_single_coverage  -> origin/upload_single_coverage
+2025-03-20T16:00:34.9647910Z  * [new branch]        v0.10.5-rtd             -> origin/v0.10.5-rtd
+2025-03-20T16:00:34.9650333Z  * [new branch]        v0.10.x                 -> origin/v0.10.x
+2025-03-20T16:00:34.9652689Z  * [new branch]        v0.11.0-rtd             -> origin/v0.11.0-rtd
+2025-03-20T16:00:34.9654950Z  * [new branch]        v0.12.0-rtd             -> origin/v0.12.0-rtd
+2025-03-20T16:00:34.9657237Z  * [new branch]        validate                -> origin/validate
+2025-03-20T16:00:34.9659495Z  * [new branch]        viewer                  -> origin/viewer
+2025-03-20T16:00:34.9661927Z  * [new branch]        write_calib_events      -> origin/write_calib_events
+2025-03-20T16:00:34.9664435Z  * [new branch]        zenodo                  -> origin/zenodo
+2025-03-20T16:00:34.9666341Z  * [new tag]           v0.10.0                 -> v0.10.0
+2025-03-20T16:00:34.9667670Z  * [new tag]           v0.10.0.post1           -> v0.10.0.post1
+2025-03-20T16:00:34.9669343Z  * [new tag]           v0.10.1                 -> v0.10.1
+2025-03-20T16:00:34.9670947Z  * [new tag]           v0.10.2                 -> v0.10.2
+2025-03-20T16:00:34.9672393Z  * [new tag]           v0.10.3                 -> v0.10.3
+2025-03-20T16:00:34.9673677Z  * [new tag]           v0.10.4                 -> v0.10.4
+2025-03-20T16:00:34.9674961Z  * [new tag]           v0.10.5                 -> v0.10.5
+2025-03-20T16:00:34.9676212Z  * [new tag]           v0.11.0                 -> v0.11.0
+2025-03-20T16:00:34.9677651Z  * [new tag]           v0.12.0                 -> v0.12.0
+2025-03-20T16:00:34.9679040Z  * [new tag]           v0.13.0                 -> v0.13.0
+2025-03-20T16:00:34.9680543Z  * [new tag]           v0.14.0                 -> v0.14.0
+2025-03-20T16:00:34.9681787Z  * [new tag]           v0.15.0                 -> v0.15.0
+2025-03-20T16:00:34.9683040Z  * [new tag]           v0.16.0                 -> v0.16.0
+2025-03-20T16:00:34.9684290Z  * [new tag]           v0.17.0                 -> v0.17.0
+2025-03-20T16:00:34.9685522Z  * [new tag]           v0.18.0                 -> v0.18.0
+2025-03-20T16:00:34.9686760Z  * [new tag]           v0.18.1                 -> v0.18.1
+2025-03-20T16:00:34.9688015Z  * [new tag]           v0.19.0                 -> v0.19.0
+2025-03-20T16:00:34.9689260Z  * [new tag]           v0.19.1                 -> v0.19.1
+2025-03-20T16:00:34.9690724Z  * [new tag]           v0.19.2                 -> v0.19.2
+2025-03-20T16:00:34.9691980Z  * [new tag]           v0.19.3                 -> v0.19.3
+2025-03-20T16:00:34.9693213Z  * [new tag]           v0.1r0                  -> v0.1r0
+2025-03-20T16:00:34.9694441Z  * [new tag]           v0.2.0                  -> v0.2.0
+2025-03-20T16:00:34.9695666Z  * [new tag]           v0.20.0                 -> v0.20.0
+2025-03-20T16:00:34.9696905Z  * [new tag]           v0.21.0                 -> v0.21.0
+2025-03-20T16:00:34.9698190Z  * [new tag]           v0.21.1                 -> v0.21.1
+2025-03-20T16:00:34.9699404Z  * [new tag]           v0.21.2                 -> v0.21.2
+2025-03-20T16:00:34.9701116Z  * [new tag]           v0.22.0                 -> v0.22.0
+2025-03-20T16:00:34.9702418Z  * [new tag]           v0.23.0                 -> v0.23.0
+2025-03-20T16:00:34.9703674Z  * [new tag]           v0.23.1                 -> v0.23.1
+2025-03-20T16:00:34.9705082Z  * [new tag]           v0.23.2                 -> v0.23.2
+2025-03-20T16:00:34.9706318Z  * [new tag]           v0.3.0                  -> v0.3.0
+2025-03-20T16:00:34.9707550Z  * [new tag]           v0.3.1                  -> v0.3.1
+2025-03-20T16:00:34.9708775Z  * [new tag]           v0.3.2                  -> v0.3.2
+2025-03-20T16:00:34.9710258Z  * [new tag]           v0.3.3                  -> v0.3.3
+2025-03-20T16:00:34.9711491Z  * [new tag]           v0.3.4                  -> v0.3.4
+2025-03-20T16:00:34.9712706Z  * [new tag]           v0.4.0                  -> v0.4.0
+2025-03-20T16:00:34.9713925Z  * [new tag]           v0.5.0                  -> v0.5.0
+2025-03-20T16:00:34.9715135Z  * [new tag]           v0.5.1                  -> v0.5.1
+2025-03-20T16:00:34.9716490Z  * [new tag]           v0.5.2                  -> v0.5.2
+2025-03-20T16:00:34.9717712Z  * [new tag]           v0.6.0                  -> v0.6.0
+2025-03-20T16:00:34.9719203Z  * [new tag]           v0.6.1                  -> v0.6.1
+2025-03-20T16:00:34.9720771Z  * [new tag]           v0.6.2                  -> v0.6.2
+2025-03-20T16:00:34.9722757Z  * [new tag]           v0.7.0                  -> v0.7.0
+2025-03-20T16:00:34.9724706Z  * [new tag]           v0.8.0                  -> v0.8.0
+2025-03-20T16:00:34.9726064Z  * [new tag]           v0.9.0                  -> v0.9.0
+2025-03-20T16:00:34.9727298Z  * [new tag]           v0.9.1                  -> v0.9.1
+2025-03-20T16:00:34.9728794Z  * [new ref]           6da925316c11a699265a8041be1b0418d5167796 -> pull/2722/merge
+2025-03-20T16:00:34.9734394Z ##[endgroup]
+2025-03-20T16:00:34.9736382Z ##[group]Determining the checkout info
+2025-03-20T16:00:34.9738252Z ##[endgroup]
+2025-03-20T16:00:34.9741270Z [command]/usr/bin/git sparse-checkout disable
+2025-03-20T16:00:34.9778780Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-20T16:00:34.9808556Z ##[group]Checking out the ref
+2025-03-20T16:00:34.9812191Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/2722/merge
+2025-03-20T16:00:35.0357506Z Note: switching to 'refs/remotes/pull/2722/merge'.
+2025-03-20T16:00:35.0358742Z 
+2025-03-20T16:00:35.0359999Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-20T16:00:35.0362212Z changes and commit them, and you can discard any commits you make in this
+2025-03-20T16:00:35.0364949Z state without impacting any branches by switching back to a branch.
+2025-03-20T16:00:35.0366324Z 
+2025-03-20T16:00:35.0367464Z If you want to create a new branch to retain commits you create, you may
+2025-03-20T16:00:35.0370328Z do so (now or later) by using -c with the switch command. Example:
+2025-03-20T16:00:35.0371817Z 
+2025-03-20T16:00:35.0372458Z   git switch -c <new-branch-name>
+2025-03-20T16:00:35.0373528Z 
+2025-03-20T16:00:35.0374123Z Or undo this operation with:
+2025-03-20T16:00:35.0375102Z 
+2025-03-20T16:00:35.0375615Z   git switch -
+2025-03-20T16:00:35.0376371Z 
+2025-03-20T16:00:35.0377737Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-20T16:00:35.0379881Z 
+2025-03-20T16:00:35.0381982Z HEAD is now at 6da92531 Merge a03d8e44618844308910e15e021900496b7d3d53 into e5999e2667ddc7253dd86703a46b497fc3ae7ae0
+2025-03-20T16:00:35.0387049Z ##[endgroup]
+2025-03-20T16:00:35.0417782Z [command]/usr/bin/git log -1 --format=%H
+2025-03-20T16:00:35.0442510Z 6da925316c11a699265a8041be1b0418d5167796
+2025-03-20T16:00:35.0696524Z ##[group]Run find docs/changes -type f | \
+2025-03-20T16:00:35.0697744Z [36;1mfind docs/changes -type f | \[0m
+2025-03-20T16:00:35.0699506Z [36;1mgrep -P "${FRAGMENT_NAME_PREFIX}\.(feature|bugfix|api|datamodel|optimization|maintenance)\.rst"[0m
+2025-03-20T16:00:35.0753667Z shell: /usr/bin/bash -e {0}
+2025-03-20T16:00:35.0754578Z env:
+2025-03-20T16:00:35.0755341Z   FRAGMENT_NAME_PREFIX: docs/changes/2722
+2025-03-20T16:00:35.0756371Z ##[endgroup]
+2025-03-20T16:00:35.0886695Z ##[error]Process completed with exit code 1.
+2025-03-20T16:00:35.1128833Z Post job cleanup.
+2025-03-20T16:00:35.2092046Z [command]/usr/bin/git version
+2025-03-20T16:00:35.2130662Z git version 2.48.1
+2025-03-20T16:00:35.2180633Z Temporarily overriding HOME='/home/runner/work/_temp/025ff5b1-6a8a-4125-87a4-6509bea22ac9' before making global git config changes
+2025-03-20T16:00:35.2185002Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-20T16:00:35.2188993Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ctapipe/ctapipe
+2025-03-20T16:00:35.2223223Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-20T16:00:35.2257989Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-20T16:00:35.2490764Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-20T16:00:35.2514453Z http.https://github.com/.extraheader
+2025-03-20T16:00:35.2526824Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-20T16:00:35.2561175Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-20T16:00:35.2908446Z Cleaning up orphan processes

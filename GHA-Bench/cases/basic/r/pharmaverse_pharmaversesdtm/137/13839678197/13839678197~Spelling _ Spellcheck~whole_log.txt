@@ -1,0 +1,519 @@
+2025-03-13T16:27:22.2741120Z Requested labels: ubuntu-latest
+2025-03-13T16:27:22.2741394Z Job defined at: pharmaverse/admiralci/.github/workflows/spellcheck.yml@refs/heads/main
+2025-03-13T16:27:22.2741885Z Reusable workflow chain:
+2025-03-13T16:27:22.2742158Z pharmaverse/pharmaversesdtm/.github/workflows/common.yml@refs/pull/137/merge (0614d6a78c91e024f8d527dc2bb407524f506051)
+2025-03-13T16:27:22.2742302Z -> pharmaverse/admiralci/.github/workflows/spellcheck.yml@refs/heads/main (29d52283c4ce3bae689d6f44fca54e9f98994aa1)
+2025-03-13T16:27:22.2742439Z Waiting for a runner to pick up this job...
+2025-03-13T16:27:24.0458453Z Job is waiting for a hosted runner to come online.
+2025-03-13T16:27:28.7543982Z Job is about to start running on the hosted runner: GitHub Actions 3 (hosted)
+2025-03-13T16:27:31.4227885Z Current runner version: '2.322.0'
+2025-03-13T16:27:31.4254328Z ##[group]Operating System
+2025-03-13T16:27:31.4255199Z Ubuntu
+2025-03-13T16:27:31.4255737Z 24.04.2
+2025-03-13T16:27:31.4256208Z LTS
+2025-03-13T16:27:31.4256722Z ##[endgroup]
+2025-03-13T16:27:31.4257267Z ##[group]Runner Image
+2025-03-13T16:27:31.4257833Z Image: ubuntu-24.04
+2025-03-13T16:27:31.4258404Z Version: 20250309.1.0
+2025-03-13T16:27:31.4259437Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250309.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-13T16:27:31.4260787Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250309.1
+2025-03-13T16:27:31.4261739Z ##[endgroup]
+2025-03-13T16:27:31.4262457Z ##[group]Runner Image Provisioner
+2025-03-13T16:27:31.4263043Z 2.0.422.1
+2025-03-13T16:27:31.4263611Z ##[endgroup]
+2025-03-13T16:27:31.4265785Z ##[group]GITHUB_TOKEN Permissions
+2025-03-13T16:27:31.4267905Z Actions: write
+2025-03-13T16:27:31.4268684Z Attestations: write
+2025-03-13T16:27:31.4269398Z Checks: write
+2025-03-13T16:27:31.4269907Z Contents: write
+2025-03-13T16:27:31.4270487Z Deployments: write
+2025-03-13T16:27:31.4271030Z Discussions: write
+2025-03-13T16:27:31.4271564Z Issues: write
+2025-03-13T16:27:31.4272252Z Metadata: read
+2025-03-13T16:27:31.4272815Z Packages: write
+2025-03-13T16:27:31.4273349Z Pages: write
+2025-03-13T16:27:31.4273911Z PullRequests: write
+2025-03-13T16:27:31.4274454Z RepositoryProjects: write
+2025-03-13T16:27:31.4275012Z SecurityEvents: write
+2025-03-13T16:27:31.4275604Z Statuses: write
+2025-03-13T16:27:31.4276099Z ##[endgroup]
+2025-03-13T16:27:31.4279133Z Secret source: Actions
+2025-03-13T16:27:31.4280161Z Prepare workflow directory
+2025-03-13T16:27:31.4934778Z Prepare all required actions
+2025-03-13T16:27:31.4970727Z Getting action download info
+2025-03-13T16:27:31.9900868Z Download action repository 'tj-actions/branch-names@v8' (SHA:6871f53176ad61624f978536bbf089c574dc19a2)
+2025-03-13T16:27:32.4143174Z Download action repository 'actions/checkout@v4.2.2' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-13T16:27:32.4566595Z Download action repository 'actions/cache@v4' (SHA:d4323d4df104b026a6aa633fdb11d772146be0bf)
+2025-03-13T16:27:33.0576496Z Download action repository 'insightsengineering/staged-dependencies-action@v1' (SHA:86e7f6ff23a195fdbb814f42967b1aec0ad7486b)
+2025-03-13T16:27:33.4589371Z Download action repository 'insightsengineering/r-spellcheck-action@v3' (SHA:c8d6ea214872d4df484008276a82b2bf5fe00a46)
+2025-03-13T16:27:34.0570830Z Uses: pharmaverse/admiralci/.github/workflows/spellcheck.yml@refs/heads/main (29d52283c4ce3bae689d6f44fca54e9f98994aa1)
+2025-03-13T16:27:34.0573029Z ##[group] Inputs
+2025-03-13T16:27:34.0573357Z   r-version: release
+2025-03-13T16:27:34.0573624Z   exclude: 
+2025-03-13T16:27:34.0573862Z ##[endgroup]
+2025-03-13T16:27:34.0574127Z Complete job name: Spelling / Spellcheck
+2025-03-13T16:27:34.1123795Z ##[group]Checking docker version
+2025-03-13T16:27:34.1136524Z ##[command]/usr/bin/docker version --format '{{.Server.APIVersion}}'
+2025-03-13T16:27:34.2063229Z '1.45'
+2025-03-13T16:27:34.2074401Z Docker daemon API version: '1.45'
+2025-03-13T16:27:34.2074913Z ##[command]/usr/bin/docker version --format '{{.Client.APIVersion}}'
+2025-03-13T16:27:34.2225330Z '1.45'
+2025-03-13T16:27:34.2238510Z Docker client API version: '1.45'
+2025-03-13T16:27:34.2243856Z ##[endgroup]
+2025-03-13T16:27:34.2246399Z ##[group]Clean up resources from previous jobs
+2025-03-13T16:27:34.2251479Z ##[command]/usr/bin/docker ps --all --quiet --no-trunc --filter "label=e684a9"
+2025-03-13T16:27:34.2393478Z ##[command]/usr/bin/docker network prune --force --filter "label=e684a9"
+2025-03-13T16:27:34.2524396Z ##[endgroup]
+2025-03-13T16:27:34.2524740Z ##[group]Create local container network
+2025-03-13T16:27:34.2534033Z ##[command]/usr/bin/docker network create --label e684a9 github_network_4f7c91c25ff347218c453fa59d5c4b40
+2025-03-13T16:27:34.3274433Z 99c75e58906831ce1a325314a2f5e2fad21ffcb84f07fcd73df644b770664611
+2025-03-13T16:27:34.3290467Z ##[endgroup]
+2025-03-13T16:27:34.3313568Z ##[group]Starting job container
+2025-03-13T16:27:34.3334589Z ##[command]/usr/bin/docker --config /home/runner/work/_temp/.docker_cbbbc4c3-2ffb-4775-98df-ed354db76f08 login ghcr.io -u Siddhesh2097 --password-stdin
+2025-03-13T16:27:34.8925160Z ##[command]/usr/bin/docker --config /home/runner/work/_temp/.docker_cbbbc4c3-2ffb-4775-98df-ed354db76f08 pull ghcr.io/pharmaverse/admiralci-release:latest
+2025-03-13T16:27:35.7205402Z latest: Pulling from pharmaverse/admiralci-release
+2025-03-13T16:27:35.9407848Z 6414378b6477: Pulling fs layer
+2025-03-13T16:27:35.9408523Z 69e5d7fd7299: Pulling fs layer
+2025-03-13T16:27:35.9408912Z daa59c8df8ab: Pulling fs layer
+2025-03-13T16:27:35.9409293Z c8dfa4bb1ae7: Pulling fs layer
+2025-03-13T16:27:35.9409666Z 3a65b41a4654: Pulling fs layer
+2025-03-13T16:27:35.9410032Z cc34301daa01: Pulling fs layer
+2025-03-13T16:27:35.9410426Z 4695e7a5e23c: Pulling fs layer
+2025-03-13T16:27:35.9410815Z 37f81ed69a80: Pulling fs layer
+2025-03-13T16:27:35.9411220Z b8441c10fab4: Pulling fs layer
+2025-03-13T16:27:35.9411609Z 4251e3aa7740: Pulling fs layer
+2025-03-13T16:27:35.9412167Z 86af339eba94: Pulling fs layer
+2025-03-13T16:27:35.9412540Z e7686e64df58: Pulling fs layer
+2025-03-13T16:27:35.9412908Z 097adeb3f8be: Pulling fs layer
+2025-03-13T16:27:35.9413270Z 8eec93e5a8b3: Pulling fs layer
+2025-03-13T16:27:35.9413648Z 3026073f4f45: Pulling fs layer
+2025-03-13T16:27:35.9414046Z a83e0e97edf1: Pulling fs layer
+2025-03-13T16:27:35.9414408Z b72924d7a847: Pulling fs layer
+2025-03-13T16:27:35.9414767Z 0d66fb34cfa9: Pulling fs layer
+2025-03-13T16:27:35.9415103Z d848df62afe4: Pulling fs layer
+2025-03-13T16:27:35.9415343Z 33e582cb2d51: Pulling fs layer
+2025-03-13T16:27:35.9415569Z 3df4075a082c: Pulling fs layer
+2025-03-13T16:27:35.9415870Z aa7f062433de: Pulling fs layer
+2025-03-13T16:27:35.9416116Z c8dfa4bb1ae7: Waiting
+2025-03-13T16:27:35.9416333Z 3a65b41a4654: Waiting
+2025-03-13T16:27:35.9416519Z cc34301daa01: Waiting
+2025-03-13T16:27:35.9416811Z b8441c10fab4: Waiting
+2025-03-13T16:27:35.9416994Z 4695e7a5e23c: Waiting
+2025-03-13T16:27:35.9417175Z 097adeb3f8be: Waiting
+2025-03-13T16:27:35.9417409Z 37f81ed69a80: Waiting
+2025-03-13T16:27:35.9417709Z 8eec93e5a8b3: Waiting
+2025-03-13T16:27:35.9417898Z 3026073f4f45: Waiting
+2025-03-13T16:27:35.9418075Z d848df62afe4: Waiting
+2025-03-13T16:27:35.9418331Z 33e582cb2d51: Waiting
+2025-03-13T16:27:35.9418526Z 4251e3aa7740: Waiting
+2025-03-13T16:27:35.9418713Z a83e0e97edf1: Waiting
+2025-03-13T16:27:35.9418903Z 86af339eba94: Waiting
+2025-03-13T16:27:35.9419173Z b72924d7a847: Waiting
+2025-03-13T16:27:35.9419367Z e7686e64df58: Waiting
+2025-03-13T16:27:35.9419552Z 0d66fb34cfa9: Waiting
+2025-03-13T16:27:35.9419737Z aa7f062433de: Waiting
+2025-03-13T16:27:36.2143704Z 69e5d7fd7299: Verifying Checksum
+2025-03-13T16:27:36.2144256Z 69e5d7fd7299: Download complete
+2025-03-13T16:27:36.2392601Z 6414378b6477: Verifying Checksum
+2025-03-13T16:27:36.2393534Z 6414378b6477: Download complete
+2025-03-13T16:27:36.4579805Z c8dfa4bb1ae7: Verifying Checksum
+2025-03-13T16:27:36.4580790Z c8dfa4bb1ae7: Download complete
+2025-03-13T16:27:36.5457032Z 3a65b41a4654: Verifying Checksum
+2025-03-13T16:27:36.5457578Z 3a65b41a4654: Download complete
+2025-03-13T16:27:36.7705328Z cc34301daa01: Verifying Checksum
+2025-03-13T16:27:36.7705930Z cc34301daa01: Download complete
+2025-03-13T16:27:36.8162646Z 4695e7a5e23c: Verifying Checksum
+2025-03-13T16:27:36.8163146Z 4695e7a5e23c: Download complete
+2025-03-13T16:27:36.9802497Z 37f81ed69a80: Download complete
+2025-03-13T16:27:37.0225741Z b8441c10fab4: Verifying Checksum
+2025-03-13T16:27:37.0227294Z b8441c10fab4: Download complete
+2025-03-13T16:27:37.2411217Z 86af339eba94: Verifying Checksum
+2025-03-13T16:27:37.2412673Z 86af339eba94: Download complete
+2025-03-13T16:27:37.2740956Z 4251e3aa7740: Verifying Checksum
+2025-03-13T16:27:37.2741478Z 4251e3aa7740: Download complete
+2025-03-13T16:27:37.2954718Z 6414378b6477: Pull complete
+2025-03-13T16:27:37.4534520Z e7686e64df58: Verifying Checksum
+2025-03-13T16:27:37.4535040Z e7686e64df58: Download complete
+2025-03-13T16:27:37.5033261Z 69e5d7fd7299: Pull complete
+2025-03-13T16:27:37.7425786Z 8eec93e5a8b3: Verifying Checksum
+2025-03-13T16:27:37.7426276Z 8eec93e5a8b3: Download complete
+2025-03-13T16:27:38.1070546Z 3026073f4f45: Download complete
+2025-03-13T16:27:38.3243756Z a83e0e97edf1: Verifying Checksum
+2025-03-13T16:27:38.3244376Z a83e0e97edf1: Download complete
+2025-03-13T16:27:38.6050729Z b72924d7a847: Verifying Checksum
+2025-03-13T16:27:38.6052834Z b72924d7a847: Download complete
+2025-03-13T16:27:38.8163777Z 0d66fb34cfa9: Download complete
+2025-03-13T16:27:39.0995439Z d848df62afe4: Verifying Checksum
+2025-03-13T16:27:39.0996434Z d848df62afe4: Download complete
+2025-03-13T16:27:39.3831671Z 33e582cb2d51: Verifying Checksum
+2025-03-13T16:27:39.3833792Z 33e582cb2d51: Download complete
+2025-03-13T16:27:39.6240731Z 3df4075a082c: Verifying Checksum
+2025-03-13T16:27:39.6241837Z 3df4075a082c: Download complete
+2025-03-13T16:27:41.1586011Z daa59c8df8ab: Verifying Checksum
+2025-03-13T16:27:41.1586485Z daa59c8df8ab: Download complete
+2025-03-13T16:27:42.0196418Z 097adeb3f8be: Verifying Checksum
+2025-03-13T16:27:42.0196930Z 097adeb3f8be: Download complete
+2025-03-13T16:27:43.9399924Z aa7f062433de: Verifying Checksum
+2025-03-13T16:27:43.9400429Z aa7f062433de: Download complete
+2025-03-13T16:27:49.3112450Z daa59c8df8ab: Pull complete
+2025-03-13T16:27:49.3220031Z c8dfa4bb1ae7: Pull complete
+2025-03-13T16:27:49.3345130Z 3a65b41a4654: Pull complete
+2025-03-13T16:27:49.9082977Z cc34301daa01: Pull complete
+2025-03-13T16:27:49.9211156Z 4695e7a5e23c: Pull complete
+2025-03-13T16:27:49.9324593Z 37f81ed69a80: Pull complete
+2025-03-13T16:27:49.9442701Z b8441c10fab4: Pull complete
+2025-03-13T16:27:49.9547477Z 4251e3aa7740: Pull complete
+2025-03-13T16:27:49.9706390Z 86af339eba94: Pull complete
+2025-03-13T16:27:49.9820830Z e7686e64df58: Pull complete
+2025-03-13T16:28:00.0158595Z 097adeb3f8be: Pull complete
+2025-03-13T16:28:00.0280028Z 8eec93e5a8b3: Pull complete
+2025-03-13T16:28:00.7275918Z 3026073f4f45: Pull complete
+2025-03-13T16:28:00.7374702Z a83e0e97edf1: Pull complete
+2025-03-13T16:28:00.7954806Z b72924d7a847: Pull complete
+2025-03-13T16:28:00.8145163Z 0d66fb34cfa9: Pull complete
+2025-03-13T16:28:00.8238219Z d848df62afe4: Pull complete
+2025-03-13T16:28:00.9433426Z 33e582cb2d51: Pull complete
+2025-03-13T16:28:00.9557040Z 3df4075a082c: Pull complete
+2025-03-13T16:28:12.9384383Z aa7f062433de: Pull complete
+2025-03-13T16:28:12.9432909Z Digest: sha256:c96c1e2c1528dafc68aa4f5cc77790033724b77aecf8f96dbf7f5d89492236ec
+2025-03-13T16:28:12.9445542Z Status: Downloaded newer image for ghcr.io/pharmaverse/admiralci-release:latest
+2025-03-13T16:28:12.9458576Z ghcr.io/pharmaverse/admiralci-release:latest
+2025-03-13T16:28:12.9544783Z ##[command]/usr/bin/docker create --name 3f854bbe97794b44b95fd11f5cf292ef_ghcriopharmaverseadmiralcireleaselatest_564e84 --label e684a9 --workdir /__w/pharmaversesdtm/pharmaversesdtm --network github_network_4f7c91c25ff347218c453fa59d5c4b40  -e "HOME=/github/home" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work":"/__w" -v "/home/runner/runners/2.322.0/externals":"/__e":ro -v "/home/runner/work/_temp":"/__w/_temp" -v "/home/runner/work/_actions":"/__w/_actions" -v "/opt/hostedtoolcache":"/__t" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" --entrypoint "tail" ghcr.io/pharmaverse/admiralci-release:latest "-f" "/dev/null"
+2025-03-13T16:28:12.9823715Z 8d3e2f6fedc9b5f4208fd254f02beb9f8de2eb312e4f6c9d803b4d9fbfb0a3ce
+2025-03-13T16:28:12.9847339Z ##[command]/usr/bin/docker start 8d3e2f6fedc9b5f4208fd254f02beb9f8de2eb312e4f6c9d803b4d9fbfb0a3ce
+2025-03-13T16:28:13.2198451Z 8d3e2f6fedc9b5f4208fd254f02beb9f8de2eb312e4f6c9d803b4d9fbfb0a3ce
+2025-03-13T16:28:13.2219093Z ##[command]/usr/bin/docker ps --all --filter id=8d3e2f6fedc9b5f4208fd254f02beb9f8de2eb312e4f6c9d803b4d9fbfb0a3ce --filter status=running --no-trunc --format "{{.ID}} {{.Status}}"
+2025-03-13T16:28:13.2328652Z 8d3e2f6fedc9b5f4208fd254f02beb9f8de2eb312e4f6c9d803b4d9fbfb0a3ce Up Less than a second
+2025-03-13T16:28:13.2348306Z ##[command]/usr/bin/docker inspect --format "{{range .Config.Env}}{{println .}}{{end}}" 8d3e2f6fedc9b5f4208fd254f02beb9f8de2eb312e4f6c9d803b4d9fbfb0a3ce
+2025-03-13T16:28:13.2470777Z HOME=/github/home
+2025-03-13T16:28:13.2471164Z GITHUB_ACTIONS=true
+2025-03-13T16:28:13.2471455Z CI=true
+2025-03-13T16:28:13.2471899Z PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2025-03-13T16:28:13.2472654Z R_VERSION=4.4.1
+2025-03-13T16:28:13.2473172Z R_HOME=/usr/local/lib/R
+2025-03-13T16:28:13.2473658Z TZ=Etc/UTC
+2025-03-13T16:28:13.2474134Z CRAN=https://p3m.dev/cran/__linux__/jammy/2024-10-30
+2025-03-13T16:28:13.2474638Z LANG=en_US.UTF-8
+2025-03-13T16:28:13.2474946Z S6_VERSION=v2.1.0.2
+2025-03-13T16:28:13.2475252Z RSTUDIO_VERSION=2024.09.0+375
+2025-03-13T16:28:13.2475601Z DEFAULT_USER=rstudio
+2025-03-13T16:28:13.2493519Z ##[endgroup]
+2025-03-13T16:28:13.2502474Z ##[group]Waiting for all services to be ready
+2025-03-13T16:28:13.2504190Z ##[endgroup]
+2025-03-13T16:28:13.2761456Z ##[group]Run tj-actions/branch-names@v8
+2025-03-13T16:28:13.2762349Z with:
+2025-03-13T16:28:13.2762747Z env:
+2025-03-13T16:28:13.2763262Z   GITHUB_PAT: ***
+2025-03-13T16:28:13.2763458Z ##[endgroup]
+2025-03-13T16:28:13.2874521Z ##[group]Run # "Set branch names..."
+2025-03-13T16:28:13.2874880Z [36;1m# "Set branch names..."[0m
+2025-03-13T16:28:13.2875172Z [36;1mif [[ "$GITHUB_REF" != "refs/tags/"* ]]; then[0m
+2025-03-13T16:28:13.2875505Z [36;1m  BASE_REF=$(printf "%q" "$GITHUB_BASE_REF")[0m
+2025-03-13T16:28:13.2875814Z [36;1m  HEAD_REF=$(printf "%q" "$GITHUB_HEAD_REF")[0m
+2025-03-13T16:28:13.2876109Z [36;1m  REF=$(printf "%q" "$GITHUB_REF")[0m
+2025-03-13T16:28:13.2876348Z [36;1m[0m
+2025-03-13T16:28:13.2876542Z [36;1m  BASE_REF=${BASE_REF/refs\/heads\//}[0m
+2025-03-13T16:28:13.2876819Z [36;1m  HEAD_REF=${HEAD_REF/refs\/heads\//}[0m
+2025-03-13T16:28:13.2877076Z [36;1m  REF_BRANCH=${REF/refs\/pull\//}[0m
+2025-03-13T16:28:13.2877412Z [36;1m  REF_BRANCH=${REF_BRANCH/refs\/heads\//}[0m
+2025-03-13T16:28:13.2877677Z [36;1m  [0m
+2025-03-13T16:28:13.2877951Z [36;1m  echo "base_ref_branch=$(eval printf "%s" "$BASE_REF")" >> "$GITHUB_OUTPUT"[0m
+2025-03-13T16:28:13.2878388Z [36;1m  echo "head_ref_branch=$(eval printf "%s" "$HEAD_REF")" >> "$GITHUB_OUTPUT"[0m
+2025-03-13T16:28:13.2878809Z [36;1m  echo "ref_branch=$(eval printf "%s" "$REF_BRANCH")" >> "$GITHUB_OUTPUT"[0m
+2025-03-13T16:28:13.2879125Z [36;1melse[0m
+2025-03-13T16:28:13.2879344Z [36;1m  BASE_REF=$(printf "%q" "$GITHUB_EVENT_BASE_REF")[0m
+2025-03-13T16:28:13.2879690Z [36;1m  BASE_REF=${BASE_REF/refs\/heads\/$INPUTS_STRIP_TAG_PREFIX/}[0m
+2025-03-13T16:28:13.2879981Z [36;1m  [0m
+2025-03-13T16:28:13.2880245Z [36;1m  echo "base_ref_branch=$(eval printf "%s" "$BASE_REF")" >> "$GITHUB_OUTPUT"[0m
+2025-03-13T16:28:13.2880569Z [36;1mfi[0m
+2025-03-13T16:28:13.2884856Z shell: bash --noprofile --norc -e -o pipefail {0}
+2025-03-13T16:28:13.2885169Z env:
+2025-03-13T16:28:13.2885568Z   GITHUB_PAT: ***
+2025-03-13T16:28:13.2885792Z   GITHUB_REF: refs/pull/137/merge
+2025-03-13T16:28:13.2886024Z   GITHUB_BASE_REF: main
+2025-03-13T16:28:13.2886239Z   GITHUB_HEAD_REF: 136_metabolic_test_data
+2025-03-13T16:28:13.2886491Z   GITHUB_EVENT_BASE_REF: 
+2025-03-13T16:28:13.2886698Z   INPUTS_STRIP_TAG_PREFIX: 
+2025-03-13T16:28:13.2886897Z ##[endgroup]
+2025-03-13T16:28:13.3673839Z ##[group]Run # "Set the current branch name..."
+2025-03-13T16:28:13.3674182Z [36;1m# "Set the current branch name..."[0m
+2025-03-13T16:28:13.3674472Z [36;1mif [[ "$GITHUB_REF" != "refs/tags/"* ]]; then[0m
+2025-03-13T16:28:13.3674795Z [36;1m  if [[ "$GITHUB_EVENT_NAME" == *"pull_request"* ]]; then[0m
+2025-03-13T16:28:13.3675177Z [36;1m    echo "current_branch=$HEAD_REF_BRANCH" >> "$GITHUB_OUTPUT"[0m
+2025-03-13T16:28:13.3675494Z [36;1m  else[0m
+2025-03-13T16:28:13.3675743Z [36;1m    echo "current_branch=$REF_BRANCH" >> "$GITHUB_OUTPUT"[0m
+2025-03-13T16:28:13.3676028Z [36;1m  fi[0m
+2025-03-13T16:28:13.3676200Z [36;1mfi[0m
+2025-03-13T16:28:13.3676544Z shell: bash --noprofile --norc -e -o pipefail {0}
+2025-03-13T16:28:13.3677007Z env:
+2025-03-13T16:28:13.3677489Z   GITHUB_PAT: ***
+2025-03-13T16:28:13.3677726Z   GITHUB_REF: refs/pull/137/merge
+2025-03-13T16:28:13.3677971Z   GITHUB_EVENT_NAME: pull_request
+2025-03-13T16:28:13.3678207Z   HEAD_REF_BRANCH: 136_metabolic_test_data
+2025-03-13T16:28:13.3678454Z   REF_BRANCH: 137/merge
+2025-03-13T16:28:13.3678651Z ##[endgroup]
+2025-03-13T16:28:13.4348683Z ##[group]Run # "Set the default branch name..."
+2025-03-13T16:28:13.4349024Z [36;1m# "Set the default branch name..."[0m
+2025-03-13T16:28:13.4349316Z [36;1mif [[ "$GITHUB_REF" != "refs/tags/"* ]]; then[0m
+2025-03-13T16:28:13.4349681Z [36;1m  if [[ "$CURRENT_BRANCH" == "$DEFAULT_BRANCH" && "$FORK" != "true" ]]; then[0m
+2025-03-13T16:28:13.4350060Z [36;1m    echo "is_default=true" >> "$GITHUB_OUTPUT"[0m
+2025-03-13T16:28:13.4350397Z [36;1m    echo "default_branch=$DEFAULT_BRANCH" >> "$GITHUB_OUTPUT"[0m
+2025-03-13T16:28:13.4350704Z [36;1m  else[0m
+2025-03-13T16:28:13.4351121Z [36;1m    echo "is_default=false" >> "$GITHUB_OUTPUT"[0m
+2025-03-13T16:28:13.4351469Z [36;1m    echo "default_branch=$DEFAULT_BRANCH" >> "$GITHUB_OUTPUT"[0m
+2025-03-13T16:28:13.4351784Z [36;1m  fi[0m
+2025-03-13T16:28:13.4351955Z [36;1mfi[0m
+2025-03-13T16:28:13.4352455Z shell: bash --noprofile --norc -e -o pipefail {0}
+2025-03-13T16:28:13.4352727Z env:
+2025-03-13T16:28:13.4353091Z   GITHUB_PAT: ***
+2025-03-13T16:28:13.4353295Z   GITHUB_REF: refs/pull/137/merge
+2025-03-13T16:28:13.4353555Z   CURRENT_BRANCH: 136_metabolic_test_data
+2025-03-13T16:28:13.4353805Z   DEFAULT_BRANCH: main
+2025-03-13T16:28:13.4353999Z   FORK: false
+2025-03-13T16:28:13.4354171Z ##[endgroup]
+2025-03-13T16:28:13.4972780Z ##[group]Run # "Set the tag name..."
+2025-03-13T16:28:13.4973072Z [36;1m# "Set the tag name..."[0m
+2025-03-13T16:28:13.4973342Z [36;1mif [[ "$GITHUB_REF" == "refs/tags/"* ]]; then[0m
+2025-03-13T16:28:13.4973638Z [36;1m  REF=$(printf "%q" "$GITHUB_REF")[0m
+2025-03-13T16:28:13.4973970Z [36;1m  TAG="${REF/refs\/tags\/$INPUTS_STRIP_TAG_PREFIX/}"[0m
+2025-03-13T16:28:13.4974266Z [36;1m[0m
+2025-03-13T16:28:13.4974499Z [36;1m  echo "tag=$(eval printf "%s" "$TAG")" >> "$GITHUB_OUTPUT"[0m
+2025-03-13T16:28:13.4974822Z [36;1m  echo "is_tag=true" >> "$GITHUB_OUTPUT"[0m
+2025-03-13T16:28:13.4975077Z [36;1melse[0m
+2025-03-13T16:28:13.4975284Z [36;1m  echo "is_tag=false" >> "$GITHUB_OUTPUT"[0m
+2025-03-13T16:28:13.4975534Z [36;1mfi[0m
+2025-03-13T16:28:13.4975857Z shell: bash --noprofile --norc -e -o pipefail {0}
+2025-03-13T16:28:13.4976120Z env:
+2025-03-13T16:28:13.4976474Z   GITHUB_PAT: ***
+2025-03-13T16:28:13.4976680Z   GITHUB_REF: refs/pull/137/merge
+2025-03-13T16:28:13.4976928Z   INPUTS_STRIP_TAG_PREFIX: 
+2025-03-13T16:28:13.4977150Z ##[endgroup]
+2025-03-13T16:28:13.5666979Z ##[group]Run actions/checkout@v4.2.2
+2025-03-13T16:28:13.5667286Z with:
+2025-03-13T16:28:13.5667465Z   ref: 136_metabolic_test_data
+2025-03-13T16:28:13.5667728Z   repository: pharmaverse/pharmaversesdtm
+2025-03-13T16:28:13.5668179Z   token: ***
+2025-03-13T16:28:13.5668368Z   ssh-strict: true
+2025-03-13T16:28:13.5668553Z   ssh-user: git
+2025-03-13T16:28:13.5668749Z   persist-credentials: true
+2025-03-13T16:28:13.5668957Z   clean: true
+2025-03-13T16:28:13.5669146Z   sparse-checkout-cone-mode: true
+2025-03-13T16:28:13.5669392Z   fetch-depth: 1
+2025-03-13T16:28:13.5669571Z   fetch-tags: false
+2025-03-13T16:28:13.5669751Z   show-progress: true
+2025-03-13T16:28:13.5669941Z   lfs: false
+2025-03-13T16:28:13.5670113Z   submodules: false
+2025-03-13T16:28:13.5670304Z   set-safe-directory: true
+2025-03-13T16:28:13.5670505Z env:
+2025-03-13T16:28:13.5670757Z   GITHUB_PAT: ***
+2025-03-13T16:28:13.5670935Z ##[endgroup]
+2025-03-13T16:28:13.5711166Z ##[command]/usr/bin/docker exec  8d3e2f6fedc9b5f4208fd254f02beb9f8de2eb312e4f6c9d803b4d9fbfb0a3ce sh -c "cat /etc/*release | grep ^ID"
+2025-03-13T16:28:13.9246329Z Syncing repository: pharmaverse/pharmaversesdtm
+2025-03-13T16:28:13.9247749Z ##[group]Getting Git version info
+2025-03-13T16:28:13.9248135Z Working directory is '/__w/pharmaversesdtm/pharmaversesdtm'
+2025-03-13T16:28:13.9249032Z [command]/usr/bin/git version
+2025-03-13T16:28:13.9265718Z git version 2.34.1
+2025-03-13T16:28:13.9296634Z ##[endgroup]
+2025-03-13T16:28:13.9321872Z Temporarily overriding HOME='/__w/_temp/1d3d17eb-c012-4709-aa82-781e6f914d9f' before making global git config changes
+2025-03-13T16:28:13.9323278Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-13T16:28:13.9328910Z [command]/usr/bin/git config --global --add safe.directory /__w/pharmaversesdtm/pharmaversesdtm
+2025-03-13T16:28:13.9364803Z Deleting the contents of '/__w/pharmaversesdtm/pharmaversesdtm'
+2025-03-13T16:28:13.9369307Z ##[group]Initializing the repository
+2025-03-13T16:28:13.9373338Z [command]/usr/bin/git init /__w/pharmaversesdtm/pharmaversesdtm
+2025-03-13T16:28:13.9407914Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-13T16:28:13.9408568Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-13T16:28:13.9409105Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-13T16:28:13.9409441Z hint: 
+2025-03-13T16:28:13.9409698Z hint: 	git config --global init.defaultBranch <name>
+2025-03-13T16:28:13.9410209Z hint: 
+2025-03-13T16:28:13.9410618Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-13T16:28:13.9411434Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-13T16:28:13.9412234Z hint: 
+2025-03-13T16:28:13.9412576Z hint: 	git branch -m <name>
+2025-03-13T16:28:13.9417772Z Initialized empty Git repository in /__w/pharmaversesdtm/pharmaversesdtm/.git/
+2025-03-13T16:28:13.9430700Z [command]/usr/bin/git remote add origin https://github.com/pharmaverse/pharmaversesdtm
+2025-03-13T16:28:13.9465263Z ##[endgroup]
+2025-03-13T16:28:13.9465878Z ##[group]Disabling automatic garbage collection
+2025-03-13T16:28:13.9470572Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-13T16:28:13.9501188Z ##[endgroup]
+2025-03-13T16:28:13.9501615Z ##[group]Setting up auth
+2025-03-13T16:28:13.9509859Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-13T16:28:13.9544253Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-13T16:28:13.9806809Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-13T16:28:13.9839686Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-13T16:28:14.0093625Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-13T16:28:14.0131746Z ##[endgroup]
+2025-03-13T16:28:14.0132477Z ##[group]Fetching the repository
+2025-03-13T16:28:14.0140759Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/136_metabolic_test_data*:refs/remotes/origin/136_metabolic_test_data* +refs/tags/136_metabolic_test_data*:refs/tags/136_metabolic_test_data*
+2025-03-13T16:28:14.6544975Z From https://github.com/pharmaverse/pharmaversesdtm
+2025-03-13T16:28:14.6545723Z  * [new branch]      136_metabolic_test_data -> origin/136_metabolic_test_data
+2025-03-13T16:28:14.6576285Z ##[endgroup]
+2025-03-13T16:28:14.6576780Z ##[group]Determining the checkout info
+2025-03-13T16:28:14.6585005Z [command]/usr/bin/git branch --list --remote origin/136_metabolic_test_data
+2025-03-13T16:28:14.6627068Z   origin/136_metabolic_test_data
+2025-03-13T16:28:14.6636599Z ##[endgroup]
+2025-03-13T16:28:14.6640076Z [command]/usr/bin/git sparse-checkout disable
+2025-03-13T16:28:14.6685289Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-13T16:28:14.6720094Z ##[group]Checking out the ref
+2025-03-13T16:28:14.6725767Z [command]/usr/bin/git checkout --progress --force -B 136_metabolic_test_data refs/remotes/origin/136_metabolic_test_data
+2025-03-13T16:28:14.6943455Z Switched to a new branch '136_metabolic_test_data'
+2025-03-13T16:28:14.6944316Z Branch '136_metabolic_test_data' set up to track remote branch '136_metabolic_test_data' from 'origin'.
+2025-03-13T16:28:14.6950382Z ##[endgroup]
+2025-03-13T16:28:14.6995742Z [command]/usr/bin/git log -1 --format=%H
+2025-03-13T16:28:14.7023704Z 708104ce803eccc9fbaedb2979e834d5b9869670
+2025-03-13T16:28:14.7214802Z ##[group]Run actions/cache@v4
+2025-03-13T16:28:14.7215058Z with:
+2025-03-13T16:28:14.7215245Z   path: ~/.staged.dependencies
+
+2025-03-13T16:28:14.7215477Z   key: staged-deps
+2025-03-13T16:28:14.7215676Z   enableCrossOsArchive: false
+2025-03-13T16:28:14.7215910Z   fail-on-cache-miss: false
+2025-03-13T16:28:14.7216124Z   lookup-only: false
+2025-03-13T16:28:14.7216315Z   save-always: false
+2025-03-13T16:28:14.7216491Z env:
+2025-03-13T16:28:14.7217027Z   GITHUB_PAT: ***
+2025-03-13T16:28:14.7217224Z ##[endgroup]
+2025-03-13T16:28:14.7220073Z ##[command]/usr/bin/docker exec  8d3e2f6fedc9b5f4208fd254f02beb9f8de2eb312e4f6c9d803b4d9fbfb0a3ce sh -c "cat /etc/*release | grep ^ID"
+2025-03-13T16:28:15.2488428Z Cache hit for: staged-deps
+2025-03-13T16:28:16.2443651Z Received 2638563 of 2638563 (100.0%), 3.5 MBs/sec
+2025-03-13T16:28:16.2444296Z Cache Size: ~3 MB (2638563 B)
+2025-03-13T16:28:16.2464654Z [command]/usr/bin/tar -xf /__w/_temp/1adf169c-c339-4ba1-998e-88d54c9933a8/cache.tzst -P -C /__w/pharmaversesdtm/pharmaversesdtm --use-compress-program unzstd
+2025-03-13T16:28:16.2679730Z Cache restored successfully
+2025-03-13T16:28:16.2885088Z Cache restored from key: staged-deps
+2025-03-13T16:28:16.3059614Z ##[group]Run insightsengineering/staged-dependencies-action@v1
+2025-03-13T16:28:16.3059977Z with:
+2025-03-13T16:28:16.3060174Z   run-system-dependencies: false
+2025-03-13T16:28:16.3060402Z   renv-restore: false
+2025-03-13T16:28:16.3060598Z   enable-check: false
+2025-03-13T16:28:16.3060809Z   direction: upstream
+2025-03-13T16:28:16.3061005Z   git-ref: 136_metabolic_test_data
+2025-03-13T16:28:16.3061251Z   git-user-name: github-actions[bot]
+2025-03-13T16:28:16.3061602Z   git-user-email: 27856297+dependabot-preview[bot]@users.noreply.github.com
+2025-03-13T16:28:16.3061951Z   path: .
+2025-03-13T16:28:16.3062301Z   version: v0.3.1
+2025-03-13T16:28:16.3062483Z   threads: auto
+2025-03-13T16:28:16.3062708Z   cran-repos: CRAN=https://cloud.r-project.org
+2025-03-13T16:28:16.3062987Z   enable-bioc-repos: false
+2025-03-13T16:28:16.3063332Z   token-mapping: https://github.com=GITHUB_PAT,https://gitlab.com=GITLAB_PAT
+2025-03-13T16:28:16.3063689Z   quiet: true
+2025-03-13T16:28:16.3063899Z   upgrade-remotes: false
+2025-03-13T16:28:16.3064085Z env:
+2025-03-13T16:28:16.3064404Z   GITHUB_PAT: ***
+2025-03-13T16:28:16.3064587Z ##[endgroup]
+2025-03-13T16:28:16.3082837Z ##[group]Run if [ "false" == "true" ]
+2025-03-13T16:28:16.3083129Z [36;1mif [ "false" == "true" ][0m
+2025-03-13T16:28:16.3083368Z [36;1mthen {[0m
+2025-03-13T16:28:16.3083602Z [36;1m  ${GITHUB_ACTION_PATH}/system-dependencies.R[0m
+2025-03-13T16:28:16.3083876Z [36;1m}[0m
+2025-03-13T16:28:16.3084034Z [36;1mfi[0m
+2025-03-13T16:28:16.3084576Z shell: bash --noprofile --norc -e -o pipefail {0}
+2025-03-13T16:28:16.3084842Z env:
+2025-03-13T16:28:16.3085134Z   GITHUB_PAT: ***
+2025-03-13T16:28:16.3085325Z   SD_REPO_PATH: .
+2025-03-13T16:28:16.3085511Z   SD_UPGRADE_REMOTES: false
+2025-03-13T16:28:16.3085715Z ##[endgroup]
+2025-03-13T16:28:16.3685965Z ##[group]Run ${GITHUB_ACTION_PATH}/staged-dependencies.R
+2025-03-13T16:28:16.3686366Z [36;1m${GITHUB_ACTION_PATH}/staged-dependencies.R[0m
+2025-03-13T16:28:16.3686877Z shell: bash --noprofile --norc -e -o pipefail {0}
+2025-03-13T16:28:16.3687156Z env:
+2025-03-13T16:28:16.3687469Z   GITHUB_PAT: ***
+2025-03-13T16:28:16.3687681Z   SD_GIT_USER_NAME: github-actions[bot]
+2025-03-13T16:28:16.3688045Z   SD_GIT_USER_EMAIL: 27856297+dependabot-preview[bot]@users.noreply.github.com
+2025-03-13T16:28:16.3688576Z   SD_REPO_PATH: .
+2025-03-13T16:28:16.3688782Z   SD_STAGED_DEPENDENCIES_VERSION: v0.3.1
+2025-03-13T16:28:16.3689026Z   SD_THREADS: auto
+2025-03-13T16:28:16.3689270Z   SD_CRAN_REPOSITORIES: CRAN=https://cloud.r-project.org
+2025-03-13T16:28:16.3689574Z   SD_ENABLE_BIOC_REPOSITORIES: false
+2025-03-13T16:28:16.3689936Z   SD_TOKEN_MAPPING: https://github.com=GITHUB_PAT,https://gitlab.com=GITLAB_PAT
+2025-03-13T16:28:16.3690305Z   SD_ENABLE_CHECK: false
+2025-03-13T16:28:16.3690506Z   SD_RENV_RESTORE: false
+2025-03-13T16:28:16.3690715Z   SD_GIT_REF: 136_metabolic_test_data
+2025-03-13T16:28:16.3690942Z   SD_QUIET: true
+2025-03-13T16:28:16.3691124Z   SD_UPGRADE_REMOTES: false
+2025-03-13T16:28:16.3691346Z   SD_DIRECTION: upstream
+2025-03-13T16:28:16.3691543Z ##[endgroup]
+2025-03-13T16:28:16.6066390Z 
+2025-03-13T16:28:16.6067179Z ==================================
+2025-03-13T16:28:16.6067911Z Running staged dependencies installer
+2025-03-13T16:28:16.6068423Z repo_path: "."
+2025-03-13T16:28:16.6068815Z sd_version: "v0.3.1"
+2025-03-13T16:28:16.6069247Z git_ref: "136_metabolic_test_data"
+2025-03-13T16:28:16.6069744Z threads: "auto"
+2025-03-13T16:28:16.6070098Z check: "false"
+2025-03-13T16:28:16.6070547Z cran_repos: "CRAN=https://cloud.r-project.org"
+2025-03-13T16:28:16.6071133Z enable_bioc_repos: "false"
+2025-03-13T16:28:16.6071843Z token_mapping: "https://github.com=GITHUB_PAT,https://gitlab.com=GITLAB_PAT"
+2025-03-13T16:28:16.6072847Z git_user_name: "github-actions[bot]"
+2025-03-13T16:28:16.6073647Z git_user_email: "27856297+dependabot-preview[bot]@users.noreply.github.com"
+2025-03-13T16:28:16.6074158Z renv_restore: "false"
+2025-03-13T16:28:16.6074406Z sd_quiet: "TRUE"
+2025-03-13T16:28:16.6075176Z upgrade_remotes: "FALSE"
+2025-03-13T16:28:16.6075457Z direction: "upstream"
+2025-03-13T16:28:16.6075705Z ==================================
+2025-03-13T16:28:16.6136564Z Number of cores detected: 4 
+2025-03-13T16:28:16.6136856Z 
+2025-03-13T16:28:16.6920580Z Installing Staged Dependencies
+2025-03-13T16:28:16.6921014Z 
+2025-03-13T16:28:24.2465596Z 
+2025-03-13T16:28:24.2468414Z Calculating Staged Dependency Table for ref:  136_metabolic_test_data ...
+2025-03-13T16:28:24.2469059Z 
+2025-03-13T16:28:24.5843618Z Copying local dir /__w/pharmaversesdtm/pharmaversesdtm to cache dir /github/home/.staged.dependencies/packages_cache/local_pharmaverse_pharmaversesdtm_b5275f0957652ddd5cd2d090b3dc20d4
+2025-03-13T16:28:24.8685411Z      package_name    type distance                             ref                        repo               host
+2025-03-13T16:28:24.8686312Z 1 pharmaversesdtm current        0 local (136_metabolic_test_data) pharmaverse/pharmaversesdtm https://github.com
+2025-03-13T16:28:24.8686963Z       sha
+2025-03-13T16:28:24.8687211Z 1 708104c
+2025-03-13T16:28:24.8687339Z 
+2025-03-13T16:28:24.8687344Z 
+2025-03-13T16:28:24.8914569Z No packages to process!
+2025-03-13T16:28:24.8915113Z [1] package_name cache_dir    actions      sha          installable 
+2025-03-13T16:28:24.8915649Z <0 rows> (or 0-length row.names)
+2025-03-13T16:28:25.5073939Z ##[group]Run insightsengineering/r-spellcheck-action@v3
+2025-03-13T16:28:25.5074296Z with:
+2025-03-13T16:28:25.5074475Z   path: .
+2025-03-13T16:28:25.5074642Z env:
+2025-03-13T16:28:25.5074967Z   GITHUB_PAT: ***
+2025-03-13T16:28:25.5075158Z ##[endgroup]
+2025-03-13T16:28:25.5090335Z ##[group]Run options(repos = c(CRAN = "https://cloud.r-project.org/"))
+2025-03-13T16:28:25.5090812Z [36;1moptions(repos = c(CRAN = "https://cloud.r-project.org/"))[0m
+2025-03-13T16:28:25.5091260Z [36;1mncores <- parallel::detectCores(all.tests = FALSE, logical = TRUE)[0m
+2025-03-13T16:28:25.5091784Z [36;1mif (!require("spelling")) install.packages("spelling", upgrade = "never", Ncpus = ncores)[0m
+2025-03-13T16:28:25.5092798Z shell: Rscript {0}
+2025-03-13T16:28:25.5092988Z env:
+2025-03-13T16:28:25.5093303Z   GITHUB_PAT: ***
+2025-03-13T16:28:25.5093493Z ##[endgroup]
+2025-03-13T16:28:25.7573863Z Loading required package: spelling
+2025-03-13T16:28:25.7827056Z ##[group]Run cd .
+2025-03-13T16:28:25.7827510Z [36;1mcd .[0m
+2025-03-13T16:28:25.7827691Z [36;1mRscript  \[0m
+2025-03-13T16:28:25.7827910Z [36;1m  ${GITHUB_ACTION_PATH}/spellcheck.R \[0m
+2025-03-13T16:28:25.7828168Z [36;1m  [0m
+2025-03-13T16:28:25.7828477Z shell: bash --noprofile --norc -e -o pipefail {0}
+2025-03-13T16:28:25.7828748Z env:
+2025-03-13T16:28:25.7829064Z   GITHUB_PAT: ***
+2025-03-13T16:28:25.7829250Z ##[endgroup]
+2025-03-13T16:28:27.1558459Z   WORD   FOUND IN
+2025-03-13T16:28:27.1558865Z COEQ   qs_metabolic.Rd:37,42
+2025-03-13T16:28:27.1559104Z 
+2025-03-13T16:28:27.1559242Z Number of misspelled words: 1
+2025-03-13T16:28:27.1566026Z You may correct the spellings of the words above or add them to the "inst/WORDLIST" file by running spelling::update_wordlist()
+2025-03-13T16:28:27.1681236Z ##[error]Process completed with exit code 1.
+2025-03-13T16:28:27.1743374Z Post job cleanup.
+2025-03-13T16:28:27.1747247Z ##[command]/usr/bin/docker exec  8d3e2f6fedc9b5f4208fd254f02beb9f8de2eb312e4f6c9d803b4d9fbfb0a3ce sh -c "cat /etc/*release | grep ^ID"
+2025-03-13T16:28:27.3786448Z [command]/usr/bin/git version
+2025-03-13T16:28:27.3829231Z git version 2.34.1
+2025-03-13T16:28:27.3877227Z Temporarily overriding HOME='/__w/_temp/4149d8b4-b114-4868-826e-4d45d8da7d4f' before making global git config changes
+2025-03-13T16:28:27.3878368Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-13T16:28:27.3884436Z [command]/usr/bin/git config --global --add safe.directory /__w/pharmaversesdtm/pharmaversesdtm
+2025-03-13T16:28:27.3923668Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-13T16:28:27.3960512Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-13T16:28:27.4230055Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-13T16:28:27.4251465Z http.https://github.com/.extraheader
+2025-03-13T16:28:27.4264736Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-13T16:28:27.4296117Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-13T16:28:27.4663358Z Stop and remove container: 3f854bbe97794b44b95fd11f5cf292ef_ghcriopharmaverseadmiralcireleaselatest_564e84
+2025-03-13T16:28:27.4667912Z ##[command]/usr/bin/docker rm --force 8d3e2f6fedc9b5f4208fd254f02beb9f8de2eb312e4f6c9d803b4d9fbfb0a3ce
+2025-03-13T16:28:27.5874861Z 8d3e2f6fedc9b5f4208fd254f02beb9f8de2eb312e4f6c9d803b4d9fbfb0a3ce
+2025-03-13T16:28:27.5902872Z Remove container network: github_network_4f7c91c25ff347218c453fa59d5c4b40
+2025-03-13T16:28:27.5907070Z ##[command]/usr/bin/docker network rm github_network_4f7c91c25ff347218c453fa59d5c4b40
+2025-03-13T16:28:27.7281395Z github_network_4f7c91c25ff347218c453fa59d5c4b40
+2025-03-13T16:28:27.7339831Z Cleaning up orphan processes

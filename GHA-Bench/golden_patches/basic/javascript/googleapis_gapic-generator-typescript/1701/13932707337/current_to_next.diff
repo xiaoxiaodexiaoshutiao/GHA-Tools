@@ -1,0 +1,26 @@
+diff --git a/baselines/redis-esm/esm/src/v1beta1/cloud_redis_client.ts.baseline b/baselines/redis-esm/esm/src/v1beta1/cloud_redis_client.ts.baseline
+index 18e99407eb..a4c0dc5591 100644
+--- a/baselines/redis-esm/esm/src/v1beta1/cloud_redis_client.ts.baseline
++++ b/baselines/redis-esm/esm/src/v1beta1/cloud_redis_client.ts.baseline
+@@ -1556,7 +1556,7 @@ export class CloudRedisClient {
+   listOperationsAsync(
+     request: protos.google.longrunning.ListOperationsRequest,
+     options?: gax.CallOptions
+-  ): AsyncIterable<AsyncIterable<protos.google.longrunning.IOperation> {
++  ): AsyncIterable<protos.google.longrunning.ListOperationsResponse> {
+      options = options || {};
+      options.otherArgs = options.otherArgs || {};
+      options.otherArgs.headers = options.otherArgs.headers || {};
+diff --git a/templates/esm/typescript_gapic/_operations.njk b/templates/esm/typescript_gapic/_operations.njk
+index a641fcfe20..1837aa213e 100644
+--- a/templates/esm/typescript_gapic/_operations.njk
++++ b/templates/esm/typescript_gapic/_operations.njk
+@@ -100,7 +100,7 @@
+   listOperationsAsync(
+     request: protos.google.longrunning.ListOperationsRequest,
+     options?: gax.CallOptions
+-  ): AsyncIterable<AsyncIterable<protos.google.longrunning.IOperation> {
++  ): AsyncIterable<protos.google.longrunning.ListOperationsResponse> {
+      options = options || {};
+      options.otherArgs = options.otherArgs || {};
+      options.otherArgs.headers = options.otherArgs.headers || {};

@@ -1,0 +1,26 @@
+diff --git a/pdb2pqr/topology.py b/pdb2pqr/topology.py
+index f909241b..bf2b290b 100644
+--- a/pdb2pqr/topology.py
++++ b/pdb2pqr/topology.py
+@@ -74,8 +74,7 @@ def startElement(self, tag_name, _):
+         elif tag_name == "titrationstate":
+             if self.curr_titration_state is not None:
+                 _LOGGER.info(
+-                    "** Overwriting current topology_titration_state "
+-                    "object!"
++                    "** Overwriting current topology_titration_state object!"
+                 )
+             self.curr_titration_state = TopologyTitrationState(
+                 self.curr_residue
+diff --git a/tests/logging_test.py b/tests/logging_test.py
+index 4cf54bd1..eaffec52 100644
+--- a/tests/logging_test.py
++++ b/tests/logging_test.py
+@@ -34,6 +34,6 @@ def test_log_output_in_pqr_location(
+         (
+             "pdb2pqr.io",
+             "INFO",
+-            f'Logs stored: {tmp_path / output_file.split(".")[0]}.log',
++            f"Logs stored: {tmp_path / output_file.split('.')[0]}.log",
+         )
+     )

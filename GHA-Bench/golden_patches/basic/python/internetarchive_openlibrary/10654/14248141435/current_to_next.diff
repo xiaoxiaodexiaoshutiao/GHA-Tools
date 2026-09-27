@@ -1,0 +1,128 @@
+diff --git a/openlibrary/i18n/messages.pot b/openlibrary/i18n/messages.pot
+index 909a9d470ec..eea97076490 100644
+--- a/openlibrary/i18n/messages.pot
++++ b/openlibrary/i18n/messages.pot
+@@ -1165,6 +1165,10 @@ msgstr ""
+ msgid "Lists (%(count)d)"
+ msgstr ""
+ 
++#: openlibrary/plugins/openlibrary/partials.py
++msgid "This work does not appear on any lists."
++msgstr ""
++
+ #: openlibrary/plugins/upstream/account.py
+ msgid "The email address you entered is invalid"
+ msgstr ""
+@@ -7558,7 +7562,7 @@ msgid "Wikipedia"
+ msgstr ""
+ 
+ #: type/edition/view.html type/work/view.html
+-msgid "This work does not appear on any lists."
++msgid "Loading Lists"
+ msgstr ""
+ 
+ #: type/edition/view.html type/work/view.html
+diff --git a/openlibrary/plugins/openlibrary/js/book-page-lists.js b/openlibrary/plugins/openlibrary/js/book-page-lists.js
+index c99d612bc97..ac6874fac43 100644
+--- a/openlibrary/plugins/openlibrary/js/book-page-lists.js
++++ b/openlibrary/plugins/openlibrary/js/book-page-lists.js
+@@ -5,8 +5,8 @@
+  */
+ export function initListsSection(elem) {
+     // Show loading indicator
+-    const loadingIndicator = elem.querySelector(".loadingIndicator")
+-    loadingIndicator.classList.remove("hidden")
++    const loadingIndicator = elem.querySelector('.loadingIndicator')
++    loadingIndicator.classList.remove('hidden')
+ 
+     const ids = JSON.parse(elem.dataset.ids)
+ 
+@@ -27,7 +27,7 @@ export function initListsSection(elem) {
+                         const fragment = document.createDocumentFragment()
+ 
+                         for (const htmlString of data.partials) {
+-                            const template = document.createElement("template")
++                            const template = document.createElement('template')
+                             template.innerHTML = htmlString
+                             fragment.append(...template.content.childNodes)
+                         }
+@@ -36,9 +36,9 @@ export function initListsSection(elem) {
+ 
+                         // Show "See All" link
+                         if (data.hasLists) {
+-                            const showAllLink = elem.querySelector(".lists-heading a")
++                            const showAllLink = elem.querySelector('.lists-heading a')
+                             if (showAllLink) {
+-                                showAllLink.classList.remove("hidden")
++                                showAllLink.classList.remove('hidden')
+                             }
+                         }
+                     })
+@@ -46,7 +46,7 @@ export function initListsSection(elem) {
+         })
+     }, {
+         root: null,
+-        rootMargin: "200px",
++        rootMargin: '200px',
+         threshold: 0
+     })
+ 
+@@ -54,7 +54,7 @@ export function initListsSection(elem) {
+ }
+ 
+ async function fetchPartials(workId, editionId) {
+-    const params = { _component: "BPListsSection" }
++    const params = { _component: 'BPListsSection' }
+     if (workId) {
+         params.workId = workId
+     }
+diff --git a/openlibrary/plugins/openlibrary/js/index.js b/openlibrary/plugins/openlibrary/js/index.js
+index cd91ddf70d3..6fe62d5792b 100644
+--- a/openlibrary/plugins/openlibrary/js/index.js
++++ b/openlibrary/plugins/openlibrary/js/index.js
+@@ -565,9 +565,9 @@ jQuery(function () {
+     }
+ 
+     // Lazy-load book page lists section
+-    const listSection = document.querySelector(".lists-section")
++    const listSection = document.querySelector('.lists-section')
+     if (listSection) {
+-        import(/* webpackChunkName: "book-page-lists" */ "./book-page-lists")
++        import(/* webpackChunkName: "book-page-lists" */ './book-page-lists')
+             .then(module => module.initListsSection(listSection))
+     }
+ });
+diff --git a/openlibrary/plugins/openlibrary/partials.py b/openlibrary/plugins/openlibrary/partials.py
+index af5890e3fca..bf7b1205504 100644
+--- a/openlibrary/plugins/openlibrary/partials.py
++++ b/openlibrary/plugins/openlibrary/partials.py
+@@ -231,17 +231,26 @@ def GET(self):
+             edition = web.ctx.site.get(edition_id) or {}
+ 
+             # Do checks and render
+-            has_lists = (work and work.get_lists(limit=1)) or (edition and edition.get_lists(limit=1))
++            has_lists = (work and work.get_lists(limit=1)) or (
++                edition and edition.get_lists(limit=1)
++            )
+             partial["hasLists"] = bool(has_lists)
+ 
+             if not has_lists:
+                 partial["partials"].append(_('This work does not appear on any lists.'))
+             else:
+                 if work and work.key:
+-                    work_list_template = render_template("lists/widget", work, include_header=False, include_widget=False)
++                    work_list_template = render_template(
++                        "lists/widget", work, include_header=False, include_widget=False
++                    )
+                     partial["partials"].append(str(work_list_template))
+                 if edition and edition.get("type", "") != "/type/edition":
+-                    edition_list_template = render_template("lists/widget", edition, include_header=False, include_widget=False)
++                    edition_list_template = render_template(
++                        "lists/widget",
++                        edition,
++                        include_header=False,
++                        include_widget=False,
++                    )
+                     partial["partials"].append(str(edition_list_template))
+ 
+         return delegate.RawText(json.dumps(partial), content_type='application/json')

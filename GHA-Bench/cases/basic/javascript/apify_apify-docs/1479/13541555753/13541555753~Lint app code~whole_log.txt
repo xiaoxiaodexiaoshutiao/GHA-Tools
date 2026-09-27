@@ -1,0 +1,237 @@
+2025-02-26T10:16:41.0531027Z Requested labels: ubuntu-latest
+2025-02-26T10:16:41.0531799Z Job defined at: apify/apify-docs/.github/workflows/test.yaml@refs/pull/1479/merge
+2025-02-26T10:16:41.0532002Z Waiting for a runner to pick up this job...
+2025-02-26T10:16:42.1533299Z Job is waiting for a hosted runner to come online.
+2025-02-26T10:16:45.1739591Z Job is about to start running on the hosted runner: GitHub Actions 407 (hosted)
+2025-02-26T10:16:47.7844375Z Current runner version: '2.322.0'
+2025-02-26T10:16:47.7869006Z ##[group]Operating System
+2025-02-26T10:16:47.7869744Z Ubuntu
+2025-02-26T10:16:47.7870344Z 24.04.2
+2025-02-26T10:16:47.7870834Z LTS
+2025-02-26T10:16:47.7871358Z ##[endgroup]
+2025-02-26T10:16:47.7871911Z ##[group]Runner Image
+2025-02-26T10:16:47.7872488Z Image: ubuntu-24.04
+2025-02-26T10:16:47.7873077Z Version: 20250223.1.0
+2025-02-26T10:16:47.7874465Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250223.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-26T10:16:47.7875845Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250223.1
+2025-02-26T10:16:47.7876840Z ##[endgroup]
+2025-02-26T10:16:47.7877386Z ##[group]Runner Image Provisioner
+2025-02-26T10:16:47.7877977Z 2.0.422.1
+2025-02-26T10:16:47.7878551Z ##[endgroup]
+2025-02-26T10:16:47.7880743Z ##[group]GITHUB_TOKEN Permissions
+2025-02-26T10:16:47.7882937Z Actions: write
+2025-02-26T10:16:47.7883843Z Attestations: write
+2025-02-26T10:16:47.7884661Z Checks: write
+2025-02-26T10:16:47.7885167Z Contents: write
+2025-02-26T10:16:47.7885759Z Deployments: write
+2025-02-26T10:16:47.7886299Z Discussions: write
+2025-02-26T10:16:47.7886809Z Issues: write
+2025-02-26T10:16:47.7887358Z Metadata: read
+2025-02-26T10:16:47.7887875Z Packages: write
+2025-02-26T10:16:47.7888404Z Pages: write
+2025-02-26T10:16:47.7888977Z PullRequests: write
+2025-02-26T10:16:47.7889540Z RepositoryProjects: write
+2025-02-26T10:16:47.7979653Z SecurityEvents: write
+2025-02-26T10:16:47.7980588Z Statuses: write
+2025-02-26T10:16:47.7981303Z ##[endgroup]
+2025-02-26T10:16:47.7986640Z Secret source: Actions
+2025-02-26T10:16:47.7987444Z Prepare workflow directory
+2025-02-26T10:16:47.8293839Z Prepare all required actions
+2025-02-26T10:16:47.8329562Z Getting action download info
+2025-02-26T10:16:48.0631834Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-02-26T10:16:48.1542150Z Download action repository 'actions/setup-node@v4' (SHA:1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a)
+2025-02-26T10:16:48.3170156Z Complete job name: Lint app code
+2025-02-26T10:16:48.3877719Z ##[group]Run actions/checkout@v4
+2025-02-26T10:16:48.3878579Z with:
+2025-02-26T10:16:48.3879002Z   repository: apify/apify-docs
+2025-02-26T10:16:48.3879668Z   token: ***
+2025-02-26T10:16:48.3880064Z   ssh-strict: true
+2025-02-26T10:16:48.3880478Z   ssh-user: git
+2025-02-26T10:16:48.3880902Z   persist-credentials: true
+2025-02-26T10:16:48.3881368Z   clean: true
+2025-02-26T10:16:48.3881790Z   sparse-checkout-cone-mode: true
+2025-02-26T10:16:48.3882292Z   fetch-depth: 1
+2025-02-26T10:16:48.3882698Z   fetch-tags: false
+2025-02-26T10:16:48.3883110Z   show-progress: true
+2025-02-26T10:16:48.3883742Z   lfs: false
+2025-02-26T10:16:48.3884137Z   submodules: false
+2025-02-26T10:16:48.3884558Z   set-safe-directory: true
+2025-02-26T10:16:48.3885263Z ##[endgroup]
+2025-02-26T10:16:48.6481573Z Syncing repository: apify/apify-docs
+2025-02-26T10:16:48.6484181Z ##[group]Getting Git version info
+2025-02-26T10:16:48.6485335Z Working directory is '/home/runner/work/apify-docs/apify-docs'
+2025-02-26T10:16:48.6486951Z [command]/usr/bin/git version
+2025-02-26T10:16:48.6621999Z git version 2.48.1
+2025-02-26T10:16:48.6651978Z ##[endgroup]
+2025-02-26T10:16:48.6667828Z Temporarily overriding HOME='/home/runner/work/_temp/5c020058-1b37-4dc4-8a47-7d1754b8da1c' before making global git config changes
+2025-02-26T10:16:48.6670266Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-26T10:16:48.6674422Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/apify-docs/apify-docs
+2025-02-26T10:16:48.6710842Z Deleting the contents of '/home/runner/work/apify-docs/apify-docs'
+2025-02-26T10:16:48.6715034Z ##[group]Initializing the repository
+2025-02-26T10:16:48.6719848Z [command]/usr/bin/git init /home/runner/work/apify-docs/apify-docs
+2025-02-26T10:16:48.6806975Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-26T10:16:48.6808378Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-26T10:16:48.6809707Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-26T10:16:48.6810379Z hint:
+2025-02-26T10:16:48.6810858Z hint: 	git config --global init.defaultBranch <name>
+2025-02-26T10:16:48.6811432Z hint:
+2025-02-26T10:16:48.6811981Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-26T10:16:48.6812958Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-26T10:16:48.6813880Z hint:
+2025-02-26T10:16:48.6814278Z hint: 	git branch -m <name>
+2025-02-26T10:16:48.6816256Z Initialized empty Git repository in /home/runner/work/apify-docs/apify-docs/.git/
+2025-02-26T10:16:48.6828015Z [command]/usr/bin/git remote add origin https://github.com/apify/apify-docs
+2025-02-26T10:16:48.6863894Z ##[endgroup]
+2025-02-26T10:16:48.6865157Z ##[group]Disabling automatic garbage collection
+2025-02-26T10:16:48.6868828Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-26T10:16:48.6900678Z ##[endgroup]
+2025-02-26T10:16:48.6901445Z ##[group]Setting up auth
+2025-02-26T10:16:48.6907221Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-26T10:16:48.6942130Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-26T10:16:48.7283174Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-26T10:16:48.7311861Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-26T10:16:48.7536851Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-26T10:16:48.7574343Z ##[endgroup]
+2025-02-26T10:16:48.7577134Z ##[group]Fetching the repository
+2025-02-26T10:16:48.7589772Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +cc1aa4dfc741ac49fce3e00e77714768cad5ea0a:refs/remotes/pull/1479/merge
+2025-02-26T10:16:52.2374087Z From https://github.com/apify/apify-docs
+2025-02-26T10:16:52.2377585Z  * [new ref]         cc1aa4dfc741ac49fce3e00e77714768cad5ea0a -> pull/1479/merge
+2025-02-26T10:16:52.2401362Z ##[endgroup]
+2025-02-26T10:16:52.2402826Z ##[group]Determining the checkout info
+2025-02-26T10:16:52.2404440Z ##[endgroup]
+2025-02-26T10:16:52.2407976Z [command]/usr/bin/git sparse-checkout disable
+2025-02-26T10:16:52.2449654Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-26T10:16:52.2477464Z ##[group]Checking out the ref
+2025-02-26T10:16:52.2480890Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1479/merge
+2025-02-26T10:16:52.7878390Z Note: switching to 'refs/remotes/pull/1479/merge'.
+2025-02-26T10:16:52.7879579Z 
+2025-02-26T10:16:52.7879998Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-26T10:16:52.7880877Z changes and commit them, and you can discard any commits you make in this
+2025-02-26T10:16:52.7881743Z state without impacting any branches by switching back to a branch.
+2025-02-26T10:16:52.7882246Z 
+2025-02-26T10:16:52.7882605Z If you want to create a new branch to retain commits you create, you may
+2025-02-26T10:16:52.7883452Z do so (now or later) by using -c with the switch command. Example:
+2025-02-26T10:16:52.7884125Z 
+2025-02-26T10:16:52.7884334Z   git switch -c <new-branch-name>
+2025-02-26T10:16:52.7884687Z 
+2025-02-26T10:16:52.7884885Z Or undo this operation with:
+2025-02-26T10:16:52.7885220Z 
+2025-02-26T10:16:52.7885386Z   git switch -
+2025-02-26T10:16:52.7885645Z 
+2025-02-26T10:16:52.7886060Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-26T10:16:52.7886585Z 
+2025-02-26T10:16:52.7887206Z HEAD is now at cc1aa4d Merge 47d5ea27ade03a5e39a54dfe285d7d574d64437f into 8f4fd563265852ba41c470c190b0968b33906e26
+2025-02-26T10:16:52.7923173Z ##[endgroup]
+2025-02-26T10:16:52.7960721Z [command]/usr/bin/git log -1 --format=%H
+2025-02-26T10:16:52.7983789Z cc1aa4dfc741ac49fce3e00e77714768cad5ea0a
+2025-02-26T10:16:52.8215108Z ##[group]Run actions/setup-node@v4
+2025-02-26T10:16:52.8215454Z with:
+2025-02-26T10:16:52.8215668Z   node-version: 22
+2025-02-26T10:16:52.8215899Z   cache: npm
+2025-02-26T10:16:52.8216153Z   cache-dependency-path: package-lock.json
+2025-02-26T10:16:52.8216510Z   registry-url: https://npm.pkg.github.com/
+2025-02-26T10:16:52.8216857Z   scope: @apify-packages
+2025-02-26T10:16:52.8217138Z   always-auth: false
+2025-02-26T10:16:52.8217375Z   check-latest: false
+2025-02-26T10:16:52.8217750Z   token: ***
+2025-02-26T10:16:52.8217968Z ##[endgroup]
+2025-02-26T10:16:52.9948101Z Found in cache @ /opt/hostedtoolcache/node/22.14.0/x64
+2025-02-26T10:16:52.9954454Z ##[group]Environment details
+2025-02-26T10:16:54.8927023Z node: v22.14.0
+2025-02-26T10:16:54.8927577Z npm: 10.9.2
+2025-02-26T10:16:54.8927898Z yarn: 1.22.22
+2025-02-26T10:16:54.8929481Z ##[endgroup]
+2025-02-26T10:16:54.8965795Z [command]/opt/hostedtoolcache/node/22.14.0/x64/bin/npm config get cache
+2025-02-26T10:16:55.1224168Z /home/runner/.npm
+2025-02-26T10:16:55.4312954Z Cache hit for: node-cache-Linux-x64-npm-e76d9ebeea90db6d0bf7b5571488f0ff090300d98becf0c4da5a2d6eff6c4a4f
+2025-02-26T10:16:55.7183014Z Received 686 of 686 (100.0%), 0.0 MBs/sec
+2025-02-26T10:16:55.7183873Z Cache Size: ~0 MB (686 B)
+2025-02-26T10:16:55.7208091Z [command]/usr/bin/tar -xf /home/runner/work/_temp/20c88af9-cd58-4818-a5c5-f9bcb15bd489/cache.tzst -P -C /home/runner/work/apify-docs/apify-docs --use-compress-program unzstd
+2025-02-26T10:16:55.7349209Z Cache restored successfully
+2025-02-26T10:16:55.7354222Z Cache restored from key: node-cache-Linux-x64-npm-e76d9ebeea90db6d0bf7b5571488f0ff090300d98becf0c4da5a2d6eff6c4a4f
+2025-02-26T10:16:55.7474426Z ##[group]Run corepack enable
+2025-02-26T10:16:55.7474754Z [36;1mcorepack enable[0m
+2025-02-26T10:16:55.7526464Z shell: /usr/bin/bash -e {0}
+2025-02-26T10:16:55.7526737Z env:
+2025-02-26T10:16:55.7526977Z   NPM_CONFIG_USERCONFIG: /home/runner/work/_temp/.npmrc
+2025-02-26T10:16:55.7527312Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-02-26T10:16:55.7527571Z ##[endgroup]
+2025-02-26T10:16:56.0298675Z ##[group]Run npm ci --force
+2025-02-26T10:16:56.0299004Z [36;1mnpm ci --force[0m
+2025-02-26T10:16:56.0345780Z shell: /usr/bin/bash -e {0}
+2025-02-26T10:16:56.0346036Z env:
+2025-02-26T10:16:56.0346282Z   NPM_CONFIG_USERCONFIG: /home/runner/work/_temp/.npmrc
+2025-02-26T10:16:56.0346757Z   NODE_AUTH_TOKEN: ***
+2025-02-26T10:16:56.0346963Z ##[endgroup]
+2025-02-26T10:16:56.1167746Z npm warn using --force Recommended protections disabled.
+2025-02-26T10:17:01.3286192Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+2025-02-26T10:17:03.7807026Z npm warn deprecated rimraf@2.7.1: Rimraf versions prior to v4 are no longer supported
+2025-02-26T10:17:05.5308269Z npm warn deprecated lodash.isequal@4.5.0: This package is deprecated. Use require('node:util').isDeepStrictEqual instead.
+2025-02-26T10:17:05.9958386Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-02-26T10:17:06.5436873Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-02-26T10:17:07.4810476Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+2025-02-26T10:17:18.2056977Z npm warn deprecated @faker-js/faker@5.5.3: Please update to a newer version.
+2025-02-26T10:17:36.7712831Z 
+2025-02-26T10:17:36.7713719Z > apify-docs@2.0.0 postinstall
+2025-02-26T10:17:36.7714232Z > patch-package
+2025-02-26T10:17:36.7714452Z 
+2025-02-26T10:17:36.9219710Z patch-package 8.0.0
+2025-02-26T10:17:36.9221915Z Applying patches...
+2025-02-26T10:17:36.9260796Z docusaurus-plugin-openapi-docs@4.3.2 ✔
+2025-02-26T10:17:36.9274876Z docusaurus-theme-openapi-docs@4.3.2 ✔
+2025-02-26T10:17:36.9595790Z 
+2025-02-26T10:17:36.9596877Z added 2308 packages, and audited 2310 packages in 41s
+2025-02-26T10:17:36.9597356Z 
+2025-02-26T10:17:36.9597682Z 621 packages are looking for funding
+2025-02-26T10:17:36.9598119Z   run `npm fund` for details
+2025-02-26T10:17:36.9621123Z 
+2025-02-26T10:17:36.9621401Z 1 moderate severity vulnerability
+2025-02-26T10:17:36.9621698Z 
+2025-02-26T10:17:36.9621826Z To address all issues, run:
+2025-02-26T10:17:36.9622069Z   npm audit fix
+2025-02-26T10:17:36.9622191Z 
+2025-02-26T10:17:36.9622301Z Run `npm audit` for details.
+2025-02-26T10:17:37.0501176Z ##[group]Run npm run lint:code
+2025-02-26T10:17:37.0501479Z [36;1mnpm run lint:code[0m
+2025-02-26T10:17:37.0552184Z shell: /usr/bin/bash -e {0}
+2025-02-26T10:17:37.0552416Z env:
+2025-02-26T10:17:37.0552643Z   NPM_CONFIG_USERCONFIG: /home/runner/work/_temp/.npmrc
+2025-02-26T10:17:37.0552975Z   NODE_AUTH_TOKEN: XXXXX-XXXXX-XXXXX-XXXXX
+2025-02-26T10:17:37.0553261Z ##[endgroup]
+2025-02-26T10:17:37.1552446Z 
+2025-02-26T10:17:37.1553057Z > apify-docs@2.0.0 lint:code
+2025-02-26T10:17:37.1553427Z > eslint .
+2025-02-26T10:17:37.1553800Z 
+2025-02-26T10:17:44.0374539Z 
+2025-02-26T10:17:44.0375513Z /home/runner/work/apify-docs/apify-docs/src/theme/Details/index.js
+2025-02-26T10:17:44.0403970Z ##[error]   2:1   error  `clsx` import should occur before import of `react`                              import/order
+2025-02-26T10:17:44.0410649Z ##[error]   3:1   error  There should be at least one empty line between import groups                    import/order
+2025-02-26T10:17:44.0412215Z ##[error]   3:1   error  `@docusaurus/theme-common/Details` import should occur before import of `react`  import/order
+2025-02-26T10:17:44.0413838Z ##[error]   3:8   error  A space is required after '{'                                                    object-curly-spacing
+2025-02-26T10:17:44.0415167Z ##[error]   3:34  error  A space is required before '}'                                                   object-curly-spacing
+2025-02-26T10:17:44.0416357Z ##[error]   8:33  error  A space is required after '{'                                                    object-curly-spacing
+2025-02-26T10:17:44.0417537Z ##[error]   8:42  error  A space is required before '}'                                                   object-curly-spacing
+2025-02-26T10:17:44.0418807Z ##[error]   9:1   error  Expected indentation of 4 spaces but found 2                                     indent
+2025-02-26T10:17:44.0420158Z ##[error]  10:1   error  Expected indentation of 8 spaces but found 4                                     indent
+2025-02-26T10:17:44.0421443Z ##[error]  11:1   error  Expected indentation of 12 spaces but found 6                                    indent
+2025-02-26T10:17:44.0422729Z ##[error]  12:1   error  Expected indentation of 12 spaces but found 6                                    indent
+2025-02-26T10:17:44.0424329Z ##[error]  13:1   error  Expected indentation of 8 spaces but found 4                                     indent
+2025-02-26T10:17:44.0425735Z ##[error]  14:1   error  Expected indentation of 4 spaces but found 2                                     indent
+2025-02-26T10:17:44.0426514Z 
+2025-02-26T10:17:44.0426925Z ✖ 13 problems (13 errors, 0 warnings)
+2025-02-26T10:17:44.0427352Z   13 errors and 0 warnings potentially fixable with the `--fix` option.
+2025-02-26T10:17:44.0427623Z 
+2025-02-26T10:17:44.2412387Z ##[error]Process completed with exit code 1.
+2025-02-26T10:17:44.2527967Z Post job cleanup.
+2025-02-26T10:17:44.3466075Z [command]/usr/bin/git version
+2025-02-26T10:17:44.3501812Z git version 2.48.1
+2025-02-26T10:17:44.3545849Z Temporarily overriding HOME='/home/runner/work/_temp/9af0d328-ca59-44e4-b337-59a373d733fd' before making global git config changes
+2025-02-26T10:17:44.3547336Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-26T10:17:44.3559523Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/apify-docs/apify-docs
+2025-02-26T10:17:44.3594400Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-26T10:17:44.3626786Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-26T10:17:44.3861355Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-26T10:17:44.3881094Z http.https://github.com/.extraheader
+2025-02-26T10:17:44.3893311Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-26T10:17:44.3924035Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-26T10:17:44.4259508Z Cleaning up orphan processes

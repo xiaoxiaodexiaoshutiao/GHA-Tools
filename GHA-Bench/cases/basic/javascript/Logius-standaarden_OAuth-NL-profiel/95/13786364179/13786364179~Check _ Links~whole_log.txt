@@ -1,0 +1,213 @@
+2025-03-11T10:58:41.7100861Z Requested labels: ubuntu-22.04
+2025-03-11T10:58:41.7101185Z Job defined at: Logius-standaarden/Automatisering/.github/workflows/check.yml@refs/heads/main
+2025-03-11T10:58:41.7101393Z Reusable workflow chain:
+2025-03-11T10:58:41.7101467Z Logius-standaarden/OAuth-NL-profiel/.github/workflows/build.yml@refs/pull/95/merge (1c4511951ce999b5071945438e816eb34b3e3856)
+2025-03-11T10:58:41.7101570Z -> Logius-standaarden/Automatisering/.github/workflows/check.yml@refs/heads/main (7938d276e3a34d5f746e9ffd95c0a7762e967e86)
+2025-03-11T10:58:41.7101692Z Waiting for a runner to pick up this job...
+2025-03-11T10:58:42.9167784Z Job is waiting for a hosted runner to come online.
+2025-03-11T10:58:45.8770574Z Job is about to start running on the hosted runner: GitHub Actions 20 (hosted)
+2025-03-11T10:58:47.2779027Z Current runner version: '2.322.0'
+2025-03-11T10:58:47.2804944Z ##[group]Operating System
+2025-03-11T10:58:47.2805971Z Ubuntu
+2025-03-11T10:58:47.2806449Z 22.04.5
+2025-03-11T10:58:47.2806936Z LTS
+2025-03-11T10:58:47.2807485Z ##[endgroup]
+2025-03-11T10:58:47.2808007Z ##[group]Runner Image
+2025-03-11T10:58:47.2808627Z Image: ubuntu-22.04
+2025-03-11T10:58:47.2809144Z Version: 20250302.1.0
+2025-03-11T10:58:47.2810174Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20250302.1/images/ubuntu/Ubuntu2204-Readme.md
+2025-03-11T10:58:47.2811608Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20250302.1
+2025-03-11T10:58:47.2812535Z ##[endgroup]
+2025-03-11T10:58:47.2813371Z ##[group]Runner Image Provisioner
+2025-03-11T10:58:47.2814048Z 2.0.422.1
+2025-03-11T10:58:47.2814496Z ##[endgroup]
+2025-03-11T10:58:47.2816793Z ##[group]GITHUB_TOKEN Permissions
+2025-03-11T10:58:47.2818932Z Actions: write
+2025-03-11T10:58:47.2819741Z Attestations: write
+2025-03-11T10:58:47.2820378Z Checks: write
+2025-03-11T10:58:47.2820909Z Contents: write
+2025-03-11T10:58:47.2821519Z Deployments: write
+2025-03-11T10:58:47.2822045Z Discussions: write
+2025-03-11T10:58:47.2822502Z Issues: write
+2025-03-11T10:58:47.2823368Z Metadata: read
+2025-03-11T10:58:47.2823875Z Packages: write
+2025-03-11T10:58:47.2824433Z Pages: write
+2025-03-11T10:58:47.2824955Z PullRequests: write
+2025-03-11T10:58:47.2825456Z RepositoryProjects: write
+2025-03-11T10:58:47.2826083Z SecurityEvents: write
+2025-03-11T10:58:47.2826645Z Statuses: write
+2025-03-11T10:58:47.2827184Z ##[endgroup]
+2025-03-11T10:58:47.2830359Z Secret source: Actions
+2025-03-11T10:58:47.2831342Z Prepare workflow directory
+2025-03-11T10:58:47.3138191Z Prepare all required actions
+2025-03-11T10:58:47.3175611Z Getting action download info
+2025-03-11T10:58:47.4923035Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-11T10:58:47.5872141Z Download action repository 'actions/cache@v4' (SHA:d4323d4df104b026a6aa633fdb11d772146be0bf)
+2025-03-11T10:58:47.8655310Z Download action repository 'Eun/http-server-action@v1' (SHA:f71cec1321f665652a46c40b6852f8e5a68bfcd4)
+2025-03-11T10:58:48.1857464Z Uses: Logius-standaarden/Automatisering/.github/workflows/check.yml@refs/heads/main (7938d276e3a34d5f746e9ffd95c0a7762e967e86)
+2025-03-11T10:58:48.1860406Z Complete job name: Check / Links
+2025-03-11T10:58:48.2652634Z ##[group]Run actions/checkout@v4
+2025-03-11T10:58:48.2654312Z with:
+2025-03-11T10:58:48.2655243Z   repository: Logius-standaarden/OAuth-NL-profiel
+2025-03-11T10:58:48.2656577Z   token: ***
+2025-03-11T10:58:48.2657339Z   ssh-strict: true
+2025-03-11T10:58:48.2658205Z   ssh-user: git
+2025-03-11T10:58:48.2659014Z   persist-credentials: true
+2025-03-11T10:58:48.2659878Z   clean: true
+2025-03-11T10:58:48.2660741Z   sparse-checkout-cone-mode: true
+2025-03-11T10:58:48.2661744Z   fetch-depth: 1
+2025-03-11T10:58:48.2662534Z   fetch-tags: false
+2025-03-11T10:58:48.2663746Z   show-progress: true
+2025-03-11T10:58:48.2664682Z   lfs: false
+2025-03-11T10:58:48.2665570Z   submodules: false
+2025-03-11T10:58:48.2666636Z   set-safe-directory: true
+2025-03-11T10:58:48.2668124Z ##[endgroup]
+2025-03-11T10:58:48.4634043Z Syncing repository: Logius-standaarden/OAuth-NL-profiel
+2025-03-11T10:58:48.4636125Z ##[group]Getting Git version info
+2025-03-11T10:58:48.4637465Z Working directory is '/home/runner/work/OAuth-NL-profiel/OAuth-NL-profiel'
+2025-03-11T10:58:48.4639486Z [command]/usr/bin/git version
+2025-03-11T10:58:48.4735497Z git version 2.48.1
+2025-03-11T10:58:48.4762219Z ##[endgroup]
+2025-03-11T10:58:48.4776624Z Temporarily overriding HOME='/home/runner/work/_temp/8b556ce1-27a5-4169-838a-c299da6451e6' before making global git config changes
+2025-03-11T10:58:48.4778250Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-11T10:58:48.4782230Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/OAuth-NL-profiel/OAuth-NL-profiel
+2025-03-11T10:58:48.4816727Z Deleting the contents of '/home/runner/work/OAuth-NL-profiel/OAuth-NL-profiel'
+2025-03-11T10:58:48.4820020Z ##[group]Initializing the repository
+2025-03-11T10:58:48.4824577Z [command]/usr/bin/git init /home/runner/work/OAuth-NL-profiel/OAuth-NL-profiel
+2025-03-11T10:58:48.4896530Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-11T10:58:48.4898355Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-11T10:58:48.4899779Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-11T10:58:48.4901197Z hint:
+2025-03-11T10:58:48.4902300Z hint: 	git config --global init.defaultBranch <name>
+2025-03-11T10:58:48.4903506Z hint:
+2025-03-11T10:58:48.4905037Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-11T10:58:48.4907501Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-11T10:58:48.4909071Z hint:
+2025-03-11T10:58:48.4909944Z hint: 	git branch -m <name>
+2025-03-11T10:58:48.4911621Z Initialized empty Git repository in /home/runner/work/OAuth-NL-profiel/OAuth-NL-profiel/.git/
+2025-03-11T10:58:48.4917464Z [command]/usr/bin/git remote add origin https://github.com/Logius-standaarden/OAuth-NL-profiel
+2025-03-11T10:58:48.4950539Z ##[endgroup]
+2025-03-11T10:58:48.4951941Z ##[group]Disabling automatic garbage collection
+2025-03-11T10:58:48.4955424Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-11T10:58:48.4985745Z ##[endgroup]
+2025-03-11T10:58:48.4987189Z ##[group]Setting up auth
+2025-03-11T10:58:48.4993545Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-11T10:58:48.5024961Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-11T10:58:48.5329291Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-11T10:58:48.5361675Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-11T10:58:48.5593205Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-11T10:58:48.5641687Z ##[endgroup]
+2025-03-11T10:58:48.5643735Z ##[group]Fetching the repository
+2025-03-11T10:58:48.5650568Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +1c4511951ce999b5071945438e816eb34b3e3856:refs/remotes/pull/95/merge
+2025-03-11T10:58:48.9053903Z From https://github.com/Logius-standaarden/OAuth-NL-profiel
+2025-03-11T10:58:48.9055370Z  * [new ref]         1c4511951ce999b5071945438e816eb34b3e3856 -> pull/95/merge
+2025-03-11T10:58:48.9079523Z ##[endgroup]
+2025-03-11T10:58:48.9081039Z ##[group]Determining the checkout info
+2025-03-11T10:58:48.9082435Z ##[endgroup]
+2025-03-11T10:58:48.9086380Z [command]/usr/bin/git sparse-checkout disable
+2025-03-11T10:58:48.9127010Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-11T10:58:48.9157906Z ##[group]Checking out the ref
+2025-03-11T10:58:48.9160026Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/95/merge
+2025-03-11T10:58:48.9271634Z Note: switching to 'refs/remotes/pull/95/merge'.
+2025-03-11T10:58:48.9273033Z 
+2025-03-11T10:58:48.9274038Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-11T10:58:48.9276350Z changes and commit them, and you can discard any commits you make in this
+2025-03-11T10:58:48.9278020Z state without impacting any branches by switching back to a branch.
+2025-03-11T10:58:48.9279329Z 
+2025-03-11T10:58:48.9280124Z If you want to create a new branch to retain commits you create, you may
+2025-03-11T10:58:48.9281595Z do so (now or later) by using -c with the switch command. Example:
+2025-03-11T10:58:48.9282511Z 
+2025-03-11T10:58:48.9283071Z   git switch -c <new-branch-name>
+2025-03-11T10:58:48.9284252Z 
+2025-03-11T10:58:48.9284603Z Or undo this operation with:
+2025-03-11T10:58:48.9285192Z 
+2025-03-11T10:58:48.9285489Z   git switch -
+2025-03-11T10:58:48.9285942Z 
+2025-03-11T10:58:48.9286831Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-11T10:58:48.9288086Z 
+2025-03-11T10:58:48.9289495Z HEAD is now at 1c45119 Merge 807f016b697fc0ac0e281beb57fc8def9af8f863 into 0d9c0831b31b67962582ce63f1258c7d2790b2b4
+2025-03-11T10:58:48.9294034Z ##[endgroup]
+2025-03-11T10:58:48.9316971Z [command]/usr/bin/git log -1 --format=%H
+2025-03-11T10:58:48.9339026Z 1c4511951ce999b5071945438e816eb34b3e3856
+2025-03-11T10:58:48.9621197Z ##[group]Run actions/cache@v4
+2025-03-11T10:58:48.9622645Z with:
+2025-03-11T10:58:48.9623944Z   path: ~/static
+2025-03-11T10:58:48.9625179Z   key: 13786364179
+2025-03-11T10:58:48.9626159Z   enableCrossOsArchive: false
+2025-03-11T10:58:48.9627331Z   fail-on-cache-miss: false
+2025-03-11T10:58:48.9628567Z   lookup-only: false
+2025-03-11T10:58:48.9629683Z   save-always: false
+2025-03-11T10:58:48.9630734Z ##[endgroup]
+2025-03-11T10:58:49.1676606Z Cache hit for: 13786364179
+2025-03-11T10:58:49.2217832Z Received 39712 of 39712 (100.0%), 2.9 MBs/sec
+2025-03-11T10:58:49.2220216Z Cache Size: ~0 MB (39712 B)
+2025-03-11T10:58:49.2258003Z [command]/usr/bin/tar -xf /home/runner/work/_temp/b29b046e-73f5-4123-b493-5e4dfa492ea3/cache.tzst -P -C /home/runner/work/OAuth-NL-profiel/OAuth-NL-profiel --use-compress-program unzstd
+2025-03-11T10:58:49.2318532Z Cache restored successfully
+2025-03-11T10:58:49.2597735Z Cache restored from key: 13786364179
+2025-03-11T10:58:49.2722963Z ##[group]Run mv ~/static/snapshot.html snapshot.html
+2025-03-11T10:58:49.2724520Z [36;1mmv ~/static/snapshot.html snapshot.html[0m
+2025-03-11T10:58:49.2820520Z shell: /usr/bin/bash -e {0}
+2025-03-11T10:58:49.2821554Z ##[endgroup]
+2025-03-11T10:58:49.3087138Z ##[group]Run Eun/http-server-action@v1
+2025-03-11T10:58:49.3088258Z with:
+2025-03-11T10:58:49.3091251Z   content-types: {
+  "css": "text/css",
+  "html": "text/html",
+  "ico": "image/x-icon",
+  "jpeg": "image/jpeg",
+  "jpg": "image/jpeg",
+  "js": "text/javascript",
+  "json": "application/json",
+  "png": "image/png",
+  "svg": "image/svg+xml",
+  "txt": "text/plain",
+  "xml": "text/xml"
+}
+
+2025-03-11T10:58:49.3094669Z   directory: .
+2025-03-11T10:58:49.3095446Z   port: 8080
+2025-03-11T10:58:49.3096205Z   no-cache: false
+2025-03-11T10:58:49.3097006Z   index-files: []
+
+2025-03-11T10:58:49.3097850Z   allowed-methods: ["GET", "HEAD"]
+
+2025-03-11T10:58:49.3098853Z   logTime: true
+2025-03-11T10:58:49.3099638Z ##[endgroup]
+2025-03-11T10:58:49.4375641Z server running
+2025-03-11T10:58:49.4468887Z ##[group]Run echo '/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin' >> $GITHUB_PATH
+2025-03-11T10:58:49.4471318Z [36;1mecho '/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin' >> $GITHUB_PATH[0m
+2025-03-11T10:58:49.4542201Z shell: /usr/bin/bash -e {0}
+2025-03-11T10:58:49.4543381Z ##[endgroup]
+2025-03-11T10:58:49.4698540Z ##[group]Run brew install muffet
+2025-03-11T10:58:49.4699629Z [36;1mbrew install muffet[0m
+2025-03-11T10:58:49.5558731Z shell: /usr/bin/bash -e {0}
+2025-03-11T10:58:49.5559692Z ##[endgroup]
+2025-03-11T10:59:05.9711567Z [34m==>[0m [1mDownloading https://ghcr.io/v2/homebrew/core/muffet/manifests/2.10.8[0m
+2025-03-11T10:59:06.1616084Z [32m==>[0m [1mFetching [32mmuffet[39m[0m
+2025-03-11T10:59:06.1654124Z [34m==>[0m [1mDownloading https://ghcr.io/v2/homebrew/core/muffet/blobs/sha256:54996f8a1026d9e4be730a91dc29138a770989dc61ed8374556eb1cb64cf9968[0m
+2025-03-11T10:59:06.6018185Z [34m==>[0m [1mPouring muffet--2.10.8.x86_64_linux.bottle.tar.gz[0m
+2025-03-11T10:59:07.3501348Z 🍺  /home/linuxbrew/.linuxbrew/Cellar/muffet/2.10.8: 6 files, 6.3MB
+2025-03-11T10:59:07.3507751Z [34m==>[0m [1mRunning `brew cleanup muffet`...[0m
+2025-03-11T10:59:07.3508513Z Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+2025-03-11T10:59:07.3509324Z Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+2025-03-11T10:59:07.3929908Z ##[group]Run muffet --exclude '8080\/\S*\.pdf' --exclude '^https:\/\/gitdocumentatie.*(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?' --exclude 'upwork.com' --exclude 'sitearchief.nl' --exclude 'opengis.net' --header 'user-agent:Curl' --ignore-fragments --one-page-only http://localhost:8080/snapshot.html --buffer-size 8192
+2025-03-11T10:59:07.3932406Z [36;1mmuffet --exclude '8080\/\S*\.pdf' --exclude '^https:\/\/gitdocumentatie.*(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?' --exclude 'upwork.com' --exclude 'sitearchief.nl' --exclude 'opengis.net' --header 'user-agent:Curl' --ignore-fragments --one-page-only http://localhost:8080/snapshot.html --buffer-size 8192[0m
+2025-03-11T10:59:07.3994334Z shell: /usr/bin/bash -e {0}
+2025-03-11T10:59:07.3994589Z ##[endgroup]
+2025-03-11T10:59:22.8585848Z http://localhost:8080/snapshot.html
+2025-03-11T10:59:22.8590008Z 	timeout (following redirect https://www.rfc-editor.org/info/bcp195)	https://tools.ietf.org/html/bcp195
+2025-03-11T10:59:22.8617634Z ##[error]Process completed with exit code 1.
+2025-03-11T10:59:22.8690559Z Post job cleanup.
+2025-03-11T10:59:23.0243997Z Post job cleanup.
+2025-03-11T10:59:23.1187687Z [command]/usr/bin/git version
+2025-03-11T10:59:23.1226985Z git version 2.48.1
+2025-03-11T10:59:23.1279273Z Temporarily overriding HOME='/home/runner/work/_temp/9afef333-44b2-407e-bfb7-226e8b4a7c45' before making global git config changes
+2025-03-11T10:59:23.1280718Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-11T10:59:23.1285974Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/OAuth-NL-profiel/OAuth-NL-profiel
+2025-03-11T10:59:23.1322470Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-11T10:59:23.1355353Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-11T10:59:23.1588072Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-11T10:59:23.1608722Z http.https://github.com/.extraheader
+2025-03-11T10:59:23.1621238Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-11T10:59:23.1651869Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-11T10:59:23.1987380Z Cleaning up orphan processes

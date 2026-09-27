@@ -1,0 +1,229 @@
+﻿2025-03-07T18:36:33.7678437Z Current runner version: '2.322.0'
+2025-03-07T18:36:33.7702239Z ##[group]Operating System
+2025-03-07T18:36:33.7703075Z Ubuntu
+2025-03-07T18:36:33.7703584Z 24.04.2
+2025-03-07T18:36:33.7704075Z LTS
+2025-03-07T18:36:33.7704577Z ##[endgroup]
+2025-03-07T18:36:33.7705068Z ##[group]Runner Image
+2025-03-07T18:36:33.7705697Z Image: ubuntu-24.04
+2025-03-07T18:36:33.7706239Z Version: 20250302.1.0
+2025-03-07T18:36:33.7707473Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250302.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-07T18:36:33.7708888Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250302.1
+2025-03-07T18:36:33.7709773Z ##[endgroup]
+2025-03-07T18:36:33.7710320Z ##[group]Runner Image Provisioner
+2025-03-07T18:36:33.7710867Z 2.0.422.1
+2025-03-07T18:36:33.7711403Z ##[endgroup]
+2025-03-07T18:36:33.7713623Z ##[group]GITHUB_TOKEN Permissions
+2025-03-07T18:36:33.7715809Z Actions: read
+2025-03-07T18:36:33.7716512Z Attestations: read
+2025-03-07T18:36:33.7717375Z Checks: read
+2025-03-07T18:36:33.7717860Z Contents: read
+2025-03-07T18:36:33.7718338Z Deployments: read
+2025-03-07T18:36:33.7718894Z Discussions: read
+2025-03-07T18:36:33.7719390Z Issues: read
+2025-03-07T18:36:33.7719852Z Metadata: read
+2025-03-07T18:36:33.7720415Z Packages: read
+2025-03-07T18:36:33.7720886Z Pages: read
+2025-03-07T18:36:33.7721385Z PullRequests: read
+2025-03-07T18:36:33.7721905Z RepositoryProjects: read
+2025-03-07T18:36:33.7722472Z SecurityEvents: read
+2025-03-07T18:36:33.7722965Z Statuses: read
+2025-03-07T18:36:33.7723474Z ##[endgroup]
+2025-03-07T18:36:33.7725761Z Secret source: None
+2025-03-07T18:36:33.7726765Z Prepare workflow directory
+2025-03-07T18:36:33.8267059Z Prepare all required actions
+2025-03-07T18:36:33.8305895Z Getting action download info
+2025-03-07T18:36:34.3898807Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-07T18:36:34.4860876Z Download action repository 'actions/setup-python@v5' (SHA:42375524e23c412d93fb67b49958b491fce71c38)
+2025-03-07T18:36:34.5792315Z Download action repository 'crate-ci/typos@master' (SHA:72f3776b6edc3a10a567b8e43fd0524b2a3f1419)
+2025-03-07T18:36:35.4094029Z Complete job name: lint/style-and-typos
+2025-03-07T18:36:35.4725117Z ##[group]Run actions/checkout@v4
+2025-03-07T18:36:35.4726080Z with:
+2025-03-07T18:36:35.4726570Z   repository: Pyomo/pyomo
+2025-03-07T18:36:35.4727494Z   token: ***
+2025-03-07T18:36:35.4727973Z   ssh-strict: true
+2025-03-07T18:36:35.4728457Z   ssh-user: git
+2025-03-07T18:36:35.4728943Z   persist-credentials: true
+2025-03-07T18:36:35.4729496Z   clean: true
+2025-03-07T18:36:35.4729976Z   sparse-checkout-cone-mode: true
+2025-03-07T18:36:35.4730578Z   fetch-depth: 1
+2025-03-07T18:36:35.4731055Z   fetch-tags: false
+2025-03-07T18:36:35.4731554Z   show-progress: true
+2025-03-07T18:36:35.4732060Z   lfs: false
+2025-03-07T18:36:35.4732531Z   submodules: false
+2025-03-07T18:36:35.4733031Z   set-safe-directory: true
+2025-03-07T18:36:35.4733813Z env:
+2025-03-07T18:36:35.4734306Z   PYTHONWARNINGS: ignore::UserWarning
+2025-03-07T18:36:35.4734964Z   PYTHON_CORE_PKGS: wheel
+2025-03-07T18:36:35.4735528Z   PYPI_ONLY: z3-solver linear-tree
+2025-03-07T18:36:35.4736343Z   PYPY_EXCLUDE: scipy numdifftools seaborn statsmodels linear-tree
+2025-03-07T18:36:35.4737271Z   CACHE_VER: v221013.1
+2025-03-07T18:36:35.4737781Z   NEOS_EMAIL: tests@pyomo.org
+2025-03-07T18:36:35.4738345Z   SRC_REF: highspy-patch
+2025-03-07T18:36:35.4738850Z ##[endgroup]
+2025-03-07T18:36:35.6613846Z Syncing repository: Pyomo/pyomo
+2025-03-07T18:36:35.6615645Z ##[group]Getting Git version info
+2025-03-07T18:36:35.6616448Z Working directory is '/home/runner/work/pyomo/pyomo'
+2025-03-07T18:36:35.6617852Z [command]/usr/bin/git version
+2025-03-07T18:36:35.6676962Z git version 2.48.1
+2025-03-07T18:36:35.6704616Z ##[endgroup]
+2025-03-07T18:36:35.6720089Z Temporarily overriding HOME='/home/runner/work/_temp/1a99181e-302d-49f7-822b-7246109bf159' before making global git config changes
+2025-03-07T18:36:35.6723086Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-07T18:36:35.6726045Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pyomo/pyomo
+2025-03-07T18:36:35.6763376Z Deleting the contents of '/home/runner/work/pyomo/pyomo'
+2025-03-07T18:36:35.6767399Z ##[group]Initializing the repository
+2025-03-07T18:36:35.6772478Z [command]/usr/bin/git init /home/runner/work/pyomo/pyomo
+2025-03-07T18:36:35.6830995Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-07T18:36:35.6832672Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-07T18:36:35.6834603Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-07T18:36:35.6836048Z hint:
+2025-03-07T18:36:35.6837143Z hint: 	git config --global init.defaultBranch <name>
+2025-03-07T18:36:35.6838205Z hint:
+2025-03-07T18:36:35.6838867Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-07T18:36:35.6839958Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-07T18:36:35.6840829Z hint:
+2025-03-07T18:36:35.6841271Z hint: 	git branch -m <name>
+2025-03-07T18:36:35.6842629Z Initialized empty Git repository in /home/runner/work/pyomo/pyomo/.git/
+2025-03-07T18:36:35.6848240Z [command]/usr/bin/git remote add origin https://github.com/Pyomo/pyomo
+2025-03-07T18:36:35.6882046Z ##[endgroup]
+2025-03-07T18:36:35.6883342Z ##[group]Disabling automatic garbage collection
+2025-03-07T18:36:35.6885778Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-07T18:36:35.6914436Z ##[endgroup]
+2025-03-07T18:36:35.6915634Z ##[group]Setting up auth
+2025-03-07T18:36:35.6920975Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-07T18:36:35.6951224Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-07T18:36:35.7228331Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-07T18:36:35.7259400Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-07T18:36:35.7494978Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-07T18:36:35.7535591Z ##[endgroup]
+2025-03-07T18:36:35.7537465Z ##[group]Fetching the repository
+2025-03-07T18:36:35.7547018Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +752297964b9e2072fbed94dc9ce5d8da6b605806:refs/remotes/pull/3509/merge
+2025-03-07T18:36:38.0270041Z From https://github.com/Pyomo/pyomo
+2025-03-07T18:36:38.0272711Z  * [new ref]         752297964b9e2072fbed94dc9ce5d8da6b605806 -> pull/3509/merge
+2025-03-07T18:36:38.0295984Z ##[endgroup]
+2025-03-07T18:36:38.0297878Z ##[group]Determining the checkout info
+2025-03-07T18:36:38.0299837Z ##[endgroup]
+2025-03-07T18:36:38.0304395Z [command]/usr/bin/git sparse-checkout disable
+2025-03-07T18:36:38.0346114Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-07T18:36:38.0376898Z ##[group]Checking out the ref
+2025-03-07T18:36:38.0378013Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/3509/merge
+2025-03-07T18:36:38.3006800Z Note: switching to 'refs/remotes/pull/3509/merge'.
+2025-03-07T18:36:38.3007950Z 
+2025-03-07T18:36:38.3008832Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-07T18:36:38.3011143Z changes and commit them, and you can discard any commits you make in this
+2025-03-07T18:36:38.3013578Z state without impacting any branches by switching back to a branch.
+2025-03-07T18:36:38.3015017Z 
+2025-03-07T18:36:38.3015908Z If you want to create a new branch to retain commits you create, you may
+2025-03-07T18:36:38.3018245Z do so (now or later) by using -c with the switch command. Example:
+2025-03-07T18:36:38.3019929Z 
+2025-03-07T18:36:38.3020299Z   git switch -c <new-branch-name>
+2025-03-07T18:36:38.3020894Z 
+2025-03-07T18:36:38.3021198Z Or undo this operation with:
+2025-03-07T18:36:38.3021721Z 
+2025-03-07T18:36:38.3021997Z   git switch -
+2025-03-07T18:36:38.3022372Z 
+2025-03-07T18:36:38.3023085Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-07T18:36:38.3024815Z 
+2025-03-07T18:36:38.3026126Z HEAD is now at 7522979 Merge da234640402b474409d43ac5c742964b229bfb13 into 1b18e2e10017f3edfa06930f278650c60116f04a
+2025-03-07T18:36:38.3030242Z ##[endgroup]
+2025-03-07T18:36:38.3064263Z [command]/usr/bin/git log -1 --format=%H
+2025-03-07T18:36:38.3087475Z 752297964b9e2072fbed94dc9ce5d8da6b605806
+2025-03-07T18:36:38.3382977Z ##[group]Run actions/setup-python@v5
+2025-03-07T18:36:38.3384002Z with:
+2025-03-07T18:36:38.3384695Z   python-version: 3.10
+2025-03-07T18:36:38.3385508Z   check-latest: false
+2025-03-07T18:36:38.3386580Z   token: ***
+2025-03-07T18:36:38.3387479Z   update-environment: true
+2025-03-07T18:36:38.3388357Z   allow-prereleases: false
+2025-03-07T18:36:38.3389214Z env:
+2025-03-07T18:36:38.3389919Z   PYTHONWARNINGS: ignore::UserWarning
+2025-03-07T18:36:38.3390926Z   PYTHON_CORE_PKGS: wheel
+2025-03-07T18:36:38.3453506Z   PYPI_ONLY: z3-solver linear-tree
+2025-03-07T18:36:38.3455654Z   PYPY_EXCLUDE: scipy numdifftools seaborn statsmodels linear-tree
+2025-03-07T18:36:38.3458114Z   CACHE_VER: v221013.1
+2025-03-07T18:36:38.3459430Z   NEOS_EMAIL: tests@pyomo.org
+2025-03-07T18:36:38.3460920Z   SRC_REF: highspy-patch
+2025-03-07T18:36:38.3462241Z ##[endgroup]
+2025-03-07T18:36:38.5140008Z ##[group]Installed versions
+2025-03-07T18:36:38.5202851Z Successfully set up CPython (3.10.16)
+2025-03-07T18:36:38.5205460Z ##[endgroup]
+2025-03-07T18:36:38.5343488Z ##[group]Run # Note v24.4.1 fails due to a bug in the parser
+2025-03-07T18:36:38.5345027Z [36;1m# Note v24.4.1 fails due to a bug in the parser[0m
+2025-03-07T18:36:38.5346203Z [36;1mpip install 'black!=24.4.1'[0m
+2025-03-07T18:36:38.5347885Z [36;1mblack . -S -C --check --diff --exclude examples/pyomobook/python-ch/BadIndent.py[0m
+2025-03-07T18:36:38.5403083Z shell: /usr/bin/bash -l {0}
+2025-03-07T18:36:38.5403912Z env:
+2025-03-07T18:36:38.5404590Z   PYTHONWARNINGS: ignore::UserWarning
+2025-03-07T18:36:38.5405573Z   PYTHON_CORE_PKGS: wheel
+2025-03-07T18:36:38.5406406Z   PYPI_ONLY: z3-solver linear-tree
+2025-03-07T18:36:38.5407785Z   PYPY_EXCLUDE: scipy numdifftools seaborn statsmodels linear-tree
+2025-03-07T18:36:38.5409054Z   CACHE_VER: v221013.1
+2025-03-07T18:36:38.5409807Z   NEOS_EMAIL: tests@pyomo.org
+2025-03-07T18:36:38.5410674Z   SRC_REF: highspy-patch
+2025-03-07T18:36:38.5411686Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-03-07T18:36:38.5413262Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib/pkgconfig
+2025-03-07T18:36:38.5414782Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-03-07T18:36:38.5416151Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-03-07T18:36:38.5417621Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-03-07T18:36:38.5419000Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib
+2025-03-07T18:36:38.5420152Z ##[endgroup]
+2025-03-07T18:36:39.5492931Z Collecting black!=24.4.1
+2025-03-07T18:36:39.5802208Z   Downloading black-25.1.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl.metadata (81 kB)
+2025-03-07T18:36:39.6380565Z Collecting click>=8.0.0 (from black!=24.4.1)
+2025-03-07T18:36:39.6407210Z   Downloading click-8.1.8-py3-none-any.whl.metadata (2.3 kB)
+2025-03-07T18:36:39.6557166Z Collecting mypy-extensions>=0.4.3 (from black!=24.4.1)
+2025-03-07T18:36:39.6585599Z   Downloading mypy_extensions-1.0.0-py3-none-any.whl.metadata (1.1 kB)
+2025-03-07T18:36:39.6777571Z Collecting packaging>=22.0 (from black!=24.4.1)
+2025-03-07T18:36:39.6807187Z   Downloading packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+2025-03-07T18:36:39.7003950Z Collecting pathspec>=0.9.0 (from black!=24.4.1)
+2025-03-07T18:36:39.7028372Z   Downloading pathspec-0.12.1-py3-none-any.whl.metadata (21 kB)
+2025-03-07T18:36:39.7264392Z Collecting platformdirs>=2 (from black!=24.4.1)
+2025-03-07T18:36:39.7290890Z   Downloading platformdirs-4.3.6-py3-none-any.whl.metadata (11 kB)
+2025-03-07T18:36:39.7517874Z Collecting tomli>=1.1.0 (from black!=24.4.1)
+2025-03-07T18:36:39.7544302Z   Downloading tomli-2.2.1-py3-none-any.whl.metadata (10 kB)
+2025-03-07T18:36:39.7799008Z Collecting typing-extensions>=4.0.1 (from black!=24.4.1)
+2025-03-07T18:36:39.7827196Z   Downloading typing_extensions-4.12.2-py3-none-any.whl.metadata (3.0 kB)
+2025-03-07T18:36:39.7961607Z Downloading black-25.1.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl (1.8 MB)
+2025-03-07T18:36:39.8266923Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 72.5 MB/s eta 0:00:00
+2025-03-07T18:36:39.8294850Z Downloading click-8.1.8-py3-none-any.whl (98 kB)
+2025-03-07T18:36:39.8364648Z Downloading mypy_extensions-1.0.0-py3-none-any.whl (4.7 kB)
+2025-03-07T18:36:39.8447920Z Downloading packaging-24.2-py3-none-any.whl (65 kB)
+2025-03-07T18:36:39.8529840Z Downloading pathspec-0.12.1-py3-none-any.whl (31 kB)
+2025-03-07T18:36:39.8602080Z Downloading platformdirs-4.3.6-py3-none-any.whl (18 kB)
+2025-03-07T18:36:39.8674194Z Downloading tomli-2.2.1-py3-none-any.whl (14 kB)
+2025-03-07T18:36:39.8732601Z Downloading typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+2025-03-07T18:36:39.9149210Z Installing collected packages: typing-extensions, tomli, platformdirs, pathspec, packaging, mypy-extensions, click, black
+2025-03-07T18:36:40.2013708Z Successfully installed black-25.1.0 click-8.1.8 mypy-extensions-1.0.0 packaging-24.2 pathspec-0.12.1 platformdirs-4.3.6 tomli-2.2.1 typing-extensions-4.12.2
+2025-03-07T18:36:45.7798764Z --- /home/runner/work/pyomo/pyomo/pyomo/contrib/appsi/solvers/highs.py	2025-03-07 18:36:38.183561+00:00
+2025-03-07T18:36:45.7805631Z +++ /home/runner/work/pyomo/pyomo/pyomo/contrib/appsi/solvers/highs.py	2025-03-07 18:36:45.770839+00:00
+2025-03-07T18:36:45.7807088Z @@ -271,11 +271,11 @@
+2025-03-07T18:36:45.7807721Z would reformat /home/runner/work/pyomo/pyomo/pyomo/contrib/appsi/solvers/highs.py
+2025-03-07T18:36:45.7808518Z  
+2025-03-07T18:36:45.7808949Z              if config.warmstart:
+2025-03-07T18:36:45.7809508Z                  self._warm_start()
+2025-03-07T18:36:45.7809906Z              timer.start('optimize')
+2025-03-07T18:36:45.7810334Z              ostreams[-1].write("RUN!\n")
+2025-03-07T18:36:45.7810773Z -            if (self.version()[0] >= 1 and self.version()[1] >= 8):
+2025-03-07T18:36:45.7811300Z +            if self.version()[0] >= 1 and self.version()[1] >= 8:
+2025-03-07T18:36:45.7811833Z                  self._solver_model.HandleKeyboardInterrupt = True
+2025-03-07T18:36:45.7812345Z              self._solver_model.run()
+2025-03-07T18:36:45.7812747Z              timer.stop('optimize')
+2025-03-07T18:36:45.7813119Z  
+2025-03-07T18:36:45.7813411Z          return self._postsolve(timer)
+2025-03-07T18:37:18.6107616Z 
+2025-03-07T18:37:18.6110480Z Oh no! 💥 💔 💥
+2025-03-07T18:37:18.6110957Z 1 file would be reformatted, 1750 files would be left unchanged.
+2025-03-07T18:37:18.6331619Z ##[error]Process completed with exit code 1.
+2025-03-07T18:37:18.6425758Z Post job cleanup.
+2025-03-07T18:37:18.7356952Z [command]/usr/bin/git version
+2025-03-07T18:37:18.7392679Z git version 2.48.1
+2025-03-07T18:37:18.7434099Z Temporarily overriding HOME='/home/runner/work/_temp/9a2f5229-46ad-45e5-8a4c-8cd01606da5e' before making global git config changes
+2025-03-07T18:37:18.7435196Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-07T18:37:18.7446554Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pyomo/pyomo
+2025-03-07T18:37:18.7483224Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-07T18:37:18.7518329Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-07T18:37:18.7757756Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-07T18:37:18.7778342Z http.https://github.com/.extraheader
+2025-03-07T18:37:18.7791078Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-07T18:37:18.7823169Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-07T18:37:18.8167321Z Cleaning up orphan processes

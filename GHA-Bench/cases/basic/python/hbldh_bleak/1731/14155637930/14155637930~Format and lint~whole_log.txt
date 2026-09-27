@@ -1,0 +1,253 @@
+﻿2025-03-30T11:35:51.0115713Z Current runner version: '2.323.0'
+2025-03-30T11:35:51.0140601Z ##[group]Operating System
+2025-03-30T11:35:51.0141847Z Ubuntu
+2025-03-30T11:35:51.0142353Z 24.04.2
+2025-03-30T11:35:51.0142849Z LTS
+2025-03-30T11:35:51.0143333Z ##[endgroup]
+2025-03-30T11:35:51.0143866Z ##[group]Runner Image
+2025-03-30T11:35:51.0144416Z Image: ubuntu-24.04
+2025-03-30T11:35:51.0144979Z Version: 20250316.1.0
+2025-03-30T11:35:51.0146018Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250316.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-30T11:35:51.0147368Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250316.1
+2025-03-30T11:35:51.0148297Z ##[endgroup]
+2025-03-30T11:35:51.0148802Z ##[group]Runner Image Provisioner
+2025-03-30T11:35:51.0149399Z 2.0.422.1
+2025-03-30T11:35:51.0149816Z ##[endgroup]
+2025-03-30T11:35:51.0152304Z ##[group]GITHUB_TOKEN Permissions
+2025-03-30T11:35:51.0154233Z Actions: read
+2025-03-30T11:35:51.0155102Z Attestations: read
+2025-03-30T11:35:51.0155670Z Checks: read
+2025-03-30T11:35:51.0156252Z Contents: read
+2025-03-30T11:35:51.0156726Z Deployments: read
+2025-03-30T11:35:51.0157219Z Discussions: read
+2025-03-30T11:35:51.0157763Z Issues: read
+2025-03-30T11:35:51.0158249Z Metadata: read
+2025-03-30T11:35:51.0158697Z Models: read
+2025-03-30T11:35:51.0159243Z Packages: read
+2025-03-30T11:35:51.0159696Z Pages: read
+2025-03-30T11:35:51.0160171Z PullRequests: read
+2025-03-30T11:35:51.0160756Z RepositoryProjects: read
+2025-03-30T11:35:51.0161456Z SecurityEvents: read
+2025-03-30T11:35:51.0161979Z Statuses: read
+2025-03-30T11:35:51.0162503Z ##[endgroup]
+2025-03-30T11:35:51.0164942Z Secret source: None
+2025-03-30T11:35:51.0165997Z Prepare workflow directory
+2025-03-30T11:35:51.0502640Z Prepare all required actions
+2025-03-30T11:35:51.0541902Z Getting action download info
+2025-03-30T11:35:51.5983059Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-03-30T11:35:51.5984053Z Version: 4.2.2
+2025-03-30T11:35:51.5985137Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-03-30T11:35:51.5986466Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-03-30T11:35:51.5987211Z ##[endgroup]
+2025-03-30T11:35:51.6917276Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-03-30T11:35:51.6917993Z Version: 5.5.0
+2025-03-30T11:35:51.6918623Z Digest: sha256:1fac95d751afd58314aebd2ab01d4bf3b3109a441917bd2cac2a22898ec494f7
+2025-03-30T11:35:51.6919450Z Source commit SHA: 8d9ed9ac5c53483de85588cdf95a591a75ab9f55
+2025-03-30T11:35:51.6920023Z ##[endgroup]
+2025-03-30T11:35:52.0727874Z Complete job name: Format and lint
+2025-03-30T11:35:52.1468815Z ##[group]Run actions/checkout@v4
+2025-03-30T11:35:52.1469730Z with:
+2025-03-30T11:35:52.1470163Z   repository: hbldh/bleak
+2025-03-30T11:35:52.1470877Z   token: ***
+2025-03-30T11:35:52.1471471Z   ssh-strict: true
+2025-03-30T11:35:52.1471913Z   ssh-user: git
+2025-03-30T11:35:52.1472344Z   persist-credentials: true
+2025-03-30T11:35:52.1472837Z   clean: true
+2025-03-30T11:35:52.1473308Z   sparse-checkout-cone-mode: true
+2025-03-30T11:35:52.1473827Z   fetch-depth: 1
+2025-03-30T11:35:52.1474244Z   fetch-tags: false
+2025-03-30T11:35:52.1474679Z   show-progress: true
+2025-03-30T11:35:52.1475119Z   lfs: false
+2025-03-30T11:35:52.1475541Z   submodules: false
+2025-03-30T11:35:52.1475993Z   set-safe-directory: true
+2025-03-30T11:35:52.1476725Z ##[endgroup]
+2025-03-30T11:35:52.3144748Z Syncing repository: hbldh/bleak
+2025-03-30T11:35:52.3147379Z ##[group]Getting Git version info
+2025-03-30T11:35:52.3148618Z Working directory is '/home/runner/work/bleak/bleak'
+2025-03-30T11:35:52.3150381Z [command]/usr/bin/git version
+2025-03-30T11:35:52.3183468Z git version 2.48.1
+2025-03-30T11:35:52.3211987Z ##[endgroup]
+2025-03-30T11:35:52.3227279Z Temporarily overriding HOME='/home/runner/work/_temp/2e813632-fb69-4726-ac62-be259eaca8c6' before making global git config changes
+2025-03-30T11:35:52.3228764Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-30T11:35:52.3232682Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/bleak/bleak
+2025-03-30T11:35:52.3277087Z Deleting the contents of '/home/runner/work/bleak/bleak'
+2025-03-30T11:35:52.3281619Z ##[group]Initializing the repository
+2025-03-30T11:35:52.3286344Z [command]/usr/bin/git init /home/runner/work/bleak/bleak
+2025-03-30T11:35:52.3344611Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-30T11:35:52.3345946Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-30T11:35:52.3346944Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-30T11:35:52.3347648Z hint:
+2025-03-30T11:35:52.3348161Z hint: 	git config --global init.defaultBranch <name>
+2025-03-30T11:35:52.3348986Z hint:
+2025-03-30T11:35:52.3349948Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-30T11:35:52.3350890Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-30T11:35:52.3351893Z hint:
+2025-03-30T11:35:52.3352301Z hint: 	git branch -m <name>
+2025-03-30T11:35:52.3353026Z Initialized empty Git repository in /home/runner/work/bleak/bleak/.git/
+2025-03-30T11:35:52.3361728Z [command]/usr/bin/git remote add origin https://github.com/hbldh/bleak
+2025-03-30T11:35:52.3397305Z ##[endgroup]
+2025-03-30T11:35:52.3398630Z ##[group]Disabling automatic garbage collection
+2025-03-30T11:35:52.3403429Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-30T11:35:52.3432433Z ##[endgroup]
+2025-03-30T11:35:52.3433156Z ##[group]Setting up auth
+2025-03-30T11:35:52.3439663Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-30T11:35:52.3473492Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-30T11:35:52.3759315Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-30T11:35:52.3792311Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-30T11:35:52.4033683Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-30T11:35:52.4073860Z ##[endgroup]
+2025-03-30T11:35:52.4074731Z ##[group]Fetching the repository
+2025-03-30T11:35:52.4084388Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +f0c1bad8d5b028ade183089c90d2914a6129ad1b:refs/remotes/pull/1731/merge
+2025-03-30T11:35:53.0885319Z From https://github.com/hbldh/bleak
+2025-03-30T11:35:53.0887138Z  * [new ref]         f0c1bad8d5b028ade183089c90d2914a6129ad1b -> pull/1731/merge
+2025-03-30T11:35:53.0920977Z ##[endgroup]
+2025-03-30T11:35:53.0923488Z ##[group]Determining the checkout info
+2025-03-30T11:35:53.0925900Z ##[endgroup]
+2025-03-30T11:35:53.0929738Z [command]/usr/bin/git sparse-checkout disable
+2025-03-30T11:35:53.0979508Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-30T11:35:53.1018887Z ##[group]Checking out the ref
+2025-03-30T11:35:53.1022731Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1731/merge
+2025-03-30T11:35:53.1222450Z Note: switching to 'refs/remotes/pull/1731/merge'.
+2025-03-30T11:35:53.1225133Z 
+2025-03-30T11:35:53.1225897Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-30T11:35:53.1227675Z changes and commit them, and you can discard any commits you make in this
+2025-03-30T11:35:53.1229361Z state without impacting any branches by switching back to a branch.
+2025-03-30T11:35:53.1230707Z 
+2025-03-30T11:35:53.1231757Z If you want to create a new branch to retain commits you create, you may
+2025-03-30T11:35:53.1233797Z do so (now or later) by using -c with the switch command. Example:
+2025-03-30T11:35:53.1235070Z 
+2025-03-30T11:35:53.1235417Z   git switch -c <new-branch-name>
+2025-03-30T11:35:53.1236063Z 
+2025-03-30T11:35:53.1236381Z Or undo this operation with:
+2025-03-30T11:35:53.1236980Z 
+2025-03-30T11:35:53.1237425Z   git switch -
+2025-03-30T11:35:53.1237917Z 
+2025-03-30T11:35:53.1238919Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-30T11:35:53.1240410Z 
+2025-03-30T11:35:53.1242272Z HEAD is now at f0c1bad Merge be232f8383f4683d059023b7e62b4acba445a6da into e01e2640994b99066552b6161f84799712c396fa
+2025-03-30T11:35:53.1247164Z ##[endgroup]
+2025-03-30T11:35:53.1279672Z [command]/usr/bin/git log -1 --format=%H
+2025-03-30T11:35:53.1308195Z f0c1bad8d5b028ade183089c90d2914a6129ad1b
+2025-03-30T11:35:53.1634171Z ##[group]Run actions/setup-python@v5
+2025-03-30T11:35:53.1635363Z with:
+2025-03-30T11:35:53.1636166Z   check-latest: false
+2025-03-30T11:35:53.1637346Z   token: ***
+2025-03-30T11:35:53.1638215Z   update-environment: true
+2025-03-30T11:35:53.1639252Z   allow-prereleases: false
+2025-03-30T11:35:53.1640298Z   freethreaded: false
+2025-03-30T11:35:53.1641394Z ##[endgroup]
+2025-03-30T11:35:53.3345735Z [warning]Neither 'python-version' nor 'python-version-file' inputs were supplied. Attempting to find '.python-version' file.
+2025-03-30T11:35:53.3349730Z [warning].python-version doesn't exist.
+2025-03-30T11:35:53.3381609Z ##[warning]The `python-version` input is not set.  The version of Python currently in `PATH` will be used.
+2025-03-30T11:35:53.3513592Z ##[group]Run pipx run poetry install --only docs,lint
+2025-03-30T11:35:53.3515110Z [36;1mpipx run poetry install --only docs,lint[0m
+2025-03-30T11:35:53.3572013Z shell: /usr/bin/bash -e {0}
+2025-03-30T11:35:53.3573002Z ##[endgroup]
+2025-03-30T11:35:53.5089911Z creating virtual environment...
+2025-03-30T11:35:53.6061844Z installing poetry...
+2025-03-30T11:35:59.7867823Z Creating virtualenv bleak-REOz21XS-py3.12 in /home/runner/.cache/pypoetry/virtualenvs
+2025-03-30T11:36:00.1421226Z Installing dependencies from lock file
+2025-03-30T11:36:00.2277539Z 
+2025-03-30T11:36:00.2278471Z Package operations: 34 installs, 0 updates, 0 removals
+2025-03-30T11:36:00.2279036Z 
+2025-03-30T11:36:00.2281903Z   - Installing certifi (2024.7.4)
+2025-03-30T11:36:00.2289640Z   - Installing charset-normalizer (2.1.1)
+2025-03-30T11:36:00.2292582Z   - Installing idna (3.7)
+2025-03-30T11:36:00.2305880Z   - Installing markupsafe (2.1.1)
+2025-03-30T11:36:00.2317282Z   - Installing pytz (2022.2.1)
+2025-03-30T11:36:00.2345914Z   - Installing urllib3 (1.26.19)
+2025-03-30T11:36:01.5960112Z   - Installing alabaster (0.7.12)
+2025-03-30T11:36:01.5966377Z   - Installing babel (2.10.3)
+2025-03-30T11:36:01.5974395Z   - Installing docutils (0.17.1)
+2025-03-30T11:36:01.5988693Z   - Installing imagesize (1.4.1)
+2025-03-30T11:36:01.5993500Z   - Installing jinja2 (3.1.4)
+2025-03-30T11:36:01.6002397Z   - Installing packaging (24.0)
+2025-03-30T11:36:01.6010323Z   - Installing pygments (2.15.0)
+2025-03-30T11:36:01.6020042Z   - Installing requests (2.32.0)
+2025-03-30T11:36:01.6599058Z   - Installing snowballstemmer (2.2.0)
+2025-03-30T11:36:01.6672141Z   - Installing sphinxcontrib-applehelp (1.0.2)
+2025-03-30T11:36:01.7357403Z   - Installing sphinxcontrib-devhelp (1.0.2)
+2025-03-30T11:36:01.7606050Z   - Installing sphinxcontrib-htmlhelp (2.0.0)
+2025-03-30T11:36:01.7817846Z   - Installing sphinxcontrib-jsmath (1.0.1)
+2025-03-30T11:36:01.8329183Z   - Installing sphinxcontrib-qthelp (1.0.3)
+2025-03-30T11:36:01.8416923Z   - Installing sphinxcontrib-serializinghtml (1.1.5)
+2025-03-30T11:36:02.5335418Z   - Installing click (8.1.3)
+2025-03-30T11:36:02.5336318Z   - Installing mccabe (0.7.0)
+2025-03-30T11:36:02.5343712Z   - Installing mypy-extensions (0.4.3)
+2025-03-30T11:36:02.5352813Z   - Installing pathspec (0.10.1)
+2025-03-30T11:36:02.5354730Z   - Installing platformdirs (2.5.2)
+2025-03-30T11:36:02.5378467Z   - Installing pycodestyle (2.9.1)
+2025-03-30T11:36:02.5387313Z   - Installing pyflakes (2.5.0)
+2025-03-30T11:36:02.5393994Z   - Installing sphinx (5.1.1)
+2025-03-30T11:36:02.8106039Z   - Installing black (24.4.2)
+2025-03-30T11:36:02.8115427Z   - Installing flake8 (5.0.4)
+2025-03-30T11:36:02.8117875Z   - Installing isort (5.13.2)
+2025-03-30T11:36:02.8128601Z   - Installing sphinx-rtd-theme (1.0.0)
+2025-03-30T11:36:02.8139148Z   - Installing tomli (2.0.1)
+2025-03-30T11:36:03.0389325Z Warning: The file chosen for install of requests 2.32.0 (requests-2.32.0-py3-none-any.whl) is yanked. Reason for being yanked: Yanked due to conflicts with CVE-2024-35195 mitigation
+2025-03-30T11:36:03.0392752Z 
+2025-03-30T11:36:03.0393289Z Installing the current project: bleak (0.22.3)
+2025-03-30T11:36:03.1491597Z ##[group]Run pipx run poetry run isort . --check --diff
+2025-03-30T11:36:03.1492014Z [36;1mpipx run poetry run isort . --check --diff[0m
+2025-03-30T11:36:03.1539865Z shell: /usr/bin/bash -e {0}
+2025-03-30T11:36:03.1540115Z ##[endgroup]
+2025-03-30T11:36:04.1055391Z Skipped 1 files
+2025-03-30T11:36:04.1229521Z ##[group]Run pipx run poetry run black . --check --diff
+2025-03-30T11:36:04.1230163Z [36;1mpipx run poetry run black . --check --diff[0m
+2025-03-30T11:36:04.1277694Z shell: /usr/bin/bash -e {0}
+2025-03-30T11:36:04.1277925Z ##[endgroup]
+2025-03-30T11:36:05.8854686Z All done! ✨ 🍰 ✨
+2025-03-30T11:36:05.8855224Z 76 files would be left unchanged.
+2025-03-30T11:36:05.9131768Z ##[group]Run pipx run poetry run flake8 . --count --show-source --statistics
+2025-03-30T11:36:05.9132330Z [36;1mpipx run poetry run flake8 . --count --show-source --statistics[0m
+2025-03-30T11:36:05.9178165Z shell: /usr/bin/bash -e {0}
+2025-03-30T11:36:05.9178386Z ##[endgroup]
+2025-03-30T11:36:07.4268439Z ./bleak/uuids.py:1257:38: E231 missing whitespace after ':'
+2025-03-30T11:36:07.4269074Z     return normalize_uuid_str(f"{uuid:04X}")
+2025-03-30T11:36:07.4269475Z                                      ^
+2025-03-30T11:36:07.4269936Z ./bleak/uuids.py:1274:38: E231 missing whitespace after ':'
+2025-03-30T11:36:07.4270430Z     return normalize_uuid_str(f"{uuid:08X}")
+2025-03-30T11:36:07.4270794Z                                      ^
+2025-03-30T11:36:07.4271600Z ./bleak/backends/winrt/scanner.py:35:25: E231 missing whitespace after ':'
+2025-03-30T11:36:07.4272262Z     return ":".join(f"{x:02X}" for x in a.to_bytes(6, byteorder="big"))
+2025-03-30T11:36:07.4272782Z                         ^
+2025-03-30T11:36:07.4273272Z ./bleak/backends/winrt/client.py:161:66: E231 missing whitespace after ':'
+2025-03-30T11:36:07.4273976Z             f"{fail_msg}: Protocol Error 0x{result.protocol_error:02X}: {err}"
+2025-03-30T11:36:07.4274492Z                                                                  ^
+2025-03-30T11:36:07.4275064Z ./bleak/backends/winrt/client.py:170:68: E231 missing whitespace after ':'
+2025-03-30T11:36:07.4275748Z     raise BleakError(f"{fail_msg}: Unexpected status code 0x{status:02X}")
+2025-03-30T11:36:07.4276291Z                                                                    ^
+2025-03-30T11:36:07.4276832Z ./bleak/backends/winrt/client.py:879:62: E231 missing whitespace after ':'
+2025-03-30T11:36:07.4277459Z                 f"Could not read Descriptor value for {handle:04X}",
+2025-03-30T11:36:07.4277926Z                                                              ^
+2025-03-30T11:36:07.4278480Z ./bleak/backends/winrt/client.py:908:84: E231 missing whitespace after ':'
+2025-03-30T11:36:07.4279213Z             f"Could not write value {data} to characteristic {characteristic.handle:04X}",
+2025-03-30T11:36:07.4279792Z                                                                                    ^
+2025-03-30T11:36:07.4280360Z ./bleak/backends/winrt/client.py:933:67: E231 missing whitespace after ':'
+2025-03-30T11:36:07.4281207Z             f"Could not write value {data!r} to descriptor {handle:04X}",
+2025-03-30T11:36:07.4281705Z                                                                   ^
+2025-03-30T11:36:07.4282257Z ./bleak/backends/winrt/client.py:985:67: E231 missing whitespace after ':'
+2025-03-30T11:36:07.4282914Z                 f"Could not start notify on {characteristic.handle:04X}",
+2025-03-30T11:36:07.4283395Z                                                                   ^
+2025-03-30T11:36:07.4284379Z ./bleak/backends/winrt/client.py:1024:62: E231 missing whitespace after ':'
+2025-03-30T11:36:07.4285058Z             f"Could not stop notify on {characteristic.handle:04X}",
+2025-03-30T11:36:07.4285546Z                                                              ^
+2025-03-30T11:36:07.4286063Z ./examples/scan_iterator.py:21:44: E231 missing whitespace after ':'
+2025-03-30T11:36:07.4286595Z         print(f"\n{n} advertisement packets:")
+2025-03-30T11:36:07.4286967Z                                            ^
+2025-03-30T11:36:07.4287330Z 11    E231 missing whitespace after ':'
+2025-03-30T11:36:07.4287655Z 11
+2025-03-30T11:36:07.4479722Z ##[error]Process completed with exit code 1.
+2025-03-30T11:36:07.4563586Z Post job cleanup.
+2025-03-30T11:36:07.5536739Z [command]/usr/bin/git version
+2025-03-30T11:36:07.5577075Z git version 2.48.1
+2025-03-30T11:36:07.5629835Z Temporarily overriding HOME='/home/runner/work/_temp/cd388c86-e26d-472d-8926-a3ca68ba2e75' before making global git config changes
+2025-03-30T11:36:07.5630742Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-30T11:36:07.5635959Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/bleak/bleak
+2025-03-30T11:36:07.5677353Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-30T11:36:07.5714039Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-30T11:36:07.5960565Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-30T11:36:07.5984040Z http.https://github.com/.extraheader
+2025-03-30T11:36:07.5996831Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-30T11:36:07.6031553Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-30T11:36:07.6378762Z Cleaning up orphan processes

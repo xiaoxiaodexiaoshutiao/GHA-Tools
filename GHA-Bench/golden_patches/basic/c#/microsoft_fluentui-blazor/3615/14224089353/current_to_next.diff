@@ -1,0 +1,57 @@
+diff --git a/src/Core/Components/InputFile/FluentInputFile.razor.cs b/src/Core/Components/InputFile/FluentInputFile.razor.cs
+index 293d586514..cf9cdf1229 100644
+--- a/src/Core/Components/InputFile/FluentInputFile.razor.cs
++++ b/src/Core/Components/InputFile/FluentInputFile.razor.cs
+@@ -12,7 +12,7 @@ public partial class FluentInputFile : FluentComponentBase, IAsyncDisposable
+     private ElementReference? _containerElement;
+     private InputFile? _inputFile;
+     private IJSObjectReference? _containerInstance;
+-    
++
+     public static string ResourceLoadingBefore = "Loading...";
+     public static string ResourceLoadingCompleted = "Completed";
+     public static string ResourceLoadingCanceled = "Canceled";
+@@ -427,15 +427,24 @@ private async Task UpdateProgressAsync(int percent, string title)
+     // Unregister the drop zone events
+     public async ValueTask DisposeAsync()
+     {
+-        if (_containerInstance != null)
++        try
+         {
+-            await _containerInstance.InvokeVoidAsync("dispose");
+-            await _containerInstance.DisposeAsync();
+-        }
++            if (_containerInstance is not null)
++            {
++                await _containerInstance.InvokeVoidAsync("dispose");
++                await _containerInstance.DisposeAsync().ConfigureAwait(false);
++            }
+ 
+-        if (Module != null)
++            if (Module != null)
++            {
++                await Module.DisposeAsync().ConfigureAwait(false);
++            }
++        }
++        catch (Exception ex) when (ex is JSDisconnectedException ||
++                                   ex is OperationCanceledException)
+         {
+-            await Module.DisposeAsync();
++            // The JSRuntime side may routinely be gone already if the reason we're disposing is that
++            // the client disconnected. This is not an error.
+         }
+     }
+ }
+diff --git a/src/Core/Components/List/FluentCombobox.razor.cs b/src/Core/Components/List/FluentCombobox.razor.cs
+index 80776015e5..63bd266939 100644
+--- a/src/Core/Components/List/FluentCombobox.razor.cs
++++ b/src/Core/Components/List/FluentCombobox.razor.cs
+@@ -153,7 +153,7 @@ protected override async Task ChangeHandlerAsync(ChangeEventArgs e)
+             }
+             else
+             {
+-                await OnSelectedItemChangedHandlerAsync(item);
++                await InvokeAsync(async () => await OnSelectedItemChangedHandlerAsync(item));
+             }
+ 
+             if (Value != value)

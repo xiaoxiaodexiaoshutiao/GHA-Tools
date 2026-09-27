@@ -1,0 +1,13 @@
+diff --git a/tests/test_fetch.js b/tests/test_fetch.js
+index e177ee099..dcf5d095b 100644
+--- a/tests/test_fetch.js
++++ b/tests/test_fetch.js
+@@ -172,7 +172,7 @@ describe('Native Fetch', () => {
+     const response = await fetch(new URL('http://example.test/'))
+     expect(response.clone().url).to.equal('http://example.test/')
+     scope.done()
+-  });
++  })
+ 
+   describe('content-encoding', () => {
+     it('should accept gzipped content', async () => {

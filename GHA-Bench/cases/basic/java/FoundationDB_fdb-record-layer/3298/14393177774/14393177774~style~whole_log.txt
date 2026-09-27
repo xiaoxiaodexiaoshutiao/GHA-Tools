@@ -1,0 +1,496 @@
+2025-04-11T00:50:58.2936305Z Requested labels: ubuntu-latest
+2025-04-11T00:50:58.2936545Z Job defined at: FoundationDB/fdb-record-layer/.github/workflows/pull_request.yml@refs/pull/3298/merge
+2025-04-11T00:50:58.2936623Z Waiting for a runner to pick up this job...
+2025-04-11T00:50:59.9764726Z Job is waiting for a hosted runner to come online.
+2025-04-11T00:51:01.4876156Z Job is about to start running on the hosted runner: GitHub Actions 499 (hosted)
+2025-04-11T00:51:03.0512263Z Current runner version: '2.323.0'
+2025-04-11T00:51:03.0539060Z ##[group]Operating System
+2025-04-11T00:51:03.0539835Z Ubuntu
+2025-04-11T00:51:03.0540340Z 24.04.2
+2025-04-11T00:51:03.0540897Z LTS
+2025-04-11T00:51:03.0541407Z ##[endgroup]
+2025-04-11T00:51:03.0541924Z ##[group]Runner Image
+2025-04-11T00:51:03.0542534Z Image: ubuntu-24.04
+2025-04-11T00:51:03.0543109Z Version: 20250406.1.0
+2025-04-11T00:51:03.0544435Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250406.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-11T00:51:03.0545936Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250406.1
+2025-04-11T00:51:03.0546872Z ##[endgroup]
+2025-04-11T00:51:03.0547383Z ##[group]Runner Image Provisioner
+2025-04-11T00:51:03.0548055Z 2.0.422.1
+2025-04-11T00:51:03.0548574Z ##[endgroup]
+2025-04-11T00:51:03.0549797Z ##[group]GITHUB_TOKEN Permissions
+2025-04-11T00:51:03.0551842Z Checks: read
+2025-04-11T00:51:03.0552427Z Contents: read
+2025-04-11T00:51:03.0553300Z Metadata: read
+2025-04-11T00:51:03.0553885Z PullRequests: read
+2025-04-11T00:51:03.0554847Z ##[endgroup]
+2025-04-11T00:51:03.0558007Z Secret source: None
+2025-04-11T00:51:03.0559087Z Prepare workflow directory
+2025-04-11T00:51:03.0867081Z Prepare all required actions
+2025-04-11T00:51:03.0904325Z Getting action download info
+2025-04-11T00:51:03.3160745Z ##[group]Download immutable action package 'actions/checkout@v4.2.2'
+2025-04-11T00:51:03.3161752Z Version: 4.2.2
+2025-04-11T00:51:03.3162648Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-11T00:51:03.3163771Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-11T00:51:03.3164641Z ##[endgroup]
+2025-04-11T00:51:03.4695289Z Complete job name: style
+2025-04-11T00:51:03.5510834Z ##[group]Run actions/checkout@v4.2.2
+2025-04-11T00:51:03.5511804Z with:
+2025-04-11T00:51:03.5512307Z   repository: FoundationDB/fdb-record-layer
+2025-04-11T00:51:03.5513107Z   token: ***
+2025-04-11T00:51:03.5513611Z   ssh-strict: true
+2025-04-11T00:51:03.5514379Z   ssh-user: git
+2025-04-11T00:51:03.5514911Z   persist-credentials: true
+2025-04-11T00:51:03.5515442Z   clean: true
+2025-04-11T00:51:03.5515935Z   sparse-checkout-cone-mode: true
+2025-04-11T00:51:03.5516480Z   fetch-depth: 1
+2025-04-11T00:51:03.5516927Z   fetch-tags: false
+2025-04-11T00:51:03.5517379Z   show-progress: true
+2025-04-11T00:51:03.5517844Z   lfs: false
+2025-04-11T00:51:03.5518271Z   submodules: false
+2025-04-11T00:51:03.5518739Z   set-safe-directory: true
+2025-04-11T00:51:03.5519560Z ##[endgroup]
+2025-04-11T00:51:03.7338359Z Syncing repository: FoundationDB/fdb-record-layer
+2025-04-11T00:51:03.7340265Z ##[group]Getting Git version info
+2025-04-11T00:51:03.7341193Z Working directory is '/home/runner/work/fdb-record-layer/fdb-record-layer'
+2025-04-11T00:51:03.7342331Z [command]/usr/bin/git version
+2025-04-11T00:51:03.7418478Z git version 2.49.0
+2025-04-11T00:51:03.7445571Z ##[endgroup]
+2025-04-11T00:51:03.7458609Z Temporarily overriding HOME='/home/runner/work/_temp/ee58412a-4abd-4b7f-8308-061e851f231d' before making global git config changes
+2025-04-11T00:51:03.7460137Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-11T00:51:03.7463397Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/fdb-record-layer/fdb-record-layer
+2025-04-11T00:51:03.7497002Z Deleting the contents of '/home/runner/work/fdb-record-layer/fdb-record-layer'
+2025-04-11T00:51:03.7500702Z ##[group]Initializing the repository
+2025-04-11T00:51:03.7504808Z [command]/usr/bin/git init /home/runner/work/fdb-record-layer/fdb-record-layer
+2025-04-11T00:51:03.7565543Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-11T00:51:03.7567219Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-11T00:51:03.7569011Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-11T00:51:03.7570387Z hint:
+2025-04-11T00:51:03.7571278Z hint: 	git config --global init.defaultBranch <name>
+2025-04-11T00:51:03.7572813Z hint:
+2025-04-11T00:51:03.7573454Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-11T00:51:03.7574696Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-11T00:51:03.7575464Z hint:
+2025-04-11T00:51:03.7575899Z hint: 	git branch -m <name>
+2025-04-11T00:51:03.7576923Z Initialized empty Git repository in /home/runner/work/fdb-record-layer/fdb-record-layer/.git/
+2025-04-11T00:51:03.7582698Z [command]/usr/bin/git remote add origin https://github.com/FoundationDB/fdb-record-layer
+2025-04-11T00:51:03.7614390Z ##[endgroup]
+2025-04-11T00:51:03.7615244Z ##[group]Disabling automatic garbage collection
+2025-04-11T00:51:03.7617949Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-11T00:51:03.7646019Z ##[endgroup]
+2025-04-11T00:51:03.7646770Z ##[group]Setting up auth
+2025-04-11T00:51:03.7652507Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-11T00:51:03.7683821Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-11T00:51:03.7968199Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-11T00:51:03.7997369Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-11T00:51:03.8227668Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-11T00:51:03.8266382Z ##[endgroup]
+2025-04-11T00:51:03.8268301Z ##[group]Fetching the repository
+2025-04-11T00:51:03.8276582Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +9a6f34e6019b1e1b12cb3947d6257b2c497d56d3:refs/remotes/pull/3298/merge
+2025-04-11T00:51:05.5845758Z From https://github.com/FoundationDB/fdb-record-layer
+2025-04-11T00:51:05.5848052Z  * [new ref]         9a6f34e6019b1e1b12cb3947d6257b2c497d56d3 -> pull/3298/merge
+2025-04-11T00:51:05.5877663Z ##[endgroup]
+2025-04-11T00:51:05.5879662Z ##[group]Determining the checkout info
+2025-04-11T00:51:05.5881876Z ##[endgroup]
+2025-04-11T00:51:05.5885650Z [command]/usr/bin/git sparse-checkout disable
+2025-04-11T00:51:05.5925534Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-11T00:51:05.5953473Z ##[group]Checking out the ref
+2025-04-11T00:51:05.5957037Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/3298/merge
+2025-04-11T00:51:05.8445391Z Note: switching to 'refs/remotes/pull/3298/merge'.
+2025-04-11T00:51:05.8446554Z 
+2025-04-11T00:51:05.8447348Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-11T00:51:05.8448827Z changes and commit them, and you can discard any commits you make in this
+2025-04-11T00:51:05.8450322Z state without impacting any branches by switching back to a branch.
+2025-04-11T00:51:05.8451235Z 
+2025-04-11T00:51:05.8451836Z If you want to create a new branch to retain commits you create, you may
+2025-04-11T00:51:05.8453129Z do so (now or later) by using -c with the switch command. Example:
+2025-04-11T00:51:05.8453880Z 
+2025-04-11T00:51:05.8454371Z   git switch -c <new-branch-name>
+2025-04-11T00:51:05.8454929Z 
+2025-04-11T00:51:05.8455257Z Or undo this operation with:
+2025-04-11T00:51:05.8456029Z 
+2025-04-11T00:51:05.8456508Z   git switch -
+2025-04-11T00:51:05.8457209Z 
+2025-04-11T00:51:05.8458475Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-11T00:51:05.8460114Z 
+2025-04-11T00:51:05.8461869Z HEAD is now at 9a6f34e Merge bac1fe48bd72708d1c2c2a354202579076fe45ac into ccbbc761f00b8a661fa27c90e32e8ec934564248
+2025-04-11T00:51:05.8468063Z ##[endgroup]
+2025-04-11T00:51:05.8503439Z [command]/usr/bin/git log -1 --format=%H
+2025-04-11T00:51:05.8526108Z 9a6f34e6019b1e1b12cb3947d6257b2c497d56d3
+2025-04-11T00:51:05.8812385Z Prepare all required actions
+2025-04-11T00:51:05.8813642Z Getting action download info
+2025-04-11T00:51:06.0384252Z ##[group]Download immutable action package 'actions/setup-java@v4.7.0'
+2025-04-11T00:51:06.0384704Z Version: 4.7.0
+2025-04-11T00:51:06.0385058Z Digest: sha256:5f5c07139c6dc32a599e9e0b973af500cb67a72aa7e5c437df96130dd73c8479
+2025-04-11T00:51:06.0385540Z Source commit SHA: 3a4f6e1af504cf6a31855fa899c6aa5355ba6c12
+2025-04-11T00:51:06.0385861Z ##[endgroup]
+2025-04-11T00:51:06.3361002Z Download action repository 'gradle/actions@0bdd871935719febd78681f197cd39af5b6e16a6' (SHA:0bdd871935719febd78681f197cd39af5b6e16a6)
+2025-04-11T00:51:09.4120684Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-04-11T00:51:09.4121059Z Version: 5.5.0
+2025-04-11T00:51:09.4121404Z Digest: sha256:1fac95d751afd58314aebd2ab01d4bf3b3109a441917bd2cac2a22898ec494f7
+2025-04-11T00:51:09.4121902Z Source commit SHA: 8d9ed9ac5c53483de85588cdf95a591a75ab9f55
+2025-04-11T00:51:09.4122327Z ##[endgroup]
+2025-04-11T00:51:09.6618757Z ##[group]Run ./actions/setup-base-env
+2025-04-11T00:51:09.6619043Z ##[endgroup]
+2025-04-11T00:51:09.6765534Z ##[group]Run actions/setup-java@v4.7.0
+2025-04-11T00:51:09.6765792Z with:
+2025-04-11T00:51:09.6765971Z   java-version: 17
+2025-04-11T00:51:09.6766168Z   distribution: temurin
+2025-04-11T00:51:09.6766372Z   java-package: jdk
+2025-04-11T00:51:09.6766560Z   check-latest: false
+2025-04-11T00:51:09.6766759Z   server-id: github
+2025-04-11T00:51:09.6766965Z   server-username: GITHUB_ACTOR
+2025-04-11T00:51:09.6767212Z   server-password: GITHUB_TOKEN
+2025-04-11T00:51:09.6767450Z   overwrite-settings: true
+2025-04-11T00:51:09.6767668Z   job-status: success
+2025-04-11T00:51:09.6767976Z   token: ***
+2025-04-11T00:51:09.6768166Z ##[endgroup]
+2025-04-11T00:51:09.8705068Z ##[group]Installed distributions
+2025-04-11T00:51:09.8746399Z Resolved Java 17.0.14+7 from tool-cache
+2025-04-11T00:51:09.8746861Z Setting Java 17.0.14+7 as the default
+2025-04-11T00:51:09.8759538Z Creating toolchains.xml for JDK version 17 from temurin
+2025-04-11T00:51:09.8834494Z Writing to /home/runner/.m2/toolchains.xml
+2025-04-11T00:51:09.8835122Z 
+2025-04-11T00:51:09.8835501Z Java configuration:
+2025-04-11T00:51:09.8835898Z   Distribution: temurin
+2025-04-11T00:51:09.8836304Z   Version: 17.0.14+7
+2025-04-11T00:51:09.8837519Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.14-7/x64
+2025-04-11T00:51:09.8838047Z 
+2025-04-11T00:51:09.8839366Z ##[endgroup]
+2025-04-11T00:51:09.8857172Z Creating settings.xml with server-id: github
+2025-04-11T00:51:09.8862978Z Writing to /home/runner/.m2/settings.xml
+2025-04-11T00:51:09.9091687Z ##[group]Run gradle/actions/setup-gradle@0bdd871935719febd78681f197cd39af5b6e16a6
+2025-04-11T00:51:09.9092075Z with:
+2025-04-11T00:51:09.9092264Z   cache-disabled: false
+2025-04-11T00:51:09.9092482Z   cache-read-only: true
+2025-04-11T00:51:09.9092695Z   cache-write-only: false
+2025-04-11T00:51:09.9092920Z   cache-overwrite-existing: false
+2025-04-11T00:51:09.9093193Z   cache-cleanup: on-success
+2025-04-11T00:51:09.9093474Z   gradle-home-cache-includes: caches
+notifications
+
+2025-04-11T00:51:09.9093776Z   add-job-summary: always
+2025-04-11T00:51:09.9094192Z   add-job-summary-as-pr-comment: never
+2025-04-11T00:51:09.9094518Z   dependency-graph: disabled
+2025-04-11T00:51:09.9094811Z   dependency-graph-report-dir: dependency-graph-reports
+2025-04-11T00:51:09.9095150Z   dependency-graph-continue-on-failure: true
+2025-04-11T00:51:09.9095428Z   build-scan-publish: false
+2025-04-11T00:51:09.9095657Z   validate-wrappers: true
+2025-04-11T00:51:09.9095878Z   allow-snapshot-wrappers: false
+2025-04-11T00:51:09.9096135Z   gradle-home-cache-strict-match: false
+2025-04-11T00:51:09.9096399Z   workflow-job-context: null
+2025-04-11T00:51:09.9096760Z   github-token: ***
+2025-04-11T00:51:09.9096963Z env:
+2025-04-11T00:51:09.9097242Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.14-7/x64
+2025-04-11T00:51:09.9097905Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.14-7/x64
+2025-04-11T00:51:09.9098414Z ##[endgroup]
+2025-04-11T00:51:10.3955818Z Merged default JDK locations into /home/runner/.m2/toolchains.xml
+2025-04-11T00:51:10.3956864Z ##[group]Restore Gradle state from cache
+2025-04-11T00:51:10.4825164Z Cache hit for: gradle-home-v1|Linux-X64|style[3ec2bade30acd7b90232d0ccef358a54]-9a6f34e6019b1e1b12cb3947d6257b2c497d56d3
+2025-04-11T00:51:10.6434303Z Received 7838972 of 7838972 (100.0%), 58.9 MBs/sec
+2025-04-11T00:51:10.6437041Z Cache Size: ~7 MB (7838972 B)
+2025-04-11T00:51:10.6468259Z [command]/usr/bin/tar -xf /home/runner/work/_temp/3b8c6ff0-113c-473f-a3c1-9c2b92cfd8a4/cache.tzst -P -C /home/runner/work/fdb-record-layer/fdb-record-layer --use-compress-program unzstd
+2025-04-11T00:51:10.8645860Z Cache restored successfully
+2025-04-11T00:51:10.8670350Z Restored cache entry with key gradle-home-v1|Linux-X64|style[3ec2bade30acd7b90232d0ccef358a54]-9a6f34e6019b1e1b12cb3947d6257b2c497d56d3 to /home/runner/.gradle/caches,/home/runner/.gradle/notifications,/home/runner/.gradle/.setup-gradle in 472ms
+2025-04-11T00:51:10.9278508Z Cache hit for: gradle-instrumented-jars-v1-af4bb8ec9139029365544c80aae8fc8b
+2025-04-11T00:51:10.9318768Z Cache hit for: gradle-dependencies-v1-5d162b1dc4488f7e9afb2f5d62e670a3
+2025-04-11T00:51:10.9322993Z Cache hit for: gradle-wrapper-zips-v1-3dbd4c3fefdc2ee239e93c58dbb942d1
+2025-04-11T00:51:10.9399476Z Cache hit for: gradle-groovy-dsl-v1-65e6510d76ce6c78e9685f5f63e207b0
+2025-04-11T00:51:10.9547811Z Received 113402 of 113402 (100.0%), 13.5 MBs/sec
+2025-04-11T00:51:10.9548356Z Cache Size: ~0 MB (113402 B)
+2025-04-11T00:51:10.9578594Z [command]/usr/bin/tar -xf /home/runner/work/_temp/33233283-a68d-4768-a4c0-7eaabc81e62c/cache.tzst -P -C /home/runner/work/fdb-record-layer/fdb-record-layer --use-compress-program unzstd
+2025-04-11T00:51:11.0194747Z Cache restored successfully
+2025-04-11T00:51:11.0235960Z Restored cache entry with key gradle-groovy-dsl-v1-65e6510d76ce6c78e9685f5f63e207b0 to /home/runner/.gradle/caches/*/groovy-dsl/*/ in 155ms
+2025-04-11T00:51:11.4036804Z Received 19875872 of 19875872 (100.0%), 42.8 MBs/sec
+2025-04-11T00:51:11.4037339Z Cache Size: ~19 MB (19875872 B)
+2025-04-11T00:51:11.7753674Z [command]/usr/bin/tar -xf /home/runner/work/_temp/9b3d7366-fec5-42a1-9501-ae5645cf52e4/cache.tzst -P -C /home/runner/work/fdb-record-layer/fdb-record-layer --use-compress-program unzstd
+2025-04-11T00:51:11.9494748Z Cache restored successfully
+2025-04-11T00:51:11.9559978Z Restored cache entry with key gradle-instrumented-jars-v1-af4bb8ec9139029365544c80aae8fc8b to /home/runner/.gradle/caches/jars-*/*/ in 1087ms
+2025-04-11T00:51:12.0609768Z Received 134217728 of 549980841 (24.4%), 119.0 MBs/sec
+2025-04-11T00:51:12.0610147Z Received 134217728 of 145873432 (92.0%), 120.9 MBs/sec
+2025-04-11T00:51:12.0919351Z Received 145873432 of 145873432 (100.0%), 127.3 MBs/sec
+2025-04-11T00:51:12.0919937Z Cache Size: ~139 MB (145873432 B)
+2025-04-11T00:51:12.0940050Z [command]/usr/bin/tar -xf /home/runner/work/_temp/3c4546be-03fd-498a-aa46-144c1096a2a3/cache.tzst -P -C /home/runner/work/fdb-record-layer/fdb-record-layer --use-compress-program unzstd
+2025-04-11T00:51:13.0709187Z Received 335544320 of 549980841 (61.0%), 153.2 MBs/sec
+2025-04-11T00:51:13.1860929Z Cache restored successfully
+2025-04-11T00:51:13.2306639Z Restored cache entry with key gradle-wrapper-zips-v1-3dbd4c3fefdc2ee239e93c58dbb942d1 to /home/runner/.gradle/wrapper/dists/gradle-7.6.4-all/69w292fwwbbevpookp42lrbux in 2362ms
+2025-04-11T00:51:14.0713188Z Received 541592233 of 549980841 (98.5%), 167.2 MBs/sec
+2025-04-11T00:51:14.1591718Z Received 549980841 of 549980841 (100.0%), 165.1 MBs/sec
+2025-04-11T00:51:14.1595037Z Cache Size: ~525 MB (549980841 B)
+2025-04-11T00:51:14.1732174Z [command]/usr/bin/tar -xf /home/runner/work/_temp/d882fa6b-a46a-4378-a571-948ca8137e3b/cache.tzst -P -C /home/runner/work/fdb-record-layer/fdb-record-layer --use-compress-program unzstd
+2025-04-11T00:51:14.9999265Z Cache restored successfully
+2025-04-11T00:51:15.1140305Z Restored cache entry with key gradle-dependencies-v1-5d162b1dc4488f7e9afb2f5d62e670a3 to /home/runner/.gradle/caches/modules-*/files-*/*/*/*/* in 4246ms
+2025-04-11T00:51:15.1231106Z ##[endgroup]
+2025-04-11T00:51:15.1832517Z ##[group]All Gradle Wrapper jars are valid
+2025-04-11T00:51:15.1833581Z ✓ Found known Gradle Wrapper JAR files:
+2025-04-11T00:51:15.1834604Z   575098db54a998ff1c6770b352c3b16766c09848bee7555dab09afc34e8cf590 gradle/wrapper/gradle-wrapper.jar
+2025-04-11T00:51:15.1835350Z ##[endgroup]
+2025-04-11T00:51:15.2010311Z ##[group]Run actions/setup-python@v5
+2025-04-11T00:51:15.2010579Z with:
+2025-04-11T00:51:15.2010791Z   python-version: 3.13
+2025-04-11T00:51:15.2011019Z   check-latest: false
+2025-04-11T00:51:15.2011358Z   token: ***
+2025-04-11T00:51:15.2011581Z   update-environment: true
+2025-04-11T00:51:15.2011839Z   allow-prereleases: false
+2025-04-11T00:51:15.2012074Z   freethreaded: false
+2025-04-11T00:51:15.2012298Z env:
+2025-04-11T00:51:15.2012602Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.14-7/x64
+2025-04-11T00:51:15.2013134Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.14-7/x64
+2025-04-11T00:51:15.2013537Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+2025-04-11T00:51:15.2013828Z   GRADLE_USER_HOME: /home/runner/.gradle
+2025-04-11T00:51:15.2014308Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+2025-04-11T00:51:15.2014606Z   GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+2025-04-11T00:51:15.2015040Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+2025-04-11T00:51:15.2015525Z   DEVELOCITY_AUTO_INJECTION_CUSTOM_VALUE: gradle-actions
+2025-04-11T00:51:15.2015857Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+2025-04-11T00:51:15.2016126Z ##[endgroup]
+2025-04-11T00:51:15.3687655Z ##[group]Installed versions
+2025-04-11T00:51:15.3743022Z Successfully set up CPython (3.13.2)
+2025-04-11T00:51:15.3743769Z ##[endgroup]
+2025-04-11T00:51:15.3884709Z Prepare all required actions
+2025-04-11T00:51:15.3911112Z ##[group]Run ./actions/run-gradle
+2025-04-11T00:51:15.3911355Z with:
+2025-04-11T00:51:15.3911824Z   gradle_command: build -x test -x destructiveTest -PreleaseBuild=false -PpublishBuild=false -PspotbugsEnableHtmlReport
+2025-04-11T00:51:15.3912313Z env:
+2025-04-11T00:51:15.3912590Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.14-7/x64
+2025-04-11T00:51:15.3913041Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.14-7/x64
+2025-04-11T00:51:15.3913429Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+2025-04-11T00:51:15.3913713Z   GRADLE_USER_HOME: /home/runner/.gradle
+2025-04-11T00:51:15.3913983Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+2025-04-11T00:51:15.3914407Z   GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+2025-04-11T00:51:15.3914807Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+2025-04-11T00:51:15.3915291Z   DEVELOCITY_AUTO_INJECTION_CUSTOM_VALUE: gradle-actions
+2025-04-11T00:51:15.3915602Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+2025-04-11T00:51:15.3915903Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-11T00:51:15.3916303Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-04-11T00:51:15.3916694Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-11T00:51:15.3917045Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-11T00:51:15.3917390Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-11T00:51:15.3917739Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-04-11T00:51:15.3918031Z ##[endgroup]
+2025-04-11T00:51:15.3945024Z ##[group]Run sed -i -e "s/^org\.gradle\..*/#&/g" gradle.properties
+2025-04-11T00:51:15.3945488Z [36;1msed -i -e "s/^org\.gradle\..*/#&/g" gradle.properties[0m
+2025-04-11T00:51:15.3995123Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-11T00:51:15.3995469Z env:
+2025-04-11T00:51:15.3995768Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.14-7/x64
+2025-04-11T00:51:15.3996247Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.14-7/x64
+2025-04-11T00:51:15.3996839Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+2025-04-11T00:51:15.3997123Z   GRADLE_USER_HOME: /home/runner/.gradle
+2025-04-11T00:51:15.3997397Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+2025-04-11T00:51:15.3997672Z   GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+2025-04-11T00:51:15.3998070Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+2025-04-11T00:51:15.3998525Z   DEVELOCITY_AUTO_INJECTION_CUSTOM_VALUE: gradle-actions
+2025-04-11T00:51:15.3998834Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+2025-04-11T00:51:15.3999151Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-11T00:51:15.3999536Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-04-11T00:51:15.3999923Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-11T00:51:15.4000263Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-11T00:51:15.4000605Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-11T00:51:15.4000956Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-04-11T00:51:15.4001250Z ##[endgroup]
+2025-04-11T00:51:15.4141787Z ##[group]Run GRADLE_OPTS="-XX:+HeapDumpOnOutOfMemoryError -XX:+TieredCompilation -Xmx4096m -Dfile.encoding=UTF-8 -Duser.country -Duser.language=en -Duser.variant --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED" ./gradlew --no-daemon --console=plain  --warning-mode all build -x test -x destructiveTest -PreleaseBuild=false -PpublishBuild=false -PspotbugsEnableHtmlReport
+2025-04-11T00:51:15.4145359Z [36;1mGRADLE_OPTS="-XX:+HeapDumpOnOutOfMemoryError -XX:+TieredCompilation -Xmx4096m -Dfile.encoding=UTF-8 -Duser.country -Duser.language=en -Duser.variant --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED" ./gradlew --no-daemon --console=plain  --warning-mode all build -x test -x destructiveTest -PreleaseBuild=false -PpublishBuild=false -PspotbugsEnableHtmlReport[0m
+2025-04-11T00:51:15.4189219Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-11T00:51:15.4189552Z env:
+2025-04-11T00:51:15.4189844Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.14-7/x64
+2025-04-11T00:51:15.4190294Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.14-7/x64
+2025-04-11T00:51:15.4190683Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+2025-04-11T00:51:15.4190964Z   GRADLE_USER_HOME: /home/runner/.gradle
+2025-04-11T00:51:15.4191253Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+2025-04-11T00:51:15.4191526Z   GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+2025-04-11T00:51:15.4191943Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+2025-04-11T00:51:15.4192391Z   DEVELOCITY_AUTO_INJECTION_CUSTOM_VALUE: gradle-actions
+2025-04-11T00:51:15.4192702Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+2025-04-11T00:51:15.4193013Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-11T00:51:15.4193391Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-04-11T00:51:15.4193771Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-11T00:51:15.4194367Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-11T00:51:15.4194766Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-11T00:51:15.4195111Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-04-11T00:51:15.4195403Z ##[endgroup]
+2025-04-11T00:51:24.4914426Z 
+2025-04-11T00:51:24.4921976Z > Configure project :fdb-record-layer-lucene
+2025-04-11T00:51:24.4923744Z Fixing seed for lucene tests
+2025-04-11T00:51:24.4925398Z Fixing seed for lucene tests
+2025-04-11T00:51:24.4926867Z Fixing seed for lucene tests
+2025-04-11T00:51:24.4928316Z Fixing seed for lucene tests
+2025-04-11T00:51:24.4929542Z Fixing seed for lucene tests
+2025-04-11T00:51:24.4930827Z Fixing seed for lucene tests
+2025-04-11T00:51:26.3955113Z 
+2025-04-11T00:51:26.3955710Z > Configure project :yaml-tests
+2025-04-11T00:51:26.3957140Z Downloaded old external server: fdb-relational-server-4.2.4.0-all.jar
+2025-04-11T00:51:26.3957980Z Downloaded old external server: fdb-relational-server-4.2.4.0-all.jar
+2025-04-11T00:51:26.3958777Z Downloaded old external server: fdb-relational-server-4.2.3.0-all.jar
+2025-04-11T00:51:26.3959592Z Downloaded old external server: fdb-relational-server-4.2.2.1-all.jar
+2025-04-11T00:51:26.3960454Z Downloaded old external server: fdb-relational-server-4.2.2.0-all.jar
+2025-04-11T00:51:26.3961266Z Downloaded old external server: fdb-relational-server-4.1.10.0-all.jar
+2025-04-11T00:51:26.3962065Z Downloaded old external server: fdb-relational-server-4.1.9.0-all.jar
+2025-04-11T00:51:26.3962902Z Downloaded old external server: fdb-relational-server-4.1.8.0-all.jar
+2025-04-11T00:51:26.3963725Z Downloaded old external server: fdb-relational-server-4.1.6.0-all.jar
+2025-04-11T00:51:26.3964915Z Downloaded old external server: fdb-relational-server-4.1.5.0-all.jar
+2025-04-11T00:51:26.3965723Z Downloaded old external server: fdb-relational-server-4.1.4.0-all.jar
+2025-04-11T00:51:26.3966360Z Found 10 to test against
+2025-04-11T00:51:26.3966817Z Using seed for yaml-tests: 1016075334166525886
+2025-04-11T00:51:27.2918503Z 
+2025-04-11T00:51:27.2918941Z > Task :extractIncludeProto
+2025-04-11T00:51:27.2919394Z > Task :extractProto
+2025-04-11T00:51:27.2932684Z > Task :generateProto NO-SOURCE
+2025-04-11T00:51:27.2933157Z > Task :compileJava NO-SOURCE
+2025-04-11T00:51:27.2933592Z > Task :processResources NO-SOURCE
+2025-04-11T00:51:27.2934299Z > Task :classes UP-TO-DATE
+2025-04-11T00:51:27.2934706Z > Task :jar
+2025-04-11T00:51:27.2935037Z > Task :assemble
+2025-04-11T00:51:27.2935711Z > Task :spotbugsMain NO-SOURCE
+2025-04-11T00:51:27.2936157Z > Task :extractIncludeTestProto
+2025-04-11T00:51:27.2936589Z > Task :extractTestProto
+2025-04-11T00:51:27.3921588Z > Task :generateTestProto NO-SOURCE
+2025-04-11T00:51:27.3928599Z > Task :compileTestJava NO-SOURCE
+2025-04-11T00:51:27.3929116Z > Task :processTestResources NO-SOURCE
+2025-04-11T00:51:27.3929590Z > Task :testClasses UP-TO-DATE
+2025-04-11T00:51:27.3930005Z > Task :spotbugsTest NO-SOURCE
+2025-04-11T00:51:27.3930415Z > Task :check
+2025-04-11T00:51:27.3930791Z > Task :createDistribution NO-SOURCE
+2025-04-11T00:51:27.3931260Z > Task :package UP-TO-DATE
+2025-04-11T00:51:27.3931654Z > Task :build
+2025-04-11T00:51:27.3932080Z > Task :fdb-extensions:processResources NO-SOURCE
+2025-04-11T00:51:27.3932695Z > Task :fdb-java-annotations:processResources NO-SOURCE
+2025-04-11T00:51:27.3933293Z > Task :fdb-record-layer-core:extractProto
+2025-04-11T00:51:27.3933836Z > Task :fdb-record-layer-core:processResources
+2025-04-11T00:51:27.5910635Z > Task :examples:extractIncludeProto
+2025-04-11T00:51:27.5911167Z > Task :examples:extractProto
+2025-04-11T00:51:27.7937098Z > Task :examples:generateProto
+2025-04-11T00:51:29.5910238Z > Task :fdb-java-annotations:compileJava
+2025-04-11T00:51:31.6909741Z > Task :fdb-extensions:compileJava
+2025-04-11T00:51:31.7914453Z > Task :fdb-java-annotations:classes
+2025-04-11T00:51:31.7919681Z > Task :fdb-java-annotations:jar
+2025-04-11T00:51:31.7924980Z > Task :fdb-record-layer-core:extractIncludeProto
+2025-04-11T00:51:32.5909417Z > Task :fdb-record-layer-core:generateProto
+2025-04-11T00:52:01.8065614Z > Task :fdb-record-layer-core:compileJava
+2025-04-11T00:52:03.2910541Z > Task :examples:compileJava
+2025-04-11T00:52:03.2914647Z > Task :examples:processResources
+2025-04-11T00:52:03.2916107Z > Task :examples:classes
+2025-04-11T00:52:03.2916910Z > Task :examples:jar
+2025-04-11T00:52:03.2917389Z > Task :fdb-extensions:classes
+2025-04-11T00:52:03.3910401Z > Task :fdb-extensions:jar
+2025-04-11T00:52:03.3910924Z > Task :fdb-record-layer-core:classes
+2025-04-11T00:52:04.2917255Z > Task :fdb-record-layer-core:jar
+2025-04-11T00:52:04.8910304Z > Task :examples:startScripts
+2025-04-11T00:52:04.9909699Z > Task :examples:distTar
+2025-04-11T00:52:05.4909732Z > Task :examples:distZip
+2025-04-11T00:52:06.8911279Z > Task :examples:javadoc
+2025-04-11T00:52:06.8914968Z > Task :examples:javadocJar
+2025-04-11T00:52:06.8915623Z > Task :examples:sourcesJar
+2025-04-11T00:52:06.9911869Z > Task :examples:extractIncludeTestProto
+2025-04-11T00:52:06.9920537Z > Task :examples:extractTestProto
+2025-04-11T00:52:06.9921522Z > Task :examples:generateTestProto NO-SOURCE
+2025-04-11T00:52:06.9922079Z > Task :examples:compileTestJava NO-SOURCE
+2025-04-11T00:52:06.9922618Z > Task :examples:processTestResources NO-SOURCE
+2025-04-11T00:52:06.9923133Z > Task :examples:testClasses UP-TO-DATE
+2025-04-11T00:52:06.9923592Z > Task :examples:testJar
+2025-04-11T00:52:06.9923973Z > Task :examples:assemble
+2025-04-11T00:52:07.0937375Z > Task :examples:checkstyleTest NO-SOURCE
+2025-04-11T00:52:10.2909075Z > Task :examples:pmdMain
+2025-04-11T00:52:10.4909448Z > Task :examples:spotbugsTest SKIPPED
+2025-04-11T00:52:10.5909979Z > Task :examples:createDistribution NO-SOURCE
+2025-04-11T00:52:10.5910650Z > Task :examples:package UP-TO-DATE
+2025-04-11T00:52:20.0913818Z > Task :fdb-extensions:javadoc
+2025-04-11T00:52:20.3937922Z > Task :fdb-extensions:javadocJar
+2025-04-11T00:52:20.4909277Z > Task :fdb-extensions:sourcesJar
+2025-04-11T00:52:23.1909243Z > Task :examples:checkstyleMandatory
+2025-04-11T00:52:25.5909576Z > Task :examples:checkstyleMain
+2025-04-11T00:52:27.2911760Z > Task :fdb-extensions:compileTestJava
+2025-04-11T00:52:27.2912281Z > Task :examples:quickCheck
+2025-04-11T00:52:27.2912748Z > Task :fdb-extensions:processTestResources NO-SOURCE
+2025-04-11T00:52:27.2913265Z > Task :fdb-extensions:testClasses
+2025-04-11T00:52:27.2913662Z > Task :fdb-extensions:testJar
+2025-04-11T00:52:27.2914773Z > Task :fdb-extensions:assemble
+2025-04-11T00:52:36.6909173Z > Task :fdb-extensions:checkstyleTest
+2025-04-11T00:52:38.3935463Z > Task :fdb-extensions:pmdMain
+2025-04-11T00:52:38.5125883Z > Task :examples:spotbugsMain
+2025-04-11T00:52:38.5130565Z > Task :examples:check
+2025-04-11T00:52:38.5215400Z > Task :examples:build
+2025-04-11T00:52:38.5216301Z > Task :fdb-extensions:spotbugsTest SKIPPED
+2025-04-11T00:52:38.6909639Z > Task :fdb-extensions:generatePomFileForLibraryPublication
+2025-04-11T00:52:38.6910669Z > Task :fdb-extensions:createDistribution
+2025-04-11T00:52:38.6911464Z > Task :fdb-extensions:package
+2025-04-11T00:52:42.3909060Z > Task :fdb-extensions:checkstyleMain
+2025-04-11T00:52:42.4909246Z > Task :fdb-java-annotations:javadoc
+2025-04-11T00:52:42.5909349Z > Task :fdb-java-annotations:javadocJar
+2025-04-11T00:52:42.5959512Z > Task :fdb-java-annotations:sourcesJar
+2025-04-11T00:52:42.5961383Z > Task :fdb-java-annotations:compileTestJava NO-SOURCE
+2025-04-11T00:52:42.5963387Z > Task :fdb-java-annotations:processTestResources NO-SOURCE
+2025-04-11T00:52:42.5965446Z > Task :fdb-java-annotations:testClasses UP-TO-DATE
+2025-04-11T00:52:42.6909924Z > Task :fdb-java-annotations:testJar
+2025-04-11T00:52:42.6911022Z > Task :fdb-java-annotations:assemble
+2025-04-11T00:52:42.6911976Z > Task :fdb-java-annotations:checkstyleTest NO-SOURCE
+2025-04-11T00:52:43.7909230Z > Task :fdb-java-annotations:pmdMain
+2025-04-11T00:52:44.1910003Z > Task :fdb-java-annotations:checkstyleMain
+2025-04-11T00:52:48.3938655Z > Task :fdb-extensions:checkstyleMandatory
+2025-04-11T00:52:48.3964939Z > Task :fdb-extensions:quickCheck
+2025-04-11T00:52:48.3965846Z > Task :fdb-java-annotations:spotbugsTest SKIPPED
+2025-04-11T00:52:48.3966792Z > Task :fdb-java-annotations:generatePomFileForLibraryPublication
+2025-04-11T00:52:48.4035945Z > Task :fdb-java-annotations:createDistribution
+2025-04-11T00:52:48.4036464Z > Task :fdb-java-annotations:package
+2025-04-11T00:52:53.7937826Z > Task :fdb-java-annotations:checkstyleMandatory
+2025-04-11T00:53:08.3911650Z > Task :fdb-extensions:spotbugsMain
+2025-04-11T00:53:13.7947607Z > Task :fdb-record-layer-core:javadoc
+2025-04-11T00:53:13.7949234Z > Task :fdb-java-annotations:quickCheck
+2025-04-11T00:53:14.1909394Z > Task :fdb-java-annotations:spotbugsMain
+2025-04-11T00:53:14.8908721Z > Task :fdb-record-layer-core:javadocJar
+2025-04-11T00:53:15.3909888Z > Task :fdb-record-layer-core:sourcesJar
+2025-04-11T00:53:15.6927237Z > Task :fdb-record-layer-core:extractIncludeTestProto
+2025-04-11T00:53:15.6928834Z > Task :fdb-record-layer-core:extractTestProto
+2025-04-11T00:53:16.1908940Z > Task :fdb-record-layer-core:generateTestProto
+2025-04-11T00:53:42.9909505Z > Task :fdb-record-layer-core:compileTestJava
+2025-04-11T00:53:42.9944735Z > Task :fdb-record-layer-core:processTestResources
+2025-04-11T00:53:42.9947430Z > Task :fdb-record-layer-core:testClasses
+2025-04-11T00:53:43.4910060Z > Task :fdb-record-layer-core:testJar
+2025-04-11T00:53:43.4912828Z > Task :fdb-extensions:check
+2025-04-11T00:53:43.4913297Z > Task :fdb-extensions:build
+2025-04-11T00:53:43.4913747Z > Task :fdb-record-layer-core:assemble
+2025-04-11T00:53:43.6945087Z > Task :fdb-java-annotations:check
+2025-04-11T00:53:43.6987112Z > Task :fdb-java-annotations:build
+2025-04-11T00:54:05.3908510Z 
+2025-04-11T00:54:05.3909000Z > Task :fdb-record-layer-core:pmdMain
+2025-04-11T00:54:05.3911078Z /home/runner/work/fdb-record-layer/fdb-record-layer/fdb-record-layer-core/src/main/java/com/apple/foundationdb/record/provider/foundationdb/OnlineIndexScrubber.java:148:	AvoidUsingHardCodedIP:	Do not hard code the IP address 
+2025-04-11T00:54:13.5926643Z 
+2025-04-11T00:54:13.5927493Z > Task :fdb-record-layer-core:checkstyleMain
+2025-04-11T00:54:13.5928283Z > Task :fdb-record-layer-core:checkstyleTest
+2025-04-11T00:54:40.9909547Z > Task :fdb-record-layer-core:pmdMain FAILED
+2025-04-11T00:57:52.7919951Z 
+2025-04-11T00:57:52.7923167Z FAILURE: Build failed with an exception.
+2025-04-11T00:57:52.7924372Z 
+2025-04-11T00:57:52.7925001Z * What went wrong:
+2025-04-11T00:57:52.7925654Z Execution failed for task ':fdb-record-layer-core:pmdMain'.
+2025-04-11T00:57:52.7928082Z > 1 PMD rule violations were found. See the report at: file:///home/runner/work/fdb-record-layer/fdb-record-layer/fdb-record-layer-core/.out/reports/pmd/main.html
+2025-04-11T00:57:52.7929338Z 68 actionable tasks: 68 executed
+2025-04-11T00:57:52.7931511Z 
+2025-04-11T00:57:52.7932282Z * Try:
+2025-04-11T00:57:52.7933754Z > Run with --stacktrace option to get the stack trace.
+2025-04-11T00:57:52.7936530Z > Run with --info or --debug option to get more log output.
+2025-04-11T00:57:52.7937791Z > Run with --scan to get full insights.
+2025-04-11T00:57:52.7940032Z 
+2025-04-11T00:57:52.7948893Z * Get more help at https://help.gradle.org
+2025-04-11T00:57:52.7949419Z 
+2025-04-11T00:57:52.7949644Z BUILD FAILED in 6m 37s
+2025-04-11T00:57:53.1196757Z ##[error]Process completed with exit code 1.
+2025-04-11T00:57:53.1245068Z Post job cleanup.
+2025-04-11T00:57:53.1312956Z Post job cleanup.
+2025-04-11T00:57:53.4498680Z In post-action step
+2025-04-11T00:57:53.4509857Z Cache is read-only: will not save state for use in subsequent builds.
+2025-04-11T00:57:53.4516554Z Generating Job Summary
+2025-04-11T00:57:53.4539648Z Completed post-action step
+2025-04-11T00:57:53.4678084Z Post job cleanup.
+2025-04-11T00:57:53.6509891Z Post job cleanup.
+2025-04-11T00:57:53.7465051Z [command]/usr/bin/git version
+2025-04-11T00:57:53.7500770Z git version 2.49.0
+2025-04-11T00:57:53.7551348Z Temporarily overriding HOME='/home/runner/work/_temp/bcdb600f-c51d-402b-9d68-6f2f2bad330b' before making global git config changes
+2025-04-11T00:57:53.7552651Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-11T00:57:53.7558149Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/fdb-record-layer/fdb-record-layer
+2025-04-11T00:57:53.7592543Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-11T00:57:53.7625777Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-11T00:57:53.7863948Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-11T00:57:53.7887036Z http.https://github.com/.extraheader
+2025-04-11T00:57:53.7899722Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-11T00:57:53.7931896Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-11T00:57:53.8267657Z Cleaning up orphan processes

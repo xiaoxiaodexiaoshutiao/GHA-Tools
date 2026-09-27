@@ -1,0 +1,13 @@
+diff --git a/src/databricks/labs/remorph/install.py b/src/databricks/labs/remorph/install.py
+index 6e970069a8..0946708504 100644
+--- a/src/databricks/labs/remorph/install.py
++++ b/src/databricks/labs/remorph/install.py
+@@ -261,7 +261,7 @@ def run(
+         module: str,
+         config: RemorphConfigs | None = None,
+     ) -> RemorphConfigs:
+-        if module in ("transpiler", "all"):
++        if module in {"transpiler", "all"}:
+             self.install_rct()
+             self.install_morpheus()
+         logger.info(f"Installing Remorph v{self._product_info.version()}")

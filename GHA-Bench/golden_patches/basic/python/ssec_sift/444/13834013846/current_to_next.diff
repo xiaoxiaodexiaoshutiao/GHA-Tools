@@ -1,0 +1,12 @@
+diff --git a/uwsift/workspace/metadatabase.py b/uwsift/workspace/metadatabase.py
+index f1708cb9..3a93ad66 100644
+--- a/uwsift/workspace/metadatabase.py
++++ b/uwsift/workspace/metadatabase.py
+@@ -798,7 +798,6 @@ class Metadatabase(object):
+ 
+     def __init__(self, uri=None, **kwargs):
+         self.session_nesting = defaultdict(int)
+-        global _MDB
+         if _MDB is not None:
+             raise AssertionError("Metadatabase is a singleton and already exists")
+         self._MDB = self

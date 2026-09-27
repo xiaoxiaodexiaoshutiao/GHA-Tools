@@ -1,0 +1,164 @@
+﻿2025-04-09T18:10:35.7450861Z Current runner version: '2.323.0'
+2025-04-09T18:10:35.7476907Z ##[group]Operating System
+2025-04-09T18:10:35.7477741Z Ubuntu
+2025-04-09T18:10:35.7478262Z 24.04.2
+2025-04-09T18:10:35.7478768Z LTS
+2025-04-09T18:10:35.7479276Z ##[endgroup]
+2025-04-09T18:10:35.7479767Z ##[group]Runner Image
+2025-04-09T18:10:35.7480413Z Image: ubuntu-24.04
+2025-04-09T18:10:35.7480927Z Version: 20250406.1.0
+2025-04-09T18:10:35.7482352Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250406.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-09T18:10:35.7483783Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250406.1
+2025-04-09T18:10:35.7484670Z ##[endgroup]
+2025-04-09T18:10:35.7485215Z ##[group]Runner Image Provisioner
+2025-04-09T18:10:35.7485750Z 2.0.422.1
+2025-04-09T18:10:35.7486284Z ##[endgroup]
+2025-04-09T18:10:35.7488646Z ##[group]GITHUB_TOKEN Permissions
+2025-04-09T18:10:35.7490702Z Actions: read
+2025-04-09T18:10:35.7491616Z Attestations: read
+2025-04-09T18:10:35.7492273Z Checks: read
+2025-04-09T18:10:35.7492794Z Contents: read
+2025-04-09T18:10:35.7493271Z Deployments: read
+2025-04-09T18:10:35.7493848Z Discussions: read
+2025-04-09T18:10:35.7494371Z Issues: read
+2025-04-09T18:10:35.7494867Z Metadata: read
+2025-04-09T18:10:35.7495421Z Models: read
+2025-04-09T18:10:35.7495887Z Packages: read
+2025-04-09T18:10:35.7496399Z Pages: read
+2025-04-09T18:10:35.7496886Z PullRequests: read
+2025-04-09T18:10:35.7497453Z RepositoryProjects: read
+2025-04-09T18:10:35.7497982Z SecurityEvents: read
+2025-04-09T18:10:35.7498537Z Statuses: read
+2025-04-09T18:10:35.7499072Z ##[endgroup]
+2025-04-09T18:10:35.7501858Z Secret source: None
+2025-04-09T18:10:35.7502755Z Prepare workflow directory
+2025-04-09T18:10:35.7890169Z Prepare all required actions
+2025-04-09T18:10:35.7928463Z Getting action download info
+2025-04-09T18:10:36.2548183Z Download action repository 'tarides/changelog-check-action@v3' (SHA:0189fc7eedec3ef3e9648c713908f6f2a6e99057)
+2025-04-09T18:10:37.3358718Z Getting action download info
+2025-04-09T18:10:37.5219506Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-09T18:10:37.5220249Z Version: 4.2.2
+2025-04-09T18:10:37.5220870Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-09T18:10:37.5221533Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-09T18:10:37.5221869Z ##[endgroup]
+2025-04-09T18:10:37.5941475Z Complete job name: check-whats-news
+2025-04-09T18:10:37.6551785Z ##[group]Run tarides/changelog-check-action@v3
+2025-04-09T18:10:37.6552495Z with:
+2025-04-09T18:10:37.6552750Z   changelog: docs/whats_new.rst
+2025-04-09T18:10:37.6553201Z ##[endgroup]
+2025-04-09T18:10:37.6700102Z ##[group]Run actions/checkout@v4
+2025-04-09T18:10:37.6700406Z with:
+2025-04-09T18:10:37.6700646Z   fetch-depth: 0
+2025-04-09T18:10:37.6700899Z   repository: braindecode/braindecode
+2025-04-09T18:10:37.6701521Z   token: ***
+2025-04-09T18:10:37.6701763Z   ssh-strict: true
+2025-04-09T18:10:37.6702004Z   ssh-user: git
+2025-04-09T18:10:37.6702270Z   persist-credentials: true
+2025-04-09T18:10:37.6702532Z   clean: true
+2025-04-09T18:10:37.6702779Z   sparse-checkout-cone-mode: true
+2025-04-09T18:10:37.6703077Z   fetch-tags: false
+2025-04-09T18:10:37.6703312Z   show-progress: true
+2025-04-09T18:10:37.6703549Z   lfs: false
+2025-04-09T18:10:37.6703778Z   submodules: false
+2025-04-09T18:10:37.6704015Z   set-safe-directory: true
+2025-04-09T18:10:37.6704276Z ##[endgroup]
+2025-04-09T18:10:37.9524130Z Syncing repository: braindecode/braindecode
+2025-04-09T18:10:37.9525589Z ##[group]Getting Git version info
+2025-04-09T18:10:37.9526089Z Working directory is '/home/runner/work/braindecode/braindecode'
+2025-04-09T18:10:37.9526770Z [command]/usr/bin/git version
+2025-04-09T18:10:37.9647033Z git version 2.49.0
+2025-04-09T18:10:37.9676448Z ##[endgroup]
+2025-04-09T18:10:37.9690118Z Temporarily overriding HOME='/home/runner/work/_temp/952eace0-9de5-4cd2-abbb-09a31a99e93c' before making global git config changes
+2025-04-09T18:10:37.9691219Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-09T18:10:37.9695743Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/braindecode/braindecode
+2025-04-09T18:10:37.9733215Z Deleting the contents of '/home/runner/work/braindecode/braindecode'
+2025-04-09T18:10:37.9736931Z ##[group]Initializing the repository
+2025-04-09T18:10:37.9741099Z [command]/usr/bin/git init /home/runner/work/braindecode/braindecode
+2025-04-09T18:10:37.9858109Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-09T18:10:37.9859016Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-09T18:10:37.9859850Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-09T18:10:37.9860387Z hint:
+2025-04-09T18:10:37.9860742Z hint: 	git config --global init.defaultBranch <name>
+2025-04-09T18:10:37.9861304Z hint:
+2025-04-09T18:10:37.9861633Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-09T18:10:37.9862172Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-09T18:10:37.9862573Z hint:
+2025-04-09T18:10:37.9862850Z hint: 	git branch -m <name>
+2025-04-09T18:10:37.9868847Z Initialized empty Git repository in /home/runner/work/braindecode/braindecode/.git/
+2025-04-09T18:10:37.9879708Z [command]/usr/bin/git remote add origin https://github.com/braindecode/braindecode
+2025-04-09T18:10:37.9918014Z ##[endgroup]
+2025-04-09T18:10:37.9918495Z ##[group]Disabling automatic garbage collection
+2025-04-09T18:10:37.9922238Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-09T18:10:37.9950820Z ##[endgroup]
+2025-04-09T18:10:37.9951895Z ##[group]Setting up auth
+2025-04-09T18:10:37.9958928Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-09T18:10:37.9988696Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-09T18:10:38.0433350Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-09T18:10:38.0474444Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-09T18:10:38.0705571Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-09T18:10:38.0742030Z ##[endgroup]
+2025-04-09T18:10:38.0742861Z ##[group]Fetching the repository
+2025-04-09T18:10:38.0751960Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* +c058f10522de9f86c256d1d1d024f4c622d8d92e:refs/remotes/pull/718/merge
+2025-04-09T18:10:41.1693664Z From https://github.com/braindecode/braindecode
+2025-04-09T18:10:41.1694649Z  * [new branch]      make_stuffs_fast                         -> origin/make_stuffs_fast
+2025-04-09T18:10:41.1695388Z  * [new branch]      master                                   -> origin/master
+2025-04-09T18:10:41.1696110Z  * [new branch]      v0.8                                     -> origin/v0.8
+2025-04-09T18:10:41.1696639Z  * [new tag]         0.5.1                                    -> 0.5.1
+2025-04-09T18:10:41.1697135Z  * [new tag]         v0.5.0                                   -> v0.5.0
+2025-04-09T18:10:41.1697929Z  * [new tag]         v0.6.0                                   -> v0.6.0
+2025-04-09T18:10:41.1699502Z  * [new tag]         v0.7.0                                   -> v0.7.0
+2025-04-09T18:10:41.1700469Z  * [new tag]         v0.8                                     -> v0.8
+2025-04-09T18:10:41.1704247Z  * [new ref]         c058f10522de9f86c256d1d1d024f4c622d8d92e -> pull/718/merge
+2025-04-09T18:10:41.1742482Z ##[endgroup]
+2025-04-09T18:10:41.1743027Z ##[group]Determining the checkout info
+2025-04-09T18:10:41.1743648Z ##[endgroup]
+2025-04-09T18:10:41.1748654Z [command]/usr/bin/git sparse-checkout disable
+2025-04-09T18:10:41.1789891Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-09T18:10:41.1816777Z ##[group]Checking out the ref
+2025-04-09T18:10:41.1820458Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/718/merge
+2025-04-09T18:10:41.2228166Z Note: switching to 'refs/remotes/pull/718/merge'.
+2025-04-09T18:10:41.2228678Z 
+2025-04-09T18:10:41.2229005Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-09T18:10:41.2229786Z changes and commit them, and you can discard any commits you make in this
+2025-04-09T18:10:41.2230538Z state without impacting any branches by switching back to a branch.
+2025-04-09T18:10:41.2231211Z 
+2025-04-09T18:10:41.2231575Z If you want to create a new branch to retain commits you create, you may
+2025-04-09T18:10:41.2232286Z do so (now or later) by using -c with the switch command. Example:
+2025-04-09T18:10:41.2232697Z 
+2025-04-09T18:10:41.2232875Z   git switch -c <new-branch-name>
+2025-04-09T18:10:41.2233159Z 
+2025-04-09T18:10:41.2233324Z Or undo this operation with:
+2025-04-09T18:10:41.2233645Z 
+2025-04-09T18:10:41.2233801Z   git switch -
+2025-04-09T18:10:41.2233997Z 
+2025-04-09T18:10:41.2234340Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-09T18:10:41.2234873Z 
+2025-04-09T18:10:41.2235216Z HEAD is now at c058f10 Merge aa72fe374ef055812fc18b3416b2cf27a98adede into 0ebb34f1b9aeb35711b156b16648c8f0eeb28f63
+2025-04-09T18:10:41.2239287Z ##[endgroup]
+2025-04-09T18:10:41.2276310Z [command]/usr/bin/git log -1 --format=%H
+2025-04-09T18:10:41.2298454Z c058f10522de9f86c256d1d1d024f4c622d8d92e
+2025-04-09T18:10:41.2514183Z ##[group]Run /home/runner/work/_actions/tarides/changelog-check-action/v3/check.sh "docs/whats_new.rst"
+2025-04-09T18:10:41.2514915Z [36;1m/home/runner/work/_actions/tarides/changelog-check-action/v3/check.sh "docs/whats_new.rst"[0m
+2025-04-09T18:10:41.2566081Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-09T18:10:41.2566438Z env:
+2025-04-09T18:10:41.2566610Z   BASE_REF: master
+2025-04-09T18:10:41.2566812Z   NO_CHANGELOG_LABEL: false
+2025-04-09T18:10:41.2567016Z ##[endgroup]
+2025-04-09T18:10:41.2689218Z User-visible changes should come with an entry in the changelog. This behavior
+2025-04-09T18:10:41.2689757Z can be overridden by using the "no changelog" label, which is used for changes
+2025-04-09T18:10:41.2690356Z that are not user-visible.
+2025-04-09T18:10:41.2704086Z ##[error]Process completed with exit code 1.
+2025-04-09T18:10:41.2793333Z Post job cleanup.
+2025-04-09T18:10:41.2936816Z Post job cleanup.
+2025-04-09T18:10:41.3863232Z [command]/usr/bin/git version
+2025-04-09T18:10:41.3910448Z git version 2.49.0
+2025-04-09T18:10:41.3953143Z Temporarily overriding HOME='/home/runner/work/_temp/bf949fa6-e690-4914-874f-021276b973db' before making global git config changes
+2025-04-09T18:10:41.3954134Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-09T18:10:41.3958449Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/braindecode/braindecode
+2025-04-09T18:10:41.3992795Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-09T18:10:41.4024719Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-09T18:10:41.4263510Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-09T18:10:41.4287299Z http.https://github.com/.extraheader
+2025-04-09T18:10:41.4300376Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-09T18:10:41.4333965Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-09T18:10:41.4684806Z Cleaning up orphan processes

@@ -1,0 +1,110 @@
+2025-02-07T20:29:06.9580741Z Requested labels: ubuntu-latest
+2025-02-07T20:29:06.9581087Z Job defined at: skalenetwork/skaled/.github/workflows/issue_check.yml@refs/pull/2099/merge
+2025-02-07T20:29:06.9581222Z Waiting for a runner to pick up this job...
+2025-02-07T20:29:07.2389656Z Job is waiting for a hosted runner to come online.
+2025-02-07T20:29:10.4474886Z Job is about to start running on the hosted runner: GitHub Actions 36 (hosted)
+2025-02-07T20:29:12.3013579Z Current runner version: '2.322.0'
+2025-02-07T20:29:12.3040970Z ##[group]Operating System
+2025-02-07T20:29:12.3041919Z Ubuntu
+2025-02-07T20:29:12.3042447Z 24.04.1
+2025-02-07T20:29:12.3042941Z LTS
+2025-02-07T20:29:12.3043515Z ##[endgroup]
+2025-02-07T20:29:12.3044064Z ##[group]Runner Image
+2025-02-07T20:29:12.3044708Z Image: ubuntu-24.04
+2025-02-07T20:29:12.3045364Z Version: 20250202.1.0
+2025-02-07T20:29:12.3047134Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250202.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-07T20:29:12.3049166Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250202.1
+2025-02-07T20:29:12.3050227Z ##[endgroup]
+2025-02-07T20:29:12.3050785Z ##[group]Runner Image Provisioner
+2025-02-07T20:29:12.3051487Z 2.0.422.1
+2025-02-07T20:29:12.3052016Z ##[endgroup]
+2025-02-07T20:29:12.3054329Z ##[group]GITHUB_TOKEN Permissions
+2025-02-07T20:29:12.3056513Z Actions: write
+2025-02-07T20:29:12.3057469Z Attestations: write
+2025-02-07T20:29:12.3058182Z Checks: write
+2025-02-07T20:29:12.3058777Z Contents: write
+2025-02-07T20:29:12.3059453Z Deployments: write
+2025-02-07T20:29:12.3059999Z Discussions: write
+2025-02-07T20:29:12.3060558Z Issues: write
+2025-02-07T20:29:12.3061107Z Metadata: read
+2025-02-07T20:29:12.3061626Z Packages: write
+2025-02-07T20:29:12.3062214Z Pages: write
+2025-02-07T20:29:12.3062736Z PullRequests: write
+2025-02-07T20:29:12.3063324Z RepositoryProjects: write
+2025-02-07T20:29:12.3064002Z SecurityEvents: write
+2025-02-07T20:29:12.3064587Z Statuses: write
+2025-02-07T20:29:12.3065083Z ##[endgroup]
+2025-02-07T20:29:12.3068657Z Secret source: Actions
+2025-02-07T20:29:12.3069943Z Prepare workflow directory
+2025-02-07T20:29:12.3519249Z Prepare all required actions
+2025-02-07T20:29:12.3557784Z Getting action download info
+2025-02-07T20:29:12.4987098Z Download action repository 'mondeja/pr-linked-issues-action@v2' (SHA:15e15b5aa999ae8a742117c9489aa63b1a007b76)
+2025-02-07T20:29:13.0132336Z Complete job name: Check if pull request has linked issues
+2025-02-07T20:29:13.0644608Z ##[group]Build container for action use: '/home/runner/work/_actions/mondeja/pr-linked-issues-action/v2/Dockerfile'.
+2025-02-07T20:29:13.0687832Z ##[command]/usr/bin/docker build -t 066daa:d366a696a0c04fb4bd20df11327a8764 -f "/home/runner/work/_actions/mondeja/pr-linked-issues-action/v2/Dockerfile" "/home/runner/work/_actions/mondeja/pr-linked-issues-action/v2"
+2025-02-07T20:29:13.7859852Z #0 building with "default" instance using docker driver
+2025-02-07T20:29:13.7860728Z 
+2025-02-07T20:29:13.7861067Z #1 [internal] load build definition from Dockerfile
+2025-02-07T20:29:13.7861868Z #1 transferring dockerfile: 162B done
+2025-02-07T20:29:13.7862523Z #1 DONE 0.0s
+2025-02-07T20:29:13.7862811Z 
+2025-02-07T20:29:13.7863179Z #2 [auth] library/alpine:pull token for registry-1.docker.io
+2025-02-07T20:29:13.7863999Z #2 DONE 0.0s
+2025-02-07T20:29:13.7864294Z 
+2025-02-07T20:29:13.7864665Z #3 [internal] load metadata for docker.io/library/alpine:3.17
+2025-02-07T20:29:14.0919481Z #3 DONE 0.5s
+2025-02-07T20:29:14.2091046Z 
+2025-02-07T20:29:14.2091992Z #4 [internal] load .dockerignore
+2025-02-07T20:29:14.2093536Z #4 transferring context: 2B done
+2025-02-07T20:29:14.2094531Z #4 DONE 0.0s
+2025-02-07T20:29:14.2095158Z 
+2025-02-07T20:29:14.2095659Z #5 [internal] load build context
+2025-02-07T20:29:14.2096803Z #5 transferring context: 6.67kB done
+2025-02-07T20:29:14.2097723Z #5 DONE 0.0s
+2025-02-07T20:29:14.2098155Z 
+2025-02-07T20:29:14.2099581Z #6 [1/3] FROM docker.io/library/alpine:3.17@sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989
+2025-02-07T20:29:14.2102528Z #6 resolve docker.io/library/alpine:3.17@sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989 done
+2025-02-07T20:29:14.2105788Z #6 extracting sha256:fbcfea79c1c4819e0689385057cfd4cbd2ee9ba20e6d420b360644788a22862c
+2025-02-07T20:29:14.2108460Z #6 sha256:8fc3dacfb6d69da8d44e42390de777e48577085db99aa4e4af35f483eb08b989 8.08kB / 8.08kB done
+2025-02-07T20:29:14.2111571Z #6 sha256:920690a8d840be3c20bf5205001bc913be3a4d8c39ea191bbdaf8e187ffcb180 1.02kB / 1.02kB done
+2025-02-07T20:29:14.2114930Z #6 sha256:775f483016a7d128be2a6c6978785619990f9ac24abb5ff1868222020118b279 601B / 601B done
+2025-02-07T20:29:14.2117869Z #6 sha256:fbcfea79c1c4819e0689385057cfd4cbd2ee9ba20e6d420b360644788a22862c 3.39MB / 3.39MB 0.1s done
+2025-02-07T20:29:14.4536422Z #6 extracting sha256:fbcfea79c1c4819e0689385057cfd4cbd2ee9ba20e6d420b360644788a22862c 0.1s done
+2025-02-07T20:29:14.4537144Z #6 DONE 0.2s
+2025-02-07T20:29:14.4537357Z 
+2025-02-07T20:29:14.4537579Z #7 [2/3] RUN apk add --no-cache --no-progress curl jq
+2025-02-07T20:29:14.4538351Z #7 0.148 fetch https://dl-cdn.alpinelinux.org/alpine/v3.17/main/x86_64/APKINDEX.tar.gz
+2025-02-07T20:29:14.5546772Z #7 0.249 fetch https://dl-cdn.alpinelinux.org/alpine/v3.17/community/x86_64/APKINDEX.tar.gz
+2025-02-07T20:29:14.7370025Z #7 0.432 (1/7) Installing ca-certificates (20240226-r0)
+2025-02-07T20:29:14.8704873Z #7 0.454 (2/7) Installing brotli-libs (1.0.9-r9)
+2025-02-07T20:29:14.8705655Z #7 0.464 (3/7) Installing nghttp2-libs (1.51.0-r2)
+2025-02-07T20:29:14.8706060Z #7 0.468 (4/7) Installing libcurl (8.9.0-r0)
+2025-02-07T20:29:14.8706438Z #7 0.476 (5/7) Installing curl (8.9.0-r0)
+2025-02-07T20:29:14.8706765Z #7 0.482 (6/7) Installing oniguruma (6.9.8-r0)
+2025-02-07T20:29:14.8707104Z #7 0.490 (7/7) Installing jq (1.6-r2)
+2025-02-07T20:29:14.8707486Z #7 0.498 Executing busybox-1.35.0-r31.trigger
+2025-02-07T20:29:14.8707847Z #7 0.502 Executing ca-certificates-20240226-r0.trigger
+2025-02-07T20:29:14.8708206Z #7 0.565 OK: 11 MiB in 22 packages
+2025-02-07T20:29:14.9797499Z #7 DONE 0.7s
+2025-02-07T20:29:14.9797906Z 
+2025-02-07T20:29:14.9798051Z #8 [3/3] COPY entrypoint /entrypoint
+2025-02-07T20:29:14.9798423Z #8 DONE 0.0s
+2025-02-07T20:29:15.0851922Z 
+2025-02-07T20:29:15.0852518Z #9 exporting to image
+2025-02-07T20:29:15.0853736Z #9 exporting layers 0.1s done
+2025-02-07T20:29:15.0854543Z #9 writing image sha256:281887f5999006fc564867c72fe18b46eeafe91ffa484861d232edb138b56ab6 done
+2025-02-07T20:29:15.0856198Z #9 naming to docker.io/library/066daa:d366a696a0c04fb4bd20df11327a8764 done
+2025-02-07T20:29:15.0856985Z #9 DONE 0.1s
+2025-02-07T20:29:15.0924914Z ##[endgroup]
+2025-02-07T20:29:15.1182685Z ##[group]Run mondeja/pr-linked-issues-action@v2
+2025-02-07T20:29:15.1183331Z with:
+2025-02-07T20:29:15.1183687Z env:
+2025-02-07T20:29:15.1184246Z   GITHUB_TOKEN: ***
+2025-02-07T20:29:15.1184459Z ##[endgroup]
+2025-02-07T20:29:15.1320109Z ##[command]/usr/bin/docker run --name daad366a696a0c04fb4bd20df11327a8764_36ca92 --label 066daa --workdir /github/workspace --rm -e "GITHUB_TOKEN" -e "INPUT_REPOSITORY_OWNER" -e "INPUT_REPOSITORY_NAME" -e "INPUT_PULL_REQUEST" -e "INPUT_OWNERS" -e "INPUT_ADD_LINKS_BY_CONTENT" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_RESULTS_URL" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/runner/work/skaled/skaled":"/github/workspace" 066daa:d366a696a0c04fb4bd20df11327a8764  "" "" "" ""
+2025-02-07T20:29:15.7545074Z ##[group]Run exit 1
+2025-02-07T20:29:15.7545402Z [36;1mexit 1[0m
+2025-02-07T20:29:15.7577939Z shell: /usr/bin/bash -e {0}
+2025-02-07T20:29:15.7578232Z ##[endgroup]
+2025-02-07T20:29:15.7677667Z ##[error]Process completed with exit code 1.
+2025-02-07T20:29:15.7737727Z Cleaning up orphan processes

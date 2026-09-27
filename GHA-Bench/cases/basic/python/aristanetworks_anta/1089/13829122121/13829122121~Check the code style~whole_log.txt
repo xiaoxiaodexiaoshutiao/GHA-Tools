@@ -1,0 +1,225 @@
+2025-03-13T07:18:07.7159174Z Requested labels: ubuntu-latest
+2025-03-13T07:18:07.7159353Z Job defined at: aristanetworks/anta/.github/workflows/code-testing.yml@refs/pull/1089/merge
+2025-03-13T07:18:07.7159433Z Waiting for a runner to pick up this job...
+2025-03-13T07:18:08.2051550Z Job is waiting for a hosted runner to come online.
+2025-03-13T07:18:11.2413971Z Job is about to start running on the hosted runner: GitHub Actions 308 (hosted)
+2025-03-13T07:18:12.8286967Z Current runner version: '2.322.0'
+2025-03-13T07:18:12.8310828Z ##[group]Operating System
+2025-03-13T07:18:12.8311597Z Ubuntu
+2025-03-13T07:18:12.8312094Z 24.04.2
+2025-03-13T07:18:12.8312633Z LTS
+2025-03-13T07:18:12.8313114Z ##[endgroup]
+2025-03-13T07:18:12.8313627Z ##[group]Runner Image
+2025-03-13T07:18:12.8314246Z Image: ubuntu-24.04
+2025-03-13T07:18:12.8314743Z Version: 20250309.1.0
+2025-03-13T07:18:12.8315781Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250309.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-13T07:18:12.8317501Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250309.1
+2025-03-13T07:18:12.8318421Z ##[endgroup]
+2025-03-13T07:18:12.8318987Z ##[group]Runner Image Provisioner
+2025-03-13T07:18:12.8319593Z 2.0.422.1
+2025-03-13T07:18:12.8320050Z ##[endgroup]
+2025-03-13T07:18:12.8322264Z ##[group]GITHUB_TOKEN Permissions
+2025-03-13T07:18:12.8324650Z Actions: read
+2025-03-13T07:18:12.8325468Z Attestations: read
+2025-03-13T07:18:12.8326086Z Checks: read
+2025-03-13T07:18:12.8326899Z Contents: read
+2025-03-13T07:18:12.8327444Z Deployments: read
+2025-03-13T07:18:12.8327942Z Discussions: read
+2025-03-13T07:18:12.8328481Z Issues: read
+2025-03-13T07:18:12.8328994Z Metadata: read
+2025-03-13T07:18:12.8329482Z Packages: read
+2025-03-13T07:18:12.8330054Z Pages: read
+2025-03-13T07:18:12.8330548Z PullRequests: read
+2025-03-13T07:18:12.8331030Z RepositoryProjects: read
+2025-03-13T07:18:12.8331671Z SecurityEvents: read
+2025-03-13T07:18:12.8332205Z Statuses: read
+2025-03-13T07:18:12.8332743Z ##[endgroup]
+2025-03-13T07:18:12.8335811Z Secret source: None
+2025-03-13T07:18:12.8337075Z Prepare workflow directory
+2025-03-13T07:18:12.8729416Z Prepare all required actions
+2025-03-13T07:18:12.8765567Z Getting action download info
+2025-03-13T07:18:13.0521598Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-13T07:18:13.1298213Z Download action repository 'actions/setup-python@v5' (SHA:42375524e23c412d93fb67b49958b491fce71c38)
+2025-03-13T07:18:13.2783258Z Complete job name: Check the code style
+2025-03-13T07:18:13.3505016Z ##[group]Run actions/checkout@v4
+2025-03-13T07:18:13.3505850Z with:
+2025-03-13T07:18:13.3506592Z   repository: aristanetworks/anta
+2025-03-13T07:18:13.3507253Z   token: ***
+2025-03-13T07:18:13.3507642Z   ssh-strict: true
+2025-03-13T07:18:13.3508067Z   ssh-user: git
+2025-03-13T07:18:13.3508530Z   persist-credentials: true
+2025-03-13T07:18:13.3509003Z   clean: true
+2025-03-13T07:18:13.3509415Z   sparse-checkout-cone-mode: true
+2025-03-13T07:18:13.3509933Z   fetch-depth: 1
+2025-03-13T07:18:13.3510334Z   fetch-tags: false
+2025-03-13T07:18:13.3510735Z   show-progress: true
+2025-03-13T07:18:13.3511148Z   lfs: false
+2025-03-13T07:18:13.3511524Z   submodules: false
+2025-03-13T07:18:13.3511935Z   set-safe-directory: true
+2025-03-13T07:18:13.3512662Z ##[endgroup]
+2025-03-13T07:18:13.5272868Z Syncing repository: aristanetworks/anta
+2025-03-13T07:18:13.5274504Z ##[group]Getting Git version info
+2025-03-13T07:18:13.5275159Z Working directory is '/home/runner/work/anta/anta'
+2025-03-13T07:18:13.5276058Z [command]/usr/bin/git version
+2025-03-13T07:18:13.5345873Z git version 2.48.1
+2025-03-13T07:18:13.5372560Z ##[endgroup]
+2025-03-13T07:18:13.5386185Z Temporarily overriding HOME='/home/runner/work/_temp/90358888-e64a-4932-af71-67395a3b6d36' before making global git config changes
+2025-03-13T07:18:13.5387724Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-13T07:18:13.5391584Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/anta/anta
+2025-03-13T07:18:13.5423974Z Deleting the contents of '/home/runner/work/anta/anta'
+2025-03-13T07:18:13.5427989Z ##[group]Initializing the repository
+2025-03-13T07:18:13.5431680Z [command]/usr/bin/git init /home/runner/work/anta/anta
+2025-03-13T07:18:13.5485674Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-13T07:18:13.5487264Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-13T07:18:13.5488469Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-13T07:18:13.5489180Z hint:
+2025-03-13T07:18:13.5489685Z hint: 	git config --global init.defaultBranch <name>
+2025-03-13T07:18:13.5490606Z hint:
+2025-03-13T07:18:13.5491408Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-13T07:18:13.5492565Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-13T07:18:13.5493480Z hint:
+2025-03-13T07:18:13.5493897Z hint: 	git branch -m <name>
+2025-03-13T07:18:13.5494594Z Initialized empty Git repository in /home/runner/work/anta/anta/.git/
+2025-03-13T07:18:13.5501387Z [command]/usr/bin/git remote add origin https://github.com/aristanetworks/anta
+2025-03-13T07:18:13.5533989Z ##[endgroup]
+2025-03-13T07:18:13.5535196Z ##[group]Disabling automatic garbage collection
+2025-03-13T07:18:13.5539752Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-13T07:18:13.5568939Z ##[endgroup]
+2025-03-13T07:18:13.5570191Z ##[group]Setting up auth
+2025-03-13T07:18:13.5576638Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-13T07:18:13.5607328Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-13T07:18:13.5873648Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-13T07:18:13.5903475Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-13T07:18:13.6135544Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-13T07:18:13.6173489Z ##[endgroup]
+2025-03-13T07:18:13.6174291Z ##[group]Fetching the repository
+2025-03-13T07:18:13.6183222Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +b268cda8f654860e4a964f5aebc56ae5c5b10b9b:refs/remotes/pull/1089/merge
+2025-03-13T07:18:14.1002730Z From https://github.com/aristanetworks/anta
+2025-03-13T07:18:14.1004727Z  * [new ref]         b268cda8f654860e4a964f5aebc56ae5c5b10b9b -> pull/1089/merge
+2025-03-13T07:18:14.1029305Z ##[endgroup]
+2025-03-13T07:18:14.1030583Z ##[group]Determining the checkout info
+2025-03-13T07:18:14.1032024Z ##[endgroup]
+2025-03-13T07:18:14.1035992Z [command]/usr/bin/git sparse-checkout disable
+2025-03-13T07:18:14.1072956Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-13T07:18:14.1100076Z ##[group]Checking out the ref
+2025-03-13T07:18:14.1102979Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1089/merge
+2025-03-13T07:18:14.1434703Z Note: switching to 'refs/remotes/pull/1089/merge'.
+2025-03-13T07:18:14.1435617Z 
+2025-03-13T07:18:14.1436545Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-13T07:18:14.1438275Z changes and commit them, and you can discard any commits you make in this
+2025-03-13T07:18:14.1439808Z state without impacting any branches by switching back to a branch.
+2025-03-13T07:18:14.1440375Z 
+2025-03-13T07:18:14.1440751Z If you want to create a new branch to retain commits you create, you may
+2025-03-13T07:18:14.1441590Z do so (now or later) by using -c with the switch command. Example:
+2025-03-13T07:18:14.1442181Z 
+2025-03-13T07:18:14.1442558Z   git switch -c <new-branch-name>
+2025-03-13T07:18:14.1443168Z 
+2025-03-13T07:18:14.1443524Z Or undo this operation with:
+2025-03-13T07:18:14.1443878Z 
+2025-03-13T07:18:14.1444092Z   git switch -
+2025-03-13T07:18:14.1444352Z 
+2025-03-13T07:18:14.1444762Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-13T07:18:14.1445333Z 
+2025-03-13T07:18:14.1446139Z HEAD is now at b268cda Merge 04b35b0c9c5395d1d50f027ed0b365d4c7a9fb14 into f841d66ebe332eaacbd91141664b84cabaa96ce1
+2025-03-13T07:18:14.1448803Z ##[endgroup]
+2025-03-13T07:18:14.1477299Z [command]/usr/bin/git log -1 --format=%H
+2025-03-13T07:18:14.1498948Z b268cda8f654860e4a964f5aebc56ae5c5b10b9b
+2025-03-13T07:18:14.1831247Z ##[group]Run actions/setup-python@v5
+2025-03-13T07:18:14.1831854Z with:
+2025-03-13T07:18:14.1832267Z   python-version: 3.11
+2025-03-13T07:18:14.1832737Z   check-latest: false
+2025-03-13T07:18:14.1833348Z   token: ***
+2025-03-13T07:18:14.1833782Z   update-environment: true
+2025-03-13T07:18:14.1834282Z   allow-prereleases: false
+2025-03-13T07:18:14.1834771Z ##[endgroup]
+2025-03-13T07:18:14.3515804Z ##[group]Installed versions
+2025-03-13T07:18:14.3574323Z Successfully set up CPython (3.11.11)
+2025-03-13T07:18:14.3576187Z ##[endgroup]
+2025-03-13T07:18:14.3720742Z ##[group]Run pip install tox
+2025-03-13T07:18:14.3722102Z [36;1mpip install tox[0m
+2025-03-13T07:18:14.3776469Z shell: /usr/bin/bash -e {0}
+2025-03-13T07:18:14.3777708Z env:
+2025-03-13T07:18:14.3778929Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-13T07:18:14.3781044Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-03-13T07:18:14.3783142Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-13T07:18:14.3784953Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-13T07:18:14.3786876Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-13T07:18:14.3788673Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-03-13T07:18:14.3790205Z ##[endgroup]
+2025-03-13T07:18:16.2002459Z Collecting tox
+2025-03-13T07:18:16.2332746Z   Downloading tox-4.24.2-py3-none-any.whl.metadata (3.7 kB)
+2025-03-13T07:18:16.2501098Z Collecting cachetools>=5.5.1 (from tox)
+2025-03-13T07:18:16.2530717Z   Downloading cachetools-5.5.2-py3-none-any.whl.metadata (5.4 kB)
+2025-03-13T07:18:16.2634455Z Collecting chardet>=5.2 (from tox)
+2025-03-13T07:18:16.2661439Z   Downloading chardet-5.2.0-py3-none-any.whl.metadata (3.4 kB)
+2025-03-13T07:18:16.2794812Z Collecting colorama>=0.4.6 (from tox)
+2025-03-13T07:18:16.2931497Z   Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+2025-03-13T07:18:16.3230133Z Collecting filelock>=3.16.1 (from tox)
+2025-03-13T07:18:16.3257754Z   Downloading filelock-3.17.0-py3-none-any.whl.metadata (2.9 kB)
+2025-03-13T07:18:16.3410425Z Collecting packaging>=24.2 (from tox)
+2025-03-13T07:18:16.3439724Z   Downloading packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+2025-03-13T07:18:16.3575606Z Collecting platformdirs>=4.3.6 (from tox)
+2025-03-13T07:18:16.3603421Z   Downloading platformdirs-4.3.6-py3-none-any.whl.metadata (11 kB)
+2025-03-13T07:18:16.3726997Z Collecting pluggy>=1.5 (from tox)
+2025-03-13T07:18:16.3754792Z   Downloading pluggy-1.5.0-py3-none-any.whl.metadata (4.8 kB)
+2025-03-13T07:18:16.3869200Z Collecting pyproject-api>=1.8 (from tox)
+2025-03-13T07:18:16.3895594Z   Downloading pyproject_api-1.9.0-py3-none-any.whl.metadata (2.7 kB)
+2025-03-13T07:18:16.4230185Z Collecting virtualenv>=20.29.1 (from tox)
+2025-03-13T07:18:16.4258717Z   Downloading virtualenv-20.29.3-py3-none-any.whl.metadata (4.5 kB)
+2025-03-13T07:18:16.4453976Z Collecting distlib<1,>=0.3.7 (from virtualenv>=20.29.1->tox)
+2025-03-13T07:18:16.4480560Z   Downloading distlib-0.3.9-py2.py3-none-any.whl.metadata (5.2 kB)
+2025-03-13T07:18:16.4602353Z Downloading tox-4.24.2-py3-none-any.whl (172 kB)
+2025-03-13T07:18:16.4691347Z Downloading cachetools-5.5.2-py3-none-any.whl (10 kB)
+2025-03-13T07:18:16.4739199Z Downloading chardet-5.2.0-py3-none-any.whl (199 kB)
+2025-03-13T07:18:16.4793923Z Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+2025-03-13T07:18:16.4843845Z Downloading filelock-3.17.0-py3-none-any.whl (16 kB)
+2025-03-13T07:18:16.4888799Z Downloading packaging-24.2-py3-none-any.whl (65 kB)
+2025-03-13T07:18:16.4937327Z Downloading platformdirs-4.3.6-py3-none-any.whl (18 kB)
+2025-03-13T07:18:16.4983631Z Downloading pluggy-1.5.0-py3-none-any.whl (20 kB)
+2025-03-13T07:18:16.5031616Z Downloading pyproject_api-1.9.0-py3-none-any.whl (13 kB)
+2025-03-13T07:18:16.5079052Z Downloading virtualenv-20.29.3-py3-none-any.whl (4.3 MB)
+2025-03-13T07:18:16.5340250Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 177.9 MB/s eta 0:00:00
+2025-03-13T07:18:16.5383419Z Downloading distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+2025-03-13T07:18:16.6012394Z Installing collected packages: distlib, pluggy, platformdirs, packaging, filelock, colorama, chardet, cachetools, virtualenv, pyproject-api, tox
+2025-03-13T07:18:17.1934210Z Successfully installed cachetools-5.5.2 chardet-5.2.0 colorama-0.4.6 distlib-0.3.9 filelock-3.17.0 packaging-24.2 platformdirs-4.3.6 pluggy-1.5.0 pyproject-api-1.9.0 tox-4.24.2 virtualenv-20.29.3
+2025-03-13T07:18:17.3675917Z ##[group]Run tox -e lint
+2025-03-13T07:18:17.3676432Z [36;1mtox -e lint[0m
+2025-03-13T07:18:17.3725232Z shell: /usr/bin/bash -e {0}
+2025-03-13T07:18:17.3725471Z env:
+2025-03-13T07:18:17.3725724Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-13T07:18:17.3726135Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-03-13T07:18:17.3726768Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-13T07:18:17.3727106Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-13T07:18:17.3727455Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-13T07:18:17.3727806Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-03-13T07:18:17.3728100Z ##[endgroup]
+2025-03-13T07:18:18.1317275Z .pkg: install_requires> python -I -m pip install 'setuptools>=64.0.0' wheel
+2025-03-13T07:18:18.9763477Z .pkg: _optional_hooks> python /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+2025-03-13T07:18:19.2553211Z .pkg: get_requires_for_build_sdist> python /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+2025-03-13T07:18:19.6756684Z .pkg: freeze> python -m pip freeze --all
+2025-03-13T07:18:19.8899926Z .pkg: pip==25.0.1,setuptools==75.8.0,wheel==0.45.1
+2025-03-13T07:18:19.8903779Z .pkg: build_sdist> python /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+2025-03-13T07:18:20.2338536Z lint: install_package_deps> python -I -m pip install 'Jinja2>=3.1.2' 'PyYAML>=6.0' 'asyncssh>=2.16' 'bumpver>=2023.1129' 'click-help-colors>=0.9' 'click~=8.1.6' 'codespell<2.5.0,>=2.2.6' 'cvprac>=1.3.1' 'eval-type-backport>=0.1.3' 'httpx>=0.27.0' 'mypy-extensions~=1.0' 'mypy~=1.10' 'pre-commit>=3.3.3' 'pydantic-extra-types>=2.3.0' 'pydantic>=2.7' 'pylint-pydantic>=0.2.4' 'pylint>=2.17.5' 'pytest-asyncio>=0.21.1' 'pytest-codspeed>=2.2.0' 'pytest-cov>=4.1.0' pytest-dependency 'pytest-html>=3.2.0' 'pytest-httpx>=0.30.0' 'pytest-metadata>=3.0.0' 'pytest>=7.4.0' 'requests>=2.31.0' 'respx>=0.22.0' 'rich<14,>=13.5.2' 'ruff<0.10.0,>=0.5.4' 'tox<5.0.0,>=4.10.0' types-PyYAML types-pyOpenSSL types-requests typing-extensions 'typing_extensions>=4.12' 'yamllint>=1.32.0'
+2025-03-13T07:18:31.4313499Z lint: install_package> python -I -m pip install --force-reinstall --no-deps /home/runner/work/anta/anta/.tox/.tmp/package/1/anta-1.2.0.tar.gz
+2025-03-13T07:18:34.2943854Z lint: freeze> python -m pip freeze --all
+2025-03-13T07:18:34.5612344Z lint: annotated-types==0.7.0,anta @ file:///home/runner/work/anta/anta/.tox/.tmp/package/1/anta-1.2.0.tar.gz#sha256=fab0221b95ab0130dcb97e785ef7ef42ce36d8dc3b0e5d7addb9d9b5576b29e5,anyio==4.8.0,astroid==3.3.9,asyncssh==2.20.0,bumpver==2024.1130,cachetools==5.5.2,certifi==2025.1.31,cffi==1.17.1,cfgv==3.4.0,chardet==5.2.0,charset-normalizer==3.4.1,click==8.1.8,click-help-colors==0.9.4,codespell==2.4.1,colorama==0.4.6,coverage==7.6.12,cryptography==44.0.2,cvprac==1.4.0,dill==0.3.9,distlib==0.3.9,eval_type_backport==0.2.2,filelock==3.17.0,h11==0.14.0,httpcore==1.0.7,httpx==0.28.1,identify==2.6.9,idna==3.10,iniconfig==2.0.0,isort==6.0.1,Jinja2==3.1.6,lexid==2021.1006,markdown-it-py==3.0.0,MarkupSafe==3.0.2,mccabe==0.7.0,mdurl==0.1.2,mypy==1.15.0,mypy-extensions==1.0.0,nodeenv==1.9.1,packaging==24.2,pathspec==0.12.1,pip==25.0.1,platformdirs==4.3.6,pluggy==1.5.0,pre_commit==4.1.0,pycparser==2.22,pydantic==2.10.6,pydantic-extra-types==2.10.3,pydantic_core==2.27.2,Pygments==2.19.1,pylint==3.3.5,pylint-plugin-utils==0.8.2,pylint-pydantic==0.3.5,pyproject-api==1.9.0,PySocks==1.7.1,pytest==8.3.5,pytest-asyncio==0.25.3,pytest-codspeed==3.2.0,pytest-cov==6.0.0,pytest-dependency==0.6.0,pytest-html==4.1.1,pytest-httpx==0.35.0,pytest-metadata==3.1.1,PyYAML==6.0.2,requests==2.32.3,respx==0.22.0,rich==13.9.4,ruff==0.9.10,setuptools==75.8.0,sniffio==1.3.1,toml==0.10.2,tomlkit==0.13.2,tox==4.24.2,types-cffi==1.16.0.20250307,types-pyOpenSSL==24.1.0.20240722,types-PyYAML==6.0.12.20241230,types-requests==2.32.0.20250306,types-setuptools==76.0.0.20250313,typing_extensions==4.12.2,urllib3==2.3.0,virtualenv==20.29.3,wheel==0.45.1,yamllint==1.36.0
+2025-03-13T07:18:34.5619794Z lint: commands[0]> ruff check .
+2025-03-13T07:18:34.6364990Z anta/input_models/logging.py:1:1: A005 Module `logging` shadows a Python standard-library module
+2025-03-13T07:18:34.6366833Z Found 1 error.
+2025-03-13T07:18:34.6389117Z lint: exit 1 (0.08 seconds) /home/runner/work/anta/anta> ruff check . pid=2023
+2025-03-13T07:18:34.6398230Z   lint: FAIL code 1 (16.99=setup[16.91]+cmd[0.08] seconds)
+2025-03-13T07:18:34.6398747Z   evaluation failed :( (17.12 seconds)
+2025-03-13T07:18:34.6695231Z ##[error]Process completed with exit code 1.
+2025-03-13T07:18:34.6793317Z Post job cleanup.
+2025-03-13T07:18:34.7718832Z [command]/usr/bin/git version
+2025-03-13T07:18:34.7754899Z git version 2.48.1
+2025-03-13T07:18:34.7804672Z Temporarily overriding HOME='/home/runner/work/_temp/acf53cc2-ed6b-4bce-8552-64087ae9961b' before making global git config changes
+2025-03-13T07:18:34.7806001Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-13T07:18:34.7810979Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/anta/anta
+2025-03-13T07:18:34.7845043Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-13T07:18:34.7877566Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-13T07:18:34.8108865Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-13T07:18:34.8128784Z http.https://github.com/.extraheader
+2025-03-13T07:18:34.8141419Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-13T07:18:34.8171917Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-13T07:18:34.8500548Z Cleaning up orphan processes

@@ -1,0 +1,307 @@
+﻿2025-03-15T03:49:42.7713407Z Current runner version: '2.322.0'
+2025-03-15T03:49:42.7744955Z ##[group]Operating System
+2025-03-15T03:49:42.7746365Z Ubuntu
+2025-03-15T03:49:42.7747062Z 24.04.2
+2025-03-15T03:49:42.7747847Z LTS
+2025-03-15T03:49:42.7748616Z ##[endgroup]
+2025-03-15T03:49:42.7749426Z ##[group]Runner Image
+2025-03-15T03:49:42.7750347Z Image: ubuntu-24.04
+2025-03-15T03:49:42.7751195Z Version: 20250309.1.0
+2025-03-15T03:49:42.7752900Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250309.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-15T03:49:42.7755543Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250309.1
+2025-03-15T03:49:42.7757139Z ##[endgroup]
+2025-03-15T03:49:42.7757936Z ##[group]Runner Image Provisioner
+2025-03-15T03:49:42.7758994Z 2.0.422.1
+2025-03-15T03:49:42.7759699Z ##[endgroup]
+2025-03-15T03:49:42.7763770Z ##[group]GITHUB_TOKEN Permissions
+2025-03-15T03:49:42.7767014Z Actions: write
+2025-03-15T03:49:42.7768184Z Attestations: write
+2025-03-15T03:49:42.7769136Z Checks: write
+2025-03-15T03:49:42.7769874Z Contents: write
+2025-03-15T03:49:42.7770753Z Deployments: write
+2025-03-15T03:49:42.7771644Z Discussions: write
+2025-03-15T03:49:42.7772391Z Issues: write
+2025-03-15T03:49:42.7773286Z Metadata: read
+2025-03-15T03:49:42.7774042Z Packages: write
+2025-03-15T03:49:42.7774820Z Pages: write
+2025-03-15T03:49:42.7775861Z PullRequests: write
+2025-03-15T03:49:42.7776677Z RepositoryProjects: write
+2025-03-15T03:49:42.7777578Z SecurityEvents: write
+2025-03-15T03:49:42.7778531Z Statuses: write
+2025-03-15T03:49:42.7779286Z ##[endgroup]
+2025-03-15T03:49:42.7782058Z Secret source: Actions
+2025-03-15T03:49:42.7783225Z Prepare workflow directory
+2025-03-15T03:49:42.8239114Z Prepare all required actions
+2025-03-15T03:49:42.8293262Z Getting action download info
+2025-03-15T03:49:43.2113635Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-15T03:49:43.3125699Z Download action repository 'actions/setup-dotnet@v4' (SHA:3951f0dfe7a07e2313ec93c75700083e2005cbab)
+2025-03-15T03:49:43.6843027Z Complete job name: build
+2025-03-15T03:49:43.7571655Z ##[group]Run actions/checkout@v4
+2025-03-15T03:49:43.7573024Z with:
+2025-03-15T03:49:43.7573693Z   fetch-depth: 0
+2025-03-15T03:49:43.7574390Z   repository: jinaga/jinaga.net
+2025-03-15T03:49:43.7575692Z   token: ***
+2025-03-15T03:49:43.7576384Z   ssh-strict: true
+2025-03-15T03:49:43.7577043Z   ssh-user: git
+2025-03-15T03:49:43.7577750Z   persist-credentials: true
+2025-03-15T03:49:43.7578515Z   clean: true
+2025-03-15T03:49:43.7579177Z   sparse-checkout-cone-mode: true
+2025-03-15T03:49:43.7579985Z   fetch-tags: false
+2025-03-15T03:49:43.7580658Z   show-progress: true
+2025-03-15T03:49:43.7581306Z   lfs: false
+2025-03-15T03:49:43.7581935Z   submodules: false
+2025-03-15T03:49:43.7582682Z   set-safe-directory: true
+2025-03-15T03:49:43.7583878Z ##[endgroup]
+2025-03-15T03:49:43.9520071Z Syncing repository: jinaga/jinaga.net
+2025-03-15T03:49:43.9521941Z ##[group]Getting Git version info
+2025-03-15T03:49:43.9522719Z Working directory is '/home/runner/work/jinaga.net/jinaga.net'
+2025-03-15T03:49:43.9523739Z [command]/usr/bin/git version
+2025-03-15T03:49:43.9593983Z git version 2.48.1
+2025-03-15T03:49:43.9621058Z ##[endgroup]
+2025-03-15T03:49:43.9641027Z Temporarily overriding HOME='/home/runner/work/_temp/4f3c488f-bb0a-4732-8164-9ecb03448391' before making global git config changes
+2025-03-15T03:49:43.9642327Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-15T03:49:43.9645930Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/jinaga.net/jinaga.net
+2025-03-15T03:49:43.9679427Z Deleting the contents of '/home/runner/work/jinaga.net/jinaga.net'
+2025-03-15T03:49:43.9683069Z ##[group]Initializing the repository
+2025-03-15T03:49:43.9687304Z [command]/usr/bin/git init /home/runner/work/jinaga.net/jinaga.net
+2025-03-15T03:49:43.9753179Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-15T03:49:43.9754266Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-15T03:49:43.9755502Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-15T03:49:43.9756143Z hint:
+2025-03-15T03:49:43.9756592Z hint: 	git config --global init.defaultBranch <name>
+2025-03-15T03:49:43.9757150Z hint:
+2025-03-15T03:49:43.9757703Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-15T03:49:43.9759143Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-15T03:49:43.9759831Z hint:
+2025-03-15T03:49:43.9760199Z hint: 	git branch -m <name>
+2025-03-15T03:49:43.9760898Z Initialized empty Git repository in /home/runner/work/jinaga.net/jinaga.net/.git/
+2025-03-15T03:49:43.9769385Z [command]/usr/bin/git remote add origin https://github.com/jinaga/jinaga.net
+2025-03-15T03:49:43.9801402Z ##[endgroup]
+2025-03-15T03:49:43.9802205Z ##[group]Disabling automatic garbage collection
+2025-03-15T03:49:43.9805697Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-15T03:49:43.9833454Z ##[endgroup]
+2025-03-15T03:49:43.9834110Z ##[group]Setting up auth
+2025-03-15T03:49:43.9840414Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-15T03:49:43.9872154Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-15T03:49:44.0262346Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-15T03:49:44.0292554Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-15T03:49:44.0523993Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-15T03:49:44.0566031Z ##[endgroup]
+2025-03-15T03:49:44.0566812Z ##[group]Fetching the repository
+2025-03-15T03:49:44.0575584Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* +706bfa82a4377a977142688d5448a2b0c6877820:refs/remotes/pull/162/merge
+2025-03-15T03:49:44.5631643Z From https://github.com/jinaga/jinaga.net
+2025-03-15T03:49:44.5633669Z  * [new branch]      fsharp-tests                             -> origin/fsharp-tests
+2025-03-15T03:49:44.5635989Z  * [new branch]      main                                     -> origin/main
+2025-03-15T03:49:44.5638551Z  * [new branch]      michaellperry/add-azure-functions-binding -> origin/michaellperry/add-azure-functions-binding
+2025-03-15T03:49:44.5641397Z  * [new branch]      michaellperry/issue160                   -> origin/michaellperry/issue160
+2025-03-15T03:49:44.5643603Z  * [new branch]      notify-restore                           -> origin/notify-restore
+2025-03-15T03:49:44.5645928Z  * [new branch]      ready-to-sync                            -> origin/ready-to-sync
+2025-03-15T03:49:44.5648424Z  * [new branch]      regenerate-nuget-api-key                 -> origin/regenerate-nuget-api-key
+2025-03-15T03:49:44.5650849Z  * [new branch]      render-table                             -> origin/render-table
+2025-03-15T03:49:44.5652856Z  * [new tag]         0.10.0                                   -> 0.10.0
+2025-03-15T03:49:44.5654592Z  * [new tag]         0.10.1                                   -> 0.10.1
+2025-03-15T03:49:44.5656536Z  * [new tag]         0.11.0                                   -> 0.11.0
+2025-03-15T03:49:44.5658372Z  * [new tag]         0.11.1                                   -> 0.11.1
+2025-03-15T03:49:44.5660190Z  * [new tag]         0.11.10                                  -> 0.11.10
+2025-03-15T03:49:44.5662127Z  * [new tag]         0.11.11                                  -> 0.11.11
+2025-03-15T03:49:44.5664005Z  * [new tag]         0.11.12                                  -> 0.11.12
+2025-03-15T03:49:44.5665996Z  * [new tag]         0.11.13                                  -> 0.11.13
+2025-03-15T03:49:44.5668199Z  * [new tag]         0.11.14                                  -> 0.11.14
+2025-03-15T03:49:44.5670044Z  * [new tag]         0.11.15                                  -> 0.11.15
+2025-03-15T03:49:44.5671848Z  * [new tag]         0.11.16                                  -> 0.11.16
+2025-03-15T03:49:44.5673680Z  * [new tag]         0.11.17                                  -> 0.11.17
+2025-03-15T03:49:44.5675793Z  * [new tag]         0.11.18                                  -> 0.11.18
+2025-03-15T03:49:44.5677756Z  * [new tag]         0.11.2                                   -> 0.11.2
+2025-03-15T03:49:44.5679701Z  * [new tag]         0.11.3                                   -> 0.11.3
+2025-03-15T03:49:44.5681652Z  * [new tag]         0.11.4                                   -> 0.11.4
+2025-03-15T03:49:44.5683569Z  * [new tag]         0.11.5                                   -> 0.11.5
+2025-03-15T03:49:44.5685702Z  * [new tag]         0.11.6                                   -> 0.11.6
+2025-03-15T03:49:44.5687877Z  * [new tag]         0.11.7                                   -> 0.11.7
+2025-03-15T03:49:44.5690057Z  * [new tag]         0.11.8                                   -> 0.11.8
+2025-03-15T03:49:44.5692336Z  * [new tag]         0.11.9                                   -> 0.11.9
+2025-03-15T03:49:44.5694563Z  * [new tag]         0.12.0                                   -> 0.12.0
+2025-03-15T03:49:44.5696981Z  * [new tag]         0.12.1                                   -> 0.12.1
+2025-03-15T03:49:44.5699260Z  * [new tag]         0.12.2                                   -> 0.12.2
+2025-03-15T03:49:44.5701491Z  * [new tag]         0.12.3                                   -> 0.12.3
+2025-03-15T03:49:44.5703751Z  * [new tag]         0.12.4                                   -> 0.12.4
+2025-03-15T03:49:44.5706119Z  * [new tag]         0.12.5                                   -> 0.12.5
+2025-03-15T03:49:44.5708375Z  * [new tag]         0.12.6                                   -> 0.12.6
+2025-03-15T03:49:44.5710884Z  * [new tag]         0.12.7                                   -> 0.12.7
+2025-03-15T03:49:44.5713217Z  * [new tag]         0.12.8                                   -> 0.12.8
+2025-03-15T03:49:44.5715637Z  * [new tag]         0.2.104                                  -> 0.2.104
+2025-03-15T03:49:44.5717984Z  * [new tag]         0.2.105                                  -> 0.2.105
+2025-03-15T03:49:44.5720369Z  * [new tag]         0.2.106                                  -> 0.2.106
+2025-03-15T03:49:44.5722346Z  * [new tag]         0.2.107                                  -> 0.2.107
+2025-03-15T03:49:44.5724624Z  * [new tag]         0.2.108                                  -> 0.2.108
+2025-03-15T03:49:44.5727196Z  * [new tag]         0.2.109                                  -> 0.2.109
+2025-03-15T03:49:44.5729370Z  * [new tag]         0.2.27                                   -> 0.2.27
+2025-03-15T03:49:44.5731387Z  * [new tag]         0.3                                      -> 0.3
+2025-03-15T03:49:44.5733499Z  * [new tag]         0.3.0                                    -> 0.3.0
+2025-03-15T03:49:44.5735772Z  * [new tag]         0.4.0                                    -> 0.4.0
+2025-03-15T03:49:44.5737936Z  * [new tag]         0.5.0                                    -> 0.5.0
+2025-03-15T03:49:44.5740053Z  * [new tag]         0.5.1                                    -> 0.5.1
+2025-03-15T03:49:44.5742156Z  * [new tag]         0.6.0                                    -> 0.6.0
+2025-03-15T03:49:44.5744231Z  * [new tag]         0.6.1                                    -> 0.6.1
+2025-03-15T03:49:44.5746682Z  * [new tag]         0.6.2                                    -> 0.6.2
+2025-03-15T03:49:44.5748747Z  * [new tag]         0.6.3                                    -> 0.6.3
+2025-03-15T03:49:44.5750880Z  * [new tag]         0.6.4                                    -> 0.6.4
+2025-03-15T03:49:44.5753070Z  * [new tag]         0.6.5                                    -> 0.6.5
+2025-03-15T03:49:44.5755771Z  * [new tag]         0.7.0                                    -> 0.7.0
+2025-03-15T03:49:44.5757878Z  * [new tag]         0.7.1                                    -> 0.7.1
+2025-03-15T03:49:44.5759935Z  * [new tag]         0.7.2                                    -> 0.7.2
+2025-03-15T03:49:44.5762029Z  * [new tag]         0.8.0                                    -> 0.8.0
+2025-03-15T03:49:44.5763995Z  * [new tag]         0.8.1                                    -> 0.8.1
+2025-03-15T03:49:44.5766291Z  * [new tag]         0.8.2                                    -> 0.8.2
+2025-03-15T03:49:44.5768347Z  * [new tag]         0.8.3                                    -> 0.8.3
+2025-03-15T03:49:44.5770236Z  * [new tag]         0.8.4                                    -> 0.8.4
+2025-03-15T03:49:44.5772470Z  * [new tag]         0.9.0                                    -> 0.9.0
+2025-03-15T03:49:44.5774507Z  * [new tag]         0.9.1                                    -> 0.9.1
+2025-03-15T03:49:44.5776653Z  * [new tag]         0.9.2                                    -> 0.9.2
+2025-03-15T03:49:44.5778150Z  * [new tag]         0.9.3                                    -> 0.9.3
+2025-03-15T03:49:44.5780047Z  * [new tag]         0.9.4                                    -> 0.9.4
+2025-03-15T03:49:44.5781474Z  * [new tag]         0.9.5                                    -> 0.9.5
+2025-03-15T03:49:44.5782880Z  * [new tag]         0.9.6                                    -> 0.9.6
+2025-03-15T03:49:44.5784289Z  * [new tag]         0.9.7                                    -> 0.9.7
+2025-03-15T03:49:44.5785852Z  * [new tag]         1.0.0                                    -> 1.0.0
+2025-03-15T03:49:44.5787332Z  * [new tag]         20240917.1                               -> 20240917.1
+2025-03-15T03:49:44.5788867Z  * [new tag]         20240919.1                               -> 20240919.1
+2025-03-15T03:49:44.5790391Z  * [new tag]         20241026.1                               -> 20241026.1
+2025-03-15T03:49:44.5792135Z  * [new tag]         20241128.1                               -> 20241128.1
+2025-03-15T03:49:44.5793687Z  * [new tag]         20241225.1                               -> 20241225.1
+2025-03-15T03:49:44.5795605Z  * [new tag]         20250113.1                               -> 20250113.1
+2025-03-15T03:49:44.5797210Z  * [new tag]         20250202.1                               -> 20250202.1
+2025-03-15T03:49:44.5798745Z  * [new tag]         20250205.1                               -> 20250205.1
+2025-03-15T03:49:44.5800310Z  * [new tag]         20250205.2                               -> 20250205.2
+2025-03-15T03:49:44.5801918Z  * [new tag]         20250312.1                               -> 20250312.1
+2025-03-15T03:49:44.5803405Z  * [new tag]         v0.2.0.9                                 -> v0.2.0.9
+2025-03-15T03:49:44.5804856Z  * [new tag]         v0.2.1                                   -> v0.2.1
+2025-03-15T03:49:44.5806499Z  * [new tag]         v0.2.13                                  -> v0.2.13
+2025-03-15T03:49:44.5807981Z  * [new tag]         v0.2.15                                  -> v0.2.15
+2025-03-15T03:49:44.5809405Z  * [new tag]         v0.2.19                                  -> v0.2.19
+2025-03-15T03:49:44.5810846Z  * [new tag]         v0.2.20                                  -> v0.2.20
+2025-03-15T03:49:44.5812287Z  * [new tag]         v0.2.21                                  -> v0.2.21
+2025-03-15T03:49:44.5813711Z  * [new tag]         v0.2.22                                  -> v0.2.22
+2025-03-15T03:49:44.5815826Z  * [new tag]         v0.2.23                                  -> v0.2.23
+2025-03-15T03:49:44.5818030Z  * [new tag]         v0.2.24                                  -> v0.2.24
+2025-03-15T03:49:44.5819657Z  * [new tag]         v0.2.25                                  -> v0.2.25
+2025-03-15T03:49:44.5821109Z  * [new tag]         v0.2.26                                  -> v0.2.26
+2025-03-15T03:49:44.5822571Z  * [new tag]         v0.2.27                                  -> v0.2.27
+2025-03-15T03:49:44.5824545Z  * [new tag]         v0.2.3                                   -> v0.2.3
+2025-03-15T03:49:44.5826537Z  * [new ref]         706bfa82a4377a977142688d5448a2b0c6877820 -> pull/162/merge
+2025-03-15T03:49:44.5830079Z ##[endgroup]
+2025-03-15T03:49:44.5831389Z ##[group]Determining the checkout info
+2025-03-15T03:49:44.5833256Z ##[endgroup]
+2025-03-15T03:49:44.5834350Z [command]/usr/bin/git sparse-checkout disable
+2025-03-15T03:49:44.5874956Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-15T03:49:44.5904202Z ##[group]Checking out the ref
+2025-03-15T03:49:44.5907675Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/162/merge
+2025-03-15T03:49:44.6146315Z Note: switching to 'refs/remotes/pull/162/merge'.
+2025-03-15T03:49:44.6147610Z 
+2025-03-15T03:49:44.6148578Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-15T03:49:44.6151625Z changes and commit them, and you can discard any commits you make in this
+2025-03-15T03:49:44.6154686Z state without impacting any branches by switching back to a branch.
+2025-03-15T03:49:44.6156669Z 
+2025-03-15T03:49:44.6157782Z If you want to create a new branch to retain commits you create, you may
+2025-03-15T03:49:44.6160413Z do so (now or later) by using -c with the switch command. Example:
+2025-03-15T03:49:44.6162053Z 
+2025-03-15T03:49:44.6162661Z   git switch -c <new-branch-name>
+2025-03-15T03:49:44.6163748Z 
+2025-03-15T03:49:44.6164284Z Or undo this operation with:
+2025-03-15T03:49:44.6165181Z 
+2025-03-15T03:49:44.6165833Z   git switch -
+2025-03-15T03:49:44.6166480Z 
+2025-03-15T03:49:44.6167657Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-15T03:49:44.6169478Z 
+2025-03-15T03:49:44.6171086Z HEAD is now at 706bfa8 Merge 4404950aa3c08570f259c7ab410ec498931f371b into 7dfffd98d22125ee87ef188ab8fac3632f577d1c
+2025-03-15T03:49:44.6175891Z ##[endgroup]
+2025-03-15T03:49:44.6202295Z [command]/usr/bin/git log -1 --format=%H
+2025-03-15T03:49:44.6227283Z 706bfa82a4377a977142688d5448a2b0c6877820
+2025-03-15T03:49:44.6484103Z ##[group]Run actions/setup-dotnet@v4
+2025-03-15T03:49:44.6485117Z with:
+2025-03-15T03:49:44.6485926Z   dotnet-version: 8.x.x
+2025-03-15T03:49:44.6486719Z   cache: false
+2025-03-15T03:49:44.6487398Z ##[endgroup]
+2025-03-15T03:49:45.2410682Z [command]/home/runner/work/_actions/actions/setup-dotnet/v4/externals/install-dotnet.sh --skip-non-versioned-files --runtime dotnet --channel LTS
+2025-03-15T03:49:45.5429913Z dotnet-install: Attempting to download using aka.ms link https://builds.dotnet.microsoft.com/dotnet/Runtime/8.0.14/dotnet-runtime-8.0.14-linux-x64.tar.gz
+2025-03-15T03:49:45.8291521Z dotnet-install: Remote file https://builds.dotnet.microsoft.com/dotnet/Runtime/8.0.14/dotnet-runtime-8.0.14-linux-x64.tar.gz size is 31283064 bytes.
+2025-03-15T03:49:45.8294098Z dotnet-install: Extracting archive from https://builds.dotnet.microsoft.com/dotnet/Runtime/8.0.14/dotnet-runtime-8.0.14-linux-x64.tar.gz
+2025-03-15T03:49:46.4419153Z dotnet-install: Downloaded file size is 31283064 bytes.
+2025-03-15T03:49:46.4420142Z dotnet-install: The remote and local file sizes are equal.
+2025-03-15T03:49:46.4724212Z dotnet-install: Installed version is 8.0.14
+2025-03-15T03:49:46.4782602Z dotnet-install: Adding to current process PATH: `/usr/share/dotnet`. Note: This change will be visible only when sourcing script.
+2025-03-15T03:49:46.4785558Z dotnet-install: Note that the script does not resolve dependencies during installation.
+2025-03-15T03:49:46.4788370Z dotnet-install: To check the list of dependencies, go to https://learn.microsoft.com/dotnet/core/install, select your operating system and check the "Dependencies" section.
+2025-03-15T03:49:46.4789873Z dotnet-install: Installation finished successfully.
+2025-03-15T03:49:46.4803775Z [command]/home/runner/work/_actions/actions/setup-dotnet/v4/externals/install-dotnet.sh --skip-non-versioned-files --channel 8.0
+2025-03-15T03:49:46.7837668Z dotnet-install: Attempting to download using aka.ms link https://builds.dotnet.microsoft.com/dotnet/Sdk/8.0.407/dotnet-sdk-8.0.407-linux-x64.tar.gz
+2025-03-15T03:49:47.9967496Z dotnet-install: Remote file https://builds.dotnet.microsoft.com/dotnet/Sdk/8.0.407/dotnet-sdk-8.0.407-linux-x64.tar.gz size is 212950827 bytes.
+2025-03-15T03:49:47.9969310Z dotnet-install: Extracting archive from https://builds.dotnet.microsoft.com/dotnet/Sdk/8.0.407/dotnet-sdk-8.0.407-linux-x64.tar.gz
+2025-03-15T03:49:52.4038628Z dotnet-install: Downloaded file size is 212950827 bytes.
+2025-03-15T03:49:52.4040895Z dotnet-install: The remote and local file sizes are equal.
+2025-03-15T03:49:52.6714941Z dotnet-install: Installed version is 8.0.407
+2025-03-15T03:49:52.6775878Z dotnet-install: Adding to current process PATH: `/usr/share/dotnet`. Note: This change will be visible only when sourcing script.
+2025-03-15T03:49:52.6777543Z dotnet-install: Note that the script does not resolve dependencies during installation.
+2025-03-15T03:49:52.6779138Z dotnet-install: To check the list of dependencies, go to https://learn.microsoft.com/dotnet/core/install, select your operating system and check the "Dependencies" section.
+2025-03-15T03:49:52.6780564Z dotnet-install: Installation finished successfully.
+2025-03-15T03:49:52.6941898Z ##[group]Run dotnet nuget update source "GitHub" --username michaellperry --password *** --store-password-in-clear-text
+2025-03-15T03:49:52.6942945Z [36;1mdotnet nuget update source "GitHub" --username michaellperry --password *** --store-password-in-clear-text[0m
+2025-03-15T03:49:52.6997743Z shell: /usr/bin/bash -e {0}
+2025-03-15T03:49:52.6997999Z env:
+2025-03-15T03:49:52.6998190Z   DOTNET_ROOT: /usr/share/dotnet
+2025-03-15T03:49:52.6998421Z ##[endgroup]
+2025-03-15T03:49:53.1020929Z Package source "GitHub" was successfully updated.
+2025-03-15T03:49:53.1248994Z ##[group]Run dotnet restore
+2025-03-15T03:49:53.1249335Z [36;1mdotnet restore[0m
+2025-03-15T03:49:53.1299781Z shell: /usr/bin/bash -e {0}
+2025-03-15T03:49:53.1300007Z env:
+2025-03-15T03:49:53.1300185Z   DOTNET_ROOT: /usr/share/dotnet
+2025-03-15T03:49:53.1300424Z ##[endgroup]
+2025-03-15T03:49:54.2280760Z   Determining projects to restore...
+2025-03-15T03:49:56.1284354Z   Restored /home/runner/work/jinaga.net/jinaga.net/Jinaga.Tool/Jinaga.Tool.csproj (in 1.34 sec).
+2025-03-15T03:49:58.2775741Z   Restored /home/runner/work/jinaga.net/jinaga.net/Jinaga/Jinaga.csproj (in 3.49 sec).
+2025-03-15T03:49:58.2779924Z   Restored /home/runner/work/jinaga.net/jinaga.net/Jinaga.UnitTest/Jinaga.UnitTest.csproj (in 3.49 sec).
+2025-03-15T03:49:58.2781227Z   Restored /home/runner/work/jinaga.net/jinaga.net/Jinaga.Store.SQLite/Jinaga.Store.SQLite.csproj (in 2.14 sec).
+2025-03-15T03:49:58.2825931Z   Restored /home/runner/work/jinaga.net/jinaga.net/Jinaga.Test/Jinaga.Test.csproj (in 3.5 sec).
+2025-03-15T03:49:58.2966676Z   Restored /home/runner/work/jinaga.net/jinaga.net/Jinaga.Store.SQLite.Test/Jinaga.Store.SQLite.Test.csproj (in 12 ms).
+2025-03-15T03:49:58.5631503Z   Restored /home/runner/work/jinaga.net/jinaga.net/Jinaga.Notebooks/Jinaga.Notebooks.csproj (in 277 ms).
+2025-03-15T03:49:58.7960182Z   Restored /home/runner/work/jinaga.net/jinaga.net/Jinaga.Maui/Jinaga.Maui.csproj (in 512 ms).
+2025-03-15T03:49:58.8520797Z ##[group]Run dotnet build Jinaga --no-restore
+2025-03-15T03:49:58.8521153Z [36;1mdotnet build Jinaga --no-restore[0m
+2025-03-15T03:49:58.8521436Z [36;1mdotnet build Jinaga.UnitTest --no-restore[0m
+2025-03-15T03:49:58.8521735Z [36;1mdotnet build Jinaga.Test --no-restore[0m
+2025-03-15T03:49:58.8522026Z [36;1mdotnet build Jinaga.Notebooks --no-restore[0m
+2025-03-15T03:49:58.8522304Z [36;1mdotnet build Jinaga.Tool --no-restore[0m
+2025-03-15T03:49:58.8522598Z [36;1mdotnet build Jinaga.Store.SQLite --no-restore[0m
+2025-03-15T03:49:58.8522926Z [36;1mdotnet build Jinaga.Store.SQLite.Test --no-restore[0m
+2025-03-15T03:49:58.8523240Z [36;1mdotnet build Jinaga.Maui --no-restore[0m
+2025-03-15T03:49:58.8572462Z shell: /usr/bin/bash -e {0}
+2025-03-15T03:49:58.8572679Z env:
+2025-03-15T03:49:58.8572856Z   DOTNET_ROOT: /usr/share/dotnet
+2025-03-15T03:49:58.8573278Z ##[endgroup]
+2025-03-15T03:50:01.6867304Z ##[error]/home/runner/work/jinaga.net/jinaga.net/Jinaga/Repository/SpecificationProcessor.cs(28,84): error CS1503: Argument 3: cannot convert from 'System.Collections.Immutable.ImmutableList<string>' to 'string?' [/home/runner/work/jinaga.net/jinaga.net/Jinaga/Jinaga.csproj]
+2025-03-15T03:50:01.6935897Z 
+2025-03-15T03:50:01.6941629Z Build FAILED.
+2025-03-15T03:50:01.6941844Z 
+2025-03-15T03:50:01.6944220Z ##[error]/home/runner/work/jinaga.net/jinaga.net/Jinaga/Repository/SpecificationProcessor.cs(28,84): error CS1503: Argument 3: cannot convert from 'System.Collections.Immutable.ImmutableList<string>' to 'string?' [/home/runner/work/jinaga.net/jinaga.net/Jinaga/Jinaga.csproj]
+2025-03-15T03:50:01.6945980Z     0 Warning(s)
+2025-03-15T03:50:01.6946169Z     1 Error(s)
+2025-03-15T03:50:01.6949600Z 
+2025-03-15T03:50:01.6949779Z Time Elapsed 00:00:02.61
+2025-03-15T03:50:01.7192964Z ##[error]Process completed with exit code 1.
+2025-03-15T03:50:01.7289831Z Post job cleanup.
+2025-03-15T03:50:01.8280147Z [command]/usr/bin/git version
+2025-03-15T03:50:01.8317582Z git version 2.48.1
+2025-03-15T03:50:01.8361520Z Temporarily overriding HOME='/home/runner/work/_temp/55e46179-ca3d-4958-ac13-985b3f2bed63' before making global git config changes
+2025-03-15T03:50:01.8362876Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-15T03:50:01.8375050Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/jinaga.net/jinaga.net
+2025-03-15T03:50:01.8409680Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-15T03:50:01.8441718Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-15T03:50:01.8676983Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-15T03:50:01.8697597Z http.https://github.com/.extraheader
+2025-03-15T03:50:01.8710415Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-15T03:50:01.8741650Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-15T03:50:01.9070955Z Cleaning up orphan processes
+2025-03-15T03:50:01.9384304Z Terminate orphan process: pid (2397) (dotnet)
+2025-03-15T03:50:01.9402759Z Terminate orphan process: pid (2398) (dotnet)
+2025-03-15T03:50:01.9431659Z Terminate orphan process: pid (2399) (dotnet)
+2025-03-15T03:50:01.9460729Z Terminate orphan process: pid (2523) (dotnet)

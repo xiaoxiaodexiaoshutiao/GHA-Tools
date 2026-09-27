@@ -1,0 +1,24 @@
+diff --git a/src/components/notifications/Telegram.vue b/src/components/notifications/Telegram.vue
+index a93c163534..3c84257594 100644
+--- a/src/components/notifications/Telegram.vue
++++ b/src/components/notifications/Telegram.vue
+@@ -104,9 +104,6 @@ export default {
+         HiddenInput,
+         TemplatedTextarea,
+     },
+-    mounted() {
+-        this.$parent.notification.telegramServerUrl ||= "https://api.telegram.org";
+-    },
+     computed: {
+         telegramTemplatedTextareaPlaceholder() {
+             return this.$t("Example:", [
+@@ -118,6 +115,9 @@ Uptime Kuma Alert{% if monitorJSON %} - {{ monitorJSON['name'] }}{% endif %}
+             ]);
+         }
+     },
++    mounted() {
++        this.$parent.notification.telegramServerUrl ||= "https://api.telegram.org";
++    },
+     methods: {
+         /**
+          * Get the URL for telegram updates

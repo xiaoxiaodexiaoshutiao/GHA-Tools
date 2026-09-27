@@ -1,0 +1,227 @@
+﻿2025-04-06T11:03:11.0765545Z Current runner version: '2.323.0'
+2025-04-06T11:03:11.0789537Z ##[group]Operating System
+2025-04-06T11:03:11.0790358Z Ubuntu
+2025-04-06T11:03:11.0790820Z 24.04.2
+2025-04-06T11:03:11.0791372Z LTS
+2025-04-06T11:03:11.0791839Z ##[endgroup]
+2025-04-06T11:03:11.0792380Z ##[group]Runner Image
+2025-04-06T11:03:11.0792923Z Image: ubuntu-24.04
+2025-04-06T11:03:11.0793529Z Version: 20250323.1.0
+2025-04-06T11:03:11.0794601Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-06T11:03:11.0795991Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-04-06T11:03:11.0796982Z ##[endgroup]
+2025-04-06T11:03:11.0797471Z ##[group]Runner Image Provisioner
+2025-04-06T11:03:11.0798068Z 2.0.422.1
+2025-04-06T11:03:11.0798577Z ##[endgroup]
+2025-04-06T11:03:11.0801117Z ##[group]GITHUB_TOKEN Permissions
+2025-04-06T11:03:11.0803295Z Actions: read
+2025-04-06T11:03:11.0804044Z Attestations: read
+2025-04-06T11:03:11.0804711Z Checks: read
+2025-04-06T11:03:11.0805206Z Contents: read
+2025-04-06T11:03:11.0805682Z Deployments: read
+2025-04-06T11:03:11.0806250Z Discussions: read
+2025-04-06T11:03:11.0806720Z Issues: read
+2025-04-06T11:03:11.0807222Z Metadata: read
+2025-04-06T11:03:11.0807707Z Models: read
+2025-04-06T11:03:11.0808215Z Packages: read
+2025-04-06T11:03:11.0808887Z Pages: read
+2025-04-06T11:03:11.0809443Z PullRequests: read
+2025-04-06T11:03:11.0810031Z RepositoryProjects: read
+2025-04-06T11:03:11.0810573Z SecurityEvents: read
+2025-04-06T11:03:11.0811129Z Statuses: read
+2025-04-06T11:03:11.0811603Z ##[endgroup]
+2025-04-06T11:03:11.0813851Z Secret source: None
+2025-04-06T11:03:11.0814890Z Prepare workflow directory
+2025-04-06T11:03:11.1141858Z Prepare all required actions
+2025-04-06T11:03:11.1179302Z Getting action download info
+2025-04-06T11:03:11.5428569Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-06T11:03:11.5429828Z Version: 4.2.2
+2025-04-06T11:03:11.5430850Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-06T11:03:11.5432123Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-06T11:03:11.5432874Z ##[endgroup]
+2025-04-06T11:03:11.6422033Z Download action repository 'fsfe/reuse-action@v5' (SHA:bb774aa972c2a89ff34781233d275075cbddf542)
+2025-04-06T11:03:11.9291593Z Complete job name: reuse
+2025-04-06T11:03:11.9719164Z ##[group]Build container for action use: '/home/runner/work/_actions/fsfe/reuse-action/v5/Dockerfile'.
+2025-04-06T11:03:11.9770161Z ##[command]/usr/bin/docker build -t 954e4a:6137b764e80c44c6b2a595ca08d0a567 -f "/home/runner/work/_actions/fsfe/reuse-action/v5/Dockerfile" "/home/runner/work/_actions/fsfe/reuse-action/v5"
+2025-04-06T11:03:12.3593877Z #0 building with "default" instance using docker driver
+2025-04-06T11:03:12.3594770Z 
+2025-04-06T11:03:12.3595164Z #1 [internal] load build definition from Dockerfile
+2025-04-06T11:03:12.3596033Z #1 transferring dockerfile: 359B done
+2025-04-06T11:03:12.3596544Z #1 DONE 0.0s
+2025-04-06T11:03:12.3596802Z 
+2025-04-06T11:03:12.3597078Z #2 [auth] fsfe/reuse:pull token for registry-1.docker.io
+2025-04-06T11:03:12.5095038Z #2 DONE 0.0s
+2025-04-06T11:03:12.5095457Z 
+2025-04-06T11:03:12.5095766Z #3 [internal] load metadata for docker.io/fsfe/reuse:5
+2025-04-06T11:03:12.7166169Z #3 DONE 0.5s
+2025-04-06T11:03:12.8326007Z 
+2025-04-06T11:03:12.8327354Z #4 [internal] load .dockerignore
+2025-04-06T11:03:12.8327878Z #4 transferring context: 2B done
+2025-04-06T11:03:12.8328364Z #4 DONE 0.0s
+2025-04-06T11:03:12.8329550Z 
+2025-04-06T11:03:12.8329765Z #5 [internal] load build context
+2025-04-06T11:03:12.8330741Z #5 transferring context: 465B done
+2025-04-06T11:03:12.8331956Z #5 DONE 0.0s
+2025-04-06T11:03:12.8332150Z 
+2025-04-06T11:03:12.8332487Z #6 [1/2] FROM docker.io/fsfe/reuse:5@sha256:000c3fc0c3e39e95b36fa9966d0104ae0496571b7de7b9f0c889a66438581bda
+2025-04-06T11:03:12.8333584Z #6 resolve docker.io/fsfe/reuse:5@sha256:000c3fc0c3e39e95b36fa9966d0104ae0496571b7de7b9f0c889a66438581bda done
+2025-04-06T11:03:12.8334902Z #6 sha256:b86d9a72f35c0513822e0f2a59b5f561b859ed0e14765f736a2cf345d96b2857 1.05MB / 30.72MB 0.1s
+2025-04-06T11:03:12.8335571Z #6 sha256:6683c2a733e0f8294bdb27c79cacd83db5c4bdad9034b962ba125d6b27e18e53 1.05MB / 8.53MB 0.1s
+2025-04-06T11:03:12.8336736Z #6 sha256:000c3fc0c3e39e95b36fa9966d0104ae0496571b7de7b9f0c889a66438581bda 1.61kB / 1.61kB done
+2025-04-06T11:03:12.8337423Z #6 sha256:2af851da25dae631c7a86e3a01f830ed87c43d502f5aaf09ed2f669a6e262ef5 1.24kB / 1.24kB done
+2025-04-06T11:03:12.9664583Z #6 sha256:b86d9a72f35c0513822e0f2a59b5f561b859ed0e14765f736a2cf345d96b2857 24.12MB / 30.72MB 0.2s
+2025-04-06T11:03:12.9665566Z #6 sha256:6683c2a733e0f8294bdb27c79cacd83db5c4bdad9034b962ba125d6b27e18e53 8.53MB / 8.53MB 0.1s done
+2025-04-06T11:03:12.9666516Z #6 sha256:95c247d0dc93c3755d5bd749f685f6ea7933f02bd0c2f4340fd2a36a342024de 2.68kB / 2.68kB done
+2025-04-06T11:03:12.9667611Z #6 sha256:dc0decf4841d19b14e836c2d82bd5cb9540fb5e0d1359549ca243f49036557e9 3.42MB / 3.42MB 0.2s done
+2025-04-06T11:03:12.9668846Z #6 extracting sha256:dc0decf4841d19b14e836c2d82bd5cb9540fb5e0d1359549ca243f49036557e9 0.1s done
+2025-04-06T11:03:12.9670101Z #6 sha256:761d8feb329cb3b6f484572a34c0479b889a403bebf3978b32573ec75421872f 161B / 161B 0.2s done
+2025-04-06T11:03:12.9671153Z #6 sha256:a2082dc05704d82dda9559089282cc3dd4de8b0fa5245dd68d3de99d6894284a 93B / 93B 0.2s done
+2025-04-06T11:03:13.1550244Z #6 sha256:b86d9a72f35c0513822e0f2a59b5f561b859ed0e14765f736a2cf345d96b2857 30.72MB / 30.72MB 0.3s done
+2025-04-06T11:03:13.1552586Z #6 extracting sha256:b86d9a72f35c0513822e0f2a59b5f561b859ed0e14765f736a2cf345d96b2857 0.1s
+2025-04-06T11:03:14.1001200Z #6 extracting sha256:b86d9a72f35c0513822e0f2a59b5f561b859ed0e14765f736a2cf345d96b2857 0.9s done
+2025-04-06T11:03:14.1307990Z #6 extracting sha256:6683c2a733e0f8294bdb27c79cacd83db5c4bdad9034b962ba125d6b27e18e53
+2025-04-06T11:03:14.7556689Z #6 extracting sha256:6683c2a733e0f8294bdb27c79cacd83db5c4bdad9034b962ba125d6b27e18e53 0.5s done
+2025-04-06T11:03:14.7558026Z #6 extracting sha256:761d8feb329cb3b6f484572a34c0479b889a403bebf3978b32573ec75421872f done
+2025-04-06T11:03:14.7559517Z #6 extracting sha256:a2082dc05704d82dda9559089282cc3dd4de8b0fa5245dd68d3de99d6894284a done
+2025-04-06T11:03:14.7560336Z #6 DONE 2.0s
+2025-04-06T11:03:14.9170640Z 
+2025-04-06T11:03:14.9172480Z #7 [2/2] COPY reuse-action-wrapper.sh /bin/reuse-action-wrapper
+2025-04-06T11:03:14.9173545Z #7 DONE 0.0s
+2025-04-06T11:03:14.9173752Z 
+2025-04-06T11:03:14.9179012Z #8 exporting to image
+2025-04-06T11:03:14.9179698Z #8 exporting layers
+2025-04-06T11:03:15.0059673Z #8 exporting layers 0.2s done
+2025-04-06T11:03:15.0280835Z #8 writing image sha256:a10ce55dae56b8aae3faab2cb32bae838b2eab8e6bf3768532a90d51f91882b2 done
+2025-04-06T11:03:15.0281927Z #8 naming to docker.io/library/954e4a:6137b764e80c44c6b2a595ca08d0a567 done
+2025-04-06T11:03:15.0282549Z #8 DONE 0.2s
+2025-04-06T11:03:15.0337835Z ##[endgroup]
+2025-04-06T11:03:15.0593119Z ##[group]Run actions/checkout@v4
+2025-04-06T11:03:15.0593668Z with:
+2025-04-06T11:03:15.0593886Z   repository: objectionary/eo-graphs
+2025-04-06T11:03:15.0594313Z   token: ***
+2025-04-06T11:03:15.0594503Z   ssh-strict: true
+2025-04-06T11:03:15.0594693Z   ssh-user: git
+2025-04-06T11:03:15.0594882Z   persist-credentials: true
+2025-04-06T11:03:15.0595100Z   clean: true
+2025-04-06T11:03:15.0595293Z   sparse-checkout-cone-mode: true
+2025-04-06T11:03:15.0595532Z   fetch-depth: 1
+2025-04-06T11:03:15.0595707Z   fetch-tags: false
+2025-04-06T11:03:15.0595894Z   show-progress: true
+2025-04-06T11:03:15.0596071Z   lfs: false
+2025-04-06T11:03:15.0596235Z   submodules: false
+2025-04-06T11:03:15.0596437Z   set-safe-directory: true
+2025-04-06T11:03:15.0596841Z ##[endgroup]
+2025-04-06T11:03:15.2260157Z Syncing repository: objectionary/eo-graphs
+2025-04-06T11:03:15.2261672Z ##[group]Getting Git version info
+2025-04-06T11:03:15.2262115Z Working directory is '/home/runner/work/eo-graphs/eo-graphs'
+2025-04-06T11:03:15.2262742Z [command]/usr/bin/git version
+2025-04-06T11:03:15.2282871Z git version 2.49.0
+2025-04-06T11:03:15.2310278Z ##[endgroup]
+2025-04-06T11:03:15.2325139Z Temporarily overriding HOME='/home/runner/work/_temp/06ee15ca-c8c6-4068-a917-ac2435f96f5f' before making global git config changes
+2025-04-06T11:03:15.2326527Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-06T11:03:15.2331603Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/eo-graphs/eo-graphs
+2025-04-06T11:03:15.2364947Z Deleting the contents of '/home/runner/work/eo-graphs/eo-graphs'
+2025-04-06T11:03:15.2368967Z ##[group]Initializing the repository
+2025-04-06T11:03:15.2373461Z [command]/usr/bin/git init /home/runner/work/eo-graphs/eo-graphs
+2025-04-06T11:03:15.2432068Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-06T11:03:15.2432928Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-06T11:03:15.2433575Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-06T11:03:15.2433915Z hint:
+2025-04-06T11:03:15.2434196Z hint: 	git config --global init.defaultBranch <name>
+2025-04-06T11:03:15.2434487Z hint:
+2025-04-06T11:03:15.2434752Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-06T11:03:15.2435283Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-06T11:03:15.2435970Z hint:
+2025-04-06T11:03:15.2436309Z hint: 	git branch -m <name>
+2025-04-06T11:03:15.2436772Z Initialized empty Git repository in /home/runner/work/eo-graphs/eo-graphs/.git/
+2025-04-06T11:03:15.2447839Z [command]/usr/bin/git remote add origin https://github.com/objectionary/eo-graphs
+2025-04-06T11:03:15.2481327Z ##[endgroup]
+2025-04-06T11:03:15.2481961Z ##[group]Disabling automatic garbage collection
+2025-04-06T11:03:15.2486296Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-06T11:03:15.2515275Z ##[endgroup]
+2025-04-06T11:03:15.2515924Z ##[group]Setting up auth
+2025-04-06T11:03:15.2522922Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-06T11:03:15.2553259Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-06T11:03:15.2832990Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-06T11:03:15.2867473Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-06T11:03:15.3102037Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-06T11:03:15.3135619Z ##[endgroup]
+2025-04-06T11:03:15.3136318Z ##[group]Fetching the repository
+2025-04-06T11:03:15.3145073Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +642eaa1e907566c7675fa0ea4f7c8d2af8fdc7c4:refs/remotes/pull/23/merge
+2025-04-06T11:03:15.6051584Z From https://github.com/objectionary/eo-graphs
+2025-04-06T11:03:15.6052357Z  * [new ref]         642eaa1e907566c7675fa0ea4f7c8d2af8fdc7c4 -> pull/23/merge
+2025-04-06T11:03:15.6076187Z ##[endgroup]
+2025-04-06T11:03:15.6076742Z ##[group]Determining the checkout info
+2025-04-06T11:03:15.6078829Z ##[endgroup]
+2025-04-06T11:03:15.6083858Z [command]/usr/bin/git sparse-checkout disable
+2025-04-06T11:03:15.6122024Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-06T11:03:15.6148976Z ##[group]Checking out the ref
+2025-04-06T11:03:15.6152659Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/23/merge
+2025-04-06T11:03:15.6226967Z Note: switching to 'refs/remotes/pull/23/merge'.
+2025-04-06T11:03:15.6227541Z 
+2025-04-06T11:03:15.6227904Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-06T11:03:15.6228920Z changes and commit them, and you can discard any commits you make in this
+2025-04-06T11:03:15.6230043Z state without impacting any branches by switching back to a branch.
+2025-04-06T11:03:15.6230496Z 
+2025-04-06T11:03:15.6230794Z If you want to create a new branch to retain commits you create, you may
+2025-04-06T11:03:15.6231484Z do so (now or later) by using -c with the switch command. Example:
+2025-04-06T11:03:15.6231887Z 
+2025-04-06T11:03:15.6232044Z   git switch -c <new-branch-name>
+2025-04-06T11:03:15.6232340Z 
+2025-04-06T11:03:15.6232454Z Or undo this operation with:
+2025-04-06T11:03:15.6232619Z 
+2025-04-06T11:03:15.6232700Z   git switch -
+2025-04-06T11:03:15.6232828Z 
+2025-04-06T11:03:15.6233039Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-06T11:03:15.6233340Z 
+2025-04-06T11:03:15.6233661Z HEAD is now at 642eaa1 Merge c0227a428d6a9c287e7883749cabaeddd0f37e2e into 3b99552d18c6704d9b75969d219b1f6aa6219e34
+2025-04-06T11:03:15.6235600Z ##[endgroup]
+2025-04-06T11:03:15.6268778Z [command]/usr/bin/git log -1 --format=%H
+2025-04-06T11:03:15.6290630Z 642eaa1e907566c7675fa0ea4f7c8d2af8fdc7c4
+2025-04-06T11:03:15.6451277Z ##[group]Run fsfe/reuse-action@v5
+2025-04-06T11:03:15.6451553Z ##[endgroup]
+2025-04-06T11:03:15.6536087Z ##[command]/usr/bin/docker run --name e4a6137b764e80c44c6b2a595ca08d0a567_41ca9c --label 954e4a --workdir /github/workspace --rm -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_RESULTS_URL" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/runner/work/eo-graphs/eo-graphs":"/github/workspace" 954e4a:6137b764e80c44c6b2a595ca08d0a567
+2025-04-06T11:03:16.5575155Z # MISSING COPYRIGHT AND LICENSING INFORMATION
+2025-04-06T11:03:16.5575529Z 
+2025-04-06T11:03:16.5575969Z The following files have no copyright and licensing information:
+2025-04-06T11:03:16.5576391Z * src/eo/dijkstra/Makefile
+2025-04-06T11:03:16.5576727Z * src/eo/fordfulkerson/Makefile
+2025-04-06T11:03:16.5577171Z * src/eo/kruskal/Makefile
+2025-04-06T11:03:16.5577515Z * src/eo/prim/Makefile
+2025-04-06T11:03:16.5577782Z 
+2025-04-06T11:03:16.5577890Z # SUMMARY
+2025-04-06T11:03:16.5578044Z 
+2025-04-06T11:03:16.5578172Z * Bad licenses: 0
+2025-04-06T11:03:16.5578481Z * Deprecated licenses: 0
+2025-04-06T11:03:16.5579049Z * Licenses without file extension: 0
+2025-04-06T11:03:16.5579462Z * Missing licenses: 0
+2025-04-06T11:03:16.5579780Z * Unused licenses: 0
+2025-04-06T11:03:16.5580095Z * Used licenses: MIT
+2025-04-06T11:03:16.5580390Z * Read errors: 0
+2025-04-06T11:03:16.5580632Z * Files with copyright information: 39 / 43
+2025-04-06T11:03:16.5580909Z * Files with license information: 39 / 43
+2025-04-06T11:03:16.5581081Z 
+2025-04-06T11:03:16.5581384Z Unfortunately, your project is not compliant with version 3.3 of the REUSE Specification :-(
+2025-04-06T11:03:16.5581712Z 
+2025-04-06T11:03:16.5581716Z 
+2025-04-06T11:03:16.5581791Z # RECOMMENDATIONS
+2025-04-06T11:03:16.5581906Z 
+2025-04-06T11:03:16.5582342Z * Fix missing copyright/licensing information: For one or more files, the tool
+2025-04-06T11:03:16.5582823Z   cannot find copyright and/or licensing information. You typically do this by
+2025-04-06T11:03:16.5583312Z   adding 'SPDX-FileCopyrightText' and 'SPDX-License-Identifier' tags to each
+2025-04-06T11:03:16.5583749Z   file. The tutorial explains additional ways to do this:
+2025-04-06T11:03:16.5584090Z   <https://reuse.software/tutorial/>
+2025-04-06T11:03:16.5584278Z 
+2025-04-06T11:03:16.6928066Z Post job cleanup.
+2025-04-06T11:03:16.7853989Z [command]/usr/bin/git version
+2025-04-06T11:03:16.7897426Z git version 2.49.0
+2025-04-06T11:03:16.7941313Z Temporarily overriding HOME='/home/runner/work/_temp/ed21b07a-3880-45ee-93f2-47cf3257ce33' before making global git config changes
+2025-04-06T11:03:16.7942641Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-06T11:03:16.7947484Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/eo-graphs/eo-graphs
+2025-04-06T11:03:16.7981557Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-06T11:03:16.8014254Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-06T11:03:16.8263846Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-06T11:03:16.8286779Z http.https://github.com/.extraheader
+2025-04-06T11:03:16.8303346Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-06T11:03:16.8337138Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-06T11:03:16.8684839Z Cleaning up orphan processes

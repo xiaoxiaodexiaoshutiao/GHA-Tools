@@ -1,0 +1,346 @@
+﻿2025-04-11T10:29:49.7385255Z Current runner version: '2.323.0'
+2025-04-11T10:29:49.7409835Z ##[group]Operating System
+2025-04-11T10:29:49.7410577Z Ubuntu
+2025-04-11T10:29:49.7411192Z 24.04.2
+2025-04-11T10:29:49.7411659Z LTS
+2025-04-11T10:29:49.7412121Z ##[endgroup]
+2025-04-11T10:29:49.7412668Z ##[group]Runner Image
+2025-04-11T10:29:49.7413252Z Image: ubuntu-24.04
+2025-04-11T10:29:49.7413772Z Version: 20250406.1.0
+2025-04-11T10:29:49.7414810Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250406.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-11T10:29:49.7416196Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250406.1
+2025-04-11T10:29:49.7417054Z ##[endgroup]
+2025-04-11T10:29:49.7417622Z ##[group]Runner Image Provisioner
+2025-04-11T10:29:49.7418157Z 2.0.422.1
+2025-04-11T10:29:49.7418841Z ##[endgroup]
+2025-04-11T10:29:49.7421360Z ##[group]GITHUB_TOKEN Permissions
+2025-04-11T10:29:49.7423506Z Actions: write
+2025-04-11T10:29:49.7424296Z Attestations: write
+2025-04-11T10:29:49.7424887Z Checks: write
+2025-04-11T10:29:49.7425412Z Contents: write
+2025-04-11T10:29:49.7425931Z Deployments: write
+2025-04-11T10:29:49.7426402Z Discussions: write
+2025-04-11T10:29:49.7426940Z Issues: write
+2025-04-11T10:29:49.7427399Z Metadata: read
+2025-04-11T10:29:49.7427877Z Models: read
+2025-04-11T10:29:49.7428342Z Packages: write
+2025-04-11T10:29:49.7429057Z Pages: write
+2025-04-11T10:29:49.7429522Z PullRequests: write
+2025-04-11T10:29:49.7430089Z RepositoryProjects: write
+2025-04-11T10:29:49.7430676Z SecurityEvents: write
+2025-04-11T10:29:49.7431158Z Statuses: write
+2025-04-11T10:29:49.7431680Z ##[endgroup]
+2025-04-11T10:29:49.7433763Z Secret source: Actions
+2025-04-11T10:29:49.7434796Z Prepare workflow directory
+2025-04-11T10:29:49.7752399Z Prepare all required actions
+2025-04-11T10:29:49.7789864Z Getting action download info
+2025-04-11T10:29:50.2165039Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-11T10:29:50.2166037Z Version: 4.2.2
+2025-04-11T10:29:50.2167117Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-11T10:29:50.2168272Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-11T10:29:50.2169205Z ##[endgroup]
+2025-04-11T10:29:50.3059408Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-04-11T10:29:50.3060102Z Version: 5.5.0
+2025-04-11T10:29:50.3060739Z Digest: sha256:1fac95d751afd58314aebd2ab01d4bf3b3109a441917bd2cac2a22898ec494f7
+2025-04-11T10:29:50.3061583Z Source commit SHA: 8d9ed9ac5c53483de85588cdf95a591a75ab9f55
+2025-04-11T10:29:50.3062175Z ##[endgroup]
+2025-04-11T10:29:50.5230433Z ##[group]Download immutable action package 'actions/cache@v4'
+2025-04-11T10:29:50.5231086Z Version: 4.2.3
+2025-04-11T10:29:50.5231735Z Digest: sha256:c8a3bb963e1f1826d8fcc8d1354f0dd29d8ac1db1d4f6f20247055ae11b81ed9
+2025-04-11T10:29:50.5232575Z Source commit SHA: 5a3ec84eff668545956fd18022155c47e93e2684
+2025-04-11T10:29:50.5233170Z ##[endgroup]
+2025-04-11T10:29:50.7010260Z Complete job name: pre-commit / run-pre-commit
+2025-04-11T10:29:50.7656725Z ##[group]Run actions/checkout@v4
+2025-04-11T10:29:50.7657534Z with:
+2025-04-11T10:29:50.7657950Z   repository: shenxianpeng/gitstats
+2025-04-11T10:29:50.7658603Z   token: ***
+2025-04-11T10:29:50.7659153Z   ssh-strict: true
+2025-04-11T10:29:50.7659538Z   ssh-user: git
+2025-04-11T10:29:50.7659970Z   persist-credentials: true
+2025-04-11T10:29:50.7660402Z   clean: true
+2025-04-11T10:29:50.7660794Z   sparse-checkout-cone-mode: true
+2025-04-11T10:29:50.7661273Z   fetch-depth: 1
+2025-04-11T10:29:50.7661648Z   fetch-tags: false
+2025-04-11T10:29:50.7662043Z   show-progress: true
+2025-04-11T10:29:50.7662441Z   lfs: false
+2025-04-11T10:29:50.7662809Z   submodules: false
+2025-04-11T10:29:50.7663204Z   set-safe-directory: true
+2025-04-11T10:29:50.7663883Z ##[endgroup]
+2025-04-11T10:29:50.9361453Z Syncing repository: shenxianpeng/gitstats
+2025-04-11T10:29:50.9363816Z ##[group]Getting Git version info
+2025-04-11T10:29:50.9364745Z Working directory is '/home/runner/work/gitstats/gitstats'
+2025-04-11T10:29:50.9366041Z [command]/usr/bin/git version
+2025-04-11T10:29:50.9421182Z git version 2.49.0
+2025-04-11T10:29:50.9448991Z ##[endgroup]
+2025-04-11T10:29:50.9461031Z Temporarily overriding HOME='/home/runner/work/_temp/e287fd01-f6fe-45b7-86a0-627f7b40c094' before making global git config changes
+2025-04-11T10:29:50.9462508Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-11T10:29:50.9466001Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/gitstats/gitstats
+2025-04-11T10:29:50.9498849Z Deleting the contents of '/home/runner/work/gitstats/gitstats'
+2025-04-11T10:29:50.9502571Z ##[group]Initializing the repository
+2025-04-11T10:29:50.9506375Z [command]/usr/bin/git init /home/runner/work/gitstats/gitstats
+2025-04-11T10:29:50.9567013Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-11T10:29:50.9568121Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-11T10:29:50.9569457Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-11T10:29:50.9570101Z hint:
+2025-04-11T10:29:50.9570565Z hint: 	git config --global init.defaultBranch <name>
+2025-04-11T10:29:50.9571129Z hint:
+2025-04-11T10:29:50.9571924Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-11T10:29:50.9573158Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-11T10:29:50.9573841Z hint:
+2025-04-11T10:29:50.9574200Z hint: 	git branch -m <name>
+2025-04-11T10:29:50.9574889Z Initialized empty Git repository in /home/runner/work/gitstats/gitstats/.git/
+2025-04-11T10:29:50.9582837Z [command]/usr/bin/git remote add origin https://github.com/shenxianpeng/gitstats
+2025-04-11T10:29:50.9615995Z ##[endgroup]
+2025-04-11T10:29:50.9617147Z ##[group]Disabling automatic garbage collection
+2025-04-11T10:29:50.9621129Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-11T10:29:50.9649910Z ##[endgroup]
+2025-04-11T10:29:50.9651138Z ##[group]Setting up auth
+2025-04-11T10:29:50.9657412Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-11T10:29:50.9688799Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-11T10:29:50.9959897Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-11T10:29:50.9990187Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-11T10:29:51.0230464Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-11T10:29:51.0266778Z ##[endgroup]
+2025-04-11T10:29:51.0275273Z ##[group]Fetching the repository
+2025-04-11T10:29:51.0276911Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +6d1add39291088c0ab4a82d7d6be10715f8f7f63:refs/remotes/pull/85/merge
+2025-04-11T10:29:51.2867390Z From https://github.com/shenxianpeng/gitstats
+2025-04-11T10:29:51.2868978Z  * [new ref]         6d1add39291088c0ab4a82d7d6be10715f8f7f63 -> pull/85/merge
+2025-04-11T10:29:51.2891346Z ##[endgroup]
+2025-04-11T10:29:51.2892301Z ##[group]Determining the checkout info
+2025-04-11T10:29:51.2894287Z ##[endgroup]
+2025-04-11T10:29:51.2899810Z [command]/usr/bin/git sparse-checkout disable
+2025-04-11T10:29:51.2939638Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-11T10:29:51.2967506Z ##[group]Checking out the ref
+2025-04-11T10:29:51.2971562Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/85/merge
+2025-04-11T10:29:51.3040470Z Note: switching to 'refs/remotes/pull/85/merge'.
+2025-04-11T10:29:51.3041271Z 
+2025-04-11T10:29:51.3041936Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-11T10:29:51.3043628Z changes and commit them, and you can discard any commits you make in this
+2025-04-11T10:29:51.3045355Z state without impacting any branches by switching back to a branch.
+2025-04-11T10:29:51.3046973Z 
+2025-04-11T10:29:51.3048010Z If you want to create a new branch to retain commits you create, you may
+2025-04-11T10:29:51.3050581Z do so (now or later) by using -c with the switch command. Example:
+2025-04-11T10:29:51.3051898Z 
+2025-04-11T10:29:51.3052436Z   git switch -c <new-branch-name>
+2025-04-11T10:29:51.3053485Z 
+2025-04-11T10:29:51.3054037Z Or undo this operation with:
+2025-04-11T10:29:51.3054945Z 
+2025-04-11T10:29:51.3055413Z   git switch -
+2025-04-11T10:29:51.3056081Z 
+2025-04-11T10:29:51.3057122Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-11T10:29:51.3059088Z 
+2025-04-11T10:29:51.3061004Z HEAD is now at 6d1add3 Merge 2c8aefb51cd5fc265e1b334fa9eca09b7c6770cc into 5fdc9b5d0f3845fbce5969d20ec50d287eb39b5e
+2025-04-11T10:29:51.3064557Z ##[endgroup]
+2025-04-11T10:29:51.3087600Z [command]/usr/bin/git log -1 --format=%H
+2025-04-11T10:29:51.3109509Z 6d1add39291088c0ab4a82d7d6be10715f8f7f63
+2025-04-11T10:29:51.3411262Z ##[group]Run actions/setup-python@v5
+2025-04-11T10:29:51.3412338Z with:
+2025-04-11T10:29:51.3413049Z   python-version: 3.x
+2025-04-11T10:29:51.3413878Z   check-latest: false
+2025-04-11T10:29:51.3414951Z   token: ***
+2025-04-11T10:29:51.3415714Z   update-environment: true
+2025-04-11T10:29:51.3416651Z   allow-prereleases: false
+2025-04-11T10:29:51.3417573Z   freethreaded: false
+2025-04-11T10:29:51.3418381Z ##[endgroup]
+2025-04-11T10:29:51.5150045Z ##[group]Installed versions
+2025-04-11T10:29:51.5206861Z Successfully set up CPython (3.13.2)
+2025-04-11T10:29:51.5207892Z ##[endgroup]
+2025-04-11T10:29:51.5415303Z ##[group]Run wget -O hadolint https://github.com/hadolint/hadolint/releases/latest/download/hadolint-Linux-x86_64 \
+2025-04-11T10:29:51.5416470Z [36;1mwget -O hadolint https://github.com/hadolint/hadolint/releases/latest/download/hadolint-Linux-x86_64 \[0m
+2025-04-11T10:29:51.5417246Z [36;1m&& chmod +x hadolint \[0m
+2025-04-11T10:29:51.5417699Z [36;1m&& mv hadolint /usr/local/bin/[0m
+2025-04-11T10:29:51.5470521Z shell: /usr/bin/bash -e {0}
+2025-04-11T10:29:51.5470972Z env:
+2025-04-11T10:29:51.5471417Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-11T10:29:51.5472022Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-04-11T10:29:51.5472627Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-11T10:29:51.5473171Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-11T10:29:51.5473720Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-11T10:29:51.5474300Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-04-11T10:29:51.5474783Z ##[endgroup]
+2025-04-11T10:29:51.5800007Z --2025-04-11 10:29:51--  https://github.com/hadolint/hadolint/releases/latest/download/hadolint-Linux-x86_64
+2025-04-11T10:29:51.6044572Z Resolving github.com (github.com)... 140.82.113.3
+2025-04-11T10:29:51.6100206Z Connecting to github.com (github.com)|140.82.113.3|:443... connected.
+2025-04-11T10:29:51.6954493Z HTTP request sent, awaiting response... 302 Found
+2025-04-11T10:29:51.7003455Z Location: https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-x86_64 [following]
+2025-04-11T10:29:51.7004845Z --2025-04-11 10:29:51--  https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-x86_64
+2025-04-11T10:29:51.7005789Z Reusing existing connection to github.com:443.
+2025-04-11T10:29:51.7665358Z HTTP request sent, awaiting response... 302 Found
+2025-04-11T10:29:51.7669567Z Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/46234189/317149b9-7868-4dcd-9ab1-5d9aa5117e4b?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250411%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250411T102951Z&X-Amz-Expires=300&X-Amz-Signature=ef6a913accd06df4b76bbdfb2d2b896ebfd089f99f1f3a697a14080a28f8a137&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Dhadolint-Linux-x86_64&response-content-type=application%2Foctet-stream [following]
+2025-04-11T10:29:51.7675221Z --2025-04-11 10:29:51--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/46234189/317149b9-7868-4dcd-9ab1-5d9aa5117e4b?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250411%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250411T102951Z&X-Amz-Expires=300&X-Amz-Signature=ef6a913accd06df4b76bbdfb2d2b896ebfd089f99f1f3a697a14080a28f8a137&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Dhadolint-Linux-x86_64&response-content-type=application%2Foctet-stream
+2025-04-11T10:29:51.7746991Z Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.109.133, 185.199.110.133, 185.199.111.133, ...
+2025-04-11T10:29:51.7809219Z Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.109.133|:443... connected.
+2025-04-11T10:29:51.8244392Z HTTP request sent, awaiting response... 200 OK
+2025-04-11T10:29:51.8245566Z Length: 2426420 (2.3M) [application/octet-stream]
+2025-04-11T10:29:51.8246638Z Saving to: ‘hadolint’
+2025-04-11T10:29:51.8247144Z 
+2025-04-11T10:29:51.8301372Z      0K .......... .......... .......... .......... ..........  2% 8.82M 0s
+2025-04-11T10:29:51.8323978Z     50K .......... .......... .......... .......... ..........  4% 21.5M 0s
+2025-04-11T10:29:51.8368546Z    100K .......... .......... .......... .......... ..........  6% 11.1M 0s
+2025-04-11T10:29:51.8373321Z    150K .......... .......... .......... .......... ..........  8% 95.0M 0s
+2025-04-11T10:29:51.8407473Z    200K .......... .......... .......... .......... .......... 10% 14.5M 0s
+2025-04-11T10:29:51.8409484Z    250K .......... .......... .......... .......... .......... 12%  184M 0s
+2025-04-11T10:29:51.8423506Z    300K .......... .......... .......... .......... .......... 14% 36.4M 0s
+2025-04-11T10:29:51.8427038Z    350K .......... .......... .......... .......... .......... 16%  118M 0s
+2025-04-11T10:29:51.8432657Z    400K .......... .......... .......... .......... .......... 18% 86.1M 0s
+2025-04-11T10:29:51.8437832Z    450K .......... .......... .......... .......... .......... 21% 93.5M 0s
+2025-04-11T10:29:51.8461118Z    500K .......... .......... .......... .......... .......... 23% 21.7M 0s
+2025-04-11T10:29:51.8463159Z    550K .......... .......... .......... .......... .......... 25%  176M 0s
+2025-04-11T10:29:51.8475274Z    600K .......... .......... .......... .......... .......... 27% 40.8M 0s
+2025-04-11T10:29:51.8476793Z    650K .......... .......... .......... .......... .......... 29%  281M 0s
+2025-04-11T10:29:51.8480103Z    700K .......... .......... .......... .......... .......... 31%  153M 0s
+2025-04-11T10:29:51.8482298Z    750K .......... .......... .......... .......... .......... 33%  213M 0s
+2025-04-11T10:29:51.8486177Z    800K .......... .......... .......... .......... .......... 35%  131M 0s
+2025-04-11T10:29:51.8488857Z    850K .......... .......... .......... .......... .......... 37%  181M 0s
+2025-04-11T10:29:51.8491854Z    900K .......... .......... .......... .......... .......... 40%  156M 0s
+2025-04-11T10:29:51.8494663Z    950K .......... .......... .......... .......... .......... 42%  207M 0s
+2025-04-11T10:29:51.8495978Z   1000K .......... .......... .......... .......... .......... 44%  258M 0s
+2025-04-11T10:29:51.8513176Z   1050K .......... .......... .......... .......... .......... 46% 29.0M 0s
+2025-04-11T10:29:51.8515188Z   1100K .......... .......... .......... .......... .......... 48%  216M 0s
+2025-04-11T10:29:51.8517764Z   1150K .......... .......... .......... .......... .......... 50%  185M 0s
+2025-04-11T10:29:51.8530630Z   1200K .......... .......... .......... .......... .......... 52% 39.0M 0s
+2025-04-11T10:29:51.8532316Z   1250K .......... .......... .......... .......... .......... 54%  297M 0s
+2025-04-11T10:29:51.8533556Z   1300K .......... .......... .......... .......... .......... 56%  278M 0s
+2025-04-11T10:29:51.8536309Z   1350K .......... .......... .......... .......... .......... 59%  327M 0s
+2025-04-11T10:29:51.8537141Z   1400K .......... .......... .......... .......... .......... 61%  241M 0s
+2025-04-11T10:29:51.8539425Z   1450K .......... .......... .......... .......... .......... 63%  246M 0s
+2025-04-11T10:29:51.8541223Z   1500K .......... .......... .......... .......... .......... 65%  270M 0s
+2025-04-11T10:29:51.8542535Z   1550K .......... .......... .......... .......... .......... 67%  302M 0s
+2025-04-11T10:29:51.8544354Z   1600K .......... .......... .......... .......... .......... 69%  301M 0s
+2025-04-11T10:29:51.8546268Z   1650K .......... .......... .......... .......... .......... 71%  314M 0s
+2025-04-11T10:29:51.8547306Z   1700K .......... .......... .......... .......... .......... 73%  318M 0s
+2025-04-11T10:29:51.8550011Z   1750K .......... .......... .......... .......... .......... 75%  299M 0s
+2025-04-11T10:29:51.8551261Z   1800K .......... .......... .......... .......... .......... 78%  209M 0s
+2025-04-11T10:29:51.8553513Z   1850K .......... .......... .......... .......... .......... 80%  307M 0s
+2025-04-11T10:29:51.8555003Z   1900K .......... .......... .......... .......... .......... 82%  313M 0s
+2025-04-11T10:29:51.8555804Z   1950K .......... .......... .......... .......... .......... 84%  326M 0s
+2025-04-11T10:29:51.8557561Z   2000K .......... .......... .......... .......... .......... 86%  335M 0s
+2025-04-11T10:29:51.8559534Z   2050K .......... .......... .......... .......... .......... 88%  248M 0s
+2025-04-11T10:29:51.8565963Z   2100K .......... .......... .......... .......... .......... 90% 79.6M 0s
+2025-04-11T10:29:51.8567567Z   2150K .......... .......... .......... .......... .......... 92%  244M 0s
+2025-04-11T10:29:51.8570028Z   2200K .......... .......... .......... .......... .......... 94%  219M 0s
+2025-04-11T10:29:51.8572308Z   2250K .......... .......... .......... .......... .......... 97%  350M 0s
+2025-04-11T10:29:51.8573503Z   2300K .......... .......... .......... .......... .......... 99%  346M 0s
+2025-04-11T10:29:51.8574429Z   2350K .......... .........                                  100%  218M=0.03s
+2025-04-11T10:29:51.8574991Z 
+2025-04-11T10:29:51.8575625Z 2025-04-11 10:29:51 (70.6 MB/s) - ‘hadolint’ saved [2426420/2426420]
+2025-04-11T10:29:51.8576461Z 
+2025-04-11T10:29:51.9212120Z ##[group]Run actions/cache@v4
+2025-04-11T10:29:51.9212524Z with:
+2025-04-11T10:29:51.9212834Z   path: ~/.cache/pre-commit
+2025-04-11T10:29:51.9213370Z   key: pre-commit-3.13.2-8642faf319b8c34b1a2c44d1991a4e1303036d8a14f332412aa4c60bad83d5cb
+2025-04-11T10:29:51.9213941Z   enableCrossOsArchive: false
+2025-04-11T10:29:51.9214303Z   fail-on-cache-miss: false
+2025-04-11T10:29:51.9214658Z   lookup-only: false
+2025-04-11T10:29:51.9214975Z   save-always: false
+2025-04-11T10:29:51.9215358Z env:
+2025-04-11T10:29:51.9215728Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-11T10:29:51.9216266Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-04-11T10:29:51.9216819Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-11T10:29:51.9217296Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-11T10:29:51.9217781Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-11T10:29:51.9218298Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-04-11T10:29:51.9218940Z ##[endgroup]
+2025-04-11T10:29:52.1675225Z Cache not found for input keys: pre-commit-3.13.2-8642faf319b8c34b1a2c44d1991a4e1303036d8a14f332412aa4c60bad83d5cb
+2025-04-11T10:29:52.1752803Z ##[group]Run pipx run pre-commit run --show-diff-on-failure --color=always --all-files
+2025-04-11T10:29:52.1753611Z [36;1mpipx run pre-commit run --show-diff-on-failure --color=always --all-files[0m
+2025-04-11T10:29:52.1801299Z shell: /usr/bin/bash -e {0}
+2025-04-11T10:29:52.1801706Z env:
+2025-04-11T10:29:52.1802108Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-11T10:29:52.1802708Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-04-11T10:29:52.1803463Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-11T10:29:52.1804000Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-11T10:29:52.1804529Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-11T10:29:52.1805050Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-04-11T10:29:52.1805543Z ##[endgroup]
+2025-04-11T10:29:52.4078611Z creating virtual environment...
+2025-04-11T10:29:52.5436169Z installing pre-commit...
+2025-04-11T10:29:54.7895246Z [INFO][m Initializing environment for https://github.com/pre-commit/pre-commit-hooks.
+2025-04-11T10:29:54.9789801Z [INFO][m Initializing environment for https://github.com/pre-commit/mirrors-mypy.
+2025-04-11T10:29:55.1568134Z [INFO][m Initializing environment for https://github.com/pre-commit/mirrors-mypy:types-requests.
+2025-04-11T10:29:55.3135103Z [INFO][m Initializing environment for https://github.com/astral-sh/ruff-pre-commit.
+2025-04-11T10:29:55.4886399Z [INFO][m Initializing environment for https://github.com/codespell-project/codespell.
+2025-04-11T10:29:55.7827502Z [INFO][m Initializing environment for https://github.com/hadolint/hadolint.
+2025-04-11T10:29:55.9956198Z [INFO][m Installing environment for https://github.com/pre-commit/pre-commit-hooks.
+2025-04-11T10:29:55.9957372Z [INFO][m Once installed this environment will be reused.
+2025-04-11T10:29:55.9957999Z [INFO][m This may take a few minutes...
+2025-04-11T10:29:59.5758881Z [INFO][m Installing environment for https://github.com/pre-commit/mirrors-mypy.
+2025-04-11T10:29:59.5759770Z [INFO][m Once installed this environment will be reused.
+2025-04-11T10:29:59.5760333Z [INFO][m This may take a few minutes...
+2025-04-11T10:30:04.1601815Z [INFO][m Installing environment for https://github.com/astral-sh/ruff-pre-commit.
+2025-04-11T10:30:04.1602864Z [INFO][m Once installed this environment will be reused.
+2025-04-11T10:30:04.1603218Z [INFO][m This may take a few minutes...
+2025-04-11T10:30:07.6007531Z [INFO][m Installing environment for https://github.com/codespell-project/codespell.
+2025-04-11T10:30:07.6008562Z [INFO][m Once installed this environment will be reused.
+2025-04-11T10:30:07.6009268Z [INFO][m This may take a few minutes...
+2025-04-11T10:30:11.0199528Z check yaml...............................................................[42mPassed[m
+2025-04-11T10:30:11.0548113Z check toml...............................................................[42mPassed[m
+2025-04-11T10:30:11.0984398Z fix end of files.........................................................[42mPassed[m
+2025-04-11T10:30:11.1510850Z trim trailing whitespace.................................................[41mFailed[m
+2025-04-11T10:30:11.1511638Z [2m- hook id: trailing-whitespace[m
+2025-04-11T10:30:11.1512080Z [2m- exit code: 1[m
+2025-04-11T10:30:11.1512510Z [2m- files were modified by this hook[m
+2025-04-11T10:30:11.1512811Z 
+2025-04-11T10:30:11.1512957Z Fixing docs/source/index.rst
+2025-04-11T10:30:11.1513230Z 
+2025-04-11T10:30:11.1823622Z fix requirements.txt.....................................................[42mPassed[m
+2025-04-11T10:30:12.8747176Z mypy.....................................................................[42mPassed[m
+2025-04-11T10:30:12.8877371Z ruff.....................................................................[42mPassed[m
+2025-04-11T10:30:12.9016810Z ruff-format..............................................................[41mFailed[m
+2025-04-11T10:30:12.9017549Z [2m- hook id: ruff-format[m
+2025-04-11T10:30:12.9018486Z [2m- files were modified by this hook[m
+2025-04-11T10:30:12.9019202Z 
+2025-04-11T10:30:12.9019401Z 1 file reformatted, 5 files left unchanged
+2025-04-11T10:30:12.9019722Z 
+2025-04-11T10:30:13.0738073Z codespell................................................................[41mFailed[m
+2025-04-11T10:30:13.0738530Z [2m- hook id: codespell[m
+2025-04-11T10:30:13.0739015Z [2m- exit code: 65[m
+2025-04-11T10:30:13.0739493Z 
+2025-04-11T10:30:13.0739805Z [33mdocs/source/conf.py[0m:[33m19[0m: [31msoruce[0m ==> [32msource, spruce[0m
+2025-04-11T10:30:13.0740352Z [33mdocs/source/copyright.rst[0m:[33m9[0m: [31mLincese[0m ==> [32mLicense[0m
+2025-04-11T10:30:13.0740873Z [33mdocs/source/license.rst[0m:[33m6[0m: [31mLincese[0m ==> [32mLicense[0m
+2025-04-11T10:30:13.0741322Z WARNING: Cannot decode file using encoding "utf-8": gitstats/sortable.js
+2025-04-11T10:30:13.0741667Z WARNING: Trying next encoding "iso-8859-1"
+2025-04-11T10:30:13.0741848Z 
+2025-04-11T10:30:13.1259576Z Lint Dockerfiles.........................................................[42mPassed[m
+2025-04-11T10:30:13.1260247Z pre-commit hook(s) made changes.
+2025-04-11T10:30:13.1261002Z If you are seeing this message in CI, reproduce locally with: `pre-commit run --all-files`.
+2025-04-11T10:30:13.1261784Z To run `pre-commit` as part of git workflow, use `pre-commit install`.
+2025-04-11T10:30:13.1262346Z All changes made by hooks:
+2025-04-11T10:30:13.1283953Z [1mdiff --git a/docs/source/conf.py b/docs/source/conf.py[m
+2025-04-11T10:30:13.1284576Z [1mindex a0d9885..40f75b3 100644[m
+2025-04-11T10:30:13.1285031Z [1m--- a/docs/source/conf.py[m
+2025-04-11T10:30:13.1285474Z [1m+++ b/docs/source/conf.py[m
+2025-04-11T10:30:13.1285940Z [36m@@ -16,4 +16,4 @@[m [mhtml_theme = "sphinx_rtd_theme"[m
+2025-04-11T10:30:13.1286267Z  html_title = "gitstats"[m
+2025-04-11T10:30:13.1286525Z  html_short_title = "gitstats"[m
+2025-04-11T10:30:13.1286742Z  [m
+2025-04-11T10:30:13.1286981Z [31m-exclude_patterns = ['soruce/TODO.md'][m
+2025-04-11T10:30:13.1287317Z [32m+[m[32mexclude_patterns = ["soruce/TODO.md"][m
+2025-04-11T10:30:13.1287715Z [1mdiff --git a/docs/source/index.rst b/docs/source/index.rst[m
+2025-04-11T10:30:13.1288059Z [1mindex 8cbf8b3..930946c 100644[m
+2025-04-11T10:30:13.1288325Z [1m--- a/docs/source/index.rst[m
+2025-04-11T10:30:13.1288579Z [1m+++ b/docs/source/index.rst[m
+2025-04-11T10:30:13.1289150Z [36m@@ -20,7 +20,7 @@[m [mHere is a list of some features of _gitstats_:[m
+2025-04-11T10:30:13.1289541Z  .. toctree::[m
+2025-04-11T10:30:13.1289735Z     :maxdepth: 1[m
+2025-04-11T10:30:13.1289959Z     :caption: Getting Started[m
+2025-04-11T10:30:13.1290183Z [31m-   [m
+2025-04-11T10:30:13.1290356Z [32m+[m
+2025-04-11T10:30:13.1290529Z     installation[m
+2025-04-11T10:30:13.1290721Z     example[m
+2025-04-11T10:30:13.1290896Z     faq[m
+2025-04-11T10:30:13.1452917Z ##[error]Process completed with exit code 1.
+2025-04-11T10:30:13.1563147Z Post job cleanup.
+2025-04-11T10:30:13.2487270Z [command]/usr/bin/git version
+2025-04-11T10:30:13.2528405Z git version 2.49.0
+2025-04-11T10:30:13.2569130Z Temporarily overriding HOME='/home/runner/work/_temp/a6df694e-8574-4cb2-a4f7-743f5777ae4a' before making global git config changes
+2025-04-11T10:30:13.2570287Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-11T10:30:13.2574487Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/gitstats/gitstats
+2025-04-11T10:30:13.2607973Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-11T10:30:13.2640024Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-11T10:30:13.2866912Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-11T10:30:13.2887125Z http.https://github.com/.extraheader
+2025-04-11T10:30:13.2899185Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-11T10:30:13.2929201Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-11T10:30:13.3247891Z Cleaning up orphan processes

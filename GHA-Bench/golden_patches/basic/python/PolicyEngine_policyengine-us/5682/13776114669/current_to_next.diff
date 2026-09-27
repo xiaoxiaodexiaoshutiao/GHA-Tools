@@ -1,0 +1,29 @@
+diff --git a/policyengine_us/variables/gov/states/ma/dot/mbta/income_eligible_reduced_fares/ma_mbta_income_eligible_reduced_fare_eligible.py b/policyengine_us/variables/gov/states/ma/dot/mbta/income_eligible_reduced_fares/ma_mbta_income_eligible_reduced_fare_eligible.py
+index c3cdf9c4778..5da629723ec 100644
+--- a/policyengine_us/variables/gov/states/ma/dot/mbta/income_eligible_reduced_fares/ma_mbta_income_eligible_reduced_fare_eligible.py
++++ b/policyengine_us/variables/gov/states/ma/dot/mbta/income_eligible_reduced_fares/ma_mbta_income_eligible_reduced_fare_eligible.py
+@@ -10,7 +10,9 @@ class ma_mbta_income_eligible_reduced_fare_eligible(Variable):
+     reference = "https://www.mbta.com/fares/reduced/income-eligible"
+ 
+     def formula(person, period, parameters):
+-        p = parameters(period).gov.states.ma.dot.mbta.income_eligible_reduced_fares.age_threshold
++        p = parameters(
++            period
++        ).gov.states.ma.dot.mbta.income_eligible_reduced_fares.age_threshold
+         age = person("age", period)
+         age_eligible = p.calc(age)
+-        return age_eligible 
++        return age_eligible
+diff --git a/policyengine_us/variables/gov/states/ma/dot/mbta/senior_charlie_card/ma_mbta_senior_charlie_card_eligible.py b/policyengine_us/variables/gov/states/ma/dot/mbta/senior_charlie_card/ma_mbta_senior_charlie_card_eligible.py
+index d6ffee95956..1699f4d4186 100644
+--- a/policyengine_us/variables/gov/states/ma/dot/mbta/senior_charlie_card/ma_mbta_senior_charlie_card_eligible.py
++++ b/policyengine_us/variables/gov/states/ma/dot/mbta/senior_charlie_card/ma_mbta_senior_charlie_card_eligible.py
+@@ -5,7 +5,7 @@ class ma_mbta_senior_charlie_card_eligible(Variable):
+     value_type = bool
+     entity = Person
+     label = "Eligible for the Massachusetts Bay Transportation Authority Senior Charlie Card program"
+-    reference = "https://www.mbta.com/fares/reduced/senior-charliecard" 
++    reference = "https://www.mbta.com/fares/reduced/senior-charliecard"
+     definition_period = YEAR
+     defined_for = StateCode.MA
+ 

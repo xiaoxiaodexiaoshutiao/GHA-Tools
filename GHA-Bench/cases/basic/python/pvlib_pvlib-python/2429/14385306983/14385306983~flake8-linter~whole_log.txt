@@ -1,0 +1,221 @@
+﻿2025-04-10T16:15:17.7104703Z Current runner version: '2.323.0'
+2025-04-10T16:15:17.7126485Z ##[group]Operating System
+2025-04-10T16:15:17.7127389Z Ubuntu
+2025-04-10T16:15:17.7127886Z 24.04.2
+2025-04-10T16:15:17.7128395Z LTS
+2025-04-10T16:15:17.7128916Z ##[endgroup]
+2025-04-10T16:15:17.7129441Z ##[group]Runner Image
+2025-04-10T16:15:17.7129972Z Image: ubuntu-24.04
+2025-04-10T16:15:17.7130537Z Version: 20250316.1.0
+2025-04-10T16:15:17.7131566Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250316.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-10T16:15:17.7132872Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250316.1
+2025-04-10T16:15:17.7134182Z ##[endgroup]
+2025-04-10T16:15:17.7134648Z ##[group]Runner Image Provisioner
+2025-04-10T16:15:17.7135209Z 2.0.422.1
+2025-04-10T16:15:17.7135674Z ##[endgroup]
+2025-04-10T16:15:17.7137919Z ##[group]GITHUB_TOKEN Permissions
+2025-04-10T16:15:17.7140270Z Actions: read
+2025-04-10T16:15:17.7141064Z Attestations: read
+2025-04-10T16:15:17.7141702Z Checks: read
+2025-04-10T16:15:17.7142164Z Contents: read
+2025-04-10T16:15:17.7142640Z Deployments: read
+2025-04-10T16:15:17.7143482Z Discussions: read
+2025-04-10T16:15:17.7143968Z Issues: read
+2025-04-10T16:15:17.7144448Z Metadata: read
+2025-04-10T16:15:17.7144939Z Models: read
+2025-04-10T16:15:17.7145419Z Packages: read
+2025-04-10T16:15:17.7145866Z Pages: read
+2025-04-10T16:15:17.7146382Z PullRequests: read
+2025-04-10T16:15:17.7146877Z RepositoryProjects: read
+2025-04-10T16:15:17.7147443Z SecurityEvents: read
+2025-04-10T16:15:17.7147970Z Statuses: read
+2025-04-10T16:15:17.7148419Z ##[endgroup]
+2025-04-10T16:15:17.7150670Z Secret source: None
+2025-04-10T16:15:17.7151557Z Prepare workflow directory
+2025-04-10T16:15:17.7469214Z Prepare all required actions
+2025-04-10T16:15:17.7506291Z Getting action download info
+2025-04-10T16:15:18.1570076Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-10T16:15:18.1571060Z Version: 4.2.2
+2025-04-10T16:15:18.1572174Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-10T16:15:18.1573569Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-10T16:15:18.1574272Z ##[endgroup]
+2025-04-10T16:15:18.2597436Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-04-10T16:15:18.2598143Z Version: 5.5.0
+2025-04-10T16:15:18.2598822Z Digest: sha256:1fac95d751afd58314aebd2ab01d4bf3b3109a441917bd2cac2a22898ec494f7
+2025-04-10T16:15:18.2599660Z Source commit SHA: 8d9ed9ac5c53483de85588cdf95a591a75ab9f55
+2025-04-10T16:15:18.2600267Z ##[endgroup]
+2025-04-10T16:15:18.5269941Z Complete job name: flake8-linter
+2025-04-10T16:15:18.5933456Z ##[group]Run actions/checkout@v4
+2025-04-10T16:15:18.5934564Z with:
+2025-04-10T16:15:18.5934973Z   repository: pvlib/pvlib-python
+2025-04-10T16:15:18.5935589Z   token: ***
+2025-04-10T16:15:18.5935941Z   ssh-strict: true
+2025-04-10T16:15:18.5936318Z   ssh-user: git
+2025-04-10T16:15:18.5936701Z   persist-credentials: true
+2025-04-10T16:15:18.5937125Z   clean: true
+2025-04-10T16:15:18.5937521Z   sparse-checkout-cone-mode: true
+2025-04-10T16:15:18.5937983Z   fetch-depth: 1
+2025-04-10T16:15:18.5938349Z   fetch-tags: false
+2025-04-10T16:15:18.5938730Z   show-progress: true
+2025-04-10T16:15:18.5939112Z   lfs: false
+2025-04-10T16:15:18.5939454Z   submodules: false
+2025-04-10T16:15:18.5939855Z   set-safe-directory: true
+2025-04-10T16:15:18.5940484Z ##[endgroup]
+2025-04-10T16:15:18.7015749Z Syncing repository: pvlib/pvlib-python
+2025-04-10T16:15:18.7018381Z ##[group]Getting Git version info
+2025-04-10T16:15:18.7019537Z Working directory is '/home/runner/work/pvlib-python/pvlib-python'
+2025-04-10T16:15:18.7021446Z [command]/usr/bin/git version
+2025-04-10T16:15:18.7064597Z git version 2.48.1
+2025-04-10T16:15:18.7090958Z ##[endgroup]
+2025-04-10T16:15:18.7104519Z Temporarily overriding HOME='/home/runner/work/_temp/51fd0a69-5ee9-40da-93cb-0b961441b49c' before making global git config changes
+2025-04-10T16:15:18.7106908Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-10T16:15:18.7109819Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pvlib-python/pvlib-python
+2025-04-10T16:15:18.7145991Z Deleting the contents of '/home/runner/work/pvlib-python/pvlib-python'
+2025-04-10T16:15:18.7149462Z ##[group]Initializing the repository
+2025-04-10T16:15:18.7153557Z [command]/usr/bin/git init /home/runner/work/pvlib-python/pvlib-python
+2025-04-10T16:15:18.7214727Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-10T16:15:18.7216618Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-10T16:15:18.7218191Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-10T16:15:18.7219358Z hint:
+2025-04-10T16:15:18.7220142Z hint: 	git config --global init.defaultBranch <name>
+2025-04-10T16:15:18.7221081Z hint:
+2025-04-10T16:15:18.7221978Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-10T16:15:18.7223693Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-10T16:15:18.7224962Z hint:
+2025-04-10T16:15:18.7225653Z hint: 	git branch -m <name>
+2025-04-10T16:15:18.7226991Z Initialized empty Git repository in /home/runner/work/pvlib-python/pvlib-python/.git/
+2025-04-10T16:15:18.7230329Z [command]/usr/bin/git remote add origin https://github.com/pvlib/pvlib-python
+2025-04-10T16:15:18.7265824Z ##[endgroup]
+2025-04-10T16:15:18.7267018Z ##[group]Disabling automatic garbage collection
+2025-04-10T16:15:18.7269175Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-10T16:15:18.7301454Z ##[endgroup]
+2025-04-10T16:15:18.7302633Z ##[group]Setting up auth
+2025-04-10T16:15:18.7308692Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-10T16:15:18.7340447Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-10T16:15:18.7648671Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-10T16:15:18.7680493Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-10T16:15:18.7941693Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-10T16:15:18.7982156Z ##[endgroup]
+2025-04-10T16:15:18.7983564Z ##[group]Fetching the repository
+2025-04-10T16:15:18.7995813Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e0d97f0c08f20e17838c260cea5b76731b95c2b1:refs/remotes/pull/2429/merge
+2025-04-10T16:15:20.3201161Z From https://github.com/pvlib/pvlib-python
+2025-04-10T16:15:20.3202867Z  * [new ref]         e0d97f0c08f20e17838c260cea5b76731b95c2b1 -> pull/2429/merge
+2025-04-10T16:15:20.3233745Z ##[endgroup]
+2025-04-10T16:15:20.3235070Z ##[group]Determining the checkout info
+2025-04-10T16:15:20.3236758Z ##[endgroup]
+2025-04-10T16:15:20.3242827Z [command]/usr/bin/git sparse-checkout disable
+2025-04-10T16:15:20.3281512Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-10T16:15:20.3309850Z ##[group]Checking out the ref
+2025-04-10T16:15:20.3315272Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/2429/merge
+2025-04-10T16:15:20.5837729Z Note: switching to 'refs/remotes/pull/2429/merge'.
+2025-04-10T16:15:20.5838733Z 
+2025-04-10T16:15:20.5839475Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-10T16:15:20.5840852Z changes and commit them, and you can discard any commits you make in this
+2025-04-10T16:15:20.5842179Z state without impacting any branches by switching back to a branch.
+2025-04-10T16:15:20.5842945Z 
+2025-04-10T16:15:20.5843672Z If you want to create a new branch to retain commits you create, you may
+2025-04-10T16:15:20.5845170Z do so (now or later) by using -c with the switch command. Example:
+2025-04-10T16:15:20.5845860Z 
+2025-04-10T16:15:20.5846161Z   git switch -c <new-branch-name>
+2025-04-10T16:15:20.5846651Z 
+2025-04-10T16:15:20.5846951Z Or undo this operation with:
+2025-04-10T16:15:20.5847422Z 
+2025-04-10T16:15:20.5847692Z   git switch -
+2025-04-10T16:15:20.5848082Z 
+2025-04-10T16:15:20.5848768Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-10T16:15:20.5849711Z 
+2025-04-10T16:15:20.5850754Z HEAD is now at e0d97f0 Merge d34705cff28368c203858dabf4a13976f3e8d11c into a4e5017f51ef4535d5b98adca530a74e1d8e07ca
+2025-04-10T16:15:20.5858340Z ##[endgroup]
+2025-04-10T16:15:20.5897144Z [command]/usr/bin/git log -1 --format=%H
+2025-04-10T16:15:20.5921287Z e0d97f0c08f20e17838c260cea5b76731b95c2b1
+2025-04-10T16:15:20.6241046Z ##[group]Run actions/setup-python@v5
+2025-04-10T16:15:20.6242244Z with:
+2025-04-10T16:15:20.6243282Z   python-version: 3.11
+2025-04-10T16:15:20.6244272Z   check-latest: false
+2025-04-10T16:15:20.6245502Z   token: ***
+2025-04-10T16:15:20.6246375Z   update-environment: true
+2025-04-10T16:15:20.6247417Z   allow-prereleases: false
+2025-04-10T16:15:20.6248443Z   freethreaded: false
+2025-04-10T16:15:20.6249345Z ##[endgroup]
+2025-04-10T16:15:20.8008520Z ##[group]Installed versions
+2025-04-10T16:15:20.8097923Z Successfully set up CPython (3.11.11)
+2025-04-10T16:15:20.8100681Z ##[endgroup]
+2025-04-10T16:15:20.8339466Z ##[group]Run pip install flake8==5.0.4
+2025-04-10T16:15:20.8340598Z [36;1mpip install flake8==5.0.4[0m
+2025-04-10T16:15:20.8397305Z shell: /usr/bin/bash -e {0}
+2025-04-10T16:15:20.8398195Z env:
+2025-04-10T16:15:20.8399122Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T16:15:20.8400599Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-04-10T16:15:20.8402070Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T16:15:20.8404046Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T16:15:20.8405720Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T16:15:20.8407061Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-04-10T16:15:20.8408179Z ##[endgroup]
+2025-04-10T16:15:21.4174882Z Collecting flake8==5.0.4
+2025-04-10T16:15:21.4507747Z   Downloading flake8-5.0.4-py2.py3-none-any.whl.metadata (4.1 kB)
+2025-04-10T16:15:21.4631745Z Collecting mccabe<0.8.0,>=0.7.0 (from flake8==5.0.4)
+2025-04-10T16:15:21.4662233Z   Downloading mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+2025-04-10T16:15:21.4798742Z Collecting pycodestyle<2.10.0,>=2.9.0 (from flake8==5.0.4)
+2025-04-10T16:15:21.4832021Z   Downloading pycodestyle-2.9.1-py2.py3-none-any.whl.metadata (31 kB)
+2025-04-10T16:15:21.4986442Z Collecting pyflakes<2.6.0,>=2.5.0 (from flake8==5.0.4)
+2025-04-10T16:15:21.5014723Z   Downloading pyflakes-2.5.0-py2.py3-none-any.whl.metadata (3.8 kB)
+2025-04-10T16:15:21.5091235Z Downloading flake8-5.0.4-py2.py3-none-any.whl (61 kB)
+2025-04-10T16:15:21.5157972Z Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+2025-04-10T16:15:21.5205051Z Downloading pycodestyle-2.9.1-py2.py3-none-any.whl (41 kB)
+2025-04-10T16:15:21.5256046Z Downloading pyflakes-2.5.0-py2.py3-none-any.whl (66 kB)
+2025-04-10T16:15:21.5461312Z Installing collected packages: pyflakes, pycodestyle, mccabe, flake8
+2025-04-10T16:15:21.8693885Z Successfully installed flake8-5.0.4 mccabe-0.7.0 pycodestyle-2.9.1 pyflakes-2.5.0
+2025-04-10T16:15:22.0194911Z ##[group]Run echo '::add-matcher::.github/workflows/flake8-linter-matcher.json'
+2025-04-10T16:15:22.0195506Z [36;1mecho '::add-matcher::.github/workflows/flake8-linter-matcher.json'[0m
+2025-04-10T16:15:22.0245995Z shell: /usr/bin/bash -e {0}
+2025-04-10T16:15:22.0246239Z env:
+2025-04-10T16:15:22.0246480Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T16:15:22.0246890Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-04-10T16:15:22.0247271Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T16:15:22.0247850Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T16:15:22.0248189Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T16:15:22.0248531Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-04-10T16:15:22.0248818Z ##[endgroup]
+2025-04-10T16:15:22.0365465Z ##[group]Run git remote add upstream https://github.com/pvlib/pvlib-python.git
+2025-04-10T16:15:22.0366009Z [36;1mgit remote add upstream https://github.com/pvlib/pvlib-python.git[0m
+2025-04-10T16:15:22.0366392Z [36;1mgit fetch upstream $GITHUB_BASE_REF[0m
+2025-04-10T16:15:22.0413574Z shell: /usr/bin/bash -e {0}
+2025-04-10T16:15:22.0413825Z env:
+2025-04-10T16:15:22.0414086Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T16:15:22.0414488Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-04-10T16:15:22.0414885Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T16:15:22.0415223Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T16:15:22.0415582Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T16:15:22.0415917Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-04-10T16:15:22.0416206Z ##[endgroup]
+2025-04-10T16:15:26.1642226Z From https://github.com/pvlib/pvlib-python
+2025-04-10T16:15:26.1642811Z  * branch            main       -> FETCH_HEAD
+2025-04-10T16:15:26.1647508Z  * [new branch]      main       -> upstream/main
+2025-04-10T16:15:26.1699411Z ##[group]Run git diff upstream/$GITHUB_BASE_REF HEAD -- "*.py" | flake8 --exclude pvlib/version.py --ignore E201,E241,E226,W503,W504 --max-line-length 79 --diff
+2025-04-10T16:15:26.1700353Z [36;1mgit diff upstream/$GITHUB_BASE_REF HEAD -- "*.py" | flake8 --exclude pvlib/version.py --ignore E201,E241,E226,W503,W504 --max-line-length 79 --diff[0m
+2025-04-10T16:15:26.1748383Z shell: /usr/bin/bash -e {0}
+2025-04-10T16:15:26.1748603Z env:
+2025-04-10T16:15:26.1748836Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T16:15:26.1749259Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-04-10T16:15:26.1749654Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T16:15:26.1749986Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T16:15:26.1750326Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T16:15:26.1750661Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-04-10T16:15:26.1750970Z ##[endgroup]
+2025-04-10T16:15:26.7091256Z ##[error]pvlib/ivtools/sdm/pvsyst.py:407:1: W293 blank line contains whitespace
+2025-04-10T16:15:26.7098795Z ##[error]pvlib/ivtools/sdm/pvsyst.py:439:5: E122 continuation line missing indentation or outdented
+2025-04-10T16:15:26.7100088Z ##[error]pvlib/ivtools/sdm/pvsyst.py:450:5: E122 continuation line missing indentation or outdented
+2025-04-10T16:15:26.7262043Z ##[error]Process completed with exit code 1.
+2025-04-10T16:15:26.7353291Z Post job cleanup.
+2025-04-10T16:15:26.8303476Z [command]/usr/bin/git version
+2025-04-10T16:15:26.8349169Z git version 2.48.1
+2025-04-10T16:15:26.8395727Z Temporarily overriding HOME='/home/runner/work/_temp/887b902b-fb3e-4c18-ba17-a307f85d8a60' before making global git config changes
+2025-04-10T16:15:26.8397135Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-10T16:15:26.8402372Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pvlib-python/pvlib-python
+2025-04-10T16:15:26.8439201Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-10T16:15:26.8472724Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-10T16:15:26.8713892Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-10T16:15:26.8735383Z http.https://github.com/.extraheader
+2025-04-10T16:15:26.8747818Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-10T16:15:26.8779078Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-10T16:15:26.9118353Z Cleaning up orphan processes

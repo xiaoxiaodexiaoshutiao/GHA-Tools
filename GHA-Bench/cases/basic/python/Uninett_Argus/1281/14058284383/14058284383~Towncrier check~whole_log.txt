@@ -1,0 +1,351 @@
+﻿2025-03-25T11:17:07.1307514Z Current runner version: '2.323.0'
+2025-03-25T11:17:07.1333185Z ##[group]Operating System
+2025-03-25T11:17:07.1334117Z Ubuntu
+2025-03-25T11:17:07.1334625Z 24.04.2
+2025-03-25T11:17:07.1335065Z LTS
+2025-03-25T11:17:07.1335745Z ##[endgroup]
+2025-03-25T11:17:07.1336230Z ##[group]Runner Image
+2025-03-25T11:17:07.1336814Z Image: ubuntu-24.04
+2025-03-25T11:17:07.1337435Z Version: 20250316.1.0
+2025-03-25T11:17:07.1338425Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250316.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-25T11:17:07.1339805Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250316.1
+2025-03-25T11:17:07.1340726Z ##[endgroup]
+2025-03-25T11:17:07.1341248Z ##[group]Runner Image Provisioner
+2025-03-25T11:17:07.1341781Z 2.0.422.1
+2025-03-25T11:17:07.1342283Z ##[endgroup]
+2025-03-25T11:17:07.1344733Z ##[group]GITHUB_TOKEN Permissions
+2025-03-25T11:17:07.1347374Z Actions: read
+2025-03-25T11:17:07.1348104Z Attestations: read
+2025-03-25T11:17:07.1348828Z Checks: read
+2025-03-25T11:17:07.1349305Z Contents: read
+2025-03-25T11:17:07.1349800Z Deployments: read
+2025-03-25T11:17:07.1350344Z Discussions: read
+2025-03-25T11:17:07.1350833Z Issues: read
+2025-03-25T11:17:07.1351284Z Metadata: read
+2025-03-25T11:17:07.1351819Z Models: read
+2025-03-25T11:17:07.1352265Z Packages: read
+2025-03-25T11:17:07.1352768Z Pages: read
+2025-03-25T11:17:07.1353301Z PullRequests: read
+2025-03-25T11:17:07.1354063Z RepositoryProjects: read
+2025-03-25T11:17:07.1354694Z SecurityEvents: read
+2025-03-25T11:17:07.1355227Z Statuses: read
+2025-03-25T11:17:07.1355735Z ##[endgroup]
+2025-03-25T11:17:07.1358327Z Secret source: None
+2025-03-25T11:17:07.1359410Z Prepare workflow directory
+2025-03-25T11:17:07.1684247Z Prepare all required actions
+2025-03-25T11:17:07.1721836Z Getting action download info
+2025-03-25T11:17:07.5577359Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-25T11:17:07.7096543Z Complete job name: Towncrier check
+2025-03-25T11:17:07.7766116Z ##[group]Run actions/checkout@v4
+2025-03-25T11:17:07.7766930Z with:
+2025-03-25T11:17:07.7767298Z   fetch-depth: 0
+2025-03-25T11:17:07.7767711Z   repository: Uninett/Argus
+2025-03-25T11:17:07.7768307Z   token: ***
+2025-03-25T11:17:07.7768677Z   ssh-strict: true
+2025-03-25T11:17:07.7769051Z   ssh-user: git
+2025-03-25T11:17:07.7769446Z   persist-credentials: true
+2025-03-25T11:17:07.7769888Z   clean: true
+2025-03-25T11:17:07.7770280Z   sparse-checkout-cone-mode: true
+2025-03-25T11:17:07.7770746Z   fetch-tags: false
+2025-03-25T11:17:07.7771135Z   show-progress: true
+2025-03-25T11:17:07.7771526Z   lfs: false
+2025-03-25T11:17:07.7771875Z   submodules: false
+2025-03-25T11:17:07.7772273Z   set-safe-directory: true
+2025-03-25T11:17:07.7772898Z ##[endgroup]
+2025-03-25T11:17:07.9638559Z Syncing repository: Uninett/Argus
+2025-03-25T11:17:07.9640788Z ##[group]Getting Git version info
+2025-03-25T11:17:07.9642035Z Working directory is '/home/runner/work/Argus/Argus'
+2025-03-25T11:17:07.9644268Z [command]/usr/bin/git version
+2025-03-25T11:17:07.9699457Z git version 2.48.1
+2025-03-25T11:17:07.9727992Z ##[endgroup]
+2025-03-25T11:17:07.9743689Z Temporarily overriding HOME='/home/runner/work/_temp/4b158ca5-1002-4a40-b10f-29d2b895f6ad' before making global git config changes
+2025-03-25T11:17:07.9746608Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-25T11:17:07.9750455Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Argus/Argus
+2025-03-25T11:17:07.9788475Z Deleting the contents of '/home/runner/work/Argus/Argus'
+2025-03-25T11:17:07.9792858Z ##[group]Initializing the repository
+2025-03-25T11:17:07.9797655Z [command]/usr/bin/git init /home/runner/work/Argus/Argus
+2025-03-25T11:17:07.9879925Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-25T11:17:07.9881163Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-25T11:17:07.9882114Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-25T11:17:07.9883075Z hint:
+2025-03-25T11:17:07.9883570Z hint: 	git config --global init.defaultBranch <name>
+2025-03-25T11:17:07.9884527Z hint:
+2025-03-25T11:17:07.9885142Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-25T11:17:07.9886530Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-25T11:17:07.9887262Z hint:
+2025-03-25T11:17:07.9887652Z hint: 	git branch -m <name>
+2025-03-25T11:17:07.9888365Z Initialized empty Git repository in /home/runner/work/Argus/Argus/.git/
+2025-03-25T11:17:07.9896465Z [command]/usr/bin/git remote add origin https://github.com/Uninett/Argus
+2025-03-25T11:17:07.9929014Z ##[endgroup]
+2025-03-25T11:17:07.9929825Z ##[group]Disabling automatic garbage collection
+2025-03-25T11:17:07.9932716Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-25T11:17:07.9961056Z ##[endgroup]
+2025-03-25T11:17:07.9961822Z ##[group]Setting up auth
+2025-03-25T11:17:07.9967977Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-25T11:17:07.9997611Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-25T11:17:08.0311414Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-25T11:17:08.0341557Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-25T11:17:08.0571935Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-25T11:17:08.0607989Z ##[endgroup]
+2025-03-25T11:17:08.0609200Z ##[group]Fetching the repository
+2025-03-25T11:17:08.0622581Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* +8ba9c25d63151f0e46ef59ec2ecec7b305c17261:refs/remotes/pull/1281/merge
+2025-03-25T11:17:08.7259033Z From https://github.com/Uninett/Argus
+2025-03-25T11:17:08.7261271Z  * [new branch]      active-search-tags        -> origin/active-search-tags
+2025-03-25T11:17:08.7263284Z  * [new branch]      add-acked-by-to-incident  -> origin/add-acked-by-to-incident
+2025-03-25T11:17:08.7264887Z  * [new branch]      add-pr-template           -> origin/add-pr-template
+2025-03-25T11:17:08.7266644Z  * [new branch]      bugfix.websockets         -> origin/bugfix.websockets
+2025-03-25T11:17:08.7269041Z  * [new branch]      declare-argus-theme-color-scheme -> origin/declare-argus-theme-color-scheme
+2025-03-25T11:17:08.7271647Z  * [new branch]      dependabot/pip/djangorestframework-3.15.2 -> origin/dependabot/pip/djangorestframework-3.15.2
+2025-03-25T11:17:08.7275251Z  * [new branch]      dependabot/pip/social-auth-app-django-5.4.1 -> origin/dependabot/pip/social-auth-app-django-5.4.1
+2025-03-25T11:17:08.7278006Z  * [new branch]      details-on-row-click      -> origin/details-on-row-click
+2025-03-25T11:17:08.7279914Z  * [new branch]      dev                       -> origin/dev
+2025-03-25T11:17:08.7281727Z  * [new branch]      dummy-ticket-test         -> origin/dummy-ticket-test
+2025-03-25T11:17:08.7284186Z  * [new branch]      htmx                      -> origin/htmx
+2025-03-25T11:17:08.7286232Z  * [new branch]      improve-timeslots-page    -> origin/improve-timeslots-page
+2025-03-25T11:17:08.7288874Z  * [new branch]      incidents-filter-selector -> origin/incidents-filter-selector
+2025-03-25T11:17:08.7290660Z  * [new branch]      master                    -> origin/master
+2025-03-25T11:17:08.7293244Z  * [new branch]      original-improve-timeslots-page -> origin/original-improve-timeslots-page
+2025-03-25T11:17:08.7296362Z  * [new branch]      remove-cookie-with-domain -> origin/remove-cookie-with-domain
+2025-03-25T11:17:08.7298758Z  * [new branch]      snitch-settings           -> origin/snitch-settings
+2025-03-25T11:17:08.7301147Z  * [new branch]      stable/1.12.x             -> origin/stable/1.12.x
+2025-03-25T11:17:08.7303189Z  * [new branch]      stable/1.14.x             -> origin/stable/1.14.x
+2025-03-25T11:17:08.7305990Z  * [new branch]      stable/1.15.x             -> origin/stable/1.15.x
+2025-03-25T11:17:08.7308512Z  * [new branch]      stable/1.8.x              -> origin/stable/1.8.x
+2025-03-25T11:17:08.7311242Z  * [new branch]      test/session-auth         -> origin/test/session-auth
+2025-03-25T11:17:08.7314700Z  * [new branch]      universal-status-badge-colors -> origin/universal-status-badge-colors
+2025-03-25T11:17:08.7317896Z  * [new tag]         all-day-timeinterval      -> all-day-timeinterval
+2025-03-25T11:17:08.7320543Z  * [new tag]         finished-proof-of-concept -> finished-proof-of-concept
+2025-03-25T11:17:08.7323127Z  * [new tag]         fix-patch-tags            -> fix-patch-tags
+2025-03-25T11:17:08.7326015Z  * [new tag]         incident-received-field   -> incident-received-field
+2025-03-25T11:17:08.7328697Z  * [new tag]         media-refactor            -> media-refactor
+2025-03-25T11:17:08.7331458Z  * [new tag]         missing-email-from-oidc   -> missing-email-from-oidc
+2025-03-25T11:17:08.7334434Z  * [new tag]         pagination                -> pagination
+2025-03-25T11:17:08.7337088Z  * [new tag]         phone-number-on-user      -> phone-number-on-user
+2025-03-25T11:17:08.7339741Z  * [new tag]         phonenumber               -> phonenumber
+2025-03-25T11:17:08.7342269Z  * [new tag]         pre-alertsource-user      -> pre-alertsource-user
+2025-03-25T11:17:08.7344925Z  * [new tag]         pre-pagination            -> pre-pagination
+2025-03-25T11:17:08.7347710Z  * [new tag]         tag-notification-filter   -> tag-notification-filter
+2025-03-25T11:17:08.7350227Z  * [new tag]         tags                      -> tags
+2025-03-25T11:17:08.7352433Z  * [new tag]         v0.1                      -> v0.1
+2025-03-25T11:17:08.7355003Z  * [new tag]         v0.10                     -> v0.10
+2025-03-25T11:17:08.7357240Z  * [new tag]         v0.11                     -> v0.11
+2025-03-25T11:17:08.7359348Z  * [new tag]         v0.12                     -> v0.12
+2025-03-25T11:17:08.7361525Z  * [new tag]         v0.13                     -> v0.13
+2025-03-25T11:17:08.7363611Z  * [new tag]         v0.14                     -> v0.14
+2025-03-25T11:17:08.7365845Z  * [new tag]         v0.15                     -> v0.15
+2025-03-25T11:17:08.7367950Z  * [new tag]         v0.16                     -> v0.16
+2025-03-25T11:17:08.7370067Z  * [new tag]         v0.17                     -> v0.17
+2025-03-25T11:17:08.7372161Z  * [new tag]         v0.2                      -> v0.2
+2025-03-25T11:17:08.7374432Z  * [new tag]         v0.3                      -> v0.3
+2025-03-25T11:17:08.7376593Z  * [new tag]         v0.4                      -> v0.4
+2025-03-25T11:17:08.7378633Z  * [new tag]         v0.5                      -> v0.5
+2025-03-25T11:17:08.7380822Z  * [new tag]         v0.6                      -> v0.6
+2025-03-25T11:17:08.7382935Z  * [new tag]         v0.7                      -> v0.7
+2025-03-25T11:17:08.7385186Z  * [new tag]         v0.8                      -> v0.8
+2025-03-25T11:17:08.7387312Z  * [new tag]         v0.9                      -> v0.9
+2025-03-25T11:17:08.7389351Z  * [new tag]         v1.0.0                    -> v1.0.0
+2025-03-25T11:17:08.7391358Z  * [new tag]         v1.0.1                    -> v1.0.1
+2025-03-25T11:17:08.7393456Z  * [new tag]         v1.0.2                    -> v1.0.2
+2025-03-25T11:17:08.7395599Z  * [new tag]         v1.0.3                    -> v1.0.3
+2025-03-25T11:17:08.7397712Z  * [new tag]         v1.0.4                    -> v1.0.4
+2025-03-25T11:17:08.7399728Z  * [new tag]         v1.0.5                    -> v1.0.5
+2025-03-25T11:17:08.7401846Z  * [new tag]         v1.0.6                    -> v1.0.6
+2025-03-25T11:17:08.7404101Z  * [new tag]         v1.1.0                    -> v1.1.0
+2025-03-25T11:17:08.7406143Z  * [new tag]         v1.1.1                    -> v1.1.1
+2025-03-25T11:17:08.7408516Z  * [new tag]         v1.10.0                   -> v1.10.0
+2025-03-25T11:17:08.7410541Z  * [new tag]         v1.10.1                   -> v1.10.1
+2025-03-25T11:17:08.7412695Z  * [new tag]         v1.10.2                   -> v1.10.2
+2025-03-25T11:17:08.7414919Z  * [new tag]         v1.11.0                   -> v1.11.0
+2025-03-25T11:17:08.7416999Z  * [new tag]         v1.11.1                   -> v1.11.1
+2025-03-25T11:17:08.7419061Z  * [new tag]         v1.12.0                   -> v1.12.0
+2025-03-25T11:17:08.7421041Z  * [new tag]         v1.12.1                   -> v1.12.1
+2025-03-25T11:17:08.7423088Z  * [new tag]         v1.12.2                   -> v1.12.2
+2025-03-25T11:17:08.7425367Z  * [new tag]         v1.12.3                   -> v1.12.3
+2025-03-25T11:17:08.7427368Z  * [new tag]         v1.12.4                   -> v1.12.4
+2025-03-25T11:17:08.7429409Z  * [new tag]         v1.13.0                   -> v1.13.0
+2025-03-25T11:17:08.7431506Z  * [new tag]         v1.14.0                   -> v1.14.0
+2025-03-25T11:17:08.7433531Z  * [new tag]         v1.14.1                   -> v1.14.1
+2025-03-25T11:17:08.7435665Z  * [new tag]         v1.14.2                   -> v1.14.2
+2025-03-25T11:17:08.7437780Z  * [new tag]         v1.14.3                   -> v1.14.3
+2025-03-25T11:17:08.7439764Z  * [new tag]         v1.15.0                   -> v1.15.0
+2025-03-25T11:17:08.7441885Z  * [new tag]         v1.16.0                   -> v1.16.0
+2025-03-25T11:17:08.7444108Z  * [new tag]         v1.17.0                   -> v1.17.0
+2025-03-25T11:17:08.7446259Z  * [new tag]         v1.18.0                   -> v1.18.0
+2025-03-25T11:17:08.7448327Z  * [new tag]         v1.19.0                   -> v1.19.0
+2025-03-25T11:17:08.7449857Z  * [new tag]         v1.19.1                   -> v1.19.1
+2025-03-25T11:17:08.7451756Z  * [new tag]         v1.19.2                   -> v1.19.2
+2025-03-25T11:17:08.7453240Z  * [new tag]         v1.2.0                    -> v1.2.0
+2025-03-25T11:17:08.7455128Z  * [new tag]         v1.2.1                    -> v1.2.1
+2025-03-25T11:17:08.7456624Z  * [new tag]         v1.2.2                    -> v1.2.2
+2025-03-25T11:17:08.7458101Z  * [new tag]         v1.2.3                    -> v1.2.3
+2025-03-25T11:17:08.7459563Z  * [new tag]         v1.2.4                    -> v1.2.4
+2025-03-25T11:17:08.7461003Z  * [new tag]         v1.20.0                   -> v1.20.0
+2025-03-25T11:17:08.7462468Z  * [new tag]         v1.20.1                   -> v1.20.1
+2025-03-25T11:17:08.7464175Z  * [new tag]         v1.21.0                   -> v1.21.0
+2025-03-25T11:17:08.7465668Z  * [new tag]         v1.22.0                   -> v1.22.0
+2025-03-25T11:17:08.7467172Z  * [new tag]         v1.22.1                   -> v1.22.1
+2025-03-25T11:17:08.7468635Z  * [new tag]         v1.23.0                   -> v1.23.0
+2025-03-25T11:17:08.7470222Z  * [new tag]         v1.24.0                   -> v1.24.0
+2025-03-25T11:17:08.7471933Z  * [new tag]         v1.25.0                   -> v1.25.0
+2025-03-25T11:17:08.7473442Z  * [new tag]         v1.26.0                   -> v1.26.0
+2025-03-25T11:17:08.7475009Z  * [new tag]         v1.26.1                   -> v1.26.1
+2025-03-25T11:17:08.7476487Z  * [new tag]         v1.27.0                   -> v1.27.0
+2025-03-25T11:17:08.7477931Z  * [new tag]         v1.28.0                   -> v1.28.0
+2025-03-25T11:17:08.7479397Z  * [new tag]         v1.29.0                   -> v1.29.0
+2025-03-25T11:17:08.7480848Z  * [new tag]         v1.3.0                    -> v1.3.0
+2025-03-25T11:17:08.7482259Z  * [new tag]         v1.3.1                    -> v1.3.1
+2025-03-25T11:17:08.7483958Z  * [new tag]         v1.3.2                    -> v1.3.2
+2025-03-25T11:17:08.7485434Z  * [new tag]         v1.3.3                    -> v1.3.3
+2025-03-25T11:17:08.7486832Z  * [new tag]         v1.3.4                    -> v1.3.4
+2025-03-25T11:17:08.7488226Z  * [new tag]         v1.3.5                    -> v1.3.5
+2025-03-25T11:17:08.7490306Z  * [new tag]         v1.3.6                    -> v1.3.6
+2025-03-25T11:17:08.7492547Z  * [new tag]         v1.30.0                   -> v1.30.0
+2025-03-25T11:17:08.7494168Z  * [new tag]         v1.31.0                   -> v1.31.0
+2025-03-25T11:17:08.7495587Z  * [new tag]         v1.32.0                   -> v1.32.0
+2025-03-25T11:17:08.7497388Z  * [new tag]         v1.33.0                   -> v1.33.0
+2025-03-25T11:17:08.7498823Z  * [new tag]         v1.4.0                    -> v1.4.0
+2025-03-25T11:17:08.7500674Z  * [new tag]         v1.5.0                    -> v1.5.0
+2025-03-25T11:17:08.7502261Z  * [new tag]         v1.5.1                    -> v1.5.1
+2025-03-25T11:17:08.7503641Z  * [new tag]         v1.6.0                    -> v1.6.0
+2025-03-25T11:17:08.7505277Z  * [new tag]         v1.7.0                    -> v1.7.0
+2025-03-25T11:17:08.7506803Z  * [new tag]         v1.8.0                    -> v1.8.0
+2025-03-25T11:17:08.7508414Z  * [new tag]         v1.8.1                    -> v1.8.1
+2025-03-25T11:17:08.7509812Z  * [new tag]         v1.9.0                    -> v1.9.0
+2025-03-25T11:17:08.7511223Z  * [new tag]         websockets                -> websockets
+2025-03-25T11:17:08.7512982Z  * [new ref]         8ba9c25d63151f0e46ef59ec2ecec7b305c17261 -> pull/1281/merge
+2025-03-25T11:17:08.7517015Z ##[endgroup]
+2025-03-25T11:17:08.7518433Z ##[group]Determining the checkout info
+2025-03-25T11:17:08.7520087Z ##[endgroup]
+2025-03-25T11:17:08.7521024Z [command]/usr/bin/git sparse-checkout disable
+2025-03-25T11:17:08.7549249Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-25T11:17:08.7579114Z ##[group]Checking out the ref
+2025-03-25T11:17:08.7581971Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1281/merge
+2025-03-25T11:17:08.7891020Z Note: switching to 'refs/remotes/pull/1281/merge'.
+2025-03-25T11:17:08.7892474Z 
+2025-03-25T11:17:08.7893552Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-25T11:17:08.7897270Z changes and commit them, and you can discard any commits you make in this
+2025-03-25T11:17:08.7900508Z state without impacting any branches by switching back to a branch.
+2025-03-25T11:17:08.7902513Z 
+2025-03-25T11:17:08.7903984Z If you want to create a new branch to retain commits you create, you may
+2025-03-25T11:17:08.7906955Z do so (now or later) by using -c with the switch command. Example:
+2025-03-25T11:17:08.7908605Z 
+2025-03-25T11:17:08.7909236Z   git switch -c <new-branch-name>
+2025-03-25T11:17:08.7910330Z 
+2025-03-25T11:17:08.7910928Z Or undo this operation with:
+2025-03-25T11:17:08.7911925Z 
+2025-03-25T11:17:08.7912462Z   git switch -
+2025-03-25T11:17:08.7913035Z 
+2025-03-25T11:17:08.7914259Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-25T11:17:08.7915562Z 
+2025-03-25T11:17:08.7917031Z HEAD is now at 8ba9c25 Merge 909d7ad00db16589f75894a74c72048fd691ba04 into f8b3d18a20666e07ff8ef8d211860eaacf029f88
+2025-03-25T11:17:08.7922274Z ##[endgroup]
+2025-03-25T11:17:08.7941954Z [command]/usr/bin/git log -1 --format=%H
+2025-03-25T11:17:08.7964967Z 8ba9c25d63151f0e46ef59ec2ecec7b305c17261
+2025-03-25T11:17:08.8175930Z ##[group]Run sudo apt-get install -y pipx
+2025-03-25T11:17:08.8177259Z [36;1msudo apt-get install -y pipx[0m
+2025-03-25T11:17:08.8178440Z [36;1mpipx install towncrier[0m
+2025-03-25T11:17:08.8232133Z shell: /usr/bin/bash -e {0}
+2025-03-25T11:17:08.8233149Z ##[endgroup]
+2025-03-25T11:17:08.8979164Z Reading package lists...
+2025-03-25T11:17:09.0628180Z Building dependency tree...
+2025-03-25T11:17:09.0643090Z Reading state information...
+2025-03-25T11:17:09.2401024Z The following additional packages will be installed:
+2025-03-25T11:17:09.2401996Z   python3-argcomplete python3-platformdirs python3-psutil python3-userpath
+2025-03-25T11:17:09.2719094Z The following NEW packages will be installed:
+2025-03-25T11:17:09.2719807Z   pipx python3-argcomplete python3-platformdirs python3-psutil
+2025-03-25T11:17:09.2720386Z   python3-userpath
+2025-03-25T11:17:09.2901682Z 0 upgraded, 5 newly installed, 0 to remove and 54 not upgraded.
+2025-03-25T11:17:09.2902858Z Need to get 1041 kB of archives.
+2025-03-25T11:17:09.2903366Z After this operation, 4865 kB of additional disk space will be used.
+2025-03-25T11:17:09.2903980Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [142 B]
+2025-03-25T11:17:09.3239475Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 python3-argcomplete all 3.1.4-1ubuntu0.1 [33.8 kB]
+2025-03-25T11:17:09.3421885Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 python3-platformdirs all 4.2.0-1 [16.1 kB]
+2025-03-25T11:17:09.3595663Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 python3-userpath all 1.9.1-1 [9416 B]
+2025-03-25T11:17:09.3770205Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 pipx all 1.4.3-1 [787 kB]
+2025-03-25T11:17:09.4151046Z Get:6 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 python3-psutil amd64 5.9.8-2build2 [195 kB]
+2025-03-25T11:17:09.6773332Z Fetched 1041 kB in 0s (7570 kB/s)
+2025-03-25T11:17:09.7024201Z Selecting previously unselected package python3-argcomplete.
+2025-03-25T11:17:09.7245070Z (Reading database ... 
+2025-03-25T11:17:09.7245404Z (Reading database ... 5%
+2025-03-25T11:17:09.7245617Z (Reading database ... 10%
+2025-03-25T11:17:09.7245817Z (Reading database ... 15%
+2025-03-25T11:17:09.7245998Z (Reading database ... 20%
+2025-03-25T11:17:09.7246285Z (Reading database ... 25%
+2025-03-25T11:17:09.7246600Z (Reading database ... 30%
+2025-03-25T11:17:09.7246920Z (Reading database ... 35%
+2025-03-25T11:17:09.7247235Z (Reading database ... 40%
+2025-03-25T11:17:09.7247564Z (Reading database ... 45%
+2025-03-25T11:17:09.7247868Z (Reading database ... 50%
+2025-03-25T11:17:09.7311580Z (Reading database ... 55%
+2025-03-25T11:17:09.7603903Z (Reading database ... 60%
+2025-03-25T11:17:09.7995152Z (Reading database ... 65%
+2025-03-25T11:17:09.8175174Z (Reading database ... 70%
+2025-03-25T11:17:09.8396640Z (Reading database ... 75%
+2025-03-25T11:17:09.8621553Z (Reading database ... 80%
+2025-03-25T11:17:09.9001006Z (Reading database ... 85%
+2025-03-25T11:17:09.9473087Z (Reading database ... 90%
+2025-03-25T11:17:09.9747515Z (Reading database ... 95%
+2025-03-25T11:17:09.9747941Z (Reading database ... 100%
+2025-03-25T11:17:09.9748417Z (Reading database ... 221111 files and directories currently installed.)
+2025-03-25T11:17:09.9792435Z Preparing to unpack .../python3-argcomplete_3.1.4-1ubuntu0.1_all.deb ...
+2025-03-25T11:17:09.9833217Z Unpacking python3-argcomplete (3.1.4-1ubuntu0.1) ...
+2025-03-25T11:17:10.0146977Z Selecting previously unselected package python3-platformdirs.
+2025-03-25T11:17:10.0282586Z Preparing to unpack .../python3-platformdirs_4.2.0-1_all.deb ...
+2025-03-25T11:17:10.0296086Z Unpacking python3-platformdirs (4.2.0-1) ...
+2025-03-25T11:17:10.0555721Z Selecting previously unselected package python3-userpath.
+2025-03-25T11:17:10.0692222Z Preparing to unpack .../python3-userpath_1.9.1-1_all.deb ...
+2025-03-25T11:17:10.0703540Z Unpacking python3-userpath (1.9.1-1) ...
+2025-03-25T11:17:10.0964636Z Selecting previously unselected package pipx.
+2025-03-25T11:17:10.1101429Z Preparing to unpack .../archives/pipx_1.4.3-1_all.deb ...
+2025-03-25T11:17:10.1115718Z Unpacking pipx (1.4.3-1) ...
+2025-03-25T11:17:10.1634773Z Selecting previously unselected package python3-psutil.
+2025-03-25T11:17:10.1769157Z Preparing to unpack .../python3-psutil_5.9.8-2build2_amd64.deb ...
+2025-03-25T11:17:10.1789022Z Unpacking python3-psutil (5.9.8-2build2) ...
+2025-03-25T11:17:10.2328577Z Setting up python3-platformdirs (4.2.0-1) ...
+2025-03-25T11:17:10.3425076Z Setting up python3-psutil (5.9.8-2build2) ...
+2025-03-25T11:17:10.5733948Z Setting up python3-argcomplete (3.1.4-1ubuntu0.1) ...
+2025-03-25T11:17:10.6848616Z Setting up python3-userpath (1.9.1-1) ...
+2025-03-25T11:17:10.7875937Z Setting up pipx (1.4.3-1) ...
+2025-03-25T11:17:10.9267117Z Processing triggers for man-db (2.12.0-4build2) ...
+2025-03-25T11:17:18.4727467Z 
+2025-03-25T11:17:18.4727925Z Running kernel seems to be up-to-date.
+2025-03-25T11:17:18.4728272Z 
+2025-03-25T11:17:18.4728414Z No services need to be restarted.
+2025-03-25T11:17:18.4728961Z 
+2025-03-25T11:17:18.4729074Z No containers need to be restarted.
+2025-03-25T11:17:18.4729243Z 
+2025-03-25T11:17:18.4729348Z No user sessions are running outdated binaries.
+2025-03-25T11:17:18.4729537Z 
+2025-03-25T11:17:18.4729718Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2025-03-25T11:17:19.4241960Z creating virtual environment...
+2025-03-25T11:17:19.5176592Z installing towncrier...
+2025-03-25T11:17:20.6659875Z done! ✨ 🌟 ✨
+2025-03-25T11:17:20.6660391Z   installed package towncrier 24.8.0, installed using Python 3.12.3
+2025-03-25T11:17:20.6660920Z   These apps are now globally available
+2025-03-25T11:17:20.6661276Z     - towncrier
+2025-03-25T11:17:20.6884003Z ##[group]Run towncrier check --compare-with origin/master
+2025-03-25T11:17:20.6884458Z [36;1mtowncrier check --compare-with origin/master[0m
+2025-03-25T11:17:20.6932863Z shell: /usr/bin/bash -e {0}
+2025-03-25T11:17:20.6933110Z ##[endgroup]
+2025-03-25T11:17:20.7888783Z Looking at these files:
+2025-03-25T11:17:20.7889187Z ----
+2025-03-25T11:17:20.7889689Z 1. /home/runner/work/Argus/Argus/docs/customization/htmx-frontend.rst
+2025-03-25T11:17:20.7890935Z 2. /home/runner/work/Argus/Argus/src/argus/htmx/templates/htmx/incident/_incident_table_cell_wrapper_link_to_details.html
+2025-03-25T11:17:20.7892424Z 3. /home/runner/work/Argus/Argus/src/argus/htmx/templates/htmx/incident/_incident_table_cell_wrapper_default.html
+2025-03-25T11:17:20.7893574Z 4. /home/runner/work/Argus/Argus/src/argus/htmx/incident/customization.py
+2025-03-25T11:17:20.7894408Z ----
+2025-03-25T11:17:20.7902013Z No new newsfragments found on this branch.
+2025-03-25T11:17:20.8055934Z ##[error]Process completed with exit code 1.
+2025-03-25T11:17:20.8150445Z Post job cleanup.
+2025-03-25T11:17:20.9066059Z [command]/usr/bin/git version
+2025-03-25T11:17:20.9103375Z git version 2.48.1
+2025-03-25T11:17:20.9150743Z Temporarily overriding HOME='/home/runner/work/_temp/47881c65-554b-4d8f-ac9b-c288f494d061' before making global git config changes
+2025-03-25T11:17:20.9151892Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-25T11:17:20.9156075Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Argus/Argus
+2025-03-25T11:17:20.9190526Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-25T11:17:20.9222664Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-25T11:17:20.9458625Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-25T11:17:20.9479062Z http.https://github.com/.extraheader
+2025-03-25T11:17:20.9491326Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-25T11:17:20.9521488Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-25T11:17:20.9855956Z Cleaning up orphan processes

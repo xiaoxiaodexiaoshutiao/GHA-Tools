@@ -1,0 +1,263 @@
+﻿2025-04-09T18:19:09.7043938Z Current runner version: '2.323.0'
+2025-04-09T18:19:09.7072086Z ##[group]Operating System
+2025-04-09T18:19:09.7073069Z Ubuntu
+2025-04-09T18:19:09.7073608Z 22.04.5
+2025-04-09T18:19:09.7074097Z LTS
+2025-04-09T18:19:09.7074534Z ##[endgroup]
+2025-04-09T18:19:09.7075101Z ##[group]Runner Image
+2025-04-09T18:19:09.7075696Z Image: ubuntu-22.04
+2025-04-09T18:19:09.7076175Z Version: 20250406.1.0
+2025-04-09T18:19:09.7077236Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20250406.1/images/ubuntu/Ubuntu2204-Readme.md
+2025-04-09T18:19:09.7078559Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20250406.1
+2025-04-09T18:19:09.7079434Z ##[endgroup]
+2025-04-09T18:19:09.7079998Z ##[group]Runner Image Provisioner
+2025-04-09T18:19:09.7080544Z 2.0.422.1
+2025-04-09T18:19:09.7081023Z ##[endgroup]
+2025-04-09T18:19:09.7082014Z ##[group]GITHUB_TOKEN Permissions
+2025-04-09T18:19:09.7084360Z Contents: read
+2025-04-09T18:19:09.7084893Z Metadata: read
+2025-04-09T18:19:09.7085657Z ##[endgroup]
+2025-04-09T18:19:09.7088171Z Secret source: None
+2025-04-09T18:19:09.7088837Z Prepare workflow directory
+2025-04-09T18:19:09.7433721Z Prepare all required actions
+2025-04-09T18:19:09.7471596Z Getting action download info
+2025-04-09T18:19:10.2162396Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-09T18:19:10.2163804Z Version: 4.2.2
+2025-04-09T18:19:10.2164939Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-09T18:19:10.2166202Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-09T18:19:10.2166974Z ##[endgroup]
+2025-04-09T18:19:10.3247604Z ##[group]Download immutable action package 'actions/setup-node@v4'
+2025-04-09T18:19:10.3248459Z Version: 4.3.0
+2025-04-09T18:19:10.3249410Z Digest: sha256:9f9f8171ffc89cb7f6897e615e2b43b46bb55176fd279129eb0088157eace9b2
+2025-04-09T18:19:10.3250418Z Source commit SHA: cdca7365b2dadb8aad0a33bc7601856ffabcc48e
+2025-04-09T18:19:10.3251100Z ##[endgroup]
+2025-04-09T18:19:10.4221860Z Download action repository 'GabrielBB/xvfb-action@v1' (SHA:86d97bde4a65fe9b290c0b3fb92c2c4ed0e5302d)
+2025-04-09T18:19:10.7690691Z Download action repository 'browser-actions/setup-firefox@latest' (SHA:634a60ccd6599686158cf5a570481b4cd30455a2)
+2025-04-09T18:19:11.0331702Z Download action repository 'codecov/codecov-action@v3' (SHA:ab904c41d6ece82784817410c45d8b8c02684457)
+2025-04-09T18:19:11.5886935Z Complete job name: Test Cases (20.x, latest)
+2025-04-09T18:19:11.6680875Z ##[group]Run actions/checkout@v4
+2025-04-09T18:19:11.6682156Z with:
+2025-04-09T18:19:11.6683219Z   repository: aframevr/aframe
+2025-04-09T18:19:11.6684477Z   token: ***
+2025-04-09T18:19:11.6685198Z   ssh-strict: true
+2025-04-09T18:19:11.6685956Z   ssh-user: git
+2025-04-09T18:19:11.6686723Z   persist-credentials: true
+2025-04-09T18:19:11.6687574Z   clean: true
+2025-04-09T18:19:11.6688344Z   sparse-checkout-cone-mode: true
+2025-04-09T18:19:11.6689298Z   fetch-depth: 1
+2025-04-09T18:19:11.6690041Z   fetch-tags: false
+2025-04-09T18:19:11.6690814Z   show-progress: true
+2025-04-09T18:19:11.6691625Z   lfs: false
+2025-04-09T18:19:11.6692343Z   submodules: false
+2025-04-09T18:19:11.6693284Z   set-safe-directory: true
+2025-04-09T18:19:11.6694464Z ##[endgroup]
+2025-04-09T18:19:11.9236783Z Syncing repository: aframevr/aframe
+2025-04-09T18:19:11.9239795Z ##[group]Getting Git version info
+2025-04-09T18:19:11.9241080Z Working directory is '/home/runner/work/aframe/aframe'
+2025-04-09T18:19:11.9243728Z [command]/usr/bin/git version
+2025-04-09T18:19:11.9338604Z git version 2.49.0
+2025-04-09T18:19:11.9373099Z ##[endgroup]
+2025-04-09T18:19:11.9387394Z Temporarily overriding HOME='/home/runner/work/_temp/45a45e86-6122-449e-80fb-3626107aa8b3' before making global git config changes
+2025-04-09T18:19:11.9390088Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-09T18:19:11.9392832Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/aframe/aframe
+2025-04-09T18:19:11.9458941Z Deleting the contents of '/home/runner/work/aframe/aframe'
+2025-04-09T18:19:11.9463387Z ##[group]Initializing the repository
+2025-04-09T18:19:11.9468276Z [command]/usr/bin/git init /home/runner/work/aframe/aframe
+2025-04-09T18:19:11.9559797Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-09T18:19:11.9561917Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-09T18:19:11.9563889Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-09T18:19:11.9565166Z hint:
+2025-04-09T18:19:11.9566080Z hint: 	git config --global init.defaultBranch <name>
+2025-04-09T18:19:11.9567256Z hint:
+2025-04-09T18:19:11.9568288Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-09T18:19:11.9570618Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-09T18:19:11.9572993Z hint:
+2025-04-09T18:19:11.9574239Z hint: 	git branch -m <name>
+2025-04-09T18:19:11.9576440Z Initialized empty Git repository in /home/runner/work/aframe/aframe/.git/
+2025-04-09T18:19:11.9585093Z [command]/usr/bin/git remote add origin https://github.com/aframevr/aframe
+2025-04-09T18:19:11.9622257Z ##[endgroup]
+2025-04-09T18:19:11.9624702Z ##[group]Disabling automatic garbage collection
+2025-04-09T18:19:11.9626792Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-09T18:19:11.9656886Z ##[endgroup]
+2025-04-09T18:19:11.9659003Z ##[group]Setting up auth
+2025-04-09T18:19:11.9664892Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-09T18:19:11.9699060Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-09T18:19:12.0054514Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-09T18:19:12.0089085Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-09T18:19:12.0338871Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-09T18:19:12.0420597Z ##[endgroup]
+2025-04-09T18:19:12.0422473Z ##[group]Fetching the repository
+2025-04-09T18:19:12.0426304Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e6e2eaf66e0158bfc4ee7a9f75f0e2c21e9cb737:refs/remotes/pull/5700/merge
+2025-04-09T18:19:13.2166232Z From https://github.com/aframevr/aframe
+2025-04-09T18:19:13.2166991Z  * [new ref]         e6e2eaf66e0158bfc4ee7a9f75f0e2c21e9cb737 -> pull/5700/merge
+2025-04-09T18:19:13.2196465Z ##[endgroup]
+2025-04-09T18:19:13.2196865Z ##[group]Determining the checkout info
+2025-04-09T18:19:13.2199048Z ##[endgroup]
+2025-04-09T18:19:13.2204218Z [command]/usr/bin/git sparse-checkout disable
+2025-04-09T18:19:13.2253272Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-09T18:19:13.2280794Z ##[group]Checking out the ref
+2025-04-09T18:19:13.2285442Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/5700/merge
+2025-04-09T18:19:13.4790161Z Note: switching to 'refs/remotes/pull/5700/merge'.
+2025-04-09T18:19:13.4790738Z 
+2025-04-09T18:19:13.4791053Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-09T18:19:13.4791708Z changes and commit them, and you can discard any commits you make in this
+2025-04-09T18:19:13.4792317Z state without impacting any branches by switching back to a branch.
+2025-04-09T18:19:13.4792981Z 
+2025-04-09T18:19:13.4793252Z If you want to create a new branch to retain commits you create, you may
+2025-04-09T18:19:13.4793835Z do so (now or later) by using -c with the switch command. Example:
+2025-04-09T18:19:13.4794159Z 
+2025-04-09T18:19:13.4794285Z   git switch -c <new-branch-name>
+2025-04-09T18:19:13.4794517Z 
+2025-04-09T18:19:13.4794642Z Or undo this operation with:
+2025-04-09T18:19:13.4795116Z 
+2025-04-09T18:19:13.4795231Z   git switch -
+2025-04-09T18:19:13.4795420Z 
+2025-04-09T18:19:13.4795686Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-09T18:19:13.4796074Z 
+2025-04-09T18:19:13.4796546Z HEAD is now at e6e2eaf Merge dc13327bca3fc4165dafcdb5ea3eafcc91ac4b3b into 187797404e092bebaf35aaebea87a2f45222c02a
+2025-04-09T18:19:13.4814534Z ##[endgroup]
+2025-04-09T18:19:13.4859079Z [command]/usr/bin/git log -1 --format=%H
+2025-04-09T18:19:13.4883798Z e6e2eaf66e0158bfc4ee7a9f75f0e2c21e9cb737
+2025-04-09T18:19:13.5120183Z ##[group]Run actions/setup-node@v4
+2025-04-09T18:19:13.5120464Z with:
+2025-04-09T18:19:13.5120654Z   node-version: 20.x
+2025-04-09T18:19:13.5120859Z   cache: npm
+2025-04-09T18:19:13.5121073Z   cache-dependency-path: package-lock.json
+2025-04-09T18:19:13.5121330Z   always-auth: false
+2025-04-09T18:19:13.5121510Z   check-latest: false
+2025-04-09T18:19:13.5121845Z   token: ***
+2025-04-09T18:19:13.5122007Z ##[endgroup]
+2025-04-09T18:19:13.6968651Z Found in cache @ /opt/hostedtoolcache/node/20.19.0/x64
+2025-04-09T18:19:13.6976651Z ##[group]Environment details
+2025-04-09T18:19:14.0652403Z node: v20.19.0
+2025-04-09T18:19:14.0652924Z npm: 10.8.2
+2025-04-09T18:19:14.0653195Z yarn: 1.22.22
+2025-04-09T18:19:14.0654379Z ##[endgroup]
+2025-04-09T18:19:14.0674581Z [command]/opt/hostedtoolcache/node/20.19.0/x64/bin/npm config get cache
+2025-04-09T18:19:14.2066085Z /home/runner/.npm
+2025-04-09T18:19:14.3622567Z Cache hit for: node-cache-Linux-x64-npm-4c1d725db7062a31c09a5f2551af9b691116708e72a5dd94fd7f55071fd5cda5
+2025-04-09T18:19:15.1060891Z Received 48370625 of 48370625 (100.0%), 75.4 MBs/sec
+2025-04-09T18:19:15.1061533Z Cache Size: ~46 MB (48370625 B)
+2025-04-09T18:19:15.1093635Z [command]/usr/bin/tar -xf /home/runner/work/_temp/1112856e-3057-4886-ba4a-e86e5f2961b2/cache.tzst -P -C /home/runner/work/aframe/aframe --use-compress-program unzstd
+2025-04-09T18:19:15.4052247Z Cache restored successfully
+2025-04-09T18:19:15.4161595Z Cache restored from key: node-cache-Linux-x64-npm-4c1d725db7062a31c09a5f2551af9b691116708e72a5dd94fd7f55071fd5cda5
+2025-04-09T18:19:15.4319348Z ##[group]Run npm install
+2025-04-09T18:19:15.4319640Z [36;1mnpm install[0m
+2025-04-09T18:19:15.4425916Z shell: /usr/bin/bash -e {0}
+2025-04-09T18:19:15.4426205Z ##[endgroup]
+2025-04-09T18:19:16.5607051Z npm warn skipping integrity check for git dependency ssh://git@github.com/dmarcos/three-bmfont-text.git
+2025-04-09T18:19:18.7645772Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-04-09T18:19:18.8270820Z npm warn deprecated lodash.get@4.4.2: This package is deprecated. Use the optional chaining (?.) operator instead.
+2025-04-09T18:19:18.8408305Z npm warn deprecated content-type-parser@1.0.2: Use whatwg-mimetype instead
+2025-04-09T18:19:18.9405796Z npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+2025-04-09T18:19:18.9622195Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+2025-04-09T18:19:19.0138976Z npm warn deprecated cryptiles@2.0.5: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+2025-04-09T18:19:19.0167445Z npm warn deprecated abab@1.0.4: Use your platform's native atob() and btoa() methods instead
+2025-04-09T18:19:19.0728620Z npm warn deprecated glob@8.1.0: Glob versions prior to v9 are no longer supported
+2025-04-09T18:19:19.0811991Z npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+2025-04-09T18:19:19.0830436Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-04-09T18:19:19.0849239Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-04-09T18:19:19.0857120Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-04-09T18:19:19.0876359Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-04-09T18:19:19.0877456Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-04-09T18:19:19.1288903Z npm warn deprecated openport@0.0.4: Use portfinder
+2025-04-09T18:19:19.2896779Z npm warn deprecated boom@2.10.1: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+2025-04-09T18:19:19.3022190Z npm warn deprecated sntp@1.0.9: This module moved to @hapi/sntp. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
+2025-04-09T18:19:19.5430473Z npm warn deprecated uuid@3.4.0: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+2025-04-09T18:19:19.6301344Z npm warn deprecated hoek@2.16.3: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+2025-04-09T18:19:19.6498989Z npm warn deprecated request@2.81.0: request has been deprecated, see https://github.com/request/request/issues/3142
+2025-04-09T18:19:19.7014663Z npm warn deprecated har-validator@4.2.1: this library is no longer supported
+2025-04-09T18:19:20.0339600Z npm warn deprecated hawk@3.1.3: This module moved to @hapi/hawk. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
+2025-04-09T18:19:21.1737919Z npm warn deprecated sinon@11.1.2: 16.1.1
+2025-04-09T18:19:21.5722112Z npm warn deprecated eslint@7.18.0: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+2025-04-09T18:19:21.5994286Z npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+2025-04-09T18:19:27.9333429Z 
+2025-04-09T18:19:27.9334245Z added 1167 packages, and audited 1168 packages in 12s
+2025-04-09T18:19:27.9334684Z 
+2025-04-09T18:19:27.9334907Z 228 packages are looking for funding
+2025-04-09T18:19:27.9335254Z   run `npm fund` for details
+2025-04-09T18:19:27.9593349Z 
+2025-04-09T18:19:27.9594371Z 24 vulnerabilities (9 moderate, 13 high, 2 critical)
+2025-04-09T18:19:27.9595033Z 
+2025-04-09T18:19:27.9595548Z To address issues that do not require attention, run:
+2025-04-09T18:19:27.9597847Z   npm audit fix
+2025-04-09T18:19:27.9598067Z 
+2025-04-09T18:19:27.9598636Z Some issues need review, and may require choosing
+2025-04-09T18:19:27.9599158Z a different dependency.
+2025-04-09T18:19:27.9599404Z 
+2025-04-09T18:19:27.9599594Z Run `npm audit` for details.
+2025-04-09T18:19:28.0001552Z ##[group]Run npm run lint
+2025-04-09T18:19:28.0001836Z [36;1mnpm run lint[0m
+2025-04-09T18:19:28.0058439Z shell: /usr/bin/bash -e {0}
+2025-04-09T18:19:28.0058679Z ##[endgroup]
+2025-04-09T18:19:28.1216780Z 
+2025-04-09T18:19:28.1217310Z > aframe@1.7.1 lint
+2025-04-09T18:19:28.1217653Z > standardx -v | snazzy
+2025-04-09T18:19:28.1217831Z 
+2025-04-09T18:19:34.4191263Z ##[group]Run npm run dist
+2025-04-09T18:19:34.4191693Z [36;1mnpm run dist[0m
+2025-04-09T18:19:34.4269763Z shell: /usr/bin/bash -e {0}
+2025-04-09T18:19:34.4270137Z ##[endgroup]
+2025-04-09T18:19:34.5522905Z 
+2025-04-09T18:19:34.5523469Z > aframe@1.7.1 dist
+2025-04-09T18:19:34.5524446Z > node scripts/updateVersionLog.js && npm run dist:min && npm run dist:max && npm run dist:module
+2025-04-09T18:19:34.5525411Z 
+2025-04-09T18:19:34.6961917Z 
+2025-04-09T18:19:34.6963048Z > aframe@1.7.1 dist:min
+2025-04-09T18:19:34.6963548Z > webpack --config webpack.prod.config.cjs
+2025-04-09T18:19:34.6963824Z 
+2025-04-09T18:19:37.4131762Z [BABEL] Note: The code generator has deoptimised the styling of /home/runner/work/aframe/aframe/node_modules/three/build/three.module.js as it exceeds the max of 500KB.
+2025-04-09T18:19:38.8034116Z [BABEL] Note: The code generator has deoptimised the styling of /home/runner/work/aframe/aframe/node_modules/three/build/three.core.js as it exceeds the max of 500KB.
+2025-04-09T18:19:51.0387244Z assets by status 1.22 MiB [1m[32m[cached][39m[22m 1 asset
+2025-04-09T18:19:51.0388249Z orphan modules 2.68 MiB [1m[33m[orphan][39m[22m 164 modules
+2025-04-09T18:19:51.0388808Z runtime modules 1.57 KiB 7 modules
+2025-04-09T18:19:51.0389202Z cacheable modules 2.87 MiB
+2025-04-09T18:19:51.0389827Z   modules by path [1m./node_modules/[39m[22m 130 KiB 40 modules
+2025-04-09T18:19:51.0390328Z   asset modules 12.1 KiB
+2025-04-09T18:19:51.0391230Z     [1mdata:image/svg+xml,%3Csvg xmlns=%27..[39m[22m 813 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+2025-04-09T18:19:51.0392439Z     [1mdata:image/svg+xml,%3Csvg xmlns=%27..[39m[22m 985 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+2025-04-09T18:19:51.0393337Z     + 3 modules
+2025-04-09T18:19:51.0393744Z   modules by path [1m./src/[39m[22m 2.72 MiB
+2025-04-09T18:19:51.0394651Z     [1m./src/index.js + 164 modules[39m[22m 2.68 MiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+2025-04-09T18:19:51.0395797Z     [1m./src/style/aframe.css[39m[22m 1.13 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+2025-04-09T18:19:51.0397186Z     ./node_modules/css-loader/dist/cjs.js![1m./src/style/aframe.css[39m[22m 41 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+2025-04-09T18:19:51.0398143Z   modules by path [1m./vendor/[39m[22m 8.1 KiB
+2025-04-09T18:19:51.0399128Z     [1m./vendor/wakelock/wakelock.js[39m[22m 4.43 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+2025-04-09T18:19:51.0400246Z     [1m./vendor/wakelock/util.js[39m[22m 3.66 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+2025-04-09T18:19:51.0400765Z 
+2025-04-09T18:19:51.0401305Z [1m[31mERROR[39m[22m in [1m./src/index.js[39m[22m [1m[32m46:2-31[39m[22m
+2025-04-09T18:19:51.0402930Z [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve './style/rStats.css' in '/home/runner/work/aframe/aframe/src'[39m[22m
+2025-04-09T18:19:51.0404051Z resolve './style/rStats.css' in '/home/runner/work/aframe/aframe/src'
+2025-04-09T18:19:51.0404967Z   using description file: /home/runner/work/aframe/aframe/package.json (relative path: ./src)
+2025-04-09T18:19:51.0405785Z     Field 'browser' doesn't contain a valid alias configuration
+2025-04-09T18:19:51.0406750Z     using description file: /home/runner/work/aframe/aframe/package.json (relative path: ./src/style/rStats.css)
+2025-04-09T18:19:51.0407509Z       no extension
+2025-04-09T18:19:51.0407958Z         Field 'browser' doesn't contain a valid alias configuration
+2025-04-09T18:19:51.0408978Z [1m[31m        /home/runner/work/aframe/aframe/src/style/rStats.css doesn't exist[39m[22m
+2025-04-09T18:19:51.0409576Z       .js
+2025-04-09T18:19:51.0409996Z         Field 'browser' doesn't contain a valid alias configuration
+2025-04-09T18:19:51.0410992Z [1m[31m        /home/runner/work/aframe/aframe/src/style/rStats.css.js doesn't exist[39m[22m
+2025-04-09T18:19:51.0412143Z       .json
+2025-04-09T18:19:51.0412601Z         Field 'browser' doesn't contain a valid alias configuration
+2025-04-09T18:19:51.0413833Z [1m[31m        /home/runner/work/aframe/aframe/src/style/rStats.css.json doesn't exist[39m[22m
+2025-04-09T18:19:51.0414467Z       .wasm
+2025-04-09T18:19:51.0414876Z         Field 'browser' doesn't contain a valid alias configuration
+2025-04-09T18:19:51.0416319Z [1m[31m        /home/runner/work/aframe/aframe/src/style/rStats.css.wasm doesn't exist[39m[22m
+2025-04-09T18:19:51.0417009Z       as directory
+2025-04-09T18:19:51.0417826Z [1m[31m        /home/runner/work/aframe/aframe/src/style/rStats.css doesn't exist[39m[22m
+2025-04-09T18:19:51.0418335Z 
+2025-04-09T18:19:51.0418805Z webpack 5.95.0 compiled with [1m[31m1 error[39m[22m in 15846 ms
+2025-04-09T18:19:51.1114059Z ##[error]Process completed with exit code 1.
+2025-04-09T18:19:51.1231841Z Post job cleanup.
+2025-04-09T18:19:51.2224574Z [command]/usr/bin/git version
+2025-04-09T18:19:51.2264739Z git version 2.49.0
+2025-04-09T18:19:51.2319436Z Temporarily overriding HOME='/home/runner/work/_temp/3084f911-5ac6-4d97-8ecf-03d54922298f' before making global git config changes
+2025-04-09T18:19:51.2320844Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-09T18:19:51.2326243Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/aframe/aframe
+2025-04-09T18:19:51.2365119Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-09T18:19:51.2399479Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-09T18:19:51.2644545Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-09T18:19:51.2669268Z http.https://github.com/.extraheader
+2025-04-09T18:19:51.2682495Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-09T18:19:51.2718368Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-09T18:19:51.3072484Z Cleaning up orphan processes

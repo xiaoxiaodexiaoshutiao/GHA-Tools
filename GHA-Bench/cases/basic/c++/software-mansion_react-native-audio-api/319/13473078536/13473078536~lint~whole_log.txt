@@ -1,0 +1,266 @@
+2025-02-22T12:52:33.1363676Z Requested labels: ubuntu-latest
+2025-02-22T12:52:33.1364109Z Job defined at: software-mansion-labs/react-native-audio-api/.github/workflows/ci.yml@refs/pull/319/merge
+2025-02-22T12:52:33.1364234Z Waiting for a runner to pick up this job...
+2025-02-22T12:52:33.8744474Z Job is waiting for a hosted runner to come online.
+2025-02-22T12:52:37.6085013Z Job is about to start running on the hosted runner: GitHub Actions 11 (hosted)
+2025-02-22T12:52:39.4941824Z Current runner version: '2.322.0'
+2025-02-22T12:52:39.4967829Z ##[group]Operating System
+2025-02-22T12:52:39.4968599Z Ubuntu
+2025-02-22T12:52:39.4969130Z 24.04.1
+2025-02-22T12:52:39.4969686Z LTS
+2025-02-22T12:52:39.4970162Z ##[endgroup]
+2025-02-22T12:52:39.4970656Z ##[group]Runner Image
+2025-02-22T12:52:39.4971270Z Image: ubuntu-24.04
+2025-02-22T12:52:39.4971800Z Version: 20250209.1.0
+2025-02-22T12:52:39.4972821Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250209.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-22T12:52:39.4974644Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250209.1
+2025-02-22T12:52:39.4975567Z ##[endgroup]
+2025-02-22T12:52:39.4976041Z ##[group]Runner Image Provisioner
+2025-02-22T12:52:39.4976710Z 2.0.422.1
+2025-02-22T12:52:39.4977202Z ##[endgroup]
+2025-02-22T12:52:39.4979429Z ##[group]GITHUB_TOKEN Permissions
+2025-02-22T12:52:39.4981461Z Actions: write
+2025-02-22T12:52:39.4982284Z Attestations: write
+2025-02-22T12:52:39.4982919Z Checks: write
+2025-02-22T12:52:39.4983709Z Contents: write
+2025-02-22T12:52:39.4984236Z Deployments: write
+2025-02-22T12:52:39.4984771Z Discussions: write
+2025-02-22T12:52:39.4985357Z Issues: write
+2025-02-22T12:52:39.4985879Z Metadata: read
+2025-02-22T12:52:39.4986370Z Packages: write
+2025-02-22T12:52:39.4986914Z Pages: write
+2025-02-22T12:52:39.4987444Z PullRequests: write
+2025-02-22T12:52:39.4987970Z RepositoryProjects: write
+2025-02-22T12:52:39.4988620Z SecurityEvents: write
+2025-02-22T12:52:39.4989161Z Statuses: write
+2025-02-22T12:52:39.4989615Z ##[endgroup]
+2025-02-22T12:52:39.4992510Z Secret source: Actions
+2025-02-22T12:52:39.4993230Z Prepare workflow directory
+2025-02-22T12:52:39.5398241Z Prepare all required actions
+2025-02-22T12:52:39.5437769Z Getting action download info
+2025-02-22T12:52:39.7412689Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-02-22T12:52:39.7414636Z Version: 4.2.2
+2025-02-22T12:52:39.7416253Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-02-22T12:52:39.7418206Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-02-22T12:52:39.7419284Z ##[endgroup]
+2025-02-22T12:52:39.9173790Z Complete job name: lint
+2025-02-22T12:52:39.9906876Z ##[group]Run actions/checkout@v4
+2025-02-22T12:52:39.9907706Z with:
+2025-02-22T12:52:39.9908229Z   repository: software-mansion-labs/react-native-audio-api
+2025-02-22T12:52:39.9909019Z   token: ***
+2025-02-22T12:52:39.9909414Z   ssh-strict: true
+2025-02-22T12:52:39.9909821Z   ssh-user: git
+2025-02-22T12:52:39.9910238Z   persist-credentials: true
+2025-02-22T12:52:39.9910694Z   clean: true
+2025-02-22T12:52:39.9911099Z   sparse-checkout-cone-mode: true
+2025-02-22T12:52:39.9911583Z   fetch-depth: 1
+2025-02-22T12:52:39.9911976Z   fetch-tags: false
+2025-02-22T12:52:39.9912394Z   show-progress: true
+2025-02-22T12:52:39.9912811Z   lfs: false
+2025-02-22T12:52:39.9913184Z   submodules: false
+2025-02-22T12:52:39.9913769Z   set-safe-directory: true
+2025-02-22T12:52:39.9914500Z ##[endgroup]
+2025-02-22T12:52:40.2479157Z Syncing repository: software-mansion-labs/react-native-audio-api
+2025-02-22T12:52:40.2481477Z ##[group]Getting Git version info
+2025-02-22T12:52:40.2483104Z Working directory is '/home/runner/work/react-native-audio-api/react-native-audio-api'
+2025-02-22T12:52:40.2485603Z [command]/usr/bin/git version
+2025-02-22T12:52:40.2558690Z git version 2.48.1
+2025-02-22T12:52:40.2588901Z ##[endgroup]
+2025-02-22T12:52:40.2602126Z Temporarily overriding HOME='/home/runner/work/_temp/9dd92853-c2e6-4801-8264-353591075725' before making global git config changes
+2025-02-22T12:52:40.2603683Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-22T12:52:40.2607619Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/react-native-audio-api/react-native-audio-api
+2025-02-22T12:52:40.2645794Z Deleting the contents of '/home/runner/work/react-native-audio-api/react-native-audio-api'
+2025-02-22T12:52:40.2649379Z ##[group]Initializing the repository
+2025-02-22T12:52:40.2653373Z [command]/usr/bin/git init /home/runner/work/react-native-audio-api/react-native-audio-api
+2025-02-22T12:52:40.2743914Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-22T12:52:40.2745111Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-22T12:52:40.2746123Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-22T12:52:40.2746885Z hint:
+2025-02-22T12:52:40.2747413Z hint: 	git config --global init.defaultBranch <name>
+2025-02-22T12:52:40.2748055Z hint:
+2025-02-22T12:52:40.2748666Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-22T12:52:40.2749671Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-22T12:52:40.2750412Z hint:
+2025-02-22T12:52:40.2750810Z hint: 	git branch -m <name>
+2025-02-22T12:52:40.2768288Z Initialized empty Git repository in /home/runner/work/react-native-audio-api/react-native-audio-api/.git/
+2025-02-22T12:52:40.2778904Z [command]/usr/bin/git remote add origin https://github.com/software-mansion-labs/react-native-audio-api
+2025-02-22T12:52:40.2812618Z ##[endgroup]
+2025-02-22T12:52:40.2813515Z ##[group]Disabling automatic garbage collection
+2025-02-22T12:52:40.2816755Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-22T12:52:40.2844787Z ##[endgroup]
+2025-02-22T12:52:40.2845504Z ##[group]Setting up auth
+2025-02-22T12:52:40.2851259Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-22T12:52:40.2880363Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-22T12:52:40.3229349Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-22T12:52:40.3259770Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-22T12:52:40.3482694Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-22T12:52:40.3520381Z ##[endgroup]
+2025-02-22T12:52:40.3521663Z ##[group]Fetching the repository
+2025-02-22T12:52:40.3530886Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +33793594afe0b7073ea04667ce822362d8b9e517:refs/remotes/pull/319/merge
+2025-02-22T12:52:41.3087051Z From https://github.com/software-mansion-labs/react-native-audio-api
+2025-02-22T12:52:41.3089384Z  * [new ref]         33793594afe0b7073ea04667ce822362d8b9e517 -> pull/319/merge
+2025-02-22T12:52:41.3114580Z ##[endgroup]
+2025-02-22T12:52:41.3116230Z ##[group]Determining the checkout info
+2025-02-22T12:52:41.3117625Z ##[endgroup]
+2025-02-22T12:52:41.3121149Z [command]/usr/bin/git sparse-checkout disable
+2025-02-22T12:52:41.3162095Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-22T12:52:41.3189857Z ##[group]Checking out the ref
+2025-02-22T12:52:41.3192915Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/319/merge
+2025-02-22T12:52:41.4471275Z Note: switching to 'refs/remotes/pull/319/merge'.
+2025-02-22T12:52:41.4472448Z 
+2025-02-22T12:52:41.4473372Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-22T12:52:41.4475831Z changes and commit them, and you can discard any commits you make in this
+2025-02-22T12:52:41.4477973Z state without impacting any branches by switching back to a branch.
+2025-02-22T12:52:41.4479226Z 
+2025-02-22T12:52:41.4480109Z If you want to create a new branch to retain commits you create, you may
+2025-02-22T12:52:41.4482089Z do so (now or later) by using -c with the switch command. Example:
+2025-02-22T12:52:41.4482958Z 
+2025-02-22T12:52:41.4483337Z   git switch -c <new-branch-name>
+2025-02-22T12:52:41.4484118Z 
+2025-02-22T12:52:41.4484829Z Or undo this operation with:
+2025-02-22T12:52:41.4485440Z 
+2025-02-22T12:52:41.4485940Z   git switch -
+2025-02-22T12:52:41.4486728Z 
+2025-02-22T12:52:41.4487439Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-22T12:52:41.4488511Z 
+2025-02-22T12:52:41.4489675Z HEAD is now at 3379359 Merge 6071af47db49e03d6355572b8ced5abd269f88f4 into b42871c7b2678ba45f16b0aa1651a515d59daa6d
+2025-02-22T12:52:41.4494383Z ##[endgroup]
+2025-02-22T12:52:41.4525385Z [command]/usr/bin/git log -1 --format=%H
+2025-02-22T12:52:41.4548665Z 33793594afe0b7073ea04667ce822362d8b9e517
+2025-02-22T12:52:41.4878237Z Prepare all required actions
+2025-02-22T12:52:41.4879517Z Getting action download info
+2025-02-22T12:52:41.6554871Z ##[group]Download immutable action package 'actions/setup-node@v4'
+2025-02-22T12:52:41.6555340Z Version: 4.2.0
+2025-02-22T12:52:41.6555746Z Digest: sha256:86190341f7d053ba0db4f8e0ad72b8a71043ab3287c7e7f2f3b56def57ec452a
+2025-02-22T12:52:41.6556297Z Source commit SHA: 1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a
+2025-02-22T12:52:41.6556694Z ##[endgroup]
+2025-02-22T12:52:41.9225758Z ##[group]Download immutable action package 'actions/setup-python@v1'
+2025-02-22T12:52:41.9226192Z Version: 1.2.4
+2025-02-22T12:52:41.9226575Z Digest: sha256:f6c2c40ee8c06e67460373ec8db5e6a05edd281e9c00b3db59beb5d86d32f692
+2025-02-22T12:52:41.9227080Z Source commit SHA: 0f07f7f756721ebd886c2462646a35f78a8bc4de
+2025-02-22T12:52:41.9227419Z ##[endgroup]
+2025-02-22T12:52:42.0771346Z ##[group]Download immutable action package 'actions/cache@v4'
+2025-02-22T12:52:42.0771777Z Version: 4.2.1
+2025-02-22T12:52:42.0772217Z Digest: sha256:b0404c9628d43aa6855629075b28f32cadf8efc5c26198438149f78500112940
+2025-02-22T12:52:42.0772744Z Source commit SHA: 0c907a75c2c80ebcb7f088228285e798b750cf8f
+2025-02-22T12:52:42.0773089Z ##[endgroup]
+2025-02-22T12:52:42.3682154Z ##[group]Run ./.github/actions/setup
+2025-02-22T12:52:42.3682507Z ##[endgroup]
+2025-02-22T12:52:42.3817395Z ##[group]Run actions/setup-node@v4
+2025-02-22T12:52:42.3817734Z with:
+2025-02-22T12:52:42.3817978Z   node-version-file: .nvmrc
+2025-02-22T12:52:42.3818249Z   always-auth: false
+2025-02-22T12:52:42.3818490Z   check-latest: false
+2025-02-22T12:52:42.3818880Z   token: ***
+2025-02-22T12:52:42.3819123Z ##[endgroup]
+2025-02-22T12:52:42.5549801Z Node version file is not JSON file
+2025-02-22T12:52:42.5551405Z Resolved .nvmrc as 20.11.1
+2025-02-22T12:52:42.5563671Z Attempting to download 20.11.1...
+2025-02-22T12:52:42.9508431Z Acquiring 20.11.1 - x64 from https://github.com/actions/node-versions/releases/download/20.11.1-7910924545/node-20.11.1-linux-x64.tar.gz
+2025-02-22T12:52:43.4676414Z Extracting ...
+2025-02-22T12:52:43.4805500Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/63e2ca8e-7167-4fc0-a392-129dc5f9d1d0 -f /home/runner/work/_temp/1de133ed-947d-41e2-a763-30ec08e42c65
+2025-02-22T12:52:44.4753694Z Adding to the cache ...
+2025-02-22T12:52:46.2038182Z ##[group]Environment details
+2025-02-22T12:52:46.6554090Z node: v20.11.1
+2025-02-22T12:52:46.6554992Z npm: 10.2.4
+2025-02-22T12:52:46.6555437Z yarn: 4.5.0
+2025-02-22T12:52:46.6556167Z ##[endgroup]
+2025-02-22T12:52:46.6718294Z ##[group]Run actions/setup-python@v1
+2025-02-22T12:52:46.6718553Z with:
+2025-02-22T12:52:46.6718741Z   python-version: 3.x
+2025-02-22T12:52:46.6718954Z   architecture: x64
+2025-02-22T12:52:46.6719149Z ##[endgroup]
+2025-02-22T12:52:46.7160148Z Successfully setup CPython (3.13.2)
+2025-02-22T12:52:46.7239756Z ##[group]Run pip install 'cpplint==2.0.0'
+2025-02-22T12:52:46.7240133Z [36;1mpip install 'cpplint==2.0.0'[0m
+2025-02-22T12:52:46.7425876Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-22T12:52:46.7426287Z env:
+2025-02-22T12:52:46.7426588Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-22T12:52:46.7426953Z ##[endgroup]
+2025-02-22T12:52:50.0790275Z Collecting cpplint==2.0.0
+2025-02-22T12:52:50.1484324Z   Downloading cpplint-2.0.0-py3-none-any.whl.metadata (4.9 kB)
+2025-02-22T12:52:50.1693109Z Downloading cpplint-2.0.0-py3-none-any.whl (78 kB)
+2025-02-22T12:52:50.1998375Z Installing collected packages: cpplint
+2025-02-22T12:52:50.2436755Z Successfully installed cpplint-2.0.0
+2025-02-22T12:52:50.3939371Z ##[group]Run curl -sSLO https://github.com/pinterest/ktlint/releases/download/1.2.1/ktlint
+2025-02-22T12:52:50.3939993Z [36;1mcurl -sSLO https://github.com/pinterest/ktlint/releases/download/1.2.1/ktlint[0m
+2025-02-22T12:52:50.3940382Z [36;1mchmod a+x ktlint[0m
+2025-02-22T12:52:50.3940608Z [36;1msudo mv ktlint /usr/local/bin/[0m
+2025-02-22T12:52:50.3996177Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-22T12:52:50.3996508Z env:
+2025-02-22T12:52:50.3996744Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-22T12:52:50.3997046Z ##[endgroup]
+2025-02-22T12:52:51.2182952Z ##[group]Run actions/cache@v4
+2025-02-22T12:52:51.2183172Z with:
+2025-02-22T12:52:51.2183564Z   path: **/node_modules
+.yarn/install-state.gz
+
+2025-02-22T12:52:51.2184350Z   key: Linux-yarn-4be0a51dba9a18b3db74c2c73536330b213795d372fd5d4d2fcb09a0299de60c-e540400fdfb418e1af711b5e310dfc09f573d5ad4785e815682627e075105e0c
+2025-02-22T12:52:51.2185261Z   restore-keys: Linux-yarn-4be0a51dba9a18b3db74c2c73536330b213795d372fd5d4d2fcb09a0299de60c
+Linux-yarn-
+
+2025-02-22T12:52:51.2185740Z   enableCrossOsArchive: false
+2025-02-22T12:52:51.2185963Z   fail-on-cache-miss: false
+2025-02-22T12:52:51.2186175Z   lookup-only: false
+2025-02-22T12:52:51.2186363Z   save-always: false
+2025-02-22T12:52:51.2186543Z env:
+2025-02-22T12:52:51.2186775Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-22T12:52:51.2187070Z ##[endgroup]
+2025-02-22T12:52:51.4497615Z Cache not found for input keys: Linux-yarn-4be0a51dba9a18b3db74c2c73536330b213795d372fd5d4d2fcb09a0299de60c-e540400fdfb418e1af711b5e310dfc09f573d5ad4785e815682627e075105e0c, Linux-yarn-4be0a51dba9a18b3db74c2c73536330b213795d372fd5d4d2fcb09a0299de60c, Linux-yarn-
+2025-02-22T12:52:51.4598331Z ##[group]Run yarn install --immutable
+2025-02-22T12:52:51.4598621Z [36;1myarn install --immutable[0m
+2025-02-22T12:52:51.4653762Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-22T12:52:51.4654083Z env:
+2025-02-22T12:52:51.4654326Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-22T12:52:51.4654625Z ##[endgroup]
+2025-02-22T12:52:51.9260369Z [93m➤[39m YN0000: Yarn detected that the current workflow is executed from a public pull request. For safety the hardened mode has been enabled.
+2025-02-22T12:52:51.9262555Z [93m➤[39m YN0000: It will prevent malicious lockfile manipulations, in exchange for a slower install time. You can opt-out if necessary; check our documentation for more details.
+2025-02-22T12:52:51.9263189Z 
+2025-02-22T12:52:51.9263616Z [94m➤[39m YN0000: · Yarn 4.5.0
+2025-02-22T12:52:51.9390290Z [94m➤[39m [90mYN0000[39m: ┌ Resolution step
+2025-02-22T12:52:51.9391524Z ##[group]Resolution step
+2025-02-22T12:52:59.2892562Z ##[endgroup]
+2025-02-22T12:52:59.2925126Z [94m➤[39m [90mYN0000[39m: └ Completed in 7s 350ms
+2025-02-22T12:52:59.2926011Z [94m➤[39m [90mYN0000[39m: ┌ Post-resolution validation
+2025-02-22T12:52:59.2926801Z ##[group]Post-resolution validation
+2025-02-22T12:52:59.2928223Z [93m➤[39m YN0086: │ Some peer dependencies are incorrectly met by dependencies; run [38;5;111myarn explain peer-requirements[39m for details.
+2025-02-22T12:52:59.3537588Z ##[endgroup]
+2025-02-22T12:52:59.3538559Z [94m➤[39m [90mYN0000[39m: └ Completed
+2025-02-22T12:52:59.3539307Z [94m➤[39m [90mYN0000[39m: ┌ Fetch step
+2025-02-22T12:52:59.3539953Z ##[group]Fetch step
+2025-02-22T12:53:23.0848542Z [93m➤[39m YN0066: │ [38;5;173mtypescript[39m[38;5;111m@[39m[38;5;111mpatch:typescript@npm%3A5.7.2#optional!builtin<compat/typescript>::version=5.7.2&hash=8c6c40[39m: Cannot apply hunk #1
+2025-02-22T12:53:37.4439649Z [94m➤[39m YN0013: │ [38;5;220m1432[39m packages were added to the project ([38;5;160m+ 318.07 MiB[39m).
+2025-02-22T12:53:37.4442087Z ##[endgroup]
+2025-02-22T12:53:37.4442778Z [94m➤[39m [90mYN0000[39m: └ Completed in 38s 90ms
+2025-02-22T12:53:37.5117944Z [94m➤[39m [90mYN0000[39m: ┌ Link step
+2025-02-22T12:53:37.5118720Z ##[group]Link step
+2025-02-22T12:53:51.5900466Z [94m➤[39m YN0007: │ [38;5;166m@evilmartians/[39m[38;5;173mlefthook[39m[38;5;111m@[39m[38;5;111mnpm:1.9.0[39m must be built because it never has been before or the last one failed
+2025-02-22T12:53:51.6967448Z ##[endgroup]
+2025-02-22T12:53:51.6968278Z [94m➤[39m [90mYN0000[39m: └ Completed in 14s 185ms
+2025-02-22T12:53:51.8110734Z [93m➤[39m YN0000: · Done with warnings in 59s 884ms
+2025-02-22T12:53:52.0642488Z ##[group]Run yarn lint
+2025-02-22T12:53:52.0642751Z [36;1myarn lint[0m
+2025-02-22T12:53:52.0699825Z shell: /usr/bin/bash -e {0}
+2025-02-22T12:53:52.0700060Z env:
+2025-02-22T12:53:52.0700320Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-22T12:53:52.0700628Z ##[endgroup]
+2025-02-22T12:54:01.3939410Z Done processing android/src/main/cpp/libs/pffft.h
+2025-02-22T12:54:01.3940037Z Total errors found: 2
+2025-02-22T12:54:01.3941447Z android/src/main/cpp/libs/pffft.h:77:  #ifndef header guard has wrong style, please use: PACKAGES_REACT_NATIVE_AUDIO_API_ANDROID_SRC_MAIN_CPP_LIBS_PFFFT_H_  [build/header_guard] [5]
+2025-02-22T12:54:01.3944007Z android/src/main/cpp/libs/pffft.h:201:  #endif line should be "#endif  // PACKAGES_REACT_NATIVE_AUDIO_API_ANDROID_SRC_MAIN_CPP_LIBS_PFFFT_H_"  [build/header_guard] [5]
+2025-02-22T12:54:01.3946841Z Done in 8s 250ms
+2025-02-22T12:54:01.4324479Z ##[error]Process completed with exit code 1.
+2025-02-22T12:54:01.4396542Z Post job cleanup.
+2025-02-22T12:54:01.4446883Z Post job cleanup.
+2025-02-22T12:54:01.5389658Z [command]/usr/bin/git version
+2025-02-22T12:54:01.5432983Z git version 2.48.1
+2025-02-22T12:54:01.5475611Z Temporarily overriding HOME='/home/runner/work/_temp/a1a6f21d-32d9-4789-8f3c-aa6a76a119c0' before making global git config changes
+2025-02-22T12:54:01.5477007Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-22T12:54:01.5481195Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/react-native-audio-api/react-native-audio-api
+2025-02-22T12:54:01.5516254Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-22T12:54:01.5547821Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-22T12:54:01.5782379Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-22T12:54:01.5803136Z http.https://github.com/.extraheader
+2025-02-22T12:54:01.5815899Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-22T12:54:01.5850745Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-22T12:54:01.6188904Z Cleaning up orphan processes

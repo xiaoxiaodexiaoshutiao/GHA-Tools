@@ -1,0 +1,223 @@
+﻿2025-03-27T10:15:38.5125770Z Current runner version: '2.323.0'
+2025-03-27T10:15:38.5151471Z ##[group]Operating System
+2025-03-27T10:15:38.5152317Z Ubuntu
+2025-03-27T10:15:38.5152910Z 24.04.2
+2025-03-27T10:15:38.5153389Z LTS
+2025-03-27T10:15:38.5153852Z ##[endgroup]
+2025-03-27T10:15:38.5154301Z ##[group]Runner Image
+2025-03-27T10:15:38.5154988Z Image: ubuntu-24.04
+2025-03-27T10:15:38.5155478Z Version: 20250316.1.0
+2025-03-27T10:15:38.5156457Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250316.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-27T10:15:38.5158197Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250316.1
+2025-03-27T10:15:38.5159099Z ##[endgroup]
+2025-03-27T10:15:38.5159584Z ##[group]Runner Image Provisioner
+2025-03-27T10:15:38.5160203Z 2.0.422.1
+2025-03-27T10:15:38.5160656Z ##[endgroup]
+2025-03-27T10:15:38.5162950Z ##[group]GITHUB_TOKEN Permissions
+2025-03-27T10:15:38.5165439Z Actions: read
+2025-03-27T10:15:38.5166113Z Attestations: read
+2025-03-27T10:15:38.5166795Z Checks: read
+2025-03-27T10:15:38.5167529Z Contents: read
+2025-03-27T10:15:38.5168043Z Deployments: read
+2025-03-27T10:15:38.5168573Z Discussions: read
+2025-03-27T10:15:38.5169061Z Issues: read
+2025-03-27T10:15:38.5169552Z Metadata: read
+2025-03-27T10:15:38.5170061Z Models: read
+2025-03-27T10:15:38.5170520Z Packages: read
+2025-03-27T10:15:38.5171034Z Pages: read
+2025-03-27T10:15:38.5171488Z PullRequests: read
+2025-03-27T10:15:38.5171992Z RepositoryProjects: read
+2025-03-27T10:15:38.5172582Z SecurityEvents: read
+2025-03-27T10:15:38.5173154Z Statuses: read
+2025-03-27T10:15:38.5173591Z ##[endgroup]
+2025-03-27T10:15:38.5175877Z Secret source: None
+2025-03-27T10:15:38.5177233Z Prepare workflow directory
+2025-03-27T10:15:38.5625241Z Prepare all required actions
+2025-03-27T10:15:38.5680512Z Getting action download info
+2025-03-27T10:15:39.0528959Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-27T10:15:39.1522398Z Download action repository 'actions/setup-python@v5' (SHA:8d9ed9ac5c53483de85588cdf95a591a75ab9f55)
+2025-03-27T10:15:39.5559281Z Download action repository 'actions/download-artifact@v4' (SHA:95815c38cf2ff2164869cbab79da8d1f422bc89e)
+2025-03-27T10:15:39.9901875Z Complete job name: check_python_coverage
+2025-03-27T10:15:40.0601394Z ##[group]Run actions/checkout@v4
+2025-03-27T10:15:40.0602324Z with:
+2025-03-27T10:15:40.0602796Z   repository: archesproject/arches
+2025-03-27T10:15:40.0603537Z   token: ***
+2025-03-27T10:15:40.0603993Z   ssh-strict: true
+2025-03-27T10:15:40.0604446Z   ssh-user: git
+2025-03-27T10:15:40.0604912Z   persist-credentials: true
+2025-03-27T10:15:40.0605415Z   clean: true
+2025-03-27T10:15:40.0605878Z   sparse-checkout-cone-mode: true
+2025-03-27T10:15:40.0606427Z   fetch-depth: 1
+2025-03-27T10:15:40.0606871Z   fetch-tags: false
+2025-03-27T10:15:40.0607507Z   show-progress: true
+2025-03-27T10:15:40.0607972Z   lfs: false
+2025-03-27T10:15:40.0608430Z   submodules: false
+2025-03-27T10:15:40.0608893Z   set-safe-directory: true
+2025-03-27T10:15:40.0609686Z ##[endgroup]
+2025-03-27T10:15:40.2468029Z Syncing repository: archesproject/arches
+2025-03-27T10:15:40.2470302Z ##[group]Getting Git version info
+2025-03-27T10:15:40.2471604Z Working directory is '/home/runner/work/arches/arches'
+2025-03-27T10:15:40.2473924Z [command]/usr/bin/git version
+2025-03-27T10:15:40.2533473Z git version 2.48.1
+2025-03-27T10:15:40.2562623Z ##[endgroup]
+2025-03-27T10:15:40.2578879Z Temporarily overriding HOME='/home/runner/work/_temp/4488a7b8-fe8d-4dfc-829b-29f9c6402b8e' before making global git config changes
+2025-03-27T10:15:40.2581646Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-27T10:15:40.2585735Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/arches/arches
+2025-03-27T10:15:40.2622078Z Deleting the contents of '/home/runner/work/arches/arches'
+2025-03-27T10:15:40.2626458Z ##[group]Initializing the repository
+2025-03-27T10:15:40.2631760Z [command]/usr/bin/git init /home/runner/work/arches/arches
+2025-03-27T10:15:40.2695288Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-27T10:15:40.2696718Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-27T10:15:40.2697967Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-27T10:15:40.2698717Z hint:
+2025-03-27T10:15:40.2699732Z hint: 	git config --global init.defaultBranch <name>
+2025-03-27T10:15:40.2700647Z hint:
+2025-03-27T10:15:40.2701558Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-27T10:15:40.2703512Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-27T10:15:40.2705074Z hint:
+2025-03-27T10:15:40.2705939Z hint: 	git branch -m <name>
+2025-03-27T10:15:40.2707737Z Initialized empty Git repository in /home/runner/work/arches/arches/.git/
+2025-03-27T10:15:40.2714073Z [command]/usr/bin/git remote add origin https://github.com/archesproject/arches
+2025-03-27T10:15:40.2750078Z ##[endgroup]
+2025-03-27T10:15:40.2751097Z ##[group]Disabling automatic garbage collection
+2025-03-27T10:15:40.2754055Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-27T10:15:40.2783287Z ##[endgroup]
+2025-03-27T10:15:40.2784089Z ##[group]Setting up auth
+2025-03-27T10:15:40.2790087Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-27T10:15:40.2821393Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-27T10:15:40.3123181Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-27T10:15:40.3154550Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-27T10:15:40.3395925Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-27T10:15:40.3432922Z ##[endgroup]
+2025-03-27T10:15:40.3434424Z ##[group]Fetching the repository
+2025-03-27T10:15:40.3443931Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +666b55d8ee8ef8d409ed2e00f6027487abb01d4c:refs/remotes/pull/11889/merge
+2025-03-27T10:15:43.7477925Z From https://github.com/archesproject/arches
+2025-03-27T10:15:43.7480258Z  * [new ref]         666b55d8ee8ef8d409ed2e00f6027487abb01d4c -> pull/11889/merge
+2025-03-27T10:15:43.7503097Z ##[endgroup]
+2025-03-27T10:15:43.7504585Z ##[group]Determining the checkout info
+2025-03-27T10:15:43.7506305Z ##[endgroup]
+2025-03-27T10:15:43.7511070Z [command]/usr/bin/git sparse-checkout disable
+2025-03-27T10:15:43.7549466Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-27T10:15:43.7581148Z ##[group]Checking out the ref
+2025-03-27T10:15:43.7585993Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/11889/merge
+2025-03-27T10:15:44.1641752Z Note: switching to 'refs/remotes/pull/11889/merge'.
+2025-03-27T10:15:44.1642369Z 
+2025-03-27T10:15:44.1642724Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-27T10:15:44.1643626Z changes and commit them, and you can discard any commits you make in this
+2025-03-27T10:15:44.1644518Z state without impacting any branches by switching back to a branch.
+2025-03-27T10:15:44.1645043Z 
+2025-03-27T10:15:44.1645384Z If you want to create a new branch to retain commits you create, you may
+2025-03-27T10:15:44.1646106Z do so (now or later) by using -c with the switch command. Example:
+2025-03-27T10:15:44.1646588Z 
+2025-03-27T10:15:44.1646785Z   git switch -c <new-branch-name>
+2025-03-27T10:15:44.1647352Z 
+2025-03-27T10:15:44.1647581Z Or undo this operation with:
+2025-03-27T10:15:44.1647886Z 
+2025-03-27T10:15:44.1648034Z   git switch -
+2025-03-27T10:15:44.1648269Z 
+2025-03-27T10:15:44.1648646Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-27T10:15:44.1649773Z 
+2025-03-27T10:15:44.1650385Z HEAD is now at 666b55d Merge c273961838a053e066da01c039d6b1e41cadc2d7 into b53e3948d063d61ca72a84ab612519dc9d00a657
+2025-03-27T10:15:44.1666649Z ##[endgroup]
+2025-03-27T10:15:44.1711648Z [command]/usr/bin/git log -1 --format=%H
+2025-03-27T10:15:44.1734739Z 666b55d8ee8ef8d409ed2e00f6027487abb01d4c
+2025-03-27T10:15:44.1972484Z ##[group]Run actions/setup-python@v5
+2025-03-27T10:15:44.1972783Z with:
+2025-03-27T10:15:44.1972980Z   python-version: 3.x
+2025-03-27T10:15:44.1973183Z   check-latest: true
+2025-03-27T10:15:44.1973504Z   token: ***
+2025-03-27T10:15:44.1973691Z   update-environment: true
+2025-03-27T10:15:44.1973914Z   allow-prereleases: false
+2025-03-27T10:15:44.1974145Z   freethreaded: false
+2025-03-27T10:15:44.1974338Z ##[endgroup]
+2025-03-27T10:15:44.3625170Z ##[group]Installed versions
+2025-03-27T10:15:44.8002617Z Resolved as '3.13.2'
+2025-03-27T10:15:44.8021909Z Successfully set up CPython (3.13.2)
+2025-03-27T10:15:44.8022740Z ##[endgroup]
+2025-03-27T10:15:44.8205309Z ##[group]Run actions/download-artifact@v4
+2025-03-27T10:15:44.8205589Z with:
+2025-03-27T10:15:44.8205799Z   name: feature-branch-python-coverage-report
+2025-03-27T10:15:44.8206074Z   path: .
+2025-03-27T10:15:44.8206245Z   merge-multiple: false
+2025-03-27T10:15:44.8206449Z   repository: archesproject/arches
+2025-03-27T10:15:44.8206675Z   run-id: 14103826841
+2025-03-27T10:15:44.8206844Z env:
+2025-03-27T10:15:44.8207327Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-27T10:15:44.8207747Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-27T10:15:44.8208131Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-27T10:15:44.8208471Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-27T10:15:44.8208802Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-27T10:15:44.8209148Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-27T10:15:44.8209437Z ##[endgroup]
+2025-03-27T10:15:45.0105245Z Downloading single artifact
+2025-03-27T10:15:45.1528475Z Preparing to download the following artifacts:
+2025-03-27T10:15:45.1529739Z - feature-branch-python-coverage-report (ID: 2830313145, Size: 112425, Expected Digest: sha256:0087af643622639cf691f41c328f6805676da93c702b64ceacb06cf2cd035aec)
+2025-03-27T10:15:45.2338240Z Redirecting to blob download url: https://productionresultssa6.blob.core.windows.net/actions-results/78d85e6e-4fba-4126-8ad7-b9e899f1097b/workflow-job-run-f5fbaf92-809c-519f-a9f7-2cff0aa1202d/artifacts/11905bd3c03027af3920f798805273b7313793a1942acb358b5e269b24b982ca.zip
+2025-03-27T10:15:45.2340550Z Starting download of artifact to: /home/runner/work/arches/arches
+2025-03-27T10:15:45.3468961Z (node:1876) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2025-03-27T10:15:45.3470525Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-03-27T10:15:45.3941965Z SHA256 digest of downloaded artifact is 0087af643622639cf691f41c328f6805676da93c702b64ceacb06cf2cd035aec
+2025-03-27T10:15:45.3942865Z Artifact download completed successfully.
+2025-03-27T10:15:45.3943318Z Total of 1 artifact(s) downloaded
+2025-03-27T10:15:45.3948504Z Download artifact has finished successfully
+2025-03-27T10:15:45.4048938Z ##[group]Run actions/download-artifact@v4
+2025-03-27T10:15:45.4049207Z with:
+2025-03-27T10:15:45.4049426Z   name: target-branch-python-coverage-report
+2025-03-27T10:15:45.4049702Z   path: .
+2025-03-27T10:15:45.4049869Z   merge-multiple: false
+2025-03-27T10:15:45.4050088Z   repository: archesproject/arches
+2025-03-27T10:15:45.4050320Z   run-id: 14103826841
+2025-03-27T10:15:45.4050495Z env:
+2025-03-27T10:15:45.4050723Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-27T10:15:45.4051113Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-27T10:15:45.4051489Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-27T10:15:45.4052019Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-27T10:15:45.4052364Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-27T10:15:45.4052701Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-27T10:15:45.4052978Z ##[endgroup]
+2025-03-27T10:15:45.5955822Z Downloading single artifact
+2025-03-27T10:15:45.7201318Z Preparing to download the following artifacts:
+2025-03-27T10:15:45.7202600Z - target-branch-python-coverage-report (ID: 2830308778, Size: 112385, Expected Digest: sha256:c004c2983be8f81e3c0313ae95d51aa6c0c411111d0efc765711969368ee4509)
+2025-03-27T10:15:45.8056878Z Redirecting to blob download url: https://productionresultssa6.blob.core.windows.net/actions-results/78d85e6e-4fba-4126-8ad7-b9e899f1097b/workflow-job-run-7dd2e430-6db3-5df9-ac70-f76badfa1de7/artifacts/1c9b29643c28091f6fdd6863c51d309fb4241c7ea739a58260df25b6199e8c72.zip
+2025-03-27T10:15:45.8059414Z Starting download of artifact to: /home/runner/work/arches/arches
+2025-03-27T10:15:45.9086491Z (node:1887) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2025-03-27T10:15:45.9087857Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-03-27T10:15:45.9512916Z SHA256 digest of downloaded artifact is c004c2983be8f81e3c0313ae95d51aa6c0c411111d0efc765711969368ee4509
+2025-03-27T10:15:45.9513593Z Artifact download completed successfully.
+2025-03-27T10:15:45.9513930Z Total of 1 artifact(s) downloaded
+2025-03-27T10:15:45.9519597Z Download artifact has finished successfully
+2025-03-27T10:15:45.9624526Z ##[group]Run feature_branch_python_coverage=$(cat feature_branch_python_coverage.json | grep -o '"totals": {[^}]*' | grep -o '"percent_covered": [0-9.]*' | awk -F ': ' '{print $2}')
+2025-03-27T10:15:45.9625673Z [36;1mfeature_branch_python_coverage=$(cat feature_branch_python_coverage.json | grep -o '"totals": {[^}]*' | grep -o '"percent_covered": [0-9.]*' | awk -F ': ' '{print $2}')[0m
+2025-03-27T10:15:45.9626663Z [36;1mtarget_branch_python_coverage=$(cat target_branch_python_coverage.json | grep -o '"totals": {[^}]*' | grep -o '"percent_covered": [0-9.]*' | awk -F ': ' '{print $2}')[0m
+2025-03-27T10:15:45.9627717Z [36;1m[0m
+2025-03-27T10:15:45.9628141Z [36;1m# Compare feature coverage with target coverage using floating-point comparison[0m
+2025-03-27T10:15:45.9628858Z [36;1mif awk -v feature="$feature_branch_python_coverage" -v target="$target_branch_python_coverage" 'BEGIN { exit (feature < target) ? 0 : 1 }'; then[0m
+2025-03-27T10:15:45.9629788Z [36;1m  echo "Coverage decreased from $target_branch_python_coverage% to $feature_branch_python_coverage%. Please add or update tests to increase coverage."[0m
+2025-03-27T10:15:45.9630365Z [36;1m  exit 1[0m
+2025-03-27T10:15:45.9630538Z [36;1melse[0m
+2025-03-27T10:15:45.9630992Z [36;1m  echo "Feature branch coverage ($feature_branch_python_coverage%) >= Target branch coverage ($target_branch_python_coverage%)."[0m
+2025-03-27T10:15:45.9631502Z [36;1mfi[0m
+2025-03-27T10:15:45.9683924Z shell: /usr/bin/bash -e {0}
+2025-03-27T10:15:45.9684168Z env:
+2025-03-27T10:15:45.9684428Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-27T10:15:45.9684848Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-27T10:15:45.9685269Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-27T10:15:45.9685637Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-27T10:15:45.9685983Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-27T10:15:45.9686347Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-27T10:15:45.9686642Z ##[endgroup]
+2025-03-27T10:15:46.0551368Z Coverage decreased from 58.6873774462686% to 58.68670946907078%. Please add or update tests to increase coverage.
+2025-03-27T10:15:46.0566680Z ##[error]Process completed with exit code 1.
+2025-03-27T10:15:46.0641544Z Post job cleanup.
+2025-03-27T10:15:46.1569688Z [command]/usr/bin/git version
+2025-03-27T10:15:46.1606109Z git version 2.48.1
+2025-03-27T10:15:46.1657324Z Temporarily overriding HOME='/home/runner/work/_temp/1e91311d-4783-43fa-9f47-bf01479bc581' before making global git config changes
+2025-03-27T10:15:46.1658469Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-27T10:15:46.1662811Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/arches/arches
+2025-03-27T10:15:46.1697333Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-27T10:15:46.1729538Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-27T10:15:46.1987397Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-27T10:15:46.2010818Z http.https://github.com/.extraheader
+2025-03-27T10:15:46.2024118Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-27T10:15:46.2057770Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-27T10:15:46.2392723Z Cleaning up orphan processes

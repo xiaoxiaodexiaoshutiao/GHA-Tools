@@ -1,0 +1,24 @@
+diff --git a/spring-cloud-tencent-plugin-starters/spring-cloud-starter-tencent-discovery-adapter-plugin/src/test/java/com/tencent/cloud/plugin/discovery/adapter/config/NacosDiscoveryAdapterAutoConfigurationTest.java b/spring-cloud-tencent-plugin-starters/spring-cloud-starter-tencent-discovery-adapter-plugin/src/test/java/com/tencent/cloud/plugin/discovery/adapter/config/NacosDiscoveryAdapterAutoConfigurationTest.java
+index 6387830aae..5dabf398d7 100644
+--- a/spring-cloud-tencent-plugin-starters/spring-cloud-starter-tencent-discovery-adapter-plugin/src/test/java/com/tencent/cloud/plugin/discovery/adapter/config/NacosDiscoveryAdapterAutoConfigurationTest.java
++++ b/spring-cloud-tencent-plugin-starters/spring-cloud-starter-tencent-discovery-adapter-plugin/src/test/java/com/tencent/cloud/plugin/discovery/adapter/config/NacosDiscoveryAdapterAutoConfigurationTest.java
+@@ -23,7 +23,6 @@
+ 
+ import org.springframework.boot.autoconfigure.AutoConfigurations;
+ import org.springframework.boot.test.context.runner.ApplicationContextRunner;
+-import org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration;
+ 
+ import static org.assertj.core.api.Assertions.assertThat;
+ 
+@@ -35,10 +34,7 @@
+ public class NacosDiscoveryAdapterAutoConfigurationTest {
+ 
+ 	private final ApplicationContextRunner contextRunner = new ApplicationContextRunner()
+-			.withConfiguration(AutoConfigurations.of(
+-					NacosDiscoveryAdapterAutoConfiguration.class,
+-					LoadBalancerAutoConfiguration.class
+-			));
++			.withConfiguration(AutoConfigurations.of(NacosDiscoveryAdapterAutoConfiguration.class));
+ 
+ 	@Test
+ 	public void testDefaultInitialization() {

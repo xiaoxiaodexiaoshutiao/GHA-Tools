@@ -1,0 +1,148 @@
+﻿2025-03-04T19:56:49.9356641Z Current runner version: '2.322.0'
+2025-03-04T19:56:49.9381195Z ##[group]Operating System
+2025-03-04T19:56:49.9381870Z Ubuntu
+2025-03-04T19:56:49.9382489Z 24.04.2
+2025-03-04T19:56:49.9382965Z LTS
+2025-03-04T19:56:49.9383476Z ##[endgroup]
+2025-03-04T19:56:49.9384067Z ##[group]Runner Image
+2025-03-04T19:56:49.9384705Z Image: ubuntu-24.04
+2025-03-04T19:56:49.9385262Z Version: 20250223.1.0
+2025-03-04T19:56:49.9386357Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250223.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-04T19:56:49.9388046Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250223.1
+2025-03-04T19:56:49.9388914Z ##[endgroup]
+2025-03-04T19:56:49.9389540Z ##[group]Runner Image Provisioner
+2025-03-04T19:56:49.9390173Z 2.0.422.1
+2025-03-04T19:56:49.9390593Z ##[endgroup]
+2025-03-04T19:56:49.9391491Z ##[group]GITHUB_TOKEN Permissions
+2025-03-04T19:56:49.9393792Z Metadata: read
+2025-03-04T19:56:49.9394270Z ##[endgroup]
+2025-03-04T19:56:49.9397898Z Secret source: None
+2025-03-04T19:56:49.9398953Z Prepare workflow directory
+2025-03-04T19:56:49.9946858Z Prepare all required actions
+2025-03-04T19:56:50.0000238Z Getting action download info
+2025-03-04T19:56:50.3598816Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-04T19:56:50.4504166Z Download action repository 'DavidAnson/markdownlint-cli2-action@v19' (SHA:05f32210e84442804257b2a6f20b273450ec8265)
+2025-03-04T19:56:50.6637321Z Complete job name: Code style check / Code style check
+2025-03-04T19:56:50.7302332Z ##[group]Run actions/checkout@v4
+2025-03-04T19:56:50.7303154Z with:
+2025-03-04T19:56:50.7303515Z   fetch-depth: 50
+2025-03-04T19:56:50.7303921Z   repository: ihhub/fheroes2
+2025-03-04T19:56:50.7304524Z   token: ***
+2025-03-04T19:56:50.7304889Z   ssh-strict: true
+2025-03-04T19:56:50.7305276Z   ssh-user: git
+2025-03-04T19:56:50.7305662Z   persist-credentials: true
+2025-03-04T19:56:50.7306112Z   clean: true
+2025-03-04T19:56:50.7306494Z   sparse-checkout-cone-mode: true
+2025-03-04T19:56:50.7306976Z   fetch-tags: false
+2025-03-04T19:56:50.7307600Z   show-progress: true
+2025-03-04T19:56:50.7308004Z   lfs: false
+2025-03-04T19:56:50.7308354Z   submodules: false
+2025-03-04T19:56:50.7308752Z   set-safe-directory: true
+2025-03-04T19:56:50.7309440Z ##[endgroup]
+2025-03-04T19:56:50.8984968Z Syncing repository: ihhub/fheroes2
+2025-03-04T19:56:50.8986586Z ##[group]Getting Git version info
+2025-03-04T19:56:50.8987526Z Working directory is '/home/runner/work/fheroes2/fheroes2'
+2025-03-04T19:56:50.8988519Z [command]/usr/bin/git version
+2025-03-04T19:56:50.9043711Z git version 2.48.1
+2025-03-04T19:56:50.9071838Z ##[endgroup]
+2025-03-04T19:56:50.9085639Z Temporarily overriding HOME='/home/runner/work/_temp/ebe18a2e-ab54-40ba-827c-7fe71bea0b40' before making global git config changes
+2025-03-04T19:56:50.9088250Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-04T19:56:50.9090867Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/fheroes2/fheroes2
+2025-03-04T19:56:50.9127790Z Deleting the contents of '/home/runner/work/fheroes2/fheroes2'
+2025-03-04T19:56:50.9131572Z ##[group]Initializing the repository
+2025-03-04T19:56:50.9135424Z [command]/usr/bin/git init /home/runner/work/fheroes2/fheroes2
+2025-03-04T19:56:50.9201798Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-04T19:56:50.9202851Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-04T19:56:50.9203717Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-04T19:56:50.9204357Z hint:
+2025-03-04T19:56:50.9204824Z hint: 	git config --global init.defaultBranch <name>
+2025-03-04T19:56:50.9205375Z hint:
+2025-03-04T19:56:50.9205915Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-04T19:56:50.9207313Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-04T19:56:50.9208162Z hint:
+2025-03-04T19:56:50.9208815Z hint: 	git branch -m <name>
+2025-03-04T19:56:50.9209503Z Initialized empty Git repository in /home/runner/work/fheroes2/fheroes2/.git/
+2025-03-04T19:56:50.9218177Z [command]/usr/bin/git remote add origin https://github.com/ihhub/fheroes2
+2025-03-04T19:56:50.9257819Z ##[endgroup]
+2025-03-04T19:56:50.9259017Z ##[group]Disabling automatic garbage collection
+2025-03-04T19:56:50.9262313Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-04T19:56:50.9295987Z ##[endgroup]
+2025-03-04T19:56:50.9296704Z ##[group]Setting up auth
+2025-03-04T19:56:50.9306025Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-04T19:56:50.9341888Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-04T19:56:50.9648317Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-04T19:56:50.9686907Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-04T19:56:50.9947919Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-04T19:56:50.9983697Z ##[endgroup]
+2025-03-04T19:56:50.9984891Z ##[group]Fetching the repository
+2025-03-04T19:56:50.9994280Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=50 origin +ef2741187db0377553fecfdff081661bee041c91:refs/remotes/pull/9602/merge
+2025-03-04T19:56:52.8664372Z From https://github.com/ihhub/fheroes2
+2025-03-04T19:56:52.8666053Z  * [new ref]         ef2741187db0377553fecfdff081661bee041c91 -> pull/9602/merge
+2025-03-04T19:56:52.8688774Z ##[endgroup]
+2025-03-04T19:56:52.8690178Z ##[group]Determining the checkout info
+2025-03-04T19:56:52.8691873Z ##[endgroup]
+2025-03-04T19:56:52.8697592Z [command]/usr/bin/git sparse-checkout disable
+2025-03-04T19:56:52.8738208Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-04T19:56:52.8766858Z ##[group]Checking out the ref
+2025-03-04T19:56:52.8771501Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/9602/merge
+2025-03-04T19:56:53.0104659Z Note: switching to 'refs/remotes/pull/9602/merge'.
+2025-03-04T19:56:53.0105553Z 
+2025-03-04T19:56:53.0106188Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-04T19:56:53.0108108Z changes and commit them, and you can discard any commits you make in this
+2025-03-04T19:56:53.0109691Z state without impacting any branches by switching back to a branch.
+2025-03-04T19:56:53.0110641Z 
+2025-03-04T19:56:53.0111244Z If you want to create a new branch to retain commits you create, you may
+2025-03-04T19:56:53.0112707Z do so (now or later) by using -c with the switch command. Example:
+2025-03-04T19:56:53.0113510Z 
+2025-03-04T19:56:53.0113836Z   git switch -c <new-branch-name>
+2025-03-04T19:56:53.0114497Z 
+2025-03-04T19:56:53.0114826Z Or undo this operation with:
+2025-03-04T19:56:53.0115357Z 
+2025-03-04T19:56:53.0115643Z   git switch -
+2025-03-04T19:56:53.0116069Z 
+2025-03-04T19:56:53.0116727Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-04T19:56:53.0117909Z 
+2025-03-04T19:56:53.0119073Z HEAD is now at ef27411 Merge 63076367e6799d77dfa6dbb5b21a1351bbad25f7 into 7129f0e2fe381312b2e513c753e23990fb0268c0
+2025-03-04T19:56:53.0125743Z ##[endgroup]
+2025-03-04T19:56:53.0165604Z [command]/usr/bin/git log -1 --format=%H
+2025-03-04T19:56:53.0187877Z ef2741187db0377553fecfdff081661bee041c91
+2025-03-04T19:56:53.0373275Z ##[group]Run sudo update-alternatives --install /usr/bin/clang-format clang-format /usr/bin/clang-format-17 100
+2025-03-04T19:56:53.0374794Z [36;1msudo update-alternatives --install /usr/bin/clang-format clang-format /usr/bin/clang-format-17 100[0m
+2025-03-04T19:56:53.0376236Z [36;1msudo update-alternatives --install /usr/bin/clang-format-diff clang-format-diff /usr/bin/clang-format-diff-17 100[0m
+2025-03-04T19:56:53.0429659Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-04T19:56:53.0430345Z ##[endgroup]
+2025-03-04T19:56:53.0740744Z update-alternatives: using /usr/bin/clang-format-diff-17 to provide /usr/bin/clang-format-diff (clang-format-diff) in auto mode
+2025-03-04T19:56:53.0805781Z ##[group]Run bash script/tools/check_code_format.sh
+2025-03-04T19:56:53.0806576Z [36;1mbash script/tools/check_code_format.sh[0m
+2025-03-04T19:56:53.0854362Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-04T19:56:53.0855027Z ##[endgroup]
+2025-03-04T19:56:55.1720375Z All the source code in the PR is formatted correctly.
+2025-03-04T19:56:55.1769840Z ##[group]Run bash script/tools/check_copyright_headers.sh
+2025-03-04T19:56:55.1770287Z [36;1mbash script/tools/check_copyright_headers.sh[0m
+2025-03-04T19:56:55.1819468Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-04T19:56:55.1819842Z ##[endgroup]
+2025-03-04T19:56:55.2651005Z Invalid copyright headers found!
+2025-03-04T19:56:55.2651741Z --- src/fheroes2/heroes/heroes_move.cpp	2025-03-04 19:56:52.996082366 +0000
+2025-03-04T19:56:55.2652445Z +++ src/fheroes2/heroes/heroes_move.cpp.tmp	2025-03-04 19:56:55.258072749 +0000
+2025-03-04T19:56:55.2653130Z @@ -1,6 +1,6 @@
+2025-03-04T19:56:55.2653546Z  /***************************************************************************
+2025-03-04T19:56:55.2654440Z   *   fheroes2: https://github.com/ihhub/fheroes2                           *
+2025-03-04T19:56:55.2655438Z - *   Copyright (C) 2019 - 2024                                             *
+2025-03-04T19:56:55.2656237Z + *   Copyright (C) 2019 - 2025                                             *
+2025-03-04T19:56:55.2656624Z   *                                                                         *
+2025-03-04T19:56:55.2657246Z   *   Free Heroes2 Engine: http://sourceforge.net/projects/fheroes2         *
+2025-03-04T19:56:55.2657818Z   *   Copyright (C) 2009 by Andrey Afletdinov <fheroes2@gmail.com>          *
+2025-03-04T19:56:55.2668646Z ##[error]Process completed with exit code 1.
+2025-03-04T19:56:55.2783426Z Post job cleanup.
+2025-03-04T19:56:55.3715698Z [command]/usr/bin/git version
+2025-03-04T19:56:55.3755950Z git version 2.48.1
+2025-03-04T19:56:55.3805135Z Temporarily overriding HOME='/home/runner/work/_temp/faf373fd-b476-462c-bf24-ecc03c651ab0' before making global git config changes
+2025-03-04T19:56:55.3806427Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-04T19:56:55.3810547Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/fheroes2/fheroes2
+2025-03-04T19:56:55.3844196Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-04T19:56:55.3876421Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-04T19:56:55.4106425Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-04T19:56:55.4126438Z http.https://github.com/.extraheader
+2025-03-04T19:56:55.4138794Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-04T19:56:55.4172293Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-04T19:56:55.4504324Z Cleaning up orphan processes

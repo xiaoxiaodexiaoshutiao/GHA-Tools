@@ -1,0 +1,13 @@
+diff --git a/docker-compose.yml b/docker-compose.yml
+index 65122b02e..a981b0258 100644
+--- a/docker-compose.yml
++++ b/docker-compose.yml
+@@ -96,7 +96,7 @@ services:
+        - MAKE_PYTHON_VERSION
+      dockerfile: dockerfiles/web/Dockerfile-test
+    depends_on:
+-     - minio
++     - createbucket
+    env_file:
+      - .env
+    environment:

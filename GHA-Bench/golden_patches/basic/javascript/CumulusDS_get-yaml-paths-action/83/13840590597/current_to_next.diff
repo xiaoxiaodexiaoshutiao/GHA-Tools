@@ -1,0 +1,73 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+deleted file mode 100644
+index 07ce474..0000000
+--- a/.github/workflows/test.yml
++++ /dev/null
+@@ -1,40 +0,0 @@
+-name: test
+-
+-on: [push, pull_request]
+-
+-jobs:
+-  unit:
+-    runs-on: ubuntu-22.04
+-    strategy:
+-      matrix:
+-        node: [16]
+-    steps:
+-      - name: Checkout
+-        uses: actions/checkout@v4
+-      - name: Install Node ${{ matrix.node }}
+-        uses: actions/setup-node@v4
+-        with:
+-          node-version: ${{ matrix.node }}
+-      - name: Get yarn cache
+-        id: yarn-cache
+-        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
+-      - uses: actions/cache@v4
+-        with:
+-          path: ${{ steps.yarn-cache.outputs.dir }}
+-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+-          restore-keys: |
+-            ${{ runner.os }}-yarn-
+-      - name: Install NPM Packages
+-        run: yarn install
+-      - name: Check licenses
+-        run: yarn build:license-checker
+-      - name: Test
+-        run: yarn test
+-      - name: Build
+-        run: yarn build
+-      - name: Upload artifacts
+-        uses: actions/upload-artifact@v4
+-        with:
+-          name: upload-artifacts
+-          path: var
+-        if: always()
+diff --git a/.github/workflows/unit.yml b/.github/workflows/unit.yml
+new file mode 100644
+index 0000000..a8ca4bb
+--- /dev/null
++++ b/.github/workflows/unit.yml
+@@ -0,0 +1,21 @@
++name: Unit
++on:
++  push:
++    branches-ignore:
++      - 'dependabot/**'
++  pull_request:
++    types: [opened, synchronize, reopened]
++    branches-ignore:
++      - 'dependabot/**'
++  pull_request_target:
++    types: [opened, synchronize, reopened, ready_for_review]
++jobs:
++  unit:
++    name: Unit
++    if: | # If the PR is coming from a fork (pull_request_target), ensure it's opened by "dependabot[bot]".
++      (github.event_name == 'pull_request_target' && github.actor == 'dependabot[bot]') ||
++      (github.event_name != 'pull_request_target' && github.actor != 'dependabot[bot]')
++    uses: CumulusDS/workflows-public/.github/workflows/package-unit.yml@master
++    secrets: inherit
++    with: # account for dependabot; otherwise we want blank ref for downstream actions
++      ref: ${{ github.event.pull_request.head.sha || '' }}

@@ -1,0 +1,155 @@
+﻿2025-04-09T06:47:06.4594578Z Current runner version: '2.323.0'
+2025-04-09T06:47:06.4620951Z ##[group]Operating System
+2025-04-09T06:47:06.4621859Z Ubuntu
+2025-04-09T06:47:06.4622440Z 24.04.2
+2025-04-09T06:47:06.4622894Z LTS
+2025-04-09T06:47:06.4623398Z ##[endgroup]
+2025-04-09T06:47:06.4623889Z ##[group]Runner Image
+2025-04-09T06:47:06.4624470Z Image: ubuntu-24.04
+2025-04-09T06:47:06.4625021Z Version: 20250323.1.0
+2025-04-09T06:47:06.4626009Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-09T06:47:06.4627548Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-04-09T06:47:06.4628384Z ##[endgroup]
+2025-04-09T06:47:06.4628985Z ##[group]Runner Image Provisioner
+2025-04-09T06:47:06.4629536Z 2.0.422.1
+2025-04-09T06:47:06.4629977Z ##[endgroup]
+2025-04-09T06:47:06.4632264Z ##[group]GITHUB_TOKEN Permissions
+2025-04-09T06:47:06.4634378Z Actions: read
+2025-04-09T06:47:06.4635154Z Attestations: read
+2025-04-09T06:47:06.4635813Z Checks: read
+2025-04-09T06:47:06.4636274Z Contents: read
+2025-04-09T06:47:06.4636976Z Deployments: read
+2025-04-09T06:47:06.4637527Z Discussions: read
+2025-04-09T06:47:06.4638099Z Issues: read
+2025-04-09T06:47:06.4638558Z Metadata: read
+2025-04-09T06:47:06.4639011Z Models: read
+2025-04-09T06:47:06.4639506Z Packages: read
+2025-04-09T06:47:06.4639998Z Pages: read
+2025-04-09T06:47:06.4640452Z PullRequests: read
+2025-04-09T06:47:06.4640982Z RepositoryProjects: read
+2025-04-09T06:47:06.4641541Z SecurityEvents: read
+2025-04-09T06:47:06.4642009Z Statuses: read
+2025-04-09T06:47:06.4642544Z ##[endgroup]
+2025-04-09T06:47:06.4644482Z Secret source: None
+2025-04-09T06:47:06.4645213Z Prepare workflow directory
+2025-04-09T06:47:06.5034173Z Prepare all required actions
+2025-04-09T06:47:06.5071604Z Getting action download info
+2025-04-09T06:47:07.0326993Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-09T06:47:07.0328185Z Version: 4.2.2
+2025-04-09T06:47:07.0329105Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-09T06:47:07.0330196Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-09T06:47:07.0330833Z ##[endgroup]
+2025-04-09T06:47:07.1334818Z Download action repository 'reviewdog/action-eslint@v1' (SHA:2fee6dd72a5419ff4113f694e2068d2a03bb35dd)
+2025-04-09T06:47:07.3788708Z Download action repository 'codecov/codecov-action@v5' (SHA:0565863a31f2c772f9f0395002a31e3f06189574)
+2025-04-09T06:47:07.6819523Z Download action repository 'codecov/test-results-action@v1' (SHA:f2dba722c67b86c6caa034178c6e4d35335f6706)
+2025-04-09T06:47:08.1822199Z Complete job name: Frontend - Tests / Frontend - Tests
+2025-04-09T06:47:08.2614051Z ##[group]Run actions/checkout@v4
+2025-04-09T06:47:08.2615295Z with:
+2025-04-09T06:47:08.2615998Z   ref: uniform_Scroll
+2025-04-09T06:47:08.2617060Z   repository: kestra-io/kestra
+2025-04-09T06:47:08.2618250Z   token: ***
+2025-04-09T06:47:08.2618974Z   ssh-strict: true
+2025-04-09T06:47:08.2619715Z   ssh-user: git
+2025-04-09T06:47:08.2620494Z   persist-credentials: true
+2025-04-09T06:47:08.2621339Z   clean: true
+2025-04-09T06:47:08.2622100Z   sparse-checkout-cone-mode: true
+2025-04-09T06:47:08.2623022Z   fetch-depth: 1
+2025-04-09T06:47:08.2623760Z   fetch-tags: false
+2025-04-09T06:47:08.2624524Z   show-progress: true
+2025-04-09T06:47:08.2625278Z   lfs: false
+2025-04-09T06:47:08.2625971Z   submodules: false
+2025-04-09T06:47:08.2626731Z   set-safe-directory: true
+2025-04-09T06:47:08.2690276Z env:
+2025-04-09T06:47:08.2691062Z   COREPACK_INTEGRITY_KEYS: 0
+2025-04-09T06:47:08.2691947Z ##[endgroup]
+2025-04-09T06:47:08.5006311Z Syncing repository: kestra-io/kestra
+2025-04-09T06:47:08.5009521Z ##[group]Getting Git version info
+2025-04-09T06:47:08.5010858Z Working directory is '/home/runner/work/kestra/kestra'
+2025-04-09T06:47:08.5013040Z [command]/usr/bin/git version
+2025-04-09T06:47:08.5067253Z git version 2.49.0
+2025-04-09T06:47:08.5109388Z ##[endgroup]
+2025-04-09T06:47:08.5127984Z Temporarily overriding HOME='/home/runner/work/_temp/c0dd1677-5aa5-4d89-a85c-61d76bbbafa2' before making global git config changes
+2025-04-09T06:47:08.5130867Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-09T06:47:08.5134916Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/kestra/kestra
+2025-04-09T06:47:08.5177683Z Deleting the contents of '/home/runner/work/kestra/kestra'
+2025-04-09T06:47:08.5183472Z ##[group]Initializing the repository
+2025-04-09T06:47:08.5189527Z [command]/usr/bin/git init /home/runner/work/kestra/kestra
+2025-04-09T06:47:08.5262256Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-09T06:47:08.5264437Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-09T06:47:08.5266097Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-09T06:47:08.5268247Z hint:
+2025-04-09T06:47:08.5269705Z hint: 	git config --global init.defaultBranch <name>
+2025-04-09T06:47:08.5271492Z hint:
+2025-04-09T06:47:08.5272681Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-09T06:47:08.5274416Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-09T06:47:08.5275719Z hint:
+2025-04-09T06:47:08.5276408Z hint: 	git branch -m <name>
+2025-04-09T06:47:08.5278168Z Initialized empty Git repository in /home/runner/work/kestra/kestra/.git/
+2025-04-09T06:47:08.5287877Z [command]/usr/bin/git remote add origin https://github.com/kestra-io/kestra
+2025-04-09T06:47:08.5333822Z ##[endgroup]
+2025-04-09T06:47:08.5338117Z ##[group]Disabling automatic garbage collection
+2025-04-09T06:47:08.5340269Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-09T06:47:08.5373496Z ##[endgroup]
+2025-04-09T06:47:08.5376143Z ##[group]Setting up auth
+2025-04-09T06:47:08.5381877Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-09T06:47:08.5414202Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-09T06:47:08.5750616Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-09T06:47:08.5783695Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-09T06:47:08.6017858Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-09T06:47:08.6057446Z ##[endgroup]
+2025-04-09T06:47:08.6059019Z ##[group]Fetching the repository
+2025-04-09T06:47:08.6067601Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/uniform_Scroll*:refs/remotes/origin/uniform_Scroll* +refs/tags/uniform_Scroll*:refs/tags/uniform_Scroll*
+2025-04-09T06:47:08.8192757Z The process '/usr/bin/git' failed with exit code 1
+2025-04-09T06:47:08.8194197Z Waiting 11 seconds before trying again
+2025-04-09T06:47:19.8211357Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/uniform_Scroll*:refs/remotes/origin/uniform_Scroll* +refs/tags/uniform_Scroll*:refs/tags/uniform_Scroll*
+2025-04-09T06:47:20.0202979Z The process '/usr/bin/git' failed with exit code 1
+2025-04-09T06:47:20.0203663Z Waiting 14 seconds before trying again
+2025-04-09T06:47:34.0246032Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/uniform_Scroll*:refs/remotes/origin/uniform_Scroll* +refs/tags/uniform_Scroll*:refs/tags/uniform_Scroll*
+2025-04-09T06:47:34.2696221Z ##[error]The process '/usr/bin/git' failed with exit code 1
+2025-04-09T06:47:34.2933747Z ##[group]Run codecov/test-results-action@v1
+2025-04-09T06:47:34.2934092Z with:
+2025-04-09T06:47:34.2934297Z   flags: frontend
+2025-04-09T06:47:34.2934523Z env:
+2025-04-09T06:47:34.2934934Z   COREPACK_INTEGRITY_KEYS: 0
+2025-04-09T06:47:34.2935192Z ##[endgroup]
+2025-04-09T06:47:34.3746986Z ==> linux OS detected
+2025-04-09T06:47:34.6799825Z https://cli.codecov.io/latest/linux/codecov.SHA256SUM
+2025-04-09T06:47:34.7464047Z gpg: directory '/home/runner/.gnupg' created
+2025-04-09T06:47:34.7468149Z gpg: keybox '/home/runner/.gnupg/pubring.kbx' created
+2025-04-09T06:47:34.7490384Z gpg: /home/runner/.gnupg/trustdb.gpg: trustdb created
+2025-04-09T06:47:34.7491949Z gpg: key 806BB28AED779869: public key "Codecov Uploader (Codecov Uploader Verification Key) <security@codecov.io>" imported
+2025-04-09T06:47:34.7616972Z gpg: Total number processed: 1
+2025-04-09T06:47:34.7617559Z gpg:               imported: 1
+2025-04-09T06:47:34.7685169Z gpg: Signature made Wed Apr  9 03:02:55 2025 UTC
+2025-04-09T06:47:34.7685891Z gpg:                using RSA key 27034E7FDB850E0BBC2C62FF806BB28AED779869
+2025-04-09T06:47:34.7688543Z gpg: Good signature from "Codecov Uploader (Codecov Uploader Verification Key) <security@codecov.io>" [unknown]
+2025-04-09T06:47:34.7691310Z gpg: WARNING: This key is not certified with a trusted signature!
+2025-04-09T06:47:34.7692241Z gpg:          There is no indication that the signature belongs to the owner.
+2025-04-09T06:47:34.7693175Z Primary key fingerprint: 2703 4E7F DB85 0E0B BC2C  62FF 806B B28A ED77 9869
+2025-04-09T06:47:34.8359311Z ==> Uploader SHASUM verified (0f7aadde579ebde1443ad2f977beada703f562997fdda603f213faf2a8559868  codecov)
+2025-04-09T06:47:34.8360280Z ==> Running version latest
+2025-04-09T06:47:34.8487385Z ==> Running version v10.4.0
+2025-04-09T06:47:34.8495734Z eventName: pull_request
+2025-04-09T06:47:34.8496416Z baseRef: kestra-io:develop | headRef: Piyush-r-bhaskar:uniform_Scroll
+2025-04-09T06:47:34.8497445Z ==> Fork detected, tokenless uploading used
+2025-04-09T06:47:34.8500704Z ==> Running command '/home/runner/work/_actions/codecov/test-results-action/v1/dist/codecov do-upload'
+2025-04-09T06:47:34.8521744Z [command]/home/runner/work/_actions/codecov/test-results-action/v1/dist/codecov do-upload -F frontend -B Piyush-r-bhaskar:uniform_Scroll -C 796ad5cfe47f729433ee201718be7dbc8e97d89c --report-type test_results
+2025-04-09T06:47:35.5918100Z info - 2025-04-09 06:47:35,589 -- ci service found: github-actions
+2025-04-09T06:47:35.5965495Z warning - 2025-04-09 06:47:35,596 -- No config file could be found. Ignoring config.
+2025-04-09T06:47:35.6342558Z info - 2025-04-09 06:47:35,633 -- Found 0 test_results files to report
+2025-04-09T06:47:35.6348809Z error - 2025-04-09 06:47:35,634 -- No JUnit XML reports found. Please review our documentation (https://docs.codecov.com/docs/test-result-ingestion-beta) to generate and upload the file.
+2025-04-09T06:47:36.0259667Z info - 2025-04-09 06:47:36,025 -- No test results reports found. Triggering notifications without uploading.
+2025-04-09T06:47:36.0260847Z info - 2025-04-09 06:47:36,025 -- Process Upload complete
+2025-04-09T06:47:36.2098323Z Post job cleanup.
+2025-04-09T06:47:36.3036606Z [command]/usr/bin/git version
+2025-04-09T06:47:36.3077835Z git version 2.49.0
+2025-04-09T06:47:36.3129067Z Temporarily overriding HOME='/home/runner/work/_temp/1366ec55-9331-41bc-8ca1-0d16d557d1d0' before making global git config changes
+2025-04-09T06:47:36.3130255Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-09T06:47:36.3134557Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/kestra/kestra
+2025-04-09T06:47:36.3172837Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-09T06:47:36.3210477Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-09T06:47:36.3461737Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-09T06:47:36.3485210Z http.https://github.com/.extraheader
+2025-04-09T06:47:36.3498040Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-09T06:47:36.3531841Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-09T06:47:36.3882711Z Cleaning up orphan processes

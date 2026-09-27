@@ -1,0 +1,217 @@
+2025-03-12T12:10:14.2947957Z Requested labels: ubuntu-latest
+2025-03-12T12:10:14.2948211Z Job defined at: PriorLabs/TabPFN/.github/workflows/pull_request.yml@refs/pull/240/merge
+2025-03-12T12:10:14.2948340Z Waiting for a runner to pick up this job...
+2025-03-12T12:10:16.5895173Z Job is waiting for a hosted runner to come online.
+2025-03-12T12:10:19.0982450Z Job is about to start running on the hosted runner: GitHub Actions 54 (hosted)
+2025-03-12T12:10:21.4535790Z Current runner version: '2.322.0'
+2025-03-12T12:10:21.4559848Z ##[group]Operating System
+2025-03-12T12:10:21.4560683Z Ubuntu
+2025-03-12T12:10:21.4561188Z 24.04.2
+2025-03-12T12:10:21.4561654Z LTS
+2025-03-12T12:10:21.4562179Z ##[endgroup]
+2025-03-12T12:10:21.4562882Z ##[group]Runner Image
+2025-03-12T12:10:21.4563423Z Image: ubuntu-24.04
+2025-03-12T12:10:21.4564018Z Version: 20250309.1.0
+2025-03-12T12:10:21.4565045Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250309.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-12T12:10:21.4566336Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250309.1
+2025-03-12T12:10:21.4567283Z ##[endgroup]
+2025-03-12T12:10:21.4567815Z ##[group]Runner Image Provisioner
+2025-03-12T12:10:21.4568435Z 2.0.422.1
+2025-03-12T12:10:21.4568940Z ##[endgroup]
+2025-03-12T12:10:21.4569967Z ##[group]GITHUB_TOKEN Permissions
+2025-03-12T12:10:21.4571777Z Contents: read
+2025-03-12T12:10:21.4572480Z Metadata: read
+2025-03-12T12:10:21.4573214Z Packages: read
+2025-03-12T12:10:21.4573839Z ##[endgroup]
+2025-03-12T12:10:21.4576637Z Secret source: Actions
+2025-03-12T12:10:21.4577352Z Prepare workflow directory
+2025-03-12T12:10:21.4881439Z Prepare all required actions
+2025-03-12T12:10:21.4917237Z Getting action download info
+2025-03-12T12:10:21.7272137Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-12T12:10:21.8375232Z Download action repository 'chartboost/ruff-action@v1' (SHA:e18ae971ccee1b2d7bbef113930f00c670b78da4)
+2025-03-12T12:10:22.3502544Z Complete job name: Ruff Linting & Formatting
+2025-03-12T12:10:22.4168630Z ##[group]Run actions/checkout@v4
+2025-03-12T12:10:22.4169484Z with:
+2025-03-12T12:10:22.4169946Z   repository: PriorLabs/TabPFN
+2025-03-12T12:10:22.4170633Z   token: ***
+2025-03-12T12:10:22.4171081Z   ssh-strict: true
+2025-03-12T12:10:22.4171539Z   ssh-user: git
+2025-03-12T12:10:22.4172007Z   persist-credentials: true
+2025-03-12T12:10:22.4172696Z   clean: true
+2025-03-12T12:10:22.4173180Z   sparse-checkout-cone-mode: true
+2025-03-12T12:10:22.4173718Z   fetch-depth: 1
+2025-03-12T12:10:22.4174174Z   fetch-tags: false
+2025-03-12T12:10:22.4174643Z   show-progress: true
+2025-03-12T12:10:22.4175106Z   lfs: false
+2025-03-12T12:10:22.4175527Z   submodules: false
+2025-03-12T12:10:22.4175994Z   set-safe-directory: true
+2025-03-12T12:10:22.4176738Z ##[endgroup]
+2025-03-12T12:10:22.7266200Z Syncing repository: PriorLabs/TabPFN
+2025-03-12T12:10:22.7267844Z ##[group]Getting Git version info
+2025-03-12T12:10:22.7268506Z Working directory is '/home/runner/work/TabPFN/TabPFN'
+2025-03-12T12:10:22.7269467Z [command]/usr/bin/git version
+2025-03-12T12:10:22.7370414Z git version 2.48.1
+2025-03-12T12:10:22.7399768Z ##[endgroup]
+2025-03-12T12:10:22.7413132Z Temporarily overriding HOME='/home/runner/work/_temp/98934213-220c-4265-897c-05d2259ed26a' before making global git config changes
+2025-03-12T12:10:22.7414472Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-12T12:10:22.7418189Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/TabPFN/TabPFN
+2025-03-12T12:10:22.7458011Z Deleting the contents of '/home/runner/work/TabPFN/TabPFN'
+2025-03-12T12:10:22.7461820Z ##[group]Initializing the repository
+2025-03-12T12:10:22.7465913Z [command]/usr/bin/git init /home/runner/work/TabPFN/TabPFN
+2025-03-12T12:10:22.7601192Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-12T12:10:22.7602905Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-12T12:10:22.7604281Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-12T12:10:22.7604973Z hint:
+2025-03-12T12:10:22.7605451Z hint: 	git config --global init.defaultBranch <name>
+2025-03-12T12:10:22.7606019Z hint:
+2025-03-12T12:10:22.7606570Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-12T12:10:22.7607443Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-12T12:10:22.7608381Z hint:
+2025-03-12T12:10:22.7608763Z hint: 	git branch -m <name>
+2025-03-12T12:10:22.7610107Z Initialized empty Git repository in /home/runner/work/TabPFN/TabPFN/.git/
+2025-03-12T12:10:22.7621092Z [command]/usr/bin/git remote add origin https://github.com/PriorLabs/TabPFN
+2025-03-12T12:10:22.7656885Z ##[endgroup]
+2025-03-12T12:10:22.7657608Z ##[group]Disabling automatic garbage collection
+2025-03-12T12:10:22.7662252Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-12T12:10:22.7691230Z ##[endgroup]
+2025-03-12T12:10:22.7692662Z ##[group]Setting up auth
+2025-03-12T12:10:22.7698824Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-12T12:10:22.7732920Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-12T12:10:22.8107522Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-12T12:10:22.8137142Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-12T12:10:22.8364975Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-12T12:10:22.8403830Z ##[endgroup]
+2025-03-12T12:10:22.8405246Z ##[group]Fetching the repository
+2025-03-12T12:10:22.8414871Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +7a223077420d1e2c3cdbd3c3429bdc47c4c620d3:refs/remotes/pull/240/merge
+2025-03-12T12:10:25.6482873Z From https://github.com/PriorLabs/TabPFN
+2025-03-12T12:10:25.6484655Z  * [new ref]         7a223077420d1e2c3cdbd3c3429bdc47c4c620d3 -> pull/240/merge
+2025-03-12T12:10:25.6515999Z ##[endgroup]
+2025-03-12T12:10:25.6517307Z ##[group]Determining the checkout info
+2025-03-12T12:10:25.6518829Z ##[endgroup]
+2025-03-12T12:10:25.6522618Z [command]/usr/bin/git sparse-checkout disable
+2025-03-12T12:10:25.6569500Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-12T12:10:25.6599645Z ##[group]Checking out the ref
+2025-03-12T12:10:25.6603422Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/240/merge
+2025-03-12T12:10:25.6726751Z Note: switching to 'refs/remotes/pull/240/merge'.
+2025-03-12T12:10:25.6728302Z 
+2025-03-12T12:10:25.6730103Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-12T12:10:25.6732252Z changes and commit them, and you can discard any commits you make in this
+2025-03-12T12:10:25.6734816Z state without impacting any branches by switching back to a branch.
+2025-03-12T12:10:25.6736089Z 
+2025-03-12T12:10:25.6736946Z If you want to create a new branch to retain commits you create, you may
+2025-03-12T12:10:25.6738786Z do so (now or later) by using -c with the switch command. Example:
+2025-03-12T12:10:25.6739878Z 
+2025-03-12T12:10:25.6740606Z   git switch -c <new-branch-name>
+2025-03-12T12:10:25.6741378Z 
+2025-03-12T12:10:25.6741833Z Or undo this operation with:
+2025-03-12T12:10:25.6742983Z 
+2025-03-12T12:10:25.6743402Z   git switch -
+2025-03-12T12:10:25.6744011Z 
+2025-03-12T12:10:25.6745009Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-12T12:10:25.6746405Z 
+2025-03-12T12:10:25.6748525Z HEAD is now at 7a22307 Merge a8949cde4fa2efdd39cb72902c8073d44cb20808 into 865e581730f4c9d8e53cfa150f8c22d116515c9a
+2025-03-12T12:10:25.6753439Z ##[endgroup]
+2025-03-12T12:10:25.6780385Z [command]/usr/bin/git log -1 --format=%H
+2025-03-12T12:10:25.6808006Z 7a223077420d1e2c3cdbd3c3429bdc47c4c620d3
+2025-03-12T12:10:25.7229011Z ##[group]Run chartboost/ruff-action@v1
+2025-03-12T12:10:25.7230168Z with:
+2025-03-12T12:10:25.7230925Z   src: ./src ./tests
+2025-03-12T12:10:25.7231795Z   version: 0.8.6
+2025-03-12T12:10:25.7232825Z   args: check
+2025-03-12T12:10:25.7233617Z ##[endgroup]
+2025-03-12T12:10:25.7343916Z ##[group]Run if [ "$RUNNER_OS" == "Windows" ]; then
+2025-03-12T12:10:25.7345329Z [36;1mif [ "$RUNNER_OS" == "Windows" ]; then[0m
+2025-03-12T12:10:25.7346661Z [36;1m  python $GITHUB_ACTION_PATH/action/main.py[0m
+2025-03-12T12:10:25.7347864Z [36;1melse[0m
+2025-03-12T12:10:25.7348819Z [36;1m  python3 $GITHUB_ACTION_PATH/action/main.py[0m
+2025-03-12T12:10:25.7350012Z [36;1mfi[0m
+2025-03-12T12:10:25.7402082Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-12T12:10:25.7403691Z env:
+2025-03-12T12:10:25.7404446Z   RUFF_FORMAT: github
+2025-03-12T12:10:25.7405326Z   INPUT_ARGS: check
+2025-03-12T12:10:25.7406143Z   INPUT_SRC: ./src ./tests
+2025-03-12T12:10:25.7407081Z   INPUT_VERSION: 0.8.6
+2025-03-12T12:10:25.7407958Z   pythonioencoding: utf-8
+2025-03-12T12:10:25.7408828Z ##[endgroup]
+2025-03-12T12:10:26.5305249Z creating virtual environment...
+2025-03-12T12:10:26.8579864Z installing ruff from spec 'ruff==0.8.6'...
+2025-03-12T12:10:32.9271930Z tests/test_classifier_interface.py:1:1: I001 [*] Import block is un-sorted or un-formatted
+2025-03-12T12:10:32.9273030Z    |
+2025-03-12T12:10:32.9273372Z  1 | / from __future__ import annotations
+2025-03-12T12:10:32.9273831Z  2 | | 
+2025-03-12T12:10:32.9274123Z  3 | | import io
+2025-03-12T12:10:32.9274482Z  4 | | import os
+2025-03-12T12:10:32.9274798Z  5 | | import typing
+2025-03-12T12:10:32.9275131Z  6 | | import sys
+2025-03-12T12:10:32.9275466Z  7 | | from itertools import product
+2025-03-12T12:10:32.9275888Z  8 | | from typing import Callable, Literal
+2025-03-12T12:10:32.9276309Z  9 | | 
+2025-03-12T12:10:32.9276590Z 10 | | import numpy as np
+2025-03-12T12:10:32.9277001Z 11 | | import pytest
+2025-03-12T12:10:32.9277422Z 12 | | import sklearn.datasets
+2025-03-12T12:10:32.9277842Z 13 | | import torch
+2025-03-12T12:10:32.9278227Z 14 | | from sklearn import config_context
+2025-03-12T12:10:32.9278746Z 15 | | from sklearn.base import check_is_fitted
+2025-03-12T12:10:32.9279333Z 16 | | from sklearn.pipeline import Pipeline
+2025-03-12T12:10:32.9279947Z 17 | | from sklearn.preprocessing import StandardScaler
+2025-03-12T12:10:32.9280653Z 18 | | from sklearn.utils.estimator_checks import parametrize_with_checks
+2025-03-12T12:10:32.9281285Z 19 | | from torch import nn
+2025-03-12T12:10:32.9281648Z 20 | | 
+2025-03-12T12:10:32.9281987Z 21 | | from tabpfn import TabPFNClassifier
+2025-03-12T12:10:32.9282791Z 22 | | from tabpfn.preprocessing import PreprocessorConfig
+2025-03-12T12:10:32.9283342Z 23 | | 
+2025-03-12T12:10:32.9283642Z 24 | | devices = ["cpu"]
+2025-03-12T12:10:32.9284004Z    | |_^ I001
+2025-03-12T12:10:32.9284546Z 25 |   if torch.cuda.is_available():
+2025-03-12T12:10:32.9285197Z 26 |       devices.append("cuda")
+2025-03-12T12:10:32.9285616Z    |
+2025-03-12T12:10:32.9285983Z    = help: Organize imports
+2025-03-12T12:10:32.9286256Z 
+2025-03-12T12:10:32.9286694Z tests/test_regressor_interface.py:1:1: I001 [*] Import block is un-sorted or un-formatted
+2025-03-12T12:10:32.9287442Z    |
+2025-03-12T12:10:32.9287811Z  1 | / from __future__ import annotations
+2025-03-12T12:10:32.9288274Z  2 | | 
+2025-03-12T12:10:32.9288575Z  3 | | import io
+2025-03-12T12:10:32.9288893Z  4 | | import os
+2025-03-12T12:10:32.9289246Z  5 | | import typing
+2025-03-12T12:10:32.9289603Z  6 | | import sys
+2025-03-12T12:10:32.9289970Z  7 | | from itertools import product
+2025-03-12T12:10:32.9290456Z  8 | | from typing import Callable, Literal
+2025-03-12T12:10:32.9290898Z  9 | | 
+2025-03-12T12:10:32.9291216Z 10 | | import numpy as np
+2025-03-12T12:10:32.9291605Z 11 | | import pytest
+2025-03-12T12:10:32.9292031Z 12 | | import sklearn.datasets
+2025-03-12T12:10:32.9292709Z 13 | | import torch
+2025-03-12T12:10:32.9293105Z 14 | | from sklearn import config_context
+2025-03-12T12:10:32.9294089Z 15 | | from sklearn.base import check_is_fitted
+2025-03-12T12:10:32.9294685Z 16 | | from sklearn.pipeline import Pipeline
+2025-03-12T12:10:32.9295267Z 17 | | from sklearn.preprocessing import StandardScaler
+2025-03-12T12:10:32.9295885Z 18 | | from sklearn.utils.estimator_checks import parametrize_with_checks
+2025-03-12T12:10:32.9296481Z 19 | | from torch import nn
+2025-03-12T12:10:32.9296697Z 20 | | 
+2025-03-12T12:10:32.9296895Z 21 | | from tabpfn import TabPFNRegressor
+2025-03-12T12:10:32.9297248Z 22 | | from tabpfn.preprocessing import PreprocessorConfig
+2025-03-12T12:10:32.9297538Z 23 | | 
+2025-03-12T12:10:32.9297704Z 24 | | devices = ["cpu"]
+2025-03-12T12:10:32.9297906Z    | |_^ I001
+2025-03-12T12:10:32.9298099Z 25 |   if torch.cuda.is_available():
+2025-03-12T12:10:32.9298354Z 26 |       devices.append("cuda")
+2025-03-12T12:10:32.9298567Z    |
+2025-03-12T12:10:32.9298741Z    = help: Organize imports
+2025-03-12T12:10:32.9298890Z 
+2025-03-12T12:10:32.9298964Z Found 2 errors.
+2025-03-12T12:10:32.9299242Z [*] 2 fixable with the `--fix` option.
+2025-03-12T12:10:32.9353499Z ##[error]Process completed with exit code 1.
+2025-03-12T12:10:32.9468303Z Post job cleanup.
+2025-03-12T12:10:33.0392946Z [command]/usr/bin/git version
+2025-03-12T12:10:33.0434183Z git version 2.48.1
+2025-03-12T12:10:33.0477196Z Temporarily overriding HOME='/home/runner/work/_temp/48d72576-2bf0-44b4-9e33-daaba4a7ea4e' before making global git config changes
+2025-03-12T12:10:33.0478571Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-12T12:10:33.0483490Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/TabPFN/TabPFN
+2025-03-12T12:10:33.0516929Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-12T12:10:33.0549759Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-12T12:10:33.0773406Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-12T12:10:33.0792224Z http.https://github.com/.extraheader
+2025-03-12T12:10:33.0804594Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-12T12:10:33.0835623Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-12T12:10:33.1156140Z Cleaning up orphan processes

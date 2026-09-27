@@ -1,0 +1,325 @@
+﻿2025-04-04T08:05:09.8205856Z Current runner version: '2.323.0'
+2025-04-04T08:05:09.8232922Z ##[group]Operating System
+2025-04-04T08:05:09.8233827Z Ubuntu
+2025-04-04T08:05:09.8234361Z 24.04.2
+2025-04-04T08:05:09.8234864Z LTS
+2025-04-04T08:05:09.8235441Z ##[endgroup]
+2025-04-04T08:05:09.8235966Z ##[group]Runner Image
+2025-04-04T08:05:09.8236592Z Image: ubuntu-24.04
+2025-04-04T08:05:09.8237209Z Version: 20250323.1.0
+2025-04-04T08:05:09.8238232Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-04T08:05:09.8239863Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-04-04T08:05:09.8240825Z ##[endgroup]
+2025-04-04T08:05:09.8241409Z ##[group]Runner Image Provisioner
+2025-04-04T08:05:09.8241994Z 2.0.422.1
+2025-04-04T08:05:09.8242504Z ##[endgroup]
+2025-04-04T08:05:09.8246255Z ##[group]GITHUB_TOKEN Permissions
+2025-04-04T08:05:09.8248585Z Actions: read
+2025-04-04T08:05:09.8249408Z Attestations: read
+2025-04-04T08:05:09.8250254Z Checks: read
+2025-04-04T08:05:09.8250734Z Contents: read
+2025-04-04T08:05:09.8251217Z Deployments: read
+2025-04-04T08:05:09.8251658Z Discussions: read
+2025-04-04T08:05:09.8252231Z Issues: read
+2025-04-04T08:05:09.8252662Z Metadata: read
+2025-04-04T08:05:09.8253118Z Models: read
+2025-04-04T08:05:09.8253635Z Packages: read
+2025-04-04T08:05:09.8254123Z Pages: read
+2025-04-04T08:05:09.8254583Z PullRequests: read
+2025-04-04T08:05:09.8255149Z RepositoryProjects: read
+2025-04-04T08:05:09.8255695Z SecurityEvents: read
+2025-04-04T08:05:09.8256167Z Statuses: read
+2025-04-04T08:05:09.8256726Z ##[endgroup]
+2025-04-04T08:05:09.8258853Z Secret source: None
+2025-04-04T08:05:09.8259896Z Prepare workflow directory
+2025-04-04T08:05:09.8769397Z Prepare all required actions
+2025-04-04T08:05:09.8807020Z Getting action download info
+2025-04-04T08:05:10.2765388Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-04T08:05:10.2766557Z Version: 4.2.2
+2025-04-04T08:05:10.2767542Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-04T08:05:10.2768715Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-04T08:05:10.2769699Z ##[endgroup]
+2025-04-04T08:05:10.4083983Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-04-04T08:05:10.4084675Z Version: 5.5.0
+2025-04-04T08:05:10.4085297Z Digest: sha256:1fac95d751afd58314aebd2ab01d4bf3b3109a441917bd2cac2a22898ec494f7
+2025-04-04T08:05:10.4086140Z Source commit SHA: 8d9ed9ac5c53483de85588cdf95a591a75ab9f55
+2025-04-04T08:05:10.4086727Z ##[endgroup]
+2025-04-04T08:05:10.7052225Z Complete job name: doctest
+2025-04-04T08:05:10.7737727Z ##[group]Run actions/checkout@v4
+2025-04-04T08:05:10.7738563Z with:
+2025-04-04T08:05:10.7739019Z   repository: stefanfoulis/django-phonenumber-field
+2025-04-04T08:05:10.7739975Z   token: ***
+2025-04-04T08:05:10.7740343Z   ssh-strict: true
+2025-04-04T08:05:10.7740718Z   ssh-user: git
+2025-04-04T08:05:10.7741097Z   persist-credentials: true
+2025-04-04T08:05:10.7741521Z   clean: true
+2025-04-04T08:05:10.7741935Z   sparse-checkout-cone-mode: true
+2025-04-04T08:05:10.7742397Z   fetch-depth: 1
+2025-04-04T08:05:10.7742771Z   fetch-tags: false
+2025-04-04T08:05:10.7743149Z   show-progress: true
+2025-04-04T08:05:10.7743527Z   lfs: false
+2025-04-04T08:05:10.7743871Z   submodules: false
+2025-04-04T08:05:10.7744252Z   set-safe-directory: true
+2025-04-04T08:05:10.7744943Z env:
+2025-04-04T08:05:10.7745288Z   TOXENV: doctest
+2025-04-04T08:05:10.7745655Z ##[endgroup]
+2025-04-04T08:05:11.0419909Z Syncing repository: stefanfoulis/django-phonenumber-field
+2025-04-04T08:05:11.0422003Z ##[group]Getting Git version info
+2025-04-04T08:05:11.0422922Z Working directory is '/home/runner/work/django-phonenumber-field/django-phonenumber-field'
+2025-04-04T08:05:11.0424024Z [command]/usr/bin/git version
+2025-04-04T08:05:11.0527654Z git version 2.49.0
+2025-04-04T08:05:11.0559040Z ##[endgroup]
+2025-04-04T08:05:11.0574626Z Temporarily overriding HOME='/home/runner/work/_temp/123a66b5-c084-4b42-b8db-02f7547fd101' before making global git config changes
+2025-04-04T08:05:11.0576273Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-04T08:05:11.0580764Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/django-phonenumber-field/django-phonenumber-field
+2025-04-04T08:05:11.0623082Z Deleting the contents of '/home/runner/work/django-phonenumber-field/django-phonenumber-field'
+2025-04-04T08:05:11.0627071Z ##[group]Initializing the repository
+2025-04-04T08:05:11.0632113Z [command]/usr/bin/git init /home/runner/work/django-phonenumber-field/django-phonenumber-field
+2025-04-04T08:05:11.0750209Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-04T08:05:11.0751835Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-04T08:05:11.0752927Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-04T08:05:11.0753584Z hint:
+2025-04-04T08:05:11.0754094Z hint: 	git config --global init.defaultBranch <name>
+2025-04-04T08:05:11.0754683Z hint:
+2025-04-04T08:05:11.0755205Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-04T08:05:11.0756059Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-04T08:05:11.0756735Z hint:
+2025-04-04T08:05:11.0757090Z hint: 	git branch -m <name>
+2025-04-04T08:05:11.0760645Z Initialized empty Git repository in /home/runner/work/django-phonenumber-field/django-phonenumber-field/.git/
+2025-04-04T08:05:11.0773372Z [command]/usr/bin/git remote add origin https://github.com/stefanfoulis/django-phonenumber-field
+2025-04-04T08:05:11.0812210Z ##[endgroup]
+2025-04-04T08:05:11.0812894Z ##[group]Disabling automatic garbage collection
+2025-04-04T08:05:11.0816846Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-04T08:05:11.0847066Z ##[endgroup]
+2025-04-04T08:05:11.0847704Z ##[group]Setting up auth
+2025-04-04T08:05:11.0855097Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-04T08:05:11.0887752Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-04T08:05:11.1262206Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-04T08:05:11.1294092Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-04T08:05:11.1537974Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-04T08:05:11.1579036Z ##[endgroup]
+2025-04-04T08:05:11.1588161Z ##[group]Fetching the repository
+2025-04-04T08:05:11.1589671Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5c619a931a614828a8af00297ff9c0011bd5c171:refs/remotes/pull/631/merge
+2025-04-04T08:05:11.4284554Z From https://github.com/stefanfoulis/django-phonenumber-field
+2025-04-04T08:05:11.4286877Z  * [new ref]         5c619a931a614828a8af00297ff9c0011bd5c171 -> pull/631/merge
+2025-04-04T08:05:11.4316686Z ##[endgroup]
+2025-04-04T08:05:11.4318532Z ##[group]Determining the checkout info
+2025-04-04T08:05:11.4320835Z ##[endgroup]
+2025-04-04T08:05:11.4325391Z [command]/usr/bin/git sparse-checkout disable
+2025-04-04T08:05:11.4376937Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-04T08:05:11.4412036Z ##[group]Checking out the ref
+2025-04-04T08:05:11.4417116Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/631/merge
+2025-04-04T08:05:11.4510094Z Note: switching to 'refs/remotes/pull/631/merge'.
+2025-04-04T08:05:11.4510944Z 
+2025-04-04T08:05:11.4511756Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-04T08:05:11.4514223Z changes and commit them, and you can discard any commits you make in this
+2025-04-04T08:05:11.4517162Z state without impacting any branches by switching back to a branch.
+2025-04-04T08:05:11.4518693Z 
+2025-04-04T08:05:11.4519944Z If you want to create a new branch to retain commits you create, you may
+2025-04-04T08:05:11.4522174Z do so (now or later) by using -c with the switch command. Example:
+2025-04-04T08:05:11.4523588Z 
+2025-04-04T08:05:11.4524148Z   git switch -c <new-branch-name>
+2025-04-04T08:05:11.4525084Z 
+2025-04-04T08:05:11.4525616Z Or undo this operation with:
+2025-04-04T08:05:11.4526406Z 
+2025-04-04T08:05:11.4526813Z   git switch -
+2025-04-04T08:05:11.4527565Z 
+2025-04-04T08:05:11.4528632Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-04T08:05:11.4530478Z 
+2025-04-04T08:05:11.4532019Z HEAD is now at 5c619a9 Merge 10eea1f23a9ade1b7f781772c6b5777204218939 into 52b6663adae87b49362b545122396cff9994f445
+2025-04-04T08:05:11.4535803Z ##[endgroup]
+2025-04-04T08:05:11.4562026Z [command]/usr/bin/git log -1 --format=%H
+2025-04-04T08:05:11.4586808Z 5c619a931a614828a8af00297ff9c0011bd5c171
+2025-04-04T08:05:11.4903284Z ##[group]Run actions/setup-python@v5
+2025-04-04T08:05:11.4904389Z with:
+2025-04-04T08:05:11.4905096Z   python-version: 3.x
+2025-04-04T08:05:11.4905924Z   cache: pip
+2025-04-04T08:05:11.4906670Z   check-latest: false
+2025-04-04T08:05:11.4907789Z   token: ***
+2025-04-04T08:05:11.4908547Z   update-environment: true
+2025-04-04T08:05:11.4909664Z   allow-prereleases: false
+2025-04-04T08:05:11.4910570Z   freethreaded: false
+2025-04-04T08:05:11.4911365Z env:
+2025-04-04T08:05:11.4912024Z   TOXENV: doctest
+2025-04-04T08:05:11.4912759Z ##[endgroup]
+2025-04-04T08:05:11.6747720Z ##[group]Installed versions
+2025-04-04T08:05:11.6806785Z Successfully set up CPython (3.13.2)
+2025-04-04T08:05:11.6808538Z ##[endgroup]
+2025-04-04T08:05:11.7345304Z [command]/opt/hostedtoolcache/Python/3.13.2/x64/bin/pip cache dir
+2025-04-04T08:05:12.0352957Z /home/runner/.cache/pip
+2025-04-04T08:05:12.1747735Z Cache hit for: setup-python-Linux-x64-24.04-Ubuntu-python-3.13.2-pip-da7df6b5ddc3947d84acbbcb56093e4f3c399e1e622e9573725d2cd83cbd75dc
+2025-04-04T08:05:12.3854549Z Received 17475594 of 17475594 (100.0%), 95.8 MBs/sec
+2025-04-04T08:05:12.3855693Z Cache Size: ~17 MB (17475594 B)
+2025-04-04T08:05:12.3888495Z [command]/usr/bin/tar -xf /home/runner/work/_temp/61cc6e95-112e-4947-b0d2-dfbe26489a19/cache.tzst -P -C /home/runner/work/django-phonenumber-field/django-phonenumber-field --use-compress-program unzstd
+2025-04-04T08:05:12.4314983Z Cache restored successfully
+2025-04-04T08:05:12.4373025Z Cache restored from key: setup-python-Linux-x64-24.04-Ubuntu-python-3.13.2-pip-da7df6b5ddc3947d84acbbcb56093e4f3c399e1e622e9573725d2cd83cbd75dc
+2025-04-04T08:05:12.4605802Z ##[group]Run python -m pip install tox
+2025-04-04T08:05:12.4606429Z [36;1mpython -m pip install tox[0m
+2025-04-04T08:05:12.4662757Z shell: /usr/bin/bash -e {0}
+2025-04-04T08:05:12.4663250Z env:
+2025-04-04T08:05:12.4663613Z   TOXENV: doctest
+2025-04-04T08:05:12.4664080Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-04T08:05:12.4664752Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-04-04T08:05:12.4665352Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-04T08:05:12.4665913Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-04T08:05:12.4666489Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-04T08:05:12.4667052Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-04-04T08:05:12.4667557Z ##[endgroup]
+2025-04-04T08:05:13.1430704Z Collecting tox
+2025-04-04T08:05:13.1445584Z   Using cached tox-4.25.0-py3-none-any.whl.metadata (3.7 kB)
+2025-04-04T08:05:13.1683618Z Collecting cachetools>=5.5.1 (from tox)
+2025-04-04T08:05:13.1695789Z   Using cached cachetools-5.5.2-py3-none-any.whl.metadata (5.4 kB)
+2025-04-04T08:05:13.1832994Z Collecting chardet>=5.2 (from tox)
+2025-04-04T08:05:13.1844136Z   Using cached chardet-5.2.0-py3-none-any.whl.metadata (3.4 kB)
+2025-04-04T08:05:13.2020354Z Collecting colorama>=0.4.6 (from tox)
+2025-04-04T08:05:13.2031843Z   Using cached colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+2025-04-04T08:05:13.2232389Z Collecting filelock>=3.16.1 (from tox)
+2025-04-04T08:05:13.2244504Z   Using cached filelock-3.18.0-py3-none-any.whl.metadata (2.9 kB)
+2025-04-04T08:05:13.2431807Z Collecting packaging>=24.2 (from tox)
+2025-04-04T08:05:13.2445067Z   Using cached packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+2025-04-04T08:05:13.2625421Z Collecting platformdirs>=4.3.6 (from tox)
+2025-04-04T08:05:13.2637932Z   Using cached platformdirs-4.3.7-py3-none-any.whl.metadata (11 kB)
+2025-04-04T08:05:13.2797807Z Collecting pluggy>=1.5 (from tox)
+2025-04-04T08:05:13.2809237Z   Using cached pluggy-1.5.0-py3-none-any.whl.metadata (4.8 kB)
+2025-04-04T08:05:13.2957035Z Collecting pyproject-api>=1.8 (from tox)
+2025-04-04T08:05:13.2968589Z   Using cached pyproject_api-1.9.0-py3-none-any.whl.metadata (2.7 kB)
+2025-04-04T08:05:13.3384193Z Collecting virtualenv>=20.29.1 (from tox)
+2025-04-04T08:05:13.3397988Z   Using cached virtualenv-20.30.0-py3-none-any.whl.metadata (4.5 kB)
+2025-04-04T08:05:13.3642280Z Collecting distlib<1,>=0.3.7 (from virtualenv>=20.29.1->tox)
+2025-04-04T08:05:13.3654958Z   Using cached distlib-0.3.9-py2.py3-none-any.whl.metadata (5.2 kB)
+2025-04-04T08:05:13.3754359Z Using cached tox-4.25.0-py3-none-any.whl (172 kB)
+2025-04-04T08:05:13.3767259Z Using cached cachetools-5.5.2-py3-none-any.whl (10 kB)
+2025-04-04T08:05:13.3778675Z Using cached chardet-5.2.0-py3-none-any.whl (199 kB)
+2025-04-04T08:05:13.3791728Z Using cached colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+2025-04-04T08:05:13.3803252Z Using cached filelock-3.18.0-py3-none-any.whl (16 kB)
+2025-04-04T08:05:13.3814427Z Using cached packaging-24.2-py3-none-any.whl (65 kB)
+2025-04-04T08:05:13.3826173Z Using cached platformdirs-4.3.7-py3-none-any.whl (18 kB)
+2025-04-04T08:05:13.3837726Z Using cached pluggy-1.5.0-py3-none-any.whl (20 kB)
+2025-04-04T08:05:13.3848440Z Using cached pyproject_api-1.9.0-py3-none-any.whl (13 kB)
+2025-04-04T08:05:13.3859463Z Using cached virtualenv-20.30.0-py3-none-any.whl (4.3 MB)
+2025-04-04T08:05:13.3904442Z Using cached distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+2025-04-04T08:05:13.4278988Z Installing collected packages: distlib, pluggy, platformdirs, packaging, filelock, colorama, chardet, cachetools, virtualenv, pyproject-api, tox
+2025-04-04T08:05:14.1403243Z Successfully installed cachetools-5.5.2 chardet-5.2.0 colorama-0.4.6 distlib-0.3.9 filelock-3.18.0 packaging-24.2 platformdirs-4.3.7 pluggy-1.5.0 pyproject-api-1.9.0 tox-4.25.0 virtualenv-20.30.0
+2025-04-04T08:05:14.2449861Z ##[group]Run tox
+2025-04-04T08:05:14.2450119Z [36;1mtox[0m
+2025-04-04T08:05:14.2500407Z shell: /usr/bin/bash -e {0}
+2025-04-04T08:05:14.2500648Z env:
+2025-04-04T08:05:14.2500819Z   TOXENV: doctest
+2025-04-04T08:05:14.2501088Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-04T08:05:14.2501501Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-04-04T08:05:14.2501903Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-04T08:05:14.2502275Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-04T08:05:14.2502634Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-04T08:05:14.2503011Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-04-04T08:05:14.2503313Z ##[endgroup]
+2025-04-04T08:05:14.8147166Z doctest: install_deps> python -I -m pip install beautifulsoup4 django djangorestframework Sphinx sphinx-rtd-theme
+2025-04-04T08:05:22.7419243Z .pkg: install_requires> python -I -m pip install 'setuptools>=42' 'setuptools_scm[toml]>=3.4'
+2025-04-04T08:05:24.9706135Z .pkg: _optional_hooks> python /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+2025-04-04T08:05:25.1654385Z .pkg: get_requires_for_build_sdist> python /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+2025-04-04T08:05:25.4768516Z .pkg: freeze> python -m pip freeze --all
+2025-04-04T08:05:25.7121312Z .pkg: packaging==24.2,pip==25.0.1,setuptools==78.1.0,setuptools-scm==8.2.0
+2025-04-04T08:05:25.7125473Z .pkg: build_sdist> python /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages/pyproject_api/_backend.py True setuptools.build_meta
+2025-04-04T08:05:26.0817856Z doctest: install_package_deps> python -I -m pip install 'Django>=4.2' 'phonenumberslite>=7.0.2'
+2025-04-04T08:05:27.0434108Z doctest: install_package> python -I -m pip install --force-reinstall --no-deps /home/runner/work/django-phonenumber-field/django-phonenumber-field/.tox/.tmp/package/1/django_phonenumber_field-0.1.dev1+g5c619a9.tar.gz
+2025-04-04T08:05:30.3875621Z doctest: freeze> python -m pip freeze --all
+2025-04-04T08:05:30.6421449Z doctest: alabaster==1.0.0,asgiref==3.8.1,babel==2.17.0,beautifulsoup4==4.13.3,certifi==2025.1.31,charset-normalizer==3.4.1,Django==5.2,django-phonenumber-field @ file:///home/runner/work/django-phonenumber-field/django-phonenumber-field/.tox/.tmp/package/1/django_phonenumber_field-0.1.dev1%2Bg5c619a9.tar.gz#sha256=48a3043177d4ea239da54efd4144675b12fb896f2af26a38b71296f8a3b50cb5,djangorestframework==3.16.0,docutils==0.21.2,idna==3.10,imagesize==1.4.1,Jinja2==3.1.6,MarkupSafe==3.0.2,packaging==24.2,phonenumberslite==9.0.2,pip==25.0.1,Pygments==2.19.1,requests==2.32.3,roman-numerals-py==3.1.0,snowballstemmer==2.2.0,soupsieve==2.6,Sphinx==8.2.3,sphinx-rtd-theme==3.0.2,sphinxcontrib-applehelp==2.0.0,sphinxcontrib-devhelp==2.0.0,sphinxcontrib-htmlhelp==2.1.0,sphinxcontrib-jquery==4.1,sphinxcontrib-jsmath==1.0.1,sphinxcontrib-qthelp==2.0.0,sphinxcontrib-serializinghtml==2.0.0,sqlparse==0.5.3,typing_extensions==4.13.1,urllib3==2.3.0
+2025-04-04T08:05:30.6426593Z doctest: commands[0] /home/runner/work/django-phonenumber-field/django-phonenumber-field/docs> make doctest
+2025-04-04T08:05:30.8211872Z Running Sphinx v8.2.3
+2025-04-04T08:05:30.8221057Z loading translations [en]... done
+2025-04-04T08:05:31.1280598Z making output directory... done
+2025-04-04T08:05:31.1312284Z loading intersphinx inventory 'django' from https://docs.djangoproject.com/en/dev/_objects/ ...
+2025-04-04T08:05:31.1316674Z loading intersphinx inventory 'python' from https://docs.python.org/3/objects.inv ...
+2025-04-04T08:05:31.5491926Z intersphinx inventory has moved: https://docs.djangoproject.com/en/dev/_objects/ -> https://docs.djangoproject.com/en/dev/objects.inv
+2025-04-04T08:05:31.5930598Z building [mo]: targets for 0 po files that are out of date
+2025-04-04T08:05:31.5932434Z writing output... 
+2025-04-04T08:05:31.5933939Z building [doctest]: targets for 3 source files that are out of date
+2025-04-04T08:05:31.5943158Z updating environment: [new config] 3 added, 0 changed, 0 removed
+2025-04-04T08:05:31.5944313Z reading sources... [ 33%] index
+2025-04-04T08:05:31.6149731Z reading sources... [ 67%] phonenumbers
+2025-04-04T08:05:31.6194337Z reading sources... [100%] reference
+2025-04-04T08:05:32.2590829Z 
+2025-04-04T08:05:32.2593455Z looking for now-outdated files... none found
+2025-04-04T08:05:32.3037250Z pickling environment... done
+2025-04-04T08:05:32.3038554Z checking consistency... done
+2025-04-04T08:05:32.3041920Z preparing documents... done
+2025-04-04T08:05:32.3042469Z copying assets... 
+2025-04-04T08:05:32.3042874Z copying assets: done
+2025-04-04T08:05:32.3043269Z running tests...
+2025-04-04T08:05:32.3053615Z 
+2025-04-04T08:05:32.3054884Z Document: phonenumbers
+2025-04-04T08:05:32.3055237Z ----------------------
+2025-04-04T08:05:32.3066120Z 1 item passed all tests:
+2025-04-04T08:05:32.3066527Z    3 tests in extensions
+2025-04-04T08:05:32.3066864Z 3 tests in 1 item.
+2025-04-04T08:05:32.3067174Z 3 passed.
+2025-04-04T08:05:32.3067357Z Test passed.
+2025-04-04T08:05:32.3511250Z 
+2025-04-04T08:05:32.3511849Z Document: reference
+2025-04-04T08:05:32.3512338Z -------------------
+2025-04-04T08:05:32.4736475Z **********************************************************************
+2025-04-04T08:05:32.4742544Z File "reference.rst", line 142, in formfield
+2025-04-04T08:05:32.4742914Z Failed example:
+2025-04-04T08:05:32.4743477Z     print_html(form.as_div())
+2025-04-04T08:05:32.4743732Z Expected:
+2025-04-04T08:05:32.4743917Z     <div>
+2025-04-04T08:05:32.4744110Z      <label for="id_number">
+2025-04-04T08:05:32.4744351Z       Number:
+2025-04-04T08:05:32.4744543Z      </label>
+2025-04-04T08:05:32.4744741Z      <ul class="errorlist">
+2025-04-04T08:05:32.4744978Z       <li>
+2025-04-04T08:05:32.4745355Z        Enter a valid phone number (e.g. (506) 234-5678) or a number with an international call prefix.
+2025-04-04T08:05:32.4745792Z       </li>
+2025-04-04T08:05:32.4745988Z      </ul>
+2025-04-04T08:05:32.4746373Z      <input aria-invalid="true" id="id_number" name="number" required="" type="tel" value="invalid"/>
+2025-04-04T08:05:32.4746828Z     </div>
+2025-04-04T08:05:32.4747003Z Got:
+2025-04-04T08:05:32.4747183Z     <div>
+2025-04-04T08:05:32.4747436Z      <label for="id_number">
+2025-04-04T08:05:32.4747669Z       Number:
+2025-04-04T08:05:32.4747861Z      </label>
+2025-04-04T08:05:32.4748090Z      <ul class="errorlist" id="id_number_error">
+2025-04-04T08:05:32.4748382Z       <li>
+2025-04-04T08:05:32.4748751Z        Enter a valid phone number (e.g. (506) 234-5678) or a number with an international call prefix.
+2025-04-04T08:05:32.4749186Z       </li>
+2025-04-04T08:05:32.4749364Z      </ul>
+2025-04-04T08:05:32.4750112Z      <input aria-describedby="id_number_error" aria-invalid="true" id="id_number" name="number" required="" type="tel" value="invalid"/>
+2025-04-04T08:05:32.4750689Z     </div>
+2025-04-04T08:05:32.5297710Z 6 items passed all tests:
+2025-04-04T08:05:32.5298447Z    4 tests in SplitPhoneNumberField.basic
+2025-04-04T08:05:32.5299025Z    5 tests in SplitPhoneNumberField.country_choices
+2025-04-04T08:05:32.5299833Z   10 tests in SplitPhoneNumberField.preselecting_country
+2025-04-04T08:05:32.5300375Z    7 tests in fallbackwidget
+2025-04-04T08:05:32.5300770Z    8 tests in serializerfield
+2025-04-04T08:05:32.5301152Z    9 tests in wrapper
+2025-04-04T08:05:32.5301503Z **********************************************************************
+2025-04-04T08:05:32.5301978Z 1 item had failures:
+2025-04-04T08:05:32.5302343Z    1 of   9 in formfield
+2025-04-04T08:05:32.5302706Z 52 tests in 7 items.
+2025-04-04T08:05:32.5303031Z 51 passed and 1 failed.
+2025-04-04T08:05:32.5303410Z ***Test Failed*** 1 failure.
+2025-04-04T08:05:32.5303692Z 
+2025-04-04T08:05:32.5303827Z Doctest summary
+2025-04-04T08:05:32.5304134Z ===============
+2025-04-04T08:05:32.5304436Z    55 tests
+2025-04-04T08:05:32.5304731Z     1 failure in tests
+2025-04-04T08:05:32.5305369Z     0 failures in setup code
+2025-04-04T08:05:32.5305775Z     0 failures in cleanup code
+2025-04-04T08:05:32.5306186Z build finished with problems.
+2025-04-04T08:05:32.7273914Z make: *** [Makefile:20: doctest] Error 1
+2025-04-04T08:05:32.7284174Z doctest: exit 2 (2.09 seconds) /home/runner/work/django-phonenumber-field/django-phonenumber-field/docs> make doctest pid=2101
+2025-04-04T08:05:32.7293642Z   doctest: FAIL code 2 (18.09=setup[16.00]+cmd[2.09] seconds)
+2025-04-04T08:05:32.7294032Z   evaluation failed :( (18.18 seconds)
+2025-04-04T08:05:32.7644706Z ##[error]Process completed with exit code 2.
+2025-04-04T08:05:32.7743790Z Post job cleanup.
+2025-04-04T08:05:32.8708939Z [command]/usr/bin/git version
+2025-04-04T08:05:32.8755086Z git version 2.49.0
+2025-04-04T08:05:32.8808326Z Temporarily overriding HOME='/home/runner/work/_temp/37fef6d3-d724-4bca-807f-6c125cb007a6' before making global git config changes
+2025-04-04T08:05:32.8809917Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-04T08:05:32.8815665Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/django-phonenumber-field/django-phonenumber-field
+2025-04-04T08:05:32.8855506Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-04T08:05:32.8891738Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-04T08:05:32.9153757Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-04T08:05:32.9177980Z http.https://github.com/.extraheader
+2025-04-04T08:05:32.9191492Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-04T08:05:32.9225283Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-04T08:05:32.9581268Z Cleaning up orphan processes

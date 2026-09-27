@@ -1,0 +1,42 @@
+diff --git a/.github/workflows/pre_commit.yml b/.github/workflows/pre_commit.yml
+index 9987dc7c..904c0290 100644
+--- a/.github/workflows/pre_commit.yml
++++ b/.github/workflows/pre_commit.yml
+@@ -18,9 +18,9 @@ jobs:
+         with:
+           ref: ${{ github.head_ref }}
+ 
+-      - uses: pre-commit/action@v2.0.3
++      - uses: pre-commit/action@v3.0.1
+ 
+       - uses: stefanzweifel/git-auto-commit-action@v5
+-        if: '!cancelled()'
++        if: "!cancelled()"
+         with:
+           commit_message: pre-commit autofixes
+diff --git a/.pre-commit-config.yaml b/.pre-commit-config.yaml
+index a8ba12d6..5f02073d 100644
+--- a/.pre-commit-config.yaml
++++ b/.pre-commit-config.yaml
+@@ -17,7 +17,7 @@ repos:
+       - id: pyproject-fmt
+         exclude: ^src/dso/templates/.*$
+   - repo: https://github.com/astral-sh/ruff-pre-commit
+-    rev: v0.11.2
++    rev: v0.11.6
+     hooks:
+       - id: ruff
+         types_or: [python, pyi, jupyter]
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index d17f5b36..362273b8 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning][].
+ 
+ ### Additions
+ 
+--   Add `dso status` and `dso push` as a wrappers for the respective `dvc` commands ([#112](https://github.com/Boehringer-Ingelheim/dso/pull/112)).
++-   Add `dso status` and `dso push` as a wrappers for the respective `dvc` commands ([#114](https://github.com/Boehringer-Ingelheim/dso/pull/112)).
+ 
+ ### Chore
+ 

@@ -1,0 +1,30 @@
+diff --git a/src/theme/Details/index.js b/src/theme/Details/index.js
+index 984e3c34c3..3642c7c897 100644
+--- a/src/theme/Details/index.js
++++ b/src/theme/Details/index.js
+@@ -1,15 +1,16 @@
+-import React from 'react';
++import { Details as DetailsGeneric } from '@docusaurus/theme-common/Details';
+ import clsx from 'clsx';
+-import {Details as DetailsGeneric} from '@docusaurus/theme-common/Details';
++import React from 'react';
++
+ import styles from './styles.module.css';
+ // Should we have a custom details/summary comp in Infima instead of reusing
+ // alert classes?
+ const InfimaClasses = 'alert alert--info';
+-export default function Details({...props}) {
+-  return (
+-    <DetailsGeneric
+-      {...props}
+-      className={clsx(InfimaClasses, styles.details, props.className)}
+-    />
+-  );
++export default function Details({ ...props }) {
++    return (
++        <DetailsGeneric
++            {...props}
++            className={clsx(InfimaClasses, styles.details, props.className)}
++        />
++    );
+ }

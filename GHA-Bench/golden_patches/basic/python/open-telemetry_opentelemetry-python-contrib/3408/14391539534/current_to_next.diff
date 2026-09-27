@@ -1,0 +1,17 @@
+diff --git a/instrumentation/opentelemetry-instrumentation-asyncio/tests/test_asyncio_duplicate_instrument.py b/instrumentation/opentelemetry-instrumentation-asyncio/tests/test_asyncio_duplicate_instrument.py
+index 4f6e0ea26f..ac6706407d 100644
+--- a/instrumentation/opentelemetry-instrumentation-asyncio/tests/test_asyncio_duplicate_instrument.py
++++ b/instrumentation/opentelemetry-instrumentation-asyncio/tests/test_asyncio_duplicate_instrument.py
+@@ -61,10 +61,10 @@ def test_duplicate_instrumentation_of_futures(self):
+         self.assertLessEqual(
+             len(fut1._callbacks),
+             1,
+-            f"fut1 has {len(fut1._callbacks)} callbacks. Potential leak!"
++            f"fut1 has {len(fut1._callbacks)} callbacks. Potential leak!",
+         )
+         self.assertLessEqual(
+             len(fut2._callbacks),
+             1,
+-            f"fut2 has {len(fut2._callbacks)} callbacks. Potential leak!"
++            f"fut2 has {len(fut2._callbacks)} callbacks. Potential leak!",
+         )

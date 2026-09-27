@@ -1,0 +1,436 @@
+2025-02-15T19:15:43.2780626Z Requested labels: ubuntu-latest
+2025-02-15T19:15:43.2780920Z Job defined at: EternalCodeTeam/EternalCore/.github/workflows/gradle.yml@refs/pull/918/merge
+2025-02-15T19:15:43.2781054Z Waiting for a runner to pick up this job...
+2025-02-15T19:15:43.8373272Z Job is waiting for a hosted runner to come online.
+2025-02-15T19:15:46.5257955Z Job is about to start running on the hosted runner: GitHub Actions 18 (hosted)
+2025-02-15T19:15:48.5829165Z Current runner version: '2.322.0'
+2025-02-15T19:15:48.5853744Z ##[group]Operating System
+2025-02-15T19:15:48.5854635Z Ubuntu
+2025-02-15T19:15:48.5855164Z 24.04.1
+2025-02-15T19:15:48.5855685Z LTS
+2025-02-15T19:15:48.5856237Z ##[endgroup]
+2025-02-15T19:15:48.5856776Z ##[group]Runner Image
+2025-02-15T19:15:48.5857348Z Image: ubuntu-24.04
+2025-02-15T19:15:48.5857958Z Version: 20250209.1.0
+2025-02-15T19:15:48.5859335Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250209.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-15T19:15:48.5861431Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250209.1
+2025-02-15T19:15:48.5862386Z ##[endgroup]
+2025-02-15T19:15:48.5862956Z ##[group]Runner Image Provisioner
+2025-02-15T19:15:48.5863615Z 2.0.422.1
+2025-02-15T19:15:48.5864146Z ##[endgroup]
+2025-02-15T19:15:48.5866379Z ##[group]GITHUB_TOKEN Permissions
+2025-02-15T19:15:48.5868422Z Actions: write
+2025-02-15T19:15:48.5869381Z Attestations: write
+2025-02-15T19:15:48.5870172Z Checks: write
+2025-02-15T19:15:48.5870665Z Contents: write
+2025-02-15T19:15:48.5871269Z Deployments: write
+2025-02-15T19:15:48.5871805Z Discussions: write
+2025-02-15T19:15:48.5872319Z Issues: write
+2025-02-15T19:15:48.5872911Z Metadata: read
+2025-02-15T19:15:48.5873403Z Packages: write
+2025-02-15T19:15:48.5873909Z Pages: write
+2025-02-15T19:15:48.5874501Z PullRequests: write
+2025-02-15T19:15:48.5875062Z RepositoryProjects: write
+2025-02-15T19:15:48.5875697Z SecurityEvents: write
+2025-02-15T19:15:48.5876237Z Statuses: write
+2025-02-15T19:15:48.5876749Z ##[endgroup]
+2025-02-15T19:15:48.5880045Z Secret source: Actions
+2025-02-15T19:15:48.5881155Z Prepare workflow directory
+2025-02-15T19:15:48.6293673Z Prepare all required actions
+2025-02-15T19:15:48.6330286Z Getting action download info
+2025-02-15T19:15:48.8688745Z ##[group]Download immutable action package 'actions/checkout@v4.2.2'
+2025-02-15T19:15:48.8690279Z Version: 4.2.2
+2025-02-15T19:15:48.8691283Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-02-15T19:15:48.8692423Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-02-15T19:15:48.8693111Z ##[endgroup]
+2025-02-15T19:15:48.9434740Z ##[group]Download immutable action package 'actions/setup-java@v4.7.0'
+2025-02-15T19:15:48.9435539Z Version: 4.7.0
+2025-02-15T19:15:48.9436238Z Digest: sha256:5f5c07139c6dc32a599e9e0b973af500cb67a72aa7e5c437df96130dd73c8479
+2025-02-15T19:15:48.9437204Z Source commit SHA: 3a4f6e1af504cf6a31855fa899c6aa5355ba6c12
+2025-02-15T19:15:48.9437885Z ##[endgroup]
+2025-02-15T19:15:49.2341242Z ##[group]Download immutable action package 'actions/cache@v4.2.0'
+2025-02-15T19:15:49.2342032Z Version: 4.2.0
+2025-02-15T19:15:49.2342753Z Digest: sha256:5bc11090595acbf82dbfb02747bf0bfd91544e869357fd3ac0eb41f509632110
+2025-02-15T19:15:49.2343695Z Source commit SHA: 1bd1e32a3bdc45362d1e726936510720a7c30a57
+2025-02-15T19:15:49.2344356Z ##[endgroup]
+2025-02-15T19:15:49.5143384Z ##[group]Download immutable action package 'actions/upload-artifact@v4.6.0'
+2025-02-15T19:15:49.5144528Z Version: 4.6.0
+2025-02-15T19:15:49.5145513Z Digest: sha256:bf85474c8423f9cd48bd2caf3ce5adb1711e2dfdb055b040bd36b044e4290329
+2025-02-15T19:15:49.5146836Z Source commit SHA: 65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
+2025-02-15T19:15:49.5147765Z ##[endgroup]
+2025-02-15T19:15:49.7355725Z Complete job name: build (17)
+2025-02-15T19:15:49.8210390Z ##[group]Run actions/checkout@v4.2.2
+2025-02-15T19:15:49.8211857Z with:
+2025-02-15T19:15:49.8212711Z   repository: EternalCodeTeam/EternalCore
+2025-02-15T19:15:49.8214202Z   token: ***
+2025-02-15T19:15:49.8215000Z   ssh-strict: true
+2025-02-15T19:15:49.8215822Z   ssh-user: git
+2025-02-15T19:15:49.8216661Z   persist-credentials: true
+2025-02-15T19:15:49.8218117Z   clean: true
+2025-02-15T19:15:49.8219170Z   sparse-checkout-cone-mode: true
+2025-02-15T19:15:49.8220243Z   fetch-depth: 1
+2025-02-15T19:15:49.8221059Z   fetch-tags: false
+2025-02-15T19:15:49.8221911Z   show-progress: true
+2025-02-15T19:15:49.8222765Z   lfs: false
+2025-02-15T19:15:49.8223849Z   submodules: false
+2025-02-15T19:15:49.8224710Z   set-safe-directory: true
+2025-02-15T19:15:49.8225972Z ##[endgroup]
+2025-02-15T19:15:50.0059796Z Syncing repository: EternalCodeTeam/EternalCore
+2025-02-15T19:15:50.0063096Z ##[group]Getting Git version info
+2025-02-15T19:15:50.0064765Z Working directory is '/home/runner/work/EternalCore/EternalCore'
+2025-02-15T19:15:50.0067167Z [command]/usr/bin/git version
+2025-02-15T19:15:50.0107776Z git version 2.48.1
+2025-02-15T19:15:50.0135129Z ##[endgroup]
+2025-02-15T19:15:50.0149157Z Temporarily overriding HOME='/home/runner/work/_temp/c1951ba4-1b74-4996-bee5-398f0614b092' before making global git config changes
+2025-02-15T19:15:50.0151936Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-15T19:15:50.0155354Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/EternalCore/EternalCore
+2025-02-15T19:15:50.0189267Z Deleting the contents of '/home/runner/work/EternalCore/EternalCore'
+2025-02-15T19:15:50.0193056Z ##[group]Initializing the repository
+2025-02-15T19:15:50.0197343Z [command]/usr/bin/git init /home/runner/work/EternalCore/EternalCore
+2025-02-15T19:15:50.0265333Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-15T19:15:50.0267923Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-15T19:15:50.0271218Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-15T19:15:50.0273111Z hint:
+2025-02-15T19:15:50.0274188Z hint: 	git config --global init.defaultBranch <name>
+2025-02-15T19:15:50.0275374Z hint:
+2025-02-15T19:15:50.0276730Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-15T19:15:50.0278782Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-15T19:15:50.0280561Z hint:
+2025-02-15T19:15:50.0281328Z hint: 	git branch -m <name>
+2025-02-15T19:15:50.0283271Z Initialized empty Git repository in /home/runner/work/EternalCore/EternalCore/.git/
+2025-02-15T19:15:50.0286540Z [command]/usr/bin/git remote add origin https://github.com/EternalCodeTeam/EternalCore
+2025-02-15T19:15:50.0316713Z ##[endgroup]
+2025-02-15T19:15:50.0318253Z ##[group]Disabling automatic garbage collection
+2025-02-15T19:15:50.0320301Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-15T19:15:50.0350003Z ##[endgroup]
+2025-02-15T19:15:50.0351430Z ##[group]Setting up auth
+2025-02-15T19:15:50.0355194Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-15T19:15:50.0387890Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-15T19:15:50.0679235Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-15T19:15:50.0710989Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-15T19:15:50.0951701Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-15T19:15:50.0986891Z ##[endgroup]
+2025-02-15T19:15:50.0989192Z ##[group]Fetching the repository
+2025-02-15T19:15:50.0996716Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +27054c81d3bee15270725558b6cebc6fa9e780b3:refs/remotes/pull/918/merge
+2025-02-15T19:15:50.6318249Z From https://github.com/EternalCodeTeam/EternalCore
+2025-02-15T19:15:50.6320845Z  * [new ref]         27054c81d3bee15270725558b6cebc6fa9e780b3 -> pull/918/merge
+2025-02-15T19:15:50.6355877Z ##[endgroup]
+2025-02-15T19:15:50.6357243Z ##[group]Determining the checkout info
+2025-02-15T19:15:50.6359946Z ##[endgroup]
+2025-02-15T19:15:50.6366220Z [command]/usr/bin/git sparse-checkout disable
+2025-02-15T19:15:50.6412070Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-15T19:15:50.6444097Z ##[group]Checking out the ref
+2025-02-15T19:15:50.6446615Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/918/merge
+2025-02-15T19:15:50.6930320Z Note: switching to 'refs/remotes/pull/918/merge'.
+2025-02-15T19:15:50.6931495Z 
+2025-02-15T19:15:50.6932333Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-15T19:15:50.6934285Z changes and commit them, and you can discard any commits you make in this
+2025-02-15T19:15:50.6937280Z state without impacting any branches by switching back to a branch.
+2025-02-15T19:15:50.6939239Z 
+2025-02-15T19:15:50.6940331Z If you want to create a new branch to retain commits you create, you may
+2025-02-15T19:15:50.6942962Z do so (now or later) by using -c with the switch command. Example:
+2025-02-15T19:15:50.6944501Z 
+2025-02-15T19:15:50.6945222Z   git switch -c <new-branch-name>
+2025-02-15T19:15:50.6946408Z 
+2025-02-15T19:15:50.6947062Z Or undo this operation with:
+2025-02-15T19:15:50.6948197Z 
+2025-02-15T19:15:50.6948781Z   git switch -
+2025-02-15T19:15:50.6949711Z 
+2025-02-15T19:15:50.6950889Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-15T19:15:50.6952644Z 
+2025-02-15T19:15:50.6954661Z HEAD is now at 27054c8 Merge 412837900b95e6243da4dda54a2fff865af81c69 into 17e9e0c8c8523593943506cc5e5b8003608874bd
+2025-02-15T19:15:50.6959336Z ##[endgroup]
+2025-02-15T19:15:50.6985940Z [command]/usr/bin/git log -1 --format=%H
+2025-02-15T19:15:50.7010431Z 27054c81d3bee15270725558b6cebc6fa9e780b3
+2025-02-15T19:15:50.7330262Z ##[group]Run actions/setup-java@v4.7.0
+2025-02-15T19:15:50.7331283Z with:
+2025-02-15T19:15:50.7331983Z   distribution: adopt
+2025-02-15T19:15:50.7332793Z   java-version: 17
+2025-02-15T19:15:50.7333567Z   java-package: jdk
+2025-02-15T19:15:50.7334365Z   check-latest: false
+2025-02-15T19:15:50.7335170Z   server-id: github
+2025-02-15T19:15:50.7335977Z   server-username: GITHUB_ACTOR
+2025-02-15T19:15:50.7336925Z   server-password: GITHUB_TOKEN
+2025-02-15T19:15:50.7337879Z   overwrite-settings: true
+2025-02-15T19:15:50.7338747Z   job-status: success
+2025-02-15T19:15:50.7340104Z   token: ***
+2025-02-15T19:15:50.7340841Z ##[endgroup]
+2025-02-15T19:15:50.9403912Z ##[group]Installed distributions
+2025-02-15T19:15:50.9430084Z Trying to resolve the latest version from remote
+2025-02-15T19:15:51.3293326Z Resolved latest version as 17.0.14+7
+2025-02-15T19:15:51.3295292Z Trying to download...
+2025-02-15T19:15:51.3298651Z Downloading Java 17.0.14+7 (Adopt-Hotspot) from https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.14%2B7/OpenJDK17U-jdk_x64_linux_hotspot_17.0.14_7.tar.gz ...
+2025-02-15T19:15:52.3348263Z Extracting Java archive...
+2025-02-15T19:15:52.3484369Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/902e7234-0747-479a-9eae-6e99004ab191 -f /home/runner/work/_temp/5115938f-fa2e-4f5c-9ac4-c07914c24ded
+2025-02-15T19:15:54.9032760Z Java 17.0.14+7 was downloaded
+2025-02-15T19:15:54.9033360Z Setting Java 17.0.14+7 as the default
+2025-02-15T19:15:54.9042252Z Creating toolchains.xml for JDK version 17 from adopt
+2025-02-15T19:15:54.9115531Z Writing to /home/runner/.m2/toolchains.xml
+2025-02-15T19:15:54.9116077Z 
+2025-02-15T19:15:54.9119370Z Java configuration:
+2025-02-15T19:15:54.9119796Z   Distribution: adopt
+2025-02-15T19:15:54.9120182Z   Version: 17.0.14+7
+2025-02-15T19:15:54.9120649Z   Path: /opt/hostedtoolcache/Java_Adopt_jdk/17.0.14-7/x64
+2025-02-15T19:15:54.9121075Z 
+2025-02-15T19:15:54.9121605Z ##[endgroup]
+2025-02-15T19:15:54.9135719Z Creating settings.xml with server-id: github
+2025-02-15T19:15:54.9136639Z Writing to /home/runner/.m2/settings.xml
+2025-02-15T19:15:55.1893667Z ##[group]Run actions/cache@v4.2.0
+2025-02-15T19:15:55.1894021Z with:
+2025-02-15T19:15:55.1894262Z   path: ~/.gradle/caches
+2025-02-15T19:15:55.1894784Z   key: Linux-gradle-dd1d8d6ea4929a3b38087cd126ee769eeeb542c975ce6dc2a6f8f9ae17cf2d5e
+2025-02-15T19:15:55.1895270Z   restore-keys: Linux-gradle-
+2025-02-15T19:15:55.1895769Z   enableCrossOsArchive: false
+2025-02-15T19:15:55.1896006Z   fail-on-cache-miss: false
+2025-02-15T19:15:55.1896238Z   lookup-only: false
+2025-02-15T19:15:55.1896447Z   save-always: false
+2025-02-15T19:15:55.1896653Z env:
+2025-02-15T19:15:55.1896918Z   JAVA_HOME: /opt/hostedtoolcache/Java_Adopt_jdk/17.0.14-7/x64
+2025-02-15T19:15:55.1897313Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Adopt_jdk/17.0.14-7/x64
+2025-02-15T19:15:55.1897640Z ##[endgroup]
+2025-02-15T19:15:55.4445690Z Cache hit for: Linux-gradle-dd1d8d6ea4929a3b38087cd126ee769eeeb542c975ce6dc2a6f8f9ae17cf2d5e
+2025-02-15T19:15:56.5954483Z Received 130023424 of 260409216 (49.9%), 123.9 MBs/sec
+2025-02-15T19:15:57.6615327Z Received 260409216 of 260409216 (100.0%), 120.1 MBs/sec
+2025-02-15T19:15:57.6618358Z Cache Size: ~248 MB (260409216 B)
+2025-02-15T19:15:57.6662549Z [command]/usr/bin/tar -xf /home/runner/work/_temp/5c7a2fb3-1323-45c8-85a0-d97a0803b485/cache.tzst -P -C /home/runner/work/EternalCore/EternalCore --use-compress-program unzstd
+2025-02-15T19:15:58.9096008Z Cache restored successfully
+2025-02-15T19:15:59.0059663Z Cache restored from key: Linux-gradle-dd1d8d6ea4929a3b38087cd126ee769eeeb542c975ce6dc2a6f8f9ae17cf2d5e
+2025-02-15T19:15:59.0185280Z ##[group]Run chmod +x gradlew
+2025-02-15T19:15:59.0185598Z [36;1mchmod +x gradlew[0m
+2025-02-15T19:15:59.0343259Z shell: /usr/bin/bash -e {0}
+2025-02-15T19:15:59.0343529Z env:
+2025-02-15T19:15:59.0343819Z   JAVA_HOME: /opt/hostedtoolcache/Java_Adopt_jdk/17.0.14-7/x64
+2025-02-15T19:15:59.0344267Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Adopt_jdk/17.0.14-7/x64
+2025-02-15T19:15:59.0344625Z ##[endgroup]
+2025-02-15T19:15:59.0476233Z ##[group]Run ./gradlew clean eternalcore-plugin:shadowJar
+2025-02-15T19:15:59.0476655Z [36;1m./gradlew clean eternalcore-plugin:shadowJar[0m
+2025-02-15T19:15:59.0529505Z shell: /usr/bin/bash -e {0}
+2025-02-15T19:15:59.0529745Z env:
+2025-02-15T19:15:59.0530011Z   JAVA_HOME: /opt/hostedtoolcache/Java_Adopt_jdk/17.0.14-7/x64
+2025-02-15T19:15:59.0530438Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Adopt_jdk/17.0.14-7/x64
+2025-02-15T19:15:59.0530761Z ##[endgroup]
+2025-02-15T19:15:59.1339541Z Downloading https://services.gradle.org/distributions/gradle-8.12.1-bin.zip
+2025-02-15T19:16:00.8016383Z .............10%.............20%.............30%.............40%.............50%.............60%.............70%.............80%.............90%.............100%
+2025-02-15T19:16:02.2974285Z 
+2025-02-15T19:16:02.2978416Z Welcome to Gradle 8.12.1!
+2025-02-15T19:16:02.2979254Z 
+2025-02-15T19:16:02.2979734Z Here are the highlights of this release:
+2025-02-15T19:16:02.2980669Z  - Enhanced error and warning reporting with the Problems API
+2025-02-15T19:16:02.2982344Z  - File-system watching support on Alpine Linux
+2025-02-15T19:16:02.2983109Z  - Build and test Swift 6 libraries and apps
+2025-02-15T19:16:02.2998466Z 
+2025-02-15T19:16:02.2999458Z For more details see https://docs.gradle.org/8.12.1/release-notes.html
+2025-02-15T19:16:02.2999930Z 
+2025-02-15T19:16:02.3948978Z Starting a Gradle Daemon (subsequent builds will be faster)
+2025-02-15T19:16:09.2964584Z > Task :buildSrc:checkKotlinGradlePluginConfigurationErrors SKIPPED
+2025-02-15T19:16:09.3990207Z > Task :buildSrc:generateExternalPluginSpecBuilders FROM-CACHE
+2025-02-15T19:16:09.4975220Z > Task :buildSrc:extractPrecompiledScriptPluginPlugins FROM-CACHE
+2025-02-15T19:16:09.4976462Z > Task :buildSrc:compilePluginsBlocks FROM-CACHE
+2025-02-15T19:16:09.6949049Z > Task :buildSrc:generatePrecompiledScriptPluginAccessors FROM-CACHE
+2025-02-15T19:16:09.6950054Z > Task :buildSrc:generateScriptPluginAdapters FROM-CACHE
+2025-02-15T19:16:10.2949030Z > Task :buildSrc:pluginDescriptors
+2025-02-15T19:16:10.2951545Z > Task :buildSrc:processResources
+2025-02-15T19:16:30.5948572Z > Task :buildSrc:compileKotlin
+2025-02-15T19:16:30.5951868Z > Task :buildSrc:compileJava NO-SOURCE
+2025-02-15T19:16:30.5952882Z > Task :buildSrc:compileGroovy NO-SOURCE
+2025-02-15T19:16:30.5953713Z > Task :buildSrc:classes
+2025-02-15T19:16:30.7948072Z > Task :buildSrc:jar
+2025-02-15T19:16:52.4978414Z > Task :eternalcore-api-example:clean UP-TO-DATE
+2025-02-15T19:16:52.4979828Z > Task :eternalcore-api:clean UP-TO-DATE
+2025-02-15T19:16:52.4981936Z > Task :eternalcore-docs-generate:clean UP-TO-DATE
+2025-02-15T19:16:52.4982475Z > Task :eternalcore-docs-api:clean UP-TO-DATE
+2025-02-15T19:16:52.4982963Z > Task :eternalcore-core:clean UP-TO-DATE
+2025-02-15T19:16:52.4983432Z > Task :eternalcore-plugin:clean UP-TO-DATE
+2025-02-15T19:16:52.4983988Z > Task :eternalcore-paper:clean UP-TO-DATE
+2025-02-15T19:16:52.5963968Z > Task :eternalcore-core:processResources NO-SOURCE
+2025-02-15T19:16:52.5965009Z > Task :eternalcore-docs-api:compileJava FROM-CACHE
+2025-02-15T19:16:52.5965801Z > Task :eternalcore-docs-api:processResources NO-SOURCE
+2025-02-15T19:16:52.5966576Z > Task :eternalcore-docs-api:classes UP-TO-DATE
+2025-02-15T19:16:52.5991794Z > Task :eternalcore-docs-api:jar
+2025-02-15T19:16:52.6951651Z > Task :eternalcore-plugin:blossomSourceReplacementJava
+2025-02-15T19:16:53.1947920Z > Task :eternalcore-plugin:generateBukkitPluginDescription
+2025-02-15T19:16:53.1948818Z > Task :eternalcore-plugin:processResources
+2025-02-15T19:16:53.7959447Z > Task :eternalcore-paper:compileJava FROM-CACHE
+2025-02-15T19:16:53.8948031Z > Task :eternalcore-paper:processResources NO-SOURCE
+2025-02-15T19:16:53.8948587Z > Task :eternalcore-paper:classes UP-TO-DATE
+2025-02-15T19:16:53.8949107Z > Task :eternalcore-paper:jar
+2025-02-15T19:16:57.9950701Z > Task :eternalcore-api:compileJava
+2025-02-15T19:16:57.9952817Z > Task :eternalcore-api:processResources NO-SOURCE
+2025-02-15T19:16:57.9954963Z > Task :eternalcore-api:classes
+2025-02-15T19:16:57.9982712Z > Task :eternalcore-api:jar
+2025-02-15T19:17:07.3979835Z 
+2025-02-15T19:17:07.3996720Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/translation/implementation/ENTranslation.java:38: error: ENTranslation is not abstract and does not override abstract method seen() in Translation
+2025-02-15T19:17:07.4016203Z public class ENTranslation extends AbstractTranslation {
+2025-02-15T19:17:07.4016845Z        ^
+2025-02-15T19:17:07.4017221Z > Task :eternalcore-core:compileJava
+2025-02-15T19:17:07.4973237Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/translation/implementation/ENTranslation.java:139: error: seen() in ENTranslation cannot implement seen() in Translation
+2025-02-15T19:17:07.4978347Z     public EnSeenMessages seen = new EnSeenMessages();
+2025-02-15T19:17:07.4985702Z                           ^
+2025-02-15T19:17:07.4988070Z   return type EnSeenMessages is not compatible with SeenMessages
+2025-02-15T19:17:07.5948042Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/notice/NoticeService.java:116: warning: [deprecation] platformBroadcaster() in Multification has been deprecated
+2025-02-15T19:17:07.5958402Z     public PlatformBroadcaster platformBroadcaster() {
+2025-02-15T19:17:07.5961213Z                                ^
+2025-02-15T19:17:07.5963006Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/feature/randomteleport/RandomTeleportSettingsImpl.java:101: warning: [deprecation] LEGACY_GRASS in Material has been deprecated
+2025-02-15T19:17:07.5974944Z         Material.LEGACY_GRASS,
+2025-02-15T19:17:07.5975453Z                 ^
+2025-02-15T19:17:07.5977205Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/feature/randomteleport/RandomTeleportSettingsImpl.java:102: warning: [deprecation] LEGACY_LONG_GRASS in Material has been deprecated
+2025-02-15T19:17:07.5979312Z         Material.LEGACY_LONG_GRASS,
+2025-02-15T19:17:07.5979764Z                 ^
+2025-02-15T19:17:07.5981499Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/feature/randomteleport/RandomTeleportSettingsImpl.java:103: warning: [deprecation] LEGACY_DEAD_BUSH in Material has been deprecated
+2025-02-15T19:17:07.5983328Z         Material.LEGACY_DEAD_BUSH,
+2025-02-15T19:17:07.5984153Z                 ^
+2025-02-15T19:17:07.7949790Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/bridge/litecommand/argument/EnchantmentArgument.java:29: warning: [deprecation] getByKey(NamespacedKey) in Enchantment has been deprecated
+2025-02-15T19:17:07.7952704Z         Enchantment enchantment = Enchantment.getByKey(NamespacedKey.minecraft(argument.toLowerCase(Locale.ROOT)));
+2025-02-15T19:17:07.7953905Z                                              ^
+2025-02-15T19:17:07.7955944Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/bridge/litecommand/argument/EnchantmentArgument.java:40: warning: [deprecation] values() in Enchantment has been deprecated
+2025-02-15T19:17:07.7957913Z         return Arrays.stream(Enchantment.values())
+2025-02-15T19:17:07.8002680Z                                         ^
+2025-02-15T19:17:08.0964170Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/feature/warp/repository/WarpRepositoryImpl.java:82: warning: [removal] warps in LocationsConfiguration has been deprecated and marked for removal
+2025-02-15T19:17:08.0966246Z             if (this.locationsConfiguration.warps.isEmpty()) {
+2025-02-15T19:17:08.0966997Z                                            ^
+2025-02-15T19:17:08.1000958Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/feature/warp/repository/WarpRepositoryImpl.java:86: warning: [removal] warps in LocationsConfiguration has been deprecated and marked for removal
+2025-02-15T19:17:08.1020376Z             this.transactionalRun(warps -> warps.putAll(this.locationsConfiguration.warps
+2025-02-15T19:17:08.1021184Z                                                                                    ^
+2025-02-15T19:17:08.1023041Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/feature/warp/repository/WarpRepositoryImpl.java:95: warning: [removal] warps in LocationsConfiguration has been deprecated and marked for removal
+2025-02-15T19:17:08.1024984Z             this.locationsConfiguration.warps.clear();
+2025-02-15T19:17:08.1025505Z                                        ^
+2025-02-15T19:17:08.2954375Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/feature/spawn/SpawnRespawnController.java:49: warning: [deprecation] getBedSpawnLocation() in Player has been deprecated
+2025-02-15T19:17:08.2956130Z         return player.getBedSpawnLocation() != null;
+2025-02-15T19:17:08.2956610Z                      ^
+2025-02-15T19:17:08.4953219Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:19: warning: [deprecation] OldEnum in org.bukkit.util has been deprecated
+2025-02-15T19:17:08.4957492Z public class OldEnumComposer implements Composer<OldEnum<?>>, SimpleDeserializer<OldEnum<?>> {
+2025-02-15T19:17:08.4958718Z                                                  ^
+2025-02-15T19:17:08.4960854Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:19: warning: [deprecation] OldEnum in org.bukkit.util has been deprecated
+2025-02-15T19:17:08.4963189Z public class OldEnumComposer implements Composer<OldEnum<?>>, SimpleDeserializer<OldEnum<?>> {
+2025-02-15T19:17:08.4964219Z                                                                                  ^
+2025-02-15T19:17:08.4966171Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:19: warning: [deprecation] OldEnum in org.bukkit.util has been deprecated
+2025-02-15T19:17:08.4968483Z public class OldEnumComposer implements Composer<OldEnum<?>>, SimpleDeserializer<OldEnum<?>> {
+2025-02-15T19:17:08.4969696Z                                                  ^
+2025-02-15T19:17:08.4971565Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:19: warning: [deprecation] OldEnum in org.bukkit.util has been deprecated
+2025-02-15T19:17:08.4974163Z public class OldEnumComposer implements Composer<OldEnum<?>>, SimpleDeserializer<OldEnum<?>> {
+2025-02-15T19:17:08.5020222Z                                                                                  ^
+2025-02-15T19:17:08.5022297Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:19: warning: [deprecation] OldEnum in org.bukkit.util has been deprecated
+2025-02-15T19:17:08.5024536Z public class OldEnumComposer implements Composer<OldEnum<?>>, SimpleDeserializer<OldEnum<?>> {
+2025-02-15T19:17:08.5025622Z                                                  ^
+2025-02-15T19:17:08.5027580Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:19: warning: [deprecation] OldEnum in org.bukkit.util has been deprecated
+2025-02-15T19:17:08.5029956Z public class OldEnumComposer implements Composer<OldEnum<?>>, SimpleDeserializer<OldEnum<?>> {
+2025-02-15T19:17:08.5030963Z                                                                                  ^
+2025-02-15T19:17:08.5032905Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:19: warning: [deprecation] OldEnum in org.bukkit.util has been deprecated
+2025-02-15T19:17:08.5035537Z public class OldEnumComposer implements Composer<OldEnum<?>>, SimpleDeserializer<OldEnum<?>> {
+2025-02-15T19:17:08.5036565Z                                                  ^
+2025-02-15T19:17:08.5038438Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:19: warning: [deprecation] OldEnum in org.bukkit.util has been deprecated
+2025-02-15T19:17:08.5040819Z public class OldEnumComposer implements Composer<OldEnum<?>>, SimpleDeserializer<OldEnum<?>> {
+2025-02-15T19:17:08.5041803Z                                                                                  ^
+2025-02-15T19:17:08.5043667Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:19: warning: [deprecation] OldEnum in org.bukkit.util has been deprecated
+2025-02-15T19:17:08.5045892Z public class OldEnumComposer implements Composer<OldEnum<?>>, SimpleDeserializer<OldEnum<?>> {
+2025-02-15T19:17:08.5046891Z                                                  ^
+2025-02-15T19:17:08.5049001Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:19: warning: [deprecation] OldEnum in org.bukkit.util has been deprecated
+2025-02-15T19:17:08.5051625Z public class OldEnumComposer implements Composer<OldEnum<?>>, SimpleDeserializer<OldEnum<?>> {
+2025-02-15T19:17:08.5052584Z                                                                                  ^
+2025-02-15T19:17:08.5059256Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:21: warning: [deprecation] OldEnum in org.bukkit.util has been deprecated
+2025-02-15T19:17:08.5062397Z     public static final Predicate<Class<?>> IS_OLD_ENUM = type -> OldEnum.class.isAssignableFrom(type);
+2025-02-15T19:17:08.5981133Z                                                                   ^
+2025-02-15T19:17:08.5983316Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:26: warning: [deprecation] OldEnum in org.bukkit.util has been deprecated
+2025-02-15T19:17:08.5985453Z     public Result<OldEnum<?>, Exception> deserialize(String source) {
+2025-02-15T19:17:08.5986311Z                   ^
+2025-02-15T19:17:08.5988217Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:26: warning: [deprecation] OldEnum in org.bukkit.util has been deprecated
+2025-02-15T19:17:08.5990809Z     public Result<OldEnum<?>, Exception> deserialize(String source) {
+2025-02-15T19:17:08.5991696Z                   ^
+2025-02-15T19:17:08.5993648Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:26: warning: [deprecation] OldEnum in org.bukkit.util has been deprecated
+2025-02-15T19:17:08.5995765Z     public Result<OldEnum<?>, Exception> deserialize(String source) {
+2025-02-15T19:17:08.5996600Z                   ^
+2025-02-15T19:17:08.5998683Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:26: warning: [deprecation] OldEnum in org.bukkit.util has been deprecated
+2025-02-15T19:17:08.6016245Z     public Result<OldEnum<?>, Exception> deserialize(String source) {
+2025-02-15T19:17:08.6016850Z                   ^
+2025-02-15T19:17:08.6018426Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:26: warning: [deprecation] OldEnum in org.bukkit.util has been deprecated
+2025-02-15T19:17:08.6051672Z     public Result<OldEnum<?>, Exception> deserialize(String source) {
+2025-02-15T19:17:08.6052265Z                   ^
+2025-02-15T19:17:08.6054146Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:31: warning: [deprecation] OldEnum in org.bukkit.util has been deprecated
+2025-02-15T19:17:08.6056128Z     public Result<OldEnum<?>, Exception> deserialize(TargetType type, String source) {
+2025-02-15T19:17:08.6056814Z                   ^
+2025-02-15T19:17:08.6058410Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:31: warning: [deprecation] OldEnum in org.bukkit.util has been deprecated
+2025-02-15T19:17:08.6060510Z     public Result<OldEnum<?>, Exception> deserialize(TargetType type, String source) {
+2025-02-15T19:17:08.6061188Z                   ^
+2025-02-15T19:17:08.6062740Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:31: warning: [deprecation] OldEnum in org.bukkit.util has been deprecated
+2025-02-15T19:17:08.6064576Z     public Result<OldEnum<?>, Exception> deserialize(TargetType type, String source) {
+2025-02-15T19:17:08.6065234Z                   ^
+2025-02-15T19:17:08.6066740Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:31: warning: [deprecation] OldEnum in org.bukkit.util has been deprecated
+2025-02-15T19:17:08.6068564Z     public Result<OldEnum<?>, Exception> deserialize(TargetType type, String source) {
+2025-02-15T19:17:08.6069474Z                   ^
+2025-02-15T19:17:08.6071055Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:31: warning: [deprecation] OldEnum in org.bukkit.util has been deprecated
+2025-02-15T19:17:08.6072921Z     public Result<OldEnum<?>, Exception> deserialize(TargetType type, String source) {
+2025-02-15T19:17:08.6073681Z                   ^
+2025-02-15T19:17:08.6075250Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:34: warning: [deprecation] OldEnum in org.bukkit.util has been deprecated
+2025-02-15T19:17:08.6077041Z             OldEnum<?> oldEnum = ReflectUtil.invokeStaticMethod(valueOfMethod, source);
+2025-02-15T19:17:08.6077655Z             ^
+2025-02-15T19:17:08.6109336Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:50: warning: [deprecation] OldEnum in org.bukkit.util has been deprecated
+2025-02-15T19:17:08.6112163Z     public Result<? extends Element<?>, ? extends Exception> serialize(CdnSettings settings, List<String> description, String key, TargetType type, OldEnum<?> oldEnum) {
+2025-02-15T19:17:08.6113352Z                                                                                                                                                     ^
+2025-02-15T19:17:08.6115097Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:50: warning: [deprecation] OldEnum in org.bukkit.util has been deprecated
+2025-02-15T19:17:08.6117454Z     public Result<? extends Element<?>, ? extends Exception> serialize(CdnSettings settings, List<String> description, String key, TargetType type, OldEnum<?> oldEnum) {
+2025-02-15T19:17:08.6118672Z                                                                                                                                                     ^
+2025-02-15T19:17:08.6120783Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:50: warning: [deprecation] OldEnum in org.bukkit.util has been deprecated
+2025-02-15T19:17:08.6123120Z     public Result<? extends Element<?>, ? extends Exception> serialize(CdnSettings settings, List<String> description, String key, TargetType type, OldEnum<?> oldEnum) {
+2025-02-15T19:17:08.6124580Z                                                                                                                                                     ^
+2025-02-15T19:17:08.6126372Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:50: warning: [deprecation] OldEnum in org.bukkit.util has been deprecated
+2025-02-15T19:17:08.6128764Z     public Result<? extends Element<?>, ? extends Exception> serialize(CdnSettings settings, List<String> description, String key, TargetType type, OldEnum<?> oldEnum) {
+2025-02-15T19:17:08.6130275Z                                                                                                                                                     ^
+2025-02-15T19:17:08.6131995Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:50: warning: [deprecation] OldEnum in org.bukkit.util has been deprecated
+2025-02-15T19:17:08.6134391Z     public Result<? extends Element<?>, ? extends Exception> serialize(CdnSettings settings, List<String> description, String key, TargetType type, OldEnum<?> oldEnum) {
+2025-02-15T19:17:08.6135561Z                                                                                                                                                     ^
+2025-02-15T19:17:08.6137193Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:51: warning: [deprecation] name() in OldEnum has been deprecated
+2025-02-15T19:17:08.6139368Z         return Result.ok(key.isEmpty() ? new Piece(oldEnum.name()) : new Entry(description, key, oldEnum.name()));
+2025-02-15T19:17:08.6140197Z                                                           ^
+2025-02-15T19:17:08.6141824Z /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/configuration/composer/OldEnumComposer.java:51: warning: [deprecation] name() in OldEnum has been deprecated
+2025-02-15T19:17:08.6143702Z         return Result.ok(key.isEmpty() ? new Piece(oldEnum.name()) : new Entry(description, key, oldEnum.name()));
+2025-02-15T19:17:08.6144476Z                                                                                                         ^
+2025-02-15T19:17:08.6145034Z Note: Some input files use unchecked or unsafe operations.
+2025-02-15T19:17:08.6145613Z Note: Recompile with -Xlint:unchecked for details.
+2025-02-15T19:17:08.6146252Z 2 errors
+2025-02-15T19:17:08.6146524Z 39 warnings
+2025-02-15T19:17:08.7947507Z 
+2025-02-15T19:17:08.7970627Z > Task :eternalcore-core:compileJava FAILED
+2025-02-15T19:17:08.8947095Z 
+2025-02-15T19:17:08.8947200Z 
+2025-02-15T19:17:08.8952041Z [Incubating] Problems report is available at: file:///home/runner/work/EternalCore/EternalCore/build/reports/problems/problems-report.html
+2025-02-15T19:17:08.8970492Z 
+2025-02-15T19:17:08.8973948Z FAILURE: Build failed with an exception.
+2025-02-15T19:17:08.8974293Z 
+2025-02-15T19:17:08.8974435Z * What went wrong:
+2025-02-15T19:17:08.8974968Z Execution failed for task ':eternalcore-core:compileJava'.
+2025-02-15T19:17:08.8975614Z > Compilation failed; see the compiler output below.
+2025-02-15T19:17:08.8977493Z   /home/runner/work/EternalCore/EternalCore/eternalcore-core/src/main/java/com/eternalcode/core/translation/implementation/ENTranslation.java:38: error: ENTranslation is not abstract and does not override abstract method seen() in Translation
+2025-02-15T19:17:08.8979829Z   public class ENTranslation extends AbstractTranslation {
+2025-02-15T19:17:08.8980378Z          ^
+2025-02-15T19:17:08.8980668Z   2 errors
+2025-02-15T19:17:08.8980953Z   39 warnings
+2025-02-15T19:17:08.8981137Z 
+2025-02-15T19:17:08.8981260Z * Try:
+2025-02-15T19:17:08.8981768Z > Check your code and dependencies to fix the compilation error(s)
+2025-02-15T19:17:08.8982391Z > Run with --scan to get full insights.
+2025-02-15T19:17:08.8982711Z 
+2025-02-15T19:17:08.8982855Z BUILD FAILED in 1m 9s
+2025-02-15T19:17:08.8986838Z Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+2025-02-15T19:17:08.8999576Z 
+2025-02-15T19:17:08.9000428Z You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+2025-02-15T19:17:08.9001355Z 
+2025-02-15T19:17:08.9002314Z For more on this, please refer to https://docs.gradle.org/8.12.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+2025-02-15T19:17:08.9004601Z 26 actionable tasks: 12 executed, 7 from cache, 7 up-to-date
+2025-02-15T19:17:09.3649825Z ##[error]Process completed with exit code 1.
+2025-02-15T19:17:09.3741874Z Post job cleanup.
+2025-02-15T19:17:09.5514244Z Post job cleanup.
+2025-02-15T19:17:09.6449733Z [command]/usr/bin/git version
+2025-02-15T19:17:09.6498107Z git version 2.48.1
+2025-02-15T19:17:09.6541719Z Temporarily overriding HOME='/home/runner/work/_temp/6d8aaf7a-0519-4e3b-a658-9c81b73bc993' before making global git config changes
+2025-02-15T19:17:09.6543005Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-15T19:17:09.6547984Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/EternalCore/EternalCore
+2025-02-15T19:17:09.6583096Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-15T19:17:09.6615583Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-15T19:17:09.6865006Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-15T19:17:09.6888431Z http.https://github.com/.extraheader
+2025-02-15T19:17:09.6901450Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-15T19:17:09.6934980Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-15T19:17:09.7287603Z Cleaning up orphan processes
+2025-02-15T19:17:09.7585578Z Terminate orphan process: pid (1942) (java)
+2025-02-15T19:17:09.7607758Z Terminate orphan process: pid (2026) (java)
+2025-02-15T19:17:09.7626653Z Terminate orphan process: pid (2183) (java)

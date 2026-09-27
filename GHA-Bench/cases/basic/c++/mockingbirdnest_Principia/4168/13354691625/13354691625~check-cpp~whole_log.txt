@@ -1,0 +1,239 @@
+2025-02-16T11:47:03.4425394Z Requested labels: windows-latest
+2025-02-16T11:47:03.4425666Z Job defined at: mockingbirdnest/Principia/.github/workflows/lint.yaml@refs/pull/4168/merge
+2025-02-16T11:47:03.4425807Z Waiting for a runner to pick up this job...
+2025-02-16T11:47:04.6486430Z Job is waiting for a hosted runner to come online.
+2025-02-16T11:47:09.7335246Z Job is about to start running on the hosted runner: GitHub Actions 20 (hosted)
+2025-02-16T11:47:13.0010939Z Current runner version: '2.322.0'
+2025-02-16T11:47:13.0035711Z ##[group]Operating System
+2025-02-16T11:47:13.0036526Z Microsoft Windows Server 2022
+2025-02-16T11:47:13.0037100Z 10.0.20348
+2025-02-16T11:47:13.0037627Z Datacenter
+2025-02-16T11:47:13.0038142Z ##[endgroup]
+2025-02-16T11:47:13.0038610Z ##[group]Runner Image
+2025-02-16T11:47:13.0039147Z Image: windows-2022
+2025-02-16T11:47:13.0039618Z Version: 20250209.1.0
+2025-02-16T11:47:13.0040626Z Included Software: https://github.com/actions/runner-images/blob/win22/20250209.1/images/windows/Windows2022-Readme.md
+2025-02-16T11:47:13.0042010Z Image Release: https://github.com/actions/runner-images/releases/tag/win22%2F20250209.1
+2025-02-16T11:47:13.0042872Z ##[endgroup]
+2025-02-16T11:47:13.0043383Z ##[group]Runner Image Provisioner
+2025-02-16T11:47:13.0043978Z 2.0.422.1
+2025-02-16T11:47:13.0044408Z ##[endgroup]
+2025-02-16T11:47:13.0046619Z ##[group]GITHUB_TOKEN Permissions
+2025-02-16T11:47:13.0048487Z Actions: read
+2025-02-16T11:47:13.0049642Z Attestations: read
+2025-02-16T11:47:13.0050226Z Checks: read
+2025-02-16T11:47:13.0050699Z Contents: read
+2025-02-16T11:47:13.0051249Z Deployments: read
+2025-02-16T11:47:13.0051754Z Discussions: read
+2025-02-16T11:47:13.0052218Z Issues: read
+2025-02-16T11:47:13.0052682Z Metadata: read
+2025-02-16T11:47:13.0053145Z Packages: read
+2025-02-16T11:47:13.0053650Z Pages: read
+2025-02-16T11:47:13.0054111Z PullRequests: read
+2025-02-16T11:47:13.0054584Z RepositoryProjects: read
+2025-02-16T11:47:13.0055127Z SecurityEvents: read
+2025-02-16T11:47:13.0055618Z Statuses: read
+2025-02-16T11:47:13.0056074Z ##[endgroup]
+2025-02-16T11:47:13.0058793Z Secret source: None
+2025-02-16T11:47:13.0059454Z Prepare workflow directory
+2025-02-16T11:47:13.0370289Z Prepare all required actions
+2025-02-16T11:47:13.0422331Z Getting action download info
+2025-02-16T11:47:13.2411500Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-02-16T11:47:13.2412597Z Version: 4.2.2
+2025-02-16T11:47:13.2413608Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-02-16T11:47:13.2414764Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-02-16T11:47:13.2415411Z ##[endgroup]
+2025-02-16T11:47:13.6122531Z Complete job name: check-cpp
+2025-02-16T11:47:13.7164725Z ##[group]Run actions/checkout@v4
+2025-02-16T11:47:13.7165728Z with:
+2025-02-16T11:47:13.7166177Z   repository: mockingbirdnest/Principia
+2025-02-16T11:47:13.7166908Z   token: ***
+2025-02-16T11:47:13.7167306Z   ssh-strict: true
+2025-02-16T11:47:13.7167720Z   ssh-user: git
+2025-02-16T11:47:13.7168132Z   persist-credentials: true
+2025-02-16T11:47:13.7168587Z   clean: true
+2025-02-16T11:47:13.7168987Z   sparse-checkout-cone-mode: true
+2025-02-16T11:47:13.7169474Z   fetch-depth: 1
+2025-02-16T11:47:13.7169863Z   fetch-tags: false
+2025-02-16T11:47:13.7170273Z   show-progress: true
+2025-02-16T11:47:13.7170690Z   lfs: false
+2025-02-16T11:47:13.7171079Z   submodules: false
+2025-02-16T11:47:13.7171486Z   set-safe-directory: true
+2025-02-16T11:47:13.7172170Z ##[endgroup]
+2025-02-16T11:47:14.3755900Z Syncing repository: mockingbirdnest/Principia
+2025-02-16T11:47:14.3860535Z ##[group]Getting Git version info
+2025-02-16T11:47:14.3861889Z Working directory is 'D:\a\Principia\Principia'
+2025-02-16T11:47:14.7393295Z [command]"C:\Program Files\Git\bin\git.exe" version
+2025-02-16T11:47:14.8708188Z git version 2.47.1.windows.2
+2025-02-16T11:47:14.8720817Z ##[endgroup]
+2025-02-16T11:47:14.8957655Z Temporarily overriding HOME='D:\a\_temp\c5249cb7-5c8c-414b-ab3d-ecc8e9b8b222' before making global git config changes
+2025-02-16T11:47:14.8959594Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-16T11:47:14.8973681Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\Principia\Principia
+2025-02-16T11:47:14.9714614Z Deleting the contents of 'D:\a\Principia\Principia'
+2025-02-16T11:47:14.9720174Z ##[group]Initializing the repository
+2025-02-16T11:47:14.9730333Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\Principia\Principia
+2025-02-16T11:47:15.0682113Z Initialized empty Git repository in D:/a/Principia/Principia/.git/
+2025-02-16T11:47:15.0718333Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/mockingbirdnest/Principia
+2025-02-16T11:47:15.1409654Z ##[endgroup]
+2025-02-16T11:47:15.1411409Z ##[group]Disabling automatic garbage collection
+2025-02-16T11:47:15.1418504Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2025-02-16T11:47:15.1645314Z ##[endgroup]
+2025-02-16T11:47:15.1647363Z ##[group]Setting up auth
+2025-02-16T11:47:15.1658021Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2025-02-16T11:47:15.1934092Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2025-02-16T11:47:17.0898229Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-16T11:47:17.1111990Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2025-02-16T11:47:17.4922311Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2025-02-16T11:47:17.5140368Z ##[endgroup]
+2025-02-16T11:47:17.5140987Z ##[group]Fetching the repository
+2025-02-16T11:47:17.5153428Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +0e7a7fcf11f79b3ba2489698220d4eeb43281f64:refs/remotes/pull/4168/merge
+2025-02-16T11:47:21.9842417Z From https://github.com/mockingbirdnest/Principia
+2025-02-16T11:47:21.9843514Z  * [new ref]         0e7a7fcf11f79b3ba2489698220d4eeb43281f64 -> pull/4168/merge
+2025-02-16T11:47:21.9969996Z ##[endgroup]
+2025-02-16T11:47:21.9970664Z ##[group]Determining the checkout info
+2025-02-16T11:47:21.9973589Z ##[endgroup]
+2025-02-16T11:47:21.9988615Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2025-02-16T11:47:22.0554747Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2025-02-16T11:47:22.0768787Z ##[group]Checking out the ref
+2025-02-16T11:47:22.0778463Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force refs/remotes/pull/4168/merge
+2025-02-16T11:47:23.1258171Z Updating files:  69% (747/1082)
+2025-02-16T11:47:23.1309129Z Updating files:  70% (758/1082)
+2025-02-16T11:47:23.1335290Z Updating files:  71% (769/1082)
+2025-02-16T11:47:23.1357981Z Updating files:  72% (780/1082)
+2025-02-16T11:47:23.1385054Z Updating files:  73% (790/1082)
+2025-02-16T11:47:23.1404581Z Updating files:  74% (801/1082)
+2025-02-16T11:47:23.1480848Z Updating files:  75% (812/1082)
+2025-02-16T11:47:23.1504883Z Updating files:  76% (823/1082)
+2025-02-16T11:47:23.1526228Z Updating files:  77% (834/1082)
+2025-02-16T11:47:23.1546229Z Updating files:  78% (844/1082)
+2025-02-16T11:47:23.1571465Z Updating files:  79% (855/1082)
+2025-02-16T11:47:23.1595075Z Updating files:  80% (866/1082)
+2025-02-16T11:47:23.1625558Z Updating files:  81% (877/1082)
+2025-02-16T11:47:23.1644997Z Updating files:  82% (888/1082)
+2025-02-16T11:47:23.1669709Z Updating files:  83% (899/1082)
+2025-02-16T11:47:23.1689929Z Updating files:  84% (909/1082)
+2025-02-16T11:47:23.1707652Z Updating files:  85% (920/1082)
+2025-02-16T11:47:23.1736077Z Updating files:  86% (931/1082)
+2025-02-16T11:47:23.1753170Z Updating files:  87% (942/1082)
+2025-02-16T11:47:23.1784315Z Updating files:  88% (953/1082)
+2025-02-16T11:47:23.1800822Z Updating files:  89% (963/1082)
+2025-02-16T11:47:23.1832255Z Updating files:  90% (974/1082)
+2025-02-16T11:47:23.1855387Z Updating files:  91% (985/1082)
+2025-02-16T11:47:23.1876867Z Updating files:  92% (996/1082)
+2025-02-16T11:47:23.1903134Z Updating files:  93% (1007/1082)
+2025-02-16T11:47:23.1919589Z Updating files:  94% (1018/1082)
+2025-02-16T11:47:23.1939622Z Updating files:  95% (1028/1082)
+2025-02-16T11:47:23.1954281Z Updating files:  96% (1039/1082)
+2025-02-16T11:47:23.1974398Z Updating files:  97% (1050/1082)
+2025-02-16T11:47:23.1993540Z Updating files:  98% (1061/1082)
+2025-02-16T11:47:23.2016051Z Updating files:  99% (1072/1082)
+2025-02-16T11:47:23.2016773Z Updating files: 100% (1082/1082)
+2025-02-16T11:47:23.2017158Z Updating files: 100% (1082/1082), done.
+2025-02-16T11:47:23.2121516Z Note: switching to 'refs/remotes/pull/4168/merge'.
+2025-02-16T11:47:23.2121887Z 
+2025-02-16T11:47:23.2122127Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-16T11:47:23.2122813Z changes and commit them, and you can discard any commits you make in this
+2025-02-16T11:47:23.2124670Z state without impacting any branches by switching back to a branch.
+2025-02-16T11:47:23.2125173Z 
+2025-02-16T11:47:23.2125485Z If you want to create a new branch to retain commits you create, you may
+2025-02-16T11:47:23.2126145Z do so (now or later) by using -c with the switch command. Example:
+2025-02-16T11:47:23.2126515Z 
+2025-02-16T11:47:23.2126674Z   git switch -c <new-branch-name>
+2025-02-16T11:47:23.2126948Z 
+2025-02-16T11:47:23.2127090Z Or undo this operation with:
+2025-02-16T11:47:23.2127335Z 
+2025-02-16T11:47:23.2127449Z   git switch -
+2025-02-16T11:47:23.2127621Z 
+2025-02-16T11:47:23.2127925Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-16T11:47:23.2128393Z 
+2025-02-16T11:47:23.2128855Z HEAD is now at 0e7a7fc Merge d9a4c69183743f4295ea89d2b591b6e600da4a14 into 8c09492040c4c4df7741c7187b47e77c893af99f
+2025-02-16T11:47:23.2228566Z ##[endgroup]
+2025-02-16T11:47:23.2576388Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2025-02-16T11:47:23.2768000Z 0e7a7fcf11f79b3ba2489698220d4eeb43281f64
+2025-02-16T11:47:23.3093442Z ##[group]Run Invoke-WebRequest https://raw.githubusercontent.com/mockingbirdnest/styleguide/mockingbirdnest-2023-10-02/cpplint/cpplint.py -OutFile cpplint.py
+2025-02-16T11:47:23.3095121Z [36;1mInvoke-WebRequest https://raw.githubusercontent.com/mockingbirdnest/styleguide/mockingbirdnest-2023-10-02/cpplint/cpplint.py -OutFile cpplint.py[0m
+2025-02-16T11:47:23.3134569Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-02-16T11:47:23.3134911Z ##[endgroup]
+2025-02-16T11:47:25.0254163Z ##[group]Run $filenames = @()
+2025-02-16T11:47:25.0254526Z [36;1m$filenames = @()[0m
+2025-02-16T11:47:25.0254816Z [36;1mif ($env:GITHUB_EVENT_NAME -eq "pull_request") {[0m
+2025-02-16T11:47:25.0255213Z [36;1m  $event = (Get-Content -Raw $env:GITHUB_EVENT_PATH | ConvertFrom-Json)[0m
+2025-02-16T11:47:25.0255584Z [36;1m  $owner_repo = $event.repository.full_name[0m
+2025-02-16T11:47:25.0255852Z [36;1m  $pr_number = $event.number[0m
+2025-02-16T11:47:25.0256120Z [36;1m  # Get the list of files changed by the PR.[0m
+2025-02-16T11:47:25.0256591Z [36;1m  # https://docs.github.com/en/rest/pulls/pulls?apiVersion=2022-11-28#list-pull-requests-files[0m
+2025-02-16T11:47:25.0257124Z [36;1m  $files = (gh api -H "Accept: application/vnd.github+json"      `[0m
+2025-02-16T11:47:25.0257493Z [36;1m                    -H "X-GitHub-Api-Version: 2022-11-28"        `[0m
+2025-02-16T11:47:25.0257813Z [36;1m                    /repos/$owner_repo/pulls/$pr_number/files |[0m
+2025-02-16T11:47:25.0258126Z [36;1m            ConvertFrom-Json)[0m
+2025-02-16T11:47:25.0258367Z [36;1m  foreach ($file in $files) {[0m
+2025-02-16T11:47:25.0258618Z [36;1m    if ($file.filename.EndsWith(".cpp") -or[0m
+2025-02-16T11:47:25.0258897Z [36;1m        $file.filename.EndsWith(".hpp")) {[0m
+2025-02-16T11:47:25.0259155Z [36;1m      $filenames += $file.filename[0m
+2025-02-16T11:47:25.0259385Z [36;1m    }[0m
+2025-02-16T11:47:25.0259538Z [36;1m  }[0m
+2025-02-16T11:47:25.0259839Z [36;1m}[0m
+2025-02-16T11:47:25.0259983Z [36;1m[0m
+2025-02-16T11:47:25.0260132Z [36;1m$filters = @([0m
+2025-02-16T11:47:25.0260322Z [36;1m    "-legal/copyright",[0m
+2025-02-16T11:47:25.0260544Z [36;1m    "-build/c++11",[0m
+2025-02-16T11:47:25.0260746Z [36;1m    "-runtime/references",[0m
+2025-02-16T11:47:25.0260968Z [36;1m    "-runtime/arrays",[0m
+2025-02-16T11:47:25.0261181Z [36;1m    "-build/include_order",[0m
+2025-02-16T11:47:25.0261408Z [36;1m    "-readability/braces",[0m
+2025-02-16T11:47:25.0261626Z [36;1m    "-build/namespaces")[0m
+2025-02-16T11:47:25.0261832Z [36;1m$errors = @()[0m
+2025-02-16T11:47:25.0262051Z [36;1m$ErrorActionPreference = "Continue"[0m
+2025-02-16T11:47:25.0262353Z [36;1mif ($env:GITHUB_EVENT_NAME -eq "pull_request") {[0m
+2025-02-16T11:47:25.0262630Z [36;1m  $files = $filenames[0m
+2025-02-16T11:47:25.0262831Z [36;1m} else {[0m
+2025-02-16T11:47:25.0263003Z [36;1m  $files = ls "*\*.[ch]pp"[0m
+2025-02-16T11:47:25.0263212Z [36;1m}[0m
+2025-02-16T11:47:25.0263375Z [36;1mforeach ($file in $files) {[0m
+2025-02-16T11:47:25.0263590Z [36;1m  $output = $([0m
+2025-02-16T11:47:25.0263819Z [36;1m    python .\cpplint.py                           `[0m
+2025-02-16T11:47:25.0264108Z [36;1m        --extensions=hpp,cpp                      `[0m
+2025-02-16T11:47:25.0264382Z [36;1m        --output=vs7                              `[0m
+2025-02-16T11:47:25.0264652Z [36;1m        --filter=$([string]::join(",", $filters)) `[0m
+2025-02-16T11:47:25.0264905Z [36;1m        $file 2>&1 `[0m
+2025-02-16T11:47:25.0265109Z [36;1m  ).Exception.Message[0m
+2025-02-16T11:47:25.0265336Z [36;1m  if ($LastExitCode -ne 0) {[0m
+2025-02-16T11:47:25.0265559Z [36;1m    $errors += $output[0m
+2025-02-16T11:47:25.0265779Z [36;1m    foreach ($e in (@() + $output)) {[0m
+2025-02-16T11:47:25.0266065Z [36;1m      $e -match '^(.*)\((\d+)\):.*\[([^\]]+)\]\s*(.*)\s*\[\d+\]'[0m
+2025-02-16T11:47:25.0266350Z [36;1m      $file = $Matches[1][0m
+2025-02-16T11:47:25.0266570Z [36;1m      $line = $Matches[2][0m
+2025-02-16T11:47:25.0266778Z [36;1m      $title = $Matches[3][0m
+2025-02-16T11:47:25.0266997Z [36;1m      $message = $Matches[4][0m
+2025-02-16T11:47:25.0267620Z [36;1m      # See https://docs.github.com/en/enterprise-cloud@latest/actions/using-workflows/workflow-commands-for-github-actions#setting-a-warning-message.[0m
+2025-02-16T11:47:25.0268324Z [36;1m      echo "::warning file=$file,line=$line,title=$title::$message"[0m
+2025-02-16T11:47:25.0269839Z [36;1m    }[0m
+2025-02-16T11:47:25.0270072Z [36;1m    $output | write-error[0m
+2025-02-16T11:47:25.0270302Z [36;1m  } else {[0m
+2025-02-16T11:47:25.0270491Z [36;1m    echo $output[0m
+2025-02-16T11:47:25.0270686Z [36;1m  }[0m
+2025-02-16T11:47:25.0270844Z [36;1m}[0m
+2025-02-16T11:47:25.0271014Z [36;1m$errors | write-error[0m
+2025-02-16T11:47:25.0271225Z [36;1mexit $errors.Length[0m
+2025-02-16T11:47:25.0302096Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-02-16T11:47:25.0302415Z env:
+2025-02-16T11:47:25.0302955Z   GH_TOKEN: ***
+2025-02-16T11:47:25.0303140Z ##[endgroup]
+2025-02-16T11:47:41.9514467Z True
+2025-02-16T11:47:41.9549972Z ##[warning]Add #include <limits> for numeric_limits<> 
+2025-02-16T11:47:42.5209733Z [31;1mWrite-Error: [31;1mastronomy/orbit_recurrence_test.cpp(95): error cpplint: [build/include_what_you_use] Add #include <limits> for numeric_limits<> [4][0m
+2025-02-16T11:47:42.8534638Z [31;1mWrite-Error: [31;1mastronomy/orbit_recurrence_test.cpp(95): error cpplint: [build/include_what_you_use] Add #include <limits> for numeric_limits<> [4][0m
+2025-02-16T11:47:42.8773261Z ##[error]Process completed with exit code 1.
+2025-02-16T11:47:42.8931068Z Post job cleanup.
+2025-02-16T11:47:43.0934361Z [command]"C:\Program Files\Git\bin\git.exe" version
+2025-02-16T11:47:43.1137613Z git version 2.47.1.windows.2
+2025-02-16T11:47:43.1205171Z Temporarily overriding HOME='D:\a\_temp\80392460-cfa3-4383-a40b-20644a99a38f' before making global git config changes
+2025-02-16T11:47:43.1206021Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-16T11:47:43.1215725Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\Principia\Principia
+2025-02-16T11:47:43.1441763Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2025-02-16T11:47:43.1665258Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2025-02-16T11:47:43.5730140Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-16T11:47:43.5923278Z http.https://github.com/.extraheader
+2025-02-16T11:47:43.5961491Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
+2025-02-16T11:47:43.6180678Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2025-02-16T11:47:44.0185526Z Cleaning up orphan processes

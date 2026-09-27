@@ -1,0 +1,255 @@
+﻿2025-04-05T21:06:46.6133814Z Current runner version: '2.323.0'
+2025-04-05T21:06:46.6161382Z ##[group]Operating System
+2025-04-05T21:06:46.6162470Z Ubuntu
+2025-04-05T21:06:46.6162932Z 24.04.2
+2025-04-05T21:06:46.6163430Z LTS
+2025-04-05T21:06:46.6164055Z ##[endgroup]
+2025-04-05T21:06:46.6164565Z ##[group]Runner Image
+2025-04-05T21:06:46.6165119Z Image: ubuntu-24.04
+2025-04-05T21:06:46.6165718Z Version: 20250323.1.0
+2025-04-05T21:06:46.6166749Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-05T21:06:46.6168119Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-04-05T21:06:46.6169434Z ##[endgroup]
+2025-04-05T21:06:46.6169956Z ##[group]Runner Image Provisioner
+2025-04-05T21:06:46.6170519Z 2.0.422.1
+2025-04-05T21:06:46.6171038Z ##[endgroup]
+2025-04-05T21:06:46.6172053Z ##[group]GITHUB_TOKEN Permissions
+2025-04-05T21:06:46.6174032Z Contents: read
+2025-04-05T21:06:46.6174680Z Metadata: read
+2025-04-05T21:06:46.6175337Z Packages: read
+2025-04-05T21:06:46.6175953Z ##[endgroup]
+2025-04-05T21:06:46.6178208Z Secret source: None
+2025-04-05T21:06:46.6179369Z Prepare workflow directory
+2025-04-05T21:06:46.6622859Z Prepare all required actions
+2025-04-05T21:06:46.6678401Z Getting action download info
+2025-04-05T21:06:47.0878244Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-05T21:06:47.0879436Z Version: 4.2.2
+2025-04-05T21:06:47.0880479Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-05T21:06:47.0881765Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-05T21:06:47.0882758Z ##[endgroup]
+2025-04-05T21:06:47.2169152Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-04-05T21:06:47.2169863Z Version: 5.5.0
+2025-04-05T21:06:47.2170489Z Digest: sha256:1fac95d751afd58314aebd2ab01d4bf3b3109a441917bd2cac2a22898ec494f7
+2025-04-05T21:06:47.2171332Z Source commit SHA: 8d9ed9ac5c53483de85588cdf95a591a75ab9f55
+2025-04-05T21:06:47.2171945Z ##[endgroup]
+2025-04-05T21:06:47.4488054Z Download action repository 'astral-sh/setup-uv@v5' (SHA:0c5e2b8115b80b4c7c5ddf6ffdd634974642d182)
+2025-04-05T21:06:47.8103928Z Complete job name: cpython (ubuntu-latest, 3.10)
+2025-04-05T21:06:47.8714244Z ##[group]Run actions/checkout@v4
+2025-04-05T21:06:47.8715057Z with:
+2025-04-05T21:06:47.8715453Z   repository: reagento/dishka
+2025-04-05T21:06:47.8716074Z   token: ***
+2025-04-05T21:06:47.8716445Z   ssh-strict: true
+2025-04-05T21:06:47.8716824Z   ssh-user: git
+2025-04-05T21:06:47.8717215Z   persist-credentials: true
+2025-04-05T21:06:47.8717648Z   clean: true
+2025-04-05T21:06:47.8718040Z   sparse-checkout-cone-mode: true
+2025-04-05T21:06:47.8718507Z   fetch-depth: 1
+2025-04-05T21:06:47.8719037Z   fetch-tags: false
+2025-04-05T21:06:47.8719447Z   show-progress: true
+2025-04-05T21:06:47.8719839Z   lfs: false
+2025-04-05T21:06:47.8720201Z   submodules: false
+2025-04-05T21:06:47.8720609Z   set-safe-directory: true
+2025-04-05T21:06:47.8721287Z ##[endgroup]
+2025-04-05T21:06:48.1747919Z Syncing repository: reagento/dishka
+2025-04-05T21:06:48.1750876Z ##[group]Getting Git version info
+2025-04-05T21:06:48.1751970Z Working directory is '/home/runner/work/dishka/dishka'
+2025-04-05T21:06:48.1753593Z [command]/usr/bin/git version
+2025-04-05T21:06:48.1892179Z git version 2.49.0
+2025-04-05T21:06:48.1923035Z ##[endgroup]
+2025-04-05T21:06:48.1937751Z Temporarily overriding HOME='/home/runner/work/_temp/5806d040-b0a5-434e-8047-95ed22a1c248' before making global git config changes
+2025-04-05T21:06:48.1941122Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-05T21:06:48.1944100Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/dishka/dishka
+2025-04-05T21:06:48.1982798Z Deleting the contents of '/home/runner/work/dishka/dishka'
+2025-04-05T21:06:48.1987114Z ##[group]Initializing the repository
+2025-04-05T21:06:48.1991255Z [command]/usr/bin/git init /home/runner/work/dishka/dishka
+2025-04-05T21:06:48.2072380Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-05T21:06:48.2075575Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-05T21:06:48.2077737Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-05T21:06:48.2079912Z hint:
+2025-04-05T21:06:48.2081362Z hint: 	git config --global init.defaultBranch <name>
+2025-04-05T21:06:48.2083093Z hint:
+2025-04-05T21:06:48.2084504Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-05T21:06:48.2086742Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-05T21:06:48.2088361Z hint:
+2025-04-05T21:06:48.2089370Z hint: 	git branch -m <name>
+2025-04-05T21:06:48.2091254Z Initialized empty Git repository in /home/runner/work/dishka/dishka/.git/
+2025-04-05T21:06:48.2094664Z [command]/usr/bin/git remote add origin https://github.com/reagento/dishka
+2025-04-05T21:06:48.2128970Z ##[endgroup]
+2025-04-05T21:06:48.2130542Z ##[group]Disabling automatic garbage collection
+2025-04-05T21:06:48.2132853Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-05T21:06:48.2163464Z ##[endgroup]
+2025-04-05T21:06:48.2165788Z ##[group]Setting up auth
+2025-04-05T21:06:48.2171065Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-05T21:06:48.2204658Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-05T21:06:48.2553583Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-05T21:06:48.2588603Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-05T21:06:48.2820295Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-05T21:06:48.2855716Z ##[endgroup]
+2025-04-05T21:06:48.2858102Z ##[group]Fetching the repository
+2025-04-05T21:06:48.2868799Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +7ff1dc6b0557fd9e16166a22531a6b3e3076f80b:refs/remotes/pull/421/merge
+2025-04-05T21:06:48.5961956Z From https://github.com/reagento/dishka
+2025-04-05T21:06:48.5962922Z  * [new ref]         7ff1dc6b0557fd9e16166a22531a6b3e3076f80b -> pull/421/merge
+2025-04-05T21:06:48.5994626Z ##[endgroup]
+2025-04-05T21:06:48.5995185Z ##[group]Determining the checkout info
+2025-04-05T21:06:48.5997768Z ##[endgroup]
+2025-04-05T21:06:48.6004057Z [command]/usr/bin/git sparse-checkout disable
+2025-04-05T21:06:48.6049055Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-05T21:06:48.6079922Z ##[group]Checking out the ref
+2025-04-05T21:06:48.6085394Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/421/merge
+2025-04-05T21:06:48.6256589Z Note: switching to 'refs/remotes/pull/421/merge'.
+2025-04-05T21:06:48.6258647Z 
+2025-04-05T21:06:48.6259390Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-05T21:06:48.6260460Z changes and commit them, and you can discard any commits you make in this
+2025-04-05T21:06:48.6261098Z state without impacting any branches by switching back to a branch.
+2025-04-05T21:06:48.6261676Z 
+2025-04-05T21:06:48.6261923Z If you want to create a new branch to retain commits you create, you may
+2025-04-05T21:06:48.6262576Z do so (now or later) by using -c with the switch command. Example:
+2025-04-05T21:06:48.6262891Z 
+2025-04-05T21:06:48.6263055Z   git switch -c <new-branch-name>
+2025-04-05T21:06:48.6263379Z 
+2025-04-05T21:06:48.6263527Z Or undo this operation with:
+2025-04-05T21:06:48.6263726Z 
+2025-04-05T21:06:48.6263858Z   git switch -
+2025-04-05T21:06:48.6264229Z 
+2025-04-05T21:06:48.6264723Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-05T21:06:48.6265760Z 
+2025-04-05T21:06:48.6266536Z HEAD is now at 7ff1dc6 Merge f9bf791ef9c4c5b77a3eaa7cbf9dd1a89fc477c7 into c85a303d59b20189807a889f57d03b09c250bcc2
+2025-04-05T21:06:48.6268325Z ##[endgroup]
+2025-04-05T21:06:48.6312601Z [command]/usr/bin/git log -1 --format=%H
+2025-04-05T21:06:48.6337498Z 7ff1dc6b0557fd9e16166a22531a6b3e3076f80b
+2025-04-05T21:06:48.6608701Z ##[group]Run actions/setup-python@v5
+2025-04-05T21:06:48.6609371Z with:
+2025-04-05T21:06:48.6609730Z   python-version: 3.10
+2025-04-05T21:06:48.6610113Z   check-latest: false
+2025-04-05T21:06:48.6610635Z   token: ***
+2025-04-05T21:06:48.6611004Z   update-environment: true
+2025-04-05T21:06:48.6611420Z   allow-prereleases: false
+2025-04-05T21:06:48.6611810Z   freethreaded: false
+2025-04-05T21:06:48.6612184Z ##[endgroup]
+2025-04-05T21:06:48.8379865Z ##[group]Installed versions
+2025-04-05T21:06:48.8446508Z Successfully set up CPython (3.10.16)
+2025-04-05T21:06:48.8447745Z ##[endgroup]
+2025-04-05T21:06:48.8606652Z ##[group]Run astral-sh/setup-uv@v5
+2025-04-05T21:06:48.8607118Z with:
+2025-04-05T21:06:48.8607611Z   github-token: ***
+2025-04-05T21:06:48.8607966Z   enable-cache: auto
+2025-04-05T21:06:48.8608392Z   cache-dependency-glob: **/uv.lock
+**/requirements*.txt
+
+2025-04-05T21:06:48.8609069Z   prune-cache: true
+2025-04-05T21:06:48.8609451Z   ignore-nothing-to-cache: false
+2025-04-05T21:06:48.8609849Z   ignore-empty-workdir: false
+2025-04-05T21:06:48.8610219Z env:
+2025-04-05T21:06:48.8610606Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-04-05T21:06:48.8611200Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib/pkgconfig
+2025-04-05T21:06:48.8611777Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-04-05T21:06:48.8612293Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-04-05T21:06:48.8612817Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-04-05T21:06:48.8613374Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib
+2025-04-05T21:06:48.8613817Z ##[endgroup]
+2025-04-05T21:06:49.2960135Z Downloading uv from "https://github.com/astral-sh/uv/releases/download/0.6.12/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2025-04-05T21:06:49.6161611Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/cc03a812-3316-48ab-a8d8-b0f282af3617 -f /home/runner/work/_temp/a6682c89-c525-419a-9754-bc2cfc1bff7f
+2025-04-05T21:06:49.9584292Z Added /opt/hostedtoolcache/uv/0.6.12/x86_64 to the path
+2025-04-05T21:06:49.9585650Z Added /home/runner/.local/bin to the path
+2025-04-05T21:06:49.9594587Z Set UV_CACHE_DIR to /home/runner/work/_temp/setup-uv-cache
+2025-04-05T21:06:49.9595002Z Successfully installed uv version 0.6.12
+2025-04-05T21:06:49.9595428Z Searching files using cache dependency glob: **/uv.lock,**/requirements*.txt
+2025-04-05T21:06:49.9831630Z /home/runner/work/dishka/dishka/examples/real_world/requirements.txt
+2025-04-05T21:06:49.9849391Z /home/runner/work/dishka/dishka/examples/real_world/requirements_test.txt
+2025-04-05T21:06:49.9901167Z /home/runner/work/dishka/dishka/requirements_dev.txt
+2025-04-05T21:06:49.9907878Z /home/runner/work/dishka/dishka/requirements_doc.txt
+2025-04-05T21:06:50.0098663Z Found 4 files to hash.
+2025-04-05T21:06:50.6971052Z Trying to restore uv cache from GitHub Actions cache with key: setup-uv-1-x86_64-unknown-linux-gnu-3.10.16-090f227e8d68ce67e2d10b4859f7e62106da33c5f91e16f8df83622917cca9a8
+2025-04-05T21:06:50.7453149Z Cache hit for: setup-uv-1-x86_64-unknown-linux-gnu-3.10.16-090f227e8d68ce67e2d10b4859f7e62106da33c5f91e16f8df83622917cca9a8
+2025-04-05T21:06:50.9204727Z Received 9810401 of 9810401 (100.0%), 65.9 MBs/sec
+2025-04-05T21:06:50.9205352Z Cache Size: ~9 MB (9810401 B)
+2025-04-05T21:06:50.9230776Z [command]/usr/bin/tar -xf /home/runner/work/_temp/685e51fb-9035-4afe-ac3b-679f4e9657ed/cache.tzst -P -C /home/runner/work/dishka/dishka --use-compress-program unzstd
+2025-04-05T21:06:50.9967749Z Cache restored successfully
+2025-04-05T21:06:50.9993493Z uv cache restored from GitHub Actions cache with key: setup-uv-1-x86_64-unknown-linux-gnu-3.10.16-090f227e8d68ce67e2d10b4859f7e62106da33c5f91e16f8df83622917cca9a8
+2025-04-05T21:06:51.0138109Z ##[group]Run uv pip install . -r requirements_dev.txt --system
+2025-04-05T21:06:51.0138615Z [36;1muv pip install . -r requirements_dev.txt --system[0m
+2025-04-05T21:06:51.0191535Z shell: /usr/bin/bash -e {0}
+2025-04-05T21:06:51.0191784Z env:
+2025-04-05T21:06:51.0192040Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-04-05T21:06:51.0192468Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib/pkgconfig
+2025-04-05T21:06:51.0192873Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-04-05T21:06:51.0193227Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-04-05T21:06:51.0193582Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-04-05T21:06:51.0193935Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib
+2025-04-05T21:06:51.0194290Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-04-05T21:06:51.0194594Z ##[endgroup]
+2025-04-05T21:06:51.1140449Z Using Python 3.10.16 environment at: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-04-05T21:06:51.3060164Z Resolved 16 packages in 191ms
+2025-04-05T21:06:51.3072481Z    Building dishka @ file:///home/runner/work/dishka/dishka
+2025-04-05T21:06:51.3300357Z Downloading virtualenv (4.1MiB)
+2025-04-05T21:06:51.3422439Z Downloading mypy (11.8MiB)
+2025-04-05T21:06:51.3423637Z Downloading ruff (10.8MiB)
+2025-04-05T21:06:51.3425521Z Downloading uv (15.5MiB)
+2025-04-05T21:06:51.6816429Z  Downloaded ruff
+2025-04-05T21:06:51.6989425Z  Downloaded uv
+2025-04-05T21:06:51.6999432Z  Downloaded virtualenv
+2025-04-05T21:06:51.8928768Z  Downloaded mypy
+2025-04-05T21:06:52.9314900Z       Built dishka @ file:///home/runner/work/dishka/dishka
+2025-04-05T21:06:52.9351872Z Prepared 16 packages in 1.62s
+2025-04-05T21:06:52.9632534Z Installed 16 packages in 27ms
+2025-04-05T21:06:52.9633019Z  + argcomplete==3.6.2
+2025-04-05T21:06:52.9633373Z  + colorlog==6.9.0
+2025-04-05T21:06:52.9633811Z  + dishka==0.1 (from file:///home/runner/work/dishka/dishka)
+2025-04-05T21:06:52.9634387Z  + distlib==0.3.9
+2025-04-05T21:06:52.9634737Z  + exceptiongroup==1.2.2
+2025-04-05T21:06:52.9635089Z  + filelock==3.18.0
+2025-04-05T21:06:52.9635407Z  + mypy==1.15.0
+2025-04-05T21:06:52.9636447Z  + mypy-extensions==1.0.0
+2025-04-05T21:06:52.9636843Z  + nox==2024.10.9
+2025-04-05T21:06:52.9637131Z  + packaging==24.2
+2025-04-05T21:06:52.9637459Z  + platformdirs==4.3.7
+2025-04-05T21:06:52.9638130Z  + ruff==0.10.0
+2025-04-05T21:06:52.9638446Z  + tomli==2.2.1
+2025-04-05T21:06:52.9638729Z  + typing-extensions==4.13.1
+2025-04-05T21:06:52.9639294Z  + uv==0.5.31
+2025-04-05T21:06:52.9639620Z  + virtualenv==20.30.0
+2025-04-05T21:06:52.9716287Z ##[group]Run ruff check .
+2025-04-05T21:06:52.9716548Z [36;1mruff check .[0m
+2025-04-05T21:06:52.9765157Z shell: /usr/bin/bash -e {0}
+2025-04-05T21:06:52.9765385Z env:
+2025-04-05T21:06:52.9765638Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-04-05T21:06:52.9766059Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib/pkgconfig
+2025-04-05T21:06:52.9766478Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-04-05T21:06:52.9766826Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-04-05T21:06:52.9767178Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-04-05T21:06:52.9767529Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib
+2025-04-05T21:06:52.9767869Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-04-05T21:06:52.9768137Z ##[endgroup]
+2025-04-05T21:06:53.0193822Z All checks passed!
+2025-04-05T21:06:53.0235572Z ##[group]Run mypy src
+2025-04-05T21:06:53.0235819Z [36;1mmypy src[0m
+2025-04-05T21:06:53.0284309Z shell: /usr/bin/bash -e {0}
+2025-04-05T21:06:53.0284532Z env:
+2025-04-05T21:06:53.0284786Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-04-05T21:06:53.0285214Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib/pkgconfig
+2025-04-05T21:06:53.0285616Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-04-05T21:06:53.0286150Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-04-05T21:06:53.0286516Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-04-05T21:06:53.0286876Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib
+2025-04-05T21:06:53.0287215Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-04-05T21:06:53.0287484Z ##[endgroup]
+2025-04-05T21:06:55.5491914Z src/dishka/entities/with_parents.py:5: error: Module "typing" has no attribute "TypeVarTuple"  [attr-defined]
+2025-04-05T21:06:55.5493347Z src/dishka/entities/with_parents.py:5: note: Use `from typing_extensions import TypeVarTuple` instead
+2025-04-05T21:06:55.5494943Z src/dishka/entities/with_parents.py:5: note: See https://mypy.readthedocs.io/en/stable/runtime_troubles.html#using-new-additions-to-the-typing-module
+2025-04-05T21:06:55.5496479Z src/dishka/entities/with_parents.py:5: error: Module "typing" has no attribute "Unpack"  [attr-defined]
+2025-04-05T21:06:55.5497634Z src/dishka/entities/with_parents.py:5: note: Use `from typing_extensions import Unpack` instead
+2025-04-05T21:06:55.6821377Z Found 2 errors in 1 file (checked 46 source files)
+2025-04-05T21:06:55.6909515Z ##[error]Process completed with exit code 1.
+2025-04-05T21:06:55.7014960Z Post job cleanup.
+2025-04-05T21:06:55.7943565Z [command]/usr/bin/git version
+2025-04-05T21:06:55.7989620Z git version 2.49.0
+2025-04-05T21:06:55.8035080Z Temporarily overriding HOME='/home/runner/work/_temp/a953d54d-77e3-4e37-ac10-06eb302ef6e7' before making global git config changes
+2025-04-05T21:06:55.8036180Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-05T21:06:55.8040556Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/dishka/dishka
+2025-04-05T21:06:55.8075205Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-05T21:06:55.8108443Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-05T21:06:55.8350614Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-05T21:06:55.8372249Z http.https://github.com/.extraheader
+2025-04-05T21:06:55.8384617Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-05T21:06:55.8414796Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-05T21:06:55.8770644Z Cleaning up orphan processes

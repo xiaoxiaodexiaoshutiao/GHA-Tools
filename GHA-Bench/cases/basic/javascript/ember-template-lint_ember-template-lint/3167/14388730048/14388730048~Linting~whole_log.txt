@@ -1,0 +1,226 @@
+﻿2025-04-10T19:44:42.0165255Z Current runner version: '2.323.0'
+2025-04-10T19:44:42.0190603Z ##[group]Operating System
+2025-04-10T19:44:42.0191386Z Ubuntu
+2025-04-10T19:44:42.0191865Z 24.04.2
+2025-04-10T19:44:42.0192424Z LTS
+2025-04-10T19:44:42.0192860Z ##[endgroup]
+2025-04-10T19:44:42.0193366Z ##[group]Runner Image
+2025-04-10T19:44:42.0193980Z Image: ubuntu-24.04
+2025-04-10T19:44:42.0194520Z Version: 20250406.1.0
+2025-04-10T19:44:42.0195493Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250406.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-10T19:44:42.0196907Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250406.1
+2025-04-10T19:44:42.0198007Z ##[endgroup]
+2025-04-10T19:44:42.0198479Z ##[group]Runner Image Provisioner
+2025-04-10T19:44:42.0199115Z 2.0.422.1
+2025-04-10T19:44:42.0199551Z ##[endgroup]
+2025-04-10T19:44:42.0200523Z ##[group]GITHUB_TOKEN Permissions
+2025-04-10T19:44:42.0202537Z Contents: read
+2025-04-10T19:44:42.0203043Z Metadata: read
+2025-04-10T19:44:42.0203810Z ##[endgroup]
+2025-04-10T19:44:42.0206158Z Secret source: None
+2025-04-10T19:44:42.0206965Z Prepare workflow directory
+2025-04-10T19:44:42.0595015Z Prepare all required actions
+2025-04-10T19:44:42.0651872Z Getting action download info
+2025-04-10T19:44:42.6431550Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-10T19:44:42.6432580Z Version: 4.2.2
+2025-04-10T19:44:42.6433553Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-10T19:44:42.6434640Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-10T19:44:42.6435432Z ##[endgroup]
+2025-04-10T19:44:42.7411795Z Download action repository 'volta-cli/action@v4' (SHA:5c175f92dea6f48441c436471e6479dbc192e194)
+2025-04-10T19:44:43.2597218Z Complete job name: Linting
+2025-04-10T19:44:43.3258346Z ##[group]Run actions/checkout@v4
+2025-04-10T19:44:43.3259187Z with:
+2025-04-10T19:44:43.3259662Z   repository: ember-template-lint/ember-template-lint
+2025-04-10T19:44:43.3260384Z   token: ***
+2025-04-10T19:44:43.3260767Z   ssh-strict: true
+2025-04-10T19:44:43.3261145Z   ssh-user: git
+2025-04-10T19:44:43.3261545Z   persist-credentials: true
+2025-04-10T19:44:43.3261996Z   clean: true
+2025-04-10T19:44:43.3262374Z   sparse-checkout-cone-mode: true
+2025-04-10T19:44:43.3262839Z   fetch-depth: 1
+2025-04-10T19:44:43.3263207Z   fetch-tags: false
+2025-04-10T19:44:43.3263596Z   show-progress: true
+2025-04-10T19:44:43.3263993Z   lfs: false
+2025-04-10T19:44:43.3264349Z   submodules: false
+2025-04-10T19:44:43.3264740Z   set-safe-directory: true
+2025-04-10T19:44:43.3265368Z env:
+2025-04-10T19:44:43.3265785Z   NODE_OPTIONS: --max-old-space-size=4096
+2025-04-10T19:44:43.3266278Z ##[endgroup]
+2025-04-10T19:44:43.5474346Z Syncing repository: ember-template-lint/ember-template-lint
+2025-04-10T19:44:43.5476673Z ##[group]Getting Git version info
+2025-04-10T19:44:43.5478400Z Working directory is '/home/runner/work/ember-template-lint/ember-template-lint'
+2025-04-10T19:44:43.5480431Z [command]/usr/bin/git version
+2025-04-10T19:44:43.5585956Z git version 2.49.0
+2025-04-10T19:44:43.5614274Z ##[endgroup]
+2025-04-10T19:44:43.5627062Z Temporarily overriding HOME='/home/runner/work/_temp/2989f003-f5dd-4fb6-a47a-5cd2dbc314ce' before making global git config changes
+2025-04-10T19:44:43.5629025Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-10T19:44:43.5632398Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ember-template-lint/ember-template-lint
+2025-04-10T19:44:43.5668016Z Deleting the contents of '/home/runner/work/ember-template-lint/ember-template-lint'
+2025-04-10T19:44:43.5671527Z ##[group]Initializing the repository
+2025-04-10T19:44:43.5675648Z [command]/usr/bin/git init /home/runner/work/ember-template-lint/ember-template-lint
+2025-04-10T19:44:43.5744538Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-10T19:44:43.5745922Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-10T19:44:43.5747250Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-10T19:44:43.5748203Z hint:
+2025-04-10T19:44:43.5748835Z hint: 	git config --global init.defaultBranch <name>
+2025-04-10T19:44:43.5749480Z hint:
+2025-04-10T19:44:43.5750097Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-10T19:44:43.5751103Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-10T19:44:43.5752449Z hint:
+2025-04-10T19:44:43.5753058Z hint: 	git branch -m <name>
+2025-04-10T19:44:43.5754039Z Initialized empty Git repository in /home/runner/work/ember-template-lint/ember-template-lint/.git/
+2025-04-10T19:44:43.5764940Z [command]/usr/bin/git remote add origin https://github.com/ember-template-lint/ember-template-lint
+2025-04-10T19:44:43.5800475Z ##[endgroup]
+2025-04-10T19:44:43.5801855Z ##[group]Disabling automatic garbage collection
+2025-04-10T19:44:43.5805352Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-10T19:44:43.5836074Z ##[endgroup]
+2025-04-10T19:44:43.5837741Z ##[group]Setting up auth
+2025-04-10T19:44:43.5843932Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-10T19:44:43.5875600Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-10T19:44:43.6207813Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-10T19:44:43.6239989Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-10T19:44:43.6486190Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-10T19:44:43.6526366Z ##[endgroup]
+2025-04-10T19:44:43.6535074Z ##[group]Fetching the repository
+2025-04-10T19:44:43.6537081Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +fcccaa60de34eeb1ae145bf1c72479709ab8d092:refs/remotes/pull/3167/merge
+2025-04-10T19:44:44.3743984Z From https://github.com/ember-template-lint/ember-template-lint
+2025-04-10T19:44:44.3746025Z  * [new ref]         fcccaa60de34eeb1ae145bf1c72479709ab8d092 -> pull/3167/merge
+2025-04-10T19:44:44.3776713Z ##[endgroup]
+2025-04-10T19:44:44.3778373Z ##[group]Determining the checkout info
+2025-04-10T19:44:44.3780073Z ##[endgroup]
+2025-04-10T19:44:44.3784052Z [command]/usr/bin/git sparse-checkout disable
+2025-04-10T19:44:44.3825124Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-10T19:44:44.3853346Z ##[group]Checking out the ref
+2025-04-10T19:44:44.3856575Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/3167/merge
+2025-04-10T19:44:44.4181281Z Note: switching to 'refs/remotes/pull/3167/merge'.
+2025-04-10T19:44:44.4182481Z 
+2025-04-10T19:44:44.4183353Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-10T19:44:44.4186667Z changes and commit them, and you can discard any commits you make in this
+2025-04-10T19:44:44.4190005Z state without impacting any branches by switching back to a branch.
+2025-04-10T19:44:44.4192276Z 
+2025-04-10T19:44:44.4193984Z If you want to create a new branch to retain commits you create, you may
+2025-04-10T19:44:44.4197005Z do so (now or later) by using -c with the switch command. Example:
+2025-04-10T19:44:44.4198883Z 
+2025-04-10T19:44:44.4199497Z   git switch -c <new-branch-name>
+2025-04-10T19:44:44.4200489Z 
+2025-04-10T19:44:44.4201084Z Or undo this operation with:
+2025-04-10T19:44:44.4202048Z 
+2025-04-10T19:44:44.4202563Z   git switch -
+2025-04-10T19:44:44.4203298Z 
+2025-04-10T19:44:44.4204562Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-10T19:44:44.4206172Z 
+2025-04-10T19:44:44.4208150Z HEAD is now at fcccaa6 Merge 271fbc0fd0c286212c4d12c86f168b46bf451443 into f69b4359361b3a8643e8ab45f7c306b7157271d1
+2025-04-10T19:44:44.4213104Z ##[endgroup]
+2025-04-10T19:44:44.4245949Z [command]/usr/bin/git log -1 --format=%H
+2025-04-10T19:44:44.4272419Z fcccaa60de34eeb1ae145bf1c72479709ab8d092
+2025-04-10T19:44:44.4610035Z ##[group]Run volta-cli/action@v4
+2025-04-10T19:44:44.4611118Z with:
+2025-04-10T19:44:44.4612209Z   token: ***
+2025-04-10T19:44:44.4613041Z   always-auth: false
+2025-04-10T19:44:44.4613929Z env:
+2025-04-10T19:44:44.4614794Z   NODE_OPTIONS: --max-old-space-size=4096
+2025-04-10T19:44:44.4615981Z ##[endgroup]
+2025-04-10T19:44:44.5939412Z looking up latest volta version
+2025-04-10T19:44:44.5943587Z ##[group]Determine the latest volta version
+2025-04-10T19:44:44.5946894Z Retrieving release info from https://api.github.com/repos/volta-cli/volta/releases/latest
+2025-04-10T19:44:44.8335077Z Latest volta version is 2.0.2
+2025-04-10T19:44:44.8337328Z ##[endgroup]
+2025-04-10T19:44:44.8344298Z ##[group]downloading volta@2.0.2
+2025-04-10T19:44:44.8348839Z downloading volta from `https://github.com/volta-cli/volta/releases/download/v2.0.2/volta-2.0.2-linux.tar.gz`
+2025-04-10T19:44:45.4343894Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/e470c474-dc43-4b23-86d4-157b9c353a44/bin -f /home/runner/work/_temp/b08b4c95-ba13-4ffe-aee2-55f622be4694
+2025-04-10T19:44:45.6289217Z ##[endgroup]
+2025-04-10T19:44:45.6581472Z executing `/opt/hostedtoolcache/volta/2.0.2/x64/bin/volta setup`
+2025-04-10T19:44:45.6584321Z [command]/opt/hostedtoolcache/volta/2.0.2/x64/bin/volta setup
+2025-04-10T19:44:45.6728700Z caching volta@2.0.2 into /opt/hostedtoolcache/volta/2.0.2/x64
+2025-04-10T19:44:45.6729643Z adding /opt/hostedtoolcache/volta/2.0.2/x64/bin to $PATH
+2025-04-10T19:44:45.6914677Z ##[group]Run npm ci
+2025-04-10T19:44:45.6914965Z [36;1mnpm ci[0m
+2025-04-10T19:44:45.6968248Z shell: /usr/bin/bash -e {0}
+2025-04-10T19:44:45.6968561Z env:
+2025-04-10T19:44:45.6968809Z   NODE_OPTIONS: --max-old-space-size=4096
+2025-04-10T19:44:45.6969189Z   VOLTA_HOME: /opt/hostedtoolcache/volta/2.0.2/x64
+2025-04-10T19:44:45.6969528Z ##[endgroup]
+2025-04-10T19:44:59.2665898Z npm WARN deprecated @npmcli/move-file@1.1.2: This functionality has been moved to @npmcli/fs
+2025-04-10T19:44:59.3805129Z npm WARN deprecated @npmcli/move-file@2.0.1: This functionality has been moved to @npmcli/fs
+2025-04-10T19:44:59.6123047Z npm WARN deprecated @npmcli/move-file@2.0.1: This functionality has been moved to @npmcli/fs
+2025-04-10T19:44:59.6453429Z npm WARN deprecated readdir-scoped-modules@1.1.0: This functionality has been moved to @npmcli/fs
+2025-04-10T19:44:59.6681242Z npm WARN deprecated debuglog@1.0.1: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+2025-04-10T19:45:00.2878548Z npm WARN deprecated glob@8.1.0: Glob versions prior to v9 are no longer supported
+2025-04-10T19:45:03.0208195Z npm WARN deprecated sinon@14.0.2: 16.1.1
+2025-04-10T19:45:06.1601269Z 
+2025-04-10T19:45:06.1602105Z added 1566 packages, and audited 1567 packages in 19s
+2025-04-10T19:45:06.1602663Z 
+2025-04-10T19:45:06.1602964Z 259 packages are looking for funding
+2025-04-10T19:45:06.1603473Z   run `npm fund` for details
+2025-04-10T19:45:06.1816349Z 
+2025-04-10T19:45:06.1816958Z 17 vulnerabilities (13 moderate, 2 high, 2 critical)
+2025-04-10T19:45:06.1817589Z 
+2025-04-10T19:45:06.1817980Z To address issues that do not require attention, run:
+2025-04-10T19:45:06.1818497Z   npm audit fix
+2025-04-10T19:45:06.1818734Z 
+2025-04-10T19:45:06.1819135Z To address all issues (including breaking changes), run:
+2025-04-10T19:45:06.1819683Z   npm audit fix --force
+2025-04-10T19:45:06.1819926Z 
+2025-04-10T19:45:06.1820133Z Run `npm audit` for details.
+2025-04-10T19:45:06.2452413Z ##[group]Run npm run lint
+2025-04-10T19:45:06.2452696Z [36;1mnpm run lint[0m
+2025-04-10T19:45:06.2502174Z shell: /usr/bin/bash -e {0}
+2025-04-10T19:45:06.2502401Z env:
+2025-04-10T19:45:06.2502595Z   NODE_OPTIONS: --max-old-space-size=4096
+2025-04-10T19:45:06.2502907Z   VOLTA_HOME: /opt/hostedtoolcache/volta/2.0.2/x64
+2025-04-10T19:45:06.2503397Z ##[endgroup]
+2025-04-10T19:45:06.4947339Z 
+2025-04-10T19:45:06.4948215Z > ember-template-lint@7.0.5 lint
+2025-04-10T19:45:06.4948906Z > npm-run-all --continue-on-error --parallel "lint:!(fix)"
+2025-04-10T19:45:06.4949289Z 
+2025-04-10T19:45:07.0157538Z 
+2025-04-10T19:45:07.0162277Z > ember-template-lint@7.0.5 lint:format
+2025-04-10T19:45:07.0167002Z > prettier --check .
+2025-04-10T19:45:07.0167779Z 
+2025-04-10T19:45:07.0967046Z 
+2025-04-10T19:45:07.0968757Z > ember-template-lint@7.0.5 lint:docs
+2025-04-10T19:45:07.0969681Z > markdownlint "**/*.md"
+2025-04-10T19:45:07.0989324Z 
+2025-04-10T19:45:07.1056920Z 
+2025-04-10T19:45:07.1057871Z > ember-template-lint@7.0.5 lint:package-json-sorting
+2025-04-10T19:45:07.1058792Z > sort-package-json --check
+2025-04-10T19:45:07.1059437Z 
+2025-04-10T19:45:07.1280719Z 
+2025-04-10T19:45:07.1281402Z > ember-template-lint@7.0.5 lint:package-json
+2025-04-10T19:45:07.1281955Z > npmPkgJsonLint .
+2025-04-10T19:45:07.1282161Z 
+2025-04-10T19:45:07.2230989Z 
+2025-04-10T19:45:07.2232028Z > ember-template-lint@7.0.5 lint:js
+2025-04-10T19:45:07.2232846Z > eslint --cache .
+2025-04-10T19:45:07.2233451Z 
+2025-04-10T19:45:07.3049198Z Checking formatting...
+2025-04-10T19:45:07.3549846Z Found 1 file.
+2025-04-10T19:45:07.3554268Z 1 file was already sorted.
+2025-04-10T19:45:10.4168943Z [warn] test/unit/-private/file-path-test.js
+2025-04-10T19:45:11.3810834Z [warn] Code style issues found in the above file. Run Prettier to fix.
+2025-04-10T19:45:19.2050018Z 
+2025-04-10T19:45:19.2051187Z /home/runner/work/ember-template-lint/ember-template-lint/test/unit/-private/file-path-test.js
+2025-04-10T19:45:19.2079095Z ##[error]  156:8   error  Strings must use singlequote  quotes
+2025-04-10T19:45:19.2087304Z ##[error]  157:20  error  Strings must use singlequote  quotes
+2025-04-10T19:45:19.2088749Z ##[error]  158:20  error  Strings must use singlequote  quotes
+2025-04-10T19:45:19.2089630Z ##[error]  159:20  error  Strings must use singlequote  quotes
+2025-04-10T19:45:19.2090500Z ##[error]  160:20  error  Strings must use singlequote  quotes
+2025-04-10T19:45:19.2091068Z 
+2025-04-10T19:45:19.2091463Z ✖ 5 problems (5 errors, 0 warnings)
+2025-04-10T19:45:19.2091865Z   5 errors and 0 warnings potentially fixable with the `--fix` option.
+2025-04-10T19:45:19.2092124Z 
+2025-04-10T19:45:19.2796064Z ERROR: "lint:js" exited with 1.
+2025-04-10T19:45:19.2898525Z ##[error]Process completed with exit code 1.
+2025-04-10T19:45:19.2988459Z Post job cleanup.
+2025-04-10T19:45:19.4262982Z [command]/usr/bin/git version
+2025-04-10T19:45:19.4304215Z git version 2.49.0
+2025-04-10T19:45:19.4356272Z Temporarily overriding HOME='/home/runner/work/_temp/44ecca55-362a-4e21-83ec-63221d882110' before making global git config changes
+2025-04-10T19:45:19.4357993Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-10T19:45:19.4362385Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ember-template-lint/ember-template-lint
+2025-04-10T19:45:19.4398139Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-10T19:45:19.4433101Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-10T19:45:19.4690196Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-10T19:45:19.4714365Z http.https://github.com/.extraheader
+2025-04-10T19:45:19.4728622Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-10T19:45:19.4763212Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-10T19:45:19.5114281Z Cleaning up orphan processes

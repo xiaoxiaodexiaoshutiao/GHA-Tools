@@ -1,0 +1,222 @@
+﻿2025-02-28T07:59:24.2048343Z Current runner version: '2.322.0'
+2025-02-28T07:59:24.2076228Z ##[group]Operating System
+2025-02-28T07:59:24.2077039Z Ubuntu
+2025-02-28T07:59:24.2077632Z 24.04.2
+2025-02-28T07:59:24.2078132Z LTS
+2025-02-28T07:59:24.2078588Z ##[endgroup]
+2025-02-28T07:59:24.2079202Z ##[group]Runner Image
+2025-02-28T07:59:24.2079785Z Image: ubuntu-24.04
+2025-02-28T07:59:24.2080314Z Version: 20250223.1.0
+2025-02-28T07:59:24.2081343Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250223.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-28T07:59:24.2082862Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250223.1
+2025-02-28T07:59:24.2084148Z ##[endgroup]
+2025-02-28T07:59:24.2084766Z ##[group]Runner Image Provisioner
+2025-02-28T07:59:24.2085404Z 2.0.422.1
+2025-02-28T07:59:24.2085840Z ##[endgroup]
+2025-02-28T07:59:24.2088190Z ##[group]GITHUB_TOKEN Permissions
+2025-02-28T07:59:24.2090412Z Actions: read
+2025-02-28T07:59:24.2091277Z Attestations: read
+2025-02-28T07:59:24.2091874Z Checks: read
+2025-02-28T07:59:24.2092334Z Contents: read
+2025-02-28T07:59:24.2092995Z Deployments: read
+2025-02-28T07:59:24.2093512Z Discussions: read
+2025-02-28T07:59:24.2094198Z Issues: read
+2025-02-28T07:59:24.2094796Z Metadata: read
+2025-02-28T07:59:24.2095259Z Packages: read
+2025-02-28T07:59:24.2095733Z Pages: read
+2025-02-28T07:59:24.2096264Z PullRequests: read
+2025-02-28T07:59:24.2096796Z RepositoryProjects: read
+2025-02-28T07:59:24.2097322Z SecurityEvents: read
+2025-02-28T07:59:24.2097914Z Statuses: read
+2025-02-28T07:59:24.2098401Z ##[endgroup]
+2025-02-28T07:59:24.2100731Z Secret source: None
+2025-02-28T07:59:24.2101581Z Prepare workflow directory
+2025-02-28T07:59:24.2457895Z Prepare all required actions
+2025-02-28T07:59:24.2496062Z Getting action download info
+2025-02-28T07:59:24.6682612Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-02-28T07:59:24.7848443Z Download action repository 'fsfe/reuse-action@v5' (SHA:bb774aa972c2a89ff34781233d275075cbddf542)
+2025-02-28T07:59:25.1369637Z Complete job name: reuse
+2025-02-28T07:59:25.1833001Z ##[group]Build container for action use: '/home/runner/work/_actions/fsfe/reuse-action/v5/Dockerfile'.
+2025-02-28T07:59:25.1887513Z ##[command]/usr/bin/docker build -t 057577:c2403e3a34a54e2086687140b55ddde5 -f "/home/runner/work/_actions/fsfe/reuse-action/v5/Dockerfile" "/home/runner/work/_actions/fsfe/reuse-action/v5"
+2025-02-28T07:59:25.7324322Z #0 building with "default" instance using docker driver
+2025-02-28T07:59:25.7325534Z 
+2025-02-28T07:59:25.7325850Z #1 [internal] load build definition from Dockerfile
+2025-02-28T07:59:25.7326536Z #1 transferring dockerfile: 359B done
+2025-02-28T07:59:25.7327061Z #1 DONE 0.0s
+2025-02-28T07:59:25.7327293Z 
+2025-02-28T07:59:25.7327587Z #2 [auth] fsfe/reuse:pull token for registry-1.docker.io
+2025-02-28T07:59:25.8823358Z #2 DONE 0.0s
+2025-02-28T07:59:25.8824131Z 
+2025-02-28T07:59:25.8824450Z #3 [internal] load metadata for docker.io/fsfe/reuse:5
+2025-02-28T07:59:26.1118732Z #3 DONE 0.5s
+2025-02-28T07:59:26.2316569Z 
+2025-02-28T07:59:26.2319814Z #4 [internal] load .dockerignore
+2025-02-28T07:59:26.2321864Z #4 transferring context: 2B done
+2025-02-28T07:59:26.2326493Z #4 DONE 0.0s
+2025-02-28T07:59:26.2327500Z 
+2025-02-28T07:59:26.2328100Z #5 [internal] load build context
+2025-02-28T07:59:26.2329418Z #5 transferring context: 465B done
+2025-02-28T07:59:26.2332223Z #5 DONE 0.0s
+2025-02-28T07:59:26.2333136Z 
+2025-02-28T07:59:26.2340201Z #6 [1/2] FROM docker.io/fsfe/reuse:5@sha256:000c3fc0c3e39e95b36fa9966d0104ae0496571b7de7b9f0c889a66438581bda
+2025-02-28T07:59:26.2345457Z #6 resolve docker.io/fsfe/reuse:5@sha256:000c3fc0c3e39e95b36fa9966d0104ae0496571b7de7b9f0c889a66438581bda done
+2025-02-28T07:59:26.2350113Z #6 extracting sha256:dc0decf4841d19b14e836c2d82bd5cb9540fb5e0d1359549ca243f49036557e9
+2025-02-28T07:59:26.2355114Z #6 sha256:dc0decf4841d19b14e836c2d82bd5cb9540fb5e0d1359549ca243f49036557e9 3.42MB / 3.42MB 0.1s done
+2025-02-28T07:59:26.2360538Z #6 sha256:b86d9a72f35c0513822e0f2a59b5f561b859ed0e14765f736a2cf345d96b2857 3.49MB / 30.72MB 0.1s
+2025-02-28T07:59:26.2370561Z #6 sha256:6683c2a733e0f8294bdb27c79cacd83db5c4bdad9034b962ba125d6b27e18e53 3.15MB / 8.53MB 0.1s
+2025-02-28T07:59:26.2378255Z #6 sha256:761d8feb329cb3b6f484572a34c0479b889a403bebf3978b32573ec75421872f 0B / 161B 0.1s
+2025-02-28T07:59:26.2382057Z #6 sha256:000c3fc0c3e39e95b36fa9966d0104ae0496571b7de7b9f0c889a66438581bda 1.61kB / 1.61kB done
+2025-02-28T07:59:26.2388395Z #6 sha256:2af851da25dae631c7a86e3a01f830ed87c43d502f5aaf09ed2f669a6e262ef5 1.24kB / 1.24kB done
+2025-02-28T07:59:26.2392775Z #6 sha256:95c247d0dc93c3755d5bd749f685f6ea7933f02bd0c2f4340fd2a36a342024de 2.68kB / 2.68kB done
+2025-02-28T07:59:26.3895345Z #6 extracting sha256:dc0decf4841d19b14e836c2d82bd5cb9540fb5e0d1359549ca243f49036557e9 0.1s done
+2025-02-28T07:59:26.3899237Z #6 sha256:b86d9a72f35c0513822e0f2a59b5f561b859ed0e14765f736a2cf345d96b2857 30.72MB / 30.72MB 0.2s
+2025-02-28T07:59:26.3903293Z #6 sha256:6683c2a733e0f8294bdb27c79cacd83db5c4bdad9034b962ba125d6b27e18e53 8.53MB / 8.53MB 0.1s done
+2025-02-28T07:59:26.3907521Z #6 sha256:761d8feb329cb3b6f484572a34c0479b889a403bebf3978b32573ec75421872f 161B / 161B 0.1s done
+2025-02-28T07:59:26.3911327Z #6 sha256:a2082dc05704d82dda9559089282cc3dd4de8b0fa5245dd68d3de99d6894284a 93B / 93B 0.2s done
+2025-02-28T07:59:26.3914957Z #6 extracting sha256:b86d9a72f35c0513822e0f2a59b5f561b859ed0e14765f736a2cf345d96b2857
+2025-02-28T07:59:26.4940161Z #6 sha256:b86d9a72f35c0513822e0f2a59b5f561b859ed0e14765f736a2cf345d96b2857 30.72MB / 30.72MB 0.2s done
+2025-02-28T07:59:27.4779711Z #6 extracting sha256:b86d9a72f35c0513822e0f2a59b5f561b859ed0e14765f736a2cf345d96b2857 0.9s done
+2025-02-28T07:59:27.4921126Z #6 extracting sha256:6683c2a733e0f8294bdb27c79cacd83db5c4bdad9034b962ba125d6b27e18e53
+2025-02-28T07:59:28.1092880Z #6 extracting sha256:6683c2a733e0f8294bdb27c79cacd83db5c4bdad9034b962ba125d6b27e18e53 0.5s done
+2025-02-28T07:59:28.1094409Z #6 extracting sha256:761d8feb329cb3b6f484572a34c0479b889a403bebf3978b32573ec75421872f done
+2025-02-28T07:59:28.1096099Z #6 extracting sha256:a2082dc05704d82dda9559089282cc3dd4de8b0fa5245dd68d3de99d6894284a
+2025-02-28T07:59:28.3068817Z #6 extracting sha256:a2082dc05704d82dda9559089282cc3dd4de8b0fa5245dd68d3de99d6894284a done
+2025-02-28T07:59:28.3069953Z #6 DONE 2.0s
+2025-02-28T07:59:28.3070355Z 
+2025-02-28T07:59:28.3070931Z #7 [2/2] COPY reuse-action-wrapper.sh /bin/reuse-action-wrapper
+2025-02-28T07:59:28.3071588Z #7 DONE 0.0s
+2025-02-28T07:59:28.3071806Z 
+2025-02-28T07:59:28.3071992Z #8 exporting to image
+2025-02-28T07:59:28.3072413Z #8 exporting layers
+2025-02-28T07:59:29.0065951Z #8 exporting layers 0.9s done
+2025-02-28T07:59:29.0371942Z #8 writing image sha256:732760acd37ce7f6c3493e5f5740c9c1d8ea0979f6adbea61ac38b059131097b done
+2025-02-28T07:59:29.0373095Z #8 naming to docker.io/library/057577:c2403e3a34a54e2086687140b55ddde5 done
+2025-02-28T07:59:29.0373925Z #8 DONE 0.9s
+2025-02-28T07:59:29.0433678Z ##[endgroup]
+2025-02-28T07:59:29.0701689Z ##[group]Run actions/checkout@v4
+2025-02-28T07:59:29.0702308Z with:
+2025-02-28T07:59:29.0702528Z   repository: objectionary/jeo-maven-plugin
+2025-02-28T07:59:29.0703077Z   token: ***
+2025-02-28T07:59:29.0703252Z   ssh-strict: true
+2025-02-28T07:59:29.0703435Z   ssh-user: git
+2025-02-28T07:59:29.0703612Z   persist-credentials: true
+2025-02-28T07:59:29.0704045Z   clean: true
+2025-02-28T07:59:29.0704237Z   sparse-checkout-cone-mode: true
+2025-02-28T07:59:29.0704473Z   fetch-depth: 1
+2025-02-28T07:59:29.0704676Z   fetch-tags: false
+2025-02-28T07:59:29.0704854Z   show-progress: true
+2025-02-28T07:59:29.0705038Z   lfs: false
+2025-02-28T07:59:29.0705193Z   submodules: false
+2025-02-28T07:59:29.0705406Z   set-safe-directory: true
+2025-02-28T07:59:29.0705914Z ##[endgroup]
+2025-02-28T07:59:29.3404843Z Syncing repository: objectionary/jeo-maven-plugin
+2025-02-28T07:59:29.3406670Z ##[group]Getting Git version info
+2025-02-28T07:59:29.3407184Z Working directory is '/home/runner/work/jeo-maven-plugin/jeo-maven-plugin'
+2025-02-28T07:59:29.3407919Z [command]/usr/bin/git version
+2025-02-28T07:59:29.3428915Z git version 2.48.1
+2025-02-28T07:59:29.3464355Z ##[endgroup]
+2025-02-28T07:59:29.3480081Z Temporarily overriding HOME='/home/runner/work/_temp/897d0133-86ad-41ff-886e-2440afe91eff' before making global git config changes
+2025-02-28T07:59:29.3480894Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-28T07:59:29.3486694Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/jeo-maven-plugin/jeo-maven-plugin
+2025-02-28T07:59:29.3526810Z Deleting the contents of '/home/runner/work/jeo-maven-plugin/jeo-maven-plugin'
+2025-02-28T07:59:29.3530291Z ##[group]Initializing the repository
+2025-02-28T07:59:29.3534844Z [command]/usr/bin/git init /home/runner/work/jeo-maven-plugin/jeo-maven-plugin
+2025-02-28T07:59:29.3654233Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-28T07:59:29.3655239Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-28T07:59:29.3655796Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-28T07:59:29.3656173Z hint:
+2025-02-28T07:59:29.3656481Z hint: 	git config --global init.defaultBranch <name>
+2025-02-28T07:59:29.3656783Z hint:
+2025-02-28T07:59:29.3657097Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-28T07:59:29.3657633Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-28T07:59:29.3658057Z hint:
+2025-02-28T07:59:29.3658276Z hint: 	git branch -m <name>
+2025-02-28T07:59:29.3661806Z Initialized empty Git repository in /home/runner/work/jeo-maven-plugin/jeo-maven-plugin/.git/
+2025-02-28T07:59:29.3675454Z [command]/usr/bin/git remote add origin https://github.com/objectionary/jeo-maven-plugin
+2025-02-28T07:59:29.3715039Z ##[endgroup]
+2025-02-28T07:59:29.3715529Z ##[group]Disabling automatic garbage collection
+2025-02-28T07:59:29.3719987Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-28T07:59:29.3750469Z ##[endgroup]
+2025-02-28T07:59:29.3750843Z ##[group]Setting up auth
+2025-02-28T07:59:29.3759552Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-28T07:59:29.3793061Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-28T07:59:29.4162879Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-28T07:59:29.4194372Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-28T07:59:29.4446103Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-28T07:59:29.4485154Z ##[endgroup]
+2025-02-28T07:59:29.4486207Z ##[group]Fetching the repository
+2025-02-28T07:59:29.4494865Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +308ac377fdfcffdf6782882daa3a6396b95a65b7:refs/remotes/pull/1021/merge
+2025-02-28T07:59:29.8468182Z From https://github.com/objectionary/jeo-maven-plugin
+2025-02-28T07:59:29.8469372Z  * [new ref]         308ac377fdfcffdf6782882daa3a6396b95a65b7 -> pull/1021/merge
+2025-02-28T07:59:29.8501637Z ##[endgroup]
+2025-02-28T07:59:29.8502203Z ##[group]Determining the checkout info
+2025-02-28T07:59:29.8504389Z ##[endgroup]
+2025-02-28T07:59:29.8510490Z [command]/usr/bin/git sparse-checkout disable
+2025-02-28T07:59:29.8560574Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-28T07:59:29.8595006Z ##[group]Checking out the ref
+2025-02-28T07:59:29.8600063Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1021/merge
+2025-02-28T07:59:29.9014482Z Note: switching to 'refs/remotes/pull/1021/merge'.
+2025-02-28T07:59:29.9015318Z 
+2025-02-28T07:59:29.9015830Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-28T07:59:29.9019039Z changes and commit them, and you can discard any commits you make in this
+2025-02-28T07:59:29.9019943Z state without impacting any branches by switching back to a branch.
+2025-02-28T07:59:29.9020407Z 
+2025-02-28T07:59:29.9020707Z If you want to create a new branch to retain commits you create, you may
+2025-02-28T07:59:29.9021405Z do so (now or later) by using -c with the switch command. Example:
+2025-02-28T07:59:29.9021840Z 
+2025-02-28T07:59:29.9022009Z   git switch -c <new-branch-name>
+2025-02-28T07:59:29.9022272Z 
+2025-02-28T07:59:29.9022434Z Or undo this operation with:
+2025-02-28T07:59:29.9022685Z 
+2025-02-28T07:59:29.9022808Z   git switch -
+2025-02-28T07:59:29.9023017Z 
+2025-02-28T07:59:29.9023367Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-28T07:59:29.9024103Z 
+2025-02-28T07:59:29.9024698Z HEAD is now at 308ac37 Merge d869a8ce6413f4747cfad99dd02eaa369322c030 into 4c108cade54c86182601f69a421c6d401dbbcd2a
+2025-02-28T07:59:29.9026642Z ##[endgroup]
+2025-02-28T07:59:29.9068626Z [command]/usr/bin/git log -1 --format=%H
+2025-02-28T07:59:29.9096812Z 308ac377fdfcffdf6782882daa3a6396b95a65b7
+2025-02-28T07:59:29.9276709Z ##[group]Run fsfe/reuse-action@v5
+2025-02-28T07:59:29.9276989Z ##[endgroup]
+2025-02-28T07:59:29.9366686Z ##[command]/usr/bin/docker run --name c2403e3a34a54e2086687140b55ddde5_f0f469 --label 057577 --workdir /github/workspace --rm -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_RESULTS_URL" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/runner/work/jeo-maven-plugin/jeo-maven-plugin":"/github/workspace" 057577:c2403e3a34a54e2086687140b55ddde5
+2025-02-28T07:59:31.0979446Z # MISSING COPYRIGHT AND LICENSING INFORMATION
+2025-02-28T07:59:31.0979822Z 
+2025-02-28T07:59:31.0980023Z The following files have no licensing information:
+2025-02-28T07:59:31.0980530Z * .github/workflows/bashate.yml
+2025-02-28T07:59:31.0980791Z 
+2025-02-28T07:59:31.0980899Z # SUMMARY
+2025-02-28T07:59:31.0981069Z 
+2025-02-28T07:59:31.0981187Z * Bad licenses: 0
+2025-02-28T07:59:31.0981499Z * Deprecated licenses: 0
+2025-02-28T07:59:31.0981862Z * Licenses without file extension: 0
+2025-02-28T07:59:31.0982243Z * Missing licenses: 0
+2025-02-28T07:59:31.0982548Z * Unused licenses: 0
+2025-02-28T07:59:31.0982839Z * Used licenses: MIT
+2025-02-28T07:59:31.0983135Z * Read errors: 0
+2025-02-28T07:59:31.0983469Z * Files with copyright information: 387 / 387
+2025-02-28T07:59:31.0984175Z * Files with license information: 386 / 387
+2025-02-28T07:59:31.0984466Z 
+2025-02-28T07:59:31.0984926Z Unfortunately, your project is not compliant with version 3.3 of the REUSE Specification :-(
+2025-02-28T07:59:31.0985520Z 
+2025-02-28T07:59:31.0985527Z 
+2025-02-28T07:59:31.0985653Z # RECOMMENDATIONS
+2025-02-28T07:59:31.0985841Z 
+2025-02-28T07:59:31.0986551Z * Fix missing copyright/licensing information: For one or more files, the tool
+2025-02-28T07:59:31.0987400Z   cannot find copyright and/or licensing information. You typically do this by
+2025-02-28T07:59:31.0988273Z   adding 'SPDX-FileCopyrightText' and 'SPDX-License-Identifier' tags to each
+2025-02-28T07:59:31.0989010Z   file. The tutorial explains additional ways to do this:
+2025-02-28T07:59:31.0989573Z   <https://reuse.software/tutorial/>
+2025-02-28T07:59:31.0989871Z 
+2025-02-28T07:59:31.2394642Z Post job cleanup.
+2025-02-28T07:59:31.3378806Z [command]/usr/bin/git version
+2025-02-28T07:59:31.3424370Z git version 2.48.1
+2025-02-28T07:59:31.3469243Z Temporarily overriding HOME='/home/runner/work/_temp/30e0410a-8182-4fbc-b64c-c6f230ab4535' before making global git config changes
+2025-02-28T07:59:31.3470520Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-28T07:59:31.3476302Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/jeo-maven-plugin/jeo-maven-plugin
+2025-02-28T07:59:31.3514904Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-28T07:59:31.3549578Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-28T07:59:31.3798271Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-28T07:59:31.3823373Z http.https://github.com/.extraheader
+2025-02-28T07:59:31.3837652Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-28T07:59:31.3870355Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-28T07:59:31.4220713Z Cleaning up orphan processes

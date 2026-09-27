@@ -1,0 +1,273 @@
+2025-02-19T08:54:14.2732367Z Requested labels: ubuntu-latest
+2025-02-19T08:54:14.2732622Z Job defined at: KMKfw/kmk_firmware/.github/workflows/test.yml@refs/pull/1085/merge
+2025-02-19T08:54:14.2732720Z Waiting for a runner to pick up this job...
+2025-02-19T08:54:15.0606072Z Job is waiting for a hosted runner to come online.
+2025-02-19T08:54:19.2667625Z Job is about to start running on the hosted runner: GitHub Actions 16 (hosted)
+2025-02-19T08:54:21.3170881Z Current runner version: '2.322.0'
+2025-02-19T08:54:21.3196430Z ##[group]Operating System
+2025-02-19T08:54:21.3197290Z Ubuntu
+2025-02-19T08:54:21.3197827Z 24.04.1
+2025-02-19T08:54:21.3198332Z LTS
+2025-02-19T08:54:21.3198865Z ##[endgroup]
+2025-02-19T08:54:21.3199398Z ##[group]Runner Image
+2025-02-19T08:54:21.3199933Z Image: ubuntu-24.04
+2025-02-19T08:54:21.3200510Z Version: 20250209.1.0
+2025-02-19T08:54:21.3201699Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250209.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-19T08:54:21.3203641Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250209.1
+2025-02-19T08:54:21.3205214Z ##[endgroup]
+2025-02-19T08:54:21.3206166Z ##[group]Runner Image Provisioner
+2025-02-19T08:54:21.3207005Z 2.0.422.1
+2025-02-19T08:54:21.3207628Z ##[endgroup]
+2025-02-19T08:54:21.3209753Z ##[group]GITHUB_TOKEN Permissions
+2025-02-19T08:54:21.3212043Z Actions: read
+2025-02-19T08:54:21.3212795Z Attestations: read
+2025-02-19T08:54:21.3213522Z Checks: read
+2025-02-19T08:54:21.3213983Z Contents: read
+2025-02-19T08:54:21.3214594Z Deployments: read
+2025-02-19T08:54:21.3215085Z Discussions: read
+2025-02-19T08:54:21.3215592Z Issues: read
+2025-02-19T08:54:21.3216147Z Metadata: read
+2025-02-19T08:54:21.3216649Z Packages: read
+2025-02-19T08:54:21.3217138Z Pages: read
+2025-02-19T08:54:21.3217684Z PullRequests: read
+2025-02-19T08:54:21.3218221Z RepositoryProjects: read
+2025-02-19T08:54:21.3218786Z SecurityEvents: read
+2025-02-19T08:54:21.3219381Z Statuses: read
+2025-02-19T08:54:21.3219872Z ##[endgroup]
+2025-02-19T08:54:21.3223041Z Secret source: None
+2025-02-19T08:54:21.3223884Z Prepare workflow directory
+2025-02-19T08:54:21.3667782Z Prepare all required actions
+2025-02-19T08:54:21.3705518Z Getting action download info
+2025-02-19T08:54:21.5568629Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-02-19T08:54:21.5569516Z Version: 4.2.2
+2025-02-19T08:54:21.5570345Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-02-19T08:54:21.5571365Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-02-19T08:54:21.5572320Z ##[endgroup]
+2025-02-19T08:54:21.6575105Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-02-19T08:54:21.6575818Z Version: 5.4.0
+2025-02-19T08:54:21.6576458Z Digest: sha256:6003df952c8106bcd378d2ba997eef202da924317a57269dfa72449b135adb7f
+2025-02-19T08:54:21.6577290Z Source commit SHA: 42375524e23c412d93fb67b49958b491fce71c38
+2025-02-19T08:54:21.6577882Z ##[endgroup]
+2025-02-19T08:54:21.9724668Z Complete job name: test
+2025-02-19T08:54:22.0473013Z ##[group]Run actions/checkout@v4
+2025-02-19T08:54:22.0473850Z with:
+2025-02-19T08:54:22.0474260Z   repository: KMKfw/kmk_firmware
+2025-02-19T08:54:22.0474950Z   token: ***
+2025-02-19T08:54:22.0475339Z   ssh-strict: true
+2025-02-19T08:54:22.0475743Z   ssh-user: git
+2025-02-19T08:54:22.0476151Z   persist-credentials: true
+2025-02-19T08:54:22.0476599Z   clean: true
+2025-02-19T08:54:22.0477005Z   sparse-checkout-cone-mode: true
+2025-02-19T08:54:22.0477574Z   fetch-depth: 1
+2025-02-19T08:54:22.0477983Z   fetch-tags: false
+2025-02-19T08:54:22.0478401Z   show-progress: true
+2025-02-19T08:54:22.0478807Z   lfs: false
+2025-02-19T08:54:22.0479183Z   submodules: false
+2025-02-19T08:54:22.0479591Z   set-safe-directory: true
+2025-02-19T08:54:22.0480236Z ##[endgroup]
+2025-02-19T08:54:22.2746417Z Syncing repository: KMKfw/kmk_firmware
+2025-02-19T08:54:22.2748524Z ##[group]Getting Git version info
+2025-02-19T08:54:22.2749338Z Working directory is '/home/runner/work/kmk_firmware/kmk_firmware'
+2025-02-19T08:54:22.2750799Z [command]/usr/bin/git version
+2025-02-19T08:54:22.2774048Z git version 2.48.1
+2025-02-19T08:54:22.2803696Z ##[endgroup]
+2025-02-19T08:54:22.2817904Z Temporarily overriding HOME='/home/runner/work/_temp/1d1517a0-71c2-4943-9259-e0006aa096de' before making global git config changes
+2025-02-19T08:54:22.2820280Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-19T08:54:22.2823429Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/kmk_firmware/kmk_firmware
+2025-02-19T08:54:22.2873334Z Deleting the contents of '/home/runner/work/kmk_firmware/kmk_firmware'
+2025-02-19T08:54:22.2877935Z ##[group]Initializing the repository
+2025-02-19T08:54:22.2882163Z [command]/usr/bin/git init /home/runner/work/kmk_firmware/kmk_firmware
+2025-02-19T08:54:22.2973356Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-19T08:54:22.2975458Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-19T08:54:22.2977405Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-19T08:54:22.2978827Z hint:
+2025-02-19T08:54:22.2979839Z hint: 	git config --global init.defaultBranch <name>
+2025-02-19T08:54:22.2981103Z hint:
+2025-02-19T08:54:22.2982559Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-19T08:54:22.2984459Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-19T08:54:22.2986010Z hint:
+2025-02-19T08:54:22.2986905Z hint: 	git branch -m <name>
+2025-02-19T08:54:22.2988556Z Initialized empty Git repository in /home/runner/work/kmk_firmware/kmk_firmware/.git/
+2025-02-19T08:54:22.2994653Z [command]/usr/bin/git remote add origin https://github.com/KMKfw/kmk_firmware
+2025-02-19T08:54:22.3033831Z ##[endgroup]
+2025-02-19T08:54:22.3038774Z ##[group]Disabling automatic garbage collection
+2025-02-19T08:54:22.3039647Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-19T08:54:22.3069712Z ##[endgroup]
+2025-02-19T08:54:22.3070517Z ##[group]Setting up auth
+2025-02-19T08:54:22.3076893Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-19T08:54:22.3110842Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-19T08:54:22.3464578Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-19T08:54:22.3498927Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-19T08:54:22.3766298Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-19T08:54:22.3804663Z ##[endgroup]
+2025-02-19T08:54:22.3806380Z ##[group]Fetching the repository
+2025-02-19T08:54:22.3815594Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +d6ddfbe42a6566ca4a1db54f38564c416fb01a8f:refs/remotes/pull/1085/merge
+2025-02-19T08:54:22.9280488Z From https://github.com/KMKfw/kmk_firmware
+2025-02-19T08:54:22.9282222Z  * [new ref]         d6ddfbe42a6566ca4a1db54f38564c416fb01a8f -> pull/1085/merge
+2025-02-19T08:54:22.9310508Z ##[endgroup]
+2025-02-19T08:54:22.9312729Z ##[group]Determining the checkout info
+2025-02-19T08:54:22.9315001Z ##[endgroup]
+2025-02-19T08:54:22.9319456Z [command]/usr/bin/git sparse-checkout disable
+2025-02-19T08:54:22.9360675Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-19T08:54:22.9392339Z ##[group]Checking out the ref
+2025-02-19T08:54:22.9396663Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1085/merge
+2025-02-19T08:54:22.9681634Z Note: switching to 'refs/remotes/pull/1085/merge'.
+2025-02-19T08:54:22.9682757Z 
+2025-02-19T08:54:22.9683898Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-19T08:54:22.9686875Z changes and commit them, and you can discard any commits you make in this
+2025-02-19T08:54:22.9689387Z state without impacting any branches by switching back to a branch.
+2025-02-19T08:54:22.9691106Z 
+2025-02-19T08:54:22.9692432Z If you want to create a new branch to retain commits you create, you may
+2025-02-19T08:54:22.9695028Z do so (now or later) by using -c with the switch command. Example:
+2025-02-19T08:54:22.9696999Z 
+2025-02-19T08:54:22.9697613Z   git switch -c <new-branch-name>
+2025-02-19T08:54:22.9698540Z 
+2025-02-19T08:54:22.9699066Z Or undo this operation with:
+2025-02-19T08:54:22.9699924Z 
+2025-02-19T08:54:22.9700396Z   git switch -
+2025-02-19T08:54:22.9701069Z 
+2025-02-19T08:54:22.9702371Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-19T08:54:22.9704195Z 
+2025-02-19T08:54:22.9705868Z HEAD is now at d6ddfbe Merge e68292abc95fd125a97cb17324edc7f0bbdae009 into 507f411370ef921e74e9e5367039555974b2dd7e
+2025-02-19T08:54:22.9710536Z ##[endgroup]
+2025-02-19T08:54:22.9736677Z [command]/usr/bin/git log -1 --format=%H
+2025-02-19T08:54:22.9761818Z d6ddfbe42a6566ca4a1db54f38564c416fb01a8f
+2025-02-19T08:54:23.0177507Z ##[group]Run actions/setup-python@v5
+2025-02-19T08:54:23.0178763Z with:
+2025-02-19T08:54:23.0179645Z   python-version: 3.11
+2025-02-19T08:54:23.0180660Z   check-latest: false
+2025-02-19T08:54:23.0182148Z   token: ***
+2025-02-19T08:54:23.0183101Z   update-environment: true
+2025-02-19T08:54:23.0184193Z   allow-prereleases: false
+2025-02-19T08:54:23.0185235Z ##[endgroup]
+2025-02-19T08:54:23.1947969Z ##[group]Installed versions
+2025-02-19T08:54:23.2011375Z Successfully set up CPython (3.11.11)
+2025-02-19T08:54:23.2014490Z ##[endgroup]
+2025-02-19T08:54:23.2169927Z ##[group]Run make devdeps
+2025-02-19T08:54:23.2171054Z [36;1mmake devdeps[0m
+2025-02-19T08:54:23.2380134Z shell: /usr/bin/bash -e {0}
+2025-02-19T08:54:23.2381220Z env:
+2025-02-19T08:54:23.2382594Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-19T08:54:23.2384435Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-02-19T08:54:23.2386226Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-19T08:54:23.2387806Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-19T08:54:23.2389434Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-19T08:54:23.2391071Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-02-19T08:54:23.2392583Z ##[endgroup]
+2025-02-19T08:54:23.2579076Z ===> Installing virtual environment
+2025-02-19T08:54:27.1585485Z Requirement already satisfied: pip in ./.venv/lib/python3.11/site-packages (24.0)
+2025-02-19T08:54:27.2559458Z Collecting pip
+2025-02-19T08:54:27.3456510Z   Downloading pip-25.0.1-py3-none-any.whl.metadata (3.7 kB)
+2025-02-19T08:54:27.3707090Z Downloading pip-25.0.1-py3-none-any.whl (1.8 MB)
+2025-02-19T08:54:27.4759868Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 18.5 MB/s eta 0:00:00
+2025-02-19T08:54:27.5149989Z Installing collected packages: pip
+2025-02-19T08:54:27.5150949Z   Attempting uninstall: pip
+2025-02-19T08:54:27.5172313Z     Found existing installation: pip 24.0
+2025-02-19T08:54:27.5558499Z     Uninstalling pip-24.0:
+2025-02-19T08:54:27.5619709Z       Successfully uninstalled pip-24.0
+2025-02-19T08:54:28.4014230Z Successfully installed pip-25.0.1
+2025-02-19T08:54:28.9777294Z Processing /home/runner/work/kmk_firmware/kmk_firmware
+2025-02-19T08:54:28.9801858Z   Installing build dependencies: started
+2025-02-19T08:54:30.4668834Z   Installing build dependencies: finished with status 'done'
+2025-02-19T08:54:30.4675386Z   Getting requirements to build wheel: started
+2025-02-19T08:54:30.6908668Z   Getting requirements to build wheel: finished with status 'done'
+2025-02-19T08:54:30.6918060Z   Preparing metadata (pyproject.toml): started
+2025-02-19T08:54:30.8848887Z   Preparing metadata (pyproject.toml): finished with status 'done'
+2025-02-19T08:54:30.9466896Z Collecting flake8==7.0.0 (from kmk_firmware==0)
+2025-02-19T08:54:31.0284407Z   Downloading flake8-7.0.0-py2.py3-none-any.whl.metadata (3.8 kB)
+2025-02-19T08:54:31.0649346Z Collecting flake8-black (from kmk_firmware==0)
+2025-02-19T08:54:31.0853523Z   Downloading flake8_black-0.3.6-py3-none-any.whl.metadata (12 kB)
+2025-02-19T08:54:31.1041585Z Collecting flake8-commas (from kmk_firmware==0)
+2025-02-19T08:54:31.1241226Z   Downloading flake8_commas-4.0.0-py3-none-any.whl.metadata (7.9 kB)
+2025-02-19T08:54:31.1420713Z Collecting flake8-comprehensions (from kmk_firmware==0)
+2025-02-19T08:54:31.1624374Z   Downloading flake8_comprehensions-3.16.0-py3-none-any.whl.metadata (12 kB)
+2025-02-19T08:54:31.1816356Z Collecting flake8-isort (from kmk_firmware==0)
+2025-02-19T08:54:31.2016425Z   Downloading flake8_isort-6.1.2-py3-none-any.whl.metadata (25 kB)
+2025-02-19T08:54:31.2246194Z Collecting flake8-pyproject (from kmk_firmware==0)
+2025-02-19T08:54:31.2445279Z   Downloading flake8_pyproject-1.2.3-py3-none-any.whl.metadata (2.9 kB)
+2025-02-19T08:54:31.2597035Z Collecting flake8-quotes (from kmk_firmware==0)
+2025-02-19T08:54:31.2799240Z   Downloading flake8-quotes-3.4.0.tar.gz (14 kB)
+2025-02-19T08:54:31.2956141Z   Installing build dependencies: started
+2025-02-19T08:54:32.5662281Z   Installing build dependencies: finished with status 'done'
+2025-02-19T08:54:32.5668216Z   Getting requirements to build wheel: started
+2025-02-19T08:54:32.7216899Z   Getting requirements to build wheel: finished with status 'done'
+2025-02-19T08:54:32.7225358Z   Preparing metadata (pyproject.toml): started
+2025-02-19T08:54:32.8796618Z   Preparing metadata (pyproject.toml): finished with status 'done'
+2025-02-19T08:54:32.9080050Z Collecting mccabe<0.8.0,>=0.7.0 (from flake8==7.0.0->kmk_firmware==0)
+2025-02-19T08:54:32.9285304Z   Downloading mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+2025-02-19T08:54:32.9428861Z Collecting pycodestyle<2.12.0,>=2.11.0 (from flake8==7.0.0->kmk_firmware==0)
+2025-02-19T08:54:32.9629295Z   Downloading pycodestyle-2.11.1-py2.py3-none-any.whl.metadata (4.5 kB)
+2025-02-19T08:54:32.9806965Z Collecting pyflakes<3.3.0,>=3.2.0 (from flake8==7.0.0->kmk_firmware==0)
+2025-02-19T08:54:33.0006068Z   Downloading pyflakes-3.2.0-py2.py3-none-any.whl.metadata (3.5 kB)
+2025-02-19T08:54:33.0591789Z Collecting black>=22.1.0 (from flake8-black->kmk_firmware==0)
+2025-02-19T08:54:33.0800301Z   Downloading black-25.1.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl.metadata (81 kB)
+2025-02-19T08:54:33.1520763Z Collecting isort<7,>=5.0.0 (from flake8-isort->kmk_firmware==0)
+2025-02-19T08:54:33.1722926Z   Downloading isort-6.0.0-py3-none-any.whl.metadata (11 kB)
+2025-02-19T08:54:33.1785161Z Requirement already satisfied: setuptools in ./.venv/lib/python3.11/site-packages (from flake8-quotes->kmk_firmware==0) (65.5.0)
+2025-02-19T08:54:33.1936240Z Collecting click>=8.0.0 (from black>=22.1.0->flake8-black->kmk_firmware==0)
+2025-02-19T08:54:33.2139048Z   Downloading click-8.1.8-py3-none-any.whl.metadata (2.3 kB)
+2025-02-19T08:54:33.2268370Z Collecting mypy-extensions>=0.4.3 (from black>=22.1.0->flake8-black->kmk_firmware==0)
+2025-02-19T08:54:33.2468200Z   Downloading mypy_extensions-1.0.0-py3-none-any.whl.metadata (1.1 kB)
+2025-02-19T08:54:33.2632925Z Collecting packaging>=22.0 (from black>=22.1.0->flake8-black->kmk_firmware==0)
+2025-02-19T08:54:33.2834601Z   Downloading packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+2025-02-19T08:54:33.2982374Z Collecting pathspec>=0.9.0 (from black>=22.1.0->flake8-black->kmk_firmware==0)
+2025-02-19T08:54:33.3183687Z   Downloading pathspec-0.12.1-py3-none-any.whl.metadata (21 kB)
+2025-02-19T08:54:33.3379068Z Collecting platformdirs>=2 (from black>=22.1.0->flake8-black->kmk_firmware==0)
+2025-02-19T08:54:33.3580837Z   Downloading platformdirs-4.3.6-py3-none-any.whl.metadata (11 kB)
+2025-02-19T08:54:33.3933722Z Downloading flake8-7.0.0-py2.py3-none-any.whl (57 kB)
+2025-02-19T08:54:33.4198566Z Downloading flake8_black-0.3.6-py3-none-any.whl (9.9 kB)
+2025-02-19T08:54:33.4445580Z Downloading flake8_commas-4.0.0-py3-none-any.whl (7.9 kB)
+2025-02-19T08:54:33.4673130Z Downloading flake8_comprehensions-3.16.0-py3-none-any.whl (8.2 kB)
+2025-02-19T08:54:33.4902131Z Downloading flake8_isort-6.1.2-py3-none-any.whl (18 kB)
+2025-02-19T08:54:33.5129920Z Downloading flake8_pyproject-1.2.3-py3-none-any.whl (4.8 kB)
+2025-02-19T08:54:33.5365450Z Downloading black-25.1.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl (1.7 MB)
+2025-02-19T08:54:33.6070702Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 33.6 MB/s eta 0:00:00
+2025-02-19T08:54:33.6272989Z Downloading isort-6.0.0-py3-none-any.whl (94 kB)
+2025-02-19T08:54:33.6509323Z Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+2025-02-19T08:54:33.6730598Z Downloading pycodestyle-2.11.1-py2.py3-none-any.whl (31 kB)
+2025-02-19T08:54:33.6953944Z Downloading pyflakes-3.2.0-py2.py3-none-any.whl (62 kB)
+2025-02-19T08:54:33.7182370Z Downloading click-8.1.8-py3-none-any.whl (98 kB)
+2025-02-19T08:54:33.7408772Z Downloading mypy_extensions-1.0.0-py3-none-any.whl (4.7 kB)
+2025-02-19T08:54:33.7630121Z Downloading packaging-24.2-py3-none-any.whl (65 kB)
+2025-02-19T08:54:33.7854235Z Downloading pathspec-0.12.1-py3-none-any.whl (31 kB)
+2025-02-19T08:54:33.8078689Z Downloading platformdirs-4.3.6-py3-none-any.whl (18 kB)
+2025-02-19T08:54:33.8268721Z Building wheels for collected packages: kmk_firmware, flake8-quotes
+2025-02-19T08:54:33.8277150Z   Building wheel for kmk_firmware (pyproject.toml): started
+2025-02-19T08:54:34.0344066Z   Building wheel for kmk_firmware (pyproject.toml): finished with status 'done'
+2025-02-19T08:54:34.0349632Z   Created wheel for kmk_firmware: filename=kmk_firmware-0-py3-none-any.whl size=13447 sha256=13b6ed55b0cfc3e87b5237eab4c8c6224275d246eb982a323c2d3c0f5911ff8d
+2025-02-19T08:54:34.0352036Z   Stored in directory: /tmp/pip-ephem-wheel-cache-chq9zd8c/wheels/4b/1e/bd/f3f0cd95c76cadd12126d12836c7f7c28846147720a03a3c69
+2025-02-19T08:54:34.0377472Z   Building wheel for flake8-quotes (pyproject.toml): started
+2025-02-19T08:54:34.2250737Z   Building wheel for flake8-quotes (pyproject.toml): finished with status 'done'
+2025-02-19T08:54:34.2257043Z   Created wheel for flake8-quotes: filename=flake8_quotes-3.4.0-py3-none-any.whl size=9312 sha256=509b6453b60bd1b34bee3df8832507fecaebbd8fc73a8f480cfc270ff9b9571d
+2025-02-19T08:54:34.2259664Z   Stored in directory: /home/runner/.cache/pip/wheels/88/6c/1a/3cbcaa2462497fcc9c2e6ea6159cbc84ff9a354898bfc66d53
+2025-02-19T08:54:34.2278413Z Successfully built kmk_firmware flake8-quotes
+2025-02-19T08:54:34.2551253Z Installing collected packages: pyflakes, pycodestyle, platformdirs, pathspec, packaging, mypy-extensions, mccabe, kmk_firmware, isort, click, flake8, black, flake8-quotes, flake8-pyproject, flake8-isort, flake8-comprehensions, flake8-commas, flake8-black
+2025-02-19T08:54:34.7259303Z Successfully installed black-25.1.0 click-8.1.8 flake8-7.0.0 flake8-black-0.3.6 flake8-commas-4.0.0 flake8-comprehensions-3.16.0 flake8-isort-6.1.2 flake8-pyproject-1.2.3 flake8-quotes-3.4.0 isort-6.0.0 kmk_firmware-0 mccabe-0.7.0 mypy-extensions-1.0.0 packaging-24.2 pathspec-0.12.1 platformdirs-4.3.6 pycodestyle-2.11.1 pyflakes-3.2.0
+2025-02-19T08:54:34.8751332Z ##[group]Run make test
+2025-02-19T08:54:34.8751895Z [36;1mmake test[0m
+2025-02-19T08:54:34.8810428Z shell: /usr/bin/bash -e {0}
+2025-02-19T08:54:34.8810668Z env:
+2025-02-19T08:54:34.8810930Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-19T08:54:34.8811353Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-02-19T08:54:34.8811997Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-19T08:54:34.8812351Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-19T08:54:34.8812706Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-19T08:54:34.8813055Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-02-19T08:54:34.8813356Z ##[endgroup]
+2025-02-19T08:54:39.8123929Z ./kmk/hid_reports/pointer.py:33:25: E231 missing whitespace after ','
+2025-02-19T08:54:39.8125021Z ./kmk/hid_reports/pointer.py:33:26: E261 at least two spaces before inline comment
+2025-02-19T08:54:39.8428922Z make: *** [Makefile:67: lint] Error 1
+2025-02-19T08:54:39.8445356Z ##[error]Process completed with exit code 2.
+2025-02-19T08:54:39.8543787Z Post job cleanup.
+2025-02-19T08:54:39.9524054Z [command]/usr/bin/git version
+2025-02-19T08:54:39.9562063Z git version 2.48.1
+2025-02-19T08:54:39.9613694Z Temporarily overriding HOME='/home/runner/work/_temp/147c3ddb-7daa-416e-9544-6acebfbcb990' before making global git config changes
+2025-02-19T08:54:39.9615139Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-19T08:54:39.9619272Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/kmk_firmware/kmk_firmware
+2025-02-19T08:54:39.9655835Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-19T08:54:39.9690465Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-19T08:54:39.9938809Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-19T08:54:39.9961369Z http.https://github.com/.extraheader
+2025-02-19T08:54:39.9974500Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-19T08:54:40.0007644Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-19T08:54:40.0359144Z Cleaning up orphan processes

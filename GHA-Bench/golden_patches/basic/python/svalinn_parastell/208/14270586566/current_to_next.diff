@@ -1,0 +1,30 @@
+diff --git a/parastell/magnet_coils.py b/parastell/magnet_coils.py
+index 081c7afe..727547c9 100644
+--- a/parastell/magnet_coils.py
++++ b/parastell/magnet_coils.py
+@@ -355,8 +355,10 @@ def build_magnet_coils(self):
+ 
+         self._cut_magnets()
+ 
+-        self.magnet_coils = [coil for coil in self.magnet_coils if coil.solid.Volume() != 0]
+-        
++        self.magnet_coils = [
++            coil for coil in self.magnet_coils if coil.solid.Volume() != 0
++        ]
++
+         self.coil_solids = [coil.solid for coil in self.magnet_coils]
+ 
+ 
+diff --git a/parastell/parastell.py b/parastell/parastell.py
+index 40715468..74d16191 100644
+--- a/parastell/parastell.py
++++ b/parastell/parastell.py
+@@ -591,7 +591,7 @@ def export_pydagmc_model(self, filename="dagmc", export_dir=""):
+         Arguments:
+             filename (str): name of DAGMC output file, defaults to 'dagmc'
+             export_dir (str): directory to save the output file, defaults to
+-            current directory
++                current directory
+         """
+ 
+         export_path = Path(export_dir) / Path(filename).with_suffix(".h5m")

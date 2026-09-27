@@ -1,0 +1,271 @@
+2025-02-19T22:51:45.9994387Z Requested labels: windows-latest
+2025-02-19T22:51:45.9994729Z Job defined at: Midnighter/httpx-limiter/.github/workflows/test.yml@refs/pull/3/merge
+2025-02-19T22:51:45.9994983Z Reusable workflow chain:
+2025-02-19T22:51:45.9995097Z Midnighter/httpx-limiter/.github/workflows/main.yml@refs/pull/3/merge (198b242f2f431d23cb737093d4f864383e8383c9)
+2025-02-19T22:51:45.9995198Z -> Midnighter/httpx-limiter/.github/workflows/test.yml@refs/pull/3/merge (198b242f2f431d23cb737093d4f864383e8383c9)
+2025-02-19T22:51:45.9995553Z Waiting for a runner to pick up this job...
+2025-02-19T22:51:46.9605205Z Job is waiting for a hosted runner to come online.
+2025-02-19T22:51:55.6457925Z Job is about to start running on the hosted runner: GitHub Actions 8 (hosted)
+2025-02-19T22:51:59.3263890Z Current runner version: '2.322.0'
+2025-02-19T22:51:59.3291604Z ##[group]Operating System
+2025-02-19T22:51:59.3292488Z Microsoft Windows Server 2022
+2025-02-19T22:51:59.3293109Z 10.0.20348
+2025-02-19T22:51:59.3293598Z Datacenter
+2025-02-19T22:51:59.3294081Z ##[endgroup]
+2025-02-19T22:51:59.3294582Z ##[group]Runner Image
+2025-02-19T22:51:59.3295141Z Image: windows-2022
+2025-02-19T22:51:59.3295648Z Version: 20250209.1.0
+2025-02-19T22:51:59.3296696Z Included Software: https://github.com/actions/runner-images/blob/win22/20250209.1/images/windows/Windows2022-Readme.md
+2025-02-19T22:51:59.3298101Z Image Release: https://github.com/actions/runner-images/releases/tag/win22%2F20250209.1
+2025-02-19T22:51:59.3299005Z ##[endgroup]
+2025-02-19T22:51:59.3299562Z ##[group]Runner Image Provisioner
+2025-02-19T22:51:59.3300161Z 2.0.422.1
+2025-02-19T22:51:59.3300619Z ##[endgroup]
+2025-02-19T22:51:59.3301767Z ##[group]GITHUB_TOKEN Permissions
+2025-02-19T22:51:59.3304003Z Contents: read
+2025-02-19T22:51:59.3304711Z Metadata: read
+2025-02-19T22:51:59.3305236Z Packages: read
+2025-02-19T22:51:59.3305745Z ##[endgroup]
+2025-02-19T22:51:59.3308888Z Secret source: Actions
+2025-02-19T22:51:59.3309739Z Prepare workflow directory
+2025-02-19T22:51:59.3608845Z Prepare all required actions
+2025-02-19T22:51:59.3647264Z Getting action download info
+2025-02-19T22:51:59.5104505Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-02-19T22:51:59.8882023Z Download action repository 'actions/setup-python@v5' (SHA:42375524e23c412d93fb67b49958b491fce71c38)
+2025-02-19T22:52:00.7180253Z Download action repository 'pypa/hatch@install' (SHA:257e27e51a6a5616ed08a39a408a21c35c9931bc)
+2025-02-19T22:52:01.1028918Z Uses: Midnighter/httpx-limiter/.github/workflows/test.yml@refs/pull/3/merge (198b242f2f431d23cb737093d4f864383e8383c9)
+2025-02-19T22:52:01.1032612Z Complete job name: prerequisites / test (windows-latest, 3.10)
+2025-02-19T22:52:01.2500657Z ##[group]Run actions/checkout@v4
+2025-02-19T22:52:01.2502064Z with:
+2025-02-19T22:52:01.2502831Z   repository: Midnighter/httpx-limiter
+2025-02-19T22:52:01.2504087Z   token: ***
+2025-02-19T22:52:01.2504820Z   ssh-strict: true
+2025-02-19T22:52:01.2505576Z   ssh-user: git
+2025-02-19T22:52:01.2506356Z   persist-credentials: true
+2025-02-19T22:52:01.2507208Z   clean: true
+2025-02-19T22:52:01.2507984Z   sparse-checkout-cone-mode: true
+2025-02-19T22:52:01.2508912Z   fetch-depth: 1
+2025-02-19T22:52:01.2509676Z   fetch-tags: false
+2025-02-19T22:52:01.2510464Z   show-progress: true
+2025-02-19T22:52:01.2511243Z   lfs: false
+2025-02-19T22:52:01.2511962Z   submodules: false
+2025-02-19T22:52:01.2512738Z   set-safe-directory: true
+2025-02-19T22:52:01.2513770Z ##[endgroup]
+2025-02-19T22:52:02.6094928Z Syncing repository: Midnighter/httpx-limiter
+2025-02-19T22:52:02.6672589Z ##[group]Getting Git version info
+2025-02-19T22:52:02.6674257Z Working directory is 'D:\a\httpx-limiter\httpx-limiter'
+2025-02-19T22:52:03.2848836Z [command]"C:\Program Files\Git\bin\git.exe" version
+2025-02-19T22:52:03.6824095Z git version 2.47.1.windows.2
+2025-02-19T22:52:03.6838000Z ##[endgroup]
+2025-02-19T22:52:03.6960926Z Temporarily overriding HOME='D:\a\_temp\1afcd232-c6b4-47c7-8730-756b7a981a9c' before making global git config changes
+2025-02-19T22:52:03.6961744Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-19T22:52:03.6971943Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\httpx-limiter\httpx-limiter
+2025-02-19T22:52:03.8545614Z Deleting the contents of 'D:\a\httpx-limiter\httpx-limiter'
+2025-02-19T22:52:03.8552193Z ##[group]Initializing the repository
+2025-02-19T22:52:03.8567230Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\httpx-limiter\httpx-limiter
+2025-02-19T22:52:04.0366730Z Initialized empty Git repository in D:/a/httpx-limiter/httpx-limiter/.git/
+2025-02-19T22:52:04.0406756Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/Midnighter/httpx-limiter
+2025-02-19T22:52:04.1773450Z ##[endgroup]
+2025-02-19T22:52:04.1774078Z ##[group]Disabling automatic garbage collection
+2025-02-19T22:52:04.1784089Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2025-02-19T22:52:04.2012606Z ##[endgroup]
+2025-02-19T22:52:04.2012994Z ##[group]Setting up auth
+2025-02-19T22:52:04.2025809Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2025-02-19T22:52:04.2241533Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2025-02-19T22:52:08.3073791Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-19T22:52:08.3321688Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2025-02-19T22:52:08.7753263Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2025-02-19T22:52:08.7977897Z ##[endgroup]
+2025-02-19T22:52:08.7978595Z ##[group]Fetching the repository
+2025-02-19T22:52:08.7992120Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +198b242f2f431d23cb737093d4f864383e8383c9:refs/remotes/pull/3/merge
+2025-02-19T22:52:13.0378344Z From https://github.com/Midnighter/httpx-limiter
+2025-02-19T22:52:13.0379607Z  * [new ref]         198b242f2f431d23cb737093d4f864383e8383c9 -> pull/3/merge
+2025-02-19T22:52:13.1093611Z ##[endgroup]
+2025-02-19T22:52:13.1094217Z ##[group]Determining the checkout info
+2025-02-19T22:52:13.1097330Z ##[endgroup]
+2025-02-19T22:52:13.1112559Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2025-02-19T22:52:13.2250265Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2025-02-19T22:52:13.2478285Z ##[group]Checking out the ref
+2025-02-19T22:52:13.2489194Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force refs/remotes/pull/3/merge
+2025-02-19T22:52:13.3766641Z Note: switching to 'refs/remotes/pull/3/merge'.
+2025-02-19T22:52:13.3767320Z 
+2025-02-19T22:52:13.3767692Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-19T22:52:13.3768407Z changes and commit them, and you can discard any commits you make in this
+2025-02-19T22:52:13.3769204Z state without impacting any branches by switching back to a branch.
+2025-02-19T22:52:13.3769626Z 
+2025-02-19T22:52:13.3769963Z If you want to create a new branch to retain commits you create, you may
+2025-02-19T22:52:13.3770720Z do so (now or later) by using -c with the switch command. Example:
+2025-02-19T22:52:13.3771199Z 
+2025-02-19T22:52:13.3771391Z   git switch -c <new-branch-name>
+2025-02-19T22:52:13.3771693Z 
+2025-02-19T22:52:13.3771845Z Or undo this operation with:
+2025-02-19T22:52:13.3772168Z 
+2025-02-19T22:52:13.3772317Z   git switch -
+2025-02-19T22:52:13.3772555Z 
+2025-02-19T22:52:13.3772907Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-19T22:52:13.3773478Z 
+2025-02-19T22:52:13.3774103Z HEAD is now at 198b242 Merge bbd5991e8fac5738287bbff0bcfa239ef1dbbd06 into 224275063131e91d7cf4325ccbfd9c362acdbcf5
+2025-02-19T22:52:13.3797639Z ##[endgroup]
+2025-02-19T22:52:13.4295597Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2025-02-19T22:52:13.4505174Z 198b242f2f431d23cb737093d4f864383e8383c9
+2025-02-19T22:52:13.5324386Z ##[group]Run actions/setup-python@v5
+2025-02-19T22:52:13.5324721Z with:
+2025-02-19T22:52:13.5324902Z   python-version: 3.10
+2025-02-19T22:52:13.5325125Z   check-latest: false
+2025-02-19T22:52:13.5325479Z   token: ***
+2025-02-19T22:52:13.5326487Z   update-environment: true
+2025-02-19T22:52:13.5326733Z   allow-prereleases: false
+2025-02-19T22:52:13.5326941Z ##[endgroup]
+2025-02-19T22:52:13.8167728Z ##[group]Installed versions
+2025-02-19T22:52:13.8790227Z Successfully set up CPython (3.10.11)
+2025-02-19T22:52:13.8791673Z ##[endgroup]
+2025-02-19T22:52:13.9132856Z ##[group]Run pypa/hatch@install
+2025-02-19T22:52:13.9133269Z with:
+2025-02-19T22:52:13.9133493Z   version: latest
+2025-02-19T22:52:13.9133727Z env:
+2025-02-19T22:52:13.9134064Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.10.11\x64
+2025-02-19T22:52:13.9134669Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.10.11\x64/lib/pkgconfig
+2025-02-19T22:52:13.9135247Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.10.11\x64
+2025-02-19T22:52:13.9135768Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.10.11\x64
+2025-02-19T22:52:13.9136280Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.10.11\x64
+2025-02-19T22:52:13.9136682Z ##[endgroup]
+2025-02-19T22:52:13.9302248Z ##[group]Run 'D:\a\_actions\pypa\hatch\install\main.sh'
+2025-02-19T22:52:13.9302635Z [36;1m'D:\a\_actions\pypa\hatch\install\main.sh'[0m
+2025-02-19T22:52:13.9649872Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-02-19T22:52:13.9650388Z env:
+2025-02-19T22:52:13.9650692Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.10.11\x64
+2025-02-19T22:52:13.9651206Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.10.11\x64/lib/pkgconfig
+2025-02-19T22:52:13.9651693Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.10.11\x64
+2025-02-19T22:52:13.9652132Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.10.11\x64
+2025-02-19T22:52:13.9652577Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.10.11\x64
+2025-02-19T22:52:13.9652901Z   VERSION: latest
+2025-02-19T22:52:13.9653078Z ##[endgroup]
+2025-02-19T22:52:14.7638537Z [1;35mDownloading Hatch latest[0m
+2025-02-19T22:52:14.7639159Z 
+2025-02-19T22:52:16.5493084Z [1;35mInstalling Hatch latest[0m
+2025-02-19T22:52:48.5592651Z Hatch, version 1.14.0
+2025-02-19T22:52:48.6198409Z ##[group]Run hatch run audit:check
+2025-02-19T22:52:48.6198751Z [36;1mhatch run audit:check[0m
+2025-02-19T22:52:48.6231181Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-02-19T22:52:48.6231521Z env:
+2025-02-19T22:52:48.6231783Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.10.11\x64
+2025-02-19T22:52:48.6232223Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.10.11\x64/lib/pkgconfig
+2025-02-19T22:52:48.6232644Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.10.11\x64
+2025-02-19T22:52:48.6233011Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.10.11\x64
+2025-02-19T22:52:48.6233387Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.10.11\x64
+2025-02-19T22:52:48.6233679Z ##[endgroup]
+2025-02-19T22:52:54.4947965Z Creating environment: audit
+2025-02-19T22:52:58.9727027Z Installing project in development mode
+2025-02-19T22:53:06.9266415Z Checking dependencies
+2025-02-19T22:53:07.0179929Z Syncing dependencies
+2025-02-19T22:53:14.8728790Z No known vulnerabilities found
+2025-02-19T22:53:14.8734551Z Name          Skip Reason
+2025-02-19T22:53:14.8734991Z ------------- ----------------------------------------------------------------------------------------
+2025-02-19T22:53:14.8735617Z httpx-limiter Dependency not found on PyPI and could not be audited: httpx-limiter (0.1.dev1+g198b242)
+2025-02-19T22:53:15.2716514Z ##[group]Run hatch run types:check
+2025-02-19T22:53:15.2716873Z [36;1mhatch run types:check[0m
+2025-02-19T22:53:15.2747589Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-02-19T22:53:15.2747919Z env:
+2025-02-19T22:53:15.2748177Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.10.11\x64
+2025-02-19T22:53:15.2748640Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.10.11\x64/lib/pkgconfig
+2025-02-19T22:53:15.2749087Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.10.11\x64
+2025-02-19T22:53:15.2749632Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.10.11\x64
+2025-02-19T22:53:15.2750025Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.10.11\x64
+2025-02-19T22:53:15.2750328Z ##[endgroup]
+2025-02-19T22:53:15.8797979Z Creating environment: types
+2025-02-19T22:53:15.9744425Z Installing project in development mode
+2025-02-19T22:53:16.2126807Z Checking dependencies
+2025-02-19T22:53:16.3037205Z Syncing dependencies
+2025-02-19T22:53:22.2971786Z Success: no issues found in 3 source files
+2025-02-19T22:53:22.4626414Z ##[group]Run hatch run +py=3.10 unit-tests:run
+2025-02-19T22:53:22.4626835Z [36;1mhatch run +py=3.10 unit-tests:run[0m
+2025-02-19T22:53:22.4658834Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-02-19T22:53:22.4659183Z env:
+2025-02-19T22:53:22.4659464Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.10.11\x64
+2025-02-19T22:53:22.4659962Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.10.11\x64/lib/pkgconfig
+2025-02-19T22:53:22.4660445Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.10.11\x64
+2025-02-19T22:53:22.4660870Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.10.11\x64
+2025-02-19T22:53:22.4661288Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.10.11\x64
+2025-02-19T22:53:22.4661622Z ##[endgroup]
+2025-02-19T22:53:29.4141966Z ------------------------------ unit-tests.py3.10 ------------------------------
+2025-02-19T22:53:29.4145816Z Creating environment: unit-tests.py3.10
+2025-02-19T22:53:29.8604615Z Installing project in development mode
+2025-02-19T22:53:30.2164016Z Checking dependencies
+2025-02-19T22:53:30.3013317Z Syncing dependencies
+2025-02-19T22:53:33.0857723Z ============================= test session starts =============================
+2025-02-19T22:53:33.0858508Z platform win32 -- Python 3.10.11, pytest-8.3.4, pluggy-1.5.0
+2025-02-19T22:53:33.0859160Z rootdir: D:\a\httpx-limiter\httpx-limiter
+2025-02-19T22:53:33.0859660Z configfile: pyproject.toml
+2025-02-19T22:53:33.0860287Z plugins: anyio-4.8.0, cov-6.0.0, httpx-0.35.0, raises-0.11
+2025-02-19T22:53:33.0860896Z collected 3 items
+2025-02-19T22:53:33.0861110Z 
+2025-02-19T22:53:33.8610089Z tests\unit\test_async_rate_limited_transport.py ..F                      [100%]
+2025-02-19T22:53:33.8610691Z 
+2025-02-19T22:53:33.8610860Z ================================== FAILURES ===================================
+2025-02-19T22:53:33.8611411Z _____________________ test_handle_async_request[asyncio] ______________________
+2025-02-19T22:53:33.8611824Z 
+2025-02-19T22:53:33.8612122Z httpx_mock = <pytest_httpx._httpx_mock.HTTPXMock object at 0x000001BF1C8E0EB0>
+2025-02-19T22:53:33.8612579Z 
+2025-02-19T22:53:33.8612703Z     @pytest.mark.anyio
+2025-02-19T22:53:33.8613105Z     async def test_handle_async_request(httpx_mock: HTTPXMock):
+2025-02-19T22:53:33.8613605Z         """Test that handled requests are rate-limited."""
+2025-02-19T22:53:33.8614005Z         counter = 0
+2025-02-19T22:53:33.8614255Z     
+2025-02-19T22:53:33.8614792Z         async def count_responses(request: httpx.Request) -> httpx.Response:  # noqa: ARG001
+2025-02-19T22:53:33.8615378Z             nonlocal counter
+2025-02-19T22:53:33.8615663Z     
+2025-02-19T22:53:33.8615885Z             counter += 1
+2025-02-19T22:53:33.8616140Z     
+2025-02-19T22:53:33.8616399Z             return httpx.Response(status_code=200)
+2025-02-19T22:53:33.8616756Z     
+2025-02-19T22:53:33.8617074Z         httpx_mock.add_callback(count_responses, is_reusable=True)
+2025-02-19T22:53:33.8617507Z     
+2025-02-19T22:53:33.8617922Z         # We configure the bucket with a rate of two to allow a burst of requests and a
+2025-02-19T22:53:33.8618642Z         # refresh interval of 0.1 seconds. That means, when we create ten requests but then
+2025-02-19T22:53:33.8619383Z         # cancel all outstanding requests after 0.06 seconds, a bit more than half the time
+2025-02-19T22:53:33.8620120Z         # of the interval will have passed, and we expect a capacity of one to be returned.
+2025-02-19T22:53:33.8621006Z         # Consequently, we expect three requests to succeed in total.
+2025-02-19T22:53:33.8621465Z         async with (
+2025-02-19T22:53:33.8621737Z             httpx.AsyncClient(
+2025-02-19T22:53:33.8622212Z                 transport=AsyncRateLimitedTransport.create(rate=2, interval=0.1),
+2025-02-19T22:53:33.8622733Z             ) as client,
+2025-02-19T22:53:33.8623037Z             anyio.create_task_group() as tg,
+2025-02-19T22:53:33.8623381Z         ):
+2025-02-19T22:53:33.8625925Z             with anyio.move_on_after(0.06) as scope:
+2025-02-19T22:53:33.8626393Z                 for _ in range(10):
+2025-02-19T22:53:33.8626808Z                     tg.start_soon(client.get, "http://example.com")
+2025-02-19T22:53:33.8627232Z                 await anyio.sleep(2)
+2025-02-19T22:53:33.8627643Z     
+2025-02-19T22:53:33.8627913Z             tg.cancel_scope.cancel()
+2025-02-19T22:53:33.8628229Z     
+2025-02-19T22:53:33.8628480Z         assert scope.cancelled_caught
+2025-02-19T22:53:33.8628840Z >       assert counter == 3
+2025-02-19T22:53:33.8629119Z E       assert 2 == 3
+2025-02-19T22:53:33.8629304Z 
+2025-02-19T22:53:33.8629538Z tests\unit\test_async_rate_limited_transport.py:74: AssertionError
+2025-02-19T22:53:33.8629923Z 
+2025-02-19T22:53:33.8630161Z ---------- coverage: platform win32, python 3.10.11-final-0 ----------
+2025-02-19T22:53:33.8630724Z Name                                                Stmts   Miss Branch BrPart    Cover   Missing
+2025-02-19T22:53:33.8631290Z -------------------------------------------------------------------------------------------------
+2025-02-19T22:53:33.8631902Z src\httpx_limiter\__init__.py                           1      0      0      0  100.00%
+2025-02-19T22:53:33.8632588Z src\httpx_limiter\async_rate_limited_transport.py      14      0      0      0  100.00%
+2025-02-19T22:53:33.8633275Z -------------------------------------------------------------------------------------------------
+2025-02-19T22:53:33.8633815Z TOTAL                                                  15      0      0      0  100.00%
+2025-02-19T22:53:33.8634136Z 
+2025-02-19T22:53:33.8634302Z =========================== short test summary info ===========================
+2025-02-19T22:53:33.8635196Z FAILED tests/unit/test_async_rate_limited_transport.py::test_handle_async_request[asyncio] - assert 2 == 3
+2025-02-19T22:53:33.8635953Z ========================= 1 failed, 2 passed in 0.94s =========================
+2025-02-19T22:53:34.0228506Z ##[error]Process completed with exit code 1.
+2025-02-19T22:53:34.0403330Z Post job cleanup.
+2025-02-19T22:53:34.2686847Z [command]"C:\Program Files\Git\bin\git.exe" version
+2025-02-19T22:53:34.2898263Z git version 2.47.1.windows.2
+2025-02-19T22:53:34.2967348Z Temporarily overriding HOME='D:\a\_temp\d1d69f0e-45b4-46b8-a0ca-198925a7752c' before making global git config changes
+2025-02-19T22:53:34.2968247Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-19T22:53:34.2978981Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\httpx-limiter\httpx-limiter
+2025-02-19T22:53:34.3213197Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2025-02-19T22:53:34.3431949Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2025-02-19T22:53:34.7625292Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-19T22:53:34.7820428Z http.https://github.com/.extraheader
+2025-02-19T22:53:34.7858942Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
+2025-02-19T22:53:34.8076918Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2025-02-19T22:53:35.2044499Z Cleaning up orphan processes

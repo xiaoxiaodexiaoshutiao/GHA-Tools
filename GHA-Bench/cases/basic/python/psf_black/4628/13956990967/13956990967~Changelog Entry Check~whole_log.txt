@@ -1,0 +1,134 @@
+2025-03-19T21:23:16.2721614Z Requested labels: ubuntu-latest
+2025-03-19T21:23:16.2722052Z Job defined at: psf/black/.github/workflows/changelog.yml@refs/pull/4628/merge
+2025-03-19T21:23:16.2722204Z Waiting for a runner to pick up this job...
+2025-03-19T21:23:17.4890577Z Job is waiting for a hosted runner to come online.
+2025-03-19T21:23:20.0376118Z Job is about to start running on the hosted runner: GitHub Actions 1 (hosted)
+2025-03-19T21:23:21.4086206Z Current runner version: '2.322.0'
+2025-03-19T21:23:21.4114140Z ##[group]Operating System
+2025-03-19T21:23:21.4114998Z Ubuntu
+2025-03-19T21:23:21.4115503Z 24.04.2
+2025-03-19T21:23:21.4115977Z LTS
+2025-03-19T21:23:21.4116525Z ##[endgroup]
+2025-03-19T21:23:21.4117058Z ##[group]Runner Image
+2025-03-19T21:23:21.4117573Z Image: ubuntu-24.04
+2025-03-19T21:23:21.4118159Z Version: 20250316.1.0
+2025-03-19T21:23:21.4119432Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250316.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-19T21:23:21.4120835Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250316.1
+2025-03-19T21:23:21.4121774Z ##[endgroup]
+2025-03-19T21:23:21.4122321Z ##[group]Runner Image Provisioner
+2025-03-19T21:23:21.4122915Z 2.0.422.1
+2025-03-19T21:23:21.4123427Z ##[endgroup]
+2025-03-19T21:23:21.4124384Z ##[group]GITHUB_TOKEN Permissions
+2025-03-19T21:23:21.4126422Z Contents: read
+2025-03-19T21:23:21.4126996Z Metadata: read
+2025-03-19T21:23:21.4127819Z ##[endgroup]
+2025-03-19T21:23:21.4131307Z Secret source: None
+2025-03-19T21:23:21.4132388Z Prepare workflow directory
+2025-03-19T21:23:21.4440407Z Prepare all required actions
+2025-03-19T21:23:21.4476594Z Getting action download info
+2025-03-19T21:23:21.5907066Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-19T21:23:21.7519627Z Complete job name: Changelog Entry Check
+2025-03-19T21:23:21.8274685Z ##[group]Run actions/checkout@v4
+2025-03-19T21:23:21.8275550Z with:
+2025-03-19T21:23:21.8275969Z   repository: psf/black
+2025-03-19T21:23:21.8276642Z   token: ***
+2025-03-19T21:23:21.8277133Z   ssh-strict: true
+2025-03-19T21:23:21.8277553Z   ssh-user: git
+2025-03-19T21:23:21.8278053Z   persist-credentials: true
+2025-03-19T21:23:21.8278528Z   clean: true
+2025-03-19T21:23:21.8279232Z   sparse-checkout-cone-mode: true
+2025-03-19T21:23:21.8279742Z   fetch-depth: 1
+2025-03-19T21:23:21.8280312Z   fetch-tags: false
+2025-03-19T21:23:21.8280948Z   show-progress: true
+2025-03-19T21:23:21.8281641Z   lfs: false
+2025-03-19T21:23:21.8282268Z   submodules: false
+2025-03-19T21:23:21.8282790Z   set-safe-directory: true
+2025-03-19T21:23:21.8283650Z ##[endgroup]
+2025-03-19T21:23:22.0411643Z Syncing repository: psf/black
+2025-03-19T21:23:22.0413377Z ##[group]Getting Git version info
+2025-03-19T21:23:22.0414051Z Working directory is '/home/runner/work/black/black'
+2025-03-19T21:23:22.0415041Z [command]/usr/bin/git version
+2025-03-19T21:23:22.0484465Z git version 2.48.1
+2025-03-19T21:23:22.0515541Z ##[endgroup]
+2025-03-19T21:23:22.0531650Z Temporarily overriding HOME='/home/runner/work/_temp/68d137cf-e3d9-45a0-abe7-9e87ae921d6a' before making global git config changes
+2025-03-19T21:23:22.0534058Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-19T21:23:22.0538247Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/black/black
+2025-03-19T21:23:22.0575509Z Deleting the contents of '/home/runner/work/black/black'
+2025-03-19T21:23:22.0580001Z ##[group]Initializing the repository
+2025-03-19T21:23:22.0584712Z [command]/usr/bin/git init /home/runner/work/black/black
+2025-03-19T21:23:22.0652992Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-19T21:23:22.0654016Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-19T21:23:22.0654944Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-19T21:23:22.0655623Z hint:
+2025-03-19T21:23:22.0656124Z hint: 	git config --global init.defaultBranch <name>
+2025-03-19T21:23:22.0656701Z hint:
+2025-03-19T21:23:22.0657251Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-19T21:23:22.0658135Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-19T21:23:22.0659069Z hint:
+2025-03-19T21:23:22.0659479Z hint: 	git branch -m <name>
+2025-03-19T21:23:22.0697108Z Initialized empty Git repository in /home/runner/work/black/black/.git/
+2025-03-19T21:23:22.0708317Z [command]/usr/bin/git remote add origin https://github.com/psf/black
+2025-03-19T21:23:22.0742064Z ##[endgroup]
+2025-03-19T21:23:22.0742815Z ##[group]Disabling automatic garbage collection
+2025-03-19T21:23:22.0746198Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-19T21:23:22.0774596Z ##[endgroup]
+2025-03-19T21:23:22.0775311Z ##[group]Setting up auth
+2025-03-19T21:23:22.0781195Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-19T21:23:22.0810643Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-19T21:23:22.1119036Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-19T21:23:22.1149225Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-19T21:23:22.1375724Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-19T21:23:22.1423504Z ##[endgroup]
+2025-03-19T21:23:22.1424341Z ##[group]Fetching the repository
+2025-03-19T21:23:22.1433247Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +7eef45425f37020e2abdb147dee3a32097fb34f5:refs/remotes/pull/4628/merge
+2025-03-19T21:23:22.5197165Z From https://github.com/psf/black
+2025-03-19T21:23:22.5198673Z  * [new ref]         7eef45425f37020e2abdb147dee3a32097fb34f5 -> pull/4628/merge
+2025-03-19T21:23:22.5227547Z ##[endgroup]
+2025-03-19T21:23:22.5229260Z ##[group]Determining the checkout info
+2025-03-19T21:23:22.5230971Z ##[endgroup]
+2025-03-19T21:23:22.5236021Z [command]/usr/bin/git sparse-checkout disable
+2025-03-19T21:23:22.5279886Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-19T21:23:22.5314674Z ##[group]Checking out the ref
+2025-03-19T21:23:22.5318329Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/4628/merge
+2025-03-19T21:23:22.5683852Z Note: switching to 'refs/remotes/pull/4628/merge'.
+2025-03-19T21:23:22.5685122Z 
+2025-03-19T21:23:22.5685703Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-19T21:23:22.5687540Z changes and commit them, and you can discard any commits you make in this
+2025-03-19T21:23:22.5690233Z state without impacting any branches by switching back to a branch.
+2025-03-19T21:23:22.5691313Z 
+2025-03-19T21:23:22.5692040Z If you want to create a new branch to retain commits you create, you may
+2025-03-19T21:23:22.5693611Z do so (now or later) by using -c with the switch command. Example:
+2025-03-19T21:23:22.5694666Z 
+2025-03-19T21:23:22.5695157Z   git switch -c <new-branch-name>
+2025-03-19T21:23:22.5695845Z 
+2025-03-19T21:23:22.5696284Z Or undo this operation with:
+2025-03-19T21:23:22.5696983Z 
+2025-03-19T21:23:22.5697416Z   git switch -
+2025-03-19T21:23:22.5697885Z 
+2025-03-19T21:23:22.5698673Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-19T21:23:22.5700086Z 
+2025-03-19T21:23:22.5701543Z HEAD is now at 7eef454 Merge 8dcec5379c710b94451287d4696d69b342740d36 into 5342d2eeda6935a96d2bd0c74072b3c441d76bde
+2025-03-19T21:23:22.5705176Z ##[endgroup]
+2025-03-19T21:23:22.5736395Z [command]/usr/bin/git log -1 --format=%H
+2025-03-19T21:23:22.5759047Z 7eef45425f37020e2abdb147dee3a32097fb34f5
+2025-03-19T21:23:22.6019135Z ##[group]Run grep -Pz "\((\n\s*)?#4628(\n\s*)?\)" CHANGES.md || \
+2025-03-19T21:23:22.6020112Z [36;1mgrep -Pz "\((\n\s*)?#4628(\n\s*)?\)" CHANGES.md || \[0m
+2025-03-19T21:23:22.6021263Z [36;1m(echo "Please add '(#4628)' change line to CHANGES.md (or if appropriate, ask a maintainer to add the 'skip news' label)" && \[0m
+2025-03-19T21:23:22.6022261Z [36;1mexit 1)[0m
+2025-03-19T21:23:22.6073021Z shell: /usr/bin/bash -e {0}
+2025-03-19T21:23:22.6073576Z ##[endgroup]
+2025-03-19T21:23:22.6180010Z Please add '(#4628)' change line to CHANGES.md (or if appropriate, ask a maintainer to add the 'skip news' label)
+2025-03-19T21:23:22.6199676Z ##[error]Process completed with exit code 1.
+2025-03-19T21:23:22.6413513Z Post job cleanup.
+2025-03-19T21:23:22.7351459Z [command]/usr/bin/git version
+2025-03-19T21:23:22.7387943Z git version 2.48.1
+2025-03-19T21:23:22.7430924Z Temporarily overriding HOME='/home/runner/work/_temp/e4d8ec97-f91f-4f41-bc69-dbb9eca17902' before making global git config changes
+2025-03-19T21:23:22.7432473Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-19T21:23:22.7443782Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/black/black
+2025-03-19T21:23:22.7478053Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-19T21:23:22.7509879Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-19T21:23:22.7756027Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-19T21:23:22.7777161Z http.https://github.com/.extraheader
+2025-03-19T21:23:22.7789756Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-19T21:23:22.7821094Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-19T21:23:22.8156424Z Cleaning up orphan processes

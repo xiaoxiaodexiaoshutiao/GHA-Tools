@@ -1,0 +1,323 @@
+2025-03-17T16:41:16.7086843Z Requested labels: ubuntu-latest
+2025-03-17T16:41:16.7087033Z Job defined at: open-feature/python-sdk-contrib/.github/workflows/build.yml@refs/pull/214/merge
+2025-03-17T16:41:16.7087135Z Waiting for a runner to pick up this job...
+2025-03-17T16:41:18.6140294Z Job is waiting for a hosted runner to come online.
+2025-03-17T16:41:22.6419956Z Job is about to start running on the hosted runner: GitHub Actions 654 (hosted)
+2025-03-17T16:41:25.5476467Z Current runner version: '2.322.0'
+2025-03-17T16:41:25.5501627Z ##[group]Operating System
+2025-03-17T16:41:25.5502366Z Ubuntu
+2025-03-17T16:41:25.5502968Z 24.04.2
+2025-03-17T16:41:25.5503507Z LTS
+2025-03-17T16:41:25.5503978Z ##[endgroup]
+2025-03-17T16:41:25.5504544Z ##[group]Runner Image
+2025-03-17T16:41:25.5505115Z Image: ubuntu-24.04
+2025-03-17T16:41:25.5505648Z Version: 20250309.1.0
+2025-03-17T16:41:25.5506723Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250309.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-17T16:41:25.5508122Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250309.1
+2025-03-17T16:41:25.5509403Z ##[endgroup]
+2025-03-17T16:41:25.5510052Z ##[group]Runner Image Provisioner
+2025-03-17T16:41:25.5510625Z 2.0.422.1
+2025-03-17T16:41:25.5511090Z ##[endgroup]
+2025-03-17T16:41:25.5512169Z ##[group]GITHUB_TOKEN Permissions
+2025-03-17T16:41:25.5513936Z Contents: read
+2025-03-17T16:41:25.5514610Z Metadata: read
+2025-03-17T16:41:25.5515313Z ##[endgroup]
+2025-03-17T16:41:25.5518286Z Secret source: None
+2025-03-17T16:41:25.5519216Z Prepare workflow directory
+2025-03-17T16:41:25.5832811Z Prepare all required actions
+2025-03-17T16:41:25.5870762Z Getting action download info
+2025-03-17T16:41:25.7741904Z Download action repository 'actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-17T16:41:25.8835072Z Download action repository 'actions/setup-python@42375524e23c412d93fb67b49958b491fce71c38' (SHA:42375524e23c412d93fb67b49958b491fce71c38)
+2025-03-17T16:41:25.9723581Z Download action repository 'pre-commit/action@2c7b3805fd2a0fd8c1884dcaebf91fc102a13ecd' (SHA:2c7b3805fd2a0fd8c1884dcaebf91fc102a13ecd)
+2025-03-17T16:41:26.2674449Z Getting action download info
+2025-03-17T16:41:26.3735155Z Download action repository 'actions/cache@v4' (SHA:d4323d4df104b026a6aa633fdb11d772146be0bf)
+2025-03-17T16:41:26.8352958Z Complete job name: lint
+2025-03-17T16:41:26.9203271Z ##[group]Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+2025-03-17T16:41:26.9205136Z with:
+2025-03-17T16:41:26.9206071Z   repository: open-feature/python-sdk-contrib
+2025-03-17T16:41:26.9207605Z   token: ***
+2025-03-17T16:41:26.9208433Z   ssh-strict: true
+2025-03-17T16:41:26.9209480Z   ssh-user: git
+2025-03-17T16:41:26.9210364Z   persist-credentials: true
+2025-03-17T16:41:26.9211356Z   clean: true
+2025-03-17T16:41:26.9212255Z   sparse-checkout-cone-mode: true
+2025-03-17T16:41:26.9213314Z   fetch-depth: 1
+2025-03-17T16:41:26.9214170Z   fetch-tags: false
+2025-03-17T16:41:26.9215052Z   show-progress: true
+2025-03-17T16:41:26.9215936Z   lfs: false
+2025-03-17T16:41:26.9216759Z   submodules: false
+2025-03-17T16:41:26.9217653Z   set-safe-directory: true
+2025-03-17T16:41:26.9218992Z ##[endgroup]
+2025-03-17T16:41:27.1140860Z Syncing repository: open-feature/python-sdk-contrib
+2025-03-17T16:41:27.1143728Z ##[group]Getting Git version info
+2025-03-17T16:41:27.1145438Z Working directory is '/home/runner/work/python-sdk-contrib/python-sdk-contrib'
+2025-03-17T16:41:27.1147657Z [command]/usr/bin/git version
+2025-03-17T16:41:27.1193586Z git version 2.48.1
+2025-03-17T16:41:27.1221609Z ##[endgroup]
+2025-03-17T16:41:27.1236415Z Temporarily overriding HOME='/home/runner/work/_temp/bcd4f936-a5ca-449e-89bf-c596f80afbe3' before making global git config changes
+2025-03-17T16:41:27.1239538Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-17T16:41:27.1242687Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/python-sdk-contrib/python-sdk-contrib
+2025-03-17T16:41:27.1280979Z Deleting the contents of '/home/runner/work/python-sdk-contrib/python-sdk-contrib'
+2025-03-17T16:41:27.1284762Z ##[group]Initializing the repository
+2025-03-17T16:41:27.1289177Z [command]/usr/bin/git init /home/runner/work/python-sdk-contrib/python-sdk-contrib
+2025-03-17T16:41:27.1356809Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-17T16:41:27.1359278Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-17T16:41:27.1362897Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-17T16:41:27.1365739Z hint:
+2025-03-17T16:41:27.1367740Z hint: 	git config --global init.defaultBranch <name>
+2025-03-17T16:41:27.1370313Z hint:
+2025-03-17T16:41:27.1372864Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-17T16:41:27.1376183Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-17T16:41:27.1378973Z hint:
+2025-03-17T16:41:27.1380299Z hint: 	git branch -m <name>
+2025-03-17T16:41:27.1383173Z Initialized empty Git repository in /home/runner/work/python-sdk-contrib/python-sdk-contrib/.git/
+2025-03-17T16:41:27.1387151Z [command]/usr/bin/git remote add origin https://github.com/open-feature/python-sdk-contrib
+2025-03-17T16:41:27.1413369Z ##[endgroup]
+2025-03-17T16:41:27.1415854Z ##[group]Disabling automatic garbage collection
+2025-03-17T16:41:27.1418112Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-17T16:41:27.1449346Z ##[endgroup]
+2025-03-17T16:41:27.1451685Z ##[group]Setting up auth
+2025-03-17T16:41:27.1457249Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-17T16:41:27.1491310Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-17T16:41:27.1784221Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-17T16:41:27.1818071Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-17T16:41:27.2072714Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-17T16:41:27.2113674Z ##[endgroup]
+2025-03-17T16:41:27.2122166Z ##[group]Fetching the repository
+2025-03-17T16:41:27.2125071Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +6c86dc6d344aa3d2e499d441b274690f33be73da:refs/remotes/pull/214/merge
+2025-03-17T16:41:27.6189152Z From https://github.com/open-feature/python-sdk-contrib
+2025-03-17T16:41:27.6191007Z  * [new ref]         6c86dc6d344aa3d2e499d441b274690f33be73da -> pull/214/merge
+2025-03-17T16:41:27.6214712Z ##[endgroup]
+2025-03-17T16:41:27.6216305Z ##[group]Determining the checkout info
+2025-03-17T16:41:27.6217874Z ##[endgroup]
+2025-03-17T16:41:27.6221671Z [command]/usr/bin/git sparse-checkout disable
+2025-03-17T16:41:27.6268409Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-17T16:41:27.6302867Z ##[group]Checking out the ref
+2025-03-17T16:41:27.6305290Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/214/merge
+2025-03-17T16:41:27.6395270Z Note: switching to 'refs/remotes/pull/214/merge'.
+2025-03-17T16:41:27.6396783Z 
+2025-03-17T16:41:27.6397946Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-17T16:41:27.6400517Z changes and commit them, and you can discard any commits you make in this
+2025-03-17T16:41:27.6402634Z state without impacting any branches by switching back to a branch.
+2025-03-17T16:41:27.6404366Z 
+2025-03-17T16:41:27.6405478Z If you want to create a new branch to retain commits you create, you may
+2025-03-17T16:41:27.6407169Z do so (now or later) by using -c with the switch command. Example:
+2025-03-17T16:41:27.6408131Z 
+2025-03-17T16:41:27.6408519Z   git switch -c <new-branch-name>
+2025-03-17T16:41:27.6409545Z 
+2025-03-17T16:41:27.6409930Z Or undo this operation with:
+2025-03-17T16:41:27.6410541Z 
+2025-03-17T16:41:27.6410874Z   git switch -
+2025-03-17T16:41:27.6411353Z 
+2025-03-17T16:41:27.6412114Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-17T16:41:27.6413277Z 
+2025-03-17T16:41:27.6414542Z HEAD is now at 6c86dc6 Merge df130a65bf315e9ae01abf420a96186a9a2bc2a6 into 1b9b5f128a7fe08ffbf84cbc7de2986f95dc01f5
+2025-03-17T16:41:27.6418494Z ##[endgroup]
+2025-03-17T16:41:27.6440915Z [command]/usr/bin/git log -1 --format=%H
+2025-03-17T16:41:27.6463450Z 6c86dc6d344aa3d2e499d441b274690f33be73da
+2025-03-17T16:41:27.6750365Z ##[group]Run actions/setup-python@42375524e23c412d93fb67b49958b491fce71c38
+2025-03-17T16:41:27.6751766Z with:
+2025-03-17T16:41:27.6752518Z   python-version: 3.13
+2025-03-17T16:41:27.6753333Z   cache: pip
+2025-03-17T16:41:27.6754084Z   check-latest: false
+2025-03-17T16:41:27.6755142Z   token: ***
+2025-03-17T16:41:27.6755908Z   update-environment: true
+2025-03-17T16:41:27.6756820Z   allow-prereleases: false
+2025-03-17T16:41:27.6757677Z ##[endgroup]
+2025-03-17T16:41:27.8538551Z ##[group]Installed versions
+2025-03-17T16:41:27.8593349Z Successfully set up CPython (3.13.2)
+2025-03-17T16:41:27.8595802Z ##[endgroup]
+2025-03-17T16:41:27.9437677Z [command]/opt/hostedtoolcache/Python/3.13.2/x64/bin/pip cache dir
+2025-03-17T16:41:28.2455449Z /home/runner/.cache/pip
+2025-03-17T16:41:28.4176758Z Cache hit for: setup-python-Linux-x64-24.04-Ubuntu-python-3.13.2-pip-aa130fe247a1d03f86993314744ac0f45cdfaa80c98429f3b7c67e41ace99be6
+2025-03-17T16:41:29.4788962Z Received 55819740 of 55819740 (100.0%), 55.8 MBs/sec
+2025-03-17T16:41:29.4789844Z Cache Size: ~53 MB (55819740 B)
+2025-03-17T16:41:29.4821607Z [command]/usr/bin/tar -xf /home/runner/work/_temp/ae5176a0-0d52-4b81-8e37-b571bfcf0b32/cache.tzst -P -C /home/runner/work/python-sdk-contrib/python-sdk-contrib --use-compress-program unzstd
+2025-03-17T16:41:29.6116737Z Cache restored successfully
+2025-03-17T16:41:29.6243898Z Cache restored from key: setup-python-Linux-x64-24.04-Ubuntu-python-3.13.2-pip-aa130fe247a1d03f86993314744ac0f45cdfaa80c98429f3b7c67e41ace99be6
+2025-03-17T16:41:29.6451111Z ##[group]Run pre-commit/action@2c7b3805fd2a0fd8c1884dcaebf91fc102a13ecd
+2025-03-17T16:41:29.6451631Z with:
+2025-03-17T16:41:29.6451980Z   extra_args: --all-files
+2025-03-17T16:41:29.6452296Z env:
+2025-03-17T16:41:29.6452671Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-17T16:41:29.6453231Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-17T16:41:29.6453769Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-17T16:41:29.6454252Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-17T16:41:29.6454732Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-17T16:41:29.6455227Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-17T16:41:29.6455651Z ##[endgroup]
+2025-03-17T16:41:29.6545305Z ##[group]Run python -m pip install pre-commit
+2025-03-17T16:41:29.6545810Z [36;1mpython -m pip install pre-commit[0m
+2025-03-17T16:41:29.6601815Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-17T16:41:29.6602285Z env:
+2025-03-17T16:41:29.6602649Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-17T16:41:29.6603201Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-17T16:41:29.6603764Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-17T16:41:29.6604255Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-17T16:41:29.6604758Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-17T16:41:29.6605258Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-17T16:41:29.6605669Z ##[endgroup]
+2025-03-17T16:41:30.2107841Z Collecting pre-commit
+2025-03-17T16:41:30.2120846Z   Using cached pre_commit-4.1.0-py2.py3-none-any.whl.metadata (1.3 kB)
+2025-03-17T16:41:30.2258495Z Collecting cfgv>=2.0.0 (from pre-commit)
+2025-03-17T16:41:30.2269788Z   Using cached cfgv-3.4.0-py2.py3-none-any.whl.metadata (8.5 kB)
+2025-03-17T16:41:30.2620241Z Collecting identify>=1.0.0 (from pre-commit)
+2025-03-17T16:41:30.2632207Z   Using cached identify-2.6.9-py2.py3-none-any.whl.metadata (4.4 kB)
+2025-03-17T16:41:30.2807002Z Collecting nodeenv>=0.11.1 (from pre-commit)
+2025-03-17T16:41:30.2818163Z   Using cached nodeenv-1.9.1-py2.py3-none-any.whl.metadata (21 kB)
+2025-03-17T16:41:30.3094428Z Collecting pyyaml>=5.1 (from pre-commit)
+2025-03-17T16:41:30.3105966Z   Using cached PyYAML-6.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+2025-03-17T16:41:30.3474723Z Collecting virtualenv>=20.10.0 (from pre-commit)
+2025-03-17T16:41:30.3486045Z   Using cached virtualenv-20.29.3-py3-none-any.whl.metadata (4.5 kB)
+2025-03-17T16:41:30.3647776Z Collecting distlib<1,>=0.3.7 (from virtualenv>=20.10.0->pre-commit)
+2025-03-17T16:41:30.3658333Z   Using cached distlib-0.3.9-py2.py3-none-any.whl.metadata (5.2 kB)
+2025-03-17T16:41:30.3877236Z Collecting filelock<4,>=3.12.2 (from virtualenv>=20.10.0->pre-commit)
+2025-03-17T16:41:30.4219497Z   Downloading filelock-3.18.0-py3-none-any.whl.metadata (2.9 kB)
+2025-03-17T16:41:30.4416627Z Collecting platformdirs<5,>=3.9.1 (from virtualenv>=20.10.0->pre-commit)
+2025-03-17T16:41:30.4427411Z   Using cached platformdirs-4.3.6-py3-none-any.whl.metadata (11 kB)
+2025-03-17T16:41:30.4489526Z Using cached pre_commit-4.1.0-py2.py3-none-any.whl (220 kB)
+2025-03-17T16:41:30.4501449Z Using cached cfgv-3.4.0-py2.py3-none-any.whl (7.2 kB)
+2025-03-17T16:41:30.4512156Z Using cached identify-2.6.9-py2.py3-none-any.whl (99 kB)
+2025-03-17T16:41:30.4523979Z Using cached nodeenv-1.9.1-py2.py3-none-any.whl (22 kB)
+2025-03-17T16:41:30.4534812Z Using cached PyYAML-6.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (759 kB)
+2025-03-17T16:41:30.4550868Z Using cached virtualenv-20.29.3-py3-none-any.whl (4.3 MB)
+2025-03-17T16:41:30.4595356Z Using cached distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+2025-03-17T16:41:30.4633721Z Downloading filelock-3.18.0-py3-none-any.whl (16 kB)
+2025-03-17T16:41:30.4687920Z Using cached platformdirs-4.3.6-py3-none-any.whl (18 kB)
+2025-03-17T16:41:30.4989991Z Installing collected packages: distlib, pyyaml, platformdirs, nodeenv, identify, filelock, cfgv, virtualenv, pre-commit
+2025-03-17T16:41:30.8902641Z Successfully installed cfgv-3.4.0 distlib-0.3.9 filelock-3.18.0 identify-2.6.9 nodeenv-1.9.1 platformdirs-4.3.6 pre-commit-4.1.0 pyyaml-6.0.2 virtualenv-20.29.3
+2025-03-17T16:41:30.9761888Z ##[group]Run python -m pip freeze --local
+2025-03-17T16:41:30.9762216Z [36;1mpython -m pip freeze --local[0m
+2025-03-17T16:41:30.9808394Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-17T16:41:30.9808945Z env:
+2025-03-17T16:41:30.9809198Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-17T16:41:30.9809612Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-17T16:41:30.9810016Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-17T16:41:30.9810372Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-17T16:41:30.9810743Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-17T16:41:30.9811101Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-17T16:41:30.9811410Z ##[endgroup]
+2025-03-17T16:41:31.2031510Z cfgv==3.4.0
+2025-03-17T16:41:31.2031926Z distlib==0.3.9
+2025-03-17T16:41:31.2032413Z filelock==3.18.0
+2025-03-17T16:41:31.2032761Z identify==2.6.9
+2025-03-17T16:41:31.2033092Z nodeenv==1.9.1
+2025-03-17T16:41:31.2033422Z platformdirs==4.3.6
+2025-03-17T16:41:31.2033858Z pre_commit==4.1.0
+2025-03-17T16:41:31.2034204Z PyYAML==6.0.2
+2025-03-17T16:41:31.2034551Z virtualenv==20.29.3
+2025-03-17T16:41:31.2906033Z ##[group]Run actions/cache@v4
+2025-03-17T16:41:31.2906262Z with:
+2025-03-17T16:41:31.2906449Z   path: ~/.cache/pre-commit
+2025-03-17T16:41:31.2906950Z   key: pre-commit-3|/opt/hostedtoolcache/Python/3.13.2/x64|f08a7cb77347cb3f32c9960c2f45d786913f747204e04de81d473e3944dd30d3
+2025-03-17T16:41:31.2907492Z   enableCrossOsArchive: false
+2025-03-17T16:41:31.2907735Z   fail-on-cache-miss: false
+2025-03-17T16:41:31.2907985Z   lookup-only: false
+2025-03-17T16:41:31.2908183Z   save-always: false
+2025-03-17T16:41:31.2908372Z env:
+2025-03-17T16:41:31.2908823Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-17T16:41:31.2909253Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-17T16:41:31.2909852Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-17T16:41:31.2910204Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-17T16:41:31.2910554Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-17T16:41:31.2910906Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-17T16:41:31.2911201Z ##[endgroup]
+2025-03-17T16:41:31.5485644Z Cache hit for: pre-commit-3|/opt/hostedtoolcache/Python/3.13.2/x64|f08a7cb77347cb3f32c9960c2f45d786913f747204e04de81d473e3944dd30d3
+2025-03-17T16:41:32.2577068Z Received 17141574 of 17141574 (100.0%), 28.6 MBs/sec
+2025-03-17T16:41:32.2577837Z Cache Size: ~16 MB (17141574 B)
+2025-03-17T16:41:32.2606249Z [command]/usr/bin/tar -xf /home/runner/work/_temp/2fc7ed5c-6a6a-4c6a-a3ef-bf2ccf32b4b0/cache.tzst -P -C /home/runner/work/python-sdk-contrib/python-sdk-contrib --use-compress-program unzstd
+2025-03-17T16:41:32.4209550Z Cache restored successfully
+2025-03-17T16:41:32.4456728Z Cache restored from key: pre-commit-3|/opt/hostedtoolcache/Python/3.13.2/x64|f08a7cb77347cb3f32c9960c2f45d786913f747204e04de81d473e3944dd30d3
+2025-03-17T16:41:32.4575528Z ##[group]Run pre-commit run --show-diff-on-failure --color=always --all-files
+2025-03-17T16:41:32.4576047Z [36;1mpre-commit run --show-diff-on-failure --color=always --all-files[0m
+2025-03-17T16:41:32.4623105Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-17T16:41:32.4623432Z env:
+2025-03-17T16:41:32.4623689Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-17T16:41:32.4624121Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-17T16:41:32.4624518Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-17T16:41:32.4625049Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-17T16:41:32.4625421Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-17T16:41:32.4625780Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-17T16:41:32.4626097Z ##[endgroup]
+2025-03-17T16:41:32.6954692Z ruff.....................................................................[41mFailed[m
+2025-03-17T16:41:32.6955511Z [2m- hook id: ruff[m
+2025-03-17T16:41:32.6955986Z [2m- exit code: 1[m
+2025-03-17T16:41:32.6956230Z 
+2025-03-17T16:41:32.6956869Z [1mproviders/openfeature-provider-flagd/tests/test_in_process.py[0m[36m:[0m63[36m:[0m5[36m:[0m [1;31mF811[0m Redefinition of unused `flag` from line 34
+2025-03-17T16:41:32.6957487Z    [1m[94m|[0m
+2025-03-17T16:41:32.6957731Z [1m[94m62 |[0m @pytest.fixture
+2025-03-17T16:41:32.6958011Z [1m[94m63 |[0m def flag():
+2025-03-17T16:41:32.6958317Z    [1m[94m|[0m     [1m[91m^^^^[0m [1m[91mF811[0m
+2025-03-17T16:41:32.6958942Z [1m[94m64 |[0m     return Flag(
+2025-03-17T16:41:32.6959256Z [1m[94m65 |[0m         key="flag",
+2025-03-17T16:41:32.6959511Z    [1m[94m|[0m
+2025-03-17T16:41:32.6959805Z    [1m[94m= [0m[1m[96mhelp[0m: Remove definition: `flag`
+2025-03-17T16:41:32.6960142Z 
+2025-03-17T16:41:32.6961175Z [1mproviders/openfeature-provider-flagd/tests/test_in_process.py[0m[36m:[0m73[36m:[0m5[36m:[0m [1;31mF811[0m Redefinition of unused `targeting` from line 23
+2025-03-17T16:41:32.6962364Z    [1m[94m|[0m
+2025-03-17T16:41:32.6962804Z [1m[94m73 |[0m def targeting():
+2025-03-17T16:41:32.6963398Z    [1m[94m|[0m     [1m[91m^^^^^^^^^[0m [1m[91mF811[0m
+2025-03-17T16:41:32.6963941Z [1m[94m74 |[0m     return {
+2025-03-17T16:41:32.6964392Z [1m[94m75 |[0m         "if": [
+2025-03-17T16:41:32.6964833Z    [1m[94m|[0m
+2025-03-17T16:41:32.6965400Z    [1m[94m= [0m[1m[96mhelp[0m: Remove definition: `targeting`
+2025-03-17T16:41:32.6965797Z 
+2025-03-17T16:41:32.6966806Z [1mproviders/openfeature-provider-flagd/tests/test_in_process.py[0m[36m:[0m83[36m:[0m5[36m:[0m [1;31mF811[0m Redefinition of unused `context` from line 45
+2025-03-17T16:41:32.6967945Z    [1m[94m|[0m
+2025-03-17T16:41:32.6968398Z [1m[94m83 |[0m def context(targeting_key):
+2025-03-17T16:41:32.6969648Z    [1m[94m|[0m     [1m[91m^^^^^^^[0m [1m[91mF811[0m
+2025-03-17T16:41:32.6970431Z [1m[94m84 |[0m     return EvaluationContext(targeting_key=targeting_key)
+2025-03-17T16:41:32.6971068Z    [1m[94m|[0m
+2025-03-17T16:41:32.6971642Z    [1m[94m= [0m[1m[96mhelp[0m: Remove definition: `context`
+2025-03-17T16:41:32.6972042Z 
+2025-03-17T16:41:32.6973128Z [1mproviders/openfeature-provider-flagd/tests/test_in_process.py[0m[36m:[0m100[36m:[0m30[36m:[0m [1;31mE711[0m Comparison to `None` should be `cond is None`
+2025-03-17T16:41:32.6974095Z     [1m[94m|[0m
+2025-03-17T16:41:32.6974402Z [1m[94m 99 |[0m     assert result.reason == "DISABLED"
+2025-03-17T16:41:32.6974782Z [1m[94m100 |[0m     assert result.variant == None
+2025-03-17T16:41:32.6975167Z     [1m[94m|[0m                              [1m[91m^^^^[0m [1m[91mE711[0m
+2025-03-17T16:41:32.6975527Z [1m[94m101 |[0m     assert result.value == False
+2025-03-17T16:41:32.6975812Z     [1m[94m|[0m
+2025-03-17T16:41:32.6976102Z     [1m[94m= [0m[1m[96mhelp[0m: Replace with `cond is None`
+2025-03-17T16:41:32.6976321Z 
+2025-03-17T16:41:32.6977010Z [1mproviders/openfeature-provider-flagd/tests/test_in_process.py[0m[36m:[0m101[36m:[0m12[36m:[0m [1;31mE712[0m Avoid equality comparisons to `False`; use `if not result.value:` for false checks
+2025-03-17T16:41:32.6977724Z     [1m[94m|[0m
+2025-03-17T16:41:32.6978000Z [1m[94m 99 |[0m     assert result.reason == "DISABLED"
+2025-03-17T16:41:32.6978360Z [1m[94m100 |[0m     assert result.variant == None
+2025-03-17T16:41:32.6979021Z [1m[94m101 |[0m     assert result.value == False
+2025-03-17T16:41:32.6979406Z     [1m[94m|[0m            [1m[91m^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mE712[0m
+2025-03-17T16:41:32.6979958Z     [1m[94m|[0m
+2025-03-17T16:41:32.6980300Z     [1m[94m= [0m[1m[96mhelp[0m: Replace with `not result.value`
+2025-03-17T16:41:32.6980520Z 
+2025-03-17T16:41:32.6981107Z [1mproviders/openfeature-provider-flagd/tests/test_in_process.py[0m[36m:[0m210[36m:[0m5[36m:[0m [1;31mPLR0913[0m Too many arguments in function definition (10 > 6)
+2025-03-17T16:41:32.6981769Z     [1m[94m|[0m
+2025-03-17T16:41:32.6981982Z [1m[94m208 |[0m     ],
+2025-03-17T16:41:32.6982215Z [1m[94m209 |[0m )
+2025-03-17T16:41:32.6982472Z [1m[94m210 |[0m def test_resolver_details(
+2025-03-17T16:41:32.6982845Z     [1m[94m|[0m     [1m[91m^^^^^^^^^^^^^^^^^^^^^[0m [1m[91mPLR0913[0m
+2025-03-17T16:41:32.6983173Z [1m[94m211 |[0m     resolver,
+2025-03-17T16:41:32.6983435Z [1m[94m212 |[0m     flag,
+2025-03-17T16:41:32.6983665Z     [1m[94m|[0m
+2025-03-17T16:41:32.6983779Z 
+2025-03-17T16:41:32.6983854Z Found 6 errors.
+2025-03-17T16:41:32.6984192Z No fixes available (2 hidden fixes can be enabled with the `--unsafe-fixes` option).
+2025-03-17T16:41:32.6984492Z 
+2025-03-17T16:41:32.7149726Z ruff-format..............................................................[42mPassed[m
+2025-03-17T16:41:32.7632933Z check toml...............................................................[42mPassed[m
+2025-03-17T16:41:32.8377845Z check yaml...............................................................[42mPassed[m
+2025-03-17T16:41:32.8912232Z trim trailing whitespace.................................................[42mPassed[m
+2025-03-17T16:41:32.9590315Z check for merge conflicts................................................[42mPassed[m
+2025-03-17T16:41:32.9781307Z ##[error]Process completed with exit code 1.
+2025-03-17T16:41:32.9836974Z Post job cleanup.
+2025-03-17T16:41:32.9890734Z Post job cleanup.
+2025-03-17T16:41:33.0821373Z [command]/usr/bin/git version
+2025-03-17T16:41:33.0863692Z git version 2.48.1
+2025-03-17T16:41:33.0905933Z Temporarily overriding HOME='/home/runner/work/_temp/552675ad-3139-4c5a-8c88-c004e122acf9' before making global git config changes
+2025-03-17T16:41:33.0907252Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-17T16:41:33.0911865Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/python-sdk-contrib/python-sdk-contrib
+2025-03-17T16:41:33.0946173Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-17T16:41:33.0978011Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-17T16:41:33.1213657Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-17T16:41:33.1235282Z http.https://github.com/.extraheader
+2025-03-17T16:41:33.1247923Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-17T16:41:33.1278129Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-17T16:41:33.1606859Z Cleaning up orphan processes

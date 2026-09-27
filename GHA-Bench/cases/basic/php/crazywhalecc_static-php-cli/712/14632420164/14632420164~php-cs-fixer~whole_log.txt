@@ -1,0 +1,200 @@
+﻿2025-04-24T02:56:54.0164512Z Current runner version: '2.323.0'
+2025-04-24T02:56:54.0196442Z ##[group]Operating System
+2025-04-24T02:56:54.0197518Z Ubuntu
+2025-04-24T02:56:54.0198250Z 24.04.2
+2025-04-24T02:56:54.0198964Z LTS
+2025-04-24T02:56:54.0199742Z ##[endgroup]
+2025-04-24T02:56:54.0200554Z ##[group]Runner Image
+2025-04-24T02:56:54.0201504Z Image: ubuntu-24.04
+2025-04-24T02:56:54.0202329Z Version: 20250420.1.0
+2025-04-24T02:56:54.0204180Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250420.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-24T02:56:54.0206609Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250420.1
+2025-04-24T02:56:54.0208075Z ##[endgroup]
+2025-04-24T02:56:54.0208857Z ##[group]Runner Image Provisioner
+2025-04-24T02:56:54.0209913Z 2.0.422.1
+2025-04-24T02:56:54.0210629Z ##[endgroup]
+2025-04-24T02:56:54.0212118Z ##[group]GITHUB_TOKEN Permissions
+2025-04-24T02:56:54.0214881Z Contents: read
+2025-04-24T02:56:54.0215667Z Metadata: read
+2025-04-24T02:56:54.0216767Z ##[endgroup]
+2025-04-24T02:56:54.0220184Z Secret source: Actions
+2025-04-24T02:56:54.0221388Z Prepare workflow directory
+2025-04-24T02:56:54.0948780Z Prepare all required actions
+2025-04-24T02:56:54.1003758Z Getting action download info
+2025-04-24T02:56:54.4736660Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-24T02:56:54.4737743Z Version: 4.2.2
+2025-04-24T02:56:54.4738680Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-24T02:56:54.4739879Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-24T02:56:54.4740563Z ##[endgroup]
+2025-04-24T02:56:54.5595715Z Download action repository 'shivammathur/setup-php@v2' (SHA:cf4cade2721270509d5b1c766ab3549210a39a2a)
+2025-04-24T02:56:54.7735801Z Complete job name: php-cs-fixer
+2025-04-24T02:56:54.8331056Z ##[group]Run actions/checkout@v4
+2025-04-24T02:56:54.8331877Z with:
+2025-04-24T02:56:54.8332296Z   repository: crazywhalecc/static-php-cli
+2025-04-24T02:56:54.8332977Z   token: ***
+2025-04-24T02:56:54.8333361Z   ssh-strict: true
+2025-04-24T02:56:54.8333741Z   ssh-user: git
+2025-04-24T02:56:54.8334473Z   persist-credentials: true
+2025-04-24T02:56:54.8334910Z   clean: true
+2025-04-24T02:56:54.8335286Z   sparse-checkout-cone-mode: true
+2025-04-24T02:56:54.8335749Z   fetch-depth: 1
+2025-04-24T02:56:54.8336119Z   fetch-tags: false
+2025-04-24T02:56:54.8336596Z   show-progress: true
+2025-04-24T02:56:54.8336979Z   lfs: false
+2025-04-24T02:56:54.8337346Z   submodules: false
+2025-04-24T02:56:54.8337741Z   set-safe-directory: true
+2025-04-24T02:56:54.8338457Z env:
+2025-04-24T02:56:54.8338982Z   GITHUB_TOKEN: ***
+2025-04-24T02:56:54.8339357Z ##[endgroup]
+2025-04-24T02:56:55.0249078Z Syncing repository: crazywhalecc/static-php-cli
+2025-04-24T02:56:55.0250791Z ##[group]Getting Git version info
+2025-04-24T02:56:55.0251611Z Working directory is '/home/runner/work/static-php-cli/static-php-cli'
+2025-04-24T02:56:55.0252603Z [command]/usr/bin/git version
+2025-04-24T02:56:55.0316240Z git version 2.49.0
+2025-04-24T02:56:55.0357749Z ##[endgroup]
+2025-04-24T02:56:55.0376941Z Temporarily overriding HOME='/home/runner/work/_temp/02ce1ad1-b84b-4089-96e2-ad06b677dafd' before making global git config changes
+2025-04-24T02:56:55.0378374Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-24T02:56:55.0385555Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/static-php-cli/static-php-cli
+2025-04-24T02:56:55.0424880Z Deleting the contents of '/home/runner/work/static-php-cli/static-php-cli'
+2025-04-24T02:56:55.0428773Z ##[group]Initializing the repository
+2025-04-24T02:56:55.0433607Z [command]/usr/bin/git init /home/runner/work/static-php-cli/static-php-cli
+2025-04-24T02:56:55.0510361Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-24T02:56:55.0511968Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-24T02:56:55.0513480Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-24T02:56:55.0515150Z hint:
+2025-04-24T02:56:55.0515931Z hint: 	git config --global init.defaultBranch <name>
+2025-04-24T02:56:55.0516880Z hint:
+2025-04-24T02:56:55.0517718Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-24T02:56:55.0519252Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-24T02:56:55.0520407Z hint:
+2025-04-24T02:56:55.0520848Z hint: 	git branch -m <name>
+2025-04-24T02:56:55.0521613Z Initialized empty Git repository in /home/runner/work/static-php-cli/static-php-cli/.git/
+2025-04-24T02:56:55.0535501Z [command]/usr/bin/git remote add origin https://github.com/crazywhalecc/static-php-cli
+2025-04-24T02:56:55.0586676Z ##[endgroup]
+2025-04-24T02:56:55.0590226Z ##[group]Disabling automatic garbage collection
+2025-04-24T02:56:55.0593417Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-24T02:56:55.0627964Z ##[endgroup]
+2025-04-24T02:56:55.0629137Z ##[group]Setting up auth
+2025-04-24T02:56:55.0634159Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-24T02:56:55.0666363Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-24T02:56:55.1002123Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-24T02:56:55.1031593Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-24T02:56:55.1285325Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-24T02:56:55.1321933Z ##[endgroup]
+2025-04-24T02:56:55.1323047Z ##[group]Fetching the repository
+2025-04-24T02:56:55.1332097Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +bceeb83c7d3a3193a9ea2d724e7948324ef1fdcd:refs/remotes/pull/712/merge
+2025-04-24T02:56:55.4212870Z From https://github.com/crazywhalecc/static-php-cli
+2025-04-24T02:56:55.4214834Z  * [new ref]         bceeb83c7d3a3193a9ea2d724e7948324ef1fdcd -> pull/712/merge
+2025-04-24T02:56:55.4254210Z ##[endgroup]
+2025-04-24T02:56:55.4255457Z ##[group]Determining the checkout info
+2025-04-24T02:56:55.4257868Z ##[endgroup]
+2025-04-24T02:56:55.4262474Z [command]/usr/bin/git sparse-checkout disable
+2025-04-24T02:56:55.4308013Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-24T02:56:55.4340599Z ##[group]Checking out the ref
+2025-04-24T02:56:55.4346616Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/712/merge
+2025-04-24T02:56:55.4608704Z Note: switching to 'refs/remotes/pull/712/merge'.
+2025-04-24T02:56:55.4610589Z 
+2025-04-24T02:56:55.4611521Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-24T02:56:55.4613059Z changes and commit them, and you can discard any commits you make in this
+2025-04-24T02:56:55.4615241Z state without impacting any branches by switching back to a branch.
+2025-04-24T02:56:55.4616026Z 
+2025-04-24T02:56:55.4616585Z If you want to create a new branch to retain commits you create, you may
+2025-04-24T02:56:55.4617762Z do so (now or later) by using -c with the switch command. Example:
+2025-04-24T02:56:55.4618441Z 
+2025-04-24T02:56:55.4618890Z   git switch -c <new-branch-name>
+2025-04-24T02:56:55.4619463Z 
+2025-04-24T02:56:55.4619848Z Or undo this operation with:
+2025-04-24T02:56:55.4620338Z 
+2025-04-24T02:56:55.4620597Z   git switch -
+2025-04-24T02:56:55.4620992Z 
+2025-04-24T02:56:55.4621668Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-24T02:56:55.4622582Z 
+2025-04-24T02:56:55.4623613Z HEAD is now at bceeb83 Merge af000ab47f6e683be8a87ae34190fb0557ca0c6a into 455ed7d5038a6d61970dddb4c14ad33f4653560d
+2025-04-24T02:56:55.4627065Z ##[endgroup]
+2025-04-24T02:56:55.4656285Z [command]/usr/bin/git log -1 --format=%H
+2025-04-24T02:56:55.4679111Z bceeb83c7d3a3193a9ea2d724e7948324ef1fdcd
+2025-04-24T02:56:55.4923458Z ##[group]Run shivammathur/setup-php@v2
+2025-04-24T02:56:55.4924830Z with:
+2025-04-24T02:56:55.4925643Z   php-version: 8.4
+2025-04-24T02:56:55.4926604Z   extensions: curl, openssl, mbstring
+2025-04-24T02:56:55.4927793Z   ini-values: memory_limit=-1
+2025-04-24T02:56:55.4928921Z   tools: pecl, composer, php-cs-fixer
+2025-04-24T02:56:55.4930104Z   ini-file: production
+2025-04-24T02:56:55.4931020Z env:
+2025-04-24T02:56:55.4932456Z   GITHUB_TOKEN: ***
+2025-04-24T02:56:55.4933359Z ##[endgroup]
+2025-04-24T02:56:55.9318094Z [command]/usr/bin/bash /home/runner/work/_actions/shivammathur/setup-php/v2/src/scripts/run.sh
+2025-04-24T02:56:55.9592695Z 
+2025-04-24T02:56:55.9594198Z [90;1m==> [0m[37;1mSetup PHP[0m
+2025-04-24T02:56:59.2681306Z [32;1m✓ [0m[34;1mPHP [0m[90;1mInstalled PHP 8.4.6[0m
+2025-04-24T02:56:59.2681910Z 
+2025-04-24T02:56:59.2682196Z [90;1m==> [0m[37;1mSetup Extensions[0m
+2025-04-24T02:56:59.3176081Z [32;1m✓ [0m[34;1mcurl [0m[90;1mEnabled[0m
+2025-04-24T02:56:59.3204614Z [32;1m✓ [0m[34;1mopenssl [0m[90;1mEnabled[0m
+2025-04-24T02:56:59.3233637Z [32;1m✓ [0m[34;1mmbstring [0m[90;1mEnabled[0m
+2025-04-24T02:56:59.3234279Z 
+2025-04-24T02:56:59.3234561Z [90;1m==> [0m[37;1mSetup Tools[0m
+2025-04-24T02:56:59.5373803Z [32;1m✓ [0m[34;1mcomposer [0m[90;1mAdded composer 2.8.6[0m
+2025-04-24T02:57:00.5703300Z [32;1m✓ [0m[34;1mPECL [0m[90;1mAdded PECL 1.10.16[0m
+2025-04-24T02:57:00.8062451Z [32;1m✓ [0m[34;1mphp-cs-fixer [0m[90;1mAdded php-cs-fixer [0m
+2025-04-24T02:57:00.8064656Z 
+2025-04-24T02:57:00.8065584Z [90;1m==> [0m[37;1mAdd php.ini values[0m
+2025-04-24T02:57:00.8145653Z [32;1m✓ [0m[34;1mmemory_limit=-1 [0m[90;1mAdded to php.ini[0m
+2025-04-24T02:57:00.8146226Z 
+2025-04-24T02:57:00.8146498Z [90;1m==> [0m[37;1mSponsor setup-php[0m
+2025-04-24T02:57:00.8147363Z [32;1m✓ [0m[34;1msetup-php [0m[90;1mhttps://setup-php.com/sponsor[0m
+2025-04-24T02:57:00.8334343Z ##[group]Run PHP_CS_FIXER_IGNORE_ENV=1 php-cs-fixer fix --dry-run --diff --ansi
+2025-04-24T02:57:00.8334930Z [36;1mPHP_CS_FIXER_IGNORE_ENV=1 php-cs-fixer fix --dry-run --diff --ansi[0m
+2025-04-24T02:57:00.8371046Z shell: /usr/bin/bash -e {0}
+2025-04-24T02:57:00.8371310Z env:
+2025-04-24T02:57:00.8371744Z   GITHUB_TOKEN: ***
+2025-04-24T02:57:00.8371944Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-24T02:57:00.8372171Z   COMPOSER_NO_INTERACTION: 1
+2025-04-24T02:57:00.8372367Z   COMPOSER_NO_AUDIT: 1
+2025-04-24T02:57:00.8372736Z   COMPOSER_AUTH: {"github-oauth": {"github.com": "***"}}
+2025-04-24T02:57:00.8373031Z ##[endgroup]
+2025-04-24T02:57:00.8856023Z PHP needs to be a minimum version of PHP 7.4.0 and maximum version of PHP 8.3.*.
+2025-04-24T02:57:00.8856862Z Current PHP version: 8.4.6.
+2025-04-24T02:57:00.8857579Z Ignoring environment requirements because `PHP_CS_FIXER_IGNORE_ENV` is set. Execution may be unstable.
+2025-04-24T02:57:00.9370462Z PHP needs to be a minimum version of PHP 7.4.0 and maximum version of PHP 8.3.*.
+2025-04-24T02:57:00.9371361Z Current PHP version: 8.4.6.
+2025-04-24T02:57:00.9372230Z Ignoring environment requirements because `PHP_CS_FIXER_IGNORE_ENV` is set. Execution may be unstable.
+2025-04-24T02:57:01.0221641Z PHP CS Fixer [32m3.75.0[39m [32m(e44b8f9)[39m [32mPersian Successor[39m by [33mFabien Potencier[39m, [33mDariusz Ruminski[39m and [33mcontributors[39m.
+2025-04-24T02:57:01.0222754Z PHP runtime: [32m8.4.6[39m
+2025-04-24T02:57:01.0223022Z Running analysis on 1 core sequentially.
+2025-04-24T02:57:01.0224329Z [30;43mYou can enable parallel runner and speed up the analysis! Please see [39;49m[31;43m]8;;https://cs.symfony.com/doc/usage.html\usage docs]8;;\[39;49m[30;43m for more information.[39;49m
+2025-04-24T02:57:01.0225342Z Loaded config [33mdefault[39m from "/home/runner/work/static-php-cli/static-php-cli/.php-cs-fixer.php".
+2025-04-24T02:57:06.7120519Z    0/372 [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0%[1G[2K  27/372 [▓▓░░░░░░░░░░░░░░░░░░░░░░░░░░]   7%[1G[2K  38/372 [▓▓░░░░░░░░░░░░░░░░░░░░░░░░░░]  10%[1G[2K  75/372 [▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░░░░]  20%[1G[2K 112/372 [▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░]  30%[1G[2K 149/372 [▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░]  40%[1G[2K 186/372 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░]  50%[1G[2K 224/372 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░]  60%[1G[2K 261/372 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░]  70%[1G[2K 298/372 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░]  80%[1G[2K 320/372 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░]  86%[1G[2K 335/372 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░]  90%[1G[2K 372/372 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%
+2025-04-24T02:57:06.7122772Z 
+2025-04-24T02:57:06.7122952Z    1) src/SPC/builder/extension/xlswriter.php
+2025-04-24T02:57:06.7123504Z [33m      ---------- begin diff ----------[39m
+2025-04-24T02:57:06.7124788Z [31m--- /home/runner/work/static-php-cli/static-php-cli/src/SPC/builder/extension/xlswriter.php[39m
+2025-04-24T02:57:06.7125897Z [32m+++ /home/runner/work/static-php-cli/static-php-cli/src/SPC/builder/extension/xlswriter.php[39m
+2025-04-24T02:57:06.7126616Z [36m@@ -28,7 +28,7 @@[39m
+2025-04-24T02:57:06.7126900Z      {
+2025-04-24T02:57:06.7127172Z          if (PHP_OS_FAMILY === 'Windows') {
+2025-04-24T02:57:06.7127744Z              $content = file_get_contents($this->source_dir . '/library/libxlsxwriter/src/theme.c');
+2025-04-24T02:57:06.7128529Z [31m-            $bom = pack('CCC', 0xef, 0xbb, 0xbf);[39m
+2025-04-24T02:57:06.7129032Z [32m+            $bom = pack('CCC', 0xEF, 0xBB, 0xBF);[39m
+2025-04-24T02:57:06.7129414Z              if (substr($content, 0, 3) !== $bom) {
+2025-04-24T02:57:06.7129874Z                  file_put_contents($this->source_dir . '/library/libxlsxwriter/src/theme.c', $content);
+2025-04-24T02:57:06.7130288Z                  return true;
+2025-04-24T02:57:06.7130425Z 
+2025-04-24T02:57:06.7130566Z [33m      ----------- end diff -----------[39m
+2025-04-24T02:57:06.7130742Z 
+2025-04-24T02:57:06.7130753Z 
+2025-04-24T02:57:06.7131178Z Found 1 of 372 files that can be fixed in 5.669 seconds, 25.12 MB memory used
+2025-04-24T02:57:06.7317625Z ##[error]Process completed with exit code 8.
+2025-04-24T02:57:06.7416495Z Post job cleanup.
+2025-04-24T02:57:06.8337100Z [command]/usr/bin/git version
+2025-04-24T02:57:06.8374575Z git version 2.49.0
+2025-04-24T02:57:06.8425893Z Temporarily overriding HOME='/home/runner/work/_temp/a0a854a5-3706-4706-ab61-0bb1bb3dc2b2' before making global git config changes
+2025-04-24T02:57:06.8427139Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-24T02:57:06.8432278Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/static-php-cli/static-php-cli
+2025-04-24T02:57:06.8468500Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-24T02:57:06.8501724Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-24T02:57:06.8726761Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-24T02:57:06.8748389Z http.https://github.com/.extraheader
+2025-04-24T02:57:06.8761552Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-24T02:57:06.8791864Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-24T02:57:06.9114485Z Cleaning up orphan processes

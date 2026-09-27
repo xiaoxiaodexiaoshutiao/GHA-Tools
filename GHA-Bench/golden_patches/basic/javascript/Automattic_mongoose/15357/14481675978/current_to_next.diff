@@ -1,0 +1,13 @@
+diff --git a/types/inferrawdoctype.d.ts b/types/inferrawdoctype.d.ts
+index 47a0fe9def8..9cee6747d85 100644
+--- a/types/inferrawdoctype.d.ts
++++ b/types/inferrawdoctype.d.ts
+@@ -83,7 +83,7 @@ declare module 'mongoose' {
+               IsItRecordAndNotAny<Item> extends true ?
+                 Item extends Record<string, never> ?
+                   ObtainRawDocumentPathType<Item, TypeKey>[] :
+-                  Array<InferRawDocType<Item>>> :
++                  Array<InferRawDocType<Item>> :
+                 ObtainRawDocumentPathType<Item, TypeKey>[]
+         >:
+         PathValueType extends StringSchemaDefinition ? PathEnumOrString<Options['enum']> :

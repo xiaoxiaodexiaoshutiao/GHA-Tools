@@ -1,0 +1,298 @@
+﻿2025-04-16T15:45:51.9428529Z Current runner version: '2.323.0'
+2025-04-16T15:45:51.9453832Z ##[group]Operating System
+2025-04-16T15:45:51.9454733Z Ubuntu
+2025-04-16T15:45:51.9455241Z 24.04.2
+2025-04-16T15:45:51.9455689Z LTS
+2025-04-16T15:45:51.9456192Z ##[endgroup]
+2025-04-16T15:45:51.9456671Z ##[group]Runner Image
+2025-04-16T15:45:51.9457251Z Image: ubuntu-24.04
+2025-04-16T15:45:51.9457710Z Version: 20250413.1.0
+2025-04-16T15:45:51.9458773Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250413.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-16T15:45:51.9460145Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250413.1
+2025-04-16T15:45:51.9461285Z ##[endgroup]
+2025-04-16T15:45:51.9461903Z ##[group]Runner Image Provisioner
+2025-04-16T15:45:51.9462446Z 2.0.422.1
+2025-04-16T15:45:51.9462899Z ##[endgroup]
+2025-04-16T15:45:51.9465214Z ##[group]GITHUB_TOKEN Permissions
+2025-04-16T15:45:51.9467442Z Actions: read
+2025-04-16T15:45:51.9468190Z Attestations: read
+2025-04-16T15:45:51.9468770Z Checks: read
+2025-04-16T15:45:51.9469305Z Contents: read
+2025-04-16T15:45:51.9469796Z Deployments: read
+2025-04-16T15:45:51.9470248Z Discussions: read
+2025-04-16T15:45:51.9471009Z Issues: read
+2025-04-16T15:45:51.9471471Z Metadata: read
+2025-04-16T15:45:51.9471953Z Models: read
+2025-04-16T15:45:51.9472420Z Packages: read
+2025-04-16T15:45:51.9472941Z Pages: read
+2025-04-16T15:45:51.9473367Z PullRequests: read
+2025-04-16T15:45:51.9473916Z RepositoryProjects: read
+2025-04-16T15:45:51.9474448Z SecurityEvents: read
+2025-04-16T15:45:51.9474949Z Statuses: read
+2025-04-16T15:45:51.9475444Z ##[endgroup]
+2025-04-16T15:45:51.9477806Z Secret source: None
+2025-04-16T15:45:51.9478840Z Prepare workflow directory
+2025-04-16T15:45:51.9888101Z Prepare all required actions
+2025-04-16T15:45:51.9926434Z Getting action download info
+2025-04-16T15:45:52.5413833Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-16T15:45:52.5414879Z Version: 4.2.2
+2025-04-16T15:45:52.5415779Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-16T15:45:52.5416979Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-16T15:45:52.5417709Z ##[endgroup]
+2025-04-16T15:45:52.6999972Z Complete job name: Check documentation
+2025-04-16T15:45:52.7455142Z ##[group]Checking docker version
+2025-04-16T15:45:52.7467783Z ##[command]/usr/bin/docker version --format '{{.Server.APIVersion}}'
+2025-04-16T15:45:52.8333111Z '1.45'
+2025-04-16T15:45:52.8344422Z Docker daemon API version: '1.45'
+2025-04-16T15:45:52.8345150Z ##[command]/usr/bin/docker version --format '{{.Client.APIVersion}}'
+2025-04-16T15:45:52.8491959Z '1.45'
+2025-04-16T15:45:52.8503210Z Docker client API version: '1.45'
+2025-04-16T15:45:52.8508212Z ##[endgroup]
+2025-04-16T15:45:52.8511251Z ##[group]Clean up resources from previous jobs
+2025-04-16T15:45:52.8516920Z ##[command]/usr/bin/docker ps --all --quiet --no-trunc --filter "label=c5f10a"
+2025-04-16T15:45:52.8657471Z ##[command]/usr/bin/docker network prune --force --filter "label=c5f10a"
+2025-04-16T15:45:52.8784191Z ##[endgroup]
+2025-04-16T15:45:52.8784641Z ##[group]Create local container network
+2025-04-16T15:45:52.8794375Z ##[command]/usr/bin/docker network create --label c5f10a github_network_67c22bced1e44d479c901adbbe769b48
+2025-04-16T15:45:52.9552071Z 19509ae3583fc68446dc2b7538045443dfca70efda7955ad5deaad0a628923b9
+2025-04-16T15:45:52.9569350Z ##[endgroup]
+2025-04-16T15:45:52.9592668Z ##[group]Starting job container
+2025-04-16T15:45:52.9611768Z ##[command]/usr/bin/docker pull rippleci/clio_ci:latest
+2025-04-16T15:45:54.0564582Z latest: Pulling from rippleci/clio_ci
+2025-04-16T15:45:54.3331552Z 17d0386c2fff: Pulling fs layer
+2025-04-16T15:45:54.3336758Z 4f4fb700ef54: Pulling fs layer
+2025-04-16T15:45:54.3339525Z bb64cb60ee0f: Pulling fs layer
+2025-04-16T15:45:54.3340373Z 4334f48ac70c: Pulling fs layer
+2025-04-16T15:45:54.3341300Z 79eedcb657d8: Pulling fs layer
+2025-04-16T15:45:54.3342010Z eeba2a0df165: Pulling fs layer
+2025-04-16T15:45:54.3342727Z 96f8cc20de9c: Pulling fs layer
+2025-04-16T15:45:54.3343775Z 4648f47502b7: Pulling fs layer
+2025-04-16T15:45:54.3344464Z c629f7e2ac57: Pulling fs layer
+2025-04-16T15:45:54.3345139Z 644e5e6064c6: Pulling fs layer
+2025-04-16T15:45:54.3345784Z 411241117153: Pulling fs layer
+2025-04-16T15:45:54.3346462Z 64c03c55f52f: Pulling fs layer
+2025-04-16T15:45:54.3347160Z 47f70c8e5f4e: Pulling fs layer
+2025-04-16T15:45:54.3347885Z 9195445f6bd6: Pulling fs layer
+2025-04-16T15:45:54.3348619Z 879f1dc7f9cf: Pulling fs layer
+2025-04-16T15:45:54.3349352Z 1ebc0e274366: Pulling fs layer
+2025-04-16T15:45:54.3350071Z 183507d72b7c: Pulling fs layer
+2025-04-16T15:45:54.3351201Z 9a46f2771ec4: Pulling fs layer
+2025-04-16T15:45:54.3352017Z a26bb8f56416: Pulling fs layer
+2025-04-16T15:45:54.3352794Z fb61e146ecc4: Pulling fs layer
+2025-04-16T15:45:54.3353558Z 576c60a137fb: Pulling fs layer
+2025-04-16T15:45:54.3354317Z a34b03a4ab56: Pulling fs layer
+2025-04-16T15:45:54.3355064Z 96f8cc20de9c: Waiting
+2025-04-16T15:45:54.3355713Z 4648f47502b7: Waiting
+2025-04-16T15:45:54.3356387Z c629f7e2ac57: Waiting
+2025-04-16T15:45:54.3357029Z 644e5e6064c6: Waiting
+2025-04-16T15:45:54.3357808Z 411241117153: Waiting
+2025-04-16T15:45:54.3358622Z 64c03c55f52f: Waiting
+2025-04-16T15:45:54.3359522Z 47f70c8e5f4e: Waiting
+2025-04-16T15:45:54.3360364Z 9195445f6bd6: Waiting
+2025-04-16T15:45:54.3361320Z 879f1dc7f9cf: Waiting
+2025-04-16T15:45:54.3362153Z 1ebc0e274366: Waiting
+2025-04-16T15:45:54.3362984Z 576c60a137fb: Waiting
+2025-04-16T15:45:54.3363814Z 183507d72b7c: Waiting
+2025-04-16T15:45:54.3364632Z 9a46f2771ec4: Waiting
+2025-04-16T15:45:54.3365462Z a34b03a4ab56: Waiting
+2025-04-16T15:45:54.3366289Z a26bb8f56416: Waiting
+2025-04-16T15:45:54.3367121Z fb61e146ecc4: Waiting
+2025-04-16T15:45:54.3367945Z 79eedcb657d8: Waiting
+2025-04-16T15:45:54.3368782Z eeba2a0df165: Waiting
+2025-04-16T15:45:54.3369614Z 4334f48ac70c: Waiting
+2025-04-16T15:45:54.6066650Z 4f4fb700ef54: Verifying Checksum
+2025-04-16T15:45:54.6070267Z 4f4fb700ef54: Download complete
+2025-04-16T15:45:55.1142225Z 17d0386c2fff: Verifying Checksum
+2025-04-16T15:45:55.1144320Z 17d0386c2fff: Download complete
+2025-04-16T15:45:55.4613940Z bb64cb60ee0f: Verifying Checksum
+2025-04-16T15:45:55.4619986Z bb64cb60ee0f: Download complete
+2025-04-16T15:45:55.5331255Z 79eedcb657d8: Verifying Checksum
+2025-04-16T15:45:55.5333084Z 79eedcb657d8: Download complete
+2025-04-16T15:45:56.1725236Z 17d0386c2fff: Pull complete
+2025-04-16T15:45:56.3357370Z 96f8cc20de9c: Verifying Checksum
+2025-04-16T15:45:56.3358023Z 96f8cc20de9c: Download complete
+2025-04-16T15:45:57.3982017Z 4f4fb700ef54: Pull complete
+2025-04-16T15:45:57.4092933Z 4648f47502b7: Verifying Checksum
+2025-04-16T15:45:57.4093632Z 4648f47502b7: Download complete
+2025-04-16T15:45:57.4656729Z 4334f48ac70c: Verifying Checksum
+2025-04-16T15:45:57.4660460Z 4334f48ac70c: Download complete
+2025-04-16T15:45:57.6798333Z c629f7e2ac57: Verifying Checksum
+2025-04-16T15:45:57.6798883Z c629f7e2ac57: Download complete
+2025-04-16T15:45:57.7514648Z 644e5e6064c6: Verifying Checksum
+2025-04-16T15:45:57.7515991Z 644e5e6064c6: Download complete
+2025-04-16T15:45:57.8058435Z eeba2a0df165: Verifying Checksum
+2025-04-16T15:45:57.8059043Z eeba2a0df165: Download complete
+2025-04-16T15:45:58.0760421Z 47f70c8e5f4e: Verifying Checksum
+2025-04-16T15:45:58.0761479Z 47f70c8e5f4e: Download complete
+2025-04-16T15:45:58.0777616Z 64c03c55f52f: Verifying Checksum
+2025-04-16T15:45:58.0779196Z 64c03c55f52f: Download complete
+2025-04-16T15:45:58.1092666Z 411241117153: Verifying Checksum
+2025-04-16T15:45:58.1093577Z 411241117153: Download complete
+2025-04-16T15:45:58.3379976Z 9195445f6bd6: Verifying Checksum
+2025-04-16T15:45:58.3381822Z 9195445f6bd6: Download complete
+2025-04-16T15:45:58.3583833Z 879f1dc7f9cf: Verifying Checksum
+2025-04-16T15:45:58.3585272Z 879f1dc7f9cf: Download complete
+2025-04-16T15:45:58.3757310Z 1ebc0e274366: Download complete
+2025-04-16T15:45:58.6153829Z 9a46f2771ec4: Verifying Checksum
+2025-04-16T15:45:58.6154282Z 9a46f2771ec4: Download complete
+2025-04-16T15:45:58.6243427Z 183507d72b7c: Verifying Checksum
+2025-04-16T15:45:58.6245286Z 183507d72b7c: Download complete
+2025-04-16T15:45:58.6319779Z a26bb8f56416: Verifying Checksum
+2025-04-16T15:45:58.6320357Z a26bb8f56416: Download complete
+2025-04-16T15:45:58.8867759Z a34b03a4ab56: Verifying Checksum
+2025-04-16T15:45:58.8868282Z a34b03a4ab56: Download complete
+2025-04-16T15:45:58.8935246Z 576c60a137fb: Verifying Checksum
+2025-04-16T15:45:58.8935780Z 576c60a137fb: Download complete
+2025-04-16T15:45:58.9070565Z fb61e146ecc4: Verifying Checksum
+2025-04-16T15:45:58.9071142Z fb61e146ecc4: Download complete
+2025-04-16T15:46:00.2806953Z bb64cb60ee0f: Pull complete
+2025-04-16T15:46:08.0542079Z 4334f48ac70c: Pull complete
+2025-04-16T15:46:08.3558472Z 79eedcb657d8: Pull complete
+2025-04-16T15:46:14.1085559Z eeba2a0df165: Pull complete
+2025-04-16T15:46:14.3457624Z 96f8cc20de9c: Pull complete
+2025-04-16T15:46:16.5885534Z 4648f47502b7: Pull complete
+2025-04-16T15:46:16.6100466Z c629f7e2ac57: Pull complete
+2025-04-16T15:46:16.6559724Z 644e5e6064c6: Pull complete
+2025-04-16T15:46:16.8161255Z 411241117153: Pull complete
+2025-04-16T15:46:17.0414919Z 64c03c55f52f: Pull complete
+2025-04-16T15:46:17.0655473Z 47f70c8e5f4e: Pull complete
+2025-04-16T15:46:17.0752739Z 9195445f6bd6: Pull complete
+2025-04-16T15:46:17.0872614Z 879f1dc7f9cf: Pull complete
+2025-04-16T15:46:17.0967875Z 1ebc0e274366: Pull complete
+2025-04-16T15:46:17.1070000Z 183507d72b7c: Pull complete
+2025-04-16T15:46:17.1185864Z 9a46f2771ec4: Pull complete
+2025-04-16T15:46:17.1303419Z a26bb8f56416: Pull complete
+2025-04-16T15:46:17.1414434Z fb61e146ecc4: Pull complete
+2025-04-16T15:46:17.1534299Z 576c60a137fb: Pull complete
+2025-04-16T15:46:17.1666650Z a34b03a4ab56: Pull complete
+2025-04-16T15:46:17.1712526Z Digest: sha256:4d3fe8729dc73d3368fef0f4feb8858668fd2e1aeb6984e6a0fecc4581fec462
+2025-04-16T15:46:17.1727042Z Status: Downloaded newer image for rippleci/clio_ci:latest
+2025-04-16T15:46:17.1759550Z docker.io/rippleci/clio_ci:latest
+2025-04-16T15:46:17.1840197Z ##[command]/usr/bin/docker create --name b5ef424b6687425d8a9875cd6bd74ef8_rippleciclio_cilatest_c8234c --label c5f10a --workdir /__w/clio/clio --network github_network_67c22bced1e44d479c901adbbe769b48  -e "HOME=/github/home" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work":"/__w" -v "/home/runner/runners/2.323.0/externals":"/__e":ro -v "/home/runner/work/_temp":"/__w/_temp" -v "/home/runner/work/_actions":"/__w/_actions" -v "/opt/hostedtoolcache":"/__t" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" --entrypoint "tail" rippleci/clio_ci:latest "-f" "/dev/null"
+2025-04-16T15:46:17.2099337Z 3ee76fb2501088b02b6a858968e62390028d31ecc6f4107d1fde04c3289c358e
+2025-04-16T15:46:17.2123647Z ##[command]/usr/bin/docker start 3ee76fb2501088b02b6a858968e62390028d31ecc6f4107d1fde04c3289c358e
+2025-04-16T15:46:17.4522489Z 3ee76fb2501088b02b6a858968e62390028d31ecc6f4107d1fde04c3289c358e
+2025-04-16T15:46:17.4538994Z ##[command]/usr/bin/docker ps --all --filter id=3ee76fb2501088b02b6a858968e62390028d31ecc6f4107d1fde04c3289c358e --filter status=running --no-trunc --format "{{.ID}} {{.Status}}"
+2025-04-16T15:46:17.4659452Z 3ee76fb2501088b02b6a858968e62390028d31ecc6f4107d1fde04c3289c358e Up Less than a second
+2025-04-16T15:46:17.4678896Z ##[command]/usr/bin/docker inspect --format "{{range .Config.Env}}{{println .}}{{end}}" 3ee76fb2501088b02b6a858968e62390028d31ecc6f4107d1fde04c3289c358e
+2025-04-16T15:46:17.4793831Z CI=true
+2025-04-16T15:46:17.4794306Z HOME=/github/home
+2025-04-16T15:46:17.4794614Z GITHUB_ACTIONS=true
+2025-04-16T15:46:17.4795094Z PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2025-04-16T15:46:17.4795608Z CLANG_VERSION=16
+2025-04-16T15:46:17.4795895Z CCACHE_VERSION=4.10.2
+2025-04-16T15:46:17.4796192Z LLVM_TOOLS_VERSION=19
+2025-04-16T15:46:17.4796485Z GH_VERSION=2.40.0
+2025-04-16T15:46:17.4796766Z DOXYGEN_VERSION=1.12.0
+2025-04-16T15:46:17.4813242Z ##[endgroup]
+2025-04-16T15:46:17.4822481Z ##[group]Waiting for all services to be ready
+2025-04-16T15:46:17.4824325Z ##[endgroup]
+2025-04-16T15:46:17.5062900Z ##[group]Run actions/checkout@v4
+2025-04-16T15:46:17.5063449Z with:
+2025-04-16T15:46:17.5063626Z   repository: XRPLF/clio
+2025-04-16T15:46:17.5063965Z   token: ***
+2025-04-16T15:46:17.5064131Z   ssh-strict: true
+2025-04-16T15:46:17.5064302Z   ssh-user: git
+2025-04-16T15:46:17.5064473Z   persist-credentials: true
+2025-04-16T15:46:17.5064677Z   clean: true
+2025-04-16T15:46:17.5064866Z   sparse-checkout-cone-mode: true
+2025-04-16T15:46:17.5065078Z   fetch-depth: 1
+2025-04-16T15:46:17.5065242Z   fetch-tags: false
+2025-04-16T15:46:17.5065411Z   show-progress: true
+2025-04-16T15:46:17.5065585Z   lfs: false
+2025-04-16T15:46:17.5065733Z   submodules: false
+2025-04-16T15:46:17.5065906Z   set-safe-directory: true
+2025-04-16T15:46:17.5066275Z ##[endgroup]
+2025-04-16T15:46:17.5121188Z ##[command]/usr/bin/docker exec  3ee76fb2501088b02b6a858968e62390028d31ecc6f4107d1fde04c3289c358e sh -c "cat /etc/*release | grep ^ID"
+2025-04-16T15:46:17.8901558Z Syncing repository: XRPLF/clio
+2025-04-16T15:46:17.8902989Z ##[group]Getting Git version info
+2025-04-16T15:46:17.8903285Z Working directory is '/__w/clio/clio'
+2025-04-16T15:46:17.8903742Z [command]/usr/bin/git version
+2025-04-16T15:46:17.8903971Z git version 2.25.1
+2025-04-16T15:46:17.8933884Z ##[endgroup]
+2025-04-16T15:46:17.8949507Z Temporarily overriding HOME='/__w/_temp/7e06e8d7-cf41-4c28-88dd-a879e0a3ece8' before making global git config changes
+2025-04-16T15:46:17.9030515Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-16T15:46:17.9033080Z [command]/usr/bin/git config --global --add safe.directory /__w/clio/clio
+2025-04-16T15:46:17.9034398Z Deleting the contents of '/__w/clio/clio'
+2025-04-16T15:46:17.9035204Z ##[group]Initializing the repository
+2025-04-16T15:46:17.9035658Z [command]/usr/bin/git init /__w/clio/clio
+2025-04-16T15:46:17.9053382Z Initialized empty Git repository in /__w/clio/clio/.git/
+2025-04-16T15:46:17.9066847Z [command]/usr/bin/git remote add origin https://github.com/XRPLF/clio
+2025-04-16T15:46:17.9100296Z ##[endgroup]
+2025-04-16T15:46:17.9101075Z ##[group]Disabling automatic garbage collection
+2025-04-16T15:46:17.9104630Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-16T15:46:17.9135086Z ##[endgroup]
+2025-04-16T15:46:17.9135548Z ##[group]Setting up auth
+2025-04-16T15:46:17.9143100Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-16T15:46:17.9175794Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-16T15:46:17.9458768Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-16T15:46:17.9489594Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-16T15:46:17.9759273Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-16T15:46:17.9794472Z ##[endgroup]
+2025-04-16T15:46:17.9795116Z ##[group]Fetching the repository
+2025-04-16T15:46:17.9803335Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +f7cc3baafac1e2937ec50b1235cdb72e514f2521:refs/remotes/pull/2005/merge
+2025-04-16T15:46:18.7039129Z From https://github.com/XRPLF/clio
+2025-04-16T15:46:18.7039688Z  * [new ref]         f7cc3baafac1e2937ec50b1235cdb72e514f2521 -> pull/2005/merge
+2025-04-16T15:46:18.7060487Z ##[endgroup]
+2025-04-16T15:46:18.7061085Z ##[group]Determining the checkout info
+2025-04-16T15:46:18.7063611Z ##[endgroup]
+2025-04-16T15:46:18.7064173Z ##[group]Checking out the ref
+2025-04-16T15:46:18.7069785Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/2005/merge
+2025-04-16T15:46:18.7810416Z Note: switching to 'refs/remotes/pull/2005/merge'.
+2025-04-16T15:46:18.7811404Z 
+2025-04-16T15:46:18.7812059Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-16T15:46:18.7812911Z changes and commit them, and you can discard any commits you make in this
+2025-04-16T15:46:18.7813852Z state without impacting any branches by switching back to a branch.
+2025-04-16T15:46:18.7814382Z 
+2025-04-16T15:46:18.7814685Z If you want to create a new branch to retain commits you create, you may
+2025-04-16T15:46:18.7815539Z do so (now or later) by using -c with the switch command. Example:
+2025-04-16T15:46:18.7815984Z 
+2025-04-16T15:46:18.7816235Z   git switch -c <new-branch-name>
+2025-04-16T15:46:18.7816582Z 
+2025-04-16T15:46:18.7816773Z Or undo this operation with:
+2025-04-16T15:46:18.7817096Z 
+2025-04-16T15:46:18.7817222Z   git switch -
+2025-04-16T15:46:18.7817467Z 
+2025-04-16T15:46:18.7817845Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-16T15:46:18.7818376Z 
+2025-04-16T15:46:18.7818899Z HEAD is now at f7cc3ba Merge f461b92497d9975f5bdc31456e985718b146ce70 into 4a5fee75484c470f76357ab593b667c2d7fe494e
+2025-04-16T15:46:18.8003462Z ##[endgroup]
+2025-04-16T15:46:18.8049776Z [command]/usr/bin/git log -1 --format=%H
+2025-04-16T15:46:18.8075043Z f7cc3baafac1e2937ec50b1235cdb72e514f2521
+2025-04-16T15:46:18.8278648Z ##[group]Run ./.githooks/check-docs
+2025-04-16T15:46:18.8278972Z [36;1m./.githooks/check-docs[0m
+2025-04-16T15:46:18.8283325Z shell: bash --noprofile --norc -e -o pipefail {0}
+2025-04-16T15:46:18.8283614Z ##[endgroup]
+2025-04-16T15:46:18.8890431Z + Checking documentation...
+2025-04-16T15:46:20.6415100Z 
+2025-04-16T15:46:20.6415620Z                                     ERROR
+2025-04-16T15:46:20.6417635Z -----------------------------------------------------------------------------
+2025-04-16T15:46:20.6418248Z                       Found issues with documentation:
+2025-04-16T15:46:20.6418558Z 
+2025-04-16T15:46:20.6426004Z /__w/clio/clio/src/rpc/RPCHelpers.hpp:747: warning: argument 'ctx' of command @param is not found in the argument list of rpc::logDuration(boost::json::object const &request, util::BaseTagDecorator const &tag, T const &dur)
+2025-04-16T15:46:20.6428402Z /__w/clio/clio/src/rpc/RPCHelpers.hpp:747: warning: The following parameters of rpc::logDuration(boost::json::object const &request, util::BaseTagDecorator const &tag, T const &dur) are not documented:
+2025-04-16T15:46:20.6429600Z   parameter 'request'
+2025-04-16T15:46:20.6429938Z   parameter 'tag'
+2025-04-16T15:46:20.6430341Z -----------------------------------------------------------------------------
+2025-04-16T15:46:20.6431232Z 
+2025-04-16T15:46:20.6462922Z ##[error]Process completed with exit code 2.
+2025-04-16T15:46:20.6561667Z Post job cleanup.
+2025-04-16T15:46:20.6565383Z ##[command]/usr/bin/docker exec  3ee76fb2501088b02b6a858968e62390028d31ecc6f4107d1fde04c3289c358e sh -c "cat /etc/*release | grep ^ID"
+2025-04-16T15:46:20.8599988Z [command]/usr/bin/git version
+2025-04-16T15:46:20.8658218Z git version 2.25.1
+2025-04-16T15:46:20.8737776Z Temporarily overriding HOME='/__w/_temp/f4502981-88ce-478e-917b-eeb1b71b6aad' before making global git config changes
+2025-04-16T15:46:20.8738956Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-16T15:46:20.8745915Z [command]/usr/bin/git config --global --add safe.directory /__w/clio/clio
+2025-04-16T15:46:20.8807483Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-16T15:46:20.8865272Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-16T15:46:20.9247147Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-16T15:46:20.9271528Z http.https://github.com/.extraheader
+2025-04-16T15:46:20.9289158Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-16T15:46:20.9324660Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-16T15:46:20.9727908Z Stop and remove container: b5ef424b6687425d8a9875cd6bd74ef8_rippleciclio_cilatest_c8234c
+2025-04-16T15:46:20.9732880Z ##[command]/usr/bin/docker rm --force 3ee76fb2501088b02b6a858968e62390028d31ecc6f4107d1fde04c3289c358e
+2025-04-16T15:46:21.1289322Z 3ee76fb2501088b02b6a858968e62390028d31ecc6f4107d1fde04c3289c358e
+2025-04-16T15:46:21.1318408Z Remove container network: github_network_67c22bced1e44d479c901adbbe769b48
+2025-04-16T15:46:21.1323299Z ##[command]/usr/bin/docker network rm github_network_67c22bced1e44d479c901adbbe769b48
+2025-04-16T15:46:21.2504899Z github_network_67c22bced1e44d479c901adbbe769b48
+2025-04-16T15:46:21.2581685Z Cleaning up orphan processes

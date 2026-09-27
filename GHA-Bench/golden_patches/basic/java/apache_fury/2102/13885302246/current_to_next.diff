@@ -1,0 +1,18 @@
+diff --git a/java/fury-core/src/main/java/org/apache/fury/resolver/DisallowedList.java b/java/fury-core/src/main/java/org/apache/fury/resolver/DisallowedList.java
+index 3289d87c8a..b6ea884018 100644
+--- a/java/fury-core/src/main/java/org/apache/fury/resolver/DisallowedList.java
++++ b/java/fury-core/src/main/java/org/apache/fury/resolver/DisallowedList.java
+@@ -65,10 +65,10 @@ class DisallowedList {
+ 
+   private static byte[] readAllBytes(InputStream inputStream) throws IOException {
+     ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+-    int nRead;
++    int numbytesRead;
+     byte[] data = new byte[1024];
+-    while ((nRead = inputStream.read(data, 0, data.length)) != -1) {
+-      buffer.write(data, 0, nRead);
++    while ((numbytesRead = inputStream.read(data, 0, data.length)) != -1) {
++      buffer.write(data, 0, numbytesRead);
+     }
+     buffer.flush();
+     return buffer.toByteArray();

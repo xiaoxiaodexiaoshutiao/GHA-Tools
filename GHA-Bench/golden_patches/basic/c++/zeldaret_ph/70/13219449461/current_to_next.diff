@@ -1,0 +1,54 @@
+diff --git a/src/Main/System/OverlayManager.cpp b/src/Main/System/OverlayManager.cpp
+index 8446eaa87..8ba3f925e 100644
+--- a/src/Main/System/OverlayManager.cpp
++++ b/src/Main/System/OverlayManager.cpp
+@@ -1,5 +1,5 @@
+-#include "global.h"
+ #include "System/OverlayManager.hpp"
++#include "global.h"
+ #include "nds/Overlay.h"
+ 
+ struct UnkStruct_020ee698 {
+@@ -18,15 +18,15 @@ struct OverlaySetup {
+     /* 08 */ OverlayId slot2Overlay;
+     /* 0c */ OverlayId slot3Overlay;
+     /* 10 */ OverlayId slot12Overlay;
+-    /* 14 */ void* mUnk_14;
+-    /* 18 */ void* mUnk_18;
++    /* 14 */ void *mUnk_14;
++    /* 18 */ void *mUnk_18;
+     /* 1c */
+ };
+ extern OverlaySetup gOverlaySetups[];
+ 
+ extern u32 *data_027e0ce0[];
+-extern "C" void func_ov007_02102850(u32**);
+-extern "C" void func_ov007_021028a0(u32**);
++extern "C" void func_ov007_02102850(u32 **);
++extern "C" void func_ov007_021028a0(u32 **);
+ 
+ THUMB void OverlayManager::Load(OverlayIndex index, OverlayId id) {
+     if (id != OverlayId_None) {
+@@ -55,7 +55,7 @@ THUMB void OverlayManager::Unload(OverlayIndex index) {
+ //! both functions should match otherwise
+ THUMB void OverlayManager::LoadOverlaySetup(s32 index) {
+     OverlayId overlayId;
+-    OverlaySetup* pSetup;
++    OverlaySetup *pSetup;
+ 
+     pSetup = &gOverlaySetups[index];
+ 
+@@ -66,11 +66,11 @@ THUMB void OverlayManager::LoadOverlaySetup(s32 index) {
+         func_ov007_02102850(data_027e0ce0);
+     } else {
+         overlayId = pSetup->slot12Overlay;
+-    
++
+         if (index == 6 && data_ov000_020ee698.mUnk_2c == 2) {
+             overlayId = OverlayId_61;
+         }
+-    
++
+         this->Load(OverlayIndex_3, pSetup->slot3Overlay);
+         this->Load(OverlayIndex_12, overlayId);
+     }

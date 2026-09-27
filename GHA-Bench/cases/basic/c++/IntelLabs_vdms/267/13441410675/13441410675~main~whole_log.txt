@@ -1,0 +1,302 @@
+2025-02-20T17:44:35.1888484Z Requested labels: ubuntu-latest
+2025-02-20T17:44:35.1888781Z Job defined at: IntelLabs/vdms/.github/workflows/precommit.yml@refs/pull/267/merge
+2025-02-20T17:44:35.1888904Z Waiting for a runner to pick up this job...
+2025-02-20T17:44:36.0076882Z Job is waiting for a hosted runner to come online.
+2025-02-20T17:44:38.6311041Z Job is about to start running on the hosted runner: GitHub Actions 239 (hosted)
+2025-02-20T17:44:40.3188260Z Current runner version: '2.322.0'
+2025-02-20T17:44:40.3211787Z ##[group]Operating System
+2025-02-20T17:44:40.3212596Z Ubuntu
+2025-02-20T17:44:40.3213086Z 24.04.1
+2025-02-20T17:44:40.3213645Z LTS
+2025-02-20T17:44:40.3214121Z ##[endgroup]
+2025-02-20T17:44:40.3214637Z ##[group]Runner Image
+2025-02-20T17:44:40.3215280Z Image: ubuntu-24.04
+2025-02-20T17:44:40.3215776Z Version: 20250209.1.0
+2025-02-20T17:44:40.3216802Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250209.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-20T17:44:40.3218230Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250209.1
+2025-02-20T17:44:40.3219148Z ##[endgroup]
+2025-02-20T17:44:40.3219713Z ##[group]Runner Image Provisioner
+2025-02-20T17:44:40.3220329Z 2.0.422.1
+2025-02-20T17:44:40.3220799Z ##[endgroup]
+2025-02-20T17:44:40.3223154Z ##[group]GITHUB_TOKEN Permissions
+2025-02-20T17:44:40.3225058Z Actions: read
+2025-02-20T17:44:40.3225881Z Attestations: read
+2025-02-20T17:44:40.3226500Z Checks: read
+2025-02-20T17:44:40.3227070Z Contents: read
+2025-02-20T17:44:40.3227605Z Deployments: read
+2025-02-20T17:44:40.3228114Z Discussions: read
+2025-02-20T17:44:40.3228680Z Issues: read
+2025-02-20T17:44:40.3229206Z Metadata: read
+2025-02-20T17:44:40.3229705Z Packages: read
+2025-02-20T17:44:40.3230305Z Pages: read
+2025-02-20T17:44:40.3230806Z PullRequests: read
+2025-02-20T17:44:40.3231478Z RepositoryProjects: read
+2025-02-20T17:44:40.3232166Z SecurityEvents: read
+2025-02-20T17:44:40.3232708Z Statuses: read
+2025-02-20T17:44:40.3233239Z ##[endgroup]
+2025-02-20T17:44:40.3235999Z Secret source: Actions
+2025-02-20T17:44:40.3236658Z Prepare workflow directory
+2025-02-20T17:44:40.3539616Z Prepare all required actions
+2025-02-20T17:44:40.3576045Z Getting action download info
+2025-02-20T17:44:40.5306386Z Download action repository 'actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-02-20T17:44:40.6008595Z Download action repository 'actions/setup-python@v4' (SHA:65d7f2d534ac1bc67fcd62888c5f4f3d2cb2b236)
+2025-02-20T17:44:40.6635569Z Download action repository 'pre-commit/action@v3.0.1' (SHA:2c7b3805fd2a0fd8c1884dcaebf91fc102a13ecd)
+2025-02-20T17:44:40.7769814Z Download action repository 'pre-commit-ci/lite-action@v1.1.0' (SHA:5d6cc0eb514c891a40562a58a8e71576c5c7fb43)
+2025-02-20T17:44:41.1348810Z Getting action download info
+2025-02-20T17:44:41.2336604Z Download action repository 'actions/cache@v4' (SHA:0c907a75c2c80ebcb7f088228285e798b750cf8f)
+2025-02-20T17:44:41.4701921Z Complete job name: main
+2025-02-20T17:44:41.5437823Z ##[group]Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+2025-02-20T17:44:41.5438893Z with:
+2025-02-20T17:44:41.5439327Z   submodules: false
+2025-02-20T17:44:41.5439806Z   repository: IntelLabs/vdms
+2025-02-20T17:44:41.5440474Z   token: ***
+2025-02-20T17:44:41.5440909Z   ssh-strict: true
+2025-02-20T17:44:41.5441517Z   ssh-user: git
+2025-02-20T17:44:41.5441986Z   persist-credentials: true
+2025-02-20T17:44:41.5442481Z   clean: true
+2025-02-20T17:44:41.5442964Z   sparse-checkout-cone-mode: true
+2025-02-20T17:44:41.5443497Z   fetch-depth: 1
+2025-02-20T17:44:41.5443934Z   fetch-tags: false
+2025-02-20T17:44:41.5444394Z   show-progress: true
+2025-02-20T17:44:41.5444859Z   lfs: false
+2025-02-20T17:44:41.5445304Z   set-safe-directory: true
+2025-02-20T17:44:41.5446042Z ##[endgroup]
+2025-02-20T17:44:41.7203067Z Syncing repository: IntelLabs/vdms
+2025-02-20T17:44:41.7205974Z ##[group]Getting Git version info
+2025-02-20T17:44:41.7207360Z Working directory is '/home/runner/work/vdms/vdms'
+2025-02-20T17:44:41.7209153Z [command]/usr/bin/git version
+2025-02-20T17:44:41.7239200Z git version 2.48.1
+2025-02-20T17:44:41.7266756Z ##[endgroup]
+2025-02-20T17:44:41.7280125Z Temporarily overriding HOME='/home/runner/work/_temp/278b2bac-80ba-4c65-a12a-30c34e16d3d2' before making global git config changes
+2025-02-20T17:44:41.7285643Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-20T17:44:41.7286976Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/vdms/vdms
+2025-02-20T17:44:41.7320085Z Deleting the contents of '/home/runner/work/vdms/vdms'
+2025-02-20T17:44:41.7325375Z ##[group]Initializing the repository
+2025-02-20T17:44:41.7329950Z [command]/usr/bin/git init /home/runner/work/vdms/vdms
+2025-02-20T17:44:41.7386725Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-20T17:44:41.7388287Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-20T17:44:41.7389453Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-20T17:44:41.7390161Z hint:
+2025-02-20T17:44:41.7391125Z hint: 	git config --global init.defaultBranch <name>
+2025-02-20T17:44:41.7392268Z hint:
+2025-02-20T17:44:41.7393193Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-20T17:44:41.7395082Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-20T17:44:41.7396557Z hint:
+2025-02-20T17:44:41.7397487Z hint: 	git branch -m <name>
+2025-02-20T17:44:41.7398915Z Initialized empty Git repository in /home/runner/work/vdms/vdms/.git/
+2025-02-20T17:44:41.7405241Z [command]/usr/bin/git remote add origin https://github.com/IntelLabs/vdms
+2025-02-20T17:44:41.7436956Z ##[endgroup]
+2025-02-20T17:44:41.7438339Z ##[group]Disabling automatic garbage collection
+2025-02-20T17:44:41.7442030Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-20T17:44:41.7470696Z ##[endgroup]
+2025-02-20T17:44:41.7472435Z ##[group]Setting up auth
+2025-02-20T17:44:41.7478713Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-20T17:44:41.7509491Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-20T17:44:41.7779107Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-20T17:44:41.7808169Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-20T17:44:41.8034670Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-20T17:44:41.8080480Z ##[endgroup]
+2025-02-20T17:44:41.8082071Z ##[group]Fetching the repository
+2025-02-20T17:44:41.8089884Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +ee8732501e6535a5029f1e650f9d994e8487db4f:refs/remotes/pull/267/merge
+2025-02-20T17:44:42.2544498Z From https://github.com/IntelLabs/vdms
+2025-02-20T17:44:42.2546924Z  * [new ref]         ee8732501e6535a5029f1e650f9d994e8487db4f -> pull/267/merge
+2025-02-20T17:44:42.2578628Z ##[endgroup]
+2025-02-20T17:44:42.2580686Z ##[group]Determining the checkout info
+2025-02-20T17:44:42.2583277Z ##[endgroup]
+2025-02-20T17:44:42.2587757Z [command]/usr/bin/git sparse-checkout disable
+2025-02-20T17:44:42.2630507Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-20T17:44:42.2662940Z ##[group]Checking out the ref
+2025-02-20T17:44:42.2666817Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/267/merge
+2025-02-20T17:44:42.3230518Z Note: switching to 'refs/remotes/pull/267/merge'.
+2025-02-20T17:44:42.3232327Z 
+2025-02-20T17:44:42.3233584Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-20T17:44:42.3236736Z changes and commit them, and you can discard any commits you make in this
+2025-02-20T17:44:42.3239973Z state without impacting any branches by switching back to a branch.
+2025-02-20T17:44:42.3242014Z 
+2025-02-20T17:44:42.3243164Z If you want to create a new branch to retain commits you create, you may
+2025-02-20T17:44:42.3246096Z do so (now or later) by using -c with the switch command. Example:
+2025-02-20T17:44:42.3247741Z 
+2025-02-20T17:44:42.3248959Z   git switch -c <new-branch-name>
+2025-02-20T17:44:42.3250276Z 
+2025-02-20T17:44:42.3250999Z Or undo this operation with:
+2025-02-20T17:44:42.3252340Z 
+2025-02-20T17:44:42.3252972Z   git switch -
+2025-02-20T17:44:42.3253799Z 
+2025-02-20T17:44:42.3255115Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-20T17:44:42.3257074Z 
+2025-02-20T17:44:42.3258812Z HEAD is now at ee87325 Merge 62c990fd17f54dffe03eac6818199c6d16c71388 into 195b3c6243f775b6393f3d91f31af3361ff138bd
+2025-02-20T17:44:42.3263488Z ##[endgroup]
+2025-02-20T17:44:42.3293091Z [command]/usr/bin/git log -1 --format=%H
+2025-02-20T17:44:42.3317170Z ee8732501e6535a5029f1e650f9d994e8487db4f
+2025-02-20T17:44:42.3684801Z ##[group]Run actions/setup-python@v4
+2025-02-20T17:44:42.3685964Z with:
+2025-02-20T17:44:42.3686774Z   python-version: 3.x
+2025-02-20T17:44:42.3687734Z   check-latest: false
+2025-02-20T17:44:42.3688940Z   token: ***
+2025-02-20T17:44:42.3689777Z   update-environment: true
+2025-02-20T17:44:42.3690794Z   allow-prereleases: false
+2025-02-20T17:44:42.3691990Z ##[endgroup]
+2025-02-20T17:44:42.5015005Z ##[group]Installed versions
+2025-02-20T17:44:42.5069500Z Successfully set up CPython (3.13.2)
+2025-02-20T17:44:42.5071985Z ##[endgroup]
+2025-02-20T17:44:42.5257036Z ##[group]Run pre-commit/action@v3.0.1
+2025-02-20T17:44:42.5258118Z with:
+2025-02-20T17:44:42.5258892Z   extra_args: --all-files
+2025-02-20T17:44:42.5259768Z env:
+2025-02-20T17:44:42.5260712Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T17:44:42.5262537Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-02-20T17:44:42.5264154Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T17:44:42.5265599Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T17:44:42.5267042Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T17:44:42.5268503Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-02-20T17:44:42.5269755Z ##[endgroup]
+2025-02-20T17:44:42.5410494Z ##[group]Run python -m pip install pre-commit
+2025-02-20T17:44:42.5411958Z [36;1mpython -m pip install pre-commit[0m
+2025-02-20T17:44:42.5558206Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-20T17:44:42.5559521Z env:
+2025-02-20T17:44:42.5560475Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T17:44:42.5562289Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-02-20T17:44:42.5563886Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T17:44:42.5565315Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T17:44:42.5566775Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T17:44:42.5568219Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-02-20T17:44:42.5569457Z ##[endgroup]
+2025-02-20T17:44:43.2661004Z Collecting pre-commit
+2025-02-20T17:44:43.3011077Z   Downloading pre_commit-4.1.0-py2.py3-none-any.whl.metadata (1.3 kB)
+2025-02-20T17:44:43.3151905Z Collecting cfgv>=2.0.0 (from pre-commit)
+2025-02-20T17:44:43.3180557Z   Downloading cfgv-3.4.0-py2.py3-none-any.whl.metadata (8.5 kB)
+2025-02-20T17:44:43.3552536Z Collecting identify>=1.0.0 (from pre-commit)
+2025-02-20T17:44:43.3582896Z   Downloading identify-2.6.7-py2.py3-none-any.whl.metadata (4.4 kB)
+2025-02-20T17:44:43.3738198Z Collecting nodeenv>=0.11.1 (from pre-commit)
+2025-02-20T17:44:43.3770920Z   Downloading nodeenv-1.9.1-py2.py3-none-any.whl.metadata (21 kB)
+2025-02-20T17:44:43.4081047Z Collecting pyyaml>=5.1 (from pre-commit)
+2025-02-20T17:44:43.4111701Z   Downloading PyYAML-6.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+2025-02-20T17:44:43.4494057Z Collecting virtualenv>=20.10.0 (from pre-commit)
+2025-02-20T17:44:43.4523354Z   Downloading virtualenv-20.29.2-py3-none-any.whl.metadata (4.5 kB)
+2025-02-20T17:44:43.4746905Z Collecting distlib<1,>=0.3.7 (from virtualenv>=20.10.0->pre-commit)
+2025-02-20T17:44:43.4781959Z   Downloading distlib-0.3.9-py2.py3-none-any.whl.metadata (5.2 kB)
+2025-02-20T17:44:43.5002751Z Collecting filelock<4,>=3.12.2 (from virtualenv>=20.10.0->pre-commit)
+2025-02-20T17:44:43.5044049Z   Downloading filelock-3.17.0-py3-none-any.whl.metadata (2.9 kB)
+2025-02-20T17:44:43.5240621Z Collecting platformdirs<5,>=3.9.1 (from virtualenv>=20.10.0->pre-commit)
+2025-02-20T17:44:43.5274206Z   Downloading platformdirs-4.3.6-py3-none-any.whl.metadata (11 kB)
+2025-02-20T17:44:43.5378902Z Downloading pre_commit-4.1.0-py2.py3-none-any.whl (220 kB)
+2025-02-20T17:44:43.5611932Z Downloading cfgv-3.4.0-py2.py3-none-any.whl (7.2 kB)
+2025-02-20T17:44:43.5670440Z Downloading identify-2.6.7-py2.py3-none-any.whl (99 kB)
+2025-02-20T17:44:43.5726629Z Downloading nodeenv-1.9.1-py2.py3-none-any.whl (22 kB)
+2025-02-20T17:44:43.5786547Z Downloading PyYAML-6.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (759 kB)
+2025-02-20T17:44:43.5876258Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 759.5/759.5 kB 80.7 MB/s eta 0:00:00
+2025-02-20T17:44:43.5910866Z Downloading virtualenv-20.29.2-py3-none-any.whl (4.3 MB)
+2025-02-20T17:44:43.6189431Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 160.5 MB/s eta 0:00:00
+2025-02-20T17:44:43.6219539Z Downloading distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+2025-02-20T17:44:43.6301814Z Downloading filelock-3.17.0-py3-none-any.whl (16 kB)
+2025-02-20T17:44:43.6353498Z Downloading platformdirs-4.3.6-py3-none-any.whl (18 kB)
+2025-02-20T17:44:43.6680876Z Installing collected packages: distlib, pyyaml, platformdirs, nodeenv, identify, filelock, cfgv, virtualenv, pre-commit
+2025-02-20T17:44:44.0538917Z Successfully installed cfgv-3.4.0 distlib-0.3.9 filelock-3.17.0 identify-2.6.7 nodeenv-1.9.1 platformdirs-4.3.6 pre-commit-4.1.0 pyyaml-6.0.2 virtualenv-20.29.2
+2025-02-20T17:44:44.2034834Z ##[group]Run python -m pip freeze --local
+2025-02-20T17:44:44.2035182Z [36;1mpython -m pip freeze --local[0m
+2025-02-20T17:44:44.2093271Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-20T17:44:44.2093671Z env:
+2025-02-20T17:44:44.2093964Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T17:44:44.2094481Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-02-20T17:44:44.2094992Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T17:44:44.2095427Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T17:44:44.2095863Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T17:44:44.2096301Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-02-20T17:44:44.2096667Z ##[endgroup]
+2025-02-20T17:44:44.4662909Z cfgv==3.4.0
+2025-02-20T17:44:44.4663555Z distlib==0.3.9
+2025-02-20T17:44:44.4663928Z filelock==3.17.0
+2025-02-20T17:44:44.4664249Z identify==2.6.7
+2025-02-20T17:44:44.4664542Z nodeenv==1.9.1
+2025-02-20T17:44:44.4664844Z platformdirs==4.3.6
+2025-02-20T17:44:44.4665253Z pre_commit==4.1.0
+2025-02-20T17:44:44.4665567Z PyYAML==6.0.2
+2025-02-20T17:44:44.4665862Z virtualenv==20.29.2
+2025-02-20T17:44:44.5532940Z ##[group]Run actions/cache@v4
+2025-02-20T17:44:44.5533309Z with:
+2025-02-20T17:44:44.5533609Z   path: ~/.cache/pre-commit
+2025-02-20T17:44:44.5534603Z   key: pre-commit-3|/opt/hostedtoolcache/Python/3.13.2/x64|a8e114951c89e1b7f16deb0f6d9f918038706bf1c52e8341a52e2a65ff1cf49d
+2025-02-20T17:44:44.5535406Z   enableCrossOsArchive: false
+2025-02-20T17:44:44.5535767Z   fail-on-cache-miss: false
+2025-02-20T17:44:44.5536103Z   lookup-only: false
+2025-02-20T17:44:44.5536394Z   save-always: false
+2025-02-20T17:44:44.5536707Z env:
+2025-02-20T17:44:44.5537101Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T17:44:44.5537717Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-02-20T17:44:44.5538309Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T17:44:44.5538855Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T17:44:44.5539396Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T17:44:44.5539939Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-02-20T17:44:44.5540568Z ##[endgroup]
+2025-02-20T17:44:44.7590301Z Cache not found for input keys: pre-commit-3|/opt/hostedtoolcache/Python/3.13.2/x64|a8e114951c89e1b7f16deb0f6d9f918038706bf1c52e8341a52e2a65ff1cf49d
+2025-02-20T17:44:44.7672525Z ##[group]Run pre-commit run --show-diff-on-failure --color=always --all-files
+2025-02-20T17:44:44.7673115Z [36;1mpre-commit run --show-diff-on-failure --color=always --all-files[0m
+2025-02-20T17:44:44.7729415Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-20T17:44:44.7729789Z env:
+2025-02-20T17:44:44.7730084Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T17:44:44.7730575Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-02-20T17:44:44.7731046Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T17:44:44.7731762Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T17:44:44.7732182Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T17:44:44.7732615Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-02-20T17:44:44.7732966Z ##[endgroup]
+2025-02-20T17:44:45.3683695Z [INFO][m Initializing environment for https://github.com/astral-sh/ruff-pre-commit.
+2025-02-20T17:44:45.5158709Z [INFO][m Initializing environment for https://github.com/pre-commit/pre-commit-hooks.
+2025-02-20T17:44:45.6658154Z [INFO][m Initializing environment for https://github.com/pre-commit/mirrors-clang-format.
+2025-02-20T17:44:46.9870605Z [INFO][m Installing environment for https://github.com/astral-sh/ruff-pre-commit.
+2025-02-20T17:44:46.9871967Z [INFO][m Once installed this environment will be reused.
+2025-02-20T17:44:46.9872768Z [INFO][m This may take a few minutes...
+2025-02-20T17:44:51.7440338Z [INFO][m Installing environment for https://github.com/pre-commit/pre-commit-hooks.
+2025-02-20T17:44:51.7441724Z [INFO][m Once installed this environment will be reused.
+2025-02-20T17:44:51.7442511Z [INFO][m This may take a few minutes...
+2025-02-20T17:44:55.1585807Z [INFO][m Installing environment for https://github.com/pre-commit/mirrors-clang-format.
+2025-02-20T17:44:55.1586694Z [INFO][m Once installed this environment will be reused.
+2025-02-20T17:44:55.1587106Z [INFO][m This may take a few minutes...
+2025-02-20T17:44:58.4177263Z ruff.....................................................................[41mFailed[m
+2025-02-20T17:44:58.4177887Z [2m- hook id: ruff[m
+2025-02-20T17:44:58.4178259Z [2m- exit code: 1[m
+2025-02-20T17:44:58.4178461Z 
+2025-02-20T17:44:58.4179199Z [1mtests/remote_function_test/udf_server.py[0m[36m:[0m121[36m:[0m23[36m:[0m [1;31mE711[0m Comparison to `None` should be `cond is None`
+2025-02-20T17:44:58.4180127Z     [1m[94m|[0m
+2025-02-20T17:44:58.4180555Z [1m[94m120 |[0m if __name__ == "__main__":
+2025-02-20T17:44:58.4181255Z [1m[94m121 |[0m     if sys.argv[1] == None:
+2025-02-20T17:44:58.4182191Z     [1m[94m|[0m                       [1m[91m^^^^[0m [1m[91mE711[0m
+2025-02-20T17:44:58.4183152Z [1m[94m122 |[0m         print("Port missing\n Correct Usage: python3 udf_server.py <port>")
+2025-02-20T17:44:58.4183950Z [1m[94m123 |[0m     else:
+2025-02-20T17:44:58.4184382Z     [1m[94m|[0m
+2025-02-20T17:44:58.4184910Z     [1m[94m= [0m[1m[96mhelp[0m: Replace with `cond is None`
+2025-02-20T17:44:58.4185303Z 
+2025-02-20T17:44:58.4185453Z Found 1 error.
+2025-02-20T17:44:58.4185997Z No fixes available (1 hidden fix can be enabled with the `--unsafe-fixes` option).
+2025-02-20T17:44:58.4186538Z 
+2025-02-20T17:44:58.4647633Z ruff-format..............................................................[42mPassed[m
+2025-02-20T17:44:58.5788933Z mixed line ending........................................................[42mPassed[m
+2025-02-20T17:44:58.6983427Z trim trailing whitespace.................................................[42mPassed[m
+2025-02-20T17:44:58.8722469Z clang-format.............................................................[42mPassed[m
+2025-02-20T17:44:58.8916540Z ##[error]Process completed with exit code 1.
+2025-02-20T17:44:58.8965496Z ##[group]Run pre-commit-ci/lite-action@v1.1.0
+2025-02-20T17:44:58.8965803Z with:
+2025-02-20T17:44:58.8966026Z   msg: [pre-commit.ci lite] apply automatic fixes
+2025-02-20T17:44:58.8966299Z env:
+2025-02-20T17:44:58.8966544Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T17:44:58.8966943Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-02-20T17:44:58.8967329Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T17:44:58.8967678Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T17:44:58.8968023Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-20T17:44:58.8968370Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-02-20T17:44:58.8968668Z ##[endgroup]
+2025-02-20T17:44:58.9962438Z nothing to do: no changes!
+2025-02-20T17:44:59.0127705Z Post job cleanup.
+2025-02-20T17:44:59.0207002Z Post job cleanup.
+2025-02-20T17:44:59.1150413Z [command]/usr/bin/git version
+2025-02-20T17:44:59.1187091Z git version 2.48.1
+2025-02-20T17:44:59.1237412Z Temporarily overriding HOME='/home/runner/work/_temp/a026946c-ece2-4774-8e4b-5ba817c50750' before making global git config changes
+2025-02-20T17:44:59.1238824Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-20T17:44:59.1242773Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/vdms/vdms
+2025-02-20T17:44:59.1277182Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-20T17:44:59.1309063Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-20T17:44:59.1540375Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-20T17:44:59.1560798Z http.https://github.com/.extraheader
+2025-02-20T17:44:59.1573331Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-20T17:44:59.1603636Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-20T17:44:59.1957121Z Cleaning up orphan processes

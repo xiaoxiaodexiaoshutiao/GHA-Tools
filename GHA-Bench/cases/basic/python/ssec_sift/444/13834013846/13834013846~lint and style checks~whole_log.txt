@@ -1,0 +1,225 @@
+﻿2025-04-08T13:23:25.0104195Z Current runner version: '2.323.0'
+2025-04-08T13:23:25.0130193Z ##[group]Operating System
+2025-04-08T13:23:25.0130949Z Ubuntu
+2025-04-08T13:23:25.0131715Z 24.04.2
+2025-04-08T13:23:25.0132180Z LTS
+2025-04-08T13:23:25.0132646Z ##[endgroup]
+2025-04-08T13:23:25.0133168Z ##[group]Runner Image
+2025-04-08T13:23:25.0133781Z Image: ubuntu-24.04
+2025-04-08T13:23:25.0134275Z Version: 20250406.1.0
+2025-04-08T13:23:25.0135347Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250406.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-08T13:23:25.0136799Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250406.1
+2025-04-08T13:23:25.0137680Z ##[endgroup]
+2025-04-08T13:23:25.0138225Z ##[group]Runner Image Provisioner
+2025-04-08T13:23:25.0138798Z 2.0.422.1
+2025-04-08T13:23:25.0139253Z ##[endgroup]
+2025-04-08T13:23:25.0142093Z ##[group]GITHUB_TOKEN Permissions
+2025-04-08T13:23:25.0144071Z Actions: read
+2025-04-08T13:23:25.0144878Z Attestations: read
+2025-04-08T13:23:25.0145456Z Checks: read
+2025-04-08T13:23:25.0145936Z Contents: read
+2025-04-08T13:23:25.0146493Z Deployments: read
+2025-04-08T13:23:25.0146958Z Discussions: read
+2025-04-08T13:23:25.0147459Z Issues: read
+2025-04-08T13:23:25.0147957Z Metadata: read
+2025-04-08T13:23:25.0148428Z Models: read
+2025-04-08T13:23:25.0148878Z Packages: read
+2025-04-08T13:23:25.0149400Z Pages: read
+2025-04-08T13:23:25.0149840Z PullRequests: read
+2025-04-08T13:23:25.0150368Z RepositoryProjects: read
+2025-04-08T13:23:25.0150956Z SecurityEvents: read
+2025-04-08T13:23:25.0151619Z Statuses: read
+2025-04-08T13:23:25.0152128Z ##[endgroup]
+2025-04-08T13:23:25.0154226Z Secret source: None
+2025-04-08T13:23:25.0155087Z Prepare workflow directory
+2025-04-08T13:23:25.0484113Z Prepare all required actions
+2025-04-08T13:23:25.0520890Z Getting action download info
+2025-04-08T13:23:25.6421608Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-08T13:23:25.6422623Z Version: 4.2.2
+2025-04-08T13:23:25.6423687Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-08T13:23:25.6424878Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-08T13:23:25.6425585Z ##[endgroup]
+2025-04-08T13:23:25.7345507Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-04-08T13:23:25.7346222Z Version: 5.5.0
+2025-04-08T13:23:25.7346843Z Digest: sha256:1fac95d751afd58314aebd2ab01d4bf3b3109a441917bd2cac2a22898ec494f7
+2025-04-08T13:23:25.7347703Z Source commit SHA: 8d9ed9ac5c53483de85588cdf95a591a75ab9f55
+2025-04-08T13:23:25.7348307Z ##[endgroup]
+2025-04-08T13:23:26.0958336Z Complete job name: lint and style checks
+2025-04-08T13:23:26.1632278Z ##[group]Run actions/checkout@v4
+2025-04-08T13:23:26.1633139Z with:
+2025-04-08T13:23:26.1633518Z   repository: ssec/sift
+2025-04-08T13:23:26.1634109Z   token: ***
+2025-04-08T13:23:26.1634483Z   ssh-strict: true
+2025-04-08T13:23:26.1634883Z   ssh-user: git
+2025-04-08T13:23:26.1635275Z   persist-credentials: true
+2025-04-08T13:23:26.1635719Z   clean: true
+2025-04-08T13:23:26.1636144Z   sparse-checkout-cone-mode: true
+2025-04-08T13:23:26.1636617Z   fetch-depth: 1
+2025-04-08T13:23:26.1636999Z   fetch-tags: false
+2025-04-08T13:23:26.1637394Z   show-progress: true
+2025-04-08T13:23:26.1637796Z   lfs: false
+2025-04-08T13:23:26.1638153Z   submodules: false
+2025-04-08T13:23:26.1638561Z   set-safe-directory: true
+2025-04-08T13:23:26.1639200Z ##[endgroup]
+2025-04-08T13:23:26.3316428Z Syncing repository: ssec/sift
+2025-04-08T13:23:26.3318082Z ##[group]Getting Git version info
+2025-04-08T13:23:26.3318700Z Working directory is '/home/runner/work/sift/sift'
+2025-04-08T13:23:26.3319650Z [command]/usr/bin/git version
+2025-04-08T13:23:26.3380091Z git version 2.49.0
+2025-04-08T13:23:26.3408262Z ##[endgroup]
+2025-04-08T13:23:26.3423228Z Temporarily overriding HOME='/home/runner/work/_temp/e721cbe3-9766-4eb0-acc2-ce5dea74c8da' before making global git config changes
+2025-04-08T13:23:26.3424657Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-08T13:23:26.3428768Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/sift/sift
+2025-04-08T13:23:26.3464718Z Deleting the contents of '/home/runner/work/sift/sift'
+2025-04-08T13:23:26.3468618Z ##[group]Initializing the repository
+2025-04-08T13:23:26.3473038Z [command]/usr/bin/git init /home/runner/work/sift/sift
+2025-04-08T13:23:26.3533039Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-08T13:23:26.3534158Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-08T13:23:26.3535496Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-08T13:23:26.3536634Z hint:
+2025-04-08T13:23:26.3537402Z hint: 	git config --global init.defaultBranch <name>
+2025-04-08T13:23:26.3538308Z hint:
+2025-04-08T13:23:26.3539150Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-08T13:23:26.3540347Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-08T13:23:26.3541054Z hint:
+2025-04-08T13:23:26.3541649Z hint: 	git branch -m <name>
+2025-04-08T13:23:26.3542326Z Initialized empty Git repository in /home/runner/work/sift/sift/.git/
+2025-04-08T13:23:26.3550131Z [command]/usr/bin/git remote add origin https://github.com/ssec/sift
+2025-04-08T13:23:26.3586323Z ##[endgroup]
+2025-04-08T13:23:26.3587433Z ##[group]Disabling automatic garbage collection
+2025-04-08T13:23:26.3591480Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-08T13:23:26.3620571Z ##[endgroup]
+2025-04-08T13:23:26.3621423Z ##[group]Setting up auth
+2025-04-08T13:23:26.3627514Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-08T13:23:26.3658803Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-08T13:23:26.3946490Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-08T13:23:26.3982775Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-08T13:23:26.4234032Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-08T13:23:26.4270916Z ##[endgroup]
+2025-04-08T13:23:26.4272053Z ##[group]Fetching the repository
+2025-04-08T13:23:26.4280855Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5b00656f5051e22c08383c9a468917edba883b56:refs/remotes/pull/444/merge
+2025-04-08T13:23:27.8772124Z From https://github.com/ssec/sift
+2025-04-08T13:23:27.8774639Z  * [new ref]         5b00656f5051e22c08383c9a468917edba883b56 -> pull/444/merge
+2025-04-08T13:23:27.8802053Z ##[endgroup]
+2025-04-08T13:23:27.8802944Z ##[group]Determining the checkout info
+2025-04-08T13:23:27.8804382Z ##[endgroup]
+2025-04-08T13:23:27.8810620Z [command]/usr/bin/git sparse-checkout disable
+2025-04-08T13:23:27.8858981Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-08T13:23:27.8891946Z ##[group]Checking out the ref
+2025-04-08T13:23:27.8896293Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/444/merge
+2025-04-08T13:23:27.9612226Z Note: switching to 'refs/remotes/pull/444/merge'.
+2025-04-08T13:23:27.9612773Z 
+2025-04-08T13:23:27.9613162Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-08T13:23:27.9614115Z changes and commit them, and you can discard any commits you make in this
+2025-04-08T13:23:27.9614957Z state without impacting any branches by switching back to a branch.
+2025-04-08T13:23:27.9615462Z 
+2025-04-08T13:23:27.9615817Z If you want to create a new branch to retain commits you create, you may
+2025-04-08T13:23:27.9616598Z do so (now or later) by using -c with the switch command. Example:
+2025-04-08T13:23:27.9617023Z 
+2025-04-08T13:23:27.9617543Z   git switch -c <new-branch-name>
+2025-04-08T13:23:27.9617845Z 
+2025-04-08T13:23:27.9618060Z Or undo this operation with:
+2025-04-08T13:23:27.9618352Z 
+2025-04-08T13:23:27.9618506Z   git switch -
+2025-04-08T13:23:27.9618753Z 
+2025-04-08T13:23:27.9619164Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-08T13:23:27.9619684Z 
+2025-04-08T13:23:27.9620298Z HEAD is now at 5b00656 Merge 84d66cf551b85fcb7428b5a5a3ef78a9d72fc0a4 into 9a24f4751b3afa63a74ff3da9031bbaece71cd81
+2025-04-08T13:23:27.9626178Z ##[endgroup]
+2025-04-08T13:23:27.9666038Z [command]/usr/bin/git log -1 --format=%H
+2025-04-08T13:23:27.9689532Z 5b00656f5051e22c08383c9a468917edba883b56
+2025-04-08T13:23:27.9930375Z ##[group]Run actions/setup-python@v5
+2025-04-08T13:23:27.9930718Z with:
+2025-04-08T13:23:27.9930934Z   python-version: 3.11
+2025-04-08T13:23:27.9931174Z   check-latest: false
+2025-04-08T13:23:27.9931707Z   token: ***
+2025-04-08T13:23:27.9931930Z   update-environment: true
+2025-04-08T13:23:27.9932201Z   allow-prereleases: false
+2025-04-08T13:23:27.9932458Z   freethreaded: false
+2025-04-08T13:23:27.9932678Z ##[endgroup]
+2025-04-08T13:23:28.1616212Z ##[group]Installed versions
+2025-04-08T13:23:28.1679497Z Successfully set up CPython (3.11.11)
+2025-04-08T13:23:28.1680493Z ##[endgroup]
+2025-04-08T13:23:28.1801891Z ##[group]Run python -m pip install --upgrade pip
+2025-04-08T13:23:28.1802446Z [36;1mpython -m pip install --upgrade pip[0m
+2025-04-08T13:23:28.1802943Z [36;1mpip install flake8 flake8-docstrings flake8-debugger flake8-bugbear pytest[0m
+2025-04-08T13:23:28.1857833Z shell: /usr/bin/bash -e {0}
+2025-04-08T13:23:28.1858141Z env:
+2025-04-08T13:23:28.1858448Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-08T13:23:28.1858925Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-04-08T13:23:28.1859380Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-08T13:23:28.1859764Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-08T13:23:28.1860178Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-08T13:23:28.1860561Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-04-08T13:23:28.1860893Z ##[endgroup]
+2025-04-08T13:23:28.7665102Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (25.0.1)
+2025-04-08T13:23:29.3709120Z Collecting flake8
+2025-04-08T13:23:29.4034484Z   Downloading flake8-7.2.0-py2.py3-none-any.whl.metadata (3.8 kB)
+2025-04-08T13:23:29.4178741Z Collecting flake8-docstrings
+2025-04-08T13:23:29.4212156Z   Downloading flake8_docstrings-1.7.0-py2.py3-none-any.whl.metadata (2.0 kB)
+2025-04-08T13:23:29.4327778Z Collecting flake8-debugger
+2025-04-08T13:23:29.4355612Z   Downloading flake8_debugger-4.1.2-py3-none-any.whl.metadata (3.6 kB)
+2025-04-08T13:23:29.4526388Z Collecting flake8-bugbear
+2025-04-08T13:23:29.4556625Z   Downloading flake8_bugbear-24.12.12-py3-none-any.whl.metadata (34 kB)
+2025-04-08T13:23:29.4910096Z Collecting pytest
+2025-04-08T13:23:29.4937301Z   Downloading pytest-8.3.5-py3-none-any.whl.metadata (7.6 kB)
+2025-04-08T13:23:29.5072195Z Collecting mccabe<0.8.0,>=0.7.0 (from flake8)
+2025-04-08T13:23:29.5097415Z   Downloading mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+2025-04-08T13:23:29.5345018Z Collecting pycodestyle<2.14.0,>=2.13.0 (from flake8)
+2025-04-08T13:23:29.5375134Z   Downloading pycodestyle-2.13.0-py2.py3-none-any.whl.metadata (4.5 kB)
+2025-04-08T13:23:29.5507985Z Collecting pyflakes<3.4.0,>=3.3.0 (from flake8)
+2025-04-08T13:23:29.5534532Z   Downloading pyflakes-3.3.2-py2.py3-none-any.whl.metadata (3.5 kB)
+2025-04-08T13:23:29.5716051Z Collecting pydocstyle>=2.1 (from flake8-docstrings)
+2025-04-08T13:23:29.5741949Z   Downloading pydocstyle-6.3.0-py3-none-any.whl.metadata (3.7 kB)
+2025-04-08T13:23:29.5942051Z Collecting attrs>=22.2.0 (from flake8-bugbear)
+2025-04-08T13:23:29.5968271Z   Downloading attrs-25.3.0-py3-none-any.whl.metadata (10 kB)
+2025-04-08T13:23:29.6130342Z Collecting iniconfig (from pytest)
+2025-04-08T13:23:29.6158008Z   Downloading iniconfig-2.1.0-py3-none-any.whl.metadata (2.7 kB)
+2025-04-08T13:23:29.6296878Z Collecting packaging (from pytest)
+2025-04-08T13:23:29.6321859Z   Downloading packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+2025-04-08T13:23:29.6441148Z Collecting pluggy<2,>=1.5 (from pytest)
+2025-04-08T13:23:29.6467547Z   Downloading pluggy-1.5.0-py3-none-any.whl.metadata (4.8 kB)
+2025-04-08T13:23:29.6598465Z Collecting snowballstemmer>=2.2.0 (from pydocstyle>=2.1->flake8-docstrings)
+2025-04-08T13:23:29.6626168Z   Downloading snowballstemmer-2.2.0-py2.py3-none-any.whl.metadata (6.5 kB)
+2025-04-08T13:23:29.6766090Z Downloading flake8-7.2.0-py2.py3-none-any.whl (57 kB)
+2025-04-08T13:23:29.6825598Z Downloading flake8_docstrings-1.7.0-py2.py3-none-any.whl (5.0 kB)
+2025-04-08T13:23:29.6945349Z Downloading flake8_debugger-4.1.2-py3-none-any.whl (7.9 kB)
+2025-04-08T13:23:29.7120211Z Downloading flake8_bugbear-24.12.12-py3-none-any.whl (36 kB)
+2025-04-08T13:23:29.7462835Z Downloading pytest-8.3.5-py3-none-any.whl (343 kB)
+2025-04-08T13:23:29.7695818Z Downloading attrs-25.3.0-py3-none-any.whl (63 kB)
+2025-04-08T13:23:29.7837702Z Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+2025-04-08T13:23:29.7901699Z Downloading pluggy-1.5.0-py3-none-any.whl (20 kB)
+2025-04-08T13:23:29.7952199Z Downloading pycodestyle-2.13.0-py2.py3-none-any.whl (31 kB)
+2025-04-08T13:23:29.7998293Z Downloading pydocstyle-6.3.0-py3-none-any.whl (38 kB)
+2025-04-08T13:23:29.8047903Z Downloading pyflakes-3.3.2-py2.py3-none-any.whl (63 kB)
+2025-04-08T13:23:29.8096559Z Downloading iniconfig-2.1.0-py3-none-any.whl (6.0 kB)
+2025-04-08T13:23:29.8147084Z Downloading packaging-24.2-py3-none-any.whl (65 kB)
+2025-04-08T13:23:29.8205169Z Downloading snowballstemmer-2.2.0-py2.py3-none-any.whl (93 kB)
+2025-04-08T13:23:29.8581686Z Installing collected packages: snowballstemmer, pyflakes, pydocstyle, pycodestyle, pluggy, packaging, mccabe, iniconfig, attrs, pytest, flake8, flake8-docstrings, flake8-debugger, flake8-bugbear
+2025-04-08T13:23:30.4863916Z Successfully installed attrs-25.3.0 flake8-7.2.0 flake8-bugbear-24.12.12 flake8-debugger-4.1.2 flake8-docstrings-1.7.0 iniconfig-2.1.0 mccabe-0.7.0 packaging-24.2 pluggy-1.5.0 pycodestyle-2.13.0 pydocstyle-6.3.0 pyflakes-3.3.2 pytest-8.3.5 snowballstemmer-2.2.0
+2025-04-08T13:23:30.5776785Z ##[group]Run flake8 uwsift/
+2025-04-08T13:23:30.5777065Z [36;1mflake8 uwsift/[0m
+2025-04-08T13:23:30.5827536Z shell: /usr/bin/bash -e {0}
+2025-04-08T13:23:30.5827768Z env:
+2025-04-08T13:23:30.5828003Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-08T13:23:30.5828409Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-04-08T13:23:30.5828794Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-08T13:23:30.5829126Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-08T13:23:30.5829472Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-08T13:23:30.5829808Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-04-08T13:23:30.5830103Z ##[endgroup]
+2025-04-08T13:23:33.3401194Z uwsift/workspace/metadatabase.py:801:9: F824 `global _MDB` is unused: name is never assigned in scope
+2025-04-08T13:23:33.3665826Z ##[error]Process completed with exit code 1.
+2025-04-08T13:23:33.3769140Z Post job cleanup.
+2025-04-08T13:23:33.4715279Z [command]/usr/bin/git version
+2025-04-08T13:23:33.4762818Z git version 2.49.0
+2025-04-08T13:23:33.4806000Z Temporarily overriding HOME='/home/runner/work/_temp/7b055efa-218e-4963-a5e7-fc4714b416f4' before making global git config changes
+2025-04-08T13:23:33.4807347Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-08T13:23:33.4812904Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/sift/sift
+2025-04-08T13:23:33.4850228Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-08T13:23:33.4884518Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-08T13:23:33.5140568Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-08T13:23:33.5164154Z http.https://github.com/.extraheader
+2025-04-08T13:23:33.5177223Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-08T13:23:33.5208903Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-08T13:23:33.5550881Z Cleaning up orphan processes

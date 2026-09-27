@@ -1,0 +1,1241 @@
+﻿2025-04-30T04:50:54.3057841Z Current runner version: '2.323.0'
+2025-04-30T04:50:54.3081936Z ##[group]Operating System
+2025-04-30T04:50:54.3082796Z Ubuntu
+2025-04-30T04:50:54.3083266Z 22.04.5
+2025-04-30T04:50:54.3083758Z LTS
+2025-04-30T04:50:54.3084176Z ##[endgroup]
+2025-04-30T04:50:54.3084759Z ##[group]Runner Image
+2025-04-30T04:50:54.3085297Z Image: ubuntu-22.04
+2025-04-30T04:50:54.3085803Z Version: 20250421.2.0
+2025-04-30T04:50:54.3086883Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20250421.2/images/ubuntu/Ubuntu2204-Readme.md
+2025-04-30T04:50:54.3088236Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20250421.2
+2025-04-30T04:50:54.3089268Z ##[endgroup]
+2025-04-30T04:50:54.3089829Z ##[group]Runner Image Provisioner
+2025-04-30T04:50:54.3090423Z 2.0.422.1
+2025-04-30T04:50:54.3090845Z ##[endgroup]
+2025-04-30T04:50:54.3093277Z ##[group]GITHUB_TOKEN Permissions
+2025-04-30T04:50:54.3095369Z Actions: write
+2025-04-30T04:50:54.3096157Z Attestations: write
+2025-04-30T04:50:54.3096747Z Checks: write
+2025-04-30T04:50:54.3097285Z Contents: write
+2025-04-30T04:50:54.3097757Z Deployments: write
+2025-04-30T04:50:54.3098258Z Discussions: write
+2025-04-30T04:50:54.3098738Z Issues: write
+2025-04-30T04:50:54.3099541Z Metadata: read
+2025-04-30T04:50:54.3100025Z Models: read
+2025-04-30T04:50:54.3100540Z Packages: write
+2025-04-30T04:50:54.3101038Z Pages: write
+2025-04-30T04:50:54.3101541Z PullRequests: write
+2025-04-30T04:50:54.3102091Z RepositoryProjects: write
+2025-04-30T04:50:54.3102629Z SecurityEvents: write
+2025-04-30T04:50:54.3103134Z Statuses: write
+2025-04-30T04:50:54.3103595Z ##[endgroup]
+2025-04-30T04:50:54.3105637Z Secret source: Actions
+2025-04-30T04:50:54.3106364Z Prepare workflow directory
+2025-04-30T04:50:54.3479305Z Prepare all required actions
+2025-04-30T04:50:54.3515779Z Getting action download info
+2025-04-30T04:50:55.0056945Z ##[group]Download immutable action package 'actions/checkout@v3'
+2025-04-30T04:50:55.0058009Z Version: 3.6.0
+2025-04-30T04:50:55.0059021Z Digest: sha256:942562b9c7d4b1f2557f1da21f4d3eb4eb4fd01f2ad78b2a6e187d1b193e0a0f
+2025-04-30T04:50:55.0060579Z Source commit SHA: f43a0e5ff2bd294095638e18286ca9a3d1956744
+2025-04-30T04:50:55.0061358Z ##[endgroup]
+2025-04-30T04:50:55.1811342Z Download action repository 'shivammathur/cache-extensions@v1' (SHA:f86518659a7b9c0ff16c43bc958474a51bb956bd)
+2025-04-30T04:50:55.6369616Z ##[group]Download immutable action package 'actions/cache@v3'
+2025-04-30T04:50:55.6370319Z Version: 3.4.3
+2025-04-30T04:50:55.6371074Z Digest: sha256:912f76fb11db1ca09ae23248a39eb86e79ea0f0f6e183d9cb96d0b778eeea4e2
+2025-04-30T04:50:55.6372647Z Source commit SHA: 2f8e54208210a422b2efd51efaa6bd6d7ca8920f
+2025-04-30T04:50:55.6373769Z ##[endgroup]
+2025-04-30T04:50:55.7304072Z Download action repository 'shivammathur/setup-php@v2' (SHA:cf4cade2721270509d5b1c766ab3549210a39a2a)
+2025-04-30T04:50:56.1703859Z Download action repository 'niden/actions-memcached@v7' (SHA:3b3ecd9d0d035ea92db716dc1540a7dbe9e56349)
+2025-04-30T04:50:56.5924564Z Download action repository 'zhulik/redis-action@v1.0.0' (SHA:d9ee6fdbf15f8f1c4c7747ec390bdcc33445de25)
+2025-04-30T04:50:57.0671031Z Complete job name: PHP 8.3 quality/tests on ubuntu-22.04
+2025-04-30T04:50:57.1194276Z ##[group]Build container for action use: '/home/runner/work/_actions/niden/actions-memcached/v7/Dockerfile'.
+2025-04-30T04:50:57.1755107Z ##[command]/usr/bin/docker build -t 9ead93:89b99440a49a4441b2d9ae0c6fcbe733 -f "/home/runner/work/_actions/niden/actions-memcached/v7/Dockerfile" "/home/runner/work/_actions/niden/actions-memcached/v7"
+2025-04-30T04:50:57.7646693Z #0 building with "default" instance using docker driver
+2025-04-30T04:50:57.7647763Z 
+2025-04-30T04:50:57.7648306Z #1 [internal] load build definition from Dockerfile
+2025-04-30T04:50:57.7649770Z #1 transferring dockerfile: 149B done
+2025-04-30T04:50:57.7650779Z #1 DONE 0.0s
+2025-04-30T04:50:57.7651257Z 
+2025-04-30T04:50:57.7651888Z #2 [internal] load metadata for docker.io/library/docker:stable
+2025-04-30T04:50:58.0040297Z #2 ...
+2025-04-30T04:50:58.0041318Z 
+2025-04-30T04:50:58.0042134Z #3 [auth] library/docker:pull token for registry-1.docker.io
+2025-04-30T04:50:58.0044097Z #3 DONE 0.0s
+2025-04-30T04:50:58.1527271Z 
+2025-04-30T04:50:58.1527745Z #2 [internal] load metadata for docker.io/library/docker:stable
+2025-04-30T04:50:58.6080209Z #2 DONE 1.0s
+2025-04-30T04:50:58.7289328Z 
+2025-04-30T04:50:58.7289728Z #4 [internal] load .dockerignore
+2025-04-30T04:50:58.7290158Z #4 transferring context: 2B done
+2025-04-30T04:50:58.7290536Z #4 DONE 0.0s
+2025-04-30T04:50:58.7290726Z 
+2025-04-30T04:50:58.7290850Z #5 [internal] load build context
+2025-04-30T04:50:58.7291201Z #5 transferring context: 157B done
+2025-04-30T04:50:58.7291543Z #5 DONE 0.0s
+2025-04-30T04:50:58.7291655Z 
+2025-04-30T04:50:58.7291999Z #6 [1/3] FROM docker.io/library/docker:stable@sha256:fd4d028713fd05a1fb896412805daed82c4a0cc84331d8dad00cb596d7ce3e3a
+2025-04-30T04:50:58.7292717Z #6 resolve docker.io/library/docker:stable@sha256:fd4d028713fd05a1fb896412805daed82c4a0cc84331d8dad00cb596d7ce3e3a done
+2025-04-30T04:50:58.7293401Z #6 sha256:8f71deccd0856d8a36db659a8c82894be97546b47c1817de27d5ee7eea860162 1.78kB / 1.78kB done
+2025-04-30T04:50:58.7293982Z #6 sha256:0c7c675703d60dc4d757acb40557350159f600ca3d49e2e8d4c2039dd6b69457 0B / 2.04MB 0.1s
+2025-04-30T04:50:58.7294534Z #6 sha256:fd4d028713fd05a1fb896412805daed82c4a0cc84331d8dad00cb596d7ce3e3a 1.00kB / 1.00kB done
+2025-04-30T04:50:58.7295120Z #6 sha256:b0757c55a1fdbb59c378fd34dde3e12bd25f68094dd69546cf5ca00ddbaa7a33 4.21kB / 4.21kB done
+2025-04-30T04:50:58.7295658Z #6 sha256:188c0c94c7c576fff0792aca7ec73d67a2f7f4cb3a6e53a84559337260b36964 0B / 2.80MB 0.1s
+2025-04-30T04:50:58.7296186Z #6 sha256:cc8c12a437cbe4e104dcea425e0ce277a2442603e14551d22a948e11026ae658 0B / 153B 0.1s
+2025-04-30T04:50:58.9275341Z #6 sha256:188c0c94c7c576fff0792aca7ec73d67a2f7f4cb3a6e53a84559337260b36964 2.80MB / 2.80MB 0.1s done
+2025-04-30T04:50:59.0282669Z #6 extracting sha256:188c0c94c7c576fff0792aca7ec73d67a2f7f4cb3a6e53a84559337260b36964 0.0s done
+2025-04-30T04:50:59.0283769Z #6 sha256:f092543453df2d4fbc4652f5584b56dd62987a33816ffd2a8d7ad9fad249b1ef 0B / 62.89MB 0.2s
+2025-04-30T04:50:59.0284723Z #6 extracting sha256:0c7c675703d60dc4d757acb40557350159f600ca3d49e2e8d4c2039dd6b69457
+2025-04-30T04:50:59.0285653Z #6 sha256:0c7c675703d60dc4d757acb40557350159f600ca3d49e2e8d4c2039dd6b69457 2.04MB / 2.04MB 0.3s done
+2025-04-30T04:50:59.0286757Z #6 sha256:cc8c12a437cbe4e104dcea425e0ce277a2442603e14551d22a948e11026ae658 153B / 153B 0.2s done
+2025-04-30T04:50:59.0287784Z #6 sha256:f092543453df2d4fbc4652f5584b56dd62987a33816ffd2a8d7ad9fad249b1ef 12.58MB / 62.89MB 0.4s
+2025-04-30T04:50:59.0289367Z #6 extracting sha256:0c7c675703d60dc4d757acb40557350159f600ca3d49e2e8d4c2039dd6b69457 0.1s done
+2025-04-30T04:50:59.0290440Z #6 sha256:65b6bc45957d739e38db2da98d43e419af5fc45c46b8149f61b743dc613383e6 549B / 549B 0.3s done
+2025-04-30T04:50:59.0291469Z #6 sha256:4de832df471bbad41016f9621737b66aa5d8e575d7676661d111ea80b87e3946 0B / 1.02kB 0.4s
+2025-04-30T04:50:59.0292454Z #6 sha256:79aa7fa92271a7c1a46782d83623d7b9a111a2236c077aa11fe4bb289865955e 0B / 116B 0.4s
+2025-04-30T04:50:59.2281800Z #6 sha256:f092543453df2d4fbc4652f5584b56dd62987a33816ffd2a8d7ad9fad249b1ef 32.51MB / 62.89MB 0.6s
+2025-04-30T04:50:59.2282605Z #6 sha256:4de832df471bbad41016f9621737b66aa5d8e575d7676661d111ea80b87e3946 1.02kB / 1.02kB 0.4s done
+2025-04-30T04:50:59.2283314Z #6 sha256:79aa7fa92271a7c1a46782d83623d7b9a111a2236c077aa11fe4bb289865955e 116B / 116B 0.5s done
+2025-04-30T04:50:59.2283921Z #6 extracting sha256:cc8c12a437cbe4e104dcea425e0ce277a2442603e14551d22a948e11026ae658 done
+2025-04-30T04:50:59.3288699Z #6 sha256:f092543453df2d4fbc4652f5584b56dd62987a33816ffd2a8d7ad9fad249b1ef 41.94MB / 62.89MB 0.7s
+2025-04-30T04:50:59.5287654Z #6 sha256:f092543453df2d4fbc4652f5584b56dd62987a33816ffd2a8d7ad9fad249b1ef 62.89MB / 62.89MB 0.9s
+2025-04-30T04:50:59.6494015Z #6 sha256:f092543453df2d4fbc4652f5584b56dd62987a33816ffd2a8d7ad9fad249b1ef 62.89MB / 62.89MB 0.9s done
+2025-04-30T04:50:59.6495396Z #6 extracting sha256:f092543453df2d4fbc4652f5584b56dd62987a33816ffd2a8d7ad9fad249b1ef 0.1s
+2025-04-30T04:51:00.4908772Z #6 extracting sha256:f092543453df2d4fbc4652f5584b56dd62987a33816ffd2a8d7ad9fad249b1ef 0.8s done
+2025-04-30T04:51:00.6103866Z #6 extracting sha256:65b6bc45957d739e38db2da98d43e419af5fc45c46b8149f61b743dc613383e6
+2025-04-30T04:51:00.8370140Z #6 extracting sha256:65b6bc45957d739e38db2da98d43e419af5fc45c46b8149f61b743dc613383e6 done
+2025-04-30T04:51:00.8371408Z #6 extracting sha256:4de832df471bbad41016f9621737b66aa5d8e575d7676661d111ea80b87e3946 done
+2025-04-30T04:51:00.8372332Z #6 extracting sha256:79aa7fa92271a7c1a46782d83623d7b9a111a2236c077aa11fe4bb289865955e done
+2025-04-30T04:51:00.8372956Z #6 DONE 2.1s
+2025-04-30T04:51:00.8373125Z 
+2025-04-30T04:51:00.8373269Z #7 [2/3] COPY entrypoint.sh /entrypoint.sh
+2025-04-30T04:51:00.8373642Z #7 DONE 0.0s
+2025-04-30T04:51:00.8373795Z 
+2025-04-30T04:51:00.8373921Z #8 [3/3] RUN chmod +x /entrypoint.sh
+2025-04-30T04:51:00.8374226Z #8 DONE 0.1s
+2025-04-30T04:51:00.9887395Z 
+2025-04-30T04:51:00.9887718Z #9 exporting to image
+2025-04-30T04:51:00.9888054Z #9 exporting layers
+2025-04-30T04:51:01.0080718Z #9 exporting layers 0.2s done
+2025-04-30T04:51:01.0345438Z #9 writing image sha256:5855db215427676dcd0e1ea31ca3989bec7f9ad98aa072b6a1f043391c12c03c done
+2025-04-30T04:51:01.0346661Z #9 naming to docker.io/library/9ead93:89b99440a49a4441b2d9ae0c6fcbe733 done
+2025-04-30T04:51:01.0347227Z #9 DONE 0.2s
+2025-04-30T04:51:01.0401844Z ##[endgroup]
+2025-04-30T04:51:01.0430411Z ##[group]Build container for action use: '/home/runner/work/_actions/zhulik/redis-action/v1.0.0/Dockerfile'.
+2025-04-30T04:51:01.0431696Z ##[command]/usr/bin/docker build -t 9ead93:b702a287512a4516af8786bb95b8b1df -f "/home/runner/work/_actions/zhulik/redis-action/v1.0.0/Dockerfile" "/home/runner/work/_actions/zhulik/redis-action/v1.0.0"
+2025-04-30T04:51:01.3195235Z #0 building with "default" instance using docker driver
+2025-04-30T04:51:01.3195634Z 
+2025-04-30T04:51:01.3195836Z #1 [internal] load build definition from Dockerfile
+2025-04-30T04:51:01.3196381Z #1 transferring dockerfile: 149B done
+2025-04-30T04:51:01.3197108Z #1 DONE 0.0s
+2025-04-30T04:51:01.3197288Z 
+2025-04-30T04:51:01.3197664Z #2 [internal] load metadata for docker.io/library/docker:stable
+2025-04-30T04:51:01.3198905Z #2 DONE 0.1s
+2025-04-30T04:51:01.4696394Z 
+2025-04-30T04:51:01.4696729Z #3 [internal] load .dockerignore
+2025-04-30T04:51:01.4697160Z #3 transferring context: 2B done
+2025-04-30T04:51:01.4697593Z #3 DONE 0.0s
+2025-04-30T04:51:01.4697759Z 
+2025-04-30T04:51:01.4697885Z #4 [internal] load build context
+2025-04-30T04:51:01.4698265Z #4 transferring context: 164B done
+2025-04-30T04:51:01.4698618Z #4 DONE 0.0s
+2025-04-30T04:51:01.4698783Z 
+2025-04-30T04:51:01.4699539Z #5 [1/3] FROM docker.io/library/docker:stable@sha256:fd4d028713fd05a1fb896412805daed82c4a0cc84331d8dad00cb596d7ce3e3a
+2025-04-30T04:51:01.4700342Z #5 CACHED
+2025-04-30T04:51:01.4700495Z 
+2025-04-30T04:51:01.4700644Z #6 [2/3] COPY entrypoint.sh /entrypoint.sh
+2025-04-30T04:51:01.4701038Z #6 DONE 0.0s
+2025-04-30T04:51:01.4701209Z 
+2025-04-30T04:51:01.4701336Z #7 [3/3] RUN chmod +x /entrypoint.sh
+2025-04-30T04:51:01.4701696Z #7 DONE 0.1s
+2025-04-30T04:51:01.6213190Z 
+2025-04-30T04:51:01.6213560Z #8 exporting to image
+2025-04-30T04:51:01.6213828Z #8 exporting layers
+2025-04-30T04:51:02.0114605Z #8 exporting layers 0.5s done
+2025-04-30T04:51:02.0381463Z #8 writing image sha256:2f4559f69741d6030fcc944d087d344c932966ac32855622ca5fbb123d76a584 done
+2025-04-30T04:51:02.0382490Z #8 naming to docker.io/library/9ead93:b702a287512a4516af8786bb95b8b1df done
+2025-04-30T04:51:02.0383014Z #8 DONE 0.5s
+2025-04-30T04:51:02.0429567Z ##[endgroup]
+2025-04-30T04:51:02.0721506Z ##[group]Run actions/checkout@v3
+2025-04-30T04:51:02.0722023Z with:
+2025-04-30T04:51:02.0722235Z   repository: PHPSocialNetwork/phpfastcache
+2025-04-30T04:51:02.0722630Z   token: ***
+2025-04-30T04:51:02.0722808Z   ssh-strict: true
+2025-04-30T04:51:02.0722994Z   persist-credentials: true
+2025-04-30T04:51:02.0723197Z   clean: true
+2025-04-30T04:51:02.0723376Z   sparse-checkout-cone-mode: true
+2025-04-30T04:51:02.0723883Z   fetch-depth: 1
+2025-04-30T04:51:02.0724050Z   fetch-tags: false
+2025-04-30T04:51:02.0724214Z   lfs: false
+2025-04-30T04:51:02.0724381Z   submodules: false
+2025-04-30T04:51:02.0724556Z   set-safe-directory: true
+2025-04-30T04:51:02.0724970Z env:
+2025-04-30T04:51:02.0725229Z   extensions: mbstring, intl, pdo_sqlite, json, redis, couchbase-3.2.2
+2025-04-30T04:51:02.0725549Z   key: cache-v1
+2025-04-30T04:51:02.0725709Z ##[endgroup]
+2025-04-30T04:51:02.2274198Z Syncing repository: PHPSocialNetwork/phpfastcache
+2025-04-30T04:51:02.2275434Z ##[group]Getting Git version info
+2025-04-30T04:51:02.2275807Z Working directory is '/home/runner/work/phpfastcache/phpfastcache'
+2025-04-30T04:51:02.2276312Z [command]/usr/bin/git version
+2025-04-30T04:51:02.2279376Z git version 2.49.0
+2025-04-30T04:51:02.2306271Z ##[endgroup]
+2025-04-30T04:51:02.2322254Z Temporarily overriding HOME='/home/runner/work/_temp/9d2eba23-9761-4f64-ab54-eb25e5dfce99' before making global git config changes
+2025-04-30T04:51:02.2323216Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-30T04:51:02.2325734Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/phpfastcache/phpfastcache
+2025-04-30T04:51:02.2355736Z Deleting the contents of '/home/runner/work/phpfastcache/phpfastcache'
+2025-04-30T04:51:02.2359049Z ##[group]Initializing the repository
+2025-04-30T04:51:02.2362173Z [command]/usr/bin/git init /home/runner/work/phpfastcache/phpfastcache
+2025-04-30T04:51:02.2439801Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-30T04:51:02.2440326Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-30T04:51:02.2441096Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-30T04:51:02.2441439Z hint:
+2025-04-30T04:51:02.2441686Z hint: 	git config --global init.defaultBranch <name>
+2025-04-30T04:51:02.2442055Z hint:
+2025-04-30T04:51:02.2442499Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-30T04:51:02.2443305Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-30T04:51:02.2443892Z hint:
+2025-04-30T04:51:02.2444182Z hint: 	git branch -m <name>
+2025-04-30T04:51:02.2445367Z Initialized empty Git repository in /home/runner/work/phpfastcache/phpfastcache/.git/
+2025-04-30T04:51:02.2454699Z [command]/usr/bin/git remote add origin https://github.com/PHPSocialNetwork/phpfastcache
+2025-04-30T04:51:02.2486720Z ##[endgroup]
+2025-04-30T04:51:02.2487197Z ##[group]Disabling automatic garbage collection
+2025-04-30T04:51:02.2490832Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-30T04:51:02.2515702Z ##[endgroup]
+2025-04-30T04:51:02.2516019Z ##[group]Setting up auth
+2025-04-30T04:51:02.2521285Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-30T04:51:02.2546526Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-30T04:51:02.2838861Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-30T04:51:02.2865187Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-30T04:51:02.3078217Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-30T04:51:02.3109546Z ##[endgroup]
+2025-04-30T04:51:02.3110228Z ##[group]Fetching the repository
+2025-04-30T04:51:02.3117638Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +fb99d03cce4fd1b78ba8325c16d8be5bdc3dfe3e:refs/remotes/pull/927/merge
+2025-04-30T04:51:02.8230990Z remote: Enumerating objects: 338, done.        
+2025-04-30T04:51:02.8232050Z remote: Counting objects:   0% (1/338)        
+2025-04-30T04:51:02.8232655Z remote: Counting objects:   1% (4/338)        
+2025-04-30T04:51:02.8233228Z remote: Counting objects:   2% (7/338)        
+2025-04-30T04:51:02.8233792Z remote: Counting objects:   3% (11/338)        
+2025-04-30T04:51:02.8234078Z remote: Counting objects:   4% (14/338)        
+2025-04-30T04:51:02.8234338Z remote: Counting objects:   5% (17/338)        
+2025-04-30T04:51:02.8234589Z remote: Counting objects:   6% (21/338)        
+2025-04-30T04:51:02.8234837Z remote: Counting objects:   7% (24/338)        
+2025-04-30T04:51:02.8235093Z remote: Counting objects:   8% (28/338)        
+2025-04-30T04:51:02.8235345Z remote: Counting objects:   9% (31/338)        
+2025-04-30T04:51:02.8235586Z remote: Counting objects:  10% (34/338)        
+2025-04-30T04:51:02.8235831Z remote: Counting objects:  11% (38/338)        
+2025-04-30T04:51:02.8236079Z remote: Counting objects:  12% (41/338)        
+2025-04-30T04:51:02.8236320Z remote: Counting objects:  13% (44/338)        
+2025-04-30T04:51:02.8236594Z remote: Counting objects:  14% (48/338)        
+2025-04-30T04:51:02.8236836Z remote: Counting objects:  15% (51/338)        
+2025-04-30T04:51:02.8237090Z remote: Counting objects:  16% (55/338)        
+2025-04-30T04:51:02.8237337Z remote: Counting objects:  17% (58/338)        
+2025-04-30T04:51:02.8237583Z remote: Counting objects:  18% (61/338)        
+2025-04-30T04:51:02.8237837Z remote: Counting objects:  19% (65/338)        
+2025-04-30T04:51:02.8238277Z remote: Counting objects:  20% (68/338)        
+2025-04-30T04:51:02.8238797Z remote: Counting objects:  21% (71/338)        
+2025-04-30T04:51:02.8239408Z remote: Counting objects:  22% (75/338)        
+2025-04-30T04:51:02.8239855Z remote: Counting objects:  23% (78/338)        
+2025-04-30T04:51:02.8240276Z remote: Counting objects:  24% (82/338)        
+2025-04-30T04:51:02.8240693Z remote: Counting objects:  25% (85/338)        
+2025-04-30T04:51:02.8241067Z remote: Counting objects:  26% (88/338)        
+2025-04-30T04:51:02.8241337Z remote: Counting objects:  27% (92/338)        
+2025-04-30T04:51:02.8241649Z remote: Counting objects:  28% (95/338)        
+2025-04-30T04:51:02.8241899Z remote: Counting objects:  29% (99/338)        
+2025-04-30T04:51:02.8242162Z remote: Counting objects:  30% (102/338)        
+2025-04-30T04:51:02.8242425Z remote: Counting objects:  31% (105/338)        
+2025-04-30T04:51:02.8242694Z remote: Counting objects:  32% (109/338)        
+2025-04-30T04:51:02.8242960Z remote: Counting objects:  33% (112/338)        
+2025-04-30T04:51:02.8243216Z remote: Counting objects:  34% (115/338)        
+2025-04-30T04:51:02.8243470Z remote: Counting objects:  35% (119/338)        
+2025-04-30T04:51:02.8243721Z remote: Counting objects:  36% (122/338)        
+2025-04-30T04:51:02.8243977Z remote: Counting objects:  37% (126/338)        
+2025-04-30T04:51:02.8244225Z remote: Counting objects:  38% (129/338)        
+2025-04-30T04:51:02.8244478Z remote: Counting objects:  39% (132/338)        
+2025-04-30T04:51:02.8244728Z remote: Counting objects:  40% (136/338)        
+2025-04-30T04:51:02.8244983Z remote: Counting objects:  41% (139/338)        
+2025-04-30T04:51:02.8245235Z remote: Counting objects:  42% (142/338)        
+2025-04-30T04:51:02.8245483Z remote: Counting objects:  43% (146/338)        
+2025-04-30T04:51:02.8245744Z remote: Counting objects:  44% (149/338)        
+2025-04-30T04:51:02.8246006Z remote: Counting objects:  45% (153/338)        
+2025-04-30T04:51:02.8246261Z remote: Counting objects:  46% (156/338)        
+2025-04-30T04:51:02.8246511Z remote: Counting objects:  47% (159/338)        
+2025-04-30T04:51:02.8246981Z remote: Counting objects:  48% (163/338)        
+2025-04-30T04:51:02.8247274Z remote: Counting objects:  49% (166/338)        
+2025-04-30T04:51:02.8247523Z remote: Counting objects:  50% (169/338)        
+2025-04-30T04:51:02.8247779Z remote: Counting objects:  51% (173/338)        
+2025-04-30T04:51:02.8248027Z remote: Counting objects:  52% (176/338)        
+2025-04-30T04:51:02.8248396Z remote: Counting objects:  53% (180/338)        
+2025-04-30T04:51:02.8248644Z remote: Counting objects:  54% (183/338)        
+2025-04-30T04:51:02.8248900Z remote: Counting objects:  55% (186/338)        
+2025-04-30T04:51:02.8249372Z remote: Counting objects:  56% (190/338)        
+2025-04-30T04:51:02.8249757Z remote: Counting objects:  57% (193/338)        
+2025-04-30T04:51:02.8250019Z remote: Counting objects:  58% (197/338)        
+2025-04-30T04:51:02.8250267Z remote: Counting objects:  59% (200/338)        
+2025-04-30T04:51:02.8250517Z remote: Counting objects:  60% (203/338)        
+2025-04-30T04:51:02.8250773Z remote: Counting objects:  61% (207/338)        
+2025-04-30T04:51:02.8251024Z remote: Counting objects:  62% (210/338)        
+2025-04-30T04:51:02.8251274Z remote: Counting objects:  63% (213/338)        
+2025-04-30T04:51:02.8251605Z remote: Counting objects:  64% (217/338)        
+2025-04-30T04:51:02.8251873Z remote: Counting objects:  65% (220/338)        
+2025-04-30T04:51:02.8252133Z remote: Counting objects:  66% (224/338)        
+2025-04-30T04:51:02.8252386Z remote: Counting objects:  67% (227/338)        
+2025-04-30T04:51:02.8252638Z remote: Counting objects:  68% (230/338)        
+2025-04-30T04:51:02.8252886Z remote: Counting objects:  69% (234/338)        
+2025-04-30T04:51:02.8253142Z remote: Counting objects:  70% (237/338)        
+2025-04-30T04:51:02.8253389Z remote: Counting objects:  71% (240/338)        
+2025-04-30T04:51:02.8260310Z remote: Counting objects:  72% (244/338)        
+2025-04-30T04:51:02.8260964Z remote: Counting objects:  73% (247/338)        
+2025-04-30T04:51:02.8261479Z remote: Counting objects:  74% (251/338)        
+2025-04-30T04:51:02.8261934Z remote: Counting objects:  75% (254/338)        
+2025-04-30T04:51:02.8262373Z remote: Counting objects:  76% (257/338)        
+2025-04-30T04:51:02.8262753Z remote: Counting objects:  77% (261/338)        
+2025-04-30T04:51:02.8263201Z remote: Counting objects:  78% (264/338)        
+2025-04-30T04:51:02.8263697Z remote: Counting objects:  79% (268/338)        
+2025-04-30T04:51:02.8264195Z remote: Counting objects:  80% (271/338)        
+2025-04-30T04:51:02.8264677Z remote: Counting objects:  81% (274/338)        
+2025-04-30T04:51:02.8265155Z remote: Counting objects:  82% (278/338)        
+2025-04-30T04:51:02.8265623Z remote: Counting objects:  83% (281/338)        
+2025-04-30T04:51:02.8266112Z remote: Counting objects:  84% (284/338)        
+2025-04-30T04:51:02.8266598Z remote: Counting objects:  85% (288/338)        
+2025-04-30T04:51:02.8267095Z remote: Counting objects:  86% (291/338)        
+2025-04-30T04:51:02.8267590Z remote: Counting objects:  87% (295/338)        
+2025-04-30T04:51:02.8268080Z remote: Counting objects:  88% (298/338)        
+2025-04-30T04:51:02.8268569Z remote: Counting objects:  89% (301/338)        
+2025-04-30T04:51:02.8269051Z remote: Counting objects:  90% (305/338)        
+2025-04-30T04:51:02.8269744Z remote: Counting objects:  91% (308/338)        
+2025-04-30T04:51:02.8270219Z remote: Counting objects:  92% (311/338)        
+2025-04-30T04:51:02.8270706Z remote: Counting objects:  93% (315/338)        
+2025-04-30T04:51:02.8271169Z remote: Counting objects:  94% (318/338)        
+2025-04-30T04:51:02.8271649Z remote: Counting objects:  95% (322/338)        
+2025-04-30T04:51:02.8272168Z remote: Counting objects:  96% (325/338)        
+2025-04-30T04:51:02.8272624Z remote: Counting objects:  97% (328/338)        
+2025-04-30T04:51:02.8273073Z remote: Counting objects:  98% (332/338)        
+2025-04-30T04:51:02.8273542Z remote: Counting objects:  99% (335/338)        
+2025-04-30T04:51:02.8274245Z remote: Counting objects: 100% (338/338)        
+2025-04-30T04:51:02.8274791Z remote: Counting objects: 100% (338/338), done.        
+2025-04-30T04:51:02.8275324Z remote: Compressing objects:   0% (1/285)        
+2025-04-30T04:51:02.8275838Z remote: Compressing objects:   1% (3/285)        
+2025-04-30T04:51:02.8276327Z remote: Compressing objects:   2% (6/285)        
+2025-04-30T04:51:02.8276802Z remote: Compressing objects:   3% (9/285)        
+2025-04-30T04:51:02.8277486Z remote: Compressing objects:   4% (12/285)        
+2025-04-30T04:51:02.8277995Z remote: Compressing objects:   5% (15/285)        
+2025-04-30T04:51:02.8278486Z remote: Compressing objects:   6% (18/285)        
+2025-04-30T04:51:02.8278969Z remote: Compressing objects:   7% (20/285)        
+2025-04-30T04:51:02.8279661Z remote: Compressing objects:   8% (23/285)        
+2025-04-30T04:51:02.8361382Z remote: Compressing objects:   9% (26/285)        
+2025-04-30T04:51:02.8361718Z remote: Compressing objects:  10% (29/285)        
+2025-04-30T04:51:02.8362118Z remote: Compressing objects:  11% (32/285)        
+2025-04-30T04:51:02.8362393Z remote: Compressing objects:  12% (35/285)        
+2025-04-30T04:51:02.8362650Z remote: Compressing objects:  13% (38/285)        
+2025-04-30T04:51:02.8362914Z remote: Compressing objects:  14% (40/285)        
+2025-04-30T04:51:02.8363180Z remote: Compressing objects:  15% (43/285)        
+2025-04-30T04:51:02.8363441Z remote: Compressing objects:  16% (46/285)        
+2025-04-30T04:51:02.8363708Z remote: Compressing objects:  17% (49/285)        
+2025-04-30T04:51:02.8363963Z remote: Compressing objects:  18% (52/285)        
+2025-04-30T04:51:02.8364221Z remote: Compressing objects:  19% (55/285)        
+2025-04-30T04:51:02.8364476Z remote: Compressing objects:  20% (57/285)        
+2025-04-30T04:51:02.8364736Z remote: Compressing objects:  21% (60/285)        
+2025-04-30T04:51:02.8364991Z remote: Compressing objects:  22% (63/285)        
+2025-04-30T04:51:02.8365254Z remote: Compressing objects:  23% (66/285)        
+2025-04-30T04:51:02.8365516Z remote: Compressing objects:  24% (69/285)        
+2025-04-30T04:51:02.8365770Z remote: Compressing objects:  25% (72/285)        
+2025-04-30T04:51:02.8366031Z remote: Compressing objects:  26% (75/285)        
+2025-04-30T04:51:02.8366284Z remote: Compressing objects:  27% (77/285)        
+2025-04-30T04:51:02.8366542Z remote: Compressing objects:  28% (80/285)        
+2025-04-30T04:51:02.8424069Z remote: Compressing objects:  29% (83/285)        
+2025-04-30T04:51:02.8424611Z remote: Compressing objects:  30% (86/285)        
+2025-04-30T04:51:02.8424999Z remote: Compressing objects:  31% (89/285)        
+2025-04-30T04:51:02.8425328Z remote: Compressing objects:  32% (92/285)        
+2025-04-30T04:51:02.8425653Z remote: Compressing objects:  33% (95/285)        
+2025-04-30T04:51:02.8425969Z remote: Compressing objects:  34% (97/285)        
+2025-04-30T04:51:02.8426322Z remote: Compressing objects:  35% (100/285)        
+2025-04-30T04:51:02.8426683Z remote: Compressing objects:  36% (103/285)        
+2025-04-30T04:51:02.8427023Z remote: Compressing objects:  37% (106/285)        
+2025-04-30T04:51:02.8427354Z remote: Compressing objects:  38% (109/285)        
+2025-04-30T04:51:02.8427669Z remote: Compressing objects:  39% (112/285)        
+2025-04-30T04:51:02.8427990Z remote: Compressing objects:  40% (114/285)        
+2025-04-30T04:51:02.8428309Z remote: Compressing objects:  41% (117/285)        
+2025-04-30T04:51:02.8428641Z remote: Compressing objects:  42% (120/285)        
+2025-04-30T04:51:02.8428956Z remote: Compressing objects:  43% (123/285)        
+2025-04-30T04:51:02.8429545Z remote: Compressing objects:  44% (126/285)        
+2025-04-30T04:51:02.8429870Z remote: Compressing objects:  45% (129/285)        
+2025-04-30T04:51:02.8430194Z remote: Compressing objects:  46% (132/285)        
+2025-04-30T04:51:02.8430525Z remote: Compressing objects:  47% (134/285)        
+2025-04-30T04:51:02.8430840Z remote: Compressing objects:  48% (137/285)        
+2025-04-30T04:51:02.8431374Z remote: Compressing objects:  49% (140/285)        
+2025-04-30T04:51:02.8481190Z remote: Compressing objects:  50% (143/285)        
+2025-04-30T04:51:02.8481795Z remote: Compressing objects:  51% (146/285)        
+2025-04-30T04:51:02.8482169Z remote: Compressing objects:  52% (149/285)        
+2025-04-30T04:51:02.8482525Z remote: Compressing objects:  53% (152/285)        
+2025-04-30T04:51:02.8482876Z remote: Compressing objects:  54% (154/285)        
+2025-04-30T04:51:02.8483446Z remote: Compressing objects:  55% (157/285)        
+2025-04-30T04:51:02.8483810Z remote: Compressing objects:  56% (160/285)        
+2025-04-30T04:51:02.8484157Z remote: Compressing objects:  57% (163/285)        
+2025-04-30T04:51:02.8484453Z remote: Compressing objects:  58% (166/285)        
+2025-04-30T04:51:02.8484712Z remote: Compressing objects:  59% (169/285)        
+2025-04-30T04:51:02.8484973Z remote: Compressing objects:  60% (171/285)        
+2025-04-30T04:51:02.8485232Z remote: Compressing objects:  61% (174/285)        
+2025-04-30T04:51:02.8485492Z remote: Compressing objects:  62% (177/285)        
+2025-04-30T04:51:02.8485750Z remote: Compressing objects:  63% (180/285)        
+2025-04-30T04:51:02.8486022Z remote: Compressing objects:  64% (183/285)        
+2025-04-30T04:51:02.8486278Z remote: Compressing objects:  65% (186/285)        
+2025-04-30T04:51:02.8486541Z remote: Compressing objects:  66% (189/285)        
+2025-04-30T04:51:02.8486801Z remote: Compressing objects:  67% (191/285)        
+2025-04-30T04:51:02.8487065Z remote: Compressing objects:  68% (194/285)        
+2025-04-30T04:51:02.8487320Z remote: Compressing objects:  69% (197/285)        
+2025-04-30T04:51:02.8487580Z remote: Compressing objects:  70% (200/285)        
+2025-04-30T04:51:02.8509461Z remote: Compressing objects:  71% (203/285)        
+2025-04-30T04:51:02.8510128Z remote: Compressing objects:  72% (206/285)        
+2025-04-30T04:51:02.8510742Z remote: Compressing objects:  73% (209/285)        
+2025-04-30T04:51:02.8511229Z remote: Compressing objects:  74% (211/285)        
+2025-04-30T04:51:02.8511596Z remote: Compressing objects:  75% (214/285)        
+2025-04-30T04:51:02.8511939Z remote: Compressing objects:  76% (217/285)        
+2025-04-30T04:51:02.8512296Z remote: Compressing objects:  77% (220/285)        
+2025-04-30T04:51:02.8512636Z remote: Compressing objects:  78% (223/285)        
+2025-04-30T04:51:02.8512971Z remote: Compressing objects:  79% (226/285)        
+2025-04-30T04:51:02.8513320Z remote: Compressing objects:  80% (228/285)        
+2025-04-30T04:51:02.8513656Z remote: Compressing objects:  81% (231/285)        
+2025-04-30T04:51:02.8514009Z remote: Compressing objects:  82% (234/285)        
+2025-04-30T04:51:02.8514315Z remote: Compressing objects:  83% (237/285)        
+2025-04-30T04:51:02.8514575Z remote: Compressing objects:  84% (240/285)        
+2025-04-30T04:51:02.8514832Z remote: Compressing objects:  85% (243/285)        
+2025-04-30T04:51:02.8515087Z remote: Compressing objects:  86% (246/285)        
+2025-04-30T04:51:02.8515351Z remote: Compressing objects:  87% (248/285)        
+2025-04-30T04:51:02.8515604Z remote: Compressing objects:  88% (251/285)        
+2025-04-30T04:51:02.8515863Z remote: Compressing objects:  89% (254/285)        
+2025-04-30T04:51:02.8516520Z remote: Compressing objects:  90% (257/285)        
+2025-04-30T04:51:02.8516785Z remote: Compressing objects:  91% (260/285)        
+2025-04-30T04:51:02.8517249Z remote: Compressing objects:  92% (263/285)        
+2025-04-30T04:51:02.8517764Z remote: Compressing objects:  93% (266/285)        
+2025-04-30T04:51:02.8518228Z remote: Compressing objects:  94% (268/285)        
+2025-04-30T04:51:02.8518511Z remote: Compressing objects:  95% (271/285)        
+2025-04-30T04:51:02.8518768Z remote: Compressing objects:  96% (274/285)        
+2025-04-30T04:51:02.8519031Z remote: Compressing objects:  97% (277/285)        
+2025-04-30T04:51:02.8519506Z remote: Compressing objects:  98% (280/285)        
+2025-04-30T04:51:02.8519774Z remote: Compressing objects:  99% (283/285)        
+2025-04-30T04:51:02.8520207Z remote: Compressing objects: 100% (285/285)        
+2025-04-30T04:51:02.8520502Z remote: Compressing objects: 100% (285/285), done.        
+2025-04-30T04:51:02.8550020Z Receiving objects:   0% (1/338)
+2025-04-30T04:51:02.8550530Z Receiving objects:   1% (4/338)
+2025-04-30T04:51:02.8552106Z Receiving objects:   2% (7/338)
+2025-04-30T04:51:02.8552459Z Receiving objects:   3% (11/338)
+2025-04-30T04:51:02.8553566Z Receiving objects:   4% (14/338)
+2025-04-30T04:51:02.8555917Z Receiving objects:   5% (17/338)
+2025-04-30T04:51:02.8557404Z Receiving objects:   6% (21/338)
+2025-04-30T04:51:02.8558525Z Receiving objects:   7% (24/338)
+2025-04-30T04:51:02.8562096Z Receiving objects:   8% (28/338)
+2025-04-30T04:51:02.8562452Z Receiving objects:   9% (31/338)
+2025-04-30T04:51:02.8563377Z Receiving objects:  10% (34/338)
+2025-04-30T04:51:02.8564828Z Receiving objects:  11% (38/338)
+2025-04-30T04:51:02.8565173Z Receiving objects:  12% (41/338)
+2025-04-30T04:51:02.8566177Z Receiving objects:  13% (44/338)
+2025-04-30T04:51:02.8567785Z Receiving objects:  14% (48/338)
+2025-04-30T04:51:02.8568699Z Receiving objects:  15% (51/338)
+2025-04-30T04:51:02.8668147Z Receiving objects:  16% (55/338)
+2025-04-30T04:51:02.8668599Z Receiving objects:  17% (58/338)
+2025-04-30T04:51:02.8670930Z Receiving objects:  18% (61/338)
+2025-04-30T04:51:02.8703034Z Receiving objects:  19% (65/338)
+2025-04-30T04:51:02.8705698Z Receiving objects:  20% (68/338)
+2025-04-30T04:51:02.8706313Z Receiving objects:  21% (71/338)
+2025-04-30T04:51:02.8709096Z Receiving objects:  22% (75/338)
+2025-04-30T04:51:02.8709940Z Receiving objects:  23% (78/338)
+2025-04-30T04:51:02.8710588Z Receiving objects:  24% (82/338)
+2025-04-30T04:51:02.8710940Z Receiving objects:  25% (85/338)
+2025-04-30T04:51:02.8711798Z Receiving objects:  26% (88/338)
+2025-04-30T04:51:02.8712196Z Receiving objects:  27% (92/338)
+2025-04-30T04:51:02.8713320Z Receiving objects:  28% (95/338)
+2025-04-30T04:51:02.8717849Z Receiving objects:  29% (99/338)
+2025-04-30T04:51:02.8720631Z Receiving objects:  30% (102/338)
+2025-04-30T04:51:02.8721356Z Receiving objects:  31% (105/338)
+2025-04-30T04:51:02.8723626Z Receiving objects:  32% (109/338)
+2025-04-30T04:51:02.8725579Z Receiving objects:  33% (112/338)
+2025-04-30T04:51:02.8726007Z Receiving objects:  34% (115/338)
+2025-04-30T04:51:02.8726551Z Receiving objects:  35% (119/338)
+2025-04-30T04:51:02.8728080Z Receiving objects:  36% (122/338)
+2025-04-30T04:51:02.8729535Z Receiving objects:  37% (126/338)
+2025-04-30T04:51:02.8730195Z Receiving objects:  38% (129/338)
+2025-04-30T04:51:02.8730577Z Receiving objects:  39% (132/338)
+2025-04-30T04:51:02.8731094Z Receiving objects:  40% (136/338)
+2025-04-30T04:51:02.8731990Z Receiving objects:  41% (139/338)
+2025-04-30T04:51:02.8732980Z Receiving objects:  42% (142/338)
+2025-04-30T04:51:02.8734509Z Receiving objects:  43% (146/338)
+2025-04-30T04:51:02.8734885Z Receiving objects:  44% (149/338)
+2025-04-30T04:51:02.8735255Z Receiving objects:  45% (153/338)
+2025-04-30T04:51:02.8735813Z Receiving objects:  46% (156/338)
+2025-04-30T04:51:02.8736652Z Receiving objects:  47% (159/338)
+2025-04-30T04:51:02.8737053Z Receiving objects:  48% (163/338)
+2025-04-30T04:51:02.8737424Z Receiving objects:  49% (166/338)
+2025-04-30T04:51:02.8737798Z Receiving objects:  50% (169/338)
+2025-04-30T04:51:02.8738848Z Receiving objects:  51% (173/338)
+2025-04-30T04:51:02.8739419Z Receiving objects:  52% (176/338)
+2025-04-30T04:51:02.8739827Z Receiving objects:  53% (180/338)
+2025-04-30T04:51:02.8740191Z Receiving objects:  54% (183/338)
+2025-04-30T04:51:02.8741562Z Receiving objects:  55% (186/338)
+2025-04-30T04:51:02.8741958Z Receiving objects:  56% (190/338)
+2025-04-30T04:51:02.8742311Z Receiving objects:  57% (193/338)
+2025-04-30T04:51:02.8742666Z Receiving objects:  58% (197/338)
+2025-04-30T04:51:02.8743449Z Receiving objects:  59% (200/338)
+2025-04-30T04:51:02.8743836Z Receiving objects:  60% (203/338)
+2025-04-30T04:51:02.8744225Z Receiving objects:  61% (207/338)
+2025-04-30T04:51:02.8744585Z Receiving objects:  62% (210/338)
+2025-04-30T04:51:02.8745205Z Receiving objects:  63% (213/338)
+2025-04-30T04:51:02.8745621Z Receiving objects:  64% (217/338)
+2025-04-30T04:51:02.8745982Z Receiving objects:  65% (220/338)
+2025-04-30T04:51:02.8746323Z Receiving objects:  66% (224/338)
+2025-04-30T04:51:02.8746699Z Receiving objects:  67% (227/338)
+2025-04-30T04:51:02.8747581Z Receiving objects:  68% (230/338)
+2025-04-30T04:51:02.8747932Z Receiving objects:  69% (234/338)
+2025-04-30T04:51:02.8750205Z Receiving objects:  70% (237/338)
+2025-04-30T04:51:02.8750599Z Receiving objects:  71% (240/338)
+2025-04-30T04:51:02.8752699Z Receiving objects:  72% (244/338)
+2025-04-30T04:51:02.8754097Z Receiving objects:  73% (247/338)
+2025-04-30T04:51:02.8755296Z Receiving objects:  74% (251/338)
+2025-04-30T04:51:02.8755848Z Receiving objects:  75% (254/338)
+2025-04-30T04:51:02.8758070Z Receiving objects:  76% (257/338)
+2025-04-30T04:51:02.8758516Z Receiving objects:  77% (261/338)
+2025-04-30T04:51:02.8758989Z Receiving objects:  78% (264/338)
+2025-04-30T04:51:02.8759868Z Receiving objects:  79% (268/338)
+2025-04-30T04:51:02.8761318Z Receiving objects:  80% (271/338)
+2025-04-30T04:51:02.8762240Z Receiving objects:  81% (274/338)
+2025-04-30T04:51:02.8763690Z Receiving objects:  82% (278/338)
+2025-04-30T04:51:02.8765303Z Receiving objects:  83% (281/338)
+2025-04-30T04:51:02.8766142Z Receiving objects:  84% (284/338)
+2025-04-30T04:51:02.8767559Z Receiving objects:  85% (288/338)
+2025-04-30T04:51:02.8767958Z Receiving objects:  86% (291/338)
+2025-04-30T04:51:02.8768474Z Receiving objects:  87% (295/338)
+2025-04-30T04:51:02.8852804Z Receiving objects:  88% (298/338)
+2025-04-30T04:51:02.8853855Z Receiving objects:  89% (301/338)
+2025-04-30T04:51:02.8855397Z Receiving objects:  90% (305/338)
+2025-04-30T04:51:02.8856732Z Receiving objects:  91% (308/338)
+2025-04-30T04:51:02.8878150Z Receiving objects:  92% (311/338)
+2025-04-30T04:51:02.8879686Z remote: Total 338 (delta 145), reused 161 (delta 45), pack-reused 0 (from 0)        
+2025-04-30T04:51:02.8880300Z Receiving objects:  93% (315/338)
+2025-04-30T04:51:02.8880787Z Receiving objects:  94% (318/338)
+2025-04-30T04:51:02.8881298Z Receiving objects:  95% (322/338)
+2025-04-30T04:51:02.8882322Z Receiving objects:  96% (325/338)
+2025-04-30T04:51:02.8882866Z Receiving objects:  97% (328/338)
+2025-04-30T04:51:02.8883366Z Receiving objects:  98% (332/338)
+2025-04-30T04:51:02.8883843Z Receiving objects:  99% (335/338)
+2025-04-30T04:51:02.8884354Z Receiving objects: 100% (338/338)
+2025-04-30T04:51:02.8885207Z Receiving objects: 100% (338/338), 188.94 KiB | 5.56 MiB/s, done.
+2025-04-30T04:51:02.8888726Z Resolving deltas:   0% (0/145)
+2025-04-30T04:51:02.8889698Z Resolving deltas:   1% (2/145)
+2025-04-30T04:51:02.8898465Z Resolving deltas:   2% (3/145)
+2025-04-30T04:51:02.8898905Z Resolving deltas:   3% (5/145)
+2025-04-30T04:51:02.8900059Z Resolving deltas:   4% (7/145)
+2025-04-30T04:51:02.8900728Z Resolving deltas:   5% (8/145)
+2025-04-30T04:51:02.8903359Z Resolving deltas:   6% (9/145)
+2025-04-30T04:51:02.8903747Z Resolving deltas:   7% (11/145)
+2025-04-30T04:51:02.8904113Z Resolving deltas:   8% (12/145)
+2025-04-30T04:51:02.8904457Z Resolving deltas:   9% (14/145)
+2025-04-30T04:51:02.8904813Z Resolving deltas:  10% (15/145)
+2025-04-30T04:51:02.8905148Z Resolving deltas:  11% (16/145)
+2025-04-30T04:51:02.8905502Z Resolving deltas:  12% (18/145)
+2025-04-30T04:51:02.8905840Z Resolving deltas:  13% (19/145)
+2025-04-30T04:51:02.8906175Z Resolving deltas:  14% (21/145)
+2025-04-30T04:51:02.8906521Z Resolving deltas:  15% (23/145)
+2025-04-30T04:51:02.8906853Z Resolving deltas:  16% (24/145)
+2025-04-30T04:51:02.8907186Z Resolving deltas:  17% (25/145)
+2025-04-30T04:51:02.8907512Z Resolving deltas:  18% (27/145)
+2025-04-30T04:51:02.8907858Z Resolving deltas:  19% (28/145)
+2025-04-30T04:51:02.8908190Z Resolving deltas:  20% (29/145)
+2025-04-30T04:51:02.8908522Z Resolving deltas:  21% (31/145)
+2025-04-30T04:51:02.8908854Z Resolving deltas:  22% (32/145)
+2025-04-30T04:51:02.8909372Z Resolving deltas:  23% (34/145)
+2025-04-30T04:51:02.8910049Z Resolving deltas:  24% (35/145)
+2025-04-30T04:51:02.8910477Z Resolving deltas:  25% (37/145)
+2025-04-30T04:51:02.8910827Z Resolving deltas:  26% (38/145)
+2025-04-30T04:51:02.8911163Z Resolving deltas:  28% (41/145)
+2025-04-30T04:51:02.8911497Z Resolving deltas:  29% (43/145)
+2025-04-30T04:51:02.8911824Z Resolving deltas:  30% (44/145)
+2025-04-30T04:51:02.8912168Z Resolving deltas:  31% (46/145)
+2025-04-30T04:51:02.8913006Z Resolving deltas:  33% (48/145)
+2025-04-30T04:51:02.8913382Z Resolving deltas:  34% (50/145)
+2025-04-30T04:51:02.8913743Z Resolving deltas:  35% (51/145)
+2025-04-30T04:51:02.8914125Z Resolving deltas:  36% (53/145)
+2025-04-30T04:51:02.8914499Z Resolving deltas:  37% (55/145)
+2025-04-30T04:51:02.8914844Z Resolving deltas:  38% (56/145)
+2025-04-30T04:51:02.8915200Z Resolving deltas:  39% (57/145)
+2025-04-30T04:51:02.8915539Z Resolving deltas:  40% (58/145)
+2025-04-30T04:51:02.8915878Z Resolving deltas:  41% (60/145)
+2025-04-30T04:51:02.8916259Z Resolving deltas:  42% (61/145)
+2025-04-30T04:51:02.8916609Z Resolving deltas:  43% (63/145)
+2025-04-30T04:51:02.8917107Z Resolving deltas:  44% (64/145)
+2025-04-30T04:51:02.8917495Z Resolving deltas:  45% (66/145)
+2025-04-30T04:51:02.8918171Z Resolving deltas:  46% (67/145)
+2025-04-30T04:51:02.8918672Z Resolving deltas:  47% (69/145)
+2025-04-30T04:51:02.8919435Z Resolving deltas:  48% (70/145)
+2025-04-30T04:51:02.8920063Z Resolving deltas:  49% (72/145)
+2025-04-30T04:51:02.8920611Z Resolving deltas:  50% (73/145)
+2025-04-30T04:51:02.8921128Z Resolving deltas:  51% (74/145)
+2025-04-30T04:51:02.8921628Z Resolving deltas:  52% (76/145)
+2025-04-30T04:51:02.8922629Z Resolving deltas:  53% (77/145)
+2025-04-30T04:51:02.8923109Z Resolving deltas:  54% (79/145)
+2025-04-30T04:51:02.8923477Z Resolving deltas:  55% (80/145)
+2025-04-30T04:51:02.8923836Z Resolving deltas:  56% (82/145)
+2025-04-30T04:51:02.8924212Z Resolving deltas:  57% (83/145)
+2025-04-30T04:51:02.8924575Z Resolving deltas:  58% (85/145)
+2025-04-30T04:51:02.8924982Z Resolving deltas:  60% (87/145)
+2025-04-30T04:51:02.8925392Z Resolving deltas:  61% (89/145)
+2025-04-30T04:51:02.8925722Z Resolving deltas:  62% (90/145)
+2025-04-30T04:51:02.8926050Z Resolving deltas:  63% (92/145)
+2025-04-30T04:51:02.8926386Z Resolving deltas:  64% (93/145)
+2025-04-30T04:51:02.8926710Z Resolving deltas:  65% (95/145)
+2025-04-30T04:51:02.8927043Z Resolving deltas:  66% (96/145)
+2025-04-30T04:51:02.8927372Z Resolving deltas:  68% (100/145)
+2025-04-30T04:51:02.8927728Z Resolving deltas:  69% (101/145)
+2025-04-30T04:51:02.8928064Z Resolving deltas:  70% (102/145)
+2025-04-30T04:51:02.8928404Z Resolving deltas:  71% (103/145)
+2025-04-30T04:51:02.8928734Z Resolving deltas:  72% (105/145)
+2025-04-30T04:51:02.8929090Z Resolving deltas:  73% (106/145)
+2025-04-30T04:51:02.8929644Z Resolving deltas:  74% (108/145)
+2025-04-30T04:51:02.8930007Z Resolving deltas:  75% (109/145)
+2025-04-30T04:51:02.8930353Z Resolving deltas:  76% (111/145)
+2025-04-30T04:51:02.8930710Z Resolving deltas:  77% (112/145)
+2025-04-30T04:51:02.8931072Z Resolving deltas:  78% (114/145)
+2025-04-30T04:51:02.8931416Z Resolving deltas:  79% (115/145)
+2025-04-30T04:51:02.8931768Z Resolving deltas:  80% (116/145)
+2025-04-30T04:51:02.8932111Z Resolving deltas:  82% (119/145)
+2025-04-30T04:51:02.8932462Z Resolving deltas:  83% (121/145)
+2025-04-30T04:51:02.8932694Z Resolving deltas:  84% (122/145)
+2025-04-30T04:51:02.8932907Z Resolving deltas:  85% (124/145)
+2025-04-30T04:51:02.8933121Z Resolving deltas:  86% (126/145)
+2025-04-30T04:51:02.8933316Z Resolving deltas:  87% (127/145)
+2025-04-30T04:51:02.8933515Z Resolving deltas:  88% (128/145)
+2025-04-30T04:51:02.8933711Z Resolving deltas:  89% (130/145)
+2025-04-30T04:51:02.8933911Z Resolving deltas:  90% (131/145)
+2025-04-30T04:51:02.8934139Z Resolving deltas:  91% (132/145)
+2025-04-30T04:51:02.8934451Z Resolving deltas:  92% (134/145)
+2025-04-30T04:51:02.8934656Z Resolving deltas:  93% (135/145)
+2025-04-30T04:51:02.8934852Z Resolving deltas:  94% (137/145)
+2025-04-30T04:51:02.8935052Z Resolving deltas:  95% (138/145)
+2025-04-30T04:51:02.8939879Z Resolving deltas:  96% (140/145)
+2025-04-30T04:51:02.8940152Z Resolving deltas:  97% (141/145)
+2025-04-30T04:51:02.8940367Z Resolving deltas:  98% (143/145)
+2025-04-30T04:51:02.8940577Z Resolving deltas:  99% (144/145)
+2025-04-30T04:51:02.8940777Z Resolving deltas: 100% (145/145)
+2025-04-30T04:51:02.8940991Z Resolving deltas: 100% (145/145), done.
+2025-04-30T04:51:02.8997896Z From https://github.com/PHPSocialNetwork/phpfastcache
+2025-04-30T04:51:02.8998796Z  * [new ref]         fb99d03cce4fd1b78ba8325c16d8be5bdc3dfe3e -> pull/927/merge
+2025-04-30T04:51:02.9030435Z ##[endgroup]
+2025-04-30T04:51:02.9030980Z ##[group]Determining the checkout info
+2025-04-30T04:51:02.9033469Z ##[endgroup]
+2025-04-30T04:51:02.9034021Z ##[group]Checking out the ref
+2025-04-30T04:51:02.9038159Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/927/merge
+2025-04-30T04:51:02.9198458Z Note: switching to 'refs/remotes/pull/927/merge'.
+2025-04-30T04:51:02.9198805Z 
+2025-04-30T04:51:02.9199103Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-30T04:51:02.9199884Z changes and commit them, and you can discard any commits you make in this
+2025-04-30T04:51:02.9200400Z state without impacting any branches by switching back to a branch.
+2025-04-30T04:51:02.9200662Z 
+2025-04-30T04:51:02.9200826Z If you want to create a new branch to retain commits you create, you may
+2025-04-30T04:51:02.9201214Z do so (now or later) by using -c with the switch command. Example:
+2025-04-30T04:51:02.9201437Z 
+2025-04-30T04:51:02.9201531Z   git switch -c <new-branch-name>
+2025-04-30T04:51:02.9201688Z 
+2025-04-30T04:51:02.9201779Z Or undo this operation with:
+2025-04-30T04:51:02.9201917Z 
+2025-04-30T04:51:02.9201986Z   git switch -
+2025-04-30T04:51:02.9202091Z 
+2025-04-30T04:51:02.9202286Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-30T04:51:02.9202615Z 
+2025-04-30T04:51:02.9203180Z HEAD is now at fb99d03 Merge 4e92fe07ec920795c05d495744fcce3382a1ba97 into 588e8fff435aa1ac9653d4b2101a1f6c0a0fc1b8
+2025-04-30T04:51:02.9207102Z ##[endgroup]
+2025-04-30T04:51:02.9241231Z [command]/usr/bin/git log -1 --format='%H'
+2025-04-30T04:51:02.9261717Z 'fb99d03cce4fd1b78ba8325c16d8be5bdc3dfe3e'
+2025-04-30T04:51:02.9419717Z ##[group]Run ./bin/ci/scripts/install_couchbase.sh
+2025-04-30T04:51:02.9420132Z [36;1m./bin/ci/scripts/install_couchbase.sh[0m
+2025-04-30T04:51:02.9455020Z shell: /usr/bin/bash -e {0}
+2025-04-30T04:51:02.9455260Z env:
+2025-04-30T04:51:02.9455522Z   extensions: mbstring, intl, pdo_sqlite, json, redis, couchbase-3.2.2
+2025-04-30T04:51:02.9455841Z   key: cache-v1
+2025-04-30T04:51:02.9456005Z ##[endgroup]
+2025-04-30T04:51:02.9539084Z # Prepare Couchbase dependencies
+2025-04-30T04:51:03.1909592Z Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+2025-04-30T04:51:03.2252749Z Executing: /tmp/apt-key-gpghome.0rfN3RHtqK/gpg.1.sh --keyserver keyserver.ubuntu.com --recv-keys A3FAA648D9223EDA
+2025-04-30T04:51:04.0256386Z gpg: key A3FAA648D9223EDA: public key "Couchbase Release Key <support@couchbase.com>" imported
+2025-04-30T04:51:04.0577083Z gpg: Total number processed: 1
+2025-04-30T04:51:04.0577486Z gpg:               imported: 1
+2025-04-30T04:51:04.3084529Z Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+2025-04-30T04:51:04.3425826Z Executing: /tmp/apt-key-gpghome.i5ru9e4xRq/gpg.1.sh --keyserver keyserver.ubuntu.com --recv-keys 1616981CC4A088B2
+2025-04-30T04:51:05.0453250Z gpg: key 1616981CC4A088B2: public key "Couchbase SDK Team (Created for SDK Git Signing) <sdk_dev@couchbase.com>" imported
+2025-04-30T04:51:05.0492586Z gpg: Total number processed: 1
+2025-04-30T04:51:05.0493868Z gpg:               imported: 1
+2025-04-30T04:51:05.2781467Z deb https://packages.couchbase.com/ubuntu bionic bionic/main
+2025-04-30T04:51:05.2852837Z deb https://packages.couchbase.com/clients/c/repos/deb/ubuntu1804 bionic bionic/main
+2025-04-30T04:51:05.4343651Z Hit:1 https://packages.microsoft.com/repos/azure-cli jammy InRelease
+2025-04-30T04:51:05.4344965Z Get:2 https://packages.microsoft.com/ubuntu/22.04/prod jammy InRelease [3632 B]
+2025-04-30T04:51:05.4709672Z Hit:3 http://azure.archive.ubuntu.com/ubuntu jammy InRelease
+2025-04-30T04:51:05.4725354Z Get:4 http://azure.archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+2025-04-30T04:51:05.4766469Z Get:5 http://azure.archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+2025-04-30T04:51:05.4792842Z Get:6 http://azure.archive.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+2025-04-30T04:51:05.5139022Z Get:7 https://packages.couchbase.com/clients/c/repos/deb/ubuntu1804 bionic InRelease [2417 B]
+2025-04-30T04:51:05.5659468Z Get:8 https://packages.microsoft.com/ubuntu/22.04/prod jammy/main arm64 Packages [59.3 kB]
+2025-04-30T04:51:05.5792326Z Get:9 https://packages.microsoft.com/ubuntu/22.04/prod jammy/main amd64 Packages [214 kB]
+2025-04-30T04:51:05.5840250Z Get:10 https://packages.microsoft.com/ubuntu/22.04/prod jammy/main armhf Packages [18.9 kB]
+2025-04-30T04:51:05.7259360Z Get:11 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [2511 kB]
+2025-04-30T04:51:05.7400490Z Get:12 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [410 kB]
+2025-04-30T04:51:05.7439727Z Get:13 http://azure.archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [3357 kB]
+2025-04-30T04:51:05.7637376Z Get:14 http://azure.archive.ubuntu.com/ubuntu jammy-updates/restricted Translation-en [595 kB]
+2025-04-30T04:51:05.7694455Z Get:15 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1201 kB]
+2025-04-30T04:51:05.7770776Z Get:16 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe Translation-en [296 kB]
+2025-04-30T04:51:05.8864461Z Get:17 http://azure.archive.ubuntu.com/ubuntu jammy-security/main amd64 Packages [2266 kB]
+2025-04-30T04:51:05.9002261Z Get:18 http://azure.archive.ubuntu.com/ubuntu jammy-security/main Translation-en [346 kB]
+2025-04-30T04:51:05.9031094Z Get:19 http://azure.archive.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [3238 kB]
+2025-04-30T04:51:05.9219918Z Get:20 http://azure.archive.ubuntu.com/ubuntu jammy-security/restricted Translation-en [577 kB]
+2025-04-30T04:51:05.9714030Z Get:21 http://azure.archive.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [973 kB]
+2025-04-30T04:51:05.9785558Z Get:22 http://azure.archive.ubuntu.com/ubuntu jammy-security/universe Translation-en [209 kB]
+2025-04-30T04:51:06.0033650Z Get:23 https://packages.couchbase.com/clients/c/repos/deb/ubuntu1804 bionic/bionic/main amd64 Packages [1934 B]
+2025-04-30T04:51:10.7171696Z Fetched 16.7 MB in 2s (8301 kB/s)
+2025-04-30T04:51:11.4677854Z Reading package lists...
+2025-04-30T04:51:11.4760519Z W: https://packages.couchbase.com/clients/c/repos/deb/ubuntu1804/dists/bionic/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+2025-04-30T04:51:11.5256614Z Reading package lists...
+2025-04-30T04:51:11.6774922Z Building dependency tree...
+2025-04-30T04:51:11.6786126Z Reading state information...
+2025-04-30T04:51:11.8155355Z build-essential is already the newest version (12.9ubuntu3).
+2025-04-30T04:51:11.8156094Z build-essential set to manually installed.
+2025-04-30T04:51:11.8156703Z lshw is already the newest version (02.19.git.2021.06.19.996aaad9c7-2build1).
+2025-04-30T04:51:11.8157154Z lshw set to manually installed.
+2025-04-30T04:51:11.8157506Z lsof is already the newest version (4.93.2+dfsg-1.1build2).
+2025-04-30T04:51:11.8157860Z lsof set to manually installed.
+2025-04-30T04:51:11.8158236Z net-tools is already the newest version (1.60+git20181103.0eebece-1ubuntu5).
+2025-04-30T04:51:11.8158862Z python3-httplib2 is already the newest version (0.20.2-2).
+2025-04-30T04:51:11.8159772Z python3-httplib2 set to manually installed.
+2025-04-30T04:51:11.8160386Z sysstat is already the newest version (12.5.2-2ubuntu0.2).
+2025-04-30T04:51:11.8160895Z tzdata is already the newest version (2025b-0ubuntu0.22.04).
+2025-04-30T04:51:11.8161291Z wget is already the newest version (1.21.2-2ubuntu1.1).
+2025-04-30T04:51:11.8161699Z libssl1.1 is already the newest version (1.1.1f-1ubuntu2.24).
+2025-04-30T04:51:11.8162107Z The following additional packages will be installed:
+2025-04-30T04:51:11.8162672Z   runit-run sysuser-helper
+2025-04-30T04:51:11.8162915Z Suggested packages:
+2025-04-30T04:51:11.8163223Z   socklog
+2025-04-30T04:51:11.8369638Z The following NEW packages will be installed:
+2025-04-30T04:51:11.8374179Z   chrpath libcouchbase-dev libcouchbase3 libtinfo5 numactl runit runit-run
+2025-04-30T04:51:11.8374703Z   sysuser-helper
+2025-04-30T04:51:11.9531253Z 0 upgraded, 8 newly installed, 0 to remove and 36 not upgraded.
+2025-04-30T04:51:11.9531787Z Need to get 936 kB of archives.
+2025-04-30T04:51:11.9532278Z After this operation, 3287 kB of additional disk space will be used.
+2025-04-30T04:51:11.9533335Z Get:1 https://packages.couchbase.com/clients/c/repos/deb/ubuntu1804 bionic/bionic/main amd64 libcouchbase3 amd64 3.3.12-1 [501 kB]
+2025-04-30T04:51:11.9622555Z Get:2 https://packages.couchbase.com/clients/c/repos/deb/ubuntu1804 bionic/bionic/main amd64 libcouchbase-dev amd64 3.3.12-1 [160 kB]
+2025-04-30T04:51:12.0229945Z Get:3 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 chrpath amd64 0.16-2 [13.2 kB]
+2025-04-30T04:51:12.1070604Z Get:4 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 libtinfo5 amd64 6.3-2ubuntu0.1 [100 kB]
+2025-04-30T04:51:12.1922330Z Get:5 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 numactl amd64 2.0.14-3ubuntu2 [36.8 kB]
+2025-04-30T04:51:12.2932411Z Get:6 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 sysuser-helper all 1.3.7+really1.4.1 [5094 B]
+2025-04-30T04:51:12.3771853Z Get:7 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 runit amd64 2.1.2-44ubuntu2 [116 kB]
+2025-04-30T04:51:12.4668080Z Get:8 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 runit-run all 2.1.2-44ubuntu2 [3994 B]
+2025-04-30T04:51:12.7452793Z Fetched 936 kB in 1s (1497 kB/s)
+2025-04-30T04:51:12.7667192Z Selecting previously unselected package chrpath.
+2025-04-30T04:51:12.7898158Z (Reading database ... 
+2025-04-30T04:51:12.7898715Z (Reading database ... 5%
+2025-04-30T04:51:12.7899511Z (Reading database ... 10%
+2025-04-30T04:51:12.7899752Z (Reading database ... 15%
+2025-04-30T04:51:12.7899965Z (Reading database ... 20%
+2025-04-30T04:51:12.7900175Z (Reading database ... 25%
+2025-04-30T04:51:12.7900393Z (Reading database ... 30%
+2025-04-30T04:51:12.7900736Z (Reading database ... 35%
+2025-04-30T04:51:12.7901089Z (Reading database ... 40%
+2025-04-30T04:51:12.7901375Z (Reading database ... 45%
+2025-04-30T04:51:12.7901699Z (Reading database ... 50%
+2025-04-30T04:51:12.8211222Z (Reading database ... 55%
+2025-04-30T04:51:12.8508888Z (Reading database ... 60%
+2025-04-30T04:51:12.8787150Z (Reading database ... 65%
+2025-04-30T04:51:12.9101908Z (Reading database ... 70%
+2025-04-30T04:51:12.9563076Z (Reading database ... 75%
+2025-04-30T04:51:12.9813300Z (Reading database ... 80%
+2025-04-30T04:51:13.0332399Z (Reading database ... 85%
+2025-04-30T04:51:13.0603077Z (Reading database ... 90%
+2025-04-30T04:51:13.0904916Z (Reading database ... 95%
+2025-04-30T04:51:13.0905256Z (Reading database ... 100%
+2025-04-30T04:51:13.0905571Z (Reading database ... 271802 files and directories currently installed.)
+2025-04-30T04:51:13.0955459Z Preparing to unpack .../0-chrpath_0.16-2_amd64.deb ...
+2025-04-30T04:51:13.0997072Z Unpacking chrpath (0.16-2) ...
+2025-04-30T04:51:13.1254024Z Selecting previously unselected package libcouchbase3:amd64.
+2025-04-30T04:51:13.1413564Z Preparing to unpack .../1-libcouchbase3_3.3.12-1_amd64.deb ...
+2025-04-30T04:51:13.1434773Z Unpacking libcouchbase3:amd64 (3.3.12-1) ...
+2025-04-30T04:51:13.1945680Z Selecting previously unselected package libcouchbase-dev:amd64.
+2025-04-30T04:51:13.2104424Z Preparing to unpack .../2-libcouchbase-dev_3.3.12-1_amd64.deb ...
+2025-04-30T04:51:13.2115183Z Unpacking libcouchbase-dev:amd64 (3.3.12-1) ...
+2025-04-30T04:51:13.2435263Z Selecting previously unselected package libtinfo5:amd64.
+2025-04-30T04:51:13.2593526Z Preparing to unpack .../3-libtinfo5_6.3-2ubuntu0.1_amd64.deb ...
+2025-04-30T04:51:13.2603943Z Unpacking libtinfo5:amd64 (6.3-2ubuntu0.1) ...
+2025-04-30T04:51:13.2823866Z Selecting previously unselected package numactl.
+2025-04-30T04:51:13.2982054Z Preparing to unpack .../4-numactl_2.0.14-3ubuntu2_amd64.deb ...
+2025-04-30T04:51:13.2991115Z Unpacking numactl (2.0.14-3ubuntu2) ...
+2025-04-30T04:51:13.3236328Z Selecting previously unselected package sysuser-helper.
+2025-04-30T04:51:13.3394440Z Preparing to unpack .../5-sysuser-helper_1.3.7+really1.4.1_all.deb ...
+2025-04-30T04:51:13.3418962Z Unpacking sysuser-helper (1.3.7+really1.4.1) ...
+2025-04-30T04:51:13.3641860Z Selecting previously unselected package runit.
+2025-04-30T04:51:13.3800001Z Preparing to unpack .../6-runit_2.1.2-44ubuntu2_amd64.deb ...
+2025-04-30T04:51:13.3854365Z runit: setting up for runsvchdir
+2025-04-30T04:51:13.3862523Z runit: current symlink succesfully created
+2025-04-30T04:51:13.3864304Z Unpacking runit (2.1.2-44ubuntu2) ...
+2025-04-30T04:51:13.4222055Z Selecting previously unselected package runit-run.
+2025-04-30T04:51:13.4378705Z Preparing to unpack .../7-runit-run_2.1.2-44ubuntu2_all.deb ...
+2025-04-30T04:51:13.4388647Z Unpacking runit-run (2.1.2-44ubuntu2) ...
+2025-04-30T04:51:13.4848314Z Setting up numactl (2.0.14-3ubuntu2) ...
+2025-04-30T04:51:13.4880783Z Setting up libcouchbase3:amd64 (3.3.12-1) ...
+2025-04-30T04:51:13.4904249Z Setting up libcouchbase-dev:amd64 (3.3.12-1) ...
+2025-04-30T04:51:13.4925936Z Setting up sysuser-helper (1.3.7+really1.4.1) ...
+2025-04-30T04:51:13.4950561Z Setting up libtinfo5:amd64 (6.3-2ubuntu0.1) ...
+2025-04-30T04:51:13.4976024Z Setting up chrpath (0.16-2) ...
+2025-04-30T04:51:13.5012267Z Setting up runit (2.1.2-44ubuntu2) ...
+2025-04-30T04:51:13.7796981Z Setting up runit-run (2.1.2-44ubuntu2) ...
+2025-04-30T04:51:13.8835956Z Created symlink /etc/systemd/system/multi-user.target.wants/runit.service → /lib/systemd/system/runit.service.
+2025-04-30T04:51:14.3111268Z Processing triggers for man-db (2.10.2-1) ...
+2025-04-30T04:51:14.8151125Z Processing triggers for libc-bin (2.35-0ubuntu3.9) ...
+2025-04-30T04:51:15.0674794Z NEEDRESTART-VER: 3.5
+2025-04-30T04:51:15.3592265Z NEEDRESTART-KCUR: 6.8.0-1026-azure
+2025-04-30T04:51:15.3592764Z NEEDRESTART-KEXP: 6.8.0-1026-azure
+2025-04-30T04:51:15.3593146Z NEEDRESTART-KSTA: 1
+2025-04-30T04:51:16.8003022Z # Downloading couchbase v7.1.1
+2025-04-30T04:51:18.1362073Z Selecting previously unselected package couchbase-server-community.
+2025-04-30T04:51:18.2270914Z (Reading database ... 271958 files and directories currently installed.)
+2025-04-30T04:51:18.2316798Z Preparing to unpack .../couchbase-server-community_7.1.1-ubuntu18.04_amd64.deb ...
+2025-04-30T04:51:18.2366262Z Warning: Transparent hugepages looks to be active and should not be.
+2025-04-30T04:51:18.2367338Z Please look at https://docs.couchbase.com/server/7.1/install/thp-disable.html as for how to PERMANENTLY alter this setting.
+2025-04-30T04:51:18.2376480Z Warning: Swappiness is not set to 0.
+2025-04-30T04:51:18.2377367Z Please look at https://docs.couchbase.com/server/7.1/install/install-swap-space.html as for how to PERMANENTLY alter this setting.
+2025-04-30T04:51:18.2436865Z Minimum RAM required  : 4 GB
+2025-04-30T04:51:18.2437254Z System RAM configured : 15.62 GB
+2025-04-30T04:51:18.2437493Z 
+2025-04-30T04:51:18.2437673Z Minimum number of processors required : 4 cores
+2025-04-30T04:51:18.2438000Z Number of processors on the system    : 4 cores
+2025-04-30T04:51:18.2623550Z Unpacking couchbase-server-community (7.1.1-3175-1) ...
+2025-04-30T04:51:32.7791108Z Setting up couchbase-server-community (7.1.1-3175-1) ...
+2025-04-30T04:51:33.2736815Z 
+2025-04-30T04:51:33.2737469Z You have successfully installed Couchbase Server.
+2025-04-30T04:51:33.2738548Z Please browse to http://fv-az1429-289:8091/ to configure your server.
+2025-04-30T04:51:33.2740028Z Refer to https://docs.couchbase.com for additional resources.
+2025-04-30T04:51:33.2742126Z 
+2025-04-30T04:51:33.2742515Z Please note that you have to update your firewall configuration to
+2025-04-30T04:51:33.2743207Z allow external connections to a number of network ports for full
+2025-04-30T04:51:33.2744013Z operation. Refer to the documentation for the current list:
+2025-04-30T04:51:33.2744690Z https://docs.couchbase.com/server/7.1/install/install-ports.html
+2025-04-30T04:51:33.2745105Z 
+2025-04-30T04:51:33.2745688Z By using this software you agree to the End User License Agreement.
+2025-04-30T04:51:33.2746239Z See /opt/couchbase/LICENSE.txt.
+2025-04-30T04:51:33.2746471Z 
+2025-04-30T04:51:33.3954784Z Created symlink /etc/systemd/system/multi-user.target.wants/couchbase-server.service → /lib/systemd/system/couchbase-server.service.
+2025-04-30T04:51:33.6812798Z [1] Waiting for Couchbase Server to be available
+2025-04-30T04:51:34.6902015Z [2] Waiting for Couchbase Server to be available
+2025-04-30T04:51:35.6979969Z [3] Waiting for Couchbase Server to be available
+2025-04-30T04:51:36.7070481Z [4] Waiting for Couchbase Server to be available
+2025-04-30T04:51:37.7146623Z [5] Waiting for Couchbase Server to be available
+2025-04-30T04:51:38.7227758Z # Couchbase Server Online
+2025-04-30T04:51:38.7228226Z # Starting setup process
+2025-04-30T04:51:38.7228527Z # 1) Setting up memory
+2025-04-30T04:51:38.7270896Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+2025-04-30T04:51:38.7271549Z                                  Dload  Upload   Total   Spent    Left  Speed
+2025-04-30T04:51:38.7274018Z 
+2025-04-30T04:51:38.7314082Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2025-04-30T04:51:38.7315320Z 100    55    0     0  100    55      0  12370 --:--:-- --:--:-- --:--:-- 13750
+2025-04-30T04:51:38.7316963Z HTTP/1.1 200 OK
+2025-04-30T04:51:38.7317380Z Cache-Control: no-cache,no-store,must-revalidate
+2025-04-30T04:51:38.7317832Z Content-Length: 0
+2025-04-30T04:51:38.7318109Z Date: Wed, 30 Apr 2025 04:51:38 GMT
+2025-04-30T04:51:38.7318609Z Expires: Thu, 01 Jan 1970 00:00:00 GMT
+2025-04-30T04:51:38.7319572Z Pragma: no-cache
+2025-04-30T04:51:38.7319881Z Server: Couchbase Server
+2025-04-30T04:51:38.7320219Z X-Content-Type-Options: nosniff
+2025-04-30T04:51:38.7320861Z X-Frame-Options: DENY
+2025-04-30T04:51:38.7321217Z X-Permitted-Cross-Domain-Policies: none
+2025-04-30T04:51:38.7321645Z X-XSS-Protection: 1; mode=block
+2025-04-30T04:51:38.7321873Z 
+2025-04-30T04:51:38.7324984Z # 2) Setting up services
+2025-04-30T04:51:38.7368845Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+2025-04-30T04:51:38.7369669Z                                  Dload  Upload   Total   Spent    Left  Speed
+2025-04-30T04:51:38.7370004Z 
+2025-04-30T04:51:38.7627454Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2025-04-30T04:51:38.7628070Z HTTP/1.1 200 OK
+2025-04-30T04:51:38.7628460Z Cache-Control: no-cache,no-store,must-revalidate
+2025-04-30T04:51:38.7628936Z Content-Length: 0
+2025-04-30T04:51:38.7630334Z Date: Wed, 30 Apr 2025 04:51:38 GMT
+2025-04-30T04:51:38.7630757Z Expires: Thu, 01 Jan 1970 00:00:00 GMT
+2025-04-30T04:51:38.7632134Z Pragma: no-cache
+2025-04-30T04:51:38.7632436Z Server: Couchbase Server
+2025-04-30T04:51:38.7633422Z X-Content-Type-Options: nosniff
+2025-04-30T04:51:38.7633817Z X-Frame-Options: DENY
+2025-04-30T04:51:38.7634192Z X-Permitted-Cross-Domain-Policies: none
+2025-04-30T04:51:38.7634643Z X-XSS-Protection: 1; mode=block
+2025-04-30T04:51:38.7634899Z 
+2025-04-30T04:51:38.7635033Z # 3) Setting up user credentials
+2025-04-30T04:51:38.7635470Z 100    26    0     0  100    26      0   1036 --:--:-- --:--:-- --:--:--  1040
+2025-04-30T04:51:38.7687960Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+2025-04-30T04:51:38.7688829Z                                  Dload  Upload   Total   Spent    Left  Speed
+2025-04-30T04:51:38.7689384Z 
+2025-04-30T04:51:38.8077828Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2025-04-30T04:51:38.8078343Z HTTP/1.1 200 OK
+2025-04-30T04:51:38.8078706Z Cache-Control: no-cache,no-store,must-revalidate
+2025-04-30T04:51:38.8079409Z Content-Length: 39
+2025-04-30T04:51:38.8079740Z Content-Type: application/json
+2025-04-30T04:51:38.8080256Z Date: Wed, 30 Apr 2025 04:51:38 GMT
+2025-04-30T04:51:38.8080627Z Expires: Thu, 01 Jan 1970 00:00:00 GMT
+2025-04-30T04:51:38.8085482Z 100    84  100    39  100    45    999   1153 --:--:-- --:--:-- --:--:--  2210
+2025-04-30T04:51:38.8091115Z Pragma: no-cache
+2025-04-30T04:51:38.8091560Z Server: Couchbase Server
+2025-04-30T04:51:38.8091957Z X-Content-Type-Options: nosniff
+2025-04-30T04:51:38.8092669Z X-Frame-Options: DENY
+2025-04-30T04:51:38.8093170Z X-Permitted-Cross-Domain-Policies: none
+2025-04-30T04:51:38.8093619Z X-XSS-Protection: 1; mode=block
+2025-04-30T04:51:38.8093881Z 
+2025-04-30T04:51:38.8126985Z {"newBaseUri":"http://127.0.0.1:8091/"}# 4) Setting up the bucket
+2025-04-30T04:51:38.8171140Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+2025-04-30T04:51:38.8172295Z                                  Dload  Upload   Total   Spent    Left  Speed
+2025-04-30T04:51:38.8172655Z 
+2025-04-30T04:51:38.8409037Z HTTP/1.1 202 Accepted
+2025-04-30T04:51:38.8415384Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2025-04-30T04:51:38.8416609Z 100    47    0     0  100    47      0   1951 --:--:-- --:--:-- --:--:--  1958
+2025-04-30T04:51:38.8430532Z Cache-Control: no-cache,no-store,must-revalidate
+2025-04-30T04:51:38.8431647Z Content-Length: 0
+2025-04-30T04:51:38.8431950Z Date: Wed, 30 Apr 2025 04:51:38 GMT
+2025-04-30T04:51:38.8432295Z Expires: Thu, 01 Jan 1970 00:00:00 GMT
+2025-04-30T04:51:38.8432728Z Location: /pools/default/buckets/phpfastcache
+2025-04-30T04:51:38.8433148Z Pragma: no-cache
+2025-04-30T04:51:38.8433450Z Server: Couchbase Server
+2025-04-30T04:51:38.8433783Z X-Content-Type-Options: nosniff
+2025-04-30T04:51:38.8434143Z X-Frame-Options: DENY
+2025-04-30T04:51:38.8434481Z X-Permitted-Cross-Domain-Policies: none
+2025-04-30T04:51:38.8434895Z X-XSS-Protection: 1; mode=block
+2025-04-30T04:51:38.8435125Z 
+2025-04-30T04:51:38.8438114Z # Couchbase running successfully
+2025-04-30T04:51:38.8505726Z ##[group]Run shivammathur/cache-extensions@v1
+2025-04-30T04:51:38.8506005Z with:
+2025-04-30T04:51:38.8506171Z   php-version: 8.3
+2025-04-30T04:51:38.8506455Z   extensions: mbstring, intl, pdo_sqlite, json, redis, couchbase-3.2.2
+2025-04-30T04:51:38.8506783Z   key: cache-v1
+2025-04-30T04:51:38.8506964Z env:
+2025-04-30T04:51:38.8507216Z   extensions: mbstring, intl, pdo_sqlite, json, redis, couchbase-3.2.2
+2025-04-30T04:51:38.8507528Z   key: cache-v1
+2025-04-30T04:51:38.8507684Z ##[endgroup]
+2025-04-30T04:51:39.0669328Z [command]/usr/bin/bash /home/runner/work/_actions/shivammathur/cache-extensions/v1/src/scripts/cache.sh data mbstring, intl, pdo_sqlite, json, redis, couchbase-3.2.2 8.3 cache-v1
+2025-04-30T04:51:39.4553301Z [command]/usr/bin/bash /home/runner/work/_actions/shivammathur/cache-extensions/v1/src/scripts/cache.sh dependencies mbstring, intl, pdo_sqlite, json, redis, couchbase-3.2.2 8.3
+2025-04-30T04:51:40.7497000Z 
+2025-04-30T04:51:40.7500339Z [90;1m==> [0m[37;1mSetup extensions[0m
+2025-04-30T04:51:41.2881610Z [32;1m✓ [0m[34;1migbinary [0m[90;1mAdded igbinary[0m
+2025-04-30T04:51:41.2999712Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/phpfastcache/phpfastcache --files-from manifest.txt --use-compress-program zstdmt
+2025-04-30T04:51:41.9861418Z Sent 33273 of 33273 (100.0%), 0.1 MBs/sec
+2025-04-30T04:51:42.2420514Z ##[group]Run actions/cache@v3
+2025-04-30T04:51:42.2420751Z with:
+2025-04-30T04:51:42.2420924Z   path: /usr/lib/php/20230831
+2025-04-30T04:51:42.2421347Z   key: Linux-jammy-x86_64-8.3-7f6a1d3ea064d8f85ecf7a6dad944199b9b251201989f04511e0a687fbf3552e-20240716
+2025-04-30T04:51:42.2421991Z   restore-keys: Linux-jammy-x86_64-8.3-7f6a1d3ea064d8f85ecf7a6dad944199b9b251201989f04511e0a687fbf3552e-20240716
+2025-04-30T04:51:42.2422456Z   enableCrossOsArchive: false
+2025-04-30T04:51:42.2422672Z   fail-on-cache-miss: false
+2025-04-30T04:51:42.2422878Z   lookup-only: false
+2025-04-30T04:51:42.2423058Z env:
+2025-04-30T04:51:42.2423310Z   extensions: mbstring, intl, pdo_sqlite, json, redis, couchbase-3.2.2
+2025-04-30T04:51:42.2423635Z   key: cache-v1
+2025-04-30T04:51:42.2423807Z ##[endgroup]
+2025-04-30T04:51:42.6298277Z Cache not found for input keys: Linux-jammy-x86_64-8.3-7f6a1d3ea064d8f85ecf7a6dad944199b9b251201989f04511e0a687fbf3552e-20240716, Linux-jammy-x86_64-8.3-7f6a1d3ea064d8f85ecf7a6dad944199b9b251201989f04511e0a687fbf3552e-20240716
+2025-04-30T04:51:42.6371655Z ##[group]Run shivammathur/setup-php@v2
+2025-04-30T04:51:42.6371927Z with:
+2025-04-30T04:51:42.6372085Z   coverage: none
+2025-04-30T04:51:42.6372269Z   php-version: 8.3
+2025-04-30T04:51:42.6372561Z   extensions: mbstring, intl, pdo_sqlite, json, redis, couchbase-3.2.2
+2025-04-30T04:51:42.6373045Z   ini-values: apc.enabled=1, apc.shm_size=32M, apc.ttl=7200, apc.enable_cli=1, apc.serializer=php
+2025-04-30T04:51:42.6373434Z   ini-file: production
+2025-04-30T04:51:42.6373619Z env:
+2025-04-30T04:51:42.6373874Z   extensions: mbstring, intl, pdo_sqlite, json, redis, couchbase-3.2.2
+2025-04-30T04:51:42.6374194Z   key: cache-v1
+2025-04-30T04:51:42.6374366Z ##[endgroup]
+2025-04-30T04:51:42.7079103Z [command]/usr/bin/bash /home/runner/work/_actions/shivammathur/setup-php/v2/src/scripts/run.sh
+2025-04-30T04:51:42.7244276Z 
+2025-04-30T04:51:42.7244793Z [90;1m==> [0m[37;1mSetup PHP[0m
+2025-04-30T04:51:46.3817325Z [32;1m✓ [0m[34;1mPHP [0m[90;1mInstalled PHP 8.3.20[0m
+2025-04-30T04:51:46.3817958Z 
+2025-04-30T04:51:46.3818225Z [90;1m==> [0m[37;1mSetup Extensions[0m
+2025-04-30T04:51:46.4353691Z [32;1m✓ [0m[34;1mmbstring [0m[90;1mEnabled[0m
+2025-04-30T04:51:46.4382386Z [32;1m✓ [0m[34;1mintl [0m[90;1mEnabled[0m
+2025-04-30T04:51:46.4398556Z [32;1m✓ [0m[34;1mpdo_sqlite [0m[90;1mEnabled[0m
+2025-04-30T04:51:46.4428604Z [32;1m✓ [0m[34;1mjson [0m[90;1mEnabled[0m
+2025-04-30T04:51:46.4458311Z [32;1m✓ [0m[34;1mredis [0m[90;1mEnabled[0m
+2025-04-30T04:52:07.9734270Z [31;1m✗ [0m[34;1mcouchbase [0m[90;1mCould not install couchbase on PHP 8.3.20[0m
+2025-04-30T04:52:07.9734966Z 
+2025-04-30T04:52:07.9735264Z [90;1m==> [0m[37;1mSetup Tools[0m
+2025-04-30T04:52:08.8554641Z [32;1m✓ [0m[34;1mcomposer [0m[90;1mAdded composer 2.8.6[0m
+2025-04-30T04:52:08.8558538Z 
+2025-04-30T04:52:08.8558966Z [90;1m==> [0m[37;1mSetup Coverage[0m
+2025-04-30T04:52:09.0871495Z [32;1m✓ [0m[34;1mnone [0m[90;1mDisabled Xdebug and PCOV[0m
+2025-04-30T04:52:09.0874013Z 
+2025-04-30T04:52:09.0877462Z [90;1m==> [0m[37;1mAdd php.ini values[0m
+2025-04-30T04:52:09.0956814Z [32;1m✓ [0m[34;1mapc.enabled=1 [0m[90;1mAdded to php.ini[0m
+2025-04-30T04:52:09.0958624Z [32;1m✓ [0m[34;1mapc.shm_size=32M [0m[90;1mAdded to php.ini[0m
+2025-04-30T04:52:09.0959495Z [32;1m✓ [0m[34;1mapc.ttl=7200 [0m[90;1mAdded to php.ini[0m
+2025-04-30T04:52:09.0960192Z [32;1m✓ [0m[34;1mapc.enable_cli=1 [0m[90;1mAdded to php.ini[0m
+2025-04-30T04:52:09.0960882Z [32;1m✓ [0m[34;1mapc.serializer=php [0m[90;1mAdded to php.ini[0m
+2025-04-30T04:52:09.0961271Z 
+2025-04-30T04:52:09.0961502Z [90;1m==> [0m[37;1mSponsor setup-php[0m
+2025-04-30T04:52:09.0962179Z [32;1m✓ [0m[34;1msetup-php [0m[90;1mhttps://setup-php.com/sponsor[0m
+2025-04-30T04:52:09.1134943Z ##[group]Run niden/actions-memcached@v7
+2025-04-30T04:52:09.1135218Z env:
+2025-04-30T04:52:09.1135493Z   extensions: mbstring, intl, pdo_sqlite, json, redis, couchbase-3.2.2
+2025-04-30T04:52:09.1135849Z   key: cache-v1
+2025-04-30T04:52:09.1136034Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-30T04:52:09.1136260Z   COMPOSER_NO_INTERACTION: 1
+2025-04-30T04:52:09.1136470Z   COMPOSER_NO_AUDIT: 1
+2025-04-30T04:52:09.1136646Z ##[endgroup]
+2025-04-30T04:52:09.1234472Z ##[command]/usr/bin/docker run --name ead9389b99440a49a4441b2d9ae0c6fcbe733_63d0b5 --label 9ead93 --workdir /github/workspace --rm -e "extensions" -e "key" -e "COMPOSER_PROCESS_TIMEOUT" -e "COMPOSER_NO_INTERACTION" -e "COMPOSER_NO_AUDIT" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_RESULTS_URL" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/runner/work/phpfastcache/phpfastcache":"/github/workspace" 9ead93:89b99440a49a4441b2d9ae0c6fcbe733
+2025-04-30T04:52:09.9230360Z Unable to find image 'memcached:alpine' locally
+2025-04-30T04:52:10.9308901Z alpine: Pulling from library/memcached
+2025-04-30T04:52:11.1898832Z f18232174bc9: Already exists
+2025-04-30T04:52:11.1914287Z 3211cc8fb761: Pulling fs layer
+2025-04-30T04:52:11.1914673Z 2692de63622a: Pulling fs layer
+2025-04-30T04:52:11.1915029Z 3694ff7984b8: Pulling fs layer
+2025-04-30T04:52:11.1915362Z 8a875c9e38db: Pulling fs layer
+2025-04-30T04:52:11.1915705Z 54d8aff7b7f4: Pulling fs layer
+2025-04-30T04:52:11.1916036Z 8a875c9e38db: Waiting
+2025-04-30T04:52:11.1916329Z 54d8aff7b7f4: Waiting
+2025-04-30T04:52:11.4614731Z 3211cc8fb761: Verifying Checksum
+2025-04-30T04:52:11.4619512Z 3211cc8fb761: Download complete
+2025-04-30T04:52:11.4705804Z 3694ff7984b8: Verifying Checksum
+2025-04-30T04:52:11.4706169Z 3694ff7984b8: Download complete
+2025-04-30T04:52:11.4816027Z 2692de63622a: Verifying Checksum
+2025-04-30T04:52:11.4816440Z 2692de63622a: Download complete
+2025-04-30T04:52:11.4816814Z 3211cc8fb761: Pull complete
+2025-04-30T04:52:11.5024724Z 2692de63622a: Pull complete
+2025-04-30T04:52:11.5711155Z 3694ff7984b8: Pull complete
+2025-04-30T04:52:11.7415319Z 8a875c9e38db: Verifying Checksum
+2025-04-30T04:52:11.7415751Z 8a875c9e38db: Download complete
+2025-04-30T04:52:11.7434686Z 54d8aff7b7f4: Verifying Checksum
+2025-04-30T04:52:11.7435096Z 54d8aff7b7f4: Download complete
+2025-04-30T04:52:11.7527204Z 8a875c9e38db: Pull complete
+2025-04-30T04:52:11.7616963Z 54d8aff7b7f4: Pull complete
+2025-04-30T04:52:11.7667889Z Digest: sha256:35090b653875831ecc957a7c16c0f582c2b92090100f74ae5ca70786f2c367ff
+2025-04-30T04:52:11.7688558Z Status: Downloaded newer image for memcached:alpine
+2025-04-30T04:52:11.7826780Z 53a7df1147d54797d9193725920d852750883c9951fe5d09f1bec47c70ca662c
+2025-04-30T04:52:12.0404971Z ##[group]Run zhulik/redis-action@v1.0.0
+2025-04-30T04:52:12.0405252Z with:
+2025-04-30T04:52:12.0405428Z   redis version: 5
+2025-04-30T04:52:12.0405609Z env:
+2025-04-30T04:52:12.0405868Z   extensions: mbstring, intl, pdo_sqlite, json, redis, couchbase-3.2.2
+2025-04-30T04:52:12.0406214Z   key: cache-v1
+2025-04-30T04:52:12.0406411Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-30T04:52:12.0406635Z   COMPOSER_NO_INTERACTION: 1
+2025-04-30T04:52:12.0406845Z   COMPOSER_NO_AUDIT: 1
+2025-04-30T04:52:12.0407030Z ##[endgroup]
+2025-04-30T04:52:12.0415246Z ##[command]/usr/bin/docker run --name ead93b702a287512a4516af8786bb95b8b1df_851403 --label 9ead93 --workdir /github/workspace --rm -e "extensions" -e "key" -e "COMPOSER_PROCESS_TIMEOUT" -e "COMPOSER_NO_INTERACTION" -e "COMPOSER_NO_AUDIT" -e "INPUT_REDIS_VERSION" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_RESULTS_URL" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/runner/work/phpfastcache/phpfastcache":"/github/workspace" 9ead93:b702a287512a4516af8786bb95b8b1df
+2025-04-30T04:52:12.2228619Z Unable to find image 'redis:5' locally
+2025-04-30T04:52:13.2003153Z 5: Pulling from library/redis
+2025-04-30T04:52:13.4554124Z a603fa5e3b41: Pulling fs layer
+2025-04-30T04:52:13.4554554Z 77631c3ef092: Pulling fs layer
+2025-04-30T04:52:13.4554939Z ed3847cf62b8: Pulling fs layer
+2025-04-30T04:52:13.4555253Z 295236254fbb: Pulling fs layer
+2025-04-30T04:52:13.4555490Z 1d25d6f70191: Pulling fs layer
+2025-04-30T04:52:13.4555700Z 23acdbbf5eef: Pulling fs layer
+2025-04-30T04:52:13.4555906Z 295236254fbb: Waiting
+2025-04-30T04:52:13.4556092Z 1d25d6f70191: Waiting
+2025-04-30T04:52:13.4556272Z 23acdbbf5eef: Waiting
+2025-04-30T04:52:13.7228931Z 77631c3ef092: Verifying Checksum
+2025-04-30T04:52:13.7229692Z 77631c3ef092: Download complete
+2025-04-30T04:52:13.7457528Z ed3847cf62b8: Verifying Checksum
+2025-04-30T04:52:13.7459618Z ed3847cf62b8: Download complete
+2025-04-30T04:52:13.9636012Z a603fa5e3b41: Verifying Checksum
+2025-04-30T04:52:13.9637014Z a603fa5e3b41: Download complete
+2025-04-30T04:52:14.0530378Z 1d25d6f70191: Verifying Checksum
+2025-04-30T04:52:14.0530972Z 1d25d6f70191: Download complete
+2025-04-30T04:52:14.0769846Z 295236254fbb: Verifying Checksum
+2025-04-30T04:52:14.0770429Z 295236254fbb: Download complete
+2025-04-30T04:52:14.2501791Z 23acdbbf5eef: Download complete
+2025-04-30T04:52:15.0911531Z a603fa5e3b41: Pull complete
+2025-04-30T04:52:15.2360222Z 77631c3ef092: Pull complete
+2025-04-30T04:52:15.2940692Z ed3847cf62b8: Pull complete
+2025-04-30T04:52:15.4621648Z 295236254fbb: Pull complete
+2025-04-30T04:52:15.4733286Z 1d25d6f70191: Pull complete
+2025-04-30T04:52:15.4879057Z 23acdbbf5eef: Pull complete
+2025-04-30T04:52:15.4931944Z Digest: sha256:fc5ecd863862f89f04334b7cbb57e93c9790478ea8188a49f6e57b0967d38c75
+2025-04-30T04:52:15.4953520Z Status: Downloaded newer image for redis:5
+2025-04-30T04:52:15.5147540Z 985ca88a9d1c06260a94217821d081163a07ffd6cd79b16d01e76f71c6b822ff
+2025-04-30T04:52:15.7618321Z ##[group]Run composer validate --strict
+2025-04-30T04:52:15.7618655Z [36;1mcomposer validate --strict[0m
+2025-04-30T04:52:15.7654944Z shell: /usr/bin/bash -e {0}
+2025-04-30T04:52:15.7655184Z env:
+2025-04-30T04:52:15.7655457Z   extensions: mbstring, intl, pdo_sqlite, json, redis, couchbase-3.2.2
+2025-04-30T04:52:15.7655786Z   key: cache-v1
+2025-04-30T04:52:15.7655966Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-30T04:52:15.7656186Z   COMPOSER_NO_INTERACTION: 1
+2025-04-30T04:52:15.7656391Z   COMPOSER_NO_AUDIT: 1
+2025-04-30T04:52:15.7656570Z ##[endgroup]
+2025-04-30T04:52:15.8969033Z ./composer.json is valid
+2025-04-30T04:52:15.9904071Z ##[group]Run actions/cache@v3
+2025-04-30T04:52:15.9904303Z with:
+2025-04-30T04:52:15.9904468Z   path: vendor
+2025-04-30T04:52:15.9904648Z   key: Linux-php-
+2025-04-30T04:52:15.9904831Z   restore-keys: Linux-php-
+
+2025-04-30T04:52:15.9905054Z   enableCrossOsArchive: false
+2025-04-30T04:52:15.9905272Z   fail-on-cache-miss: false
+2025-04-30T04:52:15.9905464Z   lookup-only: false
+2025-04-30T04:52:15.9905639Z env:
+2025-04-30T04:52:15.9905901Z   extensions: mbstring, intl, pdo_sqlite, json, redis, couchbase-3.2.2
+2025-04-30T04:52:15.9906436Z   key: cache-v1
+2025-04-30T04:52:15.9906618Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-30T04:52:15.9906834Z   COMPOSER_NO_INTERACTION: 1
+2025-04-30T04:52:15.9907033Z   COMPOSER_NO_AUDIT: 1
+2025-04-30T04:52:15.9907217Z ##[endgroup]
+2025-04-30T04:52:16.4043996Z Cache not found for input keys: Linux-php-, Linux-php-
+2025-04-30T04:52:16.4113290Z ##[group]Run ./bin/ci/scripts/install_dependencies.sh
+2025-04-30T04:52:16.4113733Z [36;1m./bin/ci/scripts/install_dependencies.sh[0m
+2025-04-30T04:52:16.4146943Z shell: /usr/bin/bash -e {0}
+2025-04-30T04:52:16.4147199Z env:
+2025-04-30T04:52:16.4147655Z   extensions: mbstring, intl, pdo_sqlite, json, redis, couchbase-3.2.2
+2025-04-30T04:52:16.4148095Z   key: cache-v1
+2025-04-30T04:52:16.4148404Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-30T04:52:16.4148698Z   COMPOSER_NO_INTERACTION: 1
+2025-04-30T04:52:16.4149012Z   COMPOSER_NO_AUDIT: 1
+2025-04-30T04:52:16.4149431Z ##[endgroup]
+2025-04-30T04:52:16.8018312Z Upgrading to version 2.8.8 (stable channel).
+2025-04-30T04:52:17.2875006Z    
+2025-04-30T04:52:17.2971281Z Use composer self-update --rollback to return to version 2.8.6
+2025-04-30T04:52:17.4409645Z ./composer.json is valid
+2025-04-30T04:52:17.5629978Z No composer.lock file present. Updating dependencies to latest instead of installing from lock file. See https://getcomposer.org/install for more information.
+2025-04-30T04:52:17.5631958Z Loading composer repositories with package information
+2025-04-30T04:52:18.0843020Z Updating dependencies
+2025-04-30T04:52:18.1042025Z Lock file operations: 22 installs, 0 updates, 0 removals
+2025-04-30T04:52:18.1042834Z   - Locking composer/pcre (3.3.2)
+2025-04-30T04:52:18.1043585Z   - Locking composer/xdebug-handler (3.0.5)
+2025-04-30T04:52:18.1044343Z   - Locking jetbrains/phpstorm-stubs (dev-master b22fb01)
+2025-04-30T04:52:18.1045090Z   - Locking league/climate (3.10.0)
+2025-04-30T04:52:18.1045795Z   - Locking pdepend/pdepend (2.16.2)
+2025-04-30T04:52:18.1046632Z   - Locking phpfastcache/phpfastcache-devtools (dev-master 6b90cfc)
+2025-04-30T04:52:18.1047263Z   - Locking phpmd/phpmd (2.15.0)
+2025-04-30T04:52:18.1047736Z   - Locking phpstan/phpstan (1.12.25)
+2025-04-30T04:52:18.1048186Z   - Locking psr/cache (3.0.0)
+2025-04-30T04:52:18.1048538Z   - Locking psr/container (2.0.2)
+2025-04-30T04:52:18.1049016Z   - Locking psr/log (3.0.2)
+2025-04-30T04:52:18.1049695Z   - Locking psr/simple-cache (3.0.0)
+2025-04-30T04:52:18.1050027Z   - Locking seld/cli-prompt (1.0.4)
+2025-04-30T04:52:18.1050448Z   - Locking squizlabs/php_codesniffer (3.12.2)
+2025-04-30T04:52:18.1050824Z   - Locking symfony/config (v7.2.3)
+2025-04-30T04:52:18.1051191Z   - Locking symfony/dependency-injection (v7.2.5)
+2025-04-30T04:52:18.1051894Z   - Locking symfony/deprecation-contracts (v3.5.1)
+2025-04-30T04:52:18.1052417Z   - Locking symfony/filesystem (v7.2.0)
+2025-04-30T04:52:18.1052773Z   - Locking symfony/polyfill-ctype (v1.31.0)
+2025-04-30T04:52:18.1053250Z   - Locking symfony/polyfill-mbstring (v1.31.0)
+2025-04-30T04:52:18.1053599Z   - Locking symfony/service-contracts (v3.5.1)
+2025-04-30T04:52:18.1053951Z   - Locking symfony/var-exporter (v7.2.5)
+2025-04-30T04:52:18.1054374Z Writing lock file
+2025-04-30T04:52:18.1054710Z Installing dependencies from lock file (including require-dev)
+2025-04-30T04:52:18.1061358Z Package operations: 22 installs, 0 updates, 0 removals
+2025-04-30T04:52:18.1076404Z   - Downloading composer/pcre (3.3.2)
+2025-04-30T04:52:18.1079819Z   - Downloading squizlabs/php_codesniffer (3.12.2)
+2025-04-30T04:52:18.1082342Z   - Downloading phpstan/phpstan (1.12.25)
+2025-04-30T04:52:18.1085114Z   - Downloading symfony/polyfill-mbstring (v1.31.0)
+2025-04-30T04:52:18.1087301Z   - Downloading symfony/polyfill-ctype (v1.31.0)
+2025-04-30T04:52:18.1089799Z   - Downloading symfony/filesystem (v7.2.0)
+2025-04-30T04:52:18.1091950Z   - Downloading symfony/var-exporter (v7.2.5)
+2025-04-30T04:52:18.1094155Z   - Downloading symfony/deprecation-contracts (v3.5.1)
+2025-04-30T04:52:18.1096761Z   - Downloading psr/container (2.0.2)
+2025-04-30T04:52:18.1098897Z   - Downloading symfony/service-contracts (v3.5.1)
+2025-04-30T04:52:18.1101328Z   - Downloading symfony/dependency-injection (v7.2.5)
+2025-04-30T04:52:18.1103485Z   - Downloading symfony/config (v7.2.3)
+2025-04-30T04:52:18.1106102Z   - Downloading pdepend/pdepend (2.16.2)
+2025-04-30T04:52:18.1107829Z   - Downloading psr/log (3.0.2)
+2025-04-30T04:52:18.1109449Z   - Downloading composer/xdebug-handler (3.0.5)
+2025-04-30T04:52:18.1111184Z   - Downloading phpmd/phpmd (2.15.0)
+2025-04-30T04:52:18.1112880Z   - Downloading seld/cli-prompt (1.0.4)
+2025-04-30T04:52:18.1114692Z   - Downloading league/climate (3.10.0)
+2025-04-30T04:52:18.1117039Z   - Downloading jetbrains/phpstorm-stubs (dev-master b22fb01)
+2025-04-30T04:52:18.1119062Z   - Downloading phpfastcache/phpfastcache-devtools (dev-master 6b90cfc)
+2025-04-30T04:52:18.1120499Z   - Downloading psr/cache (3.0.0)
+2025-04-30T04:52:18.1122293Z   - Downloading psr/simple-cache (3.0.0)
+2025-04-30T04:52:19.1742057Z   - Installing composer/pcre (3.3.2): Extracting archive
+2025-04-30T04:52:19.1757663Z   - Installing squizlabs/php_codesniffer (3.12.2): Extracting archive
+2025-04-30T04:52:19.1763539Z   - Installing phpstan/phpstan (1.12.25): Extracting archive
+2025-04-30T04:52:19.1774703Z   - Installing symfony/polyfill-mbstring (v1.31.0): Extracting archive
+2025-04-30T04:52:19.1784768Z   - Installing symfony/polyfill-ctype (v1.31.0): Extracting archive
+2025-04-30T04:52:19.1815294Z   - Installing symfony/filesystem (v7.2.0): Extracting archive
+2025-04-30T04:52:19.1840757Z   - Installing symfony/var-exporter (v7.2.5): Extracting archive
+2025-04-30T04:52:19.1846458Z   - Installing symfony/deprecation-contracts (v3.5.1): Extracting archive
+2025-04-30T04:52:19.1860245Z   - Installing psr/container (2.0.2): Extracting archive
+2025-04-30T04:52:19.1910235Z   - Installing symfony/service-contracts (v3.5.1): Extracting archive
+2025-04-30T04:52:19.1921035Z   - Installing symfony/dependency-injection (v7.2.5): Extracting archive
+2025-04-30T04:52:19.1927788Z   - Installing symfony/config (v7.2.3): Extracting archive
+2025-04-30T04:52:19.1934680Z   - Installing pdepend/pdepend (2.16.2): Extracting archive
+2025-04-30T04:52:19.1939743Z   - Installing psr/log (3.0.2): Extracting archive
+2025-04-30T04:52:19.1949996Z   - Installing composer/xdebug-handler (3.0.5): Extracting archive
+2025-04-30T04:52:19.1950818Z   - Installing phpmd/phpmd (2.15.0): Extracting archive
+2025-04-30T04:52:19.1955141Z   - Installing seld/cli-prompt (1.0.4): Extracting archive
+2025-04-30T04:52:19.1957100Z   - Installing league/climate (3.10.0): Extracting archive
+2025-04-30T04:52:19.1960052Z   - Installing jetbrains/phpstorm-stubs (dev-master b22fb01): Extracting archive
+2025-04-30T04:52:19.1963028Z   - Installing phpfastcache/phpfastcache-devtools (dev-master 6b90cfc): Extracting archive
+2025-04-30T04:52:19.1966283Z   - Installing psr/cache (3.0.0): Extracting archive
+2025-04-30T04:52:19.1967608Z   - Installing psr/simple-cache (3.0.0): Extracting archive
+2025-04-30T04:52:19.8696243Z 15 package suggestions were added by new dependencies, use `composer suggest` to see details.
+2025-04-30T04:52:19.8698902Z Generating autoload files
+2025-04-30T04:52:19.8723961Z 15 packages you are using are looking for funding.
+2025-04-30T04:52:19.8724606Z Use the `composer fund` command to find out more!
+2025-04-30T04:52:20.0105573Z ./composer.json has been updated
+2025-04-30T04:52:20.0191082Z Running composer update phpfastcache/phpssdb predis/predis --with-all-dependencies
+2025-04-30T04:52:20.0214954Z Loading composer repositories with package information
+2025-04-30T04:52:20.0986297Z Updating dependencies
+2025-04-30T04:52:20.1046028Z Lock file operations: 2 installs, 0 updates, 0 removals
+2025-04-30T04:52:20.1046604Z   - Locking phpfastcache/phpssdb (1.2.0)
+2025-04-30T04:52:20.1047066Z   - Locking predis/predis (v2.3.0)
+2025-04-30T04:52:20.1052931Z Writing lock file
+2025-04-30T04:52:20.1053423Z Installing dependencies from lock file (including require-dev)
+2025-04-30T04:52:20.1063610Z Package operations: 2 installs, 0 updates, 0 removals
+2025-04-30T04:52:20.1075231Z   - Downloading phpfastcache/phpssdb (1.2.0)
+2025-04-30T04:52:20.1078511Z   - Downloading predis/predis (v2.3.0)
+2025-04-30T04:52:20.5857660Z   - Installing phpfastcache/phpssdb (1.2.0): Extracting archive
+2025-04-30T04:52:20.5873412Z   - Installing predis/predis (v2.3.0): Extracting archive
+2025-04-30T04:52:20.8686798Z 1 package suggestions were added by new dependencies, use `composer suggest` to see details.
+2025-04-30T04:52:20.8691976Z Generating autoload files
+2025-04-30T04:52:20.8716708Z 16 packages you are using are looking for funding.
+2025-04-30T04:52:20.8717241Z Use the `composer fund` command to find out more!
+2025-04-30T04:52:20.8883326Z ##[group]Run composer run-script quality
+2025-04-30T04:52:20.8883837Z [36;1mcomposer run-script quality[0m
+2025-04-30T04:52:20.8929987Z shell: /usr/bin/bash -e {0}
+2025-04-30T04:52:20.8930400Z env:
+2025-04-30T04:52:20.8930864Z   extensions: mbstring, intl, pdo_sqlite, json, redis, couchbase-3.2.2
+2025-04-30T04:52:20.8931423Z   key: cache-v1
+2025-04-30T04:52:20.8931764Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-30T04:52:20.8932144Z   COMPOSER_NO_INTERACTION: 1
+2025-04-30T04:52:20.8932506Z   COMPOSER_NO_AUDIT: 1
+2025-04-30T04:52:20.8932827Z ##[endgroup]
+2025-04-30T04:52:21.0160855Z > vendor/bin/phpcs lib/ --report=summary
+2025-04-30T04:52:21.4457139Z ............................................................  60 / 142 (42%)
+2025-04-30T04:52:21.6462751Z ............................................................ 120 / 142 (85%)
+2025-04-30T04:52:21.8583796Z ......................                                       142 / 142 (100%)
+2025-04-30T04:52:21.8585621Z 
+2025-04-30T04:52:21.8585683Z 
+2025-04-30T04:52:21.8588286Z Time: 795ms; Memory: 14MB
+2025-04-30T04:52:21.8588507Z 
+2025-04-30T04:52:21.8673227Z > vendor/bin/phpmd lib/ ansi phpmd.xml
+2025-04-30T04:52:23.3046689Z 
+2025-04-30T04:52:23.3047113Z Found 0 violations and 0 errors in 1280ms
+2025-04-30T04:52:23.3047361Z 
+2025-04-30T04:52:23.3047657Z [32mNo mess detected[0m
+2025-04-30T04:52:23.3137370Z > vendor/bin/phpstan analyse lib/ -l 6 -c phpstan.neon
+2025-04-30T04:52:39.0925593Z    0/142 [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0%
+2025-04-30T04:52:39.2710266Z  122/142 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░]  85%
+2025-04-30T04:52:39.3757436Z  142/142 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%
+2025-04-30T04:52:39.3757834Z 
+2025-04-30T04:52:39.3904790Z ##[error]Property Phpfastcache\Exceptions\PhpfastcacheCorruptedDataException::$message (string) overriding property Exception::$message should not have a native type.
+2025-04-30T04:52:39.3913489Z  ------ ---------------------------------------------------------------------- 
+2025-04-30T04:52:39.3914012Z   Line   Phpfastcache/Exceptions/PhpfastcacheCorruptedDataException.php        
+2025-04-30T04:52:39.3914457Z  ------ ---------------------------------------------------------------------- 
+2025-04-30T04:52:39.3914783Z   25     Property                                                              
+2025-04-30T04:52:39.3918182Z          Phpfastcache\Exceptions\PhpfastcacheCorruptedDataException::$message  
+2025-04-30T04:52:39.3918853Z          (string) overriding property Exception::$message should not have a    
+2025-04-30T04:52:39.3919537Z          native type.                                                          
+2025-04-30T04:52:39.3919993Z  ------ ---------------------------------------------------------------------- 
+2025-04-30T04:52:39.3920684Z 
+2025-04-30T04:52:39.3920689Z 
+2025-04-30T04:52:39.3920850Z  [ERROR] Found 1 error                                                          
+2025-04-30T04:52:39.3921260Z 
+2025-04-30T04:52:39.4000336Z Script vendor/bin/phpstan analyse lib/ -l 6 -c phpstan.neon handling the phpstan event returned with error code 1
+2025-04-30T04:52:39.4001133Z Script @phpstan was called via quality
+2025-04-30T04:52:39.4088543Z ##[error]Process completed with exit code 1.
+2025-04-30T04:52:39.4168603Z Post job cleanup.
+2025-04-30T04:52:39.4947905Z [command]/usr/bin/git version
+2025-04-30T04:52:39.4980712Z git version 2.49.0
+2025-04-30T04:52:39.5023831Z Temporarily overriding HOME='/home/runner/work/_temp/eaf27414-0b7c-4781-a5da-e3f1a403d64a' before making global git config changes
+2025-04-30T04:52:39.5025404Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-30T04:52:39.5028586Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/phpfastcache/phpfastcache
+2025-04-30T04:52:39.5058960Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-30T04:52:39.5087539Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-30T04:52:39.5309451Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-30T04:52:39.5328323Z http.https://github.com/.extraheader
+2025-04-30T04:52:39.5339953Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-30T04:52:39.5367760Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-30T04:52:39.5686191Z Cleaning up orphan processes

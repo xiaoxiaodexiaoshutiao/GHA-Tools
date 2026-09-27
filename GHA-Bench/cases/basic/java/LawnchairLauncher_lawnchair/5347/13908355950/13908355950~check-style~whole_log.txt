@@ -1,0 +1,425 @@
+﻿2025-03-17T21:33:21.1206076Z Current runner version: '2.322.0'
+2025-03-17T21:33:21.1239153Z ##[group]Operating System
+2025-03-17T21:33:21.1240401Z Ubuntu
+2025-03-17T21:33:21.1241121Z 24.04.2
+2025-03-17T21:33:21.1241842Z LTS
+2025-03-17T21:33:21.1242697Z ##[endgroup]
+2025-03-17T21:33:21.1243552Z ##[group]Runner Image
+2025-03-17T21:33:21.1244457Z Image: ubuntu-24.04
+2025-03-17T21:33:21.1245526Z Version: 20250309.1.0
+2025-03-17T21:33:21.1247586Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250309.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-17T21:33:21.1250041Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250309.1
+2025-03-17T21:33:21.1251744Z ##[endgroup]
+2025-03-17T21:33:21.1252552Z ##[group]Runner Image Provisioner
+2025-03-17T21:33:21.1253588Z 2.0.422.1
+2025-03-17T21:33:21.1254332Z ##[endgroup]
+2025-03-17T21:33:21.1258412Z ##[group]GITHUB_TOKEN Permissions
+2025-03-17T21:33:21.1261220Z Actions: read
+2025-03-17T21:33:21.1262498Z Attestations: read
+2025-03-17T21:33:21.1263568Z Checks: read
+2025-03-17T21:33:21.1264391Z Contents: read
+2025-03-17T21:33:21.1265341Z Deployments: read
+2025-03-17T21:33:21.1266267Z Discussions: read
+2025-03-17T21:33:21.1267320Z Issues: read
+2025-03-17T21:33:21.1268326Z Metadata: read
+2025-03-17T21:33:21.1269216Z Packages: read
+2025-03-17T21:33:21.1270196Z Pages: read
+2025-03-17T21:33:21.1271102Z PullRequests: read
+2025-03-17T21:33:21.1271979Z RepositoryProjects: read
+2025-03-17T21:33:21.1272965Z SecurityEvents: read
+2025-03-17T21:33:21.1273769Z Statuses: read
+2025-03-17T21:33:21.1274583Z ##[endgroup]
+2025-03-17T21:33:21.1277696Z Secret source: None
+2025-03-17T21:33:21.1278791Z Prepare workflow directory
+2025-03-17T21:33:21.1762837Z Prepare all required actions
+2025-03-17T21:33:21.1819945Z Getting action download info
+2025-03-17T21:33:21.3860124Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-17T21:33:21.4764333Z Download action repository 'actions/setup-java@v4' (SHA:3a4f6e1af504cf6a31855fa899c6aa5355ba6c12)
+2025-03-17T21:33:21.7911605Z Download action repository 'gradle/actions@v4' (SHA:94baf225fe0a508e581a564467443d0e2379123b)
+2025-03-17T21:33:22.7674188Z Complete job name: check-style
+2025-03-17T21:33:22.8451753Z ##[group]Run actions/checkout@v4
+2025-03-17T21:33:22.8453060Z with:
+2025-03-17T21:33:22.8453807Z   submodules: true
+2025-03-17T21:33:22.8454680Z   repository: LawnchairLauncher/lawnchair
+2025-03-17T21:33:22.8455971Z   token: ***
+2025-03-17T21:33:22.8456719Z   ssh-strict: true
+2025-03-17T21:33:22.8457724Z   ssh-user: git
+2025-03-17T21:33:22.8458531Z   persist-credentials: true
+2025-03-17T21:33:22.8459414Z   clean: true
+2025-03-17T21:33:22.8460204Z   sparse-checkout-cone-mode: true
+2025-03-17T21:33:22.8461180Z   fetch-depth: 1
+2025-03-17T21:33:22.8461955Z   fetch-tags: false
+2025-03-17T21:33:22.8462750Z   show-progress: true
+2025-03-17T21:33:22.8463565Z   lfs: false
+2025-03-17T21:33:22.8464320Z   set-safe-directory: true
+2025-03-17T21:33:22.8465424Z ##[endgroup]
+2025-03-17T21:33:23.0192657Z Syncing repository: LawnchairLauncher/lawnchair
+2025-03-17T21:33:23.0195335Z ##[group]Getting Git version info
+2025-03-17T21:33:23.0196731Z Working directory is '/home/runner/work/lawnchair/lawnchair'
+2025-03-17T21:33:23.0198849Z [command]/usr/bin/git version
+2025-03-17T21:33:23.0252848Z git version 2.48.1
+2025-03-17T21:33:23.0280954Z ##[endgroup]
+2025-03-17T21:33:23.0294765Z Temporarily overriding HOME='/home/runner/work/_temp/472bb360-70fe-43ba-86e2-71f674c7bad8' before making global git config changes
+2025-03-17T21:33:23.0297635Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-17T21:33:23.0300683Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/lawnchair/lawnchair
+2025-03-17T21:33:23.0335054Z Deleting the contents of '/home/runner/work/lawnchair/lawnchair'
+2025-03-17T21:33:23.0339253Z ##[group]Initializing the repository
+2025-03-17T21:33:23.0344464Z [command]/usr/bin/git init /home/runner/work/lawnchair/lawnchair
+2025-03-17T21:33:23.0403823Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-17T21:33:23.0406907Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-17T21:33:23.0410136Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-17T21:33:23.0411928Z hint:
+2025-03-17T21:33:23.0412882Z hint: 	git config --global init.defaultBranch <name>
+2025-03-17T21:33:23.0414020Z hint:
+2025-03-17T21:33:23.0415321Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-17T21:33:23.0417875Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-17T21:33:23.0419386Z hint:
+2025-03-17T21:33:23.0420251Z hint: 	git branch -m <name>
+2025-03-17T21:33:23.0422695Z Initialized empty Git repository in /home/runner/work/lawnchair/lawnchair/.git/
+2025-03-17T21:33:23.0426668Z [command]/usr/bin/git remote add origin https://github.com/LawnchairLauncher/lawnchair
+2025-03-17T21:33:23.0456545Z ##[endgroup]
+2025-03-17T21:33:23.0459410Z ##[group]Disabling automatic garbage collection
+2025-03-17T21:33:23.0461555Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-17T21:33:23.0490586Z ##[endgroup]
+2025-03-17T21:33:23.0492098Z ##[group]Setting up auth
+2025-03-17T21:33:23.0495354Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-17T21:33:23.0525653Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-17T21:33:23.0808451Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-17T21:33:23.0846500Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-17T21:33:23.1094322Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-17T21:33:23.1141393Z ##[endgroup]
+2025-03-17T21:33:23.1144018Z ##[group]Fetching the repository
+2025-03-17T21:33:23.1153956Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +c6fb428254db1b930c627ef74327f611212c05af:refs/remotes/pull/5347/merge
+2025-03-17T21:33:44.6774958Z From https://github.com/LawnchairLauncher/lawnchair
+2025-03-17T21:33:44.6775862Z  * [new ref]         c6fb428254db1b930c627ef74327f611212c05af -> pull/5347/merge
+2025-03-17T21:33:44.6802024Z ##[endgroup]
+2025-03-17T21:33:44.6802533Z ##[group]Determining the checkout info
+2025-03-17T21:33:44.6804115Z ##[endgroup]
+2025-03-17T21:33:44.6809951Z [command]/usr/bin/git sparse-checkout disable
+2025-03-17T21:33:44.6849367Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-17T21:33:44.6876425Z ##[group]Checking out the ref
+2025-03-17T21:33:44.6880501Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/5347/merge
+2025-03-17T21:33:45.8431603Z Updating files:  24% (1215/4906)
+2025-03-17T21:33:45.8452991Z Updating files:  25% (1227/4906)
+2025-03-17T21:33:45.8472843Z Updating files:  26% (1276/4906)
+2025-03-17T21:33:45.8494572Z Updating files:  27% (1325/4906)
+2025-03-17T21:33:45.8581832Z Updating files:  28% (1374/4906)
+2025-03-17T21:33:45.8649584Z Updating files:  29% (1423/4906)
+2025-03-17T21:33:45.8702023Z Updating files:  30% (1472/4906)
+2025-03-17T21:33:45.8744938Z Updating files:  31% (1521/4906)
+2025-03-17T21:33:45.8786450Z Updating files:  32% (1570/4906)
+2025-03-17T21:33:45.8822662Z Updating files:  33% (1619/4906)
+2025-03-17T21:33:45.8860418Z Updating files:  34% (1669/4906)
+2025-03-17T21:33:45.8907932Z Updating files:  35% (1718/4906)
+2025-03-17T21:33:45.8944635Z Updating files:  36% (1767/4906)
+2025-03-17T21:33:45.8976940Z Updating files:  37% (1816/4906)
+2025-03-17T21:33:45.9025190Z Updating files:  38% (1865/4906)
+2025-03-17T21:33:45.9074936Z Updating files:  39% (1914/4906)
+2025-03-17T21:33:45.9102873Z Updating files:  40% (1963/4906)
+2025-03-17T21:33:45.9126871Z Updating files:  41% (2012/4906)
+2025-03-17T21:33:45.9154772Z Updating files:  42% (2061/4906)
+2025-03-17T21:33:45.9184979Z Updating files:  43% (2110/4906)
+2025-03-17T21:33:45.9207376Z Updating files:  44% (2159/4906)
+2025-03-17T21:33:45.9223716Z Updating files:  45% (2208/4906)
+2025-03-17T21:33:45.9242617Z Updating files:  46% (2257/4906)
+2025-03-17T21:33:45.9304994Z Updating files:  47% (2306/4906)
+2025-03-17T21:33:45.9366663Z Updating files:  48% (2355/4906)
+2025-03-17T21:33:45.9405570Z Updating files:  49% (2404/4906)
+2025-03-17T21:33:45.9450863Z Updating files:  50% (2453/4906)
+2025-03-17T21:33:45.9492652Z Updating files:  51% (2503/4906)
+2025-03-17T21:33:45.9520095Z Updating files:  52% (2552/4906)
+2025-03-17T21:33:45.9557587Z Updating files:  53% (2601/4906)
+2025-03-17T21:33:45.9594246Z Updating files:  54% (2650/4906)
+2025-03-17T21:33:45.9628451Z Updating files:  55% (2699/4906)
+2025-03-17T21:33:45.9662973Z Updating files:  56% (2748/4906)
+2025-03-17T21:33:45.9686537Z Updating files:  57% (2797/4906)
+2025-03-17T21:33:45.9714759Z Updating files:  58% (2846/4906)
+2025-03-17T21:33:45.9745879Z Updating files:  59% (2895/4906)
+2025-03-17T21:33:45.9812356Z Updating files:  60% (2944/4906)
+2025-03-17T21:33:45.9846477Z Updating files:  61% (2993/4906)
+2025-03-17T21:33:45.9884246Z Updating files:  62% (3042/4906)
+2025-03-17T21:33:45.9909417Z Updating files:  63% (3091/4906)
+2025-03-17T21:33:45.9945471Z Updating files:  64% (3140/4906)
+2025-03-17T21:33:45.9974922Z Updating files:  65% (3189/4906)
+2025-03-17T21:33:46.0002377Z Updating files:  66% (3238/4906)
+2025-03-17T21:33:46.0041128Z Updating files:  67% (3288/4906)
+2025-03-17T21:33:46.0074264Z Updating files:  68% (3337/4906)
+2025-03-17T21:33:46.0102029Z Updating files:  69% (3386/4906)
+2025-03-17T21:33:46.0125842Z Updating files:  70% (3435/4906)
+2025-03-17T21:33:46.0153860Z Updating files:  71% (3484/4906)
+2025-03-17T21:33:46.0186035Z Updating files:  72% (3533/4906)
+2025-03-17T21:33:46.0220670Z Updating files:  73% (3582/4906)
+2025-03-17T21:33:46.0247525Z Updating files:  74% (3631/4906)
+2025-03-17T21:33:46.0275520Z Updating files:  75% (3680/4906)
+2025-03-17T21:33:46.0293153Z Updating files:  76% (3729/4906)
+2025-03-17T21:33:46.0310236Z Updating files:  77% (3778/4906)
+2025-03-17T21:33:46.0335850Z Updating files:  78% (3827/4906)
+2025-03-17T21:33:46.0373522Z Updating files:  79% (3876/4906)
+2025-03-17T21:33:46.0410114Z Updating files:  80% (3925/4906)
+2025-03-17T21:33:46.0452377Z Updating files:  81% (3974/4906)
+2025-03-17T21:33:46.0493844Z Updating files:  82% (4023/4906)
+2025-03-17T21:33:46.0541323Z Updating files:  83% (4072/4906)
+2025-03-17T21:33:46.0574589Z Updating files:  84% (4122/4906)
+2025-03-17T21:33:46.0602349Z Updating files:  85% (4171/4906)
+2025-03-17T21:33:46.0633879Z Updating files:  86% (4220/4906)
+2025-03-17T21:33:46.0667196Z Updating files:  87% (4269/4906)
+2025-03-17T21:33:46.0708125Z Updating files:  88% (4318/4906)
+2025-03-17T21:33:46.0747383Z Updating files:  89% (4367/4906)
+2025-03-17T21:33:46.0787248Z Updating files:  90% (4416/4906)
+2025-03-17T21:33:46.0824863Z Updating files:  91% (4465/4906)
+2025-03-17T21:33:46.0857636Z Updating files:  92% (4514/4906)
+2025-03-17T21:33:46.0885547Z Updating files:  93% (4563/4906)
+2025-03-17T21:33:46.0907617Z Updating files:  94% (4612/4906)
+2025-03-17T21:33:46.0928362Z Updating files:  95% (4661/4906)
+2025-03-17T21:33:46.0953835Z Updating files:  96% (4710/4906)
+2025-03-17T21:33:46.0987933Z Updating files:  97% (4759/4906)
+2025-03-17T21:33:46.1023720Z Updating files:  98% (4808/4906)
+2025-03-17T21:33:46.1064307Z Updating files:  99% (4857/4906)
+2025-03-17T21:33:46.1064742Z Updating files: 100% (4906/4906)
+2025-03-17T21:33:46.1065109Z Updating files: 100% (4906/4906), done.
+2025-03-17T21:33:46.1128556Z Note: switching to 'refs/remotes/pull/5347/merge'.
+2025-03-17T21:33:46.1129025Z 
+2025-03-17T21:33:46.1129438Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-17T21:33:46.1130343Z changes and commit them, and you can discard any commits you make in this
+2025-03-17T21:33:46.1131556Z state without impacting any branches by switching back to a branch.
+2025-03-17T21:33:46.1132103Z 
+2025-03-17T21:33:46.1132438Z If you want to create a new branch to retain commits you create, you may
+2025-03-17T21:33:46.1133274Z do so (now or later) by using -c with the switch command. Example:
+2025-03-17T21:33:46.1133759Z 
+2025-03-17T21:33:46.1133973Z   git switch -c <new-branch-name>
+2025-03-17T21:33:46.1134293Z 
+2025-03-17T21:33:46.1134476Z Or undo this operation with:
+2025-03-17T21:33:46.1134654Z 
+2025-03-17T21:33:46.1134742Z   git switch -
+2025-03-17T21:33:46.1134874Z 
+2025-03-17T21:33:46.1135113Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-17T21:33:46.1135455Z 
+2025-03-17T21:33:46.1135887Z HEAD is now at c6fb428 Merge 92f62b79565e2a10cbd37d233c46ccee5850f68d into 2f50866c861b659c5a8610c9bd9437dc8b5bb5a7
+2025-03-17T21:33:46.1229084Z ##[endgroup]
+2025-03-17T21:33:46.1229539Z ##[group]Setting up auth for fetching submodules
+2025-03-17T21:33:46.1234708Z [command]/usr/bin/git config --global http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-17T21:33:46.1274423Z [command]/usr/bin/git config --global --unset-all url.https://github.com/.insteadOf
+2025-03-17T21:33:46.1304198Z [command]/usr/bin/git config --global --add url.https://github.com/.insteadOf git@github.com:
+2025-03-17T21:33:46.1334933Z [command]/usr/bin/git config --global --add url.https://github.com/.insteadOf org-34144436@github.com:
+2025-03-17T21:33:46.1360578Z ##[endgroup]
+2025-03-17T21:33:46.1361160Z ##[group]Fetching submodules
+2025-03-17T21:33:46.1365144Z [command]/usr/bin/git submodule sync
+2025-03-17T21:33:46.1667366Z [command]/usr/bin/git -c protocol.version=2 submodule update --init --force --depth=1
+2025-03-17T21:33:46.1841154Z Submodule 'platform_frameworks_libs_systemui' (https://github.com/LawnchairLauncher/platform_frameworks_libs_systemui) registered for path 'platform_frameworks_libs_systemui'
+2025-03-17T21:33:46.1868588Z Cloning into '/home/runner/work/lawnchair/lawnchair/platform_frameworks_libs_systemui'...
+2025-03-17T21:33:46.4814322Z Submodule path 'platform_frameworks_libs_systemui': checked out 'cc37c52766cd935a2440062492fe13017e7b3487'
+2025-03-17T21:33:46.4828543Z [command]/usr/bin/git submodule foreach git config --local gc.auto 0
+2025-03-17T21:33:46.5050800Z Entering 'platform_frameworks_libs_systemui'
+2025-03-17T21:33:46.5082862Z ##[endgroup]
+2025-03-17T21:33:46.5083234Z ##[group]Persisting credentials for submodules
+2025-03-17T21:33:46.5089513Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'url\.https\:\/\/github\.com\/\.insteadOf' && git config --local --unset-all 'url.https://github.com/.insteadOf' || :"
+2025-03-17T21:33:46.5308363Z Entering 'platform_frameworks_libs_systemui'
+2025-03-17T21:33:46.5365040Z [command]/usr/bin/git submodule foreach sh -c "git config --local 'http.https://github.com/.extraheader' 'AUTHORIZATION: basic ***' && git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2025-03-17T21:33:46.5582944Z Entering 'platform_frameworks_libs_systemui'
+2025-03-17T21:33:46.5621696Z file:/home/runner/work/lawnchair/lawnchair/.git/modules/platform_frameworks_libs_systemui/config	remote.origin.url
+2025-03-17T21:33:46.5644573Z [command]/usr/bin/git submodule foreach git config --local --add 'url.https://github.com/.insteadOf' 'git@github.com:'
+2025-03-17T21:33:46.5869890Z Entering 'platform_frameworks_libs_systemui'
+2025-03-17T21:33:46.5910919Z [command]/usr/bin/git submodule foreach git config --local --add 'url.https://github.com/.insteadOf' 'org-34144436@github.com:'
+2025-03-17T21:33:46.6141520Z Entering 'platform_frameworks_libs_systemui'
+2025-03-17T21:33:46.6173316Z ##[endgroup]
+2025-03-17T21:33:46.6208931Z [command]/usr/bin/git log -1 --format=%H
+2025-03-17T21:33:46.6230758Z c6fb428254db1b930c627ef74327f611212c05af
+2025-03-17T21:33:46.6455046Z ##[group]Run actions/setup-java@v4
+2025-03-17T21:33:46.6455483Z with:
+2025-03-17T21:33:46.6455666Z   distribution: zulu
+2025-03-17T21:33:46.6455853Z   java-version: 21
+2025-03-17T21:33:46.6456039Z   java-package: jdk
+2025-03-17T21:33:46.6456227Z   check-latest: false
+2025-03-17T21:33:46.6456419Z   server-id: github
+2025-03-17T21:33:46.6456604Z   server-username: GITHUB_ACTOR
+2025-03-17T21:33:46.6456836Z   server-password: GITHUB_TOKEN
+2025-03-17T21:33:46.6457263Z   overwrite-settings: true
+2025-03-17T21:33:46.6457595Z   job-status: success
+2025-03-17T21:33:46.6457906Z   token: ***
+2025-03-17T21:33:46.6458084Z ##[endgroup]
+2025-03-17T21:33:46.8414356Z ##[group]Installed distributions
+2025-03-17T21:33:46.8439675Z Trying to resolve the latest version from remote
+2025-03-17T21:33:46.9295024Z Resolved latest version as 21.0.6+7
+2025-03-17T21:33:46.9295547Z Trying to download...
+2025-03-17T21:33:46.9296455Z Downloading Java 21.0.6+7 (Zulu) from https://cdn.azul.com/zulu/bin/zulu21.40.17-ca-crac-jdk21.0.6-linux_x64.tar.gz ...
+2025-03-17T21:33:48.8490792Z Extracting Java archive...
+2025-03-17T21:33:48.8592334Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/fd302dd8-eae9-4712-9708-93079339db96 -f /home/runner/work/_temp/8db155f7-5fcf-4cee-8142-5238919a60d9
+2025-03-17T21:33:51.7642199Z Java 21.0.6+7 was downloaded
+2025-03-17T21:33:51.7642639Z Setting Java 21.0.6+7 as the default
+2025-03-17T21:33:51.7652341Z Creating toolchains.xml for JDK version 21 from zulu
+2025-03-17T21:33:51.7730102Z Writing to /home/runner/.m2/toolchains.xml
+2025-03-17T21:33:51.7730498Z 
+2025-03-17T21:33:51.7730627Z Java configuration:
+2025-03-17T21:33:51.7730948Z   Distribution: zulu
+2025-03-17T21:33:51.7731241Z   Version: 21.0.6+7
+2025-03-17T21:33:51.7731638Z   Path: /opt/hostedtoolcache/Java_Zulu_jdk/21.0.6-7/x64
+2025-03-17T21:33:51.7731996Z 
+2025-03-17T21:33:51.7732395Z ##[endgroup]
+2025-03-17T21:33:51.7750993Z Creating settings.xml with server-id: github
+2025-03-17T21:33:51.7751332Z Writing to /home/runner/.m2/settings.xml
+2025-03-17T21:33:51.7999339Z ##[group]Run gradle/actions/setup-gradle@v4
+2025-03-17T21:33:51.7999610Z with:
+2025-03-17T21:33:51.7999787Z   cache-disabled: false
+2025-03-17T21:33:51.7999985Z   cache-read-only: true
+2025-03-17T21:33:51.8000182Z   cache-write-only: false
+2025-03-17T21:33:51.8000391Z   cache-overwrite-existing: false
+2025-03-17T21:33:51.8000622Z   cache-cleanup: on-success
+2025-03-17T21:33:51.8000881Z   gradle-home-cache-includes: caches
+notifications
+
+2025-03-17T21:33:51.8001163Z   add-job-summary: always
+2025-03-17T21:33:51.8001385Z   add-job-summary-as-pr-comment: never
+2025-03-17T21:33:51.8001632Z   dependency-graph: disabled
+2025-03-17T21:33:51.8001908Z   dependency-graph-report-dir: dependency-graph-reports
+2025-03-17T21:33:51.8002225Z   dependency-graph-continue-on-failure: true
+2025-03-17T21:33:51.8002490Z   build-scan-publish: false
+2025-03-17T21:33:51.8002696Z   validate-wrappers: true
+2025-03-17T21:33:51.8002915Z   allow-snapshot-wrappers: false
+2025-03-17T21:33:51.8003195Z   gradle-home-cache-strict-match: false
+2025-03-17T21:33:51.8003450Z   workflow-job-context: null
+2025-03-17T21:33:51.8003810Z   github-token: ***
+2025-03-17T21:33:51.8003991Z env:
+2025-03-17T21:33:51.8004228Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/21.0.6-7/x64
+2025-03-17T21:33:51.8004584Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Zulu_jdk/21.0.6-7/x64
+2025-03-17T21:33:51.8004875Z ##[endgroup]
+2025-03-17T21:33:52.1989073Z Merged default JDK locations into /home/runner/.m2/toolchains.xml
+2025-03-17T21:33:52.1992260Z ##[group]Restore Gradle state from cache
+2025-03-17T21:33:52.3084430Z Cache hit for: gradle-home-v1|Linux-X64|check-style[b8a35c2f917259958c9abe8f2ff1b5ff]-c6fb428254db1b930c627ef74327f611212c05af
+2025-03-17T21:33:52.4254192Z Received 793599 of 793599 (100.0%), 10.2 MBs/sec
+2025-03-17T21:33:52.4256746Z Cache Size: ~1 MB (793599 B)
+2025-03-17T21:33:52.4281195Z [command]/usr/bin/tar -xf /home/runner/work/_temp/e699c8c7-4c07-4779-80a8-0cfa390e415b/cache.tzst -P -C /home/runner/work/lawnchair/lawnchair --use-compress-program unzstd
+2025-03-17T21:33:52.5193098Z Cache restored successfully
+2025-03-17T21:33:52.5201606Z Restored cache entry with key gradle-home-v1|Linux-X64|check-style[b8a35c2f917259958c9abe8f2ff1b5ff]-c6fb428254db1b930c627ef74327f611212c05af to /home/runner/.gradle/caches,/home/runner/.gradle/notifications,/home/runner/.gradle/.setup-gradle in 319ms
+2025-03-17T21:33:52.5638196Z Cache hit for: gradle-groovy-dsl-v1-ebd2a012691b84079bb994a884ae21db
+2025-03-17T21:33:52.5696022Z Cache hit for: gradle-instrumented-jars-v1-9d81ac795044efd80a2e6813f7113cc0
+2025-03-17T21:33:52.5703769Z Cache hit for: gradle-wrapper-zips-v1-2404ef08b03d28a6a12a9811a47b570f
+2025-03-17T21:33:52.5751352Z Cache hit for: gradle-dependencies-v1-9f4908d2c886046806ea1850724713c3
+2025-03-17T21:33:52.5756483Z Cache hit for: gradle-transforms-v1-b29aa7e04e3d8e674521d72d1e0e97b9
+2025-03-17T21:33:52.6660811Z Received 276769 of 276769 (100.0%), 4.0 MBs/sec
+2025-03-17T21:33:52.6661956Z Cache Size: ~0 MB (276769 B)
+2025-03-17T21:33:52.6972439Z [command]/usr/bin/tar -xf /home/runner/work/_temp/7feebc66-f09a-4030-afb4-2b214ea41673/cache.tzst -P -C /home/runner/work/lawnchair/lawnchair --use-compress-program unzstd
+2025-03-17T21:33:52.7267682Z Received 176449 of 176449 (100.0%), 1.8 MBs/sec
+2025-03-17T21:33:52.7268209Z Cache Size: ~0 MB (176449 B)
+2025-03-17T21:33:52.7672431Z Cache restored successfully
+2025-03-17T21:33:52.7681414Z Restored cache entry with key gradle-groovy-dsl-v1-ebd2a012691b84079bb994a884ae21db to /home/runner/.gradle/caches/*/groovy-dsl/*/ in 246ms
+2025-03-17T21:33:53.1641614Z [command]/usr/bin/tar -xf /home/runner/work/_temp/35a90ebd-7595-470e-98ce-87dad250f484/cache.tzst -P -C /home/runner/work/lawnchair/lawnchair --use-compress-program unzstd
+2025-03-17T21:33:53.2232734Z Cache restored successfully
+2025-03-17T21:33:53.2488308Z Restored cache entry with key gradle-instrumented-jars-v1-9d81ac795044efd80a2e6813f7113cc0 to /home/runner/.gradle/caches/jars-*/*/ in 727ms
+2025-03-17T21:33:53.6263037Z Received 134217728 of 136189757 (98.6%), 125.4 MBs/sec
+2025-03-17T21:33:53.6975504Z Received 83178913 of 83178913 (100.0%), 82.6 MBs/sec
+2025-03-17T21:33:53.6976144Z Cache Size: ~79 MB (83178913 B)
+2025-03-17T21:33:53.7033048Z Received 92274688 of 216062956 (42.7%), 83.1 MBs/sec
+2025-03-17T21:33:53.7196599Z Received 136189757 of 136189757 (100.0%), 116.6 MBs/sec
+2025-03-17T21:33:53.7198401Z Cache Size: ~130 MB (136189757 B)
+2025-03-17T21:33:53.7403437Z [command]/usr/bin/tar -xf /home/runner/work/_temp/d82614d8-f64b-4c25-ad98-84d054be3d3e/cache.tzst -P -C /home/runner/work/lawnchair/lawnchair --use-compress-program unzstd
+2025-03-17T21:33:53.7453254Z [command]/usr/bin/tar -xf /home/runner/work/_temp/bd854716-a935-4c65-aee8-bdf0e2de45b9/cache.tzst -P -C /home/runner/work/lawnchair/lawnchair --use-compress-program unzstd
+2025-03-17T21:33:54.0751049Z Cache restored successfully
+2025-03-17T21:33:54.1148811Z Restored cache entry with key gradle-wrapper-zips-v1-2404ef08b03d28a6a12a9811a47b570f to /home/runner/.gradle/wrapper/dists/gradle-8.13-bin/5xuhj0ry160q40clulazy9h7d in 1594ms
+2025-03-17T21:33:54.6666985Z Received 216062956 of 216062956 (100.0%), 101.9 MBs/sec
+2025-03-17T21:33:54.6675855Z Cache Size: ~206 MB (216062956 B)
+2025-03-17T21:33:54.6714113Z [command]/usr/bin/tar -xf /home/runner/work/_temp/d6f3b606-98f9-44f6-b046-a98a9898f65b/cache.tzst -P -C /home/runner/work/lawnchair/lawnchair --use-compress-program unzstd
+2025-03-17T21:33:54.8291862Z Cache restored successfully
+2025-03-17T21:33:54.8531849Z Restored cache entry with key gradle-transforms-v1-b29aa7e04e3d8e674521d72d1e0e97b9 to /home/runner/.gradle/caches/transforms-4/*/,/home/runner/.gradle/caches/*/transforms/*/ in 2330ms
+2025-03-17T21:33:55.0856740Z Cache restored successfully
+2025-03-17T21:33:55.1307291Z Restored cache entry with key gradle-dependencies-v1-9f4908d2c886046806ea1850724713c3 to /home/runner/.gradle/caches/modules-*/files-*/*/*/*/* in 2609ms
+2025-03-17T21:33:55.1380267Z ##[endgroup]
+2025-03-17T21:33:55.2273227Z ##[group]All Gradle Wrapper jars are valid
+2025-03-17T21:33:55.2274653Z ✓ Found known Gradle Wrapper JAR files:
+2025-03-17T21:33:55.2275373Z   81a82aaea5abcc8ff68b3dfcb58b3c3c429378efd98e7433460610fecd7ae45f gradle/wrapper/gradle-wrapper.jar
+2025-03-17T21:33:55.2276088Z ##[endgroup]
+2025-03-17T21:33:55.2443160Z ##[group]Run ./gradlew spotlessCheck
+2025-03-17T21:33:55.2443487Z [36;1m./gradlew spotlessCheck[0m
+2025-03-17T21:33:55.2495488Z shell: /usr/bin/bash -e {0}
+2025-03-17T21:33:55.2495723Z env:
+2025-03-17T21:33:55.2495970Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/21.0.6-7/x64
+2025-03-17T21:33:55.2496338Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Zulu_jdk/21.0.6-7/x64
+2025-03-17T21:33:55.2496675Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+2025-03-17T21:33:55.2496949Z   GRADLE_USER_HOME: /home/runner/.gradle
+2025-03-17T21:33:55.2497532Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+2025-03-17T21:33:55.2497799Z   GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+2025-03-17T21:33:55.2498180Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+2025-03-17T21:33:55.2498638Z   DEVELOCITY_AUTO_INJECTION_CUSTOM_VALUE: gradle-actions
+2025-03-17T21:33:55.2498963Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+2025-03-17T21:33:55.2499193Z ##[endgroup]
+2025-03-17T21:33:56.0175087Z Starting a Gradle Daemon (subsequent builds will be faster)
+2025-03-17T21:33:57.4169649Z Parallel Configuration Cache is an incubating feature.
+2025-03-17T21:33:58.2166209Z Calculating task graph as no cached configuration is available for tasks: spotlessCheck
+2025-03-17T21:34:01.1167236Z Type-safe project accessors is an incubating feature.
+2025-03-17T21:34:01.1184888Z Project accessors enabled, but root project name not explicitly set for 'lawnchair'. Checking out the project in different folders will impact the generated code and implicitly the buildscript classpath, breaking caching.
+2025-03-17T21:34:11.2208010Z > Task :spotlessInternalRegisterDependencies
+2025-03-17T21:34:11.3172321Z > Task :spotlessJava FROM-CACHE
+2025-03-17T21:34:11.3181705Z > Task :spotlessJavaCheck UP-TO-DATE
+2025-03-17T21:34:25.7169099Z 
+2025-03-17T21:34:25.7169814Z > Task :spotlessKotlin
+2025-03-17T21:34:25.7173826Z Format was not able to resolve all violations which (theoretically) can be autocorrected in file /home/runner/work/lawnchair/lawnchair/lawnchair/src/app/lawnchair/views/LawnchairFloatingSurfaceView.kt
+2025-03-17T21:34:26.0189282Z 
+2025-03-17T21:34:26.0189827Z > Task :spotlessKotlinCheck FAILED
+2025-03-17T21:34:26.1169228Z gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run-1742247239099.json
+2025-03-17T21:34:26.1170553Z 
+2025-03-17T21:34:26.1171693Z [Incubating] Problems report is available at: file:///home/runner/work/lawnchair/lawnchair/build/reports/problems/problems-report.html
+2025-03-17T21:34:26.1177779Z 
+2025-03-17T21:34:26.1179821Z FAILURE: Build failed with an exception.
+2025-03-17T21:34:26.1181255Z 
+2025-03-17T21:34:26.1181922Z * What went wrong:
+2025-03-17T21:34:26.1182502Z Execution failed for task ':spotlessKotlinCheck'.
+2025-03-17T21:34:26.1183297Z > The following files had format violations:
+2025-03-17T21:34:26.1184291Z       lawnchair/src/app/lawnchair/ui/preferences/data/liveinfo/model/LiveInformation.kt
+2025-03-17T21:34:26.1186443Z           @@ -5,10 +5,10 @@
+2025-03-17T21:34:26.1192072Z            @Serializable
+2025-03-17T21:34:26.1193117Z            data·class·LiveInformation(
+2025-03-17T21:34:26.1194381Z            ····private·val·version:·Int·=·2,
+2025-03-17T21:34:26.1195182Z           -····val·announcements:·List<Announcement>·=·emptyList(),·
+2025-03-17T21:34:26.1197634Z           -····val·features:·Map<String,·String?>·=·emptyMap(),·····
+2025-03-17T21:34:26.1198555Z           +····val·announcements:·List<Announcement>·=·emptyList(),
+2025-03-17T21:34:26.1199439Z           +····val·features:·Map<String,·String?>·=·emptyMap(),
+2025-03-17T21:34:26.1200216Z            )·{
+2025-03-17T21:34:26.1200706Z            ····companion·object·{
+2025-03-17T21:34:26.1201480Z           -········val·default·=·LiveInformation()·
+2025-03-17T21:34:26.1202611Z           +········val·default·=·LiveInformation()
+2025-03-17T21:34:26.1203263Z            ····}
+2025-03-17T21:34:26.1203645Z            }
+2025-03-17T21:34:26.1205545Z   Run './gradlew :spotlessApply' to fix these violations.
+2025-03-17T21:34:26.1206046Z 
+2025-03-17T21:34:26.1206249Z * Try:
+2025-03-17T21:34:26.1206727Z > Run with --stacktrace option to get the stack trace.
+2025-03-17T21:34:26.1207741Z > Run with --info or --debug option to get more log output.
+2025-03-17T21:34:26.1208572Z > Get more help at https://help.gradle.org.
+2025-03-17T21:34:26.1209044Z 
+2025-03-17T21:34:26.1209216Z BUILD FAILED in 30s
+2025-03-17T21:34:26.1209458Z 
+2025-03-17T21:34:26.1210052Z Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+2025-03-17T21:34:26.1210734Z 
+2025-03-17T21:34:26.1211450Z You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+2025-03-17T21:34:26.1212371Z 
+2025-03-17T21:34:26.1213248Z For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+2025-03-17T21:34:26.1214615Z 5 actionable tasks: 3 executed, 1 from cache, 1 up-to-date
+2025-03-17T21:34:26.2162521Z 
+2025-03-17T21:34:26.2163209Z Publishing build scan...
+2025-03-17T21:34:26.4164680Z gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-scans/__run-1742247239099.json
+2025-03-17T21:34:26.5180331Z https://gradle.com/s/ktct4cmn7jf2q
+2025-03-17T21:34:26.5180902Z 
+2025-03-17T21:34:26.5181089Z Configuration cache entry stored.
+2025-03-17T21:34:26.9337540Z ##[error]Process completed with exit code 1.
+2025-03-17T21:34:26.9515299Z Post job cleanup.
+2025-03-17T21:34:27.2732119Z In post-action step
+2025-03-17T21:34:27.2741479Z Cache is read-only: will not save state for use in subsequent builds.
+2025-03-17T21:34:27.2747727Z Generating Job Summary
+2025-03-17T21:34:27.2769882Z Completed post-action step
+2025-03-17T21:34:27.2904793Z Post job cleanup.
+2025-03-17T21:34:27.4677929Z Post job cleanup.
+2025-03-17T21:34:27.5699232Z [command]/usr/bin/git version
+2025-03-17T21:34:27.5736414Z git version 2.48.1
+2025-03-17T21:34:27.5780303Z Temporarily overriding HOME='/home/runner/work/_temp/d06c360e-d5a8-4378-a570-8a7c3d2a6a55' before making global git config changes
+2025-03-17T21:34:27.5781600Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-17T21:34:27.5793907Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/lawnchair/lawnchair
+2025-03-17T21:34:27.5831553Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-17T21:34:27.5869296Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-17T21:34:27.6100776Z Entering 'platform_frameworks_libs_systemui'
+2025-03-17T21:34:27.6162273Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-17T21:34:27.6185822Z http.https://github.com/.extraheader
+2025-03-17T21:34:27.6199730Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-17T21:34:27.6586570Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-17T21:34:27.6814151Z Entering 'platform_frameworks_libs_systemui'
+2025-03-17T21:34:27.6839342Z http.https://github.com/.extraheader
+2025-03-17T21:34:27.7812226Z Cleaning up orphan processes
+2025-03-17T21:34:27.9309295Z Terminate orphan process: pid (2213) (java)

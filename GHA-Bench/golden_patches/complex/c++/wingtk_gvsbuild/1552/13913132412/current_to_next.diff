@@ -1,0 +1,244 @@
+diff --git a/gvsbuild/patches/gperf/lib/meson.build b/gvsbuild/patches/gperf/lib/meson.build
+new file mode 100644
+index 000000000..d36255eaf
+--- /dev/null
++++ b/gvsbuild/patches/gperf/lib/meson.build
+@@ -0,0 +1,31 @@
++# meson configuration for gperf
++#
++# Copyright (C) 2020 Tim-Philipp Müller <tim centricular com>
++#
++# This file is part of GNU GPERF.
++#
++# This program is free software: you can redistribute it and/or modify
++# it under the terms of the GNU General Public License as published by
++# the Free Software Foundation; either version 3 of the License, or
++# (at your option) any later version.
++#
++# This program is distributed in the hope that it will be useful,
++# but WITHOUT ANY WARRANTY; without even the implied warranty of
++# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++# GNU General Public License for more details.
++#
++# You should have received a copy of the GNU General Public License
++# along with this program.  If not, see <https://www.gnu.org/licenses/>.
++
++libgp_sources = [
++  'getline.cc',
++  'hash.cc',
++  'getopt.c',
++  'getopt1.c',
++]
++
++libgp = static_library ('gp', libgp_sources,
++  include_directories: gperf_incs,
++  dependencies: libm,
++  native: true,
++  install: false)
+diff --git a/gvsbuild/patches/gperf/meson.build b/gvsbuild/patches/gperf/meson.build
+new file mode 100644
+index 000000000..a66488a23
+--- /dev/null
++++ b/gvsbuild/patches/gperf/meson.build
+@@ -0,0 +1,49 @@
++# meson configuration for gperf
++#
++# Copyright (C) 2020 Tim-Philipp Müller <tim centricular com>
++#
++# This file is part of GNU GPERF.
++#
++# This program is free software: you can redistribute it and/or modify
++# it under the terms of the GNU General Public License as published by
++# the Free Software Foundation; either version 3 of the License, or
++# (at your option) any later version.
++#
++# This program is distributed in the hope that it will be useful,
++# but WITHOUT ANY WARRANTY; without even the implied warranty of
++# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++# GNU General Public License for more details.
++#
++# You should have received a copy of the GNU General Public License
++# along with this program.  If not, see <https://www.gnu.org/licenses/>.
++
++project('gperf', 'cpp', 'c',
++  version: run_command(find_program('version.py'), check: true).stdout().strip(),
++  meson_version: '>= 0.49')
++
++cxx = meson.get_compiler('cpp', native: true)
++
++gperf_incs = include_directories('.', 'lib')
++
++cdata = configuration_data()
++
++libm = cxx.find_library('m', required: false)
++
++have_dynamic_array = cxx.compiles('int func (int n) { int dynamic_array[n]; }',
++  name: 'C++ compiler supports stack-allocated variable-size arrays')
++
++cdata.set10('HAVE_DYNAMIC_ARRAY', have_dynamic_array,
++  description: 'C++ compiler supports stack-allocated variable-size arrays')
++
++subdir('lib')
++subdir('src')
++
++if not get_option('tests').disabled()
++  subdir('tests')
++endif
++
++if not get_option('docs').disabled()
++  subdir('doc')
++endif
++
++configure_file(output: 'config.h', configuration: cdata)
+diff --git a/gvsbuild/patches/gperf/meson_options.txt b/gvsbuild/patches/gperf/meson_options.txt
+new file mode 100644
+index 000000000..d547fbaa1
+--- /dev/null
++++ b/gvsbuild/patches/gperf/meson_options.txt
+@@ -0,0 +1,12 @@
++# common feature options
++option('tests', type: 'feature', value: 'disabled')
++
++# documentation
++option('docs', type: 'feature', value: 'disabled')
++option('doc-ps', type: 'feature', value: 'disabled')
++option('doc-dvi', type: 'feature', value: 'disabled')
++option('doc-man', type: 'feature', value: 'auto')
++option('doc-pdf', type: 'feature', value: 'auto')
++option('doc-info', type: 'feature', value: 'auto',)
++option('doc-html', type: 'feature', value: 'auto')
++option('doc-examples', type: 'feature', value: 'auto')
+diff --git a/gvsbuild/patches/gperf/src/meson.build b/gvsbuild/patches/gperf/src/meson.build
+new file mode 100644
+index 000000000..258bf8135
+--- /dev/null
++++ b/gvsbuild/patches/gperf/src/meson.build
+@@ -0,0 +1,43 @@
++# meson configuration for gperf
++#
++# Copyright (C) 2020 Tim-Philipp Müller <tim centricular com>
++#
++# This file is part of GNU GPERF.
++#
++# This program is free software: you can redistribute it and/or modify
++# it under the terms of the GNU General Public License as published by
++# the Free Software Foundation; either version 3 of the License, or
++# (at your option) any later version.
++#
++# This program is distributed in the hope that it will be useful,
++# but WITHOUT ANY WARRANTY; without even the implied warranty of
++# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++# GNU General Public License for more details.
++#
++# You should have received a copy of the GNU General Public License
++# along with this program.  If not, see <https://www.gnu.org/licenses/>.
++
++gperf_sources = [
++  'version.cc',
++  'positions.cc',
++  'options.cc',
++  'keyword.cc',
++  'keyword-list.cc',
++  'input.cc',
++  'bool-array.cc',
++  'hash-table.cc',
++  'search.cc',
++  'output.cc',
++  'main.cc',
++]
++
++gperf_exe = executable('gperf', gperf_sources,
++  include_directories: gperf_incs,
++  dependencies: libm,
++  link_with: libgp,
++  native: true,
++  install: not meson.is_subproject())
++
++if meson.is_subproject()
++  meson.override_find_program('gperf', gperf_exe)
++endif
+diff --git a/gvsbuild/patches/gperf/version.py b/gvsbuild/patches/gperf/version.py
+new file mode 100644
+index 000000000..6dca7172f
+--- /dev/null
++++ b/gvsbuild/patches/gperf/version.py
+@@ -0,0 +1,51 @@
++#!/usr/bin/env python3
++#
++# gperf version.py
++#
++# Copyright (C) 2020 Tim-Philipp Müller <tim centricular com>
++#
++# This file is part of GNU GPERF.
++#
++# This program is free software: you can redistribute it and/or modify
++# it under the terms of the GNU General Public License as published by
++# the Free Software Foundation; either version 3 of the License, or
++# (at your option) any later version.
++#
++# This program is distributed in the hope that it will be useful,
++# but WITHOUT ANY WARRANTY; without even the implied warranty of
++# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++# GNU General Public License for more details.
++#
++# You should have received a copy of the GNU General Public License
++# along with this program.  If not, see <https://www.gnu.org/licenses/>.
++#
++# Extracts version from src/version.cc, because like any sane build system
++# we extract the version from the code instead of having the build system set
++# the version for the code to consume.
++
++import os
++import sys
++
++version = None
++
++srcroot = os.path.dirname(__file__)
++
++f = open(os.path.join(srcroot, "src/version.cc"))
++
++for line in f:
++    if line.startswith("const char *version_string"):
++        version = line[26:].split('"')[1]
++        break
++
++f.close()
++
++if not version:
++    print(
++        "Warning: Could not extract version from src/version.cc in",
++        srcroot,
++        file=sys.stderr,
++    )
++    sys.exit(-1)
++
++print(version)
++sys.exit(0)
+diff --git a/gvsbuild/projects/gperf.py b/gvsbuild/projects/gperf.py
+index a4316ac70..89e265074 100644
+--- a/gvsbuild/projects/gperf.py
++++ b/gvsbuild/projects/gperf.py
+@@ -14,19 +14,18 @@
+ #  along with this program; if not, see <http://www.gnu.org/licenses/>.
+ 
+ from gvsbuild.utils.base_builders import Meson
+-from gvsbuild.utils.base_expanders import GitRepo
++from gvsbuild.utils.base_expanders import Tarball
+ from gvsbuild.utils.base_project import project_add
+ 
+ 
+ @project_add
+-class Gperf(GitRepo, Meson):
++class Gperf(Tarball, Meson):
+     def __init__(self):
+         Meson.__init__(
+             self,
+             "gperf",
+-            repo_url="https://gitlab.freedesktop.org/tpm/gperf.git",
+-            fetch_submodules=False,
+-            tag="c24359b4eab86d71c655c3b3fc969f13aac879ce",
++            version="3.1",
++            archive_url="https://download-mirror.savannah.gnu.org/releases/gperf/gperf-{version}.tar.gz",
+             dependencies=["ninja"],
+         )
+ 

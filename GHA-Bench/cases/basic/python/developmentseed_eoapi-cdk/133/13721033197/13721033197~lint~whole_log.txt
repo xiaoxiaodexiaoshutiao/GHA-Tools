@@ -1,0 +1,225 @@
+2025-03-07T12:48:56.9926801Z Requested labels: ubuntu-latest
+2025-03-07T12:48:56.9927095Z Job defined at: developmentseed/eoapi-cdk/.github/workflows/lint.yaml@refs/pull/133/merge
+2025-03-07T12:48:56.9927192Z Waiting for a runner to pick up this job...
+2025-03-07T12:48:57.6732738Z Job is waiting for a hosted runner to come online.
+2025-03-07T12:49:00.4612789Z Job is about to start running on the hosted runner: GitHub Actions 60 (hosted)
+2025-03-07T12:49:02.3199951Z Current runner version: '2.322.0'
+2025-03-07T12:49:02.3224559Z ##[group]Operating System
+2025-03-07T12:49:02.3225447Z Ubuntu
+2025-03-07T12:49:02.3225973Z 24.04.2
+2025-03-07T12:49:02.3226450Z LTS
+2025-03-07T12:49:02.3227013Z ##[endgroup]
+2025-03-07T12:49:02.3227558Z ##[group]Runner Image
+2025-03-07T12:49:02.3228172Z Image: ubuntu-24.04
+2025-03-07T12:49:02.3228730Z Version: 20250302.1.0
+2025-03-07T12:49:02.3229739Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250302.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-07T12:49:02.3231190Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250302.1
+2025-03-07T12:49:02.3232132Z ##[endgroup]
+2025-03-07T12:49:02.3232981Z ##[group]Runner Image Provisioner
+2025-03-07T12:49:02.3233927Z 2.0.422.1
+2025-03-07T12:49:02.3234782Z ##[endgroup]
+2025-03-07T12:49:02.3238499Z ##[group]GITHUB_TOKEN Permissions
+2025-03-07T12:49:02.3241046Z Actions: write
+2025-03-07T12:49:02.3241882Z Attestations: write
+2025-03-07T12:49:02.3242771Z Checks: write
+2025-03-07T12:49:02.3243329Z Contents: write
+2025-03-07T12:49:02.3243961Z Deployments: write
+2025-03-07T12:49:02.3244496Z Discussions: write
+2025-03-07T12:49:02.3245049Z Issues: write
+2025-03-07T12:49:02.3245555Z Metadata: read
+2025-03-07T12:49:02.3246070Z Packages: write
+2025-03-07T12:49:02.3246618Z Pages: write
+2025-03-07T12:49:02.3247172Z PullRequests: write
+2025-03-07T12:49:02.3247735Z RepositoryProjects: write
+2025-03-07T12:49:02.3248329Z SecurityEvents: write
+2025-03-07T12:49:02.3248902Z Statuses: write
+2025-03-07T12:49:02.3249406Z ##[endgroup]
+2025-03-07T12:49:02.3252844Z Secret source: Actions
+2025-03-07T12:49:02.3253899Z Prepare workflow directory
+2025-03-07T12:49:02.3578295Z Prepare all required actions
+2025-03-07T12:49:02.3615898Z Getting action download info
+2025-03-07T12:49:02.5369010Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-07T12:49:02.6242369Z Download action repository 'actions/setup-python@v5' (SHA:42375524e23c412d93fb67b49958b491fce71c38)
+2025-03-07T12:49:02.7848125Z Complete job name: lint
+2025-03-07T12:49:02.8662922Z ##[group]Run actions/checkout@v4
+2025-03-07T12:49:02.8663885Z with:
+2025-03-07T12:49:02.8664379Z   repository: developmentseed/eoapi-cdk
+2025-03-07T12:49:02.8665171Z   token: ***
+2025-03-07T12:49:02.8665609Z   ssh-strict: true
+2025-03-07T12:49:02.8666065Z   ssh-user: git
+2025-03-07T12:49:02.8666533Z   persist-credentials: true
+2025-03-07T12:49:02.8667038Z   clean: true
+2025-03-07T12:49:02.8667514Z   sparse-checkout-cone-mode: true
+2025-03-07T12:49:02.8668042Z   fetch-depth: 1
+2025-03-07T12:49:02.8668494Z   fetch-tags: false
+2025-03-07T12:49:02.8668966Z   show-progress: true
+2025-03-07T12:49:02.8669427Z   lfs: false
+2025-03-07T12:49:02.8669851Z   submodules: false
+2025-03-07T12:49:02.8670313Z   set-safe-directory: true
+2025-03-07T12:49:02.8671050Z ##[endgroup]
+2025-03-07T12:49:03.0868568Z Syncing repository: developmentseed/eoapi-cdk
+2025-03-07T12:49:03.0870621Z ##[group]Getting Git version info
+2025-03-07T12:49:03.0871513Z Working directory is '/home/runner/work/eoapi-cdk/eoapi-cdk'
+2025-03-07T12:49:03.0872974Z [command]/usr/bin/git version
+2025-03-07T12:49:03.0935270Z git version 2.48.1
+2025-03-07T12:49:03.0963843Z ##[endgroup]
+2025-03-07T12:49:03.0978708Z Temporarily overriding HOME='/home/runner/work/_temp/95050d10-1266-415d-a86d-ff50a555fc1a' before making global git config changes
+2025-03-07T12:49:03.0980233Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-07T12:49:03.0984454Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/eoapi-cdk/eoapi-cdk
+2025-03-07T12:49:03.1022184Z Deleting the contents of '/home/runner/work/eoapi-cdk/eoapi-cdk'
+2025-03-07T12:49:03.1027205Z ##[group]Initializing the repository
+2025-03-07T12:49:03.1032933Z [command]/usr/bin/git init /home/runner/work/eoapi-cdk/eoapi-cdk
+2025-03-07T12:49:03.1120637Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-07T12:49:03.1123356Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-07T12:49:03.1125034Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-07T12:49:03.1125878Z hint:
+2025-03-07T12:49:03.1126470Z hint: 	git config --global init.defaultBranch <name>
+2025-03-07T12:49:03.1127641Z hint:
+2025-03-07T12:49:03.1128761Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-07T12:49:03.1130499Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-07T12:49:03.1131810Z hint:
+2025-03-07T12:49:03.1132465Z hint: 	git branch -m <name>
+2025-03-07T12:49:03.1133515Z Initialized empty Git repository in /home/runner/work/eoapi-cdk/eoapi-cdk/.git/
+2025-03-07T12:49:03.1143787Z [command]/usr/bin/git remote add origin https://github.com/developmentseed/eoapi-cdk
+2025-03-07T12:49:03.1183416Z ##[endgroup]
+2025-03-07T12:49:03.1184235Z ##[group]Disabling automatic garbage collection
+2025-03-07T12:49:03.1187600Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-07T12:49:03.1217218Z ##[endgroup]
+2025-03-07T12:49:03.1218455Z ##[group]Setting up auth
+2025-03-07T12:49:03.1223946Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-07T12:49:03.1253576Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-07T12:49:03.1577731Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-07T12:49:03.1607856Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-07T12:49:03.1834041Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-07T12:49:03.1880320Z ##[endgroup]
+2025-03-07T12:49:03.1881297Z ##[group]Fetching the repository
+2025-03-07T12:49:03.1889203Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +2c2590082f34c3e2d9243008b3df0582eacc6c19:refs/remotes/pull/133/merge
+2025-03-07T12:49:03.5933753Z From https://github.com/developmentseed/eoapi-cdk
+2025-03-07T12:49:03.5935409Z  * [new ref]         2c2590082f34c3e2d9243008b3df0582eacc6c19 -> pull/133/merge
+2025-03-07T12:49:03.5960187Z ##[endgroup]
+2025-03-07T12:49:03.5961687Z ##[group]Determining the checkout info
+2025-03-07T12:49:03.5964199Z ##[endgroup]
+2025-03-07T12:49:03.5969388Z [command]/usr/bin/git sparse-checkout disable
+2025-03-07T12:49:03.6013111Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-07T12:49:03.6040414Z ##[group]Checking out the ref
+2025-03-07T12:49:03.6044376Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/133/merge
+2025-03-07T12:49:03.6165760Z Note: switching to 'refs/remotes/pull/133/merge'.
+2025-03-07T12:49:03.6166737Z 
+2025-03-07T12:49:03.6167422Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-07T12:49:03.6169051Z changes and commit them, and you can discard any commits you make in this
+2025-03-07T12:49:03.6170562Z state without impacting any branches by switching back to a branch.
+2025-03-07T12:49:03.6171116Z 
+2025-03-07T12:49:03.6171512Z If you want to create a new branch to retain commits you create, you may
+2025-03-07T12:49:03.6172362Z do so (now or later) by using -c with the switch command. Example:
+2025-03-07T12:49:03.6173136Z 
+2025-03-07T12:49:03.6173438Z   git switch -c <new-branch-name>
+2025-03-07T12:49:03.6174081Z 
+2025-03-07T12:49:03.6174429Z Or undo this operation with:
+2025-03-07T12:49:03.6174864Z 
+2025-03-07T12:49:03.6175060Z   git switch -
+2025-03-07T12:49:03.6175320Z 
+2025-03-07T12:49:03.6175723Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-07T12:49:03.6176296Z 
+2025-03-07T12:49:03.6176975Z HEAD is now at 2c25900 Merge 8258d5fe91bab51fe2fd87b9e6ee0a3e1b9f4b72 into c9915dd56e2ab2331d201d457c9a990866f30786
+2025-03-07T12:49:03.6179240Z ##[endgroup]
+2025-03-07T12:49:03.6210646Z [command]/usr/bin/git log -1 --format=%H
+2025-03-07T12:49:03.6232850Z 2c2590082f34c3e2d9243008b3df0582eacc6c19
+2025-03-07T12:49:03.6573146Z ##[group]Run actions/setup-python@v5
+2025-03-07T12:49:03.6573823Z with:
+2025-03-07T12:49:03.6574233Z   python-version: 3.11
+2025-03-07T12:49:03.6574714Z   check-latest: false
+2025-03-07T12:49:03.6575359Z   token: ***
+2025-03-07T12:49:03.6575797Z   update-environment: true
+2025-03-07T12:49:03.6576300Z   allow-prereleases: false
+2025-03-07T12:49:03.6576777Z ##[endgroup]
+2025-03-07T12:49:03.8295493Z ##[group]Installed versions
+2025-03-07T12:49:03.8374367Z Successfully set up CPython (3.11.11)
+2025-03-07T12:49:03.8376044Z ##[endgroup]
+2025-03-07T12:49:03.8507199Z ##[group]Run python -m pip install --upgrade pip
+2025-03-07T12:49:03.8507930Z [36;1mpython -m pip install --upgrade pip[0m
+2025-03-07T12:49:03.8508525Z [36;1mpython -m pip install pre-commit[0m
+2025-03-07T12:49:03.8560541Z shell: /usr/bin/bash -e {0}
+2025-03-07T12:49:03.8561039Z env:
+2025-03-07T12:49:03.8561521Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-07T12:49:03.8562320Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-03-07T12:49:03.8563291Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-07T12:49:03.8563999Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-07T12:49:03.8564755Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-07T12:49:03.8565494Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-03-07T12:49:03.8566086Z ##[endgroup]
+2025-03-07T12:49:04.4655927Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (25.0.1)
+2025-03-07T12:49:05.1036047Z Collecting pre-commit
+2025-03-07T12:49:05.1940341Z   Downloading pre_commit-4.1.0-py2.py3-none-any.whl.metadata (1.3 kB)
+2025-03-07T12:49:05.2097100Z Collecting cfgv>=2.0.0 (from pre-commit)
+2025-03-07T12:49:05.2292675Z   Downloading cfgv-3.4.0-py2.py3-none-any.whl.metadata (8.5 kB)
+2025-03-07T12:49:05.2808680Z Collecting identify>=1.0.0 (from pre-commit)
+2025-03-07T12:49:05.3006197Z   Downloading identify-2.6.8-py2.py3-none-any.whl.metadata (4.4 kB)
+2025-03-07T12:49:05.3183941Z Collecting nodeenv>=0.11.1 (from pre-commit)
+2025-03-07T12:49:05.3378603Z   Downloading nodeenv-1.9.1-py2.py3-none-any.whl.metadata (21 kB)
+2025-03-07T12:49:05.3741908Z Collecting pyyaml>=5.1 (from pre-commit)
+2025-03-07T12:49:05.3936299Z   Downloading PyYAML-6.0.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+2025-03-07T12:49:05.4316081Z Collecting virtualenv>=20.10.0 (from pre-commit)
+2025-03-07T12:49:05.4508669Z   Downloading virtualenv-20.29.3-py3-none-any.whl.metadata (4.5 kB)
+2025-03-07T12:49:05.4698752Z Collecting distlib<1,>=0.3.7 (from virtualenv>=20.10.0->pre-commit)
+2025-03-07T12:49:05.4891721Z   Downloading distlib-0.3.9-py2.py3-none-any.whl.metadata (5.2 kB)
+2025-03-07T12:49:05.5110963Z Collecting filelock<4,>=3.12.2 (from virtualenv>=20.10.0->pre-commit)
+2025-03-07T12:49:05.5303620Z   Downloading filelock-3.17.0-py3-none-any.whl.metadata (2.9 kB)
+2025-03-07T12:49:05.5496888Z Collecting platformdirs<5,>=3.9.1 (from virtualenv>=20.10.0->pre-commit)
+2025-03-07T12:49:05.5689925Z   Downloading platformdirs-4.3.6-py3-none-any.whl.metadata (11 kB)
+2025-03-07T12:49:05.5979875Z Downloading pre_commit-4.1.0-py2.py3-none-any.whl (220 kB)
+2025-03-07T12:49:05.6602344Z Downloading cfgv-3.4.0-py2.py3-none-any.whl (7.2 kB)
+2025-03-07T12:49:05.6822032Z Downloading identify-2.6.8-py2.py3-none-any.whl (99 kB)
+2025-03-07T12:49:05.7061720Z Downloading nodeenv-1.9.1-py2.py3-none-any.whl (22 kB)
+2025-03-07T12:49:05.7283368Z Downloading PyYAML-6.0.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (762 kB)
+2025-03-07T12:49:05.7703312Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 763.0/763.0 kB 21.6 MB/s eta 0:00:00
+2025-03-07T12:49:05.7901678Z Downloading virtualenv-20.29.3-py3-none-any.whl (4.3 MB)
+2025-03-07T12:49:05.8429626Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 80.6 MB/s eta 0:00:00
+2025-03-07T12:49:05.8624293Z Downloading distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+2025-03-07T12:49:05.8869241Z Downloading filelock-3.17.0-py3-none-any.whl (16 kB)
+2025-03-07T12:49:05.9095003Z Downloading platformdirs-4.3.6-py3-none-any.whl (18 kB)
+2025-03-07T12:49:05.9428603Z Installing collected packages: distlib, pyyaml, platformdirs, nodeenv, identify, filelock, cfgv, virtualenv, pre-commit
+2025-03-07T12:49:06.3054561Z Successfully installed cfgv-3.4.0 distlib-0.3.9 filelock-3.17.0 identify-2.6.8 nodeenv-1.9.1 platformdirs-4.3.6 pre-commit-4.1.0 pyyaml-6.0.2 virtualenv-20.29.3
+2025-03-07T12:49:06.3911348Z ##[group]Run pre-commit run --all-files
+2025-03-07T12:49:06.3911712Z [36;1mpre-commit run --all-files[0m
+2025-03-07T12:49:06.3960544Z shell: /usr/bin/bash -e {0}
+2025-03-07T12:49:06.3960805Z env:
+2025-03-07T12:49:06.3961076Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-07T12:49:06.3961527Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-03-07T12:49:06.3961940Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-07T12:49:06.3962304Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-07T12:49:06.3962898Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-07T12:49:06.3963276Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-03-07T12:49:06.3963600Z ##[endgroup]
+2025-03-07T12:49:06.6705724Z [WARNING] top-level `default_stages` uses deprecated stage names (commit) which will be removed in a future version.  run: `pre-commit migrate-config` to automatically fix this.
+2025-03-07T12:49:06.6710497Z [INFO] Initializing environment for https://github.com/pre-commit/pre-commit-hooks.
+2025-03-07T12:49:06.9332215Z [WARNING] repo `https://github.com/pre-commit/pre-commit-hooks` uses deprecated stage names (commit, push) which will be removed in a future version.  Hint: often `pre-commit autoupdate --repo https://github.com/pre-commit/pre-commit-hooks` will fix this.  if it does not -- consider reporting an issue to that repo.
+2025-03-07T12:49:06.9365310Z [INFO] Initializing environment for https://github.com/astral-sh/ruff-pre-commit.
+2025-03-07T12:49:07.1662387Z [INFO] Installing environment for https://github.com/pre-commit/pre-commit-hooks.
+2025-03-07T12:49:07.1663787Z [INFO] Once installed this environment will be reused.
+2025-03-07T12:49:07.1664193Z [INFO] This may take a few minutes...
+2025-03-07T12:49:10.8446550Z [INFO] Installing environment for https://github.com/astral-sh/ruff-pre-commit.
+2025-03-07T12:49:10.8447308Z [INFO] Once installed this environment will be reused.
+2025-03-07T12:49:10.8447868Z [INFO] This may take a few minutes...
+2025-03-07T12:49:14.7958990Z Trim Trailing Whitespace.................................................Passed
+2025-03-07T12:49:14.8483367Z Fix End of Files.........................................................Passed
+2025-03-07T12:49:14.8665284Z ruff.....................................................................Passed
+2025-03-07T12:49:14.8850349Z ruff-format..............................................................Failed
+2025-03-07T12:49:14.8850942Z - hook id: ruff-format
+2025-03-07T12:49:14.8851366Z - files were modified by this hook
+2025-03-07T12:49:14.8851666Z 
+2025-03-07T12:49:14.8851862Z 1 file reformatted, 32 files left unchanged
+2025-03-07T12:49:14.8853823Z 
+2025-03-07T12:49:14.9044600Z ##[error]Process completed with exit code 1.
+2025-03-07T12:49:14.9138659Z Post job cleanup.
+2025-03-07T12:49:15.0101974Z [command]/usr/bin/git version
+2025-03-07T12:49:15.0139333Z git version 2.48.1
+2025-03-07T12:49:15.0190956Z Temporarily overriding HOME='/home/runner/work/_temp/76153080-cfd4-4924-941a-23c32376ab58' before making global git config changes
+2025-03-07T12:49:15.0192311Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-07T12:49:15.0197664Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/eoapi-cdk/eoapi-cdk
+2025-03-07T12:49:15.0234932Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-07T12:49:15.0268554Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-07T12:49:15.0503754Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-07T12:49:15.0525772Z http.https://github.com/.extraheader
+2025-03-07T12:49:15.0538331Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-07T12:49:15.0570112Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-07T12:49:15.0915170Z Cleaning up orphan processes

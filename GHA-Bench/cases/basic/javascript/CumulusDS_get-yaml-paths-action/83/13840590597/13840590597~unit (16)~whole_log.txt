@@ -1,0 +1,174 @@
+2025-03-13T17:12:40.0115551Z Requested labels: ubuntu-22.04
+2025-03-13T17:12:40.0115816Z Job defined at: CumulusDS/get-yaml-paths-action/.github/workflows/test.yml@refs/pull/83/merge
+2025-03-13T17:12:40.0115900Z Waiting for a runner to pick up this job...
+2025-03-13T17:12:40.2368810Z Job is waiting for a hosted runner to come online.
+2025-03-13T17:12:41.9152889Z Job is about to start running on the hosted runner: GitHub Actions 20 (hosted)
+2025-03-13T17:12:43.3180829Z Current runner version: '2.322.0'
+2025-03-13T17:12:43.3206593Z ##[group]Operating System
+2025-03-13T17:12:43.3207529Z Ubuntu
+2025-03-13T17:12:43.3208047Z 22.04.5
+2025-03-13T17:12:43.3208607Z LTS
+2025-03-13T17:12:43.3209094Z ##[endgroup]
+2025-03-13T17:12:43.3209591Z ##[group]Runner Image
+2025-03-13T17:12:43.3210206Z Image: ubuntu-22.04
+2025-03-13T17:12:43.3210790Z Version: 20250309.1.0
+2025-03-13T17:12:43.3211865Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20250309.1/images/ubuntu/Ubuntu2204-Readme.md
+2025-03-13T17:12:43.3213321Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20250309.1
+2025-03-13T17:12:43.3214288Z ##[endgroup]
+2025-03-13T17:12:43.3214782Z ##[group]Runner Image Provisioner
+2025-03-13T17:12:43.3215776Z 2.0.422.1
+2025-03-13T17:12:43.3216315Z ##[endgroup]
+2025-03-13T17:12:43.3218657Z ##[group]GITHUB_TOKEN Permissions
+2025-03-13T17:12:43.3220921Z Actions: write
+2025-03-13T17:12:43.3221729Z Attestations: write
+2025-03-13T17:12:43.3222470Z Checks: write
+2025-03-13T17:12:43.3223319Z Contents: write
+2025-03-13T17:12:43.3223900Z Deployments: write
+2025-03-13T17:12:43.3224425Z Discussions: write
+2025-03-13T17:12:43.3225024Z Issues: write
+2025-03-13T17:12:43.3225858Z Metadata: read
+2025-03-13T17:12:43.3226360Z Packages: write
+2025-03-13T17:12:43.3226974Z Pages: write
+2025-03-13T17:12:43.3227495Z PullRequests: write
+2025-03-13T17:12:43.3228028Z RepositoryProjects: write
+2025-03-13T17:12:43.3228705Z SecurityEvents: write
+2025-03-13T17:12:43.3229218Z Statuses: write
+2025-03-13T17:12:43.3229709Z ##[endgroup]
+2025-03-13T17:12:43.3232704Z Secret source: Actions
+2025-03-13T17:12:43.3233681Z Prepare workflow directory
+2025-03-13T17:12:43.3655132Z Prepare all required actions
+2025-03-13T17:12:43.3692105Z Getting action download info
+2025-03-13T17:12:43.6398770Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-13T17:12:43.7290153Z Download action repository 'actions/setup-node@v4' (SHA:1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a)
+2025-03-13T17:12:43.8411457Z Download action repository 'actions/cache@v4' (SHA:d4323d4df104b026a6aa633fdb11d772146be0bf)
+2025-03-13T17:12:44.1359396Z Download action repository 'actions/upload-artifact@v4' (SHA:4cec3d8aa04e39d1a68397de0c4cd6fb9dce8ec1)
+2025-03-13T17:12:44.3516421Z Complete job name: unit (16)
+2025-03-13T17:12:44.4297166Z ##[group]Run actions/checkout@v4
+2025-03-13T17:12:44.4298758Z with:
+2025-03-13T17:12:44.4299617Z   repository: CumulusDS/get-yaml-paths-action
+2025-03-13T17:12:44.4300977Z   token: ***
+2025-03-13T17:12:44.4301724Z   ssh-strict: true
+2025-03-13T17:12:44.4302716Z   ssh-user: git
+2025-03-13T17:12:44.4303566Z   persist-credentials: true
+2025-03-13T17:12:44.4304437Z   clean: true
+2025-03-13T17:12:44.4305460Z   sparse-checkout-cone-mode: true
+2025-03-13T17:12:44.4306427Z   fetch-depth: 1
+2025-03-13T17:12:44.4307186Z   fetch-tags: false
+2025-03-13T17:12:44.4307964Z   show-progress: true
+2025-03-13T17:12:44.4308787Z   lfs: false
+2025-03-13T17:12:44.4309612Z   submodules: false
+2025-03-13T17:12:44.4310460Z   set-safe-directory: true
+2025-03-13T17:12:44.4311985Z ##[endgroup]
+2025-03-13T17:12:44.6117725Z Syncing repository: CumulusDS/get-yaml-paths-action
+2025-03-13T17:12:44.6121584Z ##[group]Getting Git version info
+2025-03-13T17:12:44.6123420Z Working directory is '/home/runner/work/get-yaml-paths-action/get-yaml-paths-action'
+2025-03-13T17:12:44.6125983Z [command]/usr/bin/git version
+2025-03-13T17:12:44.6161664Z git version 2.48.1
+2025-03-13T17:12:44.6190393Z ##[endgroup]
+2025-03-13T17:12:44.6203975Z Temporarily overriding HOME='/home/runner/work/_temp/cf6e1ca5-e894-4d72-881f-b32890bc8a8c' before making global git config changes
+2025-03-13T17:12:44.6207193Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-13T17:12:44.6210471Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/get-yaml-paths-action/get-yaml-paths-action
+2025-03-13T17:12:44.6244356Z Deleting the contents of '/home/runner/work/get-yaml-paths-action/get-yaml-paths-action'
+2025-03-13T17:12:44.6248836Z ##[group]Initializing the repository
+2025-03-13T17:12:44.6253426Z [command]/usr/bin/git init /home/runner/work/get-yaml-paths-action/get-yaml-paths-action
+2025-03-13T17:12:44.6319469Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-13T17:12:44.6321649Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-13T17:12:44.6324014Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-13T17:12:44.6326174Z hint:
+2025-03-13T17:12:44.6327692Z hint: 	git config --global init.defaultBranch <name>
+2025-03-13T17:12:44.6329641Z hint:
+2025-03-13T17:12:44.6331503Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-13T17:12:44.6334525Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-13T17:12:44.6337219Z hint:
+2025-03-13T17:12:44.6338473Z hint: 	git branch -m <name>
+2025-03-13T17:12:44.6341408Z Initialized empty Git repository in /home/runner/work/get-yaml-paths-action/get-yaml-paths-action/.git/
+2025-03-13T17:12:44.6346029Z [command]/usr/bin/git remote add origin https://github.com/CumulusDS/get-yaml-paths-action
+2025-03-13T17:12:44.6372106Z ##[endgroup]
+2025-03-13T17:12:44.6374468Z ##[group]Disabling automatic garbage collection
+2025-03-13T17:12:44.6376784Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-13T17:12:44.6406303Z ##[endgroup]
+2025-03-13T17:12:44.6408499Z ##[group]Setting up auth
+2025-03-13T17:12:44.6413765Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-13T17:12:44.6446669Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-13T17:12:44.6723508Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-13T17:12:44.6755486Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-13T17:12:44.6976902Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-13T17:12:44.7013890Z ##[endgroup]
+2025-03-13T17:12:44.7016362Z ##[group]Fetching the repository
+2025-03-13T17:12:44.7022955Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +c84525497ae56bad3968a63a9b2d08a3ac9477a8:refs/remotes/pull/83/merge
+2025-03-13T17:12:45.2580266Z From https://github.com/CumulusDS/get-yaml-paths-action
+2025-03-13T17:12:45.2581887Z  * [new ref]         c84525497ae56bad3968a63a9b2d08a3ac9477a8 -> pull/83/merge
+2025-03-13T17:12:45.2606835Z ##[endgroup]
+2025-03-13T17:12:45.2607792Z ##[group]Determining the checkout info
+2025-03-13T17:12:45.2609589Z ##[endgroup]
+2025-03-13T17:12:45.2615463Z [command]/usr/bin/git sparse-checkout disable
+2025-03-13T17:12:45.2654712Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-13T17:12:45.2682643Z ##[group]Checking out the ref
+2025-03-13T17:12:45.2687071Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/83/merge
+2025-03-13T17:12:45.3088627Z Note: switching to 'refs/remotes/pull/83/merge'.
+2025-03-13T17:12:45.3089186Z 
+2025-03-13T17:12:45.3089629Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-13T17:12:45.3090564Z changes and commit them, and you can discard any commits you make in this
+2025-03-13T17:12:45.3091484Z state without impacting any branches by switching back to a branch.
+2025-03-13T17:12:45.3092036Z 
+2025-03-13T17:12:45.3092411Z If you want to create a new branch to retain commits you create, you may
+2025-03-13T17:12:45.3093245Z do so (now or later) by using -c with the switch command. Example:
+2025-03-13T17:12:45.3093619Z 
+2025-03-13T17:12:45.3093834Z   git switch -c <new-branch-name>
+2025-03-13T17:12:45.3094401Z 
+2025-03-13T17:12:45.3094612Z Or undo this operation with:
+2025-03-13T17:12:45.3094886Z 
+2025-03-13T17:12:45.3095072Z   git switch -
+2025-03-13T17:12:45.3095609Z 
+2025-03-13T17:12:45.3095941Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-13T17:12:45.3096513Z 
+2025-03-13T17:12:45.3097259Z HEAD is now at c845254 Merge 9aed56dc5248a586d516ca2334cf20803497a659 into bb2b384a65fb7e5ee3c8875786c124b4559c1e9a
+2025-03-13T17:12:45.3099970Z ##[endgroup]
+2025-03-13T17:12:45.3138385Z [command]/usr/bin/git log -1 --format=%H
+2025-03-13T17:12:45.3162134Z c84525497ae56bad3968a63a9b2d08a3ac9477a8
+2025-03-13T17:12:45.3433606Z ##[group]Run actions/setup-node@v4
+2025-03-13T17:12:45.3434085Z with:
+2025-03-13T17:12:45.3434430Z   node-version: 16
+2025-03-13T17:12:45.3434774Z   always-auth: false
+2025-03-13T17:12:45.3435367Z   check-latest: false
+2025-03-13T17:12:45.3435883Z   token: ***
+2025-03-13T17:12:45.3436230Z ##[endgroup]
+2025-03-13T17:12:45.5251968Z Attempting to download 16...
+2025-03-13T17:12:45.8323598Z Acquiring 16.20.2 - x64 from https://github.com/actions/node-versions/releases/download/16.20.2-5819740093/node-16.20.2-linux-x64.tar.gz
+2025-03-13T17:12:46.1855942Z Extracting ...
+2025-03-13T17:12:46.1988401Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/875e9a77-5723-4583-b75a-ebc767f1b403 -f /home/runner/work/_temp/56cfb5d8-8582-40a6-b793-a8bed7a52890
+2025-03-13T17:12:46.8676017Z Adding to the cache ...
+2025-03-13T17:12:47.8658842Z ##[group]Environment details
+2025-03-13T17:12:48.5695362Z node: v16.20.2
+2025-03-13T17:12:48.5695980Z npm: 8.19.4
+2025-03-13T17:12:48.5696425Z yarn: 3.8.7
+2025-03-13T17:12:48.5697254Z ##[endgroup]
+2025-03-13T17:12:48.5836690Z ##[group]Run echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
+2025-03-13T17:12:48.5837146Z [36;1mecho "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT[0m
+2025-03-13T17:12:48.5930592Z shell: /usr/bin/bash -e {0}
+2025-03-13T17:12:48.5930885Z ##[endgroup]
+2025-03-13T17:12:49.1957586Z ##[error]Unable to process file command 'output' successfully.
+2025-03-13T17:12:49.1964473Z ##[error]Invalid format '  0. yarn cache clean [--mirror] [--all]'
+2025-03-13T17:12:49.2105951Z ##[group]Run actions/upload-artifact@v4
+2025-03-13T17:12:49.2106266Z with:
+2025-03-13T17:12:49.2106455Z   name: upload-artifacts
+2025-03-13T17:12:49.2106672Z   path: var
+2025-03-13T17:12:49.2106861Z   if-no-files-found: warn
+2025-03-13T17:12:49.2107081Z   compression-level: 6
+2025-03-13T17:12:49.2107281Z   overwrite: false
+2025-03-13T17:12:49.2107482Z   include-hidden-files: false
+2025-03-13T17:12:49.2107719Z ##[endgroup]
+2025-03-13T17:12:49.4184294Z ##[warning]No files were found with the provided path: var. No artifacts will be uploaded.
+2025-03-13T17:12:49.4352014Z Post job cleanup.
+2025-03-13T17:12:49.5303489Z [command]/usr/bin/git version
+2025-03-13T17:12:49.5333098Z git version 2.48.1
+2025-03-13T17:12:49.5383581Z Temporarily overriding HOME='/home/runner/work/_temp/9157bad7-fff5-4e2a-b84a-c23207274f6c' before making global git config changes
+2025-03-13T17:12:49.5385360Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-13T17:12:49.5390159Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/get-yaml-paths-action/get-yaml-paths-action
+2025-03-13T17:12:49.5423913Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-13T17:12:49.5456545Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-13T17:12:49.5683233Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-13T17:12:49.5703668Z http.https://github.com/.extraheader
+2025-03-13T17:12:49.5716058Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-13T17:12:49.5746918Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-13T17:12:49.6068975Z Cleaning up orphan processes

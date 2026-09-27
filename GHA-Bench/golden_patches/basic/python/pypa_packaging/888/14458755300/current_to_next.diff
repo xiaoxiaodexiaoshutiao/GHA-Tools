@@ -1,0 +1,87 @@
+diff --git a/docs/markers.rst b/docs/markers.rst
+index e802dac03..def807327 100644
+--- a/docs/markers.rst
++++ b/docs/markers.rst
+@@ -64,6 +64,9 @@ Reference
+ 
+     :param dict environment: A dictionary containing keys and values to
+                              override the detected environment.
++    :param str context: A string representing the context in which the marker is evaluated.
++                        Acceptable values are "metadata" (for core metadata; default),
++                        "lock_file", and "requirement" (i.e. all other situations).
+     :raises: UndefinedComparison: If the marker uses a comparison on strings
+                                   which are not valid versions per the
+                                   :ref:`specification of version specifiers
+diff --git a/src/packaging/markers.py b/src/packaging/markers.py
+index 29f087a02..e7cea5729 100644
+--- a/src/packaging/markers.py
++++ b/src/packaging/markers.py
+@@ -8,7 +8,7 @@
+ import os
+ import platform
+ import sys
+-from typing import Any, Callable, Literal, Set, TypedDict, Union, cast
++from typing import AbstractSet, Any, Callable, Literal, TypedDict, Union, cast
+ 
+ from ._parser import MarkerAtom, MarkerList, Op, Value, Variable
+ from ._parser import parse_marker as _parse_marker
+@@ -25,7 +25,7 @@
+     "default_environment",
+ ]
+ 
+-Operator = Callable[[str, Union[str, Set[str]]], bool]
++Operator = Callable[[str, Union[str, AbstractSet[str]]], bool]
+ EvaluateContext = Literal["metadata", "lock_file", "requirement"]
+ MARKERS_ALLOWING_SET = {"extras", "dependency_groups"}
+ 
+@@ -177,7 +177,7 @@ def _format_marker(
+ }
+ 
+ 
+-def _eval_op(lhs: str, op: Op, rhs: str | set[str]) -> bool:
++def _eval_op(lhs: str, op: Op, rhs: str | AbstractSet[str]) -> bool:
+     if isinstance(rhs, str):
+         try:
+             spec = Specifier("".join([op.serialize(), rhs]))
+@@ -193,7 +193,9 @@ def _eval_op(lhs: str, op: Op, rhs: str | set[str]) -> bool:
+     return oper(lhs, rhs)
+ 
+ 
+-def _normalize(lhs: str, rhs: str | set[str], key: str) -> tuple[str, str | set[str]]:
++def _normalize(
++    lhs: str, rhs: str | AbstractSet[str], key: str
++) -> tuple[str, str | AbstractSet[str]]:
+     # PEP 685 – Comparison of extra names for optional distribution dependencies
+     # https://peps.python.org/pep-0685/
+     # > When comparing extra names, tools MUST normalize the names being
+@@ -212,7 +214,7 @@ def _normalize(lhs: str, rhs: str | set[str], key: str) -> tuple[str, str | set[
+ 
+ 
+ def _evaluate_markers(
+-    markers: MarkerList, environment: dict[str, str | set[str]]
++    markers: MarkerList, environment: dict[str, str | AbstractSet[str]]
+ ) -> bool:
+     groups: list[list[bool]] = [[]]
+ 
+@@ -326,7 +328,9 @@ def evaluate(
+ 
+         The environment is determined from the current Python process.
+         """
+-        current_environment = cast("dict[str, str | set[str]]", default_environment())
++        current_environment = cast(
++            "dict[str, str | AbstractSet[str]]", default_environment()
++        )
+         if context == "lock_file":
+             current_environment.update(
+                 extras=frozenset(), dependency_groups=frozenset()
+@@ -346,8 +350,8 @@ def evaluate(
+ 
+ 
+ def _repair_python_full_version(
+-    env: dict[str, str | set[str]],
+-) -> dict[str, str | set[str]]:
++    env: dict[str, str | AbstractSet[str]],
++) -> dict[str, str | AbstractSet[str]]:
+     """
+     Work around platform.python_version() returning something that is not PEP 440
+     compliant for non-tagged Python builds.

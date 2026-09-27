@@ -1,0 +1,186 @@
+2025-03-27T00:36:24.3115301Z Requested labels: ubuntu-latest
+2025-03-27T00:36:24.3115568Z Job defined at: numpy/numtype/.github/workflows/ci.yml@refs/pull/416/merge
+2025-03-27T00:36:24.3115665Z Waiting for a runner to pick up this job...
+2025-03-27T00:36:25.5052090Z Job is waiting for a hosted runner to come online.
+2025-03-27T00:36:28.2155215Z Job is about to start running on the hosted runner: GitHub Actions 59 (hosted)
+2025-03-27T00:36:30.1514251Z Current runner version: '2.323.0'
+2025-03-27T00:36:30.1542751Z ##[group]Operating System
+2025-03-27T00:36:30.1543548Z Ubuntu
+2025-03-27T00:36:30.1543984Z 24.04.2
+2025-03-27T00:36:30.1544605Z LTS
+2025-03-27T00:36:30.1545460Z ##[endgroup]
+2025-03-27T00:36:30.1546188Z ##[group]Runner Image
+2025-03-27T00:36:30.1546778Z Image: ubuntu-24.04
+2025-03-27T00:36:30.1547271Z Version: 20250316.1.0
+2025-03-27T00:36:30.1548341Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250316.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-27T00:36:30.1549785Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250316.1
+2025-03-27T00:36:30.1550725Z ##[endgroup]
+2025-03-27T00:36:30.1551309Z ##[group]Runner Image Provisioner
+2025-03-27T00:36:30.1551907Z 2.0.422.1
+2025-03-27T00:36:30.1552357Z ##[endgroup]
+2025-03-27T00:36:30.1553527Z ##[group]GITHUB_TOKEN Permissions
+2025-03-27T00:36:30.1555711Z Contents: read
+2025-03-27T00:36:30.1556375Z Metadata: read
+2025-03-27T00:36:30.1557111Z PullRequests: write
+2025-03-27T00:36:30.1557819Z ##[endgroup]
+2025-03-27T00:36:30.1561113Z Secret source: Actions
+2025-03-27T00:36:30.1562183Z Prepare workflow directory
+2025-03-27T00:36:30.1948908Z Prepare all required actions
+2025-03-27T00:36:30.1986753Z Getting action download info
+2025-03-27T00:36:30.4456537Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-27T00:36:31.4963850Z Download action repository 'crate-ci/typos@master' (SHA:d08e4083f112e684fb88f6babd9ae60a1f1cd84f)
+2025-03-27T00:36:32.1120786Z Download action repository 'DavidAnson/markdownlint-cli2-action@v19' (SHA:05f32210e84442804257b2a6f20b273450ec8265)
+2025-03-27T00:36:32.4032247Z Download action repository 'uncenter/setup-taplo@v1' (SHA:09968a8ae38d66ddd3d23802c44bf6122d7aa991)
+2025-03-27T00:36:32.6433625Z Download action repository 'astral-sh/setup-uv@v5' (SHA:22695119d769bdb6f7032ad67b9bca0ef8c4a174)
+2025-03-27T00:36:33.1403794Z Complete job name: lint
+2025-03-27T00:36:33.2178403Z ##[group]Run actions/checkout@v4
+2025-03-27T00:36:33.2179084Z with:
+2025-03-27T00:36:33.2179349Z   repository: numpy/numtype
+2025-03-27T00:36:33.2179938Z   token: ***
+2025-03-27T00:36:33.2180170Z   ssh-strict: true
+2025-03-27T00:36:33.2180405Z   ssh-user: git
+2025-03-27T00:36:33.2180680Z   persist-credentials: true
+2025-03-27T00:36:33.2180953Z   clean: true
+2025-03-27T00:36:33.2181203Z   sparse-checkout-cone-mode: true
+2025-03-27T00:36:33.2181526Z   fetch-depth: 1
+2025-03-27T00:36:33.2181766Z   fetch-tags: false
+2025-03-27T00:36:33.2182025Z   show-progress: true
+2025-03-27T00:36:33.2182275Z   lfs: false
+2025-03-27T00:36:33.2182504Z   submodules: false
+2025-03-27T00:36:33.2182750Z   set-safe-directory: true
+2025-03-27T00:36:33.2183211Z env:
+2025-03-27T00:36:33.2183439Z   UV_FROZEN: 1
+2025-03-27T00:36:33.2183729Z ##[endgroup]
+2025-03-27T00:36:36.5208207Z Syncing repository: numpy/numtype
+2025-03-27T00:36:36.5209520Z ##[group]Getting Git version info
+2025-03-27T00:36:36.5210006Z Working directory is '/home/runner/work/numtype/numtype'
+2025-03-27T00:36:36.5210609Z [command]/usr/bin/git version
+2025-03-27T00:36:36.7520500Z git version 2.48.1
+2025-03-27T00:36:36.7607937Z ##[endgroup]
+2025-03-27T00:36:36.7621705Z Temporarily overriding HOME='/home/runner/work/_temp/ef8b7834-e998-4a08-8ac6-38027dde8d5f' before making global git config changes
+2025-03-27T00:36:36.7627344Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-27T00:36:36.7628198Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/numtype/numtype
+2025-03-27T00:36:36.7731133Z Deleting the contents of '/home/runner/work/numtype/numtype'
+2025-03-27T00:36:36.7734828Z ##[group]Initializing the repository
+2025-03-27T00:36:36.7739314Z [command]/usr/bin/git init /home/runner/work/numtype/numtype
+2025-03-27T00:36:36.8724087Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-27T00:36:36.8726712Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-27T00:36:36.8728734Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-27T00:36:36.8729201Z hint:
+2025-03-27T00:36:36.8730043Z hint: 	git config --global init.defaultBranch <name>
+2025-03-27T00:36:36.8730841Z hint:
+2025-03-27T00:36:36.8731735Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-27T00:36:36.8733265Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-27T00:36:36.8734183Z hint:
+2025-03-27T00:36:36.8734956Z hint: 	git branch -m <name>
+2025-03-27T00:36:36.8961995Z Initialized empty Git repository in /home/runner/work/numtype/numtype/.git/
+2025-03-27T00:36:36.8984357Z [command]/usr/bin/git remote add origin https://github.com/numpy/numtype
+2025-03-27T00:36:36.9108213Z ##[endgroup]
+2025-03-27T00:36:36.9109284Z ##[group]Disabling automatic garbage collection
+2025-03-27T00:36:36.9115525Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-27T00:36:36.9164718Z ##[endgroup]
+2025-03-27T00:36:36.9165528Z ##[group]Setting up auth
+2025-03-27T00:36:36.9175313Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-27T00:36:36.9223939Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-27T00:36:37.2717363Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-27T00:36:37.2749877Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-27T00:36:37.2975725Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-27T00:36:37.3022045Z ##[endgroup]
+2025-03-27T00:36:37.3022977Z ##[group]Fetching the repository
+2025-03-27T00:36:37.3031913Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e6083fe3dcfc3f9463b0e096cf666a4746ce032b:refs/remotes/pull/416/merge
+2025-03-27T00:36:38.0277126Z From https://github.com/numpy/numtype
+2025-03-27T00:36:38.0277909Z  * [new ref]         e6083fe3dcfc3f9463b0e096cf666a4746ce032b -> pull/416/merge
+2025-03-27T00:36:38.0362067Z ##[endgroup]
+2025-03-27T00:36:38.0362558Z ##[group]Determining the checkout info
+2025-03-27T00:36:38.0364814Z ##[endgroup]
+2025-03-27T00:36:38.0370337Z [command]/usr/bin/git sparse-checkout disable
+2025-03-27T00:36:38.0470199Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-27T00:36:38.0499581Z ##[group]Checking out the ref
+2025-03-27T00:36:38.0504082Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/416/merge
+2025-03-27T00:36:38.0852745Z Note: switching to 'refs/remotes/pull/416/merge'.
+2025-03-27T00:36:38.0853149Z 
+2025-03-27T00:36:38.0853521Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-27T00:36:38.0854284Z changes and commit them, and you can discard any commits you make in this
+2025-03-27T00:36:38.0855194Z state without impacting any branches by switching back to a branch.
+2025-03-27T00:36:38.0855652Z 
+2025-03-27T00:36:38.0855973Z If you want to create a new branch to retain commits you create, you may
+2025-03-27T00:36:38.0856566Z do so (now or later) by using -c with the switch command. Example:
+2025-03-27T00:36:38.0856824Z 
+2025-03-27T00:36:38.0856933Z   git switch -c <new-branch-name>
+2025-03-27T00:36:38.0857116Z 
+2025-03-27T00:36:38.0857217Z Or undo this operation with:
+2025-03-27T00:36:38.0857374Z 
+2025-03-27T00:36:38.0857464Z   git switch -
+2025-03-27T00:36:38.0857615Z 
+2025-03-27T00:36:38.0857842Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-27T00:36:38.0858125Z 
+2025-03-27T00:36:38.0858469Z HEAD is now at e6083fe Merge d35c083614c32c8fe999fcb5ad4ea3dc5a006c41 into 3ef5beca1acf7a2b0761d011874f2300397a9c92
+2025-03-27T00:36:38.0863886Z ##[endgroup]
+2025-03-27T00:36:38.0918666Z [command]/usr/bin/git log -1 --format=%H
+2025-03-27T00:36:38.0944425Z e6083fe3dcfc3f9463b0e096cf666a4746ce032b
+2025-03-27T00:36:38.1141580Z ##[group]Run crate-ci/typos@master
+2025-03-27T00:36:38.1141874Z with:
+2025-03-27T00:36:38.1142057Z   isolated: false
+2025-03-27T00:36:38.1142306Z   write_changes: false
+2025-03-27T00:36:38.1142506Z env:
+2025-03-27T00:36:38.1142675Z   UV_FROZEN: 1
+2025-03-27T00:36:38.1142856Z ##[endgroup]
+2025-03-27T00:36:38.1227751Z ##[group]Run $GITHUB_ACTION_PATH/action/entrypoint.sh
+2025-03-27T00:36:38.1228173Z [36;1m$GITHUB_ACTION_PATH/action/entrypoint.sh[0m
+2025-03-27T00:36:38.1278492Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-27T00:36:38.1278898Z env:
+2025-03-27T00:36:38.1279101Z   UV_FROZEN: 1
+2025-03-27T00:36:38.1279298Z   INSTALL_DIR: .
+2025-03-27T00:36:38.1279490Z   INPUT_FILES: 
+2025-03-27T00:36:38.1279698Z   INPUT_EXTEND_IDENTIFIERS: 
+2025-03-27T00:36:38.1279931Z   INPUT_EXTEND_WORDS: 
+2025-03-27T00:36:38.1280170Z   INPUT_ISOLATED: false
+2025-03-27T00:36:38.1280393Z   INPUT_WRITE_CHANGES: false
+2025-03-27T00:36:38.1280610Z   INPUT_CONFIG: 
+2025-03-27T00:36:38.1280847Z ##[endgroup]
+2025-03-27T00:36:38.1448640Z Downloading 'typos' v1.30.3
+2025-03-27T00:36:38.2126065Z --2025-03-27 00:36:38--  https://github.com/crate-ci/typos/releases/download/v1.30.3/typos-v1.30.3-x86_64-unknown-linux-musl.tar.gz
+2025-03-27T00:36:38.2388316Z Resolving github.com (github.com)... 140.82.112.4
+2025-03-27T00:36:38.2574969Z Connecting to github.com (github.com)|140.82.112.4|:443... connected.
+2025-03-27T00:36:38.3618492Z HTTP request sent, awaiting response... 302 Found
+2025-03-27T00:36:38.3626429Z Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/181782286/16b48bde-09fa-4d15-8aa9-9defa08d8f36?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250327%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250327T003638Z&X-Amz-Expires=300&X-Amz-Signature=8999af12f0f031cf678907082f190914637475b918b390915634aadf856c538d&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Dtypos-v1.30.3-x86_64-unknown-linux-musl.tar.gz&response-content-type=application%2Foctet-stream [following]
+2025-03-27T00:36:38.3633619Z --2025-03-27 00:36:38--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/181782286/16b48bde-09fa-4d15-8aa9-9defa08d8f36?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250327%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250327T003638Z&X-Amz-Expires=300&X-Amz-Signature=8999af12f0f031cf678907082f190914637475b918b390915634aadf856c538d&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Dtypos-v1.30.3-x86_64-unknown-linux-musl.tar.gz&response-content-type=application%2Foctet-stream
+2025-03-27T00:36:38.3804714Z Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.108.133, 185.199.109.133, 185.199.110.133, ...
+2025-03-27T00:36:38.3826608Z Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.108.133|:443... connected.
+2025-03-27T00:36:38.4881769Z HTTP request sent, awaiting response... 200 OK
+2025-03-27T00:36:38.4882499Z Length: 7694375 (7.3M) [application/octet-stream]
+2025-03-27T00:36:38.4884008Z Saving to: ‘typos-v1.30.3-x86_64-unknown-linux-musl.tar.gz’
+2025-03-27T00:36:38.4908273Z 
+2025-03-27T00:36:38.5056317Z      0K ........ ........ ........ ........ ........ ........ 40%  176M 0s
+2025-03-27T00:36:38.5139817Z   3072K ........ ........ ........ ........ ........ ........ 81%  357M 0s
+2025-03-27T00:36:38.5175424Z   6144K ........ ........ .....                              100%  365M=0.03s
+2025-03-27T00:36:38.5175794Z 
+2025-03-27T00:36:38.5176719Z 2025-03-27 00:36:38 (252 MB/s) - ‘typos-v1.30.3-x86_64-unknown-linux-musl.tar.gz’ saved [7694375/7694375]
+2025-03-27T00:36:38.5177280Z 
+2025-03-27T00:36:38.5237145Z ./typos
+2025-03-27T00:36:38.7567127Z jq: jq-1.7
+2025-03-27T00:36:38.7567826Z $ ./typos .
+2025-03-27T00:36:38.8464005Z ##[group]Run DavidAnson/markdownlint-cli2-action@v19
+2025-03-27T00:36:38.8464326Z with:
+2025-03-27T00:36:38.8464520Z   config: doc/.markdownlint.yaml
+2025-03-27T00:36:38.8464751Z   globs: **/*.md
+2025-03-27T00:36:38.8464944Z   separator: 
+
+2025-03-27T00:36:38.8465369Z env:
+2025-03-27T00:36:38.8465536Z   UV_FROZEN: 1
+2025-03-27T00:36:38.8465719Z ##[endgroup]
+2025-03-27T00:36:38.9740692Z markdownlint-cli2 v0.17.2 (markdownlint v0.37.4)
+2025-03-27T00:36:38.9771609Z ##[error]Failed due to error: Error: Unable to use configuration file '/home/runner/work/numtype/numtype/doc/.markdownlint.yaml'; ENOENT: no such file or directory, open '/home/runner/work/numtype/numtype/doc/.markdownlint.yaml'
+2025-03-27T00:36:38.9903079Z Post job cleanup.
+2025-03-27T00:36:39.0843224Z [command]/usr/bin/git version
+2025-03-27T00:36:39.0884956Z git version 2.48.1
+2025-03-27T00:36:39.0928262Z Temporarily overriding HOME='/home/runner/work/_temp/3623d97e-aef0-4efc-b7cf-7384adbb33a3' before making global git config changes
+2025-03-27T00:36:39.0929590Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-27T00:36:39.0934527Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/numtype/numtype
+2025-03-27T00:36:39.0970342Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-27T00:36:39.1003973Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-27T00:36:39.1491194Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-27T00:36:39.1514309Z http.https://github.com/.extraheader
+2025-03-27T00:36:39.1526942Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-27T00:36:39.1558373Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-27T00:36:39.1915211Z Cleaning up orphan processes

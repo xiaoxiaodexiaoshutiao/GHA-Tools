@@ -1,0 +1,171 @@
+2025-02-07T05:23:19.2731333Z Requested labels: ubuntu-latest
+2025-02-07T05:23:19.2731627Z Job defined at: rommapp/romm/.github/workflows/typecheck.yml@refs/pull/1586/merge
+2025-02-07T05:23:19.2731726Z Waiting for a runner to pick up this job...
+2025-02-07T05:23:19.9683860Z Job is waiting for a hosted runner to come online.
+2025-02-07T05:23:22.5571640Z Job is about to start running on the hosted runner: GitHub Actions 9 (hosted)
+2025-02-07T05:23:24.3557505Z Current runner version: '2.322.0'
+2025-02-07T05:23:24.3582384Z ##[group]Operating System
+2025-02-07T05:23:24.3583194Z Ubuntu
+2025-02-07T05:23:24.3584181Z 24.04.1
+2025-02-07T05:23:24.3584703Z LTS
+2025-02-07T05:23:24.3585140Z ##[endgroup]
+2025-02-07T05:23:24.3585742Z ##[group]Runner Image
+2025-02-07T05:23:24.3586327Z Image: ubuntu-24.04
+2025-02-07T05:23:24.3586837Z Version: 20250202.1.0
+2025-02-07T05:23:24.3587953Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250202.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-07T05:23:24.3589344Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250202.1
+2025-02-07T05:23:24.3590197Z ##[endgroup]
+2025-02-07T05:23:24.3590817Z ##[group]Runner Image Provisioner
+2025-02-07T05:23:24.3591420Z 2.0.422.1
+2025-02-07T05:23:24.3591954Z ##[endgroup]
+2025-02-07T05:23:24.3593070Z ##[group]GITHUB_TOKEN Permissions
+2025-02-07T05:23:24.3595673Z Checks: write
+2025-02-07T05:23:24.3596338Z Metadata: read
+2025-02-07T05:23:24.3597066Z PullRequests: write
+2025-02-07T05:23:24.3597759Z ##[endgroup]
+2025-02-07T05:23:24.3600956Z Secret source: Actions
+2025-02-07T05:23:24.3602065Z Prepare workflow directory
+2025-02-07T05:23:24.3911309Z Prepare all required actions
+2025-02-07T05:23:24.4033155Z Getting action download info
+2025-02-07T05:23:24.5523141Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-02-07T05:23:24.6321566Z Download action repository 'actions/setup-node@v4' (SHA:1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a)
+2025-02-07T05:23:24.9506748Z Complete job name: typecheck
+2025-02-07T05:23:25.0257481Z ##[group]Run actions/checkout@v4
+2025-02-07T05:23:25.0258439Z with:
+2025-02-07T05:23:25.0258860Z   repository: rommapp/romm
+2025-02-07T05:23:25.0259542Z   token: ***
+2025-02-07T05:23:25.0259955Z   ssh-strict: true
+2025-02-07T05:23:25.0260365Z   ssh-user: git
+2025-02-07T05:23:25.0260788Z   persist-credentials: true
+2025-02-07T05:23:25.0261251Z   clean: true
+2025-02-07T05:23:25.0261678Z   sparse-checkout-cone-mode: true
+2025-02-07T05:23:25.0262241Z   fetch-depth: 1
+2025-02-07T05:23:25.0262645Z   fetch-tags: false
+2025-02-07T05:23:25.0263077Z   show-progress: true
+2025-02-07T05:23:25.0263710Z   lfs: false
+2025-02-07T05:23:25.0264095Z   submodules: false
+2025-02-07T05:23:25.0264527Z   set-safe-directory: true
+2025-02-07T05:23:25.0265274Z ##[endgroup]
+2025-02-07T05:23:25.1955298Z Syncing repository: rommapp/romm
+2025-02-07T05:23:25.1957756Z ##[group]Getting Git version info
+2025-02-07T05:23:25.1959062Z Working directory is '/home/runner/work/romm/romm'
+2025-02-07T05:23:25.1960792Z [command]/usr/bin/git version
+2025-02-07T05:23:25.1992366Z git version 2.48.1
+2025-02-07T05:23:25.2020572Z ##[endgroup]
+2025-02-07T05:23:25.2036924Z Temporarily overriding HOME='/home/runner/work/_temp/cd0d014e-cb2d-49e3-9024-0a3fee5d79c2' before making global git config changes
+2025-02-07T05:23:25.2039589Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-07T05:23:25.2043583Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/romm/romm
+2025-02-07T05:23:25.2081898Z Deleting the contents of '/home/runner/work/romm/romm'
+2025-02-07T05:23:25.2086304Z ##[group]Initializing the repository
+2025-02-07T05:23:25.2090984Z [command]/usr/bin/git init /home/runner/work/romm/romm
+2025-02-07T05:23:25.2151466Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-07T05:23:25.2152579Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-07T05:23:25.2153801Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-07T05:23:25.2154507Z hint:
+2025-02-07T05:23:25.2155036Z hint: 	git config --global init.defaultBranch <name>
+2025-02-07T05:23:25.2155935Z hint:
+2025-02-07T05:23:25.2156874Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-07T05:23:25.2157804Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-07T05:23:25.2158511Z hint:
+2025-02-07T05:23:25.2159228Z hint: 	git branch -m <name>
+2025-02-07T05:23:25.2159916Z Initialized empty Git repository in /home/runner/work/romm/romm/.git/
+2025-02-07T05:23:25.2166818Z [command]/usr/bin/git remote add origin https://github.com/rommapp/romm
+2025-02-07T05:23:25.2197859Z ##[endgroup]
+2025-02-07T05:23:25.2198607Z ##[group]Disabling automatic garbage collection
+2025-02-07T05:23:25.2201989Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-07T05:23:25.2230176Z ##[endgroup]
+2025-02-07T05:23:25.2230884Z ##[group]Setting up auth
+2025-02-07T05:23:25.2236899Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-07T05:23:25.2266321Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-07T05:23:25.2556675Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-07T05:23:25.2589241Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-07T05:23:25.2826128Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-07T05:23:25.2871370Z ##[endgroup]
+2025-02-07T05:23:25.2872774Z ##[group]Fetching the repository
+2025-02-07T05:23:25.2882374Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +633ed766ee33590885ec7cf35af2af85d6986dd0:refs/remotes/pull/1586/merge
+2025-02-07T05:23:26.7788034Z From https://github.com/rommapp/romm
+2025-02-07T05:23:26.7790051Z  * [new ref]         633ed766ee33590885ec7cf35af2af85d6986dd0 -> pull/1586/merge
+2025-02-07T05:23:26.7812162Z ##[endgroup]
+2025-02-07T05:23:26.7813783Z ##[group]Determining the checkout info
+2025-02-07T05:23:26.7815178Z ##[endgroup]
+2025-02-07T05:23:26.7818933Z [command]/usr/bin/git sparse-checkout disable
+2025-02-07T05:23:26.7859711Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-07T05:23:26.7887357Z ##[group]Checking out the ref
+2025-02-07T05:23:26.7890318Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1586/merge
+2025-02-07T05:23:27.0800553Z Note: switching to 'refs/remotes/pull/1586/merge'.
+2025-02-07T05:23:27.0802570Z 
+2025-02-07T05:23:27.0806400Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-07T05:23:27.0809107Z changes and commit them, and you can discard any commits you make in this
+2025-02-07T05:23:27.0812642Z state without impacting any branches by switching back to a branch.
+2025-02-07T05:23:27.0814556Z 
+2025-02-07T05:23:27.0815672Z If you want to create a new branch to retain commits you create, you may
+2025-02-07T05:23:27.0818115Z do so (now or later) by using -c with the switch command. Example:
+2025-02-07T05:23:27.0819544Z 
+2025-02-07T05:23:27.0820153Z   git switch -c <new-branch-name>
+2025-02-07T05:23:27.0821252Z 
+2025-02-07T05:23:27.0821841Z Or undo this operation with:
+2025-02-07T05:23:27.0822832Z 
+2025-02-07T05:23:27.0823549Z   git switch -
+2025-02-07T05:23:27.0824290Z 
+2025-02-07T05:23:27.0825636Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-07T05:23:27.0827687Z 
+2025-02-07T05:23:27.0829937Z HEAD is now at 633ed76 Merge 157907aa1903591b1710644bf2b955ae6170d27b into 0e037497cbea8b9d0da0c05e3cef11d0203a0678
+2025-02-07T05:23:27.0837211Z ##[endgroup]
+2025-02-07T05:23:27.0884014Z [command]/usr/bin/git log -1 --format=%H
+2025-02-07T05:23:27.0902847Z 633ed766ee33590885ec7cf35af2af85d6986dd0
+2025-02-07T05:23:27.1220881Z ##[group]Run actions/setup-node@v4
+2025-02-07T05:23:27.1222065Z with:
+2025-02-07T05:23:27.1222910Z   node-version: 18
+2025-02-07T05:23:27.1224015Z   always-auth: false
+2025-02-07T05:23:27.1224984Z   check-latest: false
+2025-02-07T05:23:27.1226239Z   token: ***
+2025-02-07T05:23:27.1227105Z ##[endgroup]
+2025-02-07T05:23:27.3004643Z Found in cache @ /opt/hostedtoolcache/node/18.20.6/x64
+2025-02-07T05:23:27.3009823Z ##[group]Environment details
+2025-02-07T05:23:27.6212268Z node: v18.20.6
+2025-02-07T05:23:27.6212792Z npm: 10.8.2
+2025-02-07T05:23:27.6213228Z yarn: 1.22.22
+2025-02-07T05:23:27.6214371Z ##[endgroup]
+2025-02-07T05:23:27.6326810Z ##[group]Run npm install
+2025-02-07T05:23:27.6327215Z [36;1mnpm install[0m
+2025-02-07T05:23:27.6362524Z shell: /usr/bin/bash -e {0}
+2025-02-07T05:23:27.6362902Z ##[endgroup]
+2025-02-07T05:23:28.4755433Z npm warn EBADENGINE Unsupported engine {
+2025-02-07T05:23:28.4756127Z npm warn EBADENGINE   package: 'lru-cache@11.0.2',
+2025-02-07T05:23:28.4756758Z npm warn EBADENGINE   required: { node: '20 || >=22' },
+2025-02-07T05:23:28.4757355Z npm warn EBADENGINE   current: { node: 'v18.20.6', npm: '10.8.2' }
+2025-02-07T05:23:28.4757792Z npm warn EBADENGINE }
+2025-02-07T05:23:30.3842868Z npm warn deprecated sourcemap-codec@1.4.8: Please use @jridgewell/sourcemap-codec instead
+2025-02-07T05:23:31.0104137Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-02-07T05:23:31.0118318Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-02-07T05:23:35.7221893Z 
+2025-02-07T05:23:35.7222645Z added 644 packages, and audited 645 packages in 8s
+2025-02-07T05:23:35.7223094Z 
+2025-02-07T05:23:35.7223613Z 148 packages are looking for funding
+2025-02-07T05:23:35.7224095Z   run `npm fund` for details
+2025-02-07T05:23:35.7236562Z 
+2025-02-07T05:23:35.7236925Z found 0 vulnerabilities
+2025-02-07T05:23:35.7546931Z ##[group]Run npm run typecheck
+2025-02-07T05:23:35.7547246Z [36;1mnpm run typecheck[0m
+2025-02-07T05:23:35.7575148Z shell: /usr/bin/bash -e {0}
+2025-02-07T05:23:35.7575398Z ##[endgroup]
+2025-02-07T05:23:35.8822773Z 
+2025-02-07T05:23:35.8823571Z > romm@0.0.1 typecheck
+2025-02-07T05:23:35.8824035Z > vue-tsc --noEmit
+2025-02-07T05:23:35.8824209Z 
+2025-02-07T05:23:47.0385957Z ##[error]src/components/common/Navigation/SettingsDrawer.vue(111,36): error TS18047: '__VLS_ctx.auth.user' is possibly 'null'.
+2025-02-07T05:23:47.0393633Z ##[error]src/components/common/Navigation/SettingsDrawer.vue(121,35): error TS18047: '__VLS_ctx.auth.user' is possibly 'null'.
+2025-02-07T05:23:47.1018669Z ##[error]Process completed with exit code 2.
+2025-02-07T05:23:47.1109348Z Post job cleanup.
+2025-02-07T05:23:47.2079551Z [command]/usr/bin/git version
+2025-02-07T05:23:47.2118641Z git version 2.48.1
+2025-02-07T05:23:47.2163602Z Temporarily overriding HOME='/home/runner/work/_temp/edcb1d30-46b5-4678-8155-bcb5881c1446' before making global git config changes
+2025-02-07T05:23:47.2165211Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-07T05:23:47.2177612Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/romm/romm
+2025-02-07T05:23:47.2212696Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-07T05:23:47.2248268Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-07T05:23:47.2487961Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-07T05:23:47.2509886Z http.https://github.com/.extraheader
+2025-02-07T05:23:47.2522417Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-07T05:23:47.2554994Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-07T05:23:47.2898973Z Cleaning up orphan processes

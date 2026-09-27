@@ -1,0 +1,225 @@
+2025-02-17T20:24:19.0214709Z Requested labels: ubuntu-latest
+2025-02-17T20:24:19.0215066Z Job defined at: Bannerlord-Coop-Team/BannerlordCoop/.github/workflows/pull_request.yml@refs/pull/1085/merge
+2025-02-17T20:24:19.0215206Z Waiting for a runner to pick up this job...
+2025-02-17T20:24:19.6974492Z Job is waiting for a hosted runner to come online.
+2025-02-17T20:24:22.1879261Z Job is about to start running on the hosted runner: GitHub Actions 16 (hosted)
+2025-02-17T20:24:23.9085769Z Current runner version: '2.322.0'
+2025-02-17T20:24:23.9111817Z ##[group]Operating System
+2025-02-17T20:24:23.9112658Z Ubuntu
+2025-02-17T20:24:23.9113285Z 24.04.1
+2025-02-17T20:24:23.9113819Z LTS
+2025-02-17T20:24:23.9114309Z ##[endgroup]
+2025-02-17T20:24:23.9115091Z ##[group]Runner Image
+2025-02-17T20:24:23.9115735Z Image: ubuntu-24.04
+2025-02-17T20:24:23.9116284Z Version: 20250209.1.0
+2025-02-17T20:24:23.9117571Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250209.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-17T20:24:23.9119277Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250209.1
+2025-02-17T20:24:23.9120403Z ##[endgroup]
+2025-02-17T20:24:23.9121003Z ##[group]Runner Image Provisioner
+2025-02-17T20:24:23.9121701Z 2.0.422.1
+2025-02-17T20:24:23.9122294Z ##[endgroup]
+2025-02-17T20:24:23.9125294Z ##[group]GITHUB_TOKEN Permissions
+2025-02-17T20:24:23.9127502Z Actions: write
+2025-02-17T20:24:23.9128311Z Attestations: write
+2025-02-17T20:24:23.9129097Z Checks: write
+2025-02-17T20:24:23.9129683Z Contents: write
+2025-02-17T20:24:23.9130264Z Deployments: write
+2025-02-17T20:24:23.9130915Z Discussions: write
+2025-02-17T20:24:23.9131512Z Issues: write
+2025-02-17T20:24:23.9132091Z Metadata: read
+2025-02-17T20:24:23.9132736Z Packages: write
+2025-02-17T20:24:23.9133301Z Pages: write
+2025-02-17T20:24:23.9133885Z PullRequests: write
+2025-02-17T20:24:23.9134564Z RepositoryProjects: write
+2025-02-17T20:24:23.9135559Z SecurityEvents: write
+2025-02-17T20:24:23.9136206Z Statuses: write
+2025-02-17T20:24:23.9136735Z ##[endgroup]
+2025-02-17T20:24:23.9139788Z Secret source: Actions
+2025-02-17T20:24:23.9140623Z Prepare workflow directory
+2025-02-17T20:24:23.9723656Z Prepare all required actions
+2025-02-17T20:24:24.0278184Z Complete job name: build-and-test
+2025-02-17T20:24:24.0900179Z ##[group]Checking docker version
+2025-02-17T20:24:24.0914514Z ##[command]/usr/bin/docker version --format '{{.Server.APIVersion}}'
+2025-02-17T20:24:24.1546896Z '1.45'
+2025-02-17T20:24:24.1556687Z Docker daemon API version: '1.45'
+2025-02-17T20:24:24.1557485Z ##[command]/usr/bin/docker version --format '{{.Client.APIVersion}}'
+2025-02-17T20:24:24.1735902Z '1.45'
+2025-02-17T20:24:24.1748498Z Docker client API version: '1.45'
+2025-02-17T20:24:24.1754616Z ##[endgroup]
+2025-02-17T20:24:24.1757928Z ##[group]Clean up resources from previous jobs
+2025-02-17T20:24:24.1763467Z ##[command]/usr/bin/docker ps --all --quiet --no-trunc --filter "label=c20d7d"
+2025-02-17T20:24:24.1920626Z ##[command]/usr/bin/docker network prune --force --filter "label=c20d7d"
+2025-02-17T20:24:24.2075838Z ##[endgroup]
+2025-02-17T20:24:24.2076537Z ##[group]Create local container network
+2025-02-17T20:24:24.2088428Z ##[command]/usr/bin/docker network create --label c20d7d github_network_b52d1782955f48be889cacde8c59091c
+2025-02-17T20:24:24.2903736Z 4567a199d7626e2da51d2b0ab86fb81614b6b3c8bb435b3d0beba5678321f8e7
+2025-02-17T20:24:24.2932108Z ##[endgroup]
+2025-02-17T20:24:24.2977177Z ##[group]Starting job container
+2025-02-17T20:24:24.3006443Z ##[command]/usr/bin/docker pull garrettluskey/bannerlordcoop:latest
+2025-02-17T20:24:24.5319387Z latest: Pulling from garrettluskey/bannerlordcoop
+2025-02-17T20:24:24.5321012Z f56be85fc22e: Pulling fs layer
+2025-02-17T20:24:24.5324406Z f4b30ec8fc9f: Pulling fs layer
+2025-02-17T20:24:24.5325593Z 9d715a572a82: Pulling fs layer
+2025-02-17T20:24:24.5326494Z ca193bc39b8d: Pulling fs layer
+2025-02-17T20:24:24.5327382Z 1f8ee6507171: Pulling fs layer
+2025-02-17T20:24:24.5328231Z f675e3879ab8: Pulling fs layer
+2025-02-17T20:24:24.5329098Z 4f4fb700ef54: Pulling fs layer
+2025-02-17T20:24:24.5329970Z 41d468968f79: Pulling fs layer
+2025-02-17T20:24:24.5330889Z ca193bc39b8d: Waiting
+2025-02-17T20:24:24.5331646Z 1f8ee6507171: Waiting
+2025-02-17T20:24:24.5332445Z f675e3879ab8: Waiting
+2025-02-17T20:24:24.5333202Z 4f4fb700ef54: Waiting
+2025-02-17T20:24:24.5333950Z 41d468968f79: Waiting
+2025-02-17T20:24:24.6131131Z f56be85fc22e: Verifying Checksum
+2025-02-17T20:24:24.6133072Z f56be85fc22e: Download complete
+2025-02-17T20:24:24.7207846Z f56be85fc22e: Pull complete
+2025-02-17T20:24:25.1143615Z ca193bc39b8d: Verifying Checksum
+2025-02-17T20:24:25.1146085Z ca193bc39b8d: Download complete
+2025-02-17T20:24:25.3895558Z f4b30ec8fc9f: Download complete
+2025-02-17T20:24:25.5871692Z f4b30ec8fc9f: Pull complete
+2025-02-17T20:24:25.6031227Z 9d715a572a82: Verifying Checksum
+2025-02-17T20:24:25.6032650Z 9d715a572a82: Download complete
+2025-02-17T20:24:25.6714280Z 4f4fb700ef54: Verifying Checksum
+2025-02-17T20:24:25.6715973Z 4f4fb700ef54: Download complete
+2025-02-17T20:24:26.0848722Z 9d715a572a82: Pull complete
+2025-02-17T20:24:26.2192174Z 41d468968f79: Verifying Checksum
+2025-02-17T20:24:26.2193160Z 41d468968f79: Download complete
+2025-02-17T20:24:26.2851659Z ca193bc39b8d: Pull complete
+2025-02-17T20:24:26.5392722Z 1f8ee6507171: Verifying Checksum
+2025-02-17T20:24:26.5393707Z 1f8ee6507171: Download complete
+2025-02-17T20:24:26.8657437Z 1f8ee6507171: Pull complete
+2025-02-17T20:24:30.0605391Z f675e3879ab8: Verifying Checksum
+2025-02-17T20:24:30.0606478Z f675e3879ab8: Download complete
+2025-02-17T20:24:33.4010547Z f675e3879ab8: Pull complete
+2025-02-17T20:24:33.4115327Z 4f4fb700ef54: Pull complete
+2025-02-17T20:24:33.6579886Z 41d468968f79: Pull complete
+2025-02-17T20:24:33.6627376Z Digest: sha256:603b0671a9cdd9e12f26ef1a034106e852625c25d97c1266eb1172090e1195fe
+2025-02-17T20:24:33.6644325Z Status: Downloaded newer image for garrettluskey/bannerlordcoop:latest
+2025-02-17T20:24:33.6658186Z docker.io/garrettluskey/bannerlordcoop:latest
+2025-02-17T20:24:33.6746658Z ##[command]/usr/bin/docker create --name 37f074e1d1174608ac909ea39dd70495_garrettluskeybannerlordcooplatest_6ce4aa --label c20d7d --workdir /__w/BannerlordCoop/BannerlordCoop --network github_network_b52d1782955f48be889cacde8c59091c  -e "HOME=/github/home" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work":"/__w" -v "/home/runner/runners/2.322.0/externals":"/__e":ro -v "/home/runner/work/_temp":"/__w/_temp" -v "/home/runner/work/_actions":"/__w/_actions" -v "/opt/hostedtoolcache":"/__t" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" --entrypoint "tail" garrettluskey/bannerlordcoop:latest "-f" "/dev/null"
+2025-02-17T20:24:33.7023479Z 4f8db96dc9d4d2555c1d7b6252f5deb7610b90561a4c16c0243c481193ebcb86
+2025-02-17T20:24:33.7046741Z ##[command]/usr/bin/docker start 4f8db96dc9d4d2555c1d7b6252f5deb7610b90561a4c16c0243c481193ebcb86
+2025-02-17T20:24:33.9380499Z 4f8db96dc9d4d2555c1d7b6252f5deb7610b90561a4c16c0243c481193ebcb86
+2025-02-17T20:24:33.9402995Z ##[command]/usr/bin/docker ps --all --filter id=4f8db96dc9d4d2555c1d7b6252f5deb7610b90561a4c16c0243c481193ebcb86 --filter status=running --no-trunc --format "{{.ID}} {{.Status}}"
+2025-02-17T20:24:33.9545071Z 4f8db96dc9d4d2555c1d7b6252f5deb7610b90561a4c16c0243c481193ebcb86 Up Less than a second
+2025-02-17T20:24:33.9566299Z ##[command]/usr/bin/docker inspect --format "{{range .Config.Env}}{{println .}}{{end}}" 4f8db96dc9d4d2555c1d7b6252f5deb7610b90561a4c16c0243c481193ebcb86
+2025-02-17T20:24:33.9695555Z HOME=/github/home
+2025-02-17T20:24:33.9696550Z GITHUB_ACTIONS=true
+2025-02-17T20:24:33.9701969Z CI=true
+2025-02-17T20:24:33.9702776Z PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2025-02-17T20:24:33.9703797Z ASPNETCORE_URLS=
+2025-02-17T20:24:33.9704403Z DOTNET_RUNNING_IN_CONTAINER=true
+2025-02-17T20:24:33.9705468Z DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
+2025-02-17T20:24:33.9706310Z DOTNET_VERSION=6.0.16
+2025-02-17T20:24:33.9706929Z ASPNET_VERSION=6.0.16
+2025-02-17T20:24:33.9707541Z DOTNET_GENERATE_ASPNET_CERTIFICATE=false
+2025-02-17T20:24:33.9708330Z DOTNET_NOLOGO=true
+2025-02-17T20:24:33.9708896Z DOTNET_SDK_VERSION=6.0.408
+2025-02-17T20:24:33.9709511Z DOTNET_USE_POLLING_FILE_WATCHER=true
+2025-02-17T20:24:33.9710195Z NUGET_XMLDOC_MODE=skip
+2025-02-17T20:24:33.9711113Z POWERSHELL_DISTRIBUTION_CHANNEL=PSDocker-DotnetSDK-Alpine-3.17
+2025-02-17T20:24:33.9721765Z ##[endgroup]
+2025-02-17T20:24:33.9730839Z ##[group]Waiting for all services to be ready
+2025-02-17T20:24:33.9733204Z ##[endgroup]
+2025-02-17T20:24:33.9990153Z ##[group]Run git clone https://github.com/Bannerlord-Coop-Team/BannerlordCoop
+2025-02-17T20:24:33.9990826Z [36;1mgit clone https://github.com/Bannerlord-Coop-Team/BannerlordCoop[0m
+2025-02-17T20:24:33.9991216Z [36;1mcd BannerlordCoop[0m
+2025-02-17T20:24:33.9991536Z [36;1mgit fetch origin "pull/1085/head:development-PR-1085"[0m
+2025-02-17T20:24:33.9991893Z [36;1mgit checkout "development-PR-1085"[0m
+2025-02-17T20:24:33.9995723Z shell: sh -e {0}
+2025-02-17T20:24:33.9996210Z ##[endgroup]
+2025-02-17T20:24:34.0686898Z Cloning into 'BannerlordCoop'...
+2025-02-17T20:24:37.6649824Z From https://github.com/Bannerlord-Coop-Team/BannerlordCoop
+2025-02-17T20:24:37.6651017Z  * [new ref]           refs/pull/1085/head -> development-PR-1085
+2025-02-17T20:24:37.7552518Z Switched to branch 'development-PR-1085'
+2025-02-17T20:24:37.7674156Z ##[group]Run ln -s /home/mb2 BannerlordCoop
+2025-02-17T20:24:37.7674837Z [36;1mln -s /home/mb2 BannerlordCoop[0m
+2025-02-17T20:24:37.7675361Z shell: sh -e {0}
+2025-02-17T20:24:37.7675605Z ##[endgroup]
+2025-02-17T20:24:37.8435580Z ##[group]Run cd BannerlordCoop/source
+2025-02-17T20:24:37.8436025Z [36;1mcd BannerlordCoop/source[0m
+2025-02-17T20:24:37.8436352Z [36;1mdotnet build Coop.Core -c Release[0m
+2025-02-17T20:24:37.8436784Z shell: sh -e {0}
+2025-02-17T20:24:37.8437006Z ##[endgroup]
+2025-02-17T20:24:38.0727875Z MSBuild version 17.3.2+561848881 for .NET
+2025-02-17T20:24:38.8186378Z   Determining projects to restore...
+2025-02-17T20:24:41.0040162Z   Restored /__w/BannerlordCoop/BannerlordCoop/BannerlordCoop/source/Common/Common.csproj (in 1.25 sec).
+2025-02-17T20:24:41.0042691Z   Restored /__w/BannerlordCoop/BannerlordCoop/BannerlordCoop/source/Coop.Core/Coop.Core.csproj (in 1.25 sec).
+2025-02-17T20:24:41.0065279Z   Restored /__w/BannerlordCoop/BannerlordCoop/BannerlordCoop/source/GameInterface/GameInterface.csproj (in 1.25 sec).
+2025-02-17T20:24:43.5826316Z /__w/BannerlordCoop/BannerlordCoop/BannerlordCoop/source/Common/Logging/MessageLogger.cs(35,9): warning CS0162: Unreachable code detected [/__w/BannerlordCoop/BannerlordCoop/BannerlordCoop/source/Common/Common.csproj]
+2025-02-17T20:24:43.6451044Z   Common -> /__w/BannerlordCoop/BannerlordCoop/BannerlordCoop/source/Common/bin/Release/netstandard2.0/Common.dll
+2025-02-17T20:24:49.8897721Z /__w/BannerlordCoop/BannerlordCoop/BannerlordCoop/source/GameInterface/Services/Monsters/MonsterRegistry.cs(18,24): warning CS0414: The field 'MonsterRegistry.InstanceCounter' is assigned but its value is never used [/__w/BannerlordCoop/BannerlordCoop/BannerlordCoop/source/GameInterface/GameInterface.csproj]
+2025-02-17T20:24:49.9868278Z   GameInterface -> /__w/BannerlordCoop/BannerlordCoop/BannerlordCoop/source/GameInterface/bin/Release/netstandard2.0/GameInterface.dll
+2025-02-17T20:24:51.3120318Z   Coop.Core -> /__w/BannerlordCoop/BannerlordCoop/BannerlordCoop/source/Coop.Core/bin/Release/netstandard2.0/Coop.Core.dll
+2025-02-17T20:24:51.3259761Z 
+2025-02-17T20:24:51.3264412Z Build succeeded.
+2025-02-17T20:24:51.3265219Z 
+2025-02-17T20:24:51.3267125Z /__w/BannerlordCoop/BannerlordCoop/BannerlordCoop/source/Common/Logging/MessageLogger.cs(35,9): warning CS0162: Unreachable code detected [/__w/BannerlordCoop/BannerlordCoop/BannerlordCoop/source/Common/Common.csproj]
+2025-02-17T20:24:51.3272107Z /__w/BannerlordCoop/BannerlordCoop/BannerlordCoop/source/GameInterface/Services/Monsters/MonsterRegistry.cs(18,24): warning CS0414: The field 'MonsterRegistry.InstanceCounter' is assigned but its value is never used [/__w/BannerlordCoop/BannerlordCoop/BannerlordCoop/source/GameInterface/GameInterface.csproj]
+2025-02-17T20:24:51.3275279Z     2 Warning(s)
+2025-02-17T20:24:51.3275686Z     0 Error(s)
+2025-02-17T20:24:51.3275959Z 
+2025-02-17T20:24:51.3276135Z Time Elapsed 00:00:13.15
+2025-02-17T20:24:51.3688082Z ##[group]Run cd BannerlordCoop/source
+2025-02-17T20:24:51.3688567Z [36;1mcd BannerlordCoop/source[0m
+2025-02-17T20:24:51.3689025Z [36;1mdotnet test -c Release --consoleLoggerParameters:ErrorsOnly[0m
+2025-02-17T20:24:51.3689818Z shell: sh -e {0}
+2025-02-17T20:24:51.3690068Z ##[endgroup]
+2025-02-17T20:25:04.0691415Z Test run for /__w/BannerlordCoop/BannerlordCoop/BannerlordCoop/source/Common.Tests/bin/x64/Release/net6.0/Common.Tests.dll (.NETCoreApp,Version=v6.0)
+2025-02-17T20:25:04.1777979Z Microsoft (R) Test Execution Command Line Tool Version 17.3.2 (x64)
+2025-02-17T20:25:04.1780292Z Copyright (c) Microsoft Corporation.  All rights reserved.
+2025-02-17T20:25:04.1863218Z 
+2025-02-17T20:25:04.3947007Z Starting test execution, please wait...
+2025-02-17T20:25:04.4398287Z A total of 1 test files matched the specified pattern.
+2025-02-17T20:25:07.4981625Z 
+2025-02-17T20:25:07.5110532Z Passed!  - Failed:     0, Passed:    34, Skipped:     0, Total:    34, Duration: 1 s - /__w/BannerlordCoop/BannerlordCoop/BannerlordCoop/source/Common.Tests/bin/x64/Release/net6.0/Common.Tests.dll (net6.0)
+2025-02-17T20:25:13.5851289Z Test run for /__w/BannerlordCoop/BannerlordCoop/BannerlordCoop/source/Coop.Tests/bin/Release/net6.0/Coop.Tests.dll (.NETCoreApp,Version=v6.0)
+2025-02-17T20:25:13.6757116Z Microsoft (R) Test Execution Command Line Tool Version 17.3.2 (x64)
+2025-02-17T20:25:13.6780872Z Copyright (c) Microsoft Corporation.  All rights reserved.
+2025-02-17T20:25:13.6820112Z 
+2025-02-17T20:25:13.8131682Z Starting test execution, please wait...
+2025-02-17T20:25:13.8450034Z A total of 1 test files matched the specified pattern.
+2025-02-17T20:25:18.4113976Z 
+2025-02-17T20:25:18.4170973Z Passed!  - Failed:     0, Passed:    96, Skipped:     0, Total:    96, Duration: 2 s - /__w/BannerlordCoop/BannerlordCoop/BannerlordCoop/source/Coop.Tests/bin/Release/net6.0/Coop.Tests.dll (net6.0)
+2025-02-17T20:25:18.9237772Z Test run for /__w/BannerlordCoop/BannerlordCoop/BannerlordCoop/source/Coop.IntegrationTests/bin/Release/net6.0/Coop.IntegrationTests.dll (.NETCoreApp,Version=v6.0)
+2025-02-17T20:25:19.0258404Z Microsoft (R) Test Execution Command Line Tool Version 17.3.2 (x64)
+2025-02-17T20:25:19.0259669Z Copyright (c) Microsoft Corporation.  All rights reserved.
+2025-02-17T20:25:19.0304913Z 
+2025-02-17T20:25:19.1482713Z Starting test execution, please wait...
+2025-02-17T20:25:19.1773677Z A total of 1 test files matched the specified pattern.
+2025-02-17T20:25:25.4479843Z 
+2025-02-17T20:25:25.4531198Z Passed!  - Failed:     0, Passed:    82, Skipped:     0, Total:    82, Duration: 4 s - /__w/BannerlordCoop/BannerlordCoop/BannerlordCoop/source/Coop.IntegrationTests/bin/Release/net6.0/Coop.IntegrationTests.dll (net6.0)
+2025-02-17T20:25:26.2380116Z Test run for /__w/BannerlordCoop/BannerlordCoop/BannerlordCoop/source/GameInterface.Tests/bin/Release/net6.0/GameInterface.Tests.dll (.NETCoreApp,Version=v6.0)
+2025-02-17T20:25:26.3028510Z Microsoft (R) Test Execution Command Line Tool Version 17.3.2 (x64)
+2025-02-17T20:25:26.3035487Z Copyright (c) Microsoft Corporation.  All rights reserved.
+2025-02-17T20:25:26.3088666Z 
+2025-02-17T20:25:26.4472723Z Starting test execution, please wait...
+2025-02-17T20:25:26.4931832Z A total of 1 test files matched the specified pattern.
+2025-02-17T20:25:31.2583872Z 
+2025-02-17T20:25:31.2643485Z Passed!  - Failed:     0, Passed:   210, Skipped:     0, Total:   210, Duration: 3 s - /__w/BannerlordCoop/BannerlordCoop/BannerlordCoop/source/GameInterface.Tests/bin/Release/net6.0/GameInterface.Tests.dll (net6.0)
+2025-02-17T20:25:34.6816744Z Test run for /__w/BannerlordCoop/BannerlordCoop/BannerlordCoop/source/E2E.Tests/bin/Release/net6.0/E2E.Tests.dll (.NETCoreApp,Version=v6.0)
+2025-02-17T20:25:34.7512986Z Microsoft (R) Test Execution Command Line Tool Version 17.3.2 (x64)
+2025-02-17T20:25:34.7513886Z Copyright (c) Microsoft Corporation.  All rights reserved.
+2025-02-17T20:25:34.7564644Z 
+2025-02-17T20:25:34.8740797Z Starting test execution, please wait...
+2025-02-17T20:25:34.9145864Z A total of 1 test files matched the specified pattern.
+2025-02-17T20:32:26.1571985Z [xUnit.net 00:06:50.71]     E2E.Tests.Services.Towns.SyncTownTests.Server_Town_Fields [FAIL]
+2025-02-17T20:32:26.1618398Z   Failed E2E.Tests.Services.Towns.SyncTownTests.Server_Town_Fields [13 s]
+2025-02-17T20:32:26.1620032Z   Error Message:
+2025-02-17T20:32:26.1622937Z    Assert.True() Failure
+2025-02-17T20:32:26.1625472Z Expected: True
+2025-02-17T20:32:26.1625854Z Actual:   False
+2025-02-17T20:32:26.1626247Z   Stack Trace:
+2025-02-17T20:32:26.1627853Z      at E2E.Tests.Environment.E2ETestEnvironment.GetIntercept(FieldInfo field) in /__w/BannerlordCoop/BannerlordCoop/BannerlordCoop/source/E2E.Tests/Environment/E2ETestEnvironment.cs:line 117
+2025-02-17T20:32:26.1630960Z    at E2E.Tests.Services.Towns.SyncTownTests.AssertField[TInstance,TValue](String fieldName, TValue value) in /__w/BannerlordCoop/BannerlordCoop/BannerlordCoop/source/E2E.Tests/Services/Towns/SyncTownTests.cs:line 81
+2025-02-17T20:32:26.1633794Z    at E2E.Tests.Services.Towns.SyncTownTests.Server_Town_Fields() in /__w/BannerlordCoop/BannerlordCoop/BannerlordCoop/source/E2E.Tests/Services/Towns/SyncTownTests.cs:line 33
+2025-02-17T21:49:59.6953860Z 
+2025-02-17T21:49:59.7020877Z Failed!  - Failed:     1, Passed:   208, Skipped:     0, Total:   209, Duration: 1 h 24 m - /__w/BannerlordCoop/BannerlordCoop/BannerlordCoop/source/E2E.Tests/bin/Release/net6.0/E2E.Tests.dll (net6.0)
+2025-02-17T21:49:59.9488140Z ##[error]Process completed with exit code 1.
+2025-02-17T21:49:59.9542596Z Stop and remove container: 37f074e1d1174608ac909ea39dd70495_garrettluskeybannerlordcooplatest_6ce4aa
+2025-02-17T21:49:59.9547554Z ##[command]/usr/bin/docker rm --force 4f8db96dc9d4d2555c1d7b6252f5deb7610b90561a4c16c0243c481193ebcb86
+2025-02-17T21:50:00.0865493Z 4f8db96dc9d4d2555c1d7b6252f5deb7610b90561a4c16c0243c481193ebcb86
+2025-02-17T21:50:00.0910017Z Remove container network: github_network_b52d1782955f48be889cacde8c59091c
+2025-02-17T21:50:00.0915305Z ##[command]/usr/bin/docker network rm github_network_b52d1782955f48be889cacde8c59091c
+2025-02-17T21:50:00.2241194Z github_network_b52d1782955f48be889cacde8c59091c
+2025-02-17T21:50:00.2300796Z Cleaning up orphan processes

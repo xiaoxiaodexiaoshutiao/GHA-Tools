@@ -1,0 +1,335 @@
+﻿2025-04-06T13:30:56.9918582Z Current runner version: '2.323.0'
+2025-04-06T13:30:56.9945434Z ##[group]Operating System
+2025-04-06T13:30:56.9946209Z Ubuntu
+2025-04-06T13:30:56.9946666Z 24.04.2
+2025-04-06T13:30:56.9947227Z LTS
+2025-04-06T13:30:56.9947669Z ##[endgroup]
+2025-04-06T13:30:56.9948215Z ##[group]Runner Image
+2025-04-06T13:30:56.9948744Z Image: ubuntu-24.04
+2025-04-06T13:30:56.9949275Z Version: 20250323.1.0
+2025-04-06T13:30:56.9950237Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-06T13:30:56.9951731Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-04-06T13:30:56.9952639Z ##[endgroup]
+2025-04-06T13:30:56.9953079Z ##[group]Runner Image Provisioner
+2025-04-06T13:30:56.9953706Z 2.0.422.1
+2025-04-06T13:30:56.9954136Z ##[endgroup]
+2025-04-06T13:30:56.9956795Z ##[group]GITHUB_TOKEN Permissions
+2025-04-06T13:30:56.9958725Z Actions: write
+2025-04-06T13:30:56.9959465Z Attestations: write
+2025-04-06T13:30:56.9960070Z Checks: write
+2025-04-06T13:30:56.9960526Z Contents: write
+2025-04-06T13:30:56.9961074Z Deployments: write
+2025-04-06T13:30:56.9961564Z Discussions: write
+2025-04-06T13:30:56.9962032Z Issues: write
+2025-04-06T13:30:56.9962578Z Metadata: read
+2025-04-06T13:30:56.9963004Z Models: read
+2025-04-06T13:30:56.9963451Z Packages: write
+2025-04-06T13:30:56.9963956Z Pages: write
+2025-04-06T13:30:56.9964445Z PullRequests: write
+2025-04-06T13:30:56.9964921Z RepositoryProjects: write
+2025-04-06T13:30:56.9965887Z SecurityEvents: write
+2025-04-06T13:30:56.9966370Z Statuses: write
+2025-04-06T13:30:56.9966832Z ##[endgroup]
+2025-04-06T13:30:56.9968911Z Secret source: Actions
+2025-04-06T13:30:56.9969665Z Prepare workflow directory
+2025-04-06T13:30:57.0293804Z Prepare all required actions
+2025-04-06T13:30:57.0332481Z Getting action download info
+2025-04-06T13:30:57.4311857Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-06T13:30:57.4313258Z Version: 4.2.2
+2025-04-06T13:30:57.4314345Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-06T13:30:57.4315742Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-06T13:30:57.4316524Z ##[endgroup]
+2025-04-06T13:30:57.5390669Z Download action repository 'astral-sh/setup-uv@v5' (SHA:0c5e2b8115b80b4c7c5ddf6ffdd634974642d182)
+2025-04-06T13:30:57.8711344Z Complete job name: pytest
+2025-04-06T13:30:57.9361609Z ##[group]Run actions/checkout@v4
+2025-04-06T13:30:57.9362434Z with:
+2025-04-06T13:30:57.9362839Z   repository: alltheplaces/alltheplaces
+2025-04-06T13:30:57.9363510Z   token: ***
+2025-04-06T13:30:57.9363884Z   ssh-strict: true
+2025-04-06T13:30:57.9364267Z   ssh-user: git
+2025-04-06T13:30:57.9364663Z   persist-credentials: true
+2025-04-06T13:30:57.9365096Z   clean: true
+2025-04-06T13:30:57.9365672Z   sparse-checkout-cone-mode: true
+2025-04-06T13:30:57.9366141Z   fetch-depth: 1
+2025-04-06T13:30:57.9366519Z   fetch-tags: false
+2025-04-06T13:30:57.9366917Z   show-progress: true
+2025-04-06T13:30:57.9367299Z   lfs: false
+2025-04-06T13:30:57.9367676Z   submodules: false
+2025-04-06T13:30:57.9368073Z   set-safe-directory: true
+2025-04-06T13:30:57.9368748Z ##[endgroup]
+2025-04-06T13:30:58.1536954Z Syncing repository: alltheplaces/alltheplaces
+2025-04-06T13:30:58.1538708Z ##[group]Getting Git version info
+2025-04-06T13:30:58.1539485Z Working directory is '/home/runner/work/alltheplaces/alltheplaces'
+2025-04-06T13:30:58.1540589Z [command]/usr/bin/git version
+2025-04-06T13:30:58.1614203Z git version 2.49.0
+2025-04-06T13:30:58.1642900Z ##[endgroup]
+2025-04-06T13:30:58.1656707Z Temporarily overriding HOME='/home/runner/work/_temp/26f71155-e047-4657-9828-745d180ac24b' before making global git config changes
+2025-04-06T13:30:58.1658066Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-06T13:30:58.1662061Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/alltheplaces/alltheplaces
+2025-04-06T13:30:58.1699923Z Deleting the contents of '/home/runner/work/alltheplaces/alltheplaces'
+2025-04-06T13:30:58.1703624Z ##[group]Initializing the repository
+2025-04-06T13:30:58.1708133Z [command]/usr/bin/git init /home/runner/work/alltheplaces/alltheplaces
+2025-04-06T13:30:58.1806250Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-06T13:30:58.1807348Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-06T13:30:58.1808201Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-06T13:30:58.1808865Z hint:
+2025-04-06T13:30:58.1809326Z hint: 	git config --global init.defaultBranch <name>
+2025-04-06T13:30:58.1810237Z hint:
+2025-04-06T13:30:58.1810984Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-06T13:30:58.1811856Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-06T13:30:58.1812531Z hint:
+2025-04-06T13:30:58.1812882Z hint: 	git branch -m <name>
+2025-04-06T13:30:58.1813625Z Initialized empty Git repository in /home/runner/work/alltheplaces/alltheplaces/.git/
+2025-04-06T13:30:58.1821446Z [command]/usr/bin/git remote add origin https://github.com/alltheplaces/alltheplaces
+2025-04-06T13:30:58.1856352Z ##[endgroup]
+2025-04-06T13:30:58.1857156Z ##[group]Disabling automatic garbage collection
+2025-04-06T13:30:58.1860220Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-06T13:30:58.1890430Z ##[endgroup]
+2025-04-06T13:30:58.1891615Z ##[group]Setting up auth
+2025-04-06T13:30:58.1898527Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-06T13:30:58.1929708Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-06T13:30:58.2242842Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-06T13:30:58.2274316Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-06T13:30:58.2502839Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-06T13:30:58.2545576Z ##[endgroup]
+2025-04-06T13:30:58.2546654Z ##[group]Fetching the repository
+2025-04-06T13:30:58.2554674Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +b5441bf2473ef991305af73f0305467221a0b820:refs/remotes/pull/12805/merge
+2025-04-06T13:30:59.0867372Z From https://github.com/alltheplaces/alltheplaces
+2025-04-06T13:30:59.0869523Z  * [new ref]         b5441bf2473ef991305af73f0305467221a0b820 -> pull/12805/merge
+2025-04-06T13:30:59.0908092Z ##[endgroup]
+2025-04-06T13:30:59.0909629Z ##[group]Determining the checkout info
+2025-04-06T13:30:59.0911393Z ##[endgroup]
+2025-04-06T13:30:59.0914428Z [command]/usr/bin/git sparse-checkout disable
+2025-04-06T13:30:59.0960316Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-06T13:30:59.0988305Z ##[group]Checking out the ref
+2025-04-06T13:30:59.0991365Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/12805/merge
+2025-04-06T13:30:59.4150606Z Note: switching to 'refs/remotes/pull/12805/merge'.
+2025-04-06T13:30:59.4151250Z 
+2025-04-06T13:30:59.4151662Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-06T13:30:59.4152355Z changes and commit them, and you can discard any commits you make in this
+2025-04-06T13:30:59.4152939Z state without impacting any branches by switching back to a branch.
+2025-04-06T13:30:59.4153286Z 
+2025-04-06T13:30:59.4153541Z If you want to create a new branch to retain commits you create, you may
+2025-04-06T13:30:59.4154076Z do so (now or later) by using -c with the switch command. Example:
+2025-04-06T13:30:59.4154377Z 
+2025-04-06T13:30:59.4154529Z   git switch -c <new-branch-name>
+2025-04-06T13:30:59.4154754Z 
+2025-04-06T13:30:59.4155416Z Or undo this operation with:
+2025-04-06T13:30:59.4155657Z 
+2025-04-06T13:30:59.4155790Z   git switch -
+2025-04-06T13:30:59.4156015Z 
+2025-04-06T13:30:59.4156286Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-06T13:30:59.4156637Z 
+2025-04-06T13:30:59.4157046Z HEAD is now at b5441bf Merge 50bf0d6d40c5b19fb2be0fa9e87ff1480c526f0c into 569bc8936715a406b909763132286802f7efc3f2
+2025-04-06T13:30:59.4164068Z ##[endgroup]
+2025-04-06T13:30:59.4203386Z [command]/usr/bin/git log -1 --format=%H
+2025-04-06T13:30:59.4226738Z b5441bf2473ef991305af73f0305467221a0b820
+2025-04-06T13:30:59.4448015Z ##[group]Run astral-sh/setup-uv@v5
+2025-04-06T13:30:59.4448477Z with:
+2025-04-06T13:30:59.4449004Z   github-token: ***
+2025-04-06T13:30:59.4449378Z   enable-cache: auto
+2025-04-06T13:30:59.4449827Z   cache-dependency-glob: **/uv.lock
+**/requirements*.txt
+
+2025-04-06T13:30:59.4450311Z   prune-cache: true
+2025-04-06T13:30:59.4450687Z   ignore-nothing-to-cache: false
+2025-04-06T13:30:59.4451132Z   ignore-empty-workdir: false
+2025-04-06T13:30:59.4451540Z ##[endgroup]
+2025-04-06T13:30:59.9263173Z Downloading uv from "https://github.com/astral-sh/uv/releases/download/0.6.12/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2025-04-06T13:31:00.2711414Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/dc655815-87d5-494e-ab70-1c4018372aaf -f /home/runner/work/_temp/f922d000-33c2-45e5-a376-73896ab0791a
+2025-04-06T13:31:00.6093617Z Added /opt/hostedtoolcache/uv/0.6.12/x86_64 to the path
+2025-04-06T13:31:00.6094789Z Added /home/runner/.local/bin to the path
+2025-04-06T13:31:00.6118718Z Set UV_CACHE_DIR to /home/runner/work/_temp/setup-uv-cache
+2025-04-06T13:31:00.6119354Z Successfully installed uv version 0.6.12
+2025-04-06T13:31:00.6120133Z Searching files using cache dependency glob: **/uv.lock,**/requirements*.txt
+2025-04-06T13:31:00.9994035Z /home/runner/work/alltheplaces/alltheplaces/uv.lock
+2025-04-06T13:31:01.0015320Z Found 1 files to hash.
+2025-04-06T13:31:01.1893906Z Trying to restore uv cache from GitHub Actions cache with key: setup-uv-1-x86_64-unknown-linux-gnu-unknown-d82485ff0d6e02cfb1dd5b0135dae09e01fc969eccb014b990a6f8fd0ca69909
+2025-04-06T13:31:01.2655724Z No GitHub Actions cache found for key: setup-uv-1-x86_64-unknown-linux-gnu-unknown-d82485ff0d6e02cfb1dd5b0135dae09e01fc969eccb014b990a6f8fd0ca69909
+2025-04-06T13:31:01.2838053Z ##[group]Run uv run pytest
+2025-04-06T13:31:01.2838421Z [36;1muv run pytest[0m
+2025-04-06T13:31:01.2891871Z shell: /usr/bin/bash -e {0}
+2025-04-06T13:31:01.2892147Z env:
+2025-04-06T13:31:01.2892471Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-04-06T13:31:01.2892744Z ##[endgroup]
+2025-04-06T13:31:01.4219669Z Downloading cpython-3.11.11-linux-x86_64-gnu (20.5MiB)
+2025-04-06T13:31:02.1460278Z  Downloaded cpython-3.11.11-linux-x86_64-gnu
+2025-04-06T13:31:02.2837945Z Using CPython 3.11.11
+2025-04-06T13:31:02.2838594Z Creating virtual environment at: .venv
+2025-04-06T13:31:02.3295491Z Downloading pycountry (6.0MiB)
+2025-04-06T13:31:02.3296926Z Downloading cryptography (4.0MiB)
+2025-04-06T13:31:02.3486576Z Downloading setuptools (1.2MiB)
+2025-04-06T13:31:02.3491052Z Downloading scipy (35.9MiB)
+2025-04-06T13:31:02.3492306Z Downloading playwright (43.1MiB)
+2025-04-06T13:31:02.3493632Z Downloading numpy (15.7MiB)
+2025-04-06T13:31:02.3495093Z Downloading pandas (12.5MiB)
+2025-04-06T13:31:02.3497840Z Downloading twisted (3.0MiB)
+2025-04-06T13:31:02.3500107Z Downloading geonamescache (25.4MiB)
+2025-04-06T13:31:02.3508198Z Downloading awscli (4.4MiB)
+2025-04-06T13:31:02.3509695Z Downloading botocore (12.8MiB)
+2025-04-06T13:31:02.3510872Z Downloading babel (9.7MiB)
+2025-04-06T13:31:02.3512332Z Downloading aiohttp (1.6MiB)
+2025-04-06T13:31:02.3513488Z Downloading pyproj (9.1MiB)
+2025-04-06T13:31:02.3515579Z Downloading virtualenv (4.1MiB)
+2025-04-06T13:31:02.3516829Z Downloading pyarrow (40.1MiB)
+2025-04-06T13:31:02.3518282Z Downloading lxml (4.8MiB)
+2025-04-06T13:31:02.3531258Z Downloading shapely (2.4MiB)
+2025-04-06T13:31:02.3532410Z Downloading phonenumbers (2.5MiB)
+2025-04-06T13:31:02.3533657Z Downloading pyogrio (22.9MiB)
+2025-04-06T13:31:02.3535431Z Downloading black (1.7MiB)
+2025-04-06T13:31:02.3536317Z Downloading brotli (2.8MiB)
+2025-04-06T13:31:02.8916412Z    Building phpserialize==1.3
+2025-04-06T13:31:02.9271484Z    Building runstats==2.0.0
+2025-04-06T13:31:03.1201673Z  Downloaded aiohttp
+2025-04-06T13:31:03.2164570Z  Downloaded black
+2025-04-06T13:31:03.2841019Z  Downloaded setuptools
+2025-04-06T13:31:03.4662234Z  Downloaded shapely
+2025-04-06T13:31:03.5052732Z  Downloaded brotli
+2025-04-06T13:31:03.5784983Z    Building reverse-geocoder==1.5.1
+2025-04-06T13:31:03.6549630Z  Downloaded phonenumbers
+2025-04-06T13:31:03.8610246Z  Downloaded virtualenv
+2025-04-06T13:31:03.9272942Z  Downloaded twisted
+2025-04-06T13:31:03.9610878Z  Downloaded cryptography
+2025-04-06T13:31:04.1220393Z  Downloaded lxml
+2025-04-06T13:31:04.2481900Z  Downloaded pycountry
+2025-04-06T13:31:04.4532396Z       Built phpserialize==1.3
+2025-04-06T13:31:04.4730024Z       Built runstats==2.0.0
+2025-04-06T13:31:04.6819977Z  Downloaded pyproj
+2025-04-06T13:31:04.7824348Z  Downloaded babel
+2025-04-06T13:31:05.1670582Z  Downloaded pandas
+2025-04-06T13:31:05.2570515Z  Downloaded numpy
+2025-04-06T13:31:05.6652760Z  Downloaded botocore
+2025-04-06T13:31:05.6723558Z  Downloaded pyogrio
+2025-04-06T13:31:05.7770858Z  Downloaded geonamescache
+2025-04-06T13:31:06.2319138Z       Built reverse-geocoder==1.5.1
+2025-04-06T13:31:06.4171012Z  Downloaded playwright
+2025-04-06T13:31:06.4277194Z  Downloaded scipy
+2025-04-06T13:31:06.4659965Z  Downloaded pyarrow
+2025-04-06T13:31:06.8071791Z  Downloaded awscli
+2025-04-06T13:31:07.0479301Z Installed 126 packages in 240ms
+2025-04-06T13:31:10.2279204Z ============================= test session starts ==============================
+2025-04-06T13:31:10.2279867Z platform linux -- Python 3.11.11, pytest-8.3.5, pluggy-1.5.0
+2025-04-06T13:31:10.2280448Z rootdir: /home/runner/work/alltheplaces/alltheplaces
+2025-04-06T13:31:10.2280930Z configfile: pyproject.toml
+2025-04-06T13:31:10.2281301Z collected 188 items
+2025-04-06T13:31:10.2281484Z 
+2025-04-06T13:31:10.2637115Z tests/test_address_clean_up.py .......                                   [  3%]
+2025-04-06T13:31:10.2861089Z tests/test_bad_coords.py .....                                           [  6%]
+2025-04-06T13:31:10.2940645Z tests/test_categories.py ........                                        [ 10%]
+2025-04-06T13:31:10.2952608Z tests/test_closed.py ..                                                  [ 11%]
+2025-04-06T13:31:10.3053436Z tests/test_country_utils.py ....                                         [ 13%]
+2025-04-06T13:31:10.3113010Z tests/test_dict_parser.py ....                                           [ 15%]
+2025-04-06T13:31:10.3144815Z tests/test_exporters.py ....                                             [ 18%]
+2025-04-06T13:31:11.6133056Z tests/test_geo.py .......                                                [ 21%]
+2025-04-06T13:31:11.6147011Z tests/test_geojson.py ..                                                 [ 22%]
+2025-04-06T13:31:11.6213970Z tests/test_google_url.py .........                                       [ 27%]
+2025-04-06T13:31:42.5271105Z tests/test_item_attributes.py .F                                         [ 28%]
+2025-04-06T13:31:42.5472120Z tests/test_ld_parser.py .........................                        [ 42%]
+2025-04-06T13:31:42.5482159Z tests/test_lineage.py ..                                                 [ 43%]
+2025-04-06T13:31:42.5519120Z tests/test_mapy_cz_url.py ......                                         [ 46%]
+2025-04-06T13:31:42.5574589Z tests/test_merge_items.py ..........                                     [ 51%]
+2025-04-06T13:31:42.5601829Z tests/test_microdata_parser.py ...                                       [ 53%]
+2025-04-06T13:31:42.6346489Z tests/test_name_suggestion_index.py .....                                [ 55%]
+2025-04-06T13:31:42.6379248Z tests/test_og_parser.py .                                                [ 56%]
+2025-04-06T13:31:42.6977763Z tests/test_opening_hours.py ......................                       [ 68%]
+2025-04-06T13:31:42.6989278Z tests/test_pipeline_assert_url_scheme.py ..                              [ 69%]
+2025-04-06T13:31:42.8725795Z tests/test_pipeline_check_item_properties.py .                           [ 69%]
+2025-04-06T13:31:42.8800617Z tests/test_pipeline_clean_strings.py ..                                  [ 70%]
+2025-04-06T13:31:42.8913919Z tests/test_pipeline_count_categories.py ...                              [ 72%]
+2025-04-06T13:31:42.9076098Z tests/test_pipeline_country_code_cleanup.py ....                         [ 74%]
+2025-04-06T13:31:42.9184751Z tests/test_pipeline_drop_attributes.py ...                               [ 76%]
+2025-04-06T13:31:42.9809997Z tests/test_pipeline_email_clean_up.py ...                                [ 77%]
+2025-04-06T13:31:42.9831242Z tests/test_pipeline_extract_gb_postcode.py ...                           [ 79%]
+2025-04-06T13:31:42.9974527Z tests/test_pipeline_geojson_multipoint_simplification.py ....            [ 81%]
+2025-04-06T13:31:43.0560049Z tests/test_pipeline_nsi_categories.py ........                           [ 85%]
+2025-04-06T13:31:43.1513996Z tests/test_pipeline_phone_cleanup.py ............                        [ 92%]
+2025-04-06T13:31:43.5564366Z tests/test_pipeline_state_cleanup.py ....                                [ 94%]
+2025-04-06T13:31:43.5582850Z tests/test_proxy_location.py ...                                         [ 95%]
+2025-04-06T13:31:43.5590968Z tests/test_react_server_components.py .                                  [ 96%]
+2025-04-06T13:31:43.5615397Z tests/test_social_media.py ....                                          [ 98%]
+2025-04-06T13:31:43.6674309Z tests/test_structured_data_spider.py ...                                 [100%]
+2025-04-06T13:31:43.6674815Z 
+2025-04-06T13:31:43.6674987Z =================================== FAILURES ===================================
+2025-04-06T13:31:43.6675756Z _________________ test_item_attributes_brand_strings_match_nsi _________________
+2025-04-06T13:31:43.6676178Z 
+2025-04-06T13:31:43.6676369Z     def test_item_attributes_brand_strings_match_nsi():
+2025-04-06T13:31:43.6676767Z         """
+2025-04-06T13:31:43.6677240Z         Check if the brand/operator string from the spider matches the brand/operator in NSI.
+2025-04-06T13:31:43.6678471Z         Some edge/complex cases might occur that are not possible to solve right away.
+2025-04-06T13:31:43.6679322Z         If you face such a case, please add the spider to the ignored_spiders list.
+2025-04-06T13:31:43.6679877Z         """
+2025-04-06T13:31:43.6680152Z         ignored_spiders = [
+2025-04-06T13:31:43.6680528Z             "sparkasse_de",  # Overcomplicated in NSI
+2025-04-06T13:31:43.6680793Z         ]
+2025-04-06T13:31:43.6680947Z     
+2025-04-06T13:31:43.6681105Z         fails = []
+2025-04-06T13:31:43.6681293Z         spider_names = set()
+2025-04-06T13:31:43.6681562Z         for spider_class in iter_spider_classes_in_modules():
+2025-04-06T13:31:43.6681888Z             spider_names.add(spider_class.name)
+2025-04-06T13:31:43.6682133Z     
+2025-04-06T13:31:43.6682325Z             if spider_class.name in ignored_spiders:
+2025-04-06T13:31:43.6682582Z                 continue
+2025-04-06T13:31:43.6682795Z             for tree in ["brand", "operator"]:
+2025-04-06T13:31:43.6683123Z                 item_attributes = getattr(spider_class, "item_attributes", {})
+2025-04-06T13:31:43.6683493Z                 if not isinstance(item_attributes, dict):
+2025-04-06T13:31:43.6683757Z                     continue
+2025-04-06T13:31:43.6683945Z     
+2025-04-06T13:31:43.6684141Z                 # Exit early if the item_attributes are not set
+2025-04-06T13:31:43.6684574Z                 if not item_attributes.get(tree) or not item_attributes.get("{}_wikidata".format(tree)):
+2025-04-06T13:31:43.6684935Z                     continue
+2025-04-06T13:31:43.6685356Z                 # Exit early if brand detection is disabled
+2025-04-06T13:31:43.6685671Z                 if item_attributes.get("nsi_id") == "N/A":
+2025-04-06T13:31:43.6686118Z                     continue
+2025-04-06T13:31:43.6686293Z     
+2025-04-06T13:31:43.6686444Z                 entry = False
+2025-04-06T13:31:43.6686647Z                 entry_details = []
+2025-04-06T13:31:43.6686870Z                 matching_entry = False
+2025-04-06T13:31:43.6687214Z                 for nsi_entry in NSI().iter_nsi(item_attributes.get("{}_wikidata".format(tree))):
+2025-04-06T13:31:43.6687551Z                     entry = True
+2025-04-06T13:31:43.6687825Z                     if nsi_entry["tags"].get(tree) == item_attributes.get(tree):
+2025-04-06T13:31:43.6688121Z                         matching_entry = True
+2025-04-06T13:31:43.6688354Z                     else:
+2025-04-06T13:31:43.6688595Z                         entry_details.append(nsi_entry["tags"].get(tree))
+2025-04-06T13:31:43.6688856Z     
+2025-04-06T13:31:43.6688996Z                 if entry:
+2025-04-06T13:31:43.6689245Z                     # Brand is found in NSI, but the brand name does not match.
+2025-04-06T13:31:43.6689548Z                     if not matching_entry:
+2025-04-06T13:31:43.6689782Z                         logging.error(
+2025-04-06T13:31:43.6690036Z                             '{}: "{}" tag "{}" does not match expected {}'.format(
+2025-04-06T13:31:43.6690403Z                                 spider_class.name, tree, item_attributes.get(tree), set(entry_details)
+2025-04-06T13:31:43.6690730Z                             )
+2025-04-06T13:31:43.6690915Z                         )
+2025-04-06T13:31:43.6691197Z                         fails.append((item_attributes, spider_class.name, entry_details))
+2025-04-06T13:31:43.6691507Z                 else:
+2025-04-06T13:31:43.6691704Z                     # Brand is not found in NSI.
+2025-04-06T13:31:43.6692038Z                     # It doesn't contribute to the fails list, as it's currently out of focus
+2025-04-06T13:31:43.6692365Z                     # logging.warning(
+2025-04-06T13:31:43.6692606Z                     #     "Missing {} in NSI: {} {}".format(
+2025-04-06T13:31:43.6692983Z                     #         tree, item_attributes.get(tree), item_attributes.get("{}_wikidata".format(tree))
+2025-04-06T13:31:43.6693328Z                     #     )
+2025-04-06T13:31:43.6693509Z                     # )
+2025-04-06T13:31:43.6693686Z                     continue
+2025-04-06T13:31:43.6693982Z         if fails:
+2025-04-06T13:31:43.6694178Z >           assert False
+2025-04-06T13:31:43.6694441Z E           assert False
+2025-04-06T13:31:43.6694557Z 
+2025-04-06T13:31:43.6694666Z tests/test_item_attributes.py:75: AssertionError
+2025-04-06T13:31:43.6695005Z ------------------------------ Captured log call -------------------------------
+2025-04-06T13:31:43.6695745Z ERROR    root:test_item_attributes.py:59 ufc_gym_us: "brand" tag "UFC GYM" does not match expected {'UFC Gym'}
+2025-04-06T13:31:43.6696202Z =========================== short test summary info ============================
+2025-04-06T13:31:43.6696698Z FAILED tests/test_item_attributes.py::test_item_attributes_brand_strings_match_nsi - assert False
+2025-04-06T13:31:43.6697162Z ======================== 1 failed, 187 passed in 36.28s ========================
+2025-04-06T13:31:44.5464691Z ##[error]Process completed with exit code 1.
+2025-04-06T13:31:44.5561787Z Post job cleanup.
+2025-04-06T13:31:44.6496588Z [command]/usr/bin/git version
+2025-04-06T13:31:44.6539701Z git version 2.49.0
+2025-04-06T13:31:44.6581923Z Temporarily overriding HOME='/home/runner/work/_temp/11867ca7-0914-4652-92f4-b4b90e236432' before making global git config changes
+2025-04-06T13:31:44.6583109Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-06T13:31:44.6587405Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/alltheplaces/alltheplaces
+2025-04-06T13:31:44.6622302Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-06T13:31:44.6655013Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-06T13:31:44.6894365Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-06T13:31:44.6915842Z http.https://github.com/.extraheader
+2025-04-06T13:31:44.6927856Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-06T13:31:44.6958963Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-06T13:31:44.7299603Z Cleaning up orphan processes

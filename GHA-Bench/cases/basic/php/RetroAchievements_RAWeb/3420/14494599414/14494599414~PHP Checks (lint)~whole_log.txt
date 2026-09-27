@@ -1,0 +1,231 @@
+﻿2025-04-16T14:00:13.4252264Z Current runner version: '2.323.0'
+2025-04-16T14:00:13.4283817Z ##[group]Operating System
+2025-04-16T14:00:13.4285268Z Ubuntu
+2025-04-16T14:00:13.4285959Z 22.04.5
+2025-04-16T14:00:13.4286868Z LTS
+2025-04-16T14:00:13.4287894Z ##[endgroup]
+2025-04-16T14:00:13.4288802Z ##[group]Runner Image
+2025-04-16T14:00:13.4289924Z Image: ubuntu-22.04
+2025-04-16T14:00:13.4290792Z Version: 20250406.1.0
+2025-04-16T14:00:13.4292588Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20250406.1/images/ubuntu/Ubuntu2204-Readme.md
+2025-04-16T14:00:13.4294956Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20250406.1
+2025-04-16T14:00:13.4296473Z ##[endgroup]
+2025-04-16T14:00:13.4297256Z ##[group]Runner Image Provisioner
+2025-04-16T14:00:13.4298605Z 2.0.422.1
+2025-04-16T14:00:13.4299316Z ##[endgroup]
+2025-04-16T14:00:13.4303181Z ##[group]GITHUB_TOKEN Permissions
+2025-04-16T14:00:13.4306531Z Actions: read
+2025-04-16T14:00:13.4307928Z Attestations: read
+2025-04-16T14:00:13.4308948Z Checks: read
+2025-04-16T14:00:13.4309721Z Contents: read
+2025-04-16T14:00:13.4310639Z Deployments: read
+2025-04-16T14:00:13.4311497Z Discussions: read
+2025-04-16T14:00:13.4312279Z Issues: read
+2025-04-16T14:00:13.4313169Z Metadata: read
+2025-04-16T14:00:13.4313853Z Models: read
+2025-04-16T14:00:13.4314606Z Packages: read
+2025-04-16T14:00:13.4315470Z Pages: read
+2025-04-16T14:00:13.4316273Z PullRequests: read
+2025-04-16T14:00:13.4317210Z RepositoryProjects: read
+2025-04-16T14:00:13.4318293Z SecurityEvents: read
+2025-04-16T14:00:13.4319091Z Statuses: read
+2025-04-16T14:00:13.4319761Z ##[endgroup]
+2025-04-16T14:00:13.4323897Z Secret source: None
+2025-04-16T14:00:13.4325477Z Prepare workflow directory
+2025-04-16T14:00:13.4798195Z Prepare all required actions
+2025-04-16T14:00:13.4853028Z Getting action download info
+2025-04-16T14:00:13.9499154Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-16T14:00:13.9500409Z Version: 4.2.2
+2025-04-16T14:00:13.9501477Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-16T14:00:13.9502717Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-16T14:00:13.9503557Z ##[endgroup]
+2025-04-16T14:00:14.0596358Z Download action repository 'shivammathur/setup-php@v2' (SHA:cf4cade2721270509d5b1c766ab3549210a39a2a)
+2025-04-16T14:00:14.2759442Z ##[group]Download immutable action package 'actions/cache@v4'
+2025-04-16T14:00:14.2760148Z Version: 4.2.3
+2025-04-16T14:00:14.2760820Z Digest: sha256:c8a3bb963e1f1826d8fcc8d1354f0dd29d8ac1db1d4f6f20247055ae11b81ed9
+2025-04-16T14:00:14.2761711Z Source commit SHA: 5a3ec84eff668545956fd18022155c47e93e2684
+2025-04-16T14:00:14.2762323Z ##[endgroup]
+2025-04-16T14:00:14.4728702Z Complete job name: PHP Checks (lint)
+2025-04-16T14:00:14.5428562Z ##[group]Run actions/checkout@v4
+2025-04-16T14:00:14.5429508Z with:
+2025-04-16T14:00:14.5429941Z   fetch-depth: 1
+2025-04-16T14:00:14.5430387Z   repository: RetroAchievements/RAWeb
+2025-04-16T14:00:14.5431140Z   token: ***
+2025-04-16T14:00:14.5431574Z   ssh-strict: true
+2025-04-16T14:00:14.5432004Z   ssh-user: git
+2025-04-16T14:00:14.5432425Z   persist-credentials: true
+2025-04-16T14:00:14.5432886Z   clean: true
+2025-04-16T14:00:14.5433297Z   sparse-checkout-cone-mode: true
+2025-04-16T14:00:14.5433800Z   fetch-tags: false
+2025-04-16T14:00:14.5434222Z   show-progress: true
+2025-04-16T14:00:14.5434646Z   lfs: false
+2025-04-16T14:00:14.5435026Z   submodules: false
+2025-04-16T14:00:14.5435456Z   set-safe-directory: true
+2025-04-16T14:00:14.5436158Z ##[endgroup]
+2025-04-16T14:00:14.8222454Z Syncing repository: RetroAchievements/RAWeb
+2025-04-16T14:00:14.8225146Z ##[group]Getting Git version info
+2025-04-16T14:00:14.8226351Z Working directory is '/home/runner/work/RAWeb/RAWeb'
+2025-04-16T14:00:14.8228326Z [command]/usr/bin/git version
+2025-04-16T14:00:14.8316194Z git version 2.49.0
+2025-04-16T14:00:14.8346625Z ##[endgroup]
+2025-04-16T14:00:14.8363512Z Temporarily overriding HOME='/home/runner/work/_temp/a3596b9d-aad0-48c0-b8d7-ee0f45300a38' before making global git config changes
+2025-04-16T14:00:14.8367995Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-16T14:00:14.8371242Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/RAWeb/RAWeb
+2025-04-16T14:00:14.8408641Z Deleting the contents of '/home/runner/work/RAWeb/RAWeb'
+2025-04-16T14:00:14.8413661Z ##[group]Initializing the repository
+2025-04-16T14:00:14.8418654Z [command]/usr/bin/git init /home/runner/work/RAWeb/RAWeb
+2025-04-16T14:00:14.8493866Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-16T14:00:14.8495840Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-16T14:00:14.8498088Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-16T14:00:14.8499613Z hint:
+2025-04-16T14:00:14.8500665Z hint: 	git config --global init.defaultBranch <name>
+2025-04-16T14:00:14.8501988Z hint:
+2025-04-16T14:00:14.8503773Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-16T14:00:14.8506948Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-16T14:00:14.8509789Z hint:
+2025-04-16T14:00:14.8511289Z hint: 	git branch -m <name>
+2025-04-16T14:00:14.8513718Z Initialized empty Git repository in /home/runner/work/RAWeb/RAWeb/.git/
+2025-04-16T14:00:14.8519886Z [command]/usr/bin/git remote add origin https://github.com/RetroAchievements/RAWeb
+2025-04-16T14:00:14.8556161Z ##[endgroup]
+2025-04-16T14:00:14.8559165Z ##[group]Disabling automatic garbage collection
+2025-04-16T14:00:14.8561647Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-16T14:00:14.8591393Z ##[endgroup]
+2025-04-16T14:00:14.8593958Z ##[group]Setting up auth
+2025-04-16T14:00:14.8599209Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-16T14:00:14.8633117Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-16T14:00:14.8978917Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-16T14:00:14.9009841Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-16T14:00:14.9243980Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-16T14:00:14.9283518Z ##[endgroup]
+2025-04-16T14:00:14.9285081Z ##[group]Fetching the repository
+2025-04-16T14:00:14.9293806Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +053130caba1e2a60a48394e46123a2c2dc18e78e:refs/remotes/pull/3420/merge
+2025-04-16T14:00:16.1692646Z From https://github.com/RetroAchievements/RAWeb
+2025-04-16T14:00:16.1693692Z  * [new ref]         053130caba1e2a60a48394e46123a2c2dc18e78e -> pull/3420/merge
+2025-04-16T14:00:16.1728212Z ##[endgroup]
+2025-04-16T14:00:16.1728968Z ##[group]Determining the checkout info
+2025-04-16T14:00:16.1731020Z ##[endgroup]
+2025-04-16T14:00:16.1736928Z [command]/usr/bin/git sparse-checkout disable
+2025-04-16T14:00:16.1781661Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-16T14:00:16.1809290Z ##[group]Checking out the ref
+2025-04-16T14:00:16.1813779Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/3420/merge
+2025-04-16T14:00:16.3793585Z Note: switching to 'refs/remotes/pull/3420/merge'.
+2025-04-16T14:00:16.3794561Z 
+2025-04-16T14:00:16.3795091Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-16T14:00:16.3797289Z changes and commit them, and you can discard any commits you make in this
+2025-04-16T14:00:16.3799294Z state without impacting any branches by switching back to a branch.
+2025-04-16T14:00:16.3799781Z 
+2025-04-16T14:00:16.3800147Z If you want to create a new branch to retain commits you create, you may
+2025-04-16T14:00:16.3801297Z do so (now or later) by using -c with the switch command. Example:
+2025-04-16T14:00:16.3801607Z 
+2025-04-16T14:00:16.3801734Z   git switch -c <new-branch-name>
+2025-04-16T14:00:16.3801939Z 
+2025-04-16T14:00:16.3802054Z Or undo this operation with:
+2025-04-16T14:00:16.3802228Z 
+2025-04-16T14:00:16.3802334Z   git switch -
+2025-04-16T14:00:16.3802486Z 
+2025-04-16T14:00:16.3802713Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-16T14:00:16.3803022Z 
+2025-04-16T14:00:16.3803385Z HEAD is now at 053130c Merge 2de5a6d4edea86d01b1db288749a3edea25c5d0a into d8dc7eae2ad3d0a42b98dfb9f4aa17974454543f
+2025-04-16T14:00:16.3845140Z ##[endgroup]
+2025-04-16T14:00:16.3849265Z [command]/usr/bin/git log -1 --format=%H
+2025-04-16T14:00:16.3872214Z 053130caba1e2a60a48394e46123a2c2dc18e78e
+2025-04-16T14:00:16.4132783Z ##[group]Run shivammathur/setup-php@v2
+2025-04-16T14:00:16.4133300Z with:
+2025-04-16T14:00:16.4133642Z   php-version: 8.2
+2025-04-16T14:00:16.4133913Z   extensions: mbstring, :psr
+2025-04-16T14:00:16.4134166Z   coverage: none
+2025-04-16T14:00:16.4134394Z   ini-values: memory_limit=1G
+2025-04-16T14:00:16.4134662Z   ini-file: production
+2025-04-16T14:00:16.4134916Z ##[endgroup]
+2025-04-16T14:00:16.4856464Z [command]/usr/bin/bash /home/runner/work/_actions/shivammathur/setup-php/v2/src/scripts/run.sh
+2025-04-16T14:00:16.5044351Z 
+2025-04-16T14:00:16.5045186Z [90;1m==> [0m[37;1mSetup PHP[0m
+2025-04-16T14:00:20.2035468Z [32;1m✓ [0m[34;1mPHP [0m[90;1mInstalled PHP 8.2.28[0m
+2025-04-16T14:00:20.2036060Z 
+2025-04-16T14:00:20.2036319Z [90;1m==> [0m[37;1mSetup Extensions[0m
+2025-04-16T14:00:20.2575902Z [32;1m✓ [0m[34;1mmbstring [0m[90;1mEnabled[0m
+2025-04-16T14:00:20.3076216Z [32;1m✓ [0m[34;1m:psr [0m[90;1mCould not find psr on PHP 8.2.28[0m
+2025-04-16T14:00:20.3076912Z 
+2025-04-16T14:00:20.3077183Z [90;1m==> [0m[37;1mSetup Tools[0m
+2025-04-16T14:00:20.6666934Z [32;1m✓ [0m[34;1mcomposer [0m[90;1mAdded composer 2.8.6[0m
+2025-04-16T14:00:20.6667972Z 
+2025-04-16T14:00:20.6668492Z [90;1m==> [0m[37;1mSetup Coverage[0m
+2025-04-16T14:00:20.9118624Z [32;1m✓ [0m[34;1mnone [0m[90;1mDisabled Xdebug and PCOV[0m
+2025-04-16T14:00:20.9119264Z 
+2025-04-16T14:00:20.9119614Z [90;1m==> [0m[37;1mAdd php.ini values[0m
+2025-04-16T14:00:20.9215264Z [32;1m✓ [0m[34;1mmemory_limit=1G [0m[90;1mAdded to php.ini[0m
+2025-04-16T14:00:20.9215829Z 
+2025-04-16T14:00:20.9216142Z [90;1m==> [0m[37;1mSponsor setup-php[0m
+2025-04-16T14:00:20.9218311Z [32;1m✓ [0m[34;1msetup-php [0m[90;1mhttps://setup-php.com/sponsor[0m
+2025-04-16T14:00:20.9353048Z ##[group]Run actions/cache@v4
+2025-04-16T14:00:20.9353309Z with:
+2025-04-16T14:00:20.9353486Z   path: ~/.composer/cache
+vendor
+
+2025-04-16T14:00:20.9353875Z   key: Linux-php-d1508b90131c33f8dded593aff277f7cf2cb60f382e719b1010def419c07d238
+2025-04-16T14:00:20.9354285Z   restore-keys: Linux-php-
+
+2025-04-16T14:00:20.9354515Z   enableCrossOsArchive: false
+2025-04-16T14:00:20.9354756Z   fail-on-cache-miss: false
+2025-04-16T14:00:20.9354955Z   lookup-only: false
+2025-04-16T14:00:20.9355139Z   save-always: false
+2025-04-16T14:00:20.9355306Z env:
+2025-04-16T14:00:20.9355477Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-16T14:00:20.9355688Z   COMPOSER_NO_INTERACTION: 1
+2025-04-16T14:00:20.9355892Z   COMPOSER_NO_AUDIT: 1
+2025-04-16T14:00:20.9356069Z ##[endgroup]
+2025-04-16T14:00:21.1740916Z Cache hit for: Linux-php-d1508b90131c33f8dded593aff277f7cf2cb60f382e719b1010def419c07d238
+2025-04-16T14:00:21.4938737Z Received 44021507 of 44021507 (100.0%), 146.3 MBs/sec
+2025-04-16T14:00:21.4939936Z Cache Size: ~42 MB (44021507 B)
+2025-04-16T14:00:21.4968468Z [command]/usr/bin/tar -xf /home/runner/work/_temp/d5023b89-921f-4430-a253-e107b653b10e/cache.tzst -P -C /home/runner/work/RAWeb/RAWeb --use-compress-program unzstd
+2025-04-16T14:00:22.8735076Z Cache restored successfully
+2025-04-16T14:00:22.9044518Z Cache restored from key: Linux-php-d1508b90131c33f8dded593aff277f7cf2cb60f382e719b1010def419c07d238
+2025-04-16T14:00:22.9196725Z ##[group]Run composer lint
+2025-04-16T14:00:22.9197026Z [36;1mcomposer lint[0m
+2025-04-16T14:00:22.9304038Z shell: /usr/bin/bash -e {0}
+2025-04-16T14:00:22.9304312Z env:
+2025-04-16T14:00:22.9304535Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-16T14:00:22.9304827Z   COMPOSER_NO_INTERACTION: 1
+2025-04-16T14:00:22.9305091Z   COMPOSER_NO_AUDIT: 1
+2025-04-16T14:00:22.9305318Z ##[endgroup]
+2025-04-16T14:00:23.3011406Z > @php vendor/bin/pint --test
+2025-04-16T14:00:23.6500661Z 
+2025-04-16T14:00:24.8156621Z   ............................................................................
+2025-04-16T14:00:25.9584237Z   ....⨯.......................................................................
+2025-04-16T14:00:27.9235791Z   ............................................................................
+2025-04-16T14:00:29.0111167Z   ............................................................................
+2025-04-16T14:00:31.3594666Z   ............................................................................
+2025-04-16T14:00:33.2252670Z   ............................................................................
+2025-04-16T14:00:33.8472775Z   ............................................................................
+2025-04-16T14:00:35.3584549Z   ............................................................................
+2025-04-16T14:00:36.6075010Z   ............................................................................
+2025-04-16T14:00:37.3807480Z   ............................................................................
+2025-04-16T14:00:38.6626408Z   ............................................................................
+2025-04-16T14:00:41.6012138Z   ............................................................................
+2025-04-16T14:00:43.6281987Z   ............................................................................
+2025-04-16T14:00:44.9305308Z   ............................................................................
+2025-04-16T14:00:47.8280546Z   ............................................................................
+2025-04-16T14:00:54.1930433Z   ............................................................................
+2025-04-16T14:00:56.3106498Z   ............................................................................
+2025-04-16T14:00:57.0402601Z   ............................................................................
+2025-04-16T14:00:57.7126832Z   ............................................................
+2025-04-16T14:00:57.7127306Z 
+2025-04-16T14:00:57.7128279Z   ──────────────────────────────────────────────────────────────────── Symfony  
+2025-04-16T14:00:57.7129033Z     FAIL   ......................................... 1428 files, 1 style issue  
+2025-04-16T14:00:57.7134984Z   ⨯ public/request/comment/create.php            single_space_around_construct  
+2025-04-16T14:00:57.7135496Z 
+2025-04-16T14:00:57.7305665Z Script @php vendor/bin/pint --test handling the lint event returned with error code 1
+2025-04-16T14:00:57.7457925Z ##[error]Process completed with exit code 1.
+2025-04-16T14:00:57.7538073Z Post job cleanup.
+2025-04-16T14:00:57.8512823Z [command]/usr/bin/git version
+2025-04-16T14:00:57.8553402Z git version 2.49.0
+2025-04-16T14:00:57.8604952Z Temporarily overriding HOME='/home/runner/work/_temp/5de9380c-8663-4a63-9d25-0262698317c4' before making global git config changes
+2025-04-16T14:00:57.8606188Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-16T14:00:57.8611339Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/RAWeb/RAWeb
+2025-04-16T14:00:57.8645971Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-16T14:00:57.8678895Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-16T14:00:57.8932154Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-16T14:00:57.8956910Z http.https://github.com/.extraheader
+2025-04-16T14:00:57.8970030Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-16T14:00:57.9002104Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-16T14:00:57.9353165Z Cleaning up orphan processes

@@ -1,0 +1,295 @@
+﻿2025-04-10T09:10:06.5395507Z Current runner version: '2.323.0'
+2025-04-10T09:10:06.5418786Z ##[group]Operating System
+2025-04-10T09:10:06.5419499Z Ubuntu
+2025-04-10T09:10:06.5419975Z 24.04.2
+2025-04-10T09:10:06.5420764Z LTS
+2025-04-10T09:10:06.5421216Z ##[endgroup]
+2025-04-10T09:10:06.5421723Z ##[group]Runner Image
+2025-04-10T09:10:06.5422310Z Image: ubuntu-24.04
+2025-04-10T09:10:06.5422847Z Version: 20250316.1.0
+2025-04-10T09:10:06.5423832Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250316.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-10T09:10:06.5425244Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250316.1
+2025-04-10T09:10:06.5426147Z ##[endgroup]
+2025-04-10T09:10:06.5426607Z ##[group]Runner Image Provisioner
+2025-04-10T09:10:06.5427232Z 2.0.422.1
+2025-04-10T09:10:06.5427668Z ##[endgroup]
+2025-04-10T09:10:06.5430188Z ##[group]GITHUB_TOKEN Permissions
+2025-04-10T09:10:06.5432444Z Actions: write
+2025-04-10T09:10:06.5433160Z Attestations: write
+2025-04-10T09:10:06.5433805Z Checks: write
+2025-04-10T09:10:06.5434258Z Contents: write
+2025-04-10T09:10:06.5434732Z Deployments: write
+2025-04-10T09:10:06.5435299Z Discussions: write
+2025-04-10T09:10:06.5435763Z Issues: write
+2025-04-10T09:10:06.5436212Z Metadata: read
+2025-04-10T09:10:06.5436706Z Models: read
+2025-04-10T09:10:06.5437184Z Packages: write
+2025-04-10T09:10:06.5437629Z Pages: write
+2025-04-10T09:10:06.5438204Z PullRequests: write
+2025-04-10T09:10:06.5438689Z RepositoryProjects: write
+2025-04-10T09:10:06.5439232Z SecurityEvents: write
+2025-04-10T09:10:06.5439740Z Statuses: write
+2025-04-10T09:10:06.5440435Z ##[endgroup]
+2025-04-10T09:10:06.5442427Z Secret source: Actions
+2025-04-10T09:10:06.5443217Z Prepare workflow directory
+2025-04-10T09:10:06.5963061Z Prepare all required actions
+2025-04-10T09:10:06.6016274Z Getting action download info
+2025-04-10T09:10:07.0947799Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-10T09:10:07.0948733Z Version: 4.2.2
+2025-04-10T09:10:07.0949649Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-10T09:10:07.1026283Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-10T09:10:07.1026930Z ##[endgroup]
+2025-04-10T09:10:07.9253462Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-04-10T09:10:07.9254230Z Version: 5.5.0
+2025-04-10T09:10:07.9254904Z Digest: sha256:1fac95d751afd58314aebd2ab01d4bf3b3109a441917bd2cac2a22898ec494f7
+2025-04-10T09:10:07.9255798Z Source commit SHA: 8d9ed9ac5c53483de85588cdf95a591a75ab9f55
+2025-04-10T09:10:07.9256440Z ##[endgroup]
+2025-04-10T09:10:08.1459501Z Download action repository 'snnaplab/get-labels-action@f426df40304808ace3b5282d4f036515f7609576' (SHA:f426df40304808ace3b5282d4f036515f7609576)
+2025-04-10T09:10:08.3479999Z Download action repository 'dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36' (SHA:de90cc6fb38fc0963ad72b210f1f284cd68cea36)
+2025-04-10T09:10:08.7662850Z Complete job name: validate changelog
+2025-04-10T09:10:08.8425734Z ##[group]Run actions/checkout@v4
+2025-04-10T09:10:08.8427026Z with:
+2025-04-10T09:10:08.8427738Z   fetch-depth: 0
+2025-04-10T09:10:08.8428542Z   repository: bjlittle/geovista
+2025-04-10T09:10:08.8429734Z   token: ***
+2025-04-10T09:10:08.8430730Z   ssh-strict: true
+2025-04-10T09:10:08.8431517Z   ssh-user: git
+2025-04-10T09:10:08.8432303Z   persist-credentials: true
+2025-04-10T09:10:08.8433168Z   clean: true
+2025-04-10T09:10:08.8433957Z   sparse-checkout-cone-mode: true
+2025-04-10T09:10:08.8434911Z   fetch-tags: false
+2025-04-10T09:10:08.8435688Z   show-progress: true
+2025-04-10T09:10:08.8436481Z   lfs: false
+2025-04-10T09:10:08.8437204Z   submodules: false
+2025-04-10T09:10:08.8438001Z   set-safe-directory: true
+2025-04-10T09:10:08.8439152Z ##[endgroup]
+2025-04-10T09:10:08.9516829Z Syncing repository: bjlittle/geovista
+2025-04-10T09:10:08.9519311Z ##[group]Getting Git version info
+2025-04-10T09:10:08.9520934Z Working directory is '/home/runner/work/geovista/geovista'
+2025-04-10T09:10:08.9522855Z [command]/usr/bin/git version
+2025-04-10T09:10:09.0698326Z git version 2.48.1
+2025-04-10T09:10:09.0725698Z ##[endgroup]
+2025-04-10T09:10:09.0741464Z Temporarily overriding HOME='/home/runner/work/_temp/838cb10f-c1f3-47d3-8bf9-f7d2d3e4c75d' before making global git config changes
+2025-04-10T09:10:09.0744211Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-10T09:10:09.0746910Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/geovista/geovista
+2025-04-10T09:10:09.0825570Z Deleting the contents of '/home/runner/work/geovista/geovista'
+2025-04-10T09:10:09.0829569Z ##[group]Initializing the repository
+2025-04-10T09:10:09.0833715Z [command]/usr/bin/git init /home/runner/work/geovista/geovista
+2025-04-10T09:10:09.1829376Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-10T09:10:09.1831881Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-10T09:10:09.1834088Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-10T09:10:09.1835723Z hint:
+2025-04-10T09:10:09.1836840Z hint: 	git config --global init.defaultBranch <name>
+2025-04-10T09:10:09.1838235Z hint:
+2025-04-10T09:10:09.1839595Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-10T09:10:09.1841626Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-10T09:10:09.1843004Z hint:
+2025-04-10T09:10:09.1843725Z hint: 	git branch -m <name>
+2025-04-10T09:10:09.2343254Z Initialized empty Git repository in /home/runner/work/geovista/geovista/.git/
+2025-04-10T09:10:09.2354587Z [command]/usr/bin/git remote add origin https://github.com/bjlittle/geovista
+2025-04-10T09:10:09.2435105Z ##[endgroup]
+2025-04-10T09:10:09.2437416Z ##[group]Disabling automatic garbage collection
+2025-04-10T09:10:09.2439271Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-10T09:10:09.2468462Z ##[endgroup]
+2025-04-10T09:10:09.2469737Z ##[group]Setting up auth
+2025-04-10T09:10:09.2475578Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-10T09:10:09.2509973Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-10T09:10:09.4229895Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-10T09:10:09.4265270Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-10T09:10:09.4527504Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-10T09:10:09.4565268Z ##[endgroup]
+2025-04-10T09:10:09.4567506Z ##[group]Fetching the repository
+2025-04-10T09:10:09.4578553Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* +9495a6e9f52d38c016745827d5b33b620519f809:refs/remotes/pull/1411/merge
+2025-04-10T09:10:10.5889457Z From https://github.com/bjlittle/geovista
+2025-04-10T09:10:10.5890416Z  * [new branch]      doc/joss        -> origin/doc/joss
+2025-04-10T09:10:10.5891259Z  * [new branch]      doc/reference-style-links -> origin/doc/reference-style-links
+2025-04-10T09:10:10.5892404Z  * [new branch]      hatch           -> origin/hatch
+2025-04-10T09:10:10.5893229Z  * [new branch]      lychee-ignore   -> origin/lychee-ignore
+2025-04-10T09:10:10.5894652Z  * [new branch]      main            -> origin/main
+2025-04-10T09:10:10.5898208Z  * [new branch]      maint/zizmor    -> origin/maint/zizmor
+2025-04-10T09:10:10.5901152Z  * [new branch]      pytest-mpl      -> origin/pytest-mpl
+2025-04-10T09:10:10.5903533Z  * [new branch]      sphinx-parallel -> origin/sphinx-parallel
+2025-04-10T09:10:10.5905841Z  * [new branch]      use-py313       -> origin/use-py313
+2025-04-10T09:10:10.5908247Z  * [new branch]      v0.4.x          -> origin/v0.4.x
+2025-04-10T09:10:10.5910405Z  * [new branch]      v0.5.x          -> origin/v0.5.x
+2025-04-10T09:10:10.5912881Z  * [new tag]         v0.1.0          -> v0.1.0
+2025-04-10T09:10:10.5913780Z  * [new tag]         v0.1.1          -> v0.1.1
+2025-04-10T09:10:10.5914524Z  * [new tag]         v0.1.2          -> v0.1.2
+2025-04-10T09:10:10.5916763Z  * [new tag]         v0.1.3          -> v0.1.3
+2025-04-10T09:10:10.5919048Z  * [new tag]         v0.1.4          -> v0.1.4
+2025-04-10T09:10:10.5920760Z  * [new tag]         v0.1a0          -> v0.1a0
+2025-04-10T09:10:10.5921290Z  * [new tag]         v0.2.0          -> v0.2.0
+2025-04-10T09:10:10.5922105Z  * [new tag]         v0.3.0          -> v0.3.0
+2025-04-10T09:10:10.5923244Z  * [new tag]         v0.4.0          -> v0.4.0
+2025-04-10T09:10:10.5925138Z  * [new tag]         v0.4.1          -> v0.4.1
+2025-04-10T09:10:10.5927446Z  * [new tag]         v0.5.0          -> v0.5.0
+2025-04-10T09:10:10.5928348Z  * [new tag]         v0.5.1          -> v0.5.1
+2025-04-10T09:10:10.5928972Z  * [new tag]         v0.5.2          -> v0.5.2
+2025-04-10T09:10:10.5930121Z  * [new tag]         v0.5.3          -> v0.5.3
+2025-04-10T09:10:10.5933823Z  * [new ref]         9495a6e9f52d38c016745827d5b33b620519f809 -> pull/1411/merge
+2025-04-10T09:10:10.6157923Z ##[endgroup]
+2025-04-10T09:10:10.6158822Z ##[group]Determining the checkout info
+2025-04-10T09:10:10.6159796Z ##[endgroup]
+2025-04-10T09:10:10.6167154Z [command]/usr/bin/git sparse-checkout disable
+2025-04-10T09:10:10.6251135Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-10T09:10:10.6286962Z ##[group]Checking out the ref
+2025-04-10T09:10:10.6287590Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1411/merge
+2025-04-10T09:10:10.6692881Z Note: switching to 'refs/remotes/pull/1411/merge'.
+2025-04-10T09:10:10.6693550Z 
+2025-04-10T09:10:10.6693982Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-10T09:10:10.6694928Z changes and commit them, and you can discard any commits you make in this
+2025-04-10T09:10:10.6695836Z state without impacting any branches by switching back to a branch.
+2025-04-10T09:10:10.6696377Z 
+2025-04-10T09:10:10.6696735Z If you want to create a new branch to retain commits you create, you may
+2025-04-10T09:10:10.6697504Z do so (now or later) by using -c with the switch command. Example:
+2025-04-10T09:10:10.6697801Z 
+2025-04-10T09:10:10.6697934Z   git switch -c <new-branch-name>
+2025-04-10T09:10:10.6698163Z 
+2025-04-10T09:10:10.6698294Z Or undo this operation with:
+2025-04-10T09:10:10.6698463Z 
+2025-04-10T09:10:10.6698550Z   git switch -
+2025-04-10T09:10:10.6698675Z 
+2025-04-10T09:10:10.6698950Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-10T09:10:10.6699520Z 
+2025-04-10T09:10:10.6700103Z HEAD is now at 9495a6e Merge d4c5b0e6bce1fa6366d0f99efebb41f141752b67 into da47d3397455e79755fe48828e90424918d9263c
+2025-04-10T09:10:10.6704698Z ##[endgroup]
+2025-04-10T09:10:10.6746520Z [command]/usr/bin/git log -1 --format=%H
+2025-04-10T09:10:10.6768655Z 9495a6e9f52d38c016745827d5b33b620519f809
+2025-04-10T09:10:10.6982337Z ##[group]Run actions/setup-python@v5
+2025-04-10T09:10:10.6982604Z with:
+2025-04-10T09:10:10.6982782Z   python-version: 3.x
+2025-04-10T09:10:10.6982978Z   check-latest: false
+2025-04-10T09:10:10.6983287Z   token: ***
+2025-04-10T09:10:10.6983469Z   update-environment: true
+2025-04-10T09:10:10.6983686Z   allow-prereleases: false
+2025-04-10T09:10:10.6983886Z   freethreaded: false
+2025-04-10T09:10:10.6984064Z ##[endgroup]
+2025-04-10T09:10:10.8607214Z ##[group]Installed versions
+2025-04-10T09:10:10.8662382Z Successfully set up CPython (3.13.2)
+2025-04-10T09:10:10.8663162Z ##[endgroup]
+2025-04-10T09:10:10.8810110Z ##[group]Run snnaplab/get-labels-action@f426df40304808ace3b5282d4f036515f7609576
+2025-04-10T09:10:10.8810721Z with:
+2025-04-10T09:10:10.8810885Z   number: 1411
+2025-04-10T09:10:10.8811075Z   repository: bjlittle/geovista
+2025-04-10T09:10:10.8811635Z   github-token: ***
+2025-04-10T09:10:10.8811816Z env:
+2025-04-10T09:10:10.8812040Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-10T09:10:10.8812430Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-04-10T09:10:10.8812811Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-10T09:10:10.8813133Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-10T09:10:10.8813461Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-10T09:10:10.8813787Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-04-10T09:10:10.8814065Z ##[endgroup]
+2025-04-10T09:10:10.8898507Z ##[group]Run set -euo pipefail
+2025-04-10T09:10:10.8898858Z [36;1mset -euo pipefail[0m
+2025-04-10T09:10:10.8899066Z [36;1m[0m
+2025-04-10T09:10:10.8899266Z [36;1mfunction validate_is_not_empty() {[0m
+2025-04-10T09:10:10.8899521Z [36;1m  if [ -z "$1" ]; then[0m
+2025-04-10T09:10:10.8899773Z [36;1m    echo "::error::Invalid argument: $2"[0m
+2025-04-10T09:10:10.8900034Z [36;1m    return 1[0m
+2025-04-10T09:10:10.8900426Z [36;1m  fi[0m
+2025-04-10T09:10:10.8900619Z [36;1m}[0m
+2025-04-10T09:10:10.8900766Z [36;1m[0m
+2025-04-10T09:10:10.8900956Z [36;1mvalidate_is_not_empty "$NUMBER" 'number'[0m
+2025-04-10T09:10:10.8901255Z [36;1mvalidate_is_not_empty "$GH_REPO" 'repository'[0m
+2025-04-10T09:10:10.8901585Z [36;1mvalidate_is_not_empty "$GH_TOKEN" 'github-token'[0m
+2025-04-10T09:10:10.8901847Z [36;1m[0m
+2025-04-10T09:10:10.8902109Z [36;1mlabels=$(gh pr view "$NUMBER" --json labels -q '.labels|map(.name)')[0m
+2025-04-10T09:10:10.8902425Z [36;1m[0m
+2025-04-10T09:10:10.8902581Z [36;1mecho "labels: $labels"[0m
+2025-04-10T09:10:10.8902785Z [36;1m[0m
+2025-04-10T09:10:10.8902971Z [36;1mecho "labels=$labels" >> $GITHUB_OUTPUT[0m
+2025-04-10T09:10:10.8903243Z [36;1mecho "LABELS=$labels" >> $GITHUB_ENV[0m
+2025-04-10T09:10:10.8957222Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-10T09:10:10.8957531Z env:
+2025-04-10T09:10:10.8957783Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-10T09:10:10.8958191Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-04-10T09:10:10.8958570Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-10T09:10:10.8958898Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-10T09:10:10.8959219Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-10T09:10:10.8959549Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-04-10T09:10:10.8959819Z   NUMBER: 1411
+2025-04-10T09:10:10.8960000Z   GH_REPO: bjlittle/geovista
+2025-04-10T09:10:10.8960551Z   GH_TOKEN: ***
+2025-04-10T09:10:10.8960735Z ##[endgroup]
+2025-04-10T09:10:15.4690902Z labels: ["type: infrastructure"]
+2025-04-10T09:10:15.4785514Z ##[group]Run dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36
+2025-04-10T09:10:15.4785856Z with:
+2025-04-10T09:10:15.4786053Z   filters: changelog:
+  - 'changelog/**'
+
+2025-04-10T09:10:15.4786291Z   list-files: csv
+2025-04-10T09:10:15.4786603Z   token: ***
+2025-04-10T09:10:15.4786776Z   initial-fetch-depth: 100
+2025-04-10T09:10:15.4786975Z env:
+2025-04-10T09:10:15.4787192Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-10T09:10:15.4787578Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-04-10T09:10:15.4787952Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-10T09:10:15.4788272Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-10T09:10:15.4788596Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-10T09:10:15.4788918Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-04-10T09:10:15.4789212Z   LABELS: ["type: infrastructure"]
+2025-04-10T09:10:15.4789464Z ##[endgroup]
+2025-04-10T09:10:15.5683164Z ##[group]Fetching list of changed files for PR#1411 from Github API
+2025-04-10T09:10:15.5692372Z Invoking listFiles(pull_number: 1411, per_page: 100)
+2025-04-10T09:10:15.8024278Z Received 1 items
+2025-04-10T09:10:15.8025197Z [modified] .lycheeignore
+2025-04-10T09:10:15.8025987Z ##[endgroup]
+2025-04-10T09:10:15.8026322Z Detected 1 changed files
+2025-04-10T09:10:15.8029556Z Results:
+2025-04-10T09:10:15.8030383Z ##[group]Filter changelog = false
+2025-04-10T09:10:15.8030991Z Matching files: none
+2025-04-10T09:10:15.8040050Z ##[endgroup]
+2025-04-10T09:10:15.8040606Z Changes output set to []
+2025-04-10T09:10:15.8703857Z ##[group]Run python -m pip install click towncrier
+2025-04-10T09:10:15.8704221Z [36;1mpython -m pip install click towncrier[0m
+2025-04-10T09:10:15.8704562Z [36;1mpython -c "import sys; print(f'version = {sys.version}')"[0m
+2025-04-10T09:10:15.8704901Z [36;1mtowncrier --version[0m
+2025-04-10T09:10:15.8705142Z [36;1m./changelog.py "${PR}" "${CHANGELOG}"[0m
+2025-04-10T09:10:15.8752121Z shell: /usr/bin/bash -l {0}
+2025-04-10T09:10:15.8752346Z env:
+2025-04-10T09:10:15.8752573Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-10T09:10:15.8752978Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-04-10T09:10:15.8753369Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-10T09:10:15.8753710Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-10T09:10:15.8754041Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-04-10T09:10:15.8754397Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-04-10T09:10:15.8754690Z   LABELS: ["type: infrastructure"]
+2025-04-10T09:10:15.8754912Z   CHANGELOG: 
+2025-04-10T09:10:15.8755067Z   PR: 1411
+2025-04-10T09:10:15.8755225Z ##[endgroup]
+2025-04-10T09:10:20.4855113Z Collecting click
+2025-04-10T09:10:20.5680730Z   Downloading click-8.1.8-py3-none-any.whl.metadata (2.3 kB)
+2025-04-10T09:10:20.5880021Z Collecting towncrier
+2025-04-10T09:10:20.6073854Z   Downloading towncrier-24.8.0-py3-none-any.whl.metadata (4.2 kB)
+2025-04-10T09:10:20.6252329Z Collecting jinja2 (from towncrier)
+2025-04-10T09:10:20.6451086Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+2025-04-10T09:10:20.6884768Z Collecting MarkupSafe>=2.0 (from jinja2->towncrier)
+2025-04-10T09:10:20.7079158Z   Downloading MarkupSafe-3.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
+2025-04-10T09:10:20.7322923Z Downloading click-8.1.8-py3-none-any.whl (98 kB)
+2025-04-10T09:10:20.7818063Z Downloading towncrier-24.8.0-py3-none-any.whl (56 kB)
+2025-04-10T09:10:20.8052742Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+2025-04-10T09:10:20.8343792Z Downloading MarkupSafe-3.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (23 kB)
+2025-04-10T09:10:20.8774484Z Installing collected packages: MarkupSafe, click, jinja2, towncrier
+2025-04-10T09:10:21.0919595Z Successfully installed MarkupSafe-3.0.2 click-8.1.8 jinja2-3.1.6 towncrier-24.8.0
+2025-04-10T09:10:21.2374339Z version = 3.13.2 (main, Mar  6 2025, 21:50:20) [GCC 13.3.0]
+2025-04-10T09:10:21.3345055Z towncrier, version 24.8.0
+2025-04-10T09:10:21.4065030Z 💥 Also see "GHA Summary" for these changelog failure details.
+2025-04-10T09:10:21.4065607Z 
+2025-04-10T09:10:21.4071701Z ❌ Please provide a **changelog news fragment file** for **[PR#1411](https://github.com/bjlittle/geovista/pull/1411)**.
+2025-04-10T09:10:21.4072515Z 
+2025-04-10T09:10:21.4073546Z ℹ️ For further details see the [changelog](https://geovista.readthedocs.io/en/latest/developer/towncrier.html#changelog) documentation.
+2025-04-10T09:10:21.4169258Z ##[error]Process completed with exit code 1.
+2025-04-10T09:10:21.4248256Z Post job cleanup.
+2025-04-10T09:10:21.5199607Z [command]/usr/bin/git version
+2025-04-10T09:10:21.5244908Z git version 2.48.1
+2025-04-10T09:10:21.5287907Z Temporarily overriding HOME='/home/runner/work/_temp/6712c1e7-4a58-47c6-90dd-325256aa45b6' before making global git config changes
+2025-04-10T09:10:21.5289238Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-10T09:10:21.5294339Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/geovista/geovista
+2025-04-10T09:10:21.5330200Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-10T09:10:21.5363769Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-10T09:10:21.5655081Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-10T09:10:21.5676296Z http.https://github.com/.extraheader
+2025-04-10T09:10:21.5688816Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-10T09:10:21.5719891Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-10T09:10:21.6055590Z Cleaning up orphan processes

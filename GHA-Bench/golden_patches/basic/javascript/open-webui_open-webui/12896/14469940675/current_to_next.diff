@@ -1,0 +1,15 @@
+diff --git a/backend/open_webui/retrieval/vector/dbs/qdrant.py b/backend/open_webui/retrieval/vector/dbs/qdrant.py
+index 895098e29b0..13d0b5328f3 100644
+--- a/backend/open_webui/retrieval/vector/dbs/qdrant.py
++++ b/backend/open_webui/retrieval/vector/dbs/qdrant.py
+@@ -51,7 +51,9 @@ def _create_collection(self, collection_name: str, dimension: int):
+         self.client.create_collection(
+             collection_name=collection_name_with_prefix,
+             vectors_config=models.VectorParams(
+-                size=dimension, distance=models.Distance.COSINE, on_disk=self.QDRANT_ON_DISK
++                size=dimension,
++                distance=models.Distance.COSINE,
++                on_disk=self.QDRANT_ON_DISK,
+             ),
+         )
+ 

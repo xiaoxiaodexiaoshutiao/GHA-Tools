@@ -1,0 +1,264 @@
+﻿2025-04-23T10:25:01.1809139Z Current runner version: '2.323.0'
+2025-04-23T10:25:01.1834044Z ##[group]Operating System
+2025-04-23T10:25:01.1834891Z Ubuntu
+2025-04-23T10:25:01.1835461Z 24.04.2
+2025-04-23T10:25:01.1835965Z LTS
+2025-04-23T10:25:01.1836520Z ##[endgroup]
+2025-04-23T10:25:01.1837005Z ##[group]Runner Image
+2025-04-23T10:25:01.1837574Z Image: ubuntu-24.04
+2025-04-23T10:25:01.1838050Z Version: 20250413.1.0
+2025-04-23T10:25:01.1839146Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250413.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-23T10:25:01.1840794Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250413.1
+2025-04-23T10:25:01.1841647Z ##[endgroup]
+2025-04-23T10:25:01.1842506Z ##[group]Runner Image Provisioner
+2025-04-23T10:25:01.1843058Z 2.0.422.1
+2025-04-23T10:25:01.1843495Z ##[endgroup]
+2025-04-23T10:25:01.1844583Z ##[group]GITHUB_TOKEN Permissions
+2025-04-23T10:25:01.1846645Z Contents: write
+2025-04-23T10:25:01.1847259Z Metadata: read
+2025-04-23T10:25:01.1847929Z ##[endgroup]
+2025-04-23T10:25:01.1850088Z Secret source: Actions
+2025-04-23T10:25:01.1850959Z Prepare workflow directory
+2025-04-23T10:25:01.2191511Z Prepare all required actions
+2025-04-23T10:25:01.2230446Z Getting action download info
+2025-04-23T10:25:01.7028407Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-23T10:25:01.7029646Z Version: 4.2.2
+2025-04-23T10:25:01.7030604Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-23T10:25:01.7031754Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-23T10:25:01.7032676Z ##[endgroup]
+2025-04-23T10:25:01.8161304Z Download action repository 'pre-commit/action@v2.0.3' (SHA:9b88afc9cd57fd75b655d5c71bd38146d07135fe)
+2025-04-23T10:25:02.1529024Z Download action repository 'stefanzweifel/git-auto-commit-action@v5' (SHA:b863ae1933cb653a53c021fe36dbb774e1fb9403)
+2025-04-23T10:25:02.4393210Z Complete job name: pre-commit
+2025-04-23T10:25:02.5072672Z ##[group]Run actions/checkout@v4
+2025-04-23T10:25:02.5073549Z with:
+2025-04-23T10:25:02.5073910Z   ref: dso-status
+2025-04-23T10:25:02.5074323Z   repository: Boehringer-Ingelheim/dso
+2025-04-23T10:25:02.5075002Z   token: ***
+2025-04-23T10:25:02.5075363Z   ssh-strict: true
+2025-04-23T10:25:02.5075749Z   ssh-user: git
+2025-04-23T10:25:02.5076137Z   persist-credentials: true
+2025-04-23T10:25:02.5076577Z   clean: true
+2025-04-23T10:25:02.5076974Z   sparse-checkout-cone-mode: true
+2025-04-23T10:25:02.5077430Z   fetch-depth: 1
+2025-04-23T10:25:02.5077803Z   fetch-tags: false
+2025-04-23T10:25:02.5078182Z   show-progress: true
+2025-04-23T10:25:02.5078590Z   lfs: false
+2025-04-23T10:25:02.5078939Z   submodules: false
+2025-04-23T10:25:02.5079343Z   set-safe-directory: true
+2025-04-23T10:25:02.5079974Z ##[endgroup]
+2025-04-23T10:25:02.6758456Z Syncing repository: Boehringer-Ingelheim/dso
+2025-04-23T10:25:02.6761473Z ##[group]Getting Git version info
+2025-04-23T10:25:02.6762826Z Working directory is '/home/runner/work/dso/dso'
+2025-04-23T10:25:02.6764452Z [command]/usr/bin/git version
+2025-04-23T10:25:02.6801797Z git version 2.49.0
+2025-04-23T10:25:02.6829613Z ##[endgroup]
+2025-04-23T10:25:02.6845077Z Temporarily overriding HOME='/home/runner/work/_temp/6ce36e2d-3fd5-4939-9f36-9edb461a5189' before making global git config changes
+2025-04-23T10:25:02.6847494Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-23T10:25:02.6851507Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/dso/dso
+2025-04-23T10:25:02.6909772Z Deleting the contents of '/home/runner/work/dso/dso'
+2025-04-23T10:25:02.6913371Z ##[group]Initializing the repository
+2025-04-23T10:25:02.6917275Z [command]/usr/bin/git init /home/runner/work/dso/dso
+2025-04-23T10:25:02.6974233Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-23T10:25:02.6975638Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-23T10:25:02.6977198Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-23T10:25:02.6978608Z hint:
+2025-04-23T10:25:02.6979314Z hint: 	git config --global init.defaultBranch <name>
+2025-04-23T10:25:02.6980253Z hint:
+2025-04-23T10:25:02.6980850Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-23T10:25:02.6981736Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-23T10:25:02.6982662Z hint:
+2025-04-23T10:25:02.6983054Z hint: 	git branch -m <name>
+2025-04-23T10:25:02.6983712Z Initialized empty Git repository in /home/runner/work/dso/dso/.git/
+2025-04-23T10:25:02.6990190Z [command]/usr/bin/git remote add origin https://github.com/Boehringer-Ingelheim/dso
+2025-04-23T10:25:02.7021024Z ##[endgroup]
+2025-04-23T10:25:02.7021718Z ##[group]Disabling automatic garbage collection
+2025-04-23T10:25:02.7026516Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-23T10:25:02.7055370Z ##[endgroup]
+2025-04-23T10:25:02.7056618Z ##[group]Setting up auth
+2025-04-23T10:25:02.7063014Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-23T10:25:02.7094194Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-23T10:25:02.7368792Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-23T10:25:02.7398726Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-23T10:25:02.7634294Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-23T10:25:02.7671403Z ##[endgroup]
+2025-04-23T10:25:02.7672744Z ##[group]Fetching the repository
+2025-04-23T10:25:02.7680803Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/dso-status*:refs/remotes/origin/dso-status* +refs/tags/dso-status*:refs/tags/dso-status*
+2025-04-23T10:25:03.1931814Z From https://github.com/Boehringer-Ingelheim/dso
+2025-04-23T10:25:03.1934107Z  * [new branch]      dso-status -> origin/dso-status
+2025-04-23T10:25:03.1959359Z ##[endgroup]
+2025-04-23T10:25:03.1961177Z ##[group]Determining the checkout info
+2025-04-23T10:25:03.1967719Z [command]/usr/bin/git branch --list --remote origin/dso-status
+2025-04-23T10:25:03.1991147Z   origin/dso-status
+2025-04-23T10:25:03.1999118Z ##[endgroup]
+2025-04-23T10:25:03.2003661Z [command]/usr/bin/git sparse-checkout disable
+2025-04-23T10:25:03.2044026Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-23T10:25:03.2073694Z ##[group]Checking out the ref
+2025-04-23T10:25:03.2077935Z [command]/usr/bin/git checkout --progress --force -B dso-status refs/remotes/origin/dso-status
+2025-04-23T10:25:03.2315712Z Switched to a new branch 'dso-status'
+2025-04-23T10:25:03.2318588Z branch 'dso-status' set up to track 'origin/dso-status'.
+2025-04-23T10:25:03.2327251Z ##[endgroup]
+2025-04-23T10:25:03.2368788Z [command]/usr/bin/git log -1 --format=%H
+2025-04-23T10:25:03.2393070Z cdfd756a426397e094f6984fe7ce8fa3d26be5d0
+2025-04-23T10:25:03.2616742Z ##[group]Run pre-commit/action@v2.0.3
+2025-04-23T10:25:03.2617837Z with:
+2025-04-23T10:25:03.2618558Z   extra_args: --all-files
+2025-04-23T10:25:03.2619416Z ##[endgroup]
+2025-04-23T10:25:03.3059117Z ##[group]install pre-commit
+2025-04-23T10:25:03.3092609Z [command]/usr/bin/pip install pre-commit
+2025-04-23T10:25:05.4966355Z Defaulting to user installation because normal site-packages is not writeable
+2025-04-23T10:25:07.3120770Z Collecting pre-commit
+2025-04-23T10:25:07.3497845Z   Downloading pre_commit-4.2.0-py2.py3-none-any.whl.metadata (1.3 kB)
+2025-04-23T10:25:07.3727355Z Collecting cfgv>=2.0.0 (from pre-commit)
+2025-04-23T10:25:07.3762800Z   Downloading cfgv-3.4.0-py2.py3-none-any.whl.metadata (8.5 kB)
+2025-04-23T10:25:07.4434837Z Collecting identify>=1.0.0 (from pre-commit)
+2025-04-23T10:25:07.4469334Z   Downloading identify-2.6.10-py2.py3-none-any.whl.metadata (4.4 kB)
+2025-04-23T10:25:07.4688606Z Collecting nodeenv>=0.11.1 (from pre-commit)
+2025-04-23T10:25:07.4724214Z   Downloading nodeenv-1.9.1-py2.py3-none-any.whl.metadata (21 kB)
+2025-04-23T10:25:07.4788229Z Requirement already satisfied: pyyaml>=5.1 in /usr/lib/python3/dist-packages (from pre-commit) (6.0.1)
+2025-04-23T10:25:07.5536845Z Collecting virtualenv>=20.10.0 (from pre-commit)
+2025-04-23T10:25:07.5573694Z   Downloading virtualenv-20.30.0-py3-none-any.whl.metadata (4.5 kB)
+2025-04-23T10:25:07.6001056Z Collecting distlib<1,>=0.3.7 (from virtualenv>=20.10.0->pre-commit)
+2025-04-23T10:25:07.6037377Z   Downloading distlib-0.3.9-py2.py3-none-any.whl.metadata (5.2 kB)
+2025-04-23T10:25:07.6333698Z Collecting filelock<4,>=3.12.2 (from virtualenv>=20.10.0->pre-commit)
+2025-04-23T10:25:07.6367847Z   Downloading filelock-3.18.0-py3-none-any.whl.metadata (2.9 kB)
+2025-04-23T10:25:07.6424962Z Requirement already satisfied: platformdirs<5,>=3.9.1 in /usr/local/lib/python3.12/dist-packages (from virtualenv>=20.10.0->pre-commit) (4.3.7)
+2025-04-23T10:25:07.6641060Z Downloading pre_commit-4.2.0-py2.py3-none-any.whl (220 kB)
+2025-04-23T10:25:07.6746715Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 220.7/220.7 kB 28.9 MB/s eta 0:00:00
+2025-04-23T10:25:07.6784082Z Downloading cfgv-3.4.0-py2.py3-none-any.whl (7.2 kB)
+2025-04-23T10:25:07.6847716Z Downloading identify-2.6.10-py2.py3-none-any.whl (99 kB)
+2025-04-23T10:25:07.6891235Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.1/99.1 kB 34.2 MB/s eta 0:00:00
+2025-04-23T10:25:07.6923552Z Downloading nodeenv-1.9.1-py2.py3-none-any.whl (22 kB)
+2025-04-23T10:25:07.6977501Z Downloading virtualenv-20.30.0-py3-none-any.whl (4.3 MB)
+2025-04-23T10:25:07.7303846Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 140.4 MB/s eta 0:00:00
+2025-04-23T10:25:07.7342553Z Downloading distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+2025-04-23T10:25:07.7408717Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 469.0/469.0 kB 94.6 MB/s eta 0:00:00
+2025-04-23T10:25:07.7444277Z Downloading filelock-3.18.0-py3-none-any.whl (16 kB)
+2025-04-23T10:25:08.1110729Z Installing collected packages: distlib, nodeenv, identify, filelock, cfgv, virtualenv, pre-commit
+2025-04-23T10:25:08.4002453Z Successfully installed cfgv-3.4.0 distlib-0.3.9 filelock-3.18.0 identify-2.6.10 nodeenv-1.9.1 pre-commit-4.2.0 virtualenv-20.30.0
+2025-04-23T10:25:08.4648954Z [command]/usr/bin/pip freeze --local
+2025-04-23T10:25:08.8397656Z argcomplete==3.6.2
+2025-04-23T10:25:08.8398330Z attrs==23.2.0
+2025-04-23T10:25:08.8398585Z Automat==22.10.0
+2025-04-23T10:25:08.8398805Z Babel==2.10.3
+2025-04-23T10:25:08.8399116Z bcc==0.29.1
+2025-04-23T10:25:08.8399394Z bcrypt==3.2.2
+2025-04-23T10:25:08.8399699Z blinker==1.7.0
+2025-04-23T10:25:08.8400008Z boto3==1.34.46
+2025-04-23T10:25:08.8400319Z botocore==1.34.46
+2025-04-23T10:25:08.8400658Z certifi==2023.11.17
+2025-04-23T10:25:08.8400998Z cfgv==3.4.0
+2025-04-23T10:25:08.8401310Z chardet==5.2.0
+2025-04-23T10:25:08.8401661Z click==8.1.6
+2025-04-23T10:25:08.8402156Z cloud-init==24.4
+2025-04-23T10:25:08.8402510Z colorama==0.4.6
+2025-04-23T10:25:08.8402868Z command-not-found==0.3
+2025-04-23T10:25:08.8403599Z configobj==5.0.8
+2025-04-23T10:25:08.8403943Z constantly==23.10.4
+2025-04-23T10:25:08.8404301Z cryptography==41.0.7
+2025-04-23T10:25:08.8404666Z dbus-python==1.3.2
+2025-04-23T10:25:08.8405015Z distlib==0.3.9
+2025-04-23T10:25:08.8405309Z distro==1.9.0
+2025-04-23T10:25:08.8405528Z distro-info==1.7+build1
+2025-04-23T10:25:08.8405758Z filelock==3.18.0
+2025-04-23T10:25:08.8405972Z httplib2==0.20.4
+2025-04-23T10:25:08.8406179Z hyperlink==21.0.0
+2025-04-23T10:25:08.8406394Z identify==2.6.10
+2025-04-23T10:25:08.8406593Z idna==3.6
+2025-04-23T10:25:08.8406794Z incremental==22.10.0
+2025-04-23T10:25:08.8407011Z Jinja2==3.1.2
+2025-04-23T10:25:08.8407216Z jmespath==1.0.1
+2025-04-23T10:25:08.8407429Z jsonpatch==1.32
+2025-04-23T10:25:08.8407638Z jsonpointer==2.0
+2025-04-23T10:25:08.8407854Z jsonschema==4.10.3
+2025-04-23T10:25:08.8408230Z launchpadlib==1.11.0
+2025-04-23T10:25:08.8408474Z lazr.restfulclient==0.14.6
+2025-04-23T10:25:08.8408723Z lazr.uri==1.0.6
+2025-04-23T10:25:08.8408945Z markdown-it-py==3.0.0
+2025-04-23T10:25:08.8409181Z MarkupSafe==2.1.5
+2025-04-23T10:25:08.8409397Z mdurl==0.1.2
+2025-04-23T10:25:08.8409597Z mercurial==6.7.2
+2025-04-23T10:25:08.8409940Z netaddr==0.8.0
+2025-04-23T10:25:08.8472229Z netifaces==0.11.0
+2025-04-23T10:25:08.8472507Z nodeenv==1.9.1
+2025-04-23T10:25:08.8472769Z oauthlib==3.2.2
+2025-04-23T10:25:08.8473031Z packaging==24.0
+2025-04-23T10:25:08.8473345Z pexpect==4.9.0
+2025-04-23T10:25:08.8473642Z pipx==1.7.1
+2025-04-23T10:25:08.8474003Z platformdirs==4.3.7
+2025-04-23T10:25:08.8474349Z pre_commit==4.2.0
+2025-04-23T10:25:08.8474696Z ptyprocess==0.7.0
+2025-04-23T10:25:08.8474996Z pyasn1==0.4.8
+2025-04-23T10:25:08.8475267Z pyasn1-modules==0.2.8
+2025-04-23T10:25:08.8475549Z Pygments==2.17.2
+2025-04-23T10:25:08.8475812Z PyGObject==3.48.2
+2025-04-23T10:25:08.8476049Z PyHamcrest==2.1.0
+2025-04-23T10:25:08.8476367Z PyJWT==2.7.0
+2025-04-23T10:25:08.8476610Z pyOpenSSL==23.2.0
+2025-04-23T10:25:08.8476858Z pyparsing==3.1.1
+2025-04-23T10:25:08.8477121Z pyparted==3.12.0
+2025-04-23T10:25:08.8477360Z pyrsistent==0.20.0
+2025-04-23T10:25:08.8477798Z pyserial==3.5
+2025-04-23T10:25:08.8478077Z python-apt==2.7.7+ubuntu4
+2025-04-23T10:25:08.8478397Z python-dateutil==2.8.2
+2025-04-23T10:25:08.8478697Z python-debian==0.1.49+ubuntu2
+2025-04-23T10:25:08.8479040Z python-magic==0.4.27
+2025-04-23T10:25:08.8479446Z pytz==2024.1
+2025-04-23T10:25:08.8479707Z PyYAML==6.0.1
+2025-04-23T10:25:08.8479975Z requests==2.31.0
+2025-04-23T10:25:08.8480230Z rich==13.7.1
+2025-04-23T10:25:08.8480497Z s3transfer==0.10.1
+2025-04-23T10:25:08.8480775Z service-identity==24.1.0
+2025-04-23T10:25:08.8481110Z setuptools==68.1.2
+2025-04-23T10:25:08.8481407Z six==1.16.0
+2025-04-23T10:25:08.8481661Z sos==4.7.2
+2025-04-23T10:25:08.8482139Z ssh-import-id==5.11
+2025-04-23T10:25:08.8482464Z systemd-python==235
+2025-04-23T10:25:08.8482759Z Twisted==24.3.0
+2025-04-23T10:25:08.8483065Z typing_extensions==4.10.0
+2025-04-23T10:25:08.8483409Z ubuntu-pro-client==8001
+2025-04-23T10:25:08.8483737Z ufw==0.36.2
+2025-04-23T10:25:08.8483993Z urllib3==2.0.7
+2025-04-23T10:25:08.8484288Z userpath==1.9.2
+2025-04-23T10:25:08.8484571Z virtualenv==20.30.0
+2025-04-23T10:25:08.8484851Z wadllib==1.3.6
+2025-04-23T10:25:08.8485131Z WALinuxAgent==2.9.1.1
+2025-04-23T10:25:08.8485426Z wheel==0.42.0
+2025-04-23T10:25:08.8485711Z zope.interface==6.1
+2025-04-23T10:25:08.8486017Z zstandard==0.22.0
+2025-04-23T10:25:08.8812601Z ##[endgroup]
+2025-04-23T10:25:09.1150366Z ##[error]getCacheEntry failed: This legacy service is shutting down, effective April 15, 2025. Migrate to the new service ASAP. For more information: https://gh.io/gha-cache-sunset
+2025-04-23T10:25:09.1307527Z ##[group]Run stefanzweifel/git-auto-commit-action@v5
+2025-04-23T10:25:09.1307832Z with:
+2025-04-23T10:25:09.1308023Z   commit_message: pre-commit autofixes
+2025-04-23T10:25:09.1308258Z   branch: dso-status
+2025-04-23T10:25:09.1308457Z   file_pattern: .
+2025-04-23T10:25:09.1308623Z   repository: .
+2025-04-23T10:25:09.1308810Z   commit_user_name: github-actions[bot]
+2025-04-23T10:25:09.1309149Z   commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
+2025-04-23T10:25:09.1309550Z   commit_author: grst <7051479+grst@users.noreply.github.com>
+2025-04-23T10:25:09.1309859Z   skip_dirty_check: false
+2025-04-23T10:25:09.1310066Z   skip_fetch: false
+2025-04-23T10:25:09.1310247Z   skip_checkout: false
+2025-04-23T10:25:09.1310428Z   disable_globbing: false
+2025-04-23T10:25:09.1310620Z   create_branch: false
+2025-04-23T10:25:09.1310798Z   create_git_tag_only: false
+2025-04-23T10:25:09.1311003Z   internal_git_binary: git
+2025-04-23T10:25:09.1311200Z ##[endgroup]
+2025-04-23T10:25:09.1545566Z Started: bash /home/runner/work/_actions/stefanzweifel/git-auto-commit-action/v5/entrypoint.sh
+2025-04-23T10:25:09.1588683Z INPUT_REPOSITORY value: .
+2025-04-23T10:25:09.1589073Z INPUT_STATUS_OPTIONS: 
+2025-04-23T10:25:09.1590013Z INPUT_FILE_PATTERN: .
+2025-04-23T10:25:09.1756691Z Working tree clean. Nothing to commit.
+2025-04-23T10:25:09.1871180Z Post job cleanup.
+2025-04-23T10:25:09.2783716Z [command]/usr/bin/git version
+2025-04-23T10:25:09.2818538Z git version 2.49.0
+2025-04-23T10:25:09.2868452Z Temporarily overriding HOME='/home/runner/work/_temp/1355548e-a582-4ec2-9261-2fdaac7d97e8' before making global git config changes
+2025-04-23T10:25:09.2869690Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-23T10:25:09.2874645Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/dso/dso
+2025-04-23T10:25:09.2908836Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-23T10:25:09.2941256Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-23T10:25:09.3170886Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-23T10:25:09.3193162Z http.https://github.com/.extraheader
+2025-04-23T10:25:09.3205300Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-23T10:25:09.3235429Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-23T10:25:09.3559202Z Cleaning up orphan processes

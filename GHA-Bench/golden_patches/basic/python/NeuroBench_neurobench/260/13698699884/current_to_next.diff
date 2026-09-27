@@ -1,0 +1,30 @@
+diff --git a/.github/workflows/python-tests.yaml b/.github/workflows/python-tests.yaml
+index 220ed106..f457b34f 100644
+--- a/.github/workflows/python-tests.yaml
++++ b/.github/workflows/python-tests.yaml
+@@ -28,11 +28,7 @@ jobs:
+ 
+     - name: Install dependencies
+       run: |
+-        if [ "${{ matrix.python-version }}" = "3.11" ]; then
+-            poetry run pytest --cov --cov-report=xml
+-          else
+-            poetry run pytest
+-          fi
++        poetry install --with code-quality
+ 
+     - name: Check with Black
+       run: |
+@@ -72,7 +68,11 @@ jobs:
+ 
+       - name: Run tests
+         run: |
+-          poetry run pytest --cov --cov-report=xml
++          if [ "${{ matrix.python-version }}" = "3.11" ]; then
++            poetry run pytest --cov --cov-report=xml
++          else
++            poetry run pytest
++          fi
+ 
+       - name: Upload coverage to Codecov
+         if: matrix.python-version == '3.11'

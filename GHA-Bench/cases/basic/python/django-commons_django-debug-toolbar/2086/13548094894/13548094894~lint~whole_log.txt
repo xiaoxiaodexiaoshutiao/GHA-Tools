@@ -1,0 +1,345 @@
+2025-02-26T15:59:40.1130987Z Requested labels: ubuntu-latest
+2025-02-26T15:59:40.1131252Z Job defined at: django-commons/django-debug-toolbar/.github/workflows/test.yml@refs/pull/2086/merge
+2025-02-26T15:59:40.1131390Z Waiting for a runner to pick up this job...
+2025-02-26T15:59:42.2360987Z Job is waiting for a hosted runner to come online.
+2025-02-26T15:59:44.2949940Z Job is about to start running on the hosted runner: GitHub Actions 6 (hosted)
+2025-02-26T15:59:46.6712994Z Current runner version: '2.322.0'
+2025-02-26T15:59:46.6741601Z ##[group]Operating System
+2025-02-26T15:59:46.6742382Z Ubuntu
+2025-02-26T15:59:46.6742884Z 24.04.2
+2025-02-26T15:59:46.6743493Z LTS
+2025-02-26T15:59:46.6744125Z ##[endgroup]
+2025-02-26T15:59:46.6744791Z ##[group]Runner Image
+2025-02-26T15:59:46.6745369Z Image: ubuntu-24.04
+2025-02-26T15:59:46.6745895Z Version: 20250223.1.0
+2025-02-26T15:59:46.6746967Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250223.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-26T15:59:46.6748662Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250223.1
+2025-02-26T15:59:46.6749785Z ##[endgroup]
+2025-02-26T15:59:46.6750437Z ##[group]Runner Image Provisioner
+2025-02-26T15:59:46.6751021Z 2.0.422.1
+2025-02-26T15:59:46.6751515Z ##[endgroup]
+2025-02-26T15:59:46.6753656Z ##[group]GITHUB_TOKEN Permissions
+2025-02-26T15:59:46.6755867Z Actions: read
+2025-02-26T15:59:46.6756684Z Attestations: read
+2025-02-26T15:59:46.6757324Z Checks: read
+2025-02-26T15:59:46.6757899Z Contents: read
+2025-02-26T15:59:46.6758623Z Deployments: read
+2025-02-26T15:59:46.6759100Z Discussions: read
+2025-02-26T15:59:46.6759685Z Issues: read
+2025-02-26T15:59:46.6760194Z Metadata: read
+2025-02-26T15:59:46.6760730Z Packages: read
+2025-02-26T15:59:46.6761279Z Pages: read
+2025-02-26T15:59:46.6761751Z PullRequests: read
+2025-02-26T15:59:46.6762320Z RepositoryProjects: read
+2025-02-26T15:59:46.6762922Z SecurityEvents: read
+2025-02-26T15:59:46.6763455Z Statuses: read
+2025-02-26T15:59:46.6764011Z ##[endgroup]
+2025-02-26T15:59:46.6767198Z Secret source: None
+2025-02-26T15:59:46.6768350Z Prepare workflow directory
+2025-02-26T15:59:46.7185517Z Prepare all required actions
+2025-02-26T15:59:46.7223059Z Getting action download info
+2025-02-26T15:59:46.9585060Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-02-26T15:59:47.0738332Z Download action repository 'actions/setup-python@v5' (SHA:42375524e23c412d93fb67b49958b491fce71c38)
+2025-02-26T15:59:47.1604550Z Download action repository 'actions/cache@v4' (SHA:0c907a75c2c80ebcb7f088228285e798b750cf8f)
+2025-02-26T15:59:48.1842010Z Complete job name: lint
+2025-02-26T15:59:48.2530767Z ##[group]Run actions/checkout@v4
+2025-02-26T15:59:48.2531685Z with:
+2025-02-26T15:59:48.2532202Z   repository: django-commons/django-debug-toolbar
+2025-02-26T15:59:48.2533039Z   token: ***
+2025-02-26T15:59:48.2533476Z   ssh-strict: true
+2025-02-26T15:59:48.2533912Z   ssh-user: git
+2025-02-26T15:59:48.2534363Z   persist-credentials: true
+2025-02-26T15:59:48.2534846Z   clean: true
+2025-02-26T15:59:48.2535298Z   sparse-checkout-cone-mode: true
+2025-02-26T15:59:48.2535820Z   fetch-depth: 1
+2025-02-26T15:59:48.2536253Z   fetch-tags: false
+2025-02-26T15:59:48.2536698Z   show-progress: true
+2025-02-26T15:59:48.2537137Z   lfs: false
+2025-02-26T15:59:48.2537614Z   submodules: false
+2025-02-26T15:59:48.2538340Z   set-safe-directory: true
+2025-02-26T15:59:48.2539274Z ##[endgroup]
+2025-02-26T15:59:48.5287861Z Syncing repository: django-commons/django-debug-toolbar
+2025-02-26T15:59:48.5291197Z ##[group]Getting Git version info
+2025-02-26T15:59:48.5292801Z Working directory is '/home/runner/work/django-debug-toolbar/django-debug-toolbar'
+2025-02-26T15:59:48.5294406Z [command]/usr/bin/git version
+2025-02-26T15:59:48.5408327Z git version 2.48.1
+2025-02-26T15:59:48.5439054Z ##[endgroup]
+2025-02-26T15:59:48.5455071Z Temporarily overriding HOME='/home/runner/work/_temp/27f4f46b-33ae-49ae-b22d-975afc3d77f2' before making global git config changes
+2025-02-26T15:59:48.5457863Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-26T15:59:48.5462537Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/django-debug-toolbar/django-debug-toolbar
+2025-02-26T15:59:48.5503506Z Deleting the contents of '/home/runner/work/django-debug-toolbar/django-debug-toolbar'
+2025-02-26T15:59:48.5507408Z ##[group]Initializing the repository
+2025-02-26T15:59:48.5512837Z [command]/usr/bin/git init /home/runner/work/django-debug-toolbar/django-debug-toolbar
+2025-02-26T15:59:48.5618503Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-26T15:59:48.5619886Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-26T15:59:48.5620834Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-26T15:59:48.5621571Z hint:
+2025-02-26T15:59:48.5622405Z hint: 	git config --global init.defaultBranch <name>
+2025-02-26T15:59:48.5623506Z hint:
+2025-02-26T15:59:48.5624541Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-26T15:59:48.5625880Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-26T15:59:48.5626662Z hint:
+2025-02-26T15:59:48.5627080Z hint: 	git branch -m <name>
+2025-02-26T15:59:48.5632693Z Initialized empty Git repository in /home/runner/work/django-debug-toolbar/django-debug-toolbar/.git/
+2025-02-26T15:59:48.5643767Z [command]/usr/bin/git remote add origin https://github.com/django-commons/django-debug-toolbar
+2025-02-26T15:59:48.5682909Z ##[endgroup]
+2025-02-26T15:59:48.5687807Z ##[group]Disabling automatic garbage collection
+2025-02-26T15:59:48.5688844Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-26T15:59:48.5716140Z ##[endgroup]
+2025-02-26T15:59:48.5716889Z ##[group]Setting up auth
+2025-02-26T15:59:48.5723283Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-26T15:59:48.5754984Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-26T15:59:48.6127069Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-26T15:59:48.6159670Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-26T15:59:48.6388518Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-26T15:59:48.6426803Z ##[endgroup]
+2025-02-26T15:59:48.6428387Z ##[group]Fetching the repository
+2025-02-26T15:59:48.6436076Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +59901bcaad3e804fe837daa82d6557b828626413:refs/remotes/pull/2086/merge
+2025-02-26T15:59:49.3839178Z From https://github.com/django-commons/django-debug-toolbar
+2025-02-26T15:59:49.3842207Z  * [new ref]         59901bcaad3e804fe837daa82d6557b828626413 -> pull/2086/merge
+2025-02-26T15:59:49.3870652Z ##[endgroup]
+2025-02-26T15:59:49.3871850Z ##[group]Determining the checkout info
+2025-02-26T15:59:49.3873537Z ##[endgroup]
+2025-02-26T15:59:49.3877780Z [command]/usr/bin/git sparse-checkout disable
+2025-02-26T15:59:49.3919399Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-26T15:59:49.3948226Z ##[group]Checking out the ref
+2025-02-26T15:59:49.3952322Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/2086/merge
+2025-02-26T15:59:49.4131567Z Note: switching to 'refs/remotes/pull/2086/merge'.
+2025-02-26T15:59:49.4132817Z 
+2025-02-26T15:59:49.4133773Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-26T15:59:49.4136422Z changes and commit them, and you can discard any commits you make in this
+2025-02-26T15:59:49.4139277Z state without impacting any branches by switching back to a branch.
+2025-02-26T15:59:49.4140976Z 
+2025-02-26T15:59:49.4142021Z If you want to create a new branch to retain commits you create, you may
+2025-02-26T15:59:49.4144488Z do so (now or later) by using -c with the switch command. Example:
+2025-02-26T15:59:49.4145995Z 
+2025-02-26T15:59:49.4146620Z   git switch -c <new-branch-name>
+2025-02-26T15:59:49.4147582Z 
+2025-02-26T15:59:49.4148323Z Or undo this operation with:
+2025-02-26T15:59:49.4149242Z 
+2025-02-26T15:59:49.4150039Z   git switch -
+2025-02-26T15:59:49.4150712Z 
+2025-02-26T15:59:49.4151983Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-26T15:59:49.4153275Z 
+2025-02-26T15:59:49.4154694Z HEAD is now at 59901bc Merge 5e45ea3f4815468b2e3b9871b290c7fad06fc1f6 into 0a1f8ab274eabbcd45c8d53057aac01e0b44958f
+2025-02-26T15:59:49.4160386Z ##[endgroup]
+2025-02-26T15:59:49.4179490Z [command]/usr/bin/git log -1 --format=%H
+2025-02-26T15:59:49.4201897Z 59901bcaad3e804fe837daa82d6557b828626413
+2025-02-26T15:59:49.4510954Z ##[group]Run actions/setup-python@v5
+2025-02-26T15:59:49.4512237Z with:
+2025-02-26T15:59:49.4513137Z   python-version: 3.9
+2025-02-26T15:59:49.4514174Z   check-latest: false
+2025-02-26T15:59:49.4515469Z   token: ***
+2025-02-26T15:59:49.4516430Z   update-environment: true
+2025-02-26T15:59:49.4517554Z   allow-prereleases: false
+2025-02-26T15:59:49.4518813Z ##[endgroup]
+2025-02-26T15:59:49.6226352Z ##[group]Installed versions
+2025-02-26T15:59:49.6287688Z Successfully set up CPython (3.9.21)
+2025-02-26T15:59:49.6290571Z ##[endgroup]
+2025-02-26T15:59:49.6439253Z ##[group]Run echo "dir=$(pip cache dir)" >> $GITHUB_OUTPUT
+2025-02-26T15:59:49.6440922Z [36;1mecho "dir=$(pip cache dir)" >> $GITHUB_OUTPUT[0m
+2025-02-26T15:59:49.6496800Z shell: /usr/bin/bash -e {0}
+2025-02-26T15:59:49.6497805Z env:
+2025-02-26T15:59:49.6499036Z   pythonLocation: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-02-26T15:59:49.6501155Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib/pkgconfig
+2025-02-26T15:59:49.6502922Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-02-26T15:59:49.6504783Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-02-26T15:59:49.6506644Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-02-26T15:59:49.6508431Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib
+2025-02-26T15:59:49.6509792Z ##[endgroup]
+2025-02-26T15:59:51.6877331Z ##[group]Run actions/cache@v4
+2025-02-26T15:59:51.6877670Z with:
+2025-02-26T15:59:51.6877939Z   path: /home/runner/.cache/pip
+2025-02-26T15:59:51.6879082Z   key: -v1-f8ac6ae9187b04633861f810227e64c864aa8c7180e34f546002d67780047a69-7ac034561c86d8b009bf780d89b572ffa2023b4aa57e77df3bab70669711f2ed
+2025-02-26T15:59:51.6879803Z   restore-keys: -v1-
+
+2025-02-26T15:59:51.6880076Z   enableCrossOsArchive: false
+2025-02-26T15:59:51.6880371Z   fail-on-cache-miss: false
+2025-02-26T15:59:51.6880638Z   lookup-only: false
+2025-02-26T15:59:51.6880884Z   save-always: false
+2025-02-26T15:59:51.6881118Z env:
+2025-02-26T15:59:51.6881404Z   pythonLocation: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-02-26T15:59:51.6881867Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib/pkgconfig
+2025-02-26T15:59:51.6882309Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-02-26T15:59:51.6882715Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-02-26T15:59:51.6883183Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-02-26T15:59:51.6883601Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib
+2025-02-26T15:59:51.6883951Z ##[endgroup]
+2025-02-26T15:59:52.0584690Z Cache hit for: -v1-f8ac6ae9187b04633861f810227e64c864aa8c7180e34f546002d67780047a69-7ac034561c86d8b009bf780d89b572ffa2023b4aa57e77df3bab70669711f2ed
+2025-02-26T15:59:53.2611371Z Received 45067404 of 45067404 (100.0%), 43.3 MBs/sec
+2025-02-26T15:59:53.2613268Z Cache Size: ~43 MB (45067404 B)
+2025-02-26T15:59:53.2643679Z [command]/usr/bin/tar -xf /home/runner/work/_temp/daa6296c-9b4e-413a-8b78-8de4058b4f28/cache.tzst -P -C /home/runner/work/django-debug-toolbar/django-debug-toolbar --use-compress-program unzstd
+2025-02-26T15:59:53.3668238Z Cache restored successfully
+2025-02-26T15:59:53.3964000Z Cache restored from key: -v1-f8ac6ae9187b04633861f810227e64c864aa8c7180e34f546002d67780047a69-7ac034561c86d8b009bf780d89b572ffa2023b4aa57e77df3bab70669711f2ed
+2025-02-26T15:59:53.4057494Z ##[group]Run python -m pip install --upgrade pip
+2025-02-26T15:59:53.4057902Z [36;1mpython -m pip install --upgrade pip[0m
+2025-02-26T15:59:53.4059149Z [36;1mpython -m pip install --upgrade tox[0m
+2025-02-26T15:59:53.4107541Z shell: /usr/bin/bash -e {0}
+2025-02-26T15:59:53.4107779Z env:
+2025-02-26T15:59:53.4108142Z   pythonLocation: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-02-26T15:59:53.4108591Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib/pkgconfig
+2025-02-26T15:59:53.4109058Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-02-26T15:59:53.4109418Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-02-26T15:59:53.4109774Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-02-26T15:59:53.4110125Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib
+2025-02-26T15:59:53.4110415Z ##[endgroup]
+2025-02-26T15:59:54.3439585Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.9.21/x64/lib/python3.9/site-packages (25.0.1)
+2025-02-26T15:59:54.8890164Z Collecting tox
+2025-02-26T15:59:54.8913372Z   Using cached tox-4.24.1-py3-none-any.whl.metadata (3.7 kB)
+2025-02-26T15:59:54.9277450Z Collecting cachetools>=5.5 (from tox)
+2025-02-26T15:59:54.9295492Z   Using cached cachetools-5.5.2-py3-none-any.whl.metadata (5.4 kB)
+2025-02-26T15:59:54.9486961Z Collecting chardet>=5.2 (from tox)
+2025-02-26T15:59:54.9504190Z   Using cached chardet-5.2.0-py3-none-any.whl.metadata (3.4 kB)
+2025-02-26T15:59:54.9718552Z Collecting colorama>=0.4.6 (from tox)
+2025-02-26T15:59:54.9735705Z   Using cached colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+2025-02-26T15:59:54.9981673Z Collecting filelock>=3.16.1 (from tox)
+2025-02-26T15:59:54.9999416Z   Using cached filelock-3.17.0-py3-none-any.whl.metadata (2.9 kB)
+2025-02-26T15:59:55.0236720Z Collecting packaging>=24.2 (from tox)
+2025-02-26T15:59:55.0254533Z   Using cached packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+2025-02-26T15:59:55.0474383Z Collecting platformdirs>=4.3.6 (from tox)
+2025-02-26T15:59:55.0492723Z   Using cached platformdirs-4.3.6-py3-none-any.whl.metadata (11 kB)
+2025-02-26T15:59:55.0707838Z Collecting pluggy>=1.5 (from tox)
+2025-02-26T15:59:55.0725836Z   Using cached pluggy-1.5.0-py3-none-any.whl.metadata (4.8 kB)
+2025-02-26T15:59:55.0963378Z Collecting pyproject-api>=1.8 (from tox)
+2025-02-26T15:59:55.0981008Z   Using cached pyproject_api-1.9.0-py3-none-any.whl.metadata (2.7 kB)
+2025-02-26T15:59:55.1203964Z Collecting tomli>=2.1 (from tox)
+2025-02-26T15:59:55.1233635Z   Using cached tomli-2.2.1-py3-none-any.whl.metadata (10 kB)
+2025-02-26T15:59:55.1459687Z Collecting typing-extensions>=4.12.2 (from tox)
+2025-02-26T15:59:55.1477100Z   Using cached typing_extensions-4.12.2-py3-none-any.whl.metadata (3.0 kB)
+2025-02-26T15:59:55.1964367Z Collecting virtualenv>=20.27.1 (from tox)
+2025-02-26T15:59:55.1983960Z   Using cached virtualenv-20.29.2-py3-none-any.whl.metadata (4.5 kB)
+2025-02-26T15:59:55.2318808Z Collecting distlib<1,>=0.3.7 (from virtualenv>=20.27.1->tox)
+2025-02-26T15:59:55.2342472Z   Using cached distlib-0.3.9-py2.py3-none-any.whl.metadata (5.2 kB)
+2025-02-26T15:59:55.2474792Z Using cached tox-4.24.1-py3-none-any.whl (171 kB)
+2025-02-26T15:59:55.2493736Z Using cached cachetools-5.5.2-py3-none-any.whl (10 kB)
+2025-02-26T15:59:55.2511364Z Using cached chardet-5.2.0-py3-none-any.whl (199 kB)
+2025-02-26T15:59:55.2530040Z Using cached colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+2025-02-26T15:59:55.2547074Z Using cached filelock-3.17.0-py3-none-any.whl (16 kB)
+2025-02-26T15:59:55.2564464Z Using cached packaging-24.2-py3-none-any.whl (65 kB)
+2025-02-26T15:59:55.2582058Z Using cached platformdirs-4.3.6-py3-none-any.whl (18 kB)
+2025-02-26T15:59:55.2599348Z Using cached pluggy-1.5.0-py3-none-any.whl (20 kB)
+2025-02-26T15:59:55.2616295Z Using cached pyproject_api-1.9.0-py3-none-any.whl (13 kB)
+2025-02-26T15:59:55.2633434Z Using cached tomli-2.2.1-py3-none-any.whl (14 kB)
+2025-02-26T15:59:55.2650719Z Using cached typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+2025-02-26T15:59:55.2668806Z Using cached virtualenv-20.29.2-py3-none-any.whl (4.3 MB)
+2025-02-26T15:59:55.2720787Z Using cached distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+2025-02-26T15:59:55.3202974Z Installing collected packages: distlib, typing-extensions, tomli, pluggy, platformdirs, packaging, filelock, colorama, chardet, cachetools, virtualenv, pyproject-api, tox
+2025-02-26T15:59:55.9893709Z Successfully installed cachetools-5.5.2 chardet-5.2.0 colorama-0.4.6 distlib-0.3.9 filelock-3.17.0 packaging-24.2 platformdirs-4.3.6 pluggy-1.5.0 pyproject-api-1.9.0 tomli-2.2.1 tox-4.24.1 typing-extensions-4.12.2 virtualenv-20.29.2
+2025-02-26T15:59:56.0484781Z ##[group]Run tox -e docs,packaging
+2025-02-26T15:59:56.0485326Z [36;1mtox -e docs,packaging[0m
+2025-02-26T15:59:56.0545447Z shell: /usr/bin/bash -e {0}
+2025-02-26T15:59:56.0545703Z env:
+2025-02-26T15:59:56.0545971Z   pythonLocation: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-02-26T15:59:56.0546448Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib/pkgconfig
+2025-02-26T15:59:56.0546883Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-02-26T15:59:56.0547270Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-02-26T15:59:56.0547670Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-02-26T15:59:56.0548166Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib
+2025-02-26T15:59:56.0548471Z ##[endgroup]
+2025-02-26T15:59:57.0753865Z docs: install_deps> python -I -m pip install --pre Sphinx sphinx-rtd-theme sphinxcontrib-spelling --pre
+2025-02-26T16:00:02.0275360Z .pkg: install_requires> python -I -m pip install hatchling
+2025-02-26T16:00:03.2718253Z .pkg: _optional_hooks> python /opt/hostedtoolcache/Python/3.9.21/x64/lib/python3.9/site-packages/pyproject_api/_backend.py True hatchling.build
+2025-02-26T16:00:03.3070890Z .pkg: get_requires_for_build_sdist> python /opt/hostedtoolcache/Python/3.9.21/x64/lib/python3.9/site-packages/pyproject_api/_backend.py True hatchling.build
+2025-02-26T16:00:03.3402553Z .pkg: freeze> python -m pip freeze --all
+2025-02-26T16:00:03.5731578Z .pkg: hatchling==1.27.0,packaging==24.2,pathspec==0.12.1,pip==25.0.1,pluggy==1.5.0,setuptools==75.8.0,tomli==2.2.1,trove-classifiers==2025.2.18.16,wheel==0.45.1
+2025-02-26T16:00:03.5736468Z .pkg: build_sdist> python /opt/hostedtoolcache/Python/3.9.21/x64/lib/python3.9/site-packages/pyproject_api/_backend.py True hatchling.build
+2025-02-26T16:00:03.8214548Z docs: install_package_deps> python -I -m pip install --pre 'django>=4.2.9' 'sqlparse>=0.2' --pre
+2025-02-26T16:00:06.2630655Z docs: install_package> python -I -m pip install --pre --force-reinstall --no-deps /home/runner/work/django-debug-toolbar/django-debug-toolbar/.tox/.tmp/package/1/django_debug_toolbar-5.0.1.tar.gz --pre
+2025-02-26T16:00:07.9532849Z docs: freeze> python -m pip freeze --all
+2025-02-26T16:00:08.2175843Z docs: alabaster==0.7.16,asgiref==3.8.1,babel==2.17.0,certifi==2025.1.31,charset-normalizer==3.4.1,Django==4.2.19,django-debug-toolbar @ file:///home/runner/work/django-debug-toolbar/django-debug-toolbar/.tox/.tmp/package/1/django_debug_toolbar-5.0.1.tar.gz#sha256=27a4e0fdc0b1c10b8afc9b0892d691150dcb292957837a8063134d67d12b0fb1,docutils==0.21.2,idna==3.10,imagesize==1.4.1,importlib_metadata==8.6.1,Jinja2==3.1.5,MarkupSafe==3.0.2,packaging==24.2,pip==25.0.1,pyenchant==3.3.0rc1,Pygments==2.19.1,requests==2.32.3,setuptools==75.8.0,snowballstemmer==2.2.0,Sphinx==7.4.7,sphinx-rtd-theme==3.0.2,sphinxcontrib-applehelp==2.0.0,sphinxcontrib-devhelp==2.0.0,sphinxcontrib-htmlhelp==2.1.0,sphinxcontrib-jquery==4.1,sphinxcontrib-jsmath==1.0.1,sphinxcontrib-qthelp==2.0.0,sphinxcontrib-serializinghtml==2.0.0,sphinxcontrib-spelling==8.0.0,sqlparse==0.5.3,tomli==2.2.1,typing_extensions==4.12.2,urllib3==2.3.0,wheel==0.45.1,zipp==3.21.0
+2025-02-26T16:00:08.2183549Z docs: commands[0]> make -C /home/runner/work/django-debug-toolbar/django-debug-toolbar/docs spelling
+2025-02-26T16:00:08.2241880Z make: Entering directory '/home/runner/work/django-debug-toolbar/django-debug-toolbar/docs'
+2025-02-26T16:00:08.6410508Z Running Sphinx v7.4.7
+2025-02-26T16:00:08.6416670Z loading translations [en]... done
+2025-02-26T16:00:09.2789369Z Initializing Spelling Checker 8.0.0
+2025-02-26T16:00:09.2798413Z making output directory... done
+2025-02-26T16:00:09.2875520Z Ignoring wiki words
+2025-02-26T16:00:09.2877107Z Ignoring acronyms
+2025-02-26T16:00:09.2877575Z Ignoring Python builtins
+2025-02-26T16:00:09.2878333Z Ignoring importable module names
+2025-02-26T16:00:09.2878877Z Ignoring contributor names
+2025-02-26T16:00:09.2880754Z Looking for custom word list in /home/runner/work/django-debug-toolbar/django-debug-toolbar/docs/spelling_wordlist.txt
+2025-02-26T16:00:09.3590365Z Scanning contributors
+2025-02-26T16:00:09.3650362Z loading intersphinx inventory 'python' from https://docs.python.org/objects.inv...
+2025-02-26T16:00:09.3657724Z loading intersphinx inventory 'django' from https://docs.djangoproject.com/en/dev/_objects/...
+2025-02-26T16:00:09.4693629Z intersphinx inventory has moved: https://docs.python.org/objects.inv -> https://docs.python.org/3/objects.inv
+2025-02-26T16:00:09.7470259Z building [mo]: targets for 0 po files that are out of date
+2025-02-26T16:00:09.7470866Z writing output... 
+2025-02-26T16:00:09.7471244Z building [spelling]: all documents
+2025-02-26T16:00:09.7483990Z updating environment: [new config] 11 added, 0 changed, 0 removed
+2025-02-26T16:00:09.7484622Z reading sources... [  9%] architecture
+2025-02-26T16:00:09.7767950Z reading sources... [ 18%] changes
+2025-02-26T16:00:09.9122037Z reading sources... [ 27%] checks
+2025-02-26T16:00:09.9181538Z reading sources... [ 36%] commands
+2025-02-26T16:00:09.9207864Z reading sources... [ 45%] configuration
+2025-02-26T16:00:09.9523413Z reading sources... [ 55%] contributing
+2025-02-26T16:00:09.9674787Z reading sources... [ 64%] index
+2025-02-26T16:00:09.9701382Z reading sources... [ 73%] installation
+2025-02-26T16:00:09.9950819Z reading sources... [ 82%] panels
+2025-02-26T16:00:10.4670755Z reading sources... [ 91%] resources
+2025-02-26T16:00:10.4776288Z reading sources... [100%] tips
+2025-02-26T16:00:10.4880008Z 
+2025-02-26T16:00:10.4884179Z looking for now-outdated files... none found
+2025-02-26T16:00:10.5060449Z pickling environment... done
+2025-02-26T16:00:10.5061961Z checking consistency... done
+2025-02-26T16:00:10.5064894Z preparing documents... done
+2025-02-26T16:00:10.5065402Z copying assets... 
+2025-02-26T16:00:10.5066590Z copying assets: done
+2025-02-26T16:00:10.5069355Z writing output... [  9%] architecture
+2025-02-26T16:00:10.5539024Z writing output... [ 18%] changes
+2025-02-26T16:00:10.5739293Z changes.rst:13: : Spell check: onboarding: Added link to contributing documentation in CONTRIBUTING.md to improve contributor onboarding..
+2025-02-26T16:00:10.8784867Z Writing /home/runner/work/django-debug-toolbar/django-debug-toolbar/docs/_build/spelling/changes.spelling
+2025-02-26T16:00:10.8787808Z writing output... [ 27%] checks
+2025-02-26T16:00:10.8865153Z writing output... [ 36%] commands
+2025-02-26T16:00:10.8908418Z writing output... [ 45%] configuration
+2025-02-26T16:00:10.9796214Z writing output... [ 55%] contributing
+2025-02-26T16:00:11.0272313Z writing output... [ 64%] index
+2025-02-26T16:00:11.0351088Z writing output... [ 73%] installation
+2025-02-26T16:00:11.0929866Z writing output... [ 82%] panels
+2025-02-26T16:00:11.2077794Z writing output... [ 91%] resources
+2025-02-26T16:00:11.2333173Z writing output... [100%] tips
+2025-02-26T16:00:11.2736924Z 
+2025-02-26T16:00:11.2749633Z 
+2025-02-26T16:00:11.2751601Z Warning, treated as error:
+2025-02-26T16:00:11.2752044Z Found 1 misspelled words
+2025-02-26T16:00:11.4048371Z make: *** [Makefile:20: spelling] Error 2
+2025-02-26T16:00:11.4050828Z make: Leaving directory '/home/runner/work/django-debug-toolbar/django-debug-toolbar/docs'
+2025-02-26T16:00:11.4062452Z docs: exit 2 (3.19 seconds) /home/runner/work/django-debug-toolbar/django-debug-toolbar> make -C /home/runner/work/django-debug-toolbar/django-debug-toolbar/docs spelling pid=2052
+2025-02-26T16:00:11.4072428Z .pkg: _exit> python /opt/hostedtoolcache/Python/3.9.21/x64/lib/python3.9/site-packages/pyproject_api/_backend.py True hatchling.build
+2025-02-26T16:00:11.5592098Z docs: FAIL ✖ in 14.71 seconds
+2025-02-26T16:00:11.5592940Z packaging: install_deps> python -I -m pip install --pre build twine --pre
+2025-02-26T16:00:16.1327379Z packaging: freeze> python -m pip freeze --all
+2025-02-26T16:00:16.3908237Z packaging: backports.tarfile==1.2.0,build==1.2.2.post1,certifi==2025.1.31,cffi==1.17.1,charset-normalizer==3.4.1,cryptography==44.0.1,docutils==0.21.2,id==1.5.0,idna==3.10,importlib_metadata==8.6.1,jaraco.classes==3.4.0,jaraco.context==6.0.1,jaraco.functools==4.1.0,jeepney==0.8.0,keyring==25.6.0,markdown-it-py==3.0.0,mdurl==0.1.2,more-itertools==10.6.0,nh3==0.2.21,packaging==24.2,pip==25.0.1,pycparser==2.22,Pygments==2.19.1,pyproject_hooks==1.2.0,readme_renderer==44.0,requests==2.32.3,requests-toolbelt==1.0.0,rfc3986==2.0.0,rich==13.9.4,SecretStorage==3.3.3,setuptools==75.8.0,tomli==2.2.1,twine==6.1.0,typing_extensions==4.12.2,urllib3==2.3.0,wheel==0.45.1,zipp==3.21.0
+2025-02-26T16:00:16.3912757Z packaging: commands[0]> python -m build
+2025-02-26T16:00:16.4713168Z * Creating isolated environment: venv+pip...
+2025-02-26T16:00:16.5287545Z * Installing packages in isolated environment:
+2025-02-26T16:00:17.3596873Z   - hatchling
+2025-02-26T16:00:17.3597392Z * Getting build dependencies for sdist...
+2025-02-26T16:00:17.4717975Z * Building sdist...
+2025-02-26T16:00:17.7904884Z * Building wheel from sdist
+2025-02-26T16:00:17.7914476Z * Creating isolated environment: venv+pip...
+2025-02-26T16:00:17.7940138Z * Installing packages in isolated environment:
+2025-02-26T16:00:18.6302095Z   - hatchling
+2025-02-26T16:00:18.6302543Z * Getting build dependencies for wheel...
+2025-02-26T16:00:18.7506541Z * Building wheel...
+2025-02-26T16:00:18.9393833Z Successfully built django_debug_toolbar-5.0.1.tar.gz and django_debug_toolbar-5.0.1-py3-none-any.whl
+2025-02-26T16:00:18.9542761Z packaging: commands[1]> twine check --strict 'dist/*'
+2025-02-26T16:00:19.2433193Z Checking dist/django_debug_toolbar-5.0.1-py3-none-any.whl: [32mPASSED[0m
+2025-02-26T16:00:19.2793475Z Checking dist/django_debug_toolbar-5.0.1.tar.gz: [32mPASSED[0m
+2025-02-26T16:00:19.3121795Z   docs: FAIL code 2 (14.71=setup[11.52]+cmd[3.19] seconds)
+2025-02-26T16:00:19.3122323Z   packaging: OK (7.89=setup[4.97]+cmd[2.56,0.36] seconds)
+2025-02-26T16:00:19.3122645Z   evaluation failed :( (22.90 seconds)
+2025-02-26T16:00:19.3527255Z ##[error]Process completed with exit code 255.
+2025-02-26T16:00:19.3605016Z Post job cleanup.
+2025-02-26T16:00:19.4549343Z [command]/usr/bin/git version
+2025-02-26T16:00:19.4586074Z git version 2.48.1
+2025-02-26T16:00:19.4637478Z Temporarily overriding HOME='/home/runner/work/_temp/b293ea72-e96b-47a6-88d0-8a0f80cc0855' before making global git config changes
+2025-02-26T16:00:19.4639038Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-26T16:00:19.4644173Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/django-debug-toolbar/django-debug-toolbar
+2025-02-26T16:00:19.4680722Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-26T16:00:19.4714452Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-26T16:00:19.4952477Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-26T16:00:19.4974711Z http.https://github.com/.extraheader
+2025-02-26T16:00:19.4987673Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-26T16:00:19.5019906Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-26T16:00:19.5359890Z Cleaning up orphan processes

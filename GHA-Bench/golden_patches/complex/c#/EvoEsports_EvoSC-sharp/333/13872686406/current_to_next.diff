@@ -1,0 +1,859 @@
+diff --git a/src/EvoSC.Commands/Middleware/CommandsMiddleware.cs b/src/EvoSC.Commands/Middleware/CommandsMiddleware.cs
+index 25706c7e1..06b294f91 100644
+--- a/src/EvoSC.Commands/Middleware/CommandsMiddleware.cs
++++ b/src/EvoSC.Commands/Middleware/CommandsMiddleware.cs
+@@ -8,8 +8,6 @@
+ using EvoSC.Common.Interfaces.Models;
+ using EvoSC.Common.Middleware;
+ using EvoSC.Common.Remote.ChatRouter;
+-using EvoSC.Common.Util;
+-using EvoSC.Common.Util.ServerUtils;
+ using Microsoft.Extensions.DependencyInjection;
+ using Microsoft.Extensions.Logging;
+ 
+diff --git a/src/EvoSC.Commands/Middleware/CommandsPermissionMiddleware.cs b/src/EvoSC.Commands/Middleware/CommandsPermissionMiddleware.cs
+index 62fbff58f..b3b275924 100644
+--- a/src/EvoSC.Commands/Middleware/CommandsPermissionMiddleware.cs
++++ b/src/EvoSC.Commands/Middleware/CommandsPermissionMiddleware.cs
+@@ -2,7 +2,6 @@
+ using EvoSC.Common.Interfaces.Controllers;
+ using EvoSC.Common.Interfaces.Services;
+ using EvoSC.Common.Middleware;
+-using EvoSC.Common.Util.ServerUtils;
+ 
+ namespace EvoSC.Commands.Middleware;
+ 
+diff --git a/src/EvoSC.Common/Database/Models/AuditLog/DbAuditRecord.cs b/src/EvoSC.Common/Database/Models/AuditLog/DbAuditRecord.cs
+index f28281fa0..55e3ca6d4 100644
+--- a/src/EvoSC.Common/Database/Models/AuditLog/DbAuditRecord.cs
++++ b/src/EvoSC.Common/Database/Models/AuditLog/DbAuditRecord.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Database.Migrations;
+-using EvoSC.Common.Database.Models.Player;
++﻿using EvoSC.Common.Database.Models.Player;
+ using EvoSC.Common.Interfaces.Models;
+ using EvoSC.Common.Models.Audit;
+ using LinqToDB.Mapping;
+diff --git a/src/EvoSC.Common/Database/Repository/Maps/MapRepository.cs b/src/EvoSC.Common/Database/Repository/Maps/MapRepository.cs
+index 63b39665c..a1eea86f5 100644
+--- a/src/EvoSC.Common/Database/Repository/Maps/MapRepository.cs
++++ b/src/EvoSC.Common/Database/Repository/Maps/MapRepository.cs
+@@ -7,8 +7,6 @@
+ using EvoSC.Common.Interfaces.Models;
+ using EvoSC.Common.Models.Maps;
+ using LinqToDB;
+-using LinqToDB.DataProvider.MySql;
+-using LinqToDB.Tools;
+ using Microsoft.Extensions.Logging;
+ 
+ namespace EvoSC.Common.Database.Repository.Maps;
+diff --git a/src/EvoSC.Common/Interfaces/IServerClient.cs b/src/EvoSC.Common/Interfaces/IServerClient.cs
+index 292820532..dd541d9d8 100644
+--- a/src/EvoSC.Common/Interfaces/IServerClient.cs
++++ b/src/EvoSC.Common/Interfaces/IServerClient.cs
+@@ -1,6 +1,4 @@
+-﻿using EvoSC.Common.Interfaces.Models;
+-using EvoSC.Common.Interfaces.Services;
+-using EvoSC.Common.Util.TextFormatting;
++﻿using EvoSC.Common.Interfaces.Services;
+ using GbxRemoteNet.Interfaces;
+ 
+ namespace EvoSC.Common.Interfaces;
+diff --git a/src/EvoSC.Common/Remote/ChatRouter/RemoteChatRouter.cs b/src/EvoSC.Common/Remote/ChatRouter/RemoteChatRouter.cs
+index 62e1a874e..1d93363c2 100644
+--- a/src/EvoSC.Common/Remote/ChatRouter/RemoteChatRouter.cs
++++ b/src/EvoSC.Common/Remote/ChatRouter/RemoteChatRouter.cs
+@@ -5,7 +5,6 @@
+ using EvoSC.Common.Interfaces.Services;
+ using EvoSC.Common.Middleware;
+ using EvoSC.Common.Util;
+-using EvoSC.Common.Util.ServerUtils;
+ using GbxRemoteNet.Events;
+ using Microsoft.Extensions.Logging;
+ 
+diff --git a/src/EvoSC.Common/Remote/ServerClient.cs b/src/EvoSC.Common/Remote/ServerClient.cs
+index 831afdca4..5e844b24e 100644
+--- a/src/EvoSC.Common/Remote/ServerClient.cs
++++ b/src/EvoSC.Common/Remote/ServerClient.cs
+@@ -6,7 +6,6 @@
+ using EvoSC.Common.Services;
+ using GbxRemoteNet;
+ using GbxRemoteNet.Interfaces;
+-using Microsoft.Extensions.DependencyInjection;
+ using Microsoft.Extensions.Logging;
+ 
+ namespace EvoSC.Common.Remote;
+diff --git a/src/EvoSC.Common/Services/AuditService.cs b/src/EvoSC.Common/Services/AuditService.cs
+index 385bfc352..d728a91cb 100644
+--- a/src/EvoSC.Common/Services/AuditService.cs
++++ b/src/EvoSC.Common/Services/AuditService.cs
+@@ -6,7 +6,6 @@
+ using EvoSC.Common.Interfaces.Services;
+ using EvoSC.Common.Interfaces.Util.Auditing;
+ using EvoSC.Common.Models.Audit;
+-using EvoSC.Common.Util;
+ using EvoSC.Common.Util.Auditing;
+ using EvoSC.Common.Util.EnumIdentifier;
+ using Microsoft.Extensions.Logging;
+diff --git a/src/EvoSC.Common/Services/MapService.cs b/src/EvoSC.Common/Services/MapService.cs
+index e1f957807..c1a4d0919 100644
+--- a/src/EvoSC.Common/Services/MapService.cs
++++ b/src/EvoSC.Common/Services/MapService.cs
+@@ -7,7 +7,6 @@
+ using EvoSC.Common.Models.Maps;
+ using EvoSC.Common.Util;
+ using GbxRemoteNet;
+-using GbxRemoteNet.Interfaces;
+ using GbxRemoteNet.Structs;
+ using GbxRemoteNet.XmlRpc.ExtraTypes;
+ using Microsoft.Extensions.Logging;
+diff --git a/src/EvoSC.Common/Services/MatchSettingsService.cs b/src/EvoSC.Common/Services/MatchSettingsService.cs
+index d82751dbf..b7f8381ac 100644
+--- a/src/EvoSC.Common/Services/MatchSettingsService.cs
++++ b/src/EvoSC.Common/Services/MatchSettingsService.cs
+@@ -1,10 +1,8 @@
+ ﻿using EvoSC.Common.Config.Models;
+-using EvoSC.Common.Database.Repository.Maps;
+ using EvoSC.Common.Interfaces;
+ using EvoSC.Common.Interfaces.Models;
+ using EvoSC.Common.Interfaces.Services;
+ using EvoSC.Common.Interfaces.Util;
+-using EvoSC.Common.Models.Maps;
+ using EvoSC.Common.Util;
+ using EvoSC.Common.Util.EnumIdentifier;
+ using EvoSC.Common.Util.MatchSettings;
+diff --git a/src/EvoSC.Manialinks/Middleware/ManialinkPermissionMiddleware.cs b/src/EvoSC.Manialinks/Middleware/ManialinkPermissionMiddleware.cs
+index 2f1b38669..429906c79 100644
+--- a/src/EvoSC.Manialinks/Middleware/ManialinkPermissionMiddleware.cs
++++ b/src/EvoSC.Manialinks/Middleware/ManialinkPermissionMiddleware.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Interfaces;
+-using EvoSC.Common.Interfaces.Controllers;
++﻿using EvoSC.Common.Interfaces.Controllers;
+ using EvoSC.Common.Interfaces.Services;
+ using EvoSC.Common.Middleware;
+ 
+diff --git a/src/EvoSC.Manialinks/Themes/AdvancedComponents/DefaultClubTagTheme.cs b/src/EvoSC.Manialinks/Themes/AdvancedComponents/DefaultClubTagTheme.cs
+index 2da42ec33..65fb19372 100644
+--- a/src/EvoSC.Manialinks/Themes/AdvancedComponents/DefaultClubTagTheme.cs
++++ b/src/EvoSC.Manialinks/Themes/AdvancedComponents/DefaultClubTagTheme.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Interfaces.Themes;
+-using EvoSC.Common.Themes;
++﻿using EvoSC.Common.Themes;
+ using EvoSC.Common.Themes.Attributes;
+ 
+ namespace EvoSC.Manialinks.Themes.AdvancedComponents;
+diff --git a/src/EvoSC.Manialinks/Themes/DefaultAlertTheme.cs b/src/EvoSC.Manialinks/Themes/DefaultAlertTheme.cs
+index 61819b225..8173f548a 100644
+--- a/src/EvoSC.Manialinks/Themes/DefaultAlertTheme.cs
++++ b/src/EvoSC.Manialinks/Themes/DefaultAlertTheme.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Interfaces.Themes;
+-using EvoSC.Common.Themes;
++﻿using EvoSC.Common.Themes;
+ using EvoSC.Common.Themes.Attributes;
+ 
+ namespace EvoSC.Manialinks.Themes;
+diff --git a/src/EvoSC.Manialinks/Themes/DefaultCheckboxTheme.cs b/src/EvoSC.Manialinks/Themes/DefaultCheckboxTheme.cs
+index 78cbdd9da..c4cbeed1c 100644
+--- a/src/EvoSC.Manialinks/Themes/DefaultCheckboxTheme.cs
++++ b/src/EvoSC.Manialinks/Themes/DefaultCheckboxTheme.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Interfaces.Themes;
+-using EvoSC.Common.Themes;
++﻿using EvoSC.Common.Themes;
+ using EvoSC.Common.Themes.Attributes;
+ 
+ namespace EvoSC.Manialinks.Themes;
+diff --git a/src/EvoSC.Manialinks/Themes/DefaultChipTheme.cs b/src/EvoSC.Manialinks/Themes/DefaultChipTheme.cs
+index 9d2e7d5b6..0a9515444 100644
+--- a/src/EvoSC.Manialinks/Themes/DefaultChipTheme.cs
++++ b/src/EvoSC.Manialinks/Themes/DefaultChipTheme.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Interfaces.Themes;
+-using EvoSC.Common.Themes;
++﻿using EvoSC.Common.Themes;
+ using EvoSC.Common.Themes.Attributes;
+ using EvoSC.Common.Util;
+ 
+diff --git a/src/EvoSC.Manialinks/Themes/DefaultDialogTheme.cs b/src/EvoSC.Manialinks/Themes/DefaultDialogTheme.cs
+index bd74ba85e..6528a48db 100644
+--- a/src/EvoSC.Manialinks/Themes/DefaultDialogTheme.cs
++++ b/src/EvoSC.Manialinks/Themes/DefaultDialogTheme.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Interfaces.Themes;
+-using EvoSC.Common.Themes;
++﻿using EvoSC.Common.Themes;
+ using EvoSC.Common.Themes.Attributes;
+ 
+ namespace EvoSC.Manialinks.Themes;
+diff --git a/src/EvoSC.Manialinks/Themes/DefaultRadioButtonTheme.cs b/src/EvoSC.Manialinks/Themes/DefaultRadioButtonTheme.cs
+index 65b9d29e1..bc39c107e 100644
+--- a/src/EvoSC.Manialinks/Themes/DefaultRadioButtonTheme.cs
++++ b/src/EvoSC.Manialinks/Themes/DefaultRadioButtonTheme.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Interfaces.Themes;
+-using EvoSC.Common.Themes;
++﻿using EvoSC.Common.Themes;
+ using EvoSC.Common.Themes.Attributes;
+ 
+ namespace EvoSC.Manialinks.Themes;
+diff --git a/src/EvoSC.Manialinks/Themes/DefaultSelectTheme.cs b/src/EvoSC.Manialinks/Themes/DefaultSelectTheme.cs
+index da65f6f70..bd871ef0e 100644
+--- a/src/EvoSC.Manialinks/Themes/DefaultSelectTheme.cs
++++ b/src/EvoSC.Manialinks/Themes/DefaultSelectTheme.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Interfaces.Themes;
+-using EvoSC.Common.Themes;
++﻿using EvoSC.Common.Themes;
+ using EvoSC.Common.Themes.Attributes;
+ 
+ namespace EvoSC.Manialinks.Themes;
+diff --git a/src/EvoSC.Manialinks/Themes/DefaultSeparatorTheme.cs b/src/EvoSC.Manialinks/Themes/DefaultSeparatorTheme.cs
+index f034b8e8a..2be425033 100644
+--- a/src/EvoSC.Manialinks/Themes/DefaultSeparatorTheme.cs
++++ b/src/EvoSC.Manialinks/Themes/DefaultSeparatorTheme.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Interfaces.Themes;
+-using EvoSC.Common.Themes;
++﻿using EvoSC.Common.Themes;
+ using EvoSC.Common.Themes.Attributes;
+ using EvoSC.Common.Util;
+ 
+diff --git a/src/EvoSC.Manialinks/Themes/DefaultTextInputTheme.cs b/src/EvoSC.Manialinks/Themes/DefaultTextInputTheme.cs
+index 578cebe78..71518a940 100644
+--- a/src/EvoSC.Manialinks/Themes/DefaultTextInputTheme.cs
++++ b/src/EvoSC.Manialinks/Themes/DefaultTextInputTheme.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Interfaces.Themes;
+-using EvoSC.Common.Themes;
++﻿using EvoSC.Common.Themes;
+ using EvoSC.Common.Themes.Attributes;
+ 
+ namespace EvoSC.Manialinks.Themes;
+diff --git a/src/EvoSC.Manialinks/Themes/DefaultToggleSwitchTheme.cs b/src/EvoSC.Manialinks/Themes/DefaultToggleSwitchTheme.cs
+index 56b316b0d..bee9751cb 100644
+--- a/src/EvoSC.Manialinks/Themes/DefaultToggleSwitchTheme.cs
++++ b/src/EvoSC.Manialinks/Themes/DefaultToggleSwitchTheme.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Interfaces.Themes;
+-using EvoSC.Common.Themes;
++﻿using EvoSC.Common.Themes;
+ using EvoSC.Common.Themes.Attributes;
+ 
+ namespace EvoSC.Manialinks.Themes;
+diff --git a/src/EvoSC.Manialinks/Themes/DefaultWidgetTheme.cs b/src/EvoSC.Manialinks/Themes/DefaultWidgetTheme.cs
+index 16b5bc9ef..b750b2cf5 100644
+--- a/src/EvoSC.Manialinks/Themes/DefaultWidgetTheme.cs
++++ b/src/EvoSC.Manialinks/Themes/DefaultWidgetTheme.cs
+@@ -1,7 +1,5 @@
+-﻿using EvoSC.Common.Interfaces.Themes;
+-using EvoSC.Common.Themes;
++﻿using EvoSC.Common.Themes;
+ using EvoSC.Common.Themes.Attributes;
+-using EvoSC.Common.Util;
+ 
+ namespace EvoSC.Manialinks.Themes;
+ 
+diff --git a/src/EvoSC.Manialinks/Themes/DefaultWindowTheme.cs b/src/EvoSC.Manialinks/Themes/DefaultWindowTheme.cs
+index 452015d08..18d0f74e6 100644
+--- a/src/EvoSC.Manialinks/Themes/DefaultWindowTheme.cs
++++ b/src/EvoSC.Manialinks/Themes/DefaultWindowTheme.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Interfaces.Themes;
+-using EvoSC.Common.Themes;
++﻿using EvoSC.Common.Themes;
+ using EvoSC.Common.Themes.Attributes;
+ using EvoSC.Common.Util;
+ 
+diff --git a/src/EvoSC.Testing/Mocking.cs b/src/EvoSC.Testing/Mocking.cs
+index b23995150..267d87d0f 100644
+--- a/src/EvoSC.Testing/Mocking.cs
++++ b/src/EvoSC.Testing/Mocking.cs
+@@ -9,7 +9,6 @@
+ using EvoSC.Common.Interfaces.Util.Auditing;
+ using EvoSC.Common.Localization;
+ using EvoSC.Common.Models.Audit;
+-using EvoSC.Common.Remote;
+ using EvoSC.Manialinks.Interfaces;
+ using EvoSC.Manialinks.Interfaces.Models;
+ using EvoSC.Testing.Controllers;
+diff --git a/src/EvoSC/InternalModules.cs b/src/EvoSC/InternalModules.cs
+index ace73bb6b..b99fd088a 100644
+--- a/src/EvoSC/InternalModules.cs
++++ b/src/EvoSC/InternalModules.cs
+@@ -2,7 +2,6 @@
+ using EvoSC.Modules.Interfaces;
+ using EvoSC.Modules.Official.ASayModule;
+ using EvoSC.Modules.Official.CurrentMapModule;
+-using EvoSC.Modules.Official.ExampleModule;
+ using EvoSC.Modules.Official.FastestCpModule;
+ using EvoSC.Modules.Official.ForceTeamModule;
+ using EvoSC.Modules.Official.GameModeUiModule;
+diff --git a/src/Modules/CurrentMapModule/Themes/DefaultCurrentMapTheme.cs b/src/Modules/CurrentMapModule/Themes/DefaultCurrentMapTheme.cs
+index eeaa40eeb..df9904b89 100644
+--- a/src/Modules/CurrentMapModule/Themes/DefaultCurrentMapTheme.cs
++++ b/src/Modules/CurrentMapModule/Themes/DefaultCurrentMapTheme.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Interfaces.Themes;
+-using EvoSC.Common.Themes;
++﻿using EvoSC.Common.Themes;
+ using EvoSC.Common.Themes.Attributes;
+ using EvoSC.Common.Util;
+ 
+diff --git a/src/Modules/ExampleModule/ExampleController.cs b/src/Modules/ExampleModule/ExampleController.cs
+index 4eb1164c6..e14b97979 100644
+--- a/src/Modules/ExampleModule/ExampleController.cs
++++ b/src/Modules/ExampleModule/ExampleController.cs
+@@ -6,15 +6,12 @@
+ using EvoSC.Common.Interfaces.Controllers;
+ using EvoSC.Common.Interfaces.Database.Repository;
+ using EvoSC.Common.Interfaces.Localization;
+-using EvoSC.Common.Interfaces.Models;
+ using EvoSC.Common.Interfaces.Services;
+ using EvoSC.Common.Remote;
+ using EvoSC.Common.Util;
+-using EvoSC.Common.Util.ServerUtils;
+ using EvoSC.Manialinks.Interfaces;
+ using GbxRemoteNet;
+ using GbxRemoteNet.Events;
+-using GbxRemoteNet.XmlRpc.ExtraTypes;
+ using Microsoft.Extensions.Logging;
+ 
+ namespace EvoSC.Modules.Official.ExampleModule;
+diff --git a/src/Modules/FastestCpModule/Themes/DefaultFastestCPTheme.cs b/src/Modules/FastestCpModule/Themes/DefaultFastestCPTheme.cs
+index e1b84fc0a..fd6acbca6 100644
+--- a/src/Modules/FastestCpModule/Themes/DefaultFastestCPTheme.cs
++++ b/src/Modules/FastestCpModule/Themes/DefaultFastestCPTheme.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Interfaces.Themes;
+-using EvoSC.Common.Themes;
++﻿using EvoSC.Common.Themes;
+ using EvoSC.Common.Themes.Attributes;
+ 
+ namespace EvoSC.Modules.Official.FastestCpModule.Themes;
+diff --git a/src/Modules/LiveRankingModule/Themes/DefaultLiveRankingTheme.cs b/src/Modules/LiveRankingModule/Themes/DefaultLiveRankingTheme.cs
+index 79d93334b..39aeb9e14 100644
+--- a/src/Modules/LiveRankingModule/Themes/DefaultLiveRankingTheme.cs
++++ b/src/Modules/LiveRankingModule/Themes/DefaultLiveRankingTheme.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Interfaces.Themes;
+-using EvoSC.Common.Themes;
++﻿using EvoSC.Common.Themes;
+ using EvoSC.Common.Themes.Attributes;
+ using EvoSC.Common.Util;
+ 
+diff --git a/src/Modules/LocalRecordsModule/Controllers/LocalRecordsManialinkController.cs b/src/Modules/LocalRecordsModule/Controllers/LocalRecordsManialinkController.cs
+index 9bace5ab5..7bf313f0f 100644
+--- a/src/Modules/LocalRecordsModule/Controllers/LocalRecordsManialinkController.cs
++++ b/src/Modules/LocalRecordsModule/Controllers/LocalRecordsManialinkController.cs
+@@ -1,5 +1,4 @@
+ ﻿using EvoSC.Common.Controllers.Attributes;
+-using EvoSC.Common.Interfaces;
+ using EvoSC.Manialinks;
+ using EvoSC.Manialinks.Attributes;
+ using EvoSC.Modules.Official.LocalRecordsModule.Interfaces.Services;
+diff --git a/src/Modules/LocalRecordsModule/Services/LocalRecordsService.cs b/src/Modules/LocalRecordsModule/Services/LocalRecordsService.cs
+index 726d6fee2..0c3c854f4 100644
+--- a/src/Modules/LocalRecordsModule/Services/LocalRecordsService.cs
++++ b/src/Modules/LocalRecordsModule/Services/LocalRecordsService.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Interfaces;
+-using EvoSC.Common.Interfaces.Models;
++﻿using EvoSC.Common.Interfaces.Models;
+ using EvoSC.Common.Interfaces.Services;
+ using EvoSC.Common.Interfaces.Themes;
+ using EvoSC.Common.Services.Attributes;
+diff --git a/src/Modules/LocalRecordsModule/Themes/DefaultLocalRecordsTheme.cs b/src/Modules/LocalRecordsModule/Themes/DefaultLocalRecordsTheme.cs
+index dc8e45628..12b104829 100644
+--- a/src/Modules/LocalRecordsModule/Themes/DefaultLocalRecordsTheme.cs
++++ b/src/Modules/LocalRecordsModule/Themes/DefaultLocalRecordsTheme.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Interfaces.Themes;
+-using EvoSC.Common.Themes;
++﻿using EvoSC.Common.Themes;
+ using EvoSC.Common.Themes.Attributes;
+ using EvoSC.Common.Util;
+ 
+diff --git a/src/Modules/MapListModule/Services/MapListService.cs b/src/Modules/MapListModule/Services/MapListService.cs
+index aa3639bad..8cac11465 100644
+--- a/src/Modules/MapListModule/Services/MapListService.cs
++++ b/src/Modules/MapListModule/Services/MapListService.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Interfaces;
+-using EvoSC.Common.Interfaces.Controllers;
++﻿using EvoSC.Common.Interfaces.Controllers;
+ using EvoSC.Common.Interfaces.Models;
+ using EvoSC.Common.Interfaces.Services;
+ using EvoSC.Common.Services.Attributes;
+diff --git a/src/Modules/MapListModule/Themes/DefaultMapListTheme.cs b/src/Modules/MapListModule/Themes/DefaultMapListTheme.cs
+index dc778cbaa..be0bf8cf3 100644
+--- a/src/Modules/MapListModule/Themes/DefaultMapListTheme.cs
++++ b/src/Modules/MapListModule/Themes/DefaultMapListTheme.cs
+@@ -1,7 +1,5 @@
+-﻿using EvoSC.Common.Interfaces.Themes;
+-using EvoSC.Common.Themes;
++﻿using EvoSC.Common.Themes;
+ using EvoSC.Common.Themes.Attributes;
+-using EvoSC.Common.Util;
+ 
+ namespace EvoSC.Modules.Official.MapListModule.Themes;
+ 
+diff --git a/src/Modules/MapQueueModule/Controllers/QueueCommandsController.cs b/src/Modules/MapQueueModule/Controllers/QueueCommandsController.cs
+index 4c9b0af04..6b055584c 100644
+--- a/src/Modules/MapQueueModule/Controllers/QueueCommandsController.cs
++++ b/src/Modules/MapQueueModule/Controllers/QueueCommandsController.cs
+@@ -3,9 +3,7 @@
+ using EvoSC.Commands.Interfaces;
+ using EvoSC.Common.Controllers;
+ using EvoSC.Common.Controllers.Attributes;
+-using EvoSC.Common.Interfaces;
+ using EvoSC.Common.Interfaces.Services;
+-using EvoSC.Common.Util.ServerUtils;
+ using EvoSC.Common.Util.TextFormatting;
+ using EvoSC.Modules.Official.MapQueueModule.Interfaces;
+ 
+diff --git a/src/Modules/MapsModule/Controllers/MapsController.cs b/src/Modules/MapsModule/Controllers/MapsController.cs
+index e66703c8a..cccd92cda 100644
+--- a/src/Modules/MapsModule/Controllers/MapsController.cs
++++ b/src/Modules/MapsModule/Controllers/MapsController.cs
+@@ -3,7 +3,6 @@
+ using EvoSC.Commands.Interfaces;
+ using EvoSC.Common.Controllers;
+ using EvoSC.Common.Controllers.Attributes;
+-using EvoSC.Common.Interfaces;
+ using EvoSC.Common.Interfaces.Localization;
+ using EvoSC.Common.Interfaces.Models;
+ using EvoSC.Common.Interfaces.Services;
+diff --git a/src/Modules/MatchManagerModule/Controllers/MatchCommandsController.cs b/src/Modules/MatchManagerModule/Controllers/MatchCommandsController.cs
+index 8bc5ef449..c399aaadc 100644
+--- a/src/Modules/MatchManagerModule/Controllers/MatchCommandsController.cs
++++ b/src/Modules/MatchManagerModule/Controllers/MatchCommandsController.cs
+@@ -2,7 +2,6 @@
+ using EvoSC.Commands.Interfaces;
+ using EvoSC.Common.Controllers;
+ using EvoSC.Common.Controllers.Attributes;
+-using EvoSC.Common.Interfaces;
+ using EvoSC.Common.Interfaces.Localization;
+ using EvoSC.Common.Interfaces.Models;
+ using EvoSC.Modules.Official.MatchManagerModule.Events;
+diff --git a/src/Modules/MatchRankingModule/Themes/DefaultMatchRankingTheme.cs b/src/Modules/MatchRankingModule/Themes/DefaultMatchRankingTheme.cs
+index a3b5b3191..53b68d894 100644
+--- a/src/Modules/MatchRankingModule/Themes/DefaultMatchRankingTheme.cs
++++ b/src/Modules/MatchRankingModule/Themes/DefaultMatchRankingTheme.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Interfaces.Themes;
+-using EvoSC.Common.Themes;
++﻿using EvoSC.Common.Themes;
+ using EvoSC.Common.Themes.Attributes;
+ using EvoSC.Common.Util;
+ 
+diff --git a/src/Modules/MatchReadyModule/Services/PlayerReadyService.cs b/src/Modules/MatchReadyModule/Services/PlayerReadyService.cs
+index e96c9c9d3..b4aa204e4 100644
+--- a/src/Modules/MatchReadyModule/Services/PlayerReadyService.cs
++++ b/src/Modules/MatchReadyModule/Services/PlayerReadyService.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Interfaces;
+-using EvoSC.Common.Interfaces.Models;
++﻿using EvoSC.Common.Interfaces.Models;
+ using EvoSC.Common.Interfaces.Services;
+ using EvoSC.Common.Services.Attributes;
+ using EvoSC.Common.Services.Models;
+diff --git a/src/Modules/MatchReadyModule/Themes/DefaultMatchReadyTheme.cs b/src/Modules/MatchReadyModule/Themes/DefaultMatchReadyTheme.cs
+index fe3412a1a..bd709363b 100644
+--- a/src/Modules/MatchReadyModule/Themes/DefaultMatchReadyTheme.cs
++++ b/src/Modules/MatchReadyModule/Themes/DefaultMatchReadyTheme.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Interfaces.Themes;
+-using EvoSC.Common.Themes;
++﻿using EvoSC.Common.Themes;
+ using EvoSC.Common.Themes.Attributes;
+ using EvoSC.Common.Util;
+ 
+diff --git a/src/Modules/MatchTrackerModule/Repository/MatchRecordRepository.cs b/src/Modules/MatchTrackerModule/Repository/MatchRecordRepository.cs
+index 1bcdbb9c9..1b1867d38 100644
+--- a/src/Modules/MatchTrackerModule/Repository/MatchRecordRepository.cs
++++ b/src/Modules/MatchTrackerModule/Repository/MatchRecordRepository.cs
+@@ -5,7 +5,6 @@
+ using EvoSC.Common.Services.Models;
+ using EvoSC.Modules.Official.MatchTrackerModule.Interfaces;
+ using EvoSC.Modules.Official.MatchTrackerModule.Interfaces.Models;
+-using EvoSC.Modules.Official.MatchTrackerModule.Models;
+ using EvoSC.Modules.Official.MatchTrackerModule.Models.Database;
+ using EvoSC.Modules.Official.MatchTrackerModule.Util;
+ using LinqToDB;
+diff --git a/src/Modules/ModuleManagerModule/Services/ModuleManagerService.cs b/src/Modules/ModuleManagerModule/Services/ModuleManagerService.cs
+index ccee62a2a..2bd5ba069 100644
+--- a/src/Modules/ModuleManagerModule/Services/ModuleManagerService.cs
++++ b/src/Modules/ModuleManagerModule/Services/ModuleManagerService.cs
+@@ -1,5 +1,4 @@
+ ﻿using System.Drawing;
+-using EvoSC.Common.Interfaces;
+ using EvoSC.Common.Interfaces.Controllers;
+ using EvoSC.Common.Interfaces.Localization;
+ using EvoSC.Common.Interfaces.Models;
+diff --git a/src/Modules/NextMapModule/Controllers/NextMapChatController.cs b/src/Modules/NextMapModule/Controllers/NextMapChatController.cs
+index 3c8ad8e14..a742ae2fe 100644
+--- a/src/Modules/NextMapModule/Controllers/NextMapChatController.cs
++++ b/src/Modules/NextMapModule/Controllers/NextMapChatController.cs
+@@ -2,7 +2,6 @@
+ using EvoSC.Commands.Interfaces;
+ using EvoSC.Common.Controllers;
+ using EvoSC.Common.Controllers.Attributes;
+-using EvoSC.Common.Interfaces;
+ using EvoSC.Common.Interfaces.Localization;
+ using EvoSC.Modules.Official.NextMapModule.Interfaces;
+ 
+diff --git a/src/Modules/NextMapModule/Themes/DefaultNextMapTheme.cs b/src/Modules/NextMapModule/Themes/DefaultNextMapTheme.cs
+index 4cdeba923..3b2cbd440 100644
+--- a/src/Modules/NextMapModule/Themes/DefaultNextMapTheme.cs
++++ b/src/Modules/NextMapModule/Themes/DefaultNextMapTheme.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Interfaces.Themes;
+-using EvoSC.Common.Themes;
++﻿using EvoSC.Common.Themes;
+ using EvoSC.Common.Themes.Attributes;
+ using EvoSC.Common.Util;
+ 
+diff --git a/src/Modules/OpenPlanetModule/Config/IOpenPlanetControlSettings.cs b/src/Modules/OpenPlanetModule/Config/IOpenPlanetControlSettings.cs
+index 033dfbe5d..4dcd765b3 100644
+--- a/src/Modules/OpenPlanetModule/Config/IOpenPlanetControlSettings.cs
++++ b/src/Modules/OpenPlanetModule/Config/IOpenPlanetControlSettings.cs
+@@ -2,7 +2,6 @@
+ using Config.Net;
+ using EvoSC.Modules.Attributes;
+ using EvoSC.Modules.Official.OpenPlanetModule.Models;
+-using LinqToDB.Common;
+ 
+ namespace EvoSC.Modules.Official.OpenPlanetModule.Config;
+ 
+diff --git a/src/Modules/OpenPlanetModule/Controllers/OpenPlanetControlManialinkController.cs b/src/Modules/OpenPlanetModule/Controllers/OpenPlanetControlManialinkController.cs
+index ea5044a9d..8ed78e581 100644
+--- a/src/Modules/OpenPlanetModule/Controllers/OpenPlanetControlManialinkController.cs
++++ b/src/Modules/OpenPlanetModule/Controllers/OpenPlanetControlManialinkController.cs
+@@ -3,8 +3,6 @@
+ using EvoSC.Common.Util;
+ using EvoSC.Manialinks;
+ using EvoSC.Manialinks.Attributes;
+-using EvoSC.Modules.Official.OpenPlanetModule.Config;
+-using EvoSC.Modules.Official.OpenPlanetModule.Events;
+ using EvoSC.Modules.Official.OpenPlanetModule.Interfaces;
+ using EvoSC.Modules.Official.OpenPlanetModule.Interfaces.Models;
+ 
+diff --git a/src/Modules/OpenPlanetModule/Themes/DefaultOpenPlanetTheme.cs b/src/Modules/OpenPlanetModule/Themes/DefaultOpenPlanetTheme.cs
+index 36e2b4dea..74893a8c4 100644
+--- a/src/Modules/OpenPlanetModule/Themes/DefaultOpenPlanetTheme.cs
++++ b/src/Modules/OpenPlanetModule/Themes/DefaultOpenPlanetTheme.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Interfaces.Themes;
+-using EvoSC.Common.Themes;
++﻿using EvoSC.Common.Themes;
+ using EvoSC.Common.Themes.Attributes;
+ using EvoSC.Common.Util;
+ 
+diff --git a/src/Modules/Player/Controllers/PlayerCommandsController.cs b/src/Modules/Player/Controllers/PlayerCommandsController.cs
+index ad3ddb8b0..cefd9486b 100644
+--- a/src/Modules/Player/Controllers/PlayerCommandsController.cs
++++ b/src/Modules/Player/Controllers/PlayerCommandsController.cs
+@@ -2,7 +2,6 @@
+ using EvoSC.Commands.Interfaces;
+ using EvoSC.Common.Controllers;
+ using EvoSC.Common.Controllers.Attributes;
+-using EvoSC.Common.Interfaces;
+ using EvoSC.Common.Interfaces.Models;
+ using EvoSC.Modules.Official.Player.Events;
+ using EvoSC.Modules.Official.Player.Interfaces;
+diff --git a/src/Modules/Player/Controllers/PlayerEventController.cs b/src/Modules/Player/Controllers/PlayerEventController.cs
+index 5abc2e32a..c989fdadd 100644
+--- a/src/Modules/Player/Controllers/PlayerEventController.cs
++++ b/src/Modules/Player/Controllers/PlayerEventController.cs
+@@ -3,12 +3,10 @@
+ using EvoSC.Common.Events.Arguments;
+ using EvoSC.Common.Events.Attributes;
+ using EvoSC.Common.Events.CoreEvents;
+-using EvoSC.Common.Interfaces;
+ using EvoSC.Common.Interfaces.Controllers;
+ using EvoSC.Common.Interfaces.Localization;
+ using EvoSC.Common.Interfaces.Services;
+ using EvoSC.Modules.Official.Player.Interfaces;
+-using Microsoft.Extensions.Logging;
+ 
+ namespace EvoSC.Modules.Official.Player.Controllers;
+ 
+diff --git a/src/Modules/RoundRankingModule/Themes/DefaultRoundRankingTheme.cs b/src/Modules/RoundRankingModule/Themes/DefaultRoundRankingTheme.cs
+index 46928b235..8b2165c6f 100644
+--- a/src/Modules/RoundRankingModule/Themes/DefaultRoundRankingTheme.cs
++++ b/src/Modules/RoundRankingModule/Themes/DefaultRoundRankingTheme.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Interfaces.Themes;
+-using EvoSC.Common.Themes;
++﻿using EvoSC.Common.Themes;
+ using EvoSC.Common.Themes.Attributes;
+ using EvoSC.Common.Util;
+ 
+diff --git a/src/Modules/ScoreboardModule/Themes/DefaultScoreboardTheme.cs b/src/Modules/ScoreboardModule/Themes/DefaultScoreboardTheme.cs
+index fbb8c525f..27447539d 100644
+--- a/src/Modules/ScoreboardModule/Themes/DefaultScoreboardTheme.cs
++++ b/src/Modules/ScoreboardModule/Themes/DefaultScoreboardTheme.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Interfaces.Themes;
+-using EvoSC.Common.Themes;
++﻿using EvoSC.Common.Themes;
+ using EvoSC.Common.Themes.Attributes;
+ 
+ namespace EvoSC.Modules.Official.ScoreboardModule.Themes;
+diff --git a/src/Modules/SpectatorTargetInfoModule/Themes/DefaultSpectatorTargetInfoTheme.cs b/src/Modules/SpectatorTargetInfoModule/Themes/DefaultSpectatorTargetInfoTheme.cs
+index 05131d000..c504830cd 100644
+--- a/src/Modules/SpectatorTargetInfoModule/Themes/DefaultSpectatorTargetInfoTheme.cs
++++ b/src/Modules/SpectatorTargetInfoModule/Themes/DefaultSpectatorTargetInfoTheme.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Interfaces.Themes;
+-using EvoSC.Common.Themes;
++﻿using EvoSC.Common.Themes;
+ using EvoSC.Common.Themes.Attributes;
+ using EvoSC.Common.Util;
+ 
+diff --git a/tests/Modules/ASayModule.Tests/ASayServiceTest.cs b/tests/Modules/ASayModule.Tests/ASayServiceTest.cs
+index a762698d8..1f3220bf4 100644
+--- a/tests/Modules/ASayModule.Tests/ASayServiceTest.cs
++++ b/tests/Modules/ASayModule.Tests/ASayServiceTest.cs
+@@ -4,7 +4,6 @@
+ using EvoSC.Common.Interfaces.Models;
+ using EvoSC.Common.Interfaces.Services;
+ using EvoSC.Common.Interfaces.Util.Auditing;
+-using EvoSC.Common.Remote;
+ using EvoSC.Manialinks.Interfaces;
+ using EvoSC.Modules.Official.ASayModule.Interfaces;
+ using EvoSC.Modules.Official.ASayModule.Services;
+diff --git a/tests/Modules/ForceTeamModule.Tests/Controllers/ForceTeamCommandControllerTests.cs b/tests/Modules/ForceTeamModule.Tests/Controllers/ForceTeamCommandControllerTests.cs
+index bcb4cc696..7d500a75d 100644
+--- a/tests/Modules/ForceTeamModule.Tests/Controllers/ForceTeamCommandControllerTests.cs
++++ b/tests/Modules/ForceTeamModule.Tests/Controllers/ForceTeamCommandControllerTests.cs
+@@ -1,5 +1,4 @@
+ ﻿using EvoSC.Common.Interfaces.Models;
+-using EvoSC.Common.Interfaces.Services;
+ using EvoSC.Modules.Official.ForceTeamModule.Controllers;
+ using EvoSC.Modules.Official.ForceTeamModule.Interfaces;
+ using EvoSC.Testing.Controllers;
+diff --git a/tests/Modules/LocalRecordsModule.Tests/Controllers/LocalRecordsManialinkControllerTests.cs b/tests/Modules/LocalRecordsModule.Tests/Controllers/LocalRecordsManialinkControllerTests.cs
+index 92c2419a2..509c816f2 100644
+--- a/tests/Modules/LocalRecordsModule.Tests/Controllers/LocalRecordsManialinkControllerTests.cs
++++ b/tests/Modules/LocalRecordsModule.Tests/Controllers/LocalRecordsManialinkControllerTests.cs
+@@ -1,12 +1,8 @@
+-﻿using EvoSC.Common.Interfaces;
+-using EvoSC.Common.Interfaces.Models;
+-using EvoSC.Common.Interfaces.Services;
++﻿using EvoSC.Common.Interfaces.Models;
+ using EvoSC.Manialinks.Interfaces.Models;
+ using EvoSC.Modules.Official.LocalRecordsModule.Controllers;
+ using EvoSC.Modules.Official.LocalRecordsModule.Interfaces.Services;
+-using EvoSC.Testing;
+ using EvoSC.Testing.Controllers;
+-using GbxRemoteNet.Interfaces;
+ using Moq;
+ 
+ namespace LocalRecordsModule.Tests.Controllers;
+diff --git a/tests/Modules/LocalRecordsModule.Tests/Controllers/WidgetUpdateControllerTests.cs b/tests/Modules/LocalRecordsModule.Tests/Controllers/WidgetUpdateControllerTests.cs
+index 546fa2137..74e34f27a 100644
+--- a/tests/Modules/LocalRecordsModule.Tests/Controllers/WidgetUpdateControllerTests.cs
++++ b/tests/Modules/LocalRecordsModule.Tests/Controllers/WidgetUpdateControllerTests.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Interfaces.Models;
+-using EvoSC.Common.Interfaces.Models.Enums;
++﻿using EvoSC.Common.Interfaces.Models.Enums;
+ using EvoSC.Common.Interfaces.Services;
+ using EvoSC.Common.Models.Maps;
+ using EvoSC.Common.Models.Players;
+diff --git a/tests/Modules/LocalRecordsModule.Tests/Services/LocalRecordsServiceTests.cs b/tests/Modules/LocalRecordsModule.Tests/Services/LocalRecordsServiceTests.cs
+index 274d8af7c..8ff22c926 100644
+--- a/tests/Modules/LocalRecordsModule.Tests/Services/LocalRecordsServiceTests.cs
++++ b/tests/Modules/LocalRecordsModule.Tests/Services/LocalRecordsServiceTests.cs
+@@ -7,13 +7,10 @@
+ using EvoSC.Common.Interfaces.Themes;
+ using EvoSC.Common.Models.Maps;
+ using EvoSC.Common.Models.Players;
+-using EvoSC.Common.Tests;
+ using EvoSC.Common.Themes;
+-using EvoSC.Manialinks;
+ using EvoSC.Manialinks.Interfaces;
+ using EvoSC.Modules.Official.LocalRecordsModule.Config;
+ using EvoSC.Modules.Official.LocalRecordsModule.Database.Models;
+-using EvoSC.Modules.Official.LocalRecordsModule.Interfaces;
+ using EvoSC.Modules.Official.LocalRecordsModule.Interfaces.Database;
+ using EvoSC.Modules.Official.LocalRecordsModule.Interfaces.Services;
+ using EvoSC.Modules.Official.LocalRecordsModule.Services;
+@@ -23,7 +20,6 @@
+ using EvoSC.Testing;
+ using GbxRemoteNet.Interfaces;
+ using Microsoft.Extensions.Logging;
+-using Microsoft.VisualBasic;
+ using Moq;
+ 
+ namespace LocalRecordsModule.Tests.Services;
+diff --git a/tests/Modules/MapListModule.Tests/Services/MapListServiceTests.cs b/tests/Modules/MapListModule.Tests/Services/MapListServiceTests.cs
+index c7226aa35..a33185031 100644
+--- a/tests/Modules/MapListModule.Tests/Services/MapListServiceTests.cs
++++ b/tests/Modules/MapListModule.Tests/Services/MapListServiceTests.cs
+@@ -3,7 +3,6 @@
+ using EvoSC.Common.Interfaces.Models;
+ using EvoSC.Common.Interfaces.Services;
+ using EvoSC.Common.Models.Maps;
+-using EvoSC.Common.Tests;
+ using EvoSC.Manialinks.Interfaces;
+ using EvoSC.Modules.Official.MapListModule.Interfaces;
+ using EvoSC.Modules.Official.MapListModule.Interfaces.Models;
+diff --git a/tests/Modules/MapQueueModuleTests/Controllers/QueueCommandsControllerTests.cs b/tests/Modules/MapQueueModuleTests/Controllers/QueueCommandsControllerTests.cs
+index b9c429543..aef944196 100644
+--- a/tests/Modules/MapQueueModuleTests/Controllers/QueueCommandsControllerTests.cs
++++ b/tests/Modules/MapQueueModuleTests/Controllers/QueueCommandsControllerTests.cs
+@@ -1,12 +1,9 @@
+-﻿using EvoSC.Common.Interfaces;
+-using EvoSC.Common.Interfaces.Models;
++﻿using EvoSC.Common.Interfaces.Models;
+ using EvoSC.Common.Interfaces.Services;
+ using EvoSC.Common.Models.Maps;
+ using EvoSC.Modules.Official.MapQueueModule.Controllers;
+ using EvoSC.Modules.Official.MapQueueModule.Interfaces;
+-using EvoSC.Testing;
+ using EvoSC.Testing.Controllers;
+-using GbxRemoteNet.Interfaces;
+ using Moq;
+ 
+ namespace EvoSC.Modules.Official.MapQueueModuleTests.Tests.Controllers;
+diff --git a/tests/Modules/MapQueueModuleTests/Controllers/QueueControllerTests.cs b/tests/Modules/MapQueueModuleTests/Controllers/QueueControllerTests.cs
+index 6fde8a282..ff9f13ad8 100644
+--- a/tests/Modules/MapQueueModuleTests/Controllers/QueueControllerTests.cs
++++ b/tests/Modules/MapQueueModuleTests/Controllers/QueueControllerTests.cs
+@@ -2,7 +2,6 @@
+ using EvoSC.Common.Interfaces.Models;
+ using EvoSC.Common.Interfaces.Services;
+ using EvoSC.Common.Models.Maps;
+-using EvoSC.Common.Tests;
+ using EvoSC.Modules.Official.MapQueueModule.Controllers;
+ using EvoSC.Modules.Official.MapQueueModule.Events.Args;
+ using EvoSC.Modules.Official.MapQueueModule.Interfaces;
+diff --git a/tests/Modules/MapsModule.Tests/Controllers/MapsControllerTests.cs b/tests/Modules/MapsModule.Tests/Controllers/MapsControllerTests.cs
+index df312c5c7..9c1bfc6b3 100644
+--- a/tests/Modules/MapsModule.Tests/Controllers/MapsControllerTests.cs
++++ b/tests/Modules/MapsModule.Tests/Controllers/MapsControllerTests.cs
+@@ -1,5 +1,4 @@
+ using EvoSC.Common.Exceptions;
+-using EvoSC.Common.Interfaces;
+ using EvoSC.Common.Interfaces.Localization;
+ using EvoSC.Common.Interfaces.Models;
+ using EvoSC.Common.Interfaces.Services;
+@@ -8,7 +7,6 @@
+ using EvoSC.Modules.Official.MapsModule.Interfaces;
+ using EvoSC.Testing;
+ using EvoSC.Testing.Controllers;
+-using GbxRemoteNet.Interfaces;
+ using Microsoft.Extensions.Logging;
+ using Moq;
+ 
+diff --git a/tests/Modules/MatchManagerModule.Tests/Controllers/MatchCommandsControllerTests.cs b/tests/Modules/MatchManagerModule.Tests/Controllers/MatchCommandsControllerTests.cs
+index 0b3b65e63..99cbf7867 100644
+--- a/tests/Modules/MatchManagerModule.Tests/Controllers/MatchCommandsControllerTests.cs
++++ b/tests/Modules/MatchManagerModule.Tests/Controllers/MatchCommandsControllerTests.cs
+@@ -1,13 +1,10 @@
+-﻿using EvoSC.Common.Interfaces;
+-using EvoSC.Common.Interfaces.Localization;
++﻿using EvoSC.Common.Interfaces.Localization;
+ using EvoSC.Common.Interfaces.Models;
+-using EvoSC.Common.Interfaces.Services;
+ using EvoSC.Modules.Official.MatchManagerModule.Controllers;
+ using EvoSC.Modules.Official.MatchManagerModule.Events;
+ using EvoSC.Modules.Official.MatchManagerModule.Interfaces;
+ using EvoSC.Testing;
+ using EvoSC.Testing.Controllers;
+-using GbxRemoteNet.Interfaces;
+ using Moq;
+ 
+ namespace MatchManagerModule.Tests.Controllers;
+diff --git a/tests/Modules/NextMapModule.Tests/Controllers/NextMapChatControllerTests.cs b/tests/Modules/NextMapModule.Tests/Controllers/NextMapChatControllerTests.cs
+index 4c971ae21..4dd1af859 100644
+--- a/tests/Modules/NextMapModule.Tests/Controllers/NextMapChatControllerTests.cs
++++ b/tests/Modules/NextMapModule.Tests/Controllers/NextMapChatControllerTests.cs
+@@ -1,13 +1,10 @@
+ ﻿using EvoSC.Common.Database.Models.Maps;
+-using EvoSC.Common.Interfaces;
+ using EvoSC.Common.Interfaces.Localization;
+ using EvoSC.Common.Interfaces.Models;
+-using EvoSC.Common.Interfaces.Services;
+ using EvoSC.Modules.Official.NextMapModule.Controllers;
+ using EvoSC.Modules.Official.NextMapModule.Interfaces;
+ using EvoSC.Testing;
+ using EvoSC.Testing.Controllers;
+-using GbxRemoteNet.Interfaces;
+ using Moq;
+ using Xunit;
+ 
+diff --git a/tests/Modules/Player.Tests/PlayerCommandsControllerTests.cs b/tests/Modules/Player.Tests/PlayerCommandsControllerTests.cs
+index fe95a8740..2a9b8dc63 100644
+--- a/tests/Modules/Player.Tests/PlayerCommandsControllerTests.cs
++++ b/tests/Modules/Player.Tests/PlayerCommandsControllerTests.cs
+@@ -1,12 +1,8 @@
+-﻿using EvoSC.Common.Interfaces;
+-using EvoSC.Common.Interfaces.Models;
+-using EvoSC.Common.Interfaces.Services;
++﻿using EvoSC.Common.Interfaces.Models;
+ using EvoSC.Modules.Official.Player.Controllers;
+ using EvoSC.Modules.Official.Player.Events;
+ using EvoSC.Modules.Official.Player.Interfaces;
+-using EvoSC.Testing;
+ using EvoSC.Testing.Controllers;
+-using GbxRemoteNet.Interfaces;
+ using Moq;
+ 
+ namespace EvoSC.Modules.Official.Player.Tests;
+diff --git a/tests/Modules/Player.Tests/PlayerEventControllerTests.cs b/tests/Modules/Player.Tests/PlayerEventControllerTests.cs
+index 2b08b8dc3..c7ad6af89 100644
+--- a/tests/Modules/Player.Tests/PlayerEventControllerTests.cs
++++ b/tests/Modules/Player.Tests/PlayerEventControllerTests.cs
+@@ -6,7 +6,6 @@
+ using EvoSC.Modules.Official.Player.Interfaces;
+ using EvoSC.Testing;
+ using EvoSC.Testing.Controllers;
+-using GbxRemoteNet.Events;
+ using Moq;
+ 
+ namespace EvoSC.Modules.Official.Player.Tests;
+diff --git a/tests/Modules/TeamInfoModule.Tests/Controllers/TeamInfoEventControllerTests.cs b/tests/Modules/TeamInfoModule.Tests/Controllers/TeamInfoEventControllerTests.cs
+index 6d5597870..902fbbbc5 100644
+--- a/tests/Modules/TeamInfoModule.Tests/Controllers/TeamInfoEventControllerTests.cs
++++ b/tests/Modules/TeamInfoModule.Tests/Controllers/TeamInfoEventControllerTests.cs
+@@ -4,12 +4,10 @@
+ using EvoSC.Common.Remote.EventArgsModels;
+ using EvoSC.Modules.Official.TeamInfoModule.Controllers;
+ using EvoSC.Modules.Official.TeamInfoModule.Interfaces;
+-using EvoSC.Modules.Official.TeamInfoModule.Services;
+ using EvoSC.Modules.Official.TeamSettingsModule.Events.EventArgs;
+ using EvoSC.Modules.Official.TeamSettingsModule.Models;
+ using EvoSC.Testing.Controllers;
+ using GbxRemoteNet.Events;
+-using Microsoft.Extensions.Logging;
+ using Moq;
+ using Xunit;
+ 
+diff --git a/tests/Modules/TeamSettingsModule.Tests/Controllers/TeamSettingsCommandControllerTests.cs b/tests/Modules/TeamSettingsModule.Tests/Controllers/TeamSettingsCommandControllerTests.cs
+index 236486e0e..c3437b0f5 100644
+--- a/tests/Modules/TeamSettingsModule.Tests/Controllers/TeamSettingsCommandControllerTests.cs
++++ b/tests/Modules/TeamSettingsModule.Tests/Controllers/TeamSettingsCommandControllerTests.cs
+@@ -1,5 +1,4 @@
+-﻿using EvoSC.Common.Interfaces;
+-using EvoSC.Common.Interfaces.Models;
++﻿using EvoSC.Common.Interfaces.Models;
+ using EvoSC.Modules.Official.TeamSettingsModule.Controllers;
+ using EvoSC.Modules.Official.TeamSettingsModule.Interfaces;
+ using EvoSC.Modules.Official.TeamSettingsModule.Models;
+diff --git a/tests/Modules/TeamSettingsModule.Tests/Services/TeamSettingsServiceTests.cs b/tests/Modules/TeamSettingsModule.Tests/Services/TeamSettingsServiceTests.cs
+index 2fad17063..d1a56dd2b 100644
+--- a/tests/Modules/TeamSettingsModule.Tests/Services/TeamSettingsServiceTests.cs
++++ b/tests/Modules/TeamSettingsModule.Tests/Services/TeamSettingsServiceTests.cs
+@@ -1,5 +1,4 @@
+-﻿using System.Collections.Specialized;
+-using EvoSC.Common.Interfaces;
++﻿using EvoSC.Common.Interfaces;
+ using EvoSC.Common.Interfaces.Models;
+ using EvoSC.Common.Interfaces.Services;
+ using EvoSC.Manialinks.Interfaces;

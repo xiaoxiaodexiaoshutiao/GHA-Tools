@@ -1,0 +1,355 @@
+2025-03-07T11:02:12.0858871Z Self-hosted runners in the repository are disabled by your administrator
+2025-03-07T11:02:12.3857064Z Requested labels: ubuntu-latest
+2025-03-07T11:02:12.3857282Z Job defined at: databrickslabs/remorph/.github/workflows/push.yml@refs/pull/1480/merge
+2025-03-07T11:02:12.3857410Z Waiting for a runner to pick up this job...
+2025-03-07T11:02:13.6534297Z Job is waiting for a hosted runner to come online.
+2025-03-07T11:02:15.7983571Z Job is about to start running on the hosted runner: GitHub Actions 53 (hosted)
+2025-03-07T11:02:17.6611054Z Current runner version: '2.322.0'
+2025-03-07T11:02:17.6636335Z ##[group]Operating System
+2025-03-07T11:02:17.6637110Z Ubuntu
+2025-03-07T11:02:17.6637674Z 24.04.2
+2025-03-07T11:02:17.6638237Z LTS
+2025-03-07T11:02:17.6638736Z ##[endgroup]
+2025-03-07T11:02:17.6639253Z ##[group]Runner Image
+2025-03-07T11:02:17.6639901Z Image: ubuntu-24.04
+2025-03-07T11:02:17.6640447Z Version: 20250302.1.0
+2025-03-07T11:02:17.6641479Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250302.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-07T11:02:17.6642930Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250302.1
+2025-03-07T11:02:17.6643876Z ##[endgroup]
+2025-03-07T11:02:17.6644367Z ##[group]Runner Image Provisioner
+2025-03-07T11:02:17.6645095Z 2.0.422.1
+2025-03-07T11:02:17.6645607Z ##[endgroup]
+2025-03-07T11:02:17.6648246Z ##[group]GITHUB_TOKEN Permissions
+2025-03-07T11:02:17.6650451Z Actions: write
+2025-03-07T11:02:17.6651268Z Attestations: write
+2025-03-07T11:02:17.6651931Z Checks: write
+2025-03-07T11:02:17.6652532Z Contents: write
+2025-03-07T11:02:17.6653041Z Deployments: write
+2025-03-07T11:02:17.6653582Z Discussions: write
+2025-03-07T11:02:17.6654157Z Issues: write
+2025-03-07T11:02:17.6654682Z Metadata: read
+2025-03-07T11:02:17.6655185Z Packages: write
+2025-03-07T11:02:17.6655749Z Pages: write
+2025-03-07T11:02:17.6656474Z PullRequests: write
+2025-03-07T11:02:17.6657024Z RepositoryProjects: write
+2025-03-07T11:02:17.6657700Z SecurityEvents: write
+2025-03-07T11:02:17.6658243Z Statuses: write
+2025-03-07T11:02:17.6658705Z ##[endgroup]
+2025-03-07T11:02:17.6661839Z Secret source: Actions
+2025-03-07T11:02:17.6662655Z Prepare workflow directory
+2025-03-07T11:02:17.7114224Z Prepare all required actions
+2025-03-07T11:02:17.7150772Z Getting action download info
+2025-03-07T11:02:17.8620160Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-07T11:02:17.9481592Z Download action repository 'actions/setup-python@v5' (SHA:42375524e23c412d93fb67b49958b491fce71c38)
+2025-03-07T11:02:18.0991949Z Complete job name: fmt-python
+2025-03-07T11:02:18.1882233Z ##[group]Run actions/checkout@v4
+2025-03-07T11:02:18.1883085Z with:
+2025-03-07T11:02:18.1883510Z   repository: databrickslabs/remorph
+2025-03-07T11:02:18.1884183Z   token: ***
+2025-03-07T11:02:18.1884589Z   ssh-strict: true
+2025-03-07T11:02:18.1885000Z   ssh-user: git
+2025-03-07T11:02:18.1885416Z   persist-credentials: true
+2025-03-07T11:02:18.1885892Z   clean: true
+2025-03-07T11:02:18.1886553Z   sparse-checkout-cone-mode: true
+2025-03-07T11:02:18.1887071Z   fetch-depth: 1
+2025-03-07T11:02:18.1887505Z   fetch-tags: false
+2025-03-07T11:02:18.1887927Z   show-progress: true
+2025-03-07T11:02:18.1888346Z   lfs: false
+2025-03-07T11:02:18.1888732Z   submodules: false
+2025-03-07T11:02:18.1889155Z   set-safe-directory: true
+2025-03-07T11:02:18.1889854Z env:
+2025-03-07T11:02:18.1890244Z   HATCH_VERSION: 1.9.1
+2025-03-07T11:02:18.1890660Z ##[endgroup]
+2025-03-07T11:02:18.3701778Z Syncing repository: databrickslabs/remorph
+2025-03-07T11:02:18.3703527Z ##[group]Getting Git version info
+2025-03-07T11:02:18.3704262Z Working directory is '/home/runner/work/remorph/remorph'
+2025-03-07T11:02:18.3705206Z [command]/usr/bin/git version
+2025-03-07T11:02:18.3755650Z git version 2.48.1
+2025-03-07T11:02:18.3783513Z ##[endgroup]
+2025-03-07T11:02:18.3797228Z Temporarily overriding HOME='/home/runner/work/_temp/ac109990-493c-4dfa-a49c-cdfa9663857b' before making global git config changes
+2025-03-07T11:02:18.3798624Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-07T11:02:18.3802287Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/remorph/remorph
+2025-03-07T11:02:18.3837921Z Deleting the contents of '/home/runner/work/remorph/remorph'
+2025-03-07T11:02:18.3841915Z ##[group]Initializing the repository
+2025-03-07T11:02:18.3845699Z [command]/usr/bin/git init /home/runner/work/remorph/remorph
+2025-03-07T11:02:18.3906381Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-07T11:02:18.3908073Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-07T11:02:18.3909374Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-07T11:02:18.3910557Z hint:
+2025-03-07T11:02:18.3911382Z hint: 	git config --global init.defaultBranch <name>
+2025-03-07T11:02:18.3912327Z hint:
+2025-03-07T11:02:18.3913219Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-07T11:02:18.3914277Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-07T11:02:18.3914992Z hint:
+2025-03-07T11:02:18.3915389Z hint: 	git branch -m <name>
+2025-03-07T11:02:18.3916327Z Initialized empty Git repository in /home/runner/work/remorph/remorph/.git/
+2025-03-07T11:02:18.3923385Z [command]/usr/bin/git remote add origin https://github.com/databrickslabs/remorph
+2025-03-07T11:02:18.3954671Z ##[endgroup]
+2025-03-07T11:02:18.3955432Z ##[group]Disabling automatic garbage collection
+2025-03-07T11:02:18.3958556Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-07T11:02:18.3985920Z ##[endgroup]
+2025-03-07T11:02:18.3986821Z ##[group]Setting up auth
+2025-03-07T11:02:18.3992987Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-07T11:02:18.4022363Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-07T11:02:18.4297435Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-07T11:02:18.4325343Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-07T11:02:18.4548261Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-07T11:02:18.4594396Z ##[endgroup]
+2025-03-07T11:02:18.4603201Z ##[group]Fetching the repository
+2025-03-07T11:02:18.4604583Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +784e993e484c95190b9abb554db2525f71b11302:refs/remotes/pull/1480/merge
+2025-03-07T11:02:19.2061997Z From https://github.com/databrickslabs/remorph
+2025-03-07T11:02:19.2064290Z  * [new ref]         784e993e484c95190b9abb554db2525f71b11302 -> pull/1480/merge
+2025-03-07T11:02:19.2087043Z ##[endgroup]
+2025-03-07T11:02:19.2089045Z ##[group]Determining the checkout info
+2025-03-07T11:02:19.2091186Z ##[endgroup]
+2025-03-07T11:02:19.2095296Z [command]/usr/bin/git sparse-checkout disable
+2025-03-07T11:02:19.2134543Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-07T11:02:19.2162853Z ##[group]Checking out the ref
+2025-03-07T11:02:19.2166865Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1480/merge
+2025-03-07T11:02:19.3705530Z Note: switching to 'refs/remotes/pull/1480/merge'.
+2025-03-07T11:02:19.3707114Z 
+2025-03-07T11:02:19.3708049Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-07T11:02:19.3709774Z changes and commit them, and you can discard any commits you make in this
+2025-03-07T11:02:19.3711570Z state without impacting any branches by switching back to a branch.
+2025-03-07T11:02:19.3712633Z 
+2025-03-07T11:02:19.3713353Z If you want to create a new branch to retain commits you create, you may
+2025-03-07T11:02:19.3714991Z do so (now or later) by using -c with the switch command. Example:
+2025-03-07T11:02:19.3716050Z 
+2025-03-07T11:02:19.3716883Z   git switch -c <new-branch-name>
+2025-03-07T11:02:19.3718057Z 
+2025-03-07T11:02:19.3718677Z Or undo this operation with:
+2025-03-07T11:02:19.3719635Z 
+2025-03-07T11:02:19.3720184Z   git switch -
+2025-03-07T11:02:19.3720898Z 
+2025-03-07T11:02:19.3722029Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-07T11:02:19.3724351Z 
+2025-03-07T11:02:19.3726794Z HEAD is now at 784e993 Merge dd3758365459bf14ba95c7807dad4ac68d84c723 into 449dd2fe3038992a918c1f4b107d68ddcbd51030
+2025-03-07T11:02:19.3733461Z ##[endgroup]
+2025-03-07T11:02:19.3764958Z [command]/usr/bin/git log -1 --format=%H
+2025-03-07T11:02:19.3787956Z 784e993e484c95190b9abb554db2525f71b11302
+2025-03-07T11:02:19.4182894Z ##[group]Run actions/setup-python@v5
+2025-03-07T11:02:19.4184247Z with:
+2025-03-07T11:02:19.4185108Z   cache: pip
+2025-03-07T11:02:19.4186287Z   cache-dependency-path: **/pyproject.toml
+2025-03-07T11:02:19.4187617Z   python-version: 3.10.x
+2025-03-07T11:02:19.4188667Z   check-latest: false
+2025-03-07T11:02:19.4189943Z   token: ***
+2025-03-07T11:02:19.4190888Z   update-environment: true
+2025-03-07T11:02:19.4191997Z   allow-prereleases: false
+2025-03-07T11:02:19.4193024Z env:
+2025-03-07T11:02:19.4193858Z   HATCH_VERSION: 1.9.1
+2025-03-07T11:02:19.4194819Z ##[endgroup]
+2025-03-07T11:02:19.5895900Z ##[group]Installed versions
+2025-03-07T11:02:19.5954703Z Successfully set up CPython (3.10.16)
+2025-03-07T11:02:19.5956739Z ##[endgroup]
+2025-03-07T11:02:19.7170954Z [command]/opt/hostedtoolcache/Python/3.10.16/x64/bin/pip cache dir
+2025-03-07T11:02:19.9681707Z /home/runner/.cache/pip
+2025-03-07T11:02:20.0862964Z Cache hit for: setup-python-Linux-x64-24.04-Ubuntu-python-3.10.16-pip-5caaab0415eb84c2075964ba38f20bda9429be6e273ba031ddb8830c2a4bee4f
+2025-03-07T11:02:21.1644090Z Received 176160768 of 240786968 (73.2%), 167.8 MBs/sec
+2025-03-07T11:02:21.5412480Z Received 240786968 of 240786968 (100.0%), 166.8 MBs/sec
+2025-03-07T11:02:21.5413777Z Cache Size: ~230 MB (240786968 B)
+2025-03-07T11:02:21.5451221Z [command]/usr/bin/tar -xf /home/runner/work/_temp/3dd2ed10-71ef-40c4-a554-c63861bdcbd4/cache.tzst -P -C /home/runner/work/remorph/remorph --use-compress-program unzstd
+2025-03-07T11:02:21.9292258Z Cache restored successfully
+2025-03-07T11:02:21.9798184Z Cache restored from key: setup-python-Linux-x64-24.04-Ubuntu-python-3.10.16-pip-5caaab0415eb84c2075964ba38f20bda9429be6e273ba031ddb8830c2a4bee4f
+2025-03-07T11:02:21.9977874Z ##[group]Run pip install hatch==$HATCH_VERSION
+2025-03-07T11:02:21.9978340Z [36;1mpip install hatch==$HATCH_VERSION[0m
+2025-03-07T11:02:22.0030886Z shell: /usr/bin/bash -e {0}
+2025-03-07T11:02:22.0031184Z env:
+2025-03-07T11:02:22.0031404Z   HATCH_VERSION: 1.9.1
+2025-03-07T11:02:22.0031735Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-03-07T11:02:22.0032214Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib/pkgconfig
+2025-03-07T11:02:22.0032673Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-03-07T11:02:22.0033094Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-03-07T11:02:22.0033538Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-03-07T11:02:22.0033952Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib
+2025-03-07T11:02:22.0034293Z ##[endgroup]
+2025-03-07T11:02:22.6129297Z Collecting hatch==1.9.1
+2025-03-07T11:02:22.6151397Z   Using cached hatch-1.9.1-py3-none-any.whl.metadata (5.2 kB)
+2025-03-07T11:02:22.6386960Z Collecting click>=8.0.6 (from hatch==1.9.1)
+2025-03-07T11:02:22.6400764Z   Using cached click-8.1.8-py3-none-any.whl.metadata (2.3 kB)
+2025-03-07T11:02:22.6587203Z Collecting hatchling>=1.21.0 (from hatch==1.9.1)
+2025-03-07T11:02:22.6600891Z   Using cached hatchling-1.27.0-py3-none-any.whl.metadata (3.8 kB)
+2025-03-07T11:02:22.6876373Z Collecting httpx>=0.22.0 (from hatch==1.9.1)
+2025-03-07T11:02:22.6890011Z   Using cached httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+2025-03-07T11:02:22.6996574Z Collecting hyperlink>=21.0.0 (from hatch==1.9.1)
+2025-03-07T11:02:22.7009850Z   Using cached hyperlink-21.0.0-py2.py3-none-any.whl.metadata (1.5 kB)
+2025-03-07T11:02:22.7332251Z Collecting keyring>=23.5.0 (from hatch==1.9.1)
+2025-03-07T11:02:22.7345728Z   Using cached keyring-25.6.0-py3-none-any.whl.metadata (20 kB)
+2025-03-07T11:02:22.7558264Z Collecting packaging>=21.3 (from hatch==1.9.1)
+2025-03-07T11:02:22.7570947Z   Using cached packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+2025-03-07T11:02:22.7656422Z Collecting pexpect~=4.8 (from hatch==1.9.1)
+2025-03-07T11:02:22.7669030Z   Using cached pexpect-4.9.0-py2.py3-none-any.whl.metadata (2.5 kB)
+2025-03-07T11:02:22.7826871Z Collecting platformdirs>=2.5.0 (from hatch==1.9.1)
+2025-03-07T11:02:22.7839449Z   Using cached platformdirs-4.3.6-py3-none-any.whl.metadata (11 kB)
+2025-03-07T11:02:22.8246541Z Collecting rich>=11.2.0 (from hatch==1.9.1)
+2025-03-07T11:02:22.8259417Z   Using cached rich-13.9.4-py3-none-any.whl.metadata (18 kB)
+2025-03-07T11:02:22.8372309Z Collecting shellingham>=1.4.0 (from hatch==1.9.1)
+2025-03-07T11:02:22.8384941Z   Using cached shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+2025-03-07T11:02:22.8459056Z Collecting tomli-w>=1.0 (from hatch==1.9.1)
+2025-03-07T11:02:22.8471366Z   Using cached tomli_w-1.2.0-py3-none-any.whl.metadata (5.7 kB)
+2025-03-07T11:02:22.8615125Z Collecting tomlkit>=0.11.1 (from hatch==1.9.1)
+2025-03-07T11:02:22.8628142Z   Using cached tomlkit-0.13.2-py3-none-any.whl.metadata (2.7 kB)
+2025-03-07T11:02:22.8716016Z Collecting userpath~=1.7 (from hatch==1.9.1)
+2025-03-07T11:02:22.8728630Z   Using cached userpath-1.9.2-py3-none-any.whl.metadata (3.0 kB)
+2025-03-07T11:02:22.9223976Z Collecting virtualenv>=20.16.2 (from hatch==1.9.1)
+2025-03-07T11:02:22.9554784Z   Downloading virtualenv-20.29.3-py3-none-any.whl.metadata (4.5 kB)
+2025-03-07T11:02:23.0166378Z Collecting zstandard<1 (from hatch==1.9.1)
+2025-03-07T11:02:23.0182706Z   Using cached zstandard-0.23.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.0 kB)
+2025-03-07T11:02:23.0330219Z Collecting pathspec>=0.10.1 (from hatchling>=1.21.0->hatch==1.9.1)
+2025-03-07T11:02:23.0343354Z   Using cached pathspec-0.12.1-py3-none-any.whl.metadata (21 kB)
+2025-03-07T11:02:23.0442912Z Collecting pluggy>=1.0.0 (from hatchling>=1.21.0->hatch==1.9.1)
+2025-03-07T11:02:23.0455869Z   Using cached pluggy-1.5.0-py3-none-any.whl.metadata (4.8 kB)
+2025-03-07T11:02:23.0580233Z Collecting tomli>=1.2.2 (from hatchling>=1.21.0->hatch==1.9.1)
+2025-03-07T11:02:23.0593279Z   Using cached tomli-2.2.1-py3-none-any.whl.metadata (10 kB)
+2025-03-07T11:02:23.0822689Z Collecting trove-classifiers (from hatchling>=1.21.0->hatch==1.9.1)
+2025-03-07T11:02:23.0835456Z   Using cached trove_classifiers-2025.3.3.18-py3-none-any.whl.metadata (2.3 kB)
+2025-03-07T11:02:23.0998582Z Collecting anyio (from httpx>=0.22.0->hatch==1.9.1)
+2025-03-07T11:02:23.1011341Z   Using cached anyio-4.8.0-py3-none-any.whl.metadata (4.6 kB)
+2025-03-07T11:02:23.1226777Z Collecting certifi (from httpx>=0.22.0->hatch==1.9.1)
+2025-03-07T11:02:23.1239988Z   Using cached certifi-2025.1.31-py3-none-any.whl.metadata (2.5 kB)
+2025-03-07T11:02:23.1404537Z Collecting httpcore==1.* (from httpx>=0.22.0->hatch==1.9.1)
+2025-03-07T11:02:23.1417427Z   Using cached httpcore-1.0.7-py3-none-any.whl.metadata (21 kB)
+2025-03-07T11:02:23.1541573Z Collecting idna (from httpx>=0.22.0->hatch==1.9.1)
+2025-03-07T11:02:23.1554277Z   Using cached idna-3.10-py3-none-any.whl.metadata (10 kB)
+2025-03-07T11:02:23.1669147Z Collecting h11<0.15,>=0.13 (from httpcore==1.*->httpx>=0.22.0->hatch==1.9.1)
+2025-03-07T11:02:23.1688751Z   Using cached h11-0.14.0-py3-none-any.whl.metadata (8.2 kB)
+2025-03-07T11:02:23.1913558Z Collecting SecretStorage>=3.2 (from keyring>=23.5.0->hatch==1.9.1)
+2025-03-07T11:02:23.1931803Z   Using cached SecretStorage-3.3.3-py3-none-any.whl.metadata (4.0 kB)
+2025-03-07T11:02:23.2086892Z Collecting jeepney>=0.4.2 (from keyring>=23.5.0->hatch==1.9.1)
+2025-03-07T11:02:23.2106960Z   Using cached jeepney-0.9.0-py3-none-any.whl.metadata (1.2 kB)
+2025-03-07T11:02:23.2489707Z Collecting importlib_metadata>=4.11.4 (from keyring>=23.5.0->hatch==1.9.1)
+2025-03-07T11:02:23.2505885Z   Using cached importlib_metadata-8.6.1-py3-none-any.whl.metadata (4.7 kB)
+2025-03-07T11:02:23.2680644Z Collecting jaraco.classes (from keyring>=23.5.0->hatch==1.9.1)
+2025-03-07T11:02:23.2702116Z   Using cached jaraco.classes-3.4.0-py3-none-any.whl.metadata (2.6 kB)
+2025-03-07T11:02:23.2923980Z Collecting jaraco.functools (from keyring>=23.5.0->hatch==1.9.1)
+2025-03-07T11:02:23.2938560Z   Using cached jaraco.functools-4.1.0-py3-none-any.whl.metadata (2.9 kB)
+2025-03-07T11:02:23.3102999Z Collecting jaraco.context (from keyring>=23.5.0->hatch==1.9.1)
+2025-03-07T11:02:23.3123269Z   Using cached jaraco.context-6.0.1-py3-none-any.whl.metadata (4.1 kB)
+2025-03-07T11:02:23.3275604Z Collecting ptyprocess>=0.5 (from pexpect~=4.8->hatch==1.9.1)
+2025-03-07T11:02:23.3296299Z   Using cached ptyprocess-0.7.0-py2.py3-none-any.whl.metadata (1.3 kB)
+2025-03-07T11:02:23.3532936Z Collecting markdown-it-py>=2.2.0 (from rich>=11.2.0->hatch==1.9.1)
+2025-03-07T11:02:23.3551235Z   Using cached markdown_it_py-3.0.0-py3-none-any.whl.metadata (6.9 kB)
+2025-03-07T11:02:23.3779771Z Collecting pygments<3.0.0,>=2.13.0 (from rich>=11.2.0->hatch==1.9.1)
+2025-03-07T11:02:23.3792700Z   Using cached pygments-2.19.1-py3-none-any.whl.metadata (2.5 kB)
+2025-03-07T11:02:23.3938119Z Collecting typing-extensions<5.0,>=4.0.0 (from rich>=11.2.0->hatch==1.9.1)
+2025-03-07T11:02:23.3958989Z   Using cached typing_extensions-4.12.2-py3-none-any.whl.metadata (3.0 kB)
+2025-03-07T11:02:23.4107111Z Collecting distlib<1,>=0.3.7 (from virtualenv>=20.16.2->hatch==1.9.1)
+2025-03-07T11:02:23.4120242Z   Using cached distlib-0.3.9-py2.py3-none-any.whl.metadata (5.2 kB)
+2025-03-07T11:02:23.4290217Z Collecting filelock<4,>=3.12.2 (from virtualenv>=20.16.2->hatch==1.9.1)
+2025-03-07T11:02:23.4304241Z   Using cached filelock-3.17.0-py3-none-any.whl.metadata (2.9 kB)
+2025-03-07T11:02:23.4577923Z Collecting zipp>=3.20 (from importlib_metadata>=4.11.4->keyring>=23.5.0->hatch==1.9.1)
+2025-03-07T11:02:23.4590734Z   Using cached zipp-3.21.0-py3-none-any.whl.metadata (3.7 kB)
+2025-03-07T11:02:23.4729889Z Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=11.2.0->hatch==1.9.1)
+2025-03-07T11:02:23.4742612Z   Using cached mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+2025-03-07T11:02:23.6341374Z Collecting cryptography>=2.0 (from SecretStorage>=3.2->keyring>=23.5.0->hatch==1.9.1)
+2025-03-07T11:02:23.6355615Z   Using cached cryptography-44.0.2-cp39-abi3-manylinux_2_34_x86_64.whl.metadata (5.7 kB)
+2025-03-07T11:02:23.6587262Z Collecting exceptiongroup>=1.0.2 (from anyio->httpx>=0.22.0->hatch==1.9.1)
+2025-03-07T11:02:23.6599403Z   Using cached exceptiongroup-1.2.2-py3-none-any.whl.metadata (6.6 kB)
+2025-03-07T11:02:23.6696739Z Collecting sniffio>=1.1 (from anyio->httpx>=0.22.0->hatch==1.9.1)
+2025-03-07T11:02:23.6709004Z   Using cached sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+2025-03-07T11:02:23.6899021Z Collecting more-itertools (from jaraco.classes->keyring>=23.5.0->hatch==1.9.1)
+2025-03-07T11:02:23.6911249Z   Using cached more_itertools-10.6.0-py3-none-any.whl.metadata (37 kB)
+2025-03-07T11:02:23.6995285Z Collecting backports.tarfile (from jaraco.context->keyring>=23.5.0->hatch==1.9.1)
+2025-03-07T11:02:23.7007629Z   Using cached backports.tarfile-1.2.0-py3-none-any.whl.metadata (2.0 kB)
+2025-03-07T11:02:23.7850623Z Collecting cffi>=1.12 (from cryptography>=2.0->SecretStorage>=3.2->keyring>=23.5.0->hatch==1.9.1)
+2025-03-07T11:02:23.7864184Z   Using cached cffi-1.17.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.5 kB)
+2025-03-07T11:02:23.8049715Z Collecting pycparser (from cffi>=1.12->cryptography>=2.0->SecretStorage>=3.2->keyring>=23.5.0->hatch==1.9.1)
+2025-03-07T11:02:23.8061819Z   Using cached pycparser-2.22-py3-none-any.whl.metadata (943 bytes)
+2025-03-07T11:02:23.8110400Z Using cached hatch-1.9.1-py3-none-any.whl (110 kB)
+2025-03-07T11:02:23.8123166Z Using cached click-8.1.8-py3-none-any.whl (98 kB)
+2025-03-07T11:02:23.8135863Z Using cached hatchling-1.27.0-py3-none-any.whl (75 kB)
+2025-03-07T11:02:23.8148743Z Using cached httpx-0.28.1-py3-none-any.whl (73 kB)
+2025-03-07T11:02:23.8161255Z Using cached httpcore-1.0.7-py3-none-any.whl (78 kB)
+2025-03-07T11:02:23.8173713Z Using cached hyperlink-21.0.0-py2.py3-none-any.whl (74 kB)
+2025-03-07T11:02:23.8186325Z Using cached keyring-25.6.0-py3-none-any.whl (39 kB)
+2025-03-07T11:02:23.8198444Z Using cached packaging-24.2-py3-none-any.whl (65 kB)
+2025-03-07T11:02:23.8210740Z Using cached pexpect-4.9.0-py2.py3-none-any.whl (63 kB)
+2025-03-07T11:02:23.8223180Z Using cached platformdirs-4.3.6-py3-none-any.whl (18 kB)
+2025-03-07T11:02:23.8234983Z Using cached rich-13.9.4-py3-none-any.whl (242 kB)
+2025-03-07T11:02:23.8248415Z Using cached shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+2025-03-07T11:02:23.8260311Z Using cached tomli_w-1.2.0-py3-none-any.whl (6.7 kB)
+2025-03-07T11:02:23.8272223Z Using cached tomlkit-0.13.2-py3-none-any.whl (37 kB)
+2025-03-07T11:02:23.8284148Z Using cached userpath-1.9.2-py3-none-any.whl (9.1 kB)
+2025-03-07T11:02:23.8315903Z Downloading virtualenv-20.29.3-py3-none-any.whl (4.3 MB)
+2025-03-07T11:02:23.8876595Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 111.2 MB/s eta 0:00:00
+2025-03-07T11:02:23.8891065Z Using cached zstandard-0.23.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (5.4 MB)
+2025-03-07T11:02:23.8943960Z Using cached distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+2025-03-07T11:02:23.8962521Z Using cached filelock-3.17.0-py3-none-any.whl (16 kB)
+2025-03-07T11:02:23.8975185Z Using cached idna-3.10-py3-none-any.whl (70 kB)
+2025-03-07T11:02:23.8988223Z Using cached importlib_metadata-8.6.1-py3-none-any.whl (26 kB)
+2025-03-07T11:02:23.9001015Z Using cached jeepney-0.9.0-py3-none-any.whl (49 kB)
+2025-03-07T11:02:23.9013523Z Using cached markdown_it_py-3.0.0-py3-none-any.whl (87 kB)
+2025-03-07T11:02:23.9026496Z Using cached pathspec-0.12.1-py3-none-any.whl (31 kB)
+2025-03-07T11:02:23.9039029Z Using cached pluggy-1.5.0-py3-none-any.whl (20 kB)
+2025-03-07T11:02:23.9051403Z Using cached ptyprocess-0.7.0-py2.py3-none-any.whl (13 kB)
+2025-03-07T11:02:23.9063752Z Using cached pygments-2.19.1-py3-none-any.whl (1.2 MB)
+2025-03-07T11:02:23.9085093Z Using cached SecretStorage-3.3.3-py3-none-any.whl (15 kB)
+2025-03-07T11:02:23.9097534Z Using cached tomli-2.2.1-py3-none-any.whl (14 kB)
+2025-03-07T11:02:23.9109999Z Using cached typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+2025-03-07T11:02:23.9122825Z Using cached anyio-4.8.0-py3-none-any.whl (96 kB)
+2025-03-07T11:02:23.9135957Z Using cached certifi-2025.1.31-py3-none-any.whl (166 kB)
+2025-03-07T11:02:23.9149766Z Using cached jaraco.classes-3.4.0-py3-none-any.whl (6.8 kB)
+2025-03-07T11:02:23.9162152Z Using cached jaraco.context-6.0.1-py3-none-any.whl (6.8 kB)
+2025-03-07T11:02:23.9174303Z Using cached jaraco.functools-4.1.0-py3-none-any.whl (10 kB)
+2025-03-07T11:02:23.9186795Z Using cached trove_classifiers-2025.3.3.18-py3-none-any.whl (13 kB)
+2025-03-07T11:02:23.9199499Z Using cached cryptography-44.0.2-cp39-abi3-manylinux_2_34_x86_64.whl (4.2 MB)
+2025-03-07T11:02:23.9243965Z Using cached exceptiongroup-1.2.2-py3-none-any.whl (16 kB)
+2025-03-07T11:02:23.9256632Z Using cached h11-0.14.0-py3-none-any.whl (58 kB)
+2025-03-07T11:02:23.9269532Z Using cached mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+2025-03-07T11:02:23.9281946Z Using cached sniffio-1.3.1-py3-none-any.whl (10 kB)
+2025-03-07T11:02:23.9294431Z Using cached zipp-3.21.0-py3-none-any.whl (9.6 kB)
+2025-03-07T11:02:23.9307136Z Using cached backports.tarfile-1.2.0-py3-none-any.whl (30 kB)
+2025-03-07T11:02:23.9319650Z Using cached more_itertools-10.6.0-py3-none-any.whl (63 kB)
+2025-03-07T11:02:23.9332614Z Using cached cffi-1.17.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (446 kB)
+2025-03-07T11:02:23.9348203Z Using cached pycparser-2.22-py3-none-any.whl (117 kB)
+2025-03-07T11:02:24.0811193Z Installing collected packages: trove-classifiers, ptyprocess, distlib, zstandard, zipp, typing-extensions, tomlkit, tomli-w, tomli, sniffio, shellingham, pygments, pycparser, pluggy, platformdirs, pexpect, pathspec, packaging, more-itertools, mdurl, jeepney, idna, h11, filelock, exceptiongroup, click, certifi, backports.tarfile, virtualenv, userpath, markdown-it-py, jaraco.functools, jaraco.context, jaraco.classes, importlib_metadata, hyperlink, httpcore, hatchling, cffi, anyio, rich, httpx, cryptography, SecretStorage, keyring, hatch
+2025-03-07T11:02:26.4695967Z Successfully installed SecretStorage-3.3.3 anyio-4.8.0 backports.tarfile-1.2.0 certifi-2025.1.31 cffi-1.17.1 click-8.1.8 cryptography-44.0.2 distlib-0.3.9 exceptiongroup-1.2.2 filelock-3.17.0 h11-0.14.0 hatch-1.9.1 hatchling-1.27.0 httpcore-1.0.7 httpx-0.28.1 hyperlink-21.0.0 idna-3.10 importlib_metadata-8.6.1 jaraco.classes-3.4.0 jaraco.context-6.0.1 jaraco.functools-4.1.0 jeepney-0.9.0 keyring-25.6.0 markdown-it-py-3.0.0 mdurl-0.1.2 more-itertools-10.6.0 packaging-24.2 pathspec-0.12.1 pexpect-4.9.0 platformdirs-4.3.6 pluggy-1.5.0 ptyprocess-0.7.0 pycparser-2.22 pygments-2.19.1 rich-13.9.4 shellingham-1.5.4 sniffio-1.3.1 tomli-2.2.1 tomli-w-1.2.0 tomlkit-0.13.2 trove-classifiers-2025.3.3.18 typing-extensions-4.12.2 userpath-1.9.2 virtualenv-20.29.3 zipp-3.21.0 zstandard-0.23.0
+2025-03-07T11:02:26.5823127Z ##[group]Run make fmt
+2025-03-07T11:02:26.5823396Z [36;1mmake fmt[0m
+2025-03-07T11:02:26.5871412Z shell: /usr/bin/bash -e {0}
+2025-03-07T11:02:26.5871650Z env:
+2025-03-07T11:02:26.5871831Z   HATCH_VERSION: 1.9.1
+2025-03-07T11:02:26.5872129Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-03-07T11:02:26.5872552Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib/pkgconfig
+2025-03-07T11:02:26.5872956Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-03-07T11:02:26.5873332Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-03-07T11:02:26.5873715Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-03-07T11:02:26.5874093Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib
+2025-03-07T11:02:26.5874407Z ##[endgroup]
+2025-03-07T11:02:26.5959598Z hatch run fmt
+2025-03-07T11:02:27.2188532Z Creating environment: default
+2025-03-07T11:02:27.5629144Z Installing project in development mode
+2025-03-07T11:02:28.2147694Z DEPRECATION: --no-python-version-warning is deprecated. pip 25.1 will enforce this behaviour change. A possible replacement is to remove the flag as it's a no-op. Discussion can be found at https://github.com/pypa/pip/issues/13154
+2025-03-07T11:02:34.8815197Z Checking dependencies
+2025-03-07T11:02:34.9194168Z Syncing dependencies
+2025-03-07T11:02:35.1904239Z DEPRECATION: --no-python-version-warning is deprecated. pip 25.1 will enforce this behaviour change. A possible replacement is to remove the flag as it's a no-op. Discussion can be found at https://github.com/pypa/pip/issues/13154
+2025-03-07T11:02:48.5753674Z cmd [1] | black .
+2025-03-07T11:02:50.4973628Z All done! ✨ 🍰 ✨
+2025-03-07T11:02:50.4974332Z 194 files left unchanged.
+2025-03-07T11:02:50.5189254Z cmd [2] | ruff  check . --fix
+2025-03-07T11:02:50.5458357Z All checks passed!
+2025-03-07T11:02:50.5477199Z cmd [3] | mypy --disable-error-code 'annotation-unchecked' .
+2025-03-07T11:03:24.0814594Z Success: no issues found in 191 source files
+2025-03-07T11:03:24.1266344Z cmd [4] | pylint --output-format=colorized -j 0 src tests
+2025-03-07T11:04:15.5531053Z [7;33m************* Module databricks.labs.remorph.install[0m
+2025-03-07T11:04:15.5532341Z src/databricks/labs/remorph/install.py:264:21: R6201: [1;3;35mConsider using set for membership test[0m ([1;3;35muse-set-for-membership[0m)
+2025-03-07T11:04:15.5533931Z src/databricks/labs/remorph/install.py:264:21: R6201: [1;3;35mConsider using set for membership test[0m ([1;3;35muse-set-for-membership[0m)
+2025-03-07T11:04:15.5534679Z 
+2025-03-07T11:04:15.5534801Z ------------------------------------
+2025-03-07T11:04:15.5535176Z Your code has been rated at 10.00/10
+2025-03-07T11:04:15.5535424Z 
+2025-03-07T11:04:15.6358240Z make: *** [Makefile:28: fmt] Error 8
+2025-03-07T11:04:15.6375615Z ##[error]Process completed with exit code 2.
+2025-03-07T11:04:15.6472958Z Post job cleanup.
+2025-03-07T11:04:15.7431612Z [command]/usr/bin/git version
+2025-03-07T11:04:15.7468837Z git version 2.48.1
+2025-03-07T11:04:15.7517519Z Temporarily overriding HOME='/home/runner/work/_temp/fbf54805-1330-4be7-a141-2479a989ccd4' before making global git config changes
+2025-03-07T11:04:15.7518738Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-07T11:04:15.7522670Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/remorph/remorph
+2025-03-07T11:04:15.7557220Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-07T11:04:15.7588748Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-07T11:04:15.7822047Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-07T11:04:15.7842607Z http.https://github.com/.extraheader
+2025-03-07T11:04:15.7854661Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-07T11:04:15.7885003Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-07T11:04:15.8220601Z Cleaning up orphan processes

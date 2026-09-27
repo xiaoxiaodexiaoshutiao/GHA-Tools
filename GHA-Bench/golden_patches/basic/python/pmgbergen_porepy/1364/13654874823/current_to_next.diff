@@ -1,0 +1,13 @@
+diff --git a/tests/models/test_poromechanics.py b/tests/models/test_poromechanics.py
+index 579dfbead8..78b45410fb 100644
+--- a/tests/models/test_poromechanics.py
++++ b/tests/models/test_poromechanics.py
+@@ -68,7 +68,7 @@ def ic_values_interface_displacement(self, intf: pp.MortarGrid) -> np.ndarray:
+             vals[1, top_cells] = (
+                 self.solid.fracture_gap + self.solid.maximum_elastic_fracture_opening
+             )
+-            return vals.ravel('F')
++            return vals.ravel("F")
+         else:
+             return super().ic_values_interface_displacement(intf)
+ 

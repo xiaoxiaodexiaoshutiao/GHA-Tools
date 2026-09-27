@@ -1,0 +1,421 @@
+2025-02-28T19:18:30.6001151Z Requested labels: ubuntu-latest
+2025-02-28T19:18:30.6001371Z Job defined at: AllayMC/Allay/.github/workflows/gradle.yml@refs/pull/592/merge
+2025-02-28T19:18:30.6001448Z Waiting for a runner to pick up this job...
+2025-02-28T19:18:31.5431473Z Job is waiting for a hosted runner to come online.
+2025-02-28T19:18:34.5992574Z Job is about to start running on the hosted runner: GitHub Actions 2 (hosted)
+2025-02-28T19:18:36.2805911Z Current runner version: '2.322.0'
+2025-02-28T19:18:36.2871990Z ##[group]Operating System
+2025-02-28T19:18:36.2873317Z Ubuntu
+2025-02-28T19:18:36.2874347Z 24.04.2
+2025-02-28T19:18:36.2875453Z LTS
+2025-02-28T19:18:36.2876350Z ##[endgroup]
+2025-02-28T19:18:36.2877679Z ##[group]Runner Image
+2025-02-28T19:18:36.2878745Z Image: ubuntu-24.04
+2025-02-28T19:18:36.2879838Z Version: 20250223.1.0
+2025-02-28T19:18:36.2881800Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250223.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-28T19:18:36.2884466Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250223.1
+2025-02-28T19:18:36.2886381Z ##[endgroup]
+2025-02-28T19:18:36.2887624Z ##[group]Runner Image Provisioner
+2025-02-28T19:18:36.2888794Z 2.0.422.1
+2025-02-28T19:18:36.2889891Z ##[endgroup]
+2025-02-28T19:18:36.2894239Z ##[group]GITHUB_TOKEN Permissions
+2025-02-28T19:18:36.2897456Z Actions: write
+2025-02-28T19:18:36.2898845Z Attestations: write
+2025-02-28T19:18:36.2900000Z Checks: write
+2025-02-28T19:18:36.2900966Z Contents: write
+2025-02-28T19:18:36.2902086Z Deployments: write
+2025-02-28T19:18:36.2903141Z Discussions: write
+2025-02-28T19:18:36.2904164Z Issues: write
+2025-02-28T19:18:36.2905103Z Metadata: read
+2025-02-28T19:18:36.2905996Z Packages: write
+2025-02-28T19:18:36.2907348Z Pages: write
+2025-02-28T19:18:36.2908305Z PullRequests: write
+2025-02-28T19:18:36.2909354Z RepositoryProjects: write
+2025-02-28T19:18:36.2910455Z SecurityEvents: write
+2025-02-28T19:18:36.2911384Z Statuses: write
+2025-02-28T19:18:36.2912351Z ##[endgroup]
+2025-02-28T19:18:36.2916615Z Secret source: Actions
+2025-02-28T19:18:36.2917844Z Prepare workflow directory
+2025-02-28T19:18:36.3349741Z Prepare all required actions
+2025-02-28T19:18:36.3385937Z Getting action download info
+2025-02-28T19:18:36.5957040Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-02-28T19:18:36.6976988Z Download action repository 'actions/setup-java@v4' (SHA:3a4f6e1af504cf6a31855fa899c6aa5355ba6c12)
+2025-02-28T19:18:37.0084694Z Download action repository 'gradle/actions@v4' (SHA:94baf225fe0a508e581a564467443d0e2379123b)
+2025-02-28T19:18:37.7490057Z Download action repository 'codecov/codecov-action@v5.3.1' (SHA:13ce06bfc6bbe3ecf90edbbf1bc32fe5978ca1d3)
+2025-02-28T19:18:37.8949077Z Download action repository 'actions/upload-artifact@v4' (SHA:4cec3d8aa04e39d1a68397de0c4cd6fb9dce8ec1)
+2025-02-28T19:18:38.1880800Z Download action repository 'AllayMC/deploy-nightly@v3.3.0' (SHA:7ef4c3e10c7207e93ba6f06f2f4292e8265bbd54)
+2025-02-28T19:18:38.6849371Z Download action repository 'fjogeleit/http-request-action@v1' (SHA:bf78da14118941f7e940279dd58f67e863cbeff6)
+2025-02-28T19:18:39.0459727Z Complete job name: build
+2025-02-28T19:18:39.1331015Z ##[group]Run actions/checkout@v4
+2025-02-28T19:18:39.1332249Z with:
+2025-02-28T19:18:39.1332962Z   repository: AllayMC/Allay
+2025-02-28T19:18:39.1334076Z   token: ***
+2025-02-28T19:18:39.1334786Z   ssh-strict: true
+2025-02-28T19:18:39.1335515Z   ssh-user: git
+2025-02-28T19:18:39.1336293Z   persist-credentials: true
+2025-02-28T19:18:39.1337321Z   clean: true
+2025-02-28T19:18:39.1338098Z   sparse-checkout-cone-mode: true
+2025-02-28T19:18:39.1338990Z   fetch-depth: 1
+2025-02-28T19:18:39.1339717Z   fetch-tags: false
+2025-02-28T19:18:39.1340456Z   show-progress: true
+2025-02-28T19:18:39.1341201Z   lfs: false
+2025-02-28T19:18:39.1341891Z   submodules: false
+2025-02-28T19:18:39.1342647Z   set-safe-directory: true
+2025-02-28T19:18:39.1343723Z ##[endgroup]
+2025-02-28T19:18:39.3374330Z Syncing repository: AllayMC/Allay
+2025-02-28T19:18:39.3376969Z ##[group]Getting Git version info
+2025-02-28T19:18:39.3378101Z Working directory is '/home/runner/work/Allay/Allay'
+2025-02-28T19:18:39.3380134Z [command]/usr/bin/git version
+2025-02-28T19:18:39.3446056Z git version 2.48.1
+2025-02-28T19:18:39.3481182Z ##[endgroup]
+2025-02-28T19:18:39.3498691Z Temporarily overriding HOME='/home/runner/work/_temp/a412697c-df5f-4349-b1f8-7debabbfa760' before making global git config changes
+2025-02-28T19:18:39.3502888Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-28T19:18:39.3507067Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Allay/Allay
+2025-02-28T19:18:39.3543742Z Deleting the contents of '/home/runner/work/Allay/Allay'
+2025-02-28T19:18:39.3547700Z ##[group]Initializing the repository
+2025-02-28T19:18:39.3551712Z [command]/usr/bin/git init /home/runner/work/Allay/Allay
+2025-02-28T19:18:39.3621553Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-28T19:18:39.3623416Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-28T19:18:39.3625276Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-28T19:18:39.3627136Z hint:
+2025-02-28T19:18:39.3628673Z hint: 	git config --global init.defaultBranch <name>
+2025-02-28T19:18:39.3630505Z hint:
+2025-02-28T19:18:39.3632285Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-28T19:18:39.3635152Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-28T19:18:39.3637567Z hint:
+2025-02-28T19:18:39.3638809Z hint: 	git branch -m <name>
+2025-02-28T19:18:39.3640979Z Initialized empty Git repository in /home/runner/work/Allay/Allay/.git/
+2025-02-28T19:18:39.3645399Z [command]/usr/bin/git remote add origin https://github.com/AllayMC/Allay
+2025-02-28T19:18:39.3677984Z ##[endgroup]
+2025-02-28T19:18:39.3679336Z ##[group]Disabling automatic garbage collection
+2025-02-28T19:18:39.3683120Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-28T19:18:39.3718066Z ##[endgroup]
+2025-02-28T19:18:39.3719298Z ##[group]Setting up auth
+2025-02-28T19:18:39.3728169Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-28T19:18:39.3764881Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-28T19:18:39.4080090Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-28T19:18:39.4113841Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-28T19:18:39.4360821Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-28T19:18:39.4395692Z ##[endgroup]
+2025-02-28T19:18:39.4404505Z ##[group]Fetching the repository
+2025-02-28T19:18:39.4408207Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +270e3b4b1b4fbed813e12a45ba0051fa7e24df6c:refs/remotes/pull/592/merge
+2025-02-28T19:18:45.9357233Z From https://github.com/AllayMC/Allay
+2025-02-28T19:18:45.9358096Z  * [new ref]         270e3b4b1b4fbed813e12a45ba0051fa7e24df6c -> pull/592/merge
+2025-02-28T19:18:45.9383668Z ##[endgroup]
+2025-02-28T19:18:45.9385768Z ##[group]Determining the checkout info
+2025-02-28T19:18:45.9386836Z ##[endgroup]
+2025-02-28T19:18:45.9392108Z [command]/usr/bin/git sparse-checkout disable
+2025-02-28T19:18:45.9439463Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-28T19:18:45.9468181Z ##[group]Checking out the ref
+2025-02-28T19:18:45.9473770Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/592/merge
+2025-02-28T19:18:46.2706727Z Note: switching to 'refs/remotes/pull/592/merge'.
+2025-02-28T19:18:46.2707245Z 
+2025-02-28T19:18:46.2707610Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-28T19:18:46.2708440Z changes and commit them, and you can discard any commits you make in this
+2025-02-28T19:18:46.2709234Z state without impacting any branches by switching back to a branch.
+2025-02-28T19:18:46.2709720Z 
+2025-02-28T19:18:46.2710053Z If you want to create a new branch to retain commits you create, you may
+2025-02-28T19:18:46.2711080Z do so (now or later) by using -c with the switch command. Example:
+2025-02-28T19:18:46.2711490Z 
+2025-02-28T19:18:46.2711668Z   git switch -c <new-branch-name>
+2025-02-28T19:18:46.2711962Z 
+2025-02-28T19:18:46.2712135Z Or undo this operation with:
+2025-02-28T19:18:46.2712396Z 
+2025-02-28T19:18:46.2712542Z   git switch -
+2025-02-28T19:18:46.2712776Z 
+2025-02-28T19:18:46.2713146Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-28T19:18:46.2713645Z 
+2025-02-28T19:18:46.2714209Z HEAD is now at 270e3b4 Merge 309f3357b13fe29120bc1a4d2fbf2bb0af41644a into ae21356cf6b4d69d2ef00ae64842d865fca47420
+2025-02-28T19:18:46.2725587Z ##[endgroup]
+2025-02-28T19:18:46.2772099Z [command]/usr/bin/git log -1 --format=%H
+2025-02-28T19:18:46.2797572Z 270e3b4b1b4fbed813e12a45ba0051fa7e24df6c
+2025-02-28T19:18:46.3053555Z ##[group]Run actions/setup-java@v4
+2025-02-28T19:18:46.3053865Z with:
+2025-02-28T19:18:46.3054084Z   java-version: 21
+2025-02-28T19:18:46.3054298Z   distribution: zulu
+2025-02-28T19:18:46.3054532Z   java-package: jdk
+2025-02-28T19:18:46.3054738Z   check-latest: false
+2025-02-28T19:18:46.3054946Z   server-id: github
+2025-02-28T19:18:46.3055182Z   server-username: GITHUB_ACTOR
+2025-02-28T19:18:46.3055436Z   server-password: GITHUB_TOKEN
+2025-02-28T19:18:46.3055678Z   overwrite-settings: true
+2025-02-28T19:18:46.3055908Z   job-status: success
+2025-02-28T19:18:46.3056236Z   token: ***
+2025-02-28T19:18:46.3056597Z ##[endgroup]
+2025-02-28T19:18:46.5062353Z ##[group]Installed distributions
+2025-02-28T19:18:46.5090349Z Trying to resolve the latest version from remote
+2025-02-28T19:18:46.6079255Z Resolved latest version as 21.0.6+7
+2025-02-28T19:18:46.6079829Z Trying to download...
+2025-02-28T19:18:46.6082121Z Downloading Java 21.0.6+7 (Zulu) from https://cdn.azul.com/zulu/bin/zulu21.40.17-ca-crac-jdk21.0.6-linux_x64.tar.gz ...
+2025-02-28T19:18:48.3749981Z Extracting Java archive...
+2025-02-28T19:18:48.3855020Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/91525df6-fb74-49cf-b702-f60eba5e3dc4 -f /home/runner/work/_temp/7eaa79d5-e683-412a-b3be-a5493d2d736a
+2025-02-28T19:18:51.2414006Z Java 21.0.6+7 was downloaded
+2025-02-28T19:18:51.2414507Z Setting Java 21.0.6+7 as the default
+2025-02-28T19:18:51.2427440Z Creating toolchains.xml for JDK version 21 from zulu
+2025-02-28T19:18:51.2512305Z Writing to /home/runner/.m2/toolchains.xml
+2025-02-28T19:18:51.2514185Z 
+2025-02-28T19:18:51.2514871Z Java configuration:
+2025-02-28T19:18:51.2515478Z   Distribution: zulu
+2025-02-28T19:18:51.2516952Z   Version: 21.0.6+7
+2025-02-28T19:18:51.2517670Z   Path: /opt/hostedtoolcache/Java_Zulu_jdk/21.0.6-7/x64
+2025-02-28T19:18:51.2518258Z 
+2025-02-28T19:18:51.2519435Z ##[endgroup]
+2025-02-28T19:18:51.2535412Z Creating settings.xml with server-id: github
+2025-02-28T19:18:51.2535784Z Writing to /home/runner/.m2/settings.xml
+2025-02-28T19:18:51.2775921Z ##[group]Run gradle/actions/setup-gradle@v4
+2025-02-28T19:18:51.2776593Z with:
+2025-02-28T19:18:51.2776934Z   gradle-version: wrapper
+2025-02-28T19:18:51.2777356Z   cache-overwrite-existing: true
+2025-02-28T19:18:51.2777720Z   cache-read-only: false
+2025-02-28T19:18:51.2778059Z   build-scan-publish: true
+2025-02-28T19:18:51.2778532Z   build-scan-terms-of-use-url: https://gradle.com/terms-of-service
+2025-02-28T19:18:51.2779018Z   build-scan-terms-of-use-agree: yes
+2025-02-28T19:18:51.2779362Z   cache-disabled: false
+2025-02-28T19:18:51.2779735Z   cache-write-only: false
+2025-02-28T19:18:51.2780078Z   cache-cleanup: on-success
+2025-02-28T19:18:51.2780487Z   gradle-home-cache-includes: caches
+notifications
+
+2025-02-28T19:18:51.2780923Z   add-job-summary: always
+2025-02-28T19:18:51.2781259Z   add-job-summary-as-pr-comment: never
+2025-02-28T19:18:51.2781669Z   dependency-graph: disabled
+2025-02-28T19:18:51.2782076Z   dependency-graph-report-dir: dependency-graph-reports
+2025-02-28T19:18:51.2782706Z   dependency-graph-continue-on-failure: true
+2025-02-28T19:18:51.2783093Z   validate-wrappers: true
+2025-02-28T19:18:51.2783580Z   allow-snapshot-wrappers: false
+2025-02-28T19:18:51.2784108Z   gradle-home-cache-strict-match: false
+2025-02-28T19:18:51.2784471Z   workflow-job-context: null
+2025-02-28T19:18:51.2785051Z   github-token: ***
+2025-02-28T19:18:51.2785416Z env:
+2025-02-28T19:18:51.2785756Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/21.0.6-7/x64
+2025-02-28T19:18:51.2786292Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Zulu_jdk/21.0.6-7/x64
+2025-02-28T19:18:51.2786831Z ##[endgroup]
+2025-02-28T19:18:51.6898812Z Merged default JDK locations into /home/runner/.m2/toolchains.xml
+2025-02-28T19:18:51.6901221Z Preparing cache for cleanup.
+2025-02-28T19:18:51.6905726Z ##[group]Restore Gradle state from cache
+2025-02-28T19:18:51.8296997Z Cache hit for: gradle-home-v1|Linux-X64|build[8f228ee883b92acfa0218009fb4414aa]-270e3b4b1b4fbed813e12a45ba0051fa7e24df6c
+2025-02-28T19:18:52.2509851Z Received 42515303 of 42515303 (100.0%), 112.3 MBs/sec
+2025-02-28T19:18:52.2511970Z Cache Size: ~41 MB (42515303 B)
+2025-02-28T19:18:52.2538150Z [command]/usr/bin/tar -xf /home/runner/work/_temp/f1382f19-bed4-455c-99f6-6f2a98176b4a/cache.tzst -P -C /home/runner/work/Allay/Allay --use-compress-program unzstd
+2025-02-28T19:18:52.3985137Z Cache restored successfully
+2025-02-28T19:18:52.4107458Z Restored cache entry with key gradle-home-v1|Linux-X64|build[8f228ee883b92acfa0218009fb4414aa]-270e3b4b1b4fbed813e12a45ba0051fa7e24df6c to /home/runner/.gradle/caches,/home/runner/.gradle/notifications,/home/runner/.gradle/.setup-gradle in 718ms
+2025-02-28T19:18:52.4764860Z Cache hit for: gradle-wrapper-zips-v1-68e268aa5bbc0127f7332b88e18d7a5d
+2025-02-28T19:18:52.4787901Z Cache hit for: gradle-generated-gradle-jars-v1-be9cfacdaa730bb6ca1664f705d9e9ea
+2025-02-28T19:18:52.4791882Z Cache hit for: gradle-dependencies-v1-6641be24666c5692e6e4e7542097f7ca
+2025-02-28T19:18:52.4829837Z Cache hit for: gradle-kotlin-dsl-v1-445160f4897f938228bace56cd0c1d86
+2025-02-28T19:18:52.4834790Z Cache hit for: gradle-instrumented-jars-v1-141ae7398895c7b545a9c65d1f1cd8ec
+2025-02-28T19:18:52.4873899Z Cache hit for: gradle-groovy-dsl-v1-238fcba62e3a05919fefe5de2c29d88d
+2025-02-28T19:18:52.4952716Z Cache hit for: gradle-transforms-v1-cd148a77fe6b7a5c3cdebf091d7e4345
+2025-02-28T19:18:52.6388440Z Received 124176 of 124176 (100.0%), 1.9 MBs/sec
+2025-02-28T19:18:52.6389455Z Cache Size: ~0 MB (124176 B)
+2025-02-28T19:18:52.6403761Z Received 74786 of 74786 (100.0%), 1.0 MBs/sec
+2025-02-28T19:18:52.6404595Z Cache Size: ~0 MB (74786 B)
+2025-02-28T19:18:52.7095009Z Received 255633 of 255633 (100.0%), 1.6 MBs/sec
+2025-02-28T19:18:52.7095608Z Cache Size: ~0 MB (255633 B)
+2025-02-28T19:18:53.0779816Z [command]/usr/bin/tar -xf /home/runner/work/_temp/dc4f8095-6815-4635-a56b-82c890524105/cache.tzst -P -C /home/runner/work/Allay/Allay --use-compress-program unzstd
+2025-02-28T19:18:53.0824472Z [command]/usr/bin/tar -xf /home/runner/work/_temp/8707ec3f-9b31-4baa-98c3-35549cb787a3/cache.tzst -P -C /home/runner/work/Allay/Allay --use-compress-program unzstd
+2025-02-28T19:18:53.1080452Z Received 21483322 of 21483322 (100.0%), 42.9 MBs/sec
+2025-02-28T19:18:53.1084871Z Cache Size: ~20 MB (21483322 B)
+2025-02-28T19:18:53.1806544Z Cache restored successfully
+2025-02-28T19:18:53.1811507Z Cache restored successfully
+2025-02-28T19:18:53.1813197Z Restored cache entry with key gradle-groovy-dsl-v1-238fcba62e3a05919fefe5de2c29d88d to /home/runner/.gradle/caches/*/groovy-dsl/*/ in 769ms
+2025-02-28T19:18:53.2103145Z Received 39898033 of 39898033 (100.0%), 57.2 MBs/sec
+2025-02-28T19:18:53.2103677Z Cache Size: ~38 MB (39898033 B)
+2025-02-28T19:18:53.2325387Z Restored cache entry with key gradle-instrumented-jars-v1-141ae7398895c7b545a9c65d1f1cd8ec to /home/runner/.gradle/caches/jars-*/*/ in 820ms
+2025-02-28T19:18:53.2653611Z [command]/usr/bin/tar -xf /home/runner/work/_temp/aafebf98-1fba-4d28-92c3-769c96fad319/cache.tzst -P -C /home/runner/work/Allay/Allay --use-compress-program unzstd
+2025-02-28T19:18:53.3364069Z Received 69871512 of 69871512 (100.0%), 81.8 MBs/sec
+2025-02-28T19:18:53.3364635Z Cache Size: ~67 MB (69871512 B)
+2025-02-28T19:18:53.4194265Z [command]/usr/bin/tar -xf /home/runner/work/_temp/34cbfece-2e78-49f2-9a25-4c66ac3ebafb/cache.tzst -P -C /home/runner/work/Allay/Allay --use-compress-program unzstd
+2025-02-28T19:18:53.4307105Z [command]/usr/bin/tar -xf /home/runner/work/_temp/5cfc5b96-61b0-4a11-a47d-82c091d7cbdf/cache.tzst -P -C /home/runner/work/Allay/Allay --use-compress-program unzstd
+2025-02-28T19:18:53.4464512Z Cache restored successfully
+2025-02-28T19:18:53.4467746Z [command]/usr/bin/tar -xf /home/runner/work/_temp/0e1c23af-7a3a-408e-804c-4558661061d3/cache.tzst -P -C /home/runner/work/Allay/Allay --use-compress-program unzstd
+2025-02-28T19:18:53.4601132Z Restored cache entry with key gradle-kotlin-dsl-v1-445160f4897f938228bace56cd0c1d86 to /home/runner/.gradle/caches/*/kotlin-dsl/accessors/*/,/home/runner/.gradle/caches/*/kotlin-dsl/scripts/*/ in 1046ms
+2025-02-28T19:18:53.7101857Z Received 134217728 of 135887723 (98.8%), 116.7 MBs/sec
+2025-02-28T19:18:53.7473945Z Received 135887723 of 135887723 (100.0%), 114.3 MBs/sec
+2025-02-28T19:18:53.7475233Z Cache Size: ~130 MB (135887723 B)
+2025-02-28T19:18:53.7497154Z [command]/usr/bin/tar -xf /home/runner/work/_temp/dd037701-0f17-4442-803f-973484939f9c/cache.tzst -P -C /home/runner/work/Allay/Allay --use-compress-program unzstd
+2025-02-28T19:18:53.8142274Z Cache restored successfully
+2025-02-28T19:18:53.8457194Z Cache restored successfully
+2025-02-28T19:18:53.8562269Z Restored cache entry with key gradle-transforms-v1-cd148a77fe6b7a5c3cdebf091d7e4345 to /home/runner/.gradle/caches/transforms-4/*/,/home/runner/.gradle/caches/*/transforms/*/ in 1442ms
+2025-02-28T19:18:53.8585251Z Restored cache entry with key gradle-dependencies-v1-6641be24666c5692e6e4e7542097f7ca to /home/runner/.gradle/caches/modules-*/files-*/*/*/*/* in 1446ms
+2025-02-28T19:18:53.9802287Z Cache restored successfully
+2025-02-28T19:18:53.9914052Z Restored cache entry with key gradle-generated-gradle-jars-v1-be9cfacdaa730bb6ca1664f705d9e9ea to /home/runner/.gradle/caches/8.10/generated-gradle-jars/gradle-api-8.10.jar in 1580ms
+2025-02-28T19:18:54.0867330Z Cache restored successfully
+2025-02-28T19:18:54.1157104Z Restored cache entry with key gradle-wrapper-zips-v1-68e268aa5bbc0127f7332b88e18d7a5d to /home/runner/.gradle/wrapper/dists/gradle-8.10-bin/deqhafrv1ntovfmgh0nh3npr9 in 1704ms
+2025-02-28T19:18:54.1239715Z ##[endgroup]
+2025-02-28T19:18:54.1945028Z ##[group]All Gradle Wrapper jars are valid
+2025-02-28T19:18:54.1946085Z ✓ Found known Gradle Wrapper JAR files:
+2025-02-28T19:18:54.1947105Z   cb0da6751c2b753a16ac168bb354870ebb1e162e9083f116729cec9c781156b8 gradle/wrapper/gradle-wrapper.jar
+2025-02-28T19:18:54.1948134Z ##[endgroup]
+2025-02-28T19:18:54.2165388Z ##[group]Run chmod +x gradlew
+2025-02-28T19:18:54.2165811Z [36;1mchmod +x gradlew[0m
+2025-02-28T19:18:54.2166054Z [36;1m./gradlew build[0m
+2025-02-28T19:18:54.2216384Z shell: /usr/bin/bash -e {0}
+2025-02-28T19:18:54.2216839Z env:
+2025-02-28T19:18:54.2217105Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/21.0.6-7/x64
+2025-02-28T19:18:54.2217541Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Zulu_jdk/21.0.6-7/x64
+2025-02-28T19:18:54.2217908Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+2025-02-28T19:18:54.2218208Z   GRADLE_USER_HOME: /home/runner/.gradle
+2025-02-28T19:18:54.2218492Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+2025-02-28T19:18:54.2218792Z   GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+2025-02-28T19:18:54.2219206Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+2025-02-28T19:18:54.2219666Z   DEVELOCITY_AUTO_INJECTION_CUSTOM_VALUE: gradle-actions
+2025-02-28T19:18:54.2219974Z   DEVELOCITY_INJECTION_ENABLED: true
+2025-02-28T19:18:54.2220266Z   DEVELOCITY_PLUGIN_VERSION: 3.19.1
+2025-02-28T19:18:54.2220524Z   DEVELOCITY_CCUD_PLUGIN_VERSION: 2.1
+2025-02-28T19:18:54.2220866Z   DEVELOCITY_TERMS_OF_USE_URL: https://gradle.com/terms-of-service
+2025-02-28T19:18:54.2221214Z   DEVELOCITY_TERMS_OF_USE_AGREE: yes
+2025-02-28T19:18:54.2221478Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+2025-02-28T19:18:54.2221939Z ##[endgroup]
+2025-02-28T19:18:55.0578838Z Starting a Gradle Daemon (subsequent builds will be faster)
+2025-02-28T19:18:55.0581684Z Daemon JVM discovery is an incubating feature.
+2025-02-28T19:19:01.8573674Z Develocity plugins resolution: https://plugins.gradle.org/m2
+2025-02-28T19:19:02.6590156Z Applying com.gradle.develocity.agent.gradle.DevelocityPlugin with version 3.19.1 via init script
+2025-02-28T19:19:03.2620404Z Setting captureFileFingerprints: true
+2025-02-28T19:19:03.2639039Z Accepting Gradle Terms of Use: https://gradle.com/terms-of-service
+2025-02-28T19:19:03.2640175Z Applying com.gradle.CommonCustomUserDataGradlePlugin with version 2.1 via init script
+2025-02-28T19:19:17.0600937Z > Task :data:processResources NO-SOURCE
+2025-02-28T19:19:17.0607496Z > Task :compileJava NO-SOURCE
+2025-02-28T19:19:17.0620089Z > Task :processResources NO-SOURCE
+2025-02-28T19:19:17.0642052Z > Task :classes UP-TO-DATE
+2025-02-28T19:19:17.0650507Z > Task :jar SKIPPED
+2025-02-28T19:19:17.0656079Z > Task :assemble UP-TO-DATE
+2025-02-28T19:19:17.0694920Z > Task :compileTestJava NO-SOURCE
+2025-02-28T19:19:17.0695781Z > Task :processTestResources NO-SOURCE
+2025-02-28T19:19:17.0701254Z > Task :testClasses UP-TO-DATE
+2025-02-28T19:19:17.0702243Z > Task :test NO-SOURCE
+2025-02-28T19:19:17.0703114Z > Task :check UP-TO-DATE
+2025-02-28T19:19:17.0707381Z > Task :build UP-TO-DATE
+2025-02-28T19:19:17.6573440Z > Task :data:sourcesJar
+2025-02-28T19:19:17.6581534Z > Task :data:processTestResources NO-SOURCE
+2025-02-28T19:19:17.6582790Z > Task :codegen:compileJava FROM-CACHE
+2025-02-28T19:19:17.6583479Z > Task :codegen:processResources NO-SOURCE
+2025-02-28T19:19:17.6651659Z > Task :codegen:classes UP-TO-DATE
+2025-02-28T19:19:17.7575015Z > Task :codegen:jar
+2025-02-28T19:19:17.8585296Z > Task :codegen:sourcesJar
+2025-02-28T19:19:17.8585757Z > Task :codegen:assemble
+2025-02-28T19:19:17.8586178Z > Task :codegen:compileTestJava NO-SOURCE
+2025-02-28T19:19:17.8586871Z > Task :codegen:processTestResources NO-SOURCE
+2025-02-28T19:19:17.8587376Z > Task :codegen:testClasses UP-TO-DATE
+2025-02-28T19:19:17.8587852Z > Task :codegen:test NO-SOURCE
+2025-02-28T19:19:17.8588457Z > Task :codegen:check UP-TO-DATE
+2025-02-28T19:19:17.8588863Z > Task :codegen:build
+2025-02-28T19:19:17.8589240Z > Task :server:generateGitProperties
+2025-02-28T19:19:18.0575934Z > Task :server:processResources
+2025-02-28T19:19:20.7574687Z > Task :server:sourcesJar
+2025-02-28T19:19:20.7577391Z > Task :server:processTestResources
+2025-02-28T19:19:29.3575737Z 
+2025-02-28T19:19:29.3582658Z > Task :api:compileJava
+2025-02-28T19:19:29.3590713Z Note: /home/runner/work/Allay/Allay/api/src/main/java/org/allaymc/api/utils/JSONUtils.java uses or overrides a deprecated API.
+2025-02-28T19:19:29.3593511Z Note: Recompile with -Xlint:deprecation for details.
+2025-02-28T19:19:29.3595153Z Note: Some input files use unchecked or unsafe operations.
+2025-02-28T19:19:29.3595758Z Note: Recompile with -Xlint:unchecked for details.
+2025-02-28T19:19:30.1579149Z 
+2025-02-28T19:19:30.1587645Z > Task :api:processResources NO-SOURCE
+2025-02-28T19:19:30.1588593Z > Task :api:classes
+2025-02-28T19:19:30.5578837Z > Task :api:jar
+2025-02-28T19:19:30.9609275Z > Task :api:sourcesJar
+2025-02-28T19:19:30.9609715Z > Task :api:assemble
+2025-02-28T19:19:30.9610106Z > Task :api:compileTestJava NO-SOURCE
+2025-02-28T19:19:30.9610613Z > Task :api:processTestResources NO-SOURCE
+2025-02-28T19:19:30.9611125Z > Task :api:testClasses UP-TO-DATE
+2025-02-28T19:19:30.9611588Z > Task :api:test NO-SOURCE
+2025-02-28T19:19:30.9611968Z > Task :api:check UP-TO-DATE
+2025-02-28T19:19:30.9612379Z > Task :api:build
+2025-02-28T19:19:42.0571970Z 
+2025-02-28T19:19:42.0577204Z > Task :server:compileJava
+2025-02-28T19:19:42.0578482Z Note: /home/runner/work/Allay/Allay/server/src/main/java/org/allaymc/server/pack/PackEncryptor.java uses or overrides a deprecated API.
+2025-02-28T19:19:42.0591431Z Note: Recompile with -Xlint:deprecation for details.
+2025-02-28T19:19:42.0592141Z Note: Some input files use unchecked or unsafe operations.
+2025-02-28T19:19:42.0593329Z Note: Recompile with -Xlint:unchecked for details.
+2025-02-28T19:19:42.7606935Z 
+2025-02-28T19:19:42.7607809Z > Task :server:classes
+2025-02-28T19:19:43.7587712Z > Task :server:jar
+2025-02-28T19:19:44.2583555Z Note: /home/runner/work/Allay/Allay/data/src/main/java/org/allaymc/data/BlockPropertyTypeGen.java uses unchecked or unsafe operations.
+2025-02-28T19:19:44.2584501Z 
+2025-02-28T19:19:44.2585256Z Note: Recompile with -Xlint:unchecked for details.
+2025-02-28T19:19:44.2602063Z > Task :data:compileJava
+2025-02-28T19:19:44.2602812Z 
+2025-02-28T19:19:44.2603170Z > Task :data:classes
+2025-02-28T19:19:44.3607828Z > Task :data:jar
+2025-02-28T19:19:44.3608630Z > Task :data:assemble
+2025-02-28T19:19:44.3609331Z > Task :data:compileTestJava NO-SOURCE
+2025-02-28T19:19:44.3610014Z > Task :data:testClasses UP-TO-DATE
+2025-02-28T19:19:44.3610588Z > Task :data:test NO-SOURCE
+2025-02-28T19:19:44.3611123Z > Task :data:check UP-TO-DATE
+2025-02-28T19:19:44.3611654Z > Task :data:build
+2025-02-28T19:19:44.9572702Z > Task :server:startScripts
+2025-02-28T19:19:45.2571901Z > Task :server:distTar
+2025-02-28T19:19:46.3574669Z > Task :server:distZip
+2025-02-28T19:19:54.2572784Z > Task :server:shadowJar
+2025-02-28T19:19:55.0589249Z > Task :server:startShadowScripts
+2025-02-28T19:19:55.3572478Z > Task :server:shadowDistTar
+2025-02-28T19:19:56.4575650Z > Task :server:shadowDistZip
+2025-02-28T19:19:56.4581717Z > Task :server:assemble
+2025-02-28T19:19:58.1571199Z 
+2025-02-28T19:19:58.1577301Z > Task :server:compileTestJava FAILED
+2025-02-28T19:19:58.1587901Z /home/runner/work/Allay/Allay/server/src/test/java/org/allaymc/server/item/type/CreativeItemRegistryTest.java:18: error: cannot find symbol
+2025-02-28T19:19:58.1599191Z         assertFalse(Registries.CREATIVE_ITEMS.getContent().isEmpty());
+2025-02-28T19:19:58.1599851Z                                              ^
+2025-02-28T19:19:58.1600313Z   symbol:   method getContent()
+2025-02-28T19:19:58.1600871Z   location: variable CREATIVE_ITEMS of type CreativeItemRegistry
+2025-02-28T19:19:58.1602227Z /home/runner/work/Allay/Allay/server/src/test/java/org/allaymc/server/item/type/CreativeItemRegistryTest.java:19: error: cannot find symbol
+2025-02-28T19:19:58.1603507Z         for (var itemStack : Registries.CREATIVE_ITEMS.getContent().values()) {
+2025-02-28T19:19:58.1604158Z                                                       ^
+2025-02-28T19:19:58.1604632Z   symbol:   method getContent()
+2025-02-28T19:19:58.1605208Z   location: variable CREATIVE_ITEMS of type CreativeItemRegistry
+2025-02-28T19:19:58.1605788Z 2 errors
+2025-02-28T19:19:58.1605978Z 
+2025-02-28T19:19:58.1606157Z FAILURE: Build failed with an exception.
+2025-02-28T19:19:58.1607103Z 
+2025-02-28T19:19:58.1607257Z * What went wrong:
+2025-02-28T19:19:58.1607705Z Execution failed for task ':server:compileTestJava'.
+2025-02-28T19:19:58.1608674Z gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run-1740770341678.json
+2025-02-28T19:19:58.1613272Z > Compilation failed; see the compiler error output for details.
+2025-02-28T19:19:58.1620961Z 
+2025-02-28T19:19:58.1621125Z * Try:
+2025-02-28T19:19:58.1621531Z > Run with --info option to get more log output.
+2025-02-28T19:19:58.1621896Z 
+2025-02-28T19:19:58.1622050Z BUILD FAILED in 1m 3s
+2025-02-28T19:19:58.1622476Z 23 actionable tasks: 22 executed, 1 from cache
+2025-02-28T19:19:58.2572601Z 
+2025-02-28T19:19:58.2577257Z Publishing build scan...
+2025-02-28T19:19:58.6576627Z gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-scans/__run-1740770341678.json
+2025-02-28T19:19:58.9575409Z https://gradle.com/s/enez5h6gspuqw
+2025-02-28T19:19:58.9578206Z 
+2025-02-28T19:19:59.3357613Z ##[error]Process completed with exit code 1.
+2025-02-28T19:19:59.3480168Z Post job cleanup.
+2025-02-28T19:19:59.6633300Z In post-action step
+2025-02-28T19:19:59.6644791Z ##[group]Stopping Gradle daemons
+2025-02-28T19:19:59.6646565Z Stopping Gradle daemons for /home/runner/.gradle/wrapper/dists/gradle-8.10-bin/deqhafrv1ntovfmgh0nh3npr9/gradle-8.10
+2025-02-28T19:19:59.6664282Z [command]/home/runner/.gradle/wrapper/dists/gradle-8.10-bin/deqhafrv1ntovfmgh0nh3npr9/gradle-8.10/bin/gradle --stop
+2025-02-28T19:20:00.3291087Z Stopping Daemon(s)
+2025-02-28T19:20:00.3291811Z 1 Daemon stopped
+2025-02-28T19:20:00.3396949Z ##[endgroup]
+2025-02-28T19:20:00.3399186Z Not performing cache-cleanup due to build failure
+2025-02-28T19:20:00.3400080Z ##[group]Caching Gradle state
+2025-02-28T19:20:00.6515208Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/Allay/Allay --files-from manifest.txt --use-compress-program zstdmt
+2025-02-28T19:20:01.0233029Z Sent 259860 of 259860 (100.0%), 3.0 MBs/sec
+2025-02-28T19:20:01.0848168Z Saved cache entry with key gradle-kotlin-dsl-v1-f42545d9e52c359272da96a828231925 from /home/runner/.gradle/caches/*/kotlin-dsl/accessors/*/,/home/runner/.gradle/caches/*/kotlin-dsl/scripts/*/ in 493ms
+2025-02-28T19:20:01.1975941Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/Allay/Allay --files-from manifest.txt --use-compress-program zstdmt
+2025-02-28T19:20:02.4107065Z Sent 50987008 of 80339993 (63.5%), 48.6 MBs/sec
+2025-02-28T19:20:03.4102574Z Sent 79429632 of 80339993 (98.9%), 37.9 MBs/sec
+2025-02-28T19:20:03.9389497Z Sent 80339993 of 80339993 (100.0%), 30.3 MBs/sec
+2025-02-28T19:20:04.0075954Z Saved cache entry with key gradle-home-v1|Linux-X64|build[8f228ee883b92acfa0218009fb4414aa]-270e3b4b1b4fbed813e12a45ba0051fa7e24df6c from /home/runner/.gradle/caches,/home/runner/.gradle/notifications,/home/runner/.gradle/.setup-gradle in 2819ms
+2025-02-28T19:20:04.0077963Z ##[endgroup]
+2025-02-28T19:20:04.0084394Z Generating Job Summary
+2025-02-28T19:20:04.0097516Z Completed post-action step
+2025-02-28T19:20:04.0263853Z Post job cleanup.
+2025-02-28T19:20:04.2036818Z Post job cleanup.
+2025-02-28T19:20:04.2973995Z [command]/usr/bin/git version
+2025-02-28T19:20:04.3020512Z git version 2.48.1
+2025-02-28T19:20:04.3063511Z Temporarily overriding HOME='/home/runner/work/_temp/d047052e-f5e1-4871-8e8e-ae2e4da0cf5d' before making global git config changes
+2025-02-28T19:20:04.3064808Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-28T19:20:04.3070156Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Allay/Allay
+2025-02-28T19:20:04.3105602Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-28T19:20:04.3138354Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-28T19:20:04.3380624Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-28T19:20:04.3401634Z http.https://github.com/.extraheader
+2025-02-28T19:20:04.3413775Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-28T19:20:04.3444462Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-28T19:20:04.3780838Z Cleaning up orphan processes

@@ -1,0 +1,463 @@
+2025-04-02T15:55:36.8761754Z Requested labels: ubuntu-latest
+2025-04-02T15:55:36.8762045Z Job defined at: microsoft/fluentui-blazor/.github/workflows/build-core-lib.yml@refs/pull/3615/merge
+2025-04-02T15:55:36.8762149Z Waiting for a runner to pick up this job...
+2025-04-02T15:55:38.3972372Z Job is waiting for a hosted runner to come online.
+2025-04-02T15:55:40.8660241Z Job is about to start running on the hosted runner: GitHub Actions 218 (hosted)
+2025-04-02T15:55:43.7148923Z Current runner version: '2.323.0'
+2025-04-02T15:55:43.7175486Z ##[group]Operating System
+2025-04-02T15:55:43.7176304Z Ubuntu
+2025-04-02T15:55:43.7176823Z 24.04.2
+2025-04-02T15:55:43.7177362Z LTS
+2025-04-02T15:55:43.7177852Z ##[endgroup]
+2025-04-02T15:55:43.7178361Z ##[group]Runner Image
+2025-04-02T15:55:43.7178999Z Image: ubuntu-24.04
+2025-04-02T15:55:43.7179545Z Version: 20250330.1.0
+2025-04-02T15:55:43.7180720Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250330.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-02T15:55:43.7182183Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250330.1
+2025-04-02T15:55:43.7183109Z ##[endgroup]
+2025-04-02T15:55:43.7183671Z ##[group]Runner Image Provisioner
+2025-04-02T15:55:43.7184285Z 2.0.422.1
+2025-04-02T15:55:43.7184750Z ##[endgroup]
+2025-04-02T15:55:43.7185896Z ##[group]GITHUB_TOKEN Permissions
+2025-04-02T15:55:43.7187688Z Contents: read
+2025-04-02T15:55:43.7188335Z Metadata: read
+2025-04-02T15:55:43.7189138Z Packages: read
+2025-04-02T15:55:43.7189793Z ##[endgroup]
+2025-04-02T15:55:43.7192908Z Secret source: Actions
+2025-04-02T15:55:43.7193633Z Prepare workflow directory
+2025-04-02T15:55:43.7658174Z Prepare all required actions
+2025-04-02T15:55:43.7695391Z Getting action download info
+2025-04-02T15:55:44.0604538Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-02T15:55:44.0605443Z Version: 4.2.2
+2025-04-02T15:55:44.0606278Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-02T15:55:44.0607298Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-02T15:55:44.0607939Z ##[endgroup]
+2025-04-02T15:55:44.1504110Z ##[group]Download immutable action package 'actions/setup-dotnet@v4'
+2025-04-02T15:55:44.1504837Z Version: 4.3.1
+2025-04-02T15:55:44.1505491Z Digest: sha256:c7f3f729e5ef5b59af173c4efb4b30240ef30b219a7c12a6fae9f099415f688c
+2025-04-02T15:55:44.1506372Z Source commit SHA: 67a3573c9a986a3f9c594539f4ab511d57bb3ce9
+2025-04-02T15:55:44.1506982Z ##[endgroup]
+2025-04-02T15:55:44.4607167Z Download action repository 'Azure/static-web-apps-deploy@v1' (SHA:4d27395796ac319302594769cfe812bd207490b1)
+2025-04-02T15:55:44.8578848Z Complete job name: Build and Deploy Demo site
+2025-04-02T15:55:44.9088127Z ##[group]Build container for action use: '/home/runner/work/_actions/Azure/static-web-apps-deploy/v1/Dockerfile'.
+2025-04-02T15:55:44.9141923Z ##[command]/usr/bin/docker build -t d7267d:32feb3efc064404f901985174e8c464a -f "/home/runner/work/_actions/Azure/static-web-apps-deploy/v1/Dockerfile" "/home/runner/work/_actions/Azure/static-web-apps-deploy/v1"
+2025-04-02T15:55:45.3663846Z #0 building with "default" instance using docker driver
+2025-04-02T15:55:45.3664715Z 
+2025-04-02T15:55:45.3665112Z #1 [internal] load build definition from Dockerfile
+2025-04-02T15:55:45.3666091Z #1 transferring dockerfile: 160B done
+2025-04-02T15:55:45.3666908Z #1 DONE 0.0s
+2025-04-02T15:55:45.3667267Z 
+2025-04-02T15:55:45.3667902Z #2 [internal] load metadata for mcr.microsoft.com/appsvc/staticappsclient:stable
+2025-04-02T15:55:45.4482911Z #2 DONE 0.2s
+2025-04-02T15:55:45.5688518Z 
+2025-04-02T15:55:45.5690208Z #3 [internal] load .dockerignore
+2025-04-02T15:55:45.5694674Z #3 transferring context: 2B done
+2025-04-02T15:55:45.5696545Z #3 DONE 0.0s
+2025-04-02T15:55:45.5699173Z 
+2025-04-02T15:55:45.5699859Z #4 [internal] load build context
+2025-04-02T15:55:45.5703190Z #4 transferring context: 107B done
+2025-04-02T15:55:45.5704740Z #4 DONE 0.0s
+2025-04-02T15:55:45.5705356Z 
+2025-04-02T15:55:45.5707496Z #5 [1/2] FROM mcr.microsoft.com/appsvc/staticappsclient:stable@sha256:41473a2ebc45daa6e63c82a7f32a5680b0fe34dac49ab85dd6369c764b191308
+2025-04-02T15:55:45.5712847Z #5 resolve mcr.microsoft.com/appsvc/staticappsclient:stable@sha256:41473a2ebc45daa6e63c82a7f32a5680b0fe34dac49ab85dd6369c764b191308 done
+2025-04-02T15:55:45.5717665Z #5 sha256:84811b2a563b9003abbd1c06f6e45a857315b931855030bdd0443d13d950a996 9.44MB / 15.76MB 0.1s
+2025-04-02T15:55:45.5721513Z #5 sha256:41473a2ebc45daa6e63c82a7f32a5680b0fe34dac49ab85dd6369c764b191308 2.71kB / 2.71kB done
+2025-04-02T15:55:45.5725529Z #5 sha256:c4961ea170d16177c6dec81c5b9e721a02636907f90fc43917ad54d55ab89087 13.35kB / 13.35kB done
+2025-04-02T15:55:45.5729790Z #5 sha256:ac323bdaa10f869bd9e7adecd8f5326e44acc4c59168868108b1cdf3891089cc 14.68MB / 55.09MB 0.1s
+2025-04-02T15:55:45.5734279Z #5 sha256:b3ff24b88ad3798f817849ad391d809ece121dc9b7f82f24bb68eed84561f048 6.29MB / 54.59MB 0.1s
+2025-04-02T15:55:45.7662710Z #5 sha256:84811b2a563b9003abbd1c06f6e45a857315b931855030bdd0443d13d950a996 15.76MB / 15.76MB 0.1s done
+2025-04-02T15:55:45.9379649Z #5 sha256:ac323bdaa10f869bd9e7adecd8f5326e44acc4c59168868108b1cdf3891089cc 55.09MB / 55.09MB 0.3s
+2025-04-02T15:55:45.9386838Z #5 sha256:b3ff24b88ad3798f817849ad391d809ece121dc9b7f82f24bb68eed84561f048 54.59MB / 54.59MB 0.3s
+2025-04-02T15:55:45.9393167Z #5 sha256:c6f58f24df78e3aabf785017c3197c2a09fd606e7f19a830a1cfde41f681f39e 24.12MB / 196.99MB 0.3s
+2025-04-02T15:55:45.9399066Z #5 sha256:ac323bdaa10f869bd9e7adecd8f5326e44acc4c59168868108b1cdf3891089cc 55.09MB / 55.09MB 0.3s done
+2025-04-02T15:55:45.9406211Z #5 sha256:b3ff24b88ad3798f817849ad391d809ece121dc9b7f82f24bb68eed84561f048 54.59MB / 54.59MB 0.4s done
+2025-04-02T15:55:45.9414432Z #5 sha256:c6f58f24df78e3aabf785017c3197c2a09fd606e7f19a830a1cfde41f681f39e 47.33MB / 196.99MB 0.4s
+2025-04-02T15:55:45.9422984Z #5 extracting sha256:ac323bdaa10f869bd9e7adecd8f5326e44acc4c59168868108b1cdf3891089cc 0.1s
+2025-04-02T15:55:45.9427419Z #5 sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 32B / 32B 0.4s done
+2025-04-02T15:55:45.9431795Z #5 sha256:9f9b29a4bb02782e9ef637948482cf6186b2cfea4bfecee192ad953107a7b130 0B / 80.86MB 0.4s
+2025-04-02T15:55:46.0465654Z #5 sha256:7c32381cbc15887afa5092d985e48bd3ce82af22ca1c343be2fcb39d4caa2143 0B / 1.56MB 0.4s
+2025-04-02T15:55:46.0473187Z #5 sha256:c6f58f24df78e3aabf785017c3197c2a09fd606e7f19a830a1cfde41f681f39e 75.68MB / 196.99MB 0.5s
+2025-04-02T15:55:46.0477997Z #5 sha256:9f9b29a4bb02782e9ef637948482cf6186b2cfea4bfecee192ad953107a7b130 14.68MB / 80.86MB 0.5s
+2025-04-02T15:55:46.0484312Z #5 sha256:7c32381cbc15887afa5092d985e48bd3ce82af22ca1c343be2fcb39d4caa2143 1.56MB / 1.56MB 0.4s done
+2025-04-02T15:55:46.0489895Z #5 sha256:5715d6ba5c0ffccc0bcdf9d1d2dd8ce68b580cd2f45d982886db8fe278df83b9 3.15MB / 72.28MB 0.5s
+2025-04-02T15:55:46.1496250Z #5 sha256:c6f58f24df78e3aabf785017c3197c2a09fd606e7f19a830a1cfde41f681f39e 93.32MB / 196.99MB 0.6s
+2025-04-02T15:55:46.1501754Z #5 sha256:9f9b29a4bb02782e9ef637948482cf6186b2cfea4bfecee192ad953107a7b130 40.89MB / 80.86MB 0.6s
+2025-04-02T15:55:46.1507905Z #5 sha256:5715d6ba5c0ffccc0bcdf9d1d2dd8ce68b580cd2f45d982886db8fe278df83b9 31.46MB / 72.28MB 0.6s
+2025-04-02T15:55:46.2622517Z #5 sha256:c6f58f24df78e3aabf785017c3197c2a09fd606e7f19a830a1cfde41f681f39e 118.49MB / 196.99MB 0.7s
+2025-04-02T15:55:46.2627059Z #5 sha256:9f9b29a4bb02782e9ef637948482cf6186b2cfea4bfecee192ad953107a7b130 47.19MB / 80.86MB 0.7s
+2025-04-02T15:55:46.2631937Z #5 sha256:5715d6ba5c0ffccc0bcdf9d1d2dd8ce68b580cd2f45d982886db8fe278df83b9 55.57MB / 72.28MB 0.7s
+2025-04-02T15:55:46.3661729Z #5 sha256:c6f58f24df78e3aabf785017c3197c2a09fd606e7f19a830a1cfde41f681f39e 175.37MB / 196.99MB 0.9s
+2025-04-02T15:55:46.3675321Z #5 sha256:9f9b29a4bb02782e9ef637948482cf6186b2cfea4bfecee192ad953107a7b130 54.53MB / 80.86MB 0.9s
+2025-04-02T15:55:46.3684487Z #5 sha256:5715d6ba5c0ffccc0bcdf9d1d2dd8ce68b580cd2f45d982886db8fe278df83b9 72.28MB / 72.28MB 0.8s done
+2025-04-02T15:55:46.3692810Z #5 sha256:218a528d080a1bebdabe150b46ac3853b986c047c42f1f5b42c3544b7fdfe841 0B / 1.16MB 0.9s
+2025-04-02T15:55:46.3697872Z #5 sha256:095fb23ecbf649df312cb6981dd528233a1af3d4a040165bcc0c37590c9e62a4 115.53kB / 115.53kB 0.9s done
+2025-04-02T15:55:46.4671679Z #5 sha256:c6f58f24df78e3aabf785017c3197c2a09fd606e7f19a830a1cfde41f681f39e 196.99MB / 196.99MB 1.0s
+2025-04-02T15:55:46.4681398Z #5 sha256:9f9b29a4bb02782e9ef637948482cf6186b2cfea4bfecee192ad953107a7b130 78.74MB / 80.86MB 1.0s
+2025-04-02T15:55:46.4686479Z #5 sha256:218a528d080a1bebdabe150b46ac3853b986c047c42f1f5b42c3544b7fdfe841 1.16MB / 1.16MB 1.0s done
+2025-04-02T15:55:46.4692423Z #5 sha256:e8e496d4f914a3099ff9504db622ffe27eddc493f797c4705b0bddc6683bb9f8 0B / 643.40kB 1.0s
+2025-04-02T15:55:46.6659820Z #5 sha256:c6f58f24df78e3aabf785017c3197c2a09fd606e7f19a830a1cfde41f681f39e 196.99MB / 196.99MB 1.2s done
+2025-04-02T15:55:46.6665482Z #5 sha256:e8e496d4f914a3099ff9504db622ffe27eddc493f797c4705b0bddc6683bb9f8 643.40kB / 643.40kB 1.2s done
+2025-04-02T15:55:46.6669936Z #5 sha256:4c6a44587e13e5c37d3f6d6f61aad47cb49baa4e5b6b11aa02e8c83a6b5b4d3d 0B / 168B 1.2s
+2025-04-02T15:55:46.7656857Z #5 sha256:4c6a44587e13e5c37d3f6d6f61aad47cb49baa4e5b6b11aa02e8c83a6b5b4d3d 168B / 168B 1.3s
+2025-04-02T15:55:46.8657411Z #5 sha256:9f9b29a4bb02782e9ef637948482cf6186b2cfea4bfecee192ad953107a7b130 80.86MB / 80.86MB 1.4s done
+2025-04-02T15:55:46.8661548Z #5 sha256:2b22defda84c5a2fffe4ed153f8a3323fc7215a67b9bd62a7d66a7c56f5e8b9a 0B / 34.82MB 1.4s
+2025-04-02T15:55:46.9664728Z #5 sha256:4c6a44587e13e5c37d3f6d6f61aad47cb49baa4e5b6b11aa02e8c83a6b5b4d3d 168B / 168B 1.4s done
+2025-04-02T15:55:46.9669944Z #5 sha256:2b22defda84c5a2fffe4ed153f8a3323fc7215a67b9bd62a7d66a7c56f5e8b9a 15.73MB / 34.82MB 1.5s
+2025-04-02T15:55:46.9674974Z #5 sha256:fc089199951098f589969385263430a7644c55e648f3691c2522efbcd5ff36d9 169B / 169B 1.4s done
+2025-04-02T15:55:47.1471379Z #5 sha256:2b22defda84c5a2fffe4ed153f8a3323fc7215a67b9bd62a7d66a7c56f5e8b9a 34.82MB / 34.82MB 1.6s
+2025-04-02T15:55:47.2847165Z #5 sha256:2b22defda84c5a2fffe4ed153f8a3323fc7215a67b9bd62a7d66a7c56f5e8b9a 34.82MB / 34.82MB 1.6s done
+2025-04-02T15:55:47.9312067Z #5 extracting sha256:ac323bdaa10f869bd9e7adecd8f5326e44acc4c59168868108b1cdf3891089cc 2.1s done
+2025-04-02T15:55:48.0620173Z #5 extracting sha256:84811b2a563b9003abbd1c06f6e45a857315b931855030bdd0443d13d950a996 0.1s
+2025-04-02T15:55:48.4486748Z #5 extracting sha256:84811b2a563b9003abbd1c06f6e45a857315b931855030bdd0443d13d950a996 0.3s done
+2025-04-02T15:55:48.6102595Z #5 extracting sha256:b3ff24b88ad3798f817849ad391d809ece121dc9b7f82f24bb68eed84561f048
+2025-04-02T15:55:50.5501558Z #5 extracting sha256:b3ff24b88ad3798f817849ad391d809ece121dc9b7f82f24bb68eed84561f048 1.8s done
+2025-04-02T15:55:50.6954591Z #5 extracting sha256:c6f58f24df78e3aabf785017c3197c2a09fd606e7f19a830a1cfde41f681f39e
+2025-04-02T15:55:55.2487676Z #5 extracting sha256:c6f58f24df78e3aabf785017c3197c2a09fd606e7f19a830a1cfde41f681f39e 4.6s done
+2025-04-02T15:55:56.4344095Z #5 extracting sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1
+2025-04-02T15:55:56.5660079Z #5 extracting sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 done
+2025-04-02T15:55:56.5661389Z #5 extracting sha256:9f9b29a4bb02782e9ef637948482cf6186b2cfea4bfecee192ad953107a7b130 0.1s
+2025-04-02T15:55:58.8309694Z #5 extracting sha256:9f9b29a4bb02782e9ef637948482cf6186b2cfea4bfecee192ad953107a7b130 2.2s done
+2025-04-02T15:55:59.0291668Z #5 extracting sha256:7c32381cbc15887afa5092d985e48bd3ce82af22ca1c343be2fcb39d4caa2143
+2025-04-02T15:55:59.2635698Z #5 extracting sha256:7c32381cbc15887afa5092d985e48bd3ce82af22ca1c343be2fcb39d4caa2143 0.1s done
+2025-04-02T15:55:59.2636720Z #5 extracting sha256:5715d6ba5c0ffccc0bcdf9d1d2dd8ce68b580cd2f45d982886db8fe278df83b9 0.1s
+2025-04-02T15:56:00.2363061Z #5 extracting sha256:5715d6ba5c0ffccc0bcdf9d1d2dd8ce68b580cd2f45d982886db8fe278df83b9 0.9s done
+2025-04-02T15:56:00.3348433Z #5 extracting sha256:095fb23ecbf649df312cb6981dd528233a1af3d4a040165bcc0c37590c9e62a4
+2025-04-02T15:56:00.4361894Z #5 extracting sha256:095fb23ecbf649df312cb6981dd528233a1af3d4a040165bcc0c37590c9e62a4 done
+2025-04-02T15:56:00.4363797Z #5 extracting sha256:218a528d080a1bebdabe150b46ac3853b986c047c42f1f5b42c3544b7fdfe841 0.0s done
+2025-04-02T15:56:00.4364899Z #5 extracting sha256:e8e496d4f914a3099ff9504db622ffe27eddc493f797c4705b0bddc6683bb9f8 0.0s done
+2025-04-02T15:56:00.5626657Z #5 extracting sha256:2b22defda84c5a2fffe4ed153f8a3323fc7215a67b9bd62a7d66a7c56f5e8b9a 0.1s
+2025-04-02T15:56:00.9368801Z #5 extracting sha256:2b22defda84c5a2fffe4ed153f8a3323fc7215a67b9bd62a7d66a7c56f5e8b9a 0.4s done
+2025-04-02T15:56:00.9371589Z #5 extracting sha256:4c6a44587e13e5c37d3f6d6f61aad47cb49baa4e5b6b11aa02e8c83a6b5b4d3d
+2025-04-02T15:56:01.0379455Z #5 extracting sha256:4c6a44587e13e5c37d3f6d6f61aad47cb49baa4e5b6b11aa02e8c83a6b5b4d3d done
+2025-04-02T15:56:01.0380878Z #5 extracting sha256:fc089199951098f589969385263430a7644c55e648f3691c2522efbcd5ff36d9 done
+2025-04-02T15:56:01.1981178Z #5 DONE 15.6s
+2025-04-02T15:56:01.1981459Z 
+2025-04-02T15:56:01.1981660Z #6 [2/2] COPY entrypoint.sh /entrypoint.sh
+2025-04-02T15:56:01.1982115Z #6 DONE 0.0s
+2025-04-02T15:56:01.1982332Z 
+2025-04-02T15:56:01.1982583Z #7 exporting to image
+2025-04-02T15:56:01.1982935Z #7 exporting layers
+2025-04-02T15:56:02.2249380Z #7 exporting layers 1.2s done
+2025-04-02T15:56:02.2520414Z #7 writing image sha256:3e4c4152ddd2c202748a5fa16c4999e4d41a39ffd74f4d94ff6680f6deaec542 done
+2025-04-02T15:56:02.2521680Z #7 naming to docker.io/library/d7267d:32feb3efc064404f901985174e8c464a done
+2025-04-02T15:56:02.2522299Z #7 DONE 1.2s
+2025-04-02T15:56:02.2569972Z ##[endgroup]
+2025-04-02T15:56:02.2826019Z ##[group]Run actions/checkout@v4
+2025-04-02T15:56:02.2826554Z with:
+2025-04-02T15:56:02.2826765Z   repository: microsoft/fluentui-blazor
+2025-04-02T15:56:02.2827208Z   token: ***
+2025-04-02T15:56:02.2827389Z   ssh-strict: true
+2025-04-02T15:56:02.2827575Z   ssh-user: git
+2025-04-02T15:56:02.2827772Z   persist-credentials: true
+2025-04-02T15:56:02.2827988Z   clean: true
+2025-04-02T15:56:02.2828191Z   sparse-checkout-cone-mode: true
+2025-04-02T15:56:02.2828433Z   fetch-depth: 1
+2025-04-02T15:56:02.2828615Z   fetch-tags: false
+2025-04-02T15:56:02.2828802Z   show-progress: true
+2025-04-02T15:56:02.2828994Z   lfs: false
+2025-04-02T15:56:02.2829169Z   submodules: false
+2025-04-02T15:56:02.2829364Z   set-safe-directory: true
+2025-04-02T15:56:02.2829756Z env:
+2025-04-02T15:56:02.2830071Z   PROJECTS: ./src/Core/Microsoft.FluentUI.AspNetCore.Components.csproj
+2025-04-02T15:56:02.2830746Z   TESTS: ./tests/Core/Microsoft.FluentUI.AspNetCore.Components.Tests.csproj
+2025-04-02T15:56:02.2831180Z   DOTNET_VERSION: net9.0
+2025-04-02T15:56:02.2831401Z   DOTNET_CLI_TELEMETRY_OPTOUT: 1
+2025-04-02T15:56:02.2831637Z   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
+2025-04-02T15:56:02.2831877Z   DOTNET_NOLOGO: true
+2025-04-02T15:56:02.2832102Z   DOTNET_GENERATE_ASPNET_CERTIFICATE: false
+2025-04-02T15:56:02.2832369Z   DOTNET_ADD_GLOBAL_TOOLS_TO_PATH: false
+2025-04-02T15:56:02.2832619Z   DOTNET_MULTILEVEL_LOOKUP: 0
+2025-04-02T15:56:02.2832910Z   PROJECT: examples/Demo/Client/FluentUI.Demo.Client.csproj
+2025-04-02T15:56:02.2833213Z   BUILD_ARCH: Any CPU
+2025-04-02T15:56:02.2833406Z   BUILD_CONFIG: Release
+2025-04-02T15:56:02.2833690Z   SKIP_DEPLOY_ON_MISSING_SECRETS: true
+2025-04-02T15:56:02.2833960Z ##[endgroup]
+2025-04-02T15:56:02.4855739Z Syncing repository: microsoft/fluentui-blazor
+2025-04-02T15:56:02.4857015Z ##[group]Getting Git version info
+2025-04-02T15:56:02.4857423Z Working directory is '/home/runner/work/fluentui-blazor/fluentui-blazor'
+2025-04-02T15:56:02.4857995Z [command]/usr/bin/git version
+2025-04-02T15:56:02.4867289Z git version 2.49.0
+2025-04-02T15:56:02.4895107Z ##[endgroup]
+2025-04-02T15:56:02.4908247Z Temporarily overriding HOME='/home/runner/work/_temp/39892d75-2600-406b-819d-b35288460fe8' before making global git config changes
+2025-04-02T15:56:02.4909114Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-02T15:56:02.4913858Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/fluentui-blazor/fluentui-blazor
+2025-04-02T15:56:02.4947211Z Deleting the contents of '/home/runner/work/fluentui-blazor/fluentui-blazor'
+2025-04-02T15:56:02.4950956Z ##[group]Initializing the repository
+2025-04-02T15:56:02.4955224Z [command]/usr/bin/git init /home/runner/work/fluentui-blazor/fluentui-blazor
+2025-04-02T15:56:02.5023334Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-02T15:56:02.5024130Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-02T15:56:02.5024883Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-02T15:56:02.5025231Z hint:
+2025-04-02T15:56:02.5025515Z hint: 	git config --global init.defaultBranch <name>
+2025-04-02T15:56:02.5025800Z hint:
+2025-04-02T15:56:02.5026090Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-02T15:56:02.5026558Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-02T15:56:02.5026917Z hint:
+2025-04-02T15:56:02.5027107Z hint: 	git branch -m <name>
+2025-04-02T15:56:02.5032428Z Initialized empty Git repository in /home/runner/work/fluentui-blazor/fluentui-blazor/.git/
+2025-04-02T15:56:02.5043837Z [command]/usr/bin/git remote add origin https://github.com/microsoft/fluentui-blazor
+2025-04-02T15:56:02.5079484Z ##[endgroup]
+2025-04-02T15:56:02.5079857Z ##[group]Disabling automatic garbage collection
+2025-04-02T15:56:02.5084314Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-02T15:56:02.5111696Z ##[endgroup]
+2025-04-02T15:56:02.5112275Z ##[group]Setting up auth
+2025-04-02T15:56:02.5119083Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-02T15:56:02.5149005Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-02T15:56:02.5545372Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-02T15:56:02.5585020Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-02T15:56:02.5809800Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-02T15:56:02.5847785Z ##[endgroup]
+2025-04-02T15:56:02.5848525Z ##[group]Fetching the repository
+2025-04-02T15:56:02.5857648Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +7f704a68182117d5221263f9931397997a247e5f:refs/remotes/pull/3615/merge
+2025-04-02T15:56:11.3725714Z From https://github.com/microsoft/fluentui-blazor
+2025-04-02T15:56:11.3726412Z  * [new ref]         7f704a68182117d5221263f9931397997a247e5f -> pull/3615/merge
+2025-04-02T15:56:11.3754243Z ##[endgroup]
+2025-04-02T15:56:11.3754715Z ##[group]Determining the checkout info
+2025-04-02T15:56:11.3756319Z ##[endgroup]
+2025-04-02T15:56:11.3762601Z [command]/usr/bin/git sparse-checkout disable
+2025-04-02T15:56:11.3802144Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-02T15:56:11.3828685Z ##[group]Checking out the ref
+2025-04-02T15:56:11.3833162Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/3615/merge
+2025-04-02T15:56:12.0585185Z Note: switching to 'refs/remotes/pull/3615/merge'.
+2025-04-02T15:56:12.0585684Z 
+2025-04-02T15:56:12.0586126Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-02T15:56:12.0587073Z changes and commit them, and you can discard any commits you make in this
+2025-04-02T15:56:12.0587988Z state without impacting any branches by switching back to a branch.
+2025-04-02T15:56:12.0588536Z 
+2025-04-02T15:56:12.0588852Z If you want to create a new branch to retain commits you create, you may
+2025-04-02T15:56:12.0589399Z do so (now or later) by using -c with the switch command. Example:
+2025-04-02T15:56:12.0589709Z 
+2025-04-02T15:56:12.0589836Z   git switch -c <new-branch-name>
+2025-04-02T15:56:12.0590043Z 
+2025-04-02T15:56:12.0590163Z Or undo this operation with:
+2025-04-02T15:56:12.0590345Z 
+2025-04-02T15:56:12.0590690Z   git switch -
+2025-04-02T15:56:12.0590956Z 
+2025-04-02T15:56:12.0591367Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-02T15:56:12.0591905Z 
+2025-04-02T15:56:12.0592550Z HEAD is now at 7f704a6 Merge b9ca23c62e74cabf555a0dae7e49450814ae8ffa into afe333948924a007563228a8e16ee05256b6c56b
+2025-04-02T15:56:12.0614224Z ##[endgroup]
+2025-04-02T15:56:12.0655821Z [command]/usr/bin/git log -1 --format=%H
+2025-04-02T15:56:12.0680369Z 7f704a68182117d5221263f9931397997a247e5f
+2025-04-02T15:56:12.0868898Z ##[group]Run actions/setup-dotnet@v4
+2025-04-02T15:56:12.0869175Z with:
+2025-04-02T15:56:12.0869360Z   dotnet-version: 9.0.x
+2025-04-02T15:56:12.0869573Z   dotnet-quality: ga
+2025-04-02T15:56:12.0869769Z   cache: false
+2025-04-02T15:56:12.0869947Z env:
+2025-04-02T15:56:12.0870248Z   PROJECTS: ./src/Core/Microsoft.FluentUI.AspNetCore.Components.csproj
+2025-04-02T15:56:12.0870921Z   TESTS: ./tests/Core/Microsoft.FluentUI.AspNetCore.Components.Tests.csproj
+2025-04-02T15:56:12.0871296Z   DOTNET_VERSION: net9.0
+2025-04-02T15:56:12.0871517Z   DOTNET_CLI_TELEMETRY_OPTOUT: 1
+2025-04-02T15:56:12.0871763Z   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
+2025-04-02T15:56:12.0872012Z   DOTNET_NOLOGO: true
+2025-04-02T15:56:12.0872243Z   DOTNET_GENERATE_ASPNET_CERTIFICATE: false
+2025-04-02T15:56:12.0872517Z   DOTNET_ADD_GLOBAL_TOOLS_TO_PATH: false
+2025-04-02T15:56:12.0872800Z   DOTNET_MULTILEVEL_LOOKUP: 0
+2025-04-02T15:56:12.0873094Z   PROJECT: examples/Demo/Client/FluentUI.Demo.Client.csproj
+2025-04-02T15:56:12.0873429Z   BUILD_ARCH: Any CPU
+2025-04-02T15:56:12.0873630Z   BUILD_CONFIG: Release
+2025-04-02T15:56:12.0873840Z   SKIP_DEPLOY_ON_MISSING_SECRETS: true
+2025-04-02T15:56:12.0874075Z ##[endgroup]
+2025-04-02T15:56:12.2694373Z [command]/home/runner/work/_actions/actions/setup-dotnet/v4/externals/install-dotnet.sh --skip-non-versioned-files --runtime dotnet --channel LTS
+2025-04-02T15:56:12.5355475Z dotnet-install: Attempting to download using aka.ms link https://builds.dotnet.microsoft.com/dotnet/Runtime/8.0.14/dotnet-runtime-8.0.14-linux-x64.tar.gz
+2025-04-02T15:56:12.8068858Z dotnet-install: Remote file https://builds.dotnet.microsoft.com/dotnet/Runtime/8.0.14/dotnet-runtime-8.0.14-linux-x64.tar.gz size is 31283064 bytes.
+2025-04-02T15:56:12.8071146Z dotnet-install: Extracting archive from https://builds.dotnet.microsoft.com/dotnet/Runtime/8.0.14/dotnet-runtime-8.0.14-linux-x64.tar.gz
+2025-04-02T15:56:13.4323315Z dotnet-install: Downloaded file size is 31283064 bytes.
+2025-04-02T15:56:13.4325002Z dotnet-install: The remote and local file sizes are equal.
+2025-04-02T15:56:13.4629718Z dotnet-install: Installed version is 8.0.14
+2025-04-02T15:56:13.4688000Z dotnet-install: Adding to current process PATH: `/usr/share/dotnet`. Note: This change will be visible only when sourcing script.
+2025-04-02T15:56:13.4689170Z dotnet-install: Note that the script does not resolve dependencies during installation.
+2025-04-02T15:56:13.4690847Z dotnet-install: To check the list of dependencies, go to https://learn.microsoft.com/dotnet/core/install, select your operating system and check the "Dependencies" section.
+2025-04-02T15:56:13.4691652Z dotnet-install: Installation finished successfully.
+2025-04-02T15:56:13.4717927Z [command]/home/runner/work/_actions/actions/setup-dotnet/v4/externals/install-dotnet.sh --skip-non-versioned-files --channel 9.0 --quality ga
+2025-04-02T15:56:13.6935065Z dotnet-install: Attempting to download using aka.ms link https://builds.dotnet.microsoft.com/dotnet/Sdk/9.0.202/dotnet-sdk-9.0.202-linux-x64.tar.gz
+2025-04-02T15:56:14.7921519Z dotnet-install: Remote file https://builds.dotnet.microsoft.com/dotnet/Sdk/9.0.202/dotnet-sdk-9.0.202-linux-x64.tar.gz size is 217102088 bytes.
+2025-04-02T15:56:14.7923440Z dotnet-install: Extracting archive from https://builds.dotnet.microsoft.com/dotnet/Sdk/9.0.202/dotnet-sdk-9.0.202-linux-x64.tar.gz
+2025-04-02T15:56:19.2706057Z dotnet-install: Downloaded file size is 217102088 bytes.
+2025-04-02T15:56:19.2706531Z dotnet-install: The remote and local file sizes are equal.
+2025-04-02T15:56:19.5465852Z dotnet-install: Installed version is 9.0.202
+2025-04-02T15:56:19.5530027Z dotnet-install: Adding to current process PATH: `/usr/share/dotnet`. Note: This change will be visible only when sourcing script.
+2025-04-02T15:56:19.5531477Z dotnet-install: Note that the script does not resolve dependencies during installation.
+2025-04-02T15:56:19.5533712Z dotnet-install: To check the list of dependencies, go to https://learn.microsoft.com/dotnet/core/install, select your operating system and check the "Dependencies" section.
+2025-04-02T15:56:19.5535027Z dotnet-install: Installation finished successfully.
+2025-04-02T15:56:19.5715107Z ##[group]Run dotnet build examples/Demo/Client/FluentUI.Demo.Client.csproj -c Release -o publish -f net9.0 -r linux-x64 --self-contained=true -p:BuildNumber=$BUILD_NUMBER -p:SourceRevisionId=$GITHUB_SHA -p:ContinuousIntegrationBuild=true
+2025-04-02T15:56:19.5716730Z [36;1mdotnet build examples/Demo/Client/FluentUI.Demo.Client.csproj -c Release -o publish -f net9.0 -r linux-x64 --self-contained=true -p:BuildNumber=$BUILD_NUMBER -p:SourceRevisionId=$GITHUB_SHA -p:ContinuousIntegrationBuild=true[0m
+2025-04-02T15:56:19.5769875Z shell: /usr/bin/bash -e {0}
+2025-04-02T15:56:19.5770128Z env:
+2025-04-02T15:56:19.5770643Z   PROJECTS: ./src/Core/Microsoft.FluentUI.AspNetCore.Components.csproj
+2025-04-02T15:56:19.5771203Z   TESTS: ./tests/Core/Microsoft.FluentUI.AspNetCore.Components.Tests.csproj
+2025-04-02T15:56:19.5771588Z   DOTNET_VERSION: net9.0
+2025-04-02T15:56:19.5771822Z   DOTNET_CLI_TELEMETRY_OPTOUT: 1
+2025-04-02T15:56:19.5772074Z   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
+2025-04-02T15:56:19.5772363Z   DOTNET_NOLOGO: true
+2025-04-02T15:56:19.5772593Z   DOTNET_GENERATE_ASPNET_CERTIFICATE: false
+2025-04-02T15:56:19.5772894Z   DOTNET_ADD_GLOBAL_TOOLS_TO_PATH: false
+2025-04-02T15:56:19.5773153Z   DOTNET_MULTILEVEL_LOOKUP: 0
+2025-04-02T15:56:19.5773455Z   PROJECT: examples/Demo/Client/FluentUI.Demo.Client.csproj
+2025-04-02T15:56:19.5773768Z   BUILD_ARCH: Any CPU
+2025-04-02T15:56:19.5773968Z   BUILD_CONFIG: Release
+2025-04-02T15:56:19.5774180Z   SKIP_DEPLOY_ON_MISSING_SECRETS: true
+2025-04-02T15:56:19.5774428Z   DOTNET_ROOT: /usr/share/dotnet
+2025-04-02T15:56:19.5774645Z ##[endgroup]
+2025-04-02T15:56:20.0259055Z   Determining projects to restore...
+2025-04-02T15:56:24.2627923Z   Restored /home/runner/work/fluentui-blazor/fluentui-blazor/src/Extensions/DesignToken.Generator/Microsoft.FluentUI.AspNetCore.Components.Generators.csproj (in 1.61 sec).
+2025-04-02T15:56:24.2921323Z   Restored /home/runner/work/fluentui-blazor/fluentui-blazor/examples/Demo/DocGenerator/FluentUI.Demo.Generators.csproj (in 22 ms).
+2025-04-02T15:56:26.8060647Z   Restored /home/runner/work/fluentui-blazor/fluentui-blazor/examples/Demo/Client/FluentUI.Demo.Client.csproj (in 4.16 sec).
+2025-04-02T15:56:26.8858250Z   Restored /home/runner/work/fluentui-blazor/fluentui-blazor/src/Core/Microsoft.FluentUI.AspNetCore.Components.csproj (in 4.24 sec).
+2025-04-02T15:56:26.8863570Z   Restored /home/runner/work/fluentui-blazor/fluentui-blazor/examples/Demo/Shared/FluentUI.Demo.Shared.csproj (in 4.24 sec).
+2025-04-02T15:56:28.3608471Z   v20.19.0
+2025-04-02T15:56:28.3649334Z   Restoring dependencies using 'npm'. This may take several minutes...
+2025-04-02T15:56:46.9223785Z   
+2025-04-02T15:56:46.9224783Z   added 186 packages, and audited 187 packages in 17s
+2025-04-02T15:56:46.9225579Z   
+2025-04-02T15:56:46.9225931Z   46 packages are looking for funding
+2025-04-02T15:56:46.9226433Z     run `npm fund` for details
+2025-04-02T15:56:46.9243276Z   
+2025-04-02T15:56:46.9244123Z   2 vulnerabilities (1 moderate, 1 high)
+2025-04-02T15:56:46.9244618Z   
+2025-04-02T15:56:46.9244958Z   To address all issues, run:
+2025-04-02T15:56:46.9245353Z     npm audit fix
+2025-04-02T15:56:46.9245685Z   
+2025-04-02T15:56:46.9245994Z   Run `npm audit` for details.
+2025-04-02T15:56:47.0724426Z   
+2025-04-02T15:56:47.0724823Z   > build
+2025-04-02T15:56:47.0725149Z   > node ./esbuild.config.mjs
+2025-04-02T15:56:47.0725469Z   
+2025-04-02T15:56:47.2386102Z   
+2025-04-02T15:56:47.2387289Z     dist/Microsoft.FluentUI.AspNetCore.Components.lib.module.js          384.3kb
+2025-04-02T15:56:47.2390743Z     .../Microsoft.FluentUI.AspNetCore.Components.lib.module.js.LEGAL...   1022b 
+2025-04-02T15:56:47.2392139Z     dist/Microsoft.FluentUI.AspNetCore.Components.lib.module.js.map        1.3mb
+2025-04-02T15:56:47.2393612Z   
+2025-04-02T15:56:47.2395338Z   ⚡ Done in 103ms
+2025-04-02T15:56:49.4119041Z   Microsoft.FluentUI.AspNetCore.Components.Generators -> /home/runner/work/fluentui-blazor/fluentui-blazor/publish/Microsoft.FluentUI.AspNetCore.Components.Generators.dll
+2025-04-02T15:57:03.7930749Z ##[warning]/home/runner/work/fluentui-blazor/fluentui-blazor/src/Core/Components/Icons/CustomIcon.cs(8,40): warning CS1574: XML comment has cref attribute 'GetInstance(IconInfo)' that could not be resolved [/home/runner/work/fluentui-blazor/fluentui-blazor/src/Core/Microsoft.FluentUI.AspNetCore.Components.csproj::TargetFramework=net9.0]
+2025-04-02T15:57:04.1545858Z   Microsoft.FluentUI.AspNetCore.Components -> /home/runner/work/fluentui-blazor/fluentui-blazor/publish/Microsoft.FluentUI.AspNetCore.Components.dll
+2025-04-02T15:57:04.5016076Z   FluentUI.Demo.Generators -> /home/runner/work/fluentui-blazor/fluentui-blazor/publish/FluentUI.Demo.Generators.dll
+2025-04-02T15:57:29.1775448Z   FluentUI.Demo.Shared -> /home/runner/work/fluentui-blazor/fluentui-blazor/publish/FluentUI.Demo.Shared.dll
+2025-04-02T15:57:33.3312628Z   FluentUI.Demo.Client -> /home/runner/work/fluentui-blazor/fluentui-blazor/publish/FluentUI.Demo.Client.dll
+2025-04-02T15:57:33.3327658Z   FluentUI.Demo.Client (Blazor output) -> /home/runner/work/fluentui-blazor/fluentui-blazor/publish/wwwroot
+2025-04-02T15:57:33.3721077Z 
+2025-04-02T15:57:33.3721301Z Build succeeded.
+2025-04-02T15:57:33.3721637Z 
+2025-04-02T15:57:33.3725494Z ##[warning]/home/runner/work/fluentui-blazor/fluentui-blazor/src/Core/Components/Icons/CustomIcon.cs(8,40): warning CS1574: XML comment has cref attribute 'GetInstance(IconInfo)' that could not be resolved [/home/runner/work/fluentui-blazor/fluentui-blazor/src/Core/Microsoft.FluentUI.AspNetCore.Components.csproj::TargetFramework=net9.0]
+2025-04-02T15:57:33.3749568Z     1 Warning(s)
+2025-04-02T15:57:33.3750176Z     0 Error(s)
+2025-04-02T15:57:33.3750401Z 
+2025-04-02T15:57:33.3750761Z Time Elapsed 00:01:06.45
+2025-04-02T15:57:33.4286218Z ##[group]Run dotnet publish examples/Demo/Client/FluentUI.Demo.Client.csproj -c Release -o publish -f net9.0 -r linux-x64 --self-contained=true -p:BuildNumber=$BUILD_NUMBER -p:SourceRevisionId=$GITHUB_SHA -p:ContinuousIntegrationBuild=true
+2025-04-02T15:57:33.4287802Z [36;1mdotnet publish examples/Demo/Client/FluentUI.Demo.Client.csproj -c Release -o publish -f net9.0 -r linux-x64 --self-contained=true -p:BuildNumber=$BUILD_NUMBER -p:SourceRevisionId=$GITHUB_SHA -p:ContinuousIntegrationBuild=true[0m
+2025-04-02T15:57:33.4335379Z shell: /usr/bin/bash -e {0}
+2025-04-02T15:57:33.4335611Z env:
+2025-04-02T15:57:33.4335923Z   PROJECTS: ./src/Core/Microsoft.FluentUI.AspNetCore.Components.csproj
+2025-04-02T15:57:33.4336450Z   TESTS: ./tests/Core/Microsoft.FluentUI.AspNetCore.Components.Tests.csproj
+2025-04-02T15:57:33.4336833Z   DOTNET_VERSION: net9.0
+2025-04-02T15:57:33.4337052Z   DOTNET_CLI_TELEMETRY_OPTOUT: 1
+2025-04-02T15:57:33.4337302Z   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
+2025-04-02T15:57:33.4337588Z   DOTNET_NOLOGO: true
+2025-04-02T15:57:33.4337804Z   DOTNET_GENERATE_ASPNET_CERTIFICATE: false
+2025-04-02T15:57:33.4338070Z   DOTNET_ADD_GLOBAL_TOOLS_TO_PATH: false
+2025-04-02T15:57:33.4338319Z   DOTNET_MULTILEVEL_LOOKUP: 0
+2025-04-02T15:57:33.4338609Z   PROJECT: examples/Demo/Client/FluentUI.Demo.Client.csproj
+2025-04-02T15:57:33.4338911Z   BUILD_ARCH: Any CPU
+2025-04-02T15:57:33.4339101Z   BUILD_CONFIG: Release
+2025-04-02T15:57:33.4339309Z   SKIP_DEPLOY_ON_MISSING_SECRETS: true
+2025-04-02T15:57:33.4339560Z   DOTNET_ROOT: /usr/share/dotnet
+2025-04-02T15:57:33.4339777Z ##[endgroup]
+2025-04-02T15:57:33.8798243Z   Determining projects to restore...
+2025-04-02T15:57:35.1350349Z   All projects are up-to-date for restore.
+2025-04-02T15:57:35.7829197Z   
+2025-04-02T15:57:35.7830190Z   > build
+2025-04-02T15:57:35.7830725Z   > node ./esbuild.config.mjs
+2025-04-02T15:57:35.7831007Z   
+2025-04-02T15:57:35.9421825Z   
+2025-04-02T15:57:35.9423801Z     dist/Microsoft.FluentUI.AspNetCore.Components.lib.module.js          384.3kb
+2025-04-02T15:57:35.9425227Z     .../Microsoft.FluentUI.AspNetCore.Components.lib.module.js.LEGAL...   1022b 
+2025-04-02T15:57:35.9426291Z     dist/Microsoft.FluentUI.AspNetCore.Components.lib.module.js.map        1.3mb
+2025-04-02T15:57:35.9427015Z   
+2025-04-02T15:57:35.9427560Z   ⚡ Done in 94ms
+2025-04-02T15:57:36.0093889Z   Microsoft.FluentUI.AspNetCore.Components.Generators -> /home/runner/work/fluentui-blazor/fluentui-blazor/src/Extensions/DesignToken.Generator/bin/Release/netstandard2.0/Microsoft.FluentUI.AspNetCore.Components.Generators.dll
+2025-04-02T15:57:36.3541899Z   Microsoft.FluentUI.AspNetCore.Components -> /home/runner/work/fluentui-blazor/fluentui-blazor/src/Core/bin/Release/net9.0/Microsoft.FluentUI.AspNetCore.Components.dll
+2025-04-02T15:57:36.4113219Z   FluentUI.Demo.Generators -> /home/runner/work/fluentui-blazor/fluentui-blazor/examples/Demo/DocGenerator/bin/Release/netstandard2.0/FluentUI.Demo.Generators.dll
+2025-04-02T15:57:48.2915958Z   FluentUI.Demo.Shared -> /home/runner/work/fluentui-blazor/fluentui-blazor/examples/Demo/Shared/bin/Release/net9.0/FluentUI.Demo.Shared.dll
+2025-04-02T15:57:52.6424458Z   FluentUI.Demo.Client -> /home/runner/work/fluentui-blazor/fluentui-blazor/examples/Demo/Client/bin/Release/net9.0/FluentUI.Demo.Client.dll
+2025-04-02T15:57:52.6442316Z   FluentUI.Demo.Client (Blazor output) -> /home/runner/work/fluentui-blazor/fluentui-blazor/examples/Demo/Client/bin/Release/net9.0/wwwroot
+2025-04-02T15:57:53.3092410Z   
+2025-04-02T15:57:53.3095116Z   > build
+2025-04-02T15:57:53.3095501Z   > node ./esbuild.config.mjs
+2025-04-02T15:57:53.3095912Z   
+2025-04-02T15:57:53.4553301Z   
+2025-04-02T15:57:53.4554667Z     dist/Microsoft.FluentUI.AspNetCore.Components.lib.module.js          384.3kb
+2025-04-02T15:57:53.4555687Z     .../Microsoft.FluentUI.AspNetCore.Components.lib.module.js.LEGAL...   1022b 
+2025-04-02T15:57:53.4556640Z     dist/Microsoft.FluentUI.AspNetCore.Components.lib.module.js.map        1.3mb
+2025-04-02T15:57:53.4557299Z   
+2025-04-02T15:57:53.4558143Z   ⚡ Done in 86ms
+2025-04-02T15:57:53.5140337Z   Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+2025-04-02T15:57:53.5184997Z   Optimizing assemblies for size. This process might take a while.
+2025-04-02T15:58:31.5577305Z   Publishing without optimizations. Although it's optional for Blazor, we strongly recommend using `wasm-tools` workload! You can install it by running `dotnet workload install wasm-tools` from the command line.
+2025-04-02T15:58:31.5578852Z   FluentUI.Demo.Client -> /home/runner/work/fluentui-blazor/fluentui-blazor/publish/
+2025-04-02T15:58:31.6257127Z ##[group]Run Azure/static-web-apps-deploy@v1
+2025-04-02T15:58:31.6257432Z with:
+2025-04-02T15:58:31.6258134Z   azure_static_web_apps_api_token: ***
+2025-04-02T15:58:31.6258533Z   repo_token: ***
+2025-04-02T15:58:31.6258728Z   action: upload
+2025-04-02T15:58:31.6258926Z   app_location: publish/wwwroot
+2025-04-02T15:58:31.6259156Z   api_location: Api
+2025-04-02T15:58:31.6259375Z   output_location: publish/wwwroot
+2025-04-02T15:58:31.6259613Z   skip_api_build: true
+2025-04-02T15:58:31.6259808Z   skip_app_build: true
+2025-04-02T15:58:31.6260009Z   production_branch: dev
+2025-04-02T15:58:31.6260217Z env:
+2025-04-02T15:58:31.6260727Z   PROJECTS: ./src/Core/Microsoft.FluentUI.AspNetCore.Components.csproj
+2025-04-02T15:58:31.6261238Z   TESTS: ./tests/Core/Microsoft.FluentUI.AspNetCore.Components.Tests.csproj
+2025-04-02T15:58:31.6261620Z   DOTNET_VERSION: net9.0
+2025-04-02T15:58:31.6261835Z   DOTNET_CLI_TELEMETRY_OPTOUT: 1
+2025-04-02T15:58:31.6262123Z   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
+2025-04-02T15:58:31.6262369Z   DOTNET_NOLOGO: true
+2025-04-02T15:58:31.6262585Z   DOTNET_GENERATE_ASPNET_CERTIFICATE: false
+2025-04-02T15:58:31.6262856Z   DOTNET_ADD_GLOBAL_TOOLS_TO_PATH: false
+2025-04-02T15:58:31.6263115Z   DOTNET_MULTILEVEL_LOOKUP: 0
+2025-04-02T15:58:31.6263407Z   PROJECT: examples/Demo/Client/FluentUI.Demo.Client.csproj
+2025-04-02T15:58:31.6263926Z   BUILD_ARCH: Any CPU
+2025-04-02T15:58:31.6264122Z   BUILD_CONFIG: Release
+2025-04-02T15:58:31.6264332Z   SKIP_DEPLOY_ON_MISSING_SECRETS: true
+2025-04-02T15:58:31.6264588Z   DOTNET_ROOT: /usr/share/dotnet
+2025-04-02T15:58:31.6264807Z ##[endgroup]
+2025-04-02T15:58:31.6371961Z ##[command]/usr/bin/docker run --name d7267d32feb3efc064404f901985174e8c464a_c20afd --label d7267d --workdir /github/workspace --rm -e "PROJECTS" -e "TESTS" -e "DOTNET_VERSION" -e "DOTNET_CLI_TELEMETRY_OPTOUT" -e "DOTNET_SKIP_FIRST_TIME_EXPERIENCE" -e "DOTNET_NOLOGO" -e "DOTNET_GENERATE_ASPNET_CERTIFICATE" -e "DOTNET_ADD_GLOBAL_TOOLS_TO_PATH" -e "DOTNET_MULTILEVEL_LOOKUP" -e "PROJECT" -e "BUILD_ARCH" -e "BUILD_CONFIG" -e "SKIP_DEPLOY_ON_MISSING_SECRETS" -e "DOTNET_ROOT" -e "INPUT_AZURE_STATIC_WEB_APPS_API_TOKEN" -e "INPUT_REPO_TOKEN" -e "INPUT_ACTION" -e "INPUT_APP_LOCATION" -e "INPUT_API_LOCATION" -e "INPUT_OUTPUT_LOCATION" -e "INPUT_SKIP_API_BUILD" -e "INPUT_SKIP_APP_BUILD" -e "INPUT_PRODUCTION_BRANCH" -e "INPUT_API_BUILD_COMMAND" -e "INPUT_APP_ARTIFACT_LOCATION" -e "INPUT_APP_BUILD_COMMAND" -e "INPUT_ROUTES_LOCATION" -e "INPUT_CONFIG_FILE_LOCATION" -e "INPUT_DEPLOYMENT_ENVIRONMENT" -e "INPUT_IS_STATIC_EXPORT" -e "INPUT_DATA_API_LOCATION" -e "INPUT_GITHUB_ID_TOKEN" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_RESULTS_URL" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/runner/work/fluentui-blazor/fluentui-blazor":"/github/workspace" d7267d:32feb3efc064404f901985174e8c464a
+2025-04-02T15:58:31.9271111Z DeploymentId: e6c35ea0-1981-442b-8891-092f2fbd9e94
+2025-04-02T15:58:31.9271593Z 
+2025-04-02T15:58:32.0316198Z [37mTry to validate location at: '/github/workspace/publish/wwwroot'.[0m
+2025-04-02T15:58:32.0327396Z [37mApp Directory Location: 'publish/wwwroot' was found.[0m
+2025-04-02T15:58:32.0328339Z [37mTry to validate location at: '/github/workspace/swa-db-connections'.[0m
+2025-04-02T15:58:32.0329857Z [37mLooking for event info[0m
+2025-04-02T15:58:33.0510352Z [37mSkipping step to build /github/workspace/publish/wwwroot with Oryx[0m
+2025-04-02T15:58:33.0564529Z [37mUsing 'staticwebapp.config.json' file for configuration information, 'routes.json' will be ignored.[0m
+2025-04-02T15:58:33.5621657Z [37mTry to validate location at: '/github/workspace/Api'.[0m
+2025-04-02T15:58:33.5622705Z [33m[WARNING] Api Directory Location: 'Api' could not be found. Azure Functions will not be created.[0m
+2025-04-02T15:58:33.6180783Z [33mEither no Api directory was specified, or the specified directory was not found. Azure Functions will not be created.[0m
+2025-04-02T15:58:34.3896638Z [37mZipping App Artifacts[0m
+2025-04-02T15:58:40.0605075Z [37mDone Zipping App Artifacts[0m
+2025-04-02T15:58:40.0605742Z [37mUploading build artifacts.[0m
+2025-04-02T15:58:46.8399067Z [31mThe content server has rejected the request with: BadRequest[0m
+2025-04-02T15:58:46.8399971Z [31mReason: No matching Static Web App environment was found.[0m
+2025-04-02T15:58:47.0003626Z [37m[0m
+2025-04-02T15:58:47.0004755Z [33mFor further information, please visit the Azure Static Web Apps documentation at https://docs.microsoft.com/en-us/azure/static-web-apps/[0m
+2025-04-02T15:58:47.0006075Z [33mIf you believe this behavior is unexpected, please raise a GitHub issue at https://github.com/azure/static-web-apps/issues/[0m
+2025-04-02T15:58:47.0007692Z [33mExiting[0m
+2025-04-02T15:58:47.1983037Z Post job cleanup.
+2025-04-02T15:58:47.2928940Z [command]/usr/bin/git version
+2025-04-02T15:58:47.2965860Z git version 2.49.0
+2025-04-02T15:58:47.3014964Z Temporarily overriding HOME='/home/runner/work/_temp/77150e09-e2d7-4069-9477-06d79036efc7' before making global git config changes
+2025-04-02T15:58:47.3016354Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-02T15:58:47.3020568Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/fluentui-blazor/fluentui-blazor
+2025-04-02T15:58:47.3055581Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-02T15:58:47.3089006Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-02T15:58:47.3326469Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-02T15:58:47.3347389Z http.https://github.com/.extraheader
+2025-04-02T15:58:47.3360405Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-02T15:58:47.3391326Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-02T15:58:47.3738797Z Cleaning up orphan processes
+2025-04-02T15:58:47.4073023Z Terminate orphan process: pid (2548) (dotnet)
+2025-04-02T15:58:47.4094093Z Terminate orphan process: pid (2565) (dotnet)
+2025-04-02T15:58:47.4114869Z Terminate orphan process: pid (2608) (dotnet)
+2025-04-02T15:58:47.4148236Z Terminate orphan process: pid (2719) (dotnet)

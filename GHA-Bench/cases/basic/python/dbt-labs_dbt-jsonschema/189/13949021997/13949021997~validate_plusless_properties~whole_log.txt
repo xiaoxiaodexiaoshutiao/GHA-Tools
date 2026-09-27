@@ -1,0 +1,318 @@
+2025-03-19T14:27:27.0135330Z Requested labels: ubuntu-latest
+2025-03-19T14:27:27.0135597Z Job defined at: dbt-labs/dbt-jsonschema/.github/workflows/ci.yml@refs/pull/189/merge
+2025-03-19T14:27:27.0135733Z Waiting for a runner to pick up this job...
+2025-03-19T14:27:28.7933765Z Job is waiting for a hosted runner to come online.
+2025-03-19T14:27:31.4359561Z Job is about to start running on the hosted runner: GitHub Actions 176 (hosted)
+2025-03-19T14:27:34.6152519Z Current runner version: '2.322.0'
+2025-03-19T14:27:34.6179047Z ##[group]Operating System
+2025-03-19T14:27:34.6179816Z Ubuntu
+2025-03-19T14:27:34.6180383Z 24.04.2
+2025-03-19T14:27:34.6181129Z LTS
+2025-03-19T14:27:34.6181867Z ##[endgroup]
+2025-03-19T14:27:34.6182741Z ##[group]Runner Image
+2025-03-19T14:27:34.6183636Z Image: ubuntu-24.04
+2025-03-19T14:27:34.6184379Z Version: 20250316.1.0
+2025-03-19T14:27:34.6185834Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250316.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-19T14:27:34.6187266Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250316.1
+2025-03-19T14:27:34.6188158Z ##[endgroup]
+2025-03-19T14:27:34.6188786Z ##[group]Runner Image Provisioner
+2025-03-19T14:27:34.6189396Z 2.0.422.1
+2025-03-19T14:27:34.6189828Z ##[endgroup]
+2025-03-19T14:27:34.6192161Z ##[group]GITHUB_TOKEN Permissions
+2025-03-19T14:27:34.6194539Z Actions: read
+2025-03-19T14:27:34.6195699Z Attestations: read
+2025-03-19T14:27:34.6196361Z Checks: read
+2025-03-19T14:27:34.6196891Z Contents: read
+2025-03-19T14:27:34.6197423Z Deployments: read
+2025-03-19T14:27:34.6198010Z Discussions: read
+2025-03-19T14:27:34.6198492Z Issues: read
+2025-03-19T14:27:34.6199009Z Metadata: read
+2025-03-19T14:27:34.6199571Z Models: read
+2025-03-19T14:27:34.6200095Z Packages: read
+2025-03-19T14:27:34.6200590Z Pages: read
+2025-03-19T14:27:34.6201107Z PullRequests: read
+2025-03-19T14:27:34.6201667Z RepositoryProjects: read
+2025-03-19T14:27:34.6202231Z SecurityEvents: read
+2025-03-19T14:27:34.6202838Z Statuses: read
+2025-03-19T14:27:34.6203348Z ##[endgroup]
+2025-03-19T14:27:34.6206665Z Secret source: None
+2025-03-19T14:27:34.6207769Z Prepare workflow directory
+2025-03-19T14:27:34.6612381Z Prepare all required actions
+2025-03-19T14:27:34.6649437Z Getting action download info
+2025-03-19T14:27:34.8445059Z Download action repository 'actions/checkout@v3' (SHA:f43a0e5ff2bd294095638e18286ca9a3d1956744)
+2025-03-19T14:27:34.9451905Z Download action repository 'actions/setup-python@v4' (SHA:65d7f2d534ac1bc67fcd62888c5f4f3d2cb2b236)
+2025-03-19T14:27:35.0855016Z Complete job name: validate_plusless_properties
+2025-03-19T14:27:35.1639211Z ##[group]Run actions/checkout@v3
+2025-03-19T14:27:35.1640107Z with:
+2025-03-19T14:27:35.1640573Z   repository: dbt-labs/dbt-jsonschema
+2025-03-19T14:27:35.1641330Z   token: ***
+2025-03-19T14:27:35.1641772Z   ssh-strict: true
+2025-03-19T14:27:35.1642242Z   persist-credentials: true
+2025-03-19T14:27:35.1642733Z   clean: true
+2025-03-19T14:27:35.1643186Z   sparse-checkout-cone-mode: true
+2025-03-19T14:27:35.1643725Z   fetch-depth: 1
+2025-03-19T14:27:35.1644177Z   fetch-tags: false
+2025-03-19T14:27:35.1644868Z   lfs: false
+2025-03-19T14:27:35.1645408Z   submodules: false
+2025-03-19T14:27:35.1645875Z   set-safe-directory: true
+2025-03-19T14:27:35.1646673Z ##[endgroup]
+2025-03-19T14:27:35.3461114Z Syncing repository: dbt-labs/dbt-jsonschema
+2025-03-19T14:27:35.3462932Z ##[group]Getting Git version info
+2025-03-19T14:27:35.3463779Z Working directory is '/home/runner/work/dbt-jsonschema/dbt-jsonschema'
+2025-03-19T14:27:35.3465354Z [command]/usr/bin/git version
+2025-03-19T14:27:35.3513146Z git version 2.48.1
+2025-03-19T14:27:35.3541051Z ##[endgroup]
+2025-03-19T14:27:35.3558283Z Temporarily overriding HOME='/home/runner/work/_temp/b144702e-ad56-4f39-b113-3dbd0016fbe3' before making global git config changes
+2025-03-19T14:27:35.3561022Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-19T14:27:35.3563404Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/dbt-jsonschema/dbt-jsonschema
+2025-03-19T14:27:35.3597144Z Deleting the contents of '/home/runner/work/dbt-jsonschema/dbt-jsonschema'
+2025-03-19T14:27:35.3600023Z ##[group]Initializing the repository
+2025-03-19T14:27:35.3603123Z [command]/usr/bin/git init /home/runner/work/dbt-jsonschema/dbt-jsonschema
+2025-03-19T14:27:35.3678039Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-19T14:27:35.3679614Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-19T14:27:35.3681798Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-19T14:27:35.3683117Z hint:
+2025-03-19T14:27:35.3683988Z hint: 	git config --global init.defaultBranch <name>
+2025-03-19T14:27:35.3685232Z hint:
+2025-03-19T14:27:35.3685869Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-19T14:27:35.3686832Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-19T14:27:35.3687573Z hint:
+2025-03-19T14:27:35.3687994Z hint: 	git branch -m <name>
+2025-03-19T14:27:35.3689179Z Initialized empty Git repository in /home/runner/work/dbt-jsonschema/dbt-jsonschema/.git/
+2025-03-19T14:27:35.3692858Z [command]/usr/bin/git remote add origin https://github.com/dbt-labs/dbt-jsonschema
+2025-03-19T14:27:35.3726461Z ##[endgroup]
+2025-03-19T14:27:35.3727274Z ##[group]Disabling automatic garbage collection
+2025-03-19T14:27:35.3728904Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-19T14:27:35.3754785Z ##[endgroup]
+2025-03-19T14:27:35.3755642Z ##[group]Setting up auth
+2025-03-19T14:27:35.3759817Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-19T14:27:35.3785838Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-19T14:27:35.4092457Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-19T14:27:35.4118788Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-19T14:27:35.4338921Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-19T14:27:35.4371465Z ##[endgroup]
+2025-03-19T14:27:35.4373007Z ##[group]Fetching the repository
+2025-03-19T14:27:35.4381329Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +e503d6bf445720f49ef460a156cffd3ee0edef8a:refs/remotes/pull/189/merge
+2025-03-19T14:27:35.8620845Z remote: Enumerating objects: 67, done.        
+2025-03-19T14:27:35.8622313Z remote: Counting objects:   1% (1/67)        
+2025-03-19T14:27:35.8623664Z remote: Counting objects:   2% (2/67)        
+2025-03-19T14:27:35.8625173Z remote: Counting objects:   4% (3/67)        
+2025-03-19T14:27:35.8626020Z remote: Counting objects:   5% (4/67)        
+2025-03-19T14:27:35.8626727Z remote: Counting objects:   7% (5/67)        
+2025-03-19T14:27:35.8627430Z remote: Counting objects:   8% (6/67)        
+2025-03-19T14:27:35.8628150Z remote: Counting objects:  10% (7/67)        
+2025-03-19T14:27:35.8628863Z remote: Counting objects:  11% (8/67)        
+2025-03-19T14:27:35.8629572Z remote: Counting objects:  13% (9/67)        
+2025-03-19T14:27:35.8630284Z remote: Counting objects:  14% (10/67)        
+2025-03-19T14:27:35.8630934Z remote: Counting objects:  16% (11/67)        
+2025-03-19T14:27:35.8631584Z remote: Counting objects:  17% (12/67)        
+2025-03-19T14:27:35.8632218Z remote: Counting objects:  19% (13/67)        
+2025-03-19T14:27:35.8632855Z remote: Counting objects:  20% (14/67)        
+2025-03-19T14:27:35.8633475Z remote: Counting objects:  22% (15/67)        
+2025-03-19T14:27:35.8634107Z remote: Counting objects:  23% (16/67)        
+2025-03-19T14:27:35.8634881Z remote: Counting objects:  25% (17/67)        
+2025-03-19T14:27:35.8635520Z remote: Counting objects:  26% (18/67)        
+2025-03-19T14:27:35.8636159Z remote: Counting objects:  28% (19/67)        
+2025-03-19T14:27:35.8636789Z remote: Counting objects:  29% (20/67)        
+2025-03-19T14:27:35.8637409Z remote: Counting objects:  31% (21/67)        
+2025-03-19T14:27:35.8638040Z remote: Counting objects:  32% (22/67)        
+2025-03-19T14:27:35.8638670Z remote: Counting objects:  34% (23/67)        
+2025-03-19T14:27:35.8639539Z remote: Counting objects:  35% (24/67)        
+2025-03-19T14:27:35.8640165Z remote: Counting objects:  37% (25/67)        
+2025-03-19T14:27:35.8640783Z remote: Counting objects:  38% (26/67)        
+2025-03-19T14:27:35.8641398Z remote: Counting objects:  40% (27/67)        
+2025-03-19T14:27:35.8642117Z remote: Counting objects:  41% (28/67)        
+2025-03-19T14:27:35.8642734Z remote: Counting objects:  43% (29/67)        
+2025-03-19T14:27:35.8643350Z remote: Counting objects:  44% (30/67)        
+2025-03-19T14:27:35.8643975Z remote: Counting objects:  46% (31/67)        
+2025-03-19T14:27:35.8644709Z remote: Counting objects:  47% (32/67)        
+2025-03-19T14:27:35.8645346Z remote: Counting objects:  49% (33/67)        
+2025-03-19T14:27:35.8645992Z remote: Counting objects:  50% (34/67)        
+2025-03-19T14:27:35.8646615Z remote: Counting objects:  52% (35/67)        
+2025-03-19T14:27:35.8647225Z remote: Counting objects:  53% (36/67)        
+2025-03-19T14:27:35.8647847Z remote: Counting objects:  55% (37/67)        
+2025-03-19T14:27:35.8648478Z remote: Counting objects:  56% (38/67)        
+2025-03-19T14:27:35.8649093Z remote: Counting objects:  58% (39/67)        
+2025-03-19T14:27:35.8649701Z remote: Counting objects:  59% (40/67)        
+2025-03-19T14:27:35.8650313Z remote: Counting objects:  61% (41/67)        
+2025-03-19T14:27:35.8650930Z remote: Counting objects:  62% (42/67)        
+2025-03-19T14:27:35.8651534Z remote: Counting objects:  64% (43/67)        
+2025-03-19T14:27:35.8652147Z remote: Counting objects:  65% (44/67)        
+2025-03-19T14:27:35.8652755Z remote: Counting objects:  67% (45/67)        
+2025-03-19T14:27:35.8653365Z remote: Counting objects:  68% (46/67)        
+2025-03-19T14:27:35.8653975Z remote: Counting objects:  70% (47/67)        
+2025-03-19T14:27:35.8654580Z remote: Counting objects:  71% (48/67)        
+2025-03-19T14:27:35.8655284Z remote: Counting objects:  73% (49/67)        
+2025-03-19T14:27:35.8655903Z remote: Counting objects:  74% (50/67)        
+2025-03-19T14:27:35.8656520Z remote: Counting objects:  76% (51/67)        
+2025-03-19T14:27:35.8657284Z remote: Counting objects:  77% (52/67)        
+2025-03-19T14:27:35.8657906Z remote: Counting objects:  79% (53/67)        
+2025-03-19T14:27:35.8658524Z remote: Counting objects:  80% (54/67)        
+2025-03-19T14:27:35.8659131Z remote: Counting objects:  82% (55/67)        
+2025-03-19T14:27:35.8659742Z remote: Counting objects:  83% (56/67)        
+2025-03-19T14:27:35.8660349Z remote: Counting objects:  85% (57/67)        
+2025-03-19T14:27:35.8660957Z remote: Counting objects:  86% (58/67)        
+2025-03-19T14:27:35.8661577Z remote: Counting objects:  88% (59/67)        
+2025-03-19T14:27:35.8662188Z remote: Counting objects:  89% (60/67)        
+2025-03-19T14:27:35.8662803Z remote: Counting objects:  91% (61/67)        
+2025-03-19T14:27:35.8663423Z remote: Counting objects:  92% (62/67)        
+2025-03-19T14:27:35.8664040Z remote: Counting objects:  94% (63/67)        
+2025-03-19T14:27:35.8664742Z remote: Counting objects:  95% (64/67)        
+2025-03-19T14:27:35.8665393Z remote: Counting objects:  97% (65/67)        
+2025-03-19T14:27:35.8666005Z remote: Counting objects:  98% (66/67)        
+2025-03-19T14:27:35.8777346Z remote: Counting objects: 100% (67/67)        
+2025-03-19T14:27:35.8779708Z remote: Counting objects: 100% (67/67), done.        
+2025-03-19T14:27:35.8781003Z remote: Compressing objects:   1% (1/59)        
+2025-03-19T14:27:35.8782292Z remote: Compressing objects:   3% (2/59)        
+2025-03-19T14:27:35.8783049Z remote: Compressing objects:   5% (3/59)        
+2025-03-19T14:27:35.8783783Z remote: Compressing objects:   6% (4/59)        
+2025-03-19T14:27:35.8784520Z remote: Compressing objects:   8% (5/59)        
+2025-03-19T14:27:35.8785567Z remote: Compressing objects:  10% (6/59)        
+2025-03-19T14:27:35.8786314Z remote: Compressing objects:  11% (7/59)        
+2025-03-19T14:27:35.8787051Z remote: Compressing objects:  13% (8/59)        
+2025-03-19T14:27:35.8788020Z remote: Compressing objects:  15% (9/59)        
+2025-03-19T14:27:35.8788789Z remote: Compressing objects:  16% (10/59)        
+2025-03-19T14:27:35.8789546Z remote: Compressing objects:  18% (11/59)        
+2025-03-19T14:27:35.8790310Z remote: Compressing objects:  20% (12/59)        
+2025-03-19T14:27:35.8790968Z remote: Compressing objects:  22% (13/59)        
+2025-03-19T14:27:35.8791624Z remote: Compressing objects:  23% (14/59)        
+2025-03-19T14:27:35.8792294Z remote: Compressing objects:  25% (15/59)        
+2025-03-19T14:27:35.8792945Z remote: Compressing objects:  27% (16/59)        
+2025-03-19T14:27:35.8879331Z remote: Compressing objects:  28% (17/59)        
+2025-03-19T14:27:35.8880150Z remote: Compressing objects:  30% (18/59)        
+2025-03-19T14:27:35.8880880Z remote: Compressing objects:  32% (19/59)        
+2025-03-19T14:27:35.8881623Z remote: Compressing objects:  33% (20/59)        
+2025-03-19T14:27:35.8882276Z remote: Compressing objects:  35% (21/59)        
+2025-03-19T14:27:35.8882949Z remote: Compressing objects:  37% (22/59)        
+2025-03-19T14:27:35.8883613Z remote: Compressing objects:  38% (23/59)        
+2025-03-19T14:27:35.8884284Z remote: Compressing objects:  40% (24/59)        
+2025-03-19T14:27:35.8885210Z remote: Compressing objects:  42% (25/59)        
+2025-03-19T14:27:35.8885875Z remote: Compressing objects:  44% (26/59)        
+2025-03-19T14:27:35.8886531Z remote: Compressing objects:  45% (27/59)        
+2025-03-19T14:27:35.8887176Z remote: Compressing objects:  47% (28/59)        
+2025-03-19T14:27:35.8887823Z remote: Compressing objects:  49% (29/59)        
+2025-03-19T14:27:35.8888481Z remote: Compressing objects:  50% (30/59)        
+2025-03-19T14:27:35.8889143Z remote: Compressing objects:  52% (31/59)        
+2025-03-19T14:27:35.8889788Z remote: Compressing objects:  54% (32/59)        
+2025-03-19T14:27:35.8890436Z remote: Compressing objects:  55% (33/59)        
+2025-03-19T14:27:35.8891099Z remote: Compressing objects:  57% (34/59)        
+2025-03-19T14:27:35.8891800Z remote: Compressing objects:  59% (35/59)        
+2025-03-19T14:27:35.8892691Z remote: Compressing objects:  61% (36/59)        
+2025-03-19T14:27:35.8893360Z remote: Compressing objects:  62% (37/59)        
+2025-03-19T14:27:35.8894025Z remote: Compressing objects:  64% (38/59)        
+2025-03-19T14:27:35.8894798Z remote: Compressing objects:  66% (39/59)        
+2025-03-19T14:27:35.8895452Z remote: Compressing objects:  67% (40/59)        
+2025-03-19T14:27:35.8896097Z remote: Compressing objects:  69% (41/59)        
+2025-03-19T14:27:35.8896748Z remote: Compressing objects:  71% (42/59)        
+2025-03-19T14:27:35.8897396Z remote: Compressing objects:  72% (43/59)        
+2025-03-19T14:27:35.8898035Z remote: Compressing objects:  74% (44/59)        
+2025-03-19T14:27:35.8898688Z remote: Compressing objects:  76% (45/59)        
+2025-03-19T14:27:35.8899333Z remote: Compressing objects:  77% (46/59)        
+2025-03-19T14:27:35.8899988Z remote: Compressing objects:  79% (47/59)        
+2025-03-19T14:27:35.8900646Z remote: Compressing objects:  81% (48/59)        
+2025-03-19T14:27:35.8901288Z remote: Compressing objects:  83% (49/59)        
+2025-03-19T14:27:35.8901940Z remote: Compressing objects:  84% (50/59)        
+2025-03-19T14:27:35.8902578Z remote: Compressing objects:  86% (51/59)        
+2025-03-19T14:27:35.8903261Z remote: Compressing objects:  88% (52/59)        
+2025-03-19T14:27:35.8903917Z remote: Compressing objects:  89% (53/59)        
+2025-03-19T14:27:35.8904571Z remote: Compressing objects:  91% (54/59)        
+2025-03-19T14:27:35.8905488Z remote: Compressing objects:  93% (55/59)        
+2025-03-19T14:27:35.8906142Z remote: Compressing objects:  94% (56/59)        
+2025-03-19T14:27:35.8906824Z remote: Compressing objects:  96% (57/59)        
+2025-03-19T14:27:35.8907479Z remote: Compressing objects:  98% (58/59)        
+2025-03-19T14:27:35.8908125Z remote: Compressing objects: 100% (59/59)        
+2025-03-19T14:27:35.8908833Z remote: Compressing objects: 100% (59/59), done.        
+2025-03-19T14:27:35.9251266Z remote: Total 67 (delta 26), reused 29 (delta 2), pack-reused 0 (from 0)        
+2025-03-19T14:27:35.9482635Z From https://github.com/dbt-labs/dbt-jsonschema
+2025-03-19T14:27:35.9508967Z  * [new ref]         e503d6bf445720f49ef460a156cffd3ee0edef8a -> pull/189/merge
+2025-03-19T14:27:35.9511929Z ##[endgroup]
+2025-03-19T14:27:35.9513161Z ##[group]Determining the checkout info
+2025-03-19T14:27:35.9514561Z ##[endgroup]
+2025-03-19T14:27:35.9515605Z ##[group]Checking out the ref
+2025-03-19T14:27:35.9516902Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/189/merge
+2025-03-19T14:27:35.9632901Z Note: switching to 'refs/remotes/pull/189/merge'.
+2025-03-19T14:27:35.9633795Z 
+2025-03-19T14:27:35.9634505Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-19T14:27:35.9636393Z changes and commit them, and you can discard any commits you make in this
+2025-03-19T14:27:35.9637912Z state without impacting any branches by switching back to a branch.
+2025-03-19T14:27:35.9638524Z 
+2025-03-19T14:27:35.9638893Z If you want to create a new branch to retain commits you create, you may
+2025-03-19T14:27:35.9639750Z do so (now or later) by using -c with the switch command. Example:
+2025-03-19T14:27:35.9640251Z 
+2025-03-19T14:27:35.9640625Z   git switch -c <new-branch-name>
+2025-03-19T14:27:35.9641251Z 
+2025-03-19T14:27:35.9641604Z Or undo this operation with:
+2025-03-19T14:27:35.9642026Z 
+2025-03-19T14:27:35.9642231Z   git switch -
+2025-03-19T14:27:35.9642482Z 
+2025-03-19T14:27:35.9642887Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-19T14:27:35.9643460Z 
+2025-03-19T14:27:35.9644136Z HEAD is now at e503d6b Merge fbde5b855fee094b90f38ea4b5bbced53ce88293 into dddeb8fe93cdcd7d2d408a91fee34961299381ab
+2025-03-19T14:27:35.9646356Z ##[endgroup]
+2025-03-19T14:27:35.9674827Z [command]/usr/bin/git log -1 --format='%H'
+2025-03-19T14:27:35.9696067Z 'e503d6bf445720f49ef460a156cffd3ee0edef8a'
+2025-03-19T14:27:35.9931119Z ##[group]Run actions/setup-python@v4
+2025-03-19T14:27:35.9931757Z with:
+2025-03-19T14:27:35.9932177Z   python-version: 3.x
+2025-03-19T14:27:35.9932650Z   check-latest: false
+2025-03-19T14:27:35.9933293Z   token: ***
+2025-03-19T14:27:35.9933733Z   update-environment: true
+2025-03-19T14:27:35.9934248Z   allow-prereleases: false
+2025-03-19T14:27:35.9934878Z ##[endgroup]
+2025-03-19T14:27:36.1164478Z ##[group]Installed versions
+2025-03-19T14:27:36.1221298Z Successfully set up CPython (3.13.2)
+2025-03-19T14:27:36.1222965Z ##[endgroup]
+2025-03-19T14:27:36.1337729Z ##[group]Run python -m pip install --upgrade pip
+2025-03-19T14:27:36.1338533Z [36;1mpython -m pip install --upgrade pip[0m
+2025-03-19T14:27:36.1339147Z [36;1mpip install jsondiff[0m
+2025-03-19T14:27:36.1392372Z shell: /usr/bin/bash -e {0}
+2025-03-19T14:27:36.1392922Z env:
+2025-03-19T14:27:36.1393459Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-19T14:27:36.1394297Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-19T14:27:36.1395493Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-19T14:27:36.1396281Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-19T14:27:36.1397040Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-19T14:27:36.1397797Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-19T14:27:36.1398443Z ##[endgroup]
+2025-03-19T14:27:37.1079571Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages (25.0.1)
+2025-03-19T14:27:38.1866040Z Collecting jsondiff
+2025-03-19T14:27:38.2316008Z   Downloading jsondiff-2.2.1-py3-none-any.whl.metadata (5.2 kB)
+2025-03-19T14:27:38.2722927Z Collecting pyyaml (from jsondiff)
+2025-03-19T14:27:38.2755187Z   Downloading PyYAML-6.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+2025-03-19T14:27:38.2844804Z Downloading jsondiff-2.2.1-py3-none-any.whl (13 kB)
+2025-03-19T14:27:38.2908369Z Downloading PyYAML-6.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (759 kB)
+2025-03-19T14:27:38.3173382Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 759.5/759.5 kB 57.3 MB/s eta 0:00:00
+2025-03-19T14:27:38.3282480Z Installing collected packages: pyyaml, jsondiff
+2025-03-19T14:27:38.3997946Z Successfully installed jsondiff-2.2.1 pyyaml-6.0.2
+2025-03-19T14:27:38.4746368Z ##[group]Run python tests/validate_plusless_properties.py
+2025-03-19T14:27:38.4746845Z [36;1mpython tests/validate_plusless_properties.py[0m
+2025-03-19T14:27:38.4796438Z shell: /usr/bin/bash -e {0}
+2025-03-19T14:27:38.4796691Z env:
+2025-03-19T14:27:38.4796960Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-19T14:27:38.4797395Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-19T14:27:38.4797828Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-19T14:27:38.4798189Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-19T14:27:38.4798548Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-19T14:27:38.4798926Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-19T14:27:38.4799230Z ##[endgroup]
+2025-03-19T14:27:38.5248908Z Traceback (most recent call last):
+2025-03-19T14:27:38.5285172Z   File "/home/runner/work/dbt-jsonschema/dbt-jsonschema/tests/validate_plusless_properties.py", line 34, in <module>
+2025-03-19T14:27:38.5286425Z     check_equivalency(key, node_type, node_properties)
+2025-03-19T14:27:38.5287051Z     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-03-19T14:27:38.5288167Z   File "/home/runner/work/dbt-jsonschema/dbt-jsonschema/tests/validate_plusless_properties.py", line 19, in check_equivalency
+2025-03-19T14:27:38.5289426Z     raise Exception(f"{key} doesn't have an equivalent {counterpart_key} defined")
+2025-03-19T14:27:38.5290130Z Exception: +pre-hook doesn't have an equivalent pre-hook defined
+2025-03-19T14:27:38.5345220Z ##[error]Process completed with exit code 1.
+2025-03-19T14:27:38.5442044Z Post job cleanup.
+2025-03-19T14:27:38.6161194Z [command]/usr/bin/git version
+2025-03-19T14:27:38.6195638Z git version 2.48.1
+2025-03-19T14:27:38.6239115Z Temporarily overriding HOME='/home/runner/work/_temp/3aa5d4e0-68f6-4076-8f0f-edfedd9f6897' before making global git config changes
+2025-03-19T14:27:38.6240517Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-19T14:27:38.6244286Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/dbt-jsonschema/dbt-jsonschema
+2025-03-19T14:27:38.6276309Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-19T14:27:38.6305528Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-19T14:27:38.6533805Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-19T14:27:38.6553890Z http.https://github.com/.extraheader
+2025-03-19T14:27:38.6565895Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-19T14:27:38.6594306Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-19T14:27:38.6917426Z Cleaning up orphan processes

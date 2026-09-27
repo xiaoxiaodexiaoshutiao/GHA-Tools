@@ -1,0 +1,372 @@
+﻿2025-03-15T18:37:53.3283909Z Current runner version: '2.322.0'
+2025-03-15T18:37:53.3305938Z ##[group]Operating System
+2025-03-15T18:37:53.3306658Z Microsoft Windows Server 2022
+2025-03-15T18:37:53.3307177Z 10.0.20348
+2025-03-15T18:37:53.3307593Z Datacenter
+2025-03-15T18:37:53.3307989Z ##[endgroup]
+2025-03-15T18:37:53.3308488Z ##[group]Runner Image
+2025-03-15T18:37:53.3308975Z Image: windows-2022
+2025-03-15T18:37:53.3309487Z Version: 20250309.1.0
+2025-03-15T18:37:53.3310495Z Included Software: https://github.com/actions/runner-images/blob/win22/20250309.1/images/windows/Windows2022-Readme.md
+2025-03-15T18:37:53.3311804Z Image Release: https://github.com/actions/runner-images/releases/tag/win22%2F20250309.1
+2025-03-15T18:37:53.3312641Z ##[endgroup]
+2025-03-15T18:37:53.3313121Z ##[group]Runner Image Provisioner
+2025-03-15T18:37:53.3313676Z 2.0.422.1
+2025-03-15T18:37:53.3314072Z ##[endgroup]
+2025-03-15T18:37:53.3316167Z ##[group]GITHUB_TOKEN Permissions
+2025-03-15T18:37:53.3317891Z Actions: read
+2025-03-15T18:37:53.3318732Z Attestations: read
+2025-03-15T18:37:53.3319241Z Checks: read
+2025-03-15T18:37:53.3319670Z Contents: read
+2025-03-15T18:37:53.3320077Z Deployments: read
+2025-03-15T18:37:53.3320542Z Discussions: read
+2025-03-15T18:37:53.3320944Z Issues: read
+2025-03-15T18:37:53.3321370Z Metadata: read
+2025-03-15T18:37:53.3321765Z Packages: read
+2025-03-15T18:37:53.3322184Z Pages: read
+2025-03-15T18:37:53.3322599Z PullRequests: read
+2025-03-15T18:37:53.3323060Z RepositoryProjects: read
+2025-03-15T18:37:53.3323528Z SecurityEvents: read
+2025-03-15T18:37:53.3324000Z Statuses: read
+2025-03-15T18:37:53.3324430Z ##[endgroup]
+2025-03-15T18:37:53.3326361Z Secret source: None
+2025-03-15T18:37:53.3327014Z Prepare workflow directory
+2025-03-15T18:37:53.3688228Z Prepare all required actions
+2025-03-15T18:37:53.3723977Z Getting action download info
+2025-03-15T18:37:53.7554272Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-15T18:37:53.9536295Z Download action repository 'actions/setup-dotnet@v4' (SHA:3951f0dfe7a07e2313ec93c75700083e2005cbab)
+2025-03-15T18:37:55.0663556Z Download action repository 'actions/upload-artifact@v4' (SHA:4cec3d8aa04e39d1a68397de0c4cd6fb9dce8ec1)
+2025-03-15T18:37:55.6055795Z Complete job name: Build artifacts / Build and Test
+2025-03-15T18:37:55.7192995Z ##[group]Run actions/checkout@v4
+2025-03-15T18:37:55.7194473Z with:
+2025-03-15T18:37:55.7195460Z   repository: MaterialDesignInXAML/MaterialDesignInXamlToolkit
+2025-03-15T18:37:55.7196918Z   token: ***
+2025-03-15T18:37:55.7197610Z   ssh-strict: true
+2025-03-15T18:37:55.7198321Z   ssh-user: git
+2025-03-15T18:37:55.7199036Z   persist-credentials: true
+2025-03-15T18:37:55.7199845Z   clean: true
+2025-03-15T18:37:55.7200579Z   sparse-checkout-cone-mode: true
+2025-03-15T18:37:55.7201456Z   fetch-depth: 1
+2025-03-15T18:37:55.7202129Z   fetch-tags: false
+2025-03-15T18:37:55.7202904Z   show-progress: true
+2025-03-15T18:37:55.7203628Z   lfs: false
+2025-03-15T18:37:55.7204303Z   submodules: false
+2025-03-15T18:37:55.7205093Z   set-safe-directory: true
+2025-03-15T18:37:55.7206068Z env:
+2025-03-15T18:37:55.7206792Z   solution: MaterialDesignToolkit.Full.sln
+2025-03-15T18:37:55.7207744Z ##[endgroup]
+2025-03-15T18:37:56.3790330Z Syncing repository: MaterialDesignInXAML/MaterialDesignInXamlToolkit
+2025-03-15T18:37:56.3988494Z ##[group]Getting Git version info
+2025-03-15T18:37:56.3989695Z Working directory is 'D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit'
+2025-03-15T18:37:56.6686193Z [command]"C:\Program Files\Git\bin\git.exe" version
+2025-03-15T18:37:56.7399917Z git version 2.48.1.windows.1
+2025-03-15T18:37:56.7728063Z ##[endgroup]
+2025-03-15T18:37:56.7753261Z Temporarily overriding HOME='D:\a\_temp\f97391a9-0149-4356-8ec8-1aa477229a1f' before making global git config changes
+2025-03-15T18:37:56.7754385Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-15T18:37:56.7765670Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit
+2025-03-15T18:37:56.8385745Z Deleting the contents of 'D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit'
+2025-03-15T18:37:56.8390383Z ##[group]Initializing the repository
+2025-03-15T18:37:56.8400120Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit
+2025-03-15T18:37:56.9335199Z Initialized empty Git repository in D:/a/MaterialDesignInXamlToolkit/MaterialDesignInXamlToolkit/.git/
+2025-03-15T18:37:56.9376660Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit
+2025-03-15T18:37:56.9858827Z ##[endgroup]
+2025-03-15T18:37:56.9859393Z ##[group]Disabling automatic garbage collection
+2025-03-15T18:37:56.9874503Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2025-03-15T18:37:57.0139821Z ##[endgroup]
+2025-03-15T18:37:57.0140708Z ##[group]Setting up auth
+2025-03-15T18:37:57.0154804Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2025-03-15T18:37:57.0391072Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2025-03-15T18:37:58.7101363Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-15T18:37:58.7324584Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2025-03-15T18:37:59.1417607Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2025-03-15T18:37:59.1642798Z ##[endgroup]
+2025-03-15T18:37:59.1643927Z ##[group]Fetching the repository
+2025-03-15T18:37:59.1657889Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +6e4d5589b2253eabdde4cd112cc8826ded65019a:refs/remotes/pull/3817/merge
+2025-03-15T18:38:01.4314669Z From https://github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit
+2025-03-15T18:38:01.4315732Z  * [new ref]         6e4d5589b2253eabdde4cd112cc8826ded65019a -> pull/3817/merge
+2025-03-15T18:38:01.5033940Z ##[endgroup]
+2025-03-15T18:38:01.5034662Z ##[group]Determining the checkout info
+2025-03-15T18:38:01.5036916Z ##[endgroup]
+2025-03-15T18:38:01.5047982Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2025-03-15T18:38:01.5678759Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2025-03-15T18:38:01.5906895Z ##[group]Checking out the ref
+2025-03-15T18:38:01.5907896Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force refs/remotes/pull/3817/merge
+2025-03-15T18:38:01.9704488Z Note: switching to 'refs/remotes/pull/3817/merge'.
+2025-03-15T18:38:01.9704957Z 
+2025-03-15T18:38:01.9705311Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-15T18:38:01.9706138Z changes and commit them, and you can discard any commits you make in this
+2025-03-15T18:38:01.9706898Z state without impacting any branches by switching back to a branch.
+2025-03-15T18:38:01.9707326Z 
+2025-03-15T18:38:01.9707615Z If you want to create a new branch to retain commits you create, you may
+2025-03-15T18:38:01.9708308Z do so (now or later) by using -c with the switch command. Example:
+2025-03-15T18:38:01.9708710Z 
+2025-03-15T18:38:01.9708885Z   git switch -c <new-branch-name>
+2025-03-15T18:38:01.9709172Z 
+2025-03-15T18:38:01.9709311Z Or undo this operation with:
+2025-03-15T18:38:01.9709539Z 
+2025-03-15T18:38:01.9709719Z   git switch -
+2025-03-15T18:38:01.9709949Z 
+2025-03-15T18:38:01.9710295Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-15T18:38:01.9711816Z 
+2025-03-15T18:38:01.9712338Z HEAD is now at 6e4d558 Merge dee53015e4950922a44ecad198a2d560b9c14da9 into fb1f11f2a796cd7fc40cd93cf61963839872f82e
+2025-03-15T18:38:01.9749914Z ##[endgroup]
+2025-03-15T18:38:02.0031180Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2025-03-15T18:38:02.0224976Z 6e4d5589b2253eabdde4cd112cc8826ded65019a
+2025-03-15T18:38:02.0630527Z ##[group]Run actions/setup-dotnet@v4
+2025-03-15T18:38:02.0630840Z with:
+2025-03-15T18:38:02.0631033Z   dotnet-version: 6.x
+8.x
+
+2025-03-15T18:38:02.0631232Z   cache: false
+2025-03-15T18:38:02.0631379Z env:
+2025-03-15T18:38:02.0631544Z   solution: MaterialDesignToolkit.Full.sln
+2025-03-15T18:38:02.0631787Z ##[endgroup]
+2025-03-15T18:38:03.0602452Z [command]"C:\Program Files\PowerShell\7\pwsh.exe" -NoLogo -Sta -NoProfile -NonInteractive -ExecutionPolicy Unrestricted -Command & 'D:\a\_actions\actions\setup-dotnet\v4\externals\install-dotnet.ps1' -SkipNonVersionedFiles -Runtime dotnet -Channel LTS
+2025-03-15T18:38:09.6926382Z dotnet-install: Downloaded file https://builds.dotnet.microsoft.com/dotnet/Runtime/8.0.14/dotnet-runtime-8.0.14-win-x64.zip size is 33296569 bytes.
+2025-03-15T18:38:09.6944769Z dotnet-install: Either downloaded or local package size can not be measured. One of them may be corrupted.
+2025-03-15T18:38:09.6977216Z dotnet-install: Extracting the archive.
+2025-03-15T18:38:11.2112339Z dotnet-install: Note that the script does not ensure your Windows version is supported during the installation.
+2025-03-15T18:38:11.2118460Z dotnet-install: To check the list of supported versions, go to https://learn.microsoft.com/dotnet/core/install/windows#supported-versions
+2025-03-15T18:38:11.2125292Z dotnet-install: Installed version is 8.0.14
+2025-03-15T18:38:11.2132680Z dotnet-install: Installation finished
+2025-03-15T18:38:11.3567866Z [command]"C:\Program Files\PowerShell\7\pwsh.exe" -NoLogo -Sta -NoProfile -NonInteractive -ExecutionPolicy Unrestricted -Command & 'D:\a\_actions\actions\setup-dotnet\v4\externals\install-dotnet.ps1' -SkipNonVersionedFiles -Channel 6.0
+2025-03-15T18:38:12.3180942Z dotnet-install: .NET Core SDK with version '6.0.428' is already installed.
+2025-03-15T18:38:12.5223516Z [command]"C:\Program Files\PowerShell\7\pwsh.exe" -NoLogo -Sta -NoProfile -NonInteractive -ExecutionPolicy Unrestricted -Command & 'D:\a\_actions\actions\setup-dotnet\v4\externals\install-dotnet.ps1' -SkipNonVersionedFiles -Runtime dotnet -Channel LTS
+2025-03-15T18:38:13.4432597Z dotnet-install: .NET Core Runtime with version '8.0.14' is already installed.
+2025-03-15T18:38:13.5752420Z [command]"C:\Program Files\PowerShell\7\pwsh.exe" -NoLogo -Sta -NoProfile -NonInteractive -ExecutionPolicy Unrestricted -Command & 'D:\a\_actions\actions\setup-dotnet\v4\externals\install-dotnet.ps1' -SkipNonVersionedFiles -Channel 8.0
+2025-03-15T18:38:17.7541542Z dotnet-install: Downloaded file https://builds.dotnet.microsoft.com/dotnet/Sdk/8.0.407/dotnet-sdk-8.0.407-win-x64.zip size is 281518764 bytes.
+2025-03-15T18:38:17.7568782Z dotnet-install: Either downloaded or local package size can not be measured. One of them may be corrupted.
+2025-03-15T18:38:17.7623514Z dotnet-install: Extracting the archive.
+2025-03-15T18:38:55.6047536Z dotnet-install: Note that the script does not ensure your Windows version is supported during the installation.
+2025-03-15T18:38:55.6051011Z dotnet-install: To check the list of supported versions, go to https://learn.microsoft.com/dotnet/core/install/windows#supported-versions
+2025-03-15T18:38:55.6055913Z dotnet-install: Installed version is 8.0.407
+2025-03-15T18:38:55.6061645Z dotnet-install: Installation finished
+2025-03-15T18:38:55.6734658Z ##[group]Run dotnet restore MaterialDesignToolkit.Full.sln
+2025-03-15T18:38:55.6735265Z [36;1mdotnet restore MaterialDesignToolkit.Full.sln[0m
+2025-03-15T18:38:55.6771569Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-03-15T18:38:55.6771890Z env:
+2025-03-15T18:38:55.6772270Z   solution: MaterialDesignToolkit.Full.sln
+2025-03-15T18:38:55.6772548Z   DOTNET_ROOT: C:\Program Files\dotnet
+2025-03-15T18:38:55.6772756Z ##[endgroup]
+2025-03-15T18:39:01.2274582Z   Determining projects to restore...
+2025-03-15T18:39:06.0668687Z   Restored D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MaterialDesignThemes.Wpf\MaterialDesignThemes.Wpf.csproj (in 2.68 sec).
+2025-03-15T18:39:08.3080950Z   Restored D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MaterialDesignColors.Wpf\MaterialDesignColors.Wpf.csproj (in 4 ms).
+2025-03-15T18:39:09.1056660Z   Restored D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MaterialDesign3.Demo.Wpf\MaterialDesign3Demo.csproj (in 5.76 sec).
+2025-03-15T18:39:09.1058417Z   Restored D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MainDemo.Wpf\MaterialDesignDemo.csproj (in 751 ms).
+2025-03-15T18:39:40.5357046Z   Restored D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MahMaterialDragablzMashUp\MahAppsDragablzDemo.csproj (in 31.39 sec).
+2025-03-15T18:39:41.4642616Z   Restored D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\tests\MaterialDesignColors.Wpf.Tests\MaterialDesignColors.Wpf.Tests.csproj (in 37.95 sec).
+2025-03-15T18:39:41.4644911Z   Restored D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\tests\MaterialDesignThemes.Wpf.Tests\MaterialDesignThemes.Wpf.Tests.csproj (in 32.14 sec).
+2025-03-15T18:39:41.5376871Z   Restored D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MaterialDesignThemes.MahApps\MaterialDesignThemes.MahApps.csproj (in 5 ms).
+2025-03-15T18:39:41.5382958Z   Restored D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MaterialDesignDemo.Shared\MaterialDesignDemo.Shared.csproj (in 4 ms).
+2025-03-15T18:39:41.5464371Z   Restored D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\tests\MaterialDesignThemes.UITests\MaterialDesignThemes.UITests.csproj (in 38.25 sec).
+2025-03-15T18:39:56.5650619Z   Restored D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MaterialDesignToolkit.ResourceGeneration\MaterialDesignToolkit.ResourceGeneration.csproj (in 16.03 sec).
+2025-03-15T18:39:56.7125012Z ##[group]Run dotnet build MaterialDesignToolkit.Full.sln --configuration Release --no-restore -p:Platform="Any CPU" -p:TreatWarningsAsErrors=True
+2025-03-15T18:39:56.7126049Z [36;1mdotnet build MaterialDesignToolkit.Full.sln --configuration Release --no-restore -p:Platform="Any CPU" -p:TreatWarningsAsErrors=True[0m
+2025-03-15T18:39:56.7158465Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-03-15T18:39:56.7158766Z env:
+2025-03-15T18:39:56.7158944Z   solution: MaterialDesignToolkit.Full.sln
+2025-03-15T18:39:56.7159201Z   DOTNET_ROOT: C:\Program Files\dotnet
+2025-03-15T18:39:56.7159411Z   MDIXVersion: 0.0.0
+2025-03-15T18:39:56.7159598Z   MDIXColorsVersion: 0.0.0
+2025-03-15T18:39:56.7159793Z   MDIXMahAppsVersion: 0.0.0
+2025-03-15T18:39:56.7159998Z ##[endgroup]
+2025-03-15T18:40:03.2085904Z   MaterialDesignColors.Wpf -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MaterialDesignColors.Wpf\bin\Release\net462\MaterialDesignColors.dll
+2025-03-15T18:40:05.9557542Z   MaterialDesignColors.Wpf -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MaterialDesignColors.Wpf\bin\Release\net8.0-windows\MaterialDesignColors.dll
+2025-03-15T18:40:06.1763124Z   MaterialDesignToolkit.ResourceGeneration -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MaterialDesignToolkit.ResourceGeneration\bin\Release\net8.0-windows\MaterialDesignToolkit.ResourceGeneration.dll
+2025-03-15T18:40:11.1600216Z   MaterialDesignColors.Wpf -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MaterialDesignColors.Wpf\bin\Release\net6.0-windows\MaterialDesignColors.dll
+2025-03-15T18:40:19.5328010Z   MaterialDesignColors.Wpf.Tests -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\tests\MaterialDesignColors.Wpf.Tests\bin\Release\net472\MaterialDesignColors.Wpf.Tests.dll
+2025-03-15T18:40:19.5334940Z   MaterialDesignColors.Wpf.Tests -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\tests\MaterialDesignColors.Wpf.Tests\bin\Release\net6.0-windows\MaterialDesignColors.Wpf.Tests.dll
+2025-03-15T18:40:28.2540617Z   MaterialDesignThemes.Wpf -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MaterialDesignThemes.Wpf\bin\Release\net8.0-windows\MaterialDesignThemes.Wpf.dll
+2025-03-15T18:40:29.7682922Z   MaterialDesignThemes.MahApps -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MaterialDesignThemes.MahApps\bin\Release\net8.0-windows\MaterialDesignThemes.MahApps.dll
+2025-03-15T18:40:29.9173035Z   MaterialDesignThemes.Wpf -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MaterialDesignThemes.Wpf\bin\Release\net6.0-windows\MaterialDesignThemes.Wpf.dll
+2025-03-15T18:40:30.1232386Z   MaterialDesignColors.Wpf.Tests -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\tests\MaterialDesignColors.Wpf.Tests\bin\Release\net8.0-windows\MaterialDesignColors.Wpf.Tests.dll
+2025-03-15T18:40:30.1791463Z   MaterialDesignThemes.Wpf.Tests -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\tests\MaterialDesignThemes.Wpf.Tests\bin\Release\net8.0-windows\MaterialDesignThemes.Wpf.Tests.dll
+2025-03-15T18:40:30.4242639Z   MaterialDesignDemo.Shared -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MaterialDesignDemo.Shared\bin\Release\net8.0-windows\MaterialDesignDemo.Shared.dll
+2025-03-15T18:40:30.7860058Z   MahAppsDragablzDemo -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MahMaterialDragablzMashUp\bin\Release\net8.0-windows\MahAppsDragablzDemo.dll
+2025-03-15T18:40:33.7443326Z   MaterialDesign3Demo -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MaterialDesign3.Demo.Wpf\bin\Release\net8.0-windows\MaterialDesign3Demo.dll
+2025-03-15T18:40:34.4612742Z   MaterialDesignDemo.Shared -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MaterialDesignDemo.Shared\bin\Release\net6.0-windows\MaterialDesignDemo.Shared.dll
+2025-03-15T18:40:34.6821030Z   MaterialDesignThemes.Wpf -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MaterialDesignThemes.Wpf\bin\Release\net462\MaterialDesignThemes.Wpf.dll
+2025-03-15T18:40:38.0103948Z   MaterialDesignDemo -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MainDemo.Wpf\bin\Release\net8.0-windows\MaterialDesignDemo.dll
+2025-03-15T18:40:39.1744541Z   MaterialDesignDemo -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MainDemo.Wpf\bin\Release\net6.0-windows\MaterialDesignDemo.dll
+2025-03-15T18:40:39.2271148Z   MaterialDesignThemes.MahApps -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MaterialDesignThemes.MahApps\bin\Release\net6.0-windows\MaterialDesignThemes.MahApps.dll
+2025-03-15T18:40:39.2300503Z   MaterialDesignThemes.Wpf.Tests -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\tests\MaterialDesignThemes.Wpf.Tests\bin\Release\net6.0-windows\MaterialDesignThemes.Wpf.Tests.dll
+2025-03-15T18:40:40.0010793Z   MaterialDesign3Demo -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MaterialDesign3.Demo.Wpf\bin\Release\net6.0-windows\MaterialDesign3Demo.dll
+2025-03-15T18:40:40.5709138Z   MaterialDesignDemo.Shared -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MaterialDesignDemo.Shared\bin\Release\net472\MaterialDesignDemo.Shared.dll
+2025-03-15T18:40:40.5746484Z   MaterialDesignThemes.Wpf.Tests -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\tests\MaterialDesignThemes.Wpf.Tests\bin\Release\net472\MaterialDesignThemes.Wpf.Tests.dll
+2025-03-15T18:40:41.3377437Z   MaterialDesignThemes.MahApps -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MaterialDesignThemes.MahApps\bin\Release\net462\MaterialDesignThemes.MahApps.dll
+2025-03-15T18:40:43.2100809Z   MaterialDesignDemo -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MainDemo.Wpf\bin\Release\net472\MaterialDesignDemo.exe
+2025-03-15T18:40:43.2431518Z   MaterialDesign3Demo -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MaterialDesign3.Demo.Wpf\bin\Release\net472\MaterialDesign3Demo.exe
+2025-03-15T18:40:43.2547557Z   MahAppsDragablzDemo -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MahMaterialDragablzMashUp\bin\Release\net6.0-windows\MahAppsDragablzDemo.dll
+2025-03-15T18:40:43.4393816Z   MahAppsDragablzDemo -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\src\MahMaterialDragablzMashUp\bin\Release\net472\MahAppsDragablzDemo.exe
+2025-03-15T18:40:46.6833323Z   MaterialDesignThemes.UITests -> D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\tests\MaterialDesignThemes.UITests\bin\Release\net8.0-windows\MaterialDesignThemes.UITests.dll
+2025-03-15T18:40:46.7010859Z 
+2025-03-15T18:40:46.7011826Z Build succeeded.
+2025-03-15T18:40:46.7012716Z     0 Warning(s)
+2025-03-15T18:40:46.7013512Z     0 Error(s)
+2025-03-15T18:40:46.7014225Z 
+2025-03-15T18:40:46.7015446Z Time Elapsed 00:00:49.59
+2025-03-15T18:40:46.8888866Z ##[group]Run dotnet test MaterialDesignToolkit.Full.sln --configuration Release --no-build --blame-crash --logger GitHubActions
+2025-03-15T18:40:46.8889761Z [36;1mdotnet test MaterialDesignToolkit.Full.sln --configuration Release --no-build --blame-crash --logger GitHubActions[0m
+2025-03-15T18:40:46.8920720Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-03-15T18:40:46.8921034Z env:
+2025-03-15T18:40:46.8921214Z   solution: MaterialDesignToolkit.Full.sln
+2025-03-15T18:40:46.8921469Z   DOTNET_ROOT: C:\Program Files\dotnet
+2025-03-15T18:40:46.8921678Z ##[endgroup]
+2025-03-15T18:40:48.8591693Z Test run for D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\tests\MaterialDesignColors.Wpf.Tests\bin\Release\net472\MaterialDesignColors.Wpf.Tests.dll (.NETFramework,Version=v4.7.2)
+2025-03-15T18:40:48.8912745Z Test run for D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\tests\MaterialDesignThemes.UITests\bin\Release\net8.0-windows\MaterialDesignThemes.UITests.dll (.NETCoreApp,Version=v8.0)
+2025-03-15T18:40:48.9399806Z VSTest version 17.11.1 (x64)
+2025-03-15T18:40:48.9508164Z 
+2025-03-15T18:40:48.9994173Z VSTest version 17.11.1 (x64)
+2025-03-15T18:40:49.0804228Z 
+2025-03-15T18:40:49.0823508Z Starting test execution, please wait...
+2025-03-15T18:40:49.1251561Z Starting test execution, please wait...
+2025-03-15T18:40:49.1372515Z A total of 1 test files matched the specified pattern.
+2025-03-15T18:40:49.1659699Z A total of 1 test files matched the specified pattern.
+2025-03-15T18:40:49.4723066Z Test run for D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\tests\MaterialDesignThemes.Wpf.Tests\bin\Release\net472\MaterialDesignThemes.Wpf.Tests.dll (.NETFramework,Version=v4.7.2)
+2025-03-15T18:40:49.5172371Z VSTest version 17.11.1 (x64)
+2025-03-15T18:40:49.5337555Z 
+2025-03-15T18:40:49.5989049Z Starting test execution, please wait...
+2025-03-15T18:40:49.6035583Z A total of 1 test files matched the specified pattern.
+2025-03-15T18:40:49.6046497Z Blame: Attaching crash dump utility to process testhost.net472 (4176).
+2025-03-15T18:40:49.9100558Z Blame: Attaching crash dump utility to process testhost (4316).
+2025-03-15T18:40:51.2194699Z Blame: Attaching crash dump utility to process testhost.net472 (1532).
+2025-03-15T18:40:56.7024256Z [xUnit.net 00:00:06.73]     MaterialDesignThemes.UITests.WPF.UpDownControls.NumericUpDownTests.NumericUpDown_ValueSetGreaterThanMaximum_CoercesToMaximum [SKIP]
+2025-03-15T18:40:58.1945424Z   Skipped MaterialDesignThemes.UITests.WPF.UpDownControls.NumericUpDownTests.NumericUpDown_ValueSetGreaterThanMaximum_CoercesToMaximum [1 ms]
+2025-03-15T18:41:00.8511320Z Data collector 'Blame' message: procdump64.exe could not be found, please make sure that the executable is available on PATH. Alternatively set PROCDUMP_PATH environment variable to a directory that contains procdump64.exe executable.
+2025-03-15T18:41:00.9063551Z 
+2025-03-15T18:41:00.9118944Z Passed!  - Failed:     0, Passed:     6, Skipped:     0, Total:     6, Duration: 3 s - MaterialDesignColors.Wpf.Tests.dll (net472)
+2025-03-15T18:41:01.0823692Z Test run for D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\tests\MaterialDesignColors.Wpf.Tests\bin\Release\net6.0-windows\MaterialDesignColors.Wpf.Tests.dll (.NETCoreApp,Version=v6.0)
+2025-03-15T18:41:01.1593277Z VSTest version 17.11.1 (x64)
+2025-03-15T18:41:01.1628440Z 
+2025-03-15T18:41:01.2720027Z Starting test execution, please wait...
+2025-03-15T18:41:01.3110909Z A total of 1 test files matched the specified pattern.
+2025-03-15T18:41:01.6279612Z Blame: Attaching crash dump utility to process testhost (6412).
+2025-03-15T18:41:21.3231971Z [xUnit.net 00:00:31.34]     MaterialDesignThemes.UITests.WPF.Theme.ThemeTests.BundledTheme_UsesSameColorsAsXamlResources [SKIP]
+2025-03-15T18:41:22.0163616Z 
+2025-03-15T18:41:22.0223431Z Passed!  - Failed:     0, Passed:     6, Skipped:     0, Total:     6, Duration: 3 s - MaterialDesignColors.Wpf.Tests.dll (net6.0)
+2025-03-15T18:41:22.1149869Z Test run for D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\tests\MaterialDesignColors.Wpf.Tests\bin\Release\net8.0-windows\MaterialDesignColors.Wpf.Tests.dll (.NETCoreApp,Version=v8.0)
+2025-03-15T18:41:22.1969469Z VSTest version 17.11.1 (x64)
+2025-03-15T18:41:22.2008878Z 
+2025-03-15T18:41:22.3869654Z Starting test execution, please wait...
+2025-03-15T18:41:22.5980303Z A total of 1 test files matched the specified pattern.
+2025-03-15T18:41:23.8037188Z   Skipped MaterialDesignThemes.UITests.WPF.Theme.ThemeTests.BundledTheme_UsesSameColorsAsXamlResources [1 ms]
+2025-03-15T18:41:23.8530676Z Blame: Attaching crash dump utility to process testhost (7932).
+2025-03-15T18:41:23.9252151Z 
+2025-03-15T18:41:23.9414015Z Passed!  - Failed:     0, Passed:     6, Skipped:     0, Total:     6, Duration: 155 ms - MaterialDesignColors.Wpf.Tests.dll (net8.0)
+2025-03-15T18:41:40.2392679Z Data collector 'Blame' message: procdump64.exe could not be found, please make sure that the executable is available on PATH. Alternatively set PROCDUMP_PATH environment variable to a directory that contains procdump64.exe executable.
+2025-03-15T18:41:40.2780832Z 
+2025-03-15T18:41:40.2824319Z Passed!  - Failed:     0, Passed:   372, Skipped:     0, Total:   372, Duration: 24 s - MaterialDesignThemes.Wpf.Tests.dll (net472)
+2025-03-15T18:41:40.3193689Z Test run for D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\tests\MaterialDesignThemes.Wpf.Tests\bin\Release\net6.0-windows\MaterialDesignThemes.Wpf.Tests.dll (.NETCoreApp,Version=v6.0)
+2025-03-15T18:41:40.3745731Z VSTest version 17.11.1 (x64)
+2025-03-15T18:41:40.3773581Z 
+2025-03-15T18:41:40.4760687Z Starting test execution, please wait...
+2025-03-15T18:41:40.5108056Z A total of 1 test files matched the specified pattern.
+2025-03-15T18:41:40.8342411Z Blame: Attaching crash dump utility to process testhost (8132).
+2025-03-15T18:42:00.5935606Z 
+2025-03-15T18:42:00.6913829Z Passed!  - Failed:     0, Passed:   372, Skipped:     0, Total:   372, Duration: 18 s - MaterialDesignThemes.Wpf.Tests.dll (net6.0)
+2025-03-15T18:42:00.7513420Z Test run for D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\tests\MaterialDesignThemes.Wpf.Tests\bin\Release\net8.0-windows\MaterialDesignThemes.Wpf.Tests.dll (.NETCoreApp,Version=v8.0)
+2025-03-15T18:42:00.8608961Z VSTest version 17.11.1 (x64)
+2025-03-15T18:42:00.8639204Z 
+2025-03-15T18:42:01.1491821Z Starting test execution, please wait...
+2025-03-15T18:42:01.1823429Z A total of 1 test files matched the specified pattern.
+2025-03-15T18:42:01.4986720Z Blame: Attaching crash dump utility to process testhost (7676).
+2025-03-15T18:42:15.7586819Z 
+2025-03-15T18:42:15.7640286Z Passed!  - Failed:     0, Passed:   372, Skipped:     0, Total:   372, Duration: 13 s - MaterialDesignThemes.Wpf.Tests.dll (net8.0)
+2025-03-15T18:45:52.1121138Z [xUnit.net 00:05:02.14]     MaterialDesignThemes.UITests.WPF.PasswordBoxes.PasswordBoxTests.PasswordBox_WithRevealedPassword_RespectsKeyboardTabNavigation [SKIP]
+2025-03-15T18:45:53.3805206Z   Skipped MaterialDesignThemes.UITests.WPF.PasswordBoxes.PasswordBoxTests.PasswordBox_WithRevealedPassword_RespectsKeyboardTabNavigation [1 ms]
+2025-03-15T18:48:16.6267679Z [xUnit.net 00:07:26.65]     MaterialDesignThemes.UITests.WPF.AutoSuggestBoxes.AutoSuggestBoxTests.AutoSuggestBox_KeysUpAndDown_WrapAround [FAIL]
+2025-03-15T18:48:17.1575891Z 
+2025-03-15T18:48:17.1600968Z ##[error]Assert.Equal() Failure: Values differ
+Expected: 11
+Actual:   3
+2025-03-15T18:48:17.1611283Z 
+2025-03-15T18:48:17.1611888Z   Failed MaterialDesignThemes.UITests.WPF.AutoSuggestBoxes.AutoSuggestBoxTests.AutoSuggestBox_KeysUpAndDown_WrapAround [948 ms]
+2025-03-15T18:48:17.1612552Z   Error Message:
+2025-03-15T18:48:17.1612802Z    Assert.Equal() Failure: Values differ
+2025-03-15T18:48:17.1613054Z Expected: 11
+2025-03-15T18:48:17.1613271Z Actual:   3
+2025-03-15T18:48:17.1613449Z   Stack Trace:
+2025-03-15T18:48:17.1615756Z      at MaterialDesignThemes.UITests.WPF.AutoSuggestBoxes.AutoSuggestBoxTests.AutoSuggestBox_KeysUpAndDown_WrapAround() in D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\tests\MaterialDesignThemes.UITests\WPF\AutoSuggestBoxes\AutoSuggestTextBoxTests.cs:line 195
+2025-03-15T18:48:17.1617845Z    at MaterialDesignThemes.UITests.WPF.AutoSuggestBoxes.AutoSuggestBoxTests.AutoSuggestBox_KeysUpAndDown_WrapAround() in D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\tests\MaterialDesignThemes.UITests\WPF\AutoSuggestBoxes\AutoSuggestTextBoxTests.cs:line 200
+2025-03-15T18:48:17.1619037Z --- End of stack trace from previous location ---
+2025-03-15T18:48:17.1619526Z   Standard Output Messages:
+2025-03-15T18:48:17.1620704Z  Starting XAML Test: D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\tests\MaterialDesignThemes.UITests\bin\Release\net8.0-windows\XAMLTest.exe "4316" --log-file "D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\tests\MaterialDesignThemes.UITests\bin\Release\net8.0-windows\5iir2zxg.xamltest.log"
+2025-03-15T18:48:17.1621932Z  3/15/2025 6:48:14 PM - GetVersion()
+2025-03-15T18:48:17.1622247Z  XAML Test v1.2.2.575, App Version v8.0.1425.11302
+2025-03-15T18:48:17.1622561Z  3/15/2025 6:48:15 PM - IApp.Initialize(...)
+2025-03-15T18:48:17.1622874Z  3/15/2025 6:48:15 PM - IApp.CreateWindow(...)
+2025-03-15T18:48:17.1623184Z  3/15/2025 6:48:15 PM - 3/15/2025 6:48:14 PM - Starting log
+2025-03-15T18:48:17.1623563Z  3/15/2025 6:48:15 PM - 3/15/2025 6:48:15 PM - Starting XAMLTest server
+2025-03-15T18:48:17.1623935Z  3/15/2025 6:48:15 PM - 3/15/2025 6:48:15 PM - Started XAMLTest server
+2025-03-15T18:48:17.1624412Z  3/15/2025 6:48:15 PM - 3/15/2025 6:48:15 PM - Fitting window -38,-36,1044,788 to screen 0,0,1024,728
+2025-03-15T18:48:17.1624910Z  3/15/2025 6:48:15 PM - 3/15/2025 6:48:15 PM - Window's new size and location 0,0,1024,728
+2025-03-15T18:48:17.1625305Z  3/15/2025 6:48:15 PM - 3/15/2025 6:48:15 PM - Activating window
+2025-03-15T18:48:17.1625682Z  3/15/2025 6:48:15 PM - 3/15/2025 6:48:15 PM - Window already active
+2025-03-15T18:48:17.1626021Z  3/15/2025 6:48:15 PM - GetElement(Container.Content)
+2025-03-15T18:48:17.1626355Z  3/15/2025 6:48:15 PM - GetElement(/Popup)
+2025-03-15T18:48:17.1626634Z  3/15/2025 6:48:15 PM - GetElement(/ListBox)
+2025-03-15T18:48:17.1626914Z  3/15/2025 6:48:15 PM - MoveKeyboardFocus()
+2025-03-15T18:48:17.1627206Z  3/15/2025 6:48:15 PM - SendInput({Text:e})
+2025-03-15T18:48:17.1627479Z  3/15/2025 6:48:15 PM - GetProperty(Suggestions)
+2025-03-15T18:48:17.1627805Z  3/15/2025 6:48:15 PM - GetProperty(SelectedIndex)
+2025-03-15T18:48:17.1628091Z  3/15/2025 6:48:15 PM - SendInput({Keys:Up})
+2025-03-15T18:48:17.1628389Z  3/15/2025 6:48:15 PM - GetProperty(SelectedIndex)
+2025-03-15T18:48:17.1628664Z  3/15/2025 6:48:15 PM - GetScreenshot()
+2025-03-15T18:48:17.1628960Z  3/15/2025 6:48:16 PM - IApp.DisposeAsync()
+2025-03-15T18:48:17.1629253Z  3/15/2025 6:48:16 PM - Waiting for process exit
+2025-03-15T18:48:17.1629524Z  3/15/2025 6:48:16 PM - Process Exited? True
+2025-03-15T18:48:17.1630403Z  -- Remote log D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit\tests\MaterialDesignThemes.UITests\bin\Release\net8.0-windows\5iir2zxg.xamltest.log --
+2025-03-15T18:48:17.1631099Z  3/15/2025 6:48:15 PM - Starting XAMLTest server
+2025-03-15T18:48:17.1631437Z  3/15/2025 6:48:15 PM - Started XAMLTest server
+2025-03-15T18:48:17.1631787Z  3/15/2025 6:48:15 PM - Fitting window -38,-36,1044,788 to screen 0,0,1024,728
+2025-03-15T18:48:17.1632204Z  3/15/2025 6:48:15 PM - Window's new size and location 0,0,1024,728
+2025-03-15T18:48:17.1632548Z  3/15/2025 6:48:15 PM - Activating window
+2025-03-15T18:48:17.1632821Z  3/15/2025 6:48:15 PM - Window already active
+2025-03-15T18:48:17.1633155Z  3/15/2025 6:48:15 PM - Getting element with query Container.Content
+2025-03-15T18:48:17.1633470Z  3/15/2025 6:48:15 PM - Got element
+2025-03-15T18:48:17.1633780Z  3/15/2025 6:48:15 PM - Getting element with query /Popup
+2025-03-15T18:48:17.1634073Z  3/15/2025 6:48:15 PM - Got element
+2025-03-15T18:48:17.1634486Z  3/15/2025 6:48:15 PM - Getting element with query /ListBox
+2025-03-15T18:48:17.1634784Z  3/15/2025 6:48:15 PM - Got element
+2025-03-15T18:48:17.1635046Z  3/15/2025 6:48:15 PM - Activating window
+2025-03-15T18:48:17.1635337Z  3/15/2025 6:48:15 PM - Window already active
+2025-03-15T18:48:17.1635601Z  3/15/2025 6:48:15 PM - Activating window
+2025-03-15T18:48:17.1635891Z  3/15/2025 6:48:15 PM - Window already active
+2025-03-15T18:48:17.1636161Z  3/15/2025 6:48:15 PM - Activating window
+2025-03-15T18:48:17.1636462Z  3/15/2025 6:48:15 PM - Window already active
+2025-03-15T18:48:17.1636721Z  3/15/2025 6:48:16 PM - Closing logger
+2025-03-15T18:48:17.1637001Z  -- Remote log end --
+2025-03-15T18:48:17.1637137Z 
+2025-03-15T18:48:17.1637142Z 
+2025-03-15T18:53:45.0903722Z 
+2025-03-15T18:53:45.0945339Z Failed!  - Failed:     1, Passed:   386, Skipped:     3, Total:   390, Duration: 12 m 50 s - MaterialDesignThemes.UITests.dll (net8.0)
+2025-03-15T18:53:45.2836862Z ##[error]Process completed with exit code 1.
+2025-03-15T18:53:45.3035920Z ##[group]Run actions/upload-artifact@v4
+2025-03-15T18:53:45.3036253Z with:
+2025-03-15T18:53:45.3036478Z   name: Screenshots-1782
+2025-03-15T18:53:45.3037093Z   path: D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkittests\MaterialDesignThemes.UITests\bin\Release\net8.0-windows7\Screenshots
+2025-03-15T18:53:45.3037744Z   if-no-files-found: ignore
+2025-03-15T18:53:45.3037993Z   compression-level: 6
+2025-03-15T18:53:45.3038199Z   overwrite: false
+2025-03-15T18:53:45.3038432Z   include-hidden-files: false
+2025-03-15T18:53:45.3038655Z env:
+2025-03-15T18:53:45.3038889Z   solution: MaterialDesignToolkit.Full.sln
+2025-03-15T18:53:45.3039172Z   DOTNET_ROOT: C:\Program Files\dotnet
+2025-03-15T18:53:45.3039437Z ##[endgroup]
+2025-03-15T18:53:45.5898280Z No files were found with the provided path: D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkittests\MaterialDesignThemes.UITests\bin\Release\net8.0-windows7\Screenshots. No artifacts will be uploaded.
+2025-03-15T18:53:45.6149405Z Post job cleanup.
+2025-03-15T18:53:45.8289695Z [command]"C:\Program Files\Git\bin\git.exe" version
+2025-03-15T18:53:45.8592974Z git version 2.48.1.windows.1
+2025-03-15T18:53:45.8683466Z Temporarily overriding HOME='D:\a\_temp\2fa20585-e20d-47fc-8f5a-999540d4fea7' before making global git config changes
+2025-03-15T18:53:45.8684738Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-15T18:53:45.8696384Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\MaterialDesignInXamlToolkit\MaterialDesignInXamlToolkit
+2025-03-15T18:53:45.9020012Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2025-03-15T18:53:45.9288484Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2025-03-15T18:53:46.3468269Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-15T18:53:46.3660246Z http.https://github.com/.extraheader
+2025-03-15T18:53:46.3696709Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
+2025-03-15T18:53:46.3928374Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2025-03-15T18:53:46.8344655Z Cleaning up orphan processes
+2025-03-15T18:53:46.8457777Z Terminate orphan process: pid (5648) (dotnet)
+2025-03-15T18:53:46.8552127Z Terminate orphan process: pid (5264) (dotnet)
+2025-03-15T18:53:46.8653429Z Terminate orphan process: pid (2528) (dotnet)

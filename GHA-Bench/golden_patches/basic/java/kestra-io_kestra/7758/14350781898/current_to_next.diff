@@ -1,0 +1,1968 @@
+diff --git a/.devcontainer/Dockerfile b/.devcontainer/Dockerfile
+index b6b316c9ec2..4d8844d764b 100644
+--- a/.devcontainer/Dockerfile
++++ b/.devcontainer/Dockerfile
+@@ -1,5 +1,6 @@
+ FROM ubuntu:24.04
+ 
++ARG BUILDPLATFORM
+ ARG DEBIAN_FRONTEND=noninteractive
+ 
+ USER root
+@@ -31,9 +32,23 @@ ENV SHELL=/bin/zsh
+ # --------------------------------------
+ # Java
+ # --------------------------------------
+-RUN wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.deb
+-RUN dpkg -i ./jdk-21_linux-x64_bin.deb
+-ENV JAVA_HOME=/usr/java/jdk-21-oracle-x64
++ARG OS_ARCHITECTURE
++
++RUN mkdir -p /usr/java
++RUN echo "Building on platform: $BUILDPLATFORM"
++RUN case "$BUILDPLATFORM" in \
++  "linux/amd64") OS_ARCHITECTURE="linux-x64" ;; \
++  "linux/arm64") OS_ARCHITECTURE="linux-aarch64" ;; \
++  "darwin/amd64") OS_ARCHITECTURE="macos-x64" ;; \
++  "darwin/arm64") OS_ARCHITECTURE="macos-aarch64" ;; \
++  *) echo "Unsupported BUILDPLATFORM: $BUILDPLATFORM" && exit 1 ;; \
++  esac && \
++  wget "https://aka.ms/download-jdk/microsoft-jdk-21.0.6-$OS_ARCHITECTURE.tar.gz" && \
++  mv "microsoft-jdk-21.0.6-$OS_ARCHITECTURE.tar.gz" microsoft-jdk-21.0.6.tar.gz
++RUN tar -xzvf microsoft-jdk-21.0.6.tar.gz && \
++  mv jdk-21.0.6+7 jdk-21 && \
++  mv jdk-21 /usr/java/
++ENV JAVA_HOME=/usr/java/jdk-21
+ ENV PATH="$PATH:$JAVA_HOME/bin"
+ # Will load a custom configuration file for Micronaut
+ ENV MICRONAUT_ENVIRONMENTS=local,override
+diff --git a/.github/CONTRIBUTING.md b/.github/CONTRIBUTING.md
+index be7cf537f14..083c888115f 100644
+--- a/.github/CONTRIBUTING.md
++++ b/.github/CONTRIBUTING.md
+@@ -37,6 +37,10 @@ The following dependencies are required to build Kestra locally:
+ - Docker & Docker Compose
+ - an IDE (Intellij IDEA, Eclipse or VS Code)
+ 
++Thanks to the Kestra community, if using VSCode, you can also start development on either the frontend or backend with a bootstrapped docker container without the need to manually set up the environment.
++
++Check out the [README](../.devcontainer/README.md) for set-up instructions and the associated [Dockerfile](../.devcontainer/Dockerfile) in the respository to get started.
++
+ To start contributing:
+ - [Fork](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo) the repository
+ - Clone the fork on your workstation:
+@@ -46,7 +50,7 @@ git clone git@github.com:{YOUR_USERNAME}/kestra.git
+ cd kestra
+ ```
+ 
+-#### Develop backend
++#### Develop on the backend
+ The backend is made with [Micronaut](https://micronaut.io).
+ 
+ Open the cloned repository in your favorite IDE. In most of decent IDEs, Gradle build will be detected and all dependencies will be downloaded.
+@@ -72,7 +76,7 @@ python3 -m pip install virtualenv
+ ```
+ 
+ 
+-#### Develop frontend
++#### Develop on the frontend
+ The frontend is made with [Vue.js](https://vuejs.org/) and located on the `/ui` folder.
+ 
+ - `npm install`
+diff --git a/.github/workflows/workflow-frontend-test.yml b/.github/workflows/workflow-frontend-test.yml
+index 2d7706d4720..7da78034b1f 100644
+--- a/.github/workflows/workflow-frontend-test.yml
++++ b/.github/workflows/workflow-frontend-test.yml
+@@ -19,11 +19,8 @@ jobs:
+     name: Frontend - Tests
+     runs-on: ubuntu-latest
+     steps:
+-      - id: checkout
+-        name: Checkout - Current ref
++      - name: Checkout
+         uses: actions/checkout@v4
+-        with:
+-          ref: ${{ github.head_ref }}
+ 
+       - name: Npm - install
+         shell: bash
+@@ -44,28 +41,15 @@ jobs:
+           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+         run: npm run build
+ 
+-      - name: Run front-end unit tests
+-        shell: bash
+-        working-directory: ui
+-        run: npm run test:cicd
+-
+       - name: Storybook - Install Playwright
+         shell: bash
+         working-directory: ui
+         run: npx playwright install --with-deps
+ 
+-      - name: Storybook - Build
+-        shell: bash
+-        working-directory: ui
+-        run: npm run build-storybook --quiet
+-
+-      - name: Storybook - Run tests
++      - name: Run front-end unit tests
+         shell: bash
+         working-directory: ui
+-        run: |
+-          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+-            "npx http-server storybook-static --port 6006 --silent" \
+-            "npx wait-on tcp:127.0.0.1:6006 && npm run test:storybook"
++        run: npm run test:cicd
+ 
+       - name: Codecov - Upload coverage reports
+         uses: codecov/codecov-action@v5
+diff --git a/Makefile b/Makefile
+index 93ab2b0e54c..2217a5284ce 100644
+--- a/Makefile
++++ b/Makefile
+@@ -181,8 +181,8 @@ clone-plugins:
+ 	@echo "Using PLUGIN_GIT_DIR: $(PLUGIN_GIT_DIR)"
+ 	@mkdir -p "$(PLUGIN_GIT_DIR)"
+ 	@echo "Fetching repository list from GitHub..."
+-	@REPOS=$(gh repo list kestra-io -L 1000  --json  name | jq -r  .[].name | sort | grep "^plugin-") \
+-	for repo in $$REPOS; do \
++	@REPOS=$$(gh repo list kestra-io -L 1000 --json name | jq -r .[].name | sort | grep "^plugin-"); \
++		for repo in $$REPOS; do \
+ 	    if [[ $$repo == plugin-* ]]; then \
+ 	        if [ -d "$(PLUGIN_GIT_DIR)/$$repo" ]; then \
+ 	            echo "Skipping: $$repo (Already cloned)"; \
+@@ -194,6 +194,22 @@ clone-plugins:
+ 	done
+ 	@echo "Done!"
+ 
++# Pull every plugins in main or master branch
++pull-plugins:
++	@echo "🔍 Pulling repositories in '$(PLUGIN_GIT_DIR)'..."
++	@for repo in "$(PLUGIN_GIT_DIR)"/*; do \
++	    if [ -d "$$repo/.git" ]; then \
++	        branch=$$(git -C "$$repo" rev-parse --abbrev-ref HEAD); \
++	        if [[ "$$branch" == "master" || "$$branch" == "main" ]]; then \
++	            echo "🔄 Pulling: $$(basename "$$repo") (branch: $$branch)"; \
++	            git -C "$$repo" pull; \
++	        else \
++	            echo "❌ Skipping: $$(basename "$$repo") (Not on master or main branch, currently on $$branch)"; \
++	        fi; \
++	    fi; \
++	done
++	@echo "✅ Done pulling!"
++
+ # Update all plugins jar
+ build-plugins:
+ 	@echo "🔍 Scanning repositories in '$(PLUGIN_GIT_DIR)'..."
+diff --git a/build.gradle b/build.gradle
+index 196e5926ac6..3e3797463ac 100644
+--- a/build.gradle
++++ b/build.gradle
+@@ -216,8 +216,8 @@ subprojects {
+             environment 'SECRET_WEBHOOK_KEY', "secretKey".bytes.encodeBase64().toString()
+             environment 'SECRET_NON_B64_SECRET', "some secret value"
+             environment 'SECRET_PASSWORD', "cGFzc3dvcmQ="
+-            environment 'KESTRA_TEST1', "true"
+-            environment 'KESTRA_TEST2', "Pass by env"
++            environment 'ENV_TEST1', "true"
++            environment 'ENV_TEST2', "Pass by env"
+         }
+ 
+         testlogger {
+diff --git a/cli/build.gradle b/cli/build.gradle
+index 68a1a6fcf72..91db677b332 100644
+--- a/cli/build.gradle
++++ b/cli/build.gradle
+@@ -36,5 +36,5 @@ dependencies {
+     implementation project(":webserver")
+ 
+     //test
+-    testImplementation "org.wiremock:wiremock"
++    testImplementation "org.wiremock:wiremock-jetty12"
+ }
+diff --git a/cli/src/main/resources/application.yml b/cli/src/main/resources/application.yml
+index 574948d4775..43af48e0f3d 100644
+--- a/cli/src/main/resources/application.yml
++++ b/cli/src/main/resources/application.yml
+@@ -168,7 +168,7 @@ kestra:
+         values:
+           recoverMissedSchedules: ALL
+   variables:
+-    env-vars-prefix: KESTRA_
++    env-vars-prefix: ENV_
+     cache-enabled: true
+     cache-size: 1000
+ 
+diff --git a/core/src/main/java/io/kestra/core/runners/RunContextCache.java b/core/src/main/java/io/kestra/core/runners/RunContextCache.java
+index 68ed9ced5ca..cb1d735d852 100644
+--- a/core/src/main/java/io/kestra/core/runners/RunContextCache.java
++++ b/core/src/main/java/io/kestra/core/runners/RunContextCache.java
+@@ -30,7 +30,7 @@ public class RunContextCache {
+ 
+     @PostConstruct
+     void init() {
+-        String envPrefix = applicationContext.getProperty("kestra.variables.env-vars-prefix", String.class, "KESTRA_");
++        String envPrefix = applicationContext.getProperty("kestra.variables.env-vars-prefix", String.class, "ENV_");
+         envVars = this.envVariables(envPrefix);
+ 
+         globalVars = applicationContext
+diff --git a/core/src/main/java/io/kestra/plugin/core/dashboard/chart/Bar.java b/core/src/main/java/io/kestra/plugin/core/dashboard/chart/Bar.java
+index c6336385b9e..255179f8c32 100644
+--- a/core/src/main/java/io/kestra/plugin/core/dashboard/chart/Bar.java
++++ b/core/src/main/java/io/kestra/plugin/core/dashboard/chart/Bar.java
+@@ -2,11 +2,14 @@
+ 
+ import com.fasterxml.jackson.annotation.JsonInclude;
+ import com.fasterxml.jackson.annotation.JsonTypeName;
++
++import io.kestra.core.models.annotations.Example;
+ import io.kestra.core.models.annotations.Plugin;
+ import io.kestra.core.models.dashboards.ColumnDescriptor;
+ import io.kestra.core.models.dashboards.DataFilter;
+ import io.kestra.core.models.dashboards.charts.DataChart;
+ import io.kestra.plugin.core.dashboard.chart.bars.BarOption;
++import io.swagger.v3.oas.annotations.media.Schema;
+ import lombok.EqualsAndHashCode;
+ import lombok.Getter;
+ import lombok.NoArgsConstructor;
+@@ -15,9 +18,40 @@
+ @SuperBuilder(toBuilder = true)
+ @Getter
+ @NoArgsConstructor
+-@Plugin
+ @JsonInclude(JsonInclude.Include.NON_DEFAULT)
+ @EqualsAndHashCode
++@Schema(
++    title = "Compare categorical data visually with bar charts."
++    )
++@Plugin(
++    examples = {
++        @Example(
++            title = "Display a bar chart with with Executions per Namespace.",
++            full = true,
++            code = {
++                "charts:\n" +
++                    "- id: executions_per_namespace_bars\n" +
++                    "type: io.kestra.plugin.core.dashboard.chart.Bar\n" +
++                    "chartOptions:\n" +
++                        "displayName: Executions (per namespace)\n" +
++                        "description: Executions count per namespace\n" +
++                        "legend:\n" +
++                            "enabled: true\n" +
++                        "column: namespace\n" +
++                    "data:\n" +
++                        "type: io.kestra.plugin.core.dashboard.data.Executions\n" +
++                        "columns:\n" +
++                            "namespace:\n" +
++                                "field: NAMESPACE\n" +
++                            "state:\n" +
++                                "field: STATE\n" +
++                            "total:\n" +
++                                "displayName: Execution\n" +
++                                "agg: COUNT\n"
++            }
++        )
++    }
++) 
+ public class Bar<F extends Enum<F>, D extends DataFilter<F, ? extends ColumnDescriptor<F>>> extends DataChart<BarOption, D> {
+     @Override
+     public Integer minNumberOfAggregations() {
+diff --git a/core/src/main/java/io/kestra/plugin/core/dashboard/chart/Markdown.java b/core/src/main/java/io/kestra/plugin/core/dashboard/chart/Markdown.java
+index 54031980357..decb3f4bf74 100644
+--- a/core/src/main/java/io/kestra/plugin/core/dashboard/chart/Markdown.java
++++ b/core/src/main/java/io/kestra/plugin/core/dashboard/chart/Markdown.java
+@@ -1,9 +1,12 @@
+ package io.kestra.plugin.core.dashboard.chart;
+ 
+ import com.fasterxml.jackson.annotation.JsonInclude;
++
++import io.kestra.core.models.annotations.Example;
+ import io.kestra.core.models.annotations.Plugin;
+ import io.kestra.core.models.dashboards.ChartOption;
+ import io.kestra.core.models.dashboards.charts.Chart;
++import io.swagger.v3.oas.annotations.media.Schema;
+ import lombok.EqualsAndHashCode;
+ import lombok.Getter;
+ import lombok.NoArgsConstructor;
+@@ -12,9 +15,35 @@
+ @SuperBuilder(toBuilder = true)
+ @Getter
+ @NoArgsConstructor
+-@Plugin
+ @JsonInclude(JsonInclude.Include.NON_DEFAULT)
+ @EqualsAndHashCode
++@Schema(
++    title = "Add context and insights with customizable Markdown text."
++    )
++@Plugin(
++    examples = {
++        @Example(
++            title = "Display custom content in place with Markdown.",
++            full = true,
++            code = {
++                "charts:\n" +
++                    "- id: markdown_insight\n" +
++                    "type: io.kestra.plugin.core.dashboard.chart.Markdown\n" +
++                    "chartOptions:\n" +
++                        "displayName: Chart Insights\n" +
++                        "description: How to interpret this chart\n" +
++                    "content: \"## Execution Success Rate\n" +
++                               "This chart displays the percentage of successful executions over time.\n" +
++                               
++                               "- A **higher success rate** indicates stable and reliable workflows.\n" +
++
++                               "- Sudden **drops** may signal issues in task execution or external dependencies.\n" +
++
++                               "- Use this insight to identify trends and optimize performance.\"\n"
++            }
++        )
++    }
++)
+ public class Markdown extends Chart<ChartOption> {
+     private String content;
+ }
+diff --git a/core/src/main/java/io/kestra/plugin/core/dashboard/chart/Pie.java b/core/src/main/java/io/kestra/plugin/core/dashboard/chart/Pie.java
+index 1be6f7f3e05..fed9069307f 100644
+--- a/core/src/main/java/io/kestra/plugin/core/dashboard/chart/Pie.java
++++ b/core/src/main/java/io/kestra/plugin/core/dashboard/chart/Pie.java
+@@ -1,11 +1,14 @@
+ package io.kestra.plugin.core.dashboard.chart;
+ 
+ import com.fasterxml.jackson.annotation.JsonInclude;
++
++import io.kestra.core.models.annotations.Example;
+ import io.kestra.core.models.annotations.Plugin;
+ import io.kestra.core.models.dashboards.ColumnDescriptor;
+ import io.kestra.core.models.dashboards.DataFilter;
+ import io.kestra.core.models.dashboards.charts.DataChart;
+ import io.kestra.plugin.core.dashboard.chart.pies.PieOption;
++import io.swagger.v3.oas.annotations.media.Schema;
+ import lombok.EqualsAndHashCode;
+ import lombok.Getter;
+ import lombok.NoArgsConstructor;
+@@ -14,9 +17,37 @@
+ @SuperBuilder(toBuilder = true)
+ @Getter
+ @NoArgsConstructor
+-@Plugin
+ @JsonInclude(JsonInclude.Include.NON_DEFAULT)
+ @EqualsAndHashCode
++@Schema(
++    title = "Show proportions and distributions using pie charts."
++    )
++@Plugin(
++    examples = {
++        @Example(
++            title = "Display a pie chart with with Executions per State.",
++            full = true,
++            code = {
++                "charts:\n" +
++                    "- id: executions_pie\n" +
++                    "type: io.kestra.plugin.core.dashboard.chart.Pie\n" +
++                    "chartOptions:\n" +
++                        "displayName: Total Executions\n" +
++                        "description: Total executions per state\n" +
++                        "legend:\n" +
++                            "enabled: true\n" +
++                        "colorByColumn: state\n" +
++                    "data:\n" +
++                        "type: io.kestra.plugin.core.dashboard.data.Executions\n" +
++                        "columns:\n" +
++                            "state:\n" +
++                                "field: STATE\n" +
++                            "total:\n" +
++                                "agg: COUNT\n"
++            }
++        )
++    }
++)    
+ public class Pie<F extends Enum<F>, D extends DataFilter<F, ? extends ColumnDescriptor<F>>> extends DataChart<PieOption, D> {
+     @Override
+     public Integer minNumberOfAggregations() {
+diff --git a/core/src/main/java/io/kestra/plugin/core/dashboard/chart/Table.java b/core/src/main/java/io/kestra/plugin/core/dashboard/chart/Table.java
+index 57ca0f53c44..feecbb1e91c 100644
+--- a/core/src/main/java/io/kestra/plugin/core/dashboard/chart/Table.java
++++ b/core/src/main/java/io/kestra/plugin/core/dashboard/chart/Table.java
+@@ -1,11 +1,14 @@
+ package io.kestra.plugin.core.dashboard.chart;
+ 
+ import com.fasterxml.jackson.annotation.JsonInclude;
++
++import io.kestra.core.models.annotations.Example;
+ import io.kestra.core.models.annotations.Plugin;
+ import io.kestra.core.models.dashboards.DataFilter;
+ import io.kestra.core.models.dashboards.charts.DataChart;
+ import io.kestra.plugin.core.dashboard.chart.tables.TableColumnDescriptor;
+ import io.kestra.plugin.core.dashboard.chart.tables.TableOption;
++import io.swagger.v3.oas.annotations.media.Schema;
+ import lombok.EqualsAndHashCode;
+ import lombok.Getter;
+ import lombok.NoArgsConstructor;
+@@ -14,8 +17,38 @@
+ @SuperBuilder(toBuilder = true)
+ @Getter
+ @NoArgsConstructor
+-@Plugin
+ @JsonInclude(JsonInclude.Include.NON_DEFAULT)
+ @EqualsAndHashCode
++@Schema(
++    title = "Display structured data in a clear, sortable table."
++    )
++@Plugin(
++    examples = {
++        @Example(
++            title = "Display a table with a Log count for each level by Namespace.",
++            full = true,
++            code = {
++                "charts:\n" +
++                    "- id: table_logs\n" +
++                    "type: io.kestra.plugin.core.dashboard.chart.Table\n" +
++                    "chartOptions:\n" +
++                        "displayName: Log count by level for filtered namespace\n" +
++                    "data:\n" +
++                        "type: io.kestra.plugin.core.dashboard.data.Logs\n" +
++                        "columns:\n" +
++                            "level:\n" +
++                                "field: LEVEL\n" +
++                                "count:\n" +
++                                    "agg: COUNT\n" +
++                            "where:\n" +
++                                "- field: NAMESPACE\n" +
++                                "type: IN\n" +
++                                "values:\n" +
++                                    "- dev_graph\n" +
++                                    "- prod_graph\n"
++            }
++        )
++    }
++)
+ public class Table<F extends Enum<F>, D extends DataFilter<F, ? extends TableColumnDescriptor<F>>> extends DataChart<TableOption, D> {
+ }
+diff --git a/core/src/main/java/io/kestra/plugin/core/dashboard/chart/TimeSeries.java b/core/src/main/java/io/kestra/plugin/core/dashboard/chart/TimeSeries.java
+index 9dc9612c9d3..610780d30d6 100644
+--- a/core/src/main/java/io/kestra/plugin/core/dashboard/chart/TimeSeries.java
++++ b/core/src/main/java/io/kestra/plugin/core/dashboard/chart/TimeSeries.java
+@@ -1,12 +1,15 @@
+ package io.kestra.plugin.core.dashboard.chart;
+ 
+ import com.fasterxml.jackson.annotation.JsonInclude;
++
++import io.kestra.core.models.annotations.Example;
+ import io.kestra.core.models.annotations.Plugin;
+ import io.kestra.core.models.dashboards.DataFilter;
+ import io.kestra.core.models.dashboards.charts.DataChart;
+ import io.kestra.core.validations.TimeSeriesChartValidation;
+ import io.kestra.plugin.core.dashboard.chart.timeseries.TimeSeriesColumnDescriptor;
+ import io.kestra.plugin.core.dashboard.chart.timeseries.TimeSeriesOption;
++import io.swagger.v3.oas.annotations.media.Schema;
+ import lombok.EqualsAndHashCode;
+ import lombok.Getter;
+ import lombok.NoArgsConstructor;
+@@ -15,10 +18,49 @@
+ @SuperBuilder(toBuilder = true)
+ @Getter
+ @NoArgsConstructor
+-@Plugin
+ @JsonInclude(JsonInclude.Include.NON_DEFAULT)
+ @EqualsAndHashCode
+ @TimeSeriesChartValidation
++@Schema(
++    title = "Track trends over time with dynamic time series charts."
++    )
++@Plugin(
++    examples = {
++        @Example(
++            title = "Display a chart with Executions over the last week.",
++            full = true,
++            code = {
++                "charts:\n" +
++                  "- id: executions_timeseries\n" +
++                    "type: io.kestra.plugin.core.dashboard.chart.TimeSeries\n" +
++                    "chartOptions:\n" +
++                        "displayName: Executions\n" +
++                        "description: Executions last week\n" +
++                        "legend:\n" +
++                            "enabled: true\n" +
++                        "column: date\n" +
++                        "colorByColumn: state\n" +
++                    "data:\n" +
++                        "type: io.kestra.plugin.core.dashboard.data.Executions\n" +
++                        "columns:\n" +
++                            "date:\n" +
++                                "field: START_DATE\n" +
++                                "displayName: Date\n" +
++                            "state:\n" +
++                                "field: STATE\n" +
++                            "total:\n" +
++                                "displayName: Executions\n" +
++                                "agg: COUNT\n" +
++                                "graphStyle: BARS\n" +
++                            "duration:\n" +
++                                "displayName: Duration\n" +
++                                "field: DURATION\n" +
++                                "agg: SUM\n" +
++                                "graphStyle: LINES\n"
++            }
++        )
++    }
++)
+ public class TimeSeries<F extends Enum<F>, D extends DataFilter<F, ? extends TimeSeriesColumnDescriptor<F>>> extends DataChart<TimeSeriesOption, D> {
+     @Override
+     public Integer minNumberOfAggregations() {
+diff --git a/core/src/main/java/io/kestra/plugin/core/execution/Fail.java b/core/src/main/java/io/kestra/plugin/core/execution/Fail.java
+index a5a6f228059..30ff4b5445f 100644
+--- a/core/src/main/java/io/kestra/plugin/core/execution/Fail.java
++++ b/core/src/main/java/io/kestra/plugin/core/execution/Fail.java
+@@ -32,82 +32,82 @@
+             full = true,
+             title = "Fail on a switch branch",
+             code = """
+-                id: fail_on_switch
+-                namespace: company.team
+-                
+-                inputs:
+-                  - id: param
+-                    type: STRING
+-                    required: true
+-                
+-                tasks:
+-                  - id: switch
+-                    type: io.kestra.plugin.core.flow.Switch
+-                    value: "{{inputs.param}}"
+-                    cases:
+-                      case1:
+-                        - id: case1
+-                          type: io.kestra.plugin.core.log.Log
+-                          message: Case 1
+-                      case2:
+-                        - id: case2
+-                          type: io.kestra.plugin.core.log.Log
+-                          message: Case 2
+-                      notexist:
+-                        - id: fail
+-                          type: io.kestra.plugin.core.execution.Fail
+-                      default:
+-                        - id: default
+-                          type: io.kestra.plugin.core.log.Log
+-                          message: default
++            id: fail_on_switch
++            namespace: company.team
++            
++            inputs:
++              - id: param
++                type: STRING
++                required: true
++            
++            tasks:
++              - id: switch
++                type: io.kestra.plugin.core.flow.Switch
++                value: "{{inputs.param}}"
++                cases:
++                  case1:
++                    - id: case1
++                      type: io.kestra.plugin.core.log.Log
++                      message: Case 1
++                  case2:
++                    - id: case2
++                      type: io.kestra.plugin.core.log.Log
++                      message: Case 2
++                  notexist:
++                    - id: fail
++                      type: io.kestra.plugin.core.execution.Fail
++                  default:
++                    - id: default
++                      type: io.kestra.plugin.core.log.Log
++                      message: default
+             """
+         ),
+         @Example(
+             full = true,
+             title = "Fail on a condition",
+             code = """
+-                id: fail_on_condition
+-                namespace: company.team
+-                
+-                inputs:
+-                  - name: param
+-                    type: STRING
+-                    required: true
+-                
+-                tasks:
+-                  - id: before
+-                    type: io.kestra.plugin.core.debug.Echo
+-                    format: I'm before the fail on condition
++            id: fail_on_condition
++            namespace: company.team
++            
++            inputs:
++              - name: param
++                type: STRING
++                required: true
++            
++            tasks:
++              - id: before
++                type: io.kestra.plugin.core.debug.Echo
++                format: I'm before the fail on condition
+ 
+-                  - id: fail
+-                    type: io.kestra.plugin.core.execution.Fail
+-                    condition: '{{ inputs.param == "fail" }}'
++              - id: fail
++                type: io.kestra.plugin.core.execution.Fail
++                condition: '{{ inputs.param == "fail" }}'
+ 
+-                  - id: after
+-                    type: io.kestra.plugin.core.debug.Echo
+-                    format: I'm after the fail on condition
++              - id: after
++                type: io.kestra.plugin.core.debug.Echo
++                format: I'm after the fail on condition
+             """
+         ),
+         @Example(
+             full = true,
+             title = "Using errorLogs function to send error message to Slack",
+             code = """
+-                id: error_logs
+-                namespace: company.team
++            id: error_logs
++            namespace: company.team
+ 
+-                tasks:
+-                - id: fail
+-                    type: io.kestra.plugin.core.execution.Fail
+-                    errorMessage: Something went wrong, make sure to fix it asap!
++            tasks:
++            - id: fail
++                type: io.kestra.plugin.core.execution.Fail
++                errorMessage: Something went wrong, make sure to fix it asap!
+ 
+-                errors:
+-                - id: slack
+-                    type: io.kestra.plugin.notifications.slack.SlackIncomingWebhook
+-                    url: "{{ secret('SLACK_WEBHOOK') }}"
+-                    payload: |
+-                    {
+-                        "text": "Failure alert for flow `{{ flow.namespace }}.{{ flow.id }}` with ID `{{ execution.id }}`. Here is a bit more context about why the execution failed: `{{ errorLogs()[0]['message'] }}`"
+-                    }
++            errors:
++            - id: slack
++                type: io.kestra.plugin.notifications.slack.SlackIncomingWebhook
++                url: "{{ secret('SLACK_WEBHOOK') }}"
++                payload: |
++                {
++                    "text": "Failure alert for flow `{{ flow.namespace }}.{{ flow.id }}` with ID `{{ execution.id }}`. Here is a bit more context about why the execution failed: `{{ errorLogs()[0]['message'] }}`"
++                }
+             """
+         )
+     },
+diff --git a/core/src/main/java/io/kestra/plugin/core/flow/WorkingDirectory.java b/core/src/main/java/io/kestra/plugin/core/flow/WorkingDirectory.java
+index 6f4c6b8857e..ff854a47684 100644
+--- a/core/src/main/java/io/kestra/plugin/core/flow/WorkingDirectory.java
++++ b/core/src/main/java/io/kestra/plugin/core/flow/WorkingDirectory.java
+@@ -103,7 +103,6 @@ SELECT sum(total) as total, avg(quantity) as avg_quantity
+                         containerImage: python:3.11-slim
+                         beforeCommands:
+                           - pip install requests kestra > /dev/null
+-                        warningOnStdErr: false
+                         script: |
+                           import requests
+                           import json
+diff --git a/core/src/main/java/io/kestra/plugin/core/storage/LocalFiles.java b/core/src/main/java/io/kestra/plugin/core/storage/LocalFiles.java
+index aa7d9b79613..f1917986be9 100644
+--- a/core/src/main/java/io/kestra/plugin/core/storage/LocalFiles.java
++++ b/core/src/main/java/io/kestra/plugin/core/storage/LocalFiles.java
+@@ -46,7 +46,6 @@
+ 
+                       - id: git_python_scripts
+                         type: io.kestra.plugin.scripts.python.Commands
+-                        warningOnStdErr: false
+                         runner: DOCKER
+                         docker:
+                           image: ghcr.io/kestra-io/pydata:latest
+diff --git a/core/src/test/java/io/kestra/core/runners/AbstractRunnerTest.java b/core/src/test/java/io/kestra/core/runners/AbstractRunnerTest.java
+index e77fa76389b..28435f99f78 100644
+--- a/core/src/test/java/io/kestra/core/runners/AbstractRunnerTest.java
++++ b/core/src/test/java/io/kestra/core/runners/AbstractRunnerTest.java
+@@ -180,7 +180,7 @@ void restartFailedThenFailureWithLocalErrors() throws Exception {
+ 
+     @Test
+     @LoadFlows({"flows/valids/restart-parent.yaml", "flows/valids/restart-child.yaml"})
+-    void restartSubflow() throws Exception {
++    protected void restartSubflow() throws Exception {
+         restartCaseTest.restartSubflow();
+     }
+ 
+@@ -388,13 +388,13 @@ void concurrencyQueue() throws Exception {
+ 
+     @RetryingTest(5) // Flaky on CI but never locally even with 100 repetitions
+     @LoadFlows({"flows/valids/flow-concurrency-queue-pause.yml"})
+-    void concurrencyQueuePause() throws Exception {
++    protected void concurrencyQueuePause() throws Exception {
+         flowConcurrencyCaseTest.flowConcurrencyQueuePause();
+     }
+ 
+     @Test
+     @LoadFlows({"flows/valids/flow-concurrency-cancel-pause.yml"})
+-    void concurrencyCancelPause() throws Exception {
++    protected void concurrencyCancelPause() throws Exception {
+         flowConcurrencyCaseTest.flowConcurrencyCancelPause();
+     }
+ 
+diff --git a/core/src/test/java/io/kestra/core/schedulers/SchedulerPollingTriggerTest.java b/core/src/test/java/io/kestra/core/schedulers/SchedulerPollingTriggerTest.java
+index 696d3db4f66..9d67c365a0f 100644
+--- a/core/src/test/java/io/kestra/core/schedulers/SchedulerPollingTriggerTest.java
++++ b/core/src/test/java/io/kestra/core/schedulers/SchedulerPollingTriggerTest.java
+@@ -40,7 +40,7 @@
+ 
+ public class SchedulerPollingTriggerTest extends AbstractSchedulerTest {
+     @Inject
+-    private ApplicationContext applicationContext;
++    protected ApplicationContext applicationContext;
+ 
+     @Inject
+     private SchedulerTriggerStateInterface triggerState;
+diff --git a/core/src/test/java/io/kestra/plugin/core/flow/VariablesTest.java b/core/src/test/java/io/kestra/plugin/core/flow/VariablesTest.java
+index c357e0077e9..1d1bb4c6721 100644
+--- a/core/src/test/java/io/kestra/plugin/core/flow/VariablesTest.java
++++ b/core/src/test/java/io/kestra/plugin/core/flow/VariablesTest.java
+@@ -34,8 +34,8 @@ class VariablesTest {
+ 
+     @Test
+     @ExecuteFlow("flows/valids/variables.yaml")
+-    @EnabledIfEnvironmentVariable(named = "KESTRA_TEST1", matches = ".*")
+-    @EnabledIfEnvironmentVariable(named = "KESTRA_TEST2", matches = ".*")
++    @EnabledIfEnvironmentVariable(named = "ENV_TEST1", matches = ".*")
++    @EnabledIfEnvironmentVariable(named = "ENV_TEST2", matches = ".*")
+     void recursiveVars(Execution execution) {
+         assertThat(execution.getTaskRunList()).hasSize(3);
+         assertThat(execution.findTaskRunsByTaskId("variable").getFirst().getOutputs().get("value")).isEqualTo("1 > 2 > 3");
+diff --git a/core/src/test/resources/sanity-checks/all_core.yaml b/core/src/test/resources/sanity-checks/all_core.yaml
+new file mode 100644
+index 00000000000..ae89c2e80cb
+--- /dev/null
++++ b/core/src/test/resources/sanity-checks/all_core.yaml
+@@ -0,0 +1,33 @@
++id: all_core
++namespace: sanitychecks.core
++
++tasks:
++  - id: for_each
++    type: io.kestra.plugin.core.flow.ForEach
++    values:
++      - allow_failure
++      - dag
++      - fail
++      - fetch
++      - for_each
++      - if
++      - kv
++      - labels
++      - log
++      - namespace_files
++      - parallel
++      - pause
++      - purge_current_execution_files
++      - request-basicauth-deprecated
++      - request-basicauth
++      - request
++      - return
++      - sequential
++      - sleep
++      - switch
++      - write
++    tasks:
++      - id: subflow
++        type: io.kestra.plugin.core.flow.Subflow
++        flowId: "{{taskrun.value}}"
++        namespace: "{{ flow.namespace }}"
+\ No newline at end of file
+diff --git a/core/src/test/resources/sanity-checks/allow_failure.yaml b/core/src/test/resources/sanity-checks/allow_failure.yaml
+index 5217ecc681b..a3e690e7cae 100644
+--- a/core/src/test/resources/sanity-checks/allow_failure.yaml
++++ b/core/src/test/resources/sanity-checks/allow_failure.yaml
+@@ -1,5 +1,5 @@
+ id: allow_failure
+-namespace: sanitychecks
++namespace: sanitychecks.core
+ 
+ tasks:
+   - id: allow_failure
+diff --git a/core/src/test/resources/sanity-checks/dag.yaml b/core/src/test/resources/sanity-checks/dag.yaml
+index 08031568ffb..e7501d2ad77 100644
+--- a/core/src/test/resources/sanity-checks/dag.yaml
++++ b/core/src/test/resources/sanity-checks/dag.yaml
+@@ -1,5 +1,5 @@
+ id: dag
+-namespace: sanitycheck
++namespace: sanitychecks.core
+ 
+ tasks:
+   - id: dag
+diff --git a/core/src/test/resources/sanity-checks/fail.yaml b/core/src/test/resources/sanity-checks/fail.yaml
+index 483c8b3d84e..17bdf76db62 100644
+--- a/core/src/test/resources/sanity-checks/fail.yaml
++++ b/core/src/test/resources/sanity-checks/fail.yaml
+@@ -1,5 +1,5 @@
+ id: fail
+-namespace: sanitychecks
++namespace: sanitychecks.core
+ 
+ tasks:
+   - id: fail
+diff --git a/core/src/test/resources/sanity-checks/fetch.yaml b/core/src/test/resources/sanity-checks/fetch.yaml
+index 184baccb847..4cbed50724e 100644
+--- a/core/src/test/resources/sanity-checks/fetch.yaml
++++ b/core/src/test/resources/sanity-checks/fetch.yaml
+@@ -1,5 +1,5 @@
+ id: fetch
+-namespace: sanitychecks
++namespace: sanitychecks.core
+ 
+ tasks:
+   - id: log_info
+diff --git a/core/src/test/resources/sanity-checks/for_each.yaml b/core/src/test/resources/sanity-checks/for_each.yaml
+index 9496e69a561..fd58765ba99 100644
+--- a/core/src/test/resources/sanity-checks/for_each.yaml
++++ b/core/src/test/resources/sanity-checks/for_each.yaml
+@@ -1,5 +1,5 @@
+ id: for_each
+-namespace: sanitychecks
++namespace: sanitychecks.core
+ 
+ tasks:
+   - id: for_each
+diff --git a/core/src/test/resources/sanity-checks/if.yaml b/core/src/test/resources/sanity-checks/if.yaml
+index a5842e1225a..af8412590e2 100644
+--- a/core/src/test/resources/sanity-checks/if.yaml
++++ b/core/src/test/resources/sanity-checks/if.yaml
+@@ -1,5 +1,5 @@
+ id: if
+-namespace: sanitychecks
++namespace: sanitychecks.core
+ 
+ tasks:
+   - id: if_true
+diff --git a/core/src/test/resources/sanity-checks/kv.yaml b/core/src/test/resources/sanity-checks/kv.yaml
+index f2a551c7b7a..5d916c87c6b 100644
+--- a/core/src/test/resources/sanity-checks/kv.yaml
++++ b/core/src/test/resources/sanity-checks/kv.yaml
+@@ -1,5 +1,5 @@
+ id: kv
+-namespace: sanitychecks
++namespace: sanitychecks.core
+ 
+ variables:
+   key: mykey
+diff --git a/core/src/test/resources/sanity-checks/labels.yaml b/core/src/test/resources/sanity-checks/labels.yaml
+index 75ac80dcbec..192bd939b14 100644
+--- a/core/src/test/resources/sanity-checks/labels.yaml
++++ b/core/src/test/resources/sanity-checks/labels.yaml
+@@ -1,5 +1,5 @@
+ id: labels
+-namespace: sanitychecks
++namespace: sanitychecks.core
+ 
+ variables:
+   label_1: test1
+diff --git a/core/src/test/resources/sanity-checks/log.yaml b/core/src/test/resources/sanity-checks/log.yaml
+index 1e27d390fa1..0633ddb6dc0 100644
+--- a/core/src/test/resources/sanity-checks/log.yaml
++++ b/core/src/test/resources/sanity-checks/log.yaml
+@@ -1,5 +1,5 @@
+ id: log
+-namespace: sanitychecks
++namespace: sanitychecks.core
+ 
+ tasks:
+   - id: hello
+diff --git a/core/src/test/resources/sanity-checks/namespace_files.yaml b/core/src/test/resources/sanity-checks/namespace_files.yaml
+index 767238c52d0..6cbdfa70a57 100644
+--- a/core/src/test/resources/sanity-checks/namespace_files.yaml
++++ b/core/src/test/resources/sanity-checks/namespace_files.yaml
+@@ -1,5 +1,5 @@
+ id: namespace_files
+-namespace: sanitychecks
++namespace: sanitychecks.core
+ 
+ tasks:
+   - id: download
+diff --git a/core/src/test/resources/sanity-checks/parallel.yaml b/core/src/test/resources/sanity-checks/parallel.yaml
+index 53fea112eac..d36dee3e180 100644
+--- a/core/src/test/resources/sanity-checks/parallel.yaml
++++ b/core/src/test/resources/sanity-checks/parallel.yaml
+@@ -1,5 +1,5 @@
+ id: parallel
+-namespace: sanitychecks
++namespace: sanitychecks.core
+ 
+ variables:
+   test: test
+diff --git a/core/src/test/resources/sanity-checks/pause.yaml b/core/src/test/resources/sanity-checks/pause.yaml
+index 4e11639d55c..30ee53f6d48 100644
+--- a/core/src/test/resources/sanity-checks/pause.yaml
++++ b/core/src/test/resources/sanity-checks/pause.yaml
+@@ -1,5 +1,5 @@
+ id: pause
+-namespace: sanitychecks
++namespace: sanitychecks.core
+ 
+ tasks:
+   - id: pause_flow
+diff --git a/core/src/test/resources/sanity-checks/purge_current_execution_files.yaml b/core/src/test/resources/sanity-checks/purge_current_execution_files.yaml
+index 976fe952a3f..1e8978c85c5 100644
+--- a/core/src/test/resources/sanity-checks/purge_current_execution_files.yaml
++++ b/core/src/test/resources/sanity-checks/purge_current_execution_files.yaml
+@@ -1,5 +1,5 @@
+ id: purge_current_execution_files
+-namespace: sanitychecks
++namespace: sanitychecks.core
+ 
+ tasks:
+   - id: download
+diff --git a/core/src/test/resources/sanity-checks/return.yaml b/core/src/test/resources/sanity-checks/return.yaml
+index 41e329b6dc0..f7530716d71 100644
+--- a/core/src/test/resources/sanity-checks/return.yaml
++++ b/core/src/test/resources/sanity-checks/return.yaml
+@@ -1,5 +1,5 @@
+ id: return
+-namespace: sanitychecks
++namespace: sanitychecks.core
+ 
+ variables:
+   my_var: test
+diff --git a/core/src/test/resources/sanity-checks/sequential.yaml b/core/src/test/resources/sanity-checks/sequential.yaml
+index c810dd04204..34ee1f4103e 100644
+--- a/core/src/test/resources/sanity-checks/sequential.yaml
++++ b/core/src/test/resources/sanity-checks/sequential.yaml
+@@ -1,5 +1,5 @@
+ id: sequential
+-namespace: sanitychecks
++namespace: sanitychecks.core
+ 
+ tasks:
+   - id: sequential_root
+diff --git a/core/src/test/resources/sanity-checks/sleep.yaml b/core/src/test/resources/sanity-checks/sleep.yaml
+index 3ae146024f5..d0ed23d4e79 100644
+--- a/core/src/test/resources/sanity-checks/sleep.yaml
++++ b/core/src/test/resources/sanity-checks/sleep.yaml
+@@ -1,5 +1,5 @@
+ id: sleep
+-namespace: sanitychecks
++namespace: sanitychecks.core
+ 
+ tasks:
+   - id: before
+diff --git a/core/src/test/resources/sanity-checks/switch.yaml b/core/src/test/resources/sanity-checks/switch.yaml
+index d244bc8c896..46936e4056e 100644
+--- a/core/src/test/resources/sanity-checks/switch.yaml
++++ b/core/src/test/resources/sanity-checks/switch.yaml
+@@ -1,5 +1,5 @@
+ id: switch
+-namespace: sanitychecks
++namespace: sanitychecks.core
+ 
+ variables:
+   switch_value: 3
+diff --git a/core/src/test/resources/sanity-checks/write.yaml b/core/src/test/resources/sanity-checks/write.yaml
+index d070ac166ff..387d3271b1e 100644
+--- a/core/src/test/resources/sanity-checks/write.yaml
++++ b/core/src/test/resources/sanity-checks/write.yaml
+@@ -1,5 +1,5 @@
+ id: write
+-namespace: sanitychecks
++namespace: sanitychecks.core
+ 
+ tasks:
+   - id: write
+diff --git a/jdbc-h2/src/main/resources/migrations/h2/V1_35__service_instance_indices.sql b/jdbc-h2/src/main/resources/migrations/h2/V1_35__service_instance_indices.sql
+new file mode 100644
+index 00000000000..77ab2af56da
+--- /dev/null
++++ b/jdbc-h2/src/main/resources/migrations/h2/V1_35__service_instance_indices.sql
+@@ -0,0 +1,2 @@
++CREATE INDEX IF NOT EXISTS ix_service_instance_state ON service_instance ("state");
++CREATE INDEX IF NOT EXISTS ix_service_instance_type_created_at_updated_at ON service_instance ("service_type", "created_at", "updated_at");
+\ No newline at end of file
+diff --git a/jdbc-mysql/src/main/resources/migrations/mysql/V1_34__service_instance_indices.sql b/jdbc-mysql/src/main/resources/migrations/mysql/V1_34__service_instance_indices.sql
+new file mode 100644
+index 00000000000..8d3c9ebc32b
+--- /dev/null
++++ b/jdbc-mysql/src/main/resources/migrations/mysql/V1_34__service_instance_indices.sql
+@@ -0,0 +1,2 @@
++CREATE INDEX ix_service_instance_state ON service_instance (`state`);
++CREATE INDEX ix_service_instance_type_created_at_updated_at ON service_instance (`service_type`, `created_at`, `updated_at`);
+\ No newline at end of file
+diff --git a/jdbc-postgres/src/main/resources/migrations/postgres/V1_34__service_instance_indices.sql b/jdbc-postgres/src/main/resources/migrations/postgres/V1_34__service_instance_indices.sql
+new file mode 100644
+index 00000000000..8050c3f79bf
+--- /dev/null
++++ b/jdbc-postgres/src/main/resources/migrations/postgres/V1_34__service_instance_indices.sql
+@@ -0,0 +1,2 @@
++CREATE INDEX IF NOT EXISTS ix_service_instance_state ON service_instance (state);
++CREATE INDEX IF NOT EXISTS ix_service_instance_type_created_at_updated_at ON service_instance (service_type, created_at, updated_at);
+diff --git a/jdbc/src/main/java/io/kestra/jdbc/repository/AbstractJdbcFlowRepository.java b/jdbc/src/main/java/io/kestra/jdbc/repository/AbstractJdbcFlowRepository.java
+index bdda9ee57c0..b4a2bd03c94 100644
+--- a/jdbc/src/main/java/io/kestra/jdbc/repository/AbstractJdbcFlowRepository.java
++++ b/jdbc/src/main/java/io/kestra/jdbc/repository/AbstractJdbcFlowRepository.java
+@@ -94,12 +94,8 @@ public AbstractJdbcFlowRepository(io.kestra.jdbc.AbstractJdbcRepository<FlowInte
+             String namespace = record.get("namespace", String.class);
+             String tenantId = record.get("tenant_id", String.class);
+             try {
+-                Map<String, Object> map;
+-                try {
+-                    map =  MAPPER.readValue(source, new TypeReference<>(){});
+-                } catch (IOException e) {
+-                    throw new DeserializationException(e, source);
+-                }
++                Map<String, Object> map = MAPPER.readValue(source, new TypeReference<>(){});
++
+                 // Inject default plugin 'version' props before converting
+                 // to flow to correctly resolve to plugin type.
+                 map = pluginDefaultService.injectVersionDefaults(tenantId, namespace, map);
+@@ -110,10 +106,11 @@ public AbstractJdbcFlowRepository(io.kestra.jdbc.AbstractJdbcRepository<FlowInte
+                 deserialize.allTasksWithChilds();
+ 
+                 return deserialize;
+-            } catch (DeserializationException e) {
++            } catch (DeserializationException | IOException e) {
+                 try {
+                     JsonNode jsonNode = JdbcMapper.of().readTree(source);
+-                    return FlowWithException.from(jsonNode, e).orElseThrow(() -> e);
++                    return FlowWithException.from(jsonNode, e)
++                        .orElseThrow(() -> e instanceof DeserializationException de ? de : new DeserializationException(e, source));
+                 } catch (JsonProcessingException ex) {
+                     throw new DeserializationException(ex, source);
+                 }
+diff --git a/platform/build.gradle b/platform/build.gradle
+index 9daeebdb729..8b64c895c6a 100644
+--- a/platform/build.gradle
++++ b/platform/build.gradle
+@@ -26,10 +26,8 @@ dependencies {
+ 
+     // as Jackson is in the Micronaut BOM, to force its version we need to use enforcedPlatform but it didn't really work, see later :(
+     api enforcedPlatform("com.fasterxml.jackson:jackson-bom:$jacksonVersion")
+-    // needed because httpclient fails to communicate with docker socket with > v5.4 (https://github.com/docker-java/docker-java/pull/2293#issuecomment-2435455322) and opensearch-java brings that version
+-    api enforcedPlatform("org.apache.httpcomponents.client5:httpclient5:5.3.1")
+     api enforcedPlatform("org.slf4j:slf4j-api:$slf4jVersion")
+-    api platform("io.micronaut.platform:micronaut-platform:4.7.6")
++    api platform("io.micronaut.platform:micronaut-platform:4.8.0")
+     api platform("io.qameta.allure:allure-bom:2.29.1")
+     // we define cloud bom here for GCP, Azure and AWS so they are aligned for all plugins that use them (secret, storage, oss and ee plugins)
+     api platform('com.google.cloud:libraries-bom:26.59.0')
+@@ -38,9 +36,6 @@ dependencies {
+ 
+ 
+     constraints {
+-        // Forced dependencies
+-        // Temporal force to include https://github.com/micronaut-projects/micronaut-core/commit/9bb43ce55ea3fca97c12cb50c5f1baea28557729 as a potential fix for https://github.com/kestra-io/kestra/issues/3402
+-        api("io.micronaut:micronaut-core:4.7.15")
+         // need to force this dep as mysql-connector brings a version incompatible with the Google Cloud libs
+         api("com.google.protobuf:protobuf-java:$protobufVersion")
+         api("com.google.protobuf:protobuf-java-util:$protobufVersion")
+@@ -108,8 +103,8 @@ dependencies {
+         api 'com.h2database:h2:2.3.232'
+         api 'mysql:mysql-connector-java:8.0.33'
+         api 'org.postgresql:postgresql:42.7.5'
+-        api 'com.github.docker-java:docker-java:3.4.2'
+-        api 'com.github.docker-java:docker-java-transport-httpclient5:3.4.2'
++        api 'com.github.docker-java:docker-java:3.5.0'
++        api 'com.github.docker-java:docker-java-transport-httpclient5:3.5.0'
+         api (group: 'org.opensearch.client', name: 'opensearch-java', version: "$opensearchVersion")
+         api (group: 'org.opensearch.client', name: 'opensearch-rest-client', version: "$opensearchRestVersion")
+         api (group: 'org.opensearch.client', name: 'opensearch-rest-high-level-client', version: "$opensearchRestVersion") // used by the elasticsearch plugin
+@@ -133,7 +128,7 @@ dependencies {
+         api 'org.hamcrest:hamcrest:3.0'
+         api 'org.hamcrest:hamcrest-library:3.0'
+         api group: 'org.exparity', name: 'hamcrest-date', version: '2.0.8'
+-        api "org.wiremock:wiremock:3.10.0"
++        api "org.wiremock:wiremock-jetty12:3.12.1"
+         api "org.apache.kafka:kafka-streams-test-utils:$kafkaVersion"
+         api "com.microsoft.playwright:playwright:1.51.0"
+ 
+diff --git a/script/build.gradle b/script/build.gradle
+index 0b773c932e8..6785d79c2ae 100644
+--- a/script/build.gradle
++++ b/script/build.gradle
+@@ -10,7 +10,7 @@ dependencies {
+         exclude group: 'com.github.docker-java', module: 'docker-java-transport-jersey'
+         exclude group: 'com.fasterxml.jackson.core'
+     }
+-    implementation 'com.github.docker-java:docker-java-transport-httpclient5:3.4.1'
++    implementation 'com.github.docker-java:docker-java-transport-httpclient5'
+ 
+     testImplementation project(':core').sourceSets.test.output
+     testImplementation project(':tests')
+diff --git a/script/src/main/java/io/kestra/plugin/scripts/exec/AbstractExecScript.java b/script/src/main/java/io/kestra/plugin/scripts/exec/AbstractExecScript.java
+index 666403c6b04..2c6fe38874c 100644
+--- a/script/src/main/java/io/kestra/plugin/scripts/exec/AbstractExecScript.java
++++ b/script/src/main/java/io/kestra/plugin/scripts/exec/AbstractExecScript.java
+@@ -64,13 +64,11 @@ public abstract class AbstractExecScript extends Task implements RunnableTask<Sc
+     )
+     protected Property<Map<String, String>> env;
+ 
+-    @Builder.Default
+     @Schema(
+-        title = "Whether to set the task state to `WARNING` when any `stdErr` output is detected.",
+-        description = "Note that a script error will set the state to `FAILED` regardless."
++        title = "Not used anymore, will be removed soon"
+     )
+-    @NotNull
+-    protected Property<Boolean> warningOnStdErr = Property.of(true);
++    @Deprecated
++    protected Property<Boolean> warningOnStdErr;
+ 
+     @Builder.Default
+     @Schema(
+@@ -158,7 +156,6 @@ protected CommandsWrapper commands(RunContext runContext) throws IllegalVariable
+         Map<String, String> renderedEnv = runContext.render(this.getEnv()).asMap(String.class, String.class);
+         return new CommandsWrapper(runContext)
+             .withEnv(renderedEnv.isEmpty() ? new HashMap<>() : renderedEnv)
+-            .withWarningOnStdErr(runContext.render(this.getWarningOnStdErr()).as(Boolean.class).orElseThrow())
+             .withRunnerType(this.getRunner())
+             .withContainerImage(runContext.render(this.getContainerImage()).as(String.class).orElse(null))
+             .withTaskRunner(this.getTaskRunner())
+diff --git a/script/src/main/java/io/kestra/plugin/scripts/exec/scripts/models/ScriptOutput.java b/script/src/main/java/io/kestra/plugin/scripts/exec/scripts/models/ScriptOutput.java
+index 65d9e7d5da4..8c44500c856 100644
+--- a/script/src/main/java/io/kestra/plugin/scripts/exec/scripts/models/ScriptOutput.java
++++ b/script/src/main/java/io/kestra/plugin/scripts/exec/scripts/models/ScriptOutput.java
+@@ -3,7 +3,6 @@
+ import com.fasterxml.jackson.annotation.JsonIgnore;
+ import com.fasterxml.jackson.annotation.JsonInclude;
+ import io.kestra.core.models.annotations.PluginProperty;
+-import io.kestra.core.models.flows.State;
+ import io.kestra.core.models.tasks.Output;
+ import io.kestra.core.models.tasks.runners.TaskRunnerDetailResult;
+ import io.swagger.v3.oas.annotations.media.Schema;
+@@ -12,7 +11,6 @@
+ 
+ import java.net.URI;
+ import java.util.Map;
+-import java.util.Optional;
+ import jakarta.validation.constraints.NotNull;
+ 
+ @Builder
+@@ -42,13 +40,6 @@ public class ScriptOutput implements Output {
+     @JsonIgnore
+     private final int stdErrLineCount;
+ 
+-    @JsonIgnore
+-    private Boolean warningOnStdErr;
+-
+     private TaskRunnerDetailResult taskRunner;
+ 
+-    @Override
+-    public Optional<State.Type> finalState() {
+-        return this.warningOnStdErr != null && this.warningOnStdErr && this.stdErrLineCount > 0 ? Optional.of(State.Type.WARNING) : Output.super.finalState();
+-    }
+ }
+diff --git a/script/src/main/java/io/kestra/plugin/scripts/exec/scripts/runners/CommandsWrapper.java b/script/src/main/java/io/kestra/plugin/scripts/exec/scripts/runners/CommandsWrapper.java
+index e2e6e9395fa..4ef0f7f97b8 100644
+--- a/script/src/main/java/io/kestra/plugin/scripts/exec/scripts/runners/CommandsWrapper.java
++++ b/script/src/main/java/io/kestra/plugin/scripts/exec/scripts/runners/CommandsWrapper.java
+@@ -74,8 +74,8 @@ public class CommandsWrapper implements TaskCommands {
+     private DockerOptions dockerOptions;
+ 
+     @With
++    @Deprecated
+     private Boolean warningOnStdErr;
+-
+     @With
+     private NamespaceFiles namespaceFiles;
+ 
+@@ -177,8 +177,7 @@ public <T extends TaskRunnerDetailResult> ScriptOutput run() throws Exception {
+ 
+         this.commands = Property.of(finalCommands);
+ 
+-        ScriptOutput.ScriptOutputBuilder scriptOutputBuilder = ScriptOutput.builder()
+-            .warningOnStdErr(this.warningOnStdErr);
++        ScriptOutput.ScriptOutputBuilder scriptOutputBuilder = ScriptOutput.builder();
+ 
+         try {
+             TaskRunnerResult<T> taskRunnerResult = realTaskRunner.run(taskRunnerRunContext, this, this.outputFiles);
+diff --git a/ui/.storybook/main.ts b/ui/.storybook/main.ts
+index c42d945d7fb..3b6f216886e 100644
+--- a/ui/.storybook/main.ts
++++ b/ui/.storybook/main.ts
+@@ -8,7 +8,7 @@ const config: StorybookConfig = {
+     "@storybook/addon-essentials",
+     "@storybook/addon-themes",
+     "@chromatic-com/storybook",
+-    "@storybook/addon-interactions",
++    "@storybook/experimental-addon-test"
+   ],
+   framework: {
+     name: "@storybook/vue3-vite",
+@@ -17,7 +17,7 @@ const config: StorybookConfig = {
+   async viteFinal(config) {
+     const {default: viteJSXPlugin} = await import("@vitejs/plugin-vue-jsx")
+     config.plugins = [
+-      ...config.plugins ?? [],
++      ...(config.plugins ?? []),
+       viteJSXPlugin(),
+     ];
+     return config;
+diff --git a/ui/.storybook/vitest.setup.ts b/ui/.storybook/vitest.setup.ts
+new file mode 100644
+index 00000000000..cd0df770d66
+--- /dev/null
++++ b/ui/.storybook/vitest.setup.ts
+@@ -0,0 +1,9 @@
++import {beforeAll} from "vitest";
++import {setProjectAnnotations} from "@storybook/vue3";
++import * as projectAnnotations from "./preview";
++
++// This is an important step to apply the right configuration when testing your stories.
++// More info at: https://storybook.js.org/docs/api/portable-stories/portable-stories-vitest#setprojectannotations
++const project = setProjectAnnotations([projectAnnotations]);
++
++beforeAll(project.beforeAll);
+\ No newline at end of file
+diff --git a/ui/eslint.config.js b/ui/eslint.config.js
+index 205607bf0af..fd04d16ad04 100644
+--- a/ui/eslint.config.js
++++ b/ui/eslint.config.js
+@@ -20,6 +20,7 @@ export default [
+             "**/*.spec.ts",
+             "vite.config.js",
+             "vitest.config.js",
++            "vitest.workspace.js",
+         ],
+         languageOptions: {globals: globals.node},
+     },
+diff --git a/ui/package-lock.json b/ui/package-lock.json
+index 8a31a5a5d6c..2533a9a5297 100644
+--- a/ui/package-lock.json
++++ b/ui/package-lock.json
+@@ -69,9 +69,9 @@
+         "@rushstack/eslint-patch": "^1.11.0",
+         "@shikijs/markdown-it": "^3.2.1",
+         "@storybook/addon-essentials": "^8.6.12",
+-        "@storybook/addon-interactions": "^8.6.12",
+         "@storybook/addon-themes": "^8.6.12",
+         "@storybook/blocks": "^8.6.12",
++        "@storybook/experimental-addon-test": "^8.6.12",
+         "@storybook/test": "^8.6.12",
+         "@storybook/test-runner": "^0.22.0",
+         "@storybook/vue3": "^8.6.12",
+@@ -83,6 +83,7 @@
+         "@typescript-eslint/parser": "^8.28.0",
+         "@vitejs/plugin-vue": "^5.2.1",
+         "@vitejs/plugin-vue-jsx": "^4.1.1",
++        "@vitest/browser": "^3.1.1",
+         "@vitest/coverage-v8": "^3.1.1",
+         "@vue/eslint-config-prettier": "^10.2.0",
+         "@vue/test-utils": "^2.4.6",
+@@ -99,6 +100,7 @@
+         "monaco-editor": "^0.52.2",
+         "monaco-yaml": "^5.3.1",
+         "patch-package": "^8.0.0",
++        "playwright": "^1.51.1",
+         "prettier": "^3.5.3",
+         "rollup-plugin-copy": "^3.5.0",
+         "sass": "^1.86.3",
+@@ -3707,6 +3709,13 @@
+         "url": "https://opencollective.com/unts"
+       }
+     },
++    "node_modules/@polka/url": {
++      "version": "1.0.0-next.28",
++      "resolved": "https://registry.npmjs.org/@polka/url/-/url-1.0.0-next.28.tgz",
++      "integrity": "sha512-8LduaNlMZGwdZ6qWrKlfa+2M4gahzFkprZiAt2TF8uS0qQgBizKXpXURqvTJ4WtmupWxaLqjRb2UCTe72mu+Aw==",
++      "dev": true,
++      "license": "MIT"
++    },
+     "node_modules/@popperjs/core": {
+       "name": "@sxzz/popperjs-es",
+       "version": "2.11.7",
+@@ -4313,27 +4322,6 @@
+         "storybook": "^8.6.12"
+       }
+     },
+-    "node_modules/@storybook/addon-interactions": {
+-      "version": "8.6.12",
+-      "resolved": "https://registry.npmjs.org/@storybook/addon-interactions/-/addon-interactions-8.6.12.tgz",
+-      "integrity": "sha512-cTAJlTq6uVZBEbtwdXkXoPQ4jHOAGKQnYSezBT4pfNkdjn/FnEeaQhMBDzf14h2wr5OgBnJa6Lmd8LD9ficz4A==",
+-      "dev": true,
+-      "license": "MIT",
+-      "dependencies": {
+-        "@storybook/global": "^5.0.0",
+-        "@storybook/instrumenter": "8.6.12",
+-        "@storybook/test": "8.6.12",
+-        "polished": "^4.2.2",
+-        "ts-dedent": "^2.2.0"
+-      },
+-      "funding": {
+-        "type": "opencollective",
+-        "url": "https://opencollective.com/storybook"
+-      },
+-      "peerDependencies": {
+-        "storybook": "^8.6.12"
+-      }
+-    },
+     "node_modules/@storybook/addon-measure": {
+       "version": "8.6.12",
+       "resolved": "https://registry.npmjs.org/@storybook/addon-measure/-/addon-measure-8.6.12.tgz",
+@@ -4539,6 +4527,43 @@
+         "storybook": "^8.6.12"
+       }
+     },
++    "node_modules/@storybook/experimental-addon-test": {
++      "version": "8.6.12",
++      "resolved": "https://registry.npmjs.org/@storybook/experimental-addon-test/-/experimental-addon-test-8.6.12.tgz",
++      "integrity": "sha512-auc8Ql0buH0WeaKVuSSuabxIiBWvqvAyxtXCm1sVMkL68GwrX3cmpNMwviz3mvKvM//F8zKi/31HMl1PZ5UnIA==",
++      "dev": true,
++      "license": "MIT",
++      "dependencies": {
++        "@storybook/global": "^5.0.0",
++        "@storybook/icons": "^1.2.12",
++        "@storybook/instrumenter": "8.6.12",
++        "@storybook/test": "8.6.12",
++        "polished": "^4.2.2",
++        "prompts": "^2.4.0",
++        "ts-dedent": "^2.2.0"
++      },
++      "funding": {
++        "type": "opencollective",
++        "url": "https://opencollective.com/storybook"
++      },
++      "peerDependencies": {
++        "@vitest/browser": "^2.1.1 || ^3.0.0",
++        "@vitest/runner": "^2.1.1 || ^3.0.0",
++        "storybook": "^8.6.12",
++        "vitest": "^2.1.1 || ^3.0.0"
++      },
++      "peerDependenciesMeta": {
++        "@vitest/browser": {
++          "optional": true
++        },
++        "@vitest/runner": {
++          "optional": true
++        },
++        "vitest": {
++          "optional": true
++        }
++      }
++    },
+     "node_modules/@storybook/global": {
+       "version": "5.0.0",
+       "resolved": "https://registry.npmjs.org/@storybook/global/-/global-5.0.0.tgz",
+@@ -6574,6 +6599,84 @@
+         "vue": "^3.0.0"
+       }
+     },
++    "node_modules/@vitest/browser": {
++      "version": "3.1.1",
++      "resolved": "https://registry.npmjs.org/@vitest/browser/-/browser-3.1.1.tgz",
++      "integrity": "sha512-A+A69mMtrj1RPh96LfXGc309KSXhy2MslvyL+cp9+Y5EVdoJD4KfXDx/3SSlRGN70+hIoJ3RRbTidTvj18PZ/A==",
++      "dev": true,
++      "license": "MIT",
++      "dependencies": {
++        "@testing-library/dom": "^10.4.0",
++        "@testing-library/user-event": "^14.6.1",
++        "@vitest/mocker": "3.1.1",
++        "@vitest/utils": "3.1.1",
++        "magic-string": "^0.30.17",
++        "sirv": "^3.0.1",
++        "tinyrainbow": "^2.0.0",
++        "ws": "^8.18.1"
++      },
++      "funding": {
++        "url": "https://opencollective.com/vitest"
++      },
++      "peerDependencies": {
++        "playwright": "*",
++        "vitest": "3.1.1",
++        "webdriverio": "^7.0.0 || ^8.0.0 || ^9.0.0"
++      },
++      "peerDependenciesMeta": {
++        "playwright": {
++          "optional": true
++        },
++        "safaridriver": {
++          "optional": true
++        },
++        "webdriverio": {
++          "optional": true
++        }
++      }
++    },
++    "node_modules/@vitest/browser/node_modules/@testing-library/user-event": {
++      "version": "14.6.1",
++      "resolved": "https://registry.npmjs.org/@testing-library/user-event/-/user-event-14.6.1.tgz",
++      "integrity": "sha512-vq7fv0rnt+QTXgPxr5Hjc210p6YKq2kmdziLgnsZGgLJ9e6VAShx1pACLuRjd/AS/sr7phAR58OIIpf0LlmQNw==",
++      "dev": true,
++      "license": "MIT",
++      "engines": {
++        "node": ">=12",
++        "npm": ">=6"
++      },
++      "peerDependencies": {
++        "@testing-library/dom": ">=7.21.4"
++      }
++    },
++    "node_modules/@vitest/browser/node_modules/@vitest/pretty-format": {
++      "version": "3.1.1",
++      "resolved": "https://registry.npmjs.org/@vitest/pretty-format/-/pretty-format-3.1.1.tgz",
++      "integrity": "sha512-dg0CIzNx+hMMYfNmSqJlLSXEmnNhMswcn3sXO7Tpldr0LiGmg3eXdLLhwkv2ZqgHb/d5xg5F7ezNFRA1fA13yA==",
++      "dev": true,
++      "license": "MIT",
++      "dependencies": {
++        "tinyrainbow": "^2.0.0"
++      },
++      "funding": {
++        "url": "https://opencollective.com/vitest"
++      }
++    },
++    "node_modules/@vitest/browser/node_modules/@vitest/utils": {
++      "version": "3.1.1",
++      "resolved": "https://registry.npmjs.org/@vitest/utils/-/utils-3.1.1.tgz",
++      "integrity": "sha512-1XIjflyaU2k3HMArJ50bwSh3wKWPD6Q47wz/NUSmRV0zNywPc4w79ARjg/i/aNINHwA+mIALhUVqD9/aUvZNgg==",
++      "dev": true,
++      "license": "MIT",
++      "dependencies": {
++        "@vitest/pretty-format": "3.1.1",
++        "loupe": "^3.1.3",
++        "tinyrainbow": "^2.0.0"
++      },
++      "funding": {
++        "url": "https://opencollective.com/vitest"
++      }
++    },
+     "node_modules/@vitest/coverage-v8": {
+       "version": "3.1.1",
+       "resolved": "https://registry.npmjs.org/@vitest/coverage-v8/-/coverage-v8-3.1.1.tgz",
+@@ -16329,6 +16432,16 @@
+         "monaco-editor": ">=0.36"
+       }
+     },
++    "node_modules/mrmime": {
++      "version": "2.0.1",
++      "resolved": "https://registry.npmjs.org/mrmime/-/mrmime-2.0.1.tgz",
++      "integrity": "sha512-Y3wQdFg2Va6etvQ5I82yUhGdsKrcYox6p7FfL1LbK2J4V01F9TGlepTIhnK24t7koZibmg82KGglhA1XK5IsLQ==",
++      "dev": true,
++      "license": "MIT",
++      "engines": {
++        "node": ">=10"
++      }
++    },
+     "node_modules/ms": {
+       "version": "2.1.3",
+       "resolved": "https://registry.npmjs.org/ms/-/ms-2.1.3.tgz",
+@@ -19312,6 +19425,21 @@
+       "dev": true,
+       "license": "ISC"
+     },
++    "node_modules/sirv": {
++      "version": "3.0.1",
++      "resolved": "https://registry.npmjs.org/sirv/-/sirv-3.0.1.tgz",
++      "integrity": "sha512-FoqMu0NCGBLCcAkS1qA+XJIQTR6/JHfQXl+uGteNCQ76T91DMUjPa9xfmeqMY3z80nLSg9yQmNjK0Px6RWsH/A==",
++      "dev": true,
++      "license": "MIT",
++      "dependencies": {
++        "@polka/url": "^1.0.0-next.24",
++        "mrmime": "^2.0.0",
++        "totalist": "^3.0.0"
++      },
++      "engines": {
++        "node": ">=18"
++      }
++    },
+     "node_modules/sisteransi": {
+       "version": "1.0.5",
+       "resolved": "https://registry.npmjs.org/sisteransi/-/sisteransi-1.0.5.tgz",
+@@ -20218,6 +20346,16 @@
+       "dev": true,
+       "license": "MIT"
+     },
++    "node_modules/totalist": {
++      "version": "3.0.1",
++      "resolved": "https://registry.npmjs.org/totalist/-/totalist-3.0.1.tgz",
++      "integrity": "sha512-sf4i37nQ2LBx4m3wB74y+ubopq6W/dIzXg0FDGjsYnZHVa1Da8FH853wlL2gtUhg+xJXjfk3kUZS3BRoQeoQBQ==",
++      "dev": true,
++      "license": "MIT",
++      "engines": {
++        "node": ">=6"
++      }
++    },
+     "node_modules/tough-cookie": {
+       "version": "5.1.2",
+       "resolved": "https://registry.npmjs.org/tough-cookie/-/tough-cookie-5.1.2.tgz",
+diff --git a/ui/package.json b/ui/package.json
+index ae5ca77cc36..c9ec318a463 100644
+--- a/ui/package.json
++++ b/ui/package.json
+@@ -11,11 +11,11 @@
+     "test:unit": "vitest run",
+     "test:lint": "eslint",
+     "test:cicd": "vitest run --coverage --exclude=\"**/translation.spec.js\"",
++    "test:storybook": "vitest run --project=storybook",
+     "translations:check": "node ./src/translations/check.js",
+     "lint": "eslint --fix",
+     "storybook": "storybook dev -p 6006",
+     "build-storybook": "storybook build",
+-    "test:storybook": "test-storybook",
+     "prepare": "cd .. && husky ui/.husky && rm -f .git/hooks/*",
+     "notes": "node ./scripts/ci/generateReleaseNotes",
+     "postinstall": "patch-package"
+@@ -81,9 +81,9 @@
+     "@rushstack/eslint-patch": "^1.11.0",
+     "@shikijs/markdown-it": "^3.2.1",
+     "@storybook/addon-essentials": "^8.6.12",
+-    "@storybook/addon-interactions": "^8.6.12",
+     "@storybook/addon-themes": "^8.6.12",
+     "@storybook/blocks": "^8.6.12",
++    "@storybook/experimental-addon-test": "^8.6.12",
+     "@storybook/test": "^8.6.12",
+     "@storybook/test-runner": "^0.22.0",
+     "@storybook/vue3": "^8.6.12",
+@@ -95,6 +95,7 @@
+     "@typescript-eslint/parser": "^8.28.0",
+     "@vitejs/plugin-vue": "^5.2.1",
+     "@vitejs/plugin-vue-jsx": "^4.1.1",
++    "@vitest/browser": "^3.1.1",
+     "@vitest/coverage-v8": "^3.1.1",
+     "@vue/eslint-config-prettier": "^10.2.0",
+     "@vue/test-utils": "^2.4.6",
+@@ -111,6 +112,7 @@
+     "monaco-editor": "^0.52.2",
+     "monaco-yaml": "^5.3.1",
+     "patch-package": "^8.0.0",
++    "playwright": "^1.51.1",
+     "prettier": "^3.5.3",
+     "rollup-plugin-copy": "^3.5.0",
+     "sass": "^1.86.3",
+diff --git a/ui/src/components/MultiPanelTabs.vue b/ui/src/components/MultiPanelTabs.vue
+index e173b41552c..37d5fbde4ac 100644
+--- a/ui/src/components/MultiPanelTabs.vue
++++ b/ui/src/components/MultiPanelTabs.vue
+@@ -23,7 +23,9 @@
+                             :class="{active: tab.value === panel.activeTab?.value}"
+                             draggable="true"
+                             @dragstart="(e) => {
+-                                e.dataTransfer.effectAllowed = 'move';
++                                if(e.dataTransfer){
++                                    e.dataTransfer.effectAllowed = 'move';
++                                }
+                                 dragstart(panelIndex, tab.value);
+                             }"
+                             @dragleave.prevent
+@@ -298,9 +300,14 @@
+             }
+         }
+ 
+-
+-        // add the tab to the target panel in-place of the hovered potential tab
+-        panels.value[targetPanelIndex].tabs.splice(targetTabIndex + 1, 0, movedTab);
++        if(targetPanelIndex === originalPanelIndex){
++            // if moving tabs on the same panel, add the tab to the target panel in-place of the hovered potential tab
++            const insertIndex = targetTabIndex < tabIndex ? targetTabIndex + 1 : targetTabIndex;
++            panels.value[targetPanelIndex].tabs.splice(insertIndex, 0, movedTab);
++        } else {
++            // add the tab to the target panel in-place of the hovered potential tab
++            panels.value[targetPanelIndex].tabs.splice(targetTabIndex + 1, 0, movedTab);
++        }
+     }
+ 
+     function destroyTab(panelIndex:number, tab: Tab){
+diff --git a/ui/src/components/code/segments/Editor.vue b/ui/src/components/code/segments/Editor.vue
+index b96a3d816f6..05478c84045 100644
+--- a/ui/src/components/code/segments/Editor.vue
++++ b/ui/src/components/code/segments/Editor.vue
+@@ -157,6 +157,7 @@
+                 input: true,
+                 lang: "yaml",
+                 shouldFocus: false,
++                showScroll: true,
+                 style: {height: "100px"},
+             },
+             labels: {
+@@ -179,6 +180,7 @@
+                 input: true,
+                 lang: "yaml",
+                 shouldFocus: false,
++                showScroll: true,
+                 style: {height: "100px"},
+             },
+             variables: {
+@@ -215,6 +217,7 @@
+                 input: true,
+                 lang: "yaml",
+                 shouldFocus: false,
++                showScroll: true,
+                 style: {height: "100px"},
+             },
+             disabled: {
+diff --git a/ui/src/components/filter/components/Label.vue b/ui/src/components/filter/components/Label.vue
+index 157c1b6c101..93d3a65eef1 100644
+--- a/ui/src/components/filter/components/Label.vue
++++ b/ui/src/components/filter/components/Label.vue
+@@ -56,20 +56,23 @@
+ </script>
+ 
+ <style scoped lang="scss">
++@import "../styles/filter.scss";
++
+ span {
+-    padding: 0.33rem 0.35rem;
++    padding: 0.40rem 0.35rem;
+     display: inline-block;
+ 
+     &:first-child,
+     .operation {
+         background: var(--ks-tag-background);
+     }
++    
+     .operation {
+-        border-left: 4px solid #ffffff;
+-        border-right: 4px solid #ffffff;
++        border-left: 4px solid $white;
++        border-right: 4px solid $white;
+ 
+         html.dark & {
+-            border-color: #20232d;
++            border-color: $border-color;
+         }
+     }
+ }
+diff --git a/ui/src/components/filter/styles/filter.scss b/ui/src/components/filter/styles/filter.scss
+index fb2bddb92e8..9ceb882bbb1 100644
+--- a/ui/src/components/filter/styles/filter.scss
++++ b/ui/src/components/filter/styles/filter.scss
+@@ -1,8 +1,24 @@
++@import "@kestra-io/ui-libs/src/scss/_color-palette.scss";
++
++// Filter Tags
++:root {
++    #{--ks-tag-background}: $base-gray-50;
++    #{--ks-tag-background-active}: $base-gray-100;
++}
++
++html.dark{
++    #{--ks-tag-background}: $base-gray-700;
++    #{--ks-tag-background-active}: $base-gray-500;
++    #{--ks-tag-background-hover}: $base-gray-400;
++}
++
+ // Coloring
+ $filters-gray-700: var(--bs-gray-700);
+ $filters-gray-900: var(--bs-gray-900);
+ $filters-card-color: var(--ks-background-card);
+ $filters-border-color: var(--ks-border-primary);
++$white: $base-white;
++$border-color: $base-gray-900;
+ 
+ // Typography
+ $filters-font-xs: var(--el-font-size-extra-small);
+diff --git a/ui/src/components/flows/FlowTriggers.vue b/ui/src/components/flows/FlowTriggers.vue
+index 6dcf265a67b..66b1d0fa9d3 100644
+--- a/ui/src/components/flows/FlowTriggers.vue
++++ b/ui/src/components/flows/FlowTriggers.vue
+@@ -148,7 +148,31 @@
+         </el-table-column>
+     </el-table>
+ 
+-    <Empty v-else type="triggers" />
++    <div v-if="triggersWithType.length" class="mt-4">
++        <el-button
++            @click="addNewTrigger"
++            :icon="Plus"
++            class="border-0 p-3"
++        >
++            {{ $t('no_code.creation.triggers') }}
++        </el-button>
++    </div>
++
++    <Empty
++        v-else
++        type="triggers"
++    >
++        <template #button>
++            <el-button
++                type="primary"
++                @click="addNewTrigger"
++                :icon="Plus"
++                class="mt-3"
++            >
++                {{ $t('no_code.creation.triggers') }}
++            </el-button>
++        </template>
++    </Empty>
+ 
+     <el-dialog v-model="isBackfillOpen" destroy-on-close :append-to-body="true">
+         <template #header>
+@@ -232,6 +256,7 @@
+     import Check from "vue-material-design-icons/Check.vue";
+     import Restart from "vue-material-design-icons/Restart.vue";
+     import CalendarCollapseHorizontalOutline from "vue-material-design-icons/CalendarCollapseHorizontalOutline.vue"
++    import Plus from "vue-material-design-icons/Plus.vue";
+     import FlowRun from "./FlowRun.vue";
+     import Id from "../Id.vue";
+     import TriggerAvatar from "./TriggerAvatar.vue";
+@@ -252,9 +277,10 @@
+     import moment from "moment";
+     import LogsWrapper from "../logs/LogsWrapper.vue";
+     import _isEqual from "lodash/isEqual";
++    import {storageKeys} from "../../utils/constants.js";
+ 
+     export default {
+-        components: {Markdown, Kicon, DateAgo, Vars, Drawer, LogsWrapper},
++        components: {Markdown, Kicon, DateAgo, Vars, Drawer, LogsWrapper, Empty},
+         data() {
+             return {
+                 triggerId: undefined,
+@@ -349,6 +375,9 @@
+                 }
+                 return false
+             },
++            editorViewType() {
++                return localStorage.getItem(storageKeys.EDITOR_VIEW_TYPE) === "NO_CODE";
++            },
+         },
+         methods: {
+             userCan(action) {
+@@ -481,6 +510,41 @@
+             canBeDisabled(trigger) {
+                 return this.triggers.map(trigg => trigg.triggerId).includes(trigger.id)
+                     && !trigger.sourceDisabled;
++            },
++            addNewTrigger() {
++                localStorage.setItem(storageKeys.EDITOR_VIEW_TYPE, "NO_CODE");
++
++                const baseUrl = {
++                    name: "flows/update",
++                    params: {
++                        tenant: this.$route.params.tenant,
++                        namespace: this.flow.namespace,
++                        id: this.flow.id,
++                        tab: "edit"
++                    }
++                };
++
++                if (this.editorViewType) {
++                    const route = {
++                        ...baseUrl,
++                        query: {
++                            section: "triggers"
++                        }
++                    };
++
++                    this.$nextTick(() => {
++                        this.$router.push(route).then(() => {
++                            this.$router.replace({
++                                ...route,
++                                query: {
++                                    ...route.query,
++                                }
++                            });
++                        });
++                    });
++                } else {
++                    this.$router.push(baseUrl);
++                }
+             }
+         }
+     };
+diff --git a/ui/src/components/flows/tasks/TaskArray.vue b/ui/src/components/flows/tasks/TaskArray.vue
+index 5673347761d..ab336711bc1 100644
+--- a/ui/src/components/flows/tasks/TaskArray.vue
++++ b/ui/src/components/flows/tasks/TaskArray.vue
+@@ -5,11 +5,17 @@
+         :gutter="10"
+         class="w-100"
+     >
+-        <el-col :span="2" class="d-flex flex-column mt-1 mb-2 reorder">
+-            <ChevronUp @click.prevent.stop="moveItem(index, 'up')" />
+-            <ChevronDown @click.prevent.stop="moveItem(index, 'down')" />
++        <el-col :span="2" class="d-flex flex-column justify-content-center mt-1 mb-2 reorder" v-if="items.length > 1">
++            <ChevronUp 
++                @click.prevent.stop="moveItem(index, 'up')" 
++                :class="{disabled: index === 0}"
++            />
++            <ChevronDown 
++                @click.prevent.stop="moveItem(index, 'down')" 
++                :class="{disabled: index === items.length - 1}"
++            />
+         </el-col>
+-        <el-col :span="20">
++        <el-col :span="items.length > 1 ? 20 : 22" class="pe-2">
+             <InputText
+                 :model-value="element"
+                 @update:model-value="(v) => handleInput(v, index)"
+@@ -17,7 +23,7 @@
+                 class="w-100"
+             />
+         </el-col>
+-        <el-col :span="2" class="col align-self-center delete">
++        <el-col :span="2" class="d-flex align-items-center justify-content-center delete">
+             <DeleteOutline @click="removeItem(index)" />
+         </el-col>
+     </el-row>
+@@ -76,4 +82,10 @@
+ 
+ <style scoped lang="scss">
+ @import "../../code/styles/code.scss";
++
++.disabled {
++    opacity: 0.5;
++    pointer-events: none;
++    cursor: not-allowed;
++}
+ </style>
+diff --git a/ui/tests/storybook/components/MultiPanelTabs.stories.tsx b/ui/tests/storybook/components/MultiPanelTabs.stories.tsx
+index 73467099a20..dc2b3a53077 100644
+--- a/ui/tests/storybook/components/MultiPanelTabs.stories.tsx
++++ b/ui/tests/storybook/components/MultiPanelTabs.stories.tsx
+@@ -1,4 +1,4 @@
+-import {markRaw, ref} from "vue";
++import {markRaw, ref, StyleValue} from "vue";
+ import {within, userEvent, expect, fireEvent, waitFor} from "@storybook/test";
+ import type {Meta, StoryObj} from "@storybook/vue3";
+ import CodeTagsIcon from "vue-material-design-icons/CodeTags.vue";
+@@ -23,10 +23,23 @@ const render: Story["render"] = ({modelValue}) => ({
+     setup() {
+         const modelValueRef = ref();
+         modelValueRef.value = modelValue;
++
++        const labelStyle: StyleValue = {
++            position: "absolute",
++            top: 0,
++            left: "0",
++            color: "white",
++            fontSize: "12px",
++            textAlign: "right",
++            padding: "0 1rem"
++          };
++          
+         return () => <div style="padding: 1rem;border: 1px solid var(--ks-border-primary); border-radius: 4px; margin: 1rem; background: var(--ks-background-body)">
++            <div style={{...labelStyle, background: "red", width: "250px"}}>This is an example of 250px wide element.</div>
++            <div style={{...labelStyle, background: "blue", width: "800px", top: "20px"}}>This is an example of 800px wide element.</div>
+             <MultiPanelTabs modelValue={modelValueRef.value} />
+-            <pre>{JSON.stringify(modelValueRef.value.map(p => ({
+-                tabs:p.tabs.map(t => t.value),
++            <pre>{JSON.stringify(modelValueRef.value.map((p:any) => ({
++                tabs:p.tabs.map((t:any) => t.value),
+                 size: p.size ? Math.round(p.size) : "<undefined>",
+             })))}</pre>
+         </div>
+@@ -230,10 +243,31 @@ export const TabReorderTest: Story = {
+             expect(canvas.getAllByRole("tab").map(tab => tab.textContent?.trim())).toMatchObject(["Tab 2", "Tab 3", "Tab 1"]);
+         }
+ 
++        const dropBetweenTwoTabs = async () => {
++            // Find the tab elements in the first panel
++            const firstTab = canvas.getByText("Tab 2");
++            const tabList = canvas.getByRole("tablist");
++
++            // Perform drag operation
++            await fireEvent.dragStart(firstTab);
++
++            await fireEvent.dragOver(tabList, {clientX: 250});
++
++            // Perform drop operation at the calculated position
++            await fireEvent.drop(canvas.getAllByText("Tab 1")[0]);
++
++            // Wait for the reorder to complete
++            await new Promise(resolve => setTimeout(resolve, 100));
++
++            // Verify the tabs have been reordered
++            await userEvent.click(firstTab);
++            expect(canvas.getAllByRole("tab").map(tab => tab.textContent?.trim())).toMatchObject(["Tab 3", "Tab 2", "Tab 1"]);
++        }
++
+         const dragEnterOnPanelDropOnPanel = async () => {
+             // Find the tab elements in the first panel
+             const secondTab = canvas.getByText("Tab 2");
+-            const panelOverlay = canvas.getByText("Content for Tab 1").parentNode!;
++            const panelOverlay = canvas.getByText("Content for Tab 2").parentNode!;
+ 
+             // Perform drag operation
+             await fireEvent.dragStart(secondTab);
+@@ -250,6 +284,10 @@ export const TabReorderTest: Story = {
+         }
+ 
+         await waitFor(dropBetweenTabs);
++
++        await new Promise(resolve => setTimeout(resolve, 100));
++        await waitFor(dropBetweenTwoTabs);
++
+         await new Promise(resolve => setTimeout(resolve, 100));
+         await waitFor(dragEnterOnPanelDropOnPanel);
+     }
+diff --git a/ui/vitest.config.js b/ui/vitest.config.js
+index 6de8dfba0fa..60612d09233 100644
+--- a/ui/vitest.config.js
++++ b/ui/vitest.config.js
+@@ -22,10 +22,16 @@ export default defineConfig({
+             junit: "./test-report.junit.xml",
+         },
+         coverage: {
++            include: [
++                "src/**/*.{js,ts,vue}",
++            ],
+             exclude: [
+                 ...coverageConfigDefaults.exclude,
+                 "stylelint.config.mjs",
+                 "storybook-static/**",
++                "**/.storybook/**",
++                "**/*.stories.*",
++                "**/*.d.ts",
+             ]
+         }
+     },
+diff --git a/ui/vitest.shims.d.ts b/ui/vitest.shims.d.ts
+new file mode 100644
+index 00000000000..f923d47d483
+--- /dev/null
++++ b/ui/vitest.shims.d.ts
+@@ -0,0 +1 @@
++/// <reference types="@vitest/browser/providers/playwright" />
+\ No newline at end of file
+diff --git a/ui/vitest.workspace.js b/ui/vitest.workspace.js
+new file mode 100644
+index 00000000000..ba421d0abc4
+--- /dev/null
++++ b/ui/vitest.workspace.js
+@@ -0,0 +1,28 @@
++import path from "node:path";
++
++import {defineWorkspace} from "vitest/config";
++
++import {storybookTest} from "@storybook/experimental-addon-test/vitest-plugin";
++
++// More info at: https://storybook.js.org/docs/writing-tests/test-addon
++export default defineWorkspace([
++    "vitest.config.js",
++    {
++        extends: "vite.config.js",
++        plugins: [
++            // The plugin will run tests for the stories defined in your Storybook config
++            // See options at: https://storybook.js.org/docs/writing-tests/test-addon#storybooktest
++            storybookTest({configDir: path.join(__dirname, ".storybook")}),
++        ],
++        test: {
++            name: "storybook",
++            browser: {
++                enabled: true,
++                headless: true,
++                provider: "playwright",
++                instances: [{browser: "chromium"}],
++            },
++            setupFiles: [".storybook/vitest.setup.ts"],
++        },
++    },
++]);
+diff --git a/webserver/build.gradle b/webserver/build.gradle
+index 219776a6dbf..91417ef64f8 100644
+--- a/webserver/build.gradle
++++ b/webserver/build.gradle
+@@ -28,7 +28,7 @@ dependencies {
+     testAnnotationProcessor project(':processor')
+     testImplementation project(':core').sourceSets.test.output
+     testImplementation project(':storage-local')
+-    testImplementation "org.wiremock:wiremock"
++    testImplementation "org.wiremock:wiremock-jetty12"
+ 
+     testImplementation project(':tests')
+     testImplementation project(':jdbc')

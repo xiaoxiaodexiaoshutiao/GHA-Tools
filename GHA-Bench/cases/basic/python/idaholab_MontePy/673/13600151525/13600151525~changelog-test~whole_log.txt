@@ -1,0 +1,177 @@
+2025-03-01T02:35:28.4864872Z Requested labels: ubuntu-latest
+2025-03-01T02:35:28.4865107Z Job defined at: idaholab/MontePy/.github/workflows/main.yml@refs/pull/673/merge
+2025-03-01T02:35:28.4865202Z Waiting for a runner to pick up this job...
+2025-03-01T02:35:30.7699746Z Job is waiting for a hosted runner to come online.
+2025-03-01T02:35:33.2580586Z Job is about to start running on the hosted runner: GitHub Actions 414 (hosted)
+2025-03-01T02:35:36.1126219Z Current runner version: '2.322.0'
+2025-03-01T02:35:36.1153095Z ##[group]Operating System
+2025-03-01T02:35:36.1153867Z Ubuntu
+2025-03-01T02:35:36.1154490Z 24.04.2
+2025-03-01T02:35:36.1155006Z LTS
+2025-03-01T02:35:36.1155433Z ##[endgroup]
+2025-03-01T02:35:36.1156049Z ##[group]Runner Image
+2025-03-01T02:35:36.1156817Z Image: ubuntu-24.04
+2025-03-01T02:35:36.1157409Z Version: 20250223.1.0
+2025-03-01T02:35:36.1158485Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250223.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-01T02:35:36.1159859Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250223.1
+2025-03-01T02:35:36.1160755Z ##[endgroup]
+2025-03-01T02:35:36.1161326Z ##[group]Runner Image Provisioner
+2025-03-01T02:35:36.1161916Z 2.0.422.1
+2025-03-01T02:35:36.1162457Z ##[endgroup]
+2025-03-01T02:35:36.1164696Z ##[group]GITHUB_TOKEN Permissions
+2025-03-01T02:35:36.1167476Z Actions: write
+2025-03-01T02:35:36.1168281Z Attestations: write
+2025-03-01T02:35:36.1168985Z Checks: write
+2025-03-01T02:35:36.1169452Z Contents: write
+2025-03-01T02:35:36.1169976Z Deployments: write
+2025-03-01T02:35:36.1170568Z Discussions: write
+2025-03-01T02:35:36.1171093Z Issues: write
+2025-03-01T02:35:36.1171621Z Metadata: read
+2025-03-01T02:35:36.1172116Z Packages: write
+2025-03-01T02:35:36.1172661Z Pages: write
+2025-03-01T02:35:36.1173200Z PullRequests: write
+2025-03-01T02:35:36.1173761Z RepositoryProjects: write
+2025-03-01T02:35:36.1174352Z SecurityEvents: write
+2025-03-01T02:35:36.1174881Z Statuses: write
+2025-03-01T02:35:36.1175410Z ##[endgroup]
+2025-03-01T02:35:36.1178779Z Secret source: Actions
+2025-03-01T02:35:36.1179890Z Prepare workflow directory
+2025-03-01T02:35:36.1583875Z Prepare all required actions
+2025-03-01T02:35:36.1620990Z Getting action download info
+2025-03-01T02:35:36.3537677Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-01T02:35:36.4503979Z Download action repository 'dorny/paths-filter@v3' (SHA:de90cc6fb38fc0963ad72b210f1f284cd68cea36)
+2025-03-01T02:35:37.1855874Z Complete job name: changelog-test
+2025-03-01T02:35:37.2540074Z ##[group]Run actions/checkout@v4
+2025-03-01T02:35:37.2541017Z with:
+2025-03-01T02:35:37.2541436Z   repository: idaholab/MontePy
+2025-03-01T02:35:37.2542068Z   token: ***
+2025-03-01T02:35:37.2542456Z   ssh-strict: true
+2025-03-01T02:35:37.2542860Z   ssh-user: git
+2025-03-01T02:35:37.2543271Z   persist-credentials: true
+2025-03-01T02:35:37.2543718Z   clean: true
+2025-03-01T02:35:37.2544126Z   sparse-checkout-cone-mode: true
+2025-03-01T02:35:37.2544603Z   fetch-depth: 1
+2025-03-01T02:35:37.2544996Z   fetch-tags: false
+2025-03-01T02:35:37.2545399Z   show-progress: true
+2025-03-01T02:35:37.2545803Z   lfs: false
+2025-03-01T02:35:37.2546173Z   submodules: false
+2025-03-01T02:35:37.2546757Z   set-safe-directory: true
+2025-03-01T02:35:37.2547475Z ##[endgroup]
+2025-03-01T02:35:37.4743763Z Syncing repository: idaholab/MontePy
+2025-03-01T02:35:37.4745664Z ##[group]Getting Git version info
+2025-03-01T02:35:37.4746692Z Working directory is '/home/runner/work/MontePy/MontePy'
+2025-03-01T02:35:37.4747824Z [command]/usr/bin/git version
+2025-03-01T02:35:37.4836789Z git version 2.48.1
+2025-03-01T02:35:37.4864199Z ##[endgroup]
+2025-03-01T02:35:37.4880212Z Temporarily overriding HOME='/home/runner/work/_temp/aaa82db7-33af-4096-99e2-70070bd5cedb' before making global git config changes
+2025-03-01T02:35:37.4883001Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-01T02:35:37.4886529Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/MontePy/MontePy
+2025-03-01T02:35:37.4923166Z Deleting the contents of '/home/runner/work/MontePy/MontePy'
+2025-03-01T02:35:37.4927343Z ##[group]Initializing the repository
+2025-03-01T02:35:37.4932072Z [command]/usr/bin/git init /home/runner/work/MontePy/MontePy
+2025-03-01T02:35:37.5019960Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-01T02:35:37.5021469Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-01T02:35:37.5022982Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-01T02:35:37.5024399Z hint:
+2025-03-01T02:35:37.5025349Z hint: 	git config --global init.defaultBranch <name>
+2025-03-01T02:35:37.5026651Z hint:
+2025-03-01T02:35:37.5027705Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-01T02:35:37.5028787Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-01T02:35:37.5029550Z hint:
+2025-03-01T02:35:37.5029986Z hint: 	git branch -m <name>
+2025-03-01T02:35:37.5030762Z Initialized empty Git repository in /home/runner/work/MontePy/MontePy/.git/
+2025-03-01T02:35:37.5037861Z [command]/usr/bin/git remote add origin https://github.com/idaholab/MontePy
+2025-03-01T02:35:37.5072008Z ##[endgroup]
+2025-03-01T02:35:37.5073367Z ##[group]Disabling automatic garbage collection
+2025-03-01T02:35:37.5075416Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-01T02:35:37.5104496Z ##[endgroup]
+2025-03-01T02:35:37.5105717Z ##[group]Setting up auth
+2025-03-01T02:35:37.5111878Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-01T02:35:37.5141390Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-01T02:35:37.5475063Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-01T02:35:37.5507898Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-01T02:35:37.5735747Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-01T02:35:37.5773305Z ##[endgroup]
+2025-03-01T02:35:37.5782618Z ##[group]Fetching the repository
+2025-03-01T02:35:37.5784350Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a8a1e0bffa47200a033ba6ad070692dba44da1a6:refs/remotes/pull/673/merge
+2025-03-01T02:35:38.3394529Z From https://github.com/idaholab/MontePy
+2025-03-01T02:35:38.3397446Z  * [new ref]         a8a1e0bffa47200a033ba6ad070692dba44da1a6 -> pull/673/merge
+2025-03-01T02:35:38.3421410Z ##[endgroup]
+2025-03-01T02:35:38.3423417Z ##[group]Determining the checkout info
+2025-03-01T02:35:38.3425703Z ##[endgroup]
+2025-03-01T02:35:38.3428706Z [command]/usr/bin/git sparse-checkout disable
+2025-03-01T02:35:38.3467317Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-01T02:35:38.3494041Z ##[group]Checking out the ref
+2025-03-01T02:35:38.3497300Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/673/merge
+2025-03-01T02:35:38.3695598Z Note: switching to 'refs/remotes/pull/673/merge'.
+2025-03-01T02:35:38.3697009Z 
+2025-03-01T02:35:38.3697803Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-01T02:35:38.3700827Z changes and commit them, and you can discard any commits you make in this
+2025-03-01T02:35:38.3703996Z state without impacting any branches by switching back to a branch.
+2025-03-01T02:35:38.3705980Z 
+2025-03-01T02:35:38.3707508Z If you want to create a new branch to retain commits you create, you may
+2025-03-01T02:35:38.3710622Z do so (now or later) by using -c with the switch command. Example:
+2025-03-01T02:35:38.3712328Z 
+2025-03-01T02:35:38.3713050Z   git switch -c <new-branch-name>
+2025-03-01T02:35:38.3714228Z 
+2025-03-01T02:35:38.3714940Z Or undo this operation with:
+2025-03-01T02:35:38.3716102Z 
+2025-03-01T02:35:38.3716774Z   git switch -
+2025-03-01T02:35:38.3717404Z 
+2025-03-01T02:35:38.3718382Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-01T02:35:38.3719791Z 
+2025-03-01T02:35:38.3721536Z HEAD is now at a8a1e0b Merge 357026b0a9e2e22e1c74b679782148cd5ec2669d into df3d0a506416b7c581fccd36a160e9aa62174bc8
+2025-03-01T02:35:38.3727633Z ##[endgroup]
+2025-03-01T02:35:38.3743914Z [command]/usr/bin/git log -1 --format=%H
+2025-03-01T02:35:38.3766021Z a8a1e0bffa47200a033ba6ad070692dba44da1a6
+2025-03-01T02:35:38.4118991Z ##[group]Run dorny/paths-filter@v3
+2025-03-01T02:35:38.4120181Z with:
+2025-03-01T02:35:38.4121515Z   filters: changelog:
+  - 'doc/source/changelog.rst'
+code:
+  - 'montepy/**'
+
+2025-03-01T02:35:38.4123415Z   token: ***
+2025-03-01T02:35:38.4124316Z   list-files: none
+2025-03-01T02:35:38.4125281Z   initial-fetch-depth: 100
+2025-03-01T02:35:38.4126548Z ##[endgroup]
+2025-03-01T02:35:38.5051593Z ##[group]Fetching list of changed files for PR#673 from Github API
+2025-03-01T02:35:38.5059887Z Invoking listFiles(pull_number: 673, per_page: 100)
+2025-03-01T02:35:38.9013659Z Received 4 items
+2025-03-01T02:35:38.9016632Z [modified] montepy/input_parser/parser_base.py
+2025-03-01T02:35:38.9021528Z [modified] montepy/input_parser/syntax_node.py
+2025-03-01T02:35:38.9023691Z [modified] montepy/input_parser/tokens.py
+2025-03-01T02:35:38.9025902Z [modified] tests/inputs/test_complement_edge.imcnp
+2025-03-01T02:35:38.9029232Z ##[endgroup]
+2025-03-01T02:35:38.9030616Z Detected 4 changed files
+2025-03-01T02:35:38.9032268Z Results:
+2025-03-01T02:35:38.9034599Z ##[group]Filter changelog = false
+2025-03-01T02:35:38.9036556Z Matching files: none
+2025-03-01T02:35:38.9038715Z ##[endgroup]
+2025-03-01T02:35:38.9040119Z ##[group]Filter code = true
+2025-03-01T02:35:38.9041093Z Matching files:
+2025-03-01T02:35:38.9042116Z montepy/input_parser/parser_base.py [modified]
+2025-03-01T02:35:38.9043458Z montepy/input_parser/syntax_node.py [modified]
+2025-03-01T02:35:38.9044743Z montepy/input_parser/tokens.py [modified]
+2025-03-01T02:35:38.9046659Z ##[endgroup]
+2025-03-01T02:35:38.9047494Z Changes output set to ["code"]
+2025-03-01T02:35:38.9815200Z ##[group]Run echo "Changelog not updated"
+2025-03-01T02:35:38.9816657Z [36;1mecho "Changelog not updated"[0m
+2025-03-01T02:35:38.9817771Z [36;1mexit 1[0m
+2025-03-01T02:35:38.9869398Z shell: /usr/bin/bash -e {0}
+2025-03-01T02:35:38.9870393Z ##[endgroup]
+2025-03-01T02:35:38.9963206Z Changelog not updated
+2025-03-01T02:35:38.9978061Z ##[error]Process completed with exit code 1.
+2025-03-01T02:35:39.0154409Z Post job cleanup.
+2025-03-01T02:35:39.1100027Z [command]/usr/bin/git version
+2025-03-01T02:35:39.1141991Z git version 2.48.1
+2025-03-01T02:35:39.1187682Z Temporarily overriding HOME='/home/runner/work/_temp/35987ca6-b66c-4761-bee7-f53493c3ef98' before making global git config changes
+2025-03-01T02:35:39.1192622Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-01T02:35:39.1196612Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/MontePy/MontePy
+2025-03-01T02:35:39.1229564Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-01T02:35:39.1264161Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-01T02:35:39.1492828Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-01T02:35:39.1513173Z http.https://github.com/.extraheader
+2025-03-01T02:35:39.1526997Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-01T02:35:39.1558560Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-01T02:35:39.1904991Z Cleaning up orphan processes

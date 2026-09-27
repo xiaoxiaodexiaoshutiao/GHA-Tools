@@ -1,0 +1,216 @@
+diff --git a/Dockerfile b/Dockerfile
+index e2011c4d6e6..10271b791d9 100644
+--- a/Dockerfile
++++ b/Dockerfile
+@@ -33,4 +33,4 @@ COPY . .
+ ARG GIT_COMMIT
+ ENV GIT_COMMIT=$GIT_COMMIT
+ 
+-CMD ["/home/ubuntu/ci/run_all_spiders.sh"]
++CMD ["./ci/run_all_spiders.sh"]
+diff --git a/locations/spiders/banxico_mx.py b/locations/spiders/banxico_mx.py
+index 305ae679785..925f4f50cca 100644
+--- a/locations/spiders/banxico_mx.py
++++ b/locations/spiders/banxico_mx.py
+@@ -26,7 +26,7 @@ class BanxicoMXSpider(Spider):
+         "40030": ("BanBajío", "Q5718183"),
+         "40002": ("Banamex", "Q2646652"),
+         "40072": ("Banorte", "Q806914"),
+-        "40012": ("BBVA", "Q2876794"),
++        "40012": ("BBVA México", "Q2876794"),
+         "40021": ("HSBC", "Q5635881"),
+         "40130": ("Compartamos Banco ICR", "Q2990370"),
+         "40036": ("ICR Inbursa", "Q731123"),
+diff --git a/locations/spiders/bash.py b/locations/spiders/bash.py
+index 9fd4909002d..5528ffa097f 100644
+--- a/locations/spiders/bash.py
++++ b/locations/spiders/bash.py
+@@ -35,7 +35,7 @@
+     "G-STAR": {"brand": "G-Star RAW", "brand_wikidata": "Q1484081"},
+     "HI": {"brand": "hi", "brand_wikidata": "Q116431177", "extras": Categories.SHOP_CLOTHES.value},
+     "@HOME LIVINGSPACE": {"brand": "@Home Livingspace", "brand_wikidata": "Q117406343"},
+-    "@HOME": {"brand": "@Home", "brand_wikidata": "Q116429887"},
++    "@HOME": {"brand": "@home", "brand_wikidata": "Q116429887"},
+     "LUELLA": {"brand": "Luella", "brand_wikidata": "Q117406783", "extras": Categories.SHOP_VARIETY_STORE.value},
+     "JET": {"brand": "Jet", "brand_wikidata": "Q61995123"},
+     "MARKHAM": {"brand": "Markham", "brand_wikidata": "Q116378583"},
+@@ -57,8 +57,8 @@
+     "SF": {"brand": "The Sneaker Factory", "brand_wikidata": "Q116290301"},
+     "SNEAKER FACTORY": {"brand": "The Sneaker Factory", "brand_wikidata": "Q116290301"},
+     "SODA BLOC": {"brand": "SODA Bloc", "brand_wikidata": "Q117406709", "extras": Categories.SHOP_CLOTHES.value},
+-    "SPORTSCENE": {"brand": "Sportscene", "brand_wikidata": "Q116378841"},
+-    "SS": {"brand": "Sportscene", "brand_wikidata": "Q116378841"},
++    "SPORTSCENE": {"brand": "sportscene", "brand_wikidata": "Q116378841"},
++    "SS": {"brand": "sportscene", "brand_wikidata": "Q116378841"},
+     "STERNS": {"brand": "Sterns", "brand_wikidata": "Q116430300"},
+     "STN": {"brand": "Sterns", "brand_wikidata": "Q116430300"},
+     "TOTALSPORTS": {"brand": "Totalsports", "brand_wikidata": "Q116379123"},
+diff --git a/locations/spiders/dunkin_sa.py b/locations/spiders/dunkin_sa.py
+index b89141be586..9cf776f353e 100644
+--- a/locations/spiders/dunkin_sa.py
++++ b/locations/spiders/dunkin_sa.py
+@@ -8,7 +8,7 @@
+ 
+ class DunkinSASpider(Spider):
+     name = "dunkin_sa"
+-    item_attributes = {"brand": "Dunkin'", "brand_wikidata": "Q847743"}
++    item_attributes = {"brand_wikidata": "Q847743"}
+ 
+     def start_requests(self):
+         yield JsonRequest(
+@@ -19,5 +19,6 @@ def start_requests(self):
+     def parse(self, response, **kwargs):
+         for store in json.loads(response.json()["d"]):
+             item = DictParser.parse(store)
++            item["branch"] = item.pop("name")
+             item["addr_full"] = store.get("fullAddress")
+             yield item
+diff --git a/locations/spiders/euronics_de.py b/locations/spiders/euronics_de.py
+index a451e892815..b94091162c9 100644
+--- a/locations/spiders/euronics_de.py
++++ b/locations/spiders/euronics_de.py
+@@ -9,6 +9,6 @@ class EuronicsDESpider(WoosmapSpider):
+ 
+     def parse_item(self, item, feature, **kwargs):
+         if "mediaathome" in feature["properties"]["contact"]["website"]:
+-            item["brand"] = "media@Home"
++            item["brand"] = "media@home"
+             item["brand_wikidata"] = "Q117707176"
+         yield item
+diff --git a/locations/government_spiders/virginia_health_inspection_blue_ridge.py b/locations/spiders/government/virginia_health_inspection_blue_ridge.py
+similarity index 100%
+rename from locations/government_spiders/virginia_health_inspection_blue_ridge.py
+rename to locations/spiders/government/virginia_health_inspection_blue_ridge.py
+diff --git a/locations/spiders/inditex.py b/locations/spiders/inditex.py
+index cbb694e8bd5..9cda7b03bb4 100644
+--- a/locations/spiders/inditex.py
++++ b/locations/spiders/inditex.py
+@@ -13,7 +13,7 @@ class InditexSpider(scrapy.Spider):
+         "oysho": {"brand": "Oysho", "brand_wikidata": "Q3327046"},
+         "zarahome": {"brand": "Zara Home", "brand_wikidata": "Q3114054"},
+         "stradivarius": {"brand": "Stradivarius", "brand_wikidata": "Q3322945"},
+-        "pullandbear": {"brand": "Pull&Bear", "brand_wikidata": "Q691029"},
++        "pullandbear": {"brand": "Pull & Bear", "brand_wikidata": "Q691029"},
+         "lefties": {"brand": "Lefties", "brand_wikidata": "Q12391713"},
+     }
+     # Each site has the same multi-brand catalogue JSON, could have picked any site!
+diff --git a/locations/spiders/kroger_us.py b/locations/spiders/kroger_us.py
+index 769af980dc0..a1fe7eb22f9 100644
+--- a/locations/spiders/kroger_us.py
++++ b/locations/spiders/kroger_us.py
+@@ -28,7 +28,7 @@
+     "https://www.kingsoopers.com/": {"brand": "King Soopers", "brand_wikidata": "Q6412065"},
+     "https://www.kroger.com/": {"brand": "Kroger", "brand_wikidata": "Q153417"},
+     "https://www.marianos.com/": {"brand": "Mariano's Fresh Market", "brand_wikidata": "Q55622168"},
+-    "https://www.metromarket.net/": {"brand": "Metro Market", "brand_wikidata": "Q7371288"},
++    "https://www.metromarket.net/": {"brand": "Metro Market"},
+     "https://www.pay-less.com/": {"brand": "Pay Less", "brand_wikidata": "Q7156587"},
+     "https://www.picknsave.com/": {"brand": "Pick 'n Save", "brand_wikidata": "Q7371288"},
+     "https://www.qfc.com/": {"brand": "QFC", "brand_wikidata": "Q7265425"},
+diff --git a/locations/spiders/marriott_hotels.py b/locations/spiders/marriott_hotels.py
+index de8aad8f80c..70442c84bcd 100644
+--- a/locations/spiders/marriott_hotels.py
++++ b/locations/spiders/marriott_hotels.py
+@@ -30,7 +30,7 @@ class MarriottHotelsSpider(scrapy.Spider):
+ 
+     # Continue policy of ignoring collection hotels for now.
+     my_brands = {
+-        "MC": ["Marriott Hotels & Resorts", "Q3918608"],
++        "MC": ["Marriott", "Q3918608"],
+         "AR": ["AC Hotels", "Q5653536"],
+         "AK": "ignore",  # Autograph Collection
+         "AL": ["Aloft Hotels", "Q4734166"],
+@@ -54,7 +54,7 @@ class MarriottHotelsSpider(scrapy.Spider):
+         "PR": ["Protea Hotels", "Q17092570"],
+         "RI": ["Residence Inn by Marriott", "Q7315394"],
+         "RZ": ["Ritz-Carlton", "Q782200"],
+-        "SI": ["Sheraton Hotels and Resorts", "Q634831"],
++        "SI": ["Sheraton", "Q634831"],
+         "SH": ["SpringHill Suites", "Q7580351"],
+         "TX": "ignore",  # Tribute Portfolio
+         "XR": ["St. Regis Hotels & Resorts", "Q30715430"],
+diff --git a/locations/spiders/marstons_plc.py b/locations/spiders/marstons_plc.py
+index d06589d57cf..2c336672d15 100644
+--- a/locations/spiders/marstons_plc.py
++++ b/locations/spiders/marstons_plc.py
+@@ -6,7 +6,7 @@
+ 
+ class MarstonsPlcSpider(scrapy.Spider):
+     name = "marstons_plc"
+-    item_attributes = {"brand": "Marston's", "brand_wikidata": "Q6773982"}
++    MARSTONS = {"brand": "Marston's", "brand_wikidata": "Q6773982"}
+     allowed_domains = ["marstonspubs.co.uk"]
+     store_types = {}
+ 
+@@ -87,6 +87,10 @@ def parse(self, response):
+                 "email": place["email"],
+                 "brand": place["pfLabel"],
+             }
++
++            if properties["brand"] == "Marston's":
++                properties.update(self.MARSTONS)
++
+             apply_category(Categories.PUB, properties)
+             apply_yes_no("payment:marstons_privilege_card", properties, place["sv"], False)
+ 
+diff --git a/locations/spiders/mbplc_gb.py b/locations/spiders/mbplc_gb.py
+index 56ce6ac125a..51cf382bed2 100644
+--- a/locations/spiders/mbplc_gb.py
++++ b/locations/spiders/mbplc_gb.py
+@@ -14,7 +14,7 @@ class MbplcGBSpider(WoosmapSpider):
+         "Ember Inns": {"brand": "Ember Inns", "brand_wikidata": "Q116272278"},
+         "Harvester": {"brand": "Harvester", "brand_wikidata": "Q5676915"},
+         "Miller & Carter": {"brand": "Miller & Carter", "brand_wikidata": "Q87067401"},
+-        "Nicholsons": {"brand": "Nicholsons", "brand_wikidata": "Q113130666"},
++        "Nicholsons": {"brand": "Nicholson's", "brand_wikidata": "Q113130666"},
+         "O'Neill's": {"brand": "O'Neill's", "brand_wikidata": "Q7071905"},
+         "Premium Country Pubs": {"brand": "Premium Country Pubs", "brand_wikidata": "Q118606900"},
+         "Stonehouse": {"brand": "Stonehouse", "brand_wikidata": "Q78192049"},
+diff --git a/locations/spiders/stonegate_gb.py b/locations/spiders/stonegate_gb.py
+index 2eacc2f9b47..7d528769efa 100644
+--- a/locations/spiders/stonegate_gb.py
++++ b/locations/spiders/stonegate_gb.py
+@@ -34,7 +34,7 @@ class StonegateGBSpider(CrawlSpider, StructuredDataSpider):
+         "www.walkaboutbars.co.uk": {"brand": "Walkabout", "brand_wikidata": "Q7962149", "cat": Categories.PUB},
+         "www.beatone.co.uk": {"brand": "Be At One", "brand_wikidata": "Q110016786", "cat": Categories.BAR},
+         "www.popworldparty.co.uk": {"brand": "Popworld", "cat": Categories.NIGHTCLUB},
+-        "www.slugandlettuce.co.uk": {"brand": "Slug & Lettuce", "brand_wikidata": "Q7542224"},
++        "www.slugandlettuce.co.uk": {"brand": "Slug and Lettuce", "brand_wikidata": "Q7542224"},
+         "www.crafted-social.co.uk": {"brand": "Crafted Social"},
+         "www.socialpubandkitchen.co.uk": {"brand": "Social Pub & Kitchen"},
+         # "www.pubsmiths.co.uk": {"brand": "Pubsmiths"},
+diff --git a/locations/spiders/ufc_gym_us.py b/locations/spiders/ufc_gym_us.py
+index bbe07ac27bd..b67b4330125 100644
+--- a/locations/spiders/ufc_gym_us.py
++++ b/locations/spiders/ufc_gym_us.py
+@@ -7,7 +7,7 @@
+ 
+ class UfcGymUSSpider(SitemapSpider):
+     name = "ufc_gym_us"
+-    item_attributes = {"brand": "UFC GYM", "brand_wikidata": "Q122511683"}
++    item_attributes = {"brand": "UFC Gym", "brand_wikidata": "Q122511683"}
+     sitemap_urls = ["https://www.ufcgym.com/sitemap.xml"]
+     sitemap_rules = [(r"/locations/(?!list)[-\w]+$", "parse")]
+ 
+diff --git a/locations/spiders/wyndham.py b/locations/spiders/wyndham.py
+index 0066f6630f1..83e1b262cb4 100644
+--- a/locations/spiders/wyndham.py
++++ b/locations/spiders/wyndham.py
+@@ -7,7 +7,7 @@
+ 
+ BRANDS = {
+     "americinn": ["AmericInn", "Q4742493"],
+-    "baymont": ["Baymont by Wyndham", "Q4874634"],
++    "baymont": ["Baymont", "Q4874634"],
+     "caesars-rewards": ["Caesars Rewards", None],
+     "days-inn": ["Days Inn", "Q1047239"],
+     "dazzler": ["Dazzler", None],
+@@ -21,7 +21,7 @@
+     "ramada": ["Ramada", "Q1502859"],
+     "registry-collection": ["Registry Collection", None],
+     "super-8": ["Super 8", "Q5364003"],
+-    "trademark": ["Trademark Collection by Wyndham", "Q112144846"],
++    "trademark": ["Trademark Collection", "Q112144846"],
+     "travelodge": ["Travelodge", "Q7836087"],
+     "tryp": ["TRYP", "Q6153452"],
+     "vienna-house": ["Vienna House", "Q2523363"],

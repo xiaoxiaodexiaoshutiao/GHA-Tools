@@ -1,0 +1,321 @@
+2025-02-25T12:07:34.0397513Z Requested labels: ubuntu-latest
+2025-02-25T12:07:34.0397762Z Job defined at: nunomaduro/collision/.github/workflows/tests.yml@refs/pull/325/merge
+2025-02-25T12:07:34.0397879Z Waiting for a runner to pick up this job...
+2025-02-25T12:07:35.8190867Z Job is waiting for a hosted runner to come online.
+2025-02-25T12:07:39.9965708Z Job is about to start running on the hosted runner: GitHub Actions 12 (hosted)
+2025-02-25T12:07:42.2485820Z Current runner version: '2.322.0'
+2025-02-25T12:07:42.2508574Z ##[group]Operating System
+2025-02-25T12:07:42.2509498Z Ubuntu
+2025-02-25T12:07:42.2510020Z 24.04.1
+2025-02-25T12:07:42.2510563Z LTS
+2025-02-25T12:07:42.2511031Z ##[endgroup]
+2025-02-25T12:07:42.2511581Z ##[group]Runner Image
+2025-02-25T12:07:42.2512176Z Image: ubuntu-24.04
+2025-02-25T12:07:42.2512729Z Version: 20250209.1.0
+2025-02-25T12:07:42.2513771Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250209.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-25T12:07:42.2515190Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250209.1
+2025-02-25T12:07:42.2516244Z ##[endgroup]
+2025-02-25T12:07:42.2516794Z ##[group]Runner Image Provisioner
+2025-02-25T12:07:42.2517506Z 2.0.422.1
+2025-02-25T12:07:42.2518016Z ##[endgroup]
+2025-02-25T12:07:42.2520139Z ##[group]GITHUB_TOKEN Permissions
+2025-02-25T12:07:42.2522029Z Actions: read
+2025-02-25T12:07:42.2522873Z Attestations: read
+2025-02-25T12:07:42.2523515Z Checks: read
+2025-02-25T12:07:42.2524013Z Contents: read
+2025-02-25T12:07:42.2524618Z Deployments: read
+2025-02-25T12:07:42.2525148Z Discussions: read
+2025-02-25T12:07:42.2525884Z Issues: read
+2025-02-25T12:07:42.2526426Z Metadata: read
+2025-02-25T12:07:42.2526908Z Packages: read
+2025-02-25T12:07:42.2527446Z Pages: read
+2025-02-25T12:07:42.2527986Z PullRequests: read
+2025-02-25T12:07:42.2528532Z RepositoryProjects: read
+2025-02-25T12:07:42.2529179Z SecurityEvents: read
+2025-02-25T12:07:42.2529680Z Statuses: read
+2025-02-25T12:07:42.2530185Z ##[endgroup]
+2025-02-25T12:07:42.2532980Z Secret source: None
+2025-02-25T12:07:42.2533692Z Prepare workflow directory
+2025-02-25T12:07:42.3014208Z Prepare all required actions
+2025-02-25T12:07:42.3050682Z Getting action download info
+2025-02-25T12:07:42.4494790Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-02-25T12:07:42.5204137Z Download action repository 'shivammathur/setup-php@v2' (SHA:9e72090525849c5e82e596468b86eb55e9cc5401)
+2025-02-25T12:07:42.7636428Z Complete job name: PHP 8.2 - ubuntu-latest - PHPUnit 11.5.9 - Laravel 12.0 - prefer-stable
+2025-02-25T12:07:42.8308974Z ##[group]Checking docker version
+2025-02-25T12:07:42.8323130Z ##[command]/usr/bin/docker version --format '{{.Server.APIVersion}}'
+2025-02-25T12:07:42.8786373Z '1.45'
+2025-02-25T12:07:42.8799557Z Docker daemon API version: '1.45'
+2025-02-25T12:07:42.8800360Z ##[command]/usr/bin/docker version --format '{{.Client.APIVersion}}'
+2025-02-25T12:07:42.8955552Z '1.45'
+2025-02-25T12:07:42.8968790Z Docker client API version: '1.45'
+2025-02-25T12:07:42.8974909Z ##[endgroup]
+2025-02-25T12:07:42.8979486Z ##[group]Clean up resources from previous jobs
+2025-02-25T12:07:42.8985921Z ##[command]/usr/bin/docker ps --all --quiet --no-trunc --filter "label=36ec90"
+2025-02-25T12:07:42.9134839Z ##[command]/usr/bin/docker network prune --force --filter "label=36ec90"
+2025-02-25T12:07:42.9263930Z ##[endgroup]
+2025-02-25T12:07:42.9264463Z ##[group]Create local container network
+2025-02-25T12:07:42.9274520Z ##[command]/usr/bin/docker network create --label 36ec90 github_network_de5f9aaece704c8a902f1c0c672da753
+2025-02-25T12:07:43.0014375Z 5309bb066e093dc83e4b79ca732c1e5e35c4b990dfb4bbdcf29f6344e208f9a5
+2025-02-25T12:07:43.0031476Z ##[endgroup]
+2025-02-25T12:07:43.0055115Z ##[group]Starting mysql service container
+2025-02-25T12:07:43.0074544Z ##[command]/usr/bin/docker pull mysql:8
+2025-02-25T12:07:43.2266792Z 8: Pulling from library/mysql
+2025-02-25T12:07:43.2934470Z 43759093d4f6: Pulling fs layer
+2025-02-25T12:07:43.2936019Z 8f4990895e9b: Pulling fs layer
+2025-02-25T12:07:43.2937094Z ea8168080d59: Pulling fs layer
+2025-02-25T12:07:43.2938392Z 995a8777e754: Pulling fs layer
+2025-02-25T12:07:43.2939756Z 80cf8eab0d72: Pulling fs layer
+2025-02-25T12:07:43.2940763Z dd6d73b138d4: Pulling fs layer
+2025-02-25T12:07:43.2941679Z 6966698f1fbd: Pulling fs layer
+2025-02-25T12:07:43.2942640Z 227358103edf: Pulling fs layer
+2025-02-25T12:07:43.2943607Z c155d1f8af49: Pulling fs layer
+2025-02-25T12:07:43.2945060Z f0bda43a95fb: Pulling fs layer
+2025-02-25T12:07:43.2946309Z 995a8777e754: Waiting
+2025-02-25T12:07:43.2947586Z 80cf8eab0d72: Waiting
+2025-02-25T12:07:43.2948819Z dd6d73b138d4: Waiting
+2025-02-25T12:07:43.2949769Z 6966698f1fbd: Waiting
+2025-02-25T12:07:43.2950566Z c155d1f8af49: Waiting
+2025-02-25T12:07:43.2951374Z f0bda43a95fb: Waiting
+2025-02-25T12:07:43.2952252Z 227358103edf: Waiting
+2025-02-25T12:07:43.3521046Z ea8168080d59: Verifying Checksum
+2025-02-25T12:07:43.3522962Z ea8168080d59: Download complete
+2025-02-25T12:07:43.4197151Z 80cf8eab0d72: Verifying Checksum
+2025-02-25T12:07:43.4199314Z 80cf8eab0d72: Download complete
+2025-02-25T12:07:43.4377042Z 995a8777e754: Verifying Checksum
+2025-02-25T12:07:43.4379054Z 995a8777e754: Download complete
+2025-02-25T12:07:43.4749256Z dd6d73b138d4: Verifying Checksum
+2025-02-25T12:07:43.4751089Z dd6d73b138d4: Download complete
+2025-02-25T12:07:43.5427536Z 227358103edf: Verifying Checksum
+2025-02-25T12:07:43.5429985Z 227358103edf: Download complete
+2025-02-25T12:07:43.6040172Z 43759093d4f6: Verifying Checksum
+2025-02-25T12:07:43.6043300Z 43759093d4f6: Download complete
+2025-02-25T12:07:43.6667647Z f0bda43a95fb: Verifying Checksum
+2025-02-25T12:07:43.6670974Z f0bda43a95fb: Download complete
+2025-02-25T12:07:43.9266046Z 6966698f1fbd: Verifying Checksum
+2025-02-25T12:07:43.9271179Z 6966698f1fbd: Download complete
+2025-02-25T12:07:44.3249026Z c155d1f8af49: Verifying Checksum
+2025-02-25T12:07:44.3250817Z c155d1f8af49: Download complete
+2025-02-25T12:07:44.9579687Z 43759093d4f6: Pull complete
+2025-02-25T12:07:45.4775179Z 8f4990895e9b: Pull complete
+2025-02-25T12:07:45.4999000Z ea8168080d59: Pull complete
+2025-02-25T12:07:45.7172743Z 995a8777e754: Pull complete
+2025-02-25T12:07:45.7274601Z 80cf8eab0d72: Pull complete
+2025-02-25T12:07:45.7370274Z dd6d73b138d4: Pull complete
+2025-02-25T12:07:46.5191707Z 6966698f1fbd: Pull complete
+2025-02-25T12:07:46.5287974Z 227358103edf: Pull complete
+2025-02-25T12:07:53.2623059Z c155d1f8af49: Pull complete
+2025-02-25T12:07:53.2734947Z f0bda43a95fb: Pull complete
+2025-02-25T12:07:53.2777854Z Digest: sha256:0917ecc5863323a48203dda0bb7d58582d958da62914024c474bf2e8c5f5ee73
+2025-02-25T12:07:53.2791449Z Status: Downloaded newer image for mysql:8
+2025-02-25T12:07:53.2798936Z docker.io/library/mysql:8
+2025-02-25T12:07:53.2857038Z ##[command]/usr/bin/docker create --name 831c6b6233dd4f5eaade98b86125223b_mysql8_9e6313 --label 36ec90 --network github_network_de5f9aaece704c8a902f1c0c672da753 --network-alias mysql -p 3306:3306 --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3 -e "MYSQL_ALLOW_EMPTY_PASSWORD=yes" -e "MYSQL_DATABASE=laravel" -e GITHUB_ACTIONS=true -e CI=true mysql:8
+2025-02-25T12:07:53.3120718Z 7b2131cc189f254727b002ba6cf05562e58470626e29c6a80ba74108cb1d8d23
+2025-02-25T12:07:53.3141247Z ##[command]/usr/bin/docker start 7b2131cc189f254727b002ba6cf05562e58470626e29c6a80ba74108cb1d8d23
+2025-02-25T12:07:53.5295151Z 7b2131cc189f254727b002ba6cf05562e58470626e29c6a80ba74108cb1d8d23
+2025-02-25T12:07:53.5316937Z ##[command]/usr/bin/docker ps --all --filter id=7b2131cc189f254727b002ba6cf05562e58470626e29c6a80ba74108cb1d8d23 --filter status=running --no-trunc --format "{{.ID}} {{.Status}}"
+2025-02-25T12:07:53.5427456Z 7b2131cc189f254727b002ba6cf05562e58470626e29c6a80ba74108cb1d8d23 Up Less than a second (health: starting)
+2025-02-25T12:07:53.5449497Z ##[command]/usr/bin/docker port 7b2131cc189f254727b002ba6cf05562e58470626e29c6a80ba74108cb1d8d23
+2025-02-25T12:07:53.5578182Z 3306/tcp -> 0.0.0.0:3306
+2025-02-25T12:07:53.5578640Z 3306/tcp -> [::]:3306
+2025-02-25T12:07:53.5627987Z ##[endgroup]
+2025-02-25T12:07:53.5639593Z ##[group]Waiting for all services to be ready
+2025-02-25T12:07:53.5654317Z ##[command]/usr/bin/docker inspect --format="{{if .Config.Healthcheck}}{{print .State.Health.Status}}{{end}}" 7b2131cc189f254727b002ba6cf05562e58470626e29c6a80ba74108cb1d8d23
+2025-02-25T12:07:53.5870115Z starting
+2025-02-25T12:07:53.5898926Z mysql service is starting, waiting 2 seconds before checking again.
+2025-02-25T12:07:55.5900425Z ##[command]/usr/bin/docker inspect --format="{{if .Config.Healthcheck}}{{print .State.Health.Status}}{{end}}" 7b2131cc189f254727b002ba6cf05562e58470626e29c6a80ba74108cb1d8d23
+2025-02-25T12:07:55.6021955Z starting
+2025-02-25T12:07:55.6034701Z mysql service is starting, waiting 3 seconds before checking again.
+2025-02-25T12:07:59.2382460Z ##[command]/usr/bin/docker inspect --format="{{if .Config.Healthcheck}}{{print .State.Health.Status}}{{end}}" 7b2131cc189f254727b002ba6cf05562e58470626e29c6a80ba74108cb1d8d23
+2025-02-25T12:07:59.2511071Z starting
+2025-02-25T12:07:59.2524218Z mysql service is starting, waiting 7 seconds before checking again.
+2025-02-25T12:08:06.3970590Z ##[command]/usr/bin/docker inspect --format="{{if .Config.Healthcheck}}{{print .State.Health.Status}}{{end}}" 7b2131cc189f254727b002ba6cf05562e58470626e29c6a80ba74108cb1d8d23
+2025-02-25T12:08:06.4084143Z healthy
+2025-02-25T12:08:06.4099228Z mysql service is healthy.
+2025-02-25T12:08:06.4099872Z ##[endgroup]
+2025-02-25T12:08:06.4343364Z ##[group]Run actions/checkout@v4
+2025-02-25T12:08:06.4343901Z with:
+2025-02-25T12:08:06.4344107Z   repository: nunomaduro/collision
+2025-02-25T12:08:06.4344497Z   token: ***
+2025-02-25T12:08:06.4344694Z   ssh-strict: true
+2025-02-25T12:08:06.4344898Z   ssh-user: git
+2025-02-25T12:08:06.4345104Z   persist-credentials: true
+2025-02-25T12:08:06.4345333Z   clean: true
+2025-02-25T12:08:06.4345695Z   sparse-checkout-cone-mode: true
+2025-02-25T12:08:06.4345932Z   fetch-depth: 1
+2025-02-25T12:08:06.4346124Z   fetch-tags: false
+2025-02-25T12:08:06.4346320Z   show-progress: true
+2025-02-25T12:08:06.4346516Z   lfs: false
+2025-02-25T12:08:06.4346695Z   submodules: false
+2025-02-25T12:08:06.4346886Z   set-safe-directory: true
+2025-02-25T12:08:06.4347305Z ##[endgroup]
+2025-02-25T12:08:06.5991528Z Syncing repository: nunomaduro/collision
+2025-02-25T12:08:06.5992975Z ##[group]Getting Git version info
+2025-02-25T12:08:06.5993414Z Working directory is '/home/runner/work/collision/collision'
+2025-02-25T12:08:06.5994021Z [command]/usr/bin/git version
+2025-02-25T12:08:06.6042057Z git version 2.48.1
+2025-02-25T12:08:06.6069584Z ##[endgroup]
+2025-02-25T12:08:06.6082875Z Temporarily overriding HOME='/home/runner/work/_temp/2a91d7ac-027d-4ed7-b5b2-8bc91d9513f8' before making global git config changes
+2025-02-25T12:08:06.6083794Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-25T12:08:06.6088111Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/collision/collision
+2025-02-25T12:08:06.6122413Z Deleting the contents of '/home/runner/work/collision/collision'
+2025-02-25T12:08:06.6126176Z ##[group]Initializing the repository
+2025-02-25T12:08:06.6130542Z [command]/usr/bin/git init /home/runner/work/collision/collision
+2025-02-25T12:08:06.6188674Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-25T12:08:06.6189384Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-25T12:08:06.6189900Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-25T12:08:06.6190247Z hint:
+2025-02-25T12:08:06.6190507Z hint: 	git config --global init.defaultBranch <name>
+2025-02-25T12:08:06.6190803Z hint:
+2025-02-25T12:08:06.6191093Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-25T12:08:06.6191557Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-25T12:08:06.6192016Z hint:
+2025-02-25T12:08:06.6192212Z hint: 	git branch -m <name>
+2025-02-25T12:08:06.6195010Z Initialized empty Git repository in /home/runner/work/collision/collision/.git/
+2025-02-25T12:08:06.6205758Z [command]/usr/bin/git remote add origin https://github.com/nunomaduro/collision
+2025-02-25T12:08:06.6236736Z ##[endgroup]
+2025-02-25T12:08:06.6237282Z ##[group]Disabling automatic garbage collection
+2025-02-25T12:08:06.6242262Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-25T12:08:06.6270597Z ##[endgroup]
+2025-02-25T12:08:06.6271282Z ##[group]Setting up auth
+2025-02-25T12:08:06.6278239Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-25T12:08:06.6308064Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-25T12:08:06.6588317Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-25T12:08:06.6617603Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-25T12:08:06.6847765Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-25T12:08:06.6886599Z ##[endgroup]
+2025-02-25T12:08:06.6887051Z ##[group]Fetching the repository
+2025-02-25T12:08:06.6895158Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +dc07d28afa4132d527128ff0a86bc4570049b8d0:refs/remotes/pull/325/merge
+2025-02-25T12:08:06.9172108Z From https://github.com/nunomaduro/collision
+2025-02-25T12:08:06.9173126Z  * [new ref]         dc07d28afa4132d527128ff0a86bc4570049b8d0 -> pull/325/merge
+2025-02-25T12:08:06.9199675Z ##[endgroup]
+2025-02-25T12:08:06.9200340Z ##[group]Determining the checkout info
+2025-02-25T12:08:06.9201882Z ##[endgroup]
+2025-02-25T12:08:06.9207307Z [command]/usr/bin/git sparse-checkout disable
+2025-02-25T12:08:06.9246082Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-25T12:08:06.9274776Z ##[group]Checking out the ref
+2025-02-25T12:08:06.9279211Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/325/merge
+2025-02-25T12:08:06.9410925Z Note: switching to 'refs/remotes/pull/325/merge'.
+2025-02-25T12:08:06.9411540Z 
+2025-02-25T12:08:06.9411960Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-25T12:08:06.9412831Z changes and commit them, and you can discard any commits you make in this
+2025-02-25T12:08:06.9413649Z state without impacting any branches by switching back to a branch.
+2025-02-25T12:08:06.9414115Z 
+2025-02-25T12:08:06.9414424Z If you want to create a new branch to retain commits you create, you may
+2025-02-25T12:08:06.9415142Z do so (now or later) by using -c with the switch command. Example:
+2025-02-25T12:08:06.9415784Z 
+2025-02-25T12:08:06.9415962Z   git switch -c <new-branch-name>
+2025-02-25T12:08:06.9416252Z 
+2025-02-25T12:08:06.9416419Z Or undo this operation with:
+2025-02-25T12:08:06.9416701Z 
+2025-02-25T12:08:06.9416796Z   git switch -
+2025-02-25T12:08:06.9416950Z 
+2025-02-25T12:08:06.9417168Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-25T12:08:06.9417465Z 
+2025-02-25T12:08:06.9417791Z HEAD is now at dc07d28 Merge 99b9b4d4f44d36e1302d4e7dfb9dfcd50cc5050b into ac8e958b788fdbdd7eb0b68be1de61ed815aec93
+2025-02-25T12:08:06.9421525Z ##[endgroup]
+2025-02-25T12:08:06.9460889Z [command]/usr/bin/git log -1 --format=%H
+2025-02-25T12:08:06.9484209Z dc07d28afa4132d527128ff0a86bc4570049b8d0
+2025-02-25T12:08:06.9654636Z ##[group]Run shivammathur/setup-php@v2
+2025-02-25T12:08:06.9654938Z with:
+2025-02-25T12:08:06.9655126Z   php-version: 8.2
+2025-02-25T12:08:06.9655833Z   extensions: dom, curl, libxml, mbstring, zip, pdo, sqlite, pdo_sqlite, gd, pdo_mysql, fileinfo, ftp, redis, memcached, gmp
+2025-02-25T12:08:06.9656325Z   tools: composer:v2
+2025-02-25T12:08:06.9656531Z   coverage: xdebug
+2025-02-25T12:08:06.9656730Z   ini-file: production
+2025-02-25T12:08:06.9656941Z ##[endgroup]
+2025-02-25T12:08:07.0365997Z [command]/usr/bin/bash /home/runner/work/_actions/shivammathur/setup-php/v2/src/scripts/run.sh
+2025-02-25T12:08:07.0605191Z 
+2025-02-25T12:08:07.0605880Z [90;1m==> [0m[37;1mSetup PHP[0m
+2025-02-25T12:08:13.1253209Z [32;1m✓ [0m[34;1mPHP [0m[90;1mInstalled PHP 8.2.27[0m
+2025-02-25T12:08:13.1253711Z 
+2025-02-25T12:08:13.1253981Z [90;1m==> [0m[37;1mSetup Extensions[0m
+2025-02-25T12:08:13.1722488Z [32;1m✓ [0m[34;1mdom [0m[90;1mEnabled[0m
+2025-02-25T12:08:13.1754314Z [32;1m✓ [0m[34;1mcurl [0m[90;1mEnabled[0m
+2025-02-25T12:08:13.1783392Z [32;1m✓ [0m[34;1mlibxml [0m[90;1mEnabled[0m
+2025-02-25T12:08:13.1814605Z [32;1m✓ [0m[34;1mmbstring [0m[90;1mEnabled[0m
+2025-02-25T12:08:13.1843399Z [32;1m✓ [0m[34;1mzip [0m[90;1mEnabled[0m
+2025-02-25T12:08:13.1872487Z [32;1m✓ [0m[34;1mpdo [0m[90;1mEnabled[0m
+2025-02-25T12:08:13.1902238Z [32;1m✓ [0m[34;1msqlite3 [0m[90;1mEnabled[0m
+2025-02-25T12:08:13.1917869Z [32;1m✓ [0m[34;1mpdo_sqlite [0m[90;1mEnabled[0m
+2025-02-25T12:08:13.1946566Z [32;1m✓ [0m[34;1mgd [0m[90;1mEnabled[0m
+2025-02-25T12:08:13.1961627Z [32;1m✓ [0m[34;1mpdo_mysql [0m[90;1mEnabled[0m
+2025-02-25T12:08:13.1991543Z [32;1m✓ [0m[34;1mfileinfo [0m[90;1mEnabled[0m
+2025-02-25T12:08:13.2020226Z [32;1m✓ [0m[34;1mftp [0m[90;1mEnabled[0m
+2025-02-25T12:08:13.2049587Z [32;1m✓ [0m[34;1mredis [0m[90;1mEnabled[0m
+2025-02-25T12:08:13.2078832Z [32;1m✓ [0m[34;1mmemcached [0m[90;1mEnabled[0m
+2025-02-25T12:08:13.2107043Z [32;1m✓ [0m[34;1mgmp [0m[90;1mEnabled[0m
+2025-02-25T12:08:13.2108752Z 
+2025-02-25T12:08:13.2109083Z [90;1m==> [0m[37;1mSetup Tools[0m
+2025-02-25T12:08:13.2627273Z chmod: cannot access '/usr/local/bin/composer': No such file or directory
+2025-02-25T12:08:13.3201625Z chmod: cannot access '/usr/local/bin/composer': No such file or directory
+2025-02-25T12:08:13.3353818Z [31;1m✗ [0m[34;1mcomposer [0m[90;1mCould not setup composer[0m
+2025-02-25T12:08:13.3470213Z ##[error]The process '/usr/bin/bash' failed with exit code 1
+2025-02-25T12:08:13.3580541Z Post job cleanup.
+2025-02-25T12:08:13.4529917Z [command]/usr/bin/git version
+2025-02-25T12:08:13.4570746Z git version 2.48.1
+2025-02-25T12:08:13.4611541Z Temporarily overriding HOME='/home/runner/work/_temp/434c42ea-bf14-4c14-850f-15377d507437' before making global git config changes
+2025-02-25T12:08:13.4612791Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-25T12:08:13.4616781Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/collision/collision
+2025-02-25T12:08:13.4650223Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-25T12:08:13.4681847Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-25T12:08:13.4905106Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-25T12:08:13.4924572Z http.https://github.com/.extraheader
+2025-02-25T12:08:13.4936880Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-25T12:08:13.4966272Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-25T12:08:13.5272132Z Print service container logs: 831c6b6233dd4f5eaade98b86125223b_mysql8_9e6313
+2025-02-25T12:08:13.5276675Z ##[command]/usr/bin/docker logs --details 7b2131cc189f254727b002ba6cf05562e58470626e29c6a80ba74108cb1d8d23
+2025-02-25T12:08:13.5436230Z  2025-02-25T12:07:53.947368Z 0 [System] [MY-015017] [Server] MySQL Server Initialization - start.
+2025-02-25T12:08:13.5437259Z  2025-02-25 12:07:53+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.4.4-1.el9 started.
+2025-02-25T12:08:13.5438499Z  2025-02-25T12:07:53.948713Z 0 [System] [MY-013169] [Server] /usr/sbin/mysqld (mysqld 8.4.4) initializing of server in progress as process 80
+2025-02-25T12:08:13.5439670Z  2025-02-25T12:07:53.953797Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2025-02-25T12:08:13.5440584Z  2025-02-25T12:07:54.118404Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2025-02-25T12:08:13.5442294Z  2025-02-25T12:07:54.808097Z 6 [Warning] [MY-010453] [Server] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
+2025-02-25T12:08:13.5443660Z  2025-02-25T12:07:56.768282Z 0 [System] [MY-015018] [Server] MySQL Server Initialization - end.
+2025-02-25T12:08:13.5444524Z  2025-02-25T12:07:56.806740Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+2025-02-25T12:08:13.5445635Z  2025-02-25T12:07:56.979536Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.4.4) starting as process 121
+2025-02-25T12:08:13.5446656Z  2025-02-25T12:07:56.989215Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2025-02-25T12:08:13.5447550Z  2025-02-25T12:07:57.120349Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2025-02-25T12:08:13.5448468Z  2025-02-25T12:07:57.341116Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2025-02-25T12:08:13.5449786Z  2025-02-25T12:07:57.341151Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2025-02-25T12:08:13.5451856Z  2025-02-25T12:07:57.342650Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2025-02-25T12:08:13.5453098Z  2025-02-25T12:07:57.362591Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: /var/run/mysqld/mysqlx.sock
+2025-02-25T12:08:13.5454039Z  2025-02-25T12:07:57.362706Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.4.4'  socket: '/var/run/mysqld/mysqld.sock'  port: 0  MySQL Community Server - GPL.
+2025-02-25T12:08:13.5454846Z  Warning: Unable to load '/usr/share/zoneinfo/iso3166.tab' as time zone. Skipping it.
+2025-02-25T12:08:13.5455592Z  Warning: Unable to load '/usr/share/zoneinfo/leap-seconds.list' as time zone. Skipping it.
+2025-02-25T12:08:13.5456174Z  Warning: Unable to load '/usr/share/zoneinfo/leapseconds' as time zone. Skipping it.
+2025-02-25T12:08:13.5456697Z  Warning: Unable to load '/usr/share/zoneinfo/tzdata.zi' as time zone. Skipping it.
+2025-02-25T12:08:13.5457191Z  Warning: Unable to load '/usr/share/zoneinfo/zone.tab' as time zone. Skipping it.
+2025-02-25T12:08:13.5457684Z  Warning: Unable to load '/usr/share/zoneinfo/zone1970.tab' as time zone. Skipping it.
+2025-02-25T12:08:13.5458317Z  2025-02-25T12:07:59.046712Z 11 [System] [MY-013172] [Server] Received SHUTDOWN from user root. Shutting down mysqld (Version: 8.4.4).
+2025-02-25T12:08:13.5459075Z  2025-02-25T12:07:59.739070Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.4.4)  MySQL Community Server - GPL.
+2025-02-25T12:08:13.5459684Z  2025-02-25T12:07:59.739086Z 0 [System] [MY-015016] [Server] MySQL Server - end.
+2025-02-25T12:08:13.5460116Z  2025-02-25T12:08:00.064328Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+2025-02-25T12:08:13.5460847Z  2025-02-25T12:08:00.239193Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.4.4) starting as process 1
+2025-02-25T12:08:13.5461429Z  2025-02-25T12:08:00.244696Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2025-02-25T12:08:13.5461930Z  2025-02-25T12:08:00.380260Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2025-02-25T12:08:13.5462445Z  2025-02-25T12:08:00.568993Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2025-02-25T12:08:13.5463211Z  2025-02-25T12:08:00.569028Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2025-02-25T12:08:13.5464271Z  2025-02-25T12:08:00.570519Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2025-02-25T12:08:13.5465287Z  2025-02-25T12:08:00.590472Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+2025-02-25T12:08:13.5466662Z  2025-02-25T12:08:00.590588Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.4.4'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+2025-02-25T12:08:13.5467452Z  2025-02-25 12:07:53+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+2025-02-25T12:08:13.5467928Z  2025-02-25 12:07:53+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.4.4-1.el9 started.
+2025-02-25T12:08:13.5468391Z  2025-02-25 12:07:53+00:00 [Note] [Entrypoint]: Initializing database files
+2025-02-25T12:08:13.5468792Z  2025-02-25 12:07:56+00:00 [Note] [Entrypoint]: Database files initialized
+2025-02-25T12:08:13.5469182Z  2025-02-25 12:07:56+00:00 [Note] [Entrypoint]: Starting temporary server
+2025-02-25T12:08:13.5469564Z  2025-02-25 12:07:57+00:00 [Note] [Entrypoint]: Temporary server started.
+2025-02-25T12:08:13.5469953Z  '/var/lib/mysql/mysql.sock' -> '/var/run/mysqld/mysqld.sock'
+2025-02-25T12:08:13.5470345Z  2025-02-25 12:07:59+00:00 [Note] [Entrypoint]: Creating database laravel
+2025-02-25T12:08:13.5470646Z  
+2025-02-25T12:08:13.5470881Z  2025-02-25 12:07:59+00:00 [Note] [Entrypoint]: Stopping temporary server
+2025-02-25T12:08:13.5471251Z  2025-02-25 12:08:00+00:00 [Note] [Entrypoint]: Temporary server stopped
+2025-02-25T12:08:13.5471551Z  
+2025-02-25T12:08:13.5471855Z  2025-02-25 12:08:00+00:00 [Note] [Entrypoint]: MySQL init process done. Ready for start up.
+2025-02-25T12:08:13.5472215Z  
+2025-02-25T12:08:13.5477598Z Stop and remove container: 831c6b6233dd4f5eaade98b86125223b_mysql8_9e6313
+2025-02-25T12:08:13.5481922Z ##[command]/usr/bin/docker rm --force 7b2131cc189f254727b002ba6cf05562e58470626e29c6a80ba74108cb1d8d23
+2025-02-25T12:08:14.2784762Z 7b2131cc189f254727b002ba6cf05562e58470626e29c6a80ba74108cb1d8d23
+2025-02-25T12:08:14.2809059Z Remove container network: github_network_de5f9aaece704c8a902f1c0c672da753
+2025-02-25T12:08:14.2813701Z ##[command]/usr/bin/docker network rm github_network_de5f9aaece704c8a902f1c0c672da753
+2025-02-25T12:08:14.3978930Z github_network_de5f9aaece704c8a902f1c0c672da753
+2025-02-25T12:08:14.4035103Z Cleaning up orphan processes

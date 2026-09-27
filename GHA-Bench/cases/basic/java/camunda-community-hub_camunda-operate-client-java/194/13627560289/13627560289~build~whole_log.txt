@@ -1,0 +1,484 @@
+2025-03-03T09:28:45.3461778Z Requested labels: ubuntu-latest
+2025-03-03T09:28:45.3462165Z Job defined at: camunda-community-hub/camunda-operate-client-java/.github/workflows/mvn-build.yml@refs/pull/194/merge
+2025-03-03T09:28:45.3462310Z Waiting for a runner to pick up this job...
+2025-03-03T09:28:46.1903596Z Job is waiting for a hosted runner to come online.
+2025-03-03T09:28:48.5010801Z Job is about to start running on the hosted runner: GitHub Actions 147 (hosted)
+2025-03-03T09:28:51.2183502Z Current runner version: '2.322.0'
+2025-03-03T09:28:51.2210208Z ##[group]Operating System
+2025-03-03T09:28:51.2210970Z Ubuntu
+2025-03-03T09:28:51.2211571Z 24.04.2
+2025-03-03T09:28:51.2212111Z LTS
+2025-03-03T09:28:51.2212593Z ##[endgroup]
+2025-03-03T09:28:51.2213222Z ##[group]Runner Image
+2025-03-03T09:28:51.2213777Z Image: ubuntu-24.04
+2025-03-03T09:28:51.2214305Z Version: 20250223.1.0
+2025-03-03T09:28:51.2215453Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250223.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-03T09:28:51.2216851Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250223.1
+2025-03-03T09:28:51.2217812Z ##[endgroup]
+2025-03-03T09:28:51.2218406Z ##[group]Runner Image Provisioner
+2025-03-03T09:28:51.2219291Z 2.0.422.1
+2025-03-03T09:28:51.2219927Z ##[endgroup]
+2025-03-03T09:28:51.2222225Z ##[group]GITHUB_TOKEN Permissions
+2025-03-03T09:28:51.2224896Z Actions: write
+2025-03-03T09:28:51.2225686Z Attestations: write
+2025-03-03T09:28:51.2226413Z Checks: write
+2025-03-03T09:28:51.2226934Z Contents: write
+2025-03-03T09:28:51.2227571Z Deployments: write
+2025-03-03T09:28:51.2228173Z Discussions: write
+2025-03-03T09:28:51.2228699Z Issues: write
+2025-03-03T09:28:51.2229481Z Metadata: read
+2025-03-03T09:28:51.2230084Z Packages: write
+2025-03-03T09:28:51.2230648Z Pages: write
+2025-03-03T09:28:51.2231143Z PullRequests: write
+2025-03-03T09:28:51.2231783Z RepositoryProjects: write
+2025-03-03T09:28:51.2232415Z SecurityEvents: write
+2025-03-03T09:28:51.2233021Z Statuses: write
+2025-03-03T09:28:51.2233605Z ##[endgroup]
+2025-03-03T09:28:51.2236921Z Secret source: Actions
+2025-03-03T09:28:51.2238022Z Prepare workflow directory
+2025-03-03T09:28:51.2652744Z Prepare all required actions
+2025-03-03T09:28:51.2690655Z Getting action download info
+2025-03-03T09:28:51.4695296Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-03T09:28:51.5639610Z Download action repository 'actions/setup-java@v4' (SHA:3a4f6e1af504cf6a31855fa899c6aa5355ba6c12)
+2025-03-03T09:28:52.2531117Z Complete job name: build
+2025-03-03T09:28:52.3252983Z ##[group]Run actions/checkout@v4
+2025-03-03T09:28:52.3253840Z with:
+2025-03-03T09:28:52.3254418Z   repository: camunda-community-hub/camunda-operate-client-java
+2025-03-03T09:28:52.3255339Z   token: ***
+2025-03-03T09:28:52.3255734Z   ssh-strict: true
+2025-03-03T09:28:52.3256157Z   ssh-user: git
+2025-03-03T09:28:52.3256580Z   persist-credentials: true
+2025-03-03T09:28:52.3257045Z   clean: true
+2025-03-03T09:28:52.3257468Z   sparse-checkout-cone-mode: true
+2025-03-03T09:28:52.3257962Z   fetch-depth: 1
+2025-03-03T09:28:52.3258371Z   fetch-tags: false
+2025-03-03T09:28:52.3258798Z   show-progress: true
+2025-03-03T09:28:52.3259413Z   lfs: false
+2025-03-03T09:28:52.3259811Z   submodules: false
+2025-03-03T09:28:52.3260242Z   set-safe-directory: true
+2025-03-03T09:28:52.3260944Z ##[endgroup]
+2025-03-03T09:28:52.5058566Z Syncing repository: camunda-community-hub/camunda-operate-client-java
+2025-03-03T09:28:52.5061519Z ##[group]Getting Git version info
+2025-03-03T09:28:52.5062548Z Working directory is '/home/runner/work/camunda-operate-client-java/camunda-operate-client-java'
+2025-03-03T09:28:52.5063790Z [command]/usr/bin/git version
+2025-03-03T09:28:52.5164762Z git version 2.48.1
+2025-03-03T09:28:52.5195580Z ##[endgroup]
+2025-03-03T09:28:52.5211987Z Temporarily overriding HOME='/home/runner/work/_temp/a8e1cedd-2a8d-452b-8854-d51a6f4a4496' before making global git config changes
+2025-03-03T09:28:52.5214386Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-03T09:28:52.5219518Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/camunda-operate-client-java/camunda-operate-client-java
+2025-03-03T09:28:52.5262425Z Deleting the contents of '/home/runner/work/camunda-operate-client-java/camunda-operate-client-java'
+2025-03-03T09:28:52.5266299Z ##[group]Initializing the repository
+2025-03-03T09:28:52.5272091Z [command]/usr/bin/git init /home/runner/work/camunda-operate-client-java/camunda-operate-client-java
+2025-03-03T09:28:52.5363232Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-03T09:28:52.5364823Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-03T09:28:52.5365746Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-03T09:28:52.5366443Z hint:
+2025-03-03T09:28:52.5366946Z hint: 	git config --global init.defaultBranch <name>
+2025-03-03T09:28:52.5368096Z hint:
+2025-03-03T09:28:52.5369705Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-03T09:28:52.5371279Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-03T09:28:52.5372436Z hint:
+2025-03-03T09:28:52.5373054Z hint: 	git branch -m <name>
+2025-03-03T09:28:52.5374184Z Initialized empty Git repository in /home/runner/work/camunda-operate-client-java/camunda-operate-client-java/.git/
+2025-03-03T09:28:52.5385244Z [command]/usr/bin/git remote add origin https://github.com/camunda-community-hub/camunda-operate-client-java
+2025-03-03T09:28:52.5422412Z ##[endgroup]
+2025-03-03T09:28:52.5423181Z ##[group]Disabling automatic garbage collection
+2025-03-03T09:28:52.5426693Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-03T09:28:52.5456115Z ##[endgroup]
+2025-03-03T09:28:52.5456823Z ##[group]Setting up auth
+2025-03-03T09:28:52.5463372Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-03T09:28:52.5497381Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-03T09:28:52.5849645Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-03T09:28:52.5882569Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-03T09:28:52.6131370Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-03T09:28:52.6171208Z ##[endgroup]
+2025-03-03T09:28:52.6172005Z ##[group]Fetching the repository
+2025-03-03T09:28:52.6181433Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +d1344262822c9ec1744609b5ab73a349a3dd9ad9:refs/remotes/pull/194/merge
+2025-03-03T09:28:53.1828574Z From https://github.com/camunda-community-hub/camunda-operate-client-java
+2025-03-03T09:28:53.1830986Z  * [new ref]         d1344262822c9ec1744609b5ab73a349a3dd9ad9 -> pull/194/merge
+2025-03-03T09:28:53.1855026Z ##[endgroup]
+2025-03-03T09:28:53.1856277Z ##[group]Determining the checkout info
+2025-03-03T09:28:53.1857603Z ##[endgroup]
+2025-03-03T09:28:53.1862331Z [command]/usr/bin/git sparse-checkout disable
+2025-03-03T09:28:53.1906235Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-03T09:28:53.1945520Z ##[group]Checking out the ref
+2025-03-03T09:28:53.1949912Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/194/merge
+2025-03-03T09:28:53.2080735Z Note: switching to 'refs/remotes/pull/194/merge'.
+2025-03-03T09:28:53.2081683Z 
+2025-03-03T09:28:53.2082363Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-03T09:28:53.2085110Z changes and commit them, and you can discard any commits you make in this
+2025-03-03T09:28:53.2087814Z state without impacting any branches by switching back to a branch.
+2025-03-03T09:28:53.2089766Z 
+2025-03-03T09:28:53.2090838Z If you want to create a new branch to retain commits you create, you may
+2025-03-03T09:28:53.2093436Z do so (now or later) by using -c with the switch command. Example:
+2025-03-03T09:28:53.2095058Z 
+2025-03-03T09:28:53.2095643Z   git switch -c <new-branch-name>
+2025-03-03T09:28:53.2096828Z 
+2025-03-03T09:28:53.2097511Z Or undo this operation with:
+2025-03-03T09:28:53.2099178Z 
+2025-03-03T09:28:53.2099830Z   git switch -
+2025-03-03T09:28:53.2100697Z 
+2025-03-03T09:28:53.2102185Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-03T09:28:53.2103772Z 
+2025-03-03T09:28:53.2105415Z HEAD is now at d134426 Merge 1bec0d6488b6d0f7bfe023619d30e54f666dc213 into b26ce6664625f453b7963e970d21c7e4340957b5
+2025-03-03T09:28:53.2111722Z ##[endgroup]
+2025-03-03T09:28:53.2133087Z [command]/usr/bin/git log -1 --format=%H
+2025-03-03T09:28:53.2156783Z d1344262822c9ec1744609b5ab73a349a3dd9ad9
+2025-03-03T09:28:53.2607268Z ##[group]Run actions/setup-java@v4
+2025-03-03T09:28:53.2608452Z with:
+2025-03-03T09:28:53.2609434Z   java-version: 21
+2025-03-03T09:28:53.2610327Z   distribution: adopt
+2025-03-03T09:28:53.2611240Z   cache: maven
+2025-03-03T09:28:53.2612100Z   java-package: jdk
+2025-03-03T09:28:53.2612999Z   check-latest: false
+2025-03-03T09:28:53.2613942Z   server-id: github
+2025-03-03T09:28:53.2614847Z   server-username: GITHUB_ACTOR
+2025-03-03T09:28:53.2615963Z   server-password: GITHUB_TOKEN
+2025-03-03T09:28:53.2617029Z   overwrite-settings: true
+2025-03-03T09:28:53.2618025Z   job-status: success
+2025-03-03T09:28:53.2619343Z   token: ***
+2025-03-03T09:28:53.2620175Z ##[endgroup]
+2025-03-03T09:28:53.4715275Z ##[group]Installed distributions
+2025-03-03T09:28:53.4739966Z Trying to resolve the latest version from remote
+2025-03-03T09:28:53.7804194Z Resolved latest version as 21.0.6+7.0.LTS
+2025-03-03T09:28:53.7805941Z Trying to download...
+2025-03-03T09:28:53.7810074Z Downloading Java 21.0.6+7.0.LTS (Adopt-Hotspot) from https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.6%2B7/OpenJDK21U-jdk_x64_linux_hotspot_21.0.6_7.tar.gz ...
+2025-03-03T09:28:55.0050110Z Extracting Java archive...
+2025-03-03T09:28:55.0150125Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/e0c46a67-6ddc-411e-9a19-0d6bb386e3ac -f /home/runner/work/_temp/1a2956b3-d054-43a9-82a7-fc7196c68f0c
+2025-03-03T09:28:57.9319989Z Java 21.0.6+7.0.LTS was downloaded
+2025-03-03T09:28:57.9321350Z Setting Java 21.0.6+7.0.LTS as the default
+2025-03-03T09:28:57.9334223Z Creating toolchains.xml for JDK version 21 from adopt
+2025-03-03T09:28:57.9447898Z Writing to /home/runner/.m2/toolchains.xml
+2025-03-03T09:28:57.9448530Z 
+2025-03-03T09:28:57.9448813Z Java configuration:
+2025-03-03T09:28:57.9449447Z   Distribution: adopt
+2025-03-03T09:28:57.9449841Z   Version: 21.0.6+7.0.LTS
+2025-03-03T09:28:57.9450367Z   Path: /opt/hostedtoolcache/Java_Adopt_jdk/21.0.6-7.0.LTS/x64
+2025-03-03T09:28:57.9450880Z 
+2025-03-03T09:28:57.9451675Z ##[endgroup]
+2025-03-03T09:28:57.9467481Z Creating settings.xml with server-id: github
+2025-03-03T09:28:57.9471487Z Writing to /home/runner/.m2/settings.xml
+2025-03-03T09:28:58.2904379Z Cache hit for: setup-java-Linux-x64-maven-08f665ce3dd7b237d7f999b9b1423a5e00c10a4d8b6c970f3d55b4c9fd65b1e4
+2025-03-03T09:28:59.5921325Z Received 0 of 105108508 (0.0%), 0.0 MBs/sec
+2025-03-03T09:29:00.5779150Z Received 105108508 of 105108508 (100.0%), 50.4 MBs/sec
+2025-03-03T09:29:00.5780550Z Cache Size: ~100 MB (105108508 B)
+2025-03-03T09:29:00.5842300Z [command]/usr/bin/tar -xf /home/runner/work/_temp/496d3bcc-bf09-48cd-91a8-661ef5a550e5/cache.tzst -P -C /home/runner/work/camunda-operate-client-java/camunda-operate-client-java --use-compress-program unzstd
+2025-03-03T09:29:00.9070852Z Cache restored successfully
+2025-03-03T09:29:00.9296063Z Cache restored from key: setup-java-Linux-x64-maven-08f665ce3dd7b237d7f999b9b1423a5e00c10a4d8b6c970f3d55b4c9fd65b1e4
+2025-03-03T09:29:00.9466922Z ##[group]Run mvn verify -PcheckFormat -B
+2025-03-03T09:29:00.9467327Z [36;1mmvn verify -PcheckFormat -B[0m
+2025-03-03T09:29:00.9519829Z shell: /usr/bin/bash -e {0}
+2025-03-03T09:29:00.9520101Z env:
+2025-03-03T09:29:00.9520373Z   JAVA_HOME: /opt/hostedtoolcache/Java_Adopt_jdk/21.0.6-7.0.LTS/x64
+2025-03-03T09:29:00.9520806Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Adopt_jdk/21.0.6-7.0.LTS/x64
+2025-03-03T09:29:00.9521132Z ##[endgroup]
+2025-03-03T09:29:02.7151087Z [INFO] Scanning for projects...
+2025-03-03T09:29:02.9832426Z [INFO] ------------------------------------------------------------------------
+2025-03-03T09:29:02.9861280Z [INFO] Reactor Build Order:
+2025-03-03T09:29:02.9865311Z [INFO] 
+2025-03-03T09:29:02.9867080Z [INFO] operate-client-root                                                [pom]
+2025-03-03T09:29:02.9869088Z [INFO] operate-client-parent                                              [pom]
+2025-03-03T09:29:02.9870643Z [INFO] java-client-operate                                                [jar]
+2025-03-03T09:29:02.9871778Z [INFO] spring-boot-starter-camunda-operate                                [jar]
+2025-03-03T09:29:02.9872803Z [INFO] operate-examples-parent                                            [pom]
+2025-03-03T09:29:02.9873810Z [INFO] operate-example-load-process-instance                              [jar]
+2025-03-03T09:29:02.9874754Z [INFO] readme-snippets                                                    [jar]
+2025-03-03T09:29:02.9942404Z [INFO] 
+2025-03-03T09:29:02.9947816Z [INFO] ---------------< io.camunda.spring:operate-client-root >----------------
+2025-03-03T09:29:02.9953442Z [INFO] Building operate-client-root 8.7.0-SNAPSHOT                        [1/7]
+2025-03-03T09:29:02.9968526Z [INFO]   from pom.xml
+2025-03-03T09:29:02.9972181Z [INFO] --------------------------------[ pom ]---------------------------------
+2025-03-03T09:29:03.0973804Z [INFO] 
+2025-03-03T09:29:03.0976499Z [INFO] --- enforcer:3.5.0:enforce (default) @ operate-client-root ---
+2025-03-03T09:29:03.2901386Z [INFO] Rule 0: org.apache.maven.enforcer.rules.ReactorModuleConvergence passed
+2025-03-03T09:29:03.2977365Z [INFO] Rule 1: org.apache.maven.enforcer.rules.dependency.DependencyConvergence passed
+2025-03-03T09:29:03.3060618Z [INFO] Rule 2: org.apache.maven.enforcer.rules.RequirePluginVersions passed
+2025-03-03T09:29:03.3062080Z [INFO] Rule 3: org.apache.maven.enforcer.rules.version.RequireMavenVersion passed
+2025-03-03T09:29:03.3198805Z [INFO] Rule 4: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+2025-03-03T09:29:03.3203560Z [INFO] 
+2025-03-03T09:29:03.3207520Z [INFO] --- spotless:2.44.3:check (spotless-check) @ operate-client-root ---
+2025-03-03T09:29:03.8290429Z [INFO] Index file does not exist. Fallback to an empty index
+2025-03-03T09:29:03.8337165Z [INFO] Spotless.Format is keeping 4 files clean - 0 needs changes to be clean, 4 were already clean, 0 were skipped because caching determined they were already clean
+2025-03-03T09:29:03.8358669Z [INFO] Spotless.Pom is keeping 1 files clean - 0 needs changes to be clean, 1 were already clean, 0 were skipped because caching determined they were already clean
+2025-03-03T09:29:03.8372473Z [INFO] 
+2025-03-03T09:29:03.8373077Z [INFO] >>> source:3.3.1:jar (attach-sources) > generate-sources @ operate-client-root >>>
+2025-03-03T09:29:03.8415639Z [INFO] 
+2025-03-03T09:29:03.8418313Z [INFO] --- enforcer:3.5.0:enforce (default) @ operate-client-root ---
+2025-03-03T09:29:03.8469928Z [INFO] Rule 1: org.apache.maven.enforcer.rules.dependency.DependencyConvergence passed
+2025-03-03T09:29:03.8497412Z [INFO] Rule 2: org.apache.maven.enforcer.rules.RequirePluginVersions passed
+2025-03-03T09:29:03.8498525Z [INFO] 
+2025-03-03T09:29:03.8499301Z [INFO] --- spotless:2.44.3:check (spotless-check) @ operate-client-root ---
+2025-03-03T09:29:03.8655412Z [INFO] Spotless.Format is keeping 4 files clean - 0 needs changes to be clean, 0 were already clean, 4 were skipped because caching determined they were already clean
+2025-03-03T09:29:03.8680192Z [INFO] Spotless.Pom is keeping 1 files clean - 0 needs changes to be clean, 0 were already clean, 1 were skipped because caching determined they were already clean
+2025-03-03T09:29:03.8686088Z [INFO] 
+2025-03-03T09:29:03.8690611Z [INFO] <<< source:3.3.1:jar (attach-sources) < generate-sources @ operate-client-root <<<
+2025-03-03T09:29:03.8695089Z [INFO] 
+2025-03-03T09:29:03.8703527Z [INFO] 
+2025-03-03T09:29:03.8710944Z [INFO] --- source:3.3.1:jar (attach-sources) @ operate-client-root ---
+2025-03-03T09:29:04.0386559Z [INFO] 
+2025-03-03T09:29:04.0388142Z [INFO] --- dependency:3.8.1:analyze-only (analyze) @ operate-client-root ---
+2025-03-03T09:29:04.4689903Z [INFO] Skipping pom project
+2025-03-03T09:29:04.4693897Z [INFO] 
+2025-03-03T09:29:04.4695605Z [INFO] --------------< io.camunda.spring:operate-client-parent >---------------
+2025-03-03T09:29:04.4697711Z [INFO] Building operate-client-parent 8.7.0-SNAPSHOT                      [2/7]
+2025-03-03T09:29:04.4699794Z [INFO]   from extension/pom.xml
+2025-03-03T09:29:04.4711201Z [INFO] --------------------------------[ pom ]---------------------------------
+2025-03-03T09:29:04.4740593Z [INFO] 
+2025-03-03T09:29:04.4743279Z [INFO] --- enforcer:3.5.0:enforce (default) @ operate-client-parent ---
+2025-03-03T09:29:04.4780550Z [INFO] Rule 1: org.apache.maven.enforcer.rules.dependency.DependencyConvergence passed
+2025-03-03T09:29:04.4792086Z [INFO] Rule 2: org.apache.maven.enforcer.rules.RequirePluginVersions passed
+2025-03-03T09:29:04.4795269Z [INFO] 
+2025-03-03T09:29:04.4796781Z [INFO] --- spotless:2.44.3:check (spotless-check) @ operate-client-parent ---
+2025-03-03T09:29:04.4900654Z [INFO] Index file does not exist. Fallback to an empty index
+2025-03-03T09:29:04.4905645Z [INFO] Spotless.Pom is keeping 1 files clean - 0 needs changes to be clean, 1 were already clean, 0 were skipped because caching determined they were already clean
+2025-03-03T09:29:04.4910277Z [INFO] 
+2025-03-03T09:29:04.4912145Z [INFO] >>> source:3.3.1:jar (attach-sources) > generate-sources @ operate-client-parent >>>
+2025-03-03T09:29:04.4948769Z [INFO] 
+2025-03-03T09:29:04.4950436Z [INFO] --- enforcer:3.5.0:enforce (default) @ operate-client-parent ---
+2025-03-03T09:29:04.5013904Z [INFO] Rule 1: org.apache.maven.enforcer.rules.dependency.DependencyConvergence passed
+2025-03-03T09:29:04.5017189Z [INFO] Rule 2: org.apache.maven.enforcer.rules.RequirePluginVersions passed
+2025-03-03T09:29:04.5019554Z [INFO] 
+2025-03-03T09:29:04.5020445Z [INFO] --- spotless:2.44.3:check (spotless-check) @ operate-client-parent ---
+2025-03-03T09:29:04.5088207Z [INFO] Spotless.Pom is keeping 1 files clean - 0 needs changes to be clean, 0 were already clean, 1 were skipped because caching determined they were already clean
+2025-03-03T09:29:04.5092295Z [INFO] 
+2025-03-03T09:29:04.5094183Z [INFO] <<< source:3.3.1:jar (attach-sources) < generate-sources @ operate-client-parent <<<
+2025-03-03T09:29:04.5112269Z [INFO] 
+2025-03-03T09:29:04.5112815Z [INFO] 
+2025-03-03T09:29:04.5113630Z [INFO] --- source:3.3.1:jar (attach-sources) @ operate-client-parent ---
+2025-03-03T09:29:04.5114402Z [INFO] 
+2025-03-03T09:29:04.5115046Z [INFO] --- dependency:3.8.1:analyze-only (analyze) @ operate-client-parent ---
+2025-03-03T09:29:04.5133347Z [INFO] Skipping pom project
+2025-03-03T09:29:04.5133745Z [INFO] 
+2025-03-03T09:29:04.5134233Z [INFO] ---------------< io.camunda.spring:java-client-operate >----------------
+2025-03-03T09:29:04.5135053Z [INFO] Building java-client-operate 8.7.0-SNAPSHOT                        [3/7]
+2025-03-03T09:29:04.5135783Z [INFO]   from extension/java-client-operate/pom.xml
+2025-03-03T09:29:04.5136396Z [INFO] --------------------------------[ jar ]---------------------------------
+2025-03-03T09:29:04.6000188Z [INFO] 
+2025-03-03T09:29:04.6001055Z [INFO] --- enforcer:3.5.0:enforce (default) @ java-client-operate ---
+2025-03-03T09:29:04.6081117Z [INFO] Rule 1: org.apache.maven.enforcer.rules.dependency.DependencyConvergence passed
+2025-03-03T09:29:04.6092336Z [INFO] Rule 2: org.apache.maven.enforcer.rules.RequirePluginVersions passed
+2025-03-03T09:29:04.6096802Z [INFO] 
+2025-03-03T09:29:04.6100481Z [INFO] --- spotless:2.44.3:check (spotless-check) @ java-client-operate ---
+2025-03-03T09:29:04.6212745Z [INFO] Index file does not exist. Fallback to an empty index
+2025-03-03T09:29:05.5285749Z [INFO] Spotless.Java is keeping 61 files clean - 0 needs changes to be clean, 61 were already clean, 0 were skipped because caching determined they were already clean
+2025-03-03T09:29:05.5301991Z [INFO] Spotless.Pom is keeping 1 files clean - 0 needs changes to be clean, 1 were already clean, 0 were skipped because caching determined they were already clean
+2025-03-03T09:29:05.5311181Z [INFO] 
+2025-03-03T09:29:05.5313108Z [INFO] --- resources:3.3.1:resources (default-resources) @ java-client-operate ---
+2025-03-03T09:29:05.5740779Z [INFO] skip non existing resourceDirectory /home/runner/work/camunda-operate-client-java/camunda-operate-client-java/extension/java-client-operate/src/main/resources
+2025-03-03T09:29:05.5754442Z [INFO] 
+2025-03-03T09:29:05.5755054Z [INFO] --- compiler:3.14.0:compile (default-compile) @ java-client-operate ---
+2025-03-03T09:29:05.6429716Z [INFO] Recompiling the module because of changed source code.
+2025-03-03T09:29:05.6473271Z [INFO] Compiling 56 source files with javac [debug release 17] to target/classes
+2025-03-03T09:29:06.5504173Z [INFO] /home/runner/work/camunda-operate-client-java/camunda-operate-client-java/extension/java-client-operate/src/main/java/io/camunda/operate/http/TypeReferenceHttpClientResponseHandler.java: /home/runner/work/camunda-operate-client-java/camunda-operate-client-java/extension/java-client-operate/src/main/java/io/camunda/operate/http/TypeReferenceHttpClientResponseHandler.java uses unchecked or unsafe operations.
+2025-03-03T09:29:06.5519531Z [INFO] /home/runner/work/camunda-operate-client-java/camunda-operate-client-java/extension/java-client-operate/src/main/java/io/camunda/operate/http/TypeReferenceHttpClientResponseHandler.java: Recompile with -Xlint:unchecked for details.
+2025-03-03T09:29:06.5525083Z [INFO] 
+2025-03-03T09:29:06.5529697Z [INFO] --- resources:3.3.1:testResources (default-testResources) @ java-client-operate ---
+2025-03-03T09:29:06.5536309Z [INFO] skip non existing resourceDirectory /home/runner/work/camunda-operate-client-java/camunda-operate-client-java/extension/java-client-operate/src/test/resources
+2025-03-03T09:29:06.5543275Z [INFO] 
+2025-03-03T09:29:06.5543868Z [INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ java-client-operate ---
+2025-03-03T09:29:06.5589770Z [INFO] Recompiling the module because of changed dependency.
+2025-03-03T09:29:06.5593487Z [INFO] Compiling 5 source files with javac [debug release 17] to target/test-classes
+2025-03-03T09:29:06.9402574Z [INFO] /home/runner/work/camunda-operate-client-java/camunda-operate-client-java/extension/java-client-operate/src/test/java/io/camunda/operate/http/DefaultHttpClientTest.java: /home/runner/work/camunda-operate-client-java/camunda-operate-client-java/extension/java-client-operate/src/test/java/io/camunda/operate/http/DefaultHttpClientTest.java uses unchecked or unsafe operations.
+2025-03-03T09:29:06.9410677Z [INFO] /home/runner/work/camunda-operate-client-java/camunda-operate-client-java/extension/java-client-operate/src/test/java/io/camunda/operate/http/DefaultHttpClientTest.java: Recompile with -Xlint:unchecked for details.
+2025-03-03T09:29:06.9415964Z [INFO] 
+2025-03-03T09:29:06.9420188Z [INFO] --- surefire:3.5.2:test (default-test) @ java-client-operate ---
+2025-03-03T09:29:07.0370669Z [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+2025-03-03T09:29:07.2427773Z [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.5.2/surefire-junit-platform-3.5.2.pom
+2025-03-03T09:29:07.4857962Z [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.5.2/surefire-junit-platform-3.5.2.pom (5.7 kB at 23 kB/s)
+2025-03-03T09:29:07.4987853Z [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/3.5.2/surefire-providers-3.5.2.pom
+2025-03-03T09:29:07.5074939Z [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/3.5.2/surefire-providers-3.5.2.pom (2.6 kB at 261 kB/s)
+2025-03-03T09:29:07.5149306Z [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.5.2/common-java5-3.5.2.pom
+2025-03-03T09:29:07.5251326Z [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.5.2/common-java5-3.5.2.pom (2.8 kB at 276 kB/s)
+2025-03-03T09:29:07.5303134Z [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.9.3/junit-platform-engine-1.9.3.pom
+2025-03-03T09:29:07.5353019Z [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.9.3/junit-platform-engine-1.9.3.pom (3.2 kB at 640 kB/s)
+2025-03-03T09:29:07.5379977Z [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.pom
+2025-03-03T09:29:07.5422478Z [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.pom (1.7 kB at 421 kB/s)
+2025-03-03T09:29:07.5449174Z [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.9.3/junit-platform-commons-1.9.3.pom
+2025-03-03T09:29:07.5500231Z [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.9.3/junit-platform-commons-1.9.3.pom (2.8 kB at 566 kB/s)
+2025-03-03T09:29:07.5532418Z [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.3/junit-platform-launcher-1.9.3.pom
+2025-03-03T09:29:07.5571398Z [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.3/junit-platform-launcher-1.9.3.pom (3.0 kB at 605 kB/s)
+2025-03-03T09:29:07.5630903Z [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.5.2/surefire-junit-platform-3.5.2.jar
+2025-03-03T09:29:07.5759659Z [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.5.2/surefire-junit-platform-3.5.2.jar (27 kB at 2.0 MB/s)
+2025-03-03T09:29:07.5769718Z [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.5.2/common-java5-3.5.2.jar
+2025-03-03T09:29:07.5788537Z [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.9.3/junit-platform-engine-1.9.3.jar
+2025-03-03T09:29:07.5822393Z [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar
+2025-03-03T09:29:07.5858578Z [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.9.3/junit-platform-commons-1.9.3.jar
+2025-03-03T09:29:07.5908730Z [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.3/junit-platform-launcher-1.9.3.jar
+2025-03-03T09:29:07.6047911Z [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar (7.7 kB at 333 kB/s)
+2025-03-03T09:29:07.6061864Z [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.5.2/common-java5-3.5.2.jar (18 kB at 605 kB/s)
+2025-03-03T09:29:07.6161843Z [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.9.3/junit-platform-engine-1.9.3.jar (189 kB at 4.9 MB/s)
+2025-03-03T09:29:07.6224373Z [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.9.3/junit-platform-commons-1.9.3.jar (103 kB at 2.4 MB/s)
+2025-03-03T09:29:07.6324805Z [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.3/junit-platform-launcher-1.9.3.jar (169 kB at 3.3 MB/s)
+2025-03-03T09:29:07.6444447Z [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.11.4/junit-platform-launcher-1.11.4.pom
+2025-03-03T09:29:07.6480768Z [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.11.4/junit-platform-launcher-1.11.4.pom (3.0 kB at 757 kB/s)
+2025-03-03T09:29:07.6530399Z [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.11.4/junit-platform-launcher-1.11.4.jar
+2025-03-03T09:29:07.6661064Z [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.11.4/junit-platform-launcher-1.11.4.jar (189 kB at 14 MB/s)
+2025-03-03T09:29:07.6755689Z [INFO] 
+2025-03-03T09:29:07.6756997Z [INFO] -------------------------------------------------------
+2025-03-03T09:29:07.6758791Z [INFO]  T E S T S
+2025-03-03T09:29:07.6759403Z [INFO] -------------------------------------------------------
+2025-03-03T09:29:08.1673489Z [INFO] Running io.camunda.operate.model.OperateDateTest
+2025-03-03T09:29:08.5006562Z [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.301 s -- in io.camunda.operate.model.OperateDateTest
+2025-03-03T09:29:08.5009426Z [INFO] Running io.camunda.operate.http.TypeReferenceHttpClientResponseHandlerTest
+2025-03-03T09:29:08.7701660Z OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-03-03T09:29:09.3785613Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.893 s -- in io.camunda.operate.http.TypeReferenceHttpClientResponseHandlerTest
+2025-03-03T09:29:09.3905938Z [INFO] Running io.camunda.operate.http.DefaultHttpClientTest
+2025-03-03T09:29:09.6129914Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.219 s -- in io.camunda.operate.http.DefaultHttpClientTest
+2025-03-03T09:29:09.6157234Z [INFO] Running io.camunda.operate.http.DefaultErrorCodeHandlerTest
+2025-03-03T09:29:09.6805869Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 s -- in io.camunda.operate.http.DefaultErrorCodeHandlerTest
+2025-03-03T09:29:09.6812297Z [INFO] Running io.camunda.operate.http.TypeReferenceTest
+2025-03-03T09:29:09.6918403Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in io.camunda.operate.http.TypeReferenceTest
+2025-03-03T09:29:09.7151709Z [INFO] 
+2025-03-03T09:29:09.7152625Z [INFO] Results:
+2025-03-03T09:29:09.7159686Z [INFO] 
+2025-03-03T09:29:09.7160580Z [INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0
+2025-03-03T09:29:09.7161990Z [INFO] 
+2025-03-03T09:29:09.7178607Z [INFO] 
+2025-03-03T09:29:09.7179403Z [INFO] --- jar:3.3.0:jar (default-jar) @ java-client-operate ---
+2025-03-03T09:29:09.8801083Z [INFO] Building jar: /home/runner/work/camunda-operate-client-java/camunda-operate-client-java/extension/java-client-operate/target/java-client-operate-8.7.0-SNAPSHOT.jar
+2025-03-03T09:29:09.9408155Z [INFO] 
+2025-03-03T09:29:09.9413956Z [INFO] >>> source:3.3.1:jar (attach-sources) > generate-sources @ java-client-operate >>>
+2025-03-03T09:29:09.9540898Z [INFO] 
+2025-03-03T09:29:09.9545004Z [INFO] --- enforcer:3.5.0:enforce (default) @ java-client-operate ---
+2025-03-03T09:29:09.9714114Z [INFO] Rule 1: org.apache.maven.enforcer.rules.dependency.DependencyConvergence passed
+2025-03-03T09:29:09.9727792Z [INFO] Rule 2: org.apache.maven.enforcer.rules.RequirePluginVersions passed
+2025-03-03T09:29:09.9731188Z [INFO] 
+2025-03-03T09:29:09.9732965Z [INFO] --- spotless:2.44.3:check (spotless-check) @ java-client-operate ---
+2025-03-03T09:29:09.9933707Z [INFO] Spotless.Java is keeping 61 files clean - 0 needs changes to be clean, 0 were already clean, 61 were skipped because caching determined they were already clean
+2025-03-03T09:29:09.9939262Z [INFO] Spotless.Pom is keeping 1 files clean - 0 needs changes to be clean, 0 were already clean, 1 were skipped because caching determined they were already clean
+2025-03-03T09:29:09.9950607Z [INFO] 
+2025-03-03T09:29:09.9953286Z [INFO] <<< source:3.3.1:jar (attach-sources) < generate-sources @ java-client-operate <<<
+2025-03-03T09:29:09.9959712Z [INFO] 
+2025-03-03T09:29:09.9960492Z [INFO] 
+2025-03-03T09:29:09.9960911Z [INFO] --- source:3.3.1:jar (attach-sources) @ java-client-operate ---
+2025-03-03T09:29:10.0288433Z [INFO] Building jar: /home/runner/work/camunda-operate-client-java/camunda-operate-client-java/extension/java-client-operate/target/java-client-operate-8.7.0-SNAPSHOT-sources.jar
+2025-03-03T09:29:10.0607105Z [INFO] 
+2025-03-03T09:29:10.0618697Z [INFO] --- dependency:3.8.1:analyze-only (analyze) @ java-client-operate ---
+2025-03-03T09:29:10.1249214Z [INFO] No dependency problems found
+2025-03-03T09:29:10.1250401Z [INFO] 
+2025-03-03T09:29:10.1251194Z [INFO] -------< io.camunda.spring:spring-boot-starter-camunda-operate >--------
+2025-03-03T09:29:10.1252345Z [INFO] Building spring-boot-starter-camunda-operate 8.7.0-SNAPSHOT        [4/7]
+2025-03-03T09:29:10.1253366Z [INFO]   from extension/spring-boot-starter-camunda-operate/pom.xml
+2025-03-03T09:29:10.1254212Z [INFO] --------------------------------[ jar ]---------------------------------
+2025-03-03T09:29:10.1765673Z [INFO] 
+2025-03-03T09:29:10.1789796Z [INFO] --- enforcer:3.5.0:enforce (default) @ spring-boot-starter-camunda-operate ---
+2025-03-03T09:29:10.1837415Z [INFO] Rule 1: org.apache.maven.enforcer.rules.dependency.DependencyConvergence passed
+2025-03-03T09:29:10.1844470Z [INFO] Rule 2: org.apache.maven.enforcer.rules.RequirePluginVersions passed
+2025-03-03T09:29:10.1848619Z [INFO] 
+2025-03-03T09:29:10.1850650Z [INFO] --- spotless:2.44.3:check (spotless-check) @ spring-boot-starter-camunda-operate ---
+2025-03-03T09:29:10.1926759Z [INFO] Index file does not exist. Fallback to an empty index
+2025-03-03T09:29:10.2449265Z [INFO] Spotless.Java is keeping 9 files clean - 0 needs changes to be clean, 9 were already clean, 0 were skipped because caching determined they were already clean
+2025-03-03T09:29:10.2457913Z [INFO] Spotless.Pom is keeping 1 files clean - 0 needs changes to be clean, 1 were already clean, 0 were skipped because caching determined they were already clean
+2025-03-03T09:29:10.2459096Z [INFO] 
+2025-03-03T09:29:10.2459766Z [INFO] --- resources:3.3.1:resources (default-resources) @ spring-boot-starter-camunda-operate ---
+2025-03-03T09:29:10.2491633Z [INFO] Copying 5 resources from src/main/resources to target/classes
+2025-03-03T09:29:10.2525640Z [INFO] 
+2025-03-03T09:29:10.2526564Z [INFO] --- compiler:3.14.0:compile (default-compile) @ spring-boot-starter-camunda-operate ---
+2025-03-03T09:29:10.2571172Z [INFO] Recompiling the module because of changed dependency.
+2025-03-03T09:29:10.2577126Z [INFO] Compiling 4 source files with javac [debug release 17] to target/classes
+2025-03-03T09:29:10.4733623Z [INFO] Annotation processing is enabled because one or more processors were found
+2025-03-03T09:29:10.4738519Z   on the class path. A future release of javac may disable annotation processing
+2025-03-03T09:29:10.4745263Z   unless at least one processor is specified by name (-processor), or a search
+2025-03-03T09:29:10.4748231Z   path is specified (--processor-path, --processor-module-path), or annotation
+2025-03-03T09:29:10.4751628Z   processing is enabled explicitly (-proc:only, -proc:full).
+2025-03-03T09:29:10.4755812Z   Use -Xlint:-options to suppress this message.
+2025-03-03T09:29:10.4767408Z   Use -proc:none to disable annotation processing.
+2025-03-03T09:29:10.4767890Z [INFO] 
+2025-03-03T09:29:10.4768601Z [INFO] --- resources:3.3.1:testResources (default-testResources) @ spring-boot-starter-camunda-operate ---
+2025-03-03T09:29:10.4770920Z [INFO] skip non existing resourceDirectory /home/runner/work/camunda-operate-client-java/camunda-operate-client-java/extension/spring-boot-starter-camunda-operate/src/test/resources
+2025-03-03T09:29:10.4773600Z [INFO] 
+2025-03-03T09:29:10.4774274Z [INFO] --- compiler:3.14.0:testCompile (default-testCompile) @ spring-boot-starter-camunda-operate ---
+2025-03-03T09:29:10.4810150Z [INFO] Recompiling the module because of changed dependency.
+2025-03-03T09:29:10.4813917Z [INFO] Compiling 5 source files with javac [debug release 17] to target/test-classes
+2025-03-03T09:29:10.6873563Z [INFO] Annotation processing is enabled because one or more processors were found
+2025-03-03T09:29:10.6874836Z   on the class path. A future release of javac may disable annotation processing
+2025-03-03T09:29:10.6875773Z   unless at least one processor is specified by name (-processor), or a search
+2025-03-03T09:29:10.6876595Z   path is specified (--processor-path, --processor-module-path), or annotation
+2025-03-03T09:29:10.6877326Z   processing is enabled explicitly (-proc:only, -proc:full).
+2025-03-03T09:29:10.6877918Z   Use -Xlint:-options to suppress this message.
+2025-03-03T09:29:10.6878459Z   Use -proc:none to disable annotation processing.
+2025-03-03T09:29:10.6881963Z [INFO] 
+2025-03-03T09:29:10.6884359Z [INFO] --- surefire:3.5.2:test (default-test) @ spring-boot-starter-camunda-operate ---
+2025-03-03T09:29:10.6935214Z [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+2025-03-03T09:29:10.6991390Z [INFO] 
+2025-03-03T09:29:10.6992008Z [INFO] -------------------------------------------------------
+2025-03-03T09:29:10.6994419Z [INFO]  T E S T S
+2025-03-03T09:29:10.6994853Z [INFO] -------------------------------------------------------
+2025-03-03T09:29:11.1588513Z [INFO] Running io.camunda.operate.spring.BeanNameTest
+2025-03-03T09:29:12.8005281Z OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-03-03T09:29:13.2070942Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.033 s -- in io.camunda.operate.spring.BeanNameTest
+2025-03-03T09:29:13.2076353Z [INFO] Running io.camunda.operate.spring.OperateClientConfigurationPropertiesProfileSaasTest
+2025-03-03T09:29:13.6177769Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.418 s -- in io.camunda.operate.spring.OperateClientConfigurationPropertiesProfileSaasTest
+2025-03-03T09:29:13.6210063Z [INFO] Running io.camunda.operate.spring.OperateClientConfigurationPropertiesProfileOidcTest
+2025-03-03T09:29:13.7677071Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.147 s -- in io.camunda.operate.spring.OperateClientConfigurationPropertiesProfileOidcTest
+2025-03-03T09:29:13.7680083Z [INFO] Running io.camunda.operate.spring.OperateClientConfigurationPropertiesProfileSimpleTest
+2025-03-03T09:29:13.7796503Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in io.camunda.operate.spring.OperateClientConfigurationPropertiesProfileSimpleTest
+2025-03-03T09:29:13.8155141Z [INFO] 
+2025-03-03T09:29:13.8155510Z [INFO] Results:
+2025-03-03T09:29:13.8155843Z [INFO] 
+2025-03-03T09:29:13.8156236Z [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0
+2025-03-03T09:29:13.8156731Z [INFO] 
+2025-03-03T09:29:13.8163116Z [INFO] 
+2025-03-03T09:29:13.8163544Z [INFO] --- jar:3.3.0:jar (default-jar) @ spring-boot-starter-camunda-operate ---
+2025-03-03T09:29:13.8221705Z [INFO] Building jar: /home/runner/work/camunda-operate-client-java/camunda-operate-client-java/extension/spring-boot-starter-camunda-operate/target/spring-boot-starter-camunda-operate-8.7.0-SNAPSHOT.jar
+2025-03-03T09:29:13.8356324Z [INFO] 
+2025-03-03T09:29:13.8369959Z [INFO] >>> source:3.3.1:jar (attach-sources) > generate-sources @ spring-boot-starter-camunda-operate >>>
+2025-03-03T09:29:13.8456076Z [INFO] 
+2025-03-03T09:29:13.8457108Z [INFO] --- enforcer:3.5.0:enforce (default) @ spring-boot-starter-camunda-operate ---
+2025-03-03T09:29:13.8534899Z [INFO] Rule 1: org.apache.maven.enforcer.rules.dependency.DependencyConvergence passed
+2025-03-03T09:29:13.8549934Z [INFO] Rule 2: org.apache.maven.enforcer.rules.RequirePluginVersions passed
+2025-03-03T09:29:13.8550604Z [INFO] 
+2025-03-03T09:29:13.8551184Z [INFO] --- spotless:2.44.3:check (spotless-check) @ spring-boot-starter-camunda-operate ---
+2025-03-03T09:29:13.8697879Z [INFO] Spotless.Java is keeping 9 files clean - 0 needs changes to be clean, 0 were already clean, 9 were skipped because caching determined they were already clean
+2025-03-03T09:29:13.8699791Z [INFO] Spotless.Pom is keeping 1 files clean - 0 needs changes to be clean, 0 were already clean, 1 were skipped because caching determined they were already clean
+2025-03-03T09:29:13.8701245Z [INFO] 
+2025-03-03T09:29:13.8701906Z [INFO] <<< source:3.3.1:jar (attach-sources) < generate-sources @ spring-boot-starter-camunda-operate <<<
+2025-03-03T09:29:13.8702710Z [INFO] 
+2025-03-03T09:29:13.8702982Z [INFO] 
+2025-03-03T09:29:13.8703510Z [INFO] --- source:3.3.1:jar (attach-sources) @ spring-boot-starter-camunda-operate ---
+2025-03-03T09:29:13.8816262Z [INFO] Building jar: /home/runner/work/camunda-operate-client-java/camunda-operate-client-java/extension/spring-boot-starter-camunda-operate/target/spring-boot-starter-camunda-operate-8.7.0-SNAPSHOT-sources.jar
+2025-03-03T09:29:13.8912165Z [INFO] 
+2025-03-03T09:29:13.8916941Z [INFO] --- dependency:3.8.1:analyze-only (analyze) @ spring-boot-starter-camunda-operate ---
+2025-03-03T09:29:13.9357665Z [ERROR] Used undeclared dependencies found:
+2025-03-03T09:29:13.9359952Z [ERROR]    com.fasterxml.jackson.core:jackson-core:jar:2.18.3:compile
+2025-03-03T09:29:13.9363982Z [INFO] ------------------------------------------------------------------------
+2025-03-03T09:29:13.9379468Z [INFO] Reactor Summary for operate-client-root 8.7.0-SNAPSHOT:
+2025-03-03T09:29:13.9380265Z [INFO] 
+2025-03-03T09:29:13.9384266Z [INFO] operate-client-root ................................ SUCCESS [  1.475 s]
+2025-03-03T09:29:13.9385386Z [INFO] operate-client-parent .............................. SUCCESS [  0.044 s]
+2025-03-03T09:29:13.9386553Z [INFO] java-client-operate ................................ SUCCESS [  5.611 s]
+2025-03-03T09:29:13.9387649Z [INFO] spring-boot-starter-camunda-operate ................ FAILURE [  3.813 s]
+2025-03-03T09:29:13.9388453Z [INFO] operate-examples-parent ............................ SKIPPED
+2025-03-03T09:29:13.9389357Z [INFO] operate-example-load-process-instance .............. SKIPPED
+2025-03-03T09:29:13.9390041Z [INFO] readme-snippets .................................... SKIPPED
+2025-03-03T09:29:13.9390684Z [INFO] ------------------------------------------------------------------------
+2025-03-03T09:29:13.9391200Z [INFO] BUILD FAILURE
+2025-03-03T09:29:13.9391632Z [INFO] ------------------------------------------------------------------------
+2025-03-03T09:29:13.9392144Z [INFO] Total time:  11.267 s
+2025-03-03T09:29:13.9392534Z [INFO] Finished at: 2025-03-03T09:29:13Z
+2025-03-03T09:29:13.9393043Z [INFO] ------------------------------------------------------------------------
+2025-03-03T09:29:13.9394451Z [ERROR] Failed to execute goal org.apache.maven.plugins:maven-dependency-plugin:3.8.1:analyze-only (analyze) on project spring-boot-starter-camunda-operate: Dependency problems found -> [Help 1]
+2025-03-03T09:29:13.9395707Z [ERROR] 
+2025-03-03T09:29:13.9396182Z [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+2025-03-03T09:29:13.9396932Z [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+2025-03-03T09:29:13.9397456Z [ERROR] 
+2025-03-03T09:29:13.9398075Z [ERROR] For more information about the errors and possible solutions, please read the following articles:
+2025-03-03T09:29:13.9399286Z [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+2025-03-03T09:29:13.9399956Z [ERROR] 
+2025-03-03T09:29:13.9400453Z [ERROR] After correcting the problems, you can resume the build with the command
+2025-03-03T09:29:13.9401194Z [ERROR]   mvn <args> -rf :spring-boot-starter-camunda-operate
+2025-03-03T09:29:13.9787567Z ##[error]Process completed with exit code 1.
+2025-03-03T09:29:13.9913769Z Post job cleanup.
+2025-03-03T09:29:14.1715210Z Post job cleanup.
+2025-03-03T09:29:14.2684185Z [command]/usr/bin/git version
+2025-03-03T09:29:14.2721700Z git version 2.48.1
+2025-03-03T09:29:14.2774355Z Temporarily overriding HOME='/home/runner/work/_temp/b06e8425-bab3-4abf-aa80-d27a2efac5e5' before making global git config changes
+2025-03-03T09:29:14.2775597Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-03T09:29:14.2781199Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/camunda-operate-client-java/camunda-operate-client-java
+2025-03-03T09:29:14.2821206Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-03T09:29:14.2857073Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-03T09:29:14.3090893Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-03T09:29:14.3111991Z http.https://github.com/.extraheader
+2025-03-03T09:29:14.3124089Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-03T09:29:14.3154908Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-03T09:29:14.3483735Z Cleaning up orphan processes

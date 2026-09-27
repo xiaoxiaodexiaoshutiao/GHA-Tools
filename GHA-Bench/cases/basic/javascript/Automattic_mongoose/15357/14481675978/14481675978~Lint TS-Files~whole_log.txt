@@ -1,0 +1,191 @@
+2025-04-16T00:00:49.6746569Z Requested labels: ubuntu-latest
+2025-04-16T00:00:49.6746919Z Job defined at: Automattic/mongoose/.github/workflows/tsd.yml@refs/pull/15357/merge
+2025-04-16T00:00:49.6747087Z Waiting for a runner to pick up this job...
+2025-04-16T00:00:50.8278743Z Job is waiting for a hosted runner to come online.
+2025-04-16T00:00:53.0890343Z Job is about to start running on the hosted runner: GitHub Actions 281 (hosted)
+2025-04-16T00:00:55.1716161Z Current runner version: '2.323.0'
+2025-04-16T00:00:55.1743285Z ##[group]Operating System
+2025-04-16T00:00:55.1744063Z Ubuntu
+2025-04-16T00:00:55.1744631Z 24.04.2
+2025-04-16T00:00:55.1745093Z LTS
+2025-04-16T00:00:55.1745567Z ##[endgroup]
+2025-04-16T00:00:55.1746155Z ##[group]Runner Image
+2025-04-16T00:00:55.1746714Z Image: ubuntu-24.04
+2025-04-16T00:00:55.1747215Z Version: 20250406.1.0
+2025-04-16T00:00:55.1748562Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250406.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-16T00:00:55.1749987Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250406.1
+2025-04-16T00:00:55.1750881Z ##[endgroup]
+2025-04-16T00:00:55.1751504Z ##[group]Runner Image Provisioner
+2025-04-16T00:00:55.1752258Z 2.0.422.1
+2025-04-16T00:00:55.1752811Z ##[endgroup]
+2025-04-16T00:00:55.1753805Z ##[group]GITHUB_TOKEN Permissions
+2025-04-16T00:00:55.1755784Z Contents: read
+2025-04-16T00:00:55.1756445Z Metadata: read
+2025-04-16T00:00:55.1757128Z ##[endgroup]
+2025-04-16T00:00:55.1760665Z Secret source: None
+2025-04-16T00:00:55.1761620Z Prepare workflow directory
+2025-04-16T00:00:55.2092926Z Prepare all required actions
+2025-04-16T00:00:55.2222199Z Getting action download info
+2025-04-16T00:00:55.4139865Z Download action repository 'actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-04-16T00:00:55.5209629Z Download action repository 'actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e' (SHA:cdca7365b2dadb8aad0a33bc7601856ffabcc48e)
+2025-04-16T00:00:55.6856106Z Complete job name: Lint TS-Files
+2025-04-16T00:00:55.7589615Z ##[group]Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-16T00:00:55.7590678Z with:
+2025-04-16T00:00:55.7591092Z   repository: Automattic/mongoose
+2025-04-16T00:00:55.7591767Z   token: ***
+2025-04-16T00:00:55.7592157Z   ssh-strict: true
+2025-04-16T00:00:55.7592553Z   ssh-user: git
+2025-04-16T00:00:55.7592959Z   persist-credentials: true
+2025-04-16T00:00:55.7593437Z   clean: true
+2025-04-16T00:00:55.7593845Z   sparse-checkout-cone-mode: true
+2025-04-16T00:00:55.7594329Z   fetch-depth: 1
+2025-04-16T00:00:55.7594716Z   fetch-tags: false
+2025-04-16T00:00:55.7595115Z   show-progress: true
+2025-04-16T00:00:55.7595528Z   lfs: false
+2025-04-16T00:00:55.7595918Z   submodules: false
+2025-04-16T00:00:55.7596334Z   set-safe-directory: true
+2025-04-16T00:00:55.7597003Z ##[endgroup]
+2025-04-16T00:00:55.9969775Z Syncing repository: Automattic/mongoose
+2025-04-16T00:00:55.9971571Z ##[group]Getting Git version info
+2025-04-16T00:00:55.9972325Z Working directory is '/home/runner/work/mongoose/mongoose'
+2025-04-16T00:00:55.9973434Z [command]/usr/bin/git version
+2025-04-16T00:00:56.0062902Z git version 2.49.0
+2025-04-16T00:00:56.0092525Z ##[endgroup]
+2025-04-16T00:00:56.0108477Z Temporarily overriding HOME='/home/runner/work/_temp/51a056b0-d8a3-4d02-ad74-b6b45a3e9ede' before making global git config changes
+2025-04-16T00:00:56.0110887Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-16T00:00:56.0115127Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/mongoose/mongoose
+2025-04-16T00:00:56.0155481Z Deleting the contents of '/home/runner/work/mongoose/mongoose'
+2025-04-16T00:00:56.0159821Z ##[group]Initializing the repository
+2025-04-16T00:00:56.0164631Z [command]/usr/bin/git init /home/runner/work/mongoose/mongoose
+2025-04-16T00:00:56.0243506Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-16T00:00:56.0244880Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-16T00:00:56.0245789Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-16T00:00:56.0246451Z hint:
+2025-04-16T00:00:56.0246922Z hint: 	git config --global init.defaultBranch <name>
+2025-04-16T00:00:56.0247490Z hint:
+2025-04-16T00:00:56.0248035Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-16T00:00:56.0249148Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-16T00:00:56.0250126Z hint:
+2025-04-16T00:00:56.0250511Z hint: 	git branch -m <name>
+2025-04-16T00:00:56.0252984Z Initialized empty Git repository in /home/runner/work/mongoose/mongoose/.git/
+2025-04-16T00:00:56.0265868Z [command]/usr/bin/git remote add origin https://github.com/Automattic/mongoose
+2025-04-16T00:00:56.0303292Z ##[endgroup]
+2025-04-16T00:00:56.0304502Z ##[group]Disabling automatic garbage collection
+2025-04-16T00:00:56.0308234Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-16T00:00:56.0337319Z ##[endgroup]
+2025-04-16T00:00:56.0338788Z ##[group]Setting up auth
+2025-04-16T00:00:56.0345014Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-16T00:00:56.0375653Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-16T00:00:56.0717865Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-16T00:00:56.0747913Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-16T00:00:56.0979292Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-16T00:00:56.1016050Z ##[endgroup]
+2025-04-16T00:00:56.1017320Z ##[group]Fetching the repository
+2025-04-16T00:00:56.1026935Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +26d22acf192f70c2ec19af1c0aed0d628e9993d6:refs/remotes/pull/15357/merge
+2025-04-16T00:00:56.7789377Z From https://github.com/Automattic/mongoose
+2025-04-16T00:00:56.7792260Z  * [new ref]         26d22acf192f70c2ec19af1c0aed0d628e9993d6 -> pull/15357/merge
+2025-04-16T00:00:56.7830244Z ##[endgroup]
+2025-04-16T00:00:56.7831642Z ##[group]Determining the checkout info
+2025-04-16T00:00:56.7833233Z ##[endgroup]
+2025-04-16T00:00:56.7837957Z [command]/usr/bin/git sparse-checkout disable
+2025-04-16T00:00:56.7879563Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-16T00:00:56.7908123Z ##[group]Checking out the ref
+2025-04-16T00:00:56.7911843Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/15357/merge
+2025-04-16T00:00:56.8422254Z Note: switching to 'refs/remotes/pull/15357/merge'.
+2025-04-16T00:00:56.8423285Z 
+2025-04-16T00:00:56.8424040Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-16T00:00:56.8425557Z changes and commit them, and you can discard any commits you make in this
+2025-04-16T00:00:56.8427024Z state without impacting any branches by switching back to a branch.
+2025-04-16T00:00:56.8428024Z 
+2025-04-16T00:00:56.8429144Z If you want to create a new branch to retain commits you create, you may
+2025-04-16T00:00:56.8430369Z do so (now or later) by using -c with the switch command. Example:
+2025-04-16T00:00:56.8430989Z 
+2025-04-16T00:00:56.8431310Z   git switch -c <new-branch-name>
+2025-04-16T00:00:56.8431783Z 
+2025-04-16T00:00:56.8432107Z Or undo this operation with:
+2025-04-16T00:00:56.8432585Z 
+2025-04-16T00:00:56.8432874Z   git switch -
+2025-04-16T00:00:56.8433280Z 
+2025-04-16T00:00:56.8433886Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-16T00:00:56.8434711Z 
+2025-04-16T00:00:56.8435621Z HEAD is now at 26d22ac Merge f3095c89ce84859c9a9a55f38e8ccf7a1a284565 into bb59d94698113697d606fa11468344ef32a36551
+2025-04-16T00:00:56.8439093Z ##[endgroup]
+2025-04-16T00:00:56.8467588Z [command]/usr/bin/git log -1 --format=%H
+2025-04-16T00:00:56.8490292Z 26d22acf192f70c2ec19af1c0aed0d628e9993d6
+2025-04-16T00:00:56.8880432Z ##[group]Run actions/setup-node@cdca7365b2dadb8aad0a33bc7601856ffabcc48e
+2025-04-16T00:00:56.8881977Z with:
+2025-04-16T00:00:56.8882817Z   node-version: 22
+2025-04-16T00:00:56.8883961Z   always-auth: false
+2025-04-16T00:00:56.8884911Z   check-latest: false
+2025-04-16T00:00:56.8886148Z   token: ***
+2025-04-16T00:00:56.8887014Z ##[endgroup]
+2025-04-16T00:00:57.0661583Z Found in cache @ /opt/hostedtoolcache/node/22.14.0/x64
+2025-04-16T00:00:57.0667781Z ##[group]Environment details
+2025-04-16T00:00:57.4221675Z node: v22.14.0
+2025-04-16T00:00:57.4222251Z npm: 10.9.2
+2025-04-16T00:00:57.4222702Z yarn: 1.22.22
+2025-04-16T00:00:57.4224089Z ##[endgroup]
+2025-04-16T00:00:57.4341401Z ##[group]Run npm install
+2025-04-16T00:00:57.4341770Z [36;1mnpm install[0m
+2025-04-16T00:00:57.4393392Z shell: /usr/bin/bash -e {0}
+2025-04-16T00:00:57.4393719Z ##[endgroup]
+2025-04-16T00:01:16.4524924Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-04-16T00:01:16.9896333Z npm warn deprecated lodash.get@4.4.2: This package is deprecated. Use the optional chaining (?.) operator instead.
+2025-04-16T00:01:17.8504279Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+2025-04-16T00:01:18.0204329Z npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+2025-04-16T00:01:18.1345261Z npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+2025-04-16T00:01:18.3741011Z npm warn deprecated calmcard@0.1.1: no longer maintained
+2025-04-16T00:01:18.3832706Z npm warn deprecated nopter@0.3.0: try optionator
+2025-04-16T00:01:18.9642476Z npm warn deprecated lodash.isequal@4.5.0: This package is deprecated. Use require('node:util').isDeepStrictEqual instead.
+2025-04-16T00:01:18.9865975Z npm warn deprecated q@1.5.1: You or someone you depend on is using Q, the JavaScript Promise library that gave JavaScript developers strong feelings about promises. They can almost certainly migrate to the native JavaScript promise now. Thank you literally everyone for joining me in this bet against the odds. Be excellent to each other.
+2025-04-16T00:01:18.9869333Z npm warn deprecated
+2025-04-16T00:01:18.9870297Z npm warn deprecated (For a CapTP with native promises, see @endo/eventual-send and @endo/captp)
+2025-04-16T00:01:19.2256978Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-04-16T00:01:19.4029901Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-04-16T00:01:19.6043966Z npm warn deprecated uuid@2.0.3: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+2025-04-16T00:01:19.6057301Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-04-16T00:01:20.6115989Z npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+2025-04-16T00:01:20.7263518Z npm warn deprecated urlobj@0.0.11: use universal-url, minurl, relateurl, url-relation
+2025-04-16T00:01:21.3334350Z 
+2025-04-16T00:01:21.3335073Z added 1005 packages, and audited 1006 packages in 24s
+2025-04-16T00:01:21.3335472Z 
+2025-04-16T00:01:21.3364499Z 202 packages are looking for funding
+2025-04-16T00:01:21.3365030Z   run `npm fund` for details
+2025-04-16T00:01:21.3365306Z 
+2025-04-16T00:01:21.3365498Z 9 vulnerabilities (4 moderate, 5 high)
+2025-04-16T00:01:21.3365729Z 
+2025-04-16T00:01:21.3365940Z To address issues that do not require attention, run:
+2025-04-16T00:01:21.3366252Z   npm audit fix
+2025-04-16T00:01:21.3366408Z 
+2025-04-16T00:01:21.3366628Z To address all issues (including breaking changes), run:
+2025-04-16T00:01:21.3366969Z   npm audit fix --force
+2025-04-16T00:01:21.3367121Z 
+2025-04-16T00:01:21.3367239Z Run `npm audit` for details.
+2025-04-16T00:01:21.4037821Z ##[group]Run npm run lint-ts
+2025-04-16T00:01:21.4038129Z [36;1mnpm run lint-ts[0m
+2025-04-16T00:01:21.4087233Z shell: /usr/bin/bash -e {0}
+2025-04-16T00:01:21.4087475Z ##[endgroup]
+2025-04-16T00:01:21.5073262Z 
+2025-04-16T00:01:21.5073818Z > mongoose@8.13.2 lint-ts
+2025-04-16T00:01:21.5074253Z > eslint . --ext .ts
+2025-04-16T00:01:21.5074412Z 
+2025-04-16T00:01:25.4546426Z 
+2025-04-16T00:01:25.4551148Z /home/runner/work/mongoose/mongoose/types/inferrawdoctype.d.ts
+2025-04-16T00:01:25.4551853Z   86:46  error  Parsing error: ':' expected
+2025-04-16T00:01:25.4552054Z 
+2025-04-16T00:01:25.4552467Z ✖ 1 problem (1 error, 0 warnings)
+2025-04-16T00:01:25.4552649Z 
+2025-04-16T00:01:25.5166575Z ##[error]Process completed with exit code 1.
+2025-04-16T00:01:25.5267326Z Post job cleanup.
+2025-04-16T00:01:25.6201009Z [command]/usr/bin/git version
+2025-04-16T00:01:25.6237367Z git version 2.49.0
+2025-04-16T00:01:25.6281770Z Temporarily overriding HOME='/home/runner/work/_temp/6c634ad7-7743-45a6-b7b2-25c74aac6a00' before making global git config changes
+2025-04-16T00:01:25.6283421Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-16T00:01:25.6295093Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/mongoose/mongoose
+2025-04-16T00:01:25.6328992Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-16T00:01:25.6362094Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-16T00:01:25.6592831Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-16T00:01:25.6612781Z http.https://github.com/.extraheader
+2025-04-16T00:01:25.6625953Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-16T00:01:25.6657033Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-16T00:01:25.6978500Z Cleaning up orphan processes

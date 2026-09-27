@@ -1,0 +1,190 @@
+2025-03-14T12:38:33.2801001Z Requested labels: ubuntu-latest
+2025-03-14T12:38:33.2801255Z Job defined at: bellingcat/auto-archiver/.github/workflows/ruff.yaml@refs/pull/247/merge
+2025-03-14T12:38:33.2801349Z Waiting for a runner to pick up this job...
+2025-03-14T12:38:34.3224356Z Job is waiting for a hosted runner to come online.
+2025-03-14T12:38:37.3423470Z Job is about to start running on the hosted runner: GitHub Actions 21 (hosted)
+2025-03-14T12:38:39.0935722Z Current runner version: '2.322.0'
+2025-03-14T12:38:39.0960272Z ##[group]Operating System
+2025-03-14T12:38:39.0961075Z Ubuntu
+2025-03-14T12:38:39.0961957Z 24.04.2
+2025-03-14T12:38:39.0962488Z LTS
+2025-03-14T12:38:39.0962942Z ##[endgroup]
+2025-03-14T12:38:39.0963542Z ##[group]Runner Image
+2025-03-14T12:38:39.0964129Z Image: ubuntu-24.04
+2025-03-14T12:38:39.0964647Z Version: 20250309.1.0
+2025-03-14T12:38:39.0965763Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250309.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-14T12:38:39.0967190Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250309.1
+2025-03-14T12:38:39.0968115Z ##[endgroup]
+2025-03-14T12:38:39.0968743Z ##[group]Runner Image Provisioner
+2025-03-14T12:38:39.0969353Z 2.0.422.1
+2025-03-14T12:38:39.0969889Z ##[endgroup]
+2025-03-14T12:38:39.0972524Z ##[group]GITHUB_TOKEN Permissions
+2025-03-14T12:38:39.0975203Z Actions: write
+2025-03-14T12:38:39.0976103Z Attestations: write
+2025-03-14T12:38:39.0976835Z Checks: write
+2025-03-14T12:38:39.0977375Z Contents: write
+2025-03-14T12:38:39.0977918Z Deployments: write
+2025-03-14T12:38:39.0978502Z Discussions: write
+2025-03-14T12:38:39.0979017Z Issues: write
+2025-03-14T12:38:39.0979500Z Metadata: read
+2025-03-14T12:38:39.0980054Z Packages: write
+2025-03-14T12:38:39.0980623Z Pages: write
+2025-03-14T12:38:39.0981120Z PullRequests: write
+2025-03-14T12:38:39.0982068Z RepositoryProjects: write
+2025-03-14T12:38:39.0982656Z SecurityEvents: write
+2025-03-14T12:38:39.0983183Z Statuses: write
+2025-03-14T12:38:39.0983763Z ##[endgroup]
+2025-03-14T12:38:39.0986956Z Secret source: Actions
+2025-03-14T12:38:39.0988048Z Prepare workflow directory
+2025-03-14T12:38:39.1400822Z Prepare all required actions
+2025-03-14T12:38:39.1438593Z Getting action download info
+2025-03-14T12:38:39.2684328Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-14T12:38:39.3495744Z Download action repository 'actions/setup-python@v5' (SHA:42375524e23c412d93fb67b49958b491fce71c38)
+2025-03-14T12:38:39.5514831Z Complete job name: build
+2025-03-14T12:38:39.6236538Z ##[group]Run actions/checkout@v4
+2025-03-14T12:38:39.6237379Z with:
+2025-03-14T12:38:39.6237801Z   repository: bellingcat/auto-archiver
+2025-03-14T12:38:39.6238491Z   token: ***
+2025-03-14T12:38:39.6238878Z   ssh-strict: true
+2025-03-14T12:38:39.6239275Z   ssh-user: git
+2025-03-14T12:38:39.6239693Z   persist-credentials: true
+2025-03-14T12:38:39.6240142Z   clean: true
+2025-03-14T12:38:39.6240546Z   sparse-checkout-cone-mode: true
+2025-03-14T12:38:39.6241025Z   fetch-depth: 1
+2025-03-14T12:38:39.6241578Z   fetch-tags: false
+2025-03-14T12:38:39.6241983Z   show-progress: true
+2025-03-14T12:38:39.6242390Z   lfs: false
+2025-03-14T12:38:39.6242767Z   submodules: false
+2025-03-14T12:38:39.6243186Z   set-safe-directory: true
+2025-03-14T12:38:39.6243854Z ##[endgroup]
+2025-03-14T12:38:39.7985463Z Syncing repository: bellingcat/auto-archiver
+2025-03-14T12:38:39.7988040Z ##[group]Getting Git version info
+2025-03-14T12:38:39.7989551Z Working directory is '/home/runner/work/auto-archiver/auto-archiver'
+2025-03-14T12:38:39.7991398Z [command]/usr/bin/git version
+2025-03-14T12:38:39.8032296Z git version 2.48.1
+2025-03-14T12:38:39.8060027Z ##[endgroup]
+2025-03-14T12:38:39.8075334Z Temporarily overriding HOME='/home/runner/work/_temp/f5dc1e46-f8f3-4f0e-868c-05d7bcb37096' before making global git config changes
+2025-03-14T12:38:39.8077771Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-14T12:38:39.8081919Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/auto-archiver/auto-archiver
+2025-03-14T12:38:39.8116401Z Deleting the contents of '/home/runner/work/auto-archiver/auto-archiver'
+2025-03-14T12:38:39.8120191Z ##[group]Initializing the repository
+2025-03-14T12:38:39.8125208Z [command]/usr/bin/git init /home/runner/work/auto-archiver/auto-archiver
+2025-03-14T12:38:39.8180836Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-14T12:38:39.8182638Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-14T12:38:39.8183550Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-14T12:38:39.8184224Z hint:
+2025-03-14T12:38:39.8184701Z hint: 	git config --global init.defaultBranch <name>
+2025-03-14T12:38:39.8185256Z hint:
+2025-03-14T12:38:39.8186161Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-14T12:38:39.8187338Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-14T12:38:39.8188513Z hint:
+2025-03-14T12:38:39.8189234Z hint: 	git branch -m <name>
+2025-03-14T12:38:39.8190647Z Initialized empty Git repository in /home/runner/work/auto-archiver/auto-archiver/.git/
+2025-03-14T12:38:39.8201026Z [command]/usr/bin/git remote add origin https://github.com/bellingcat/auto-archiver
+2025-03-14T12:38:39.8233268Z ##[endgroup]
+2025-03-14T12:38:39.8234487Z ##[group]Disabling automatic garbage collection
+2025-03-14T12:38:39.8238292Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-14T12:38:39.8267185Z ##[endgroup]
+2025-03-14T12:38:39.8268447Z ##[group]Setting up auth
+2025-03-14T12:38:39.8274745Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-14T12:38:39.8305958Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-14T12:38:39.8578198Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-14T12:38:39.8608554Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-14T12:38:39.8840090Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-14T12:38:39.8877036Z ##[endgroup]
+2025-03-14T12:38:39.8878308Z ##[group]Fetching the repository
+2025-03-14T12:38:39.8887706Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +2773183a018c685d33a9544668b5c70c215047a4:refs/remotes/pull/247/merge
+2025-03-14T12:38:40.2613694Z From https://github.com/bellingcat/auto-archiver
+2025-03-14T12:38:40.2615533Z  * [new ref]         2773183a018c685d33a9544668b5c70c215047a4 -> pull/247/merge
+2025-03-14T12:38:40.2637910Z ##[endgroup]
+2025-03-14T12:38:40.2638712Z ##[group]Determining the checkout info
+2025-03-14T12:38:40.2640042Z ##[endgroup]
+2025-03-14T12:38:40.2645452Z [command]/usr/bin/git sparse-checkout disable
+2025-03-14T12:38:40.2683011Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-14T12:38:40.2709775Z ##[group]Checking out the ref
+2025-03-14T12:38:40.2713578Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/247/merge
+2025-03-14T12:38:40.3170231Z Note: switching to 'refs/remotes/pull/247/merge'.
+2025-03-14T12:38:40.3171188Z 
+2025-03-14T12:38:40.3172095Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-14T12:38:40.3173761Z changes and commit them, and you can discard any commits you make in this
+2025-03-14T12:38:40.3175366Z state without impacting any branches by switching back to a branch.
+2025-03-14T12:38:40.3176333Z 
+2025-03-14T12:38:40.3176914Z If you want to create a new branch to retain commits you create, you may
+2025-03-14T12:38:40.3177776Z do so (now or later) by using -c with the switch command. Example:
+2025-03-14T12:38:40.3178283Z 
+2025-03-14T12:38:40.3178507Z   git switch -c <new-branch-name>
+2025-03-14T12:38:40.3178850Z 
+2025-03-14T12:38:40.3179064Z Or undo this operation with:
+2025-03-14T12:38:40.3179385Z 
+2025-03-14T12:38:40.3179667Z   git switch -
+2025-03-14T12:38:40.3180138Z 
+2025-03-14T12:38:40.3180847Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-14T12:38:40.3181778Z 
+2025-03-14T12:38:40.3182726Z HEAD is now at 2773183 Merge 17ae75fb95a0b6f753197e615cee07e8d6a5df0a into a01a873f379b7912971b6c90865c352b64b0e665
+2025-03-14T12:38:40.3184751Z ##[endgroup]
+2025-03-14T12:38:40.3219096Z [command]/usr/bin/git log -1 --format=%H
+2025-03-14T12:38:40.3241264Z 2773183a018c685d33a9544668b5c70c215047a4
+2025-03-14T12:38:40.3581360Z ##[group]Run actions/setup-python@v5
+2025-03-14T12:38:40.3582182Z with:
+2025-03-14T12:38:40.3582604Z   python-version: 3.11
+2025-03-14T12:38:40.3583080Z   check-latest: false
+2025-03-14T12:38:40.3583703Z   token: ***
+2025-03-14T12:38:40.3584128Z   update-environment: true
+2025-03-14T12:38:40.3584629Z   allow-prereleases: false
+2025-03-14T12:38:40.3585108Z ##[endgroup]
+2025-03-14T12:38:40.5333434Z ##[group]Installed versions
+2025-03-14T12:38:40.5396211Z Successfully set up CPython (3.11.11)
+2025-03-14T12:38:40.5398441Z ##[endgroup]
+2025-03-14T12:38:40.5545847Z ##[group]Run python -m pip install --upgrade pip
+2025-03-14T12:38:40.5547590Z [36;1mpython -m pip install --upgrade pip[0m
+2025-03-14T12:38:40.5549106Z [36;1mpip install ruff[0m
+2025-03-14T12:38:40.5603701Z shell: /usr/bin/bash -e {0}
+2025-03-14T12:38:40.5604936Z env:
+2025-03-14T12:38:40.5606187Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-14T12:38:40.5608265Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-03-14T12:38:40.5610265Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-14T12:38:40.5612224Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-14T12:38:40.5614015Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-14T12:38:40.5615795Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-03-14T12:38:40.5617335Z ##[endgroup]
+2025-03-14T12:38:42.8096956Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (25.0.1)
+2025-03-14T12:38:43.6383549Z Collecting ruff
+2025-03-14T12:38:43.6706875Z   Downloading ruff-0.10.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (25 kB)
+2025-03-14T12:38:43.6826483Z Downloading ruff-0.10.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.3 MB)
+2025-03-14T12:38:43.7733650Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.3/11.3 MB 146.7 MB/s eta 0:00:00
+2025-03-14T12:38:43.7937365Z Installing collected packages: ruff
+2025-03-14T12:38:43.9300531Z Successfully installed ruff-0.10.0
+2025-03-14T12:38:44.0137171Z ##[group]Run ruff check --output-format=github . && ruff format --check
+2025-03-14T12:38:44.0137806Z [36;1mruff check --output-format=github . && ruff format --check[0m
+2025-03-14T12:38:44.0186907Z shell: /usr/bin/bash -e {0}
+2025-03-14T12:38:44.0187194Z env:
+2025-03-14T12:38:44.0187495Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-14T12:38:44.0187966Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-03-14T12:38:44.0188429Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-14T12:38:44.0188839Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-14T12:38:44.0189302Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-14T12:38:44.0189700Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-03-14T12:38:44.0190040Z ##[endgroup]
+2025-03-14T12:38:44.0501237Z ##[error]tests/enrichers/test_opentimestamps_enricher.py:89:5: F841 Local variable `ots` is assigned to but never used
+2025-03-14T12:38:44.0510348Z ##[error]tests/enrichers/test_opentimestamps_enricher.py:112:12: E712 Avoid equality comparisons to `True`; use `if verification_info["verified"]:` for truth checks
+2025-03-14T12:38:44.0513000Z ##[error]tests/enrichers/test_opentimestamps_enricher.py:132:12: E712 Avoid equality comparisons to `False`; use `if not verification_info["verified"]:` for false checks
+2025-03-14T12:38:44.0515297Z ##[error]tests/enrichers/test_opentimestamps_enricher.py:151:12: E712 Avoid equality comparisons to `True`; use `if verification_info["verified"]:` for truth checks
+2025-03-14T12:38:44.0517531Z ##[error]tests/enrichers/test_opentimestamps_enricher.py:187:12: E712 Avoid equality comparisons to `True`; use `if metadata.get("opentimestamped"):` for truth checks
+2025-03-14T12:38:44.0520177Z ##[error]tests/enrichers/test_opentimestamps_enricher.py:194:12: E712 Avoid equality comparisons to `True`; use `if metadata.media[0].get("opentimestamps"):` for truth checks
+2025-03-14T12:38:44.0522741Z ##[error]tests/enrichers/test_opentimestamps_enricher.py:204:12: E712 Avoid equality comparisons to `True`; use `if timestamp_media.get("verified"):` for truth checks
+2025-03-14T12:38:44.0525118Z ##[error]tests/enrichers/test_opentimestamps_enricher.py:241:12: E712 Avoid equality comparisons to `True`; use `if metadata.get("opentimestamped"):` for truth checks
+2025-03-14T12:38:44.0527374Z ##[error]tests/enrichers/test_opentimestamps_enricher.py:262:12: E712 Avoid equality comparisons to `False`; use `if not metadata.get("opentimestamped"):` for false checks
+2025-03-14T12:38:44.0530341Z ##[error]Process completed with exit code 1.
+2025-03-14T12:38:44.0638553Z Post job cleanup.
+2025-03-14T12:38:44.1571861Z [command]/usr/bin/git version
+2025-03-14T12:38:44.1609471Z git version 2.48.1
+2025-03-14T12:38:44.1659812Z Temporarily overriding HOME='/home/runner/work/_temp/8353f795-1771-4341-8e6b-7341f0065fde' before making global git config changes
+2025-03-14T12:38:44.1661682Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-14T12:38:44.1666245Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/auto-archiver/auto-archiver
+2025-03-14T12:38:44.1700198Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-14T12:38:44.1732455Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-14T12:38:44.1963020Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-14T12:38:44.1983245Z http.https://github.com/.extraheader
+2025-03-14T12:38:44.1996297Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-14T12:38:44.2026526Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-14T12:38:44.2364517Z Cleaning up orphan processes

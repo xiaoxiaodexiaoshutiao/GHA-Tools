@@ -1,0 +1,270 @@
+﻿2025-03-24T16:12:09.6470763Z Current runner version: '2.323.0'
+2025-03-24T16:12:09.6494318Z ##[group]Operating System
+2025-03-24T16:12:09.6495516Z Ubuntu
+2025-03-24T16:12:09.6496010Z 24.04.2
+2025-03-24T16:12:09.6496493Z LTS
+2025-03-24T16:12:09.6496960Z ##[endgroup]
+2025-03-24T16:12:09.6497497Z ##[group]Runner Image
+2025-03-24T16:12:09.6498043Z Image: ubuntu-24.04
+2025-03-24T16:12:09.6498597Z Version: 20250316.1.0
+2025-03-24T16:12:09.6499652Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250316.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-24T16:12:09.6501051Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250316.1
+2025-03-24T16:12:09.6501982Z ##[endgroup]
+2025-03-24T16:12:09.6502469Z ##[group]Runner Image Provisioner
+2025-03-24T16:12:09.6503066Z 2.0.422.1
+2025-03-24T16:12:09.6503461Z ##[endgroup]
+2025-03-24T16:12:09.6506087Z ##[group]GITHUB_TOKEN Permissions
+2025-03-24T16:12:09.6508144Z Actions: read
+2025-03-24T16:12:09.6508943Z Attestations: read
+2025-03-24T16:12:09.6509529Z Checks: read
+2025-03-24T16:12:09.6510082Z Contents: read
+2025-03-24T16:12:09.6510552Z Deployments: read
+2025-03-24T16:12:09.6511026Z Discussions: read
+2025-03-24T16:12:09.6511536Z Issues: read
+2025-03-24T16:12:09.6512021Z Metadata: read
+2025-03-24T16:12:09.6512462Z Models: read
+2025-03-24T16:12:09.6512984Z Packages: read
+2025-03-24T16:12:09.6513519Z Pages: read
+2025-03-24T16:12:09.6513984Z PullRequests: read
+2025-03-24T16:12:09.6514705Z RepositoryProjects: read
+2025-03-24T16:12:09.6515256Z SecurityEvents: read
+2025-03-24T16:12:09.6515765Z Statuses: read
+2025-03-24T16:12:09.6516252Z ##[endgroup]
+2025-03-24T16:12:09.6518236Z Secret source: None
+2025-03-24T16:12:09.6518939Z Prepare workflow directory
+2025-03-24T16:12:09.6855536Z Prepare all required actions
+2025-03-24T16:12:09.6910029Z Getting action download info
+2025-03-24T16:12:10.1214195Z Download action repository 'actions/checkout@v2' (SHA:ee0669bd1cc54295c223e0bb666b733df41de1c5)
+2025-03-24T16:12:10.2271670Z Download action repository 'actions/setup-python@v1' (SHA:0f07f7f756721ebd886c2462646a35f78a8bc4de)
+2025-03-24T16:12:10.5025658Z Complete job name: build (3.8)
+2025-03-24T16:12:10.5637296Z ##[group]Run actions/checkout@v2
+2025-03-24T16:12:10.5638355Z with:
+2025-03-24T16:12:10.5639003Z   repository: aspectumapp/osm2geojson
+2025-03-24T16:12:10.5639733Z   token: ***
+2025-03-24T16:12:10.5640140Z   ssh-strict: true
+2025-03-24T16:12:10.5640591Z   persist-credentials: true
+2025-03-24T16:12:10.5641074Z   clean: true
+2025-03-24T16:12:10.5641480Z   fetch-depth: 1
+2025-03-24T16:12:10.5641879Z   lfs: false
+2025-03-24T16:12:10.5642281Z   submodules: false
+2025-03-24T16:12:10.5642714Z   set-safe-directory: true
+2025-03-24T16:12:10.5643465Z ##[endgroup]
+2025-03-24T16:12:10.7385008Z Syncing repository: aspectumapp/osm2geojson
+2025-03-24T16:12:10.7387352Z ##[group]Getting Git version info
+2025-03-24T16:12:10.7388345Z Working directory is '/home/runner/work/osm2geojson/osm2geojson'
+2025-03-24T16:12:10.7389675Z [command]/usr/bin/git version
+2025-03-24T16:12:10.7415373Z git version 2.48.1
+2025-03-24T16:12:10.7442226Z ##[endgroup]
+2025-03-24T16:12:10.7459242Z Temporarily overriding HOME='/home/runner/work/_temp/0dca1698-5161-4778-b219-53c8a50fc35e' before making global git config changes
+2025-03-24T16:12:10.7460802Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-24T16:12:10.7462983Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/osm2geojson/osm2geojson
+2025-03-24T16:12:10.7499894Z Deleting the contents of '/home/runner/work/osm2geojson/osm2geojson'
+2025-03-24T16:12:10.7503858Z ##[group]Initializing the repository
+2025-03-24T16:12:10.7507693Z [command]/usr/bin/git init /home/runner/work/osm2geojson/osm2geojson
+2025-03-24T16:12:10.7567908Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-24T16:12:10.7569372Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-24T16:12:10.7570837Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-24T16:12:10.7572667Z hint:
+2025-03-24T16:12:10.7573609Z hint: 	git config --global init.defaultBranch <name>
+2025-03-24T16:12:10.7574893Z hint:
+2025-03-24T16:12:10.7575689Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-24T16:12:10.7576692Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-24T16:12:10.7577439Z hint:
+2025-03-24T16:12:10.7577840Z hint: 	git branch -m <name>
+2025-03-24T16:12:10.7578817Z Initialized empty Git repository in /home/runner/work/osm2geojson/osm2geojson/.git/
+2025-03-24T16:12:10.7583343Z [command]/usr/bin/git remote add origin https://github.com/aspectumapp/osm2geojson
+2025-03-24T16:12:10.7615862Z ##[endgroup]
+2025-03-24T16:12:10.7616899Z ##[group]Disabling automatic garbage collection
+2025-03-24T16:12:10.7619138Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-24T16:12:10.7647601Z ##[endgroup]
+2025-03-24T16:12:10.7648436Z ##[group]Setting up auth
+2025-03-24T16:12:10.7653560Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-24T16:12:10.7682219Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-24T16:12:10.7985500Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-24T16:12:10.8014023Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-24T16:12:10.8240987Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-24T16:12:10.8277555Z ##[endgroup]
+2025-03-24T16:12:10.8278381Z ##[group]Fetching the repository
+2025-03-24T16:12:10.8286510Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +b17816505fe8806a7d3e990145510da3c2aaa515:refs/remotes/pull/48/merge
+2025-03-24T16:12:11.1758404Z remote: Enumerating objects: 66, done.        
+2025-03-24T16:12:11.1759932Z remote: Counting objects:   1% (1/66)        
+2025-03-24T16:12:11.1760937Z remote: Counting objects:   3% (2/66)        
+2025-03-24T16:12:11.1762058Z remote: Counting objects:   4% (3/66)        
+2025-03-24T16:12:11.1762736Z remote: Counting objects:   6% (4/66)        
+2025-03-24T16:12:11.1763418Z remote: Counting objects:   7% (5/66)        
+2025-03-24T16:12:11.1764097Z remote: Counting objects:   9% (6/66)        
+2025-03-24T16:12:11.1764992Z remote: Counting objects:  10% (7/66)        
+2025-03-24T16:12:11.1765669Z remote: Counting objects:  12% (8/66)        
+2025-03-24T16:12:11.1766345Z remote: Counting objects:  13% (9/66)        
+2025-03-24T16:12:11.1767037Z remote: Counting objects:  15% (10/66)        
+2025-03-24T16:12:11.1767725Z remote: Counting objects:  16% (11/66)        
+2025-03-24T16:12:11.1768409Z remote: Counting objects:  18% (12/66)        
+2025-03-24T16:12:11.1768980Z remote: Counting objects:  19% (13/66)        
+2025-03-24T16:12:11.1769564Z remote: Counting objects:  21% (14/66)        
+2025-03-24T16:12:11.1770191Z remote: Counting objects:  22% (15/66)        
+2025-03-24T16:12:11.1770843Z remote: Counting objects:  24% (16/66)        
+2025-03-24T16:12:11.1771476Z remote: Counting objects:  25% (17/66)        
+2025-03-24T16:12:11.1772094Z remote: Counting objects:  27% (18/66)        
+2025-03-24T16:12:11.1772714Z remote: Counting objects:  28% (19/66)        
+2025-03-24T16:12:11.1773329Z remote: Counting objects:  30% (20/66)        
+2025-03-24T16:12:11.1773942Z remote: Counting objects:  31% (21/66)        
+2025-03-24T16:12:11.1774759Z remote: Counting objects:  33% (22/66)        
+2025-03-24T16:12:11.1775385Z remote: Counting objects:  34% (23/66)        
+2025-03-24T16:12:11.1775991Z remote: Counting objects:  36% (24/66)        
+2025-03-24T16:12:11.1776607Z remote: Counting objects:  37% (25/66)        
+2025-03-24T16:12:11.1777441Z remote: Counting objects:  39% (26/66)        
+2025-03-24T16:12:11.1778070Z remote: Counting objects:  40% (27/66)        
+2025-03-24T16:12:11.1778684Z remote: Counting objects:  42% (28/66)        
+2025-03-24T16:12:11.1779333Z remote: Counting objects:  43% (29/66)        
+2025-03-24T16:12:11.1779951Z remote: Counting objects:  45% (30/66)        
+2025-03-24T16:12:11.1780551Z remote: Counting objects:  46% (31/66)        
+2025-03-24T16:12:11.1781147Z remote: Counting objects:  48% (32/66)        
+2025-03-24T16:12:11.1781741Z remote: Counting objects:  50% (33/66)        
+2025-03-24T16:12:11.1782325Z remote: Counting objects:  51% (34/66)        
+2025-03-24T16:12:11.1782922Z remote: Counting objects:  53% (35/66)        
+2025-03-24T16:12:11.1783513Z remote: Counting objects:  54% (36/66)        
+2025-03-24T16:12:11.1784105Z remote: Counting objects:  56% (37/66)        
+2025-03-24T16:12:11.1784897Z remote: Counting objects:  57% (38/66)        
+2025-03-24T16:12:11.1785525Z remote: Counting objects:  59% (39/66)        
+2025-03-24T16:12:11.1786118Z remote: Counting objects:  60% (40/66)        
+2025-03-24T16:12:11.1786707Z remote: Counting objects:  62% (41/66)        
+2025-03-24T16:12:11.1787293Z remote: Counting objects:  63% (42/66)        
+2025-03-24T16:12:11.1787887Z remote: Counting objects:  65% (43/66)        
+2025-03-24T16:12:11.1788481Z remote: Counting objects:  66% (44/66)        
+2025-03-24T16:12:11.1789089Z remote: Counting objects:  68% (45/66)        
+2025-03-24T16:12:11.1789689Z remote: Counting objects:  69% (46/66)        
+2025-03-24T16:12:11.1790373Z remote: Counting objects:  71% (47/66)        
+2025-03-24T16:12:11.1791072Z remote: Counting objects:  72% (48/66)        
+2025-03-24T16:12:11.1791793Z remote: Counting objects:  74% (49/66)        
+2025-03-24T16:12:11.1792430Z remote: Counting objects:  75% (50/66)        
+2025-03-24T16:12:11.1793022Z remote: Counting objects:  77% (51/66)        
+2025-03-24T16:12:11.1793634Z remote: Counting objects:  78% (52/66)        
+2025-03-24T16:12:11.1794226Z remote: Counting objects:  80% (53/66)        
+2025-03-24T16:12:11.1795174Z remote: Counting objects:  81% (54/66)        
+2025-03-24T16:12:11.1795824Z remote: Counting objects:  83% (55/66)        
+2025-03-24T16:12:11.1796419Z remote: Counting objects:  84% (56/66)        
+2025-03-24T16:12:11.1797027Z remote: Counting objects:  86% (57/66)        
+2025-03-24T16:12:11.1797620Z remote: Counting objects:  87% (58/66)        
+2025-03-24T16:12:11.1798202Z remote: Counting objects:  89% (59/66)        
+2025-03-24T16:12:11.1798786Z remote: Counting objects:  90% (60/66)        
+2025-03-24T16:12:11.1799363Z remote: Counting objects:  92% (61/66)        
+2025-03-24T16:12:11.1799945Z remote: Counting objects:  93% (62/66)        
+2025-03-24T16:12:11.1800522Z remote: Counting objects:  95% (63/66)        
+2025-03-24T16:12:11.1801103Z remote: Counting objects:  96% (64/66)        
+2025-03-24T16:12:11.1801702Z remote: Counting objects:  98% (65/66)        
+2025-03-24T16:12:11.1802286Z remote: Counting objects: 100% (66/66)        
+2025-03-24T16:12:11.1802908Z remote: Counting objects: 100% (66/66), done.        
+2025-03-24T16:12:11.1803572Z remote: Compressing objects:   1% (1/58)        
+2025-03-24T16:12:11.1804180Z remote: Compressing objects:   3% (2/58)        
+2025-03-24T16:12:11.1804977Z remote: Compressing objects:   5% (3/58)        
+2025-03-24T16:12:11.1805588Z remote: Compressing objects:   6% (4/58)        
+2025-03-24T16:12:11.1806196Z remote: Compressing objects:   8% (5/58)        
+2025-03-24T16:12:11.1807009Z remote: Compressing objects:  10% (6/58)        
+2025-03-24T16:12:11.1808026Z remote: Compressing objects:  12% (7/58)        
+2025-03-24T16:12:11.1809096Z remote: Compressing objects:  13% (8/58)        
+2025-03-24T16:12:11.1810098Z remote: Compressing objects:  15% (9/58)        
+2025-03-24T16:12:11.1810865Z remote: Compressing objects:  17% (10/58)        
+2025-03-24T16:12:11.1811471Z remote: Compressing objects:  18% (11/58)        
+2025-03-24T16:12:11.1812272Z remote: Compressing objects:  20% (12/58)        
+2025-03-24T16:12:11.1812882Z remote: Compressing objects:  22% (13/58)        
+2025-03-24T16:12:11.1813506Z remote: Compressing objects:  24% (14/58)        
+2025-03-24T16:12:11.1814270Z remote: Compressing objects:  25% (15/58)        
+2025-03-24T16:12:11.1815394Z remote: Compressing objects:  27% (16/58)        
+2025-03-24T16:12:11.1816467Z remote: Compressing objects:  29% (17/58)        
+2025-03-24T16:12:11.1817494Z remote: Compressing objects:  31% (18/58)        
+2025-03-24T16:12:11.1818427Z remote: Compressing objects:  32% (19/58)        
+2025-03-24T16:12:11.1819389Z remote: Compressing objects:  34% (20/58)        
+2025-03-24T16:12:11.1820395Z remote: Compressing objects:  36% (21/58)        
+2025-03-24T16:12:11.1821586Z remote: Compressing objects:  37% (22/58)        
+2025-03-24T16:12:11.1822742Z remote: Compressing objects:  39% (23/58)        
+2025-03-24T16:12:11.1823636Z remote: Compressing objects:  41% (24/58)        
+2025-03-24T16:12:11.1824287Z remote: Compressing objects:  43% (25/58)        
+2025-03-24T16:12:11.1825139Z remote: Compressing objects:  44% (26/58)        
+2025-03-24T16:12:11.1825741Z remote: Compressing objects:  46% (27/58)        
+2025-03-24T16:12:11.1826344Z remote: Compressing objects:  48% (28/58)        
+2025-03-24T16:12:11.1826947Z remote: Compressing objects:  50% (29/58)        
+2025-03-24T16:12:11.1827701Z remote: Compressing objects:  51% (30/58)        
+2025-03-24T16:12:11.1828458Z remote: Compressing objects:  53% (31/58)        
+2025-03-24T16:12:11.1829065Z remote: Compressing objects:  55% (32/58)        
+2025-03-24T16:12:11.1829674Z remote: Compressing objects:  56% (33/58)        
+2025-03-24T16:12:11.1830271Z remote: Compressing objects:  58% (34/58)        
+2025-03-24T16:12:11.1831123Z remote: Compressing objects:  60% (35/58)        
+2025-03-24T16:12:11.1832099Z remote: Compressing objects:  62% (36/58)        
+2025-03-24T16:12:11.1833062Z remote: Compressing objects:  63% (37/58)        
+2025-03-24T16:12:11.1833929Z remote: Compressing objects:  65% (38/58)        
+2025-03-24T16:12:11.1835312Z remote: Compressing objects:  67% (39/58)        
+2025-03-24T16:12:11.1836516Z remote: Compressing objects:  68% (40/58)        
+2025-03-24T16:12:11.1837641Z remote: Compressing objects:  70% (41/58)        
+2025-03-24T16:12:11.1838675Z remote: Compressing objects:  72% (42/58)        
+2025-03-24T16:12:11.1839737Z remote: Compressing objects:  74% (43/58)        
+2025-03-24T16:12:11.1840735Z remote: Compressing objects:  75% (44/58)        
+2025-03-24T16:12:11.1841878Z remote: Compressing objects:  77% (45/58)        
+2025-03-24T16:12:11.1842898Z remote: Compressing objects:  79% (46/58)        
+2025-03-24T16:12:11.1843912Z remote: Compressing objects:  81% (47/58)        
+2025-03-24T16:12:11.1845148Z remote: Compressing objects:  82% (48/58)        
+2025-03-24T16:12:11.1846182Z remote: Compressing objects:  84% (49/58)        
+2025-03-24T16:12:11.1847186Z remote: Compressing objects:  86% (50/58)        
+2025-03-24T16:12:11.1848213Z remote: Compressing objects:  87% (51/58)        
+2025-03-24T16:12:11.1849028Z remote: Compressing objects:  89% (52/58)        
+2025-03-24T16:12:11.1849628Z remote: Compressing objects:  91% (53/58)        
+2025-03-24T16:12:11.1850607Z remote: Compressing objects:  93% (54/58)        
+2025-03-24T16:12:11.1851593Z remote: Compressing objects:  94% (55/58)        
+2025-03-24T16:12:11.1852191Z remote: Compressing objects:  96% (56/58)        
+2025-03-24T16:12:11.1852787Z remote: Compressing objects:  98% (57/58)        
+2025-03-24T16:12:11.1853665Z remote: Compressing objects: 100% (58/58)        
+2025-03-24T16:12:11.1854717Z remote: Compressing objects: 100% (58/58), done.        
+2025-03-24T16:12:11.1939726Z remote: Total 66 (delta 6), reused 37 (delta 2), pack-reused 0 (from 0)        
+2025-03-24T16:12:11.2097536Z From https://github.com/aspectumapp/osm2geojson
+2025-03-24T16:12:11.2099127Z  * [new ref]         b17816505fe8806a7d3e990145510da3c2aaa515 -> pull/48/merge
+2025-03-24T16:12:11.2127033Z ##[endgroup]
+2025-03-24T16:12:11.2128604Z ##[group]Determining the checkout info
+2025-03-24T16:12:11.2130414Z ##[endgroup]
+2025-03-24T16:12:11.2131746Z ##[group]Checking out the ref
+2025-03-24T16:12:11.2135391Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/48/merge
+2025-03-24T16:12:11.2231351Z Note: switching to 'refs/remotes/pull/48/merge'.
+2025-03-24T16:12:11.2232233Z 
+2025-03-24T16:12:11.2232765Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-24T16:12:11.2233928Z changes and commit them, and you can discard any commits you make in this
+2025-03-24T16:12:11.2235524Z state without impacting any branches by switching back to a branch.
+2025-03-24T16:12:11.2236798Z 
+2025-03-24T16:12:11.2237712Z If you want to create a new branch to retain commits you create, you may
+2025-03-24T16:12:11.2239698Z do so (now or later) by using -c with the switch command. Example:
+2025-03-24T16:12:11.2240905Z 
+2025-03-24T16:12:11.2241353Z   git switch -c <new-branch-name>
+2025-03-24T16:12:11.2242147Z 
+2025-03-24T16:12:11.2242523Z Or undo this operation with:
+2025-03-24T16:12:11.2243221Z 
+2025-03-24T16:12:11.2243545Z   git switch -
+2025-03-24T16:12:11.2244047Z 
+2025-03-24T16:12:11.2245217Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-24T16:12:11.2246661Z 
+2025-03-24T16:12:11.2248391Z HEAD is now at b178165 Merge 0a675f2ee82bfb46a274ef25878c6d8bf2bbab8d into 9d4455a1fa867bb1b89bbb677a0a4de3388b3e87
+2025-03-24T16:12:11.2251404Z ##[endgroup]
+2025-03-24T16:12:11.2279636Z [command]/usr/bin/git log -1 --format='%H'
+2025-03-24T16:12:11.2304136Z 'b17816505fe8806a7d3e990145510da3c2aaa515'
+2025-03-24T16:12:11.2545252Z ##[group]Run actions/setup-python@v1
+2025-03-24T16:12:11.2546112Z with:
+2025-03-24T16:12:11.2546622Z   python-version: 3.8
+2025-03-24T16:12:11.2547248Z   architecture: x64
+2025-03-24T16:12:11.2547818Z ##[endgroup]
+2025-03-24T16:12:11.3017030Z ##[error]Version 3.8 with arch x64 not found
+Available versions:
+
+3.10.16 (x64)
+3.11.11 (x64)
+3.12.9 (x64)
+3.13.2 (x64)
+3.9.21 (x64)
+2025-03-24T16:12:11.3245977Z Post job cleanup.
+2025-03-24T16:12:11.4136654Z [command]/usr/bin/git version
+2025-03-24T16:12:11.4176251Z git version 2.48.1
+2025-03-24T16:12:11.4219277Z Temporarily overriding HOME='/home/runner/work/_temp/f1db4f4f-8c54-4a4d-939e-f77a68fddff1' before making global git config changes
+2025-03-24T16:12:11.4222349Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-24T16:12:11.4224939Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/osm2geojson/osm2geojson
+2025-03-24T16:12:11.4258853Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-24T16:12:11.4292881Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-24T16:12:11.4523009Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-24T16:12:11.4543028Z http.https://github.com/.extraheader
+2025-03-24T16:12:11.4553340Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-24T16:12:11.4583963Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-24T16:12:11.4942925Z Cleaning up orphan processes

@@ -1,0 +1,218 @@
+2025-03-20T19:49:04.1835326Z Requested labels: ubuntu-latest
+2025-03-20T19:49:04.1835606Z Job defined at: shubhamranjan/dotnet-etcd/.github/workflows/dotnet-tests.yml@refs/pull/233/merge
+2025-03-20T19:49:04.1835683Z Waiting for a runner to pick up this job...
+2025-03-20T19:49:04.7343689Z Job is waiting for a hosted runner to come online.
+2025-03-20T19:49:08.5884358Z Job is about to start running on the hosted runner: GitHub Actions 33 (hosted)
+2025-03-20T19:49:10.4031920Z Current runner version: '2.322.0'
+2025-03-20T19:49:10.4059180Z ##[group]Operating System
+2025-03-20T19:49:10.4059983Z Ubuntu
+2025-03-20T19:49:10.4060570Z 24.04.2
+2025-03-20T19:49:10.4061032Z LTS
+2025-03-20T19:49:10.4061491Z ##[endgroup]
+2025-03-20T19:49:10.4062071Z ##[group]Runner Image
+2025-03-20T19:49:10.4062644Z Image: ubuntu-24.04
+2025-03-20T19:49:10.4063155Z Version: 20250316.1.0
+2025-03-20T19:49:10.4064264Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250316.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-20T19:49:10.4065596Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250316.1
+2025-03-20T19:49:10.4066476Z ##[endgroup]
+2025-03-20T19:49:10.4067258Z ##[group]Runner Image Provisioner
+2025-03-20T19:49:10.4067863Z 2.0.422.1
+2025-03-20T19:49:10.4068387Z ##[endgroup]
+2025-03-20T19:49:10.4070692Z ##[group]GITHUB_TOKEN Permissions
+2025-03-20T19:49:10.4072600Z Actions: write
+2025-03-20T19:49:10.4073478Z Attestations: write
+2025-03-20T19:49:10.4074126Z Checks: write
+2025-03-20T19:49:10.4074633Z Contents: write
+2025-03-20T19:49:10.4075157Z Deployments: write
+2025-03-20T19:49:10.4075717Z Discussions: write
+2025-03-20T19:49:10.4076215Z Issues: write
+2025-03-20T19:49:10.4076716Z Metadata: read
+2025-03-20T19:49:10.4077787Z Models: read
+2025-03-20T19:49:10.4078613Z Packages: write
+2025-03-20T19:49:10.4079392Z Pages: write
+2025-03-20T19:49:10.4080266Z PullRequests: write
+2025-03-20T19:49:10.4081047Z RepositoryProjects: write
+2025-03-20T19:49:10.4081916Z SecurityEvents: write
+2025-03-20T19:49:10.4082535Z Statuses: write
+2025-03-20T19:49:10.4083046Z ##[endgroup]
+2025-03-20T19:49:10.4086182Z Secret source: Actions
+2025-03-20T19:49:10.4087290Z Prepare workflow directory
+2025-03-20T19:49:10.4599362Z Prepare all required actions
+2025-03-20T19:49:10.4637559Z Getting action download info
+2025-03-20T19:49:10.6615492Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-20T19:49:10.7509011Z Download action repository 'actions/setup-dotnet@v4' (SHA:67a3573c9a986a3f9c594539f4ab511d57bb3ce9)
+2025-03-20T19:49:11.1220122Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2025-03-20T19:49:11.6014488Z Complete job name: build-and-test
+2025-03-20T19:49:11.6576305Z ##[group]Checking docker version
+2025-03-20T19:49:11.6589550Z ##[command]/usr/bin/docker version --format '{{.Server.APIVersion}}'
+2025-03-20T19:49:11.7483240Z '1.45'
+2025-03-20T19:49:11.7495603Z Docker daemon API version: '1.45'
+2025-03-20T19:49:11.7496451Z ##[command]/usr/bin/docker version --format '{{.Client.APIVersion}}'
+2025-03-20T19:49:11.7716520Z '1.45'
+2025-03-20T19:49:11.7730499Z Docker client API version: '1.45'
+2025-03-20T19:49:11.7736617Z ##[endgroup]
+2025-03-20T19:49:11.7739904Z ##[group]Clean up resources from previous jobs
+2025-03-20T19:49:11.7745376Z ##[command]/usr/bin/docker ps --all --quiet --no-trunc --filter "label=7f2481"
+2025-03-20T19:49:11.7893383Z ##[command]/usr/bin/docker network prune --force --filter "label=7f2481"
+2025-03-20T19:49:11.8030258Z ##[endgroup]
+2025-03-20T19:49:11.8030826Z ##[group]Create local container network
+2025-03-20T19:49:11.8041244Z ##[command]/usr/bin/docker network create --label 7f2481 github_network_35b15891e8c041638df606acd3225290
+2025-03-20T19:49:11.8859928Z 3df92080717aa91c03369ebb0d119c1577ef66bc1b56b585ef52759470f9d7df
+2025-03-20T19:49:11.8881775Z ##[endgroup]
+2025-03-20T19:49:11.8909348Z ##[group]Starting etcd service container
+2025-03-20T19:49:11.8930251Z ##[command]/usr/bin/docker pull quay.io/coreos/etcd:v3.5.9
+2025-03-20T19:49:12.4047851Z v3.5.9: Pulling from coreos/etcd
+2025-03-20T19:49:12.5175872Z dd5ad9c9c29f: Pulling fs layer
+2025-03-20T19:49:12.5177924Z 960043b8858c: Pulling fs layer
+2025-03-20T19:49:12.5179381Z b4ca4c215f48: Pulling fs layer
+2025-03-20T19:49:12.5180529Z eebb06941f3e: Pulling fs layer
+2025-03-20T19:49:12.5181585Z 02cd68c0cbf6: Pulling fs layer
+2025-03-20T19:49:12.5182568Z d3c894b5b2b0: Pulling fs layer
+2025-03-20T19:49:12.5183530Z b40161cd83fc: Pulling fs layer
+2025-03-20T19:49:12.5184877Z 46ba3f23f1d3: Pulling fs layer
+2025-03-20T19:49:12.5185813Z 4fa131a1b726: Pulling fs layer
+2025-03-20T19:49:12.5186747Z eebb06941f3e: Waiting
+2025-03-20T19:49:12.5187862Z 654ed51d2180: Pulling fs layer
+2025-03-20T19:49:12.5188831Z 5f673cfffa4e: Pulling fs layer
+2025-03-20T19:49:12.5189760Z daea03978d14: Pulling fs layer
+2025-03-20T19:49:12.5190677Z 1191a2487b77: Pulling fs layer
+2025-03-20T19:49:12.5191601Z eec65f887b31: Pulling fs layer
+2025-03-20T19:49:12.5192509Z 02cd68c0cbf6: Waiting
+2025-03-20T19:49:12.5193271Z d3c894b5b2b0: Waiting
+2025-03-20T19:49:12.5194031Z b40161cd83fc: Waiting
+2025-03-20T19:49:12.5194925Z daea03978d14: Waiting
+2025-03-20T19:49:12.5195850Z 46ba3f23f1d3: Waiting
+2025-03-20T19:49:12.5196754Z 1191a2487b77: Waiting
+2025-03-20T19:49:12.5197932Z eec65f887b31: Waiting
+2025-03-20T19:49:12.5198888Z 4fa131a1b726: Waiting
+2025-03-20T19:49:12.5199825Z 5f673cfffa4e: Waiting
+2025-03-20T19:49:12.5200764Z 654ed51d2180: Waiting
+2025-03-20T19:49:12.8464362Z b4ca4c215f48: Verifying Checksum
+2025-03-20T19:49:12.8466250Z b4ca4c215f48: Download complete
+2025-03-20T19:49:12.8907367Z dd5ad9c9c29f: Download complete
+2025-03-20T19:49:12.9065275Z dd5ad9c9c29f: Pull complete
+2025-03-20T19:49:12.9484746Z eebb06941f3e: Verifying Checksum
+2025-03-20T19:49:12.9487281Z eebb06941f3e: Download complete
+2025-03-20T19:49:13.0544100Z d3c894b5b2b0: Download complete
+2025-03-20T19:49:13.0661856Z 02cd68c0cbf6: Verifying Checksum
+2025-03-20T19:49:13.0664108Z 02cd68c0cbf6: Download complete
+2025-03-20T19:49:13.1634687Z 46ba3f23f1d3: Download complete
+2025-03-20T19:49:13.1777349Z b40161cd83fc: Verifying Checksum
+2025-03-20T19:49:13.1779095Z b40161cd83fc: Download complete
+2025-03-20T19:49:13.3509910Z 654ed51d2180: Verifying Checksum
+2025-03-20T19:49:13.3511675Z 654ed51d2180: Download complete
+2025-03-20T19:49:13.5644745Z 4fa131a1b726: Verifying Checksum
+2025-03-20T19:49:13.5645427Z 4fa131a1b726: Download complete
+2025-03-20T19:49:13.6781024Z daea03978d14: Verifying Checksum
+2025-03-20T19:49:13.6781896Z daea03978d14: Download complete
+2025-03-20T19:49:13.7903488Z 1191a2487b77: Verifying Checksum
+2025-03-20T19:49:13.7904230Z 1191a2487b77: Download complete
+2025-03-20T19:49:13.8731509Z 5f673cfffa4e: Verifying Checksum
+2025-03-20T19:49:13.8732307Z 5f673cfffa4e: Download complete
+2025-03-20T19:49:13.9059567Z eec65f887b31: Verifying Checksum
+2025-03-20T19:49:13.9060074Z eec65f887b31: Download complete
+2025-03-20T19:49:16.8960623Z 960043b8858c: Download complete
+2025-03-20T19:49:16.9524569Z 960043b8858c: Pull complete
+2025-03-20T19:49:17.3084639Z b4ca4c215f48: Pull complete
+2025-03-20T19:49:17.3210262Z eebb06941f3e: Pull complete
+2025-03-20T19:49:17.3325722Z 02cd68c0cbf6: Pull complete
+2025-03-20T19:49:17.3437450Z d3c894b5b2b0: Pull complete
+2025-03-20T19:49:17.3639666Z b40161cd83fc: Pull complete
+2025-03-20T19:49:17.3760233Z 46ba3f23f1d3: Pull complete
+2025-03-20T19:49:17.3921760Z 4fa131a1b726: Pull complete
+2025-03-20T19:49:17.5247541Z 654ed51d2180: Pull complete
+2025-03-20T19:49:17.6271264Z 5f673cfffa4e: Pull complete
+2025-03-20T19:49:17.7138108Z daea03978d14: Pull complete
+2025-03-20T19:49:17.7231966Z 1191a2487b77: Pull complete
+2025-03-20T19:49:17.7329205Z eec65f887b31: Pull complete
+2025-03-20T19:49:17.7401036Z Digest: sha256:18ca110b5ce9a177bb80d6b4a08d73bda54b549d7a0eb6f66e6da69bf919c63f
+2025-03-20T19:49:17.7413597Z Status: Downloaded newer image for quay.io/coreos/etcd:v3.5.9
+2025-03-20T19:49:17.7424673Z quay.io/coreos/etcd:v3.5.9
+2025-03-20T19:49:17.7484460Z ##[command]/usr/bin/docker create --name 605cb0b9a6f94ff1af5fc38759d41893_quayiocoreosetcdv359_5f60a0 --label 7f2481 --network github_network_35b15891e8c041638df606acd3225290 --network-alias etcd -p 2379:2379 -p 2380:2380 --health-cmd "etcdctl endpoint health" --health-interval 10s --health-timeout 5s --health-retries 5 -e "ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379" -e "ETCD_ADVERTISE_CLIENT_URLS=http://0.0.0.0:2379" -e GITHUB_ACTIONS=true -e CI=true quay.io/coreos/etcd:v3.5.9
+2025-03-20T19:49:17.7709657Z ee1f09d06e2c82cd3da8869406ff3290bee5b655b252e3d30097cc3fa35f0482
+2025-03-20T19:49:17.7731292Z ##[command]/usr/bin/docker start ee1f09d06e2c82cd3da8869406ff3290bee5b655b252e3d30097cc3fa35f0482
+2025-03-20T19:49:18.2722139Z ee1f09d06e2c82cd3da8869406ff3290bee5b655b252e3d30097cc3fa35f0482
+2025-03-20T19:49:18.2741557Z ##[command]/usr/bin/docker ps --all --filter id=ee1f09d06e2c82cd3da8869406ff3290bee5b655b252e3d30097cc3fa35f0482 --filter status=running --no-trunc --format "{{.ID}} {{.Status}}"
+2025-03-20T19:49:18.2873912Z ee1f09d06e2c82cd3da8869406ff3290bee5b655b252e3d30097cc3fa35f0482 Up Less than a second (health: starting)
+2025-03-20T19:49:18.2897447Z ##[command]/usr/bin/docker port ee1f09d06e2c82cd3da8869406ff3290bee5b655b252e3d30097cc3fa35f0482
+2025-03-20T19:49:18.3023987Z 2379/tcp -> 0.0.0.0:2379
+2025-03-20T19:49:18.3024529Z 2379/tcp -> [::]:2379
+2025-03-20T19:49:18.3024870Z 2380/tcp -> 0.0.0.0:2380
+2025-03-20T19:49:18.3025220Z 2380/tcp -> [::]:2380
+2025-03-20T19:49:18.3069584Z ##[endgroup]
+2025-03-20T19:49:18.3078052Z ##[group]Waiting for all services to be ready
+2025-03-20T19:49:18.3091133Z ##[command]/usr/bin/docker inspect --format="{{if .Config.Healthcheck}}{{print .State.Health.Status}}{{end}}" ee1f09d06e2c82cd3da8869406ff3290bee5b655b252e3d30097cc3fa35f0482
+2025-03-20T19:49:18.3208326Z starting
+2025-03-20T19:49:18.3228408Z etcd service is starting, waiting 2 seconds before checking again.
+2025-03-20T19:49:20.3230800Z ##[command]/usr/bin/docker inspect --format="{{if .Config.Healthcheck}}{{print .State.Health.Status}}{{end}}" ee1f09d06e2c82cd3da8869406ff3290bee5b655b252e3d30097cc3fa35f0482
+2025-03-20T19:49:20.3353898Z starting
+2025-03-20T19:49:20.3366598Z etcd service is starting, waiting 3 seconds before checking again.
+2025-03-20T19:49:24.0252361Z ##[command]/usr/bin/docker inspect --format="{{if .Config.Healthcheck}}{{print .State.Health.Status}}{{end}}" ee1f09d06e2c82cd3da8869406ff3290bee5b655b252e3d30097cc3fa35f0482
+2025-03-20T19:49:24.0378401Z starting
+2025-03-20T19:49:24.0392200Z etcd service is starting, waiting 7 seconds before checking again.
+2025-03-20T19:49:31.8258494Z ##[command]/usr/bin/docker inspect --format="{{if .Config.Healthcheck}}{{print .State.Health.Status}}{{end}}" ee1f09d06e2c82cd3da8869406ff3290bee5b655b252e3d30097cc3fa35f0482
+2025-03-20T19:49:31.8376774Z starting
+2025-03-20T19:49:31.8391314Z etcd service is starting, waiting 13 seconds before checking again.
+2025-03-20T19:49:45.3054778Z ##[command]/usr/bin/docker inspect --format="{{if .Config.Healthcheck}}{{print .State.Health.Status}}{{end}}" ee1f09d06e2c82cd3da8869406ff3290bee5b655b252e3d30097cc3fa35f0482
+2025-03-20T19:49:45.3172119Z starting
+2025-03-20T19:49:45.3184608Z etcd service is starting, waiting 27 seconds before checking again.
+2025-03-20T19:50:13.3131398Z ##[command]/usr/bin/docker inspect --format="{{if .Config.Healthcheck}}{{print .State.Health.Status}}{{end}}" ee1f09d06e2c82cd3da8869406ff3290bee5b655b252e3d30097cc3fa35f0482
+2025-03-20T19:50:13.3257324Z unhealthy
+2025-03-20T19:50:13.3275835Z ##[endgroup]
+2025-03-20T19:50:13.3276085Z ##[group]Service container etcd failed.
+2025-03-20T19:50:13.3281626Z ##[command]/usr/bin/docker logs --details ee1f09d06e2c82cd3da8869406ff3290bee5b655b252e3d30097cc3fa35f0482
+2025-03-20T19:50:13.3631047Z  {"level":"info","ts":"2025-03-20T19:49:18.282276Z","caller":"flags/flag.go:113","msg":"recognized and used environment variable","variable-name":"ETCD_ADVERTISE_CLIENT_URLS","variable-value":"http://0.0.0.0:2379"}
+2025-03-20T19:50:13.3633569Z  {"level":"info","ts":"2025-03-20T19:49:18.282436Z","caller":"flags/flag.go:113","msg":"recognized and used environment variable","variable-name":"ETCD_LISTEN_CLIENT_URLS","variable-value":"http://0.0.0.0:2379"}
+2025-03-20T19:50:13.3635584Z  {"level":"warn","ts":"2025-03-20T19:49:18.283041Z","caller":"embed/config.go:673","msg":"Running http and grpc server on single port. This is not recommended for production."}
+2025-03-20T19:50:13.3636892Z  {"level":"info","ts":"2025-03-20T19:49:18.283081Z","caller":"etcdmain/etcd.go:73","msg":"Running: ","args":["/usr/local/bin/etcd"]}
+2025-03-20T19:50:13.3638837Z  {"level":"warn","ts":"2025-03-20T19:49:18.283102Z","caller":"etcdmain/etcd.go:105","msg":"'data-dir' was empty; using default","data-dir":"default.etcd"}
+2025-03-20T19:50:13.3640357Z  {"level":"warn","ts":"2025-03-20T19:49:18.283139Z","caller":"embed/config.go:673","msg":"Running http and grpc server on single port. This is not recommended for production."}
+2025-03-20T19:50:13.3642033Z  {"level":"info","ts":"2025-03-20T19:49:18.283152Z","caller":"embed/etcd.go:127","msg":"configuring peer listeners","listen-peer-urls":["http://localhost:2380"]}
+2025-03-20T19:50:13.3643516Z  {"level":"info","ts":"2025-03-20T19:49:18.283613Z","caller":"embed/etcd.go:135","msg":"configuring client listeners","listen-client-urls":["http://0.0.0.0:2379"]}
+2025-03-20T19:50:13.3650471Z  {"level":"info","ts":"2025-03-20T19:49:18.283761Z","caller":"embed/etcd.go:309","msg":"starting an etcd server","etcd-version":"3.5.9","git-sha":"bdbbde998","go-version":"go1.19.9","go-os":"linux","go-arch":"amd64","max-cpu-set":4,"max-cpu-available":4,"member-initialized":false,"name":"default","data-dir":"default.etcd","wal-dir":"","wal-dir-dedicated":"","member-dir":"default.etcd/member","force-new-cluster":false,"heartbeat-interval":"100ms","election-timeout":"1s","initial-election-tick-advance":true,"snapshot-count":100000,"max-wals":5,"max-snapshots":5,"snapshot-catchup-entries":5000,"initial-advertise-peer-urls":["http://localhost:2380"],"listen-peer-urls":["http://localhost:2380"],"advertise-client-urls":["http://0.0.0.0:2379"],"listen-client-urls":["http://0.0.0.0:2379"],"listen-metrics-urls":[],"cors":["*"],"host-whitelist":["*"],"initial-cluster":"default=http://localhost:2380","initial-cluster-state":"new","initial-cluster-token":"etcd-cluster","quota-backend-bytes":2147483648,"max-request-bytes":1572864,"max-concurrent-streams":4294967295,"pre-vote":true,"initial-corrupt-check":false,"corrupt-check-time-interval":"0s","compact-check-time-enabled":false,"compact-check-time-interval":"1m0s","auto-compaction-mode":"periodic","auto-compaction-retention":"0s","auto-compaction-interval":"0s","discovery-url":"","discovery-proxy":"","downgrade-check-interval":"5s"}
+2025-03-20T19:50:13.3655273Z  {"level":"info","ts":"2025-03-20T19:49:18.285312Z","caller":"etcdserver/backend.go:81","msg":"opened backend db","path":"default.etcd/member/snap/db","took":"807.994µs"}
+2025-03-20T19:50:13.3656205Z  {"level":"info","ts":"2025-03-20T19:49:18.287286Z","caller":"etcdserver/raft.go:495","msg":"starting local member","local-member-id":"8e9e05c52164694d","cluster-id":"cdf818194e3a8c32"}
+2025-03-20T19:50:13.3657327Z  {"level":"info","ts":"2025-03-20T19:49:18.287417Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"8e9e05c52164694d switched to configuration voters=()"}
+2025-03-20T19:50:13.3658108Z  {"level":"info","ts":"2025-03-20T19:49:18.287475Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"8e9e05c52164694d became follower at term 0"}
+2025-03-20T19:50:13.3658977Z  {"level":"info","ts":"2025-03-20T19:49:18.287522Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"newRaft 8e9e05c52164694d [peers: [], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]"}
+2025-03-20T19:50:13.3659865Z  {"level":"info","ts":"2025-03-20T19:49:18.287544Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"8e9e05c52164694d became follower at term 1"}
+2025-03-20T19:50:13.3660683Z  {"level":"info","ts":"2025-03-20T19:49:18.287601Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"8e9e05c52164694d switched to configuration voters=(10276657743932975437)"}
+2025-03-20T19:50:13.3661468Z  {"level":"warn","ts":"2025-03-20T19:49:18.289175Z","caller":"auth/store.go:1238","msg":"simple token is not cryptographically signed"}
+2025-03-20T19:50:13.3662113Z  {"level":"info","ts":"2025-03-20T19:49:18.290389Z","caller":"mvcc/kvstore.go:393","msg":"kvstore restored","current-rev":1}
+2025-03-20T19:50:13.3662962Z  {"level":"info","ts":"2025-03-20T19:49:18.290781Z","caller":"etcdserver/quota.go:94","msg":"enabled backend quota with default value","quota-name":"v3-applier","quota-size-bytes":2147483648,"quota-size":"2.1 GB"}
+2025-03-20T19:50:13.3664414Z  {"level":"info","ts":"2025-03-20T19:49:18.291104Z","caller":"etcdserver/server.go:854","msg":"starting etcd server","local-member-id":"8e9e05c52164694d","local-server-version":"3.5.9","cluster-version":"to_be_decided"}
+2025-03-20T19:50:13.3665755Z  {"level":"info","ts":"2025-03-20T19:49:18.29129Z","caller":"etcdserver/server.go:738","msg":"started as single-node; fast-forwarding election ticks","local-member-id":"8e9e05c52164694d","forward-ticks":9,"forward-duration":"900ms","election-ticks":10,"election-timeout":"1s"}
+2025-03-20T19:50:13.3667163Z  {"level":"info","ts":"2025-03-20T19:49:18.291561Z","caller":"fileutil/purge.go:44","msg":"started to purge file","dir":"default.etcd/member/snap","suffix":"snap.db","max":5,"interval":"30s"}
+2025-03-20T19:50:13.3668118Z  {"level":"info","ts":"2025-03-20T19:49:18.29161Z","caller":"fileutil/purge.go:44","msg":"started to purge file","dir":"default.etcd/member/snap","suffix":"snap","max":5,"interval":"30s"}
+2025-03-20T19:50:13.3669055Z  {"level":"info","ts":"2025-03-20T19:49:18.29162Z","caller":"fileutil/purge.go:44","msg":"started to purge file","dir":"default.etcd/member/wal","suffix":"wal","max":5,"interval":"30s"}
+2025-03-20T19:50:13.3669962Z  {"level":"info","ts":"2025-03-20T19:49:18.291965Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"8e9e05c52164694d switched to configuration voters=(10276657743932975437)"}
+2025-03-20T19:50:13.3671130Z  {"level":"info","ts":"2025-03-20T19:49:18.292115Z","caller":"membership/cluster.go:421","msg":"added member","cluster-id":"cdf818194e3a8c32","local-member-id":"8e9e05c52164694d","added-peer-id":"8e9e05c52164694d","added-peer-peer-urls":["http://localhost:2380"]}
+2025-03-20T19:50:13.3672177Z  {"level":"info","ts":"2025-03-20T19:49:18.293504Z","caller":"embed/etcd.go:597","msg":"serving peer traffic","address":"127.0.0.1:2380"}
+2025-03-20T19:50:13.3673662Z  {"level":"info","ts":"2025-03-20T19:49:18.2935Z","caller":"embed/etcd.go:278","msg":"now serving peer/client/metrics","local-member-id":"8e9e05c52164694d","initial-advertise-peer-urls":["http://localhost:2380"],"listen-peer-urls":["http://localhost:2380"],"advertise-client-urls":["http://0.0.0.0:2379"],"listen-client-urls":["http://0.0.0.0:2379"],"listen-metrics-urls":[]}
+2025-03-20T19:50:13.3674998Z  {"level":"info","ts":"2025-03-20T19:49:18.29353Z","caller":"embed/etcd.go:569","msg":"cmux::serve","address":"127.0.0.1:2380"}
+2025-03-20T19:50:13.3675711Z  {"level":"info","ts":"2025-03-20T19:49:18.688359Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"8e9e05c52164694d is starting a new election at term 1"}
+2025-03-20T19:50:13.3676497Z  {"level":"info","ts":"2025-03-20T19:49:18.688397Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"8e9e05c52164694d became pre-candidate at term 1"}
+2025-03-20T19:50:13.3677511Z  {"level":"info","ts":"2025-03-20T19:49:18.688409Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"8e9e05c52164694d received MsgPreVoteResp from 8e9e05c52164694d at term 1"}
+2025-03-20T19:50:13.3678351Z  {"level":"info","ts":"2025-03-20T19:49:18.688422Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"8e9e05c52164694d became candidate at term 2"}
+2025-03-20T19:50:13.3679165Z  {"level":"info","ts":"2025-03-20T19:49:18.68843Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"8e9e05c52164694d received MsgVoteResp from 8e9e05c52164694d at term 2"}
+2025-03-20T19:50:13.3679975Z  {"level":"info","ts":"2025-03-20T19:49:18.688443Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"8e9e05c52164694d became leader at term 2"}
+2025-03-20T19:50:13.3680773Z  {"level":"info","ts":"2025-03-20T19:49:18.688454Z","logger":"raft","caller":"etcdserver/zap_raft.go:77","msg":"raft.node: 8e9e05c52164694d elected leader 8e9e05c52164694d at term 2"}
+2025-03-20T19:50:13.3682239Z  {"level":"info","ts":"2025-03-20T19:49:18.688932Z","caller":"etcdserver/server.go:2062","msg":"published local member to cluster through raft","local-member-id":"8e9e05c52164694d","local-member-attributes":"{Name:default ClientURLs:[http://0.0.0.0:2379]}","request-path":"/0/members/8e9e05c52164694d/attributes","cluster-id":"cdf818194e3a8c32","publish-timeout":"7s"}
+2025-03-20T19:50:13.3683693Z  {"level":"info","ts":"2025-03-20T19:49:18.688936Z","caller":"embed/serve.go:103","msg":"ready to serve client requests"}
+2025-03-20T19:50:13.3684424Z  {"level":"info","ts":"2025-03-20T19:49:18.688939Z","caller":"etcdserver/server.go:2571","msg":"setting up initial cluster version using v2 API","cluster-version":"3.5"}
+2025-03-20T19:50:13.3685129Z  {"level":"info","ts":"2025-03-20T19:49:18.689121Z","caller":"etcdmain/main.go:44","msg":"notifying init daemon"}
+2025-03-20T19:50:13.3685714Z  {"level":"info","ts":"2025-03-20T19:49:18.689138Z","caller":"etcdmain/main.go:50","msg":"successfully notified init daemon"}
+2025-03-20T19:50:13.3686584Z  {"level":"info","ts":"2025-03-20T19:49:18.689197Z","caller":"membership/cluster.go:584","msg":"set initial cluster version","cluster-id":"cdf818194e3a8c32","local-member-id":"8e9e05c52164694d","cluster-version":"3.5"}
+2025-03-20T19:50:13.3687887Z  {"level":"info","ts":"2025-03-20T19:49:18.689278Z","caller":"api/capability.go:75","msg":"enabled capabilities for version","cluster-version":"3.5"}
+2025-03-20T19:50:13.3688651Z  {"level":"info","ts":"2025-03-20T19:49:18.689299Z","caller":"etcdserver/server.go:2595","msg":"cluster version is updated","cluster-version":"3.5"}
+2025-03-20T19:50:13.3689572Z  {"level":"info","ts":"2025-03-20T19:49:18.689612Z","caller":"embed/serve.go:187","msg":"serving client traffic insecurely; this is strongly discouraged!","traffic":"grpc+http","address":"[::]:2379"}
+2025-03-20T19:50:13.3702089Z ##[error]Failed to initialize container quay.io/coreos/etcd:v3.5.9
+2025-03-20T19:50:13.3709497Z ##[endgroup]
+2025-03-20T19:50:13.3792326Z ##[error]One or more containers failed to start.
+2025-03-20T19:50:13.3867924Z Stop and remove container: 605cb0b9a6f94ff1af5fc38759d41893_quayiocoreosetcdv359_5f60a0
+2025-03-20T19:50:13.3872434Z ##[command]/usr/bin/docker rm --force ee1f09d06e2c82cd3da8869406ff3290bee5b655b252e3d30097cc3fa35f0482
+2025-03-20T19:50:13.6122581Z ee1f09d06e2c82cd3da8869406ff3290bee5b655b252e3d30097cc3fa35f0482
+2025-03-20T19:50:13.6151661Z Remove container network: github_network_35b15891e8c041638df606acd3225290
+2025-03-20T19:50:13.6156193Z ##[command]/usr/bin/docker network rm github_network_35b15891e8c041638df606acd3225290
+2025-03-20T19:50:13.7436663Z github_network_35b15891e8c041638df606acd3225290
+2025-03-20T19:50:13.7499689Z Cleaning up orphan processes

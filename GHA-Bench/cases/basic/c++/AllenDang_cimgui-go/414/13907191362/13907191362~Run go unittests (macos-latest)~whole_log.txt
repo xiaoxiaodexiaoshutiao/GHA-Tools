@@ -1,0 +1,401 @@
+﻿2025-03-17T18:34:48.4730060Z Current runner version: '2.322.0'
+2025-03-17T18:34:48.4788100Z ##[group]Operating System
+2025-03-17T18:34:48.4788980Z macOS
+2025-03-17T18:34:48.4789310Z 14.7.4
+2025-03-17T18:34:48.4789620Z 23H420
+2025-03-17T18:34:48.4789960Z ##[endgroup]
+2025-03-17T18:34:48.4790310Z ##[group]Runner Image
+2025-03-17T18:34:48.4790710Z Image: macos-14-arm64
+2025-03-17T18:34:48.4791060Z Version: 20250304.1018
+2025-03-17T18:34:48.4791790Z Included Software: https://github.com/actions/runner-images/blob/macos-14-arm64/20250304.1018/images/macos/macos-14-arm64-Readme.md
+2025-03-17T18:34:48.4795460Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-14-arm64%2F20250304.1018
+2025-03-17T18:34:48.4796300Z ##[endgroup]
+2025-03-17T18:34:48.4797110Z ##[group]Runner Image Provisioner
+2025-03-17T18:34:48.4799170Z 2.0.422.1+55c30c14fe2a0a1547db1b656933ae07d97649a9
+2025-03-17T18:34:48.4801780Z ##[endgroup]
+2025-03-17T18:34:48.4809760Z ##[group]GITHUB_TOKEN Permissions
+2025-03-17T18:34:48.4812800Z Actions: read
+2025-03-17T18:34:48.4813170Z Attestations: read
+2025-03-17T18:34:48.4813830Z Checks: read
+2025-03-17T18:34:48.4814160Z Contents: read
+2025-03-17T18:34:48.4814480Z Deployments: read
+2025-03-17T18:34:48.4814800Z Discussions: read
+2025-03-17T18:34:48.4815120Z Issues: read
+2025-03-17T18:34:48.4815430Z Metadata: read
+2025-03-17T18:34:48.4815750Z Packages: read
+2025-03-17T18:34:48.4816070Z Pages: read
+2025-03-17T18:34:48.4816380Z PullRequests: read
+2025-03-17T18:34:48.4817520Z RepositoryProjects: read
+2025-03-17T18:34:48.4818120Z SecurityEvents: read
+2025-03-17T18:34:48.4818450Z Statuses: read
+2025-03-17T18:34:48.4818810Z ##[endgroup]
+2025-03-17T18:34:48.4820900Z Secret source: None
+2025-03-17T18:34:48.4821320Z Prepare workflow directory
+2025-03-17T18:34:48.5108430Z Prepare all required actions
+2025-03-17T18:34:48.5199670Z Getting action download info
+2025-03-17T18:34:48.9648970Z Download action repository 'actions/setup-go@v5' (SHA:f111f3307d8850f501ac008e886eec1fd1932a34)
+2025-03-17T18:34:49.9510710Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-17T18:34:50.1844040Z Complete job name: Run go unittests (macos-latest)
+2025-03-17T18:34:50.2307920Z ##[group]Run actions/setup-go@v5
+2025-03-17T18:34:50.2308650Z with:
+2025-03-17T18:34:50.2308980Z   go-version: 1.24.x
+2025-03-17T18:34:50.2309330Z   check-latest: false
+2025-03-17T18:34:50.2309970Z   token: ***
+2025-03-17T18:34:50.2310280Z   cache: true
+2025-03-17T18:34:50.2310730Z ##[endgroup]
+2025-03-17T18:34:50.6504810Z Setup go version spec 1.24.x
+2025-03-17T18:34:50.6748260Z Attempting to download 1.24.x...
+2025-03-17T18:34:51.3399740Z matching 1.24.x...
+2025-03-17T18:34:51.3407300Z Acquiring 1.24.1 from https://github.com/actions/go-versions/releases/download/1.24.1-13667719799/go-1.24.1-darwin-arm64.tar.gz
+2025-03-17T18:34:52.7759200Z Extracting Go...
+2025-03-17T18:34:52.7933210Z [command]/usr/bin/tar xz -C /Users/runner/work/_temp/f9a9102e-8f45-479e-aaa7-ea5a13c41ace -f /Users/runner/work/_temp/6c07098f-3eb6-4880-8d95-60f803a88729
+2025-03-17T18:34:56.8571620Z Successfully extracted go to /Users/runner/work/_temp/f9a9102e-8f45-479e-aaa7-ea5a13c41ace
+2025-03-17T18:34:56.8573660Z Adding to the cache ...
+2025-03-17T18:35:06.3775460Z Successfully cached go to /Users/runner/hostedtoolcache/go/1.24.1/arm64
+2025-03-17T18:35:06.3875080Z Added go to the path
+2025-03-17T18:35:06.3889570Z Successfully set up Go version 1.24.x
+2025-03-17T18:35:06.5859230Z [command]/Users/runner/hostedtoolcache/go/1.24.1/arm64/bin/go env GOCACHE
+2025-03-17T18:35:06.5878730Z [command]/Users/runner/hostedtoolcache/go/1.24.1/arm64/bin/go env GOMODCACHE
+2025-03-17T18:35:06.6042790Z /Users/runner/Library/Caches/go-build
+2025-03-17T18:35:06.6053530Z /Users/runner/go/pkg/mod
+2025-03-17T18:35:06.6071730Z ##[warning]Restore cache failed: Dependencies file is not found in /Users/runner/work/cimgui-go/cimgui-go. Supported file pattern: go.sum
+2025-03-17T18:35:06.6326150Z go version go1.24.1 darwin/arm64
+2025-03-17T18:35:06.6328410Z 
+2025-03-17T18:35:06.6333910Z ##[group]go env
+2025-03-17T18:35:10.1180890Z AR='ar'
+2025-03-17T18:35:10.1182120Z CC='clang'
+2025-03-17T18:35:10.1182580Z CGO_CFLAGS='-O2 -g'
+2025-03-17T18:35:10.1183250Z CGO_CPPFLAGS=''
+2025-03-17T18:35:10.1183670Z CGO_CXXFLAGS='-O2 -g'
+2025-03-17T18:35:10.1184120Z CGO_ENABLED='1'
+2025-03-17T18:35:10.1184460Z CGO_FFLAGS='-O2 -g'
+2025-03-17T18:35:10.1184710Z CGO_LDFLAGS='-O2 -g'
+2025-03-17T18:35:10.1185080Z CXX='clang++'
+2025-03-17T18:35:10.1185310Z GCCGO='gccgo'
+2025-03-17T18:35:10.1185600Z GO111MODULE=''
+2025-03-17T18:35:10.1185850Z GOARCH='arm64'
+2025-03-17T18:35:10.1186270Z GOARM64='v8.0'
+2025-03-17T18:35:10.1186570Z GOAUTH='netrc'
+2025-03-17T18:35:10.1186790Z GOBIN=''
+2025-03-17T18:35:10.1187120Z GOCACHE='/Users/runner/Library/Caches/go-build'
+2025-03-17T18:35:10.1187640Z GOCACHEPROG=''
+2025-03-17T18:35:10.1187940Z GODEBUG=''
+2025-03-17T18:35:10.1188340Z GOENV='/Users/runner/Library/Application Support/go/env'
+2025-03-17T18:35:10.1188910Z GOEXE=''
+2025-03-17T18:35:10.1189170Z GOEXPERIMENT=''
+2025-03-17T18:35:10.1189520Z GOFIPS140='off'
+2025-03-17T18:35:10.1189780Z GOFLAGS=''
+2025-03-17T18:35:10.1190830Z GOGCCFLAGS='-fPIC -arch arm64 -pthread -fno-caret-diagnostics -Qunused-arguments -fmessage-length=0 -ffile-prefix-map=/var/folders/0j/bwqcs4y508s2n4ck4dhf3rpc0000gn/T/go-build2379266330=/tmp/go-build -gno-record-gcc-switches -fno-common'
+2025-03-17T18:35:10.1191940Z GOHOSTARCH='arm64'
+2025-03-17T18:35:10.1192230Z GOHOSTOS='darwin'
+2025-03-17T18:35:10.1192550Z GOINSECURE=''
+2025-03-17T18:35:10.1192770Z GOMOD='/dev/null'
+2025-03-17T18:35:10.1192990Z GOMODCACHE='/Users/runner/go/pkg/mod'
+2025-03-17T18:35:10.1193330Z GONOPROXY=''
+2025-03-17T18:35:10.1193590Z GONOSUMDB=''
+2025-03-17T18:35:10.1193820Z GOOS='darwin'
+2025-03-17T18:35:10.1194040Z GOPATH='/Users/runner/go'
+2025-03-17T18:35:10.1194370Z GOPRIVATE=''
+2025-03-17T18:35:10.1194960Z GOPROXY='https://proxy.golang.org,direct'
+2025-03-17T18:35:10.1195490Z GOROOT='/Users/runner/hostedtoolcache/go/1.24.1/arm64'
+2025-03-17T18:35:10.1195940Z GOSUMDB='sum.golang.org'
+2025-03-17T18:35:10.1196440Z GOTELEMETRY='local'
+2025-03-17T18:35:10.1196910Z GOTELEMETRYDIR='/Users/runner/Library/Application Support/go/telemetry'
+2025-03-17T18:35:10.1198210Z GOTMPDIR=''
+2025-03-17T18:35:10.1202750Z GOTOOLCHAIN='auto'
+2025-03-17T18:35:10.1203340Z GOTOOLDIR='/Users/runner/hostedtoolcache/go/1.24.1/arm64/pkg/tool/darwin_arm64'
+2025-03-17T18:35:10.1203850Z GOVCS=''
+2025-03-17T18:35:10.1204200Z GOVERSION='go1.24.1'
+2025-03-17T18:35:10.1204650Z GOWORK=''
+2025-03-17T18:35:10.1204970Z PKG_CONFIG='pkg-config'
+2025-03-17T18:35:10.1205350Z 
+2025-03-17T18:35:10.1209370Z ##[endgroup]
+2025-03-17T18:35:10.1496750Z ##[group]Run actions/checkout@v4
+2025-03-17T18:35:10.1497140Z with:
+2025-03-17T18:35:10.1497380Z   fetch-depth: 0
+2025-03-17T18:35:10.1497580Z   submodules: recursive
+2025-03-17T18:35:10.1497910Z   repository: AllenDang/cimgui-go
+2025-03-17T18:35:10.1498490Z   token: ***
+2025-03-17T18:35:10.1498740Z   ssh-strict: true
+2025-03-17T18:35:10.1498940Z   ssh-user: git
+2025-03-17T18:35:10.1499220Z   persist-credentials: true
+2025-03-17T18:35:10.1499390Z   clean: true
+2025-03-17T18:35:10.1499530Z   sparse-checkout-cone-mode: true
+2025-03-17T18:35:10.1499700Z   fetch-tags: false
+2025-03-17T18:35:10.1499830Z   show-progress: true
+2025-03-17T18:35:10.1499970Z   lfs: false
+2025-03-17T18:35:10.1500170Z   set-safe-directory: true
+2025-03-17T18:35:10.1500390Z ##[endgroup]
+2025-03-17T18:35:10.3269660Z Syncing repository: AllenDang/cimgui-go
+2025-03-17T18:35:10.3271010Z ##[group]Getting Git version info
+2025-03-17T18:35:10.3271410Z Working directory is '/Users/runner/work/cimgui-go/cimgui-go'
+2025-03-17T18:35:10.3293330Z [command]/opt/homebrew/bin/git version
+2025-03-17T18:35:10.3727170Z git version 2.48.1
+2025-03-17T18:35:10.3754850Z ##[endgroup]
+2025-03-17T18:35:10.3765170Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/ac27ea4a-ad6f-4024-9eaf-2e09c535b7ea/.gitconfig'
+2025-03-17T18:35:10.3774150Z Temporarily overriding HOME='/Users/runner/work/_temp/ac27ea4a-ad6f-4024-9eaf-2e09c535b7ea' before making global git config changes
+2025-03-17T18:35:10.3844750Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-17T18:35:10.3845650Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/cimgui-go/cimgui-go
+2025-03-17T18:35:10.4149280Z Deleting the contents of '/Users/runner/work/cimgui-go/cimgui-go'
+2025-03-17T18:35:10.4159890Z ##[group]Initializing the repository
+2025-03-17T18:35:10.4227570Z [command]/opt/homebrew/bin/git init /Users/runner/work/cimgui-go/cimgui-go
+2025-03-17T18:35:10.4331910Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-17T18:35:10.4338300Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-17T18:35:10.4347760Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-17T18:35:10.4364810Z hint:
+2025-03-17T18:35:10.4386320Z hint: 	git config --global init.defaultBranch <name>
+2025-03-17T18:35:10.4393940Z hint:
+2025-03-17T18:35:10.4406860Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-17T18:35:10.4409800Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-17T18:35:10.4414860Z hint:
+2025-03-17T18:35:10.4415470Z hint: 	git branch -m <name>
+2025-03-17T18:35:10.4416080Z Initialized empty Git repository in /Users/runner/work/cimgui-go/cimgui-go/.git/
+2025-03-17T18:35:10.4417380Z [command]/opt/homebrew/bin/git remote add origin https://github.com/AllenDang/cimgui-go
+2025-03-17T18:35:10.4445360Z ##[endgroup]
+2025-03-17T18:35:10.4445720Z ##[group]Disabling automatic garbage collection
+2025-03-17T18:35:10.4446060Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+2025-03-17T18:35:10.4490880Z ##[endgroup]
+2025-03-17T18:35:10.4491230Z ##[group]Setting up auth
+2025-03-17T18:35:10.4495190Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-17T18:35:10.4565700Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-17T18:35:10.5532060Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-17T18:35:10.5591460Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-17T18:35:10.6473400Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-17T18:35:10.6585540Z ##[endgroup]
+2025-03-17T18:35:10.6586390Z ##[group]Fetching the repository
+2025-03-17T18:35:10.6599210Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* +b3bd3df7cf74560b13e8d728a82ac8ace261fbbf:refs/remotes/pull/414/merge
+2025-03-17T18:35:20.7112830Z From https://github.com/AllenDang/cimgui-go
+2025-03-17T18:35:20.7142490Z  * [new branch]        dependabot/github_actions/golangci/golangci-lint-action-6.5.1 -> origin/dependabot/github_actions/golangci/golangci-lint-action-6.5.1
+2025-03-17T18:35:20.7146870Z  * [new branch]        main                                     -> origin/main
+2025-03-17T18:35:20.7197210Z  * [new tag]           v1.0.0                                   -> v1.0.0
+2025-03-17T18:35:20.7198100Z  * [new tag]           v1.0.1                                   -> v1.0.1
+2025-03-17T18:35:20.7198650Z  * [new tag]           v1.0.2                                   -> v1.0.2
+2025-03-17T18:35:20.7199240Z  * [new tag]           v1.0.3                                   -> v1.0.3
+2025-03-17T18:35:20.7199610Z  * [new tag]           v1.1.0                                   -> v1.1.0
+2025-03-17T18:35:20.7202770Z  * [new tag]           v1.2.0                                   -> v1.2.0
+2025-03-17T18:35:20.7227650Z  * [new tag]           v1.3.0                                   -> v1.3.0
+2025-03-17T18:35:20.7228750Z  * [new ref]           b3bd3df7cf74560b13e8d728a82ac8ace261fbbf -> pull/414/merge
+2025-03-17T18:35:20.7231300Z ##[endgroup]
+2025-03-17T18:35:20.7232130Z ##[group]Determining the checkout info
+2025-03-17T18:35:20.7232900Z ##[endgroup]
+2025-03-17T18:35:20.7233450Z [command]/opt/homebrew/bin/git sparse-checkout disable
+2025-03-17T18:35:20.7291470Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-17T18:35:20.7361630Z ##[group]Checking out the ref
+2025-03-17T18:35:20.7366730Z [command]/opt/homebrew/bin/git checkout --progress --force refs/remotes/pull/414/merge
+2025-03-17T18:35:21.8593640Z Updating files:  38% (5445/14210)
+2025-03-17T18:35:21.8847660Z Updating files:  39% (5542/14210)
+2025-03-17T18:35:21.9093870Z Updating files:  40% (5684/14210)
+2025-03-17T18:35:21.9374690Z Updating files:  41% (5827/14210)
+2025-03-17T18:35:21.9748760Z Updating files:  42% (5969/14210)
+2025-03-17T18:35:22.0125910Z Updating files:  43% (6111/14210)
+2025-03-17T18:35:22.0375730Z Updating files:  44% (6253/14210)
+2025-03-17T18:35:22.0635110Z Updating files:  45% (6395/14210)
+2025-03-17T18:35:22.0920590Z Updating files:  46% (6537/14210)
+2025-03-17T18:35:22.1147610Z Updating files:  47% (6679/14210)
+2025-03-17T18:35:22.1457630Z Updating files:  48% (6821/14210)
+2025-03-17T18:35:22.1675270Z Updating files:  49% (6963/14210)
+2025-03-17T18:35:22.2014380Z Updating files:  50% (7105/14210)
+2025-03-17T18:35:22.2338680Z Updating files:  51% (7248/14210)
+2025-03-17T18:35:22.3163090Z Updating files:  52% (7390/14210)
+2025-03-17T18:35:22.3443720Z Updating files:  53% (7532/14210)
+2025-03-17T18:35:22.3684200Z Updating files:  54% (7674/14210)
+2025-03-17T18:35:22.3955760Z Updating files:  55% (7816/14210)
+2025-03-17T18:35:22.4279580Z Updating files:  56% (7958/14210)
+2025-03-17T18:35:22.4534670Z Updating files:  57% (8100/14210)
+2025-03-17T18:35:22.4802260Z Updating files:  58% (8242/14210)
+2025-03-17T18:35:22.5105130Z Updating files:  59% (8384/14210)
+2025-03-17T18:35:22.5379010Z Updating files:  60% (8526/14210)
+2025-03-17T18:35:22.5556240Z Updating files:  61% (8669/14210)
+2025-03-17T18:35:22.5748880Z Updating files:  62% (8811/14210)
+2025-03-17T18:35:22.6021110Z Updating files:  63% (8953/14210)
+2025-03-17T18:35:22.6353900Z Updating files:  64% (9095/14210)
+2025-03-17T18:35:22.6874710Z Updating files:  65% (9237/14210)
+2025-03-17T18:35:22.7159090Z Updating files:  66% (9379/14210)
+2025-03-17T18:35:22.7434960Z Updating files:  67% (9521/14210)
+2025-03-17T18:35:22.7638100Z Updating files:  68% (9663/14210)
+2025-03-17T18:35:22.7653060Z Updating files:  68% (9777/14210)
+2025-03-17T18:35:22.7911810Z Updating files:  69% (9805/14210)
+2025-03-17T18:35:22.8185480Z Updating files:  70% (9947/14210)
+2025-03-17T18:35:22.8411940Z Updating files:  71% (10090/14210)
+2025-03-17T18:35:22.8685160Z Updating files:  72% (10232/14210)
+2025-03-17T18:35:22.9212510Z Updating files:  73% (10374/14210)
+2025-03-17T18:35:22.9445970Z Updating files:  74% (10516/14210)
+2025-03-17T18:35:22.9665100Z Updating files:  75% (10658/14210)
+2025-03-17T18:35:22.9963090Z Updating files:  76% (10800/14210)
+2025-03-17T18:35:23.0206750Z Updating files:  77% (10942/14210)
+2025-03-17T18:35:23.0424120Z Updating files:  78% (11084/14210)
+2025-03-17T18:35:23.0675060Z Updating files:  79% (11226/14210)
+2025-03-17T18:35:23.0950750Z Updating files:  80% (11368/14210)
+2025-03-17T18:35:23.1094490Z Updating files:  81% (11511/14210)
+2025-03-17T18:35:23.1616750Z Updating files:  82% (11653/14210)
+2025-03-17T18:35:23.1831580Z Updating files:  83% (11795/14210)
+2025-03-17T18:35:23.2931760Z Updating files:  84% (11937/14210)
+2025-03-17T18:35:23.6533440Z Updating files:  85% (12079/14210)
+2025-03-17T18:35:23.7178820Z Updating files:  86% (12221/14210)
+2025-03-17T18:35:23.7701030Z Updating files:  87% (12363/14210)
+2025-03-17T18:35:23.8266340Z Updating files:  87% (12411/14210)
+2025-03-17T18:35:24.0225650Z Updating files:  88% (12505/14210)
+2025-03-17T18:35:24.0955520Z Updating files:  89% (12647/14210)
+2025-03-17T18:35:24.1318310Z Updating files:  90% (12789/14210)
+2025-03-17T18:35:24.1662260Z Updating files:  91% (12932/14210)
+2025-03-17T18:35:24.2204950Z Updating files:  92% (13074/14210)
+2025-03-17T18:35:24.3048220Z Updating files:  93% (13216/14210)
+2025-03-17T18:35:24.4580680Z Updating files:  94% (13358/14210)
+2025-03-17T18:35:24.5335230Z Updating files:  95% (13500/14210)
+2025-03-17T18:35:24.5916000Z Updating files:  96% (13642/14210)
+2025-03-17T18:35:24.6298410Z Updating files:  97% (13784/14210)
+2025-03-17T18:35:24.6890310Z Updating files:  98% (13926/14210)
+2025-03-17T18:35:24.7607920Z Updating files:  99% (14068/14210)
+2025-03-17T18:35:24.7668500Z Updating files:  99% (14195/14210)
+2025-03-17T18:35:24.7680290Z Updating files: 100% (14210/14210)
+2025-03-17T18:35:24.7682340Z Updating files: 100% (14210/14210), done.
+2025-03-17T18:35:24.7882470Z HEAD is now at b3bd3df7 Merge fd2c3f90873e89af1279324eb251bc015f64d10e into 1366b6d94773e13f15114e36bdd082c25e52f8ac
+2025-03-17T18:35:24.7975830Z ##[endgroup]
+2025-03-17T18:35:24.7976500Z ##[group]Setting up auth for fetching submodules
+2025-03-17T18:35:24.7977620Z [command]/opt/homebrew/bin/git config --global http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-17T18:35:24.8050670Z [command]/opt/homebrew/bin/git config --global --unset-all url.https://github.com/.insteadOf
+2025-03-17T18:35:24.8276500Z [command]/opt/homebrew/bin/git config --global --add url.https://github.com/.insteadOf git@github.com:
+2025-03-17T18:35:24.8691660Z [command]/opt/homebrew/bin/git config --global --add url.https://github.com/.insteadOf org-18550@github.com:
+2025-03-17T18:35:24.9049090Z ##[endgroup]
+2025-03-17T18:35:24.9049560Z ##[group]Fetching submodules
+2025-03-17T18:35:24.9151720Z [command]/opt/homebrew/bin/git submodule sync --recursive
+2025-03-17T18:35:25.0771380Z [command]/opt/homebrew/bin/git -c protocol.version=2 submodule update --init --force --recursive
+2025-03-17T18:35:25.2353750Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local gc.auto 0
+2025-03-17T18:35:25.3917170Z ##[endgroup]
+2025-03-17T18:35:25.4018410Z ##[group]Persisting credentials for submodules
+2025-03-17T18:35:25.4120260Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'url\.https\:\/\/github\.com\/\.insteadOf' && git config --local --unset-all 'url.https://github.com/.insteadOf' || :"
+2025-03-17T18:35:25.5669520Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local 'http.https://github.com/.extraheader' 'AUTHORIZATION: basic ***' && git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2025-03-17T18:35:25.7130860Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --add 'url.https://github.com/.insteadOf' 'git@github.com:'
+2025-03-17T18:35:25.8817840Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --add 'url.https://github.com/.insteadOf' 'org-18550@github.com:'
+2025-03-17T18:35:26.0184890Z ##[endgroup]
+2025-03-17T18:35:26.0541420Z [command]/opt/homebrew/bin/git log -1 --format=%H
+2025-03-17T18:35:26.0651490Z b3bd3df7cf74560b13e8d728a82ac8ace261fbbf
+2025-03-17T18:35:26.1125640Z ##[group]Run go test -race -v ./...
+2025-03-17T18:35:26.1125960Z [36;1mgo test -race -v ./...[0m
+2025-03-17T18:35:26.1597070Z shell: /bin/bash -e {0}
+2025-03-17T18:35:26.1597890Z ##[endgroup]
+2025-03-17T18:35:27.3473130Z go: downloading github.com/hajimehoshi/ebiten/v2 v2.8.6
+2025-03-17T18:35:29.7639280Z go: downloading github.com/ebitengine/purego v0.8.0
+2025-03-17T18:35:29.7659990Z go: downloading golang.org/x/sync v0.8.0
+2025-03-17T18:35:29.7779110Z go: downloading github.com/ebitengine/hideconsole v1.0.0
+2025-03-17T18:35:36.1104730Z ?   	github.com/AllenDang/cimgui-go	[no test files]
+2025-03-17T18:36:10.1394130Z ?   	github.com/AllenDang/cimgui-go/ImGuiColorTextEdit	[no test files]
+2025-03-17T18:36:11.0073400Z ?   	github.com/AllenDang/cimgui-go/backend	[no test files]
+2025-03-17T18:36:11.3614110Z ?   	github.com/AllenDang/cimgui-go/backend/ebiten-backend	[no test files]
+2025-03-17T18:36:11.3618220Z ?   	github.com/AllenDang/cimgui-go/backend/ebiten-backend/internal/native	[no test files]
+2025-03-17T18:36:13.0879850Z ?   	github.com/AllenDang/cimgui-go/backend/glfwbackend	[no test files]
+2025-03-17T18:36:14.3031310Z ?   	github.com/AllenDang/cimgui-go/backend/sdlbackend	[no test files]
+2025-03-17T18:36:27.8767310Z ?   	github.com/AllenDang/cimgui-go/examples/common	[no test files]
+2025-03-17T18:36:28.0398870Z ?   	github.com/AllenDang/cimgui-go/examples/ebiten	[no test files]
+2025-03-17T18:36:28.2369420Z ?   	github.com/AllenDang/cimgui-go/examples/ebiten-game	[no test files]
+2025-03-17T18:36:28.2504620Z # github.com/AllenDang/cimgui-go/examples/ebiten-game-in-texture
+2025-03-17T18:36:28.2505230Z FAIL	github.com/AllenDang/cimgui-go/examples/ebiten-game-in-texture [build failed]
+2025-03-17T18:36:28.2580510Z ##[error]examples/ebiten-game-in-texture/main.go:28:133: too many arguments in call to imgui.ImageV
+2025-03-17T18:36:28.2614760Z 	have (imgui.TextureID, imgui.Vec2, imgui.Vec2, imgui.Vec2, imgui.Vec4, imgui.Vec4)
+2025-03-17T18:36:28.2616800Z 	want (imgui.TextureID, imgui.Vec2, imgui.Vec2, imgui.Vec2)
+2025-03-17T18:36:28.3268440Z ?   	github.com/AllenDang/cimgui-go/examples/glfw	[no test files]
+2025-03-17T18:36:28.3832040Z ?   	github.com/AllenDang/cimgui-go/examples/sdl	[no test files]
+2025-03-17T18:36:39.8114020Z # github.com/AllenDang/cimgui-go/imgui.test
+2025-03-17T18:36:39.8117320Z ld: warning: '/private/var/folders/0j/bwqcs4y508s2n4ck4dhf3rpc0000gn/T/go-link-3114859318/000030.o' has malformed LC_DYSYMTAB, expected 98 undefined symbols to start at index 1626, found 95 undefined symbols starting at index 1626
+2025-03-17T18:36:41.4793350Z === RUN   TestVec2_Add
+2025-03-17T18:36:41.4795560Z === RUN   TestVec2_Add/Add_nothing
+2025-03-17T18:36:41.4797840Z === RUN   TestVec2_Add/Add_1,_5
+2025-03-17T18:36:41.4799540Z === RUN   TestVec2_Add/(20,_4)_+_(8,_8)
+2025-03-17T18:36:41.4801170Z === RUN   TestVec2_Add/positive_+_negative
+2025-03-17T18:36:41.4803150Z === RUN   TestVec2_Add/negative_+_negative
+2025-03-17T18:36:41.4804430Z === RUN   TestVec2_Add/float_+_float
+2025-03-17T18:36:41.4806530Z --- PASS: TestVec2_Add (0.00s)
+2025-03-17T18:36:41.4809230Z     --- PASS: TestVec2_Add/Add_nothing (0.00s)
+2025-03-17T18:36:41.4810690Z     --- PASS: TestVec2_Add/Add_1,_5 (0.00s)
+2025-03-17T18:36:41.4812270Z     --- PASS: TestVec2_Add/(20,_4)_+_(8,_8) (0.00s)
+2025-03-17T18:36:41.4812840Z     --- PASS: TestVec2_Add/positive_+_negative (0.00s)
+2025-03-17T18:36:41.4813310Z     --- PASS: TestVec2_Add/negative_+_negative (0.00s)
+2025-03-17T18:36:41.4814550Z     --- PASS: TestVec2_Add/float_+_float (0.00s)
+2025-03-17T18:36:41.4814890Z === RUN   TestVec2_Div
+2025-03-17T18:36:41.4815160Z === RUN   TestVec2_Div/Simplest
+2025-03-17T18:36:41.4815840Z === RUN   TestVec2_Div/Divide_by_2
+2025-03-17T18:36:41.4816700Z === RUN   TestVec2_Div/divide_by_-2
+2025-03-17T18:36:41.4816980Z === RUN   TestVec2_Div/divide_by_float
+2025-03-17T18:36:41.4817260Z --- PASS: TestVec2_Div (0.00s)
+2025-03-17T18:36:41.4817600Z     --- PASS: TestVec2_Div/Simplest (0.00s)
+2025-03-17T18:36:41.4819010Z     --- PASS: TestVec2_Div/Divide_by_2 (0.00s)
+2025-03-17T18:36:41.4819390Z     --- PASS: TestVec2_Div/divide_by_-2 (0.00s)
+2025-03-17T18:36:41.4819850Z     --- PASS: TestVec2_Div/divide_by_float (0.00s)
+2025-03-17T18:36:41.4820260Z === RUN   TestVec2_Mul
+2025-03-17T18:36:41.4820480Z === RUN   TestVec2_Mul/multiply_by_1
+2025-03-17T18:36:41.4820890Z === RUN   TestVec2_Mul/multiply_by_-1
+2025-03-17T18:36:41.4821170Z === RUN   TestVec2_Mul/multiply_by_2
+2025-03-17T18:36:41.4822380Z === RUN   TestVec2_Mul/multiply_by_float
+2025-03-17T18:36:41.4822670Z === RUN   TestVec2_Mul/multiply_by_0
+2025-03-17T18:36:41.4822970Z --- PASS: TestVec2_Mul (0.00s)
+2025-03-17T18:36:41.4823320Z     --- PASS: TestVec2_Mul/multiply_by_1 (0.00s)
+2025-03-17T18:36:41.4823790Z     --- PASS: TestVec2_Mul/multiply_by_-1 (0.00s)
+2025-03-17T18:36:41.4824140Z     --- PASS: TestVec2_Mul/multiply_by_2 (0.00s)
+2025-03-17T18:36:41.4838610Z     --- PASS: TestVec2_Mul/multiply_by_float (0.00s)
+2025-03-17T18:36:41.4840250Z     --- PASS: TestVec2_Mul/multiply_by_0 (0.00s)
+2025-03-17T18:36:41.4841810Z === RUN   TestVec2_Sub
+2025-03-17T18:36:41.4842150Z === RUN   TestVec2_Sub/Simplest
+2025-03-17T18:36:41.4842460Z === RUN   TestVec2_Sub/positive_-_positive
+2025-03-17T18:36:41.4842800Z === RUN   TestVec2_Sub/positive_-_negative
+2025-03-17T18:36:41.4843070Z === RUN   TestVec2_Sub/negative_-_positive
+2025-03-17T18:36:41.4843390Z === RUN   TestVec2_Sub/negative_-_negative
+2025-03-17T18:36:41.4843740Z === RUN   TestVec2_Sub/float_-_float
+2025-03-17T18:36:41.4844020Z --- PASS: TestVec2_Sub (0.00s)
+2025-03-17T18:36:41.4844400Z     --- PASS: TestVec2_Sub/Simplest (0.00s)
+2025-03-17T18:36:41.4844820Z     --- PASS: TestVec2_Sub/positive_-_positive (0.00s)
+2025-03-17T18:36:41.4845260Z     --- PASS: TestVec2_Sub/positive_-_negative (0.00s)
+2025-03-17T18:36:41.4845640Z     --- PASS: TestVec2_Sub/negative_-_positive (0.00s)
+2025-03-17T18:36:41.4846120Z     --- PASS: TestVec2_Sub/negative_-_negative (0.00s)
+2025-03-17T18:36:41.4846530Z     --- PASS: TestVec2_Sub/float_-_float (0.00s)
+2025-03-17T18:36:41.4846800Z === RUN   TestVec4_Add
+2025-03-17T18:36:41.4847090Z === RUN   TestVec4_Add/Simplest
+2025-03-17T18:36:41.4847350Z === RUN   TestVec4_Add/positive_+_positive
+2025-03-17T18:36:41.4847630Z === RUN   TestVec4_Add/positive_+_negative
+2025-03-17T18:36:41.4847900Z === RUN   TestVec4_Add/negative_+_positive
+2025-03-17T18:36:41.4848240Z === RUN   TestVec4_Add/negative_+_negative
+2025-03-17T18:36:41.4848500Z === RUN   TestVec4_Add/float_+_float
+2025-03-17T18:36:41.4848760Z --- PASS: TestVec4_Add (0.00s)
+2025-03-17T18:36:41.4849080Z     --- PASS: TestVec4_Add/Simplest (0.00s)
+2025-03-17T18:36:41.4849510Z     --- PASS: TestVec4_Add/positive_+_positive (0.00s)
+2025-03-17T18:36:41.4849900Z     --- PASS: TestVec4_Add/positive_+_negative (0.00s)
+2025-03-17T18:36:41.4850360Z     --- PASS: TestVec4_Add/negative_+_positive (0.00s)
+2025-03-17T18:36:41.4850830Z     --- PASS: TestVec4_Add/negative_+_negative (0.00s)
+2025-03-17T18:36:41.4851190Z     --- PASS: TestVec4_Add/float_+_float (0.00s)
+2025-03-17T18:36:41.4851460Z === RUN   TestVec4_Sub
+2025-03-17T18:36:41.4852170Z === RUN   TestVec4_Sub/Simplest
+2025-03-17T18:36:41.4852830Z === RUN   TestVec4_Sub/numbers;_no_change
+2025-03-17T18:36:41.4853180Z === RUN   TestVec4_Sub/numbers;_change
+2025-03-17T18:36:41.4853490Z === RUN   TestVec4_Sub/floats;_no_change
+2025-03-17T18:36:41.4853860Z === RUN   TestVec4_Sub/floats;_change
+2025-03-17T18:36:41.4854150Z --- PASS: TestVec4_Sub (0.00s)
+2025-03-17T18:36:41.4854460Z     --- PASS: TestVec4_Sub/Simplest (0.00s)
+2025-03-17T18:36:41.4854940Z     --- PASS: TestVec4_Sub/numbers;_no_change (0.00s)
+2025-03-17T18:36:41.4855390Z     --- PASS: TestVec4_Sub/numbers;_change (0.00s)
+2025-03-17T18:36:41.4855770Z     --- PASS: TestVec4_Sub/floats;_no_change (0.00s)
+2025-03-17T18:36:41.4856160Z     --- PASS: TestVec4_Sub/floats;_change (0.00s)
+2025-03-17T18:36:41.4856550Z PASS
+2025-03-17T18:36:41.4856790Z ok  	github.com/AllenDang/cimgui-go/imgui	1.073s
+2025-03-17T18:36:41.4857180Z ?   	github.com/AllenDang/cimgui-go/imguizmo	[no test files]
+2025-03-17T18:36:41.4858180Z ?   	github.com/AllenDang/cimgui-go/immarkdown	[no test files]
+2025-03-17T18:36:41.4858790Z ?   	github.com/AllenDang/cimgui-go/imnodes	[no test files]
+2025-03-17T18:36:41.4859190Z ?   	github.com/AllenDang/cimgui-go/implot	[no test files]
+2025-03-17T18:36:41.4859540Z ?   	github.com/AllenDang/cimgui-go/internal	[no test files]
+2025-03-17T18:36:41.4859970Z ?   	github.com/AllenDang/cimgui-go/templates	[no test files]
+2025-03-17T18:36:41.4860320Z ?   	github.com/AllenDang/cimgui-go/utils	[no test files]
+2025-03-17T18:36:41.4860680Z ?   	github.com/AllenDang/cimgui-go/utils/vectors	[no test files]
+2025-03-17T18:36:41.4861200Z FAIL
+2025-03-17T18:36:41.6041210Z ##[error]Process completed with exit code 1.
+2025-03-17T18:36:41.6502220Z Post job cleanup.
+2025-03-17T18:36:42.0191530Z [command]/opt/homebrew/bin/git version
+2025-03-17T18:36:42.0777460Z git version 2.48.1
+2025-03-17T18:36:42.1036160Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/e0e51f42-7133-4d5c-93e1-bc7eedffd2cc/.gitconfig'
+2025-03-17T18:36:42.1038420Z Temporarily overriding HOME='/Users/runner/work/_temp/e0e51f42-7133-4d5c-93e1-bc7eedffd2cc' before making global git config changes
+2025-03-17T18:36:42.1040320Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-17T18:36:42.1042180Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/cimgui-go/cimgui-go
+2025-03-17T18:36:42.1155080Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-17T18:36:42.1260850Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-17T18:36:42.2562080Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-17T18:36:42.2628820Z http.https://github.com/.extraheader
+2025-03-17T18:36:42.2642520Z [command]/opt/homebrew/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-17T18:36:42.2708430Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-17T18:36:42.3977260Z Cleaning up orphan processes

@@ -1,0 +1,13 @@
+diff --git a/examples/ebiten-game-in-texture/main.go b/examples/ebiten-game-in-texture/main.go
+index 9c8301f2d..52b50a366 100644
+--- a/examples/ebiten-game-in-texture/main.go
++++ b/examples/ebiten-game-in-texture/main.go
+@@ -25,7 +25,7 @@ func showPictureLoadingDemo() {
+ 	imgui.SetNextWindowPosV(imgui.NewVec2(basePos.X+60, 600), imgui.CondOnce, imgui.NewVec2(0, 0))
+ 	imgui.Begin("Ebiten Active Image")
+ 	imgui.Text(fmt.Sprintf("pointer = %v", texture.ID))
+-	imgui.ImageV(texture.ID, imgui.NewVec2(float32(texture.Width), float32(texture.Height)), imgui.NewVec2(0, 0), imgui.NewVec2(1, 1), imgui.NewVec4(1, 1, 1, 1), imgui.NewVec4(0, 0, 0, 0))
++	imgui.ImageWithBgV(texture.ID, imgui.NewVec2(float32(texture.Width), float32(texture.Height)), imgui.NewVec2(0, 0), imgui.NewVec2(1, 1), imgui.NewVec4(0, 0, 0, 0), imgui.NewVec4(1, 1, 1, 1))
+ 	imgui.End()
+ }
+ 

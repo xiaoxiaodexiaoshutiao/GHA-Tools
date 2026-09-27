@@ -1,0 +1,243 @@
+﻿2025-03-26T08:56:07.2123516Z Current runner version: '2.323.0'
+2025-03-26T08:56:07.2151078Z ##[group]Operating System
+2025-03-26T08:56:07.2151978Z Ubuntu
+2025-03-26T08:56:07.2152464Z 24.04.2
+2025-03-26T08:56:07.2152919Z LTS
+2025-03-26T08:56:07.2153459Z ##[endgroup]
+2025-03-26T08:56:07.2153927Z ##[group]Runner Image
+2025-03-26T08:56:07.2154501Z Image: ubuntu-24.04
+2025-03-26T08:56:07.2155075Z Version: 20250316.1.0
+2025-03-26T08:56:07.2156045Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250316.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-26T08:56:07.2157462Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250316.1
+2025-03-26T08:56:07.2158354Z ##[endgroup]
+2025-03-26T08:56:07.2159066Z ##[group]Runner Image Provisioner
+2025-03-26T08:56:07.2159658Z 2.0.422.1
+2025-03-26T08:56:07.2160114Z ##[endgroup]
+2025-03-26T08:56:07.2162518Z ##[group]GITHUB_TOKEN Permissions
+2025-03-26T08:56:07.2164385Z Actions: write
+2025-03-26T08:56:07.2165299Z Attestations: write
+2025-03-26T08:56:07.2165949Z Checks: write
+2025-03-26T08:56:07.2166430Z Contents: write
+2025-03-26T08:56:07.2166946Z Deployments: write
+2025-03-26T08:56:07.2167391Z Discussions: write
+2025-03-26T08:56:07.2167956Z Issues: write
+2025-03-26T08:56:07.2168388Z Metadata: read
+2025-03-26T08:56:07.2169024Z Models: read
+2025-03-26T08:56:07.2169597Z Packages: write
+2025-03-26T08:56:07.2170054Z Pages: write
+2025-03-26T08:56:07.2170510Z PullRequests: write
+2025-03-26T08:56:07.2171078Z RepositoryProjects: write
+2025-03-26T08:56:07.2171628Z SecurityEvents: write
+2025-03-26T08:56:07.2172105Z Statuses: write
+2025-03-26T08:56:07.2172649Z ##[endgroup]
+2025-03-26T08:56:07.2174825Z Secret source: Actions
+2025-03-26T08:56:07.2175816Z Prepare workflow directory
+2025-03-26T08:56:07.2501126Z Prepare all required actions
+2025-03-26T08:56:07.2539917Z Getting action download info
+2025-03-26T08:56:07.8009696Z Download action repository 'actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-26T08:56:07.9090977Z Download action repository 'actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b' (SHA:0b93645e9fea7318ecaed2b359559ac225c90a2b)
+2025-03-26T08:56:08.1317146Z Complete job name: ruff (3.12)
+2025-03-26T08:56:08.1980443Z ##[group]Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+2025-03-26T08:56:08.1981428Z with:
+2025-03-26T08:56:08.1981820Z   repository: vllm-project/vllm-spyre
+2025-03-26T08:56:08.1982459Z   token: ***
+2025-03-26T08:56:08.1982815Z   ssh-strict: true
+2025-03-26T08:56:08.1983191Z   ssh-user: git
+2025-03-26T08:56:08.1983571Z   persist-credentials: true
+2025-03-26T08:56:08.1983999Z   clean: true
+2025-03-26T08:56:08.1984378Z   sparse-checkout-cone-mode: true
+2025-03-26T08:56:08.1984838Z   fetch-depth: 1
+2025-03-26T08:56:08.1985200Z   fetch-tags: false
+2025-03-26T08:56:08.1985575Z   show-progress: true
+2025-03-26T08:56:08.1985961Z   lfs: false
+2025-03-26T08:56:08.1986300Z   submodules: false
+2025-03-26T08:56:08.1986689Z   set-safe-directory: true
+2025-03-26T08:56:08.1987322Z ##[endgroup]
+2025-03-26T08:56:08.4554207Z Syncing repository: vllm-project/vllm-spyre
+2025-03-26T08:56:08.4556793Z ##[group]Getting Git version info
+2025-03-26T08:56:08.4557749Z Working directory is '/home/runner/work/vllm-spyre/vllm-spyre'
+2025-03-26T08:56:08.4559591Z [command]/usr/bin/git version
+2025-03-26T08:56:08.4663003Z git version 2.48.1
+2025-03-26T08:56:08.4694021Z ##[endgroup]
+2025-03-26T08:56:08.4707102Z Temporarily overriding HOME='/home/runner/work/_temp/dbd3688c-0c87-4777-8251-e8a1f8e9d2dd' before making global git config changes
+2025-03-26T08:56:08.4708557Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-26T08:56:08.4712213Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/vllm-spyre/vllm-spyre
+2025-03-26T08:56:08.4747495Z Deleting the contents of '/home/runner/work/vllm-spyre/vllm-spyre'
+2025-03-26T08:56:08.4751573Z ##[group]Initializing the repository
+2025-03-26T08:56:08.4755352Z [command]/usr/bin/git init /home/runner/work/vllm-spyre/vllm-spyre
+2025-03-26T08:56:08.4859940Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-26T08:56:08.4861509Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-26T08:56:08.4862411Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-26T08:56:08.4863060Z hint:
+2025-03-26T08:56:08.4863516Z hint: 	git config --global init.defaultBranch <name>
+2025-03-26T08:56:08.4864078Z hint:
+2025-03-26T08:56:08.4864610Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-26T08:56:08.4865485Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-26T08:56:08.4866170Z hint:
+2025-03-26T08:56:08.4866522Z hint: 	git branch -m <name>
+2025-03-26T08:56:08.4880399Z Initialized empty Git repository in /home/runner/work/vllm-spyre/vllm-spyre/.git/
+2025-03-26T08:56:08.4895185Z [command]/usr/bin/git remote add origin https://github.com/vllm-project/vllm-spyre
+2025-03-26T08:56:08.4937431Z ##[endgroup]
+2025-03-26T08:56:08.4938819Z ##[group]Disabling automatic garbage collection
+2025-03-26T08:56:08.4942752Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-26T08:56:08.4975021Z ##[endgroup]
+2025-03-26T08:56:08.4976195Z ##[group]Setting up auth
+2025-03-26T08:56:08.4982867Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-26T08:56:08.5014301Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-26T08:56:08.5377747Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-26T08:56:08.5408839Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-26T08:56:08.5661510Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-26T08:56:08.5695582Z ##[endgroup]
+2025-03-26T08:56:08.5696520Z ##[group]Fetching the repository
+2025-03-26T08:56:08.5704914Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +66d06cbe3067295326c7e6789acf2469ad005ba5:refs/remotes/pull/44/merge
+2025-03-26T08:56:09.2521448Z From https://github.com/vllm-project/vllm-spyre
+2025-03-26T08:56:09.2524782Z  * [new ref]         66d06cbe3067295326c7e6789acf2469ad005ba5 -> pull/44/merge
+2025-03-26T08:56:09.2551483Z ##[endgroup]
+2025-03-26T08:56:09.2553381Z ##[group]Determining the checkout info
+2025-03-26T08:56:09.2555454Z ##[endgroup]
+2025-03-26T08:56:09.2559942Z [command]/usr/bin/git sparse-checkout disable
+2025-03-26T08:56:09.2602053Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-26T08:56:09.2631854Z ##[group]Checking out the ref
+2025-03-26T08:56:09.2635841Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/44/merge
+2025-03-26T08:56:09.2746980Z Note: switching to 'refs/remotes/pull/44/merge'.
+2025-03-26T08:56:09.2749057Z 
+2025-03-26T08:56:09.2750243Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-26T08:56:09.2752389Z changes and commit them, and you can discard any commits you make in this
+2025-03-26T08:56:09.2755104Z state without impacting any branches by switching back to a branch.
+2025-03-26T08:56:09.2756958Z 
+2025-03-26T08:56:09.2757986Z If you want to create a new branch to retain commits you create, you may
+2025-03-26T08:56:09.2760690Z do so (now or later) by using -c with the switch command. Example:
+2025-03-26T08:56:09.2762118Z 
+2025-03-26T08:56:09.2762684Z   git switch -c <new-branch-name>
+2025-03-26T08:56:09.2763623Z 
+2025-03-26T08:56:09.2764152Z Or undo this operation with:
+2025-03-26T08:56:09.2765029Z 
+2025-03-26T08:56:09.2765496Z   git switch -
+2025-03-26T08:56:09.2766171Z 
+2025-03-26T08:56:09.2767080Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-26T08:56:09.2768950Z 
+2025-03-26T08:56:09.2770328Z HEAD is now at 66d06cb Merge 204ec08f48761cf2f6a2c1d9c1004fd2a5c52fd0 into 7fc3c8e1bddf7c698c728187e422eccd0b030b20
+2025-03-26T08:56:09.2775270Z ##[endgroup]
+2025-03-26T08:56:09.2793618Z [command]/usr/bin/git log -1 --format=%H
+2025-03-26T08:56:09.2816083Z 66d06cbe3067295326c7e6789acf2469ad005ba5
+2025-03-26T08:56:09.3132244Z ##[group]Run actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b
+2025-03-26T08:56:09.3133926Z with:
+2025-03-26T08:56:09.3134735Z   python-version: 3.12
+2025-03-26T08:56:09.3135687Z   check-latest: false
+2025-03-26T08:56:09.3136884Z   token: ***
+2025-03-26T08:56:09.3137748Z   update-environment: true
+2025-03-26T08:56:09.3138928Z   allow-prereleases: false
+2025-03-26T08:56:09.3139958Z ##[endgroup]
+2025-03-26T08:56:09.4704613Z ##[group]Installed versions
+2025-03-26T08:56:09.4767458Z Successfully set up CPython (3.12.9)
+2025-03-26T08:56:09.4768466Z ##[endgroup]
+2025-03-26T08:56:09.4887927Z ##[group]Run python -m pip install --upgrade pip
+2025-03-26T08:56:09.4888491Z [36;1mpython -m pip install --upgrade pip[0m
+2025-03-26T08:56:09.4889057Z [36;1mpip install -r requirements-lint.txt[0m
+2025-03-26T08:56:09.4943303Z shell: /usr/bin/bash -e {0}
+2025-03-26T08:56:09.4943626Z env:
+2025-03-26T08:56:09.4943947Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-26T08:56:09.4944451Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib/pkgconfig
+2025-03-26T08:56:09.4944965Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-26T08:56:09.4945572Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-26T08:56:09.4946025Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-26T08:56:09.4946470Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib
+2025-03-26T08:56:09.4946825Z ##[endgroup]
+2025-03-26T08:56:12.2824165Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.12.9/x64/lib/python3.12/site-packages (25.0.1)
+2025-03-26T08:56:12.9964848Z Collecting yapf==0.32.0 (from -r requirements-lint.txt (line 2))
+2025-03-26T08:56:13.0604285Z   Downloading yapf-0.32.0-py2.py3-none-any.whl.metadata (34 kB)
+2025-03-26T08:56:13.0910306Z Collecting toml==0.10.2 (from -r requirements-lint.txt (line 3))
+2025-03-26T08:56:13.1007961Z   Downloading toml-0.10.2-py2.py3-none-any.whl.metadata (7.1 kB)
+2025-03-26T08:56:13.1249106Z Collecting tomli==2.0.2 (from -r requirements-lint.txt (line 4))
+2025-03-26T08:56:13.1345944Z   Downloading tomli-2.0.2-py3-none-any.whl.metadata (10.0 kB)
+2025-03-26T08:56:13.4243871Z Collecting ruff==0.6.5 (from -r requirements-lint.txt (line 5))
+2025-03-26T08:56:13.4363239Z   Downloading ruff-0.6.5-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (25 kB)
+2025-03-26T08:56:13.4621866Z Collecting codespell==2.3.0 (from -r requirements-lint.txt (line 6))
+2025-03-26T08:56:13.4727525Z   Downloading codespell-2.3.0-py3-none-any.whl.metadata (15 kB)
+2025-03-26T08:56:13.5145147Z Collecting isort==5.13.2 (from -r requirements-lint.txt (line 7))
+2025-03-26T08:56:13.5253647Z   Downloading isort-5.13.2-py3-none-any.whl.metadata (12 kB)
+2025-03-26T08:56:13.5731450Z Collecting clang-format==18.1.5 (from -r requirements-lint.txt (line 8))
+2025-03-26T08:56:13.5835986Z   Downloading clang_format-18.1.5-py2.py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.6 kB)
+2025-03-26T08:56:13.6699690Z Collecting pymarkdownlnt==0.9.26 (from -r requirements-lint.txt (line 9))
+2025-03-26T08:56:13.6805988Z   Downloading pymarkdownlnt-0.9.26-py3-none-any.whl.metadata (10 kB)
+2025-03-26T08:56:13.7608177Z Collecting mypy==1.11.1 (from -r requirements-lint.txt (line 12))
+2025-03-26T08:56:13.7718809Z   Downloading mypy-1.11.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl.metadata (1.9 kB)
+2025-03-26T08:56:13.7971117Z Collecting types-PyYAML (from -r requirements-lint.txt (line 13))
+2025-03-26T08:56:13.8077228Z   Downloading types_pyyaml-6.0.12.20250326-py3-none-any.whl.metadata (2.0 kB)
+2025-03-26T08:56:13.8410464Z Collecting types-requests (from -r requirements-lint.txt (line 14))
+2025-03-26T08:56:13.8509056Z   Downloading types_requests-2.32.0.20250306-py3-none-any.whl.metadata (2.3 kB)
+2025-03-26T08:56:13.8877173Z Collecting types-setuptools (from -r requirements-lint.txt (line 15))
+2025-03-26T08:56:13.8979188Z   Downloading types_setuptools-76.0.0.20250313-py3-none-any.whl.metadata (2.2 kB)
+2025-03-26T08:56:13.9817282Z Collecting application-properties>=0.8.2 (from pymarkdownlnt==0.9.26->-r requirements-lint.txt (line 9))
+2025-03-26T08:56:13.9922561Z   Downloading application_properties-0.8.2-py3-none-any.whl.metadata (9.4 kB)
+2025-03-26T08:56:14.0735232Z Collecting columnar>=1.4.0 (from pymarkdownlnt==0.9.26->-r requirements-lint.txt (line 9))
+2025-03-26T08:56:14.0840363Z   Downloading Columnar-1.4.1-py3-none-any.whl.metadata (11 kB)
+2025-03-26T08:56:14.1098046Z Collecting typing-extensions>=4.7.0 (from pymarkdownlnt==0.9.26->-r requirements-lint.txt (line 9))
+2025-03-26T08:56:14.1202271Z   Downloading typing_extensions-4.13.0-py3-none-any.whl.metadata (3.0 kB)
+2025-03-26T08:56:14.1489515Z Collecting mypy-extensions>=1.0.0 (from mypy==1.11.1->-r requirements-lint.txt (line 12))
+2025-03-26T08:56:14.1594874Z   Downloading mypy_extensions-1.0.0-py3-none-any.whl.metadata (1.1 kB)
+2025-03-26T08:56:14.1903350Z Collecting urllib3>=2 (from types-requests->-r requirements-lint.txt (line 14))
+2025-03-26T08:56:14.2002499Z   Downloading urllib3-2.3.0-py3-none-any.whl.metadata (6.5 kB)
+2025-03-26T08:56:14.3083516Z Collecting setuptools (from types-setuptools->-r requirements-lint.txt (line 15))
+2025-03-26T08:56:14.3183969Z   Downloading setuptools-78.1.0-py3-none-any.whl.metadata (6.6 kB)
+2025-03-26T08:56:14.3682323Z Collecting pyyaml>=5.4.1 (from application-properties>=0.8.2->pymarkdownlnt==0.9.26->-r requirements-lint.txt (line 9))
+2025-03-26T08:56:14.3789291Z   Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+2025-03-26T08:56:14.4005551Z Collecting toolz (from columnar>=1.4.0->pymarkdownlnt==0.9.26->-r requirements-lint.txt (line 9))
+2025-03-26T08:56:14.4104954Z   Downloading toolz-1.0.0-py3-none-any.whl.metadata (5.1 kB)
+2025-03-26T08:56:14.4315873Z Collecting wcwidth (from columnar>=1.4.0->pymarkdownlnt==0.9.26->-r requirements-lint.txt (line 9))
+2025-03-26T08:56:14.4422431Z   Downloading wcwidth-0.2.13-py2.py3-none-any.whl.metadata (14 kB)
+2025-03-26T08:56:14.4630933Z Downloading yapf-0.32.0-py2.py3-none-any.whl (190 kB)
+2025-03-26T08:56:14.4891293Z Downloading toml-0.10.2-py2.py3-none-any.whl (16 kB)
+2025-03-26T08:56:14.5017883Z Downloading tomli-2.0.2-py3-none-any.whl (13 kB)
+2025-03-26T08:56:14.5146258Z Downloading ruff-0.6.5-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (10.3 MB)
+2025-03-26T08:56:14.5981442Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.3/10.3 MB 137.8 MB/s eta 0:00:00
+2025-03-26T08:56:14.6103128Z Downloading codespell-2.3.0-py3-none-any.whl (329 kB)
+2025-03-26T08:56:14.6246073Z Downloading isort-5.13.2-py3-none-any.whl (92 kB)
+2025-03-26T08:56:14.6386041Z Downloading clang_format-18.1.5-py2.py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.7 MB)
+2025-03-26T08:56:14.6522067Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 132.0 MB/s eta 0:00:00
+2025-03-26T08:56:14.6628296Z Downloading pymarkdownlnt-0.9.26-py3-none-any.whl (477 kB)
+2025-03-26T08:56:14.6797337Z Downloading mypy-1.11.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl (12.5 MB)
+2025-03-26T08:56:14.7768538Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.5/12.5 MB 130.3 MB/s eta 0:00:00
+2025-03-26T08:56:14.7892876Z Downloading types_pyyaml-6.0.12.20250326-py3-none-any.whl (20 kB)
+2025-03-26T08:56:14.8020232Z Downloading types_requests-2.32.0.20250306-py3-none-any.whl (20 kB)
+2025-03-26T08:56:14.8152509Z Downloading types_setuptools-76.0.0.20250313-py3-none-any.whl (65 kB)
+2025-03-26T08:56:14.8340805Z Downloading application_properties-0.8.2-py3-none-any.whl (18 kB)
+2025-03-26T08:56:14.8476415Z Downloading Columnar-1.4.1-py3-none-any.whl (11 kB)
+2025-03-26T08:56:14.8599179Z Downloading mypy_extensions-1.0.0-py3-none-any.whl (4.7 kB)
+2025-03-26T08:56:14.8715147Z Downloading typing_extensions-4.13.0-py3-none-any.whl (45 kB)
+2025-03-26T08:56:14.8846551Z Downloading urllib3-2.3.0-py3-none-any.whl (128 kB)
+2025-03-26T08:56:14.8975462Z Downloading setuptools-78.1.0-py3-none-any.whl (1.3 MB)
+2025-03-26T08:56:14.9077537Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 127.7 MB/s eta 0:00:00
+2025-03-26T08:56:14.9174299Z Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (767 kB)
+2025-03-26T08:56:14.9268079Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 767.5/767.5 kB 82.8 MB/s eta 0:00:00
+2025-03-26T08:56:14.9375182Z Downloading toolz-1.0.0-py3-none-any.whl (56 kB)
+2025-03-26T08:56:14.9498867Z Downloading wcwidth-0.2.13-py2.py3-none-any.whl (34 kB)
+2025-03-26T08:56:15.0414529Z Installing collected packages: yapf, wcwidth, clang-format, urllib3, typing-extensions, types-PyYAML, toolz, tomli, toml, setuptools, ruff, pyyaml, mypy-extensions, isort, codespell, types-setuptools, types-requests, mypy, columnar, application-properties, pymarkdownlnt
+2025-03-26T08:56:18.3481034Z Successfully installed application-properties-0.8.2 clang-format-18.1.5 codespell-2.3.0 columnar-1.4.1 isort-5.13.2 mypy-1.11.1 mypy-extensions-1.0.0 pymarkdownlnt-0.9.26 pyyaml-6.0.2 ruff-0.6.5 setuptools-78.1.0 toml-0.10.2 tomli-2.0.2 toolz-1.0.0 types-PyYAML-6.0.12.20250326 types-requests-2.32.0.20250306 types-setuptools-76.0.0.20250313 typing-extensions-4.13.0 urllib3-2.3.0 wcwidth-0.2.13 yapf-0.32.0
+2025-03-26T08:56:18.4749605Z ##[group]Run echo "::add-matcher::.github/workflows/matchers/ruff.json"
+2025-03-26T08:56:18.4750210Z [36;1mecho "::add-matcher::.github/workflows/matchers/ruff.json"[0m
+2025-03-26T08:56:18.4750575Z [36;1mruff check --output-format github .[0m
+2025-03-26T08:56:18.4803641Z shell: /usr/bin/bash -e {0}
+2025-03-26T08:56:18.4803880Z env:
+2025-03-26T08:56:18.4804154Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-26T08:56:18.4804543Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib/pkgconfig
+2025-03-26T08:56:18.4804939Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-26T08:56:18.4805287Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-26T08:56:18.4805623Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-26T08:56:18.4805969Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib
+2025-03-26T08:56:18.4806252Z ##[endgroup]
+2025-03-26T08:56:18.5070768Z ##[error]vllm_spyre/model_executor/model_loader/spyre.py:3:8: F401 `sys` imported but unused
+2025-03-26T08:56:18.5079506Z ##[error]Process completed with exit code 1.
+2025-03-26T08:56:18.5186250Z Post job cleanup.
+2025-03-26T08:56:18.6123598Z [command]/usr/bin/git version
+2025-03-26T08:56:18.6160477Z git version 2.48.1
+2025-03-26T08:56:18.6213923Z Temporarily overriding HOME='/home/runner/work/_temp/c043a087-1c75-46a0-8609-5e706ba81bc1' before making global git config changes
+2025-03-26T08:56:18.6215351Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-26T08:56:18.6219497Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/vllm-spyre/vllm-spyre
+2025-03-26T08:56:18.6254162Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-26T08:56:18.6286191Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-26T08:56:18.6523152Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-26T08:56:18.6543063Z http.https://github.com/.extraheader
+2025-03-26T08:56:18.6555077Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-26T08:56:18.6585394Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-26T08:56:18.6922355Z Cleaning up orphan processes

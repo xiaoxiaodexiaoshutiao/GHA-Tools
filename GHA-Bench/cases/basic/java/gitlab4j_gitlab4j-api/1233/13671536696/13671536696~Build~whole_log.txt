@@ -1,0 +1,863 @@
+﻿2025-03-05T08:23:37.9215408Z Current runner version: '2.322.0'
+2025-03-05T08:23:37.9250118Z ##[group]Operating System
+2025-03-05T08:23:37.9251611Z Ubuntu
+2025-03-05T08:23:37.9252433Z 24.04.2
+2025-03-05T08:23:37.9253220Z LTS
+2025-03-05T08:23:37.9254030Z ##[endgroup]
+2025-03-05T08:23:37.9254824Z ##[group]Runner Image
+2025-03-05T08:23:37.9255776Z Image: ubuntu-24.04
+2025-03-05T08:23:37.9256653Z Version: 20250223.1.0
+2025-03-05T08:23:37.9258529Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250223.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-05T08:23:37.9261344Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250223.1
+2025-03-05T08:23:37.9263089Z ##[endgroup]
+2025-03-05T08:23:37.9263986Z ##[group]Runner Image Provisioner
+2025-03-05T08:23:37.9264898Z 2.0.422.1
+2025-03-05T08:23:37.9265840Z ##[endgroup]
+2025-03-05T08:23:37.9269841Z ##[group]GITHUB_TOKEN Permissions
+2025-03-05T08:23:37.9272793Z Actions: read
+2025-03-05T08:23:37.9273905Z Attestations: read
+2025-03-05T08:23:37.9274961Z Checks: read
+2025-03-05T08:23:37.9275855Z Contents: read
+2025-03-05T08:23:37.9276737Z Deployments: read
+2025-03-05T08:23:37.9277640Z Discussions: read
+2025-03-05T08:23:37.9278477Z Issues: read
+2025-03-05T08:23:37.9279385Z Metadata: read
+2025-03-05T08:23:37.9280276Z Packages: read
+2025-03-05T08:23:37.9281320Z Pages: read
+2025-03-05T08:23:37.9282231Z PullRequests: read
+2025-03-05T08:23:37.9283036Z RepositoryProjects: read
+2025-03-05T08:23:37.9283943Z SecurityEvents: read
+2025-03-05T08:23:37.9284805Z Statuses: read
+2025-03-05T08:23:37.9285595Z ##[endgroup]
+2025-03-05T08:23:37.9288327Z Secret source: None
+2025-03-05T08:23:37.9289452Z Prepare workflow directory
+2025-03-05T08:23:37.9767048Z Prepare all required actions
+2025-03-05T08:23:37.9823279Z Getting action download info
+2025-03-05T08:23:38.1949275Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-05T08:23:38.2803331Z Download action repository 'actions/setup-java@v3' (SHA:0ab4596768b603586c0de567f2430c30f5b0d2b0)
+2025-03-05T08:23:38.5238513Z Download action repository 'gradle/actions@v3' (SHA:d9c87d481d55275bb5441eef3fe0e46805f9ef70)
+2025-03-05T08:23:39.1842522Z Complete job name: Build
+2025-03-05T08:23:39.2529192Z ##[group]Run actions/checkout@v4
+2025-03-05T08:23:39.2530037Z with:
+2025-03-05T08:23:39.2530418Z   fetch-depth: 0
+2025-03-05T08:23:39.2530995Z   repository: gitlab4j/gitlab4j-api
+2025-03-05T08:23:39.2531667Z   token: ***
+2025-03-05T08:23:39.2532055Z   ssh-strict: true
+2025-03-05T08:23:39.2532433Z   ssh-user: git
+2025-03-05T08:23:39.2532826Z   persist-credentials: true
+2025-03-05T08:23:39.2533258Z   clean: true
+2025-03-05T08:23:39.2533657Z   sparse-checkout-cone-mode: true
+2025-03-05T08:23:39.2534132Z   fetch-tags: false
+2025-03-05T08:23:39.2534516Z   show-progress: true
+2025-03-05T08:23:39.2534910Z   lfs: false
+2025-03-05T08:23:39.2535284Z   submodules: false
+2025-03-05T08:23:39.2535687Z   set-safe-directory: true
+2025-03-05T08:23:39.2536354Z ##[endgroup]
+2025-03-05T08:23:39.4230949Z Syncing repository: gitlab4j/gitlab4j-api
+2025-03-05T08:23:39.4233848Z ##[group]Getting Git version info
+2025-03-05T08:23:39.4235215Z Working directory is '/home/runner/work/gitlab4j-api/gitlab4j-api'
+2025-03-05T08:23:39.4237015Z [command]/usr/bin/git version
+2025-03-05T08:23:39.4281099Z git version 2.48.1
+2025-03-05T08:23:39.4309701Z ##[endgroup]
+2025-03-05T08:23:39.4325622Z Temporarily overriding HOME='/home/runner/work/_temp/a46d4f84-9150-49ae-b9d9-f252e6498162' before making global git config changes
+2025-03-05T08:23:39.4328004Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-05T08:23:39.4332352Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/gitlab4j-api/gitlab4j-api
+2025-03-05T08:23:39.4372704Z Deleting the contents of '/home/runner/work/gitlab4j-api/gitlab4j-api'
+2025-03-05T08:23:39.4377719Z ##[group]Initializing the repository
+2025-03-05T08:23:39.4383129Z [command]/usr/bin/git init /home/runner/work/gitlab4j-api/gitlab4j-api
+2025-03-05T08:23:39.4453849Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-05T08:23:39.4454976Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-05T08:23:39.4455871Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-05T08:23:39.4456532Z hint:
+2025-03-05T08:23:39.4456999Z hint: 	git config --global init.defaultBranch <name>
+2025-03-05T08:23:39.4457566Z hint:
+2025-03-05T08:23:39.4458098Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-05T08:23:39.4459371Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-05T08:23:39.4460286Z hint:
+2025-03-05T08:23:39.4460653Z hint: 	git branch -m <name>
+2025-03-05T08:23:39.4461660Z Initialized empty Git repository in /home/runner/work/gitlab4j-api/gitlab4j-api/.git/
+2025-03-05T08:23:39.4470357Z [command]/usr/bin/git remote add origin https://github.com/gitlab4j/gitlab4j-api
+2025-03-05T08:23:39.4502333Z ##[endgroup]
+2025-03-05T08:23:39.4503035Z ##[group]Disabling automatic garbage collection
+2025-03-05T08:23:39.4506431Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-05T08:23:39.4534381Z ##[endgroup]
+2025-03-05T08:23:39.4535033Z ##[group]Setting up auth
+2025-03-05T08:23:39.4541388Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-05T08:23:39.4570206Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-05T08:23:39.4857596Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-05T08:23:39.4886934Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-05T08:23:39.5116204Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-05T08:23:39.5160348Z ##[endgroup]
+2025-03-05T08:23:39.5161399Z ##[group]Fetching the repository
+2025-03-05T08:23:39.5171563Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* +b79091e881e642cf3a42bb259cfb731416823017:refs/remotes/pull/1233/merge
+2025-03-05T08:23:40.5367465Z From https://github.com/gitlab4j/gitlab4j-api
+2025-03-05T08:23:40.5369966Z  * [new branch]        5.0.x                   -> origin/5.0.x
+2025-03-05T08:23:40.5372269Z  * [new branch]        fix-markdown-request    -> origin/fix-markdown-request
+2025-03-05T08:23:40.5374750Z  * [new branch]        follow-up/issue-612     -> origin/follow-up/issue-612
+2025-03-05T08:23:40.5376989Z  * [new branch]        main                    -> origin/main
+2025-03-05T08:23:40.5378969Z  * [new branch]        patch-15                -> origin/patch-15
+2025-03-05T08:23:40.5380223Z  * [new tag]           4.18.0                  -> 4.18.0
+2025-03-05T08:23:40.5382002Z  * [new tag]           5.7.0                   -> 5.7.0
+2025-03-05T08:23:40.5383790Z  * [new tag]           5.8.0                   -> 5.8.0
+2025-03-05T08:23:40.5385597Z  * [new tag]           6.0.0-rc.6              -> 6.0.0-rc.6
+2025-03-05T08:23:40.5387225Z  * [new tag]           6.0.0-rc.7              -> 6.0.0-rc.7
+2025-03-05T08:23:40.5389015Z  * [new tag]           6.0.0-rc.8              -> 6.0.0-rc.8
+2025-03-05T08:23:40.5391195Z  * [new tag]           gitlab-api-1.0          -> gitlab-api-1.0
+2025-03-05T08:23:40.5393065Z  * [new tag]           gitlab-api-1.0.0        -> gitlab-api-1.0.0
+2025-03-05T08:23:40.5394942Z  * [new tag]           gitlab-api-1.0.10       -> gitlab-api-1.0.10
+2025-03-05T08:23:40.5396980Z  * [new tag]           gitlab-api-1.0.11       -> gitlab-api-1.0.11
+2025-03-05T08:23:40.5398976Z  * [new tag]           gitlab-api-1.0.12       -> gitlab-api-1.0.12
+2025-03-05T08:23:40.5401289Z  * [new tag]           gitlab-api-1.0.13       -> gitlab-api-1.0.13
+2025-03-05T08:23:40.5403844Z  * [new tag]           gitlab-api-1.0.14       -> gitlab-api-1.0.14
+2025-03-05T08:23:40.5405902Z  * [new tag]           gitlab-api-1.0.15       -> gitlab-api-1.0.15
+2025-03-05T08:23:40.5407942Z  * [new tag]           gitlab-api-1.0.2        -> gitlab-api-1.0.2
+2025-03-05T08:23:40.5410046Z  * [new tag]           gitlab-api-1.0.3        -> gitlab-api-1.0.3
+2025-03-05T08:23:40.5412187Z  * [new tag]           gitlab-api-1.0.4        -> gitlab-api-1.0.4
+2025-03-05T08:23:40.5414285Z  * [new tag]           gitlab-api-1.0.5        -> gitlab-api-1.0.5
+2025-03-05T08:23:40.5416202Z  * [new tag]           gitlab-api-1.0.6        -> gitlab-api-1.0.6
+2025-03-05T08:23:40.5418343Z  * [new tag]           gitlab-api-1.0.7        -> gitlab-api-1.0.7
+2025-03-05T08:23:40.5420602Z  * [new tag]           gitlab-api-1.0.8        -> gitlab-api-1.0.8
+2025-03-05T08:23:40.5423100Z  * [new tag]           gitlab-api-1.0.9        -> gitlab-api-1.0.9
+2025-03-05T08:23:40.5425452Z  * [new tag]           gitlab-api-2.0.0        -> gitlab-api-2.0.0
+2025-03-05T08:23:40.5427748Z  * [new tag]           gitlab-api-2.0.1        -> gitlab-api-2.0.1
+2025-03-05T08:23:40.5430140Z  * [new tag]           gitlab-api-2.0.2        -> gitlab-api-2.0.2
+2025-03-05T08:23:40.5432793Z  * [new tag]           gitlab-api-2.0.3        -> gitlab-api-2.0.3
+2025-03-05T08:23:40.5435167Z  * [new tag]           gitlab-api-2.0.4        -> gitlab-api-2.0.4
+2025-03-05T08:23:40.5437426Z  * [new tag]           gitlab-api-3.0.0        -> gitlab-api-3.0.0
+2025-03-05T08:23:40.5439659Z  * [new tag]           gitlab-api-3.0.1        -> gitlab-api-3.0.1
+2025-03-05T08:23:40.5442417Z  * [new tag]           gitlab-api-4.0.0        -> gitlab-api-4.0.0
+2025-03-05T08:23:40.5444930Z  * [new tag]           gitlab-api-4.0.1        -> gitlab-api-4.0.1
+2025-03-05T08:23:40.5447211Z  * [new tag]           gitlab-api-4.0.2        -> gitlab-api-4.0.2
+2025-03-05T08:23:40.5449481Z  * [new tag]           gitlab-api-4.0.3        -> gitlab-api-4.0.3
+2025-03-05T08:23:40.5452186Z  * [new tag]           gitlab-api-4.0.4        -> gitlab-api-4.0.4
+2025-03-05T08:23:40.5454979Z  * [new tag]           gitlab4j-api-4.0.5      -> gitlab4j-api-4.0.5
+2025-03-05T08:23:40.5457640Z  * [new tag]           gitlab4j-api-4.0.6      -> gitlab4j-api-4.0.6
+2025-03-05T08:23:40.5460226Z  * [new tag]           gitlab4j-api-4.0.7      -> gitlab4j-api-4.0.7
+2025-03-05T08:23:40.5462890Z  * [new tag]           gitlab4j-api-4.0.8      -> gitlab4j-api-4.0.8
+2025-03-05T08:23:40.5465306Z  * [new tag]           gitlab4j-api-4.0.9      -> gitlab4j-api-4.0.9
+2025-03-05T08:23:40.5467782Z  * [new tag]           gitlab4j-api-4.1.0      -> gitlab4j-api-4.1.0
+2025-03-05T08:23:40.5470283Z  * [new tag]           gitlab4j-api-4.1.1      -> gitlab4j-api-4.1.1
+2025-03-05T08:23:40.5472893Z  * [new tag]           gitlab4j-api-4.1.2      -> gitlab4j-api-4.1.2
+2025-03-05T08:23:40.5475325Z  * [new tag]           gitlab4j-api-4.1.3      -> gitlab4j-api-4.1.3
+2025-03-05T08:23:40.5477744Z  * [new tag]           gitlab4j-api-4.1.4      -> gitlab4j-api-4.1.4
+2025-03-05T08:23:40.5480313Z  * [new tag]           gitlab4j-api-4.1.5      -> gitlab4j-api-4.1.5
+2025-03-05T08:23:40.5482981Z  * [new tag]           gitlab4j-api-4.1.6      -> gitlab4j-api-4.1.6
+2025-03-05T08:23:40.5485397Z  * [new tag]           gitlab4j-api-4.10.0     -> gitlab4j-api-4.10.0
+2025-03-05T08:23:40.5487965Z  * [new tag]           gitlab4j-api-4.10.1     -> gitlab4j-api-4.10.1
+2025-03-05T08:23:40.5490491Z  * [new tag]           gitlab4j-api-4.10.10    -> gitlab4j-api-4.10.10
+2025-03-05T08:23:40.5493322Z  * [new tag]           gitlab4j-api-4.10.11    -> gitlab4j-api-4.10.11
+2025-03-05T08:23:40.5495979Z  * [new tag]           gitlab4j-api-4.10.12    -> gitlab4j-api-4.10.12
+2025-03-05T08:23:40.5498417Z  * [new tag]           gitlab4j-api-4.10.14    -> gitlab4j-api-4.10.14
+2025-03-05T08:23:40.5501093Z  * [new tag]           gitlab4j-api-4.10.15    -> gitlab4j-api-4.10.15
+2025-03-05T08:23:40.5503651Z  * [new tag]           gitlab4j-api-4.10.16    -> gitlab4j-api-4.10.16
+2025-03-05T08:23:40.5506438Z  * [new tag]           gitlab4j-api-4.10.17    -> gitlab4j-api-4.10.17
+2025-03-05T08:23:40.5508931Z  * [new tag]           gitlab4j-api-4.10.18    -> gitlab4j-api-4.10.18
+2025-03-05T08:23:40.5511578Z  * [new tag]           gitlab4j-api-4.10.19    -> gitlab4j-api-4.10.19
+2025-03-05T08:23:40.5513985Z  * [new tag]           gitlab4j-api-4.10.2     -> gitlab4j-api-4.10.2
+2025-03-05T08:23:40.5516510Z  * [new tag]           gitlab4j-api-4.10.20    -> gitlab4j-api-4.10.20
+2025-03-05T08:23:40.5518904Z  * [new tag]           gitlab4j-api-4.10.3     -> gitlab4j-api-4.10.3
+2025-03-05T08:23:40.5521559Z  * [new tag]           gitlab4j-api-4.10.4     -> gitlab4j-api-4.10.4
+2025-03-05T08:23:40.5524013Z  * [new tag]           gitlab4j-api-4.10.5     -> gitlab4j-api-4.10.5
+2025-03-05T08:23:40.5526498Z  * [new tag]           gitlab4j-api-4.10.6     -> gitlab4j-api-4.10.6
+2025-03-05T08:23:40.5528845Z  * [new tag]           gitlab4j-api-4.10.7     -> gitlab4j-api-4.10.7
+2025-03-05T08:23:40.5531480Z  * [new tag]           gitlab4j-api-4.10.8     -> gitlab4j-api-4.10.8
+2025-03-05T08:23:40.5533978Z  * [new tag]           gitlab4j-api-4.10.9     -> gitlab4j-api-4.10.9
+2025-03-05T08:23:40.5536314Z  * [new tag]           gitlab4j-api-4.11.0     -> gitlab4j-api-4.11.0
+2025-03-05T08:23:40.5538796Z  * [new tag]           gitlab4j-api-4.11.1     -> gitlab4j-api-4.11.1
+2025-03-05T08:23:40.5541450Z  * [new tag]           gitlab4j-api-4.11.10    -> gitlab4j-api-4.11.10
+2025-03-05T08:23:40.5544045Z  * [new tag]           gitlab4j-api-4.11.11    -> gitlab4j-api-4.11.11
+2025-03-05T08:23:40.5546379Z  * [new tag]           gitlab4j-api-4.11.12    -> gitlab4j-api-4.11.12
+2025-03-05T08:23:40.5548873Z  * [new tag]           gitlab4j-api-4.11.14    -> gitlab4j-api-4.11.14
+2025-03-05T08:23:40.5551370Z  * [new tag]           gitlab4j-api-4.11.15    -> gitlab4j-api-4.11.15
+2025-03-05T08:23:40.5553875Z  * [new tag]           gitlab4j-api-4.11.16    -> gitlab4j-api-4.11.16
+2025-03-05T08:23:40.5556176Z  * [new tag]           gitlab4j-api-4.11.17    -> gitlab4j-api-4.11.17
+2025-03-05T08:23:40.5558760Z  * [new tag]           gitlab4j-api-4.11.18    -> gitlab4j-api-4.11.18
+2025-03-05T08:23:40.5561507Z  * [new tag]           gitlab4j-api-4.11.19    -> gitlab4j-api-4.11.19
+2025-03-05T08:23:40.5563984Z  * [new tag]           gitlab4j-api-4.11.2     -> gitlab4j-api-4.11.2
+2025-03-05T08:23:40.5566469Z  * [new tag]           gitlab4j-api-4.11.3     -> gitlab4j-api-4.11.3
+2025-03-05T08:23:40.5568746Z  * [new tag]           gitlab4j-api-4.11.4     -> gitlab4j-api-4.11.4
+2025-03-05T08:23:40.5571385Z  * [new tag]           gitlab4j-api-4.11.5     -> gitlab4j-api-4.11.5
+2025-03-05T08:23:40.5573688Z  * [new tag]           gitlab4j-api-4.11.6     -> gitlab4j-api-4.11.6
+2025-03-05T08:23:40.5576128Z  * [new tag]           gitlab4j-api-4.11.7     -> gitlab4j-api-4.11.7
+2025-03-05T08:23:40.5578449Z  * [new tag]           gitlab4j-api-4.11.8     -> gitlab4j-api-4.11.8
+2025-03-05T08:23:40.5580928Z  * [new tag]           gitlab4j-api-4.11.9     -> gitlab4j-api-4.11.9
+2025-03-05T08:23:40.5583413Z  * [new tag]           gitlab4j-api-4.12.0     -> gitlab4j-api-4.12.0
+2025-03-05T08:23:40.5585742Z  * [new tag]           gitlab4j-api-4.12.1     -> gitlab4j-api-4.12.1
+2025-03-05T08:23:40.5588173Z  * [new tag]           gitlab4j-api-4.12.10    -> gitlab4j-api-4.12.10
+2025-03-05T08:23:40.5590356Z  * [new tag]           gitlab4j-api-4.12.11    -> gitlab4j-api-4.12.11
+2025-03-05T08:23:40.5592791Z  * [new tag]           gitlab4j-api-4.12.12    -> gitlab4j-api-4.12.12
+2025-03-05T08:23:40.5595236Z  * [new tag]           gitlab4j-api-4.12.14    -> gitlab4j-api-4.12.14
+2025-03-05T08:23:40.5597582Z  * [new tag]           gitlab4j-api-4.12.15    -> gitlab4j-api-4.12.15
+2025-03-05T08:23:40.5599991Z  * [new tag]           gitlab4j-api-4.12.16    -> gitlab4j-api-4.12.16
+2025-03-05T08:23:40.5602532Z  * [new tag]           gitlab4j-api-4.12.17    -> gitlab4j-api-4.12.17
+2025-03-05T08:23:40.5604997Z  * [new tag]           gitlab4j-api-4.12.18    -> gitlab4j-api-4.12.18
+2025-03-05T08:23:40.5607742Z  * [new tag]           gitlab4j-api-4.12.2     -> gitlab4j-api-4.12.2
+2025-03-05T08:23:40.5610042Z  * [new tag]           gitlab4j-api-4.12.3     -> gitlab4j-api-4.12.3
+2025-03-05T08:23:40.5612434Z  * [new tag]           gitlab4j-api-4.12.4     -> gitlab4j-api-4.12.4
+2025-03-05T08:23:40.5614850Z  * [new tag]           gitlab4j-api-4.12.5     -> gitlab4j-api-4.12.5
+2025-03-05T08:23:40.5617183Z  * [new tag]           gitlab4j-api-4.12.6     -> gitlab4j-api-4.12.6
+2025-03-05T08:23:40.5619518Z  * [new tag]           gitlab4j-api-4.12.7     -> gitlab4j-api-4.12.7
+2025-03-05T08:23:40.5621956Z  * [new tag]           gitlab4j-api-4.12.8     -> gitlab4j-api-4.12.8
+2025-03-05T08:23:40.5624344Z  * [new tag]           gitlab4j-api-4.12.9     -> gitlab4j-api-4.12.9
+2025-03-05T08:23:40.5626515Z  * [new tag]           gitlab4j-api-4.14.0     -> gitlab4j-api-4.14.0
+2025-03-05T08:23:40.5628875Z  * [new tag]           gitlab4j-api-4.14.1     -> gitlab4j-api-4.14.1
+2025-03-05T08:23:40.5631377Z  * [new tag]           gitlab4j-api-4.14.10    -> gitlab4j-api-4.14.10
+2025-03-05T08:23:40.5633800Z  * [new tag]           gitlab4j-api-4.14.11    -> gitlab4j-api-4.14.11
+2025-03-05T08:23:40.5636167Z  * [new tag]           gitlab4j-api-4.14.12    -> gitlab4j-api-4.14.12
+2025-03-05T08:23:40.5638525Z  * [new tag]           gitlab4j-api-4.14.14    -> gitlab4j-api-4.14.14
+2025-03-05T08:23:40.5641093Z  * [new tag]           gitlab4j-api-4.14.15    -> gitlab4j-api-4.14.15
+2025-03-05T08:23:40.5643328Z  * [new tag]           gitlab4j-api-4.14.16    -> gitlab4j-api-4.14.16
+2025-03-05T08:23:40.5645539Z  * [new tag]           gitlab4j-api-4.14.17    -> gitlab4j-api-4.14.17
+2025-03-05T08:23:40.5647915Z  * [new tag]           gitlab4j-api-4.14.18    -> gitlab4j-api-4.14.18
+2025-03-05T08:23:40.5650109Z  * [new tag]           gitlab4j-api-4.14.19    -> gitlab4j-api-4.14.19
+2025-03-05T08:23:40.5652549Z  * [new tag]           gitlab4j-api-4.14.2     -> gitlab4j-api-4.14.2
+2025-03-05T08:23:40.5654882Z  * [new tag]           gitlab4j-api-4.14.20    -> gitlab4j-api-4.14.20
+2025-03-05T08:23:40.5657052Z  * [new tag]           gitlab4j-api-4.14.21    -> gitlab4j-api-4.14.21
+2025-03-05T08:23:40.5659599Z  * [new tag]           gitlab4j-api-4.14.22    -> gitlab4j-api-4.14.22
+2025-03-05T08:23:40.5661924Z  * [new tag]           gitlab4j-api-4.14.23    -> gitlab4j-api-4.14.23
+2025-03-05T08:23:40.5664284Z  * [new tag]           gitlab4j-api-4.14.24    -> gitlab4j-api-4.14.24
+2025-03-05T08:23:40.5666525Z  * [new tag]           gitlab4j-api-4.14.25    -> gitlab4j-api-4.14.25
+2025-03-05T08:23:40.5668690Z  * [new tag]           gitlab4j-api-4.14.26    -> gitlab4j-api-4.14.26
+2025-03-05T08:23:40.5671153Z  * [new tag]           gitlab4j-api-4.14.27    -> gitlab4j-api-4.14.27
+2025-03-05T08:23:40.5673362Z  * [new tag]           gitlab4j-api-4.14.28    -> gitlab4j-api-4.14.28
+2025-03-05T08:23:40.5675574Z  * [new tag]           gitlab4j-api-4.14.29    -> gitlab4j-api-4.14.29
+2025-03-05T08:23:40.5677822Z  * [new tag]           gitlab4j-api-4.14.3     -> gitlab4j-api-4.14.3
+2025-03-05T08:23:40.5679999Z  * [new tag]           gitlab4j-api-4.14.30    -> gitlab4j-api-4.14.30
+2025-03-05T08:23:40.5682358Z  * [new tag]           gitlab4j-api-4.14.4     -> gitlab4j-api-4.14.4
+2025-03-05T08:23:40.5684632Z  * [new tag]           gitlab4j-api-4.14.5     -> gitlab4j-api-4.14.5
+2025-03-05T08:23:40.5686788Z  * [new tag]           gitlab4j-api-4.14.6     -> gitlab4j-api-4.14.6
+2025-03-05T08:23:40.5688931Z  * [new tag]           gitlab4j-api-4.14.7     -> gitlab4j-api-4.14.7
+2025-03-05T08:23:40.5691328Z  * [new tag]           gitlab4j-api-4.14.8     -> gitlab4j-api-4.14.8
+2025-03-05T08:23:40.5693508Z  * [new tag]           gitlab4j-api-4.14.9     -> gitlab4j-api-4.14.9
+2025-03-05T08:23:40.5695717Z  * [new tag]           gitlab4j-api-4.15.0     -> gitlab4j-api-4.15.0
+2025-03-05T08:23:40.5697982Z  * [new tag]           gitlab4j-api-4.15.1     -> gitlab4j-api-4.15.1
+2025-03-05T08:23:40.5700077Z  * [new tag]           gitlab4j-api-4.15.2     -> gitlab4j-api-4.15.2
+2025-03-05T08:23:40.5702806Z  * [new tag]           gitlab4j-api-4.15.3     -> gitlab4j-api-4.15.3
+2025-03-05T08:23:40.5705062Z  * [new tag]           gitlab4j-api-4.15.4     -> gitlab4j-api-4.15.4
+2025-03-05T08:23:40.5707149Z  * [new tag]           gitlab4j-api-4.15.5     -> gitlab4j-api-4.15.5
+2025-03-05T08:23:40.5709437Z  * [new tag]           gitlab4j-api-4.15.6     -> gitlab4j-api-4.15.6
+2025-03-05T08:23:40.5711790Z  * [new tag]           gitlab4j-api-4.15.7     -> gitlab4j-api-4.15.7
+2025-03-05T08:23:40.5713867Z  * [new tag]           gitlab4j-api-4.16.0     -> gitlab4j-api-4.16.0
+2025-03-05T08:23:40.5777293Z  * [new tag]           gitlab4j-api-4.17.0     -> gitlab4j-api-4.17.0
+2025-03-05T08:23:40.5778932Z  * [new tag]           gitlab4j-api-4.19.0     -> gitlab4j-api-4.19.0
+2025-03-05T08:23:40.5780508Z  * [new tag]           gitlab4j-api-4.2.0      -> gitlab4j-api-4.2.0
+2025-03-05T08:23:40.5782188Z  * [new tag]           gitlab4j-api-4.2.1      -> gitlab4j-api-4.2.1
+2025-03-05T08:23:40.5783729Z  * [new tag]           gitlab4j-api-4.2.2      -> gitlab4j-api-4.2.2
+2025-03-05T08:23:40.5785289Z  * [new tag]           gitlab4j-api-4.2.3      -> gitlab4j-api-4.2.3
+2025-03-05T08:23:40.5786820Z  * [new tag]           gitlab4j-api-4.2.4      -> gitlab4j-api-4.2.4
+2025-03-05T08:23:40.5788355Z  * [new tag]           gitlab4j-api-4.2.5      -> gitlab4j-api-4.2.5
+2025-03-05T08:23:40.5789884Z  * [new tag]           gitlab4j-api-4.3.0      -> gitlab4j-api-4.3.0
+2025-03-05T08:23:40.5791587Z  * [new tag]           gitlab4j-api-4.3.1      -> gitlab4j-api-4.3.1
+2025-03-05T08:23:40.5793123Z  * [new tag]           gitlab4j-api-4.3.2      -> gitlab4j-api-4.3.2
+2025-03-05T08:23:40.5794660Z  * [new tag]           gitlab4j-api-4.3.3      -> gitlab4j-api-4.3.3
+2025-03-05T08:23:40.5796168Z  * [new tag]           gitlab4j-api-4.3.4      -> gitlab4j-api-4.3.4
+2025-03-05T08:23:40.5797680Z  * [new tag]           gitlab4j-api-4.3.5      -> gitlab4j-api-4.3.5
+2025-03-05T08:23:40.5799194Z  * [new tag]           gitlab4j-api-4.3.6      -> gitlab4j-api-4.3.6
+2025-03-05T08:23:40.5801164Z  * [new tag]           gitlab4j-api-4.4.0      -> gitlab4j-api-4.4.0
+2025-03-05T08:23:40.5804198Z  * [new tag]           gitlab4j-api-4.4.1      -> gitlab4j-api-4.4.1
+2025-03-05T08:23:40.5806827Z  * [new tag]           gitlab4j-api-4.4.2      -> gitlab4j-api-4.4.2
+2025-03-05T08:23:40.5809405Z  * [new tag]           gitlab4j-api-4.4.3      -> gitlab4j-api-4.4.3
+2025-03-05T08:23:40.5812190Z  * [new tag]           gitlab4j-api-4.4.4      -> gitlab4j-api-4.4.4
+2025-03-05T08:23:40.5814740Z  * [new tag]           gitlab4j-api-4.4.5      -> gitlab4j-api-4.4.5
+2025-03-05T08:23:40.5817302Z  * [new tag]           gitlab4j-api-4.4.6      -> gitlab4j-api-4.4.6
+2025-03-05T08:23:40.5819859Z  * [new tag]           gitlab4j-api-4.4.7      -> gitlab4j-api-4.4.7
+2025-03-05T08:23:40.5821800Z  * [new tag]           gitlab4j-api-4.4.8      -> gitlab4j-api-4.4.8
+2025-03-05T08:23:40.5823896Z  * [new tag]           gitlab4j-api-4.5.0      -> gitlab4j-api-4.5.0
+2025-03-05T08:23:40.5825488Z  * [new tag]           gitlab4j-api-4.6.0      -> gitlab4j-api-4.6.0
+2025-03-05T08:23:40.5827038Z  * [new tag]           gitlab4j-api-4.6.1      -> gitlab4j-api-4.6.1
+2025-03-05T08:23:40.5828569Z  * [new tag]           gitlab4j-api-4.6.2      -> gitlab4j-api-4.6.2
+2025-03-05T08:23:40.5830086Z  * [new tag]           gitlab4j-api-4.6.3      -> gitlab4j-api-4.6.3
+2025-03-05T08:23:40.5831931Z  * [new tag]           gitlab4j-api-4.6.4      -> gitlab4j-api-4.6.4
+2025-03-05T08:23:40.5833481Z  * [new tag]           gitlab4j-api-4.6.5      -> gitlab4j-api-4.6.5
+2025-03-05T08:23:40.5834988Z  * [new tag]           gitlab4j-api-4.6.6      -> gitlab4j-api-4.6.6
+2025-03-05T08:23:40.5836500Z  * [new tag]           gitlab4j-api-4.6.8      -> gitlab4j-api-4.6.8
+2025-03-05T08:23:40.5837981Z  * [new tag]           gitlab4j-api-4.6.9      -> gitlab4j-api-4.6.9
+2025-03-05T08:23:40.5839577Z  * [new tag]           gitlab4j-api-4.7.0      -> gitlab4j-api-4.7.0
+2025-03-05T08:23:40.5841343Z  * [new tag]           gitlab4j-api-4.7.1      -> gitlab4j-api-4.7.1
+2025-03-05T08:23:40.5843130Z  * [new tag]           gitlab4j-api-4.7.10     -> gitlab4j-api-4.7.10
+2025-03-05T08:23:40.5844691Z  * [new tag]           gitlab4j-api-4.7.11     -> gitlab4j-api-4.7.11
+2025-03-05T08:23:40.5846218Z  * [new tag]           gitlab4j-api-4.7.12     -> gitlab4j-api-4.7.12
+2025-03-05T08:23:40.5847742Z  * [new tag]           gitlab4j-api-4.7.14     -> gitlab4j-api-4.7.14
+2025-03-05T08:23:40.5849256Z  * [new tag]           gitlab4j-api-4.7.15     -> gitlab4j-api-4.7.15
+2025-03-05T08:23:40.5850936Z  * [new tag]           gitlab4j-api-4.7.16     -> gitlab4j-api-4.7.16
+2025-03-05T08:23:40.5852469Z  * [new tag]           gitlab4j-api-4.7.17     -> gitlab4j-api-4.7.17
+2025-03-05T08:23:40.5853968Z  * [new tag]           gitlab4j-api-4.7.2      -> gitlab4j-api-4.7.2
+2025-03-05T08:23:40.5855453Z  * [new tag]           gitlab4j-api-4.7.3      -> gitlab4j-api-4.7.3
+2025-03-05T08:23:40.5856949Z  * [new tag]           gitlab4j-api-4.7.4      -> gitlab4j-api-4.7.4
+2025-03-05T08:23:40.5858684Z  * [new tag]           gitlab4j-api-4.7.5      -> gitlab4j-api-4.7.5
+2025-03-05T08:23:40.5860216Z  * [new tag]           gitlab4j-api-4.7.6      -> gitlab4j-api-4.7.6
+2025-03-05T08:23:40.5861942Z  * [new tag]           gitlab4j-api-4.7.7      -> gitlab4j-api-4.7.7
+2025-03-05T08:23:40.5863428Z  * [new tag]           gitlab4j-api-4.7.8      -> gitlab4j-api-4.7.8
+2025-03-05T08:23:40.5864902Z  * [new tag]           gitlab4j-api-4.7.9      -> gitlab4j-api-4.7.9
+2025-03-05T08:23:40.5866370Z  * [new tag]           gitlab4j-api-4.8.0      -> gitlab4j-api-4.8.0
+2025-03-05T08:23:40.5867855Z  * [new tag]           gitlab4j-api-4.8.1      -> gitlab4j-api-4.8.1
+2025-03-05T08:23:40.5869335Z  * [new tag]           gitlab4j-api-4.8.10     -> gitlab4j-api-4.8.10
+2025-03-05T08:23:40.5870992Z  * [new tag]           gitlab4j-api-4.8.11     -> gitlab4j-api-4.8.11
+2025-03-05T08:23:40.5872505Z  * [new tag]           gitlab4j-api-4.8.12     -> gitlab4j-api-4.8.12
+2025-03-05T08:23:40.5874090Z  * [new tag]           gitlab4j-api-4.8.14     -> gitlab4j-api-4.8.14
+2025-03-05T08:23:40.5875604Z  * [new tag]           gitlab4j-api-4.8.15     -> gitlab4j-api-4.8.15
+2025-03-05T08:23:40.5877376Z  * [new tag]           gitlab4j-api-4.8.16     -> gitlab4j-api-4.8.16
+2025-03-05T08:23:40.5879314Z  * [new tag]           gitlab4j-api-4.8.17     -> gitlab4j-api-4.8.17
+2025-03-05T08:23:40.5881915Z  * [new tag]           gitlab4j-api-4.8.18     -> gitlab4j-api-4.8.18
+2025-03-05T08:23:40.5883718Z  * [new tag]           gitlab4j-api-4.8.19     -> gitlab4j-api-4.8.19
+2025-03-05T08:23:40.5885185Z  * [new tag]           gitlab4j-api-4.8.2      -> gitlab4j-api-4.8.2
+2025-03-05T08:23:40.5886620Z  * [new tag]           gitlab4j-api-4.8.20     -> gitlab4j-api-4.8.20
+2025-03-05T08:23:40.5888848Z  * [new tag]           gitlab4j-api-4.8.21     -> gitlab4j-api-4.8.21
+2025-03-05T08:23:40.5890430Z  * [new tag]           gitlab4j-api-4.8.22     -> gitlab4j-api-4.8.22
+2025-03-05T08:23:40.5892740Z  * [new tag]           gitlab4j-api-4.8.23     -> gitlab4j-api-4.8.23
+2025-03-05T08:23:40.5894412Z  * [new tag]           gitlab4j-api-4.8.24     -> gitlab4j-api-4.8.24
+2025-03-05T08:23:40.5895883Z  * [new tag]           gitlab4j-api-4.8.25     -> gitlab4j-api-4.8.25
+2025-03-05T08:23:40.5897347Z  * [new tag]           gitlab4j-api-4.8.26     -> gitlab4j-api-4.8.26
+2025-03-05T08:23:40.5899233Z  * [new tag]           gitlab4j-api-4.8.27     -> gitlab4j-api-4.8.27
+2025-03-05T08:23:40.5900847Z  * [new tag]           gitlab4j-api-4.8.28     -> gitlab4j-api-4.8.28
+2025-03-05T08:23:40.5902346Z  * [new tag]           gitlab4j-api-4.8.29     -> gitlab4j-api-4.8.29
+2025-03-05T08:23:40.5903791Z  * [new tag]           gitlab4j-api-4.8.3      -> gitlab4j-api-4.8.3
+2025-03-05T08:23:40.5905399Z  * [new tag]           gitlab4j-api-4.8.30     -> gitlab4j-api-4.8.30
+2025-03-05T08:23:40.5906935Z  * [new tag]           gitlab4j-api-4.8.31     -> gitlab4j-api-4.8.31
+2025-03-05T08:23:40.5908417Z  * [new tag]           gitlab4j-api-4.8.32     -> gitlab4j-api-4.8.32
+2025-03-05T08:23:40.5910104Z  * [new tag]           gitlab4j-api-4.8.33     -> gitlab4j-api-4.8.33
+2025-03-05T08:23:40.5911862Z  * [new tag]           gitlab4j-api-4.8.34     -> gitlab4j-api-4.8.34
+2025-03-05T08:23:40.5913362Z  * [new tag]           gitlab4j-api-4.8.35     -> gitlab4j-api-4.8.35
+2025-03-05T08:23:40.5914842Z  * [new tag]           gitlab4j-api-4.8.36     -> gitlab4j-api-4.8.36
+2025-03-05T08:23:40.5916331Z  * [new tag]           gitlab4j-api-4.8.37     -> gitlab4j-api-4.8.37
+2025-03-05T08:23:40.5917825Z  * [new tag]           gitlab4j-api-4.8.38     -> gitlab4j-api-4.8.38
+2025-03-05T08:23:40.5919319Z  * [new tag]           gitlab4j-api-4.8.39     -> gitlab4j-api-4.8.39
+2025-03-05T08:23:40.5921010Z  * [new tag]           gitlab4j-api-4.8.4      -> gitlab4j-api-4.8.4
+2025-03-05T08:23:40.5922522Z  * [new tag]           gitlab4j-api-4.8.40     -> gitlab4j-api-4.8.40
+2025-03-05T08:23:40.5924020Z  * [new tag]           gitlab4j-api-4.8.41     -> gitlab4j-api-4.8.41
+2025-03-05T08:23:40.5925503Z  * [new tag]           gitlab4j-api-4.8.42     -> gitlab4j-api-4.8.42
+2025-03-05T08:23:40.5927324Z  * [new tag]           gitlab4j-api-4.8.43     -> gitlab4j-api-4.8.43
+2025-03-05T08:23:40.5928932Z  * [new tag]           gitlab4j-api-4.8.44     -> gitlab4j-api-4.8.44
+2025-03-05T08:23:40.5930426Z  * [new tag]           gitlab4j-api-4.8.45     -> gitlab4j-api-4.8.45
+2025-03-05T08:23:40.5932064Z  * [new tag]           gitlab4j-api-4.8.46     -> gitlab4j-api-4.8.46
+2025-03-05T08:23:40.5933715Z  * [new tag]           gitlab4j-api-4.8.47     -> gitlab4j-api-4.8.47
+2025-03-05T08:23:40.5935179Z  * [new tag]           gitlab4j-api-4.8.48     -> gitlab4j-api-4.8.48
+2025-03-05T08:23:40.5936873Z  * [new tag]           gitlab4j-api-4.8.49     -> gitlab4j-api-4.8.49
+2025-03-05T08:23:40.5938469Z  * [new tag]           gitlab4j-api-4.8.5      -> gitlab4j-api-4.8.5
+2025-03-05T08:23:40.5939906Z  * [new tag]           gitlab4j-api-4.8.50     -> gitlab4j-api-4.8.50
+2025-03-05T08:23:40.5941619Z  * [new tag]           gitlab4j-api-4.8.51     -> gitlab4j-api-4.8.51
+2025-03-05T08:23:40.5943096Z  * [new tag]           gitlab4j-api-4.8.52     -> gitlab4j-api-4.8.52
+2025-03-05T08:23:40.5944845Z  * [new tag]           gitlab4j-api-4.8.53     -> gitlab4j-api-4.8.53
+2025-03-05T08:23:40.5946364Z  * [new tag]           gitlab4j-api-4.8.54     -> gitlab4j-api-4.8.54
+2025-03-05T08:23:40.5947808Z  * [new tag]           gitlab4j-api-4.8.55     -> gitlab4j-api-4.8.55
+2025-03-05T08:23:40.5949274Z  * [new tag]           gitlab4j-api-4.8.56     -> gitlab4j-api-4.8.56
+2025-03-05T08:23:40.5950878Z  * [new tag]           gitlab4j-api-4.8.57     -> gitlab4j-api-4.8.57
+2025-03-05T08:23:40.5952411Z  * [new tag]           gitlab4j-api-4.8.58     -> gitlab4j-api-4.8.58
+2025-03-05T08:23:40.5953841Z  * [new tag]           gitlab4j-api-4.8.6      -> gitlab4j-api-4.8.6
+2025-03-05T08:23:40.5955263Z  * [new tag]           gitlab4j-api-4.8.7      -> gitlab4j-api-4.8.7
+2025-03-05T08:23:40.5956689Z  * [new tag]           gitlab4j-api-4.8.8      -> gitlab4j-api-4.8.8
+2025-03-05T08:23:40.5958115Z  * [new tag]           gitlab4j-api-4.8.9      -> gitlab4j-api-4.8.9
+2025-03-05T08:23:40.5959596Z  * [new tag]           gitlab4j-api-4.9.0      -> gitlab4j-api-4.9.0
+2025-03-05T08:23:40.5961317Z  * [new tag]           gitlab4j-api-4.9.1      -> gitlab4j-api-4.9.1
+2025-03-05T08:23:40.5962752Z  * [new tag]           gitlab4j-api-4.9.10     -> gitlab4j-api-4.9.10
+2025-03-05T08:23:40.5964203Z  * [new tag]           gitlab4j-api-4.9.11     -> gitlab4j-api-4.9.11
+2025-03-05T08:23:40.5965918Z  * [new tag]           gitlab4j-api-4.9.12     -> gitlab4j-api-4.9.12
+2025-03-05T08:23:40.5967384Z  * [new tag]           gitlab4j-api-4.9.14     -> gitlab4j-api-4.9.14
+2025-03-05T08:23:40.5968827Z  * [new tag]           gitlab4j-api-4.9.15     -> gitlab4j-api-4.9.15
+2025-03-05T08:23:40.5970590Z  * [new tag]           gitlab4j-api-4.9.16     -> gitlab4j-api-4.9.16
+2025-03-05T08:23:40.5972277Z  * [new tag]           gitlab4j-api-4.9.17     -> gitlab4j-api-4.9.17
+2025-03-05T08:23:40.5973726Z  * [new tag]           gitlab4j-api-4.9.18     -> gitlab4j-api-4.9.18
+2025-03-05T08:23:40.5975355Z  * [new tag]           gitlab4j-api-4.9.19     -> gitlab4j-api-4.9.19
+2025-03-05T08:23:40.5976917Z  * [new tag]           gitlab4j-api-4.9.2      -> gitlab4j-api-4.9.2
+2025-03-05T08:23:40.5978365Z  * [new tag]           gitlab4j-api-4.9.20     -> gitlab4j-api-4.9.20
+2025-03-05T08:23:40.5979798Z  * [new tag]           gitlab4j-api-4.9.21     -> gitlab4j-api-4.9.21
+2025-03-05T08:23:40.5981422Z  * [new tag]           gitlab4j-api-4.9.22     -> gitlab4j-api-4.9.22
+2025-03-05T08:23:40.5982859Z  * [new tag]           gitlab4j-api-4.9.23     -> gitlab4j-api-4.9.23
+2025-03-05T08:23:40.5984278Z  * [new tag]           gitlab4j-api-4.9.3      -> gitlab4j-api-4.9.3
+2025-03-05T08:23:40.5985695Z  * [new tag]           gitlab4j-api-4.9.4      -> gitlab4j-api-4.9.4
+2025-03-05T08:23:40.5987106Z  * [new tag]           gitlab4j-api-4.9.5      -> gitlab4j-api-4.9.5
+2025-03-05T08:23:40.5988518Z  * [new tag]           gitlab4j-api-4.9.6      -> gitlab4j-api-4.9.6
+2025-03-05T08:23:40.5989949Z  * [new tag]           gitlab4j-api-4.9.7      -> gitlab4j-api-4.9.7
+2025-03-05T08:23:40.5991530Z  * [new tag]           gitlab4j-api-4.9.8      -> gitlab4j-api-4.9.8
+2025-03-05T08:23:40.5992961Z  * [new tag]           gitlab4j-api-4.9.9      -> gitlab4j-api-4.9.9
+2025-03-05T08:23:40.5994380Z  * [new tag]           gitlab4j-api-5.0.0      -> gitlab4j-api-5.0.0
+2025-03-05T08:23:40.5995776Z  * [new tag]           gitlab4j-api-5.0.1      -> gitlab4j-api-5.0.1
+2025-03-05T08:23:40.5997176Z  * [new tag]           gitlab4j-api-5.1.0      -> gitlab4j-api-5.1.0
+2025-03-05T08:23:40.5998592Z  * [new tag]           gitlab4j-api-5.2.0      -> gitlab4j-api-5.2.0
+2025-03-05T08:23:40.5999992Z  * [new tag]           gitlab4j-api-5.3.0      -> gitlab4j-api-5.3.0
+2025-03-05T08:23:40.6001687Z  * [new tag]           gitlab4j-api-5.4.0      -> gitlab4j-api-5.4.0
+2025-03-05T08:23:40.6003186Z  * [new tag]           gitlab4j-api-5.5.0      -> gitlab4j-api-5.5.0
+2025-03-05T08:23:40.6004609Z  * [new tag]           gitlab4j-api-5.6.0      -> gitlab4j-api-5.6.0
+2025-03-05T08:23:40.6006117Z  * [new tag]           gitlab4j-api-6.0.0-rc.1 -> gitlab4j-api-6.0.0-rc.1
+2025-03-05T08:23:40.6007792Z  * [new tag]           gitlab4j-api-6.0.0-rc.2 -> gitlab4j-api-6.0.0-rc.2
+2025-03-05T08:23:40.6009324Z  * [new tag]           gitlab4j-api-6.0.0-rc.3 -> gitlab4j-api-6.0.0-rc.3
+2025-03-05T08:23:40.6011030Z  * [new tag]           gitlab4j-api-6.0.0-rc.4 -> gitlab4j-api-6.0.0-rc.4
+2025-03-05T08:23:40.6012568Z  * [new tag]           gitlab4j-api-6.0.0-rc.5 -> gitlab4j-api-6.0.0-rc.5
+2025-03-05T08:23:40.6014171Z  * [new ref]           b79091e881e642cf3a42bb259cfb731416823017 -> pull/1233/merge
+2025-03-05T08:23:40.6017584Z ##[endgroup]
+2025-03-05T08:23:40.6018882Z ##[group]Determining the checkout info
+2025-03-05T08:23:40.6020347Z ##[endgroup]
+2025-03-05T08:23:40.6021535Z [command]/usr/bin/git sparse-checkout disable
+2025-03-05T08:23:40.6024074Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-05T08:23:40.6027007Z ##[group]Checking out the ref
+2025-03-05T08:23:40.6028387Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1233/merge
+2025-03-05T08:23:40.6377393Z Note: switching to 'refs/remotes/pull/1233/merge'.
+2025-03-05T08:23:40.6378858Z 
+2025-03-05T08:23:40.6380038Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-05T08:23:40.6383562Z changes and commit them, and you can discard any commits you make in this
+2025-03-05T08:23:40.6386509Z state without impacting any branches by switching back to a branch.
+2025-03-05T08:23:40.6387621Z 
+2025-03-05T08:23:40.6388546Z If you want to create a new branch to retain commits you create, you may
+2025-03-05T08:23:40.6390386Z do so (now or later) by using -c with the switch command. Example:
+2025-03-05T08:23:40.6391818Z 
+2025-03-05T08:23:40.6392222Z   git switch -c <new-branch-name>
+2025-03-05T08:23:40.6392868Z 
+2025-03-05T08:23:40.6393243Z Or undo this operation with:
+2025-03-05T08:23:40.6393834Z 
+2025-03-05T08:23:40.6394557Z   git switch -
+2025-03-05T08:23:40.6395026Z 
+2025-03-05T08:23:40.6395876Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-05T08:23:40.6397330Z 
+2025-03-05T08:23:40.6398805Z HEAD is now at b79091e8 Merge b91e6dffd03e7ad21771a6a884e1687ee5cbb79d into 98f686b76b1f6e7f24a2a490817f7e43c38c68c4
+2025-03-05T08:23:40.6402806Z ##[endgroup]
+2025-03-05T08:23:40.6429726Z [command]/usr/bin/git log -1 --format=%H
+2025-03-05T08:23:40.6453001Z b79091e881e642cf3a42bb259cfb731416823017
+2025-03-05T08:23:40.6770048Z ##[group]Run actions/setup-java@v3
+2025-03-05T08:23:40.6771189Z with:
+2025-03-05T08:23:40.6771905Z   distribution: temurin
+2025-03-05T08:23:40.6772741Z   java-version: 11
+2025-03-05T08:23:40.6773516Z   java-package: jdk
+2025-03-05T08:23:40.6774300Z   check-latest: false
+2025-03-05T08:23:40.6775096Z   server-id: github
+2025-03-05T08:23:40.6775900Z   server-username: GITHUB_ACTOR
+2025-03-05T08:23:40.6776839Z   server-password: GITHUB_TOKEN
+2025-03-05T08:23:40.6777775Z   overwrite-settings: true
+2025-03-05T08:23:40.6778666Z   job-status: success
+2025-03-05T08:23:40.6779688Z   token: ***
+2025-03-05T08:23:40.6780396Z ##[endgroup]
+2025-03-05T08:23:40.8293405Z ##[group]Installed distributions
+2025-03-05T08:23:40.8334850Z Resolved Java 11.0.26+4 from tool-cache
+2025-03-05T08:23:40.8336094Z Setting Java 11.0.26+4 as the default
+2025-03-05T08:23:40.8348690Z Creating toolchains.xml for JDK version 11 from temurin
+2025-03-05T08:23:40.8424369Z Writing to /home/runner/.m2/toolchains.xml
+2025-03-05T08:23:40.8426013Z 
+2025-03-05T08:23:40.8426761Z Java configuration:
+2025-03-05T08:23:40.8428126Z   Distribution: temurin
+2025-03-05T08:23:40.8429546Z   Version: 11.0.26+4
+2025-03-05T08:23:40.8431647Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/11.0.26-4/x64
+2025-03-05T08:23:40.8433351Z 
+2025-03-05T08:23:40.8434770Z ##[endgroup]
+2025-03-05T08:23:40.8449654Z Creating settings.xml with server-id: github
+2025-03-05T08:23:40.8451612Z Writing to /home/runner/.m2/settings.xml
+2025-03-05T08:23:40.8757865Z ##[group]Run gradle/actions/setup-gradle@v3
+2025-03-05T08:23:40.8758896Z with:
+2025-03-05T08:23:40.8759572Z   cache-disabled: false
+2025-03-05T08:23:40.8760350Z   cache-read-only: true
+2025-03-05T08:23:40.8761263Z   cache-write-only: false
+2025-03-05T08:23:40.8762297Z   cache-overwrite-existing: false
+2025-03-05T08:23:40.8763442Z   gradle-home-cache-includes: caches
+notifications
+
+2025-03-05T08:23:40.8764546Z   gradle-home-cache-cleanup: false
+2025-03-05T08:23:40.8765457Z   add-job-summary: always
+2025-03-05T08:23:40.8766327Z   add-job-summary-as-pr-comment: never
+2025-03-05T08:23:40.8767296Z   dependency-graph: disabled
+2025-03-05T08:23:40.8768236Z   dependency-graph-continue-on-failure: true
+2025-03-05T08:23:40.8769251Z   build-scan-publish: false
+2025-03-05T08:23:40.8770100Z   validate-wrappers: false
+2025-03-05T08:23:40.8771090Z   generate-job-summary: true
+2025-03-05T08:23:40.8771989Z   gradle-home-cache-strict-match: false
+2025-03-05T08:23:40.8773006Z   workflow-job-context: null
+2025-03-05T08:23:40.8774152Z   github-token: ***
+2025-03-05T08:23:40.8774845Z env:
+2025-03-05T08:23:40.8775846Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/11.0.26-4/x64
+2025-03-05T08:23:40.8777491Z   JAVA_HOME_11_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/11.0.26-4/x64
+2025-03-05T08:23:40.8778780Z ##[endgroup]
+2025-03-05T08:23:41.2914425Z Merged default JDK locations into /home/runner/.m2/toolchains.xml
+2025-03-05T08:23:41.2917050Z ##[group]Restore Gradle state from cache
+2025-03-05T08:23:41.4719975Z Cache Size: ~1 MB (1188376 B)
+2025-03-05T08:23:41.4748022Z [command]/usr/bin/tar -xf /home/runner/work/_temp/a6d1f56e-c746-4612-92fb-2e194cbdb97c/cache.tzst -P -C /home/runner/work/gitlab4j-api/gitlab4j-api --use-compress-program unzstd
+2025-03-05T08:23:41.5316804Z Cache restored successfully
+2025-03-05T08:23:41.5328740Z Restored Gradle User Home from cache key: gradle-home-v1|Linux|build-gradle[1a9084c354fb8bd660651da9d6a0d9be]-98f686b76b1f6e7f24a2a490817f7e43c38c68c4
+2025-03-05T08:23:41.7119295Z Cache Size: ~0 MB (142600 B)
+2025-03-05T08:23:41.7608066Z Cache Size: ~0 MB (94344 B)
+2025-03-05T08:23:41.8634296Z [command]/usr/bin/tar -xf /home/runner/work/_temp/4e80cb65-2177-4be6-bac8-aef839e5b5ee/cache.tzst -P -C /home/runner/work/gitlab4j-api/gitlab4j-api --use-compress-program unzstd
+2025-03-05T08:23:41.9157463Z Cache restored successfully
+2025-03-05T08:23:41.9160208Z [command]/usr/bin/tar -xf /home/runner/work/_temp/9eb86b30-7d27-4d6e-85e3-35ece4e7983e/cache.tzst -P -C /home/runner/work/gitlab4j-api/gitlab4j-api --use-compress-program unzstd
+2025-03-05T08:23:41.9270612Z Restored groovy-dsl with key gradle-groovy-dsl-v1-b4652b12c9fc4b4394dd3f1c5558a4ae to /home/runner/.gradle/caches/*/groovy-dsl/*/
+2025-03-05T08:23:41.9477072Z Cache restored successfully
+2025-03-05T08:23:41.9566907Z Restored instrumented-jars with key gradle-instrumented-jars-v1-c24b79393d3887db57b840fdbcfe0572 to /home/runner/.gradle/caches/jars-*/*/
+2025-03-05T08:23:42.0643082Z Cache Size: ~9 MB (9321440 B)
+2025-03-05T08:23:42.1228503Z [command]/usr/bin/tar -xf /home/runner/work/_temp/05669f81-3c13-4932-9ff1-ec7169124baf/cache.tzst -P -C /home/runner/work/gitlab4j-api/gitlab4j-api --use-compress-program unzstd
+2025-03-05T08:23:42.1366176Z Cache Size: ~35 MB (36245196 B)
+2025-03-05T08:23:42.1500467Z [command]/usr/bin/tar -xf /home/runner/work/_temp/f00dc503-81f8-43df-b9d1-543bdd61948c/cache.tzst -P -C /home/runner/work/gitlab4j-api/gitlab4j-api --use-compress-program unzstd
+2025-03-05T08:23:42.3508960Z Cache restored successfully
+2025-03-05T08:23:42.3509716Z Cache restored successfully
+2025-03-05T08:23:42.3547798Z Restored transforms with key gradle-transforms-v1-6a28b880b662007698cf954d32219487 to /home/runner/.gradle/caches/transforms-4/*/
+2025-03-05T08:23:42.3549076Z /home/runner/.gradle/caches/*/transforms/*/
+2025-03-05T08:23:42.3662684Z Restored dependencies with key gradle-dependencies-v1-ae3f9467a7e9b52a005d5881415c66d0 to /home/runner/.gradle/caches/modules-*/files-*/*/*/*/*
+2025-03-05T08:23:42.4158425Z Received 1188376 of 1188376 (100.0%), 1.1 MBs/sec
+2025-03-05T08:23:42.5069591Z Cache Size: ~130 MB (136021157 B)
+2025-03-05T08:23:42.5089190Z [command]/usr/bin/tar -xf /home/runner/work/_temp/33c7de0b-d187-4f37-91a6-0a744830409c/cache.tzst -P -C /home/runner/work/gitlab4j-api/gitlab4j-api --use-compress-program unzstd
+2025-03-05T08:23:42.6239430Z Received 142600 of 142600 (100.0%), 0.1 MBs/sec
+2025-03-05T08:23:42.6320317Z Received 94344 of 94344 (100.0%), 0.1 MBs/sec
+2025-03-05T08:23:42.6552387Z Received 36245196 of 36245196 (100.0%), 34.5 MBs/sec
+2025-03-05T08:23:42.6703881Z Received 136021157 of 136021157 (100.0%), 129.7 MBs/sec
+2025-03-05T08:23:42.6805304Z Received 9321440 of 9321440 (100.0%), 8.9 MBs/sec
+2025-03-05T08:23:42.7337521Z Cache restored successfully
+2025-03-05T08:23:42.7621071Z Restored wrapper-zips with key gradle-wrapper-zips-v1-106cef4f6e027db824312e7dcca1deb7 to /home/runner/.gradle/wrapper/dists/gradle-8.10.1-bin/e90i968nv55tch01zkse4avv3
+2025-03-05T08:23:42.7630398Z ##[endgroup]
+2025-03-05T08:23:42.7812087Z ##[group]Run ./gradlew build --console=PLAIN --stacktrace
+2025-03-05T08:23:42.7812627Z [36;1m./gradlew build --console=PLAIN --stacktrace[0m
+2025-03-05T08:23:42.7863530Z shell: /usr/bin/bash -e {0}
+2025-03-05T08:23:42.7863892Z env:
+2025-03-05T08:23:42.7864198Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/11.0.26-4/x64
+2025-03-05T08:23:42.7864700Z   JAVA_HOME_11_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/11.0.26-4/x64
+2025-03-05T08:23:42.7865102Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+2025-03-05T08:23:42.7865403Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+2025-03-05T08:23:42.7865696Z   GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+2025-03-05T08:23:42.7866117Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+2025-03-05T08:23:42.7866585Z   DEVELOCITY_AUTO_INJECTION_CUSTOM_VALUE: gradle-actions
+2025-03-05T08:23:42.7866907Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+2025-03-05T08:23:42.7867162Z ##[endgroup]
+2025-03-05T08:23:43.7514968Z Starting a Gradle Daemon (subsequent builds will be faster)
+2025-03-05T08:23:50.4506772Z 
+2025-03-05T08:23:50.4539981Z > Configure project :
+2025-03-05T08:23:50.4617120Z Jandex Gradle plugin 2.1.0. Consider becoming a patron at https://www.patreon.com/aalmiray
+2025-03-05T08:23:52.2504883Z 
+2025-03-05T08:23:52.2506074Z > Task :assemble UP-TO-DATE
+2025-03-05T08:23:52.2506829Z > Task :check UP-TO-DATE
+2025-03-05T08:23:52.2507630Z > Task :build UP-TO-DATE
+2025-03-05T08:23:54.2500688Z 
+2025-03-05T08:23:54.2503394Z > Task :gitlab4j-models:compileJava
+2025-03-05T08:23:54.2508583Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-models/src/main/java/org/gitlab4j/api/models/MergeRequest.java:55: warning: [dep-ann] deprecated item is not annotated with @Deprecated
+2025-03-05T08:23:54.2510013Z     private Participant mergedBy;
+2025-03-05T08:23:54.2510440Z                         ^
+2025-03-05T08:23:54.7501637Z Note: /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-models/src/main/java/org/gitlab4j/models/utils/JacksonJson.java uses or overrides a deprecated API.
+2025-03-05T08:23:54.7507396Z Note: Recompile with -Xlint:deprecation for details.
+2025-03-05T08:23:54.7512741Z 1 warning
+2025-03-05T08:23:56.9513301Z 
+2025-03-05T08:23:56.9515407Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-api/src/main/java/org/gitlab4j/api/ServicesApi.java:37: warning: [dep-ann] deprecated item is not annotated with @Deprecated
+2025-03-05T08:23:56.9517234Z     public void setGitLabCI(Object projectIdOrPath, String token, String projectCIUrl) throws GitLabApiException {
+2025-03-05T08:23:56.9518753Z                 ^
+2025-03-05T08:23:56.9520279Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-api/src/main/java/org/gitlab4j/api/ServicesApi.java:59: warning: [dep-ann] deprecated item is not annotated with @Deprecated
+2025-03-05T08:23:56.9525639Z     public void deleteGitLabCI(Object projectIdOrPath) throws GitLabApiException {
+2025-03-05T08:23:56.9526454Z                 ^
+2025-03-05T08:23:56.9527826Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-api/src/main/java/org/gitlab4j/api/ServicesApi.java:133: warning: [dep-ann] deprecated item is not annotated with @Deprecated
+2025-03-05T08:23:56.9530017Z     public void setHipChat(Object projectIdOrPath, String token, String room, String server) throws GitLabApiException {
+2025-03-05T08:23:56.9531264Z                 ^
+2025-03-05T08:23:56.9532641Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-api/src/main/java/org/gitlab4j/api/ServicesApi.java:156: warning: [dep-ann] deprecated item is not annotated with @Deprecated
+2025-03-05T08:23:56.9534416Z     public void deleteHipChat(Object projectIdOrPath) throws GitLabApiException {
+2025-03-05T08:23:56.9535256Z                 ^
+2025-03-05T08:23:56.9536692Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-api/src/main/java/org/gitlab4j/api/HealthCheckApi.java:41: warning: [dep-ann] deprecated item is not annotated with @Deprecated
+2025-03-05T08:23:56.9539294Z     public HealthCheckInfo getLiveness(String token) throws GitLabApiException {
+2025-03-05T08:23:56.9540322Z                            ^
+2025-03-05T08:23:56.9541960Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-api/src/main/java/org/gitlab4j/api/HealthCheckApi.java:77: warning: [dep-ann] deprecated item is not annotated with @Deprecated
+2025-03-05T08:23:56.9543724Z     public HealthCheckInfo getReadiness(String token) throws GitLabApiException {
+2025-03-05T08:23:56.9554633Z                            ^
+2025-03-05T08:23:56.9555862Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-api/src/main/java/org/gitlab4j/api/WikisApi.java:101: warning: [dep-ann] deprecated item is not annotated with @Deprecated
+2025-03-05T08:23:56.9557772Z     public List<WikiPage> getPages(Object projectIdOrPath, int page, int perPage) throws GitLabApiException {
+2025-03-05T08:23:56.9558626Z                           ^
+2025-03-05T08:23:56.9559094Z Note: Some input files use or override a deprecated API.
+2025-03-05T08:23:56.9559724Z Note: Recompile with -Xlint:deprecation for details.
+2025-03-05T08:23:56.9560222Z 7 warnings
+2025-03-05T08:23:56.9561075Z > Task :gitlab4j-api:compileJava
+2025-03-05T08:23:57.0525175Z 
+2025-03-05T08:23:57.0537958Z > Task :gitlab4j-api:processResources NO-SOURCE
+2025-03-05T08:23:57.0540611Z > Task :gitlab4j-api:classes
+2025-03-05T08:23:57.2501095Z > Task :gitlab4j-api:sourcesJar
+2025-03-05T08:23:57.2501695Z > Task :spotlessInternalRegisterDependencies
+2025-03-05T08:23:57.3499947Z > Task :gitlab4j-api:jandex
+2025-03-05T08:24:01.5501965Z > Task :gitlab4j-api:spotlessJava
+2025-03-05T08:24:01.6509397Z > Task :gitlab4j-api:jar
+2025-03-05T08:24:04.5499037Z 
+2025-03-05T08:24:04.5509642Z > Task :gitlab4j-api:javadoc
+2025-03-05T08:24:04.5518459Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-api/src/main/java/org/gitlab4j/api/GroupApi.java:2459: warning: no @return
+2025-03-05T08:24:04.5519969Z     public GroupHook addWebhook(Object groupIdOrPath, GroupHookParams groupHookParams) throws GitLabApiException {
+2025-03-05T08:24:04.5521041Z                      ^
+2025-03-05T08:24:04.8501708Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-api/src/main/java/org/gitlab4j/api/MilestonesApi.java:588: warning: no @param for itemsPerPage
+2025-03-05T08:24:04.8508527Z     public Pager<MergeRequest> getMergeRequest(Object projectIdOrPath, Long milestoneId, int itemsPerPage)
+2025-03-05T08:24:04.8513451Z                                ^
+2025-03-05T08:24:04.8517553Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-api/src/main/java/org/gitlab4j/api/NotesApi.java:457: warning: no @param for internal
+2025-03-05T08:24:04.8527145Z     public Note createMergeRequestNote(
+2025-03-05T08:24:04.8530314Z                 ^
+2025-03-05T08:24:04.9503524Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-api/src/main/java/org/gitlab4j/api/PipelineApi.java:1151: warning: no @param for scope
+2025-03-05T08:24:04.9510908Z     public Stream<Bridge> getBridgesStream(Object projectIdOrPath, long pipelineId, JobScope scope)
+2025-03-05T08:24:04.9511719Z                           ^
+2025-03-05T08:24:05.2557168Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-api/src/main/java/org/gitlab4j/api/SearchApi.java:28: warning: no @param for <T>
+2025-03-05T08:24:05.2558827Z     public <T> List<T> globalSearch(SearchScope<T> scope, String search) throws GitLabApiException {
+2025-03-05T08:24:05.2572819Z                        ^
+2025-03-05T08:24:05.2573843Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-api/src/main/java/org/gitlab4j/api/SearchApi.java:44: warning: no @param for <T>
+2025-03-05T08:24:05.2575244Z     public <T> Stream<T> globalSearchStream(SearchScope<T> scope, String search) throws GitLabApiException {
+2025-03-05T08:24:05.2576059Z                          ^
+2025-03-05T08:24:05.2577039Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-api/src/main/java/org/gitlab4j/api/SearchApi.java:61: warning: no @param for <T>
+2025-03-05T08:24:05.2578498Z     public <T> Pager<T> globalSearch(SearchScope<T> scope, String search, int itemsPerPage) throws GitLabApiException {
+2025-03-05T08:24:05.2580465Z                         ^
+2025-03-05T08:24:05.2581659Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-api/src/main/java/org/gitlab4j/api/SearchApi.java:83: warning: no @param for <T>
+2025-03-05T08:24:05.2582975Z     public <T> List<T> groupSearch(Object groupIdOrPath, GroupSearchScope<T> scope, String search)
+2025-03-05T08:24:05.2583703Z                        ^
+2025-03-05T08:24:05.2584678Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-api/src/main/java/org/gitlab4j/api/SearchApi.java:103: warning: no @param for <T>
+2025-03-05T08:24:05.2586073Z     public <T> Stream<T> groupSearchStream(Object groupIdOrPath, GroupSearchScope<T> scope, String search)
+2025-03-05T08:24:05.2586912Z                          ^
+2025-03-05T08:24:05.2587921Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-api/src/main/java/org/gitlab4j/api/SearchApi.java:123: warning: no @param for <T>
+2025-03-05T08:24:05.2589431Z     public <T> Pager<T> groupSearch(Object groupIdOrPath, GroupSearchScope<T> scope, String search, int itemsPerPage)
+2025-03-05T08:24:05.2590607Z                         ^
+2025-03-05T08:24:05.2591833Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-api/src/main/java/org/gitlab4j/api/SearchApi.java:153: warning: no @param for <T>
+2025-03-05T08:24:05.2593177Z     public <T> List<T> projectSearch(Object projectIdOrPath, ProjectSearchScope<T> scope, String search)
+2025-03-05T08:24:05.2593995Z                        ^
+2025-03-05T08:24:05.2594892Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-api/src/main/java/org/gitlab4j/api/SearchApi.java:175: warning: no @param for <T>
+2025-03-05T08:24:05.2596224Z     public <T> List<T> projectSearch(Object projectIdOrPath, ProjectSearchScope<T> scope, String search, String ref)
+2025-03-05T08:24:05.2596980Z                        ^
+2025-03-05T08:24:05.2597842Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-api/src/main/java/org/gitlab4j/api/SearchApi.java:195: warning: no @param for <T>
+2025-03-05T08:24:05.2599151Z     public <T> Stream<T> projectSearchStream(Object projectIdOrPath, ProjectSearchScope<T> scope, String search)
+2025-03-05T08:24:05.2599908Z                          ^
+2025-03-05T08:24:05.2601182Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-api/src/main/java/org/gitlab4j/api/SearchApi.java:216: warning: no @param for <T>
+2025-03-05T08:24:05.2602188Z     public <T> Stream<T> projectSearchStream(
+2025-03-05T08:24:05.2602631Z                          ^
+2025-03-05T08:24:05.2603573Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-api/src/main/java/org/gitlab4j/api/SearchApi.java:236: warning: no @param for <T>
+2025-03-05T08:24:05.2604568Z     public <T> Pager<T> projectSearch(
+2025-03-05T08:24:05.2604995Z                         ^
+2025-03-05T08:24:05.2605905Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-api/src/main/java/org/gitlab4j/api/SearchApi.java:259: warning: no @param for <T>
+2025-03-05T08:24:05.2606910Z     public <T> Pager<T> projectSearch(
+2025-03-05T08:24:05.2607319Z                         ^
+2025-03-05T08:24:05.3532492Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-api/src/main/java/org/gitlab4j/api/UserApi.java:1372: warning: no @return
+2025-03-05T08:24:05.3533774Z     public List<GpgKey> listGpgKeys() throws GitLabApiException {
+2025-03-05T08:24:05.3558895Z                         ^
+2025-03-05T08:24:05.3559851Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-api/src/main/java/org/gitlab4j/api/UserApi.java:1385: warning: no @return
+2025-03-05T08:24:05.3561207Z     public GpgKey addGpgKey(final String key) throws GitLabApiException {
+2025-03-05T08:24:05.3561821Z                   ^
+2025-03-05T08:24:05.3562709Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-api/src/main/java/org/gitlab4j/api/UserApi.java:1411: warning: no @return
+2025-03-05T08:24:05.3563904Z     public List<GpgKey> listGpgKeys(final Long userId) throws GitLabApiException {
+2025-03-05T08:24:05.3564553Z                         ^
+2025-03-05T08:24:05.3565772Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-api/src/main/java/org/gitlab4j/api/UserApi.java:1425: warning: no @return
+2025-03-05T08:24:05.3567040Z     public GpgKey addGpgKey(final Long userId, final String key) throws GitLabApiException {
+2025-03-05T08:24:05.3567743Z                   ^
+2025-03-05T08:24:05.3568640Z /home/runner/work/gitlab4j-api/gitlab4j-api/gitlab4j-api/src/main/java/org/gitlab4j/api/UserApi.java:1516: warning: no @return
+2025-03-05T08:24:05.3569791Z     public boolean exists(String username) throws GitLabApiException {
+2025-03-05T08:24:05.3570392Z                    ^
+2025-03-05T08:24:06.1500363Z 21 warnings
+2025-03-05T08:24:06.3503072Z 
+2025-03-05T08:24:06.3503787Z > Task :gitlab4j-api:javadocJar
+2025-03-05T08:24:06.3504561Z > Task :gitlab4j-api:assemble
+2025-03-05T08:24:06.4520057Z 
+2025-03-05T08:24:06.4520379Z > Task :gitlab4j-api:spotlessJavaCheck FAILED
+2025-03-05T08:24:06.4521289Z FAILURE: Build failed with an exception.
+2025-03-05T08:24:06.4521733Z 
+2025-03-05T08:24:06.4522069Z * What went wrong:
+2025-03-05T08:24:06.4522649Z Execution failed for task ':gitlab4j-api:spotlessJavaCheck'.
+2025-03-05T08:24:06.4523743Z > The following files had format violations:
+2025-03-05T08:24:06.4524383Z       src/main/java/org/gitlab4j/api/JobApi.java
+2025-03-05T08:24:06.4524995Z           @@ -300,11 +300,10 @@
+2025-03-05T08:24:06.4526353Z            ·····*·@throws·GitLabApiException·if·any·exception·occurs·during·execution
+2025-03-05T08:24:06.4527240Z            ·····*/
+2025-03-05T08:24:06.4527893Z            ····public·Job·getJob()·throws·GitLabApiException·{
+2025-03-05T08:24:06.4528646Z           -········Response·response·=
+2025-03-05T08:24:06.4529389Z           -················get(Response.Status.OK,·null,·"job");
+2025-03-05T08:24:06.4530281Z           +········Response·response·=·get(Response.Status.OK,·null,·"job");
+2025-03-05T08:24:06.4531325Z            ········return·(response.readEntity(Job.class));
+2025-03-05T08:24:06.4531945Z            ····}
+2025-03-05T08:24:06.4532407Z           -····
+2025-03-05T08:24:06.4532815Z           +
+2025-03-05T08:24:06.4533277Z            ····/**
+2025-03-05T08:24:06.4533829Z            ·····*·Get·single·job·in·a·project.
+2025-03-05T08:24:06.4534444Z            ·····*
+2025-03-05T08:24:06.4535018Z   Run './gradlew :gitlab4j-api:spotlessApply' to fix these violations.
+2025-03-05T08:24:06.4535545Z 
+2025-03-05T08:24:06.4535759Z * Try:
+2025-03-05T08:24:06.4536179Z > Run with --info or --debug option to get more log output.
+2025-03-05T08:24:06.4536728Z > Run with --scan to get full insights.
+2025-03-05T08:24:06.4537329Z > Get more help at https://help.gradle.org.
+2025-03-05T08:24:06.4537965Z 
+2025-03-05T08:24:06.4538284Z * Exception is:
+2025-03-05T08:24:06.4539140Z org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':gitlab4j-api:spotlessJavaCheck'.
+2025-03-05T08:24:06.4540898Z 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.lambda$executeIfValid$1(ExecuteActionsTaskExecuter.java:130)
+2025-03-05T08:24:06.4542234Z 	at org.gradle.internal.Try$Failure.ifSuccessfulOrElse(Try.java:293)
+2025-03-05T08:24:06.4543528Z 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:128)
+2025-03-05T08:24:06.4545177Z 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:116)
+2025-03-05T08:24:06.4546854Z 	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+2025-03-05T08:24:06.4548649Z 	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
+2025-03-05T08:24:06.4550414Z 	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+2025-03-05T08:24:06.4552189Z 	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
+2025-03-05T08:24:06.4553693Z 	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+2025-03-05T08:24:06.4562551Z 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+2025-03-05T08:24:06.4565104Z 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+2025-03-05T08:24:06.4566577Z 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+2025-03-05T08:24:06.4568072Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:209)
+2025-03-05T08:24:06.4569835Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+2025-03-05T08:24:06.4571882Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+2025-03-05T08:24:06.4573328Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+2025-03-05T08:24:06.4574852Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
+2025-03-05T08:24:06.4576551Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+2025-03-05T08:24:06.4577857Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+2025-03-05T08:24:06.4579222Z 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+2025-03-05T08:24:06.4580536Z 	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:42)
+2025-03-05T08:24:06.4612467Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:331)
+2025-03-05T08:24:06.4614240Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:318)
+2025-03-05T08:24:06.4616132Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(DefaultTaskExecutionGraph.java:314)
+2025-03-05T08:24:06.4617801Z 	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:85)
+2025-03-05T08:24:06.4619409Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:314)
+2025-03-05T08:24:06.4621442Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
+2025-03-05T08:24:06.4623019Z 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
+2025-03-05T08:24:06.4624301Z 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
+2025-03-05T08:24:06.4625477Z 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+2025-03-05T08:24:06.4626650Z 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+2025-03-05T08:24:06.4627784Z Caused by: org.gradle.api.GradleException: The following files had format violations:
+2025-03-05T08:24:06.4628546Z     src/main/java/org/gitlab4j/api/JobApi.java
+2025-03-05T08:24:06.4629030Z         @@ -300,11 +300,10 @@
+2025-03-05T08:24:06.4629994Z          ·····*·@throws·GitLabApiException·if·any·exception·occurs·during·execution
+2025-03-05T08:24:06.4635840Z          ·····*/
+2025-03-05T08:24:06.4636455Z          ····public·Job·getJob()·throws·GitLabApiException·{
+2025-03-05T08:24:06.4637174Z         -········Response·response·=
+2025-03-05T08:24:06.4637839Z         -················get(Response.Status.OK,·null,·"job");
+2025-03-05T08:24:06.4642606Z         +········Response·response·=·get(Response.Status.OK,·null,·"job");
+2025-03-05T08:24:06.4659703Z          ········return·(response.readEntity(Job.class));
+2025-03-05T08:24:06.4660262Z          ····}
+2025-03-05T08:24:06.4661129Z         -····
+2025-03-05T08:24:06.4661511Z         +
+2025-03-05T08:24:06.4661944Z          ····/**
+2025-03-05T08:24:06.4662458Z          ·····*·Get·single·job·in·a·project.
+2025-03-05T08:24:06.4663037Z          ·····*
+2025-03-05T08:24:06.4663615Z Run './gradlew :gitlab4j-api:spotlessApply' to fix these violations.
+2025-03-05T08:24:06.4664583Z 	at com.diffplug.gradle.spotless.SpotlessCheck.performAction(SpotlessCheck.java:111)
+2025-03-05T08:24:06.4665700Z 	at com.diffplug.gradle.spotless.SpotlessCheck.performAction(SpotlessCheck.java:53)
+2025-03-05T08:24:06.4666792Z 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2025-03-05T08:24:06.4668160Z 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+2025-03-05T08:24:06.4669525Z 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+2025-03-05T08:24:06.4670677Z 	at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:125)
+2025-03-05T08:24:06.4672030Z 	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.doExecute(StandardTaskAction.java:58)
+2025-03-05T08:24:06.4673693Z 	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:51)
+2025-03-05T08:24:06.4675082Z 	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:29)
+2025-03-05T08:24:06.4676292Z 	at org.gradle.api.internal.tasks.execution.TaskExecution$3.run(TaskExecution.java:244)
+2025-03-05T08:24:06.4677549Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
+2025-03-05T08:24:06.4679005Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
+2025-03-05T08:24:06.4680416Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+2025-03-05T08:24:06.4682147Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+2025-03-05T08:24:06.4683748Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
+2025-03-05T08:24:06.4685246Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+2025-03-05T08:24:06.4690669Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:47)
+2025-03-05T08:24:06.4692341Z 	at org.gradle.api.internal.tasks.execution.TaskExecution.executeAction(TaskExecution.java:229)
+2025-03-05T08:24:06.4693595Z 	at org.gradle.api.internal.tasks.execution.TaskExecution.executeActions(TaskExecution.java:212)
+2025-03-05T08:24:06.4694813Z 	at org.gradle.api.internal.tasks.execution.TaskExecution.executeWithPreviousOutputFiles(TaskExecution.java:195)
+2025-03-05T08:24:06.4695561Z 	at org.gradle.api.internal.tasks.execution.TaskExecution.execute(TaskExecution.java:162)
+2025-03-05T08:24:06.4696187Z 	at org.gradle.internal.execution.steps.ExecuteStep.executeInternal(ExecuteStep.java:105)
+2025-03-05T08:24:06.4696800Z 	at org.gradle.internal.execution.steps.ExecuteStep.access$000(ExecuteStep.java:44)
+2025-03-05T08:24:06.4697452Z 	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:59)
+2025-03-05T08:24:06.4697985Z 	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:56)
+2025-03-05T08:24:06.4698757Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:209)
+2025-03-05T08:24:06.4699753Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+2025-03-05T08:24:06.4700642Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+2025-03-05T08:24:06.4704227Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+2025-03-05T08:24:06.4705940Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
+2025-03-05T08:24:06.4707401Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+2025-03-05T08:24:06.4708780Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+2025-03-05T08:24:06.4709963Z 	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:56)
+2025-03-05T08:24:06.4712415Z 	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:44)
+2025-03-05T08:24:06.4713571Z 	at org.gradle.internal.execution.steps.CancelExecutionStep.execute(CancelExecutionStep.java:42)
+2025-03-05T08:24:06.4714796Z 	at org.gradle.internal.execution.steps.TimeoutStep.executeWithoutTimeout(TimeoutStep.java:75)
+2025-03-05T08:24:06.4715913Z 	at org.gradle.internal.execution.steps.TimeoutStep.execute(TimeoutStep.java:55)
+2025-03-05T08:24:06.4717167Z 	at org.gradle.internal.execution.steps.PreCreateOutputParentsStep.execute(PreCreateOutputParentsStep.java:50)
+2025-03-05T08:24:06.4718869Z 	at org.gradle.internal.execution.steps.PreCreateOutputParentsStep.execute(PreCreateOutputParentsStep.java:28)
+2025-03-05T08:24:06.4720324Z 	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.execute(RemovePreviousOutputsStep.java:67)
+2025-03-05T08:24:06.4721958Z 	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.execute(RemovePreviousOutputsStep.java:37)
+2025-03-05T08:24:06.4723447Z 	at org.gradle.internal.execution.steps.BroadcastChangingOutputsStep.execute(BroadcastChangingOutputsStep.java:61)
+2025-03-05T08:24:06.4724966Z 	at org.gradle.internal.execution.steps.BroadcastChangingOutputsStep.execute(BroadcastChangingOutputsStep.java:26)
+2025-03-05T08:24:06.4726582Z 	at org.gradle.internal.execution.steps.CaptureOutputsAfterExecutionStep.execute(CaptureOutputsAfterExecutionStep.java:69)
+2025-03-05T08:24:06.4728265Z 	at org.gradle.internal.execution.steps.CaptureOutputsAfterExecutionStep.execute(CaptureOutputsAfterExecutionStep.java:46)
+2025-03-05T08:24:06.4729772Z 	at org.gradle.internal.execution.steps.ResolveInputChangesStep.execute(ResolveInputChangesStep.java:40)
+2025-03-05T08:24:06.4731393Z 	at org.gradle.internal.execution.steps.ResolveInputChangesStep.execute(ResolveInputChangesStep.java:29)
+2025-03-05T08:24:06.4732726Z 	at org.gradle.internal.execution.steps.BuildCacheStep.executeWithoutCache(BuildCacheStep.java:189)
+2025-03-05T08:24:06.4733948Z 	at org.gradle.internal.execution.steps.BuildCacheStep.lambda$execute$1(BuildCacheStep.java:75)
+2025-03-05T08:24:06.4734852Z 	at org.gradle.internal.Either$Right.fold(Either.java:175)
+2025-03-05T08:24:06.4735675Z 	at org.gradle.internal.execution.caching.CachingState.fold(CachingState.java:62)
+2025-03-05T08:24:06.4736691Z 	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:73)
+2025-03-05T08:24:06.4737751Z 	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:48)
+2025-03-05T08:24:06.4738971Z 	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:46)
+2025-03-05T08:24:06.4740339Z 	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:35)
+2025-03-05T08:24:06.4741802Z 	at org.gradle.internal.execution.steps.SkipUpToDateStep.executeBecause(SkipUpToDateStep.java:75)
+2025-03-05T08:24:06.4743027Z 	at org.gradle.internal.execution.steps.SkipUpToDateStep.lambda$execute$2(SkipUpToDateStep.java:53)
+2025-03-05T08:24:06.4744200Z 	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:53)
+2025-03-05T08:24:06.4745318Z 	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:35)
+2025-03-05T08:24:06.4746791Z 	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:37)
+2025-03-05T08:24:06.4748823Z 	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:27)
+2025-03-05T08:24:06.4750847Z 	at org.gradle.internal.execution.steps.ResolveIncrementalCachingStateStep.executeDelegate(ResolveIncrementalCachingStateStep.java:49)
+2025-03-05T08:24:06.4752829Z 	at org.gradle.internal.execution.steps.ResolveIncrementalCachingStateStep.executeDelegate(ResolveIncrementalCachingStateStep.java:27)
+2025-03-05T08:24:06.4754533Z 	at org.gradle.internal.execution.steps.AbstractResolveCachingStateStep.execute(AbstractResolveCachingStateStep.java:71)
+2025-03-05T08:24:06.4756120Z 	at org.gradle.internal.execution.steps.AbstractResolveCachingStateStep.execute(AbstractResolveCachingStateStep.java:39)
+2025-03-05T08:24:06.4757499Z 	at org.gradle.internal.execution.steps.ResolveChangesStep.execute(ResolveChangesStep.java:65)
+2025-03-05T08:24:06.4758648Z 	at org.gradle.internal.execution.steps.ResolveChangesStep.execute(ResolveChangesStep.java:36)
+2025-03-05T08:24:06.4759723Z 	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:107)
+2025-03-05T08:24:06.4761161Z 	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:56)
+2025-03-05T08:24:06.4762573Z 	at org.gradle.internal.execution.steps.AbstractCaptureStateBeforeExecutionStep.execute(AbstractCaptureStateBeforeExecutionStep.java:64)
+2025-03-05T08:24:06.4764465Z 	at org.gradle.internal.execution.steps.AbstractCaptureStateBeforeExecutionStep.execute(AbstractCaptureStateBeforeExecutionStep.java:43)
+2025-03-05T08:24:06.4766294Z 	at org.gradle.internal.execution.steps.AbstractSkipEmptyWorkStep.executeWithNonEmptySources(AbstractSkipEmptyWorkStep.java:125)
+2025-03-05T08:24:06.4767812Z 	at org.gradle.internal.execution.steps.AbstractSkipEmptyWorkStep.execute(AbstractSkipEmptyWorkStep.java:56)
+2025-03-05T08:24:06.4769239Z 	at org.gradle.internal.execution.steps.AbstractSkipEmptyWorkStep.execute(AbstractSkipEmptyWorkStep.java:36)
+2025-03-05T08:24:06.4771301Z 	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsStartedStep.execute(MarkSnapshottingInputsStartedStep.java:38)
+2025-03-05T08:24:06.4773080Z 	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.execute(LoadPreviousExecutionStateStep.java:36)
+2025-03-05T08:24:06.4774714Z 	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.execute(LoadPreviousExecutionStateStep.java:23)
+2025-03-05T08:24:06.4776172Z 	at org.gradle.internal.execution.steps.HandleStaleOutputsStep.execute(HandleStaleOutputsStep.java:75)
+2025-03-05T08:24:06.4777481Z 	at org.gradle.internal.execution.steps.HandleStaleOutputsStep.execute(HandleStaleOutputsStep.java:41)
+2025-03-05T08:24:06.4778914Z 	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.lambda$execute$0(AssignMutableWorkspaceStep.java:35)
+2025-03-05T08:24:06.4780282Z 	at org.gradle.api.internal.tasks.execution.TaskExecution$4.withWorkspace(TaskExecution.java:289)
+2025-03-05T08:24:06.4781787Z 	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.execute(AssignMutableWorkspaceStep.java:31)
+2025-03-05T08:24:06.4783254Z 	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.execute(AssignMutableWorkspaceStep.java:22)
+2025-03-05T08:24:06.4784582Z 	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:40)
+2025-03-05T08:24:06.4785771Z 	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:23)
+2025-03-05T08:24:06.4790330Z 	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.lambda$execute$2(ExecuteWorkBuildOperationFiringStep.java:67)
+2025-03-05T08:24:06.4792397Z 	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:67)
+2025-03-05T08:24:06.4794161Z 	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:39)
+2025-03-05T08:24:06.4795622Z 	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:46)
+2025-03-05T08:24:06.4797018Z 	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:34)
+2025-03-05T08:24:06.4798174Z 	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:48)
+2025-03-05T08:24:06.4799198Z 	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:35)
+2025-03-05T08:24:06.4800362Z 	at org.gradle.internal.execution.impl.DefaultExecutionEngine$1.execute(DefaultExecutionEngine.java:61)
+2025-03-05T08:24:06.4802004Z 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:127)
+2025-03-05T08:24:06.4803582Z 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:116)
+2025-03-05T08:24:06.4805164Z 	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+2025-03-05T08:24:06.4806834Z 	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
+2025-03-05T08:24:06.4808699Z 	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+2025-03-05T08:24:06.4810182Z 	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
+2025-03-05T08:24:06.4811774Z 	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+2025-03-05T08:24:06.4813256Z 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+2025-03-05T08:24:06.4814624Z 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+2025-03-05T08:24:06.4815948Z 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+2025-03-05T08:24:06.4817494Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:209)
+2025-03-05T08:24:06.4819316Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+2025-03-05T08:24:06.4821164Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+2025-03-05T08:24:06.4822639Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+2025-03-05T08:24:06.4824076Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
+2025-03-05T08:24:06.4825520Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+2025-03-05T08:24:06.4826923Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+2025-03-05T08:24:06.4828307Z 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+2025-03-05T08:24:06.4829596Z 	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:42)
+2025-03-05T08:24:06.4831221Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:331)
+2025-03-05T08:24:06.4832937Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:318)
+2025-03-05T08:24:06.4834708Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(DefaultTaskExecutionGraph.java:314)
+2025-03-05T08:24:06.4836322Z 	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:85)
+2025-03-05T08:24:06.4837948Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:314)
+2025-03-05T08:24:06.4840127Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
+2025-03-05T08:24:06.4841957Z 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
+2025-03-05T08:24:06.4843211Z 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
+2025-03-05T08:24:06.4844498Z 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+2025-03-05T08:24:06.4845767Z 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+2025-03-05T08:24:06.4846445Z 
+2025-03-05T08:24:06.5528942Z 
+2025-03-05T08:24:06.5528964Z 
+2025-03-05T08:24:06.5529511Z BUILD FAILED in 23s
+2025-03-05T08:24:06.5534104Z Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+2025-03-05T08:24:06.5535054Z 
+2025-03-05T08:24:06.5537024Z You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+2025-03-05T08:24:06.5538308Z 
+2025-03-05T08:24:06.5540976Z For more on this, please refer to https://docs.gradle.org/8.10.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+2025-03-05T08:24:06.5542694Z 10 actionable tasks: 10 executed
+2025-03-05T08:24:06.9043620Z ##[error]Process completed with exit code 1.
+2025-03-05T08:24:06.9189791Z Post job cleanup.
+2025-03-05T08:24:07.1537054Z In post-action step
+2025-03-05T08:24:07.1545070Z Cache is read-only: will not save state for use in subsequent builds.
+2025-03-05T08:24:07.1550572Z Generating Job Summary
+2025-03-05T08:24:07.1571079Z Completed post-action step
+2025-03-05T08:24:07.1733618Z Post job cleanup.
+2025-03-05T08:24:07.3033752Z Post job cleanup.
+2025-03-05T08:24:07.3989651Z [command]/usr/bin/git version
+2025-03-05T08:24:07.4033398Z git version 2.48.1
+2025-03-05T08:24:07.4090485Z Temporarily overriding HOME='/home/runner/work/_temp/7dfc9ee9-6f45-4947-8c20-f4dcb9b35194' before making global git config changes
+2025-03-05T08:24:07.4092967Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-05T08:24:07.4097615Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/gitlab4j-api/gitlab4j-api
+2025-03-05T08:24:07.4134351Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-05T08:24:07.4168551Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-05T08:24:07.4426717Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-05T08:24:07.4450242Z http.https://github.com/.extraheader
+2025-03-05T08:24:07.4464233Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-05T08:24:07.4498205Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-05T08:24:07.4849955Z Cleaning up orphan processes
+2025-03-05T08:24:07.5118482Z Terminate orphan process: pid (1969) (java)

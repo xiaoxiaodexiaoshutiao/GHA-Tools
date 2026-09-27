@@ -1,0 +1,426 @@
+diff --git a/booknews.Rmd b/booknews.Rmd
+index de9b1ee39..101cff1e8 100644
+--- a/booknews.Rmd
++++ b/booknews.Rmd
+@@ -4,6 +4,8 @@
+ 
+ - 2025-03-11, add item about "top level code" in packaging guide (#879)
+ 
++- 2025-02-25, add official rule on submitting one package at once only (`@maurolepore`, #876)
++
+ - 2025-03-11, mention the Air formatting tool wherever we mention the styler package (#875)
+ 
+ - 2025-02-25, require the default git branch to not be called master (#863)
+diff --git a/maintenance_evolution.pt.Rmd b/maintenance_evolution.pt.Rmd
+index 44dc28230..259a80209 100644
+--- a/maintenance_evolution.pt.Rmd
++++ b/maintenance_evolution.pt.Rmd
+@@ -3,28 +3,28 @@ aliases:
+   - evolution.html
+ ---
+ 
+-# Package evolution - changing stuff in your package {#evolution}
++# Evolução do pacote - alteração de itens em seu pacote {#evolution}
+ 
+ ```{block, type="summaryblock"}
+-This chapter presents our guidance for changing stuff in your package: changing parameter names, changing function names, deprecating functions, and even retiring and archiving packages.
++Este capítulo apresenta nossa orientação para alterar coisas em seu pacote: alterar nomes de parâmetros, alterar nomes de funções, descontinuar funções e até mesmo retirar e arquivar pacotes.
+ 
+-_This chapter was initially contributed as a tech note on rOpenSci website by [Scott Chamberlain](https://github.com/sckott); you can read the original version [here](https://ropensci.org/technotes/2017/01/05/package-evolution/)._
++_Este capítulo foi inicialmente contribuído como uma nota técnica no site da rOpenSci por [Scott Chamberlain](https://github.com/sckott); você pode ler a versão original [aqui](https://ropensci.org/technotes/2017/01/05/package-evolution/)._
+ ```
+ 
+-## Philosophy of changes {#philosophy-of-changes}
++## Filosofia das alterações {#philosophy-of-changes}
+ 
+-Everyone's free to have their own opinion about how freely parameters/functions/etc. are changed in a library - rules about package changes are not enforced by CRAN or otherwise. Generally, as a library gets more mature, changes to user facing methods (i.e., exported functions in an R package) should become very rare. Libraries that are dependencies of many other libraries are likely to be more careful about changes, and should be.
++Todos são livres para ter sua própria opinião sobre a liberdade com que parâmetros/funções/etc. são alterados em uma biblioteca - as regras sobre alterações de pacotes não são impostas pelo CRAN ou de outra forma. Em geral, à medida que uma biblioteca se torna mais madura, as alterações nos métodos voltados para o usuário (ou seja, funções exportadas em um pacote R) devem se tornar muito raras. As bibliotecas que são dependências de muitas outras bibliotecas provavelmente serão mais cuidadosas com as alterações, e devem ser.
+ 
+-## The lifecycle package {#the-lifecycle-package}
++## O pacote lifecycle {#the-lifecycle-package}
+ 
+-This chapter presents solutions that do not require the lifecycle package but you might still find it useful.
+-We recommend [reading the lifecycle documentation](https://lifecycle.r-lib.org/articles/stages.html).
++Este capítulo apresenta soluções que não requerem o pacote lifecycle, mas que você ainda pode considerar úteis.
++Recomendamos que você [leia a documentação do lifecycle](https://lifecycle.r-lib.org/articles/stages.html).
+ 
+-## Parameters: changing parameter names {#parameters-changing-parameter-names}
++## Parâmetros: alteração dos nomes dos parâmetros {#parameters-changing-parameter-names}
+ 
+-Sometimes parameter names must be changed for clarity, or some other reason.
++Às vezes, os nomes dos parâmetros precisam ser alterados para maior clareza ou por algum outro motivo.
+ 
+-A possible approach is check if deprecated arguments are not missing, and stop providing a meaningful message.
++Uma abordagem possível é verificar se os argumentos descontinuados não estão faltando e parar de fornecer uma mensagem significativa.
+ 
+ ```r
+ foo_bar <- function(x, y) {
+@@ -38,7 +38,7 @@ foo_bar(x = 5)
+ #> Error in foo_bar(x = 5) : use 'y' instead of 'x' 
+ ```
+ 
+-If you want to be more helpful, you could emit a warning but automatically take the necessary action:
++Se quiser que a função seja mais útil, você pode fazê-la emitir um aviso e tomar automaticamente a ação necessária:
+ 
+ ```r
+ foo_bar <- function(x, y) {
+@@ -53,21 +53,21 @@ foo_bar(x = 5)
+ #> 25
+ ```
+ 
+-Be aware of the parameter `...`. If your function has `...`, and you have already removed a parameter (lets call it `z`), a user may have older code that uses `z`. When they pass in `z`, it's not a parameter in the function definition, and will likely be silently ignored -- not what you want. Instead, leave the argument around, throwing an error if it used.
++Esteja ciente do parâmetro `...`. Se sua função tiver `...` e você já tiver removido um parâmetro (vamos chamá-lo de `z`), um usuário pode ter um código mais antigo que usa `z`. Quando você passa o parâmetro `z` ele não é um parâmetro na definição da função e provavelmente será ignorado silenciosamente -- não é o que você deseja. Em vez disso, deixe o argumento presente, lançando um erro se ele for usado.
+ 
+-## Functions: changing function names {#functions-changing-function-names}
++## Funções: alteração de nomes de funções {#functions-changing-function-names}
+ 
+-If you must change a function name, do it gradually, as with any other change in your package.
++Se você precisar alterar o nome de uma função, faça-o gradualmente, como em qualquer outra alteração em seu pacote.
+ 
+-Let's say you have a function `foo`.
++Digamos que você tenha uma função `foo`.
+ 
+ ```r
+ foo <- function(x) x + 1
+ ```
+ 
+-However, you want to change the function name to `bar`.
++No entanto, você deseja alterar o nome da função para `bar`.
+ 
+-Instead of simply changing the function name and `foo` no longer existing straight away, in the first version of the package where `bar` appears, make an alias like:
++Em vez de simplesmente alterar o nome da função e `foo` deixar de existir imediatamente, na primeira versão do pacote em que o `bar` aparecer, crie um alias como:
+ 
+ ```r
+ #' foo - add 1 to an input
+@@ -79,9 +79,9 @@ foo <- function(x) x + 1
+ bar <- foo
+ ```
+ 
+-With the above solution, the user can use either `foo()` or `bar()` -- either will do the same thing, as they are the same function.
++Com a solução acima, o usuário pode usar `foo()` ou `bar()` -- ambos farão a mesma coisa, pois são a mesma função.
+ 
+-It's also useful to have a message but then you'll only want to throw that message when they use the old function, e.g.,
++Também é útil ter uma mensagem, mas você só vai querer lançar essa mensagem quando eles usarem a função antiga, por exemplo,
+ 
+ ```r
+ #' foo - add 1 to an input
+@@ -96,7 +96,7 @@ foo <- function(x) {
+ bar <- function(x) x + 1
+ ```
+ 
+-After users have used the package version for a while (with both `foo` and `bar`), in the next version you can remove the old function name (`foo`), and only have `bar`.
++Depois que os usuários tiverem usado a versão do pacote por algum tempo (com ambos os `foo` e `bar`), na próxima versão você poderá remover o nome da função antiga (`foo`), e você terá apenas `bar`.
+ 
+ ```r
+ #' bar - add 1 to an input
+@@ -104,13 +104,13 @@ After users have used the package version for a while (with both `foo` and `bar`
+ bar <- function(x) x + 1
+ ```
+ 
+-## Functions: deprecate \& defunct {#functions-deprecate-defunct}
++## Funções: descontinuadas e removidas {#functions-deprecate-defunct}
+ 
+-To remove a function from a package (let's say your package name is `helloworld`), you can use the following protocol:
++Para remover uma função de um pacote (digamos que o nome do seu pacote seja `helloworld`), você pode usar o seguinte protocolo:
+ 
+-- Mark the function as deprecated in package version `x` (e.g., `v0.2.0`)
++- Marque a função como descontinuada na versão do pacote `x` (por exemplo, `v0.2.0`)
+ 
+-In the function itself, use `.Deprecated()` to point to the replacement function:
++Na própria função, use `.Deprecated()` para apontar para a função de substituição:
+ 
+ ```r
+ foo <- function() {
+@@ -118,11 +118,11 @@ foo <- function() {
+ }
+ ```
+ 
+-There's options in `.Deprecated` for specifying a new function name, as well as a new package name, which makes sense when moving functions into different packages.
++Há opções em `.Deprecated` para especificar um novo nome de função, bem como um novo nome de pacote, o que faz sentido quando você move funções para pacotes diferentes.
+ 
+-The message that's given by `.Deprecated` is a warning, so can be suppressed by users with `suppressWarnings()` if desired.
++A mensagem que é dada por `.Deprecated` é um aviso, portanto, pode ser suprimida por usuários com `suppressWarnings()` se você desejar.
+ 
+-Make a man page for deprecated functions like:
++Crie uma página de manual para funções descontinuadas, como:
+ 
+ ```r
+ #' Deprecated functions in helloworld
+@@ -138,11 +138,11 @@ Make a man page for deprecated functions like:
+ NULL
+ ```
+ 
+-This creates a man page that users can access like ``?`helloworld-deprecated` `` and they'll see in the documentation index. Add any functions to this page as needed, and take away as a function moves to defunct (see below).
++Isso cria uma página de manual que os usuários podem acessar como ``?`helloworld-deprecated` `` e que você verá no índice da documentação. Adicione quaisquer funções a essa página conforme necessário e remova-as quando uma função se tornar "defunct" (veja abaixo).
+ 
+-- In the next version (`v0.3.0`) you can make the function defunct (that is, completely gone from the package, except for a man page with a note about it).
++- Na próxima versão (`v0.3.0`), você pode tornar a função "defunct" (ou seja, completamente removida do pacote, exceto por uma página de manual com uma nota sobre ela).
+ 
+-In the function itself, use `.Defunct()` like:
++Na própria função, use `.Defunct()` como:
+ 
+ ```r
+ foo <- function() {
+@@ -150,9 +150,9 @@ foo <- function() {
+ }
+ ```
+ 
+-Note that the message in `.Defunct` is an error so that the function stops whereas `.Deprecated` uses a warning that let the function proceed.
++Observe que a mensagem em `.Defunct` é um erro para que a função pare, enquanto `.Deprecated` usa um aviso que permite que a função continue.
+ 
+-In addition, it's good to add `...` to all defunct functions so that if users pass in any parameters they'll get the same defunct message instead of a `unused argument` message, so like:
++Além disso, é bom adicionar `...` a todas as funções removidas para que, se os usuários passarem algum parâmetro, recebam a mesma mensagem de "defunct" em vez de um `unused argument` assim, por exemplo:
+ 
+ ```r
+ foo <- function(...) {
+@@ -160,21 +160,21 @@ foo <- function(...) {
+ }
+ ```
+ 
+-Without `...` gives:
++Sem `...` o resultado é:
+ 
+ ```r
+ foo(x = 5)
+ #> Error in foo(x = 5) : unused argument (x = 5)
+ ```
+ 
+-And with `...` gives:
++E com `...` o resultado é:
+ 
+ ```r
+ foo(x = 5)
+ #> Error: 'foo' has been removed from this package
+ ```
+ 
+-Make a man page for defunct functions like:
++Faça uma página de manual para funções "defunct", como:
+ 
+ ```r
+ #' Defunct functions in helloworld
+@@ -189,21 +189,21 @@ Make a man page for defunct functions like:
+ NULL
+ ```
+ 
+-This creates a man page that users can access like ``?`helloworld-defunct` `` and they'll see in the documentation index. Add any functions to this page as needed. You'll likely want to keep this man page indefinitely.
++Isso cria uma página de manual que os usuários podem acessar como ``?`helloworld-defunct` `` e que você verá no índice da documentação. Você pode adicionar quaisquer funções a essa página, conforme necessário. Você provavelmente desejará manter essa página de manual indefinidamente.
+ 
+-### Testing deprecated functions {#testing-deprecated-functions}
++### Testando funções descontinuadas {#testing-deprecated-functions}
+ 
+-You don't have to change the tests of deprecated functions until they are made defunct.
++Você não precisa alterar os testes de funções descontinuadas até que elas se tornem "defunct".
+ 
+-- Consider any changes made to a deprecated function. Along with using `.Deprecated` inside the function, did you change the parameters at all in the deprecated function, or create a new function that replaces the deprecated function, etc. Those changes should be tested if any made.
+-- Related to above, if the deprecated function is simply getting a name change, perhaps test that the old and new functions return identical results.
+-- [`suppressWarnings()` could be used](https://community.rstudio.com/t/unit-testing-of-a-deprecated-function/42837/2) to suppress the warning thrown from `.Deprecated`, but tests are not user facing, so it is not that bad if the warning is thrown in tests, and the warning could even be used as a reminder to the maintainer.
++- Considere todas as alterações feitas em uma função descontinuada. Além de usar `.Deprecated` dentro da função, você alterou os parâmetros na função descontinuada ou criou uma nova função que substitui a função descontinuada, etc.? Essas alterações devem ser testadas, caso você as tenha feito.
++- Em relação ao que foi dito acima, se a função descontinuada estiver apenas recebendo uma alteração de nome, talvez você possa testar se as funções antiga e nova retornam resultados idênticos.
++- [`suppressWarnings()` poderia ser usado](https://community.rstudio.com/t/unit-testing-of-a-deprecated-function/42837/2) para suprimir o aviso lançado pelo `.Deprecated`, mas os testes não são voltados para o usuário e, portanto, não é tão ruim se o aviso for lançado nos testes, e o aviso pode até ser usado como um lembrete para o mantenedor.
+ 
+-Once a function is made defunct, its tests are simply removed.
++Quando uma função se torna "defunct", seus testes são simplesmente removidos.
+ 
+-## Archiving packages {#archivalguidance}
++## Arquivamento de pacotes {#archivalguidance}
+ 
+-Software generally has a finite lifespan, and packages may eventually need to be archived. Archived packages are [archived](https://docs.github.com/en/repositories/archiving-a-github-repository/archiving-repositories) and moved to a dedicated GitHub organization, [ropensci-archive](https://github.com/ropensci-archive). Prior to archiving, the contents of the README file should be moved to an alternative location (such as "README-OLD.md"), and replaced with minimal contents including something like the following:
++Software geralmente tem uma vida útil finita, e os pacotes podem precisar ser arquivados. Os pacotes arquivados são [arquivados](https://docs.github.com/en/repositories/archiving-a-github-repository/archiving-repositories) e movidos para uma organização dedicada no GitHub, [ropensci-archive](https://github.com/ropensci-archive). Antes do arquivamento, o conteúdo do arquivo README deve ser movido para um local alternativo (como "README-OLD.md") e substituído por um conteúdo mínimo, incluindo algo como o seguinte:
+ 
+ ```md
+ # <package name>
+@@ -214,18 +214,18 @@ Software generally has a finite lifespan, and packages may eventually need to be
+ This package has been archived. The former README is now in [README-old](<link-to-README-old>).
+ ```
+ 
+-The repo status badge should be "unsupported" for formerly released packages, or "abandoned" for former concept or WIP packages, in which case the badge code above should be replaced with:
++O *badge* de status do repositório deve estar como "unsupported" (sem suporte) para pacotes lançados anteriormente ou como "abandoned" (abandonado) para pacotes de conceito anterior ou WIP (trabalho em progresso), caso em que o código do *badge* acima deve ser substituído por:
+ 
+ ```md
+ [![Project Status: Abandoned](https://www.repostatus.org/badges/latest/abandoned.svg)](https://www.repostatus.org/#abandoned)
+ ```
+ 
+-An example of a minimal README in an archived package is in [ropensci-archive/monkeylearn](https://github.com/ropensci-archive/monkeylearn/blob/master/README.md). Once the README has been copied elsewhere and reduced to minimal form, the following steps should be followed:
++Um exemplo de um README mínimo em um pacote arquivado está em [ropensci-archive/monkeylearn](https://github.com/ropensci-archive/monkeylearn/blob/master/README.md). Depois que o README tiver sido copiado em outro lugar e reduzido à forma mínima, você deverá seguir as etapas a seguir:
+ 
+-- [ ] Close issues with a sentence explaining the situation and linking to this guidance.
+-- [ ] Archive the repository on GitHub (also under repo settings).
+-- [ ] Transfer the repository to [ropensci-archive](https://github.com/ropensci-archive), or request an [rOpenSci staff member](https://ropensci.org/about/#team) to transfer it (you can email `info@ropensci.org`).
++- [ ] Encerre os *issues* com uma frase que explique a situação e faça um link para este guia.
++- [ ] Arquive o repositório no GitHub (também nas configurações do repositório).
++- [ ] Transfira o repositório para [ropensci-archive](https://github.com/ropensci-archive) ou solicite um [membro da equipe do rOpenSci](https://ropensci.org/about/#team) para transferi-lo (você pode enviar um e-mail para `info@ropensci.org`).
+ 
+-Archived packages may be unarchived if authors or a new person opt to resume maintenance. For that please contact rOpenSci. They are transferred to the ropenscilabs organization.
++Os pacotes arquivados podem ser desarquivados se os autores ou uma nova pessoa optarem por retomar a manutenção. Para isso, entre em contato com a rOpenSci.
+ 
+ 
+diff --git a/softwarereview_author.Rmd b/softwarereview_author.Rmd
+index f7b932c2a..73533b61a 100644
+--- a/softwarereview_author.Rmd
++++ b/softwarereview_author.Rmd
+@@ -24,6 +24,7 @@ This concise guide presents the software peer review process for you as a packag
+   - At the submission stage, all major functions should be stable enough to be fully documented and tested; the README should make a strong case for the package.
+   - Your README file should strive to explain your package's functionality and aims, assuming readers have little to no domain knowledge. All technical tems, including references to other software, should be clarified.
+ - Your package will continue to evolve after review, the chapter on *Package evolution* [provides guidance about the topic](#evolution).
++- Please do not submit several packages at a time: we request you wait until a package has been approved before you submit another one.
+ 
+ ## Preparing for Submission {#preparing-for-submission}
+ 
+diff --git a/softwarereview_author.es.Rmd b/softwarereview_author.es.Rmd
+index 3f3b7932e..bd980bc80 100644
+--- a/softwarereview_author.es.Rmd
++++ b/softwarereview_author.es.Rmd
+@@ -19,6 +19,7 @@ Esta guía condensa el proceso de revisión por pares desde el punto de vista de
+ - En la fase de envío, todas las funciones principales deben ser lo suficientemente estables como para estar completamente documentadas y testeadas. El *README* tiene que dar una buena impresión de tu paquete.
+ - El archivo *README* debe esforzarse por explicar las funcionalidades y los objetivos de tu paquete asumiendo poco o ningún conocimiento del dominio. Además, debe aclarar todos los temas técnicos, incluidas las referencias a otros software.
+ - Tu paquete seguirá evolucionando después de la revisión, el capítulo sobre *Evolución de paquetes* [proporciona orientación sobre el tema](#evolution).
++- Por favor, no envies varios paquetes a la vez: te rogamos que espere hasta que un paquete haya sido aprobado antes de enviar otro.
+ 
+ ## Preparación para el envío {#preparing-for-submission}
+ 
+diff --git a/softwarereview_author.pt.Rmd b/softwarereview_author.pt.Rmd
+index e78a91829..9af38a834 100644
+--- a/softwarereview_author.pt.Rmd
++++ b/softwarereview_author.pt.Rmd
+@@ -24,6 +24,7 @@ Este guia conciso apresenta o processo de revisão de software por pares, para v
+   - No estágio de envio da submissão, todas as principais funções devem ser estáveis o suficiente para serem totalmente documentadas e testadas; o README deve apresentar uma base segura para o pacote.
+   - Seu arquivo README deve assegurar-se em explicar a funcionalidade e os objetivos do seu pacote, presumindo que os leitores tenham pouco ou nenhum conhecimento do domínio. Todos os termos técnicos, inclusive as referências a outros softwares, devem ser esclarecidos.
+ - Seu pacote continuará a evoluir após a revisão. O capítulo sobre *Evolução do pacote* [fornece mais orientações sobre este tópico](#evolution).
++- Não envie vários pacotes ao mesmo tempo: solicitamos que você espere até que um pacote seja aprovado antes de enviar outro.
+ 
+ ## Preparando para Submissão {#preparing-for-submission}
+ 
+diff --git a/softwarereview_intro.Rmd b/softwarereview_intro.Rmd
+index 7f7ca3b36..e4bdb3a4d 100644
+--- a/softwarereview_intro.Rmd
++++ b/softwarereview_intro.Rmd
+@@ -56,6 +56,7 @@ Information on the current team, and the current status of software peer review,
+ ```{r}
+ #| echo: false
+ #| results: 'asis'
++#| warning: false
+ if (nzchar(Sys.getenv("AIRTABLE_API_KEY"))) {
+   source(file.path("scripts", "airtable-get-data.R"), local = knitr::knit_global())
+ } 
+diff --git a/softwarereview_reviewer.pt.Rmd b/softwarereview_reviewer.pt.Rmd
+new file mode 100644
+index 000000000..d89d198c0
+--- /dev/null
++++ b/softwarereview_reviewer.pt.Rmd
+@@ -0,0 +1,116 @@
++
++# Guia para revisores {#reviewerguide}
++
++```{block, type="summaryblock"}
++Obrigado por aceitar revisar um pacote para a rOpenSci! Este capítulo consiste em nossas diretrizes para [preparar](#preparereview), [enviar](#submitreview) e [acompanhar](#followupreviewer) a sua revisão.
++
++Você pode entrar em contato com o(a) editor(a) responsável pela submissão para esclarecer qualquer dúvida que tenha sobre o processo ou sobre a sua revisão.
++
++Tente ao máximo concluir sua avaliação em até 3 semanas após o aceite da solicitação de avaliação. Nós vamos lembrar os(as) revisores(as) das datas de vencimento, tanto futuras quanto passadas. Os(as) editores(as) podem designar revisores(as) adicionais ou alternativos se uma revisão estiver muito atrasada.
++
++**A comunidade da rOpenSci é o nosso melhor patrimônio. 
++Nosso objetivo é que as revisões sejam abertas, colaborativas e focadas na melhoria da qualidade do software.
++Seja respeitoso e gentil! 
++Consulte o nosso guia para revisores e também o [código de conduta] (https://ropensci.org/code-of-conduct/) para obter mais informações.**
++
++_Se você usar nossos processos,  guias, listas de verificação, etc., ao revisar um software em outra plataforma, por favor, notifique os envolvidos (e.g., editores(as) de periódicos, estudantes ou equipes de revisão interna de código) que esses processos, padrões e materiais são provenientes da rOpenSci, e nos informe em nosso [fórum público] (https://discuss.ropensci.org/c/usecases) ou em [particular por e-mail] (https://ropensci.org/contact/)._
++```
++
++## Se voluntariando como revisor(a) {#volunteering-as-a-reviewer}
++
++Obrigado pelo seu desejo de participar como revisor(a) da revisão por pares de software da rOpenSci!
++
++Por favor, preencha o nosso [formulário de voluntariado](https://ropensci.org/software-reviewer).
++
++Se você encontrar alguma submissão que seja particularmente relevante para seus interesses, envie um e-mail para `info@ropensci.org`, incluindo o nome do pacote, a URL da *issue* que corresponde a este envio e o nome do(a) editor(a) responsável.
++No entanto, lembre-se de que o(a) editor(a) é responsável por indicar os(as) potenciais revisores(as), sendo possível que outras pessoas já tenham sido convidadas.
++Pedimos que não se candidate a todas as submissões e também evite se voluntariar diretamente pela interface do GitHub.
++
++Para saber outras maneiras de contribuir, consulte o [Guia de contribuição da rOpenSci](https://contributing.ropensci.org/).
++
++## Preparando a sua revisão {#preparereview}
++
++As revisões devem ser baseadas na versão mais recente da *branch* `main` no GitHub, a menos que os(as) autores(as) do pacote indiquem o contrário.
++Todos os envios criam um relatório detalhado, gerado pelo nosso pacote [`pkgcheck`](https://docs.ropensci.org/pkgcheck/), sobre a estrutura e a funcionalidade do pacote enviado. Se o pacote tiver sido alterado substancialmente desde as últimas verificações, você pode solicitar uma nova verificação com o comando `@ropensci-review-bot check package`. Observe que, ao instalar o pacote para revisá-lo, você deve se certificar de que todas as dependências estão disponíveis em sua máquina (por exemplo, você pode executar `pak::pak()` para isso).
++
++### Diretrizes gerais {#general-guidelines}
++
++Para revisar um pacote, comece copiando o nosso [modelo de revisão](#reviewtemplate) (ou o nosso [modelo de revisão em espanhol](#reviewtemplatees)) e use ele como uma lista de verificações que precisam ser feitas.  Além de marcar os critérios mínimos, pedimos que você forneça comentários gerais abordando o seguinte:
++
++- O código está em conformidade com os princípios gerais do [Guia de revisão da Mozilla](https://mozillascience.github.io/codeReview/review.html)?
++- O pacote está de acordo com os requisitos do [Guia de pacotes da rOpenSci](#building)?
++- Há melhorias que poderiam ser feitas no estilo do código?
++- Há duplicação de código no pacote que deveria ser reduzida?
++- Há melhorias na interface do usuário que poderiam ser feitas?
++- Existem melhorias de desempenho que podem ser feitas?
++- A documentação (instruções de instalação, *vignettes*, exemplos e demonstrações) é clara e suficiente? O princípio de *vários pontos de entrada* está sendo usado? Ou seja, a documentação leva em conta o fato de que qualquer parte da documentação pode ser o primeiro encontro do usuário com o pacote e/ou com as ferramentas e os dados que ele contém?
++- As funções e os argumentos foram nomeados para trabalharem juntos e formarem uma API de programação comum e lógica que seja fácil de ler e de autocompletar?
++- Se você tiver seus próprios dados/problemas relevantes, analise-os com o pacote. Você pode acabar encontrando casos de uso extremos nos quais o autor não pensou.
++
++Seja respeitoso e gentil com os(as) autores(as) em suas avaliações. Nosso [código de conduta](#code-of-conduct) é obrigatório para todos os envolvidos em nosso processo de avaliação. Esperamos que você envie sua avaliação em até 3 (três) semanas, de acordo com o prazo estabelecido pelo(a) editor(a). Entre em contato com o(a) editor(a) diretamente ou no tópico de envio para informá-lo sobre possíveis atrasos.
++
++Incentivamos você a usar ferramentas automatizadas para facilitar a revisão. Isso inclui:
++
++- Verificar o relatório inicial do pacote gerado pelo nosso `@ropensci-review-bot`.
++- Verificar os registros (logs) nos serviços de integração contínua utilizados pelo pacote (GitHub Actions, Codecov, etc.)
++- Executar `devtools::check()` e `devtools::test()` no pacote para localizar quaisquer erros que possam ter passado despercebidos pelo(a) autor(a).
++- Verificar se a omissão de testes é justificada (e.g., o uso de `skip_on_cran()` em testes que fazem solicitações reais de API vs. ignorar todos os testes em um sistema operacional).
++- Se o pacote não for enviado por meio da *branch* padrão/principal, lembre-se de mudar para a *branch* de revisão que foi submetida antes de iniciar sua revisão. Nesse caso, você também terá que pesquisar o pacote localmente, dado que a pesquisa no GitHub é limitada à *branch* padrão. Além disso, documentações hospedadas em um website tipo `pkgdown` não são necessariamente atualizadas, por isso recomendamos que você inspecione a documentação do pacote localmente, executando `pkgdown::build_site()`.
++
++Os(as) revisores(as) também podem gerar novamente os resultados da verificação de pacotes a partir de `@ropensci-review-bot` a qualquer momento, emitindo um único comentário em um *issue* de revisão: `@ropensci-review-bot check package`.
++
++### Interações feitas fora dos canais oficiais {#off-thread-interactions}
++
++Se você interagiu com os(as) autores(as) do pacote e falou sobre a revisão fora de um tópico de revisão (como em _chats_, mensagens diretas, pessoalmente ou *issues* no repositório do projeto), certifique-se de que sua revisão capture e/ou referencie elementos dessas conversas que sejam relevantes para o processo.
++
++### Experiências de revisores(as) anteriores {#experience-from-past-reviewers}
++
++Revisores (as) iniciantes podem achar útil ler (sobre) algumas revisões anteriores. Em geral, você pode encontrar os tópicos de envio de pacotes que já foram integrados [aqui](https://github.com/ropensci/software-review/issues?q=is%3Aissue+is%3Aclosed+label%3A6%2Fapproved). Aqui, estão alguns exemplos de revisões (observe que suas revisões não precisam ser tão longas quanto esses exemplos):
++
++- [revisão 1](https://github.com/ropensci/software-review/issues/191#issuecomment-367166658) e [revisão2](https://github.com/ropensci/software-review/issues/191#issuecomment-368254623) de `rtika`
++
++- `NLMR` [revisão 1](https://github.com/ropensci/software-review/issues/188#issuecomment-368042693) e [revisão2](https://github.com/ropensci/software-review/issues/188#issuecomment-369310831)
++
++- `bowerbird` [comentário pré-revisão](https://github.com/ropensci/software-review/issues/139#issuecomment-322713737), [revisão 1](https://github.com/ropensci/software-review/issues/139#issuecomment-342380870), [revisão 2](https://github.com/ropensci/software-review/issues/139#issuecomment-342724843).
++
++- `rusda` [revisão](https://github.com/ropensci/software-review/issues/18#issuecomment-120445737) (de antes de termos um modelo de revisão)
++
++Você pode ler algumas publicações escritas por avaliadores(as) sobre as suas experiências [através deste link](https://ropensci.org/tags/reviewer/). Em especial, [nesta postagem de Mara Averick](https://ropensci.org/blog/2017/08/22/first-package-review/), você pode ler sobre o papel de "usuário ingênuo" que um(a) revisor(a) pode assumir para fornecer um feedback útil, mesmo sem ser especialista no tópico ou na implementação do pacote, ao se perguntar: *"O que eu achava que seria feito? Realmente, faz isso? Quais são os detalhes que me assustam?"*. Em [outra postagem](https://ropensci.org/blog/2017/09/08/first-review-experiences/), Verena Haunschmid compartilha sua experiência de alternar entre usar o pacote e revisar seu código.
++
++O ex-revisor e autor de pacotes [Adam Sparks](https://adamhsparks.netlify.app/) escreveu o seguinte "\[escreva\] uma boa crítica da estrutura do pacote e das práticas recomendadas de codificação. Se você souber como fazer algo melhor, diga-me. É fácil perder oportunidades de documentação como desenvolvedor(a); porém, como revisor(a), você tem uma visão diferente. Você é um usuário que pode dar um *feedback*. O que não está claro no pacote? Como você poderia deixar isso mais claro? Se você estiver usando-o pela primeira vez, é fácil? Você conhece algum outro pacote R que talvez eu devesse usar? Ou há algum que eu esteja usando e que talvez não devesse usar? Se você puder contribuir com o pacote, então contribua."
++
++### Pacote de ajuda para revisores {#helper-package-for-reviewers}
++
++Se estiver trabalhando no RStudio, você pode otimizar o fluxo de trabalho de revisão usando o pacote [`pkgreviewr`](https://github.com/ropensci-org/pkgreviewr), criado pela editora associada Anna Krystalli. Digamos que você tenha aceitado revisar o pacote `refnet`, então você escreveria o seguinte:
++
++```
++remotes::install_github("ropensci-org/pkgreviewr")
++library(pkgreviewr)
++pkgreview_create(pkg_repo = "embruna/refnet", 
++                 review_parent = "~/Documents/workflows/rOpenSci/reviews/")
++```
++
++Como resultado:
++
++- o repositório do GitHub do pacote `refnet` será clonado.
++- um projeto de revisão será criado, contendo um bloco de notas para você preencher, já usando o modelo de revisão recomendado.
++- observe que, se o pacote não for enviado por meio da *branch* padrão/principal, você precisará mudar para a *branch* enviada antes de iniciar a revisão.
++
++### Comentários sobre o processo {#feedback-on-the-process}
++
++Incentivamos você a fazer perguntas e fornecer feedbacks sobre o processo de revisão em nosso [fórum](https://discuss.ropensci.org).
++
++## Envio da revisão {#submitreview}
++
++- Quando sua revisão estiver concluída, cole-a como um comentário na *issue* onde a revisão do pacote está sendo feita/tratada.
++- Comentários adicionais são bem-vindos na mesma issue. Esperamos que as revisões de pacotes funcionem como uma conversa contínua com os(as) autores(as), em vez de uma única rodada de revisões típica de manuscritos acadêmicos.
++- Você também pode enviar *issues* ou *Pull Requests* diretamente para o repositório dos pacotes, se preferir, mas, se o fizer, comente sobre eles e coloque um link para eles dentro do tópico onde a revisão do pacote está sendo tratada, para que tenhamos um registro centralizado da sua revisão.
++- Inclua uma estimativa de quantas horas você gastou na revisão.
++
++## Acompanhamento da revisão {#followupreviewer}
++
++Os(as) autores(as) devem responder dentro de 2 (duas) semanas com as alterações feitas no pacote em resposta à sua avaliação. Nesse estágio, pedimos que você avalie se as alterações são suficientes para resolver as questões levantadas em sua revisão. Incentivamos a discussão contínua entre autores(as) de pacotes e revisores(as), e você também pode pedir aos editores que esclareçam os problemas no tópico de revisão.
++
++Você usará o [modelo de aprovação](#approval2template).
++
++

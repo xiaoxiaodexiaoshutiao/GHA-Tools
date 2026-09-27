@@ -1,0 +1,43 @@
+diff --git a/acceptance-tests/src/test/java/linea/plugin/acc/test/LineaPluginTestBase.java b/acceptance-tests/src/test/java/linea/plugin/acc/test/LineaPluginTestBase.java
+index c69749da..7ab7d823 100644
+--- a/acceptance-tests/src/test/java/linea/plugin/acc/test/LineaPluginTestBase.java
++++ b/acceptance-tests/src/test/java/linea/plugin/acc/test/LineaPluginTestBase.java
+@@ -158,7 +158,7 @@ private BesuNode createCliqueNodeWithExtraCliOptionsAndRpcApis(
+                     "LineaSetExtraDataEndpointPlugin",
+                     "LineaTransactionPoolValidatorPlugin",
+                     "LineaTransactionSelectorPlugin",
+-                    "LineaSendBundleEndpointPlugin"));
++                    "LineaBundleEndpointsPlugin"));
+ 
+     return besu.create(nodeConfBuilder.build());
+   }
+diff --git a/sequencer/src/main/java/net/consensys/linea/bundles/LineaLimitedBundlePool.java b/sequencer/src/main/java/net/consensys/linea/bundles/LineaLimitedBundlePool.java
+index d7d68026..ee988d58 100644
+--- a/sequencer/src/main/java/net/consensys/linea/bundles/LineaLimitedBundlePool.java
++++ b/sequencer/src/main/java/net/consensys/linea/bundles/LineaLimitedBundlePool.java
+@@ -100,14 +100,17 @@ public LineaLimitedBundlePool(
+                 })
+             .removalListener(
+                 (Hash key, TransactionBundle bundle, RemovalCause cause) -> {
+-                  if (bundle != null && cause.wasEvicted()) {
+-                    log.atTrace()
+-                        .setMessage("Dropping transaction bundle {}:{} due to {}")
+-                        .addArgument(bundle::blockNumber)
+-                        .addArgument(() -> bundle.bundleIdentifier().toHexString())
+-                        .addArgument(cause::name)
+-                        .log();
+-                    removeFromBlockIndex(bundle);
++                  if (bundle != null) {
++                    if (cause.wasEvicted()) {
++                      log.atTrace()
++                          .setMessage("Dropping transaction bundle {}:{} due to {}")
++                          .addArgument(bundle::blockNumber)
++                          .addArgument(() -> bundle.bundleIdentifier().toHexString())
++                          .addArgument(cause::name)
++                          .log();
++                      removeFromBlockIndex(bundle);
++                    }
++
+                     transactionBundleRemovedListeners.forEach(
+                         listener -> listener.onTransactionBundleRemoved(bundle));
+                   }

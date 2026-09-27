@@ -1,0 +1,495 @@
+2025-02-22T09:06:28.8432524Z Requested labels: ubuntu-latest
+2025-02-22T09:06:28.8432948Z Job defined at: meilisearch/meilisearch-java/.github/workflows/tests.yml@refs/pull/816/merge
+2025-02-22T09:06:28.8433076Z Waiting for a runner to pick up this job...
+2025-02-22T09:06:29.8326420Z Job is waiting for a hosted runner to come online.
+2025-02-22T09:06:32.6274415Z Job is about to start running on the hosted runner: GitHub Actions 9 (hosted)
+2025-02-22T09:06:34.1788443Z Current runner version: '2.322.0'
+2025-02-22T09:06:34.1812886Z ##[group]Operating System
+2025-02-22T09:06:34.1813664Z Ubuntu
+2025-02-22T09:06:34.1814201Z 24.04.1
+2025-02-22T09:06:34.1815019Z LTS
+2025-02-22T09:06:34.1815562Z ##[endgroup]
+2025-02-22T09:06:34.1816061Z ##[group]Runner Image
+2025-02-22T09:06:34.1816670Z Image: ubuntu-24.04
+2025-02-22T09:06:34.1817219Z Version: 20250209.1.0
+2025-02-22T09:06:34.1818237Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250209.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-22T09:06:34.1819665Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250209.1
+2025-02-22T09:06:34.1820584Z ##[endgroup]
+2025-02-22T09:06:34.1821097Z ##[group]Runner Image Provisioner
+2025-02-22T09:06:34.1821742Z 2.0.422.1
+2025-02-22T09:06:34.1822237Z ##[endgroup]
+2025-02-22T09:06:34.1824340Z ##[group]GITHUB_TOKEN Permissions
+2025-02-22T09:06:34.1826411Z Actions: read
+2025-02-22T09:06:34.1827221Z Attestations: read
+2025-02-22T09:06:34.1827844Z Checks: read
+2025-02-22T09:06:34.1828475Z Contents: read
+2025-02-22T09:06:34.1829007Z Deployments: read
+2025-02-22T09:06:34.1829527Z Discussions: read
+2025-02-22T09:06:34.1830056Z Issues: read
+2025-02-22T09:06:34.1830582Z Metadata: read
+2025-02-22T09:06:34.1831115Z Packages: read
+2025-02-22T09:06:34.1831610Z Pages: read
+2025-02-22T09:06:34.1832135Z PullRequests: read
+2025-02-22T09:06:34.1832665Z RepositoryProjects: read
+2025-02-22T09:06:34.1833298Z SecurityEvents: read
+2025-02-22T09:06:34.1833843Z Statuses: read
+2025-02-22T09:06:34.1834305Z ##[endgroup]
+2025-02-22T09:06:34.1837371Z Secret source: None
+2025-02-22T09:06:34.1838081Z Prepare workflow directory
+2025-02-22T09:06:34.2230049Z Prepare all required actions
+2025-02-22T09:06:34.2266949Z Getting action download info
+2025-02-22T09:06:34.4174983Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-02-22T09:06:34.4175960Z Version: 4.2.2
+2025-02-22T09:06:34.4176811Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-02-22T09:06:34.4177858Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-02-22T09:06:34.4178578Z ##[endgroup]
+2025-02-22T09:06:34.5103261Z ##[group]Download immutable action package 'actions/setup-java@v4'
+2025-02-22T09:06:34.5103969Z Version: 4.7.0
+2025-02-22T09:06:34.5104822Z Digest: sha256:5f5c07139c6dc32a599e9e0b973af500cb67a72aa7e5c437df96130dd73c8479
+2025-02-22T09:06:34.5105703Z Source commit SHA: 3a4f6e1af504cf6a31855fa899c6aa5355ba6c12
+2025-02-22T09:06:34.5106311Z ##[endgroup]
+2025-02-22T09:06:34.7962764Z ##[group]Download immutable action package 'actions/upload-artifact@v4'
+2025-02-22T09:06:34.7963499Z Version: 4.6.1
+2025-02-22T09:06:34.7964140Z Digest: sha256:3f6a28e7a1e0b5c8e2249e28da121a049fa5b91863b04390a46a82e4f8e2da98
+2025-02-22T09:06:34.7965212Z Source commit SHA: 4cec3d8aa04e39d1a68397de0c4cd6fb9dce8ec1
+2025-02-22T09:06:34.7965835Z ##[endgroup]
+2025-02-22T09:06:35.0595212Z Download action repository 'codecov/codecov-action@v5' (SHA:13ce06bfc6bbe3ecf90edbbf1bc32fe5978ca1d3)
+2025-02-22T09:06:35.3325579Z Complete job name: integration-and-unit-tests
+2025-02-22T09:06:35.4067341Z ##[group]Run actions/checkout@v4
+2025-02-22T09:06:35.4068231Z with:
+2025-02-22T09:06:35.4068731Z   repository: meilisearch/meilisearch-java
+2025-02-22T09:06:35.4069549Z   token: ***
+2025-02-22T09:06:35.4069983Z   ssh-strict: true
+2025-02-22T09:06:35.4070424Z   ssh-user: git
+2025-02-22T09:06:35.4070880Z   persist-credentials: true
+2025-02-22T09:06:35.4071369Z   clean: true
+2025-02-22T09:06:35.4071819Z   sparse-checkout-cone-mode: true
+2025-02-22T09:06:35.4072349Z   fetch-depth: 1
+2025-02-22T09:06:35.4072790Z   fetch-tags: false
+2025-02-22T09:06:35.4073222Z   show-progress: true
+2025-02-22T09:06:35.4073674Z   lfs: false
+2025-02-22T09:06:35.4074113Z   submodules: false
+2025-02-22T09:06:35.4074561Z   set-safe-directory: true
+2025-02-22T09:06:35.4075534Z ##[endgroup]
+2025-02-22T09:06:35.5933867Z Syncing repository: meilisearch/meilisearch-java
+2025-02-22T09:06:35.5936073Z ##[group]Getting Git version info
+2025-02-22T09:06:35.5937389Z Working directory is '/home/runner/work/meilisearch-java/meilisearch-java'
+2025-02-22T09:06:35.5938564Z [command]/usr/bin/git version
+2025-02-22T09:06:35.6012864Z git version 2.48.1
+2025-02-22T09:06:35.6041882Z ##[endgroup]
+2025-02-22T09:06:35.6056436Z Temporarily overriding HOME='/home/runner/work/_temp/c9b0c78f-9361-4c35-aca4-ee0a354caa42' before making global git config changes
+2025-02-22T09:06:35.6058836Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-22T09:06:35.6061595Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/meilisearch-java/meilisearch-java
+2025-02-22T09:06:35.6097552Z Deleting the contents of '/home/runner/work/meilisearch-java/meilisearch-java'
+2025-02-22T09:06:35.6101315Z ##[group]Initializing the repository
+2025-02-22T09:06:35.6105466Z [command]/usr/bin/git init /home/runner/work/meilisearch-java/meilisearch-java
+2025-02-22T09:06:35.6208576Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-22T09:06:35.6209849Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-22T09:06:35.6210888Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-22T09:06:35.6211715Z hint:
+2025-02-22T09:06:35.6212327Z hint: 	git config --global init.defaultBranch <name>
+2025-02-22T09:06:35.6213038Z hint:
+2025-02-22T09:06:35.6213679Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-22T09:06:35.6215146Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-22T09:06:35.6216160Z hint:
+2025-02-22T09:06:35.6216947Z hint: 	git branch -m <name>
+2025-02-22T09:06:35.6218418Z Initialized empty Git repository in /home/runner/work/meilisearch-java/meilisearch-java/.git/
+2025-02-22T09:06:35.6228441Z [command]/usr/bin/git remote add origin https://github.com/meilisearch/meilisearch-java
+2025-02-22T09:06:35.6267580Z ##[endgroup]
+2025-02-22T09:06:35.6268941Z ##[group]Disabling automatic garbage collection
+2025-02-22T09:06:35.6272392Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-22T09:06:35.6313597Z ##[endgroup]
+2025-02-22T09:06:35.6315690Z ##[group]Setting up auth
+2025-02-22T09:06:35.6317017Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-22T09:06:35.6345840Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-22T09:06:35.6679384Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-22T09:06:35.6710990Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-22T09:06:35.6945623Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-22T09:06:35.6983722Z ##[endgroup]
+2025-02-22T09:06:35.6985759Z ##[group]Fetching the repository
+2025-02-22T09:06:35.6993032Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +f287769d99fac9d42e479b7b87f7d2fe7bf099a5:refs/remotes/pull/816/merge
+2025-02-22T09:06:35.9896291Z From https://github.com/meilisearch/meilisearch-java
+2025-02-22T09:06:35.9900356Z  * [new ref]         f287769d99fac9d42e479b7b87f7d2fe7bf099a5 -> pull/816/merge
+2025-02-22T09:06:35.9927050Z ##[endgroup]
+2025-02-22T09:06:35.9929147Z ##[group]Determining the checkout info
+2025-02-22T09:06:35.9931669Z ##[endgroup]
+2025-02-22T09:06:35.9935033Z [command]/usr/bin/git sparse-checkout disable
+2025-02-22T09:06:35.9979183Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-22T09:06:36.0009237Z ##[group]Checking out the ref
+2025-02-22T09:06:36.0012757Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/816/merge
+2025-02-22T09:06:36.0128642Z Note: switching to 'refs/remotes/pull/816/merge'.
+2025-02-22T09:06:36.0130130Z 
+2025-02-22T09:06:36.0131121Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-22T09:06:36.0134228Z changes and commit them, and you can discard any commits you make in this
+2025-02-22T09:06:36.0137239Z state without impacting any branches by switching back to a branch.
+2025-02-22T09:06:36.0138930Z 
+2025-02-22T09:06:36.0139751Z If you want to create a new branch to retain commits you create, you may
+2025-02-22T09:06:36.0141975Z do so (now or later) by using -c with the switch command. Example:
+2025-02-22T09:06:36.0143161Z 
+2025-02-22T09:06:36.0143657Z   git switch -c <new-branch-name>
+2025-02-22T09:06:36.0144460Z 
+2025-02-22T09:06:36.0145155Z Or undo this operation with:
+2025-02-22T09:06:36.0145926Z 
+2025-02-22T09:06:36.0146379Z   git switch -
+2025-02-22T09:06:36.0146966Z 
+2025-02-22T09:06:36.0147946Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-22T09:06:36.0149380Z 
+2025-02-22T09:06:36.0151018Z HEAD is now at f287769 Merge 0b72a1cad9e04a7ef1ae30253a7eb0bb8f473fd0 into 6383b6b400fd330683e3b13e53382c0f24437613
+2025-02-22T09:06:36.0155850Z ##[endgroup]
+2025-02-22T09:06:36.0174349Z [command]/usr/bin/git log -1 --format=%H
+2025-02-22T09:06:36.0197054Z f287769d99fac9d42e479b7b87f7d2fe7bf099a5
+2025-02-22T09:06:36.0535486Z ##[group]Run actions/setup-java@v4
+2025-02-22T09:06:36.0536569Z with:
+2025-02-22T09:06:36.0537328Z   java-version: 8
+2025-02-22T09:06:36.0538193Z   distribution: zulu
+2025-02-22T09:06:36.0539071Z   cache: gradle
+2025-02-22T09:06:36.0539905Z   java-package: jdk
+2025-02-22T09:06:36.0540765Z   check-latest: false
+2025-02-22T09:06:36.0541649Z   server-id: github
+2025-02-22T09:06:36.0542537Z   server-username: GITHUB_ACTOR
+2025-02-22T09:06:36.0543581Z   server-password: GITHUB_TOKEN
+2025-02-22T09:06:36.0544739Z   overwrite-settings: true
+2025-02-22T09:06:36.0545698Z   job-status: success
+2025-02-22T09:06:36.0546837Z   token: ***
+2025-02-22T09:06:36.0547643Z ##[endgroup]
+2025-02-22T09:06:36.2651833Z ##[group]Installed distributions
+2025-02-22T09:06:36.2683812Z Trying to resolve the latest version from remote
+2025-02-22T09:06:36.3732561Z Resolved latest version as 8.0.442+6
+2025-02-22T09:06:36.3734366Z Trying to download...
+2025-02-22T09:06:36.3737204Z Downloading Java 8.0.442+6 (Zulu) from https://cdn.azul.com/zulu/bin/zulu8.84.0.15-ca-jdk8.0.442-linux_x64.tar.gz ...
+2025-02-22T09:06:37.0843563Z Extracting Java archive...
+2025-02-22T09:06:37.0943253Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/5e147d98-d8ce-4f9f-8c7e-d42b65d96073 -f /home/runner/work/_temp/35033e86-8941-44b9-a237-09a9f287f9b9
+2025-02-22T09:06:38.8322675Z Java 8.0.442+6 was downloaded
+2025-02-22T09:06:38.8323263Z Setting Java 8.0.442+6 as the default
+2025-02-22T09:06:38.8337005Z Creating toolchains.xml for JDK version 8 from zulu
+2025-02-22T09:06:38.8438751Z Writing to /home/runner/.m2/toolchains.xml
+2025-02-22T09:06:38.8439312Z 
+2025-02-22T09:06:38.8439539Z Java configuration:
+2025-02-22T09:06:38.8440080Z   Distribution: zulu
+2025-02-22T09:06:38.8440571Z   Version: 8.0.442+6
+2025-02-22T09:06:38.8441362Z   Path: /opt/hostedtoolcache/Java_Zulu_jdk/8.0.442-6/x64
+2025-02-22T09:06:38.8441890Z 
+2025-02-22T09:06:38.8443079Z ##[endgroup]
+2025-02-22T09:06:38.8459016Z Creating settings.xml with server-id: github
+2025-02-22T09:06:38.8461801Z Writing to /home/runner/.m2/settings.xml
+2025-02-22T09:06:38.9497605Z Cache hit for: setup-java-Linux-x64-gradle-4b3c6b4dd82f53dfaf7e3c0995f3d23b083bb0f1cff87120459c24401b7a9a0c
+2025-02-22T09:06:39.8951627Z Received 158946772 of 158946772 (100.0%), 174.2 MBs/sec
+2025-02-22T09:06:39.8952678Z Cache Size: ~152 MB (158946772 B)
+2025-02-22T09:06:39.8989031Z [command]/usr/bin/tar -xf /home/runner/work/_temp/39f25df2-f13a-44bc-82e4-55fe7c4d5942/cache.tzst -P -C /home/runner/work/meilisearch-java/meilisearch-java --use-compress-program unzstd
+2025-02-22T09:06:40.2105627Z Cache restored successfully
+2025-02-22T09:06:40.2449093Z Cache restored from key: setup-java-Linux-x64-gradle-4b3c6b4dd82f53dfaf7e3c0995f3d23b083bb0f1cff87120459c24401b7a9a0c
+2025-02-22T09:06:40.2638804Z ##[group]Run chmod +x gradlew
+2025-02-22T09:06:40.2639140Z [36;1mchmod +x gradlew[0m
+2025-02-22T09:06:40.2847775Z shell: /usr/bin/bash -e {0}
+2025-02-22T09:06:40.2848044Z env:
+2025-02-22T09:06:40.2848311Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/8.0.442-6/x64
+2025-02-22T09:06:40.2848733Z   JAVA_HOME_8_X64: /opt/hostedtoolcache/Java_Zulu_jdk/8.0.442-6/x64
+2025-02-22T09:06:40.2849054Z ##[endgroup]
+2025-02-22T09:06:40.2993136Z ##[group]Run docker run -d -p 7700:7700 getmeili/meilisearch:latest meilisearch --master-key=masterKey --no-analytics
+2025-02-22T09:06:40.2993965Z [36;1mdocker run -d -p 7700:7700 getmeili/meilisearch:latest meilisearch --master-key=masterKey --no-analytics[0m
+2025-02-22T09:06:40.3047444Z shell: /usr/bin/bash -e {0}
+2025-02-22T09:06:40.3047712Z env:
+2025-02-22T09:06:40.3047976Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/8.0.442-6/x64
+2025-02-22T09:06:40.3048391Z   JAVA_HOME_8_X64: /opt/hostedtoolcache/Java_Zulu_jdk/8.0.442-6/x64
+2025-02-22T09:06:40.3048742Z ##[endgroup]
+2025-02-22T09:06:40.4181092Z Unable to find image 'getmeili/meilisearch:latest' locally
+2025-02-22T09:06:40.7020319Z latest: Pulling from getmeili/meilisearch
+2025-02-22T09:06:40.7712354Z 0a9a5dfd008f: Pulling fs layer
+2025-02-22T09:06:40.7712921Z 478e0ff36269: Pulling fs layer
+2025-02-22T09:06:40.7713355Z 4ed32b8d7b66: Pulling fs layer
+2025-02-22T09:06:40.7713769Z 8fd0aa50ba1e: Pulling fs layer
+2025-02-22T09:06:40.7714231Z b15a612a1ff6: Pulling fs layer
+2025-02-22T09:06:40.7714841Z 0e2ad1002a93: Pulling fs layer
+2025-02-22T09:06:40.7715221Z 8fd0aa50ba1e: Waiting
+2025-02-22T09:06:40.7715666Z b15a612a1ff6: Waiting
+2025-02-22T09:06:40.7716000Z 0e2ad1002a93: Waiting
+2025-02-22T09:06:40.9001322Z 478e0ff36269: Verifying Checksum
+2025-02-22T09:06:40.9001978Z 478e0ff36269: Download complete
+2025-02-22T09:06:40.9062940Z 0a9a5dfd008f: Verifying Checksum
+2025-02-22T09:06:40.9064030Z 0a9a5dfd008f: Download complete
+2025-02-22T09:06:41.0061452Z b15a612a1ff6: Verifying Checksum
+2025-02-22T09:06:41.0074920Z b15a612a1ff6: Download complete
+2025-02-22T09:06:41.0084565Z 8fd0aa50ba1e: Verifying Checksum
+2025-02-22T09:06:41.0085622Z 8fd0aa50ba1e: Download complete
+2025-02-22T09:06:41.0517375Z 0a9a5dfd008f: Pull complete
+2025-02-22T09:06:41.1036187Z 0e2ad1002a93: Verifying Checksum
+2025-02-22T09:06:41.1039569Z 0e2ad1002a93: Download complete
+2025-02-22T09:06:41.3563754Z 4ed32b8d7b66: Verifying Checksum
+2025-02-22T09:06:41.3564120Z 4ed32b8d7b66: Download complete
+2025-02-22T09:06:42.4778446Z 478e0ff36269: Pull complete
+2025-02-22T09:06:43.1166069Z 4ed32b8d7b66: Pull complete
+2025-02-22T09:06:43.1540002Z 8fd0aa50ba1e: Pull complete
+2025-02-22T09:06:43.1693587Z b15a612a1ff6: Pull complete
+2025-02-22T09:06:43.1814365Z 0e2ad1002a93: Pull complete
+2025-02-22T09:06:43.1865210Z Digest: sha256:c944d012cd5557103865503f090b8724966c6a7745d987921c107ac2a31ba985
+2025-02-22T09:06:43.1885128Z Status: Downloaded newer image for getmeili/meilisearch:latest
+2025-02-22T09:06:43.2231800Z 6c3940ec5a3d26b3c43408edad6be1d1444680a7a201fbf9e73d43f8e65f5391
+2025-02-22T09:06:43.5867963Z ##[group]Run ./gradlew build integrationTest
+2025-02-22T09:06:43.5868478Z [36;1m./gradlew build integrationTest[0m
+2025-02-22T09:06:43.5924191Z shell: /usr/bin/bash -e {0}
+2025-02-22T09:06:43.5924434Z env:
+2025-02-22T09:06:43.5924877Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/8.0.442-6/x64
+2025-02-22T09:06:43.5925277Z   JAVA_HOME_8_X64: /opt/hostedtoolcache/Java_Zulu_jdk/8.0.442-6/x64
+2025-02-22T09:06:43.5925597Z ##[endgroup]
+2025-02-22T09:06:44.0889746Z 
+2025-02-22T09:06:44.0893767Z Welcome to Gradle 8.1!
+2025-02-22T09:06:44.0894055Z 
+2025-02-22T09:06:44.0894249Z Here are the highlights of this release:
+2025-02-22T09:06:44.0906625Z  - Stable configuration cache
+2025-02-22T09:06:44.0907169Z  - Experimental Kotlin DSL assignment syntax
+2025-02-22T09:06:44.0907648Z  - Building with Java 20
+2025-02-22T09:06:44.0908249Z 
+2025-02-22T09:06:44.0912268Z For more details see https://docs.gradle.org/8.1/release-notes.html
+2025-02-22T09:06:44.0914996Z 
+2025-02-22T09:06:44.1880854Z Starting a Gradle Daemon (subsequent builds will be faster)
+2025-02-22T09:06:52.4898571Z 
+2025-02-22T09:06:52.4899349Z > Task :compileJava
+2025-02-22T09:06:52.4919814Z Note: Some input files use unchecked or unsafe operations.
+2025-02-22T09:06:52.4924440Z Note: Recompile with -Xlint:unchecked for details.
+2025-02-22T09:06:52.6879142Z 
+2025-02-22T09:06:52.6887544Z > Task :processResources NO-SOURCE
+2025-02-22T09:06:52.6887998Z > Task :classes
+2025-02-22T09:06:52.7879501Z > Task :jar
+2025-02-22T09:06:54.1878436Z 
+2025-02-22T09:06:54.1880272Z > Task :javadoc
+2025-02-22T09:06:54.1883952Z /home/runner/work/meilisearch-java/meilisearch-java/src/main/java/com/meilisearch/sdk/SettingsHandler.java:712: warning: no @param for separatorTokens
+2025-02-22T09:06:54.1886365Z     public TaskInfo updateSeparatorTokensSettings(String uid, String[] separatorTokens) {
+2025-02-22T09:06:54.1886820Z                     ^
+2025-02-22T09:06:54.1887479Z /home/runner/work/meilisearch-java/meilisearch-java/src/main/java/com/meilisearch/sdk/SettingsHandler.java:752: warning: no @param for separatorTokens
+2025-02-22T09:06:54.1888367Z     public TaskInfo updateNonSeparatorTokensSettings(String uid, String[] separatorTokens) {
+2025-02-22T09:06:54.1888797Z                     ^
+2025-02-22T09:06:54.1888982Z 2 warnings
+2025-02-22T09:06:54.2879203Z 
+2025-02-22T09:06:54.2879686Z > Task :javadocJar
+2025-02-22T09:06:54.2881664Z > Task :sourcesJar
+2025-02-22T09:06:54.2882428Z > Task :assemble
+2025-02-22T09:06:54.2882909Z > Task :spotlessInternalRegisterDependencies
+2025-02-22T09:06:55.8912470Z > Task :spotlessJava
+2025-02-22T09:06:55.8916915Z > Task :spotlessJavaCheck
+2025-02-22T09:06:55.8917609Z > Task :spotlessCheck
+2025-02-22T09:06:59.6879404Z 
+2025-02-22T09:06:59.6884308Z > Task :compileTestJava
+2025-02-22T09:06:59.6891286Z Note: Some input files use or override a deprecated API.
+2025-02-22T09:06:59.6895711Z Note: Recompile with -Xlint:deprecation for details.
+2025-02-22T09:06:59.6898589Z Note: Some input files use unchecked or unsafe operations.
+2025-02-22T09:06:59.6901134Z Note: Recompile with -Xlint:unchecked for details.
+2025-02-22T09:06:59.7879715Z 
+2025-02-22T09:06:59.7881638Z > Task :processTestResources
+2025-02-22T09:06:59.7883824Z > Task :testClasses
+2025-02-22T09:07:01.7879100Z 
+2025-02-22T09:07:01.7883391Z > Task :test
+2025-02-22T09:07:01.7885234Z 
+2025-02-22T09:07:01.7896735Z SearchRequestTest > toStringQueryDefinitionAttributesToSearchOn() PASSED
+2025-02-22T09:07:01.7903304Z 
+2025-02-22T09:07:01.7915233Z SearchRequestTest > toStringSimpleQueryWithBuilder() PASSED
+2025-02-22T09:07:01.7926072Z 
+2025-02-22T09:07:01.7926730Z SearchRequestTest > toStringQueryLimitAndOffset() PASSED
+2025-02-22T09:07:01.7927278Z 
+2025-02-22T09:07:01.7927777Z SearchRequestTest > toStringEveryParametersWithArrayMatchingStrategyNull() PASSED
+2025-02-22T09:07:01.7928425Z 
+2025-02-22T09:07:01.7928792Z SearchRequestTest > toStringQueryAndOffsetWithBuilder() PASSED
+2025-02-22T09:07:01.7929414Z 
+2025-02-22T09:07:01.7930272Z SearchRequestTest > toStringEveryParametersWithArray() PASSED
+2025-02-22T09:07:01.7930768Z 
+2025-02-22T09:07:01.7931220Z SearchRequestTest > toStringEveryParametersWithArrayWithBuilder() PASSED
+2025-02-22T09:07:01.7931780Z 
+2025-02-22T09:07:01.7932143Z SearchRequestTest > toStringSimpleQuery() PASSED
+2025-02-22T09:07:01.7932543Z 
+2025-02-22T09:07:01.7932791Z SearchRequestTest > toStringQueryAndOffset() PASSED
+2025-02-22T09:07:01.7933235Z 
+2025-02-22T09:07:01.7933665Z SearchRequestTest > toStringQueryLimitOffsetAndAttributesToRetrieve() PASSED
+2025-02-22T09:07:01.7934300Z 
+2025-02-22T09:07:01.7934868Z SearchRequestTest > toStringEveryParametersWithBuilder() PASSED
+2025-02-22T09:07:01.7935458Z 
+2025-02-22T09:07:01.7935738Z SearchRequestTest > toStringEveryParameters() PASSED
+2025-02-22T09:07:01.7936165Z 
+2025-02-22T09:07:01.7936787Z SearchRequestTest > toStringQueryLimitOffsetAndAttributesToRetrieveWithBuilder() PASSED
+2025-02-22T09:07:01.7937704Z 
+2025-02-22T09:07:01.7938281Z SearchRequestTest > toStringQueryLimitOffsetAndPageAndHitPerPage() PASSED
+2025-02-22T09:07:01.7969982Z 
+2025-02-22T09:07:01.7970389Z SearchRequestTest > toStringQueryLimitAndOffsetWithBuilder() PASSED
+2025-02-22T09:07:02.9903090Z 
+2025-02-22T09:07:02.9903727Z SettingsHandlerTest > Test reset dictionary settings PASSED
+2025-02-22T09:07:03.2878478Z 
+2025-02-22T09:07:03.2879165Z SettingsHandlerTest > Test get dictionary settings by uid PASSED
+2025-02-22T09:07:03.6878392Z 
+2025-02-22T09:07:03.6879645Z SettingsHandlerTest > Test update dictionary settings PASSED
+2025-02-22T09:07:03.7913623Z 
+2025-02-22T09:07:03.7914280Z TaskHandlerUtilsTest > addIndexUidToQueryWithOneIndexUid() PASSED
+2025-02-22T09:07:03.7915011Z 
+2025-02-22T09:07:03.7915348Z TaskHandlerUtilsTest > addIndexUidToQueryWithParamNull() PASSED
+2025-02-22T09:07:03.7915834Z 
+2025-02-22T09:07:03.7916125Z TaskHandlerUtilsTest > addIndexUidToQueryWithParam() PASSED
+2025-02-22T09:07:03.7916619Z 
+2025-02-22T09:07:03.7916996Z TaskHandlerUtilsTest > addIndexUidToQueryWithMultipleIndexUids() PASSED
+2025-02-22T09:07:03.7917548Z 
+2025-02-22T09:07:03.7917794Z MeilisearchApiExceptionTest > testToString() PASSED
+2025-02-22T09:07:03.7918185Z 
+2025-02-22T09:07:03.7918499Z MeilisearchCommunicationExceptionTest > testToString() PASSED
+2025-02-22T09:07:03.7918967Z 
+2025-02-22T09:07:03.7919187Z MeilisearchExceptionTest > testToString() PASSED
+2025-02-22T09:07:03.7919549Z 
+2025-02-22T09:07:03.7919812Z MeilisearchTimeoutExceptionTest > testToString() PASSED
+2025-02-22T09:07:03.7920239Z 
+2025-02-22T09:07:03.7920431Z BasicRequestTest > contentString() PASSED
+2025-02-22T09:07:03.7920758Z 
+2025-02-22T09:07:03.7920928Z BasicRequestTest > contentClass() PASSED
+2025-02-22T09:07:03.7921246Z 
+2025-02-22T09:07:03.7921416Z BasicRequestTest > basicUseCase() PASSED
+2025-02-22T09:07:03.7921732Z 
+2025-02-22T09:07:03.7921907Z BasicResponseTest > contentString() PASSED
+2025-02-22T09:07:03.7922231Z 
+2025-02-22T09:07:03.7922408Z BasicResponseTest > headerMap() PASSED
+2025-02-22T09:07:03.7922711Z 
+2025-02-22T09:07:03.7922920Z BasicResponseTest > statusCodeNotZero() PASSED
+2025-02-22T09:07:03.7923272Z 
+2025-02-22T09:07:03.7923456Z BasicResponseTest > contentClass() PASSED
+2025-02-22T09:07:03.7923781Z 
+2025-02-22T09:07:03.7923961Z BasicResponseTest > basicUseCase() PASSED
+2025-02-22T09:07:04.8878821Z 
+2025-02-22T09:07:04.8893550Z CustomOkHttpClientTest > deleteWithoutBody() PASSED
+2025-02-22T09:07:04.8894141Z 
+2025-02-22T09:07:04.8894393Z CustomOkHttpClientTest > delete() PASSED
+2025-02-22T09:07:04.8894868Z 
+2025-02-22T09:07:04.8895331Z CustomOkHttpClientTest > customConfigWithCustomAnalyticsHasBoth() PASSED
+2025-02-22T09:07:04.8895962Z 
+2025-02-22T09:07:04.8896324Z CustomOkHttpClientTest > postWithoutBody() PASSED
+2025-02-22T09:07:04.8896792Z 
+2025-02-22T09:07:04.8916522Z CustomOkHttpClientTest > get() PASSED
+2025-02-22T09:07:04.9878768Z 
+2025-02-22T09:07:04.9879933Z CustomOkHttpClientTest > put() PASSED
+2025-02-22T09:07:04.9880550Z 
+2025-02-22T09:07:04.9881196Z CustomOkHttpClientTest > post() PASSED
+2025-02-22T09:07:04.9888190Z 
+2025-02-22T09:07:04.9892339Z CustomOkHttpClientTest > patch() PASSED
+2025-02-22T09:07:04.9905202Z 
+2025-02-22T09:07:04.9905509Z CustomOkHttpClientTest > patchWithoutBody() PASSED
+2025-02-22T09:07:04.9906029Z 
+2025-02-22T09:07:04.9906474Z CustomOkHttpClientTest > defaultConfigHasAnalytics() PASSED
+2025-02-22T09:07:04.9906932Z 
+2025-02-22T09:07:04.9907180Z CustomOkHttpClientTest > requestWithHeaders() PASSED
+2025-02-22T09:07:04.9907566Z 
+2025-02-22T09:07:04.9907802Z URLBuilderTest > addParameterStringIntArray() PASSED
+2025-02-22T09:07:04.9908182Z 
+2025-02-22T09:07:04.9908433Z URLBuilderTest > addParameterStringStringArray() PASSED
+2025-02-22T09:07:04.9908829Z 
+2025-02-22T09:07:04.9908978Z URLBuilderTest > getURL() PASSED
+2025-02-22T09:07:04.9909248Z 
+2025-02-22T09:07:04.9909446Z URLBuilderTest > addParameterStringInt() PASSED
+2025-02-22T09:07:04.9909791Z 
+2025-02-22T09:07:04.9910005Z URLBuilderTest > addParameterStringString() PASSED
+2025-02-22T09:07:04.9910648Z 
+2025-02-22T09:07:04.9910811Z URLBuilderTest > addSubroute() PASSED
+2025-02-22T09:07:05.1883509Z 
+2025-02-22T09:07:05.1888757Z URLBuilderTest > addParameterStringDate() FAILED
+2025-02-22T09:07:05.1904829Z     org.opentest4j.AssertionFailedError at URLBuilderTest.java:121
+2025-02-22T09:07:05.1906060Z         Caused by: java.time.format.DateTimeParseException at URLBuilderTest.java:121
+2025-02-22T09:07:05.1906880Z 
+2025-02-22T09:07:05.1907320Z URLBuilderTest > addSubrouteWithMultipleRoutes() PASSED
+2025-02-22T09:07:05.1907928Z 
+2025-02-22T09:07:05.1908406Z GsonJsonHandlerTest > deserializeWithParametersEmpty() PASSED
+2025-02-22T09:07:05.1909039Z 
+2025-02-22T09:07:05.1909411Z GsonJsonHandlerTest > deserializeMap() PASSED
+2025-02-22T09:07:05.1909926Z 
+2025-02-22T09:07:05.1911397Z GsonJsonHandlerTest > decodeKeyWithOnlyExpiresAtSet() PASSED
+2025-02-22T09:07:05.1912040Z 
+2025-02-22T09:07:05.1912361Z GsonJsonHandlerTest > deserializeString() PASSED
+2025-02-22T09:07:05.1912918Z 
+2025-02-22T09:07:05.1913671Z GsonJsonHandlerTest > decodeKeyWithAllFieldsSet() PASSED
+2025-02-22T09:07:05.1914232Z 
+2025-02-22T09:07:05.1914730Z GsonJsonHandlerTest > encodeAnObject() PASSED
+2025-02-22T09:07:05.1915240Z 
+2025-02-22T09:07:05.1915593Z GsonJsonHandlerTest > deserializeBodyNull() PASSED
+2025-02-22T09:07:05.1916115Z 
+2025-02-22T09:07:05.1916559Z GsonJsonHandlerTest > decodeNestedKeyWhereValueIsNull() PASSED
+2025-02-22T09:07:05.1917160Z 
+2025-02-22T09:07:05.1917599Z GsonJsonHandlerTest > encodeBasicString() PASSED
+2025-02-22T09:07:05.1918262Z 
+2025-02-22T09:07:05.1918908Z GsonJsonHandlerTest > encodeThrowsJsonEncodingExceptionWhenGsonThrowsException() PASSED
+2025-02-22T09:07:05.1919739Z 
+2025-02-22T09:07:05.1920198Z GsonJsonHandlerTest > encodeEmptyKeyWritesExpiresAtNull() PASSED
+2025-02-22T09:07:05.1920839Z 
+2025-02-22T09:07:05.1921241Z GsonJsonHandlerTest > decodeKeyWithASingleValue() PASSED
+2025-02-22T09:07:05.1921943Z 
+2025-02-22T09:07:05.1922284Z GsonJsonHandlerTest > decodeNullAsKey() PASSED
+2025-02-22T09:07:05.1922800Z 
+2025-02-22T09:07:05.1923227Z GsonJsonHandlerTest > decodeKeyWithEmptyArrayActions() PASSED
+2025-02-22T09:07:05.1923844Z 
+2025-02-22T09:07:05.1924176Z GsonJsonHandlerTest > decodeEmptyKey() PASSED
+2025-02-22T09:07:05.1924794Z 
+2025-02-22T09:07:05.1925387Z GsonJsonHandlerTest > encodeKeyWithNonNullValueWritesValueAndExpiresAt() PASSED
+2025-02-22T09:07:05.1926150Z 
+2025-02-22T09:07:05.1926730Z GsonJsonHandlerTest > encodeKeyWithExpiresAtSetWritesExpiresAtValue() PASSED
+2025-02-22T09:07:05.1927504Z 
+2025-02-22T09:07:05.1928228Z GsonJsonHandlerTest > encodeWithMultipleValuesSetWritesAllValuesIncludingExpiresAt() PASSED
+2025-02-22T09:07:05.1929454Z 
+2025-02-22T09:07:05.1929812Z GsonJsonHandlerTest > deserialize() PASSED
+2025-02-22T09:07:05.1930430Z 
+2025-02-22T09:07:05.1930849Z GsonJsonHandlerTest > decodeKeyWithNullIndexes() PASSED
+2025-02-22T09:07:05.8880054Z 
+2025-02-22T09:07:05.8886157Z JacksonJsonHandlerTest > deserializeWithParametersEmpty() PASSED
+2025-02-22T09:07:05.8887323Z 
+2025-02-22T09:07:05.8887614Z JacksonJsonHandlerTest > deserializeMap() PASSED
+2025-02-22T09:07:05.8887964Z 
+2025-02-22T09:07:05.8890106Z JacksonJsonHandlerTest > deserializeString() PASSED
+2025-02-22T09:07:05.8890550Z 
+2025-02-22T09:07:05.8890782Z JacksonJsonHandlerTest > deserializeBodyNull() PASSED
+2025-02-22T09:07:05.8891025Z 
+2025-02-22T09:07:05.8891135Z JacksonJsonHandlerTest > serialize() PASSED
+2025-02-22T09:07:05.8891473Z 
+2025-02-22T09:07:05.8891661Z JacksonJsonHandlerTest > deserialize() PASSED
+2025-02-22T09:07:05.9885634Z 
+2025-02-22T09:07:05.9886008Z 79 tests completed, 1 failed
+2025-02-22T09:07:06.0878220Z 
+2025-02-22T09:07:06.0878547Z 
+2025-02-22T09:07:06.0878937Z > Task :test FAILED
+2025-02-22T09:07:06.0879417Z FAILURE: Build failed with an exception.
+2025-02-22T09:07:06.0884538Z 
+2025-02-22T09:07:06.0884932Z * What went wrong:
+2025-02-22T09:07:06.0885345Z Execution failed for task ':test'.
+2025-02-22T09:07:06.0886411Z > There were failing tests. See the report at: file:///home/runner/work/meilisearch-java/meilisearch-java/build/reports/tests/test/index.html
+2025-02-22T09:07:06.0887683Z 
+2025-02-22T09:07:06.0887800Z * Try:
+2025-02-22T09:07:06.0888211Z > Run with --stacktrace option to get the stack trace.
+2025-02-22T09:07:06.0888816Z > Run with --info or --debug option to get more log output.
+2025-02-22T09:07:06.0889370Z > Run with --scan to get full insights.
+2025-02-22T09:07:06.0889683Z 
+2025-02-22T09:07:06.0889890Z * Get more help at https://help.gradle.org
+2025-02-22T09:07:06.0890214Z 
+2025-02-22T09:07:06.0890339Z BUILD FAILED in 22s
+2025-02-22T09:07:06.0890544Z 
+2025-02-22T09:07:06.0890974Z Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+2025-02-22T09:07:06.0891582Z 
+2025-02-22T09:07:06.0892253Z You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+2025-02-22T09:07:06.0893089Z 
+2025-02-22T09:07:06.0893563Z See https://docs.gradle.org/8.1/userguide/command_line_interface.html#sec:command_line_warnings
+2025-02-22T09:07:06.0894377Z 11 actionable tasks: 11 executed
+2025-02-22T09:07:06.4120033Z ##[error]Process completed with exit code 1.
+2025-02-22T09:07:06.4188551Z ##[group]Run actions/upload-artifact@v4
+2025-02-22T09:07:06.4188830Z with:
+2025-02-22T09:07:06.4189003Z   name: Test report
+2025-02-22T09:07:06.4189231Z   path: build/reports/tests/integrationTest
+2025-02-22T09:07:06.4189504Z   if-no-files-found: ignore
+2025-02-22T09:07:06.4189729Z   compression-level: 6
+2025-02-22T09:07:06.4189933Z   overwrite: false
+2025-02-22T09:07:06.4190135Z   include-hidden-files: false
+2025-02-22T09:07:06.4190349Z env:
+2025-02-22T09:07:06.4190608Z   JAVA_HOME: /opt/hostedtoolcache/Java_Zulu_jdk/8.0.442-6/x64
+2025-02-22T09:07:06.4190984Z   JAVA_HOME_8_X64: /opt/hostedtoolcache/Java_Zulu_jdk/8.0.442-6/x64
+2025-02-22T09:07:06.4191286Z ##[endgroup]
+2025-02-22T09:07:06.6267450Z No files were found with the provided path: build/reports/tests/integrationTest. No artifacts will be uploaded.
+2025-02-22T09:07:06.6437577Z Post job cleanup.
+2025-02-22T09:07:06.8184823Z Post job cleanup.
+2025-02-22T09:07:06.9123331Z [command]/usr/bin/git version
+2025-02-22T09:07:06.9164215Z git version 2.48.1
+2025-02-22T09:07:06.9208686Z Temporarily overriding HOME='/home/runner/work/_temp/94dcb349-9115-4fe0-867c-c154423ae70e' before making global git config changes
+2025-02-22T09:07:06.9209936Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-22T09:07:06.9222454Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/meilisearch-java/meilisearch-java
+2025-02-22T09:07:06.9259210Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-22T09:07:06.9293873Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-22T09:07:06.9547880Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-22T09:07:06.9570803Z http.https://github.com/.extraheader
+2025-02-22T09:07:06.9590263Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-22T09:07:06.9629905Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-22T09:07:06.9981379Z Cleaning up orphan processes
+2025-02-22T09:07:07.0313787Z Terminate orphan process: pid (2064) (java)

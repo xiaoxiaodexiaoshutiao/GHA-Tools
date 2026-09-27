@@ -1,0 +1,407 @@
+diff --git a/Duplicati.sln b/Duplicati.sln
+index e9f8d24051..729e869059 100644
+--- a/Duplicati.sln
++++ b/Duplicati.sln
+@@ -164,7 +164,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Duplicati.Library.Backend.p
+ EndProject
+ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Duplicati.Library.Crashlog", "Duplicati\Library\Crashlog\Duplicati.Library.Crashlog.csproj", "{8ACA2736-3C69-4FA5-BCF9-5EDF50CAF332}"
+ EndProject
+-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Duplicati.Library.Backend.CIFS", "Duplicati\Library\Backend\CIFS\Duplicati.Library.Backend.CIFS.csproj", "{836E0557-B40C-4DC7-9A2A-5C062F9ACC6B}"
++Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Duplicati.Library.Backend.SMB", "Duplicati\Library\Backend\SMB\Duplicati.Library.Backend.SMB.csproj", "{836E0557-B40C-4DC7-9A2A-5C062F9ACC6B}"
+ EndProject
+ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Duplicati.Library.SourceProviders", "Duplicati\Library\SourceProviders\Duplicati.Library.SourceProviders.csproj", "{8A2C7A9F-3EC8-4DE5-A9FA-9E4BCF955EF3}"
+ EndProject
+diff --git a/Duplicati/Library/Backend/SMB/CIFSBackend.cs b/Duplicati/Library/Backend/SMB/CIFSBackend.cs
+new file mode 100644
+index 0000000000..425b35fcf2
+--- /dev/null
++++ b/Duplicati/Library/Backend/SMB/CIFSBackend.cs
+@@ -0,0 +1,65 @@
++// Copyright (C) 2025, The Duplicati Team
++// https://duplicati.com, hello@duplicati.com
++// 
++// Permission is hereby granted, free of charge, to any person obtaining a 
++// copy of this software and associated documentation files (the "Software"), 
++// to deal in the Software without restriction, including without limitation 
++// the rights to use, copy, modify, merge, publish, distribute, sublicense, 
++// and/or sell copies of the Software, and to permit persons to whom the 
++// Software is furnished to do so, subject to the following conditions:
++// 
++// The above copyright notice and this permission notice shall be included in 
++// all copies or substantial portions of the Software.
++// 
++// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS 
++// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
++// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
++// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
++// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
++// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
++// DEALINGS IN THE SOFTWARE.
++
++namespace Duplicati.Library.Backend;
++
++/// <summary>
++/// Native CIFS/SMB Backend implementation
++/// </summary>
++public class CIFSBackend : SMBBackend
++{
++    /// <summary>
++    /// Log tag for the backend
++    /// </summary>
++    public static readonly string LOGTAG = Logging.Log.LogTagFromType<CIFSBackend>();
++    /// <summary>
++    /// Gets the protocol key for the backend
++    /// </summary>
++    public override string ProtocolKey => "cifs";
++
++    /// <summary>
++    /// Gets the display name for the backend
++    /// </summary>
++    public override string DisplayName => "CIFS (deprecated)";
++
++    /// <summary>
++    /// Gets the description for the backend
++    /// </summary>
++    public override string Description => "Same as SMB backend, but with a different name. Use SMB instead.";
++
++    /// <summary>
++    /// Empty constructor is required for the backend to be loaded by the backend factory
++    /// </summary>
++    public CIFSBackend() : base()
++    {
++    }
++
++    /// <summary>
++    /// Actual constructor for the backend that accepts the url and options
++    /// </summary>
++    /// <param name="url">URL in Duplicati Uri format</param>
++    /// <param name="options">options to be used in the backend</param>
++    public CIFSBackend(string url, Dictionary<string, string?> options)
++        : base(url, options)
++    {
++        Logging.Log.WriteWarningMessage(LOGTAG, "DeprecatedCIFSBackend", null, "The CIFS backend is deprecated, please use the SMB backend instead.");
++    }
++}
+\ No newline at end of file
+diff --git a/Duplicati/Library/Backend/CIFS/Duplicati.Library.Backend.CIFS.csproj b/Duplicati/Library/Backend/SMB/Duplicati.Library.Backend.SMB.csproj
+similarity index 94%
+rename from Duplicati/Library/Backend/CIFS/Duplicati.Library.Backend.CIFS.csproj
+rename to Duplicati/Library/Backend/SMB/Duplicati.Library.Backend.SMB.csproj
+index 3dbadb34fc..41f97d11fd 100644
+--- a/Duplicati/Library/Backend/CIFS/Duplicati.Library.Backend.CIFS.csproj
++++ b/Duplicati/Library/Backend/SMB/Duplicati.Library.Backend.SMB.csproj
+@@ -6,7 +6,7 @@
+     <Copyright>Copyright © 2025 Team Duplicati, MIT license</Copyright>
+     <Nullable>enable</Nullable>
+     <ImplicitUsings>enable</ImplicitUsings>
+-    <RootNamespace>Duplicati.Library.Backend.CIFS</RootNamespace>
++    <RootNamespace>Duplicati.Library.Backend.SMB</RootNamespace>
+   </PropertyGroup>
+ 
+   <ItemGroup>
+diff --git a/Duplicati/Library/Backend/CIFS/Model/SMBConnectionParameters.cs b/Duplicati/Library/Backend/SMB/Model/SMBConnectionParameters.cs
+similarity index 97%
+rename from Duplicati/Library/Backend/CIFS/Model/SMBConnectionParameters.cs
+rename to Duplicati/Library/Backend/SMB/Model/SMBConnectionParameters.cs
+index 044b03cdd2..85a66c43a6 100644
+--- a/Duplicati/Library/Backend/CIFS/Model/SMBConnectionParameters.cs
++++ b/Duplicati/Library/Backend/SMB/Model/SMBConnectionParameters.cs
+@@ -21,7 +21,7 @@
+ 
+ using SMBLibrary;
+ 
+-namespace Duplicati.Library.Backend.CIFS.Model;
++namespace Duplicati.Library.Backend.SMB.Model;
+ 
+ /// <summary>
+ /// Connection parameters for establishing an SMB connection.
+diff --git a/Duplicati/Library/Backend/CIFS/CIFS.cs b/Duplicati/Library/Backend/SMB/SMBBackend.cs
+similarity index 96%
+rename from Duplicati/Library/Backend/CIFS/CIFS.cs
+rename to Duplicati/Library/Backend/SMB/SMBBackend.cs
+index 2a98f65217..4c8cfadac5 100644
+--- a/Duplicati/Library/Backend/CIFS/CIFS.cs
++++ b/Duplicati/Library/Backend/SMB/SMBBackend.cs
+@@ -20,8 +20,8 @@
+ // DEALINGS IN THE SOFTWARE.
+ 
+ using Duplicati.Library.Interface;
+-using Duplicati.Library.Backend.CIFS;
+-using Duplicati.Library.Backend.CIFS.Model;
++using Duplicati.Library.Backend.SMB;
++using Duplicati.Library.Backend.SMB.Model;
+ using SMBLibrary;
+ using Duplicati.Library.SourceProvider;
+ using System.Runtime.CompilerServices;
+@@ -33,22 +33,22 @@ namespace Duplicati.Library.Backend;
+ /// <summary>
+ /// Native CIFS/SMB Backend implementation
+ /// </summary>
+-public class CIFSBackend : IStreamingBackend, IFolderEnabledBackend
++public class SMBBackend : IStreamingBackend, IFolderEnabledBackend
+ {
+     /// <summary>
+     /// Implementation of interface property for the backend key
+     /// </summary>
+-    public string ProtocolKey => "cifs";
++    public virtual string ProtocolKey => "smb";
+ 
+     /// <summary>
+     /// Implementation of interface property for the backend display name
+     /// </summary>
+-    public string DisplayName => Strings.CIFSBackend.DisplayName;
++    public virtual string DisplayName => Strings.SMBBackend.DisplayName;
+ 
+     /// <summary>
+     /// Implementation of interface property for the backend description
+     /// </summary>
+-    public string Description => Strings.CIFSBackend.Description;
++    public virtual string Description => Strings.SMBBackend.Description;
+ 
+     /// <summary>
+     /// Hostname only (no ports or paths) to be used on DNS resolutions.
+@@ -112,7 +112,7 @@ public class CIFSBackend : IStreamingBackend, IFolderEnabledBackend
+     /// <summary>
+     /// Empty constructor is required for the backend to be loaded by the backend factory
+     /// </summary>
+-    public CIFSBackend()
++    public SMBBackend()
+     {
+         _DnsName = null!;
+         _connectionParameters = null!;
+@@ -124,7 +124,7 @@ public CIFSBackend()
+     /// </summary>
+     /// <param name="url">URL in Duplicati Uri format</param>
+     /// <param name="options">options to be used in the backend</param>
+-    public CIFSBackend(string url, Dictionary<string, string?> options)
++    public SMBBackend(string url, Dictionary<string, string?> options)
+     {
+         if (string.IsNullOrEmpty(url))
+             throw new ArgumentNullException(nameof(url));
+@@ -182,7 +182,7 @@ public CIFSBackend(string url, Dictionary<string, string?> options)
+     public IList<ICommandLineArgument> SupportedCommands =>
+         [
+             .. AuthOptionsHelper.GetOptions(),
+-            new CommandLineArgument(AUTH_DOMAIN_OPTION, CommandLineArgument.ArgumentType.String, Strings.CIFSBackend.DescriptionAuthDomainShort, Strings.CIFSBackend.DescriptionAuthDomainLong),
++            new CommandLineArgument(AUTH_DOMAIN_OPTION, CommandLineArgument.ArgumentType.String, Strings.SMBBackend.DescriptionAuthDomainShort, Strings.SMBBackend.DescriptionAuthDomainLong),
+             new CommandLineArgument(TRANSPORT_OPTION, CommandLineArgument.ArgumentType.Enumeration, Strings.Options.TransportShort, Strings.Options.TransportLong, DEFAULT_TRANSPORT, null, _transportMap.Keys.ToArray()),
+             new CommandLineArgument(READ_BUFFER_SIZE_OPTION, CommandLineArgument.ArgumentType.String, Strings.Options.DescriptionReadBufferSizeShort, Strings.Options.DescriptionReadBufferSizeLong),
+             new CommandLineArgument(WRITE_BUFFER_SIZE_OPTION, CommandLineArgument.ArgumentType.String, Strings.Options.DescriptionWriteBufferSizeShort, Strings.Options.DescriptionWriteBufferSizeLong),
+diff --git a/Duplicati/Library/Backend/CIFS/SMBShareConnection.cs b/Duplicati/Library/Backend/SMB/SMBShareConnection.cs
+similarity index 98%
+rename from Duplicati/Library/Backend/CIFS/SMBShareConnection.cs
+rename to Duplicati/Library/Backend/SMB/SMBShareConnection.cs
+index 0226811cd0..a77bafd128 100644
+--- a/Duplicati/Library/Backend/CIFS/SMBShareConnection.cs
++++ b/Duplicati/Library/Backend/SMB/SMBShareConnection.cs
+@@ -19,15 +19,7 @@
+ // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+ // DEALINGS IN THE SOFTWARE.
+ 
+-#nullable enable
+-
+-using System;
+-using System.Collections.Generic;
+-using System.IO;
+-using System.Linq;
+-using System.Threading;
+-using System.Threading.Tasks;
+-using Duplicati.Library.Backend.CIFS.Model;
++using Duplicati.Library.Backend.SMB.Model;
+ using Duplicati.Library.Common.IO;
+ using Duplicati.Library.Interface;
+ using Duplicati.Library.Localization.Short;
+@@ -37,7 +29,7 @@
+ using SMBLibrary.Client;
+ using FileAttributes = SMBLibrary.FileAttributes;
+ 
+-namespace Duplicati.Library.Backend.CIFS;
++namespace Duplicati.Library.Backend.SMB;
+ 
+ /// <summary>
+ /// Class the wraps the SMB connection and file store objects, handling the connection,
+diff --git a/Duplicati/Library/Backend/CIFS/Strings.cs b/Duplicati/Library/Backend/SMB/Strings.cs
+similarity index 98%
+rename from Duplicati/Library/Backend/CIFS/Strings.cs
+rename to Duplicati/Library/Backend/SMB/Strings.cs
+index 2457dcf9d4..e0567cd113 100644
+--- a/Duplicati/Library/Backend/CIFS/Strings.cs
++++ b/Duplicati/Library/Backend/SMB/Strings.cs
+@@ -23,7 +23,7 @@
+ 
+ namespace Duplicati.Library.Backend.Strings
+ {
+-    internal static class CIFSBackend
++    internal static class SMBBackend
+     {
+ 
+         public static string DescriptionAuthDomainLong => LC.L(@"The domain used to connect to the server. This may also be supplied as the environment variable ""AUTH_DOMAIN"".");
+diff --git a/Duplicati/Library/Backends/BackendModules.cs b/Duplicati/Library/Backends/BackendModules.cs
+index c5c2cd714d..f2cf6fc1df 100644
+--- a/Duplicati/Library/Backends/BackendModules.cs
++++ b/Duplicati/Library/Backends/BackendModules.cs
+@@ -67,7 +67,8 @@ public static class BackendModules
+         new Backend.TencentCOS.COS(),
+         new Backend.WEBDAV(),
+         new Backend.pCloudBackend(),
+-        new Backend.CIFSBackend()
++        new Backend.SMBBackend(),
++        new Backend.CIFSBackend(),
+     }
+     .Where(x => x != null)
+     .ToList();
+diff --git a/Duplicati/Library/Backends/Duplicati.Library.Backends.csproj b/Duplicati/Library/Backends/Duplicati.Library.Backends.csproj
+index e3d85f6b39..4540465be3 100644
+--- a/Duplicati/Library/Backends/Duplicati.Library.Backends.csproj
++++ b/Duplicati/Library/Backends/Duplicati.Library.Backends.csproj
+@@ -10,7 +10,7 @@
+ 	<ProjectReference Include="..\Backend\AzureBlob\Duplicati.Library.Backend.AzureBlob.csproj" />
+ 	<ProjectReference Include="..\Backend\Backblaze\Duplicati.Library.Backend.Backblaze.csproj" />
+ 	<ProjectReference Include="..\Backend\Box\Duplicati.Library.Backend.Box.csproj" />
+-	<ProjectReference Include="..\Backend\CIFS\Duplicati.Library.Backend.CIFS.csproj" />
++	<ProjectReference Include="..\Backend\SMB\Duplicati.Library.Backend.SMB.csproj" />
+ 	<ProjectReference Include="..\Backend\CloudFiles\Duplicati.Library.Backend.CloudFiles.csproj" />
+ 	<ProjectReference Include="..\Backend\Dropbox\Duplicati.Library.Backend.Dropbox.csproj" />
+ 	<ProjectReference Include="..\Backend\File\Duplicati.Library.Backend.File.csproj" />
+diff --git a/Duplicati/Server/webroot/ngax/scripts/services/EditUriBuiltins.js b/Duplicati/Server/webroot/ngax/scripts/services/EditUriBuiltins.js
+index 94f8251acf..c6af89a3ab 100644
+--- a/Duplicati/Server/webroot/ngax/scripts/services/EditUriBuiltins.js
++++ b/Duplicati/Server/webroot/ngax/scripts/services/EditUriBuiltins.js
+@@ -35,8 +35,9 @@ backupApp.service('EditUriBuiltins', function (AppService, AppUtils, SystemInfo,
+     EditUriBackendConfig.templates['aliyunoss']   = 'templates/backends/aliyunoss.html';
+     EditUriBackendConfig.templates['e2']          = 'templates/backends/e2.html';
+     EditUriBackendConfig.templates['pcloud']      = 'templates/backends/pcloud.html';
+-    EditUriBackendConfig.templates['cifs']        = 'templates/backends/cifs.html';
+-    
++    EditUriBackendConfig.templates['smb']        = 'templates/backends/smb.html';
++    EditUriBackendConfig.templates['cifs']        = 'templates/backends/smb.html';
++
+     EditUriBackendConfig.testers['s3'] = function(scope, callback) {
+ 
+         if (scope.s3_server != 's3.amazonaws.com')
+@@ -296,11 +297,12 @@ backupApp.service('EditUriBuiltins', function (AppService, AppUtils, SystemInfo,
+         }
+         return this['oauth-base'].apply(this, arguments); 
+     };
+-    EditUriBackendConfig.loaders['cifs']      = function(scope) {
++    EditUriBackendConfig.loaders['smb']      = function(scope) {
+         if (scope.Transport === undefined || scope.Transport === '') {
+             scope.Transport = 'directtcp';
+         }
+     };
++    EditUriBackendConfig.loaders['cifs'] = EditUriBackendConfig.loaders['smb'];
+ 
+     EditUriBackendConfig.loaders['openstack'] = function (scope) {
+         if (scope.openstack_providers == null) {
+@@ -614,7 +616,7 @@ backupApp.service('EditUriBuiltins', function (AppService, AppUtils, SystemInfo,
+         EditUriBackendConfig.mergeServerAndPath(scope);
+     }
+ 
+-    EditUriBackendConfig.parsers['cifs'] = function (scope, module, server, path, port, options) {
++    EditUriBackendConfig.parsers['smb'] = function (scope, module, server, path, port, options) {
+         if (options['--transport'])
+             scope.Transport = options['--transport'];
+         else
+@@ -633,6 +635,8 @@ backupApp.service('EditUriBuiltins', function (AppService, AppUtils, SystemInfo,
+ 
+     };
+ 
++    EditUriBackendConfig.parsers['cifs'] = EditUriBackendConfig.parsers['smb'];
++
+ 
+     // Builders take the scope and produce the uri output
+     EditUriBackendConfig.builders['s3'] = function (scope) {
+@@ -976,7 +980,7 @@ backupApp.service('EditUriBuiltins', function (AppService, AppUtils, SystemInfo,
+         return url;
+     }
+ 
+-    EditUriBackendConfig.builders['cifs'] = function (scope) {
++    EditUriBackendConfig.builders['smb'] = function (scope) {
+         var opts = {
+             'transport': scope.Transport,
+             'auth-domain': scope.Domain
+@@ -1001,12 +1005,16 @@ backupApp.service('EditUriBuiltins', function (AppService, AppUtils, SystemInfo,
+         );
+     }
+ 
+-    EditUriBackendConfig.validaters['cifs'] = function (scope, continuation) {
++    EditUriBackendConfig.builders['cifs'] = EditUriBackendConfig.builders['smb'];
++
++    EditUriBackendConfig.validaters['smb'] = function (scope, continuation) {
+         if (EditUriBackendConfig.require_server(scope)
+             && EditUriBackendConfig.require_username(scope)
+             && EditUriBackendConfig.require_field(scope, 'ShareName', gettextCatalog.getString('Share name')))
+             continuation();
+     };
++
++    EditUriBackendConfig.validaters['smb'] = EditUriBackendConfig.validaters['cifs'];
+     
+     EditUriBackendConfig.validaters['file'] = function (scope, continuation) {
+         if (EditUriBackendConfig.require_path(scope))
+diff --git a/Duplicati/Server/webroot/ngax/scripts/services/SystemInfo.js b/Duplicati/Server/webroot/ngax/scripts/services/SystemInfo.js
+index 4180ca0e54..1a0c76ee4a 100644
+--- a/Duplicati/Server/webroot/ngax/scripts/services/SystemInfo.js
++++ b/Duplicati/Server/webroot/ngax/scripts/services/SystemInfo.js
+@@ -50,7 +50,7 @@ backupApp.service('SystemInfo', function($rootScope, $timeout, $cookies, AppServ
+                 'openstack': gettextCatalog.getString('OpenStack Object Storage / Swift'),
+                 's3': gettextCatalog.getString('S3 Compatible'),
+                 'aftp': gettextCatalog.getString('FTP (Alternative)'),
+-                'cifs': gettextCatalog.getString('CFIS / SMB'),
++                'smb': gettextCatalog.getString('SMB / CIFS'),
+             },
+             local: {'file': null},
+             prop: {
+diff --git a/Duplicati/Server/webroot/ngax/templates/backends/cifs.html b/Duplicati/Server/webroot/ngax/templates/backends/smb.html
+similarity index 100%
+rename from Duplicati/Server/webroot/ngax/templates/backends/cifs.html
+rename to Duplicati/Server/webroot/ngax/templates/backends/smb.html
+diff --git a/LiveTests/Duplicati.Backend.Tests/CIFS/CIFSTests.cs b/LiveTests/Duplicati.Backend.Tests/CIFS/CIFSTests.cs
+index d7547f52be..375435cad0 100644
+--- a/LiveTests/Duplicati.Backend.Tests/CIFS/CIFSTests.cs
++++ b/LiveTests/Duplicati.Backend.Tests/CIFS/CIFSTests.cs
+@@ -21,22 +21,22 @@
+ 
+ using DotNet.Testcontainers.Images;
+ 
+-namespace Duplicati.Backend.Tests.CIFS;
++namespace Duplicati.Backend.Tests.SMB;
+ 
+ /// <summary>
+-/// CIFS Tests
++/// SMB Tests
+ /// </summary>
+ [TestClass]
+-public sealed class CIFSTests : BaseSftpgoTest
++public sealed class SMBTests : BaseSftpgoTest
+ {
+ 
+     /// <summary>
+-    /// Test CIFS with TestContainers creating a Samba Server with TestContainers.
++    /// Test SMB with TestContainers creating a Samba Server with TestContainers.
+     ///
+     /// This test has no requirement of environment variables.
+     /// </summary>
+     [TestMethod]
+-    public async Task TestCIFS()
++    public async Task TestSMB()
+     {
+         var outputConsumer = new OutputConsumer();
+         var randomPassword = GeneratePassword();
+@@ -73,7 +73,7 @@ chmod 700 /shares/testshare1
+ 
+         var container = new ContainerBuilder()
+             .WithImage("ubuntu:22.04")
+-            .WithImagePullPolicy(PullPolicy.Missing) 
++            .WithImagePullPolicy(PullPolicy.Missing)
+             .WithCommand("/bin/bash", "-c", "apt-get update && " +
+                 "DEBIAN_FRONTEND=noninteractive apt-get install -y samba && " +
+                 "bash /etc/samba/entrypoint.sh")
+@@ -92,7 +92,7 @@ chmod 700 /shares/testshare1
+         var exitCode = CommandLine.BackendTester.Program.Main(
+             new[]
+             {
+-                $"cifs://localhost/testshare1/new/?transport=directtcp&auth-domain&auth-username=smbuser1&auth-password={randomPassword}",
++                $"sMB://localhost/testshare1/new/?transport=directtcp&auth-domain&auth-username=smbuser1&auth-password={randomPassword}",
+             }.Concat(Parameters.GlobalTestParameters).ToArray());
+ 
+         Console.WriteLine(await outputConsumer.GetStreamsOutput());

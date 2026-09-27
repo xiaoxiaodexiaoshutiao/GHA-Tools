@@ -1,0 +1,417 @@
+2025-03-28T11:42:29.7789369Z Requested labels: ubuntu-latest
+2025-03-28T11:42:29.7789676Z Job defined at: WordPress/plugin-check/.github/workflows/php-lint.yml@refs/pull/900/merge
+2025-03-28T11:42:29.7789769Z Waiting for a runner to pick up this job...
+2025-03-28T11:42:32.3881365Z Job is waiting for a hosted runner to come online.
+2025-03-28T11:42:33.5337994Z Job is about to start running on the hosted runner: GitHub Actions 56 (hosted)
+2025-03-28T11:42:35.7089022Z Current runner version: '2.323.0'
+2025-03-28T11:42:35.7114389Z ##[group]Operating System
+2025-03-28T11:42:35.7115804Z Ubuntu
+2025-03-28T11:42:35.7116646Z 24.04.2
+2025-03-28T11:42:35.7117251Z LTS
+2025-03-28T11:42:35.7117869Z ##[endgroup]
+2025-03-28T11:42:35.7118414Z ##[group]Runner Image
+2025-03-28T11:42:35.7118985Z Image: ubuntu-24.04
+2025-03-28T11:42:35.7119610Z Version: 20250323.1.0
+2025-03-28T11:42:35.7120668Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-28T11:42:35.7122056Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-03-28T11:42:35.7122937Z ##[endgroup]
+2025-03-28T11:42:35.7123478Z ##[group]Runner Image Provisioner
+2025-03-28T11:42:35.7124098Z 2.0.422.1
+2025-03-28T11:42:35.7124850Z ##[endgroup]
+2025-03-28T11:42:35.7127025Z ##[group]GITHUB_TOKEN Permissions
+2025-03-28T11:42:35.7129286Z Actions: read
+2025-03-28T11:42:35.7130106Z Attestations: read
+2025-03-28T11:42:35.7130876Z Checks: read
+2025-03-28T11:42:35.7131349Z Contents: read
+2025-03-28T11:42:35.7131913Z Deployments: read
+2025-03-28T11:42:35.7132492Z Discussions: read
+2025-03-28T11:42:35.7133035Z Issues: read
+2025-03-28T11:42:35.7133653Z Metadata: read
+2025-03-28T11:42:35.7134166Z Models: read
+2025-03-28T11:42:35.7134863Z Packages: read
+2025-03-28T11:42:35.7135526Z Pages: read
+2025-03-28T11:42:35.7136027Z PullRequests: read
+2025-03-28T11:42:35.7136614Z RepositoryProjects: read
+2025-03-28T11:42:35.7137164Z SecurityEvents: read
+2025-03-28T11:42:35.7137717Z Statuses: read
+2025-03-28T11:42:35.7138257Z ##[endgroup]
+2025-03-28T11:42:35.7141348Z Secret source: None
+2025-03-28T11:42:35.7142440Z Prepare workflow directory
+2025-03-28T11:42:35.7556130Z Prepare all required actions
+2025-03-28T11:42:35.7594416Z Getting action download info
+2025-03-28T11:42:35.9397248Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-03-28T11:42:35.9398198Z Version: 4.2.2
+2025-03-28T11:42:35.9399092Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-03-28T11:42:35.9400200Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-03-28T11:42:35.9400884Z ##[endgroup]
+2025-03-28T11:42:36.0469342Z Download action repository 'shivammathur/setup-php@v2' (SHA:9e72090525849c5e82e596468b86eb55e9cc5401)
+2025-03-28T11:42:36.3906056Z Download action repository 'ramsey/composer-install@a2636af0004d1c0499ffca16ac0b4cc94df70565' (SHA:a2636af0004d1c0499ffca16ac0b4cc94df70565)
+2025-03-28T11:42:36.6731242Z Getting action download info
+2025-03-28T11:42:36.8305913Z ##[group]Download immutable action package 'actions/cache@v4'
+2025-03-28T11:42:36.8307410Z Version: 4.2.3
+2025-03-28T11:42:36.8308886Z Digest: sha256:c8a3bb963e1f1826d8fcc8d1354f0dd29d8ac1db1d4f6f20247055ae11b81ed9
+2025-03-28T11:42:36.8311244Z Source commit SHA: 5a3ec84eff668545956fd18022155c47e93e2684
+2025-03-28T11:42:36.8313030Z ##[endgroup]
+2025-03-28T11:42:37.0990576Z Complete job name: PHP
+2025-03-28T11:42:37.1809179Z ##[group]Run actions/checkout@v4
+2025-03-28T11:42:37.1810502Z with:
+2025-03-28T11:42:37.1811290Z   repository: WordPress/plugin-check
+2025-03-28T11:42:37.1812569Z   token: ***
+2025-03-28T11:42:37.1813328Z   ssh-strict: true
+2025-03-28T11:42:37.1895552Z   ssh-user: git
+2025-03-28T11:42:37.1897050Z   persist-credentials: true
+2025-03-28T11:42:37.1898492Z   clean: true
+2025-03-28T11:42:37.1899982Z   sparse-checkout-cone-mode: true
+2025-03-28T11:42:37.1901672Z   fetch-depth: 1
+2025-03-28T11:42:37.1903093Z   fetch-tags: false
+2025-03-28T11:42:37.1904716Z   show-progress: true
+2025-03-28T11:42:37.1906103Z   lfs: false
+2025-03-28T11:42:37.1907319Z   submodules: false
+2025-03-28T11:42:37.1908775Z   set-safe-directory: true
+2025-03-28T11:42:37.1911500Z ##[endgroup]
+2025-03-28T11:42:37.4747254Z Syncing repository: WordPress/plugin-check
+2025-03-28T11:42:37.4749866Z ##[group]Getting Git version info
+2025-03-28T11:42:37.4751295Z Working directory is '/home/runner/work/plugin-check/plugin-check'
+2025-03-28T11:42:37.4753183Z [command]/usr/bin/git version
+2025-03-28T11:42:37.4854336Z git version 2.49.0
+2025-03-28T11:42:37.4887387Z ##[endgroup]
+2025-03-28T11:42:37.4902680Z Temporarily overriding HOME='/home/runner/work/_temp/e51fe227-14c1-4626-95d7-9e986305dc26' before making global git config changes
+2025-03-28T11:42:37.4907607Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-28T11:42:37.4911623Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/plugin-check/plugin-check
+2025-03-28T11:42:37.4946329Z Deleting the contents of '/home/runner/work/plugin-check/plugin-check'
+2025-03-28T11:42:37.4950091Z ##[group]Initializing the repository
+2025-03-28T11:42:37.4955555Z [command]/usr/bin/git init /home/runner/work/plugin-check/plugin-check
+2025-03-28T11:42:37.5060701Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-28T11:42:37.5062688Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-28T11:42:37.5064428Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-28T11:42:37.5065958Z hint:
+2025-03-28T11:42:37.5066856Z hint: 	git config --global init.defaultBranch <name>
+2025-03-28T11:42:37.5067979Z hint:
+2025-03-28T11:42:37.5069029Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-28T11:42:37.5070922Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-28T11:42:37.5073018Z hint:
+2025-03-28T11:42:37.5074404Z hint: 	git branch -m <name>
+2025-03-28T11:42:37.5077303Z Initialized empty Git repository in /home/runner/work/plugin-check/plugin-check/.git/
+2025-03-28T11:42:37.5086357Z [command]/usr/bin/git remote add origin https://github.com/WordPress/plugin-check
+2025-03-28T11:42:37.5123207Z ##[endgroup]
+2025-03-28T11:42:37.5125895Z ##[group]Disabling automatic garbage collection
+2025-03-28T11:42:37.5128126Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-28T11:42:37.5157697Z ##[endgroup]
+2025-03-28T11:42:37.5160034Z ##[group]Setting up auth
+2025-03-28T11:42:37.5165350Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-28T11:42:37.5197741Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-28T11:42:37.5586293Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-28T11:42:37.5614158Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-28T11:42:37.5840968Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-28T11:42:37.5876968Z ##[endgroup]
+2025-03-28T11:42:37.5880486Z ##[group]Fetching the repository
+2025-03-28T11:42:37.5888539Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +0efeb9a9384853857e9c659f779b2f637d74a2e9:refs/remotes/pull/900/merge
+2025-03-28T11:42:38.0275729Z From https://github.com/WordPress/plugin-check
+2025-03-28T11:42:38.0277669Z  * [new ref]         0efeb9a9384853857e9c659f779b2f637d74a2e9 -> pull/900/merge
+2025-03-28T11:42:38.0306376Z ##[endgroup]
+2025-03-28T11:42:38.0308127Z ##[group]Determining the checkout info
+2025-03-28T11:42:38.0309614Z ##[endgroup]
+2025-03-28T11:42:38.0312724Z [command]/usr/bin/git sparse-checkout disable
+2025-03-28T11:42:38.0353444Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-28T11:42:38.0380769Z ##[group]Checking out the ref
+2025-03-28T11:42:38.0383627Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/900/merge
+2025-03-28T11:42:38.0671057Z Note: switching to 'refs/remotes/pull/900/merge'.
+2025-03-28T11:42:38.0672383Z 
+2025-03-28T11:42:38.0673126Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-28T11:42:38.0676060Z changes and commit them, and you can discard any commits you make in this
+2025-03-28T11:42:38.0678854Z state without impacting any branches by switching back to a branch.
+2025-03-28T11:42:38.0680537Z 
+2025-03-28T11:42:38.0681609Z If you want to create a new branch to retain commits you create, you may
+2025-03-28T11:42:38.0684123Z do so (now or later) by using -c with the switch command. Example:
+2025-03-28T11:42:38.0685849Z 
+2025-03-28T11:42:38.0686487Z   git switch -c <new-branch-name>
+2025-03-28T11:42:38.0687523Z 
+2025-03-28T11:42:38.0688088Z Or undo this operation with:
+2025-03-28T11:42:38.0689013Z 
+2025-03-28T11:42:38.0689526Z   git switch -
+2025-03-28T11:42:38.0690242Z 
+2025-03-28T11:42:38.0691401Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-28T11:42:38.0692912Z 
+2025-03-28T11:42:38.0694080Z HEAD is now at 0efeb9a Merge 14745ce90e92d71afe6f357dcfc42a39308f9996 into 9f771d07236f6e92952d8e023f709f81ffd7cadd
+2025-03-28T11:42:38.0697812Z ##[endgroup]
+2025-03-28T11:42:38.0720095Z [command]/usr/bin/git log -1 --format=%H
+2025-03-28T11:42:38.0742261Z 0efeb9a9384853857e9c659f779b2f637d74a2e9
+2025-03-28T11:42:38.0982486Z ##[group]Run shivammathur/setup-php@v2
+2025-03-28T11:42:38.0983499Z with:
+2025-03-28T11:42:38.0984199Z   php-version: latest
+2025-03-28T11:42:38.0985150Z   ini-file: production
+2025-03-28T11:42:38.0985943Z ##[endgroup]
+2025-03-28T11:42:38.2179160Z [command]/usr/bin/bash /home/runner/work/_actions/shivammathur/setup-php/v2/src/scripts/run.sh
+2025-03-28T11:42:38.2416758Z 
+2025-03-28T11:42:38.2417977Z [90;1m==> [0m[37;1mSetup PHP[0m
+2025-03-28T11:42:42.0597430Z [32;1m✓ [0m[34;1mPHP [0m[90;1mInstalled PHP 8.4.5[0m
+2025-03-28T11:42:42.0600260Z 
+2025-03-28T11:42:42.0600716Z [90;1m==> [0m[37;1mSetup Tools[0m
+2025-03-28T11:42:42.4101559Z [32;1m✓ [0m[34;1mcomposer [0m[90;1mAdded composer 2.8.6[0m
+2025-03-28T11:42:42.4102367Z 
+2025-03-28T11:42:42.4102837Z [90;1m==> [0m[37;1mSponsor setup-php[0m
+2025-03-28T11:42:42.4104002Z [32;1m✓ [0m[34;1msetup-php [0m[90;1mhttps://setup-php.com/sponsor[0m
+2025-03-28T11:42:42.4291987Z ##[group]Run composer validate
+2025-03-28T11:42:42.4292324Z [36;1mcomposer validate[0m
+2025-03-28T11:42:42.4345970Z shell: /usr/bin/bash -e {0}
+2025-03-28T11:42:42.4346243Z env:
+2025-03-28T11:42:42.4346444Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-03-28T11:42:42.4346706Z   COMPOSER_NO_INTERACTION: 1
+2025-03-28T11:42:42.4346938Z   COMPOSER_NO_AUDIT: 1
+2025-03-28T11:42:42.4347155Z ##[endgroup]
+2025-03-28T11:42:42.6295913Z ./composer.json is valid, but with a few warnings
+2025-03-28T11:42:42.6296606Z See https://getcomposer.org/doc/04-schema.md for details on the schema
+2025-03-28T11:42:42.6297027Z # General warnings
+2025-03-28T11:42:42.6297611Z - The package "afragen/wordpress-plugin-readme-parser" is pointing to a commit-ref, this is bad practice and can cause unforeseen issues.
+2025-03-28T11:42:42.6298594Z - require.plugin-check/phpcs-sniffs : unbound version constraints (@dev) should be avoided
+2025-03-28T11:42:42.6568026Z ##[group]Run ramsey/composer-install@a2636af0004d1c0499ffca16ac0b4cc94df70565
+2025-03-28T11:42:42.6568450Z with:
+2025-03-28T11:42:42.6568665Z   composer-options: --prefer-dist
+2025-03-28T11:42:42.6568938Z   dependency-versions: locked
+2025-03-28T11:42:42.6569192Z   require-lock-file: false
+2025-03-28T11:42:42.6569426Z   composer-filename: composer
+2025-03-28T11:42:42.6569663Z env:
+2025-03-28T11:42:42.6569853Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-03-28T11:42:42.6570085Z   COMPOSER_NO_INTERACTION: 1
+2025-03-28T11:42:42.6570336Z   COMPOSER_NO_AUDIT: 1
+2025-03-28T11:42:42.6570575Z ##[endgroup]
+2025-03-28T11:42:42.6649668Z ##[group]Run ${GITHUB_ACTION_PATH}/bin/php_version.sh
+2025-03-28T11:42:42.6650074Z [36;1m${GITHUB_ACTION_PATH}/bin/php_version.sh[0m
+2025-03-28T11:42:42.6699753Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-28T11:42:42.6700097Z env:
+2025-03-28T11:42:42.6700295Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-03-28T11:42:42.6700576Z   COMPOSER_NO_INTERACTION: 1
+2025-03-28T11:42:42.6701012Z   COMPOSER_NO_AUDIT: 1
+2025-03-28T11:42:42.6701216Z ##[endgroup]
+2025-03-28T11:42:42.7763250Z ##[group]Run ${GITHUB_ACTION_PATH}/bin/should_cache.sh ""
+2025-03-28T11:42:42.7763639Z [36;1m${GITHUB_ACTION_PATH}/bin/should_cache.sh ""[0m
+2025-03-28T11:42:42.7815175Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-28T11:42:42.7815519Z env:
+2025-03-28T11:42:42.7815721Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-03-28T11:42:42.7815975Z   COMPOSER_NO_INTERACTION: 1
+2025-03-28T11:42:42.7816203Z   COMPOSER_NO_AUDIT: 1
+2025-03-28T11:42:42.7816401Z ##[endgroup]
+2025-03-28T11:42:42.7967463Z ##[group]Run ${GITHUB_ACTION_PATH}/bin/composer_paths.sh \
+2025-03-28T11:42:42.7967888Z [36;1m${GITHUB_ACTION_PATH}/bin/composer_paths.sh \[0m
+2025-03-28T11:42:42.7968184Z [36;1m  "" \[0m
+2025-03-28T11:42:42.7968378Z [36;1m  "" \[0m
+2025-03-28T11:42:42.7968575Z [36;1m  "/usr/bin/php" \[0m
+2025-03-28T11:42:42.7968804Z [36;1m  "composer"[0m
+2025-03-28T11:42:42.8016939Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-28T11:42:42.8017291Z env:
+2025-03-28T11:42:42.8017491Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-03-28T11:42:42.8017737Z   COMPOSER_NO_INTERACTION: 1
+2025-03-28T11:42:42.8017962Z   COMPOSER_NO_AUDIT: 1
+2025-03-28T11:42:42.8018168Z ##[endgroup]
+2025-03-28T11:42:43.6197347Z ##[group]Run ${GITHUB_ACTION_PATH}/bin/cache_key.sh \
+2025-03-28T11:42:43.6197734Z [36;1m${GITHUB_ACTION_PATH}/bin/cache_key.sh \[0m
+2025-03-28T11:42:43.6198020Z [36;1m  "Linux" \[0m
+2025-03-28T11:42:43.6198220Z [36;1m  "8.4.5" \[0m
+2025-03-28T11:42:43.6198425Z [36;1m  "locked" \[0m
+2025-03-28T11:42:43.6198650Z [36;1m  "--prefer-dist" \[0m
+2025-03-28T11:42:43.6198903Z [36;1m  "" \[0m
+2025-03-28T11:42:43.6199096Z [36;1m  "" \[0m
+2025-03-28T11:42:43.6199284Z [36;1m  "" \[0m
+2025-03-28T11:42:43.6199468Z [36;1m  ""[0m
+2025-03-28T11:42:43.6245291Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-28T11:42:43.6245632Z env:
+2025-03-28T11:42:43.6245848Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-03-28T11:42:43.6246113Z   COMPOSER_NO_INTERACTION: 1
+2025-03-28T11:42:43.6246347Z   COMPOSER_NO_AUDIT: 1
+2025-03-28T11:42:43.6246547Z ##[endgroup]
+2025-03-28T11:42:43.6441856Z ##[group]Run actions/cache@v4
+2025-03-28T11:42:43.6442083Z with:
+2025-03-28T11:42:43.6442277Z   path: /home/runner/.cache/composer
+2025-03-28T11:42:43.6442586Z   key: Linux-php-8.4.5-composer---prefer-dist-locked
+2025-03-28T11:42:43.6443000Z   restore-keys: Linux-php-8.4.5-composer---prefer-dist-locked-
+
+2025-03-28T11:42:43.6443358Z   enableCrossOsArchive: false
+2025-03-28T11:42:43.6443605Z   fail-on-cache-miss: false
+2025-03-28T11:42:43.6443824Z   lookup-only: false
+2025-03-28T11:42:43.6444025Z   save-always: false
+2025-03-28T11:42:43.6444211Z env:
+2025-03-28T11:42:43.6444394Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-03-28T11:42:43.6444839Z   COMPOSER_NO_INTERACTION: 1
+2025-03-28T11:42:43.6445063Z   COMPOSER_NO_AUDIT: 1
+2025-03-28T11:42:43.6445363Z   CACHE_RESTORE_KEY: Linux-php-8.4.5-composer---prefer-dist-locked-
+2025-03-28T11:42:43.6445918Z ##[endgroup]
+2025-03-28T11:42:43.9019693Z Cache hit for: Linux-php-8.4.5-composer---prefer-dist-locked
+2025-03-28T11:42:44.5959725Z Received 19080740 of 19080740 (100.0%), 35.5 MBs/sec
+2025-03-28T11:42:44.5960285Z Cache Size: ~18 MB (19080740 B)
+2025-03-28T11:42:44.5988303Z [command]/usr/bin/tar -xf /home/runner/work/_temp/08bae7df-3075-4b4b-9308-2b03539560d2/cache.tzst -P -C /home/runner/work/plugin-check/plugin-check --use-compress-program unzstd
+2025-03-28T11:42:44.6369273Z Cache restored successfully
+2025-03-28T11:42:44.6630846Z Cache restored from key: Linux-php-8.4.5-composer---prefer-dist-locked
+2025-03-28T11:42:44.6718850Z ##[group]Run ${GITHUB_ACTION_PATH}/bin/composer_install.sh \
+2025-03-28T11:42:44.6719262Z [36;1m${GITHUB_ACTION_PATH}/bin/composer_install.sh \[0m
+2025-03-28T11:42:44.6719573Z [36;1m  "locked" \[0m
+2025-03-28T11:42:44.6719804Z [36;1m  "--prefer-dist" \[0m
+2025-03-28T11:42:44.6720039Z [36;1m  "" \[0m
+2025-03-28T11:42:44.6720264Z [36;1m  "/usr/bin/php" \[0m
+2025-03-28T11:42:44.6720676Z [36;1m  "/usr/local/bin/composer" \[0m
+2025-03-28T11:42:44.6720950Z [36;1m  "./composer.lock" \[0m
+2025-03-28T11:42:44.6721179Z [36;1m  "false" \[0m
+2025-03-28T11:42:44.6721388Z [36;1m  "composer" \[0m
+2025-03-28T11:42:44.6766644Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-28T11:42:44.6766967Z env:
+2025-03-28T11:42:44.6767165Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-03-28T11:42:44.6767411Z   COMPOSER_NO_INTERACTION: 1
+2025-03-28T11:42:44.6767638Z   COMPOSER_NO_AUDIT: 1
+2025-03-28T11:42:44.6767953Z   CACHE_RESTORE_KEY: Linux-php-8.4.5-composer---prefer-dist-locked-
+2025-03-28T11:42:44.6768312Z ##[endgroup]
+2025-03-28T11:42:44.8527819Z [32mInstalling dependencies from lock file (including require-dev)[39m
+2025-03-28T11:42:44.8566932Z [32mVerifying lock file contents can be installed on current platform.[39m
+2025-03-28T11:42:44.8786179Z [32mPackage operations: 99 installs, 0 updates, 0 removals[39m
+2025-03-28T11:42:44.8811883Z   - Downloading [32msquizlabs/php_codesniffer[39m ([33m3.12.0[39m)
+2025-03-28T11:42:44.8988037Z   - Downloading [32mslevomat/coding-standard[39m ([33m8.16.1[39m)
+2025-03-28T11:42:45.1736771Z   - Installing [32mcomposer/installers[39m ([33mv2.3.0[39m): Extracting archive
+2025-03-28T11:42:45.1938693Z   - Installing [32msquizlabs/php_codesniffer[39m ([33m3.12.0[39m): Extracting archive
+2025-03-28T11:42:45.3833769Z   - Installing [32mdealerdirect/phpcodesniffer-composer-installer[39m ([33mv1.0.0[39m): Extracting archive
+2025-03-28T11:42:45.3893338Z   - Installing [32mphpstan/phpstan[39m ([33m1.12.12[39m): Extracting archive
+2025-03-28T11:42:45.5230140Z   - Installing [32mphpstan/extension-installer[39m ([33m1.4.3[39m): Extracting archive
+2025-03-28T11:42:45.5297955Z   - Installing [32msymfony/polyfill-mbstring[39m ([33mv1.31.0[39m): Extracting archive
+2025-03-28T11:42:45.5303575Z   - Installing [32merusev/parsedown[39m ([33m1.7.4[39m): Extracting archive
+2025-03-28T11:42:45.5309498Z   - Installing [32mafragen/wordpress-plugin-readme-parser[39m ([33mdev-master c375859[39m): Extracting archive
+2025-03-28T11:42:45.5316395Z   - Installing [32mphpcsstandards/phpcsutils[39m ([33m1.0.12[39m): Extracting archive
+2025-03-28T11:42:45.5333000Z   - Installing [32mphpcsstandards/phpcsextra[39m ([33m1.2.1[39m): Extracting archive
+2025-03-28T11:42:45.5347671Z   - Installing [32mwp-coding-standards/wpcs[39m ([33m3.1.0[39m): Extracting archive
+2025-03-28T11:42:45.5385972Z   - Installing [32msirbrillig/phpcs-variable-analysis[39m ([33mv2.11.21[39m): Extracting archive
+2025-03-28T11:42:45.5387452Z   - Installing [32mautomattic/vipwpcs[39m ([33m3.0.1[39m): Extracting archive
+2025-03-28T11:42:45.5427640Z   - Installing [32mbehat/gherkin[39m ([33mv4.10.0[39m): Extracting archive
+2025-03-28T11:42:45.5436815Z   - Installing [32mbehat/transliterator[39m ([33mv1.5.0[39m): Extracting archive
+2025-03-28T11:42:45.5488703Z   - Installing [32mcomposer/pcre[39m ([33m3.3.2[39m): Extracting archive
+2025-03-28T11:42:45.5497910Z   - Installing [32mdoctrine/instantiator[39m ([33m1.5.0[39m): Extracting archive
+2025-03-28T11:42:45.5501545Z   - Installing [32mgettext/languages[39m ([33m2.10.0[39m): Extracting archive
+2025-03-28T11:42:45.5504766Z   - Installing [32mmustache/mustache[39m ([33mv2.14.2[39m): Extracting archive
+2025-03-28T11:42:45.5507835Z   - Installing [32mmyclabs/deep-copy[39m ([33m1.12.1[39m): Extracting archive
+2025-03-28T11:42:45.5510889Z   - Installing [32mphar-io/version[39m ([33m3.2.1[39m): Extracting archive
+2025-03-28T11:42:45.5513911Z   - Installing [32mphar-io/manifest[39m ([33m2.0.4[39m): Extracting archive
+2025-03-28T11:42:45.5516458Z   - Installing [32mphp-parallel-lint/php-console-color[39m ([33mv1.0.1[39m): Extracting archive
+2025-03-28T11:42:45.5517986Z   - Installing [32msymfony/polyfill-php80[39m ([33mv1.31.0[39m): Extracting archive
+2025-03-28T11:42:45.5519494Z   - Installing [32msymfony/polyfill-ctype[39m ([33mv1.31.0[39m): Extracting archive
+2025-03-28T11:42:45.5521021Z   - Installing [32msymfony/filesystem[39m ([33mv5.4.45[39m): Extracting archive
+2025-03-28T11:42:45.5526959Z   - Installing [32msymfony/deprecation-contracts[39m ([33mv2.5.4[39m): Extracting archive
+2025-03-28T11:42:45.5529579Z   - Installing [32mpsr/container[39m ([33m1.1.2[39m): Extracting archive
+2025-03-28T11:42:45.5532364Z   - Installing [32msymfony/service-contracts[39m ([33mv2.5.4[39m): Extracting archive
+2025-03-28T11:42:45.5557991Z   - Installing [32msymfony/polyfill-php81[39m ([33mv1.31.0[39m): Extracting archive
+2025-03-28T11:42:45.5565955Z   - Installing [32msymfony/dependency-injection[39m ([33mv5.4.48[39m): Extracting archive
+2025-03-28T11:42:45.5573381Z   - Installing [32msymfony/config[39m ([33mv5.4.46[39m): Extracting archive
+2025-03-28T11:42:45.5580795Z   - Installing [32mpdepend/pdepend[39m ([33m2.16.2[39m): Extracting archive
+2025-03-28T11:42:45.5588394Z   - Installing [32mpsr/log[39m ([33m1.1.4[39m): Extracting archive
+2025-03-28T11:42:45.5593983Z   - Installing [32mcomposer/xdebug-handler[39m ([33m3.0.5[39m): Extracting archive
+2025-03-28T11:42:45.5597246Z   - Installing [32mphpmd/phpmd[39m ([33m2.15.0[39m): Extracting archive
+2025-03-28T11:42:45.5599904Z   - Installing [32mtheseer/tokenizer[39m ([33m1.2.3[39m): Extracting archive
+2025-03-28T11:42:45.5602623Z   - Installing [32msebastian/version[39m ([33m3.0.2[39m): Extracting archive
+2025-03-28T11:42:45.5605883Z   - Installing [32mnikic/php-parser[39m ([33mv5.3.1[39m): Extracting archive
+2025-03-28T11:42:45.5616430Z   - Installing [32msebastian/lines-of-code[39m ([33m1.0.4[39m): Extracting archive
+2025-03-28T11:42:45.5617753Z   - Installing [32msebastian/environment[39m ([33m5.1.5[39m): Extracting archive
+2025-03-28T11:42:45.5619023Z   - Installing [32msebastian/complexity[39m ([33m2.0.3[39m): Extracting archive
+2025-03-28T11:42:45.5620391Z   - Installing [32msebastian/code-unit-reverse-lookup[39m ([33m2.0.3[39m): Extracting archive
+2025-03-28T11:42:45.5622473Z   - Installing [32mphpunit/php-text-template[39m ([33m2.0.4[39m): Extracting archive
+2025-03-28T11:42:45.5624743Z   - Installing [32mphpunit/php-file-iterator[39m ([33m3.0.6[39m): Extracting archive
+2025-03-28T11:42:45.5626037Z   - Installing [32mphpunit/php-code-coverage[39m ([33m9.2.32[39m): Extracting archive
+2025-03-28T11:42:45.5628419Z   - Installing [32mphpunit/php-invoker[39m ([33m3.1.1[39m): Extracting archive
+2025-03-28T11:42:45.5630635Z   - Installing [32mphpunit/php-timer[39m ([33m5.0.3[39m): Extracting archive
+2025-03-28T11:42:45.5680680Z   - Installing [32mplugin-check/phpcs-sniffs[39m ([33mdev-fix/phpunit[39m): Mirroring from ./phpcs-sniffs
+2025-03-28T11:42:45.5692333Z   - Installing [32msebastian/cli-parser[39m ([33m1.0.2[39m): Extracting archive
+2025-03-28T11:42:45.5694736Z   - Installing [32msebastian/code-unit[39m ([33m1.0.8[39m): Extracting archive
+2025-03-28T11:42:45.5697525Z   - Installing [32msebastian/recursion-context[39m ([33m4.0.5[39m): Extracting archive
+2025-03-28T11:42:45.5699344Z   - Installing [32msebastian/exporter[39m ([33m4.0.6[39m): Extracting archive
+2025-03-28T11:42:45.5701766Z   - Installing [32msebastian/diff[39m ([33m4.0.6[39m): Extracting archive
+2025-03-28T11:42:45.5703853Z   - Installing [32msebastian/comparator[39m ([33m4.0.8[39m): Extracting archive
+2025-03-28T11:42:45.5706204Z   - Installing [32msebastian/object-reflector[39m ([33m2.0.4[39m): Extracting archive
+2025-03-28T11:42:45.5708211Z   - Installing [32msebastian/global-state[39m ([33m5.0.7[39m): Extracting archive
+2025-03-28T11:42:45.5710292Z   - Installing [32msebastian/object-enumerator[39m ([33m4.0.4[39m): Extracting archive
+2025-03-28T11:42:45.5712339Z   - Installing [32msebastian/resource-operations[39m ([33m3.0.4[39m): Extracting archive
+2025-03-28T11:42:45.5714262Z   - Installing [32msebastian/type[39m ([33m3.2.1[39m): Extracting archive
+2025-03-28T11:42:45.5716604Z   - Installing [32mphpstan/phpdoc-parser[39m ([33m2.1.0[39m): Extracting archive
+2025-03-28T11:42:45.5718698Z   - Installing [32mslevomat/coding-standard[39m ([33m8.16.1[39m): Extracting archive
+2025-03-28T11:42:45.5720834Z   - Installing [32msymfony/polyfill-intl-normalizer[39m ([33mv1.31.0[39m): Extracting archive
+2025-03-28T11:42:45.5722870Z   - Installing [32msymfony/polyfill-intl-grapheme[39m ([33mv1.31.0[39m): Extracting archive
+2025-03-28T11:42:45.5724960Z   - Installing [32msymfony/string[39m ([33mv5.4.47[39m): Extracting archive
+2025-03-28T11:42:45.5727116Z   - Installing [32msymfony/polyfill-php73[39m ([33mv1.31.0[39m): Extracting archive
+2025-03-28T11:42:45.5729021Z   - Installing [32msymfony/console[39m ([33mv5.4.47[39m): Extracting archive
+2025-03-28T11:42:45.5731103Z   - Installing [32mpsr/event-dispatcher[39m ([33m1.0.0[39m): Extracting archive
+2025-03-28T11:42:45.5733346Z   - Installing [32msymfony/event-dispatcher-contracts[39m ([33mv2.5.4[39m): Extracting archive
+2025-03-28T11:42:45.5735561Z   - Installing [32msymfony/event-dispatcher[39m ([33mv5.4.45[39m): Extracting archive
+2025-03-28T11:42:45.5737419Z   - Installing [32msymfony/finder[39m ([33mv5.4.45[39m): Extracting archive
+2025-03-28T11:42:45.5739540Z   - Installing [32msymfony/translation-contracts[39m ([33mv2.5.4[39m): Extracting archive
+2025-03-28T11:42:45.5741471Z   - Installing [32msymfony/translation[39m ([33mv5.4.45[39m): Extracting archive
+2025-03-28T11:42:45.5743433Z   - Installing [32msymfony/yaml[39m ([33mv5.4.45[39m): Extracting archive
+2025-03-28T11:42:45.5745794Z   - Installing [32mphp-stubs/wordpress-stubs[39m ([33mv6.7.1[39m): Extracting archive
+2025-03-28T11:42:45.5748068Z   - Installing [32mszepeviktor/phpstan-wordpress[39m ([33mv1.3.5[39m): Extracting archive
+2025-03-28T11:42:45.5750147Z   - Installing [32mwp-cli/php-cli-tools[39m ([33mv0.11.22[39m): Extracting archive
+2025-03-28T11:42:45.5752214Z   - Installing [32mwp-cli/mustangostang-spyc[39m ([33m0.6.3[39m): Extracting archive
+2025-03-28T11:42:45.5754185Z   - Installing [32mwp-cli/wp-cli[39m ([33mv2.11.0[39m): Extracting archive
+2025-03-28T11:42:45.5756654Z   - Installing [32mwp-cli/entity-command[39m ([33mv2.8.2[39m): Extracting archive
+2025-03-28T11:42:45.5758653Z   - Installing [32mcomposer/semver[39m ([33m3.4.3[39m): Extracting archive
+2025-03-28T11:42:45.5760741Z   - Installing [32mwp-cli/extension-command[39m ([33mv2.1.23[39m): Extracting archive
+2025-03-28T11:42:45.5762675Z   - Installing [32mmck89/peast[39m ([33mv1.16.3[39m): Extracting archive
+2025-03-28T11:42:45.5764842Z   - Installing [32mgettext/gettext[39m ([33mv4.8.12[39m): Extracting archive
+2025-03-28T11:42:45.5767488Z   - Installing [32meftec/bladeone[39m ([33m3.52[39m): Extracting archive
+2025-03-28T11:42:45.5769493Z   - Installing [32mwp-cli/i18n-command[39m ([33mv2.6.3[39m): Extracting archive
+2025-03-28T11:42:45.5771647Z   - Installing [32mwp-cli/language-command[39m ([33mv2.0.22[39m): Extracting archive
+2025-03-28T11:42:45.5773945Z   - Installing [32mphpunit/phpunit[39m ([33m9.6.22[39m): Extracting archive
+2025-03-28T11:42:45.5776164Z   - Installing [32myoast/phpunit-polyfills[39m ([33m1.1.2[39m): Extracting archive
+2025-03-28T11:42:45.5778296Z   - Installing [32mwp-cli/eval-command[39m ([33mv2.2.5[39m): Extracting archive
+2025-03-28T11:42:45.5780435Z   - Installing [32mwp-cli/core-command[39m ([33mv2.1.18[39m): Extracting archive
+2025-03-28T11:42:45.5782592Z   - Installing [32mwp-cli/wp-config-transformer[39m ([33mv1.4.1[39m): Extracting archive
+2025-03-28T11:42:45.5784868Z   - Installing [32mwp-cli/config-command[39m ([33mv2.3.7[39m): Extracting archive
+2025-03-28T11:42:45.5787105Z   - Installing [32mphpcompatibility/php-compatibility[39m ([33m9.3.5[39m): Extracting archive
+2025-03-28T11:42:45.5789328Z   - Installing [32mphp-parallel-lint/php-parallel-lint[39m ([33mv1.4.0[39m): Extracting archive
+2025-03-28T11:42:45.5791519Z   - Installing [32mphp-parallel-lint/php-console-highlighter[39m ([33mv1.0.0[39m): Extracting archive
+2025-03-28T11:42:45.5793598Z   - Installing [32mbehat/behat[39m ([33mv3.15.0[39m): Extracting archive
+2025-03-28T11:42:45.5795944Z   - Installing [32mwp-cli/wp-cli-tests[39m ([33mv4.3.1[39m): Extracting archive
+2025-03-28T11:42:45.5798082Z   - Installing [32mwp-phpunit/wp-phpunit[39m ([33m6.7.2[39m): Extracting archive
+2025-03-28T11:42:46.3157834Z [32mGenerating autoload files[39m
+2025-03-28T11:42:46.4741576Z [32m60 packages you are using are looking for funding.[39m
+2025-03-28T11:42:46.4742190Z [32mUse the `composer fund` command to find out more![39m
+2025-03-28T11:42:46.6527201Z PHP CodeSniffer Config [32minstalled_paths[39m [33mset to[39m [32m../../automattic/vipwpcs,../../phpcompatibility/php-compatibility,../../phpcsstandards/phpcsextra,../../phpcsstandards/phpcsutils,../../plugin-check/phpcs-sniffs,../../sirbrillig/phpcs-variable-analysis,../../slevomat/coding-standard,../../wp-cli/wp-cli-tests,../../wp-coding-standards/wpcs[39m
+2025-03-28T11:42:46.6529096Z [32mphpstan/extension-installer:[39m Extensions installed
+2025-03-28T11:42:46.6529768Z > [32mcomposer/pcre:[39m installed
+2025-03-28T11:42:46.6530355Z > [32mszepeviktor/phpstan-wordpress:[39m installed
+2025-03-28T11:42:46.6778284Z ##[group]Run composer lint
+2025-03-28T11:42:46.6778583Z [36;1mcomposer lint[0m
+2025-03-28T11:42:46.6823600Z shell: /usr/bin/bash -e {0}
+2025-03-28T11:42:46.6823844Z env:
+2025-03-28T11:42:46.6824037Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-03-28T11:42:46.6824281Z   COMPOSER_NO_INTERACTION: 1
+2025-03-28T11:42:46.6824698Z   COMPOSER_NO_AUDIT: 1
+2025-03-28T11:42:46.6825036Z   CACHE_RESTORE_KEY: Linux-php-8.4.5-composer---prefer-dist-locked-
+2025-03-28T11:42:46.6825399Z ##[endgroup]
+2025-03-28T11:42:47.0418995Z > phpcs --standard=phpcs.xml.dist
+2025-03-28T11:42:54.4241393Z ..........................E.................................  60 / 132 (45%)
+2025-03-28T11:43:01.0985219Z ............................................................ 120 / 132 (91%)
+2025-03-28T11:43:01.4355190Z ............                                                 132 / 132 (100%)
+2025-03-28T11:43:01.4355686Z 
+2025-03-28T11:43:01.4355693Z 
+2025-03-28T11:43:01.4365659Z 
+2025-03-28T11:43:01.4366385Z FILE: ...n-check/includes/Checker/Checks/Plugin_Repo/Plugin_Header_Fields_Check.php
+2025-03-28T11:43:01.4367150Z --------------------------------------------------------------------------------
+2025-03-28T11:43:01.4367502Z FOUND 2 ERRORS AFFECTING 2 LINES
+2025-03-28T11:43:01.4367819Z --------------------------------------------------------------------------------
+2025-03-28T11:43:01.4368172Z  491 | ERROR | [x] Whitespace found at end of line
+2025-03-28T11:43:01.4368539Z      |       |     (Squiz.WhiteSpace.SuperfluousWhitespace.EndLine)
+2025-03-28T11:43:01.4368897Z  497 | ERROR | [x] Whitespace found at end of line
+2025-03-28T11:43:01.4369230Z      |       |     (Squiz.WhiteSpace.SuperfluousWhitespace.EndLine)
+2025-03-28T11:43:01.4369596Z --------------------------------------------------------------------------------
+2025-03-28T11:43:01.4369985Z PHPCBF CAN FIX THE 2 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+2025-03-28T11:43:01.4370355Z --------------------------------------------------------------------------------
+2025-03-28T11:43:01.4370597Z 
+2025-03-28T11:43:01.4370688Z Time: 14.35 secs; Memory: 46MB
+2025-03-28T11:43:01.4370847Z 
+2025-03-28T11:43:01.4477207Z Script phpcs --standard=phpcs.xml.dist handling the lint event returned with error code 2
+2025-03-28T11:43:01.4653166Z ##[error]Process completed with exit code 2.
+2025-03-28T11:43:01.4770101Z Post job cleanup.
+2025-03-28T11:43:01.4820014Z Post job cleanup.
+2025-03-28T11:43:01.5739732Z [command]/usr/bin/git version
+2025-03-28T11:43:01.5774416Z git version 2.49.0
+2025-03-28T11:43:01.5821852Z Temporarily overriding HOME='/home/runner/work/_temp/cb93ab0b-94ab-452a-978b-9f6573075ba8' before making global git config changes
+2025-03-28T11:43:01.5822758Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-28T11:43:01.5827195Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/plugin-check/plugin-check
+2025-03-28T11:43:01.5860038Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-28T11:43:01.5891514Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-28T11:43:01.6120791Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-28T11:43:01.6141213Z http.https://github.com/.extraheader
+2025-03-28T11:43:01.6153803Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-28T11:43:01.6184358Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-28T11:43:01.6509096Z Cleaning up orphan processes

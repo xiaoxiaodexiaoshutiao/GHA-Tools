@@ -1,0 +1,205 @@
+2025-04-15T00:46:47.4162989Z Requested labels: ubuntu-latest
+2025-04-15T00:46:47.4163282Z Job defined at: pypa/packaging/.github/workflows/lint.yml@refs/pull/888/merge
+2025-04-15T00:46:47.4163397Z Waiting for a runner to pick up this job...
+2025-04-15T00:46:49.1724424Z Job is waiting for a hosted runner to come online.
+2025-04-15T00:46:51.1777557Z Job is about to start running on the hosted runner: GitHub Actions 301 (hosted)
+2025-04-15T00:46:52.7596248Z Current runner version: '2.323.0'
+2025-04-15T00:46:52.7623469Z ##[group]Operating System
+2025-04-15T00:46:52.7624259Z Ubuntu
+2025-04-15T00:46:52.7624761Z 24.04.2
+2025-04-15T00:46:52.7625308Z LTS
+2025-04-15T00:46:52.7625743Z ##[endgroup]
+2025-04-15T00:46:52.7626275Z ##[group]Runner Image
+2025-04-15T00:46:52.7626894Z Image: ubuntu-24.04
+2025-04-15T00:46:52.7627423Z Version: 20250406.1.0
+2025-04-15T00:46:52.7628438Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250406.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-15T00:46:52.7630165Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250406.1
+2025-04-15T00:46:52.7631061Z ##[endgroup]
+2025-04-15T00:46:52.7631592Z ##[group]Runner Image Provisioner
+2025-04-15T00:46:52.7632242Z 2.0.422.1
+2025-04-15T00:46:52.7632731Z ##[endgroup]
+2025-04-15T00:46:52.7633835Z ##[group]GITHUB_TOKEN Permissions
+2025-04-15T00:46:52.7635646Z Contents: read
+2025-04-15T00:46:52.7636188Z Metadata: read
+2025-04-15T00:46:52.7636970Z Packages: read
+2025-04-15T00:46:52.7637607Z ##[endgroup]
+2025-04-15T00:46:52.7640774Z Secret source: None
+2025-04-15T00:46:52.7641478Z Prepare workflow directory
+2025-04-15T00:46:52.8112066Z Prepare all required actions
+2025-04-15T00:46:52.8149906Z Getting action download info
+2025-04-15T00:46:52.9650089Z Download action repository 'actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-04-15T00:46:53.0525490Z Download action repository 'actions/setup-python@8d9ed9ac5c53483de85588cdf95a591a75ab9f55' (SHA:8d9ed9ac5c53483de85588cdf95a591a75ab9f55)
+2025-04-15T00:46:53.3888884Z Complete job name: nox -s lint
+2025-04-15T00:46:53.4592580Z ##[group]Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-15T00:46:53.4593725Z with:
+2025-04-15T00:46:53.4594150Z   repository: pypa/packaging
+2025-04-15T00:46:53.4594836Z   token: ***
+2025-04-15T00:46:53.4595224Z   ssh-strict: true
+2025-04-15T00:46:53.4595620Z   ssh-user: git
+2025-04-15T00:46:53.4596041Z   persist-credentials: true
+2025-04-15T00:46:53.4596518Z   clean: true
+2025-04-15T00:46:53.4596924Z   sparse-checkout-cone-mode: true
+2025-04-15T00:46:53.4597402Z   fetch-depth: 1
+2025-04-15T00:46:53.4597795Z   fetch-tags: false
+2025-04-15T00:46:53.4598202Z   show-progress: true
+2025-04-15T00:46:53.4598600Z   lfs: false
+2025-04-15T00:46:53.4599195Z   submodules: false
+2025-04-15T00:46:53.4599629Z   set-safe-directory: true
+2025-04-15T00:46:53.4600407Z env:
+2025-04-15T00:46:53.4600767Z   FORCE_COLOR: 1
+2025-04-15T00:46:53.4601151Z ##[endgroup]
+2025-04-15T00:46:53.6651507Z Syncing repository: pypa/packaging
+2025-04-15T00:46:53.6653347Z ##[group]Getting Git version info
+2025-04-15T00:46:53.6654034Z Working directory is '/home/runner/work/packaging/packaging'
+2025-04-15T00:46:53.6654979Z [command]/usr/bin/git version
+2025-04-15T00:46:53.6722003Z git version 2.49.0
+2025-04-15T00:46:53.6750939Z ##[endgroup]
+2025-04-15T00:46:53.6765390Z Temporarily overriding HOME='/home/runner/work/_temp/af31b63a-6c26-414a-b93b-ee68b6e787eb' before making global git config changes
+2025-04-15T00:46:53.6766783Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-15T00:46:53.6771191Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/packaging/packaging
+2025-04-15T00:46:53.6806267Z Deleting the contents of '/home/runner/work/packaging/packaging'
+2025-04-15T00:46:53.6810480Z ##[group]Initializing the repository
+2025-04-15T00:46:53.6814605Z [command]/usr/bin/git init /home/runner/work/packaging/packaging
+2025-04-15T00:46:53.6879108Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-15T00:46:53.6880232Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-15T00:46:53.6881172Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-15T00:46:53.6881873Z hint:
+2025-04-15T00:46:53.6882367Z hint: 	git config --global init.defaultBranch <name>
+2025-04-15T00:46:53.6882963Z hint:
+2025-04-15T00:46:53.6883802Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-15T00:46:53.6884980Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-15T00:46:53.6886032Z hint:
+2025-04-15T00:46:53.6886435Z hint: 	git branch -m <name>
+2025-04-15T00:46:53.6887239Z Initialized empty Git repository in /home/runner/work/packaging/packaging/.git/
+2025-04-15T00:46:53.6897098Z [command]/usr/bin/git remote add origin https://github.com/pypa/packaging
+2025-04-15T00:46:53.6933247Z ##[endgroup]
+2025-04-15T00:46:53.6934488Z ##[group]Disabling automatic garbage collection
+2025-04-15T00:46:53.6938228Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-15T00:46:53.6967943Z ##[endgroup]
+2025-04-15T00:46:53.6969460Z ##[group]Setting up auth
+2025-04-15T00:46:53.6976082Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-15T00:46:53.7007792Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-15T00:46:53.7333717Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-15T00:46:53.7380225Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-15T00:46:53.7642498Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-15T00:46:53.7684344Z ##[endgroup]
+2025-04-15T00:46:53.7686186Z ##[group]Fetching the repository
+2025-04-15T00:46:53.7694542Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +67d4b80ab4f42b77a4bb07a5b1d5ba7ee96fe694:refs/remotes/pull/888/merge
+2025-04-15T00:46:54.0784549Z From https://github.com/pypa/packaging
+2025-04-15T00:46:54.0785499Z  * [new ref]         67d4b80ab4f42b77a4bb07a5b1d5ba7ee96fe694 -> pull/888/merge
+2025-04-15T00:46:54.0814011Z ##[endgroup]
+2025-04-15T00:46:54.0815508Z ##[group]Determining the checkout info
+2025-04-15T00:46:54.0817075Z ##[endgroup]
+2025-04-15T00:46:54.0822585Z [command]/usr/bin/git sparse-checkout disable
+2025-04-15T00:46:54.0865071Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-15T00:46:54.0894583Z ##[group]Checking out the ref
+2025-04-15T00:46:54.0899637Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/888/merge
+2025-04-15T00:46:54.0983811Z Note: switching to 'refs/remotes/pull/888/merge'.
+2025-04-15T00:46:54.0984415Z 
+2025-04-15T00:46:54.0984784Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-15T00:46:54.0985633Z changes and commit them, and you can discard any commits you make in this
+2025-04-15T00:46:54.0986477Z state without impacting any branches by switching back to a branch.
+2025-04-15T00:46:54.0986965Z 
+2025-04-15T00:46:54.0987503Z If you want to create a new branch to retain commits you create, you may
+2025-04-15T00:46:54.0989156Z do so (now or later) by using -c with the switch command. Example:
+2025-04-15T00:46:54.0990031Z 
+2025-04-15T00:46:54.0990379Z   git switch -c <new-branch-name>
+2025-04-15T00:46:54.0990963Z 
+2025-04-15T00:46:54.0991309Z Or undo this operation with:
+2025-04-15T00:46:54.0991821Z 
+2025-04-15T00:46:54.0992101Z   git switch -
+2025-04-15T00:46:54.0992497Z 
+2025-04-15T00:46:54.0993138Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-15T00:46:54.0994067Z 
+2025-04-15T00:46:54.0995157Z HEAD is now at 67d4b80 Merge 7a0a7d20e2a43cae4d7ec2a18fe384876071eb7d into e624d8edfaa28865de7b5a7da8bd59fd410e5331
+2025-04-15T00:46:54.0998357Z ##[endgroup]
+2025-04-15T00:46:54.1033720Z [command]/usr/bin/git log -1 --format=%H
+2025-04-15T00:46:54.1120228Z 67d4b80ab4f42b77a4bb07a5b1d5ba7ee96fe694
+2025-04-15T00:46:54.1400078Z ##[group]Run actions/setup-python@8d9ed9ac5c53483de85588cdf95a591a75ab9f55
+2025-04-15T00:46:54.1401196Z with:
+2025-04-15T00:46:54.1401611Z   python-version: 3.9
+2025-04-15T00:46:54.1402062Z   cache: pip
+2025-04-15T00:46:54.1402467Z   check-latest: false
+2025-04-15T00:46:54.1403096Z   token: ***
+2025-04-15T00:46:54.1403530Z   update-environment: true
+2025-04-15T00:46:54.1404022Z   allow-prereleases: false
+2025-04-15T00:46:54.1404490Z   freethreaded: false
+2025-04-15T00:46:54.1404922Z env:
+2025-04-15T00:46:54.1405443Z   FORCE_COLOR: 1
+2025-04-15T00:46:54.1405862Z ##[endgroup]
+2025-04-15T00:46:54.3119451Z ##[group]Installed versions
+2025-04-15T00:46:54.3182732Z Successfully set up CPython (3.9.21)
+2025-04-15T00:46:54.3184456Z ##[endgroup]
+2025-04-15T00:46:54.3658300Z [command]/opt/hostedtoolcache/Python/3.9.21/x64/bin/pip cache dir
+2025-04-15T00:46:54.6234094Z /home/runner/.cache/pip
+2025-04-15T00:46:54.7531940Z Cache hit for: setup-python-Linux-x64-24.04-Ubuntu-python-3.9.21-pip-919e67ff36887439a07a37c58a9b37a9e10f31b2bf8255896e851d7474847dc7
+2025-04-15T00:46:55.0088441Z Received 25825981 of 25825981 (100.0%), 113.0 MBs/sec
+2025-04-15T00:46:55.0092143Z Cache Size: ~25 MB (25825981 B)
+2025-04-15T00:46:55.0123325Z [command]/usr/bin/tar -xf /home/runner/work/_temp/fe33dbf3-837d-483c-aa6d-6c2673768c71/cache.tzst -P -C /home/runner/work/packaging/packaging --use-compress-program unzstd
+2025-04-15T00:46:55.0887448Z Cache restored successfully
+2025-04-15T00:46:55.0952628Z Cache restored from key: setup-python-Linux-x64-24.04-Ubuntu-python-3.9.21-pip-919e67ff36887439a07a37c58a9b37a9e10f31b2bf8255896e851d7474847dc7
+2025-04-15T00:46:55.1146823Z ##[group]Run pipx run nox --error-on-missing-interpreters -s lint -- --show-diff-on-failure
+2025-04-15T00:46:55.1149696Z [36;1mpipx run nox --error-on-missing-interpreters -s lint -- --show-diff-on-failure[0m
+2025-04-15T00:46:55.1206961Z shell: /usr/bin/bash -e {0}
+2025-04-15T00:46:55.1208092Z env:
+2025-04-15T00:46:55.1209228Z   FORCE_COLOR: 1
+2025-04-15T00:46:55.1210511Z   pythonLocation: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-04-15T00:46:55.1212381Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib/pkgconfig
+2025-04-15T00:46:55.1214146Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-04-15T00:46:55.1215745Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-04-15T00:46:55.1217374Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-04-15T00:46:55.1219235Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib
+2025-04-15T00:46:55.1220659Z ##[endgroup]
+2025-04-15T00:46:55.2715404Z creating virtual environment...
+2025-04-15T00:46:55.3683667Z installing nox...
+2025-04-15T00:46:56.9330635Z [36mnox > [33mRunning session lint[0m
+2025-04-15T00:46:56.9333931Z [36mnox > [34mCreating virtual environment (virtualenv) using python3.9 in .nox/lint[0m
+2025-04-15T00:46:57.4495879Z [36mnox > [34mpython -m pip install pre-commit[0m
+2025-04-15T00:46:59.2279379Z [36mnox > [34mpre-commit run --all-files --show-diff-on-failure[0m
+2025-04-15T00:46:59.4709649Z [INFO] Initializing environment for https://github.com/pre-commit/pre-commit-hooks.
+2025-04-15T00:46:59.6482593Z [WARNING] repo `https://github.com/pre-commit/pre-commit-hooks` uses deprecated stage names (commit, push) which will be removed in a future version.  Hint: often `pre-commit autoupdate --repo https://github.com/pre-commit/pre-commit-hooks` will fix this.  if it does not -- consider reporting an issue to that repo.
+2025-04-15T00:46:59.6534284Z [INFO] Initializing environment for https://github.com/pre-commit/mirrors-mypy.
+2025-04-15T00:46:59.8149953Z [INFO] Initializing environment for https://github.com/pre-commit/mirrors-mypy:pyparsing,nox.
+2025-04-15T00:47:00.0100423Z [INFO] Initializing environment for https://github.com/astral-sh/ruff-pre-commit.
+2025-04-15T00:47:00.1825986Z [INFO] Installing environment for https://github.com/pre-commit/pre-commit-hooks.
+2025-04-15T00:47:00.1826810Z [INFO] Once installed this environment will be reused.
+2025-04-15T00:47:00.1828664Z [INFO] This may take a few minutes...
+2025-04-15T00:47:03.4555203Z [INFO] Installing environment for https://github.com/pre-commit/mirrors-mypy.
+2025-04-15T00:47:03.4555804Z [INFO] Once installed this environment will be reused.
+2025-04-15T00:47:07.7849764Z [INFO] This may take a few minutes...
+2025-04-15T00:47:07.7850669Z [INFO] Installing environment for https://github.com/astral-sh/ruff-pre-commit.
+2025-04-15T00:47:07.7851500Z [INFO] Once installed this environment will be reused.
+2025-04-15T00:47:07.7852096Z [INFO] This may take a few minutes...
+2025-04-15T00:47:11.8646520Z check toml...............................................................Passed
+2025-04-15T00:47:11.9291499Z check yaml...............................................................Passed
+2025-04-15T00:47:11.9882906Z fix end of files.........................................................Passed
+2025-04-15T00:47:12.0509174Z trim trailing whitespace.................................................Passed
+2025-04-15T00:47:14.7402611Z mypy.....................................................................Failed
+2025-04-15T00:47:14.7403367Z - hook id: mypy
+2025-04-15T00:47:14.7403640Z - exit code: 1
+2025-04-15T00:47:14.7403768Z 
+2025-04-15T00:47:14.7404415Z src/packaging/markers.py:331: error: No overload variant of "update" of "MutableMapping" matches argument types "FrozenSet[Never]", "FrozenSet[Never]"  [call-overload]
+2025-04-15T00:47:14.7405173Z src/packaging/markers.py:331: note: Possible overload variants:
+2025-04-15T00:47:14.7406181Z src/packaging/markers.py:331: note:     def update(self, SupportsKeysAndGetItem[str, Union[str, Set[str]]], /, **kwargs: Union[str, Set[str]]) -> None
+2025-04-15T00:47:14.7407143Z src/packaging/markers.py:331: note:     def update(self, Iterable[Tuple[str, Union[str, Set[str]]]], /, **kwargs: Union[str, Set[str]]) -> None
+2025-04-15T00:47:14.7407847Z src/packaging/markers.py:331: note:     def update(self, **kwargs: Union[str, Set[str]]) -> None
+2025-04-15T00:47:14.7408315Z Found 1 error in 1 file (checked 17 source files)
+2025-04-15T00:47:14.7408522Z 
+2025-04-15T00:47:14.7707607Z ruff.....................................................................Passed
+2025-04-15T00:47:14.7994885Z ruff-format..............................................................Passed
+2025-04-15T00:47:14.8189911Z [36mnox > [31mCommand pre-commit run --all-files --show-diff-on-failure failed with exit code 1[0m
+2025-04-15T00:47:14.8190764Z [36mnox > [31mSession lint failed.[0m
+2025-04-15T00:47:14.8362775Z ##[error]Process completed with exit code 1.
+2025-04-15T00:47:14.8465970Z Post job cleanup.
+2025-04-15T00:47:14.9436258Z [command]/usr/bin/git version
+2025-04-15T00:47:14.9475305Z git version 2.49.0
+2025-04-15T00:47:14.9527596Z Temporarily overriding HOME='/home/runner/work/_temp/a20ae4fe-ff9d-4861-b070-3e6b041ec5d2' before making global git config changes
+2025-04-15T00:47:14.9528721Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-15T00:47:14.9533733Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/packaging/packaging
+2025-04-15T00:47:14.9571332Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-15T00:47:14.9606166Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-15T00:47:14.9841756Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-15T00:47:14.9864107Z http.https://github.com/.extraheader
+2025-04-15T00:47:14.9876688Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-15T00:47:14.9909788Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-15T00:47:15.0252440Z Cleaning up orphan processes

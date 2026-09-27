@@ -1,0 +1,20 @@
+diff --git a/includes/Checker/Checks/Plugin_Repo/Plugin_Header_Fields_Check.php b/includes/Checker/Checks/Plugin_Repo/Plugin_Header_Fields_Check.php
+index f30e13f6e..ed6a820d4 100644
+--- a/includes/Checker/Checks/Plugin_Repo/Plugin_Header_Fields_Check.php
++++ b/includes/Checker/Checks/Plugin_Repo/Plugin_Header_Fields_Check.php
+@@ -488,13 +488,13 @@ private function is_valid_url( $url ) {
+ 		if ( filter_var( $url, FILTER_VALIDATE_URL ) !== $url || ! str_starts_with( $url, 'http' ) ) {
+ 			return false;
+ 		}
+-	
++
+ 		// Detect duplicated protocol (e.g., "https://http://example.com/").
+ 		$parsed_url = wp_parse_url( $url );
+ 		if ( isset( $parsed_url['scheme'] ) && str_contains( substr( $url, strlen( $parsed_url['scheme'] ) + 3 ), '://' ) ) {
+ 			return false;
+ 		}
+-	
++
+ 		return true;
+ 	}
+ 

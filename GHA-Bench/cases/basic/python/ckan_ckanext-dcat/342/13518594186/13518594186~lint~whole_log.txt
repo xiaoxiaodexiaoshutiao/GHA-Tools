@@ -1,0 +1,204 @@
+2025-02-25T10:04:26.3785416Z Requested labels: ubuntu-latest
+2025-02-25T10:04:26.3785763Z Job defined at: ckan/ckanext-dcat/.github/workflows/test.yml@refs/pull/342/merge
+2025-02-25T10:04:26.3785895Z Waiting for a runner to pick up this job...
+2025-02-25T10:04:26.5974655Z Job is waiting for a hosted runner to come online.
+2025-02-25T10:04:29.9313484Z Job is about to start running on the hosted runner: GitHub Actions 13 (hosted)
+2025-02-25T10:04:32.2667457Z Current runner version: '2.322.0'
+2025-02-25T10:04:32.2691738Z ##[group]Operating System
+2025-02-25T10:04:32.2692566Z Ubuntu
+2025-02-25T10:04:32.2693086Z 24.04.1
+2025-02-25T10:04:32.2693585Z LTS
+2025-02-25T10:04:32.2694107Z ##[endgroup]
+2025-02-25T10:04:32.2694612Z ##[group]Runner Image
+2025-02-25T10:04:32.2695185Z Image: ubuntu-24.04
+2025-02-25T10:04:32.2695766Z Version: 20250209.1.0
+2025-02-25T10:04:32.2696787Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250209.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-25T10:04:32.2698273Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250209.1
+2025-02-25T10:04:32.2699264Z ##[endgroup]
+2025-02-25T10:04:32.2699760Z ##[group]Runner Image Provisioner
+2025-02-25T10:04:32.2700332Z 2.0.422.1
+2025-02-25T10:04:32.2700885Z ##[endgroup]
+2025-02-25T10:04:32.2703046Z ##[group]GITHUB_TOKEN Permissions
+2025-02-25T10:04:32.2705240Z Actions: write
+2025-02-25T10:04:32.2705968Z Attestations: write
+2025-02-25T10:04:32.2706671Z Checks: write
+2025-02-25T10:04:32.2707135Z Contents: write
+2025-02-25T10:04:32.2707858Z Deployments: write
+2025-02-25T10:04:32.2708403Z Discussions: write
+2025-02-25T10:04:32.2708922Z Issues: write
+2025-02-25T10:04:32.2709459Z Metadata: read
+2025-02-25T10:04:32.2709967Z Packages: write
+2025-02-25T10:04:32.2710464Z Pages: write
+2025-02-25T10:04:32.2711013Z PullRequests: write
+2025-02-25T10:04:32.2711559Z RepositoryProjects: write
+2025-02-25T10:04:32.2712130Z SecurityEvents: write
+2025-02-25T10:04:32.2712724Z Statuses: write
+2025-02-25T10:04:32.2713204Z ##[endgroup]
+2025-02-25T10:04:32.2716338Z Secret source: Actions
+2025-02-25T10:04:32.2717633Z Prepare workflow directory
+2025-02-25T10:04:32.3078842Z Prepare all required actions
+2025-02-25T10:04:32.3115048Z Getting action download info
+2025-02-25T10:04:32.5237813Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-02-25T10:04:32.5968833Z Download action repository 'actions/setup-python@v5' (SHA:42375524e23c412d93fb67b49958b491fce71c38)
+2025-02-25T10:04:33.3000917Z Complete job name: lint
+2025-02-25T10:04:33.3723577Z ##[group]Run actions/checkout@v4
+2025-02-25T10:04:33.3724482Z with:
+2025-02-25T10:04:33.3724924Z   repository: ckan/ckanext-dcat
+2025-02-25T10:04:33.3725656Z   token: ***
+2025-02-25T10:04:33.3726105Z   ssh-strict: true
+2025-02-25T10:04:33.3726550Z   ssh-user: git
+2025-02-25T10:04:33.3726997Z   persist-credentials: true
+2025-02-25T10:04:33.3727816Z   clean: true
+2025-02-25T10:04:33.3728284Z   sparse-checkout-cone-mode: true
+2025-02-25T10:04:33.3728828Z   fetch-depth: 1
+2025-02-25T10:04:33.3729279Z   fetch-tags: false
+2025-02-25T10:04:33.3729732Z   show-progress: true
+2025-02-25T10:04:33.3730187Z   lfs: false
+2025-02-25T10:04:33.3730632Z   submodules: false
+2025-02-25T10:04:33.3731093Z   set-safe-directory: true
+2025-02-25T10:04:33.3731886Z env:
+2025-02-25T10:04:33.3732296Z   COLUMNS: 120
+2025-02-25T10:04:33.3732715Z ##[endgroup]
+2025-02-25T10:04:33.5399810Z Syncing repository: ckan/ckanext-dcat
+2025-02-25T10:04:33.5401655Z ##[group]Getting Git version info
+2025-02-25T10:04:33.5402515Z Working directory is '/home/runner/work/ckanext-dcat/ckanext-dcat'
+2025-02-25T10:04:33.5403611Z [command]/usr/bin/git version
+2025-02-25T10:04:33.5461420Z git version 2.48.1
+2025-02-25T10:04:33.5489512Z ##[endgroup]
+2025-02-25T10:04:33.5502747Z Temporarily overriding HOME='/home/runner/work/_temp/2e0f3389-aa61-41a1-83e9-4de9fa5302ec' before making global git config changes
+2025-02-25T10:04:33.5504203Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-25T10:04:33.5507851Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ckanext-dcat/ckanext-dcat
+2025-02-25T10:04:33.5540676Z Deleting the contents of '/home/runner/work/ckanext-dcat/ckanext-dcat'
+2025-02-25T10:04:33.5544053Z ##[group]Initializing the repository
+2025-02-25T10:04:33.5548217Z [command]/usr/bin/git init /home/runner/work/ckanext-dcat/ckanext-dcat
+2025-02-25T10:04:33.5609879Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-25T10:04:33.5611627Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-25T10:04:33.5613255Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-25T10:04:33.5614634Z hint:
+2025-02-25T10:04:33.5615493Z hint: 	git config --global init.defaultBranch <name>
+2025-02-25T10:04:33.5616575Z hint:
+2025-02-25T10:04:33.5617670Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-25T10:04:33.5618662Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-25T10:04:33.5619409Z hint:
+2025-02-25T10:04:33.5619826Z hint: 	git branch -m <name>
+2025-02-25T10:04:33.5620646Z Initialized empty Git repository in /home/runner/work/ckanext-dcat/ckanext-dcat/.git/
+2025-02-25T10:04:33.5626746Z [command]/usr/bin/git remote add origin https://github.com/ckan/ckanext-dcat
+2025-02-25T10:04:33.5660456Z ##[endgroup]
+2025-02-25T10:04:33.5661278Z ##[group]Disabling automatic garbage collection
+2025-02-25T10:04:33.5664530Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-25T10:04:33.5692644Z ##[endgroup]
+2025-02-25T10:04:33.5693376Z ##[group]Setting up auth
+2025-02-25T10:04:33.5699616Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-25T10:04:33.5731819Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-25T10:04:33.6013810Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-25T10:04:33.6042448Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-25T10:04:33.6284157Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-25T10:04:33.6320908Z ##[endgroup]
+2025-02-25T10:04:33.6329467Z ##[group]Fetching the repository
+2025-02-25T10:04:33.6330992Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +7421907af3dcf60a8c712d233d7d1d1c1287ecd3:refs/remotes/pull/342/merge
+2025-02-25T10:04:34.2696608Z From https://github.com/ckan/ckanext-dcat
+2025-02-25T10:04:34.2698409Z  * [new ref]         7421907af3dcf60a8c712d233d7d1d1c1287ecd3 -> pull/342/merge
+2025-02-25T10:04:34.2725646Z ##[endgroup]
+2025-02-25T10:04:34.2727392Z ##[group]Determining the checkout info
+2025-02-25T10:04:34.2728911Z ##[endgroup]
+2025-02-25T10:04:34.2732179Z [command]/usr/bin/git sparse-checkout disable
+2025-02-25T10:04:34.2769114Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-25T10:04:34.2795774Z ##[group]Checking out the ref
+2025-02-25T10:04:34.2799175Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/342/merge
+2025-02-25T10:04:34.2939334Z Note: switching to 'refs/remotes/pull/342/merge'.
+2025-02-25T10:04:34.2940454Z 
+2025-02-25T10:04:34.2941165Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-25T10:04:34.2943301Z changes and commit them, and you can discard any commits you make in this
+2025-02-25T10:04:34.2946303Z state without impacting any branches by switching back to a branch.
+2025-02-25T10:04:34.2948303Z 
+2025-02-25T10:04:34.2949435Z If you want to create a new branch to retain commits you create, you may
+2025-02-25T10:04:34.2952195Z do so (now or later) by using -c with the switch command. Example:
+2025-02-25T10:04:34.2953856Z 
+2025-02-25T10:04:34.2954508Z   git switch -c <new-branch-name>
+2025-02-25T10:04:34.2955640Z 
+2025-02-25T10:04:34.2956347Z Or undo this operation with:
+2025-02-25T10:04:34.2957678Z 
+2025-02-25T10:04:34.2958307Z   git switch -
+2025-02-25T10:04:34.2959071Z 
+2025-02-25T10:04:34.2960039Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-25T10:04:34.2961786Z 
+2025-02-25T10:04:34.2963895Z HEAD is now at 7421907 Merge 7f5d7a6272e8b2df1390b15ce1d3b7acc7a00f8e into a62400838344d9038e073bb9c267d3b93db5ccf3
+2025-02-25T10:04:34.2969579Z ##[endgroup]
+2025-02-25T10:04:34.2984594Z [command]/usr/bin/git log -1 --format=%H
+2025-02-25T10:04:34.3006778Z 7421907af3dcf60a8c712d233d7d1d1c1287ecd3
+2025-02-25T10:04:34.3441588Z ##[group]Run actions/setup-python@v5
+2025-02-25T10:04:34.3443586Z with:
+2025-02-25T10:04:34.3445017Z   python-version: 3.9
+2025-02-25T10:04:34.3446678Z   check-latest: false
+2025-02-25T10:04:34.3449033Z   token: ***
+2025-02-25T10:04:34.3450582Z   update-environment: true
+2025-02-25T10:04:34.3452391Z   allow-prereleases: false
+2025-02-25T10:04:34.3454031Z env:
+2025-02-25T10:04:34.3455368Z   COLUMNS: 120
+2025-02-25T10:04:34.3456778Z ##[endgroup]
+2025-02-25T10:04:34.5160546Z ##[group]Installed versions
+2025-02-25T10:04:34.5220303Z Successfully set up CPython (3.9.21)
+2025-02-25T10:04:34.5222195Z ##[endgroup]
+2025-02-25T10:04:34.5363002Z ##[group]Run pip install flake8 pycodestyle
+2025-02-25T10:04:34.5364425Z [36;1mpip install flake8 pycodestyle[0m
+2025-02-25T10:04:34.5526506Z shell: /usr/bin/bash -e {0}
+2025-02-25T10:04:34.5527751Z env:
+2025-02-25T10:04:34.5528521Z   COLUMNS: 120
+2025-02-25T10:04:34.5529609Z   pythonLocation: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-02-25T10:04:34.5531344Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib/pkgconfig
+2025-02-25T10:04:34.5533078Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-02-25T10:04:34.5534650Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-02-25T10:04:34.5536229Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-02-25T10:04:34.5537931Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib
+2025-02-25T10:04:34.5539301Z ##[endgroup]
+2025-02-25T10:04:35.1265453Z Collecting flake8
+2025-02-25T10:04:35.1376111Z   Downloading flake8-7.1.2-py2.py3-none-any.whl.metadata (3.8 kB)
+2025-02-25T10:04:35.1516102Z Collecting pycodestyle
+2025-02-25T10:04:35.1558374Z   Downloading pycodestyle-2.12.1-py2.py3-none-any.whl.metadata (4.5 kB)
+2025-02-25T10:04:35.1689784Z Collecting mccabe<0.8.0,>=0.7.0 (from flake8)
+2025-02-25T10:04:35.1728475Z   Downloading mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+2025-02-25T10:04:35.1903817Z Collecting pyflakes<3.3.0,>=3.2.0 (from flake8)
+2025-02-25T10:04:35.1939859Z   Downloading pyflakes-3.2.0-py2.py3-none-any.whl.metadata (3.5 kB)
+2025-02-25T10:04:35.2027732Z Downloading flake8-7.1.2-py2.py3-none-any.whl (57 kB)
+2025-02-25T10:04:35.2097488Z Downloading pycodestyle-2.12.1-py2.py3-none-any.whl (31 kB)
+2025-02-25T10:04:35.2156979Z Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+2025-02-25T10:04:35.2215675Z Downloading pyflakes-3.2.0-py2.py3-none-any.whl (62 kB)
+2025-02-25T10:04:35.2407836Z Installing collected packages: pyflakes, pycodestyle, mccabe, flake8
+2025-02-25T10:04:35.3790650Z Successfully installed flake8-7.1.2 mccabe-0.7.0 pycodestyle-2.12.1 pyflakes-3.2.0
+2025-02-25T10:04:35.4820177Z ##[group]Run flake8 . --count --select=E901,E999,F821,F822,F823 --show-source --statistics --exclude ckan
+2025-02-25T10:04:35.4821056Z [36;1mflake8 . --count --select=E901,E999,F821,F822,F823 --show-source --statistics --exclude ckan[0m
+2025-02-25T10:04:35.4881207Z shell: /usr/bin/bash -e {0}
+2025-02-25T10:04:35.4881558Z env:
+2025-02-25T10:04:35.4881827Z   COLUMNS: 120
+2025-02-25T10:04:35.4882201Z   pythonLocation: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-02-25T10:04:35.4882744Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib/pkgconfig
+2025-02-25T10:04:35.4883264Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-02-25T10:04:35.4883730Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-02-25T10:04:35.4884199Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-02-25T10:04:35.4884677Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib
+2025-02-25T10:04:35.4885096Z ##[endgroup]
+2025-02-25T10:04:37.3406180Z ./ckanext/dcat/converters.py:26:35: F821 undefined name 'basestring'
+2025-02-25T10:04:37.3407621Z     if isinstance(dcat_publisher, basestring):
+2025-02-25T10:04:37.3408089Z                                   ^
+2025-02-25T10:04:37.3408645Z ./ckanext/dcat/converters.py:41:33: F821 undefined name 'basestring'
+2025-02-25T10:04:37.3409271Z     if isinstance(dcat_creator, basestring):
+2025-02-25T10:04:37.3409697Z                                 ^
+2025-02-25T10:04:37.3410254Z ./ckanext/dcat/harvesters/rdf.py:137:43: F821 undefined name 'basestring'
+2025-02-25T10:04:37.3410904Z             if not isinstance(rdf_format, basestring):
+2025-02-25T10:04:37.3411351Z                                           ^
+2025-02-25T10:04:37.3411770Z 3     F821 undefined name 'basestring'
+2025-02-25T10:04:37.3412179Z 3
+2025-02-25T10:04:37.3559682Z ##[error]Process completed with exit code 1.
+2025-02-25T10:04:37.3653673Z Post job cleanup.
+2025-02-25T10:04:37.4577784Z [command]/usr/bin/git version
+2025-02-25T10:04:37.4613310Z git version 2.48.1
+2025-02-25T10:04:37.4662089Z Temporarily overriding HOME='/home/runner/work/_temp/a74691a0-701b-4392-8cf1-04a29087680c' before making global git config changes
+2025-02-25T10:04:37.4663506Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-25T10:04:37.4668410Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ckanext-dcat/ckanext-dcat
+2025-02-25T10:04:37.4704321Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-25T10:04:37.4738391Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-25T10:04:37.4972769Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-25T10:04:37.4993700Z http.https://github.com/.extraheader
+2025-02-25T10:04:37.5005807Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-25T10:04:37.5035884Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-25T10:04:37.5365302Z Cleaning up orphan processes

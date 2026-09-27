@@ -1,0 +1,261 @@
+2025-03-13T09:38:19.8091285Z Requested labels: ubuntu-latest
+2025-03-13T09:38:19.8091612Z Job defined at: apache/datafusion-python/.github/workflows/build.yml@refs/pull/1061/merge
+2025-03-13T09:38:19.8091732Z Waiting for a runner to pick up this job...
+2025-03-13T09:38:21.5040452Z Job is waiting for a hosted runner to come online.
+2025-03-13T09:38:23.7606416Z Job is about to start running on the hosted runner: GitHub Actions 345 (hosted)
+2025-03-13T09:38:25.8350009Z Current runner version: '2.322.0'
+2025-03-13T09:38:25.8375547Z ##[group]Operating System
+2025-03-13T09:38:25.8376428Z Ubuntu
+2025-03-13T09:38:25.8376943Z 24.04.2
+2025-03-13T09:38:25.8377444Z LTS
+2025-03-13T09:38:25.8378000Z ##[endgroup]
+2025-03-13T09:38:25.8378507Z ##[group]Runner Image
+2025-03-13T09:38:25.8379069Z Image: ubuntu-24.04
+2025-03-13T09:38:25.8379663Z Version: 20250309.1.0
+2025-03-13T09:38:25.8380694Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250309.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-13T09:38:25.8382288Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250309.1
+2025-03-13T09:38:25.8383231Z ##[endgroup]
+2025-03-13T09:38:25.8383730Z ##[group]Runner Image Provisioner
+2025-03-13T09:38:25.8384369Z 2.0.422.1
+2025-03-13T09:38:25.8384900Z ##[endgroup]
+2025-03-13T09:38:25.8386954Z ##[group]GITHUB_TOKEN Permissions
+2025-03-13T09:38:25.8389050Z Actions: read
+2025-03-13T09:38:25.8389767Z Attestations: read
+2025-03-13T09:38:25.8390529Z Checks: read
+2025-03-13T09:38:25.8391063Z Contents: read
+2025-03-13T09:38:25.8391830Z Deployments: read
+2025-03-13T09:38:25.8392371Z Discussions: read
+2025-03-13T09:38:25.8392876Z Issues: read
+2025-03-13T09:38:25.8393457Z Metadata: read
+2025-03-13T09:38:25.8393966Z Packages: read
+2025-03-13T09:38:25.8394430Z Pages: read
+2025-03-13T09:38:25.8395021Z PullRequests: read
+2025-03-13T09:38:25.8395565Z RepositoryProjects: read
+2025-03-13T09:38:25.8396189Z SecurityEvents: read
+2025-03-13T09:38:25.8396752Z Statuses: read
+2025-03-13T09:38:25.8397223Z ##[endgroup]
+2025-03-13T09:38:25.8401041Z Secret source: None
+2025-03-13T09:38:25.8402744Z Prepare workflow directory
+2025-03-13T09:38:25.8724835Z Prepare all required actions
+2025-03-13T09:38:25.8762083Z Getting action download info
+2025-03-13T09:38:26.0980412Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-13T09:38:26.1928559Z Download action repository 'actions/setup-python@v5' (SHA:42375524e23c412d93fb67b49958b491fce71c38)
+2025-03-13T09:38:26.2905651Z Download action repository 'astral-sh/setup-uv@v5' (SHA:f94ec6bedd8674c4426838e6b50417d36b6ab231)
+2025-03-13T09:38:26.6366483Z Complete job name: build
+2025-03-13T09:38:26.7080768Z ##[group]Run actions/checkout@v4
+2025-03-13T09:38:26.7081805Z with:
+2025-03-13T09:38:26.7082251Z   repository: apache/datafusion-python
+2025-03-13T09:38:26.7082934Z   token: ***
+2025-03-13T09:38:26.7083322Z   ssh-strict: true
+2025-03-13T09:38:26.7083723Z   ssh-user: git
+2025-03-13T09:38:26.7084138Z   persist-credentials: true
+2025-03-13T09:38:26.7084590Z   clean: true
+2025-03-13T09:38:26.7085003Z   sparse-checkout-cone-mode: true
+2025-03-13T09:38:26.7085485Z   fetch-depth: 1
+2025-03-13T09:38:26.7085880Z   fetch-tags: false
+2025-03-13T09:38:26.7086279Z   show-progress: true
+2025-03-13T09:38:26.7086693Z   lfs: false
+2025-03-13T09:38:26.7087079Z   submodules: false
+2025-03-13T09:38:26.7087489Z   set-safe-directory: true
+2025-03-13T09:38:26.7088130Z ##[endgroup]
+2025-03-13T09:38:26.9220117Z Syncing repository: apache/datafusion-python
+2025-03-13T09:38:26.9222410Z ##[group]Getting Git version info
+2025-03-13T09:38:26.9223291Z Working directory is '/home/runner/work/datafusion-python/datafusion-python'
+2025-03-13T09:38:26.9224724Z [command]/usr/bin/git version
+2025-03-13T09:38:26.9304275Z git version 2.48.1
+2025-03-13T09:38:26.9347193Z ##[endgroup]
+2025-03-13T09:38:26.9366899Z Temporarily overriding HOME='/home/runner/work/_temp/2327f985-f027-4c2e-b18c-772b1b55e62c' before making global git config changes
+2025-03-13T09:38:26.9369303Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-13T09:38:26.9374204Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/datafusion-python/datafusion-python
+2025-03-13T09:38:26.9411488Z Deleting the contents of '/home/runner/work/datafusion-python/datafusion-python'
+2025-03-13T09:38:26.9415568Z ##[group]Initializing the repository
+2025-03-13T09:38:26.9420496Z [command]/usr/bin/git init /home/runner/work/datafusion-python/datafusion-python
+2025-03-13T09:38:26.9513503Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-13T09:38:26.9515178Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-13T09:38:26.9516555Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-13T09:38:26.9517528Z hint:
+2025-03-13T09:38:26.9518025Z hint: 	git config --global init.defaultBranch <name>
+2025-03-13T09:38:26.9518623Z hint:
+2025-03-13T09:38:26.9519173Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-13T09:38:26.9520069Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-13T09:38:26.9520791Z hint:
+2025-03-13T09:38:26.9521174Z hint: 	git branch -m <name>
+2025-03-13T09:38:26.9522268Z Initialized empty Git repository in /home/runner/work/datafusion-python/datafusion-python/.git/
+2025-03-13T09:38:26.9529357Z [command]/usr/bin/git remote add origin https://github.com/apache/datafusion-python
+2025-03-13T09:38:26.9564090Z ##[endgroup]
+2025-03-13T09:38:26.9564823Z ##[group]Disabling automatic garbage collection
+2025-03-13T09:38:26.9569565Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-13T09:38:26.9599622Z ##[endgroup]
+2025-03-13T09:38:26.9600857Z ##[group]Setting up auth
+2025-03-13T09:38:26.9607493Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-13T09:38:26.9638949Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-13T09:38:26.9938276Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-13T09:38:26.9969303Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-13T09:38:27.0201522Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-13T09:38:27.0239885Z ##[endgroup]
+2025-03-13T09:38:27.0241130Z ##[group]Fetching the repository
+2025-03-13T09:38:27.0249071Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +7cdbe1b3769f76f1a89b0bac05dc72f45ea3d07b:refs/remotes/pull/1061/merge
+2025-03-13T09:38:27.4595705Z From https://github.com/apache/datafusion-python
+2025-03-13T09:38:27.4597714Z  * [new ref]         7cdbe1b3769f76f1a89b0bac05dc72f45ea3d07b -> pull/1061/merge
+2025-03-13T09:38:27.4622446Z ##[endgroup]
+2025-03-13T09:38:27.4623838Z ##[group]Determining the checkout info
+2025-03-13T09:38:27.4625520Z ##[endgroup]
+2025-03-13T09:38:27.4630932Z [command]/usr/bin/git sparse-checkout disable
+2025-03-13T09:38:27.4674071Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-13T09:38:27.4703611Z ##[group]Checking out the ref
+2025-03-13T09:38:27.4707709Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1061/merge
+2025-03-13T09:38:27.4936942Z Note: switching to 'refs/remotes/pull/1061/merge'.
+2025-03-13T09:38:27.4938645Z 
+2025-03-13T09:38:27.4939720Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-13T09:38:27.4943759Z changes and commit them, and you can discard any commits you make in this
+2025-03-13T09:38:27.4944967Z state without impacting any branches by switching back to a branch.
+2025-03-13T09:38:27.4945657Z 
+2025-03-13T09:38:27.4946175Z If you want to create a new branch to retain commits you create, you may
+2025-03-13T09:38:27.4947253Z do so (now or later) by using -c with the switch command. Example:
+2025-03-13T09:38:27.4947880Z 
+2025-03-13T09:38:27.4948171Z   git switch -c <new-branch-name>
+2025-03-13T09:38:27.4948622Z 
+2025-03-13T09:38:27.4948903Z Or undo this operation with:
+2025-03-13T09:38:27.4949353Z 
+2025-03-13T09:38:27.4949605Z   git switch -
+2025-03-13T09:38:27.4950271Z 
+2025-03-13T09:38:27.4950868Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-13T09:38:27.4951978Z 
+2025-03-13T09:38:27.4952882Z HEAD is now at 7cdbe1b Merge 46097d1460f682348722d3bee689830d75a04967 into b194a8772e58ccefc697e11671113127a8038716
+2025-03-13T09:38:27.4955763Z ##[endgroup]
+2025-03-13T09:38:27.4980835Z [command]/usr/bin/git log -1 --format=%H
+2025-03-13T09:38:27.5004117Z 7cdbe1b3769f76f1a89b0bac05dc72f45ea3d07b
+2025-03-13T09:38:27.5290872Z ##[group]Run actions/setup-python@v5
+2025-03-13T09:38:27.5292250Z with:
+2025-03-13T09:38:27.5293020Z   python-version: 3.12
+2025-03-13T09:38:27.5293898Z   check-latest: false
+2025-03-13T09:38:27.5295020Z   token: ***
+2025-03-13T09:38:27.5295830Z   update-environment: true
+2025-03-13T09:38:27.5296797Z   allow-prereleases: false
+2025-03-13T09:38:27.5297737Z ##[endgroup]
+2025-03-13T09:38:27.7014741Z ##[group]Installed versions
+2025-03-13T09:38:27.7077169Z Successfully set up CPython (3.12.9)
+2025-03-13T09:38:27.7079789Z ##[endgroup]
+2025-03-13T09:38:27.7277410Z ##[group]Run astral-sh/setup-uv@v5
+2025-03-13T09:38:27.7278418Z with:
+2025-03-13T09:38:27.7279190Z   enable-cache: true
+2025-03-13T09:38:27.7280358Z   github-token: ***
+2025-03-13T09:38:27.7281552Z   cache-dependency-glob: **/uv.lock
+**/requirements*.txt
+
+2025-03-13T09:38:27.7282752Z   prune-cache: true
+2025-03-13T09:38:27.7283654Z   ignore-nothing-to-cache: false
+2025-03-13T09:38:27.7284592Z env:
+2025-03-13T09:38:27.7285540Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-13T09:38:27.7287022Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib/pkgconfig
+2025-03-13T09:38:27.7288506Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-13T09:38:27.7289868Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-13T09:38:27.7291332Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-13T09:38:27.7292711Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib
+2025-03-13T09:38:27.7293873Z ##[endgroup]
+2025-03-13T09:38:28.1640496Z Downloading uv from "https://github.com/astral-sh/uv/releases/download/0.6.6/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2025-03-13T09:38:28.4220712Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/84b3daf3-0f02-4125-bdb2-acade25a135f -f /home/runner/work/_temp/2b152fbe-32e1-4f4b-b722-316bb62d7ba7
+2025-03-13T09:38:28.7526980Z Added /opt/hostedtoolcache/uv/0.6.6/x86_64 to the path
+2025-03-13T09:38:28.7527916Z Added /home/runner/.local/bin to the path
+2025-03-13T09:38:28.7539264Z Set UV_CACHE_DIR to /home/runner/work/_temp/setup-uv-cache
+2025-03-13T09:38:28.7539984Z Successfully installed uv version 0.6.6
+2025-03-13T09:38:28.7540764Z Searching files using cache dependency glob: **/uv.lock,**/requirements*.txt
+2025-03-13T09:38:28.7938592Z /home/runner/work/datafusion-python/datafusion-python/uv.lock
+2025-03-13T09:38:28.7961056Z Found 1 files to hash.
+2025-03-13T09:38:28.8876002Z Trying to restore uv cache from GitHub Actions cache with key: setup-uv-1-x86_64-unknown-linux-gnu-3.12.9-d452bf0dbb4fa859f9e2b0f9ad66fb96ac838e1b6a13ef3556b25cadcdfb9f02
+2025-03-13T09:38:28.9417919Z Cache hit for: setup-uv-1-x86_64-unknown-linux-gnu-3.12.9-d452bf0dbb4fa859f9e2b0f9ad66fb96ac838e1b6a13ef3556b25cadcdfb9f02
+2025-03-13T09:38:29.0142866Z Received 1300 of 1300 (100.0%), 0.1 MBs/sec
+2025-03-13T09:38:29.0143626Z Cache Size: ~0 MB (1300 B)
+2025-03-13T09:38:29.0173797Z [command]/usr/bin/tar -xf /home/runner/work/_temp/88c240af-3684-46cf-b1cf-dfcad3aff95e/cache.tzst -P -C /home/runner/work/datafusion-python/datafusion-python --use-compress-program unzstd
+2025-03-13T09:38:29.0244080Z Cache restored successfully
+2025-03-13T09:38:29.0250190Z uv cache restored from GitHub Actions cache with key: setup-uv-1-x86_64-unknown-linux-gnu-3.12.9-d452bf0dbb4fa859f9e2b0f9ad66fb96ac838e1b6a13ef3556b25cadcdfb9f02
+2025-03-13T09:38:29.0425797Z ##[group]Run uv sync --dev --no-install-package datafusion
+2025-03-13T09:38:29.0426285Z [36;1muv sync --dev --no-install-package datafusion[0m
+2025-03-13T09:38:29.0479025Z shell: /usr/bin/bash -e {0}
+2025-03-13T09:38:29.0479271Z env:
+2025-03-13T09:38:29.0479521Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-13T09:38:29.0479945Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib/pkgconfig
+2025-03-13T09:38:29.0480344Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-13T09:38:29.0480712Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-13T09:38:29.0481103Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-13T09:38:29.0481665Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib
+2025-03-13T09:38:29.0482015Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-03-13T09:38:29.0482306Z ##[endgroup]
+2025-03-13T09:38:29.1072393Z Using CPython 3.12.9 interpreter at: /opt/hostedtoolcache/Python/3.12.9/x64/bin/python3
+2025-03-13T09:38:34.0427094Z Creating virtual environment at: .venv
+2025-03-13T09:38:34.0427754Z Resolved 81 packages in 4.92s
+2025-03-13T09:38:34.0958699Z Downloading cryptography (4.0MiB)
+2025-03-13T09:38:34.0959788Z Downloading pyarrow (38.2MiB)
+2025-03-13T09:38:34.0964002Z Downloading numpy (15.4MiB)
+2025-03-13T09:38:34.0964993Z Downloading maturin (7.6MiB)
+2025-03-13T09:38:34.0966296Z Downloading ruff (10.8MiB)
+2025-03-13T09:38:34.3972226Z  Downloaded maturin
+2025-03-13T09:38:34.4810435Z  Downloaded ruff
+2025-03-13T09:38:34.5283131Z  Downloaded cryptography
+2025-03-13T09:38:34.9004223Z  Downloaded pyarrow
+2025-03-13T09:38:34.9838692Z  Downloaded numpy
+2025-03-13T09:38:34.9840839Z Prepared 23 packages in 936ms
+2025-03-13T09:38:35.0072578Z Installed 23 packages in 23ms
+2025-03-13T09:38:35.0073124Z  + certifi==2024.12.14
+2025-03-13T09:38:35.0073461Z  + cffi==1.17.1
+2025-03-13T09:38:35.0073917Z  + charset-normalizer==3.4.1
+2025-03-13T09:38:35.0074512Z  + cryptography==44.0.0
+2025-03-13T09:38:35.0074897Z  + deprecated==1.2.18
+2025-03-13T09:38:35.0075216Z  + idna==3.10
+2025-03-13T09:38:35.0075512Z  + iniconfig==2.0.0
+2025-03-13T09:38:35.0075830Z  + maturin==1.8.1
+2025-03-13T09:38:35.0076200Z  + numpy==2.2.1
+2025-03-13T09:38:35.0076504Z  + packaging==24.2
+2025-03-13T09:38:35.0076807Z  + pluggy==1.5.0
+2025-03-13T09:38:35.0077119Z  + pyarrow==18.1.0
+2025-03-13T09:38:35.0077438Z  + pycparser==2.22
+2025-03-13T09:38:35.0077753Z  + pygithub==2.5.0
+2025-03-13T09:38:35.0078063Z  + pyjwt==2.10.1
+2025-03-13T09:38:35.0078449Z  + pynacl==1.5.0
+2025-03-13T09:38:35.0078750Z  + pytest==8.3.4
+2025-03-13T09:38:35.0079043Z  + requests==2.32.3
+2025-03-13T09:38:35.0079351Z  + ruff==0.9.1
+2025-03-13T09:38:35.0079636Z  + toml==0.10.2
+2025-03-13T09:38:35.0079921Z  + typing-extensions==4.12.2
+2025-03-13T09:38:35.0080249Z  + urllib3==2.3.0
+2025-03-13T09:38:35.0080531Z  + wrapt==1.17.2
+2025-03-13T09:38:35.0183035Z ##[group]Run uv run --no-project ruff check --output-format=github python/
+2025-03-13T09:38:35.0183582Z [36;1muv run --no-project ruff check --output-format=github python/[0m
+2025-03-13T09:38:35.0183979Z [36;1muv run --no-project ruff format --check python/[0m
+2025-03-13T09:38:35.0232845Z shell: /usr/bin/bash -e {0}
+2025-03-13T09:38:35.0233076Z env:
+2025-03-13T09:38:35.0233327Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-13T09:38:35.0233739Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib/pkgconfig
+2025-03-13T09:38:35.0234125Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-13T09:38:35.0234473Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-13T09:38:35.0234816Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-13T09:38:35.0235161Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib
+2025-03-13T09:38:35.0235497Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-03-13T09:38:35.0235803Z ##[endgroup]
+2025-03-13T09:38:35.1115929Z ##[error]python/datafusion/udf.py:20:1: I001 Import block is un-sorted or un-formatted
+2025-03-13T09:38:35.1151773Z ##[error]python/datafusion/udf.py:22:17: F401 `ast.Call` imported but unused
+2025-03-13T09:38:35.1153780Z ##[error]python/datafusion/udf.py:650:9: C901 `udwf` is too complex (11 > 10)
+2025-03-13T09:38:35.1155464Z ##[error]python/datafusion/udf.py:656:89: W505 Doc line too long (95 > 88)
+2025-03-13T09:38:35.1156959Z ##[error]python/datafusion/udf.py:656:89: E501 Line too long (95 > 88)
+2025-03-13T09:38:35.1158236Z ##[error]python/datafusion/udf.py:657:89: W505 Doc line too long (90 > 88)
+2025-03-13T09:38:35.1159557Z ##[error]python/datafusion/udf.py:657:89: E501 Line too long (90 > 88)
+2025-03-13T09:38:35.1160885Z ##[error]python/datafusion/udf.py:668:89: W505 Doc line too long (90 > 88)
+2025-03-13T09:38:35.1162640Z ##[error]python/datafusion/udf.py:668:89: E501 Line too long (90 > 88)
+2025-03-13T09:38:35.1163997Z ##[error]python/datafusion/udf.py:688:89: W505 Doc line too long (89 > 88)
+2025-03-13T09:38:35.1165366Z ##[error]python/datafusion/udf.py:688:89: E501 Line too long (89 > 88)
+2025-03-13T09:38:35.1166650Z ##[error]python/tests/test_udwf.py:306:89: E501 Line too long (112 > 88)
+2025-03-13T09:38:35.1167913Z ##[error]python/tests/test_udwf.py:490:89: E501 Line too long (117 > 88)
+2025-03-13T09:38:35.1170489Z ##[error]Process completed with exit code 1.
+2025-03-13T09:38:35.1264744Z Post job cleanup.
+2025-03-13T09:38:35.2196160Z [command]/usr/bin/git version
+2025-03-13T09:38:35.2232927Z git version 2.48.1
+2025-03-13T09:38:35.2280568Z Temporarily overriding HOME='/home/runner/work/_temp/6a56de9e-980a-4c1b-b1fd-d02c390a9da5' before making global git config changes
+2025-03-13T09:38:35.2281922Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-13T09:38:35.2286283Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/datafusion-python/datafusion-python
+2025-03-13T09:38:35.2321801Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-13T09:38:35.2357013Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-13T09:38:35.2589066Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-13T09:38:35.2610934Z http.https://github.com/.extraheader
+2025-03-13T09:38:35.2624208Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-13T09:38:35.2656463Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-13T09:38:35.2993622Z Cleaning up orphan processes

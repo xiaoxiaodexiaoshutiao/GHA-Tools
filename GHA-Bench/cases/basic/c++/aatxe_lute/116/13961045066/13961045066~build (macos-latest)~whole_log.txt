@@ -1,0 +1,202 @@
+﻿2025-03-20T03:00:21.6878410Z Current runner version: '2.322.0'
+2025-03-20T03:00:21.6893510Z ##[group]Operating System
+2025-03-20T03:00:21.6893930Z macOS
+2025-03-20T03:00:21.6894200Z 14.7.4
+2025-03-20T03:00:21.6894480Z 23H420
+2025-03-20T03:00:21.6894760Z ##[endgroup]
+2025-03-20T03:00:21.6895060Z ##[group]Runner Image
+2025-03-20T03:00:21.6895390Z Image: macos-14-arm64
+2025-03-20T03:00:21.6895710Z Version: 20250304.1018
+2025-03-20T03:00:21.6896370Z Included Software: https://github.com/actions/runner-images/blob/macos-14-arm64/20250304.1018/images/macos/macos-14-arm64-Readme.md
+2025-03-20T03:00:21.6897290Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-14-arm64%2F20250304.1018
+2025-03-20T03:00:21.6897870Z ##[endgroup]
+2025-03-20T03:00:21.6898190Z ##[group]Runner Image Provisioner
+2025-03-20T03:00:21.6898580Z 2.0.422.1+55c30c14fe2a0a1547db1b656933ae07d97649a9
+2025-03-20T03:00:21.6898960Z ##[endgroup]
+2025-03-20T03:00:21.6899590Z ##[group]GITHUB_TOKEN Permissions
+2025-03-20T03:00:21.6900500Z Contents: read
+2025-03-20T03:00:21.6900840Z Metadata: read
+2025-03-20T03:00:21.6901130Z Packages: read
+2025-03-20T03:00:21.6901410Z ##[endgroup]
+2025-03-20T03:00:21.6902680Z Secret source: None
+2025-03-20T03:00:21.6903030Z Prepare workflow directory
+2025-03-20T03:00:21.7099650Z Prepare all required actions
+2025-03-20T03:00:21.7125020Z Getting action download info
+2025-03-20T03:00:21.9724990Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-20T03:00:22.3351990Z Complete job name: build (macos-latest)
+2025-03-20T03:00:22.3825580Z ##[group]Run actions/checkout@v4
+2025-03-20T03:00:22.3826550Z with:
+2025-03-20T03:00:22.3826860Z   repository: aatxe/lute
+2025-03-20T03:00:22.3827470Z   token: ***
+2025-03-20T03:00:22.3827740Z   ssh-strict: true
+2025-03-20T03:00:22.3828040Z   ssh-user: git
+2025-03-20T03:00:22.3828340Z   persist-credentials: true
+2025-03-20T03:00:22.3828680Z   clean: true
+2025-03-20T03:00:22.3828980Z   sparse-checkout-cone-mode: true
+2025-03-20T03:00:22.3829340Z   fetch-depth: 1
+2025-03-20T03:00:22.3829670Z   fetch-tags: false
+2025-03-20T03:00:22.3829970Z   show-progress: true
+2025-03-20T03:00:22.3830250Z   lfs: false
+2025-03-20T03:00:22.3830520Z   submodules: false
+2025-03-20T03:00:22.3830820Z   set-safe-directory: true
+2025-03-20T03:00:22.3831330Z ##[endgroup]
+2025-03-20T03:00:23.1098050Z Syncing repository: aatxe/lute
+2025-03-20T03:00:23.1099590Z ##[group]Getting Git version info
+2025-03-20T03:00:23.1100080Z Working directory is '/Users/runner/work/lute/lute'
+2025-03-20T03:00:23.1100970Z [command]/opt/homebrew/bin/git version
+2025-03-20T03:00:23.1433730Z git version 2.48.1
+2025-03-20T03:00:23.1510890Z ##[endgroup]
+2025-03-20T03:00:23.1525410Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/ff7ae02c-5267-43d1-a1f7-23ff491368ae/.gitconfig'
+2025-03-20T03:00:23.1534480Z Temporarily overriding HOME='/Users/runner/work/_temp/ff7ae02c-5267-43d1-a1f7-23ff491368ae' before making global git config changes
+2025-03-20T03:00:23.1535890Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-20T03:00:23.1539420Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/lute/lute
+2025-03-20T03:00:23.1716780Z Deleting the contents of '/Users/runner/work/lute/lute'
+2025-03-20T03:00:23.1719130Z ##[group]Initializing the repository
+2025-03-20T03:00:23.1722890Z [command]/opt/homebrew/bin/git init /Users/runner/work/lute/lute
+2025-03-20T03:00:23.2159240Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-20T03:00:23.2161100Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-20T03:00:23.2162150Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-20T03:00:23.2162900Z hint:
+2025-03-20T03:00:23.2163440Z hint: 	git config --global init.defaultBranch <name>
+2025-03-20T03:00:23.2163990Z hint:
+2025-03-20T03:00:23.2164510Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-20T03:00:23.2165240Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-20T03:00:23.2166440Z hint:
+2025-03-20T03:00:23.2166780Z hint: 	git branch -m <name>
+2025-03-20T03:00:23.2167290Z Initialized empty Git repository in /Users/runner/work/lute/lute/.git/
+2025-03-20T03:00:23.2171550Z [command]/opt/homebrew/bin/git remote add origin https://github.com/aatxe/lute
+2025-03-20T03:00:23.2482020Z ##[endgroup]
+2025-03-20T03:00:23.2483190Z ##[group]Disabling automatic garbage collection
+2025-03-20T03:00:23.2484150Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+2025-03-20T03:00:23.2537850Z ##[endgroup]
+2025-03-20T03:00:23.2538440Z ##[group]Setting up auth
+2025-03-20T03:00:23.2542600Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-20T03:00:23.2597470Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-20T03:00:23.3799940Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-20T03:00:23.3840900Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-20T03:00:23.4527350Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-20T03:00:23.4586330Z ##[endgroup]
+2025-03-20T03:00:23.4587210Z ##[group]Fetching the repository
+2025-03-20T03:00:23.4595010Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +858573f8dfab53bf0604ce763a4986d43276eada:refs/remotes/pull/116/merge
+2025-03-20T03:00:24.2625850Z From https://github.com/aatxe/lute
+2025-03-20T03:00:24.2626520Z  * [new ref]         858573f8dfab53bf0604ce763a4986d43276eada -> pull/116/merge
+2025-03-20T03:00:24.2713830Z ##[endgroup]
+2025-03-20T03:00:24.2714330Z ##[group]Determining the checkout info
+2025-03-20T03:00:24.2714820Z ##[endgroup]
+2025-03-20T03:00:24.2715180Z [command]/opt/homebrew/bin/git sparse-checkout disable
+2025-03-20T03:00:24.2800700Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-20T03:00:24.3000730Z ##[group]Checking out the ref
+2025-03-20T03:00:24.3001420Z [command]/opt/homebrew/bin/git checkout --progress --force refs/remotes/pull/116/merge
+2025-03-20T03:00:24.3306790Z HEAD is now at 858573f Merge 59ead9b56654375d25d75f4e891ce72b006a1a20 into ea2befc426da34a2a28a904fcc9f1416a62ecb00
+2025-03-20T03:00:24.3620510Z ##[endgroup]
+2025-03-20T03:00:24.3924570Z [command]/opt/homebrew/bin/git log -1 --format=%H
+2025-03-20T03:00:24.3967310Z 858573f8dfab53bf0604ce763a4986d43276eada
+2025-03-20T03:00:24.4114940Z Prepare all required actions
+2025-03-20T03:00:24.4115350Z Getting action download info
+2025-03-20T03:00:24.5842690Z Download action repository 'actions/setup-python@v5' (SHA:42375524e23c412d93fb67b49958b491fce71c38)
+2025-03-20T03:00:24.7420510Z Download action repository 'ilammy/msvc-dev-cmd@v1' (SHA:0b201ec74fa43914dc39ae48a89fd1d8cb592756)
+2025-03-20T03:00:25.7594410Z Download action repository 'actions/cache@v4' (SHA:5a3ec84eff668545956fd18022155c47e93e2684)
+2025-03-20T03:00:26.9494010Z ##[group]Run ./.github/actions/setup-and-build
+2025-03-20T03:00:26.9494230Z with:
+2025-03-20T03:00:26.9494360Z   config: debug
+2025-03-20T03:00:26.9494480Z ##[endgroup]
+2025-03-20T03:00:26.9619650Z ##[group]Run actions/setup-python@v5
+2025-03-20T03:00:26.9619820Z with:
+2025-03-20T03:00:26.9619940Z   python-version: 3.11
+2025-03-20T03:00:26.9620080Z   check-latest: false
+2025-03-20T03:00:26.9620270Z   token: ***
+2025-03-20T03:00:26.9620390Z   update-environment: true
+2025-03-20T03:00:26.9620570Z   allow-prereleases: false
+2025-03-20T03:00:26.9620710Z ##[endgroup]
+2025-03-20T03:00:27.1107850Z ##[group]Installed versions
+2025-03-20T03:00:27.1146990Z Successfully set up CPython (3.11.9)
+2025-03-20T03:00:27.1147690Z ##[endgroup]
+2025-03-20T03:00:27.1215770Z ##[group]Run brew unlink brotli zstd
+2025-03-20T03:00:27.1216000Z [36;1mbrew unlink brotli zstd[0m
+2025-03-20T03:00:27.1281970Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-20T03:00:27.1282280Z env:
+2025-03-20T03:00:27.1282510Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.11.9/arm64
+2025-03-20T03:00:27.1282900Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.11.9/arm64/lib/pkgconfig
+2025-03-20T03:00:27.1283270Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.11.9/arm64
+2025-03-20T03:00:27.1283610Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.11.9/arm64
+2025-03-20T03:00:27.1283940Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.11.9/arm64
+2025-03-20T03:00:27.1284220Z ##[endgroup]
+2025-03-20T03:00:30.2795620Z Unlinking /opt/homebrew/Cellar/brotli/1.1.0... 17 symlinks removed.
+2025-03-20T03:00:30.3403340Z Unlinking /opt/homebrew/Cellar/zstd/1.5.7... 22 symlinks removed.
+2025-03-20T03:00:30.4793600Z ##[group]Run actions/cache@v4
+2025-03-20T03:00:30.4794010Z with:
+2025-03-20T03:00:30.4794150Z   path: extern
+2025-03-20T03:00:30.4794430Z   key: extern-9e2c8ff36a78d12ea4a115bf4932d34ed3c17ad6666f3d9da11645efbd823d3a
+2025-03-20T03:00:30.4794820Z   enableCrossOsArchive: false
+2025-03-20T03:00:30.4795110Z   fail-on-cache-miss: false
+2025-03-20T03:00:30.4795570Z   lookup-only: false
+2025-03-20T03:00:30.4795760Z   save-always: false
+2025-03-20T03:00:30.4795910Z env:
+2025-03-20T03:00:30.4796160Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.11.9/arm64
+2025-03-20T03:00:30.4796870Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.11.9/arm64/lib/pkgconfig
+2025-03-20T03:00:30.4797290Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.11.9/arm64
+2025-03-20T03:00:30.4797800Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.11.9/arm64
+2025-03-20T03:00:30.4798150Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.11.9/arm64
+2025-03-20T03:00:30.4798460Z ##[endgroup]
+2025-03-20T03:00:30.8165510Z Cache hit for: extern-9e2c8ff36a78d12ea4a115bf4932d34ed3c17ad6666f3d9da11645efbd823d3a
+2025-03-20T03:00:31.9250740Z Received 65668256 of 65668256 (100.0%), 67.3 MBs/sec
+2025-03-20T03:00:31.9255470Z Cache Size: ~63 MB (65668256 B)
+2025-03-20T03:00:31.9316710Z [command]/opt/homebrew/bin/gtar -xf /Users/runner/work/_temp/99cf1ca6-cb89-430d-9bdd-8052bc505464/cache.tgz -P -C /Users/runner/work/lute/lute --delay-directory-restore -z
+2025-03-20T03:00:33.8625930Z Cache restored successfully
+2025-03-20T03:00:33.9209070Z Cache restored from key: extern-9e2c8ff36a78d12ea4a115bf4932d34ed3c17ad6666f3d9da11645efbd823d3a
+2025-03-20T03:00:33.9517890Z ##[group]Run python ./tools/luthier.py configure lute --config=debug 
+2025-03-20T03:00:33.9518800Z [36;1mpython ./tools/luthier.py configure lute --config=debug [0m
+2025-03-20T03:00:33.9580990Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-20T03:00:33.9581370Z env:
+2025-03-20T03:00:33.9581780Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.11.9/arm64
+2025-03-20T03:00:33.9582370Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.11.9/arm64/lib/pkgconfig
+2025-03-20T03:00:33.9583080Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.11.9/arm64
+2025-03-20T03:00:33.9583790Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.11.9/arm64
+2025-03-20T03:00:33.9584180Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.11.9/arm64
+2025-03-20T03:00:33.9584700Z ##[endgroup]
+2025-03-20T03:00:34.4298920Z > git fetch --depth=1 origin curl-8_12_1
+2025-03-20T03:00:35.0875830Z From https://github.com/curl/curl
+2025-03-20T03:00:35.0978620Z  * tag               curl-8_12_1 -> FETCH_HEAD
+2025-03-20T03:00:35.1083720Z > git checkout curl-8_12_1
+2025-03-20T03:00:35.2615300Z HEAD is now at 57495c6 RELEASE-NOTES: synced
+2025-03-20T03:00:35.2717020Z > git submodule update --init --recursive --depth=1
+2025-03-20T03:00:35.3601410Z > git fetch --depth=1 origin v5.7.6-stable
+2025-03-20T03:00:35.9316740Z From https://github.com/wolfSSL/wolfssl
+2025-03-20T03:00:35.9319750Z  * tag               v5.7.6-stable -> FETCH_HEAD
+2025-03-20T03:00:35.9371280Z > git checkout v5.7.6-stable
+2025-03-20T03:00:36.2952290Z HEAD is now at 239b85c Merge pull request #8323 from JacobBarthelmeh/release
+2025-03-20T03:00:36.3054560Z > git submodule update --init --recursive --depth=1
+2025-03-20T03:00:36.4364920Z > git fetch --depth=1 origin 0.665
+2025-03-20T03:00:37.0348710Z From https://github.com/luau-lang/luau
+2025-03-20T03:00:37.0349100Z  * tag               0.665      -> FETCH_HEAD
+2025-03-20T03:00:37.0391350Z > git checkout 0.665
+2025-03-20T03:00:37.0811130Z HEAD is now at e0b55a9 Sync to upstream/release/665 (#1732)
+2025-03-20T03:00:37.0817150Z > git submodule update --init --recursive --depth=1
+2025-03-20T03:00:37.1473370Z > git fetch --depth=1 origin v1.50.0
+2025-03-20T03:00:37.7687510Z From https://github.com/libuv/libuv
+2025-03-20T03:00:37.7687820Z  * tag               v1.50.0    -> FETCH_HEAD
+2025-03-20T03:00:37.7739540Z > git checkout v1.50.0
+2025-03-20T03:00:37.7992990Z HEAD is now at 8fb9cb9 2025.01.15, Version 1.50.0 (Stable)
+2025-03-20T03:00:37.7998880Z > git submodule update --init --recursive --depth=1
+2025-03-20T03:00:37.8865850Z > cmake -G=Ninja -B build/xcode/debug -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=1
+2025-03-20T03:00:37.9324630Z 0.1.0
+2025-03-20T03:00:37.9429700Z CMake Error: CMake was unable to find a build program corresponding to "Ninja".  CMAKE_MAKE_PROGRAM is not set.  You probably need to select a different build tool.
+2025-03-20T03:00:37.9430340Z CMake Error: CMAKE_CXX_COMPILER not set, after EnableLanguage
+2025-03-20T03:00:37.9430710Z CMake Error: CMAKE_C_COMPILER not set, after EnableLanguage
+2025-03-20T03:00:37.9431330Z -- Configuring incomplete, errors occurred!
+2025-03-20T03:00:37.9517770Z ##[error]Process completed with exit code 1.
+2025-03-20T03:00:37.9631240Z Post job cleanup.
+2025-03-20T03:00:37.9701130Z Post job cleanup.
+2025-03-20T03:00:38.0792080Z [command]/opt/homebrew/bin/git version
+2025-03-20T03:00:38.0841370Z git version 2.48.1
+2025-03-20T03:00:38.0873560Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/09b47f9f-04e9-4a27-937d-87c1a005df85/.gitconfig'
+2025-03-20T03:00:38.0880070Z Temporarily overriding HOME='/Users/runner/work/_temp/09b47f9f-04e9-4a27-937d-87c1a005df85' before making global git config changes
+2025-03-20T03:00:38.0880730Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-20T03:00:38.0884610Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/lute/lute
+2025-03-20T03:00:38.0939530Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-20T03:00:38.0989250Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-20T03:00:38.1631530Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-20T03:00:38.1632490Z http.https://github.com/.extraheader
+2025-03-20T03:00:38.1639320Z [command]/opt/homebrew/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-20T03:00:38.1689550Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-20T03:00:38.2325860Z Cleaning up orphan processes

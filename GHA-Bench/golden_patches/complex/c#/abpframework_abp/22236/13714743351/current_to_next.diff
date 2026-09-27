@@ -1,0 +1,1941 @@
+diff --git a/Directory.Packages.props b/Directory.Packages.props
+index 8d360157b30..b7e281d7aac 100644
+--- a/Directory.Packages.props
++++ b/Directory.Packages.props
+@@ -77,6 +77,7 @@
+     <PackageVersion Include="Microsoft.CodeAnalysis.CSharp" Version="4.5.0" />
+     <PackageVersion Include="Microsoft.CSharp" Version="4.7.0" />
+     <PackageVersion Include="Microsoft.Data.Sqlite" Version="9.0.2" />
++    <PackageVersion Include="Microsoft.Data.SqlClient" Version="6.0.1" />
+     <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="9.0.2" />
+     <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.2" />
+     <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.2" />
+diff --git a/docs/en/Community-Articles/2022-11-14-How-to-add-a-custom-grant-type-in-OpenIddict/1.png b/docs/en/Community-Articles/2022-11-14-How-to-add-a-custom-grant-type-in-OpenIddict/1.png
+new file mode 100644
+index 00000000000..8e6a25600f4
+Binary files /dev/null and b/docs/en/Community-Articles/2022-11-14-How-to-add-a-custom-grant-type-in-OpenIddict/1.png differ
+diff --git a/docs/en/Community-Articles/2022-11-14-How-to-add-a-custom-grant-type-in-OpenIddict/2.png b/docs/en/Community-Articles/2022-11-14-How-to-add-a-custom-grant-type-in-OpenIddict/2.png
+new file mode 100644
+index 00000000000..d758ca86cf8
+Binary files /dev/null and b/docs/en/Community-Articles/2022-11-14-How-to-add-a-custom-grant-type-in-OpenIddict/2.png differ
+diff --git a/docs/en/Community-Articles/2022-11-14-How-to-add-a-custom-grant-type-in-OpenIddict/3.png b/docs/en/Community-Articles/2022-11-14-How-to-add-a-custom-grant-type-in-OpenIddict/3.png
+new file mode 100644
+index 00000000000..dcca72e9321
+Binary files /dev/null and b/docs/en/Community-Articles/2022-11-14-How-to-add-a-custom-grant-type-in-OpenIddict/3.png differ
+diff --git a/docs/en/Community-Articles/2022-11-14-How-to-add-a-custom-grant-type-in-OpenIddict/POST.md b/docs/en/Community-Articles/2022-11-14-How-to-add-a-custom-grant-type-in-OpenIddict/POST.md
+index 8f45279b3d7..e147058f670 100644
+--- a/docs/en/Community-Articles/2022-11-14-How-to-add-a-custom-grant-type-in-OpenIddict/POST.md
++++ b/docs/en/Community-Articles/2022-11-14-How-to-add-a-custom-grant-type-in-OpenIddict/POST.md
+@@ -2,17 +2,72 @@
+ 
+ ## ITokenExtensionGrant
+ 
+-Create a class that inherits `ITokenExtensionGrant`, and then register it with the framework. 
++Create a `MyTokenExtensionGrant` class that inherits `ITokenExtensionGrant`, and then register it with the framework. 
+ 
+-In the `MyTokenExtensionGrant` class below we try to get the token details, The `ForbidResult` handles the failure case and `SignInResult` returns a new token response, You can pass more parameters to implement business checks.
++```cs
++public override void PreConfigureServices(ServiceConfigurationContext context)
++{
++    //...
++    PreConfigure<OpenIddictServerBuilder>(builder =>
++    {
++        builder.Configure(openIddictServerOptions =>
++        {
++            openIddictServerOptions.GrantTypes.Add(MyTokenExtensionGrant.ExtensionGrantName);
++        });
++    });
++    //...
++}
++
++public override void ConfigureServices(ServiceConfigurationContext context)
++{
++    //...
++    Configure<AbpOpenIddictExtensionGrantsOptions>(options =>
++    {
++        options.Grants.Add(MyTokenExtensionGrant.ExtensionGrantName, new MyTokenExtensionGrant());
++    });
++    //...
++}
++```
++
++## Generate a new token response
++
++In the `MyTokenExtensionGrant` class below we have two methods to get a new token using a user token or user API key. You can choose one of them based on your business.
++
++These methods are just examples. Please add more logic to validate input data.
+ 
+ ```cs
++using System.Collections.Immutable;
++using System.Security.Principal;
++using Microsoft.AspNetCore.Authentication;
++using Microsoft.AspNetCore.Identity;
++using Microsoft.AspNetCore.Mvc;
++using OpenIddict.Abstractions;
++using OpenIddict.Server;
++using OpenIddict.Server.AspNetCore;
++using Volo.Abp.Identity;
++using Volo.Abp.OpenIddict;
++using Volo.Abp.OpenIddict.ExtensionGrantTypes;
++using IdentityUser = Volo.Abp.Identity.IdentityUser;
++using SignInResult = Microsoft.AspNetCore.Mvc.SignInResult;
++
++namespace OpenIddict.Demo.Server.ExtensionGrants;
++
+ public class MyTokenExtensionGrant : ITokenExtensionGrant
+ {
+     public const string ExtensionGrantName = "MyTokenExtensionGrant";
+ 
+     public string Name => ExtensionGrantName;
++
+     public async Task<IActionResult>  HandleAsync(ExtensionGrantContext context)
++    {
++        // You can get a new token using any of the following methods based on your business.
++        // They are just examples. You can implement your own logic here.
++
++        return await HandleUserAccessTokenAsync(context);
++        return await HandleUserApiKeyAsync(context);
++    }
++
++    public async Task<IActionResult>  HandleUserAccessTokenAsync(ExtensionGrantContext context)
+     {
+         var userToken = context.Request.GetParameter("token").ToString();
+ 
+@@ -26,6 +81,9 @@ public class MyTokenExtensionGrant : ITokenExtensionGrant
+                 }!));
+         }
+ 
++        // We will validate the user token
++        // The Token is issued by the OpenIddict server, So we can validate it using the introspection endpoint
++
+         var transaction = await context.HttpContext.RequestServices.GetRequiredService<IOpenIddictServerFactory>().CreateTransactionAsync();
+         transaction.EndpointType = OpenIddictServerEndpointType.Introspection;
+         transaction.Request = new OpenIddictRequest
+@@ -64,23 +122,92 @@ public class MyTokenExtensionGrant : ITokenExtensionGrant
+                 }));
+         }
+ 
++        // We have validated the user token and got the user id
++
+         var userId = principal.FindUserId();
+         var userManager = context.HttpContext.RequestServices.GetRequiredService<IdentityUserManager>();
+         var user = await userManager.GetByIdAsync(userId.Value);
+         var userClaimsPrincipalFactory = context.HttpContext.RequestServices.GetRequiredService<IUserClaimsPrincipalFactory<IdentityUser>>();
+         var claimsPrincipal = await userClaimsPrincipalFactory.CreateAsync(user);
+-        claimsPrincipal.SetScopes(principal.GetScopes());
+-        claimsPrincipal.SetResources(await GetResourcesAsync(context, principal.GetScopes()));
+ 
+-        //abp version < 7.3
+-        await context.HttpContext.RequestServices.GetRequiredService<AbpOpenIddictClaimDestinationsManager>().SetAsync(claimsPrincipal);
++        // Prepare the scopes
++        var scopes = GetScopes(context);
++
++        claimsPrincipal.SetScopes(scopes);
++        claimsPrincipal.SetResources(await GetResourcesAsync(context, scopes));
++        await context.HttpContext.RequestServices.GetRequiredService<AbpOpenIddictClaimsPrincipalManager>().HandleAsync(context.Request, principal);
++        return new SignInResult(OpenIddictServerAspNetCoreDefaults.AuthenticationScheme, claimsPrincipal);
++    }
+ 
+-        //For abp version >= 7.3
+-        await context.HttpContext.RequestServices.GetRequiredService<AbpOpenIddictClaimsPrincipalManager>().HandleAsync(context.Request, claimsPrincipal);
+ 
++    protected async Task<IActionResult> HandleUserApiKeyAsync(ExtensionGrantContext context)
++    {
++        var userApiKey = context.Request.GetParameter("user_api_key").ToString();
++
++        if (string.IsNullOrEmpty(userApiKey))
++        {
++            return new ForbidResult(
++                new[] {OpenIddictServerAspNetCoreDefaults.AuthenticationScheme},
++                properties: new AuthenticationProperties(new Dictionary<string, string>
++                {
++                    [OpenIddictServerAspNetCoreConstants.Properties.Error] = OpenIddictConstants.Errors.InvalidRequest
++                }!));
++        }
++
++        // Here we can validate the user API key and get the user id
++        if (false) // Add your own logic here
++        {
++            // If the user API key is invalid
++            return new ForbidResult(
++                new[] {OpenIddictServerAspNetCoreDefaults.AuthenticationScheme},
++                properties: new AuthenticationProperties(new Dictionary<string, string>
++                {
++                    [OpenIddictServerAspNetCoreConstants.Properties.Error] = OpenIddictConstants.Errors.InvalidRequest
++                }!));
++        }
++
++        // Add your own logic to get the user by API key
++        var userManager = context.HttpContext.RequestServices.GetRequiredService<IdentityUserManager>();
++        var user = await userManager.FindByNameAsync("admin");
++        if (user == null)
++        {
++            return new ForbidResult(
++                new[] {OpenIddictServerAspNetCoreDefaults.AuthenticationScheme},
++                properties: new AuthenticationProperties(new Dictionary<string, string>
++                {
++                    [OpenIddictServerAspNetCoreConstants.Properties.Error] = OpenIddictConstants.Errors.InvalidRequest
++                }!));
++        }
++
++        // Create a principal for the user
++        var userClaimsPrincipalFactory = context.HttpContext.RequestServices.GetRequiredService<IUserClaimsPrincipalFactory<IdentityUser>>();
++        var claimsPrincipal = await userClaimsPrincipalFactory.CreateAsync(user);
++
++        // Prepare the scopes
++        var scopes = GetScopes(context);
++
++        claimsPrincipal.SetScopes(scopes);
++        claimsPrincipal.SetResources(await GetResourcesAsync(context, scopes));
++        await context.HttpContext.RequestServices.GetRequiredService<AbpOpenIddictClaimsPrincipalManager>().HandleAsync(context.Request, claimsPrincipal);
+         return new SignInResult(OpenIddictServerAspNetCoreDefaults.AuthenticationScheme, claimsPrincipal);
+     }
+ 
++    private ImmutableArray<string> GetScopes(ExtensionGrantContext context)
++    {
++        // Prepare the scopes
++        // The scopes must be defined in the OpenIddict server
++
++        // If you want to get the scopes from the request, you have to add `scope` parameter in the request
++        // scope: AbpAPI profile roles email phone offline_access
++
++        //var scopes = context.Request.GetScopes();
++
++        // If you want to set the scopes here, you can use the following code
++        var scopes = new[] { "AbpAPI", "profile", "roles", "email", "phone", "offline_access" }.ToImmutableArray();
++
++        return scopes;
++    }
++
+     private async Task<IEnumerable<string>> GetResourcesAsync(ExtensionGrantContext context, ImmutableArray<string> scopes)
+     {
+         var resources = new List<string>();
+@@ -98,38 +225,24 @@ public class MyTokenExtensionGrant : ITokenExtensionGrant
+ }
+ ```
+ 
+-```cs
+-public override void PreConfigureServices(ServiceConfigurationContext context)
+-{
+-    //...
+-    PreConfigure<OpenIddictServerBuilder>(builder =>
+-    {
+-        builder.Configure(openIddictServerOptions =>
+-        {
+-            openIddictServerOptions.GrantTypes.Add(MyTokenExtensionGrant.ExtensionGrantName);
+-        });
+-    });
+-    //...
+-}
++### Get a new token using user access token
+ 
+-public override void ConfigureServices(ServiceConfigurationContext context)
+-{
+-    //...
+-    Configure<AbpOpenIddictExtensionGrantsOptions>(options =>
+-    {
+-        options.Grants.Add(MyTokenExtensionGrant.ExtensionGrantName, new MyTokenExtensionGrant());
+-    });
+-    //...
+-}
+-```
++* Get a user token using the `password` grant type.
+ 
++![Http request 1](1.png)
+ 
+-![Http request 1](postman1.png)
++*  Use the user token to get a new token using the `HandleUserAccessTokenAsync` method.
+ 
+-![Http request 2](postman2.png)
++![Http request 2](2.png)
+ 
+-## Source code
++### Get a new token using user API key
++
++*  Directly get a new token using the `HandleUserApiKeyAsync` method.
+ 
+-https://github.com/abpframework/abp/commit/3210f138454697647689b4868c8d4b7b3da02d44
+ 
++![Http request 3](3.png)
++
++## Source code
++
++https://github.com/abpframework/abp/blob/dev/modules/openiddict/app/OpenIddict.Demo.Server/ExtensionGrants/MyTokenExtensionGrant.cs
+ 
+diff --git a/docs/en/Community-Articles/2022-11-14-How-to-add-a-custom-grant-type-in-OpenIddict/postman1.png b/docs/en/Community-Articles/2022-11-14-How-to-add-a-custom-grant-type-in-OpenIddict/postman1.png
+deleted file mode 100644
+index e7ec1ccce0d..00000000000
+Binary files a/docs/en/Community-Articles/2022-11-14-How-to-add-a-custom-grant-type-in-OpenIddict/postman1.png and /dev/null differ
+diff --git a/docs/en/Community-Articles/2022-11-14-How-to-add-a-custom-grant-type-in-OpenIddict/postman2.png b/docs/en/Community-Articles/2022-11-14-How-to-add-a-custom-grant-type-in-OpenIddict/postman2.png
+deleted file mode 100644
+index b44e756ed55..00000000000
+Binary files a/docs/en/Community-Articles/2022-11-14-How-to-add-a-custom-grant-type-in-OpenIddict/postman2.png and /dev/null differ
+diff --git a/docs/en/Community-Articles/2024-03-05-URL-Based-Localization/cover.png b/docs/en/Community-Articles/2024-03-05-URL-Based-Localization/cover.png
+index 275a84aab6a..b0f06080af7 100644
+Binary files a/docs/en/Community-Articles/2024-03-05-URL-Based-Localization/cover.png and b/docs/en/Community-Articles/2024-03-05-URL-Based-Localization/cover.png differ
+diff --git a/docs/en/Community-Articles/2024-03-05-URL-Based-Localization/scrshot1.jpg b/docs/en/Community-Articles/2024-03-05-URL-Based-Localization/scrshot1.jpg
+index 68089f596a6..0d35786717f 100644
+Binary files a/docs/en/Community-Articles/2024-03-05-URL-Based-Localization/scrshot1.jpg and b/docs/en/Community-Articles/2024-03-05-URL-Based-Localization/scrshot1.jpg differ
+diff --git a/docs/en/Community-Articles/2025-02-20-Using-OutboxInbox-Pattern-for-Reliable-Event-Handling-in-a-Multi-Module-Monolithic-Application/POST.md b/docs/en/Community-Articles/2025-02-20-Using-OutboxInbox-Pattern-for-Reliable-Event-Handling-in-a-Multi-Module-Monolithic-Application/POST.md
+new file mode 100644
+index 00000000000..b3a5b145e9d
+--- /dev/null
++++ b/docs/en/Community-Articles/2025-02-20-Using-OutboxInbox-Pattern-for-Reliable-Event-Handling-in-a-Multi-Module-Monolithic-Application/POST.md
+@@ -0,0 +1,234 @@
++# Using Outbox/Inbox Pattern for Reliable Event Handling in a Multi-Module Monolithic Application
++
++This article explains how to implement reliable event handling using the `Outbox/Inbox` pattern in a modular monolithic application with multiple databases. We'll use the `ModularCRM` project as an example (how that project was created is explained in [this document](https://abp.io/docs/latest/tutorials/modular-crm)).
++
++## Project Background
++
++`ModularCRM` is a monolithic application that integrates multiple ABP framework open-source modules, including:
++
++- `Account`
++- `Identity`
++- `Tenant Management` 
++- `Permission Management`
++- `Setting Management`
++- And other open-source modules
++
++Besides the ABP framework modules, the project contains three business modules:
++
++- Order module (`Ordering`), using `MongoDB` database
++- Product module (`Products`), using `SQL Server` database
++- Payment module (`Payment`), using `MongoDB` database
++
++The project configures separate database connection strings for `ModularCRM` and the three business modules in `appsettings.json`:
++
++```json
++{
++  "ConnectionStrings": {
++    "Default": "Server=localhost,1434;Database=ModularCrm;User Id=sa;Password=1q2w3E***;TrustServerCertificate=true",
++    "Products": "Server=localhost,1434;Database=ModularCrm_Products;User Id=sa;Password=1q2w3E***;TrustServerCertificate=true",
++    "Ordering": "mongodb://localhost:27017/ModularCrm_Ordering?replicaSet=rs0",
++    "Payment": "mongodb://localhost:27017/ModularCrm_Payment?replicaSet=rs0"
++  }
++}
++```
++
++## Business Scenario
++
++These modules communicate through the ABP framework's `DistributedEventBus` to implement the following business flow:
++
++> This is a simple example flow. Real business flows are more complex. The sample code is for demonstration purposes.
++
++1. Order module: Publishes `OrderPlacedEto` event when an order is placed
++2. Product module: Subscribes to `OrderPlacedEto` event and reduce product stock
++3. Payment module: Subscribes to `OrderPlacedEto` event, processes payment, then publishes `PaymentCompletedEto` event
++4. Order module: Subscribes to `PaymentCompletedEto` event and updates order status to `Delivered`
++
++When implementing this flow, we need to ensure:
++
++- Transaction consistency between order creation and event publishing
++- Transaction consistency when modules process messages
++- Reliable message delivery (including persistence, confirmation, and retry mechanisms)
++
++Using the default implementation of the ABP framework's distributed event bus cannot meet these requirements, so we need to add a new mechanism that is also provided by the ABP Framework.
++
++## Outbox/Inbox Pattern Solution
++
++To meet these requirements, we use the `Outbox/Inbox` pattern:
++
++### Outbox Pattern
++
++- Saves distributed events with database operations in the same transaction
++- Sends events to distributed message service through background jobs
++- Ensures consistency between data updates and event publishing
++- Prevents message loss during system failures
++
++### Inbox Pattern
++
++- First saves received distributed events to the database
++- Processes events in a transactional way
++- Ensures messages are processed only once by saving processed message records
++- Maintains processing state for reliable handling
++
++> For how to enable and configure `Outbox/Inbox` in projects and modules, see: https://abp.io/docs/latest/framework/infrastructure/event-bus/distributed#outbox-inbox-for-transactional-events
++
++### Module Configuration
++
++Each module needs to configure separate `Outbox/Inbox`. Since it's a monolithic application, all message processing classes are in the same project, so we need to configure `Outbox/Inbox` for each module with `Selector/EventSelector` to ensure that the module only sends and receives the messages it cares about, avoiding message duplication processing.
++
++**ModularCRM Main Application Configuration**
++
++It will send and receive messages from all ABP framework open-source modules.
++
++```csharp
++// This selector will match all abp built-in modules and the current module.
++Func<Type, bool> abpModuleSelector = type => type.Namespace != null && (type.Namespace.StartsWith("Volo.") || type.Assembly == typeof(ModularCrmModule).Assembly);
++
++Configure<AbpDistributedEventBusOptions>(options =>
++{
++    options.Inboxes.Configure("ModularCrm", config =>
++    {
++        config.UseDbContext<ModularCrmDbContext>();
++        config.EventSelector = abpModuleSelector;
++        config.HandlerSelector = abpModuleSelector;
++    });
++
++    options.Outboxes.Configure("ModularCrm", config =>
++    {
++        config.UseDbContext<ModularCrmDbContext>();
++        config.Selector = abpModuleSelector;
++    });
++});
++```
++
++**Order Module Configuration**
++
++It only sends `OrderPlacedEto` events and receives `PaymentCompletedEto` events and executes `OrderPaymentCompletedEventHandler`.
++
++```csharp
++Configure<AbpDistributedEventBusOptions>(options =>
++{
++    options.Inboxes.Configure(OrderingDbProperties.ConnectionStringName, config =>
++    {
++        config.UseMongoDbContext<IOrderingDbContext>();
++        config.EventSelector = type => type == typeof(PaymentCompletedEto);
++        config.HandlerSelector = type => type == typeof(OrderPaymentCompletedEventHandler);
++    });
++
++    options.Outboxes.Configure(OrderingDbProperties.ConnectionStringName, config =>
++    {
++        config.UseMongoDbContext<IOrderingDbContext>();
++        config.Selector = type => type == typeof(OrderPlacedEto);
++    });
++});
++```
++
++> Here, the `EventSelector` and `HandlerSelector` checks only a single type. If you have multiple events and event handlers, you can check the given type if it is included in an array of types.
++
++**Product Module Configuration**
++
++It only receives `EntityCreatedEto<UserEto>` and `OrderPlacedEto` events and executes `ProductsOrderPlacedEventHandler` and `ProductsUserCreatedEventHandler`. It does not send any events now.
++
++```csharp
++Configure<AbpDistributedEventBusOptions>(options =>
++{
++    options.Inboxes.Configure(ProductsDbProperties.ConnectionStringName, config =>
++    {
++        config.UseDbContext<IProductsDbContext>();
++		config.EventSelector = type => type == typeof(EntityCreatedEto<UserEto>) || type == typeof(OrderPlacedEto);
++        config.HandlerSelector = type => type == typeof(ProductsOrderPlacedEventHandler) || type == typeof(ProductsUserCreatedEventHandler);
++    });
++
++    // Outboxes are not used in this module
++	options.Outboxes.Configure(ProductsDbProperties.ConnectionStringName, config =>
++	{
++		config.UseDbContext<IProductsDbContext>();
++		config.Selector = type => false;
++	});
++});
++```
++
++**Payment Module Configuration**
++
++It only sends `PaymentCompletedEto` events and receives `OrderPlacedEto` events and executes `PaymentOrderPlacedEventHandler`.
++
++```csharp
++Configure<AbpDistributedEventBusOptions>(options =>
++{
++    options.Inboxes.Configure(PaymentDbProperties.ConnectionStringName, config =>
++    {
++        config.UseMongoDbContext<IPaymentMongoDbContext>();
++        config.EventSelector = type => type == typeof(OrderPlacedEto);
++        config.HandlerSelector = type => type == typeof(PaymentOrderPlacedEventHandler);
++    });
++
++    options.Outboxes.Configure(PaymentDbProperties.ConnectionStringName, config =>
++    {
++        config.UseMongoDbContext<IPaymentMongoDbContext>();
++        config.Selector = type => type == typeof(PaymentCompletedEto);
++    });
++});
++```
++
++## Running ModularCRM Simulation Business Flow
++
++1. Run the following command in the `ModularCrm` directory:
++
++```
++# Start SQL Server and MongoDB databases in Docker
++docker-compose up -d
++
++# Restore and install project npm dependencies
++abp install-lib              
++
++# Migrate databases
++dotnet run --project ModularCrm --migrate-database 
++
++# Start the application
++dotnet run --project ModularCrm
++```
++
++2. Navigate to `https://localhost:44303/` to view the application homepage
++
++![index](index.png)
++
++3. Enter a customer name and select a product, then submit an order. After a moment, refresh the page to see the order, product, and payment information.
++
++![order](order.png)
++
++Application logs display the complete processing flow:
++
++```
++[Ordering Module] Order created:  OrderId: b7ad3f47-0e77-bb81-082f-3a1834503e88, ProductId: 0f95689f-4cb6-36f5-68bd-3a18344d32c9, CustomerName: john
++
++[Products Module] OrderPlacedEto event received: OrderId: b7ad3f47-0e77-bb81-082f-3a1834503e88, CustomerName: john, ProductId: 0f95689f-4cb6-36f5-68bd-3a18344d32c9
++[Products Module] Stock count decreased for ProductId: 0f95689f-4cb6-36f5-68bd-3a18344d32c9
++
++[Payment Module] OrderPlacedEto event received: OrderId: b7ad3f47-0e77-bb81-082f-3a1834503e88, CustomerName: john, ProductId: 0f95689f-4cb6-36f5-68bd-3a18344d32c9
++[Payment Module] Payment processing completed for OrderId: b7ad3f47-0e77-bb81-082f-3a1834503e88
++
++[Ordering Module] PaymentCompletedEto event received: OrderId: b7ad3f47-0e77-bb81-082f-3a1834503e88, PaymentId: d0a41ead-ee0f-714c-e254-3a1834504d65, PaymentMethod: CreditCard, PaymentAmount: ModularCrm.Payment.Payment.PaymentCompletedEto
++[Ordering Module] Order state updated to Delivered for OrderId: b7ad3f47-0e77-bb81-082f-3a1834503e88
++```
++
++In addition, when a new user registers, the product module will also receive the `EntityCreatedEto<UserEto>` event, and we will send an email to the new user, just to demonstrate the `Outbox/Inbox Selector` mechanism.
++
++```
++[Products Module] UserCreated event received: UserId: "9a1f2bd0-5b28-210a-9e56-3a18344d310a", UserName: admin
++[Products Module] Sending a popular products email to admin@abp.io...
++```
++
++## Summary
++
++By introducing the `Outbox/Inbox` pattern, we have achieved:
++
++1. Transactional message sending and receiving
++2. Reliable message processing mechanism
++3. Modular event processing in a multi-database environment
++
++ModularCRM project not only implements reliable message processing but also demonstrates how to handle multi-database scenarios gracefully in a monolithic application. Project source code: https://github.com/abpframework/abp-samples/tree/master/ModularCrm-OutboxInbox-Pattern
++
++## Reference
++
++- [Outbox/Inbox for transactional events](https://abp.io/docs/latest/framework/infrastructure/event-bus/distributed#outbox-inbox-for-transactional-events)
++- [ConnectionStrings](https://abp.io/docs/latest/framework/fundamentals/connection-strings)
++- [ABP Studio: Single Layer Solution Template](https://abp.io/docs/latest/solution-templates/single-layer-web-application)
+diff --git a/docs/en/Community-Articles/2025-02-20-Using-OutboxInbox-Pattern-for-Reliable-Event-Handling-in-a-Multi-Module-Monolithic-Application/index.png b/docs/en/Community-Articles/2025-02-20-Using-OutboxInbox-Pattern-for-Reliable-Event-Handling-in-a-Multi-Module-Monolithic-Application/index.png
+new file mode 100644
+index 00000000000..cadd2c29c1b
+Binary files /dev/null and b/docs/en/Community-Articles/2025-02-20-Using-OutboxInbox-Pattern-for-Reliable-Event-Handling-in-a-Multi-Module-Monolithic-Application/index.png differ
+diff --git a/docs/en/Community-Articles/2025-02-20-Using-OutboxInbox-Pattern-for-Reliable-Event-Handling-in-a-Multi-Module-Monolithic-Application/order.png b/docs/en/Community-Articles/2025-02-20-Using-OutboxInbox-Pattern-for-Reliable-Event-Handling-in-a-Multi-Module-Monolithic-Application/order.png
+new file mode 100644
+index 00000000000..4c66eff9c0d
+Binary files /dev/null and b/docs/en/Community-Articles/2025-02-20-Using-OutboxInbox-Pattern-for-Reliable-Event-Handling-in-a-Multi-Module-Monolithic-Application/order.png differ
+diff --git a/docs/en/framework/infrastructure/cancellation-token-provider.md b/docs/en/framework/infrastructure/cancellation-token-provider.md
+index aea703403e6..957e90e7bcf 100644
+--- a/docs/en/framework/infrastructure/cancellation-token-provider.md
++++ b/docs/en/framework/infrastructure/cancellation-token-provider.md
+@@ -1,10 +1,14 @@
+ # Cancellation Token Provider
+ 
+-A `CancellationToken` enables cooperative cancellation between threads, thread pool work items, or `Task` objects. To handle the possible cancellation of the operation, ABP provides `ICancellationTokenProvider` to obtain the `CancellationToken` itself from the source.
++A [`CancellationToken`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.cancellationtoken) enables cooperative cancellation between threads, thread pool work items, or `Task` objects. To handle the possible cancellation of the operation, ABP provides `ICancellationTokenProvider` to obtain the `CancellationToken` itself from the source.
+ 
+-> To get more information about `CancellationToken`, see [Microsoft Documentation](https://docs.microsoft.com/en-us/dotnet/api/system.threading.cancellationtoken).
++## When To Use Manual Cancellation Tokens
+ 
+-## ICancellationTokenProvider
++**ABP automates cancellation token usage wherever possible**. For example, in ASP.NET Core applications, ABP automatically obtains the `CancellationToken` from the `HttpContext.RequestAborted` and uses it in database queries and other cancellable places. So, most of the times, you don't need to deal with `CancellationToken` objects to pass them between methods.
++
++> You do not need to use the `ICancellationTokenProvider` unless you want to add cancellation support in your own logic or to pass a cancellation token to a method outside of the ABP framework.
++
++## ICancellationTokenProvider Service
+ 
+ `ICancellationTokenProvider` is an abstraction to provide `CancellationToken` for different scenarios.
+ 
+@@ -39,33 +43,27 @@ namespace MyProject
+ }
+ ```
+ 
+-## Built-in providers
++## Built-in Providers
+ 
+-- `NullCancellationTokenProvider`
++- `HttpContextCancellationTokenProvider`: The **default provider** for ASP.NET Core applications. It simply provides a `CancellationToken` that is source of the web request from the `HttpContext.RequestAborted`.
+ 
+-  The `NullCancellationTokenProvider` is a built in provider and it supply always `CancellationToken.None`.
++- `NullCancellationTokenProvider`: A built in provider and it supply always `CancellationToken.None`. It is used if no other providers can be used.
+ 
+-- `HttpContextCancellationTokenProvider`
+ 
+-  The `HttpContextCancellationTokenProvider` is a built in default provider for ABP Web applications. It simply provides a `CancellationToken` that is source of the web request from the `HttpContext`.
++## Implementing a Custom Cancellation Token Provider
+ 
+-## Implementing the ICancellationTokenProvider
+-
+-You can easily create your CancellationTokenProvider by creating a class that implements the `ICancellationTokenProvider` interface, as shown below:
++You can easily create your `ICancellationTokenProvider` implementation by creating a class that implements the `ICancellationTokenProvider` interface, as shown below:
+ 
+ ```csharp
+ using System.Threading;
+ 
+ namespace AbpDemo
+ {
+-    public class MyCancellationTokenProvider : ICancellationTokenProvider
++    public class MyCancellationTokenProvider
++        : ICancellationTokenProvider, 
++          ITransientDependency // Can also be singleton or scoped
+     {
+-        public CancellationToken Token { get; }
+-
+-        private MyCancellationTokenProvider()
+-        {
+-
+-        }
++        public CancellationToken Token { get; } // TODO: Return a cancellation token
+     }
+ }
+ ```
+diff --git a/docs/en/kb/can-not-login-with-admin-user.md b/docs/en/kb/can-not-login-with-admin-user.md
+index d69695b5030..300a1a5c8f3 100644
+--- a/docs/en/kb/can-not-login-with-admin-user.md
++++ b/docs/en/kb/can-not-login-with-admin-user.md
+@@ -1,5 +1,36 @@
+-# KB#0003: Can not login with the admin user
++# KB#0003: Cannot login with the admin user
+ 
+-* Try username `admin` and Password `1q2w3E*`.
+-* Try to migrate database. If you have a `DbMigrator` application in your solution, use it. It will seed initial data and create the admin user for you.
+-* If not works, read the README.MD file in your solution, or check the [Getting Started](https://abp.io/docs/latest/get-started) document.
++## Use the Correct Username and Password
++
++You may have entered the wrong password. The username is `admin`, and the password is `1q2w3E*`. Note that the password is case-sensitive.
++
++## Forgot to Seed Initial Data
++
++You may need to add migrations and update the database using the EF Core CLI. If your solution includes a `DbMigrator` application, you must run the `DbMigrator` application to seed the initial data.
++
++If your project does not include a `DbMigrator` application, there might be a `migrate-database.ps1` script available. You can use it to migrate and seed the initial data.
++
++> The no-layer application typically support a `--migrate-database` option for migrating and seeding initial data.
++
++> Example:
++> ```bash
++> dotnet run --migrate-database
++> ```
++
++## Tenant Admin User
++
++If you cannot log in as a tenant admin user, ensure the tenant database is created and seeded, Use the password that was set during tenant creation.
++
++> The tenant seeding process is handled by the template project. If it is not completed, please check the `Logs` file for any error logs.
++
++## Check the `AbpUsers` Table
++
++If you have performed migration and seeded the initial data, check the `AbpUsers` table in the database. Ensure that the user record exists. If your tenant has a separate database, check the tenant database as well.
++
++Passwords are stored in hashed format, not plain text. If you suspect the password is incorrect, you can delete the user record and re-seed the initial data using the `DbMigrator` application or the `migrate-database.ps1` script.
++
++## Other Issues
++
++If the issue persists, refer to the `README.MD` file in your solution or consult the [Getting Started](https://abp.io/docs/latest/get-started) documentation.
++
++Feel free to create an issue in the [ABP GitHub repository](https://github.com/abpframework/abp/issues/new/choose) or contact [ABP Commercial Support](https://abp.io/support/questions/New) for assistance.
+diff --git a/framework/src/Volo.Abp.AspNetCore.Components.WebAssembly.Theming/ComponentsComponentsBundleContributor.cs b/framework/src/Volo.Abp.AspNetCore.Components.WebAssembly.Theming/ComponentsComponentsBundleContributor.cs
+index 816dd51889c..0ad3ddb1c51 100644
+--- a/framework/src/Volo.Abp.AspNetCore.Components.WebAssembly.Theming/ComponentsComponentsBundleContributor.cs
++++ b/framework/src/Volo.Abp.AspNetCore.Components.WebAssembly.Theming/ComponentsComponentsBundleContributor.cs
+@@ -17,17 +17,14 @@ public void AddScripts(BundleContext context)
+ 
+     public void AddStyles(BundleContext context)
+     {
+-        if (!context.InteractiveAuto)
++        context.BundleDefinitions.Insert(0, new BundleDefinition
+         {
+-            context.BundleDefinitions.Insert(0, new BundleDefinition
+-            {
+-                Source = "_content/Volo.Abp.AspNetCore.Components.WebAssembly.Theming/libs/bootstrap/css/bootstrap.min.css"
+-            });
+-            context.BundleDefinitions.Insert(1, new BundleDefinition
+-            {
+-                Source = "_content/Volo.Abp.AspNetCore.Components.WebAssembly.Theming/libs/fontawesome/css/all.css"
+-            });
+-        }
++            Source = "_content/Volo.Abp.AspNetCore.Components.WebAssembly.Theming/libs/bootstrap/css/bootstrap.min.css"
++        });
++        context.BundleDefinitions.Insert(1, new BundleDefinition
++        {
++            Source = "_content/Volo.Abp.AspNetCore.Components.WebAssembly.Theming/libs/fontawesome/css/all.css"
++        });
+ 
+         context.Add("_content/Volo.Abp.AspNetCore.Components.Web/libs/abp/css/abp.css");
+         context.Add("_content/Volo.Abp.AspNetCore.Components.WebAssembly.Theming/libs/flag-icon/css/flag-icon.css");
+diff --git a/framework/src/Volo.Abp.BackgroundJobs.HangFire/Volo/Abp/BackgroundJobs/Hangfire/HangfireBackgroundJobManager.cs b/framework/src/Volo.Abp.BackgroundJobs.HangFire/Volo/Abp/BackgroundJobs/Hangfire/HangfireBackgroundJobManager.cs
+index a94426adadd..0a47399e497 100644
+--- a/framework/src/Volo.Abp.BackgroundJobs.HangFire/Volo/Abp/BackgroundJobs/Hangfire/HangfireBackgroundJobManager.cs
++++ b/framework/src/Volo.Abp.BackgroundJobs.HangFire/Volo/Abp/BackgroundJobs/Hangfire/HangfireBackgroundJobManager.cs
+@@ -5,17 +5,20 @@
+ using Hangfire.States;
+ using Microsoft.Extensions.Options;
+ using Volo.Abp.DependencyInjection;
++using Volo.Abp.Hangfire;
+ 
+ namespace Volo.Abp.BackgroundJobs.Hangfire;
+ 
+ [Dependency(ReplaceServices = true)]
+ public class HangfireBackgroundJobManager : IBackgroundJobManager, ITransientDependency
+ {
+-    protected AbpBackgroundJobOptions Options { get; }
++    protected IOptions<AbpBackgroundJobOptions> BackgroundJobOptions { get; }
++    protected IOptions<AbpHangfireOptions> HangfireOptions { get; }
+ 
+-    public HangfireBackgroundJobManager(IOptions<AbpBackgroundJobOptions> options)
++    public HangfireBackgroundJobManager(IOptions<AbpBackgroundJobOptions> backgroundJobOptions, IOptions<AbpHangfireOptions> hangfireOptions)
+     {
+-        Options = options.Value;
++        BackgroundJobOptions = backgroundJobOptions;
++        HangfireOptions = hangfireOptions;
+     }
+ 
+     public virtual Task<string> EnqueueAsync<TArgs>(TArgs args, BackgroundJobPriority priority = BackgroundJobPriority.Normal,
+@@ -33,13 +36,7 @@ public virtual Task<string> EnqueueAsync<TArgs>(TArgs args, BackgroundJobPriorit
+ 
+     protected virtual string GetQueueName(Type argsType)
+     {
+-        var queueName = EnqueuedState.DefaultQueue;
+-        var queueAttribute = Options.GetJob(argsType).JobType.GetCustomAttribute<QueueAttribute>();
+-        if (queueAttribute != null)
+-        {
+-            queueName = queueAttribute.Queue;
+-        }
+-
+-        return queueName;
++        var queueAttribute = BackgroundJobOptions.Value.GetJob(argsType).JobType.GetCustomAttribute<QueueAttribute>();
++        return queueAttribute != null ? HangfireOptions.Value.DefaultQueuePrefix + queueAttribute.Queue : HangfireOptions.Value.DefaultQueue;
+     }
+ }
+diff --git a/framework/src/Volo.Abp.BackgroundJobs/Volo/Abp/BackgroundJobs/AbpBackgroundJobWorkerOptions.cs b/framework/src/Volo.Abp.BackgroundJobs/Volo/Abp/BackgroundJobs/AbpBackgroundJobWorkerOptions.cs
+index 3bc31e7a39d..b3395080283 100644
+--- a/framework/src/Volo.Abp.BackgroundJobs/Volo/Abp/BackgroundJobs/AbpBackgroundJobWorkerOptions.cs
++++ b/framework/src/Volo.Abp.BackgroundJobs/Volo/Abp/BackgroundJobs/AbpBackgroundJobWorkerOptions.cs
+@@ -2,6 +2,11 @@
+ 
+ public class AbpBackgroundJobWorkerOptions
+ {
++    /// <summary>
++    /// Application name.
++    /// </summary>
++    public string? ApplicationName { get; set; }
++
+     /// <summary>
+     /// Interval between polling jobs from <see cref="IBackgroundJobStore"/>.
+     /// Default value: 5000 (5 seconds).
+diff --git a/framework/src/Volo.Abp.BackgroundJobs/Volo/Abp/BackgroundJobs/BackgroundJobInfo.cs b/framework/src/Volo.Abp.BackgroundJobs/Volo/Abp/BackgroundJobs/BackgroundJobInfo.cs
+index 0d5441a4bc7..4a9cec922c6 100644
+--- a/framework/src/Volo.Abp.BackgroundJobs/Volo/Abp/BackgroundJobs/BackgroundJobInfo.cs
++++ b/framework/src/Volo.Abp.BackgroundJobs/Volo/Abp/BackgroundJobs/BackgroundJobInfo.cs
+@@ -9,6 +9,11 @@ public class BackgroundJobInfo
+ {
+     public Guid Id { get; set; }
+ 
++    /// <summary>
++    /// Application name.
++    /// </summary>
++    public virtual string? ApplicationName { get; set; }
++
+     /// <summary>
+     /// Name of the job.
+     /// </summary>
+diff --git a/framework/src/Volo.Abp.BackgroundJobs/Volo/Abp/BackgroundJobs/BackgroundJobWorker.cs b/framework/src/Volo.Abp.BackgroundJobs/Volo/Abp/BackgroundJobs/BackgroundJobWorker.cs
+index 43133500985..a015e32d662 100644
+--- a/framework/src/Volo.Abp.BackgroundJobs/Volo/Abp/BackgroundJobs/BackgroundJobWorker.cs
++++ b/framework/src/Volo.Abp.BackgroundJobs/Volo/Abp/BackgroundJobs/BackgroundJobWorker.cs
+@@ -43,7 +43,7 @@ protected override async Task DoWorkAsync(PeriodicBackgroundWorkerContext worker
+             {
+                 var store = workerContext.ServiceProvider.GetRequiredService<IBackgroundJobStore>();
+ 
+-                var waitingJobs = await store.GetWaitingJobsAsync(WorkerOptions.MaxJobFetchCount);
++                var waitingJobs = await store.GetWaitingJobsAsync(WorkerOptions.ApplicationName, WorkerOptions.MaxJobFetchCount);
+ 
+                 if (!waitingJobs.Any())
+                 {
+diff --git a/framework/src/Volo.Abp.BackgroundJobs/Volo/Abp/BackgroundJobs/DefaultBackgroundJobManager.cs b/framework/src/Volo.Abp.BackgroundJobs/Volo/Abp/BackgroundJobs/DefaultBackgroundJobManager.cs
+index 7218776cfea..68851c50432 100644
+--- a/framework/src/Volo.Abp.BackgroundJobs/Volo/Abp/BackgroundJobs/DefaultBackgroundJobManager.cs
++++ b/framework/src/Volo.Abp.BackgroundJobs/Volo/Abp/BackgroundJobs/DefaultBackgroundJobManager.cs
+@@ -1,5 +1,7 @@
+ ﻿using System;
+ using System.Threading.Tasks;
++using Microsoft.Extensions.Options;
++using Volo.Abp.BackgroundWorkers;
+ using Volo.Abp.DependencyInjection;
+ using Volo.Abp.Guids;
+ using Volo.Abp.Timing;
+@@ -16,16 +18,19 @@ public class DefaultBackgroundJobManager : IBackgroundJobManager, ITransientDepe
+     protected IBackgroundJobSerializer Serializer { get; }
+     protected IGuidGenerator GuidGenerator { get; }
+     protected IBackgroundJobStore Store { get; }
++    protected IOptions<AbpBackgroundJobWorkerOptions> BackgroundJobWorkerOptions { get; }
+ 
+     public DefaultBackgroundJobManager(
+         IClock clock,
+         IBackgroundJobSerializer serializer,
+         IBackgroundJobStore store,
+-        IGuidGenerator guidGenerator)
++        IGuidGenerator guidGenerator,
++        IOptions<AbpBackgroundJobWorkerOptions> backgroundJobWorkerOptions)
+     {
+         Clock = clock;
+         Serializer = serializer;
+         GuidGenerator = guidGenerator;
++        BackgroundJobWorkerOptions = backgroundJobWorkerOptions;
+         Store = store;
+     }
+ 
+@@ -41,6 +46,7 @@ protected virtual async Task<Guid> EnqueueAsync(string jobName, object args, Bac
+         var jobInfo = new BackgroundJobInfo
+         {
+             Id = GuidGenerator.Create(),
++            ApplicationName = BackgroundJobWorkerOptions.Value.ApplicationName,
+             JobName = jobName,
+             JobArgs = Serializer.Serialize(args),
+             Priority = priority,
+diff --git a/framework/src/Volo.Abp.BackgroundJobs/Volo/Abp/BackgroundJobs/IBackgroundJobStore.cs b/framework/src/Volo.Abp.BackgroundJobs/Volo/Abp/BackgroundJobs/IBackgroundJobStore.cs
+index 4a3a8d1ac0d..7fcf8cc5b61 100644
+--- a/framework/src/Volo.Abp.BackgroundJobs/Volo/Abp/BackgroundJobs/IBackgroundJobStore.cs
++++ b/framework/src/Volo.Abp.BackgroundJobs/Volo/Abp/BackgroundJobs/IBackgroundJobStore.cs
+@@ -24,12 +24,13 @@ public interface IBackgroundJobStore
+ 
+     /// <summary>
+     /// Gets waiting jobs. It should get jobs based on these:
+-    /// Conditions: !IsAbandoned And NextTryTime &lt;= Clock.Now.
++    /// Conditions: ApplicationName is applicationName And !IsAbandoned And NextTryTime &lt;= Clock.Now.
+     /// Order by: Priority DESC, TryCount ASC, NextTryTime ASC.
+     /// Maximum result: <paramref name="maxResultCount"/>.
+     /// </summary>
++    /// <param name="applicationName">Application name.</param>
+     /// <param name="maxResultCount">Maximum result count.</param>
+-    Task<List<BackgroundJobInfo>> GetWaitingJobsAsync(int maxResultCount);
++    Task<List<BackgroundJobInfo>> GetWaitingJobsAsync(string? applicationName, int maxResultCount);
+ 
+     /// <summary>
+     /// Deletes a job.
+diff --git a/framework/src/Volo.Abp.BackgroundJobs/Volo/Abp/BackgroundJobs/InMemoryBackgroundJobStore.cs b/framework/src/Volo.Abp.BackgroundJobs/Volo/Abp/BackgroundJobs/InMemoryBackgroundJobStore.cs
+index 7abbc188ce9..85916e8c378 100644
+--- a/framework/src/Volo.Abp.BackgroundJobs/Volo/Abp/BackgroundJobs/InMemoryBackgroundJobStore.cs
++++ b/framework/src/Volo.Abp.BackgroundJobs/Volo/Abp/BackgroundJobs/InMemoryBackgroundJobStore.cs
+@@ -35,9 +35,10 @@ public virtual Task InsertAsync(BackgroundJobInfo jobInfo)
+         return Task.CompletedTask;
+     }
+ 
+-    public virtual Task<List<BackgroundJobInfo>> GetWaitingJobsAsync(int maxResultCount)
++    public virtual Task<List<BackgroundJobInfo>> GetWaitingJobsAsync(string? applicationName, int maxResultCount)
+     {
+         var waitingJobs = _jobs.Values
++            .Where(t => t.ApplicationName == applicationName)
+             .Where(t => !t.IsAbandoned && t.NextTryTime <= Clock.Now)
+             .OrderByDescending(t => t.Priority)
+             .ThenBy(t => t.TryCount)
+diff --git a/framework/src/Volo.Abp.BackgroundWorkers.Hangfire/Volo/Abp/BackgroundWorkers/Hangfire/HangfireBackgroundWorkerBase.cs b/framework/src/Volo.Abp.BackgroundWorkers.Hangfire/Volo/Abp/BackgroundWorkers/Hangfire/HangfireBackgroundWorkerBase.cs
+index 0c1a5f3d26a..0c9ba67603a 100644
+--- a/framework/src/Volo.Abp.BackgroundWorkers.Hangfire/Volo/Abp/BackgroundWorkers/Hangfire/HangfireBackgroundWorkerBase.cs
++++ b/framework/src/Volo.Abp.BackgroundWorkers.Hangfire/Volo/Abp/BackgroundWorkers/Hangfire/HangfireBackgroundWorkerBase.cs
+@@ -13,7 +13,7 @@ public abstract class HangfireBackgroundWorkerBase : BackgroundWorkerBase, IHang
+ 
+     public TimeZoneInfo? TimeZone { get; set; } = TimeZoneInfo.Utc;
+ 
+-    public string Queue { get; set; } = EnqueuedState.DefaultQueue;
++    public string Queue { get; set; } = default!;
+ 
+     public abstract Task DoWorkAsync(CancellationToken cancellationToken = default);
+ }
+diff --git a/framework/src/Volo.Abp.BackgroundWorkers.Hangfire/Volo/Abp/BackgroundWorkers/Hangfire/HangfireBackgroundWorkerManager.cs b/framework/src/Volo.Abp.BackgroundWorkers.Hangfire/Volo/Abp/BackgroundWorkers/Hangfire/HangfireBackgroundWorkerManager.cs
+index 9c79056ec24..1ed3561cacb 100644
+--- a/framework/src/Volo.Abp.BackgroundWorkers.Hangfire/Volo/Abp/BackgroundWorkers/Hangfire/HangfireBackgroundWorkerManager.cs
++++ b/framework/src/Volo.Abp.BackgroundWorkers.Hangfire/Volo/Abp/BackgroundWorkers/Hangfire/HangfireBackgroundWorkerManager.cs
+@@ -4,6 +4,7 @@
+ using System.Threading.Tasks;
+ using Hangfire;
+ using Microsoft.Extensions.DependencyInjection;
++using Microsoft.Extensions.Options;
+ using Volo.Abp.DependencyInjection;
+ using Volo.Abp.DynamicProxy;
+ using Volo.Abp.Hangfire;
+@@ -30,15 +31,19 @@ public void Initialize()
+ 
+     public async override Task AddAsync(IBackgroundWorker worker, CancellationToken cancellationToken = default)
+     {
++        var abpHangfireOptions = ServiceProvider.GetRequiredService<IOptions<AbpHangfireOptions>>().Value;
++        var defaultQueuePrefix = abpHangfireOptions.DefaultQueuePrefix;
++        var defaultQueue = abpHangfireOptions.DefaultQueue;
++
+         switch (worker)
+         {
+             case IHangfireBackgroundWorker hangfireBackgroundWorker:
+             {
+                 var unProxyWorker = ProxyHelper.UnProxy(hangfireBackgroundWorker);
+-                
++
+                 RecurringJob.AddOrUpdate(
+                     hangfireBackgroundWorker.RecurringJobId,
+-                    hangfireBackgroundWorker.Queue,
++                    hangfireBackgroundWorker.Queue.IsNullOrWhiteSpace() ? defaultQueue : defaultQueuePrefix + hangfireBackgroundWorker.Queue,
+                     () => ((IHangfireBackgroundWorker)unProxyWorker).DoWorkAsync(cancellationToken),
+                     hangfireBackgroundWorker.CronExpression,
+                     new RecurringJobOptions
+@@ -57,24 +62,24 @@ public async override Task AddAsync(IBackgroundWorker worker, CancellationToken
+                 {
+                     return;
+                 }
+-                
++
+                 var adapterType = typeof(HangfirePeriodicBackgroundWorkerAdapter<>).MakeGenericType(ProxyHelper.GetUnProxiedType(worker));
+                 var workerAdapter = (Activator.CreateInstance(adapterType) as IHangfireBackgroundWorker)!;
+ 
+                 if (workerAdapter.RecurringJobId.IsNullOrWhiteSpace())
+                 {
+-                    RecurringJob.AddOrUpdate(   
++                    RecurringJob.AddOrUpdate(
+                         () => workerAdapter.DoWorkAsync(cancellationToken),
+                         GetCron(period.Value),
+                         workerAdapter.TimeZone ,
+-                        workerAdapter.Queue);
++                        workerAdapter.Queue.IsNullOrWhiteSpace() ? defaultQueue : defaultQueuePrefix + workerAdapter.Queue);
+                 }
+                 else
+                 {
+-                    
++
+                     RecurringJob.AddOrUpdate(
+                         workerAdapter.RecurringJobId,
+-                        workerAdapter.Queue,
++                        workerAdapter.Queue.IsNullOrWhiteSpace() ? defaultQueue : defaultQueuePrefix + workerAdapter.Queue,
+                         () => workerAdapter.DoWorkAsync(cancellationToken),
+                         GetCron(period.Value),
+                         new RecurringJobOptions
+@@ -82,7 +87,7 @@ public async override Task AddAsync(IBackgroundWorker worker, CancellationToken
+                             TimeZone = workerAdapter.TimeZone
+                         });
+                 }
+-                
++
+ 
+                 break;
+             }
+@@ -121,4 +126,4 @@ protected virtual string GetCron(int period)
+ 
+         return cron;
+     }
+-}
+\ No newline at end of file
++}
+diff --git a/framework/src/Volo.Abp.HangFire/Volo/Abp/Hangfire/AbpHangfireModule.cs b/framework/src/Volo.Abp.HangFire/Volo/Abp/Hangfire/AbpHangfireModule.cs
+index 6c34b869044..2b75155e7bd 100644
+--- a/framework/src/Volo.Abp.HangFire/Volo/Abp/Hangfire/AbpHangfireModule.cs
++++ b/framework/src/Volo.Abp.HangFire/Volo/Abp/Hangfire/AbpHangfireModule.cs
+@@ -1,5 +1,6 @@
+ ﻿using Hangfire;
+ using Microsoft.Extensions.DependencyInjection;
++using Microsoft.Extensions.DependencyInjection.Extensions;
+ using Microsoft.Extensions.Options;
+ using Volo.Abp.Authorization;
+ using Volo.Abp.Modularity;
+@@ -24,7 +25,10 @@ public override void ConfigureServices(ServiceConfigurationContext context)
+             var options = serviceProvider.GetRequiredService<IOptions<AbpHangfireOptions>>().Value;
+             return new AbpHangfireBackgroundJobServer(options.BackgroundJobServerFactory.Invoke(serviceProvider));
+         });
++
++        context.Services.TryAddEnumerable(ServiceDescriptor.Singleton<IPostConfigureOptions<AbpHangfireOptions>, AbpHangfireOptionsConfiguration>());
+     }
++
+     public override void OnApplicationInitialization(ApplicationInitializationContext context)
+     {
+         _backgroundJobServer = context.ServiceProvider.GetRequiredService<AbpHangfireBackgroundJobServer>();
+diff --git a/framework/src/Volo.Abp.HangFire/Volo/Abp/Hangfire/AbpHangfireOptions.cs b/framework/src/Volo.Abp.HangFire/Volo/Abp/Hangfire/AbpHangfireOptions.cs
+index 98c45348c7e..8ed90d17c7c 100644
+--- a/framework/src/Volo.Abp.HangFire/Volo/Abp/Hangfire/AbpHangfireOptions.cs
++++ b/framework/src/Volo.Abp.HangFire/Volo/Abp/Hangfire/AbpHangfireOptions.cs
+@@ -12,6 +12,18 @@ namespace Volo.Abp.Hangfire;
+ 
+ public class AbpHangfireOptions
+ {
++    /// <summary>
++    /// This value is used to add prefix to all of the queues. Default is empty.
++    /// </summary>
++    public string DefaultQueuePrefix { get; set; } = string.Empty;
++
++    /// <summary>
++    /// Hangfire queue name max length, default is 50.
++    /// </summary>
++    public int MaxQueueNameLength { get; set; } = 50;
++
++    public string DefaultQueue { get; set; } = EnqueuedState.DefaultQueue;
++
+     public BackgroundJobServerOptions? ServerOptions { get; set; }
+ 
+     public IEnumerable<IBackgroundProcess>? AdditionalProcesses { get; set; }
+diff --git a/framework/src/Volo.Abp.HangFire/Volo/Abp/Hangfire/AbpHangfireOptionsConfiguration.cs b/framework/src/Volo.Abp.HangFire/Volo/Abp/Hangfire/AbpHangfireOptionsConfiguration.cs
+new file mode 100644
+index 00000000000..1fb5dcd8dcb
+--- /dev/null
++++ b/framework/src/Volo.Abp.HangFire/Volo/Abp/Hangfire/AbpHangfireOptionsConfiguration.cs
+@@ -0,0 +1,65 @@
++using System;
++using System.Linq;
++using System.Text.RegularExpressions;
++using Hangfire;
++using Hangfire.States;
++using Microsoft.Extensions.Options;
++
++namespace Volo.Abp.Hangfire;
++
++public class AbpHangfireOptionsConfiguration : IPostConfigureOptions<AbpHangfireOptions>
++{
++    public void PostConfigure(string? name, AbpHangfireOptions options)
++    {
++        if (options.DefaultQueuePrefix.IsNullOrWhiteSpace())
++        {
++            return;;
++        }
++
++        // The Queue name argument must consist of lowercase letters, digits, underscore, and dash characters only.
++        var queuesPrefix = Regex.Replace(options.DefaultQueuePrefix.ToLower().Replace(".", "_"), "[^a-z0-9_-]", "");
++        if (queuesPrefix.IsNullOrWhiteSpace())
++        {
++            throw new AbpException($"The QueuesPrefix({options.DefaultQueuePrefix}) is not valid, it must consist of lowercase letters, digits, underscore, and dash characters only.");
++        }
++
++        options.DefaultQueuePrefix = queuesPrefix.EnsureEndsWith('_');
++
++        if (options.ServerOptions == null)
++        {
++            var queue = $"{options.DefaultQueuePrefix}{EnqueuedState.DefaultQueue}";
++            if (queue.Length > options.MaxQueueNameLength)
++            {
++                throw new AbpException($"The maximum length of the Hangfire queue name({queue}) is {options.MaxQueueNameLength}, Please configure the AbpHangfireOptions.DefaultQueuePrefix manually.");
++            }
++            options.ServerOptions = new BackgroundJobServerOptions
++            {
++                Queues = new[] { queue }
++            };
++            options.DefaultQueue = queue;
++        }
++        else
++        {
++            var queues = options.ServerOptions.Queues;
++            for (var i = 0; i < queues.Length; i++)
++            {
++                var queue = $"{options.DefaultQueuePrefix}{queues[i]}";
++                if (queue.Length > options.MaxQueueNameLength)
++                {
++                    throw new AbpException($"The maximum length of the Hangfire queue name({queue}) is {options.MaxQueueNameLength}, Please configure the AbpHangfireOptions.DefaultQueuePrefix manually.");
++                }
++                queues[i] = queue;
++            }
++            var defaultQueue = queues.FirstOrDefault(q => q.EndsWith(EnqueuedState.DefaultQueue));
++            if (defaultQueue.IsNullOrWhiteSpace())
++            {
++                defaultQueue = queues.FirstOrDefault();
++                if (defaultQueue.IsNullOrWhiteSpace())
++                {
++                    throw new AbpException("There is no queue defined in the Hangfire configuration!");
++                }
++            }
++            options.DefaultQueue = defaultQueue;
++        }
++    }
++}
+diff --git a/latest-versions.json b/latest-versions.json
+index 8b465b861a4..0ced5df485c 100644
+--- a/latest-versions.json
++++ b/latest-versions.json
+@@ -1,4 +1,13 @@
+ [
++    {
++    "version": "9.1.0",
++    "releaseDate": "",
++    "type": "stable",
++    "message": "",
++    "leptonx": {
++      "version": "4.1.0"
++    }
++  },
+   {
+     "version": "9.0.6",
+     "releaseDate": "",
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/ar.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/ar.json
+index 86d0ad83254..d3db345a9bb 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/ar.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/ar.json
+@@ -68,6 +68,8 @@
+     "AccessDenied": "تم الرفض!",
+     "AccessDeniedMessage": "ليس لديك حق الوصول إلى هذا المورد.",
+     "OrRegisterWith": "أو التسجيل بـ:",
+-    "RegisterUsingYourProviderAccount": "قم بالتسجيل باستخدام حسابك في {0}"
++    "RegisterUsingYourProviderAccount": "قم بالتسجيل باستخدام حسابك في {0}",
++    "RequireMigrateSeedTitle": "تعذر العثور على المستخدم المسؤول",
++    "RequireMigrateSeedMessage": "يرجى التأكد من تنفيذ seed قاعدة البيانات. راجع <a target=\"_blank\" href=\"https://abp.io/kb/0003\">الوثائق</a> للحلول الممكنة."
+   }
+ }
+\ No newline at end of file
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/cs.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/cs.json
+index aebaadc5433..6967ed0d61f 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/cs.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/cs.json
+@@ -68,6 +68,8 @@
+     "AccessDenied": "Přístup odepřen!",
+     "AccessDeniedMessage": "K tomuto zdroji nemáte přístup.",
+     "OrRegisterWith": "Nebo se registrujte pomocí:",
+-    "RegisterUsingYourProviderAccount": "Registrovat pomocí vašeho účtu {0}"
++    "RegisterUsingYourProviderAccount": "Registrovat pomocí vašeho účtu {0}",
++    "RequireMigrateSeedTitle": "Nelze najít uživatele správce",
++    "RequireMigrateSeedMessage": "Ujistěte se, že je spuštěn seed databáze. Podívejte se na <a target=\"_blank\" href=\"https://abp.io/kb/0003\">dokumentaci</a> pro možná řešení."
+   }
+ }
+\ No newline at end of file
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/da.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/da.json
+index 24283d06c8c..98cc6843895 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/da.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/da.json
+@@ -65,6 +65,8 @@
+     "AccessDenied": "Adgang nægtet!",
+     "AccessDeniedMessage": "Du har ikke adgang til denne ressource.",
+     "OrRegisterWith": "Eller registrér med:",
+-    "RegisterUsingYourProviderAccount": "Registrér med din {0} konto"
++    "RegisterUsingYourProviderAccount": "Registrér med din {0} konto",
++    "RequireMigrateSeedTitle": "Kunne ikke finde administratorbrugeren",
++    "RequireMigrateSeedMessage": "Sørg for, at databasens seed bliver udført. Se <a target=\"_blank\" href=\"https://abp.io/kb/0003\">dokumentationen</a> for mulige løsninger."
+   }
+ }
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/de.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/de.json
+index a6ff6d68c16..982a213753e 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/de.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/de.json
+@@ -68,6 +68,8 @@
+     "AccessDenied": "Zugriff abgelehnt!",
+     "AccessDeniedMessage": "Sie haben keinen Zugriff auf diese Ressource.",
+     "OrRegisterWith": "Oder registrieren Sie sich mit:",
+-    "RegisterUsingYourProviderAccount": "Registrieren Sie sich mit Ihrem {0} Benutzerkonto"
++    "RegisterUsingYourProviderAccount": "Registrieren Sie sich mit Ihrem {0} Benutzerkonto",
++    "RequireMigrateSeedTitle": "Der Administrator-Benutzer konnte nicht gefunden werden",
++    "RequireMigrateSeedMessage": "Bitte stellen Sie sicher, dass die Datenbank-Seed ausgeführt wird. Siehe <a target=\"_blank\" href=\"https://abp.io/kb/0003\">Dokumentation</a> für mögliche Lösungen."
+   }
+ }
+\ No newline at end of file
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/el.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/el.json
+index a64dca5ef5a..594adbd31f6 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/el.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/el.json
+@@ -66,6 +66,8 @@
+     "AccessDenied": "Δεν επιτρέπεται η πρόσβαση!",
+     "AccessDeniedMessage": "Δεν έχετε πρόσβαση σε αυτόν τον πόρο.",
+     "OrRegisterWith": "Ή εγγραφείτε με:",
+-    "RegisterUsingYourProviderAccount": "Εγγραφείτε χρησιμοποιώντας τον λογαριασμό σας {0}"
++    "RegisterUsingYourProviderAccount": "Εγγραφείτε χρησιμοποιώντας τον λογαριασμό σας {0}",
++    "RequireMigrateSeedTitle": "Δεν βρέθηκε ο χρήστης διαχειριστή",
++    "RequireMigrateSeedMessage": "Βεβαιωθείτε ότι εκτελείται το seed της βάσης δεδομένων. Δείτε την <a target=\"_blank\" href=\"https://abp.io/kb/0003\">τεκμηρίωση</a> για πιθανές λύσεις."
+   }
+ }
+\ No newline at end of file
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/en-GB.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/en-GB.json
+index f4208335b50..09a93dca6fa 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/en-GB.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/en-GB.json
+@@ -63,6 +63,8 @@
+     "PasswordResetInfoInEmail": "We received an account recovery request! If you initiated this request, click the following link to reset your password.",
+     "ResetMyPassword": "Reset my password",
+     "OrRegisterWith": "Or register with",
+-    "RegisterUsingYourProviderAccount": "Register using your {0} account"
++    "RegisterUsingYourProviderAccount": "Register using your {0} account",
++    "RequireMigrateSeedTitle": "Could not find the admin user",
++    "RequireMigrateSeedMessage": "Please ensure that the database seed is executed. See <a target=\"_blank\" href=\"https://abp.io/kb/0003\">documentation</a> for possible solutions."
+   }
+ }
+\ No newline at end of file
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/en.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/en.json
+index 39ca254f676..a230495c879 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/en.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/en.json
+@@ -68,6 +68,8 @@
+     "AccessDenied": "Access denied!",
+     "AccessDeniedMessage": "You do not have access to this resource.",
+     "OrRegisterWith": "Or register with",
+-    "RegisterUsingYourProviderAccount": "Register using your {0} account"
++    "RegisterUsingYourProviderAccount": "Register using your {0} account",
++    "RequireMigrateSeedTitle": "Could not find the admin user",
++    "RequireMigrateSeedMessage": "Please ensure that the database seed is executed. See <a target=\"_blank\" href=\"https://abp.io/kb/0003\">documentation</a> for possible solutions."
+   }
+ }
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/es-mx.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/es-mx.json
+index 6793e589863..f25046575a0 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/es-mx.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/es-mx.json
+@@ -36,6 +36,8 @@
+     "Manage": "Administrar",
+     "MyAccount": "Mi cuenta",
+     "OrRegisterWith": "O registrarse con",
+-    "RegisterUsingYourProviderAccount": "Registrarse con su cuenta de {0} "
++    "RegisterUsingYourProviderAccount": "Registrarse con su cuenta de {0} ",
++    "RequireMigrateSeedTitle": "No se pudo encontrar el usuario administrador",
++    "RequireMigrateSeedMessage": "Asegúrese de que se ejecute la semilla de la base de datos. Consulte la <a target=\"_blank\" href=\"https://abp.io/kb/0003\">documentación</a> para posibles soluciones."
+   }
+ }
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/es.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/es.json
+index 4f7fbf94d8a..814c41d218b 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/es.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/es.json
+@@ -68,6 +68,8 @@
+     "AccessDenied": "¡Acceso denegado!",
+     "AccessDeniedMessage": "No tienes acceso a este recurso.",
+     "OrRegisterWith": "O registrarse con:",
+-    "RegisterUsingYourProviderAccount": "Registrarse con su cuenta de {0} "
++    "RegisterUsingYourProviderAccount": "Registrarse con su cuenta de {0} ",
++    "RequireMigrateSeedTitle": "No se pudo encontrar el usuario administrador",
++    "RequireMigrateSeedMessage": "Asegúrese de que se ejecute la semilla de la base de datos. Consulte la <a target=\"_blank\" href=\"https://abp.io/kb/0003\">documentación</a> para posibles soluciones."
+   }
+ }
+\ No newline at end of file
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/fa.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/fa.json
+index 4fc0685b792..e431b84548f 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/fa.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/fa.json
+@@ -66,6 +66,8 @@
+     "AccessDenied": "دسترسی ممنوع!",
+     "AccessDeniedMessage": "شما به این منبع دسترسی ندارید.",
+     "OrRegisterWith": "یا ثبت نام کنید با:",
+-    "RegisterUsingYourProviderAccount": "با استفاده از حساب {0} خود ثبت نام کنید"
++    "RegisterUsingYourProviderAccount": "با استفاده از حساب {0} خود ثبت نام کنید",
++    "RequireMigrateSeedTitle": "کاربر مدیر پیدا نشد",
++    "RequireMigrateSeedMessage": "لطفاً اطمینان حاصل کنید که seed پایگاه داده اجرا شده است. برای راه‌حل‌های ممکن <a target=\"_blank\" href=\"https://abp.io/kb/0003\">مستندات</a> را ببینید."
+   }
+ }
+\ No newline at end of file
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/fi.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/fi.json
+index 2f0ae2c5742..72acd91647b 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/fi.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/fi.json
+@@ -68,6 +68,8 @@
+     "AccessDenied": "Pääsy evätty!",
+     "AccessDeniedMessage": "Sinulla ei ole pääsyä tähän resurssiin.",
+     "OrRegisterWith": "Tai rekisteröidy:",
+-    "RegisterUsingYourProviderAccount": "Rekisteröidy {0} -tililläsi"
++    "RegisterUsingYourProviderAccount": "Rekisteröidy {0} -tililläsi",
++    "RequireMigrateSeedTitle": "Järjestelmänvalvojaa ei löydy",
++    "RequireMigrateSeedMessage": "Varmista, että tietokannan siemennys on suoritettu. Katso <a target=\"_blank\" href=\"https://abp.io/kb/0003\">dokumentaatio</a> mahdollisia ratkaisuja varten."
+   }
+ }
+\ No newline at end of file
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/fr.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/fr.json
+index fbeec127877..73a53b4beee 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/fr.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/fr.json
+@@ -68,6 +68,8 @@
+     "AccessDenied": "Accès refusé!",
+     "AccessDeniedMessage": "Vous n'avez pas accès à cette ressource.",
+     "OrRegisterWith": "Or register with",
+-    "RegisterUsingYourProviderAccount": "Register using your {0} account"
++    "RegisterUsingYourProviderAccount": "Register using your {0} account",
++    "RequireMigrateSeedTitle": "Impossible de trouver l'utilisateur administrateur",
++    "RequireMigrateSeedMessage": "Veuillez vous assurer que l'initialisation de la base de données est exécutée. Consultez la <a target=\"_blank\" href=\"https://abp.io/kb/0003\">documentation</a> pour les solutions possibles."
+   }
+ }
+\ No newline at end of file
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/hi.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/hi.json
+index 9300e913f6f..4264f6ebcfb 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/hi.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/hi.json
+@@ -68,6 +68,8 @@
+     "AccessDenied": "पहुंच अस्वीकृत!",
+     "AccessDeniedMessage": "आपके पास इस संसाधन तक पहुँच नहीं है।",
+     "OrRegisterWith": "या इसके साथ पंजीकरण करें:",
+-    "RegisterUsingYourProviderAccount": "अपने {0} खाते का उपयोग करके पंजीकरण करें"
++    "RegisterUsingYourProviderAccount": "अपने {0} खाते का उपयोग करके पंजीकरण करें",
++    "RequireMigrateSeedTitle": "व्यवस्थापक उपयोगकर्ता नहीं मिला",
++    "RequireMigrateSeedMessage": "कृपया सुनिश्चित करें कि डेटाबेस सीड निष्पादित किया गया है। संभावित समाधानों के लिए <a target=\"_blank\" href=\"https://abp.io/kb/0003\">दस्तावेज़ीकरण</a> देखें।"
+   }
+ }
+\ No newline at end of file
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/hr.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/hr.json
+index 8ec48e7a099..2262779dba2 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/hr.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/hr.json
+@@ -68,6 +68,8 @@
+         "AccessDenied": "Pristup odbijen!",
+         "AccessDeniedMessage": "Nemate pristup ovom resursu.",
+         "OrRegisterWith": "Ili se registrirajte sa:",
+-        "RegisterUsingYourProviderAccount": "Registrirajte se koristeći svoj {0} račun"
++        "RegisterUsingYourProviderAccount": "Registrirajte se koristeći svoj {0} račun",
++        "RequireMigrateSeedTitle": "Nije moguće pronaći administratorskog korisnika",
++        "RequireMigrateSeedMessage": "Molimo provjerite je li izvršeno početno punjenje baze podataka. Pogledajte <a target=\"_blank\" href=\"https://abp.io/kb/0003\">dokumentaciju</a> za moguća rješenja."
+     }
+ }
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/hu.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/hu.json
+index 44e3794e246..c2a8d3d3549 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/hu.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/hu.json
+@@ -68,6 +68,8 @@
+     "AccessDenied": "Hozzáférés megtagadva!",
+     "AccessDeniedMessage": "Nincs hozzáférése ehhez az erőforráshoz.",
+     "OrRegisterWith": "Vagy regisztráljon:",
+-    "RegisterUsingYourProviderAccount": "Regisztráljon a(z) {0} fiókjával"
++    "RegisterUsingYourProviderAccount": "Regisztráljon a(z) {0} fiókjával",
++    "RequireMigrateSeedTitle": "Nem található az adminisztrátor felhasználó",
++    "RequireMigrateSeedMessage": "Kérjük, győződjön meg arról, hogy az adatbázis seed végrehajtásra került. Tekintse meg a <a target=\"_blank\" href=\"https://abp.io/kb/0003\">dokumentációt</a> a lehetséges megoldásokért."
+   }
+ }
+\ No newline at end of file
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/is.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/is.json
+index 693e200e9fd..cb38ff2b6ab 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/is.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/is.json
+@@ -68,6 +68,8 @@
+     "AccessDenied": "Aðgangi hafnað!",
+     "AccessDeniedMessage": "Þú hefur ekki aðgang að þessari auðlind.",
+     "OrRegisterWith": "Eða skráðu þig með:",
+-    "RegisterUsingYourProviderAccount": "Skráðu þig með {0} aðganginum þínum"
++    "RegisterUsingYourProviderAccount": "Skráðu þig með {0} aðganginum þínum",
++    "RequireMigrateSeedTitle": "Ekki tókst að finna stjórnandann",
++    "RequireMigrateSeedMessage": "Vinsamlegast gakktu úr skugga um að gagnagrunnsfræið sé keyrt. Sjá <a target=\"_blank\" href=\"https://abp.io/kb/0003\">fylgiskjöl</a> fyrir mögulegar lausnir."
+   }
+ }
+\ No newline at end of file
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/it.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/it.json
+index 60157a574b5..a2a2a6db507 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/it.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/it.json
+@@ -68,6 +68,8 @@
+     "AccessDenied": "Accesso negato!",
+     "AccessDeniedMessage": "Non hai accesso a questa risorsa.",
+     "OrRegisterWith": "Oppure registrati con:",
+-    "RegisterUsingYourProviderAccount": "Registrati utilizzando il tuo account {0}"
++    "RegisterUsingYourProviderAccount": "Registrati utilizzando il tuo account {0}",
++    "RequireMigrateSeedTitle": "Impossibile trovare l'utente amministratore",
++    "RequireMigrateSeedMessage": "Assicurati che il seed del database sia eseguito. Consulta la <a target=\"_blank\" href=\"https://abp.io/kb/0003\">documentazione</a> per possibili soluzioni."
+   }
+ }
+\ No newline at end of file
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/nl.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/nl.json
+index 200d35210d4..a1c389d8a2d 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/nl.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/nl.json
+@@ -68,6 +68,8 @@
+     "AccessDenied": "Toegang geweigerd!",
+     "AccessDeniedMessage": "U heeft geen toegang tot deze bron.",
+     "OrRegisterWith": "Of registreer met:",
+-    "RegisterUsingYourProviderAccount": "Registreer met uw {0} -account"
++    "RegisterUsingYourProviderAccount": "Registreer met uw {0} -account",
++    "RequireMigrateSeedTitle": "Kan de beheerder niet vinden",
++    "RequireMigrateSeedMessage": "Zorg ervoor dat het database seed wordt uitgevoerd. Zie <a target=\"_blank\" href=\"https://abp.io/kb/0003\">documentatie</a> voor mogelijke oplossingen."
+   }
+ }
+\ No newline at end of file
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/pl-PL.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/pl-PL.json
+index dc5c7952c31..028fc3100b4 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/pl-PL.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/pl-PL.json
+@@ -68,6 +68,8 @@
+     "AccessDenied": "Brak dostępu!",
+     "AccessDeniedMessage": "Nie masz dostępu do tego zasobu.",
+     "OrRegisterWith": "Lub zarejestruj się za pomocą:",
+-    "RegisterUsingYourProviderAccount": "Zarejestruj się za pomocą konta {0}"
++    "RegisterUsingYourProviderAccount": "Zarejestruj się za pomocą konta {0}",
++    "RequireMigrateSeedTitle": "Nie można znaleźć użytkownika administratora",
++    "RequireMigrateSeedMessage": "Upewnij się, że wykonano seed bazy danych. Zobacz <a target=\"_blank\" href=\"https://abp.io/kb/0003\">dokumentację</a>, aby poznać możliwe rozwiązania."
+   }
+ }
+\ No newline at end of file
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/pt-BR.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/pt-BR.json
+index 3ea880a4747..e92a6f1d5b9 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/pt-BR.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/pt-BR.json
+@@ -68,6 +68,8 @@
+     "AccessDenied": "Acesso negado!",
+     "AccessDeniedMessage": "Você não tem acesso a este recurso.",
+     "OrRegisterWith": "Ou registre-se com:",
+-    "RegisterUsingYourProviderAccount": "Registre-se utilizando sua conta {0}"
++    "RegisterUsingYourProviderAccount": "Registre-se utilizando sua conta {0}",
++    "RequireMigrateSeedTitle": "Não foi possível encontrar o usuário administrador",
++    "RequireMigrateSeedMessage": "Certifique-se de que a semeadura do banco de dados seja executada. Consulte a <a target=\"_blank\" href=\"https://abp.io/kb/0003\">documentação</a> para possíveis soluções."
+   }
+ }
+\ No newline at end of file
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/ro-RO.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/ro-RO.json
+index b7dbc5c244c..63fea101b13 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/ro-RO.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/ro-RO.json
+@@ -68,6 +68,8 @@
+     "AccessDenied": "Acces interzis!",
+     "AccessDeniedMessage": "Nu aveţi acces la această resursă.",
+     "OrRegisterWith": "Sau înregistraţi-vă cu:",
+-    "RegisterUsingYourProviderAccount": "Înregistraţi-vă folosindu-vă contul {0}"
++    "RegisterUsingYourProviderAccount": "Înregistraţi-vă folosindu-vă contul {0}",
++    "RequireMigrateSeedTitle": "Nu s-a putut găsi utilizatorul admin",
++    "RequireMigrateSeedMessage": "Vă rugăm să vă asiguraţi că seed-ul bazei de date este executat. Consultaţi <a target=\"_blank\" href=\"https://abp.io/kb/0003\">documentaţia</a> pentru soluţii posibile."
+   }
+ }
+\ No newline at end of file
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/ru.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/ru.json
+index d57b3c4e09e..834fd7707b1 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/ru.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/ru.json
+@@ -68,6 +68,8 @@
+     "AccessDenied": "В доступе отказано!",
+     "AccessDeniedMessage": "У вас нет доступа к этому ресурсу.",
+     "OrRegisterWith": "Или зарегистрируйтесь с помощью:",
+-    "RegisterUsingYourProviderAccount": "Зарегистрируйтесь, используя свой {0} аккаунт"
++    "RegisterUsingYourProviderAccount": "Зарегистрируйтесь, используя свой {0} аккаунт",
++    "RequireMigrateSeedTitle": "Не удалось найти пользователя-администратора",
++    "RequireMigrateSeedMessage": "Пожалуйста, убедитесь, что выполнено начальное заполнение базы данных. Смотрите <a target=\"_blank\" href=\"https://abp.io/kb/0003\">документацию</a> для возможных решений."
+   }
+ }
+\ No newline at end of file
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/sk.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/sk.json
+index cbaf2b4ee7a..0965e8aaa3a 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/sk.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/sk.json
+@@ -68,6 +68,8 @@
+     "AccessDenied": "Prístup zamietnutý!",
+     "AccessDeniedMessage": "K tomuto zdroju nemáte prístup.",
+     "OrRegisterWith": "Alebo sa zaregistrujte pomocou:",
+-    "RegisterUsingYourProviderAccount": "Zaregistrujte sa pomocou svojho {0} účtu"
++    "RegisterUsingYourProviderAccount": "Zaregistrujte sa pomocou svojho {0} účtu",
++    "RequireMigrateSeedTitle": "Nepodarilo sa nájsť používateľa správcu",
++    "RequireMigrateSeedMessage": "Uistite sa, že je spustené seed databázy. Pozrite si <a target=\"_blank\" href=\"https://abp.io/kb/0003\">dokumentáciu</a> pre možné riešenia."
+   }
+ }
+\ No newline at end of file
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/sl.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/sl.json
+index fae736de5f2..63820bc60ff 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/sl.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/sl.json
+@@ -68,6 +68,8 @@
+     "AccessDenied": "Dostop zavrnjen!",
+     "AccessDeniedMessage": "Nimate dostopa do tega vira.",
+     "OrRegisterWith": "Ali pa se registrirajte z:",
+-    "RegisterUsingYourProviderAccount": "Registrirajte se z uporabo vašega {0} računa"
++    "RegisterUsingYourProviderAccount": "Registrirajte se z uporabo vašega {0} računa",
++    "RequireMigrateSeedTitle": "Skrbniškega uporabnika ni mogoče najti",
++    "RequireMigrateSeedMessage": "Prepričajte se, da je seed baze podatkov izveden. Za možne rešitve glejte <a target=\"_blank\" href=\"https://abp.io/kb/0003\">dokumentacijo</a>."
+   }
+ }
+\ No newline at end of file
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/sv.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/sv.json
+index d06472ed7bf..a03bf20e97b 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/sv.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/sv.json
+@@ -68,6 +68,8 @@
+     "AccessDenied": "Åtkomst nekad!",
+     "AccessDeniedMessage": "Du har inte tillgång till denna resurs.",
+     "OrRegisterWith": "Eller registrera dig med",
+-    "RegisterUsingYourProviderAccount": "Registrera dig med ditt {0} konto"
++    "RegisterUsingYourProviderAccount": "Registrera dig med ditt {0} konto",
++    "RequireMigrateSeedTitle": "Kunde inte hitta administratörsanvändaren",
++    "RequireMigrateSeedMessage": "Se till att databasens seed körs. Se <a target=\"_blank\" href=\"https://abp.io/kb/0003\">dokumentationen</a> för möjliga lösningar."
+   }
+ }
+\ No newline at end of file
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/tr.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/tr.json
+index 0e53963f9a0..841cd187759 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/tr.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/tr.json
+@@ -68,6 +68,8 @@
+     "AccessDenied": "Erişim reddedildi!",
+     "AccessDeniedMessage": "Bu kaynağa erişiminiz yok.",
+     "OrRegisterWith": "Veya bunlarla kayıt ol:",
+-    "RegisterUsingYourProviderAccount": "{0} hesabınızla kayıt olun."
++    "RegisterUsingYourProviderAccount": "{0} hesabınızla kayıt olun.",
++    "RequireMigrateSeedTitle": "Yönetici kullanıcısı bulunamadı",
++    "RequireMigrateSeedMessage": "Lütfen veritabanı tohumunun yürütüldüğünden emin olun. Olası çözümler için <a target=\"_blank\" href=\"https://abp.io/kb/0003\">belgelere</a> bakın."
+   }
+ }
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/vi.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/vi.json
+index 600ce9fa4f1..e29ba0d7b9c 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/vi.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/vi.json
+@@ -68,6 +68,8 @@
+     "AccessDenied": "Quyền truy cập bị từ chối!",
+     "AccessDeniedMessage": "Bạn không có quyền truy cập vào tài nguyên này.",
+     "OrRegisterWith": "Hoặc đăng ký bằng:",
+-    "RegisterUsingYourProviderAccount": "Đăng ký bằng tài khoản {0} của bạn"
++    "RegisterUsingYourProviderAccount": "Đăng ký bằng tài khoản {0} của bạn",
++    "RequireMigrateSeedTitle": "Không thể tìm thấy người dùng quản trị",
++    "RequireMigrateSeedMessage": "Vui lòng đảm bảo rằng seed cơ sở dữ liệu được thực thi. Xem <a target=\"_blank\" href=\"https://abp.io/kb/0003\">tài liệu</a> để biết các giải pháp có thể."
+   }
+ }
+\ No newline at end of file
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/zh-Hans.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/zh-Hans.json
+index e6af1b3b7ef..094798b95c8 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/zh-Hans.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/zh-Hans.json
+@@ -68,6 +68,8 @@
+     "AccessDenied": "拒绝访问！",
+     "AccessDeniedMessage": "您无法访问此资源。",
+     "OrRegisterWith": "或注册",
+-    "RegisterUsingYourProviderAccount": "使用您的 {0} 账户注册"
++    "RegisterUsingYourProviderAccount": "使用您的 {0} 账户注册",
++    "RequireMigrateSeedTitle": "找不到管理员用户",
++    "RequireMigrateSeedMessage": "请确保已执行数据库种子数据。查看<a target=\"_blank\" href=\"https://abp.io/kb/0003\">文档</a>了解可能的解决方案。"
+   }
+ }
+\ No newline at end of file
+diff --git a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/zh-Hant.json b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/zh-Hant.json
+index 14cf84fc240..1657ce4a497 100644
+--- a/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/zh-Hant.json
++++ b/modules/account/src/Volo.Abp.Account.Application.Contracts/Volo/Abp/Account/Localization/Resources/zh-Hant.json
+@@ -68,6 +68,8 @@
+     "AccessDenied": "拒絕訪問!",
+     "AccessDeniedMessage": "您無權訪問此資源.",
+     "OrRegisterWith": "或是註冊用:",
+-    "RegisterUsingYourProviderAccount": "使用你的{0}帳號註冊"
++    "RegisterUsingYourProviderAccount": "使用你的{0}帳號註冊",
++    "RequireMigrateSeedTitle": "找不到管理員用戶",
++    "RequireMigrateSeedMessage": "請確保已執行資料庫種子資料。查看<a target=\"_blank\" href=\"https://abp.io/kb/0003\">文檔</a>了解可能的解決方案。"
+   }
+ }
+\ No newline at end of file
+diff --git a/modules/account/src/Volo.Abp.Account.Web.IdentityServer/Pages/Account/IdentityServerSupportedLoginModel.cs b/modules/account/src/Volo.Abp.Account.Web.IdentityServer/Pages/Account/IdentityServerSupportedLoginModel.cs
+index 0a2aadd64a1..b8ca910eba3 100644
+--- a/modules/account/src/Volo.Abp.Account.Web.IdentityServer/Pages/Account/IdentityServerSupportedLoginModel.cs
++++ b/modules/account/src/Volo.Abp.Account.Web.IdentityServer/Pages/Account/IdentityServerSupportedLoginModel.cs
+@@ -11,6 +11,7 @@
+ using System.Linq;
+ using System.Security.Claims;
+ using System.Threading.Tasks;
++using Microsoft.AspNetCore.Hosting;
+ using Microsoft.AspNetCore.Identity;
+ using Volo.Abp.Account.Settings;
+ using Volo.Abp.DependencyInjection;
+@@ -35,8 +36,9 @@ public IdentityServerSupportedLoginModel(
+         IdentityDynamicClaimsPrincipalContributorCache identityDynamicClaimsPrincipalContributorCache,
+         IIdentityServerInteractionService interaction,
+         IClientStore clientStore,
+-        IEventService identityServerEvents)
+-        : base(schemeProvider, accountOptions, identityOptions, identityDynamicClaimsPrincipalContributorCache)
++        IEventService identityServerEvents,
++        IWebHostEnvironment webHostEnvironment)
++        : base(schemeProvider, accountOptions, identityOptions, identityDynamicClaimsPrincipalContributorCache, webHostEnvironment)
+     {
+         Interaction = interaction;
+         ClientStore = clientStore;
+diff --git a/modules/account/src/Volo.Abp.Account.Web.OpenIddict/Pages/Account/OpenIddictSupportedLoginModel.cs b/modules/account/src/Volo.Abp.Account.Web.OpenIddict/Pages/Account/OpenIddictSupportedLoginModel.cs
+index d7998eb826e..0390bf0f525 100644
+--- a/modules/account/src/Volo.Abp.Account.Web.OpenIddict/Pages/Account/OpenIddictSupportedLoginModel.cs
++++ b/modules/account/src/Volo.Abp.Account.Web.OpenIddict/Pages/Account/OpenIddictSupportedLoginModel.cs
+@@ -2,6 +2,7 @@
+ using System.Security.Claims;
+ using System.Threading.Tasks;
+ using Microsoft.AspNetCore.Authentication;
++using Microsoft.AspNetCore.Hosting;
+ using Microsoft.Extensions.Options;
+ using Microsoft.AspNetCore.Identity;
+ using Microsoft.AspNetCore.Mvc;
+@@ -24,8 +25,9 @@ public OpenIddictSupportedLoginModel(
+         IOptions<AbpAccountOptions> accountOptions,
+         IOptions<IdentityOptions> identityOptions,
+         IdentityDynamicClaimsPrincipalContributorCache identityDynamicClaimsPrincipalContributorCache,
+-        AbpOpenIddictRequestHelper openIddictRequestHelper)
+-        : base(schemeProvider, accountOptions, identityOptions, identityDynamicClaimsPrincipalContributorCache)
++        AbpOpenIddictRequestHelper openIddictRequestHelper,
++        IWebHostEnvironment webHostEnvironment)
++        : base(schemeProvider, accountOptions, identityOptions, identityDynamicClaimsPrincipalContributorCache, webHostEnvironment)
+     {
+         OpenIddictRequestHelper = openIddictRequestHelper;
+     }
+diff --git a/modules/account/src/Volo.Abp.Account.Web/Pages/Account/Login.cshtml b/modules/account/src/Volo.Abp.Account.Web/Pages/Account/Login.cshtml
+index 2b0fcb9c2c9..1c883936b48 100644
+--- a/modules/account/src/Volo.Abp.Account.Web/Pages/Account/Login.cshtml
++++ b/modules/account/src/Volo.Abp.Account.Web/Pages/Account/Login.cshtml
+@@ -22,6 +22,14 @@
+     </abp-script-bundle>
+ }
+ 
++@if (Model.ShowRequireMigrateSeedMessage)
++{
++    <div class="alert alert-danger">
++        <h4 class="alert-heading">@L["RequireMigrateSeedTitle"]</h4>
++        <p>@L["RequireMigrateSeedMessage"]</p>
++    </div>
++}
++
+ <div class="card mt-3 shadow-sm rounded">
+     <div class="card-body p-5">
+         <h4>@L["Login"]</h4>
+diff --git a/modules/account/src/Volo.Abp.Account.Web/Pages/Account/Login.cshtml.cs b/modules/account/src/Volo.Abp.Account.Web/Pages/Account/Login.cshtml.cs
+index 6ab8350b608..c17eb1e28f2 100644
+--- a/modules/account/src/Volo.Abp.Account.Web/Pages/Account/Login.cshtml.cs
++++ b/modules/account/src/Volo.Abp.Account.Web/Pages/Account/Login.cshtml.cs
+@@ -10,6 +10,8 @@
+ using System.Linq;
+ using System.Security.Claims;
+ using System.Threading.Tasks;
++using Microsoft.AspNetCore.Hosting;
++using Microsoft.Extensions.Hosting;
+ using Volo.Abp.Account.Settings;
+ using Volo.Abp.Auditing;
+ using Volo.Abp.Identity;
+@@ -53,18 +55,22 @@ public class LoginModel : AccountPageModel
+     protected AbpAccountOptions AccountOptions { get; }
+     protected IOptions<IdentityOptions> IdentityOptions { get; }
+     protected IdentityDynamicClaimsPrincipalContributorCache IdentityDynamicClaimsPrincipalContributorCache { get; }
++    protected IWebHostEnvironment WebHostEnvironment { get; }
+     public bool ShowCancelButton { get; set; }
++    public bool ShowRequireMigrateSeedMessage { get; set; }
+ 
+     public LoginModel(
+         IAuthenticationSchemeProvider schemeProvider,
+         IOptions<AbpAccountOptions> accountOptions,
+         IOptions<IdentityOptions> identityOptions,
+-        IdentityDynamicClaimsPrincipalContributorCache identityDynamicClaimsPrincipalContributorCache)
++        IdentityDynamicClaimsPrincipalContributorCache identityDynamicClaimsPrincipalContributorCache,
++        IWebHostEnvironment webHostEnvironment)
+     {
+         SchemeProvider = schemeProvider;
+         IdentityOptions = identityOptions;
+         AccountOptions = accountOptions.Value;
+         IdentityDynamicClaimsPrincipalContributorCache = identityDynamicClaimsPrincipalContributorCache;
++        WebHostEnvironment = webHostEnvironment;
+     }
+ 
+     public virtual async Task<IActionResult> OnGetAsync()
+@@ -130,6 +136,17 @@ await IdentitySecurityLogManager.SaveAsync(new IdentitySecurityLogContext()
+ 
+         if (!result.Succeeded)
+         {
++            if (LoginInput.UserNameOrEmailAddress == IdentityDataSeedContributor.AdminUserNameDefaultValue &&
++                WebHostEnvironment.IsDevelopment())
++            {
++                var adminUser = await UserManager.FindByNameAsync(IdentityDataSeedContributor.AdminUserNameDefaultValue);
++                if (adminUser == null)
++                {
++                    ShowRequireMigrateSeedMessage = true;
++                    return Page();
++                }
++            }
++
+             Alerts.Danger(L["InvalidUserNameOrPassword"]);
+             return Page();
+         }
+diff --git a/modules/background-jobs/src/Volo.Abp.BackgroundJobs.Domain.Shared/Volo/Abp/BackgroundJobs/BackgroundJobRecordConsts.cs b/modules/background-jobs/src/Volo.Abp.BackgroundJobs.Domain.Shared/Volo/Abp/BackgroundJobs/BackgroundJobRecordConsts.cs
+index 4369bfcece3..7cf4e651fe5 100644
+--- a/modules/background-jobs/src/Volo.Abp.BackgroundJobs.Domain.Shared/Volo/Abp/BackgroundJobs/BackgroundJobRecordConsts.cs
++++ b/modules/background-jobs/src/Volo.Abp.BackgroundJobs.Domain.Shared/Volo/Abp/BackgroundJobs/BackgroundJobRecordConsts.cs
+@@ -2,6 +2,11 @@
+ 
+ public static class BackgroundJobRecordConsts
+ {
++    /// <summary>
++    /// Default value: 96
++    /// </summary>
++    public static int MaxApplicationNameLength { get; set; } = 96;
++
+     /// <summary>
+     /// Default value: 128
+     /// </summary>
+diff --git a/modules/background-jobs/src/Volo.Abp.BackgroundJobs.Domain/Volo/Abp/BackgroundJobs/BackgroundJobRecord.cs b/modules/background-jobs/src/Volo.Abp.BackgroundJobs.Domain/Volo/Abp/BackgroundJobs/BackgroundJobRecord.cs
+index 66714af6d6a..c01f933781d 100644
+--- a/modules/background-jobs/src/Volo.Abp.BackgroundJobs.Domain/Volo/Abp/BackgroundJobs/BackgroundJobRecord.cs
++++ b/modules/background-jobs/src/Volo.Abp.BackgroundJobs.Domain/Volo/Abp/BackgroundJobs/BackgroundJobRecord.cs
+@@ -6,6 +6,11 @@ namespace Volo.Abp.BackgroundJobs;
+ 
+ public class BackgroundJobRecord : AggregateRoot<Guid>, IHasCreationTime
+ {
++    /// <summary>
++    /// Application name that scheduled this job.
++    /// </summary>
++    public virtual string ApplicationName { get; set; }
++
+     /// <summary>
+     /// Type of the job.
+     /// It's AssemblyQualifiedName of job type.
+diff --git a/modules/background-jobs/src/Volo.Abp.BackgroundJobs.Domain/Volo/Abp/BackgroundJobs/BackgroundJobStore.cs b/modules/background-jobs/src/Volo.Abp.BackgroundJobs.Domain/Volo/Abp/BackgroundJobs/BackgroundJobStore.cs
+index e29948cc952..c7dbd6fbefb 100644
+--- a/modules/background-jobs/src/Volo.Abp.BackgroundJobs.Domain/Volo/Abp/BackgroundJobs/BackgroundJobStore.cs
++++ b/modules/background-jobs/src/Volo.Abp.BackgroundJobs.Domain/Volo/Abp/BackgroundJobs/BackgroundJobStore.cs
+@@ -34,10 +34,10 @@ await BackgroundJobRepository.InsertAsync(
+         );
+     }
+ 
+-    public virtual async Task<List<BackgroundJobInfo>> GetWaitingJobsAsync(int maxResultCount)
++    public virtual async Task<List<BackgroundJobInfo>> GetWaitingJobsAsync(string applicationName, int maxResultCount)
+     {
+         return ObjectMapper.Map<List<BackgroundJobRecord>, List<BackgroundJobInfo>>(
+-            await BackgroundJobRepository.GetWaitingListAsync(maxResultCount)
++            await BackgroundJobRepository.GetWaitingListAsync(applicationName, maxResultCount)
+         );
+     }
+ 
+diff --git a/modules/background-jobs/src/Volo.Abp.BackgroundJobs.Domain/Volo/Abp/BackgroundJobs/IBackgroundJobRepository.cs b/modules/background-jobs/src/Volo.Abp.BackgroundJobs.Domain/Volo/Abp/BackgroundJobs/IBackgroundJobRepository.cs
+index b3c552c974c..7e189df5c8e 100644
+--- a/modules/background-jobs/src/Volo.Abp.BackgroundJobs.Domain/Volo/Abp/BackgroundJobs/IBackgroundJobRepository.cs
++++ b/modules/background-jobs/src/Volo.Abp.BackgroundJobs.Domain/Volo/Abp/BackgroundJobs/IBackgroundJobRepository.cs
+@@ -2,11 +2,12 @@
+ using System.Collections.Generic;
+ using System.Threading;
+ using System.Threading.Tasks;
++using JetBrains.Annotations;
+ using Volo.Abp.Domain.Repositories;
+ 
+ namespace Volo.Abp.BackgroundJobs;
+ 
+ public interface IBackgroundJobRepository : IBasicRepository<BackgroundJobRecord, Guid>
+ {
+-    Task<List<BackgroundJobRecord>> GetWaitingListAsync(int maxResultCount, CancellationToken cancellationToken = default);
++    Task<List<BackgroundJobRecord>> GetWaitingListAsync([CanBeNull] string applicationName, int maxResultCount, CancellationToken cancellationToken = default);
+ }
+diff --git a/modules/background-jobs/src/Volo.Abp.BackgroundJobs.EntityFrameworkCore/Volo/Abp/BackgroundJobs/EntityFrameworkCore/BackgroundJobsDbContextModelCreatingExtensions.cs b/modules/background-jobs/src/Volo.Abp.BackgroundJobs.EntityFrameworkCore/Volo/Abp/BackgroundJobs/EntityFrameworkCore/BackgroundJobsDbContextModelCreatingExtensions.cs
+index 5b51c8809df..53a2c538437 100644
+--- a/modules/background-jobs/src/Volo.Abp.BackgroundJobs.EntityFrameworkCore/Volo/Abp/BackgroundJobs/EntityFrameworkCore/BackgroundJobsDbContextModelCreatingExtensions.cs
++++ b/modules/background-jobs/src/Volo.Abp.BackgroundJobs.EntityFrameworkCore/Volo/Abp/BackgroundJobs/EntityFrameworkCore/BackgroundJobsDbContextModelCreatingExtensions.cs
+@@ -22,6 +22,7 @@ public static void ConfigureBackgroundJobs(
+ 
+             b.ConfigureByConvention();
+ 
++            b.Property(x => x.ApplicationName).IsRequired(false).HasMaxLength(BackgroundJobRecordConsts.MaxApplicationNameLength);
+             b.Property(x => x.JobName).IsRequired().HasMaxLength(BackgroundJobRecordConsts.MaxJobNameLength);
+             b.Property(x => x.JobArgs).IsRequired().HasMaxLength(BackgroundJobRecordConsts.MaxJobArgsLength);
+             b.Property(x => x.TryCount).HasDefaultValue(0);
+diff --git a/modules/background-jobs/src/Volo.Abp.BackgroundJobs.EntityFrameworkCore/Volo/Abp/BackgroundJobs/EntityFrameworkCore/EfCoreBackgroundJobRepository.cs b/modules/background-jobs/src/Volo.Abp.BackgroundJobs.EntityFrameworkCore/Volo/Abp/BackgroundJobs/EntityFrameworkCore/EfCoreBackgroundJobRepository.cs
+index a2be3c6e1e7..a81de3cdfbe 100644
+--- a/modules/background-jobs/src/Volo.Abp.BackgroundJobs.EntityFrameworkCore/Volo/Abp/BackgroundJobs/EntityFrameworkCore/EfCoreBackgroundJobRepository.cs
++++ b/modules/background-jobs/src/Volo.Abp.BackgroundJobs.EntityFrameworkCore/Volo/Abp/BackgroundJobs/EntityFrameworkCore/EfCoreBackgroundJobRepository.cs
+@@ -3,6 +3,7 @@
+ using System.Linq;
+ using System.Threading;
+ using System.Threading.Tasks;
++using JetBrains.Annotations;
+ using Microsoft.EntityFrameworkCore;
+ using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
+ using Volo.Abp.EntityFrameworkCore;
+@@ -22,17 +23,16 @@ public EfCoreBackgroundJobRepository(
+         Clock = clock;
+     }
+ 
+-    public virtual async Task<List<BackgroundJobRecord>> GetWaitingListAsync(
+-        int maxResultCount,
+-        CancellationToken cancellationToken = default)
++    public virtual async Task<List<BackgroundJobRecord>> GetWaitingListAsync([CanBeNull] string applicationName, int maxResultCount, CancellationToken cancellationToken = default)
+     {
+-        return await (await GetWaitingListQueryAsync(maxResultCount)).ToListAsync(GetCancellationToken(cancellationToken));
++        return await (await GetWaitingListQueryAsync(applicationName, maxResultCount)).ToListAsync(GetCancellationToken(cancellationToken));
+     }
+ 
+-    protected virtual async Task<IQueryable<BackgroundJobRecord>> GetWaitingListQueryAsync(int maxResultCount)
++    protected virtual async Task<IQueryable<BackgroundJobRecord>> GetWaitingListQueryAsync([CanBeNull] string applicationName, int maxResultCount)
+     {
+         var now = Clock.Now;
+         return (await GetDbSetAsync())
++            .Where(t => t.ApplicationName == applicationName)
+             .Where(t => !t.IsAbandoned && t.NextTryTime <= now)
+             .OrderByDescending(t => t.Priority)
+             .ThenBy(t => t.TryCount)
+diff --git a/modules/background-jobs/src/Volo.Abp.BackgroundJobs.MongoDB/Volo/Abp/BackgroundJobs/MongoDB/MongoBackgroundJobRepository.cs b/modules/background-jobs/src/Volo.Abp.BackgroundJobs.MongoDB/Volo/Abp/BackgroundJobs/MongoDB/MongoBackgroundJobRepository.cs
+index a3f46643fec..71a56805245 100644
+--- a/modules/background-jobs/src/Volo.Abp.BackgroundJobs.MongoDB/Volo/Abp/BackgroundJobs/MongoDB/MongoBackgroundJobRepository.cs
++++ b/modules/background-jobs/src/Volo.Abp.BackgroundJobs.MongoDB/Volo/Abp/BackgroundJobs/MongoDB/MongoBackgroundJobRepository.cs
+@@ -3,6 +3,7 @@
+ using System.Threading;
+ using System.Threading.Tasks;
+ using System.Linq;
++using JetBrains.Annotations;
+ using MongoDB.Driver;
+ using MongoDB.Driver.Linq;
+ using Volo.Abp.Domain.Repositories.MongoDB;
+@@ -23,17 +24,16 @@ public MongoBackgroundJobRepository(
+         Clock = clock;
+     }
+ 
+-    public virtual async Task<List<BackgroundJobRecord>> GetWaitingListAsync(
+-        int maxResultCount,
+-        CancellationToken cancellationToken = default)
++    public virtual async Task<List<BackgroundJobRecord>> GetWaitingListAsync([CanBeNull] string applicationName, int maxResultCount, CancellationToken cancellationToken = default)
+     {
+-        return await (await GetWaitingListQuery(maxResultCount)).ToListAsync(GetCancellationToken(cancellationToken));
++        return await (await GetWaitingListQuery(applicationName, maxResultCount, cancellationToken)).ToListAsync(GetCancellationToken(cancellationToken));
+     }
+ 
+-    protected virtual async Task<IQueryable<BackgroundJobRecord>> GetWaitingListQuery(int maxResultCount, CancellationToken cancellationToken = default)
++    protected virtual async Task<IQueryable<BackgroundJobRecord>> GetWaitingListQuery([CanBeNull] string applicationName, int maxResultCount, CancellationToken cancellationToken = default)
+     {
+         var now = Clock.Now;
+         return (await GetQueryableAsync(cancellationToken))
++            .Where(t => t.ApplicationName == applicationName)
+             .Where(t => !t.IsAbandoned && t.NextTryTime <= now)
+             .OrderByDescending(t => t.Priority)
+             .ThenBy(t => t.TryCount)
+diff --git a/modules/background-jobs/test/Volo.Abp.BackgroundJobs.TestBase/Volo/Abp/BackgroundJobs/BackgroundJobRepository_Tests.cs b/modules/background-jobs/test/Volo.Abp.BackgroundJobs.TestBase/Volo/Abp/BackgroundJobs/BackgroundJobRepository_Tests.cs
+index 02e4fa9d607..c62cb433091 100644
+--- a/modules/background-jobs/test/Volo.Abp.BackgroundJobs.TestBase/Volo/Abp/BackgroundJobs/BackgroundJobRepository_Tests.cs
++++ b/modules/background-jobs/test/Volo.Abp.BackgroundJobs.TestBase/Volo/Abp/BackgroundJobs/BackgroundJobRepository_Tests.cs
+@@ -1,4 +1,5 @@
+-﻿using System.Threading.Tasks;
++﻿using System.Linq;
++using System.Threading.Tasks;
+ using Shouldly;
+ using Volo.Abp.Modularity;
+ using Volo.Abp.Timing;
+@@ -23,12 +24,16 @@ protected BackgroundJobRepository_Tests()
+     [InlineData(5)]
+     public async Task GetWaitingListAsync(int maxResultCount)
+     {
+-        var backgroundJobs = await _backgroundJobRepository.GetWaitingListAsync(maxResultCount);
++        var backgroundJobs = await _backgroundJobRepository.GetWaitingListAsync("App1", maxResultCount);
+ 
+         backgroundJobs.Count.ShouldBeGreaterThan(0);
+         backgroundJobs.Count.ShouldBeLessThanOrEqualTo(maxResultCount);
+ 
+         backgroundJobs.ForEach(j => j.IsAbandoned.ShouldBeFalse());
+         backgroundJobs.ForEach(j => j.NextTryTime.ShouldBeLessThanOrEqualTo(_clock.Now.AddSeconds(1))); //1 second tolerance
++
++        backgroundJobs.All(j => j.ApplicationName == "App1").ShouldBeTrue();
++        backgroundJobs.Any(j => j.ApplicationName == "App2").ShouldBeFalse();
++        backgroundJobs.Any(j => j.ApplicationName == null).ShouldBeFalse();
+     }
+ }
+diff --git a/modules/background-jobs/test/Volo.Abp.BackgroundJobs.TestBase/Volo/Abp/BackgroundJobs/BackgroundJobsTestDataBuilder.cs b/modules/background-jobs/test/Volo.Abp.BackgroundJobs.TestBase/Volo/Abp/BackgroundJobs/BackgroundJobsTestDataBuilder.cs
+index 079a0ab3ea0..f6f4c37e128 100644
+--- a/modules/background-jobs/test/Volo.Abp.BackgroundJobs.TestBase/Volo/Abp/BackgroundJobs/BackgroundJobsTestDataBuilder.cs
++++ b/modules/background-jobs/test/Volo.Abp.BackgroundJobs.TestBase/Volo/Abp/BackgroundJobs/BackgroundJobsTestDataBuilder.cs
+@@ -26,6 +26,7 @@ public async Task BuildAsync()
+         await _backgroundJobRepository.InsertAsync(
+             new BackgroundJobRecord(_testData.JobId1)
+             {
++                ApplicationName = "App1",
+                 JobName = "TestJobName",
+                 JobArgs = "{ value: 1 }",
+                 NextTryTime = _clock.Now.Subtract(TimeSpan.FromMinutes(1)),
+@@ -40,6 +41,7 @@ await _backgroundJobRepository.InsertAsync(
+         await _backgroundJobRepository.InsertAsync(
+             new BackgroundJobRecord(_testData.JobId2)
+             {
++                ApplicationName = "App2",
+                 JobName = "TestJobName",
+                 JobArgs = "{ value: 2 }",
+                 NextTryTime = _clock.Now.AddMinutes(42),
+@@ -54,6 +56,7 @@ await _backgroundJobRepository.InsertAsync(
+         await _backgroundJobRepository.InsertAsync(
+             new BackgroundJobRecord(_testData.JobId3)
+             {
++                ApplicationName = "App1",
+                 JobName = "TestJobName",
+                 JobArgs = "{ value: 3 }",
+                 NextTryTime = _clock.Now,
+diff --git a/modules/openiddict/app/OpenIddict.Demo.Server/ExtensionGrants/MyTokenExtensionGrant.cs b/modules/openiddict/app/OpenIddict.Demo.Server/ExtensionGrants/MyTokenExtensionGrant.cs
+index b5167621ef8..12e587b65ba 100644
+--- a/modules/openiddict/app/OpenIddict.Demo.Server/ExtensionGrants/MyTokenExtensionGrant.cs
++++ b/modules/openiddict/app/OpenIddict.Demo.Server/ExtensionGrants/MyTokenExtensionGrant.cs
+@@ -19,7 +19,17 @@ public class MyTokenExtensionGrant : ITokenExtensionGrant
+     public const string ExtensionGrantName = "MyTokenExtensionGrant";
+ 
+     public string Name => ExtensionGrantName;
++
+     public async Task<IActionResult>  HandleAsync(ExtensionGrantContext context)
++    {
++        // You can get a new token using any of the following methods based on your business.
++        // They are just examples. You can implement your own logic here.
++
++        return await HandleUserAccessTokenAsync(context);
++        return await HandleUserApiKeyAsync(context);
++    }
++
++    public async Task<IActionResult>  HandleUserAccessTokenAsync(ExtensionGrantContext context)
+     {
+         var userToken = context.Request.GetParameter("token").ToString();
+ 
+@@ -33,6 +43,9 @@ public async Task<IActionResult>  HandleAsync(ExtensionGrantContext context)
+                 }!));
+         }
+ 
++        // We will validate the user token
++        // The Token is issued by the OpenIddict server, So we can validate it using the introspection endpoint
++
+         var transaction = await context.HttpContext.RequestServices.GetRequiredService<IOpenIddictServerFactory>().CreateTransactionAsync();
+         transaction.EndpointType = OpenIddictServerEndpointType.Introspection;
+         transaction.Request = new OpenIddictRequest
+@@ -71,17 +84,92 @@ public async Task<IActionResult>  HandleAsync(ExtensionGrantContext context)
+                 }));
+         }
+ 
++        // We have validated the user token and got the user id
++
+         var userId = principal.FindUserId();
+         var userManager = context.HttpContext.RequestServices.GetRequiredService<IdentityUserManager>();
+         var user = await userManager.GetByIdAsync(userId.Value);
+         var userClaimsPrincipalFactory = context.HttpContext.RequestServices.GetRequiredService<IUserClaimsPrincipalFactory<IdentityUser>>();
+         var claimsPrincipal = await userClaimsPrincipalFactory.CreateAsync(user);
+-        claimsPrincipal.SetScopes(principal.GetScopes());
+-        claimsPrincipal.SetResources(await GetResourcesAsync(context, principal.GetScopes()));
++
++        // Prepare the scopes
++        var scopes = GetScopes(context);
++
++        claimsPrincipal.SetScopes(scopes);
++        claimsPrincipal.SetResources(await GetResourcesAsync(context, scopes));
+         await context.HttpContext.RequestServices.GetRequiredService<AbpOpenIddictClaimsPrincipalManager>().HandleAsync(context.Request, principal);
+         return new SignInResult(OpenIddictServerAspNetCoreDefaults.AuthenticationScheme, claimsPrincipal);
+     }
+ 
++
++    protected async Task<IActionResult> HandleUserApiKeyAsync(ExtensionGrantContext context)
++    {
++        var userApiKey = context.Request.GetParameter("user_api_key").ToString();
++
++        if (string.IsNullOrEmpty(userApiKey))
++        {
++            return new ForbidResult(
++                new[] {OpenIddictServerAspNetCoreDefaults.AuthenticationScheme},
++                properties: new AuthenticationProperties(new Dictionary<string, string>
++                {
++                    [OpenIddictServerAspNetCoreConstants.Properties.Error] = OpenIddictConstants.Errors.InvalidRequest
++                }!));
++        }
++
++        // Here we can validate the user API key and get the user id
++        if (false) // Add your own logic here
++        {
++            // If the user API key is invalid
++            return new ForbidResult(
++                new[] {OpenIddictServerAspNetCoreDefaults.AuthenticationScheme},
++                properties: new AuthenticationProperties(new Dictionary<string, string>
++                {
++                    [OpenIddictServerAspNetCoreConstants.Properties.Error] = OpenIddictConstants.Errors.InvalidRequest
++                }!));
++        }
++
++        // Add your own logic to get the user by API key
++        var userManager = context.HttpContext.RequestServices.GetRequiredService<IdentityUserManager>();
++        var user = await userManager.FindByNameAsync("admin");
++        if (user == null)
++        {
++            return new ForbidResult(
++                new[] {OpenIddictServerAspNetCoreDefaults.AuthenticationScheme},
++                properties: new AuthenticationProperties(new Dictionary<string, string>
++                {
++                    [OpenIddictServerAspNetCoreConstants.Properties.Error] = OpenIddictConstants.Errors.InvalidRequest
++                }!));
++        }
++
++        // Create a principal for the user
++        var userClaimsPrincipalFactory = context.HttpContext.RequestServices.GetRequiredService<IUserClaimsPrincipalFactory<IdentityUser>>();
++        var claimsPrincipal = await userClaimsPrincipalFactory.CreateAsync(user);
++
++        // Prepare the scopes
++        var scopes = GetScopes(context);
++
++        claimsPrincipal.SetScopes(scopes);
++        claimsPrincipal.SetResources(await GetResourcesAsync(context, scopes));
++        await context.HttpContext.RequestServices.GetRequiredService<AbpOpenIddictClaimsPrincipalManager>().HandleAsync(context.Request, claimsPrincipal);
++        return new SignInResult(OpenIddictServerAspNetCoreDefaults.AuthenticationScheme, claimsPrincipal);
++    }
++
++    protected ImmutableArray<string> GetScopes(ExtensionGrantContext context)
++    {
++        // Prepare the scopes
++        // The scopes must be defined in the OpenIddict server
++
++        // If you want to get the scopes from the request, you have to add `scope` parameter in the request
++        // scope: AbpAPI profile roles email phone offline_access
++
++        //var scopes = context.Request.GetScopes();
++
++        // If you want to set the scopes here, you can use the following code
++        var scopes = new[] { "AbpAPI", "profile", "roles", "email", "phone", "offline_access" }.ToImmutableArray();
++
++        return scopes;
++    }
++
+     private async Task<IEnumerable<string>> GetResourcesAsync(ExtensionGrantContext context, ImmutableArray<string> scopes)
+     {
+         var resources = new List<string>();

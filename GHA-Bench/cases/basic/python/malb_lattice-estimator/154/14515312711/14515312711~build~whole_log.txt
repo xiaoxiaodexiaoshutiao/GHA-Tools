@@ -1,0 +1,308 @@
+2025-04-17T12:10:27.7602087Z Requested labels: ubuntu-22.04
+2025-04-17T12:10:27.7602473Z Job defined at: malb/lattice-estimator/.github/workflows/pep8.yml@refs/pull/154/merge
+2025-04-17T12:10:27.7602609Z Waiting for a runner to pick up this job...
+2025-04-17T12:10:28.3494881Z Job is waiting for a hosted runner to come online.
+2025-04-17T12:10:32.6618568Z Job is about to start running on the hosted runner: GitHub Actions 4 (hosted)
+2025-04-17T12:10:35.1551532Z Current runner version: '2.323.0'
+2025-04-17T12:10:35.1576534Z ##[group]Operating System
+2025-04-17T12:10:35.1577344Z Ubuntu
+2025-04-17T12:10:35.1577982Z 22.04.5
+2025-04-17T12:10:35.1578533Z LTS
+2025-04-17T12:10:35.1579091Z ##[endgroup]
+2025-04-17T12:10:35.1579665Z ##[group]Runner Image
+2025-04-17T12:10:35.1580290Z Image: ubuntu-22.04
+2025-04-17T12:10:35.1580908Z Version: 20250406.1.0
+2025-04-17T12:10:35.1582017Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20250406.1/images/ubuntu/Ubuntu2204-Readme.md
+2025-04-17T12:10:35.1583432Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20250406.1
+2025-04-17T12:10:35.1584624Z ##[endgroup]
+2025-04-17T12:10:35.1585178Z ##[group]Runner Image Provisioner
+2025-04-17T12:10:35.1585837Z 2.0.422.1
+2025-04-17T12:10:35.1586439Z ##[endgroup]
+2025-04-17T12:10:35.1588786Z ##[group]GITHUB_TOKEN Permissions
+2025-04-17T12:10:35.1591228Z Actions: write
+2025-04-17T12:10:35.1592001Z Attestations: write
+2025-04-17T12:10:35.1592757Z Checks: write
+2025-04-17T12:10:35.1593313Z Contents: write
+2025-04-17T12:10:35.1594006Z Deployments: write
+2025-04-17T12:10:35.1594655Z Discussions: write
+2025-04-17T12:10:35.1595239Z Issues: write
+2025-04-17T12:10:35.1595818Z Metadata: read
+2025-04-17T12:10:35.1596384Z Models: read
+2025-04-17T12:10:35.1596922Z Packages: write
+2025-04-17T12:10:35.1597515Z Pages: write
+2025-04-17T12:10:35.1598090Z PullRequests: write
+2025-04-17T12:10:35.1598708Z RepositoryProjects: write
+2025-04-17T12:10:35.1599385Z SecurityEvents: write
+2025-04-17T12:10:35.1599947Z Statuses: write
+2025-04-17T12:10:35.1600518Z ##[endgroup]
+2025-04-17T12:10:35.1603887Z Secret source: Actions
+2025-04-17T12:10:35.1605070Z Prepare workflow directory
+2025-04-17T12:10:35.1981536Z Prepare all required actions
+2025-04-17T12:10:35.2018545Z Getting action download info
+2025-04-17T12:10:35.4224575Z ##[group]Download immutable action package 'actions/checkout@v2'
+2025-04-17T12:10:35.4225507Z Version: 2.7.0
+2025-04-17T12:10:35.4226362Z Digest: sha256:95d28907bc868c0bab52f05f1f84cf8416c9415fba4c92519bc0b83bdce1eae3
+2025-04-17T12:10:35.4227435Z Source commit SHA: ee0669bd1cc54295c223e0bb666b733df41de1c5
+2025-04-17T12:10:35.4228098Z ##[endgroup]
+2025-04-17T12:10:35.5901997Z Complete job name: build
+2025-04-17T12:10:35.6666294Z ##[group]Run actions/checkout@v2
+2025-04-17T12:10:35.6667189Z with:
+2025-04-17T12:10:35.6667658Z   repository: malb/lattice-estimator
+2025-04-17T12:10:35.6668379Z   token: ***
+2025-04-17T12:10:35.6668824Z   ssh-strict: true
+2025-04-17T12:10:35.6669303Z   persist-credentials: true
+2025-04-17T12:10:35.6669816Z   clean: true
+2025-04-17T12:10:35.6670253Z   fetch-depth: 1
+2025-04-17T12:10:35.6670694Z   lfs: false
+2025-04-17T12:10:35.6671133Z   submodules: false
+2025-04-17T12:10:35.6671616Z   set-safe-directory: true
+2025-04-17T12:10:35.6672306Z env:
+2025-04-17T12:10:35.6672723Z   JOBS: 2
+2025-04-17T12:10:35.6673152Z ##[endgroup]
+2025-04-17T12:10:35.9033219Z Syncing repository: malb/lattice-estimator
+2025-04-17T12:10:35.9035340Z ##[group]Getting Git version info
+2025-04-17T12:10:35.9036225Z Working directory is '/home/runner/work/lattice-estimator/lattice-estimator'
+2025-04-17T12:10:35.9037351Z [command]/usr/bin/git version
+2025-04-17T12:10:35.9134654Z git version 2.49.0
+2025-04-17T12:10:35.9163069Z ##[endgroup]
+2025-04-17T12:10:35.9183937Z Temporarily overriding HOME='/home/runner/work/_temp/884a2c84-b30e-4ea0-bc03-c642c69f8f72' before making global git config changes
+2025-04-17T12:10:35.9185511Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-17T12:10:35.9187545Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/lattice-estimator/lattice-estimator
+2025-04-17T12:10:35.9224387Z Deleting the contents of '/home/runner/work/lattice-estimator/lattice-estimator'
+2025-04-17T12:10:35.9229219Z ##[group]Initializing the repository
+2025-04-17T12:10:35.9232124Z [command]/usr/bin/git init /home/runner/work/lattice-estimator/lattice-estimator
+2025-04-17T12:10:35.9314660Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-17T12:10:35.9316005Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-17T12:10:35.9316959Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-17T12:10:35.9317686Z hint:
+2025-04-17T12:10:35.9318227Z hint: 	git config --global init.defaultBranch <name>
+2025-04-17T12:10:35.9318871Z hint:
+2025-04-17T12:10:35.9319480Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-17T12:10:35.9320875Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-17T12:10:35.9322184Z hint:
+2025-04-17T12:10:35.9322872Z hint: 	git branch -m <name>
+2025-04-17T12:10:35.9324516Z Initialized empty Git repository in /home/runner/work/lattice-estimator/lattice-estimator/.git/
+2025-04-17T12:10:35.9331487Z [command]/usr/bin/git remote add origin https://github.com/malb/lattice-estimator
+2025-04-17T12:10:35.9365330Z ##[endgroup]
+2025-04-17T12:10:35.9366290Z ##[group]Disabling automatic garbage collection
+2025-04-17T12:10:35.9368542Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-17T12:10:35.9398950Z ##[endgroup]
+2025-04-17T12:10:35.9399762Z ##[group]Setting up auth
+2025-04-17T12:10:35.9404822Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-17T12:10:35.9433445Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-17T12:10:35.9768403Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-17T12:10:35.9796288Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-17T12:10:36.0018393Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-17T12:10:36.0058413Z ##[endgroup]
+2025-04-17T12:10:36.0059284Z ##[group]Fetching the repository
+2025-04-17T12:10:36.0067515Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +8b70fe961d5fa3c89b09d8f22fe9f74ccd98ce00:refs/remotes/pull/154/merge
+2025-04-17T12:10:36.4936042Z remote: Enumerating objects: 71, done.        
+2025-04-17T12:10:36.4937489Z remote: Counting objects:   1% (1/71)        
+2025-04-17T12:10:36.4938204Z remote: Counting objects:   2% (2/71)        
+2025-04-17T12:10:36.4938834Z remote: Counting objects:   4% (3/71)        
+2025-04-17T12:10:36.4939457Z remote: Counting objects:   5% (4/71)        
+2025-04-17T12:10:36.4940081Z remote: Counting objects:   7% (5/71)        
+2025-04-17T12:10:36.4940689Z remote: Counting objects:   8% (6/71)        
+2025-04-17T12:10:36.4941308Z remote: Counting objects:   9% (7/71)        
+2025-04-17T12:10:36.4941927Z remote: Counting objects:  11% (8/71)        
+2025-04-17T12:10:36.4942581Z remote: Counting objects:  12% (9/71)        
+2025-04-17T12:10:36.4943203Z remote: Counting objects:  14% (10/71)        
+2025-04-17T12:10:36.4944102Z remote: Counting objects:  15% (11/71)        
+2025-04-17T12:10:36.4944743Z remote: Counting objects:  16% (12/71)        
+2025-04-17T12:10:36.4945378Z remote: Counting objects:  18% (13/71)        
+2025-04-17T12:10:36.4945997Z remote: Counting objects:  19% (14/71)        
+2025-04-17T12:10:36.4946618Z remote: Counting objects:  21% (15/71)        
+2025-04-17T12:10:36.4947232Z remote: Counting objects:  22% (16/71)        
+2025-04-17T12:10:36.4947859Z remote: Counting objects:  23% (17/71)        
+2025-04-17T12:10:36.4948481Z remote: Counting objects:  25% (18/71)        
+2025-04-17T12:10:36.4949104Z remote: Counting objects:  26% (19/71)        
+2025-04-17T12:10:36.4949739Z remote: Counting objects:  28% (20/71)        
+2025-04-17T12:10:36.4950352Z remote: Counting objects:  29% (21/71)        
+2025-04-17T12:10:36.4951247Z remote: Counting objects:  30% (22/71)        
+2025-04-17T12:10:36.4951869Z remote: Counting objects:  32% (23/71)        
+2025-04-17T12:10:36.4952488Z remote: Counting objects:  33% (24/71)        
+2025-04-17T12:10:36.4953113Z remote: Counting objects:  35% (25/71)        
+2025-04-17T12:10:36.4953862Z remote: Counting objects:  36% (26/71)        
+2025-04-17T12:10:36.4954481Z remote: Counting objects:  38% (27/71)        
+2025-04-17T12:10:36.4955105Z remote: Counting objects:  39% (28/71)        
+2025-04-17T12:10:36.4955725Z remote: Counting objects:  40% (29/71)        
+2025-04-17T12:10:36.4956343Z remote: Counting objects:  42% (30/71)        
+2025-04-17T12:10:36.4956961Z remote: Counting objects:  43% (31/71)        
+2025-04-17T12:10:36.4957571Z remote: Counting objects:  45% (32/71)        
+2025-04-17T12:10:36.4958197Z remote: Counting objects:  46% (33/71)        
+2025-04-17T12:10:36.4958814Z remote: Counting objects:  47% (34/71)        
+2025-04-17T12:10:36.4959431Z remote: Counting objects:  49% (35/71)        
+2025-04-17T12:10:36.4960066Z remote: Counting objects:  50% (36/71)        
+2025-04-17T12:10:36.4960686Z remote: Counting objects:  52% (37/71)        
+2025-04-17T12:10:36.4961322Z remote: Counting objects:  53% (38/71)        
+2025-04-17T12:10:36.4961947Z remote: Counting objects:  54% (39/71)        
+2025-04-17T12:10:36.4962570Z remote: Counting objects:  56% (40/71)        
+2025-04-17T12:10:36.4963189Z remote: Counting objects:  57% (41/71)        
+2025-04-17T12:10:36.4963910Z remote: Counting objects:  59% (42/71)        
+2025-04-17T12:10:36.4964552Z remote: Counting objects:  60% (43/71)        
+2025-04-17T12:10:36.4965178Z remote: Counting objects:  61% (44/71)        
+2025-04-17T12:10:36.4965795Z remote: Counting objects:  63% (45/71)        
+2025-04-17T12:10:36.4966419Z remote: Counting objects:  64% (46/71)        
+2025-04-17T12:10:36.4967027Z remote: Counting objects:  66% (47/71)        
+2025-04-17T12:10:36.4967648Z remote: Counting objects:  67% (48/71)        
+2025-04-17T12:10:36.4968274Z remote: Counting objects:  69% (49/71)        
+2025-04-17T12:10:36.4968892Z remote: Counting objects:  70% (50/71)        
+2025-04-17T12:10:36.4969512Z remote: Counting objects:  71% (51/71)        
+2025-04-17T12:10:36.4970285Z remote: Counting objects:  73% (52/71)        
+2025-04-17T12:10:36.4970927Z remote: Counting objects:  74% (53/71)        
+2025-04-17T12:10:36.4971548Z remote: Counting objects:  76% (54/71)        
+2025-04-17T12:10:36.4972168Z remote: Counting objects:  77% (55/71)        
+2025-04-17T12:10:36.4972785Z remote: Counting objects:  78% (56/71)        
+2025-04-17T12:10:36.4975715Z remote: Counting objects:  80% (57/71)        
+2025-04-17T12:10:36.4976786Z remote: Counting objects:  81% (58/71)        
+2025-04-17T12:10:36.4977495Z remote: Counting objects:  83% (59/71)        
+2025-04-17T12:10:36.4978159Z remote: Counting objects:  84% (60/71)        
+2025-04-17T12:10:36.4978817Z remote: Counting objects:  85% (61/71)        
+2025-04-17T12:10:36.4979472Z remote: Counting objects:  87% (62/71)        
+2025-04-17T12:10:36.4980135Z remote: Counting objects:  88% (63/71)        
+2025-04-17T12:10:36.4980800Z remote: Counting objects:  90% (64/71)        
+2025-04-17T12:10:36.4981477Z remote: Counting objects:  91% (65/71)        
+2025-04-17T12:10:36.4982132Z remote: Counting objects:  92% (66/71)        
+2025-04-17T12:10:36.4982796Z remote: Counting objects:  94% (67/71)        
+2025-04-17T12:10:36.4983450Z remote: Counting objects:  95% (68/71)        
+2025-04-17T12:10:36.4984290Z remote: Counting objects:  97% (69/71)        
+2025-04-17T12:10:36.4984938Z remote: Counting objects:  98% (70/71)        
+2025-04-17T12:10:36.4985619Z remote: Counting objects: 100% (71/71)        
+2025-04-17T12:10:36.4986304Z remote: Counting objects: 100% (71/71), done.        
+2025-04-17T12:10:36.4987013Z remote: Compressing objects:   1% (1/68)        
+2025-04-17T12:10:36.4987700Z remote: Compressing objects:   2% (2/68)        
+2025-04-17T12:10:36.4988365Z remote: Compressing objects:   4% (3/68)        
+2025-04-17T12:10:36.4989224Z remote: Compressing objects:   5% (4/68)        
+2025-04-17T12:10:36.4989875Z remote: Compressing objects:   7% (5/68)        
+2025-04-17T12:10:36.4990512Z remote: Compressing objects:   8% (6/68)        
+2025-04-17T12:10:36.4991158Z remote: Compressing objects:  10% (7/68)        
+2025-04-17T12:10:36.4991809Z remote: Compressing objects:  11% (8/68)        
+2025-04-17T12:10:36.4992454Z remote: Compressing objects:  13% (9/68)        
+2025-04-17T12:10:36.4993104Z remote: Compressing objects:  14% (10/68)        
+2025-04-17T12:10:36.4993873Z remote: Compressing objects:  16% (11/68)        
+2025-04-17T12:10:36.4994528Z remote: Compressing objects:  17% (12/68)        
+2025-04-17T12:10:36.4995179Z remote: Compressing objects:  19% (13/68)        
+2025-04-17T12:10:36.4995811Z remote: Compressing objects:  20% (14/68)        
+2025-04-17T12:10:36.5067350Z remote: Compressing objects:  22% (15/68)        
+2025-04-17T12:10:36.5068627Z remote: Compressing objects:  23% (16/68)        
+2025-04-17T12:10:36.5069981Z remote: Compressing objects:  25% (17/68)        
+2025-04-17T12:10:36.5070860Z remote: Compressing objects:  26% (18/68)        
+2025-04-17T12:10:36.5071671Z remote: Compressing objects:  27% (19/68)        
+2025-04-17T12:10:36.5072480Z remote: Compressing objects:  29% (20/68)        
+2025-04-17T12:10:36.5073279Z remote: Compressing objects:  30% (21/68)        
+2025-04-17T12:10:36.5074304Z remote: Compressing objects:  32% (22/68)        
+2025-04-17T12:10:36.5075188Z remote: Compressing objects:  33% (23/68)        
+2025-04-17T12:10:36.5075988Z remote: Compressing objects:  35% (24/68)        
+2025-04-17T12:10:36.5076788Z remote: Compressing objects:  36% (25/68)        
+2025-04-17T12:10:36.5077594Z remote: Compressing objects:  38% (26/68)        
+2025-04-17T12:10:36.5078309Z remote: Compressing objects:  39% (27/68)        
+2025-04-17T12:10:36.5078939Z remote: Compressing objects:  41% (28/68)        
+2025-04-17T12:10:36.5079574Z remote: Compressing objects:  42% (29/68)        
+2025-04-17T12:10:36.5080221Z remote: Compressing objects:  44% (30/68)        
+2025-04-17T12:10:36.5080868Z remote: Compressing objects:  45% (31/68)        
+2025-04-17T12:10:36.5081507Z remote: Compressing objects:  47% (32/68)        
+2025-04-17T12:10:36.5082313Z remote: Compressing objects:  48% (33/68)        
+2025-04-17T12:10:36.5082972Z remote: Compressing objects:  50% (34/68)        
+2025-04-17T12:10:36.5083753Z remote: Compressing objects:  51% (35/68)        
+2025-04-17T12:10:36.5084393Z remote: Compressing objects:  52% (36/68)        
+2025-04-17T12:10:36.5085032Z remote: Compressing objects:  54% (37/68)        
+2025-04-17T12:10:36.5085666Z remote: Compressing objects:  55% (38/68)        
+2025-04-17T12:10:36.5086298Z remote: Compressing objects:  57% (39/68)        
+2025-04-17T12:10:36.5086933Z remote: Compressing objects:  58% (40/68)        
+2025-04-17T12:10:36.5087560Z remote: Compressing objects:  60% (41/68)        
+2025-04-17T12:10:36.5088532Z remote: Compressing objects:  61% (42/68)        
+2025-04-17T12:10:36.5090382Z remote: Compressing objects:  63% (43/68)        
+2025-04-17T12:10:36.5093202Z remote: Compressing objects:  64% (44/68)        
+2025-04-17T12:10:36.5094313Z remote: Compressing objects:  66% (45/68)        
+2025-04-17T12:10:36.5095180Z remote: Compressing objects:  67% (46/68)        
+2025-04-17T12:10:36.5096009Z remote: Compressing objects:  69% (47/68)        
+2025-04-17T12:10:36.5096661Z remote: Compressing objects:  70% (48/68)        
+2025-04-17T12:10:36.5098281Z remote: Compressing objects:  72% (49/68)        
+2025-04-17T12:10:36.5099065Z remote: Compressing objects:  73% (50/68)        
+2025-04-17T12:10:36.5099720Z remote: Compressing objects:  75% (51/68)        
+2025-04-17T12:10:36.5100368Z remote: Compressing objects:  76% (52/68)        
+2025-04-17T12:10:36.5101009Z remote: Compressing objects:  77% (53/68)        
+2025-04-17T12:10:36.5101648Z remote: Compressing objects:  79% (54/68)        
+2025-04-17T12:10:36.5102286Z remote: Compressing objects:  80% (55/68)        
+2025-04-17T12:10:36.5103138Z remote: Compressing objects:  82% (56/68)        
+2025-04-17T12:10:36.5104020Z remote: Compressing objects:  83% (57/68)        
+2025-04-17T12:10:36.5104663Z remote: Compressing objects:  85% (58/68)        
+2025-04-17T12:10:36.5105308Z remote: Compressing objects:  86% (59/68)        
+2025-04-17T12:10:36.5105941Z remote: Compressing objects:  88% (60/68)        
+2025-04-17T12:10:36.5106606Z remote: Compressing objects:  89% (61/68)        
+2025-04-17T12:10:36.5107259Z remote: Compressing objects:  91% (62/68)        
+2025-04-17T12:10:36.5107896Z remote: Compressing objects:  92% (63/68)        
+2025-04-17T12:10:36.5108527Z remote: Compressing objects:  94% (64/68)        
+2025-04-17T12:10:36.5110006Z remote: Compressing objects:  95% (65/68)        
+2025-04-17T12:10:36.5110771Z remote: Compressing objects:  97% (66/68)        
+2025-04-17T12:10:36.5111423Z remote: Compressing objects:  98% (67/68)        
+2025-04-17T12:10:36.5112065Z remote: Compressing objects: 100% (68/68)        
+2025-04-17T12:10:36.5112758Z remote: Compressing objects: 100% (68/68), done.        
+2025-04-17T12:10:36.5457042Z remote: Total 71 (delta 5), reused 25 (delta 0), pack-reused 0 (from 0)        
+2025-04-17T12:10:36.5535468Z From https://github.com/malb/lattice-estimator
+2025-04-17T12:10:36.5536795Z  * [new ref]         8b70fe961d5fa3c89b09d8f22fe9f74ccd98ce00 -> pull/154/merge
+2025-04-17T12:10:36.5566042Z ##[endgroup]
+2025-04-17T12:10:36.5567392Z ##[group]Determining the checkout info
+2025-04-17T12:10:36.5568919Z ##[endgroup]
+2025-04-17T12:10:36.5570122Z ##[group]Checking out the ref
+2025-04-17T12:10:36.5574124Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/154/merge
+2025-04-17T12:10:36.5662107Z Note: switching to 'refs/remotes/pull/154/merge'.
+2025-04-17T12:10:36.5662862Z 
+2025-04-17T12:10:36.5663279Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-17T12:10:36.5664441Z changes and commit them, and you can discard any commits you make in this
+2025-04-17T12:10:36.5665353Z state without impacting any branches by switching back to a branch.
+2025-04-17T12:10:36.5666000Z 
+2025-04-17T12:10:36.5666611Z If you want to create a new branch to retain commits you create, you may
+2025-04-17T12:10:36.5668661Z do so (now or later) by using -c with the switch command. Example:
+2025-04-17T12:10:36.5669604Z 
+2025-04-17T12:10:36.5670001Z   git switch -c <new-branch-name>
+2025-04-17T12:10:36.5670635Z 
+2025-04-17T12:10:36.5670996Z Or undo this operation with:
+2025-04-17T12:10:36.5671543Z 
+2025-04-17T12:10:36.5671871Z   git switch -
+2025-04-17T12:10:36.5672287Z 
+2025-04-17T12:10:36.5672967Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-17T12:10:36.5674145Z 
+2025-04-17T12:10:36.5675251Z HEAD is now at 8b70fe9 Merge 73df11ec5180aae71571d6774b979b94399442c1 into 787c05a0eacc2c74bc834a6bb86262e2e90f54ab
+2025-04-17T12:10:36.5677510Z ##[endgroup]
+2025-04-17T12:10:36.5711565Z [command]/usr/bin/git log -1 --format='%H'
+2025-04-17T12:10:36.5734675Z '8b70fe961d5fa3c89b09d8f22fe9f74ccd98ce00'
+2025-04-17T12:10:36.5930277Z ##[group]Run pip install --upgrade pyproject-flake8
+2025-04-17T12:10:36.5931065Z [36;1mpip install --upgrade pyproject-flake8[0m
+2025-04-17T12:10:36.5931695Z [36;1mflake8 estimator/[0m
+2025-04-17T12:10:36.6037072Z shell: /usr/bin/bash -e {0}
+2025-04-17T12:10:36.6115723Z env:
+2025-04-17T12:10:36.6116372Z   JOBS: 2
+2025-04-17T12:10:36.6117119Z ##[endgroup]
+2025-04-17T12:10:37.0935353Z Defaulting to user installation because normal site-packages is not writeable
+2025-04-17T12:10:37.4164676Z Collecting pyproject-flake8
+2025-04-17T12:10:37.4524353Z   Downloading pyproject_flake8-7.0.0-py3-none-any.whl (5.5 kB)
+2025-04-17T12:10:37.4586951Z Requirement already satisfied: tomli in /usr/local/lib/python3.10/dist-packages (from pyproject-flake8) (2.2.1)
+2025-04-17T12:10:37.4975414Z Collecting flake8==7.0.0
+2025-04-17T12:10:37.5004008Z   Downloading flake8-7.0.0-py2.py3-none-any.whl (57 kB)
+2025-04-17T12:10:37.5124754Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.6/57.6 KB 4.8 MB/s eta 0:00:00
+2025-04-17T12:10:37.5385128Z Collecting pyflakes<3.3.0,>=3.2.0
+2025-04-17T12:10:37.5413465Z   Downloading pyflakes-3.2.0-py2.py3-none-any.whl (62 kB)
+2025-04-17T12:10:37.5456277Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.7/62.7 KB 21.8 MB/s eta 0:00:00
+2025-04-17T12:10:37.5679202Z Collecting pycodestyle<2.12.0,>=2.11.0
+2025-04-17T12:10:37.5713384Z   Downloading pycodestyle-2.11.1-py2.py3-none-any.whl (31 kB)
+2025-04-17T12:10:37.5975220Z Collecting mccabe<0.8.0,>=0.7.0
+2025-04-17T12:10:37.6002001Z   Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+2025-04-17T12:10:37.7558827Z Installing collected packages: pyflakes, pycodestyle, mccabe, flake8, pyproject-flake8
+2025-04-17T12:10:37.8577210Z Successfully installed flake8-7.0.0 mccabe-0.7.0 pycodestyle-2.11.1 pyflakes-3.2.0 pyproject-flake8-7.0.0
+2025-04-17T12:10:38.4112252Z estimator/ntru.py:130:121: E501 line too long (140 > 120 characters)
+2025-04-17T12:10:38.4114154Z estimator/ntru.py:131:121: E501 line too long (159 > 120 characters)
+2025-04-17T12:10:38.4257744Z ##[error]Process completed with exit code 1.
+2025-04-17T12:10:38.4347191Z Post job cleanup.
+2025-04-17T12:10:38.5237530Z [command]/usr/bin/git version
+2025-04-17T12:10:38.5272952Z git version 2.49.0
+2025-04-17T12:10:38.5315555Z Temporarily overriding HOME='/home/runner/work/_temp/60cdd2c1-cb9f-4eec-a196-00482f9dfd39' before making global git config changes
+2025-04-17T12:10:38.5318922Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-17T12:10:38.5319704Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/lattice-estimator/lattice-estimator
+2025-04-17T12:10:38.5350710Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-17T12:10:38.5381301Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-17T12:10:38.5603384Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-17T12:10:38.5624684Z http.https://github.com/.extraheader
+2025-04-17T12:10:38.5635197Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-17T12:10:38.5665553Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-17T12:10:38.6005426Z Cleaning up orphan processes

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 7cd483e3..16aae3d9 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -26,6 +26,7 @@ jobs:
+         uses: actions/setup-java@v4
+         with:
+           java-version: ${{ matrix.java }}
++          distribution: 'temurin'
+       - name: make gradle wrapper executable
+         if: ${{ runner.os != 'Windows' }}
+         run: chmod +x ./gradlew

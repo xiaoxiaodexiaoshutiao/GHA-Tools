@@ -1,0 +1,214 @@
+2025-03-19T10:32:26.8980396Z Requested labels: ubuntu-latest
+2025-03-19T10:32:26.8980721Z Job defined at: GEOLYTIX/xyz/.github/workflows/eslint.yml@refs/pull/2018/merge
+2025-03-19T10:32:26.8980821Z Waiting for a runner to pick up this job...
+2025-03-19T10:32:27.6402228Z Job is waiting for a hosted runner to come online.
+2025-03-19T10:32:30.8761766Z Job is about to start running on the hosted runner: GitHub Actions 19 (hosted)
+2025-03-19T10:32:33.1136282Z Current runner version: '2.322.0'
+2025-03-19T10:32:33.1162835Z ##[group]Operating System
+2025-03-19T10:32:33.1163597Z Ubuntu
+2025-03-19T10:32:33.1164188Z 24.04.2
+2025-03-19T10:32:33.1164721Z LTS
+2025-03-19T10:32:33.1165228Z ##[endgroup]
+2025-03-19T10:32:33.1165840Z ##[group]Runner Image
+2025-03-19T10:32:33.1166403Z Image: ubuntu-24.04
+2025-03-19T10:32:33.1167138Z Version: 20250316.1.0
+2025-03-19T10:32:33.1168246Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250316.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-19T10:32:33.1169621Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250316.1
+2025-03-19T10:32:33.1170533Z ##[endgroup]
+2025-03-19T10:32:33.1171178Z ##[group]Runner Image Provisioner
+2025-03-19T10:32:33.1171779Z 2.0.422.1
+2025-03-19T10:32:33.1172294Z ##[endgroup]
+2025-03-19T10:32:33.1174539Z ##[group]GITHUB_TOKEN Permissions
+2025-03-19T10:32:33.1177229Z Actions: read
+2025-03-19T10:32:33.1178097Z Attestations: read
+2025-03-19T10:32:33.1178811Z Checks: read
+2025-03-19T10:32:33.1179365Z Contents: read
+2025-03-19T10:32:33.1179893Z Deployments: read
+2025-03-19T10:32:33.1180476Z Discussions: read
+2025-03-19T10:32:33.1181051Z Issues: read
+2025-03-19T10:32:33.1181596Z Metadata: read
+2025-03-19T10:32:33.1182175Z Models: read
+2025-03-19T10:32:33.1182692Z Packages: read
+2025-03-19T10:32:33.1183242Z Pages: read
+2025-03-19T10:32:33.1183833Z PullRequests: read
+2025-03-19T10:32:33.1184419Z RepositoryProjects: read
+2025-03-19T10:32:33.1185013Z SecurityEvents: read
+2025-03-19T10:32:33.1185599Z Statuses: read
+2025-03-19T10:32:33.1186133Z ##[endgroup]
+2025-03-19T10:32:33.1189446Z Secret source: None
+2025-03-19T10:32:33.1190693Z Prepare workflow directory
+2025-03-19T10:32:33.1612688Z Prepare all required actions
+2025-03-19T10:32:33.1649788Z Getting action download info
+2025-03-19T10:32:33.3267264Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-19T10:32:33.4363347Z Download action repository 'biomejs/setup-biome@v2' (SHA:c016c38f26f2c4a6eb3662679143614a254263fd)
+2025-03-19T10:32:33.8817142Z Complete job name: quality
+2025-03-19T10:32:33.9556777Z ##[group]Run actions/checkout@v4
+2025-03-19T10:32:33.9557746Z with:
+2025-03-19T10:32:33.9558206Z   repository: GEOLYTIX/xyz
+2025-03-19T10:32:33.9558947Z   token: ***
+2025-03-19T10:32:33.9559375Z   ssh-strict: true
+2025-03-19T10:32:33.9559823Z   ssh-user: git
+2025-03-19T10:32:33.9560285Z   persist-credentials: true
+2025-03-19T10:32:33.9560785Z   clean: true
+2025-03-19T10:32:33.9561244Z   sparse-checkout-cone-mode: true
+2025-03-19T10:32:33.9561805Z   fetch-depth: 1
+2025-03-19T10:32:33.9562266Z   fetch-tags: false
+2025-03-19T10:32:33.9562912Z   show-progress: true
+2025-03-19T10:32:33.9563481Z   lfs: false
+2025-03-19T10:32:33.9563920Z   submodules: false
+2025-03-19T10:32:33.9564623Z   set-safe-directory: true
+2025-03-19T10:32:33.9565976Z ##[endgroup]
+2025-03-19T10:32:34.2193795Z Syncing repository: GEOLYTIX/xyz
+2025-03-19T10:32:34.2195866Z ##[group]Getting Git version info
+2025-03-19T10:32:34.2196941Z Working directory is '/home/runner/work/xyz/xyz'
+2025-03-19T10:32:34.2198033Z [command]/usr/bin/git version
+2025-03-19T10:32:34.2292317Z git version 2.48.1
+2025-03-19T10:32:34.2324324Z ##[endgroup]
+2025-03-19T10:32:34.2349380Z Temporarily overriding HOME='/home/runner/work/_temp/2eabdd60-fa1f-4f66-b70d-0157b1523e0d' before making global git config changes
+2025-03-19T10:32:34.2352113Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-19T10:32:34.2357184Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/xyz/xyz
+2025-03-19T10:32:34.2400704Z Deleting the contents of '/home/runner/work/xyz/xyz'
+2025-03-19T10:32:34.2405589Z ##[group]Initializing the repository
+2025-03-19T10:32:34.2410754Z [command]/usr/bin/git init /home/runner/work/xyz/xyz
+2025-03-19T10:32:34.2497245Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-19T10:32:34.2498664Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-19T10:32:34.2500004Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-19T10:32:34.2500753Z hint:
+2025-03-19T10:32:34.2501772Z hint: 	git config --global init.defaultBranch <name>
+2025-03-19T10:32:34.2502946Z hint:
+2025-03-19T10:32:34.2504026Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-19T10:32:34.2505723Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-19T10:32:34.2507208Z hint:
+2025-03-19T10:32:34.2507730Z hint: 	git branch -m <name>
+2025-03-19T10:32:34.2508538Z Initialized empty Git repository in /home/runner/work/xyz/xyz/.git/
+2025-03-19T10:32:34.2519205Z [command]/usr/bin/git remote add origin https://github.com/GEOLYTIX/xyz
+2025-03-19T10:32:34.2557344Z ##[endgroup]
+2025-03-19T10:32:34.2558178Z ##[group]Disabling automatic garbage collection
+2025-03-19T10:32:34.2561283Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-19T10:32:34.2590989Z ##[endgroup]
+2025-03-19T10:32:34.2591802Z ##[group]Setting up auth
+2025-03-19T10:32:34.2598337Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-19T10:32:34.2631599Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-19T10:32:34.3021883Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-19T10:32:34.3056333Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-19T10:32:34.3292655Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-19T10:32:34.3344611Z ##[endgroup]
+2025-03-19T10:32:34.3346217Z ##[group]Fetching the repository
+2025-03-19T10:32:34.3356223Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +89558a04a58ac69bb89790662d29053ef59b3eb0:refs/remotes/pull/2018/merge
+2025-03-19T10:32:34.8093382Z From https://github.com/GEOLYTIX/xyz
+2025-03-19T10:32:34.8097969Z  * [new ref]         89558a04a58ac69bb89790662d29053ef59b3eb0 -> pull/2018/merge
+2025-03-19T10:32:34.8120522Z ##[endgroup]
+2025-03-19T10:32:34.8121770Z ##[group]Determining the checkout info
+2025-03-19T10:32:34.8123074Z ##[endgroup]
+2025-03-19T10:32:34.8127778Z [command]/usr/bin/git sparse-checkout disable
+2025-03-19T10:32:34.8168843Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-19T10:32:34.8198143Z ##[group]Checking out the ref
+2025-03-19T10:32:34.8202209Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/2018/merge
+2025-03-19T10:32:34.8505782Z Note: switching to 'refs/remotes/pull/2018/merge'.
+2025-03-19T10:32:34.8507106Z 
+2025-03-19T10:32:34.8508118Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-19T10:32:34.8511624Z changes and commit them, and you can discard any commits you make in this
+2025-03-19T10:32:34.8514241Z state without impacting any branches by switching back to a branch.
+2025-03-19T10:32:34.8516059Z 
+2025-03-19T10:32:34.8517429Z If you want to create a new branch to retain commits you create, you may
+2025-03-19T10:32:34.8519939Z do so (now or later) by using -c with the switch command. Example:
+2025-03-19T10:32:34.8521565Z 
+2025-03-19T10:32:34.8522275Z   git switch -c <new-branch-name>
+2025-03-19T10:32:34.8523281Z 
+2025-03-19T10:32:34.8523828Z Or undo this operation with:
+2025-03-19T10:32:34.8524705Z 
+2025-03-19T10:32:34.8525180Z   git switch -
+2025-03-19T10:32:34.8525852Z 
+2025-03-19T10:32:34.8527383Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-19T10:32:34.8529202Z 
+2025-03-19T10:32:34.8530705Z HEAD is now at 89558a0 Merge 8d2a0eb2a0713195a9a4ab66aad5caa8ef2c40cf into 33c783a405d7e6d33849a9ffca212c27df8368a2
+2025-03-19T10:32:34.8536280Z ##[endgroup]
+2025-03-19T10:32:34.8557733Z [command]/usr/bin/git log -1 --format=%H
+2025-03-19T10:32:34.8581592Z 89558a04a58ac69bb89790662d29053ef59b3eb0
+2025-03-19T10:32:34.8941040Z ##[group]Run biomejs/setup-biome@v2
+2025-03-19T10:32:34.8942267Z with:
+2025-03-19T10:32:34.8943101Z   version: latest
+2025-03-19T10:32:34.8944295Z   token: ***
+2025-03-19T10:32:34.8945183Z ##[endgroup]
+2025-03-19T10:32:35.0019480Z No working directory specified. Using the current working directory.
+2025-03-19T10:32:36.9452868Z ##[group]Run biome ci .
+2025-03-19T10:32:36.9453199Z [36;1mbiome ci .[0m
+2025-03-19T10:32:36.9506702Z shell: /usr/bin/bash -e {0}
+2025-03-19T10:32:36.9507028Z ##[endgroup]
+2025-03-19T10:32:37.1210856Z [0m./api/api.js[0m[0m [0m[0mformat[0m[0m [0m[0m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[0m
+2025-03-19T10:32:37.1212294Z 
+2025-03-19T10:32:37.1221796Z [0m[0m  [0m[0m[1m[31m✖[0m[0m [0m[0m[31mFile content differs from formatting output[0m[0m
+2025-03-19T10:32:37.1222679Z [0m[0m  [0m[0m
+2025-03-19T10:32:37.1234341Z [0m[0m  [0m[0m  [0m[0m[1m343[0m[0m [0m[0m[1m343[0m[0m[1m │ [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0mi[0m[0mf[0m[0m [0m[0m([0m[0mp[0m[0ma[0m[0mr[0m[0ma[0m[0mm[0m[0ms[0m[0m[[0m[0mk[0m[0me[0m[0my[0m[0m][0m[0m.[0m[0mm[0m[0ma[0m[0mt[0m[0mc[0m[0mh[0m[0m([0m[0m/[0m[0m^[0m[0m\[0m[0m[[0m[0m.[0m[0m*[0m[0m\[0m[0m][0m[0m$[0m[0m/[0m[0m)[0m[0m)[0m[0m [0m[0m{[0m[0m
+2025-03-19T10:32:37.1240608Z [0m[0m  [0m[0m  [0m[0m[1m344[0m[0m [0m[0m[1m344[0m[0m[1m │ [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m/[0m[0m/[0m[0m [0m[0mM[0m[0ma[0m[0mt[0m[0mc[0m[0mh[0m[0m [0m[0mt[0m[0mh[0m[0me[0m[0m [0m[0ms[0m[0mt[0m[0mr[0m[0mi[0m[0mn[0m[0mg[0m[0m [0m[0mb[0m[0me[0m[0mt[0m[0mw[0m[0me[0m[0me[0m[0mn[0m[0m [0m[0ms[0m[0mq[0m[0mu[0m[0ma[0m[0mr[0m[0me[0m[0m [0m[0mb[0m[0mr[0m[0ma[0m[0mc[0m[0mk[0m[0me[0m[0mt[0m[0ms[0m[0m [0m[0ma[0m[0mn[0m[0md[0m[0m [0m[0ms[0m[0mp[0m[0ml[0m[0mi[0m[0mt[0m[0m [0m[0mi[0m[0mn[0m[0mt[0m[0mo[0m[0m [0m[0ma[0m[0mn[0m[0m [0m[0ma[0m[0mr[0m[0mr[0m[0ma[0m[0my[0m[0m [0m[0mw[0m[0mi[0m[0mt[0m[0mh[0m[0m [0m[0mu[0m[0mn[0m[0md[0m[0me[0m[0mf[0m[0mi[0m[0mn[0m[0me[0m[0md[0m[0m [0m[0ma[0m[0mr[0m[0mr[0m[0ma[0m[0my[0m[0m [0m[0mv[0m[0ma[0m[0ml[0m[0mu[0m[0me[0m[0ms[0m[0m [0m[0mf[0m[0mi[0m[0ml[0m[0mt[0m[0me[0m[0mr[0m[0me[0m[0md[0m[0m [0m[0mo[0m[0mu[0m[0mt[0m[0m.[0m[0m
+2025-03-19T10:32:37.1247051Z [0m[0m  [0m[0m  [0m[0m[1m345[0m[0m [0m[0m [0m[0m [0m[0m [0m[0m[1m │ [0m[0m[31m-[0m[0m [0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[31mp[0m[0m[31ma[0m[0m[31mr[0m[0m[31ma[0m[0m[31mm[0m[0m[31ms[0m[0m[31m[[0m[0m[31mk[0m[0m[31me[0m[0m[31my[0m[0m[31m][0m[0m[2m[31m·[0m[0m[31m=[0m[0m[2m[31m·[0m[0m[31mp[0m[0m[31ma[0m[0m[31mr[0m[0m[31ma[0m[0m[31mm[0m[0m[31ms[0m[0m[31m[[0m[0m[31mk[0m[0m[31me[0m[0m[31my[0m[0m[31m][0m[0m[31m.[0m[0m[31mm[0m[0m[31ma[0m[0m[31mt[0m[0m[31mc[0m[0m[31mh[0m[0m[31m([0m[0m[31m/[0m[0m[31m^[0m[0m[31m\[0m[0m[31m[[0m[0m[31m([0m[0m[31m.[0m[0m[31m*[0m[0m[31m)[0m[0m[31m\[0m[0m[31m][0m[0m[31m$[0m[0m[31m/[0m[0m[31m)[0m[0m[31m[[0m[0m[31m1[0m[0m[31m][0m[0m
+2025-03-19T10:32:37.1251385Z [0m[0m  [0m[0m  [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m[1m345[0m[0m[1m │ [0m[0m[32m+[0m[0m [0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[32mp[0m[0m[32ma[0m[0m[32mr[0m[0m[32ma[0m[0m[32mm[0m[0m[32ms[0m[0m[32m[[0m[0m[32mk[0m[0m[32me[0m[0m[32my[0m[0m[32m][0m[0m[2m[32m·[0m[0m[32m=[0m[0m[2m[32m·[0m[0m[32mp[0m[0m[32ma[0m[0m[32mr[0m[0m[32ma[0m[0m[32mm[0m[0m[32ms[0m[0m[32m[[0m[0m[32mk[0m[0m[32me[0m[0m[32my[0m[0m[32m][0m[0m
+2025-03-19T10:32:37.1255660Z [0m[0m  [0m[0m  [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m[1m346[0m[0m[1m │ [0m[0m[32m+[0m[0m [0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[32m.[0m[0m[32mm[0m[0m[32ma[0m[0m[32mt[0m[0m[32mc[0m[0m[32mh[0m[0m[32m([0m[0m[32m/[0m[0m[32m^[0m[0m[32m\[0m[0m[32m[[0m[0m[32m([0m[0m[32m.[0m[0m[32m*[0m[0m[32m)[0m[0m[32m\[0m[0m[32m][0m[0m[32m$[0m[0m[32m/[0m[0m[32m)[0m[0m[32m[[0m[0m[32m1[0m[0m[32m][0m[0m
+2025-03-19T10:32:37.1258305Z [0m[0m  [0m[0m  [0m[0m[1m346[0m[0m [0m[0m[1m347[0m[0m[1m │ [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m.[0m[0ms[0m[0mp[0m[0ml[0m[0mi[0m[0mt[0m[0m([0m[0m'[0m[0m,[0m[0m'[0m[0m)[0m[0m
+2025-03-19T10:32:37.1260194Z [0m[0m  [0m[0m  [0m[0m[1m347[0m[0m [0m[0m[1m348[0m[0m[1m │ [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m.[0m[0mf[0m[0mi[0m[0ml[0m[0mt[0m[0me[0m[0mr[0m[0m([0m[0mB[0m[0mo[0m[0mo[0m[0ml[0m[0me[0m[0ma[0m[0mn[0m[0m)[0m[0m;[0m[0m
+2025-03-19T10:32:37.1261294Z [0m[0m  [0m[0m
+2025-03-19T10:32:37.1261654Z [0m
+2025-03-19T10:32:37.1263500Z [0m./lib/ui/locations/entries/dataview.mjs[0m[0m:[0m[0m56[0m[0m:[0m[0m25[0m[0m [0m[0m]8;;https://biomejs.dev/linter/rules/no-excessive-cognitive-complexity\lint/complexity/noExcessiveCognitiveComplexity]8;;\[0m[0m [0m[0m━━━━━━━━━━[0m[0m
+2025-03-19T10:32:37.1265047Z 
+2025-03-19T10:32:37.1265589Z [0m[0m  [0m[0m[1m[33m⚠[0m[0m [0m[0m[33mExcessive complexity of 27 detected (max: 20).[0m[0m
+2025-03-19T10:32:37.1266273Z [0m[0m  [0m[0m
+2025-03-19T10:32:37.1266905Z [0m[0m  [0m[0m  [0m[0m[1m54 │ [0m[0m*[0m[0m/[0m[0m
+2025-03-19T10:32:37.1267475Z [0m[0m  [0m[0m  [0m[0m[1m55 │ [0m[0m
+2025-03-19T10:32:37.1269349Z [0m[0m  [0m[0m[1m[31m>[0m[0m [0m[0m[1m56 │ [0m[0me[0m[0mx[0m[0mp[0m[0mo[0m[0mr[0m[0mt[0m[0m [0m[0md[0m[0me[0m[0mf[0m[0ma[0m[0mu[0m[0ml[0m[0mt[0m[0m [0m[0mf[0m[0mu[0m[0mn[0m[0mc[0m[0mt[0m[0mi[0m[0mo[0m[0mn[0m[0m [0m[0md[0m[0ma[0m[0mt[0m[0ma[0m[0mv[0m[0mi[0m[0me[0m[0mw[0m[0m([0m[0me[0m[0mn[0m[0mt[0m[0mr[0m[0my[0m[0m)[0m[0m [0m[0m{[0m[0m
+2025-03-19T10:32:37.1271772Z [0m[0m  [0m[0m [0m[0m [0m[0m[1m   │ [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m[1m[31m^[0m[0m[1m[31m^[0m[0m[1m[31m^[0m[0m[1m[31m^[0m[0m[1m[31m^[0m[0m[1m[31m^[0m[0m[1m[31m^[0m[0m[1m[31m^[0m[0m
+2025-03-19T10:32:37.1273949Z [0m[0m  [0m[0m  [0m[0m[1m57 │ [0m[0m [0m[0m [0m[0mi[0m[0mf[0m[0m [0m[0m([0m[0me[0m[0mn[0m[0mt[0m[0mr[0m[0my[0m[0m.[0m[0mv[0m[0ma[0m[0ml[0m[0mu[0m[0me[0m[0m [0m[0m![0m[0m=[0m[0m=[0m[0m [0m[0mu[0m[0mn[0m[0md[0m[0me[0m[0mf[0m[0mi[0m[0mn[0m[0me[0m[0md[0m[0m)[0m[0m [0m[0m{[0m[0m
+2025-03-19T10:32:37.1276027Z [0m[0m  [0m[0m  [0m[0m[1m58 │ [0m[0m [0m[0m [0m[0m [0m[0m [0m[0me[0m[0mn[0m[0mt[0m[0mr[0m[0my[0m[0m.[0m[0md[0m[0ma[0m[0mt[0m[0ma[0m[0m [0m[0m=[0m[0m [0m[0me[0m[0mn[0m[0mt[0m[0mr[0m[0my[0m[0m.[0m[0mv[0m[0ma[0m[0ml[0m[0mu[0m[0me[0m[0m;[0m[0m
+2025-03-19T10:32:37.1277260Z [0m[0m  [0m[0m
+2025-03-19T10:32:37.1278327Z [0m[0m  [0m[0m[1m[34mℹ[0m[0m [0m[0m[34mPlease refactor this function to reduce its complexity score from 27 to the max allowed complexity 20.[0m[0m
+2025-03-19T10:32:37.1279554Z [0m[0m  [0m[0m
+2025-03-19T10:32:37.1279946Z [0m
+2025-03-19T10:32:37.1281777Z [0m./lib/ui/locations/entries/cloudinary.mjs[0m[0m:[0m[0m217[0m[0m:[0m[0m25[0m[0m [0m[0m]8;;https://biomejs.dev/linter/rules/no-excessive-cognitive-complexity\lint/complexity/noExcessiveCognitiveComplexity]8;;\[0m[0m [0m[0m━━━━━━━━━━[0m[0m
+2025-03-19T10:32:37.1283251Z 
+2025-03-19T10:32:37.1283933Z [0m[0m  [0m[0m[1m[33m⚠[0m[0m [0m[0m[33mExcessive complexity of 21 detected (max: 20).[0m[0m
+2025-03-19T10:32:37.1284648Z [0m[0m  [0m[0m
+2025-03-19T10:32:37.1285832Z [0m[0m  [0m[0m  [0m[0m[1m215 │ [0m[0m [0m[0m [0m[0mc[0m[0mo[0m[0mn[0m[0ms[0m[0mt[0m[0m [0m[0mi[0m[0mm[0m[0mg[0m[0m [0m[0m=[0m[0m [0m[0mn[0m[0me[0m[0mw[0m[0m [0m[0mI[0m[0mm[0m[0ma[0m[0mg[0m[0me[0m[0m([0m[0m)[0m[0m;[0m[0m
+2025-03-19T10:32:37.1287126Z [0m[0m  [0m[0m  [0m[0m[1m216 │ [0m[0m
+2025-03-19T10:32:37.1288072Z [0m[0m  [0m[0m[1m[31m>[0m[0m [0m[0m[1m217 │ [0m[0m [0m[0m [0m[0mi[0m[0mm[0m[0mg[0m[0m.[0m[0mo[0m[0mn[0m[0ml[0m[0mo[0m[0ma[0m[0md[0m[0m [0m[0m=[0m[0m [0m[0ma[0m[0ms[0m[0my[0m[0mn[0m[0mc[0m[0m [0m[0m([0m[0m)[0m[0m [0m[0m=[0m[0m>[0m[0m [0m[0m{[0m[0m
+2025-03-19T10:32:37.1289121Z [0m[0m  [0m[0m [0m[0m [0m[0m [0m[0m[1m   │ [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m[1m[31m^[0m[0m[1m[31m^[0m[0m[1m[31m^[0m[0m
+2025-03-19T10:32:37.1290466Z [0m[0m  [0m[0m  [0m[0m[1m218 │ [0m[0m [0m[0m [0m[0m [0m[0m [0m[0mc[0m[0mo[0m[0mn[0m[0ms[0m[0mt[0m[0m [0m[0mc[0m[0ma[0m[0mn[0m[0mv[0m[0ma[0m[0ms[0m[0m [0m[0m=[0m[0m [0m[0mm[0m[0ma[0m[0mp[0m[0mp[0m[0m.[0m[0mu[0m[0mt[0m[0mi[0m[0ml[0m[0ms[0m[0m.[0m[0mh[0m[0mt[0m[0mm[0m[0ml[0m[0m.[0m[0mn[0m[0mo[0m[0md[0m[0me[0m[0m`[0m[0m<[0m[0mc[0m[0ma[0m[0mn[0m[0mv[0m[0ma[0m[0ms[0m[0m>[0m[0m`[0m[0m;[0m[0m
+2025-03-19T10:32:37.1292215Z [0m[0m  [0m[0m  [0m[0m[1m219 │ [0m[0m [0m[0m [0m[0m [0m[0m [0m[0mc[0m[0mo[0m[0mn[0m[0ms[0m[0mt[0m[0m [0m[0mm[0m[0ma[0m[0mx[0m[0m_[0m[0ms[0m[0mi[0m[0mz[0m[0me[0m[0m [0m[0m=[0m[0m [0m[0m1[0m[0m0[0m[0m2[0m[0m4[0m[0m;[0m[0m
+2025-03-19T10:32:37.1292793Z [0m[0m  [0m[0m
+2025-03-19T10:32:37.1293380Z [0m[0m  [0m[0m[1m[34mℹ[0m[0m [0m[0m[34mPlease refactor this function to reduce its complexity score from 21 to the max allowed complexity 20.[0m[0m
+2025-03-19T10:32:37.1293923Z [0m[0m  [0m[0m
+2025-03-19T10:32:37.1294132Z [0m
+2025-03-19T10:32:37.1295079Z [0m./mod/utils/merge.js[0m[0m:[0m[0m5[0m[0m:[0m[0m25[0m[0m [0m[0m]8;;https://biomejs.dev/linter/rules/no-excessive-cognitive-complexity\lint/complexity/noExcessiveCognitiveComplexity]8;;\[0m[0m [0m[0m━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[0m
+2025-03-19T10:32:37.1295846Z 
+2025-03-19T10:32:37.1296118Z [0m[0m  [0m[0m[1m[33m⚠[0m[0m [0m[0m[33mExcessive complexity of 24 detected (max: 20).[0m[0m
+2025-03-19T10:32:37.1296715Z [0m[0m  [0m[0m
+2025-03-19T10:32:37.1297018Z [0m[0m  [0m[0m  [0m[0m[1m3 │ [0m[0m*[0m[0m/[0m[0m
+2025-03-19T10:32:37.1297351Z [0m[0m  [0m[0m  [0m[0m[1m4 │ [0m[0m
+2025-03-19T10:32:37.1298553Z [0m[0m  [0m[0m[1m[31m>[0m[0m [0m[0m[1m5 │ [0m[0me[0m[0mx[0m[0mp[0m[0mo[0m[0mr[0m[0mt[0m[0m [0m[0md[0m[0me[0m[0mf[0m[0ma[0m[0mu[0m[0ml[0m[0mt[0m[0m [0m[0mf[0m[0mu[0m[0mn[0m[0mc[0m[0mt[0m[0mi[0m[0mo[0m[0mn[0m[0m [0m[0mm[0m[0me[0m[0mr[0m[0mg[0m[0me[0m[0mD[0m[0me[0m[0me[0m[0mp[0m[0m([0m[0mt[0m[0ma[0m[0mr[0m[0mg[0m[0me[0m[0mt[0m[0m,[0m[0m [0m[0m.[0m[0m.[0m[0m.[0m[0ms[0m[0mo[0m[0mu[0m[0mr[0m[0mc[0m[0me[0m[0ms[0m[0m)[0m[0m [0m[0m{[0m[0m
+2025-03-19T10:32:37.1300176Z [0m[0m  [0m[0m [0m[0m[1m   │ [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m[1m[31m^[0m[0m[1m[31m^[0m[0m[1m[31m^[0m[0m[1m[31m^[0m[0m[1m[31m^[0m[0m[1m[31m^[0m[0m[1m[31m^[0m[0m[1m[31m^[0m[0m[1m[31m^[0m[0m
+2025-03-19T10:32:37.1301284Z [0m[0m  [0m[0m  [0m[0m[1m6 │ [0m[0m [0m[0m [0m[0m/[0m[0m/[0m[0m [0m[0mN[0m[0mo[0m[0m [0m[0ms[0m[0mo[0m[0mu[0m[0mr[0m[0mc[0m[0me[0m[0ms[0m[0m [0m[0mt[0m[0mo[0m[0m [0m[0mm[0m[0me[0m[0mr[0m[0mg[0m[0me[0m[0m.[0m[0m
+2025-03-19T10:32:37.1302193Z [0m[0m  [0m[0m  [0m[0m[1m7 │ [0m[0m [0m[0m [0m[0mi[0m[0mf[0m[0m [0m[0m([0m[0m![0m[0ms[0m[0mo[0m[0mu[0m[0mr[0m[0mc[0m[0me[0m[0ms[0m[0m.[0m[0ml[0m[0me[0m[0mn[0m[0mg[0m[0mt[0m[0mh[0m[0m)[0m[0m [0m[0m{[0m[0m
+2025-03-19T10:32:37.1302712Z [0m[0m  [0m[0m
+2025-03-19T10:32:37.1303312Z [0m[0m  [0m[0m[1m[34mℹ[0m[0m [0m[0m[34mPlease refactor this function to reduce its complexity score from 24 to the max allowed complexity 20.[0m[0m
+2025-03-19T10:32:37.1303833Z [0m[0m  [0m[0m
+2025-03-19T10:32:37.1304023Z [0m
+2025-03-19T10:32:37.1304436Z [0mci[0m[0m [0m[0m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[0m
+2025-03-19T10:32:37.1304728Z 
+2025-03-19T10:32:37.1305128Z [0m[0m  [0m[0m[1m[31m✖[0m[0m [0m[0m[31mSome [0m[0m[1m[31merrors[0m[0m[31m were emitted while [0m[0m[1m[31mrunning checks[0m[0m[31m.[0m[0m
+2025-03-19T10:32:37.1305599Z [0m[0m  [0m[0m
+2025-03-19T10:32:37.1305795Z [0m
+2025-03-19T10:32:37.1306308Z [0m[34mChecked [0m[0m[34m464[0m[0m[34m [0m[0m[34mfiles[0m[0m[34m in [0m[0m[34m155[0m[0m[2m[34mms[0m[0m[34m.[0m[0m[34m No fixes applied.[0m[0m
+2025-03-19T10:32:37.1307065Z [0m[0m[31mFound [0m[0m[31m1[0m[0m[31m error.[0m[0m
+2025-03-19T10:32:37.1307445Z [0m[0m[33mFound [0m[0m[33m3[0m[0m[33m warnings.[0m
+2025-03-19T10:32:37.1320322Z ##[error]Process completed with exit code 1.
+2025-03-19T10:32:37.1420347Z Post job cleanup.
+2025-03-19T10:32:37.2375256Z [command]/usr/bin/git version
+2025-03-19T10:32:37.2411480Z git version 2.48.1
+2025-03-19T10:32:37.2462576Z Temporarily overriding HOME='/home/runner/work/_temp/9ebf6688-41d2-4de4-a605-bd4c8c4b07b0' before making global git config changes
+2025-03-19T10:32:37.2463640Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-19T10:32:37.2468130Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/xyz/xyz
+2025-03-19T10:32:37.2504142Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-19T10:32:37.2536955Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-19T10:32:37.2768133Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-19T10:32:37.2788297Z http.https://github.com/.extraheader
+2025-03-19T10:32:37.2801078Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-19T10:32:37.2832534Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-19T10:32:37.3169347Z Cleaning up orphan processes

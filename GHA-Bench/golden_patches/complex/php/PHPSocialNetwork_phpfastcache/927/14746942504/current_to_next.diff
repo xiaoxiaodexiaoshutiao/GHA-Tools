@@ -1,0 +1,13 @@
+diff --git a/lib/Phpfastcache/Exceptions/PhpfastcacheCorruptedDataException.php b/lib/Phpfastcache/Exceptions/PhpfastcacheCorruptedDataException.php
+index 2bfdf2fa..ffa6b036 100644
+--- a/lib/Phpfastcache/Exceptions/PhpfastcacheCorruptedDataException.php
++++ b/lib/Phpfastcache/Exceptions/PhpfastcacheCorruptedDataException.php
+@@ -22,7 +22,7 @@ class PhpfastcacheCorruptedDataException extends PhpfastcacheDriverException
+      * @param string $message
+      * @param mixed|null $corruptedData
+      */
+-    public function __construct(protected string $message = '', protected mixed $corruptedData = null)
++    public function __construct(protected $message = '', protected mixed $corruptedData = null)
+     {
+         parent::__construct($message);
+     }

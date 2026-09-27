@@ -1,0 +1,13 @@
+diff --git a/setup.php b/setup.php
+index 6675a0d584..4cd5f9ce0f 100644
+--- a/setup.php
++++ b/setup.php
+@@ -239,7 +239,7 @@ function plugin_init_glpiinventory()
+         $PLUGIN_HOOKS[Hooks::ADD_JAVASCRIPT]['glpiinventory'] = [];
+         $PLUGIN_HOOKS[Hooks::ADD_CSS]['glpiinventory'] = [];
+         if (
+-            str_contains($current_url,   Plugin::getWebDir('glpiinventory', false))
++            str_contains($current_url, Plugin::getWebDir('glpiinventory', false))
+             || str_ends_with($current_url, "front/printer.form.php")
+             || str_ends_with($current_url, "front/computer.form.php")
+         ) {

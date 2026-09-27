@@ -1,0 +1,309 @@
+2025-02-11T19:03:56.9381540Z Requested labels: ubuntu-22.04
+2025-02-11T19:03:56.9381899Z Job defined at: model-bakers/model_bakery/.github/workflows/ci.yml@refs/pull/517/merge
+2025-02-11T19:03:56.9382037Z Waiting for a runner to pick up this job...
+2025-02-11T19:03:57.8164270Z Job is waiting for a hosted runner to come online.
+2025-02-11T19:04:01.7822405Z Job is about to start running on the hosted runner: GitHub Actions 13 (hosted)
+2025-02-11T19:04:04.1434614Z Current runner version: '2.322.0'
+2025-02-11T19:04:04.1460461Z ##[group]Operating System
+2025-02-11T19:04:04.1461312Z Ubuntu
+2025-02-11T19:04:04.1461861Z 22.04.5
+2025-02-11T19:04:04.1462371Z LTS
+2025-02-11T19:04:04.1462939Z ##[endgroup]
+2025-02-11T19:04:04.1463484Z ##[group]Runner Image
+2025-02-11T19:04:04.1464021Z Image: ubuntu-22.04
+2025-02-11T19:04:04.1464624Z Version: 20250202.1.0
+2025-02-11T19:04:04.1465672Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20250202.1/images/ubuntu/Ubuntu2204-Readme.md
+2025-02-11T19:04:04.1466985Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20250202.1
+2025-02-11T19:04:04.1467985Z ##[endgroup]
+2025-02-11T19:04:04.1468518Z ##[group]Runner Image Provisioner
+2025-02-11T19:04:04.1469072Z 2.0.422.1
+2025-02-11T19:04:04.1469668Z ##[endgroup]
+2025-02-11T19:04:04.1471766Z ##[group]GITHUB_TOKEN Permissions
+2025-02-11T19:04:04.1473979Z Actions: read
+2025-02-11T19:04:04.1474702Z Attestations: read
+2025-02-11T19:04:04.1475475Z Checks: read
+2025-02-11T19:04:04.1475947Z Contents: read
+2025-02-11T19:04:04.1476598Z Deployments: read
+2025-02-11T19:04:04.1477106Z Discussions: read
+2025-02-11T19:04:04.1477641Z Issues: read
+2025-02-11T19:04:04.1478205Z Metadata: read
+2025-02-11T19:04:04.1478725Z Packages: read
+2025-02-11T19:04:04.1479236Z Pages: read
+2025-02-11T19:04:04.1479783Z PullRequests: read
+2025-02-11T19:04:04.1480331Z RepositoryProjects: read
+2025-02-11T19:04:04.1480971Z SecurityEvents: read
+2025-02-11T19:04:04.1481608Z Statuses: read
+2025-02-11T19:04:04.1482133Z ##[endgroup]
+2025-02-11T19:04:04.1485146Z Secret source: None
+2025-02-11T19:04:04.1486305Z Prepare workflow directory
+2025-02-11T19:04:04.1851981Z Prepare all required actions
+2025-02-11T19:04:04.1908945Z Getting action download info
+2025-02-11T19:04:04.4476397Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-02-11T19:04:04.4477406Z Version: 4.2.2
+2025-02-11T19:04:04.4478347Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-02-11T19:04:04.4479478Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-02-11T19:04:04.4480176Z ##[endgroup]
+2025-02-11T19:04:04.5271422Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-02-11T19:04:04.5272889Z Version: 5.4.0
+2025-02-11T19:04:04.5274221Z Digest: sha256:6003df952c8106bcd378d2ba997eef202da924317a57269dfa72449b135adb7f
+2025-02-11T19:04:04.5276002Z Source commit SHA: 42375524e23c412d93fb67b49958b491fce71c38
+2025-02-11T19:04:04.5277219Z ##[endgroup]
+2025-02-11T19:04:04.8628634Z Complete job name: linters (black --check --diff .)
+2025-02-11T19:04:04.9305800Z ##[group]Run actions/checkout@v4
+2025-02-11T19:04:04.9306755Z with:
+2025-02-11T19:04:04.9307278Z   repository: model-bakers/model_bakery
+2025-02-11T19:04:04.9308084Z   token: ***
+2025-02-11T19:04:04.9308549Z   ssh-strict: true
+2025-02-11T19:04:04.9309028Z   ssh-user: git
+2025-02-11T19:04:04.9310176Z   persist-credentials: true
+2025-02-11T19:04:04.9311080Z   clean: true
+2025-02-11T19:04:04.9311867Z   sparse-checkout-cone-mode: true
+2025-02-11T19:04:04.9312761Z   fetch-depth: 1
+2025-02-11T19:04:04.9313536Z   fetch-tags: false
+2025-02-11T19:04:04.9314318Z   show-progress: true
+2025-02-11T19:04:04.9315124Z   lfs: false
+2025-02-11T19:04:04.9315844Z   submodules: false
+2025-02-11T19:04:04.9316635Z   set-safe-directory: true
+2025-02-11T19:04:04.9317927Z ##[endgroup]
+2025-02-11T19:04:05.1101488Z Syncing repository: model-bakers/model_bakery
+2025-02-11T19:04:05.1103535Z ##[group]Getting Git version info
+2025-02-11T19:04:05.1104481Z Working directory is '/home/runner/work/model_bakery/model_bakery'
+2025-02-11T19:04:05.1106024Z [command]/usr/bin/git version
+2025-02-11T19:04:05.1167338Z git version 2.48.1
+2025-02-11T19:04:05.1205820Z ##[endgroup]
+2025-02-11T19:04:05.1221353Z Temporarily overriding HOME='/home/runner/work/_temp/484d246f-f4e7-4b1b-b346-b6517359f56c' before making global git config changes
+2025-02-11T19:04:05.1226465Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-11T19:04:05.1228090Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/model_bakery/model_bakery
+2025-02-11T19:04:05.1263119Z Deleting the contents of '/home/runner/work/model_bakery/model_bakery'
+2025-02-11T19:04:05.1267109Z ##[group]Initializing the repository
+2025-02-11T19:04:05.1271992Z [command]/usr/bin/git init /home/runner/work/model_bakery/model_bakery
+2025-02-11T19:04:05.1341768Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-11T19:04:05.1343398Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-11T19:04:05.1344483Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-11T19:04:05.1345366Z hint:
+2025-02-11T19:04:05.1345988Z hint: 	git config --global init.defaultBranch <name>
+2025-02-11T19:04:05.1346837Z hint:
+2025-02-11T19:04:05.1347980Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-11T19:04:05.1349319Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-11T19:04:05.1350945Z hint:
+2025-02-11T19:04:05.1352073Z hint: 	git branch -m <name>
+2025-02-11T19:04:05.1353783Z Initialized empty Git repository in /home/runner/work/model_bakery/model_bakery/.git/
+2025-02-11T19:04:05.1361533Z [command]/usr/bin/git remote add origin https://github.com/model-bakers/model_bakery
+2025-02-11T19:04:05.1395092Z ##[endgroup]
+2025-02-11T19:04:05.1396586Z ##[group]Disabling automatic garbage collection
+2025-02-11T19:04:05.1399594Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-11T19:04:05.1430846Z ##[endgroup]
+2025-02-11T19:04:05.1432735Z ##[group]Setting up auth
+2025-02-11T19:04:05.1438170Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-11T19:04:05.1477225Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-11T19:04:05.1801024Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-11T19:04:05.1835382Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-11T19:04:05.2122333Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-11T19:04:05.2157017Z ##[endgroup]
+2025-02-11T19:04:05.2157875Z ##[group]Fetching the repository
+2025-02-11T19:04:05.2166557Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +aa5782283d2153fe8cb20288579aa5ab5bd4488a:refs/remotes/pull/517/merge
+2025-02-11T19:04:05.5691460Z From https://github.com/model-bakers/model_bakery
+2025-02-11T19:04:05.5692666Z  * [new ref]         aa5782283d2153fe8cb20288579aa5ab5bd4488a -> pull/517/merge
+2025-02-11T19:04:05.5745953Z ##[endgroup]
+2025-02-11T19:04:05.5747096Z ##[group]Determining the checkout info
+2025-02-11T19:04:05.5748411Z ##[endgroup]
+2025-02-11T19:04:05.5749172Z [command]/usr/bin/git sparse-checkout disable
+2025-02-11T19:04:05.5776866Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-11T19:04:05.5804674Z ##[group]Checking out the ref
+2025-02-11T19:04:05.5807894Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/517/merge
+2025-02-11T19:04:05.5901314Z Note: switching to 'refs/remotes/pull/517/merge'.
+2025-02-11T19:04:05.5902120Z 
+2025-02-11T19:04:05.5902795Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-11T19:04:05.5904308Z changes and commit them, and you can discard any commits you make in this
+2025-02-11T19:04:05.5905731Z state without impacting any branches by switching back to a branch.
+2025-02-11T19:04:05.5906557Z 
+2025-02-11T19:04:05.5906917Z If you want to create a new branch to retain commits you create, you may
+2025-02-11T19:04:05.5907983Z do so (now or later) by using -c with the switch command. Example:
+2025-02-11T19:04:05.5908438Z 
+2025-02-11T19:04:05.5908640Z   git switch -c <new-branch-name>
+2025-02-11T19:04:05.5909179Z 
+2025-02-11T19:04:05.5909512Z Or undo this operation with:
+2025-02-11T19:04:05.5910001Z 
+2025-02-11T19:04:05.5910273Z   git switch -
+2025-02-11T19:04:05.5910537Z 
+2025-02-11T19:04:05.5910922Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-11T19:04:05.5911461Z 
+2025-02-11T19:04:05.5912079Z HEAD is now at aa57822 Merge 94b8a7c02e27f11328b67e229ab3663c9b66f6bd into 1aa6662a2da7a1c0ab5fa11004bfa235d31509e8
+2025-02-11T19:04:05.5914170Z ##[endgroup]
+2025-02-11T19:04:05.5944072Z [command]/usr/bin/git log -1 --format=%H
+2025-02-11T19:04:05.5966170Z aa5782283d2153fe8cb20288579aa5ab5bd4488a
+2025-02-11T19:04:05.6202410Z ##[group]Run actions/setup-python@v5
+2025-02-11T19:04:05.6203020Z with:
+2025-02-11T19:04:05.6203458Z   python-version: 3.12
+2025-02-11T19:04:05.6203943Z   cache: pip
+2025-02-11T19:04:05.6204394Z   check-latest: false
+2025-02-11T19:04:05.6205030Z   token: ***
+2025-02-11T19:04:05.6205487Z   update-environment: true
+2025-02-11T19:04:05.6206012Z   allow-prereleases: false
+2025-02-11T19:04:05.6206514Z ##[endgroup]
+2025-02-11T19:04:05.7889910Z ##[group]Installed versions
+2025-02-11T19:04:05.7954099Z Successfully set up CPython (3.12.8)
+2025-02-11T19:04:05.7955615Z ##[endgroup]
+2025-02-11T19:04:05.8946178Z [command]/opt/hostedtoolcache/Python/3.12.8/x64/bin/pip cache dir
+2025-02-11T19:04:06.1445190Z /home/runner/.cache/pip
+2025-02-11T19:04:06.2786202Z ##[warning]Cache not found for keys: setup-python-Linux-x64-22.04-Ubuntu-python-3.12.8-pip-d00685f4924a241dd3c306c51bbe8942c06b02750df878903ce6cc24c041cf65, setup-python-Linux-x64-22.04-Ubuntu-python-3.12.8-pip
+2025-02-11T19:04:06.2796965Z pip cache is not found
+2025-02-11T19:04:06.2934173Z ##[group]Run python -m pip install .[test]
+2025-02-11T19:04:06.2935558Z [36;1mpython -m pip install .[test][0m
+2025-02-11T19:04:06.3003085Z shell: /usr/bin/bash -e {0}
+2025-02-11T19:04:06.3004151Z env:
+2025-02-11T19:04:06.3005194Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.8/x64
+2025-02-11T19:04:06.3006985Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.8/x64/lib/pkgconfig
+2025-02-11T19:04:06.3008745Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.8/x64
+2025-02-11T19:04:06.3010606Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.8/x64
+2025-02-11T19:04:06.3012167Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.8/x64
+2025-02-11T19:04:06.3013752Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.8/x64/lib
+2025-02-11T19:04:06.3015096Z ##[endgroup]
+2025-02-11T19:04:06.8301337Z Processing /home/runner/work/model_bakery/model_bakery
+2025-02-11T19:04:06.8326409Z   Installing build dependencies: started
+2025-02-11T19:04:07.7735645Z   Installing build dependencies: finished with status 'done'
+2025-02-11T19:04:07.7745204Z   Getting requirements to build wheel: started
+2025-02-11T19:04:07.8485518Z   Getting requirements to build wheel: finished with status 'done'
+2025-02-11T19:04:07.8498661Z   Preparing metadata (pyproject.toml): started
+2025-02-11T19:04:07.9960340Z   Preparing metadata (pyproject.toml): finished with status 'done'
+2025-02-11T19:04:08.0833989Z Collecting django>=4.2 (from model-bakery==1.20.1)
+2025-02-11T19:04:08.1005803Z   Downloading Django-5.1.6-py3-none-any.whl.metadata (4.2 kB)
+2025-02-11T19:04:08.1481121Z Collecting black (from model-bakery==1.20.1)
+2025-02-11T19:04:08.1531855Z   Downloading black-25.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl.metadata (81 kB)
+2025-02-11T19:04:08.4102329Z Collecting coverage (from model-bakery==1.20.1)
+2025-02-11T19:04:08.4184511Z   Downloading coverage-7.6.12-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (8.5 kB)
+2025-02-11T19:04:08.5817639Z Collecting mypy (from model-bakery==1.20.1)
+2025-02-11T19:04:08.5863961Z   Downloading mypy-1.15.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl.metadata (2.1 kB)
+2025-02-11T19:04:08.7229451Z Collecting pillow (from model-bakery==1.20.1)
+2025-02-11T19:04:08.7277706Z   Downloading pillow-11.1.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+2025-02-11T19:04:08.7679931Z Collecting pytest (from model-bakery==1.20.1)
+2025-02-11T19:04:08.7723908Z   Downloading pytest-8.3.4-py3-none-any.whl.metadata (7.5 kB)
+2025-02-11T19:04:08.7962010Z Collecting pytest-django (from model-bakery==1.20.1)
+2025-02-11T19:04:08.8011672Z   Downloading pytest_django-4.10.0-py3-none-any.whl.metadata (8.3 kB)
+2025-02-11T19:04:09.1027177Z Collecting ruff (from model-bakery==1.20.1)
+2025-02-11T19:04:09.1073374Z   Downloading ruff-0.9.6-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (25 kB)
+2025-02-11T19:04:09.1300720Z Collecting asgiref<4,>=3.8.1 (from django>=4.2->model-bakery==1.20.1)
+2025-02-11T19:04:09.1372756Z   Downloading asgiref-3.8.1-py3-none-any.whl.metadata (9.3 kB)
+2025-02-11T19:04:09.1527966Z Collecting sqlparse>=0.3.1 (from django>=4.2->model-bakery==1.20.1)
+2025-02-11T19:04:09.1575601Z   Downloading sqlparse-0.5.3-py3-none-any.whl.metadata (3.9 kB)
+2025-02-11T19:04:09.1792843Z Collecting click>=8.0.0 (from black->model-bakery==1.20.1)
+2025-02-11T19:04:09.1845064Z   Downloading click-8.1.8-py3-none-any.whl.metadata (2.3 kB)
+2025-02-11T19:04:09.1960961Z Collecting mypy-extensions>=0.4.3 (from black->model-bakery==1.20.1)
+2025-02-11T19:04:09.2003046Z   Downloading mypy_extensions-1.0.0-py3-none-any.whl.metadata (1.1 kB)
+2025-02-11T19:04:09.2167687Z Collecting packaging>=22.0 (from black->model-bakery==1.20.1)
+2025-02-11T19:04:09.2180322Z   Using cached packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+2025-02-11T19:04:09.2286446Z Collecting pathspec>=0.9.0 (from black->model-bakery==1.20.1)
+2025-02-11T19:04:09.2298793Z   Using cached pathspec-0.12.1-py3-none-any.whl.metadata (21 kB)
+2025-02-11T19:04:09.2507859Z Collecting platformdirs>=2 (from black->model-bakery==1.20.1)
+2025-02-11T19:04:09.2548408Z   Downloading platformdirs-4.3.6-py3-none-any.whl.metadata (11 kB)
+2025-02-11T19:04:09.2753745Z Collecting typing_extensions>=4.6.0 (from mypy->model-bakery==1.20.1)
+2025-02-11T19:04:09.2793671Z   Downloading typing_extensions-4.12.2-py3-none-any.whl.metadata (3.0 kB)
+2025-02-11T19:04:09.2941043Z Collecting iniconfig (from pytest->model-bakery==1.20.1)
+2025-02-11T19:04:09.2982855Z   Downloading iniconfig-2.0.0-py3-none-any.whl.metadata (2.6 kB)
+2025-02-11T19:04:09.3142654Z Collecting pluggy<2,>=1.5 (from pytest->model-bakery==1.20.1)
+2025-02-11T19:04:09.3154318Z   Using cached pluggy-1.5.0-py3-none-any.whl.metadata (4.8 kB)
+2025-02-11T19:04:09.3455679Z Downloading Django-5.1.6-py3-none-any.whl (8.3 MB)
+2025-02-11T19:04:09.4125785Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.3/8.3 MB 133.6 MB/s eta 0:00:00
+2025-02-11T19:04:09.4172595Z Downloading black-25.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl (1.8 MB)
+2025-02-11T19:04:09.4319921Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 131.6 MB/s eta 0:00:00
+2025-02-11T19:04:09.4382905Z Downloading coverage-7.6.12-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (242 kB)
+2025-02-11T19:04:09.4465548Z Downloading mypy-1.15.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl (12.4 MB)
+2025-02-11T19:04:09.5271991Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.4/12.4 MB 157.1 MB/s eta 0:00:00
+2025-02-11T19:04:09.5318021Z Downloading pillow-11.1.0-cp312-cp312-manylinux_2_28_x86_64.whl (4.5 MB)
+2025-02-11T19:04:09.5624872Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 152.9 MB/s eta 0:00:00
+2025-02-11T19:04:09.5675436Z Downloading pytest-8.3.4-py3-none-any.whl (343 kB)
+2025-02-11T19:04:09.5772344Z Downloading pytest_django-4.10.0-py3-none-any.whl (23 kB)
+2025-02-11T19:04:09.5856998Z Downloading ruff-0.9.6-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.5 MB)
+2025-02-11T19:04:09.6542414Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.5/12.5 MB 186.2 MB/s eta 0:00:00
+2025-02-11T19:04:09.6588268Z Downloading asgiref-3.8.1-py3-none-any.whl (23 kB)
+2025-02-11T19:04:09.6655509Z Downloading click-8.1.8-py3-none-any.whl (98 kB)
+2025-02-11T19:04:09.6733880Z Downloading mypy_extensions-1.0.0-py3-none-any.whl (4.7 kB)
+2025-02-11T19:04:09.6766243Z Using cached packaging-24.2-py3-none-any.whl (65 kB)
+2025-02-11T19:04:09.6778934Z Using cached pathspec-0.12.1-py3-none-any.whl (31 kB)
+2025-02-11T19:04:09.6821866Z Downloading platformdirs-4.3.6-py3-none-any.whl (18 kB)
+2025-02-11T19:04:09.6854172Z Using cached pluggy-1.5.0-py3-none-any.whl (20 kB)
+2025-02-11T19:04:09.6900604Z Downloading sqlparse-0.5.3-py3-none-any.whl (44 kB)
+2025-02-11T19:04:09.6981654Z Downloading typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+2025-02-11T19:04:09.7053163Z Downloading iniconfig-2.0.0-py3-none-any.whl (5.9 kB)
+2025-02-11T19:04:09.7790466Z Building wheels for collected packages: model-bakery
+2025-02-11T19:04:09.7799495Z   Building wheel for model-bakery (pyproject.toml): started
+2025-02-11T19:04:09.8113086Z   Building wheel for model-bakery (pyproject.toml): finished with status 'done'
+2025-02-11T19:04:09.8119335Z   Created wheel for model-bakery: filename=model_bakery-1.20.1-py3-none-any.whl size=24043 sha256=de4402387c4e24fb6c4bc55af69e299c04720874a96e4839ad74a34a94342693
+2025-02-11T19:04:09.8121905Z   Stored in directory: /tmp/pip-ephem-wheel-cache-b3vyh6ud/wheels/64/c7/58/5c598e86b45b974da575ddb4f76547f3196d0e095032abe2e0
+2025-02-11T19:04:09.8142632Z Successfully built model-bakery
+2025-02-11T19:04:09.8761509Z Installing collected packages: typing_extensions, sqlparse, ruff, pluggy, platformdirs, pillow, pathspec, packaging, mypy-extensions, iniconfig, coverage, click, asgiref, pytest, mypy, django, black, pytest-django, model-bakery
+2025-02-11T19:04:14.4882947Z Successfully installed asgiref-3.8.1 black-25.1.0 click-8.1.8 coverage-7.6.12 django-5.1.6 iniconfig-2.0.0 model-bakery-1.20.1 mypy-1.15.0 mypy-extensions-1.0.0 packaging-24.2 pathspec-0.12.1 pillow-11.1.0 platformdirs-4.3.6 pluggy-1.5.0 pytest-8.3.4 pytest-django-4.10.0 ruff-0.9.6 sqlparse-0.5.3 typing_extensions-4.12.2
+2025-02-11T19:04:14.5666141Z 
+2025-02-11T19:04:14.5666706Z [notice] A new release of pip is available: 25.0 -> 25.0.1
+2025-02-11T19:04:14.5667441Z [notice] To update, run: pip install --upgrade pip
+2025-02-11T19:04:14.6595455Z ##[group]Run black --check --diff .
+2025-02-11T19:04:14.6595821Z [36;1mblack --check --diff .[0m
+2025-02-11T19:04:14.6634340Z shell: /usr/bin/bash -e {0}
+2025-02-11T19:04:14.6634577Z env:
+2025-02-11T19:04:14.6634835Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.8/x64
+2025-02-11T19:04:14.6635267Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.8/x64/lib/pkgconfig
+2025-02-11T19:04:14.6635670Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.8/x64
+2025-02-11T19:04:14.6636036Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.8/x64
+2025-02-11T19:04:14.6636411Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.8/x64
+2025-02-11T19:04:14.6636768Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.8/x64/lib
+2025-02-11T19:04:14.6637081Z ##[endgroup]
+2025-02-11T19:04:15.7002279Z --- /home/runner/work/model_bakery/model_bakery/model_bakery/baker.py	2025-02-11 19:04:05.584592+00:00
+2025-02-11T19:04:15.7003462Z +++ /home/runner/work/model_bakery/model_bakery/model_bakery/baker.py	2025-02-11 19:04:15.696333+00:00
+2025-02-11T19:04:15.7004203Z @@ -712,11 +712,13 @@
+2025-02-11T19:04:15.7004540Z              else:
+2025-02-11T19:04:15.7004908Z                  setattr(instance, field_name, value)
+2025-02-11T19:04:15.7005370Z                  setattr(
+2025-02-11T19:04:15.7005720Z                      instance,
+2025-02-11T19:04:15.7006114Z                      ct_field_name,
+2025-02-11T19:04:15.7006835Z -                    contenttypes_models.ContentType.objects.get_for_model(value, for_concrete_model=False),
+2025-02-11T19:04:15.7007738Z +                    contenttypes_models.ContentType.objects.get_for_model(
+2025-02-11T19:04:15.7008375Z +                        value, for_concrete_model=False
+2025-02-11T19:04:15.7009247Z +                    ),
+2025-02-11T19:04:15.7009964Z                  )
+2025-02-11T19:04:15.7010484Z                  setattr(instance, oid_field_name, value.pk)
+2025-02-11T19:04:15.7010975Z  
+2025-02-11T19:04:15.7011261Z      def _remote_field(
+2025-02-11T19:04:15.7011698Z          self, field: Union[ForeignKey, OneToOneField]
+2025-02-11T19:04:15.7012212Z would reformat /home/runner/work/model_bakery/model_bakery/model_bakery/baker.py
+2025-02-11T19:04:15.9755007Z --- /home/runner/work/model_bakery/model_bakery/tests/test_baker.py	2025-02-11 19:04:05.584592+00:00
+2025-02-11T19:04:15.9756219Z +++ /home/runner/work/model_bakery/model_bakery/tests/test_baker.py	2025-02-11 19:04:15.970783+00:00
+2025-02-11T19:04:15.9756733Z @@ -635,16 +635,20 @@
+2025-02-11T19:04:15.9757197Z          assert isinstance(dummy, models.DummyGenericForeignKeyModel)
+2025-02-11T19:04:15.9757836Z          assert isinstance(dummy.content_type, ContentType)
+2025-02-11T19:04:15.9758297Z  
+2025-02-11T19:04:15.9758784Z      def test_create_model_with_contenttype_field_and_proxy_model(self):
+2025-02-11T19:04:15.9759509Z          from django.contrib.contenttypes.models import ContentType
+2025-02-11T19:04:15.9760045Z +
+2025-02-11T19:04:15.9760361Z          class ProxyPerson(models.Person):
+2025-02-11T19:04:15.9760846Z              class Meta:
+2025-02-11T19:04:15.9761194Z                  proxy = True
+2025-02-11T19:04:15.9761594Z                  app_label = "generic"
+2025-02-11T19:04:15.9762005Z  
+2025-02-11T19:04:15.9762692Z -        dummy = baker.make(models.DummyGenericForeignKeyModel, content_object=baker.make(ProxyPerson, name="John Doe"))
+2025-02-11T19:04:15.9763648Z +        dummy = baker.make(
+2025-02-11T19:04:15.9764079Z +            models.DummyGenericForeignKeyModel,
+2025-02-11T19:04:15.9764494Z +            content_object=baker.make(ProxyPerson, name="John Doe"),
+2025-02-11T19:04:15.9764801Z +        )
+2025-02-11T19:04:15.9764992Z          dummy.refresh_from_db()
+2025-02-11T19:04:15.9765324Z          assert isinstance(dummy, models.DummyGenericForeignKeyModel)
+2025-02-11T19:04:15.9765726Z          assert isinstance(dummy.content_type, ContentType)
+2025-02-11T19:04:15.9766073Z          assert isinstance(dummy.content_object, ProxyPerson)
+2025-02-11T19:04:15.9766820Z          assert dummy.content_object.name == "John Doe"
+2025-02-11T19:04:15.9767261Z would reformat /home/runner/work/model_bakery/model_bakery/tests/test_baker.py
+2025-02-11T19:04:15.9867214Z 
+2025-02-11T19:04:15.9867736Z Oh no! 💥 💔 💥
+2025-02-11T19:04:15.9868235Z 2 files would be reformatted, 31 files would be left unchanged.
+2025-02-11T19:04:16.0095792Z ##[error]Process completed with exit code 1.
+2025-02-11T19:04:16.0185574Z Post job cleanup.
+2025-02-11T19:04:16.1118345Z [command]/usr/bin/git version
+2025-02-11T19:04:16.1159313Z git version 2.48.1
+2025-02-11T19:04:16.1199407Z Temporarily overriding HOME='/home/runner/work/_temp/86f2a551-b5d4-4c1b-931c-ad5a30313b32' before making global git config changes
+2025-02-11T19:04:16.1200671Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-11T19:04:16.1204581Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/model_bakery/model_bakery
+2025-02-11T19:04:16.1240884Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-11T19:04:16.1275342Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-11T19:04:16.1541959Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-11T19:04:16.1547430Z http.https://github.com/.extraheader
+2025-02-11T19:04:16.1559485Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-11T19:04:16.1592387Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-11T19:04:16.1936965Z Cleaning up orphan processes

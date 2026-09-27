@@ -1,0 +1,85 @@
+diff --git a/src/main/java/dev/dubhe/anvilcraft/init/ModItems.java b/src/main/java/dev/dubhe/anvilcraft/init/ModItems.java
+index 11c22c3e2e..9d5ede7786 100644
+--- a/src/main/java/dev/dubhe/anvilcraft/init/ModItems.java
++++ b/src/main/java/dev/dubhe/anvilcraft/init/ModItems.java
+@@ -567,6 +567,7 @@ public static <T extends AbstractAmuletItem> ItemEntry<T> createAmuletItem(
+             builder -> builder.requires(Items.ANVIL)
+         );
+     public static final ItemEntry<CogwheelAmuletItem> COGWHEEL_AMULET;
++
+     static {
+         ItemEntry<CogwheelAmuletItem> cogwheelAmulet;
+         if (LoadingModList.get().getModFileById("create") != null) {
+@@ -582,6 +583,7 @@ public static <T extends AbstractAmuletItem> ItemEntry<T> createAmuletItem(
+         }
+         COGWHEEL_AMULET = cogwheelAmulet;
+     }
++
+     public static final ItemEntry<ComradeAmuletItem> COMRADE_AMULET =
+         createAmuletItem(
+             "comrade", ComradeAmuletItem::new,
+diff --git a/src/main/java/dev/dubhe/anvilcraft/item/amulet/CogwheelAmuletItem.java b/src/main/java/dev/dubhe/anvilcraft/item/amulet/CogwheelAmuletItem.java
+index ef207dc841..1aa5104334 100644
+--- a/src/main/java/dev/dubhe/anvilcraft/item/amulet/CogwheelAmuletItem.java
++++ b/src/main/java/dev/dubhe/anvilcraft/item/amulet/CogwheelAmuletItem.java
+@@ -12,7 +12,7 @@ public CogwheelAmuletItem(Properties properties) {
+     }
+ 
+     @Override
+-    void UpdateAccessory(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
++    void updateAccessory(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
+         if (entity instanceof Player player) {
+             player.setData(ModDataAttachments.CREATE_MASTER, true);
+         }
+diff --git a/src/main/java/dev/dubhe/anvilcraft/mixin/LivingEntityMixin.java b/src/main/java/dev/dubhe/anvilcraft/mixin/LivingEntityMixin.java
+index 92a34c1844..bbad329c86 100644
+--- a/src/main/java/dev/dubhe/anvilcraft/mixin/LivingEntityMixin.java
++++ b/src/main/java/dev/dubhe/anvilcraft/mixin/LivingEntityMixin.java
+@@ -64,6 +64,7 @@ private void dropBeheadingLoot(
+     private boolean alsoCheckAmuletBox(ItemStack instance, Item item) {
+         return instance.is(item) || instance.is(ModItems.AMULET_BOX);
+     }
++
+     @ModifyArg(
+         method = "checkTotemDeathProtection",
+         at = @At(
+@@ -74,6 +75,7 @@ private boolean alsoCheckAmuletBox(ItemStack instance, Item item) {
+     private Object alsoAwardAmuletBoxStat(Object value, @Local ItemStack stack) {
+         return stack.getItem();
+     }
++
+     @ModifyArg(
+         method = "checkTotemDeathProtection",
+         at = @At(
+@@ -85,6 +87,7 @@ private Object alsoAwardAmuletBoxStat(Object value, @Local ItemStack stack) {
+     private ItemStack onlyUseTotemToTrigger(ItemStack stack) {
+         return Items.TOTEM_OF_UNDYING.getDefaultInstance();
+     }
++
+     @ModifyVariable(
+         method = "checkTotemDeathProtection",
+         at = @At(
+@@ -119,6 +122,7 @@ private ItemStack firstUseTotem(
+ 
+         return ref.get();
+     }
++
+     @Redirect(
+         method = "checkTotemDeathProtection",
+         at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;shrink(I)V")
+diff --git a/src/main/java/dev/dubhe/anvilcraft/util/CastUtil.java b/src/main/java/dev/dubhe/anvilcraft/util/CastUtil.java
+index 00d1cf52b0..eb96b48472 100644
+--- a/src/main/java/dev/dubhe/anvilcraft/util/CastUtil.java
++++ b/src/main/java/dev/dubhe/anvilcraft/util/CastUtil.java
+@@ -4,9 +4,10 @@ public class CastUtil {
+     /**
+      * 转换一个使用 <code>(Example) value</code> 方法转换时编译器会丢出警告的值。
+      * 请确保传入的值可以被正常转换！否则仍会报错。
++     *
+      * @param value 需要转换类型的值
+-     * @return 转换类型后的值
+      * @param <T> 将会转换成的类型
++     * @return 转换类型后的值
+      */
+     @SuppressWarnings("unchecked")
+     public static <T> T cast(Object value) throws ClassCastException {

@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/lint.yml b/.github/workflows/lint.yml
+index e2d26381..fa26db95 100644
+--- a/.github/workflows/lint.yml
++++ b/.github/workflows/lint.yml
+@@ -7,11 +7,11 @@ jobs:
+     runs-on: ubuntu-latest
+ 
+     steps:
+-      - uses: actions/checkout@v2
+-      - uses: actions/setup-python@v2
++      - uses: actions/checkout@v3
++      - uses: actions/setup-python@v3
+         with:
+           python-version: 3.x
+       - name: Lint
+-        uses: pre-commit/action@v2.0.0
++        uses: pre-commit/action@v3.0.1
+         with:
+           extra_args: --all-files --show-diff-on-failure

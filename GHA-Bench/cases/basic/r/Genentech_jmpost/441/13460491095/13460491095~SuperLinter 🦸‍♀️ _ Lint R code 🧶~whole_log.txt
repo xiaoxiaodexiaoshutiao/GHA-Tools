@@ -1,0 +1,392 @@
+2025-02-21T15:59:21.1887388Z Requested labels: ubuntu-latest
+2025-02-21T15:59:21.1887533Z Job defined at: insightsengineering/r.pkg.template/.github/workflows/linter.yaml@refs/heads/main
+2025-02-21T15:59:21.1887736Z Reusable workflow chain:
+2025-02-21T15:59:21.1887826Z Genentech/jmpost/.github/workflows/check.yaml@refs/pull/441/merge (34dd7b51bb4c29f9830143839fe81006c3a7730c)
+2025-02-21T15:59:21.1887921Z -> insightsengineering/r.pkg.template/.github/workflows/linter.yaml@refs/heads/main (2e355a62625b0a63bbae51daf296b0d48ac6d378)
+2025-02-21T15:59:21.1888015Z Waiting for a runner to pick up this job...
+2025-02-21T15:59:23.2410416Z Job is waiting for a hosted runner to come online.
+2025-02-21T15:59:26.4057999Z Job is about to start running on the hosted runner: GitHub Actions 132 (hosted)
+2025-02-21T15:59:29.4047043Z Current runner version: '2.322.0'
+2025-02-21T15:59:29.4074132Z ##[group]Operating System
+2025-02-21T15:59:29.4075221Z Ubuntu
+2025-02-21T15:59:29.4075738Z 24.04.1
+2025-02-21T15:59:29.4076309Z LTS
+2025-02-21T15:59:29.4076797Z ##[endgroup]
+2025-02-21T15:59:29.4077350Z ##[group]Runner Image
+2025-02-21T15:59:29.4078006Z Image: ubuntu-24.04
+2025-02-21T15:59:29.4078510Z Version: 20250209.1.0
+2025-02-21T15:59:29.4079578Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250209.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-21T15:59:29.4081195Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250209.1
+2025-02-21T15:59:29.4082147Z ##[endgroup]
+2025-02-21T15:59:29.4082716Z ##[group]Runner Image Provisioner
+2025-02-21T15:59:29.4083317Z 2.0.422.1
+2025-02-21T15:59:29.4083828Z ##[endgroup]
+2025-02-21T15:59:29.4086082Z ##[group]GITHUB_TOKEN Permissions
+2025-02-21T15:59:29.4088088Z Actions: write
+2025-02-21T15:59:29.4088899Z Attestations: write
+2025-02-21T15:59:29.4089583Z Checks: write
+2025-02-21T15:59:29.4090306Z Contents: write
+2025-02-21T15:59:29.4090869Z Deployments: write
+2025-02-21T15:59:29.4091383Z Discussions: write
+2025-02-21T15:59:29.4091968Z Issues: write
+2025-02-21T15:59:29.4092502Z Metadata: read
+2025-02-21T15:59:29.4093003Z Packages: write
+2025-02-21T15:59:29.4093608Z Pages: write
+2025-02-21T15:59:29.4094092Z PullRequests: write
+2025-02-21T15:59:29.4094639Z RepositoryProjects: write
+2025-02-21T15:59:29.4095320Z SecurityEvents: write
+2025-02-21T15:59:29.4095873Z Statuses: write
+2025-02-21T15:59:29.4096417Z ##[endgroup]
+2025-02-21T15:59:29.4099325Z Secret source: Actions
+2025-02-21T15:59:29.4100325Z Prepare workflow directory
+2025-02-21T15:59:29.4612855Z Prepare all required actions
+2025-02-21T15:59:29.4649626Z Getting action download info
+2025-02-21T15:59:29.6886817Z ##[group]Download immutable action package 'actions/checkout@v4.1.1'
+2025-02-21T15:59:29.6887819Z Version: 4.1.1
+2025-02-21T15:59:29.6888745Z Digest: sha256:e11afe49e58abe2c2e9323b9f0fb3cbb63fcbbdbbccb43aea2251ab49a57435a
+2025-02-21T15:59:29.6889891Z Source commit SHA: b4ffde65f46336ab88eb53be808477a3936bae11
+2025-02-21T15:59:29.6890944Z ##[endgroup]
+2025-02-21T15:59:29.7677801Z Download action repository 'Ana06/get-changed-files@v2.2.0' (SHA:e0c398b7065a8d84700c471b6afc4116d1ba4e96)
+2025-02-21T15:59:30.1282138Z Uses: insightsengineering/r.pkg.template/.github/workflows/linter.yaml@refs/heads/main (2e355a62625b0a63bbae51daf296b0d48ac6d378)
+2025-02-21T15:59:30.1284737Z ##[group] Inputs
+2025-02-21T15:59:30.1286057Z   lintr_error_on_lint: true
+2025-02-21T15:59:30.1286635Z   lint-all-files: false
+2025-02-21T15:59:30.1287136Z ##[endgroup]
+2025-02-21T15:59:30.1287721Z Complete job name: SuperLinter 🦸‍♀️ / Lint R code 🧶
+2025-02-21T15:59:30.1807138Z ##[group]Checking docker version
+2025-02-21T15:59:30.1821527Z ##[command]/usr/bin/docker version --format '{{.Server.APIVersion}}'
+2025-02-21T15:59:30.2545700Z '1.45'
+2025-02-21T15:59:30.2558674Z Docker daemon API version: '1.45'
+2025-02-21T15:59:30.2559518Z ##[command]/usr/bin/docker version --format '{{.Client.APIVersion}}'
+2025-02-21T15:59:30.2713749Z '1.45'
+2025-02-21T15:59:30.2727644Z Docker client API version: '1.45'
+2025-02-21T15:59:30.2733705Z ##[endgroup]
+2025-02-21T15:59:30.2736968Z ##[group]Clean up resources from previous jobs
+2025-02-21T15:59:30.2742436Z ##[command]/usr/bin/docker ps --all --quiet --no-trunc --filter "label=48a190"
+2025-02-21T15:59:30.2888678Z ##[command]/usr/bin/docker network prune --force --filter "label=48a190"
+2025-02-21T15:59:30.3024785Z ##[endgroup]
+2025-02-21T15:59:30.3025324Z ##[group]Create local container network
+2025-02-21T15:59:30.3035428Z ##[command]/usr/bin/docker network create --label 48a190 github_network_5517cd9c6d274c8fa5c9ba172747bad1
+2025-02-21T15:59:30.3918890Z f318e5cc5d9c14b58369757105441f8c8ee5ec8517f68a0e933d579b7eea81d8
+2025-02-21T15:59:30.3938422Z ##[endgroup]
+2025-02-21T15:59:30.3962523Z ##[group]Starting job container
+2025-02-21T15:59:30.3982691Z ##[command]/usr/bin/docker --config /home/runner/work/_temp/.docker_ab280f23-bbd2-4dc9-8dd4-1604994978a8 login ghcr.io -u gowerc --password-stdin
+2025-02-21T15:59:30.6578189Z ##[command]/usr/bin/docker --config /home/runner/work/_temp/.docker_ab280f23-bbd2-4dc9-8dd4-1604994978a8 pull ghcr.io/insightsengineering/rstudio:latest
+2025-02-21T15:59:31.1810476Z latest: Pulling from insightsengineering/rstudio
+2025-02-21T15:59:31.3323559Z 5a7813e071bf: Pulling fs layer
+2025-02-21T15:59:31.3324977Z 619d6b2dbf39: Pulling fs layer
+2025-02-21T15:59:31.3325715Z 98b4444c3e59: Pulling fs layer
+2025-02-21T15:59:31.3326422Z 5fa970fe3a02: Pulling fs layer
+2025-02-21T15:59:31.3327128Z 4927158e7cb8: Pulling fs layer
+2025-02-21T15:59:31.3327833Z c431a6837342: Pulling fs layer
+2025-02-21T15:59:31.3328601Z a0d63a8d22d5: Pulling fs layer
+2025-02-21T15:59:31.3329314Z d8833c1fcb77: Pulling fs layer
+2025-02-21T15:59:31.3330270Z 8d545f1f0f82: Pulling fs layer
+2025-02-21T15:59:31.3330994Z a0f19b4e324e: Pulling fs layer
+2025-02-21T15:59:31.3331705Z 1d1f3f67e298: Pulling fs layer
+2025-02-21T15:59:31.3332420Z 8a85ff299c33: Pulling fs layer
+2025-02-21T15:59:31.3333182Z a2b7b22245e9: Pulling fs layer
+2025-02-21T15:59:31.3333939Z 9bf9bf0e922b: Pulling fs layer
+2025-02-21T15:59:31.3334736Z 12381b307ecb: Pulling fs layer
+2025-02-21T15:59:31.3335513Z 2617b2670e16: Pulling fs layer
+2025-02-21T15:59:31.3336318Z dee49bb49d26: Pulling fs layer
+2025-02-21T15:59:31.3337145Z e6bb380d519e: Pulling fs layer
+2025-02-21T15:59:31.3337966Z 2170740ee6b5: Pulling fs layer
+2025-02-21T15:59:31.3338762Z 2b8d502714b7: Pulling fs layer
+2025-02-21T15:59:31.3339578Z a2b9fc93595e: Pulling fs layer
+2025-02-21T15:59:31.3340562Z 11f9b35fb43a: Pulling fs layer
+2025-02-21T15:59:31.3341841Z a0d63a8d22d5: Waiting
+2025-02-21T15:59:31.3343201Z d8833c1fcb77: Waiting
+2025-02-21T15:59:31.3344244Z 8d545f1f0f82: Waiting
+2025-02-21T15:59:31.3345235Z a0f19b4e324e: Waiting
+2025-02-21T15:59:31.3346235Z 1d1f3f67e298: Waiting
+2025-02-21T15:59:31.3347238Z 8a85ff299c33: Waiting
+2025-02-21T15:59:31.3348284Z a2b7b22245e9: Waiting
+2025-02-21T15:59:31.3349322Z 9bf9bf0e922b: Waiting
+2025-02-21T15:59:31.3350562Z 2b8d502714b7: Waiting
+2025-02-21T15:59:31.3351587Z 12381b307ecb: Waiting
+2025-02-21T15:59:31.3352606Z 2617b2670e16: Waiting
+2025-02-21T15:59:31.3353607Z a2b9fc93595e: Waiting
+2025-02-21T15:59:31.3354630Z 5fa970fe3a02: Waiting
+2025-02-21T15:59:31.3355642Z dee49bb49d26: Waiting
+2025-02-21T15:59:31.3356647Z 4927158e7cb8: Waiting
+2025-02-21T15:59:31.3357644Z 11f9b35fb43a: Waiting
+2025-02-21T15:59:31.3358667Z e6bb380d519e: Waiting
+2025-02-21T15:59:31.3359725Z 2170740ee6b5: Waiting
+2025-02-21T15:59:31.3360940Z c431a6837342: Waiting
+2025-02-21T15:59:31.4737211Z 619d6b2dbf39: Verifying Checksum
+2025-02-21T15:59:31.4739133Z 619d6b2dbf39: Download complete
+2025-02-21T15:59:31.5848901Z 5a7813e071bf: Verifying Checksum
+2025-02-21T15:59:31.5850665Z 5a7813e071bf: Download complete
+2025-02-21T15:59:31.6108951Z 5fa970fe3a02: Verifying Checksum
+2025-02-21T15:59:31.6110944Z 5fa970fe3a02: Download complete
+2025-02-21T15:59:31.7348760Z 4927158e7cb8: Verifying Checksum
+2025-02-21T15:59:31.7351286Z 4927158e7cb8: Download complete
+2025-02-21T15:59:31.8604773Z c431a6837342: Download complete
+2025-02-21T15:59:31.8810932Z a0d63a8d22d5: Download complete
+2025-02-21T15:59:32.0104352Z d8833c1fcb77: Verifying Checksum
+2025-02-21T15:59:32.0108781Z d8833c1fcb77: Download complete
+2025-02-21T15:59:32.0466258Z 8d545f1f0f82: Verifying Checksum
+2025-02-21T15:59:32.0469889Z 8d545f1f0f82: Download complete
+2025-02-21T15:59:32.1929724Z a0f19b4e324e: Verifying Checksum
+2025-02-21T15:59:32.1933550Z a0f19b4e324e: Download complete
+2025-02-21T15:59:32.2022479Z 1d1f3f67e298: Verifying Checksum
+2025-02-21T15:59:32.2030101Z 1d1f3f67e298: Download complete
+2025-02-21T15:59:32.3886868Z 8a85ff299c33: Verifying Checksum
+2025-02-21T15:59:32.3902146Z 8a85ff299c33: Download complete
+2025-02-21T15:59:32.5381693Z 9bf9bf0e922b: Verifying Checksum
+2025-02-21T15:59:32.5383768Z 9bf9bf0e922b: Download complete
+2025-02-21T15:59:32.5895882Z 98b4444c3e59: Download complete
+2025-02-21T15:59:32.7277939Z 2617b2670e16: Verifying Checksum
+2025-02-21T15:59:32.7283906Z 2617b2670e16: Download complete
+2025-02-21T15:59:32.8119684Z 12381b307ecb: Download complete
+2025-02-21T15:59:32.8885889Z dee49bb49d26: Verifying Checksum
+2025-02-21T15:59:32.8886444Z dee49bb49d26: Download complete
+2025-02-21T15:59:32.9531068Z e6bb380d519e: Verifying Checksum
+2025-02-21T15:59:32.9531627Z e6bb380d519e: Download complete
+2025-02-21T15:59:33.0181944Z 5a7813e071bf: Pull complete
+2025-02-21T15:59:33.0277041Z 2170740ee6b5: Verifying Checksum
+2025-02-21T15:59:33.0281474Z 2170740ee6b5: Download complete
+2025-02-21T15:59:33.0910085Z 2b8d502714b7: Verifying Checksum
+2025-02-21T15:59:33.0913709Z 2b8d502714b7: Download complete
+2025-02-21T15:59:33.3420527Z 619d6b2dbf39: Pull complete
+2025-02-21T15:59:33.8597161Z a2b7b22245e9: Verifying Checksum
+2025-02-21T15:59:33.8597894Z a2b7b22245e9: Download complete
+2025-02-21T15:59:36.0028311Z a2b9fc93595e: Verifying Checksum
+2025-02-21T15:59:36.0028872Z a2b9fc93595e: Download complete
+2025-02-21T15:59:41.1493710Z 11f9b35fb43a: Verifying Checksum
+2025-02-21T15:59:41.1494271Z 11f9b35fb43a: Download complete
+2025-02-21T15:59:43.6662908Z 98b4444c3e59: Pull complete
+2025-02-21T15:59:43.6744306Z 5fa970fe3a02: Pull complete
+2025-02-21T15:59:43.6850126Z 4927158e7cb8: Pull complete
+2025-02-21T15:59:44.2639325Z c431a6837342: Pull complete
+2025-02-21T15:59:44.2738777Z a0d63a8d22d5: Pull complete
+2025-02-21T15:59:44.2819434Z d8833c1fcb77: Pull complete
+2025-02-21T15:59:44.2905207Z 8d545f1f0f82: Pull complete
+2025-02-21T15:59:44.2992349Z a0f19b4e324e: Pull complete
+2025-02-21T15:59:44.3081785Z 1d1f3f67e298: Pull complete
+2025-02-21T15:59:44.3204052Z 8a85ff299c33: Pull complete
+2025-02-21T15:59:54.2853111Z a2b7b22245e9: Pull complete
+2025-02-21T15:59:54.3024302Z 9bf9bf0e922b: Pull complete
+2025-02-21T15:59:55.0089838Z 12381b307ecb: Pull complete
+2025-02-21T15:59:55.0221636Z 2617b2670e16: Pull complete
+2025-02-21T15:59:55.0823025Z dee49bb49d26: Pull complete
+2025-02-21T15:59:55.0976682Z e6bb380d519e: Pull complete
+2025-02-21T15:59:55.1079044Z 2170740ee6b5: Pull complete
+2025-02-21T15:59:55.1203681Z 2b8d502714b7: Pull complete
+2025-02-21T16:00:13.5573593Z a2b9fc93595e: Pull complete
+2025-02-21T16:00:49.0826209Z 11f9b35fb43a: Pull complete
+2025-02-21T16:00:49.0881139Z Digest: sha256:74889f051e24634b35802ac04817c68a8391cbb94050eacc111cd1be0ecb16cf
+2025-02-21T16:00:49.0903038Z Status: Downloaded newer image for ghcr.io/insightsengineering/rstudio:latest
+2025-02-21T16:00:49.0914421Z ghcr.io/insightsengineering/rstudio:latest
+2025-02-21T16:00:49.1000472Z ##[command]/usr/bin/docker create --name d3ff45a6927349b9933c665bef53a67c_ghcrioinsightsengineeringrstudiolatest_091a2d --label 48a190 --workdir /__w/jmpost/jmpost --network github_network_5517cd9c6d274c8fa5c9ba172747bad1  -e "HOME=/github/home" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work":"/__w" -v "/home/runner/runners/2.322.0/externals":"/__e":ro -v "/home/runner/work/_temp":"/__w/_temp" -v "/home/runner/work/_actions":"/__w/_actions" -v "/opt/hostedtoolcache":"/__t" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" --entrypoint "tail" ghcr.io/insightsengineering/rstudio:latest "-f" "/dev/null"
+2025-02-21T16:00:49.1288072Z f1d943dfbb16ad8ab8a8f393ff8c5847ace4dd5cac71f28bba9b19ea4f0bdc00
+2025-02-21T16:00:49.1309188Z ##[command]/usr/bin/docker start f1d943dfbb16ad8ab8a8f393ff8c5847ace4dd5cac71f28bba9b19ea4f0bdc00
+2025-02-21T16:00:49.3579573Z f1d943dfbb16ad8ab8a8f393ff8c5847ace4dd5cac71f28bba9b19ea4f0bdc00
+2025-02-21T16:00:49.3597286Z ##[command]/usr/bin/docker ps --all --filter id=f1d943dfbb16ad8ab8a8f393ff8c5847ace4dd5cac71f28bba9b19ea4f0bdc00 --filter status=running --no-trunc --format "{{.ID}} {{.Status}}"
+2025-02-21T16:00:49.3719042Z f1d943dfbb16ad8ab8a8f393ff8c5847ace4dd5cac71f28bba9b19ea4f0bdc00 Up Less than a second
+2025-02-21T16:00:49.3737602Z ##[command]/usr/bin/docker inspect --format "{{range .Config.Env}}{{println .}}{{end}}" f1d943dfbb16ad8ab8a8f393ff8c5847ace4dd5cac71f28bba9b19ea4f0bdc00
+2025-02-21T16:00:49.3845908Z HOME=/github/home
+2025-02-21T16:00:49.3846398Z GITHUB_ACTIONS=true
+2025-02-21T16:00:49.3846730Z CI=true
+2025-02-21T16:00:49.3847269Z PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2025-02-21T16:00:49.3847851Z R_VERSION=4.4.2
+2025-02-21T16:00:49.3848181Z R_HOME=/usr/local/lib/R
+2025-02-21T16:00:49.3848502Z TZ=Etc/UTC
+2025-02-21T16:00:49.3848888Z CRAN=https://p3m.dev/cran/__linux__/noble/latest
+2025-02-21T16:00:49.3849233Z LANG=en_US.UTF-8
+2025-02-21T16:00:49.3849442Z S6_VERSION=v2.1.0.2
+2025-02-21T16:00:49.3849651Z RSTUDIO_VERSION=2024.12.1+563
+2025-02-21T16:00:49.3849873Z DEFAULT_USER=rstudio
+2025-02-21T16:00:49.3850363Z CTAN_REPO=https://mirrors.mit.edu/CTAN/systems/texlive/tlnet
+2025-02-21T16:00:49.3865508Z ##[endgroup]
+2025-02-21T16:00:49.3874514Z ##[group]Waiting for all services to be ready
+2025-02-21T16:00:49.3876259Z ##[endgroup]
+2025-02-21T16:00:49.4153682Z ##[group]Run actions/checkout@v4.1.1
+2025-02-21T16:00:49.4154379Z with:
+2025-02-21T16:00:49.4154644Z   ref: f4c6606d41e5cb9bf6731aa56d960aacf87eb369
+2025-02-21T16:00:49.4154936Z   fetch-depth: 0
+2025-02-21T16:00:49.4155144Z   repository: Genentech/jmpost
+2025-02-21T16:00:49.4155529Z   token: ***
+2025-02-21T16:00:49.4155725Z   ssh-strict: true
+2025-02-21T16:00:49.4155940Z   persist-credentials: true
+2025-02-21T16:00:49.4156166Z   clean: true
+2025-02-21T16:00:49.4156370Z   sparse-checkout-cone-mode: true
+2025-02-21T16:00:49.4156610Z   fetch-tags: false
+2025-02-21T16:00:49.4156816Z   show-progress: true
+2025-02-21T16:00:49.4157019Z   lfs: false
+2025-02-21T16:00:49.4157207Z   submodules: false
+2025-02-21T16:00:49.4157399Z   set-safe-directory: true
+2025-02-21T16:00:49.4157814Z ##[endgroup]
+2025-02-21T16:00:49.4212424Z ##[command]/usr/bin/docker exec  f1d943dfbb16ad8ab8a8f393ff8c5847ace4dd5cac71f28bba9b19ea4f0bdc00 sh -c "cat /etc/*release | grep ^ID"
+2025-02-21T16:00:49.6921030Z Syncing repository: Genentech/jmpost
+2025-02-21T16:00:49.6922311Z ##[group]Getting Git version info
+2025-02-21T16:00:49.6922652Z Working directory is '/__w/jmpost/jmpost'
+2025-02-21T16:00:49.6923128Z [command]/usr/bin/git version
+2025-02-21T16:00:49.6923370Z git version 2.43.0
+2025-02-21T16:00:49.6940684Z ##[endgroup]
+2025-02-21T16:00:49.6958089Z Temporarily overriding HOME='/__w/_temp/a7fca0fc-25b3-4ef5-bab5-1931eae041d1' before making global git config changes
+2025-02-21T16:00:49.6958955Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-21T16:00:49.6962984Z [command]/usr/bin/git config --global --add safe.directory /__w/jmpost/jmpost
+2025-02-21T16:00:49.6994148Z Deleting the contents of '/__w/jmpost/jmpost'
+2025-02-21T16:00:49.6997450Z ##[group]Initializing the repository
+2025-02-21T16:00:49.7000577Z [command]/usr/bin/git init /__w/jmpost/jmpost
+2025-02-21T16:00:49.7031363Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-21T16:00:49.7032185Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-21T16:00:49.7032674Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-21T16:00:49.7033011Z hint: 
+2025-02-21T16:00:49.7033287Z hint: 	git config --global init.defaultBranch <name>
+2025-02-21T16:00:49.7033586Z hint: 
+2025-02-21T16:00:49.7033877Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-21T16:00:49.7034348Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-21T16:00:49.7034809Z hint: 
+2025-02-21T16:00:49.7035148Z hint: 	git branch -m <name>
+2025-02-21T16:00:49.7040916Z Initialized empty Git repository in /__w/jmpost/jmpost/.git/
+2025-02-21T16:00:49.7052119Z [command]/usr/bin/git remote add origin https://github.com/Genentech/jmpost
+2025-02-21T16:00:49.7086235Z ##[endgroup]
+2025-02-21T16:00:49.7086790Z ##[group]Disabling automatic garbage collection
+2025-02-21T16:00:49.7089436Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-21T16:00:49.7120986Z ##[endgroup]
+2025-02-21T16:00:49.7121544Z ##[group]Setting up auth
+2025-02-21T16:00:49.7126536Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-21T16:00:49.7153794Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-21T16:00:49.7386865Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-21T16:00:49.7414005Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-21T16:00:49.7628949Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-21T16:00:49.7662152Z ##[endgroup]
+2025-02-21T16:00:49.7662851Z ##[group]Fetching the repository
+2025-02-21T16:00:49.7670612Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+2025-02-21T16:00:53.3420724Z From https://github.com/Genentech/jmpost
+2025-02-21T16:00:53.3421604Z  * [new branch]        164_gsf_vignette      -> origin/164_gsf_vignette
+2025-02-21T16:00:53.3422460Z  * [new branch]        173_roxy_lint_types   -> origin/173_roxy_lint_types
+2025-02-21T16:00:53.3423217Z  * [new branch]        421-fix-claret-bruno  -> origin/421-fix-claret-bruno
+2025-02-21T16:00:53.3428002Z  * [new branch]        431-save-object       -> origin/431-save-object
+2025-02-21T16:00:53.3431194Z  * [new branch]        435-intro-vignette    -> origin/435-intro-vignette
+2025-02-21T16:00:53.3432414Z  * [new branch]        _junit_xml_reports    -> origin/_junit_xml_reports
+2025-02-21T16:00:53.3433107Z  * [new branch]        _xml_coverage_reports -> origin/_xml_coverage_reports
+2025-02-21T16:00:53.3436550Z  * [new branch]        develop-legacy        -> origin/develop-legacy
+2025-02-21T16:00:53.3441932Z  * [new branch]        gh-pages              -> origin/gh-pages
+2025-02-21T16:00:53.3442684Z  * [new branch]        main                  -> origin/main
+2025-02-21T16:00:53.3443311Z  * [new branch]        vignettes_francois    -> origin/vignettes_francois
+2025-02-21T16:00:53.3444005Z  * [new branch]        xx-test-cicd          -> origin/xx-test-cicd
+2025-02-21T16:00:53.3444622Z  * [new tag]           v0.0.1                -> v0.0.1
+2025-02-21T16:00:53.3474898Z [command]/usr/bin/git rev-parse --verify --quiet f4c6606d41e5cb9bf6731aa56d960aacf87eb369^{object}
+2025-02-21T16:00:53.3496195Z f4c6606d41e5cb9bf6731aa56d960aacf87eb369
+2025-02-21T16:00:53.3502801Z ##[endgroup]
+2025-02-21T16:00:53.3503458Z ##[group]Determining the checkout info
+2025-02-21T16:00:53.3507918Z ##[endgroup]
+2025-02-21T16:00:53.3508766Z ##[group]Checking out the ref
+2025-02-21T16:00:53.3509490Z [command]/usr/bin/git checkout --progress --force f4c6606d41e5cb9bf6731aa56d960aacf87eb369
+2025-02-21T16:00:53.3802549Z Note: switching to 'f4c6606d41e5cb9bf6731aa56d960aacf87eb369'.
+2025-02-21T16:00:53.3803154Z 
+2025-02-21T16:00:53.3803524Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-21T16:00:53.3804428Z changes and commit them, and you can discard any commits you make in this
+2025-02-21T16:00:53.3805432Z state without impacting any branches by switching back to a branch.
+2025-02-21T16:00:53.3805982Z 
+2025-02-21T16:00:53.3806339Z If you want to create a new branch to retain commits you create, you may
+2025-02-21T16:00:53.3807214Z do so (now or later) by using -c with the switch command. Example:
+2025-02-21T16:00:53.3807754Z 
+2025-02-21T16:00:53.3807979Z   git switch -c <new-branch-name>
+2025-02-21T16:00:53.3808365Z 
+2025-02-21T16:00:53.3808577Z Or undo this operation with:
+2025-02-21T16:00:53.3809028Z 
+2025-02-21T16:00:53.3809213Z   git switch -
+2025-02-21T16:00:53.3809479Z 
+2025-02-21T16:00:53.3810193Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-21T16:00:53.3810855Z 
+2025-02-21T16:00:53.3811507Z HEAD is now at f4c6606d fix claret unit test
+2025-02-21T16:00:53.3814996Z ##[endgroup]
+2025-02-21T16:00:53.3848645Z [command]/usr/bin/git log -1 --format='%H'
+2025-02-21T16:00:53.3870598Z 'f4c6606d41e5cb9bf6731aa56d960aacf87eb369'
+2025-02-21T16:00:53.4085657Z ##[group]Run git config --global --add safe.directory $(pwd)
+2025-02-21T16:00:53.4086214Z [36;1mgit config --global --add safe.directory $(pwd)[0m
+2025-02-21T16:00:53.4086790Z [36;1mexport head_commit_message="$(git show -s --format=%B | tr '\r\n' ' ' | tr '\n' ' ')"[0m
+2025-02-21T16:00:53.4087249Z [36;1mecho "head_commit_message = $head_commit_message"[0m
+2025-02-21T16:00:53.4087627Z [36;1mif [[ $head_commit_message == *"$SKIP_INSTRUCTION"* ]]; then[0m
+2025-02-21T16:00:53.4088042Z [36;1m  echo "Skip instruction detected - cancelling the workflow."[0m
+2025-02-21T16:00:53.4088369Z [36;1m  exit 1[0m
+2025-02-21T16:00:53.4088551Z [36;1mfi[0m
+2025-02-21T16:00:53.4092266Z shell: bash --noprofile --norc -e -o pipefail {0}
+2025-02-21T16:00:53.4092589Z env:
+2025-02-21T16:00:53.4092784Z   SKIP_INSTRUCTION: [skip linter]
+2025-02-21T16:00:53.4093020Z ##[endgroup]
+2025-02-21T16:00:53.4764029Z head_commit_message = fix claret unit test  
+2025-02-21T16:00:53.4841133Z ##[group]Run Ana06/get-changed-files@v2.2.0
+2025-02-21T16:00:53.4841432Z with:
+2025-02-21T16:00:53.4841619Z   format: json
+2025-02-21T16:00:53.4841807Z   filter: *
+2025-02-21T16:00:53.4842100Z   token: ***
+2025-02-21T16:00:53.4842293Z ##[endgroup]
+2025-02-21T16:00:53.4844581Z ##[command]/usr/bin/docker exec  f1d943dfbb16ad8ab8a8f393ff8c5847ace4dd5cac71f28bba9b19ea4f0bdc00 sh -c "cat /etc/*release | grep ^ID"
+2025-02-21T16:00:53.6648292Z Base commit: 626ee2037b0674affc77a3aabb0cbc49e35eb992
+2025-02-21T16:00:53.6648909Z Head commit: f4c6606d41e5cb9bf6731aa56d960aacf87eb369
+2025-02-21T16:00:54.0366917Z All: ["design/debug-cb/.gitignore","design/debug-cb/A/README.md","design/debug-cb/A/claret_bruno.R","design/debug-cb/A/claret_bruno.stan","design/debug-cb/B/README.md","design/debug-cb/B/claret_bruno.R","design/debug-cb/B/claret_bruno.stan","design/debug-cb/B/claret_bruno_nc.stan","design/debug-cb/README.md","tests/testthat/test-LongitudinalClaretBruno.R","tests/testthat/test-brierScore.R"]
+2025-02-21T16:00:54.0371032Z Added: ["design/debug-cb/.gitignore","design/debug-cb/A/README.md","design/debug-cb/A/claret_bruno.R","design/debug-cb/A/claret_bruno.stan","design/debug-cb/B/README.md","design/debug-cb/B/claret_bruno.R","design/debug-cb/B/claret_bruno.stan","design/debug-cb/B/claret_bruno_nc.stan","design/debug-cb/README.md"]
+2025-02-21T16:00:54.0373311Z Modified: ["tests/testthat/test-LongitudinalClaretBruno.R","tests/testthat/test-brierScore.R"]
+2025-02-21T16:00:54.0374114Z Removed: []
+2025-02-21T16:00:54.0374440Z Renamed: []
+2025-02-21T16:00:54.0376736Z Added or modified: ["design/debug-cb/.gitignore","design/debug-cb/A/README.md","design/debug-cb/A/claret_bruno.R","design/debug-cb/A/claret_bruno.stan","design/debug-cb/B/README.md","design/debug-cb/B/claret_bruno.R","design/debug-cb/B/claret_bruno.stan","design/debug-cb/B/claret_bruno_nc.stan","design/debug-cb/README.md","tests/testthat/test-LongitudinalClaretBruno.R","tests/testthat/test-brierScore.R"]
+2025-02-21T16:00:54.0381283Z Added, modified or renamed: ["design/debug-cb/.gitignore","design/debug-cb/A/README.md","design/debug-cb/A/claret_bruno.R","design/debug-cb/A/claret_bruno.stan","design/debug-cb/B/README.md","design/debug-cb/B/claret_bruno.R","design/debug-cb/B/claret_bruno.stan","design/debug-cb/B/claret_bruno_nc.stan","design/debug-cb/README.md","tests/testthat/test-LongitudinalClaretBruno.R","tests/testthat/test-brierScore.R"]
+2025-02-21T16:00:54.0536873Z ##[group]Run github_event_name <- "pull_request"
+2025-02-21T16:00:54.0537270Z [36;1mgithub_event_name <- "pull_request"[0m
+2025-02-21T16:00:54.0537634Z [36;1mcat(paste0("GitHub event name = ", github_event_name, "\n"))[0m
+2025-02-21T16:00:54.0537985Z [36;1mexclusions_list <- NULL[0m
+2025-02-21T16:00:54.0538375Z [36;1mif (!(identical("false", "true") || identical(github_event_name, "workflow_dispatch"))) {[0m
+2025-02-21T16:00:54.0540426Z [36;1m  changed_files <- jsonlite::fromJSON('["design/debug-cb/.gitignore","design/debug-cb/A/README.md","design/debug-cb/A/claret_bruno.R","design/debug-cb/A/claret_bruno.stan","design/debug-cb/B/README.md","design/debug-cb/B/claret_bruno.R","design/debug-cb/B/claret_bruno.stan","design/debug-cb/B/claret_bruno_nc.stan","design/debug-cb/README.md","tests/testthat/test-LongitudinalClaretBruno.R","tests/testthat/test-brierScore.R"]')[0m
+2025-02-21T16:00:54.0541928Z [36;1m  all_files <- list.files(recursive = TRUE)[0m
+2025-02-21T16:00:54.0542335Z [36;1m  exclusions_list <- as.list(setdiff(all_files, changed_files))[0m
+2025-02-21T16:00:54.0542687Z [36;1m  cat("Linting only changed files:\n")[0m
+2025-02-21T16:00:54.0542964Z [36;1m  cat(changed_files)[0m
+2025-02-21T16:00:54.0543192Z [36;1m  cat("\n\n")[0m
+2025-02-21T16:00:54.0543397Z [36;1m} else {[0m
+2025-02-21T16:00:54.0543604Z [36;1m  cat("Linting all files.\n")[0m
+2025-02-21T16:00:54.0543846Z [36;1m}[0m
+2025-02-21T16:00:54.0544109Z [36;1mlints <- lintr::lint_package(exclusions = exclusions_list)[0m
+2025-02-21T16:00:54.0544436Z [36;1mif (length(lints) > 0L) {[0m
+2025-02-21T16:00:54.0544679Z [36;1m  print(lints)[0m
+2025-02-21T16:00:54.0544913Z [36;1m  if (identical("true", "true")) {[0m
+2025-02-21T16:00:54.0545391Z [36;1m    stop("Lints detected. Please review and adjust code according to the comments provided.", call. = FALSE)[0m
+2025-02-21T16:00:54.0545867Z [36;1m  }[0m
+2025-02-21T16:00:54.0546050Z [36;1m}[0m
+2025-02-21T16:00:54.0546327Z shell: Rscript {0}
+2025-02-21T16:00:54.0546535Z ##[endgroup]
+2025-02-21T16:00:54.3271462Z GitHub event name = pull_request
+2025-02-21T16:00:54.3441298Z Linting only changed files:
+2025-02-21T16:00:54.3443694Z design/debug-cb/.gitignore design/debug-cb/A/README.md design/debug-cb/A/claret_bruno.R design/debug-cb/A/claret_bruno.stan design/debug-cb/B/README.md design/debug-cb/B/claret_bruno.R design/debug-cb/B/claret_bruno.stan design/debug-cb/B/claret_bruno_nc.stan design/debug-cb/README.md tests/testthat/test-LongitudinalClaretBruno.R tests/testthat/test-brierScore.R
+2025-02-21T16:00:54.3445954Z 
+2025-02-21T16:00:55.1340935Z Warning message:
+2025-02-21T16:00:55.1341532Z Warning encountered while loading config:
+2025-02-21T16:00:55.1342093Z Caused by warning:
+2025-02-21T16:00:55.1342494Z ! Warning from config setting `linters`.
+2025-02-21T16:00:55.1342913Z Caused by warning:
+2025-02-21T16:00:55.1343630Z ! ℹ Trying to remove cyclocomp_linter, which is not in `defaults`. 
+2025-02-21T16:00:55.1391183Z ##[warning]file=tests/testthat/test-LongitudinalClaretBruno.R,line=511,col=7,[commented_code_linter] Remove commented code.
+2025-02-21T16:00:55.1399294Z ##[warning]file=tests/testthat/test-LongitudinalClaretBruno.R,line=512,col=7,[commented_code_linter] Remove commented code.
+2025-02-21T16:00:55.1402500Z ##[warning]file=tests/testthat/test-LongitudinalClaretBruno.R,line=513,col=7,[commented_code_linter] Remove commented code.
+2025-02-21T16:00:55.1404142Z Error: Lints detected. Please review and adjust code according to the comments provided.
+2025-02-21T16:00:55.1404766Z Execution halted
+2025-02-21T16:00:55.1406472Z ##[warning]file=tests/testthat/test-LongitudinalClaretBruno.R,line=514,col=7,[commented_code_linter] Remove commented code.
+2025-02-21T16:00:55.1409583Z ##[warning]file=tests/testthat/test-LongitudinalClaretBruno.R,line=514,col=121,[line_length_linter] Lines should not be more than 120 characters. This line is 126 characters.
+2025-02-21T16:00:55.1413298Z ##[warning]file=tests/testthat/test-LongitudinalClaretBruno.R,line=515,col=6,[trailing_whitespace_linter] Remove trailing whitespace.
+2025-02-21T16:00:55.1536492Z ##[error]Process completed with exit code 1.
+2025-02-21T16:00:55.1601257Z Post job cleanup.
+2025-02-21T16:00:55.1605128Z ##[command]/usr/bin/docker exec  f1d943dfbb16ad8ab8a8f393ff8c5847ace4dd5cac71f28bba9b19ea4f0bdc00 sh -c "cat /etc/*release | grep ^ID"
+2025-02-21T16:00:55.3524781Z [command]/usr/bin/git version
+2025-02-21T16:00:55.3570266Z git version 2.43.0
+2025-02-21T16:00:55.3614522Z Copying '/github/home/.gitconfig' to '/__w/_temp/a569ec26-99fa-4323-b8de-fc0122490f81/.gitconfig'
+2025-02-21T16:00:55.3628748Z Temporarily overriding HOME='/__w/_temp/a569ec26-99fa-4323-b8de-fc0122490f81' before making global git config changes
+2025-02-21T16:00:55.3630837Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-21T16:00:55.3635120Z [command]/usr/bin/git config --global --add safe.directory /__w/jmpost/jmpost
+2025-02-21T16:00:55.3679033Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-21T16:00:55.3718879Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-21T16:00:55.4038648Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-21T16:00:55.4057138Z http.https://github.com/.extraheader
+2025-02-21T16:00:55.4068956Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-21T16:00:55.4097007Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-21T16:00:55.4426372Z Stop and remove container: d3ff45a6927349b9933c665bef53a67c_ghcrioinsightsengineeringrstudiolatest_091a2d
+2025-02-21T16:00:55.4431379Z ##[command]/usr/bin/docker rm --force f1d943dfbb16ad8ab8a8f393ff8c5847ace4dd5cac71f28bba9b19ea4f0bdc00
+2025-02-21T16:00:55.5628854Z f1d943dfbb16ad8ab8a8f393ff8c5847ace4dd5cac71f28bba9b19ea4f0bdc00
+2025-02-21T16:00:55.5657209Z Remove container network: github_network_5517cd9c6d274c8fa5c9ba172747bad1
+2025-02-21T16:00:55.5661753Z ##[command]/usr/bin/docker network rm github_network_5517cd9c6d274c8fa5c9ba172747bad1
+2025-02-21T16:00:55.6912519Z github_network_5517cd9c6d274c8fa5c9ba172747bad1
+2025-02-21T16:00:55.6974312Z Cleaning up orphan processes

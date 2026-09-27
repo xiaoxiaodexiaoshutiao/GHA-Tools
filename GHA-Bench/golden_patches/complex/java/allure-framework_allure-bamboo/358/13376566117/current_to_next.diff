@@ -1,0 +1,30 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 6446bc1..83ec2b0 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -15,8 +15,8 @@ jobs:
+       - uses: actions/checkout@v4
+       - uses: actions/setup-java@v4
+         with:
+-          distribution: 'zulu'
+-          java-version: '8'
++          distribution: 'temurin'
++          java-version: '17'
+           cache: 'maven'
+       - name: Maven Build
+         run: ./mvnw clean package
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 4432746..7ade56d 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -11,8 +11,8 @@ jobs:
+       - uses: actions/checkout@v4
+       - uses: actions/setup-java@v4
+         with:
+-          distribution: 'zulu'
+-          java-version: '8'
++          distribution: 'temurin'
++          java-version: '17'
+           cache: 'maven'
+       - run: echo "VERSION=${GITHUB_REF:10}" >> $GITHUB_ENV
+       - run: ./mvnw versions:set -DnewVersion=${{ env.VERSION }}

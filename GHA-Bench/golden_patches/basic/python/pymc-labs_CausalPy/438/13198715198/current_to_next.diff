@@ -1,0 +1,614 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index d828b564a..3d91052c5 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -1,4 +1,5 @@
+ name: PyPI release
++
+ on:
+   workflow_dispatch:
+   pull_request:
+@@ -23,6 +24,7 @@ jobs:
+         run: |
+           pip install build
+           python -m build
++          ls dist  # List the contents of the dist directory
+       - name: Check the sdist installs and imports
+         run: |
+           mkdir -p test-sdist
+@@ -30,21 +32,22 @@ jobs:
+           python -m venv venv-sdist
+           venv-sdist/bin/python -m pip install ../dist/causalpy*.tar.gz
+           echo "Checking import and version number (on release)"
+-          venv-sdist/bin/python -c "import causalpy; assert causalpy.__version__ == '${{  github.ref_name }}' if '${{ github.ref_type }}' == 'tag' else causalpy.__version__; print(causalpy.__version__)"
++          venv-sdist/bin/python -c "import causalpy; assert causalpy.__version__ == '${{ github.ref_name }}' if '${{ github.ref_type }}' == 'tag' else causalpy.__version__; print(causalpy.__version__)"
+           cd ..
+       - name: Check the bdist installs and imports
+         run: |
+           mkdir -p test-bdist
+           cd test-bdist
+           python -m venv venv-bdist
+-          venv-bdist/bin/python -m pip install ../dist/CausalPy*.whl
++          venv-bdist/bin/python -m pip install ../dist/causalpy*.whl
+           echo "Checking import and version number (on release)"
+-          venv-bdist/bin/python -c "import causalpy; assert causalpy.__version__ == '${{  github.ref_name }}' if '${{ github.ref_type }}' == 'tag' else causalpy.__version__; print(causalpy.__version__)"
++          venv-bdist/bin/python -c "import causalpy; assert causalpy.__version__ == '${{ github.ref_name }}' if '${{ github.ref_type }}' == 'tag' else causalpy.__version__; print(causalpy.__version__)"
+           cd ..
+-      - uses: actions/upload-artifact@v3
++      - uses: actions/upload-artifact@v4
+         with:
+           name: artifact
+           path: dist/*
++
+   test:
+     name: Upload to Test PyPI
+     permissions:
+@@ -72,7 +75,7 @@ jobs:
+           python -m venv venv-test-pypi
+           venv-test-pypi/bin/python -m pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple causalpy
+           echo "Checking import and version number"
+-          venv-test-pypi/bin/python -c "import causalpy; assert causalpy.__version__ == '${{  github.ref_name }}'"
++          venv-test-pypi/bin/python -c "import causalpy; assert causalpy.__version__ == '${{ github.ref_name }}'"
+ 
+   publish:
+     environment: release
+diff --git a/.github/workflows/uml.yml b/.github/workflows/uml.yml
+new file mode 100644
+index 000000000..a8afc78f7
+--- /dev/null
++++ b/.github/workflows/uml.yml
+@@ -0,0 +1,54 @@
++name: Update the UML Diagrams
++on:
++  workflow_dispatch:
++  schedule:
++    - cron:  '0 12 * * 1'
++
++jobs:
++  build:
++    runs-on: ubuntu-latest
++    permissions: write-all
++    steps:
++      - name: Checkout repository
++        uses: actions/checkout@v4
++        with:
++          ref: main
++      - name: Set up Python
++        uses: actions/setup-python@v5
++        with:
++          python-version: "3.10"
++
++      - name: Configure Git Identity
++        run: |
++          git config user.name 'github-actions[bot]'
++          git config user.email 'github-actions[bot]@users.noreply.github.com'
++      - name: Update the UML Diagrams
++        run: |
++          sudo apt-get update && sudo apt-get install -y graphviz
++          make uml
++      - name: Detect UML changes
++        id: changes
++        run: |
++          git add docs/source/uml/*.png
++          if git diff --staged --exit-code; then
++            echo "No changes to commit"
++            echo "changes_exist=false" >> $GITHUB_OUTPUT
++          else
++            echo "changes_exist=true" >> $GITHUB_OUTPUT
++          fi
++      - name: Create PR for changes
++        if: steps.changes.outputs.changes_exist == 'true'
++        run: |
++          git checkout -b update-uml-diagrams
++          git commit -m "Update UML Diagrams"
++          git push -u origin update-uml-diagrams
++          gh pr create \
++            --base main \
++            --title "Update UML Diagrams" \
++            --body "This PR updates the UML diagrams
++            This PR was created automatically by the [UML workflow](https://github.com/pymc-labs/CausalPy/blob/main/.github/workflows/uml.yml).
++            See the logs [here](https://github.com/pymc-labs/CausalPy/actions/workflows/uml.yml) for more details." \
++            --label "no releasenotes" \
++            --reviewer drbenvincent
++        env:
++          GH_TOKEN: ${{ github.token }}
+diff --git a/.pre-commit-config.yaml b/.pre-commit-config.yaml
+index c06e81d13..5192e75c9 100644
+--- a/.pre-commit-config.yaml
++++ b/.pre-commit-config.yaml
+@@ -5,7 +5,7 @@ ci:
+ # See https://pre-commit.com/hooks.html for more hooks
+ repos:
+   - repo: https://github.com/lucianopaz/head_of_apache
+-    rev: "0.0.3"
++    rev: "0.1.0"
+     hooks:
+       - id: head_of_apache
+         args:
+@@ -25,7 +25,7 @@ repos:
+         exclude: &exclude_pattern 'iv_weak_instruments.ipynb'
+         args: ["--maxkb=1500"]
+   - repo: https://github.com/astral-sh/ruff-pre-commit
+-    rev: v0.8.4
++    rev: v0.9.9
+     hooks:
+       # Run the linter
+       - id: ruff
+@@ -42,7 +42,7 @@ repos:
+         # see here https://github.com/econchick/interrogate/issues/60#issuecomment-735436566
+         pass_filenames: false
+   - repo: https://github.com/codespell-project/codespell
+-    rev: v2.3.0
++    rev: v2.4.1
+     hooks:
+       - id: codespell
+         additional_dependencies:
+diff --git a/causalpy/__init__.py b/causalpy/__init__.py
+index 8e89bb40b..26921565c 100644
+--- a/causalpy/__init__.py
++++ b/causalpy/__init__.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/custom_exceptions.py b/causalpy/custom_exceptions.py
+index 54c9b95c5..89e74c8f5 100644
+--- a/causalpy/custom_exceptions.py
++++ b/causalpy/custom_exceptions.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/data/__init__.py b/causalpy/data/__init__.py
+index e06f3de85..b2ae03e3a 100644
+--- a/causalpy/data/__init__.py
++++ b/causalpy/data/__init__.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/data/datasets.py b/causalpy/data/datasets.py
+index 3cb69d4be..a1504d065 100644
+--- a/causalpy/data/datasets.py
++++ b/causalpy/data/datasets.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/data/simulate_data.py b/causalpy/data/simulate_data.py
+index fe3af1d36..f2f65741d 100644
+--- a/causalpy/data/simulate_data.py
++++ b/causalpy/data/simulate_data.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/experiments/__init__.py b/causalpy/experiments/__init__.py
+index d1a2295a1..0548ada36 100644
+--- a/causalpy/experiments/__init__.py
++++ b/causalpy/experiments/__init__.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/experiments/base.py b/causalpy/experiments/base.py
+index d91a54557..4fcfeba8c 100644
+--- a/causalpy/experiments/base.py
++++ b/causalpy/experiments/base.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/experiments/diff_in_diff.py b/causalpy/experiments/diff_in_diff.py
+index daae8e50c..ec704e147 100644
+--- a/causalpy/experiments/diff_in_diff.py
++++ b/causalpy/experiments/diff_in_diff.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/experiments/instrumental_variable.py b/causalpy/experiments/instrumental_variable.py
+index bb0adfc7f..001ce9af8 100644
+--- a/causalpy/experiments/instrumental_variable.py
++++ b/causalpy/experiments/instrumental_variable.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/experiments/inverse_propensity_weighting.py b/causalpy/experiments/inverse_propensity_weighting.py
+index 13f747674..3e2915f7e 100644
+--- a/causalpy/experiments/inverse_propensity_weighting.py
++++ b/causalpy/experiments/inverse_propensity_weighting.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/experiments/prepostfit.py b/causalpy/experiments/prepostfit.py
+index 6b04818ef..0598b64f1 100644
+--- a/causalpy/experiments/prepostfit.py
++++ b/causalpy/experiments/prepostfit.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2025 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/experiments/prepostnegd.py b/causalpy/experiments/prepostnegd.py
+index 9cecc49bb..f1854b92d 100644
+--- a/causalpy/experiments/prepostnegd.py
++++ b/causalpy/experiments/prepostnegd.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/experiments/regression_discontinuity.py b/causalpy/experiments/regression_discontinuity.py
+index 75b3184b4..1afc5c1a8 100644
+--- a/causalpy/experiments/regression_discontinuity.py
++++ b/causalpy/experiments/regression_discontinuity.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/experiments/regression_kink.py b/causalpy/experiments/regression_kink.py
+index 880e178a3..2eb350796 100644
+--- a/causalpy/experiments/regression_kink.py
++++ b/causalpy/experiments/regression_kink.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/plot_utils.py b/causalpy/plot_utils.py
+index 48ba34d3b..87ef2aaef 100644
+--- a/causalpy/plot_utils.py
++++ b/causalpy/plot_utils.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/pymc_experiments.py b/causalpy/pymc_experiments.py
+index 159600727..9a2861fc2 100644
+--- a/causalpy/pymc_experiments.py
++++ b/causalpy/pymc_experiments.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/pymc_models.py b/causalpy/pymc_models.py
+index 032da928f..896052591 100644
+--- a/causalpy/pymc_models.py
++++ b/causalpy/pymc_models.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+@@ -164,7 +164,7 @@ def print_row(
+         ) -> None:
+             """Print one row of the coefficient table"""
+             formatted_name = f"  {name: <{max_label_length}}"
+-            formatted_val = f"{round_num(coeff_samples.mean().data, round_to)}, 94% HDI [{round_num(coeff_samples.quantile(0.03).data, round_to)}, {round_num(coeff_samples.quantile(1-0.03).data, round_to)}]"  # noqa: E501
++            formatted_val = f"{round_num(coeff_samples.mean().data, round_to)}, 94% HDI [{round_num(coeff_samples.quantile(0.03).data, round_to)}, {round_num(coeff_samples.quantile(1 - 0.03).data, round_to)}]"  # noqa: E501
+             print(f"  {formatted_name}  {formatted_val}")
+ 
+         print("Model coefficients:")
+diff --git a/causalpy/skl_experiments.py b/causalpy/skl_experiments.py
+index d3d6b5f8b..d086ccb3d 100644
+--- a/causalpy/skl_experiments.py
++++ b/causalpy/skl_experiments.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/skl_models.py b/causalpy/skl_models.py
+index f4fe24373..2b97af519 100644
+--- a/causalpy/skl_models.py
++++ b/causalpy/skl_models.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/tests/__init__.py b/causalpy/tests/__init__.py
+index d1a2295a1..0548ada36 100644
+--- a/causalpy/tests/__init__.py
++++ b/causalpy/tests/__init__.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/tests/conftest.py b/causalpy/tests/conftest.py
+index 5d20a8c11..f01dc6932 100644
+--- a/causalpy/tests/conftest.py
++++ b/causalpy/tests/conftest.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/tests/test_api_stability.py b/causalpy/tests/test_api_stability.py
+index 859930a16..495ee4f53 100644
+--- a/causalpy/tests/test_api_stability.py
++++ b/causalpy/tests/test_api_stability.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+@@ -36,9 +36,9 @@ def test_causal_inference_and_discovery_with_python_example():
+ 
+     # Build the model
+     model = cp.pymc_models.WeightedSumFitter(sample_kwargs=sample_kwargs)
+-    assert isinstance(
+-        model, WeightedSumFitter
+-    ), "model is not an instance of WeightedSumFitter"
++    assert isinstance(model, WeightedSumFitter), (
++        "model is not an instance of WeightedSumFitter"
++    )
+ 
+     formula = "twitter ~ 0 + tiktok + linkedin + instagram"
+ 
+@@ -49,9 +49,9 @@ def test_causal_inference_and_discovery_with_python_example():
+         formula=formula,
+         model=model,
+     )
+-    assert isinstance(
+-        results, SyntheticControl
+-    ), "results is not an instance of SyntheticControl"
++    assert isinstance(results, SyntheticControl), (
++        "results is not an instance of SyntheticControl"
++    )
+ 
+     fig, ax = results.plot()
+     assert isinstance(fig, plt.Figure)
+diff --git a/causalpy/tests/test_data_loading.py b/causalpy/tests/test_data_loading.py
+index 1fbc3b1fa..cfd9d8073 100644
+--- a/causalpy/tests/test_data_loading.py
++++ b/causalpy/tests/test_data_loading.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/tests/test_input_validation.py b/causalpy/tests/test_input_validation.py
+index 4f19a9d1d..58c390317 100644
+--- a/causalpy/tests/test_input_validation.py
++++ b/causalpy/tests/test_input_validation.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/tests/test_integration_pymc_examples.py b/causalpy/tests/test_integration_pymc_examples.py
+index 6f36764fa..016ad5677 100644
+--- a/causalpy/tests/test_integration_pymc_examples.py
++++ b/causalpy/tests/test_integration_pymc_examples.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/tests/test_integration_skl_examples.py b/causalpy/tests/test_integration_skl_examples.py
+index a35d4983b..944274ed7 100644
+--- a/causalpy/tests/test_integration_skl_examples.py
++++ b/causalpy/tests/test_integration_skl_examples.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/tests/test_misc.py b/causalpy/tests/test_misc.py
+index de3192be9..0ebe90de9 100644
+--- a/causalpy/tests/test_misc.py
++++ b/causalpy/tests/test_misc.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/tests/test_model_experiment_compatability.py b/causalpy/tests/test_model_experiment_compatability.py
+index cc12f056d..1c316f73b 100644
+--- a/causalpy/tests/test_model_experiment_compatability.py
++++ b/causalpy/tests/test_model_experiment_compatability.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/tests/test_pymc_models.py b/causalpy/tests/test_pymc_models.py
+index 79ad53e88..29664d18c 100644
+--- a/causalpy/tests/test_pymc_models.py
++++ b/causalpy/tests/test_pymc_models.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/tests/test_synthetic_data.py b/causalpy/tests/test_synthetic_data.py
+index 51da6a3e5..1093802a1 100644
+--- a/causalpy/tests/test_synthetic_data.py
++++ b/causalpy/tests/test_synthetic_data.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/tests/test_utils.py b/causalpy/tests/test_utils.py
+index e67f391e9..8dc95590a 100644
+--- a/causalpy/tests/test_utils.py
++++ b/causalpy/tests/test_utils.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/utils.py b/causalpy/utils.py
+index bc29c5cad..c64eb1097 100644
+--- a/causalpy/utils.py
++++ b/causalpy/utils.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/causalpy/version.py b/causalpy/version.py
+index a48782f2e..c7ca91c5d 100644
+--- a/causalpy/version.py
++++ b/causalpy/version.py
+@@ -1,4 +1,4 @@
+-#   Copyright 2024 The PyMC Labs Developers
++#   Copyright 2022 - 2025 The PyMC Labs Developers
+ #
+ #   Licensed under the Apache License, Version 2.0 (the "License");
+ #   you may not use this file except in compliance with the License.
+diff --git a/docs/source/index.md b/docs/source/index.md
+index 720255113..50fc8813e 100644
+--- a/docs/source/index.md
++++ b/docs/source/index.md
+@@ -96,7 +96,7 @@ CausalPy has a broad range of quasi-experimental methods for causal inference:
+ | Geographical lift | Measures the impact of an intervention in a specific geographic area by comparing it to similar areas without the intervention. Commonly used in marketing to assess regional campaigns. |
+ | ANCOVA | Analysis of Covariance combines ANOVA and regression to control for the effects of one or more quantitative covariates. Used when comparing group means while controlling for other variables. |
+ | Differences in Differences | Compares the changes in outcomes over time between a treatment group and a control group. Used in observational studies to estimate causal effects by accounting for time trends. |
+-| Regression discontinuity | Identifies causal effects by exploiting a cutoff or threshold in an assignment variable. Used when treatment is assigned based on a threshold value of an observed variable, allowing comparison just above and below the cutoff. |
++|Regression discontinuity | Identifies causal effects by exploiting a sharp cutoff or threshold in an assignment variable. Used when treatment is assigned based on a threshold value of an observed variable, allowing comparison just above and below the cutoff. |
+ | Regression kink designs | Focuses on changes in the slope (kinks) of the relationship between variables rather than jumps at cutoff points. Used to identify causal effects when treatment intensity changes at a threshold. |
+ | Interrupted time series | Analyzes the effect of an intervention by comparing time series data before and after the intervention. Used when data is collected over time and an intervention occurs at a known point, allowing assessment of changes in level or trend. |
+ | Instrumental variable regression | Addresses endogeneity by using an instrument variable that is correlated with the endogenous explanatory variable but uncorrelated with the error term. Used when explanatory variables are correlated with the error term, providing consistent estimates of causal effects. |
+diff --git a/docs/source/notebooks/multi_cell_geolift.ipynb b/docs/source/notebooks/multi_cell_geolift.ipynb
+index ebba88e9c..fc71bb1a3 100644
+--- a/docs/source/notebooks/multi_cell_geolift.ipynb
++++ b/docs/source/notebooks/multi_cell_geolift.ipynb
+@@ -1099,7 +1099,7 @@
+     "unpooled_results = []\n",
+     "\n",
+     "for i, target_geo in enumerate(treated):\n",
+-    "    print(f\"Analyzing test geo: {target_geo} ({i+1} of {len(treated)})\")\n",
++    "    print(f\"Analyzing test geo: {target_geo} ({i + 1} of {len(treated)})\")\n",
+     "    formula = f\"{target_geo} ~ 0 + {' + '.join(untreated)}\"\n",
+     "    print(formula)\n",
+     "\n",
+diff --git a/docs/source/notebooks/rd_pymc.ipynb b/docs/source/notebooks/rd_pymc.ipynb
+index be23d3c44..a6fba7490 100644
+--- a/docs/source/notebooks/rd_pymc.ipynb
++++ b/docs/source/notebooks/rd_pymc.ipynb
+@@ -5,7 +5,7 @@
+    "cell_type": "markdown",
+    "metadata": {},
+    "source": [
+-    "# Regression discontinuity with `pymc` models"
++    "# Sharp regression discontinuity with `pymc` models"
+    ]
+   },
+   {
+diff --git a/docs/source/notebooks/rd_pymc_drinking.ipynb b/docs/source/notebooks/rd_pymc_drinking.ipynb
+index 4ffca0db0..6052dc889 100644
+--- a/docs/source/notebooks/rd_pymc_drinking.ipynb
++++ b/docs/source/notebooks/rd_pymc_drinking.ipynb
+@@ -7,7 +7,7 @@
+    "source": [
+     "# Drinking age - Bayesian analysis\n",
+     "\n",
+-    "This example uses the regression discontinuity design to make claims about the causal effects of the minimum legal drinking age (21 in the USA) upon all cause mortality rates. The dataset is from a study by {cite:t}`carpenter2009effect`."
++    "This example uses the sharp regression discontinuity design to make claims about the causal effects of the minimum legal drinking age (21 in the USA) upon all cause mortality rates. The dataset is from a study by {cite:t}`carpenter2009effect`."
+    ]
+   },
+   {
+diff --git a/docs/source/notebooks/rd_skl.ipynb b/docs/source/notebooks/rd_skl.ipynb
+index b790fad2b..e38475b32 100644
+--- a/docs/source/notebooks/rd_skl.ipynb
++++ b/docs/source/notebooks/rd_skl.ipynb
+@@ -4,7 +4,7 @@
+    "cell_type": "markdown",
+    "metadata": {},
+    "source": [
+-    "# Regression discontinuity with sci-kit learn models"
++    "# Sharp regression discontinuity with sci-kit learn models"
+    ]
+   },
+   {
+diff --git a/docs/source/notebooks/rd_skl_drinking.ipynb b/docs/source/notebooks/rd_skl_drinking.ipynb
+index 05adda46a..0c36fc3b2 100644
+--- a/docs/source/notebooks/rd_skl_drinking.ipynb
++++ b/docs/source/notebooks/rd_skl_drinking.ipynb
+@@ -7,7 +7,7 @@
+    "source": [
+     "# Drinking age with a scikit-learn model\n",
+     "\n",
+-    "This example uses the regression discontinuity design to make claims about the causal effects of the minimum legal drinking age (21 in the USA) upon all cause mortality rates. The dataset is from a study by {cite:t}`carpenter2009effect`."
++    "This example uses the sharp regression discontinuity design to make claims about the causal effects of the minimum legal drinking age (21 in the USA) upon all cause mortality rates. The dataset is from a study by {cite:t}`carpenter2009effect`."
+    ]
+   },
+   {
+diff --git a/docs/source/notebooks/rkink_pymc.ipynb b/docs/source/notebooks/rkink_pymc.ipynb
+index 2c1d004c2..368dece13 100644
+--- a/docs/source/notebooks/rkink_pymc.ipynb
++++ b/docs/source/notebooks/rkink_pymc.ipynb
+@@ -108,7 +108,7 @@
+     "    beta = rng.random(5)\n",
+     "    ax[0, col].plot(x, f(x, beta, kink), lw=3)\n",
+     "    ax[1, col].plot(x, np.gradient(f(x, beta, kink), x), lw=3)\n",
+-    "    ax[0, col].set(title=f\"Random  {col+1}\")\n",
++    "    ax[0, col].set(title=f\"Random  {col + 1}\")\n",
+     "    ax[1, col].set(xlabel=\"x\")\n",
+     "\n",
+     "ax[0, 0].set(ylabel=\"$y = f(x)$\")\n",
+diff --git a/pyproject.toml b/pyproject.toml
+index 2195651e5..5b3013bfc 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -54,7 +54,7 @@ docs = [
+     "ipykernel",
+     "daft",
+     "linkify-it-py",
+-    "myst-nb!=1.1.0",
++    "myst-nb<=1.0.0",
+     "pathlib",
+     "sphinx",
+     "sphinx-autodoc-typehints",

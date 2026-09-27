@@ -1,0 +1,158 @@
+2025-04-04T21:14:06.0949192Z Requested labels: ubuntu-latest
+2025-04-04T21:14:06.0949411Z Job defined at: opensearch-project/flow-framework/.github/workflows/changelog_verifier.yml@refs/pull/1096/merge
+2025-04-04T21:14:06.0949492Z Waiting for a runner to pick up this job...
+2025-04-04T21:14:06.7117986Z Job is waiting for a hosted runner to come online.
+2025-04-04T21:14:09.5296704Z Job is about to start running on the hosted runner: GitHub Actions 444 (hosted)
+2025-04-04T21:14:11.2183523Z Current runner version: '2.323.0'
+2025-04-04T21:14:11.2209071Z ##[group]Operating System
+2025-04-04T21:14:11.2209862Z Ubuntu
+2025-04-04T21:14:11.2210452Z 24.04.2
+2025-04-04T21:14:11.2210970Z LTS
+2025-04-04T21:14:11.2211439Z ##[endgroup]
+2025-04-04T21:14:11.2212019Z ##[group]Runner Image
+2025-04-04T21:14:11.2212609Z Image: ubuntu-24.04
+2025-04-04T21:14:11.2213135Z Version: 20250323.1.0
+2025-04-04T21:14:11.2214258Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-04T21:14:11.2215643Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-04-04T21:14:11.2216592Z ##[endgroup]
+2025-04-04T21:14:11.2217266Z ##[group]Runner Image Provisioner
+2025-04-04T21:14:11.2217903Z 2.0.422.1
+2025-04-04T21:14:11.2218460Z ##[endgroup]
+2025-04-04T21:14:11.2220687Z ##[group]GITHUB_TOKEN Permissions
+2025-04-04T21:14:11.2222917Z Actions: read
+2025-04-04T21:14:11.2223673Z Attestations: read
+2025-04-04T21:14:11.2224391Z Checks: read
+2025-04-04T21:14:11.2224879Z Contents: read
+2025-04-04T21:14:11.2225415Z Deployments: read
+2025-04-04T21:14:11.2225995Z Discussions: read
+2025-04-04T21:14:11.2226528Z Issues: read
+2025-04-04T21:14:11.2227035Z Metadata: read
+2025-04-04T21:14:11.2227729Z Models: read
+2025-04-04T21:14:11.2228262Z Packages: read
+2025-04-04T21:14:11.2228762Z Pages: read
+2025-04-04T21:14:11.2229347Z PullRequests: read
+2025-04-04T21:14:11.2229923Z RepositoryProjects: read
+2025-04-04T21:14:11.2230541Z SecurityEvents: read
+2025-04-04T21:14:11.2231059Z Statuses: read
+2025-04-04T21:14:11.2231574Z ##[endgroup]
+2025-04-04T21:14:11.2234747Z Secret source: None
+2025-04-04T21:14:11.2235634Z Prepare workflow directory
+2025-04-04T21:14:11.2624977Z Prepare all required actions
+2025-04-04T21:14:11.2661872Z Getting action download info
+2025-04-04T21:14:11.4538175Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-04T21:14:11.4539066Z Version: 4.2.2
+2025-04-04T21:14:11.4540046Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-04T21:14:11.4541132Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-04T21:14:11.4541766Z ##[endgroup]
+2025-04-04T21:14:11.5362996Z Download action repository 'dangoslen/changelog-enforcer@v3' (SHA:204e7d3ef26579f4cd0fd759c57032656fdf23c7)
+2025-04-04T21:14:11.8909315Z Complete job name: verify-changelog
+2025-04-04T21:14:11.9617573Z ##[group]Run actions/checkout@v4
+2025-04-04T21:14:11.9618458Z with:
+2025-04-04T21:14:11.9619066Z   token: ***
+2025-04-04T21:14:11.9619525Z   ref: 72a8afe463b3fd283bdd498947cf939ee03da69e
+2025-04-04T21:14:11.9620156Z   repository: opensearch-project/flow-framework
+2025-04-04T21:14:11.9620735Z   ssh-strict: true
+2025-04-04T21:14:11.9621157Z   ssh-user: git
+2025-04-04T21:14:11.9621586Z   persist-credentials: true
+2025-04-04T21:14:11.9622055Z   clean: true
+2025-04-04T21:14:11.9622478Z   sparse-checkout-cone-mode: true
+2025-04-04T21:14:11.9622974Z   fetch-depth: 1
+2025-04-04T21:14:11.9623381Z   fetch-tags: false
+2025-04-04T21:14:11.9623830Z   show-progress: true
+2025-04-04T21:14:11.9624268Z   lfs: false
+2025-04-04T21:14:11.9624655Z   submodules: false
+2025-04-04T21:14:11.9625316Z   set-safe-directory: true
+2025-04-04T21:14:11.9626111Z ##[endgroup]
+2025-04-04T21:14:12.1560130Z Syncing repository: opensearch-project/flow-framework
+2025-04-04T21:14:12.1561970Z ##[group]Getting Git version info
+2025-04-04T21:14:12.1562746Z Working directory is '/home/runner/work/flow-framework/flow-framework'
+2025-04-04T21:14:12.1563775Z [command]/usr/bin/git version
+2025-04-04T21:14:12.1654932Z git version 2.49.0
+2025-04-04T21:14:12.1682132Z ##[endgroup]
+2025-04-04T21:14:12.1694961Z Temporarily overriding HOME='/home/runner/work/_temp/32ce2aa7-fcef-4c7e-b3da-3ef844a58a3c' before making global git config changes
+2025-04-04T21:14:12.1696369Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-04T21:14:12.1700223Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/flow-framework/flow-framework
+2025-04-04T21:14:12.1733225Z Deleting the contents of '/home/runner/work/flow-framework/flow-framework'
+2025-04-04T21:14:12.1736821Z ##[group]Initializing the repository
+2025-04-04T21:14:12.1741118Z [command]/usr/bin/git init /home/runner/work/flow-framework/flow-framework
+2025-04-04T21:14:12.1823687Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-04T21:14:12.1824878Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-04T21:14:12.1825909Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-04T21:14:12.1826629Z hint:
+2025-04-04T21:14:12.1827302Z hint: 	git config --global init.defaultBranch <name>
+2025-04-04T21:14:12.1827917Z hint:
+2025-04-04T21:14:12.1828759Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-04T21:14:12.1829958Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-04T21:14:12.1830675Z hint:
+2025-04-04T21:14:12.1831100Z hint: 	git branch -m <name>
+2025-04-04T21:14:12.1831906Z Initialized empty Git repository in /home/runner/work/flow-framework/flow-framework/.git/
+2025-04-04T21:14:12.1839877Z [command]/usr/bin/git remote add origin https://github.com/opensearch-project/flow-framework
+2025-04-04T21:14:12.1874445Z ##[endgroup]
+2025-04-04T21:14:12.1875211Z ##[group]Disabling automatic garbage collection
+2025-04-04T21:14:12.1878732Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-04T21:14:12.1911292Z ##[endgroup]
+2025-04-04T21:14:12.1912590Z ##[group]Setting up auth
+2025-04-04T21:14:12.1919826Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-04T21:14:12.1960939Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-04T21:14:12.2288908Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-04T21:14:12.2323449Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-04T21:14:12.2578389Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-04T21:14:12.2620592Z ##[endgroup]
+2025-04-04T21:14:12.2621814Z ##[group]Fetching the repository
+2025-04-04T21:14:12.2630638Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin 72a8afe463b3fd283bdd498947cf939ee03da69e
+2025-04-04T21:14:12.5834488Z From https://github.com/opensearch-project/flow-framework
+2025-04-04T21:14:12.5836255Z  * branch            72a8afe463b3fd283bdd498947cf939ee03da69e -> FETCH_HEAD
+2025-04-04T21:14:12.5861051Z ##[endgroup]
+2025-04-04T21:14:12.5863852Z ##[group]Determining the checkout info
+2025-04-04T21:14:12.5865384Z ##[endgroup]
+2025-04-04T21:14:12.5870504Z [command]/usr/bin/git sparse-checkout disable
+2025-04-04T21:14:12.5909629Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-04T21:14:12.5939533Z ##[group]Checking out the ref
+2025-04-04T21:14:12.5942868Z [command]/usr/bin/git checkout --progress --force 72a8afe463b3fd283bdd498947cf939ee03da69e
+2025-04-04T21:14:12.6155230Z Note: switching to '72a8afe463b3fd283bdd498947cf939ee03da69e'.
+2025-04-04T21:14:12.6156242Z 
+2025-04-04T21:14:12.6156900Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-04T21:14:12.6158734Z changes and commit them, and you can discard any commits you make in this
+2025-04-04T21:14:12.6160274Z state without impacting any branches by switching back to a branch.
+2025-04-04T21:14:12.6161012Z 
+2025-04-04T21:14:12.6161506Z If you want to create a new branch to retain commits you create, you may
+2025-04-04T21:14:12.6162571Z do so (now or later) by using -c with the switch command. Example:
+2025-04-04T21:14:12.6163897Z 
+2025-04-04T21:14:12.6164146Z   git switch -c <new-branch-name>
+2025-04-04T21:14:12.6164585Z 
+2025-04-04T21:14:12.6164802Z Or undo this operation with:
+2025-04-04T21:14:12.6165200Z 
+2025-04-04T21:14:12.6165433Z   git switch -
+2025-04-04T21:14:12.6165738Z 
+2025-04-04T21:14:12.6166247Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-04T21:14:12.6167028Z 
+2025-04-04T21:14:12.6167708Z HEAD is now at 72a8afe Fix Config parser does not handle tenant_id field
+2025-04-04T21:14:12.6169700Z ##[endgroup]
+2025-04-04T21:14:12.6198149Z [command]/usr/bin/git log -1 --format=%H
+2025-04-04T21:14:12.6219684Z 72a8afe463b3fd283bdd498947cf939ee03da69e
+2025-04-04T21:14:12.6524318Z ##[group]Run dangoslen/changelog-enforcer@v3
+2025-04-04T21:14:12.6525088Z with:
+2025-04-04T21:14:12.6525540Z   skipLabels: autocut, skip-changelog
+2025-04-04T21:14:12.6526218Z   changeLogPath: CHANGELOG.md
+2025-04-04T21:14:12.6527104Z   versionPattern: ^## \[((v|V)?\d*\.\d*\.\d*-?\w*|unreleased|Unreleased|UNRELEASED)\]
+2025-04-04T21:14:12.6528489Z   token: ***
+2025-04-04T21:14:12.6528912Z ##[endgroup]
+2025-04-04T21:14:12.7388953Z Skip Labels: autocut,skip-changelog
+2025-04-04T21:14:12.7390233Z Changelog Path: CHANGELOG.md
+2025-04-04T21:14:12.7391526Z Missing Update Error Message: No update to CHANGELOG.md found!
+2025-04-04T21:14:12.7393075Z Expected Latest Version: 
+2025-04-04T21:14:12.7394468Z Version Pattern: ^## \[((v|V)?\d*\.\d*\.\d*-?\w*|unreleased|Unreleased|UNRELEASED)\]
+2025-04-04T21:14:12.9600265Z ##[error]No update to CHANGELOG.md found!
+2025-04-04T21:14:12.9833762Z Post job cleanup.
+2025-04-04T21:14:13.0771688Z [command]/usr/bin/git version
+2025-04-04T21:14:13.0807580Z git version 2.49.0
+2025-04-04T21:14:13.0859669Z Temporarily overriding HOME='/home/runner/work/_temp/ab3bd450-0dc3-44c4-8546-dda362aacfa3' before making global git config changes
+2025-04-04T21:14:13.0864778Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-04T21:14:13.0869257Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/flow-framework/flow-framework
+2025-04-04T21:14:13.0900949Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-04T21:14:13.0936054Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-04T21:14:13.1179351Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-04T21:14:13.1182992Z http.https://github.com/.extraheader
+2025-04-04T21:14:13.1196659Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-04T21:14:13.1232216Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-04T21:14:13.1611440Z Cleaning up orphan processes

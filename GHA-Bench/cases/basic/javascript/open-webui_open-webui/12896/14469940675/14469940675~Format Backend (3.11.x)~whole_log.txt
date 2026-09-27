@@ -1,0 +1,240 @@
+2025-04-15T12:54:38.7482623Z Requested labels: ubuntu-latest
+2025-04-15T12:54:38.7482914Z Job defined at: open-webui/open-webui/.github/workflows/format-backend.yaml@refs/pull/12896/merge
+2025-04-15T12:54:38.7483071Z Waiting for a runner to pick up this job...
+2025-04-15T12:54:40.2706633Z Job is waiting for a hosted runner to come online.
+2025-04-15T12:54:42.5453391Z Job is about to start running on the hosted runner: GitHub Actions 52 (hosted)
+2025-04-15T12:54:45.0607643Z Current runner version: '2.323.0'
+2025-04-15T12:54:45.0630952Z ##[group]Operating System
+2025-04-15T12:54:45.0631764Z Ubuntu
+2025-04-15T12:54:45.0632289Z 24.04.2
+2025-04-15T12:54:45.0632840Z LTS
+2025-04-15T12:54:45.0633329Z ##[endgroup]
+2025-04-15T12:54:45.0633834Z ##[group]Runner Image
+2025-04-15T12:54:45.0634469Z Image: ubuntu-24.04
+2025-04-15T12:54:45.0635003Z Version: 20250413.1.0
+2025-04-15T12:54:45.0636032Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250413.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-15T12:54:45.0637463Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250413.1
+2025-04-15T12:54:45.0638392Z ##[endgroup]
+2025-04-15T12:54:45.0639329Z ##[group]Runner Image Provisioner
+2025-04-15T12:54:45.0640056Z 2.0.422.1
+2025-04-15T12:54:45.0640568Z ##[endgroup]
+2025-04-15T12:54:45.0642761Z ##[group]GITHUB_TOKEN Permissions
+2025-04-15T12:54:45.0644718Z Actions: read
+2025-04-15T12:54:45.0645543Z Attestations: read
+2025-04-15T12:54:45.0646167Z Checks: read
+2025-04-15T12:54:45.0646770Z Contents: read
+2025-04-15T12:54:45.0647286Z Deployments: read
+2025-04-15T12:54:45.0647821Z Discussions: read
+2025-04-15T12:54:45.0648393Z Issues: read
+2025-04-15T12:54:45.0649100Z Metadata: read
+2025-04-15T12:54:45.0649609Z Models: read
+2025-04-15T12:54:45.0650172Z Packages: read
+2025-04-15T12:54:45.0650712Z Pages: read
+2025-04-15T12:54:45.0651213Z PullRequests: read
+2025-04-15T12:54:45.0651850Z RepositoryProjects: read
+2025-04-15T12:54:45.0652435Z SecurityEvents: read
+2025-04-15T12:54:45.0652948Z Statuses: read
+2025-04-15T12:54:45.0653545Z ##[endgroup]
+2025-04-15T12:54:45.0656378Z Secret source: None
+2025-04-15T12:54:45.0657287Z Prepare workflow directory
+2025-04-15T12:54:45.1057819Z Prepare all required actions
+2025-04-15T12:54:45.1094619Z Getting action download info
+2025-04-15T12:54:45.3712475Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-15T12:54:45.3713346Z Version: 4.2.2
+2025-04-15T12:54:45.3714184Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-15T12:54:45.3715221Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-15T12:54:45.3715833Z ##[endgroup]
+2025-04-15T12:54:45.4854867Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-04-15T12:54:45.4855611Z Version: 5.5.0
+2025-04-15T12:54:45.4856268Z Digest: sha256:1fac95d751afd58314aebd2ab01d4bf3b3109a441917bd2cac2a22898ec494f7
+2025-04-15T12:54:45.4857148Z Source commit SHA: 8d9ed9ac5c53483de85588cdf95a591a75ab9f55
+2025-04-15T12:54:45.4857795Z ##[endgroup]
+2025-04-15T12:54:45.8452498Z Complete job name: Format Backend (3.11.x)
+2025-04-15T12:54:45.9145147Z ##[group]Run actions/checkout@v4
+2025-04-15T12:54:45.9145983Z with:
+2025-04-15T12:54:45.9146416Z   repository: open-webui/open-webui
+2025-04-15T12:54:45.9147087Z   token: ***
+2025-04-15T12:54:45.9147497Z   ssh-strict: true
+2025-04-15T12:54:45.9147913Z   ssh-user: git
+2025-04-15T12:54:45.9148334Z   persist-credentials: true
+2025-04-15T12:54:45.9148971Z   clean: true
+2025-04-15T12:54:45.9149420Z   sparse-checkout-cone-mode: true
+2025-04-15T12:54:45.9149922Z   fetch-depth: 1
+2025-04-15T12:54:45.9150324Z   fetch-tags: false
+2025-04-15T12:54:45.9150737Z   show-progress: true
+2025-04-15T12:54:45.9151141Z   lfs: false
+2025-04-15T12:54:45.9151539Z   submodules: false
+2025-04-15T12:54:45.9151960Z   set-safe-directory: true
+2025-04-15T12:54:45.9152641Z ##[endgroup]
+2025-04-15T12:54:46.0918339Z Syncing repository: open-webui/open-webui
+2025-04-15T12:54:46.0921073Z ##[group]Getting Git version info
+2025-04-15T12:54:46.0922578Z Working directory is '/home/runner/work/open-webui/open-webui'
+2025-04-15T12:54:46.0924429Z [command]/usr/bin/git version
+2025-04-15T12:54:46.0974609Z git version 2.49.0
+2025-04-15T12:54:46.1002478Z ##[endgroup]
+2025-04-15T12:54:46.1016278Z Temporarily overriding HOME='/home/runner/work/_temp/c3884ed5-be98-4e96-bb46-07f6a3da3ece' before making global git config changes
+2025-04-15T12:54:46.1017674Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-15T12:54:46.1021374Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/open-webui/open-webui
+2025-04-15T12:54:46.1055570Z Deleting the contents of '/home/runner/work/open-webui/open-webui'
+2025-04-15T12:54:46.1059183Z ##[group]Initializing the repository
+2025-04-15T12:54:46.1063197Z [command]/usr/bin/git init /home/runner/work/open-webui/open-webui
+2025-04-15T12:54:46.1157211Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-15T12:54:46.1158588Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-15T12:54:46.1159796Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-15T12:54:46.1160477Z hint:
+2025-04-15T12:54:46.1161058Z hint: 	git config --global init.defaultBranch <name>
+2025-04-15T12:54:46.1162135Z hint:
+2025-04-15T12:54:46.1162803Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-15T12:54:46.1164397Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-15T12:54:46.1165766Z hint:
+2025-04-15T12:54:46.1166497Z hint: 	git branch -m <name>
+2025-04-15T12:54:46.1167867Z Initialized empty Git repository in /home/runner/work/open-webui/open-webui/.git/
+2025-04-15T12:54:46.1175748Z [command]/usr/bin/git remote add origin https://github.com/open-webui/open-webui
+2025-04-15T12:54:46.1209549Z ##[endgroup]
+2025-04-15T12:54:46.1210786Z ##[group]Disabling automatic garbage collection
+2025-04-15T12:54:46.1214479Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-15T12:54:46.1246047Z ##[endgroup]
+2025-04-15T12:54:46.1247341Z ##[group]Setting up auth
+2025-04-15T12:54:46.1253678Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-15T12:54:46.1287097Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-15T12:54:46.1599994Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-15T12:54:46.1632609Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-15T12:54:46.1880855Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-15T12:54:46.1928219Z ##[endgroup]
+2025-04-15T12:54:46.1929260Z ##[group]Fetching the repository
+2025-04-15T12:54:46.1937834Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +2cc689b2f28191180c6fad510ad8001a49482f16:refs/remotes/pull/12896/merge
+2025-04-15T12:54:48.5107483Z From https://github.com/open-webui/open-webui
+2025-04-15T12:54:48.5109155Z  * [new ref]         2cc689b2f28191180c6fad510ad8001a49482f16 -> pull/12896/merge
+2025-04-15T12:54:48.5138158Z ##[endgroup]
+2025-04-15T12:54:48.5139859Z ##[group]Determining the checkout info
+2025-04-15T12:54:48.5141414Z ##[endgroup]
+2025-04-15T12:54:48.5145988Z [command]/usr/bin/git sparse-checkout disable
+2025-04-15T12:54:48.5186347Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-15T12:54:48.5216738Z ##[group]Checking out the ref
+2025-04-15T12:54:48.5218390Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/12896/merge
+2025-04-15T12:54:49.1010092Z Note: switching to 'refs/remotes/pull/12896/merge'.
+2025-04-15T12:54:49.1010611Z 
+2025-04-15T12:54:49.1011023Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-15T12:54:49.1011759Z changes and commit them, and you can discard any commits you make in this
+2025-04-15T12:54:49.1012401Z state without impacting any branches by switching back to a branch.
+2025-04-15T12:54:49.1012752Z 
+2025-04-15T12:54:49.1013011Z If you want to create a new branch to retain commits you create, you may
+2025-04-15T12:54:49.1013854Z do so (now or later) by using -c with the switch command. Example:
+2025-04-15T12:54:49.1014166Z 
+2025-04-15T12:54:49.1014315Z   git switch -c <new-branch-name>
+2025-04-15T12:54:49.1014551Z 
+2025-04-15T12:54:49.1014709Z Or undo this operation with:
+2025-04-15T12:54:49.1014914Z 
+2025-04-15T12:54:49.1015051Z   git switch -
+2025-04-15T12:54:49.1015228Z 
+2025-04-15T12:54:49.1015507Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-15T12:54:49.1015892Z 
+2025-04-15T12:54:49.1016384Z HEAD is now at 2cc689b Merge b1ef53873fa3adccd0a5a1b68e5b638316e40248 into 12c7ecf0f4bd4e6ed4c1840962f6a1fdf7f80b5e
+2025-04-15T12:54:49.1037928Z ##[endgroup]
+2025-04-15T12:54:49.1075822Z [command]/usr/bin/git log -1 --format=%H
+2025-04-15T12:54:49.1097974Z 2cc689b2f28191180c6fad510ad8001a49482f16
+2025-04-15T12:54:49.1411809Z ##[group]Run actions/setup-python@v5
+2025-04-15T12:54:49.1412218Z with:
+2025-04-15T12:54:49.1412498Z   python-version: 3.11.x
+2025-04-15T12:54:49.1412809Z   check-latest: false
+2025-04-15T12:54:49.1413257Z   token: ***
+2025-04-15T12:54:49.1413527Z   update-environment: true
+2025-04-15T12:54:49.1413852Z   allow-prereleases: false
+2025-04-15T12:54:49.1414179Z   freethreaded: false
+2025-04-15T12:54:49.1414465Z ##[endgroup]
+2025-04-15T12:54:49.3050645Z ##[group]Installed versions
+2025-04-15T12:54:49.3121530Z Successfully set up CPython (3.11.12)
+2025-04-15T12:54:49.3122633Z ##[endgroup]
+2025-04-15T12:54:49.3243170Z ##[group]Run python -m pip install --upgrade pip
+2025-04-15T12:54:49.3243709Z [36;1mpython -m pip install --upgrade pip[0m
+2025-04-15T12:54:49.3244101Z [36;1mpip install black[0m
+2025-04-15T12:54:49.3296990Z shell: /usr/bin/bash -e {0}
+2025-04-15T12:54:49.3297339Z env:
+2025-04-15T12:54:49.3297682Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.12/x64
+2025-04-15T12:54:49.3298220Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.12/x64/lib/pkgconfig
+2025-04-15T12:54:49.3298945Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.12/x64
+2025-04-15T12:54:49.3299449Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.12/x64
+2025-04-15T12:54:49.3299928Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.12/x64
+2025-04-15T12:54:49.3300409Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.12/x64/lib
+2025-04-15T12:54:49.3300801Z ##[endgroup]
+2025-04-15T12:54:49.9281892Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages (25.0.1)
+2025-04-15T12:54:50.5476802Z Collecting black
+2025-04-15T12:54:50.5807247Z   Downloading black-25.1.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl.metadata (81 kB)
+2025-04-15T12:54:50.6192291Z Collecting click>=8.0.0 (from black)
+2025-04-15T12:54:50.6218943Z   Downloading click-8.1.8-py3-none-any.whl.metadata (2.3 kB)
+2025-04-15T12:54:50.6336575Z Collecting mypy-extensions>=0.4.3 (from black)
+2025-04-15T12:54:50.6363917Z   Downloading mypy_extensions-1.0.0-py3-none-any.whl.metadata (1.1 kB)
+2025-04-15T12:54:50.6512393Z Collecting packaging>=22.0 (from black)
+2025-04-15T12:54:50.6541175Z   Downloading packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+2025-04-15T12:54:50.6669375Z Collecting pathspec>=0.9.0 (from black)
+2025-04-15T12:54:50.6696340Z   Downloading pathspec-0.12.1-py3-none-any.whl.metadata (21 kB)
+2025-04-15T12:54:50.6967457Z Collecting platformdirs>=2 (from black)
+2025-04-15T12:54:50.6997800Z   Downloading platformdirs-4.3.7-py3-none-any.whl.metadata (11 kB)
+2025-04-15T12:54:50.7095515Z Downloading black-25.1.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl (1.7 MB)
+2025-04-15T12:54:50.7239554Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 141.3 MB/s eta 0:00:00
+2025-04-15T12:54:50.7267100Z Downloading click-8.1.8-py3-none-any.whl (98 kB)
+2025-04-15T12:54:50.7321763Z Downloading mypy_extensions-1.0.0-py3-none-any.whl (4.7 kB)
+2025-04-15T12:54:50.7374524Z Downloading packaging-24.2-py3-none-any.whl (65 kB)
+2025-04-15T12:54:50.7424364Z Downloading pathspec-0.12.1-py3-none-any.whl (31 kB)
+2025-04-15T12:54:50.7475485Z Downloading platformdirs-4.3.7-py3-none-any.whl (18 kB)
+2025-04-15T12:54:50.7764956Z Installing collected packages: platformdirs, pathspec, packaging, mypy-extensions, click, black
+2025-04-15T12:54:51.0773468Z Successfully installed black-25.1.0 click-8.1.8 mypy-extensions-1.0.0 packaging-24.2 pathspec-0.12.1 platformdirs-4.3.7
+2025-04-15T12:54:51.1556588Z ##[group]Run npm run format:backend
+2025-04-15T12:54:51.1556928Z [36;1mnpm run format:backend[0m
+2025-04-15T12:54:51.1604754Z shell: /usr/bin/bash -e {0}
+2025-04-15T12:54:51.1604989Z env:
+2025-04-15T12:54:51.1605251Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.12/x64
+2025-04-15T12:54:51.1605673Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.12/x64/lib/pkgconfig
+2025-04-15T12:54:51.1606070Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.12/x64
+2025-04-15T12:54:51.1606463Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.12/x64
+2025-04-15T12:54:51.1606833Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.12/x64
+2025-04-15T12:54:51.1607220Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.12/x64/lib
+2025-04-15T12:54:51.1607521Z ##[endgroup]
+2025-04-15T12:54:51.4355693Z 
+2025-04-15T12:54:51.4356181Z > open-webui@0.6.5 format:backend
+2025-04-15T12:54:53.3406971Z reformatted /home/runner/work/open-webui/open-webui/backend/open_webui/retrieval/vector/dbs/qdrant.py
+2025-04-15T12:54:53.3407923Z > black . --exclude ".venv/|/venv/"
+2025-04-15T12:54:53.3408242Z 
+2025-04-15T12:54:54.6698490Z 
+2025-04-15T12:54:54.6699757Z All done! ✨ 🍰 ✨
+2025-04-15T12:54:54.6701280Z 1 file reformatted, 155 files left unchanged.
+2025-04-15T12:54:54.7006012Z ##[group]Run git diff --exit-code
+2025-04-15T12:54:54.7006327Z [36;1mgit diff --exit-code[0m
+2025-04-15T12:54:54.7053145Z shell: /usr/bin/bash -e {0}
+2025-04-15T12:54:54.7053386Z env:
+2025-04-15T12:54:54.7053635Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.12/x64
+2025-04-15T12:54:54.7054052Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.12/x64/lib/pkgconfig
+2025-04-15T12:54:54.7054464Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.12/x64
+2025-04-15T12:54:54.7054820Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.12/x64
+2025-04-15T12:54:54.7055172Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.12/x64
+2025-04-15T12:54:54.7055520Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.12/x64/lib
+2025-04-15T12:54:54.7055810Z ##[endgroup]
+2025-04-15T12:54:54.7661326Z diff --git a/backend/open_webui/retrieval/vector/dbs/qdrant.py b/backend/open_webui/retrieval/vector/dbs/qdrant.py
+2025-04-15T12:54:54.7662013Z index 895098e..13d0b53 100644
+2025-04-15T12:54:54.7662431Z --- a/backend/open_webui/retrieval/vector/dbs/qdrant.py
+2025-04-15T12:54:54.7662856Z +++ b/backend/open_webui/retrieval/vector/dbs/qdrant.py
+2025-04-15T12:54:54.7663213Z @@ -51,7 +51,9 @@ class QdrantClient:
+2025-04-15T12:54:54.7663542Z          self.client.create_collection(
+2025-04-15T12:54:54.7663901Z              collection_name=collection_name_with_prefix,
+2025-04-15T12:54:54.7664275Z              vectors_config=models.VectorParams(
+2025-04-15T12:54:54.7664773Z -                size=dimension, distance=models.Distance.COSINE, on_disk=self.QDRANT_ON_DISK
+2025-04-15T12:54:54.7665239Z +                size=dimension,
+2025-04-15T12:54:54.7665581Z +                distance=models.Distance.COSINE,
+2025-04-15T12:54:54.7666398Z +                on_disk=self.QDRANT_ON_DISK,
+2025-04-15T12:54:54.7666890Z              ),
+2025-04-15T12:54:54.7667229Z          )
+2025-04-15T12:54:54.7667559Z  
+2025-04-15T12:54:54.7678218Z ##[error]Process completed with exit code 1.
+2025-04-15T12:54:54.7775047Z Post job cleanup.
+2025-04-15T12:54:54.8699662Z [command]/usr/bin/git version
+2025-04-15T12:54:54.8734966Z git version 2.49.0
+2025-04-15T12:54:54.8782706Z Temporarily overriding HOME='/home/runner/work/_temp/705a4722-1a7f-4e85-be30-787c67173a84' before making global git config changes
+2025-04-15T12:54:54.8783811Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-15T12:54:54.8787872Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/open-webui/open-webui
+2025-04-15T12:54:54.8822495Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-15T12:54:54.8854907Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-15T12:54:54.9093879Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-15T12:54:54.9114790Z http.https://github.com/.extraheader
+2025-04-15T12:54:54.9127341Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-15T12:54:54.9161109Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-15T12:54:54.9496588Z Cleaning up orphan processes

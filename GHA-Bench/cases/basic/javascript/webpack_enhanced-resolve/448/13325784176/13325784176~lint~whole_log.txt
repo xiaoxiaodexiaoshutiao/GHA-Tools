@@ -1,0 +1,180 @@
+2025-02-14T16:16:38.9648198Z Requested labels: ubuntu-latest
+2025-02-14T16:16:38.9648526Z Job defined at: webpack/enhanced-resolve/.github/workflows/test.yml@refs/pull/448/merge
+2025-02-14T16:16:38.9648627Z Waiting for a runner to pick up this job...
+2025-02-14T16:16:40.2941507Z Job is waiting for a hosted runner to come online.
+2025-02-14T16:16:42.6206960Z Job is about to start running on the hosted runner: GitHub Actions 41 (hosted)
+2025-02-14T16:16:44.4741778Z Current runner version: '2.322.0'
+2025-02-14T16:16:44.4765354Z ##[group]Operating System
+2025-02-14T16:16:44.4766157Z Ubuntu
+2025-02-14T16:16:44.4766692Z 24.04.1
+2025-02-14T16:16:44.4767203Z LTS
+2025-02-14T16:16:44.4767697Z ##[endgroup]
+2025-02-14T16:16:44.4768231Z ##[group]Runner Image
+2025-02-14T16:16:44.4768864Z Image: ubuntu-24.04
+2025-02-14T16:16:44.4769421Z Version: 20250209.1.0
+2025-02-14T16:16:44.4770434Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250209.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-14T16:16:44.4771866Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250209.1
+2025-02-14T16:16:44.4772948Z ##[endgroup]
+2025-02-14T16:16:44.4773485Z ##[group]Runner Image Provisioner
+2025-02-14T16:16:44.4774156Z 2.0.422.1
+2025-02-14T16:16:44.4774635Z ##[endgroup]
+2025-02-14T16:16:44.4775727Z ##[group]GITHUB_TOKEN Permissions
+2025-02-14T16:16:44.4778037Z Contents: read
+2025-02-14T16:16:44.4778586Z Metadata: read
+2025-02-14T16:16:44.4779365Z ##[endgroup]
+2025-02-14T16:16:44.4782867Z Secret source: None
+2025-02-14T16:16:44.4783903Z Prepare workflow directory
+2025-02-14T16:16:44.5088380Z Prepare all required actions
+2025-02-14T16:16:44.5124381Z Getting action download info
+2025-02-14T16:16:44.6985126Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-02-14T16:16:44.7744362Z Download action repository 'actions/setup-node@v4' (SHA:1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a)
+2025-02-14T16:16:45.0699441Z Complete job name: lint
+2025-02-14T16:16:45.1446239Z ##[group]Run actions/checkout@v4
+2025-02-14T16:16:45.1447117Z with:
+2025-02-14T16:16:45.1447558Z   repository: webpack/enhanced-resolve
+2025-02-14T16:16:45.1448283Z   token: ***
+2025-02-14T16:16:45.1448701Z   ssh-strict: true
+2025-02-14T16:16:45.1449130Z   ssh-user: git
+2025-02-14T16:16:45.1449572Z   persist-credentials: true
+2025-02-14T16:16:45.1450044Z   clean: true
+2025-02-14T16:16:45.1450484Z   sparse-checkout-cone-mode: true
+2025-02-14T16:16:45.1451037Z   fetch-depth: 1
+2025-02-14T16:16:45.1451470Z   fetch-tags: false
+2025-02-14T16:16:45.1451915Z   show-progress: true
+2025-02-14T16:16:45.1452612Z   lfs: false
+2025-02-14T16:16:45.1453010Z   submodules: false
+2025-02-14T16:16:45.1453443Z   set-safe-directory: true
+2025-02-14T16:16:45.1454190Z ##[endgroup]
+2025-02-14T16:16:45.3180583Z Syncing repository: webpack/enhanced-resolve
+2025-02-14T16:16:45.3182846Z ##[group]Getting Git version info
+2025-02-14T16:16:45.3183766Z Working directory is '/home/runner/work/enhanced-resolve/enhanced-resolve'
+2025-02-14T16:16:45.3184956Z [command]/usr/bin/git version
+2025-02-14T16:16:45.3221360Z git version 2.48.1
+2025-02-14T16:16:45.3248099Z ##[endgroup]
+2025-02-14T16:16:45.3261284Z Temporarily overriding HOME='/home/runner/work/_temp/f8ee6202-3bb7-4b0f-b452-db2c635c391b' before making global git config changes
+2025-02-14T16:16:45.3262927Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-14T16:16:45.3266294Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/enhanced-resolve/enhanced-resolve
+2025-02-14T16:16:45.3299413Z Deleting the contents of '/home/runner/work/enhanced-resolve/enhanced-resolve'
+2025-02-14T16:16:45.3303286Z ##[group]Initializing the repository
+2025-02-14T16:16:45.3307144Z [command]/usr/bin/git init /home/runner/work/enhanced-resolve/enhanced-resolve
+2025-02-14T16:16:45.3366467Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-14T16:16:45.3367554Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-14T16:16:45.3368564Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-14T16:16:45.3369240Z hint:
+2025-02-14T16:16:45.3369754Z hint: 	git config --global init.defaultBranch <name>
+2025-02-14T16:16:45.3370354Z hint:
+2025-02-14T16:16:45.3371294Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-14T16:16:45.3372607Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-14T16:16:45.3373599Z hint:
+2025-02-14T16:16:45.3374006Z hint: 	git branch -m <name>
+2025-02-14T16:16:45.3374836Z Initialized empty Git repository in /home/runner/work/enhanced-resolve/enhanced-resolve/.git/
+2025-02-14T16:16:45.3382227Z [command]/usr/bin/git remote add origin https://github.com/webpack/enhanced-resolve
+2025-02-14T16:16:45.3412841Z ##[endgroup]
+2025-02-14T16:16:45.3413591Z ##[group]Disabling automatic garbage collection
+2025-02-14T16:16:45.3416827Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-14T16:16:45.3444339Z ##[endgroup]
+2025-02-14T16:16:45.3445061Z ##[group]Setting up auth
+2025-02-14T16:16:45.3450881Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-14T16:16:45.3479611Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-14T16:16:45.3752914Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-14T16:16:45.3781210Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-14T16:16:45.4011404Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-14T16:16:45.4048745Z ##[endgroup]
+2025-02-14T16:16:45.4049825Z ##[group]Fetching the repository
+2025-02-14T16:16:45.4057417Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a7f4a155d281b7413db58c621616ab4e173836c1:refs/remotes/pull/448/merge
+2025-02-14T16:16:45.7576670Z From https://github.com/webpack/enhanced-resolve
+2025-02-14T16:16:45.7578220Z  * [new ref]         a7f4a155d281b7413db58c621616ab4e173836c1 -> pull/448/merge
+2025-02-14T16:16:45.7600724Z ##[endgroup]
+2025-02-14T16:16:45.7601497Z ##[group]Determining the checkout info
+2025-02-14T16:16:45.7604571Z ##[endgroup]
+2025-02-14T16:16:45.7610243Z [command]/usr/bin/git sparse-checkout disable
+2025-02-14T16:16:45.7651151Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-14T16:16:45.7679010Z ##[group]Checking out the ref
+2025-02-14T16:16:45.7683444Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/448/merge
+2025-02-14T16:16:45.7851011Z Note: switching to 'refs/remotes/pull/448/merge'.
+2025-02-14T16:16:45.7851896Z 
+2025-02-14T16:16:45.7852775Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-14T16:16:45.7854272Z changes and commit them, and you can discard any commits you make in this
+2025-02-14T16:16:45.7855747Z state without impacting any branches by switching back to a branch.
+2025-02-14T16:16:45.7856435Z 
+2025-02-14T16:16:45.7856789Z If you want to create a new branch to retain commits you create, you may
+2025-02-14T16:16:45.7857592Z do so (now or later) by using -c with the switch command. Example:
+2025-02-14T16:16:45.7858085Z 
+2025-02-14T16:16:45.7858293Z   git switch -c <new-branch-name>
+2025-02-14T16:16:45.7858814Z 
+2025-02-14T16:16:45.7859131Z Or undo this operation with:
+2025-02-14T16:16:45.7859641Z 
+2025-02-14T16:16:45.7859839Z   git switch -
+2025-02-14T16:16:45.7860082Z 
+2025-02-14T16:16:45.7860477Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-14T16:16:45.7861024Z 
+2025-02-14T16:16:45.7861663Z HEAD is now at a7f4a15 Merge 4918c5b3a4b36d461b7dd34b86da0c63cc714228 into 9436f4d6d930f98b7dbdc7f142ddc5a323512cb6
+2025-02-14T16:16:45.7863842Z ##[endgroup]
+2025-02-14T16:16:45.7893543Z [command]/usr/bin/git log -1 --format=%H
+2025-02-14T16:16:45.7914601Z a7f4a155d281b7413db58c621616ab4e173836c1
+2025-02-14T16:16:45.8151235Z ##[group]Run actions/setup-node@v4
+2025-02-14T16:16:45.8151794Z with:
+2025-02-14T16:16:45.8152473Z   node-version: lts/*
+2025-02-14T16:16:45.8152925Z   cache: yarn
+2025-02-14T16:16:45.8153325Z   always-auth: false
+2025-02-14T16:16:45.8153968Z   check-latest: false
+2025-02-14T16:16:45.8154580Z   token: ***
+2025-02-14T16:16:45.8154973Z ##[endgroup]
+2025-02-14T16:16:45.9866103Z Attempt to resolve LTS alias from manifest...
+2025-02-14T16:16:46.2604533Z Found in cache @ /opt/hostedtoolcache/node/22.13.1/x64
+2025-02-14T16:16:46.2610106Z ##[group]Environment details
+2025-02-14T16:16:51.6206898Z node: v22.13.1
+2025-02-14T16:16:51.6207443Z npm: 10.9.2
+2025-02-14T16:16:51.6207928Z yarn: 1.22.22
+2025-02-14T16:16:51.6208783Z ##[endgroup]
+2025-02-14T16:16:51.6230923Z [command]/usr/local/bin/yarn --version
+2025-02-14T16:16:51.7321245Z 1.22.22
+2025-02-14T16:16:51.7412963Z [command]/usr/local/bin/yarn cache dir
+2025-02-14T16:16:51.8992388Z /home/runner/.cache/yarn/v6
+2025-02-14T16:16:51.9212859Z [command]/usr/local/bin/yarn config get enableGlobalCache
+2025-02-14T16:16:52.0661490Z undefined
+2025-02-14T16:16:52.1107888Z ##[warning]Cache not found for keys: node-cache-Linux-x64-yarn-6e03086c527e8bdaed53dddfa7a4777d4cbf99000be65a1397561da89fea119f
+2025-02-14T16:16:52.1117407Z yarn cache is not found
+2025-02-14T16:16:52.1248111Z ##[group]Run yarn --frozen-lockfile
+2025-02-14T16:16:52.1248489Z [36;1myarn --frozen-lockfile[0m
+2025-02-14T16:16:52.1415717Z shell: /usr/bin/bash -e {0}
+2025-02-14T16:16:52.1416027Z ##[endgroup]
+2025-02-14T16:16:52.2664772Z yarn install v1.22.22
+2025-02-14T16:16:52.3265795Z [1/5] Validating package.json...
+2025-02-14T16:16:52.3285965Z [2/5] Resolving packages...
+2025-02-14T16:16:52.5068185Z [3/5] Fetching packages...
+2025-02-14T16:16:58.7483305Z [4/5] Linking dependencies...
+2025-02-14T16:17:01.9124370Z [5/5] Building fresh packages...
+2025-02-14T16:17:02.5703878Z $ husky install
+2025-02-14T16:17:02.6038068Z husky - Git hooks installed
+2025-02-14T16:17:02.6091796Z Done in 10.35s.
+2025-02-14T16:17:02.6460714Z ##[group]Run yarn lint
+2025-02-14T16:17:02.6461014Z [36;1myarn lint[0m
+2025-02-14T16:17:02.6515906Z shell: /usr/bin/bash -e {0}
+2025-02-14T16:17:02.6516171Z ##[endgroup]
+2025-02-14T16:17:02.7726932Z yarn run v1.22.22
+2025-02-14T16:17:02.8097406Z $ yarn run code-lint && yarn run type-lint && yarn typings-test && yarn run special-lint && yarn run spelling
+2025-02-14T16:17:02.9697799Z $ eslint --cache lib test
+2025-02-14T16:17:06.0541602Z $ tsc
+2025-02-14T16:17:08.2756123Z $ tsc -p tsconfig.types.test.json
+2025-02-14T16:17:11.1591652Z $ node node_modules/tooling/lockfile-lint && node node_modules/tooling/inherit-types && node node_modules/tooling/format-file-header && node node_modules/tooling/generate-types
+2025-02-14T16:17:13.6658295Z types.d.ts need to be updated.
+2025-02-14T16:17:13.6660449Z run 'yarn special-lint-fix' to update.
+2025-02-14T16:17:13.6946425Z error Command failed with exit code 1.
+2025-02-14T16:17:13.6947616Z info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+2025-02-14T16:17:13.7146997Z error Command failed with exit code 1.
+2025-02-14T16:17:13.7148438Z info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+2025-02-14T16:17:13.7256824Z ##[error]Process completed with exit code 1.
+2025-02-14T16:17:13.7333149Z Post job cleanup.
+2025-02-14T16:17:13.8269401Z [command]/usr/bin/git version
+2025-02-14T16:17:13.8306362Z git version 2.48.1
+2025-02-14T16:17:13.8357480Z Temporarily overriding HOME='/home/runner/work/_temp/74fb84ad-9888-4029-a282-844a7c5a0348' before making global git config changes
+2025-02-14T16:17:13.8359002Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-14T16:17:13.8363975Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/enhanced-resolve/enhanced-resolve
+2025-02-14T16:17:13.8398143Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-14T16:17:13.8429622Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-14T16:17:13.8661981Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-14T16:17:13.8682016Z http.https://github.com/.extraheader
+2025-02-14T16:17:13.8695298Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-14T16:17:13.8726398Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-14T16:17:13.9057017Z Cleaning up orphan processes

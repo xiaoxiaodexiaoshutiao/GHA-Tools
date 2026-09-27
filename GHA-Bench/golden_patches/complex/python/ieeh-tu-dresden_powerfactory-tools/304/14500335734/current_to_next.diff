@@ -1,0 +1,2098 @@
+diff --git a/examples/grids/3_Bus/3_Bus__HV_3_Bus__steadystate_case.json b/examples/grids/3_Bus/3_Bus__HV_3_Bus__steadystate_case.json
+index 78e93ad0..37c8d0ed 100644
+--- a/examples/grids/3_Bus/3_Bus__HV_3_Bus__steadystate_case.json
++++ b/examples/grids/3_Bus/3_Bus__HV_3_Bus__steadystate_case.json
+@@ -281,10 +281,10 @@
+   ],
+   "meta": {
+     "case": "3_Bus",
+-    "creator": "powerfactory-tools @ version 3.0.0",
+-    "date": "2024-09-03",
++    "creator": "powerfactory-tools @ version 3.1.0",
++    "date": "2025-04-16",
+     "grid": "HV_3_Bus",
+-    "id": "ade4fb63-9722-4b56-929b-45e08f70de02",
++    "id": "60d76039-3f09-4115-be0d-c403c444423f",
+     "optional_data": [
+       {
+         "description": "The version of PowerFactory used for export.",
+@@ -294,7 +294,7 @@
+     ],
+     "project": "PowerFactory-Tools",
+     "sign_convention": "PASSIVE",
+-    "version": "2.3.1"
++    "version": "2.3.3"
+   },
+   "optional_data": null,
+   "transformers": []
+diff --git a/examples/grids/3_Bus/3_Bus__HV_3_Bus__topology.json b/examples/grids/3_Bus/3_Bus__HV_3_Bus__topology.json
+index 6b1ad057..0db8c7a8 100644
+--- a/examples/grids/3_Bus/3_Bus__HV_3_Bus__topology.json
++++ b/examples/grids/3_Bus/3_Bus__HV_3_Bus__topology.json
+@@ -421,9 +421,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_const_power",
+         "optional_data": null,
+         "u_0": {
+@@ -536,9 +536,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_const_power",
+         "optional_data": null,
+         "u_0": {
+@@ -565,9 +565,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_const_power",
+         "optional_data": null,
+         "u_0": {
+@@ -680,9 +680,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_const_power",
+         "optional_data": null,
+         "u_0": {
+@@ -709,9 +709,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -830,9 +830,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -859,9 +859,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -980,9 +980,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -1007,10 +1007,10 @@
+   ],
+   "meta": {
+     "case": "3_Bus",
+-    "creator": "powerfactory-tools @ version 3.0.0",
+-    "date": "2024-09-03",
++    "creator": "powerfactory-tools @ version 3.1.0",
++    "date": "2025-04-16",
+     "grid": "HV_3_Bus",
+-    "id": "ade4fb63-9722-4b56-929b-45e08f70de02",
++    "id": "60d76039-3f09-4115-be0d-c403c444423f",
+     "optional_data": [
+       {
+         "description": "The version of PowerFactory used for export.",
+@@ -1020,7 +1020,7 @@
+     ],
+     "project": "PowerFactory-Tools",
+     "sign_convention": "PASSIVE",
+-    "version": "2.3.1"
++    "version": "2.3.3"
+   },
+   "nodes": [
+     {
+diff --git a/examples/grids/3_Bus/3_Bus__HV_3_Bus__topology_case.json b/examples/grids/3_Bus/3_Bus__HV_3_Bus__topology_case.json
+index 9b72ba41..14fe2fd6 100644
+--- a/examples/grids/3_Bus/3_Bus__HV_3_Bus__topology_case.json
++++ b/examples/grids/3_Bus/3_Bus__HV_3_Bus__topology_case.json
+@@ -2,10 +2,10 @@
+   "elements": [],
+   "meta": {
+     "case": "3_Bus",
+-    "creator": "powerfactory-tools @ version 3.0.0",
+-    "date": "2024-09-03",
++    "creator": "powerfactory-tools @ version 3.1.0",
++    "date": "2025-04-16",
+     "grid": "HV_3_Bus",
+-    "id": "ade4fb63-9722-4b56-929b-45e08f70de02",
++    "id": "60d76039-3f09-4115-be0d-c403c444423f",
+     "optional_data": [
+       {
+         "description": "The version of PowerFactory used for export.",
+@@ -15,7 +15,7 @@
+     ],
+     "project": "PowerFactory-Tools",
+     "sign_convention": "PASSIVE",
+-    "version": "2.3.1"
++    "version": "2.3.3"
+   },
+   "optional_data": null
+ }
+\ No newline at end of file
+diff --git a/examples/grids/Base/Base__HV_9_Bus__steadystate_case.json b/examples/grids/Base/Base__HV_9_Bus__steadystate_case.json
+index 83ea2892..1e49f382 100644
+--- a/examples/grids/Base/Base__HV_9_Bus__steadystate_case.json
++++ b/examples/grids/Base/Base__HV_9_Bus__steadystate_case.json
+@@ -1226,10 +1226,10 @@
+   ],
+   "meta": {
+     "case": "Base",
+-    "creator": "powerfactory-tools @ version 3.0.0",
+-    "date": "2024-09-03",
++    "creator": "powerfactory-tools @ version 3.1.0",
++    "date": "2025-04-16",
+     "grid": "HV_9_Bus",
+-    "id": "a7e50600-34a1-4a4c-a5ba-9c9f9a56c2c3",
++    "id": "2788c08e-ee7d-4f0c-a4f1-af2b780134be",
+     "optional_data": [
+       {
+         "description": "The version of PowerFactory used for export.",
+@@ -1239,7 +1239,7 @@
+     ],
+     "project": "PowerFactory-Tools",
+     "sign_convention": "PASSIVE",
+-    "version": "2.3.1"
++    "version": "2.3.3"
+   },
+   "optional_data": null,
+   "transformers": [
+diff --git a/examples/grids/Base/Base__HV_9_Bus__topology.json b/examples/grids/Base/Base__HV_9_Bus__topology.json
+index 716311eb..4a5a8c50 100644
+--- a/examples/grids/Base/Base__HV_9_Bus__topology.json
++++ b/examples/grids/Base/Base__HV_9_Bus__topology.json
+@@ -2395,9 +2395,9 @@
+         "c_i": 0.0,
+         "c_p": 0.0,
+         "c_z": 1.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -2510,9 +2510,9 @@
+         "c_i": 0.0,
+         "c_p": 0.0,
+         "c_z": 1.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -2539,9 +2539,9 @@
+         "c_i": 1.0,
+         "c_p": 0.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_const_current",
+         "optional_data": null,
+         "u_0": {
+@@ -2654,9 +2654,9 @@
+         "c_i": 1.0,
+         "c_p": 0.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_const_current",
+         "optional_data": null,
+         "u_0": {
+@@ -2683,9 +2683,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_const_power",
+         "optional_data": null,
+         "u_0": {
+@@ -2798,9 +2798,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_const_power",
+         "optional_data": null,
+         "u_0": {
+@@ -2827,9 +2827,9 @@
+         "c_i": 0.0,
+         "c_p": 0.0,
+         "c_z": 1.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_const_impedance",
+         "optional_data": null,
+         "u_0": {
+@@ -2942,9 +2942,9 @@
+         "c_i": 0.0,
+         "c_p": 0.0,
+         "c_z": 1.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_const_impedance",
+         "optional_data": null,
+         "u_0": {
+@@ -2971,9 +2971,9 @@
+         "c_i": 0.0,
+         "c_p": 0.0,
+         "c_z": 1.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_general_2ph",
+         "optional_data": null,
+         "u_0": {
+@@ -3078,9 +3078,9 @@
+         "c_i": 0.0,
+         "c_p": 0.0,
+         "c_z": 1.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_general_2ph",
+         "optional_data": null,
+         "u_0": {
+@@ -3107,9 +3107,9 @@
+         "c_i": 0.0,
+         "c_p": 0.0,
+         "c_z": 1.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_general",
+         "optional_data": null,
+         "u_0": {
+@@ -3222,9 +3222,9 @@
+         "c_i": 0.0,
+         "c_p": 0.0,
+         "c_z": 1.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_general",
+         "optional_data": null,
+         "u_0": {
+@@ -3251,9 +3251,9 @@
+         "c_i": 1.0,
+         "c_p": 0.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Standard-NS-Lasttyp",
+         "optional_data": null,
+         "u_0": {
+@@ -3366,9 +3366,9 @@
+         "c_i": 1.0,
+         "c_p": 0.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Standard-NS-Lasttyp",
+         "optional_data": null,
+         "u_0": {
+@@ -3395,9 +3395,9 @@
+         "c_i": 1.0,
+         "c_p": 0.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Standard-NS-Lasttyp",
+         "optional_data": null,
+         "u_0": {
+@@ -3510,9 +3510,9 @@
+         "c_i": 1.0,
+         "c_p": 0.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Standard-NS-Lasttyp",
+         "optional_data": null,
+         "u_0": {
+@@ -3539,9 +3539,9 @@
+         "c_i": 1.0,
+         "c_p": 0.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Standard-NS-Lasttyp",
+         "optional_data": null,
+         "u_0": {
+@@ -3654,9 +3654,9 @@
+         "c_i": 1.0,
+         "c_p": 0.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Standard-NS-Lasttyp",
+         "optional_data": null,
+         "u_0": {
+@@ -3683,9 +3683,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "LoadLV_const_current",
+         "optional_data": null,
+         "u_0": {
+@@ -3798,9 +3798,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "LoadLV_const_current",
+         "optional_data": null,
+         "u_0": {
+@@ -3827,9 +3827,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -3942,9 +3942,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -3971,9 +3971,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4086,9 +4086,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4115,9 +4115,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4236,9 +4236,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4265,9 +4265,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4386,9 +4386,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4415,9 +4415,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4536,9 +4536,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4565,9 +4565,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4712,9 +4712,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4741,9 +4741,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4846,9 +4846,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4875,9 +4875,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4990,9 +4990,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -5017,10 +5017,10 @@
+   ],
+   "meta": {
+     "case": "Base",
+-    "creator": "powerfactory-tools @ version 3.0.0",
+-    "date": "2024-09-03",
++    "creator": "powerfactory-tools @ version 3.1.0",
++    "date": "2025-04-16",
+     "grid": "HV_9_Bus",
+-    "id": "a7e50600-34a1-4a4c-a5ba-9c9f9a56c2c3",
++    "id": "2788c08e-ee7d-4f0c-a4f1-af2b780134be",
+     "optional_data": [
+       {
+         "description": "The version of PowerFactory used for export.",
+@@ -5030,7 +5030,7 @@
+     ],
+     "project": "PowerFactory-Tools",
+     "sign_convention": "PASSIVE",
+-    "version": "2.3.1"
++    "version": "2.3.3"
+   },
+   "nodes": [
+     {
+diff --git a/examples/grids/Base/Base__HV_9_Bus__topology_case.json b/examples/grids/Base/Base__HV_9_Bus__topology_case.json
+index a4c431fa..438be033 100644
+--- a/examples/grids/Base/Base__HV_9_Bus__topology_case.json
++++ b/examples/grids/Base/Base__HV_9_Bus__topology_case.json
+@@ -8,23 +8,23 @@
+     },
+     {
+       "disabled": true,
+-      "name": "Node_9/Field_2/QB1",
++      "name": "Node_9/Field_3/QB1",
+       "open_switches": [],
+       "optional_data": null
+     },
+     {
+       "disabled": true,
+-      "name": "Node_9/Field_3/QB1",
++      "name": "Node_9/Field_2/QB1",
+       "open_switches": [],
+       "optional_data": null
+     }
+   ],
+   "meta": {
+     "case": "Base",
+-    "creator": "powerfactory-tools @ version 3.0.0",
+-    "date": "2024-09-03",
++    "creator": "powerfactory-tools @ version 3.1.0",
++    "date": "2025-04-16",
+     "grid": "HV_9_Bus",
+-    "id": "a7e50600-34a1-4a4c-a5ba-9c9f9a56c2c3",
++    "id": "2788c08e-ee7d-4f0c-a4f1-af2b780134be",
+     "optional_data": [
+       {
+         "description": "The version of PowerFactory used for export.",
+@@ -34,7 +34,7 @@
+     ],
+     "project": "PowerFactory-Tools",
+     "sign_convention": "PASSIVE",
+-    "version": "2.3.1"
++    "version": "2.3.3"
+   },
+   "optional_data": null
+ }
+\ No newline at end of file
+diff --git a/examples/grids/Industry_Park/Industry_Park__HV_9_Bus__steadystate_case.json b/examples/grids/Industry_Park/Industry_Park__HV_9_Bus__steadystate_case.json
+index 813798b2..4e9f4b86 100644
+--- a/examples/grids/Industry_Park/Industry_Park__HV_9_Bus__steadystate_case.json
++++ b/examples/grids/Industry_Park/Industry_Park__HV_9_Bus__steadystate_case.json
+@@ -1226,10 +1226,10 @@
+   ],
+   "meta": {
+     "case": "Industry_Park",
+-    "creator": "powerfactory-tools @ version 3.0.0",
+-    "date": "2024-09-03",
++    "creator": "powerfactory-tools @ version 3.1.0",
++    "date": "2025-04-16",
+     "grid": "HV_9_Bus",
+-    "id": "e2cc3c89-a7d0-4427-b532-89bc04b66090",
++    "id": "1af8d368-5d21-4c2c-8753-e2322fde2438",
+     "optional_data": [
+       {
+         "description": "The version of PowerFactory used for export.",
+@@ -1239,7 +1239,7 @@
+     ],
+     "project": "PowerFactory-Tools",
+     "sign_convention": "PASSIVE",
+-    "version": "2.3.1"
++    "version": "2.3.3"
+   },
+   "optional_data": null,
+   "transformers": [
+diff --git a/examples/grids/Industry_Park/Industry_Park__HV_9_Bus__topology.json b/examples/grids/Industry_Park/Industry_Park__HV_9_Bus__topology.json
+index b3744119..4de6577b 100644
+--- a/examples/grids/Industry_Park/Industry_Park__HV_9_Bus__topology.json
++++ b/examples/grids/Industry_Park/Industry_Park__HV_9_Bus__topology.json
+@@ -2395,9 +2395,9 @@
+         "c_i": 0.0,
+         "c_p": 0.0,
+         "c_z": 1.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -2510,9 +2510,9 @@
+         "c_i": 0.0,
+         "c_p": 0.0,
+         "c_z": 1.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -2539,9 +2539,9 @@
+         "c_i": 1.0,
+         "c_p": 0.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_const_current",
+         "optional_data": null,
+         "u_0": {
+@@ -2654,9 +2654,9 @@
+         "c_i": 1.0,
+         "c_p": 0.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_const_current",
+         "optional_data": null,
+         "u_0": {
+@@ -2683,9 +2683,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_const_power",
+         "optional_data": null,
+         "u_0": {
+@@ -2798,9 +2798,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_const_power",
+         "optional_data": null,
+         "u_0": {
+@@ -2827,9 +2827,9 @@
+         "c_i": 0.0,
+         "c_p": 0.0,
+         "c_z": 1.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_const_impedance",
+         "optional_data": null,
+         "u_0": {
+@@ -2942,9 +2942,9 @@
+         "c_i": 0.0,
+         "c_p": 0.0,
+         "c_z": 1.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_const_impedance",
+         "optional_data": null,
+         "u_0": {
+@@ -2971,9 +2971,9 @@
+         "c_i": 0.0,
+         "c_p": 0.0,
+         "c_z": 1.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_general_2ph",
+         "optional_data": null,
+         "u_0": {
+@@ -3078,9 +3078,9 @@
+         "c_i": 0.0,
+         "c_p": 0.0,
+         "c_z": 1.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_general_2ph",
+         "optional_data": null,
+         "u_0": {
+@@ -3107,9 +3107,9 @@
+         "c_i": 0.0,
+         "c_p": 0.0,
+         "c_z": 1.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_general",
+         "optional_data": null,
+         "u_0": {
+@@ -3222,9 +3222,9 @@
+         "c_i": 0.0,
+         "c_p": 0.0,
+         "c_z": 1.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_general",
+         "optional_data": null,
+         "u_0": {
+@@ -3251,9 +3251,9 @@
+         "c_i": 1.0,
+         "c_p": 0.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Standard-NS-Lasttyp",
+         "optional_data": null,
+         "u_0": {
+@@ -3366,9 +3366,9 @@
+         "c_i": 1.0,
+         "c_p": 0.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Standard-NS-Lasttyp",
+         "optional_data": null,
+         "u_0": {
+@@ -3395,9 +3395,9 @@
+         "c_i": 1.0,
+         "c_p": 0.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Standard-NS-Lasttyp",
+         "optional_data": null,
+         "u_0": {
+@@ -3510,9 +3510,9 @@
+         "c_i": 1.0,
+         "c_p": 0.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Standard-NS-Lasttyp",
+         "optional_data": null,
+         "u_0": {
+@@ -3539,9 +3539,9 @@
+         "c_i": 1.0,
+         "c_p": 0.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Standard-NS-Lasttyp",
+         "optional_data": null,
+         "u_0": {
+@@ -3654,9 +3654,9 @@
+         "c_i": 1.0,
+         "c_p": 0.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Standard-NS-Lasttyp",
+         "optional_data": null,
+         "u_0": {
+@@ -3683,9 +3683,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "LoadLV_const_current",
+         "optional_data": null,
+         "u_0": {
+@@ -3798,9 +3798,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "LoadLV_const_current",
+         "optional_data": null,
+         "u_0": {
+@@ -3827,9 +3827,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -3942,9 +3942,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -3971,9 +3971,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4086,9 +4086,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4115,9 +4115,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4236,9 +4236,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4265,9 +4265,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4386,9 +4386,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4415,9 +4415,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4536,9 +4536,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4565,9 +4565,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4712,9 +4712,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4741,9 +4741,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4846,9 +4846,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4875,9 +4875,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4990,9 +4990,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -5017,10 +5017,10 @@
+   ],
+   "meta": {
+     "case": "Industry_Park",
+-    "creator": "powerfactory-tools @ version 3.0.0",
+-    "date": "2024-09-03",
++    "creator": "powerfactory-tools @ version 3.1.0",
++    "date": "2025-04-16",
+     "grid": "HV_9_Bus",
+-    "id": "e2cc3c89-a7d0-4427-b532-89bc04b66090",
++    "id": "1af8d368-5d21-4c2c-8753-e2322fde2438",
+     "optional_data": [
+       {
+         "description": "The version of PowerFactory used for export.",
+@@ -5030,7 +5030,7 @@
+     ],
+     "project": "PowerFactory-Tools",
+     "sign_convention": "PASSIVE",
+-    "version": "2.3.1"
++    "version": "2.3.3"
+   },
+   "nodes": [
+     {
+diff --git a/examples/grids/Industry_Park/Industry_Park__HV_9_Bus__topology_case.json b/examples/grids/Industry_Park/Industry_Park__HV_9_Bus__topology_case.json
+index 4b734d6d..27b8480c 100644
+--- a/examples/grids/Industry_Park/Industry_Park__HV_9_Bus__topology_case.json
++++ b/examples/grids/Industry_Park/Industry_Park__HV_9_Bus__topology_case.json
+@@ -8,23 +8,23 @@
+     },
+     {
+       "disabled": true,
+-      "name": "Node_9/Field_2/QB1",
++      "name": "Node_9/Field_3/QB1",
+       "open_switches": [],
+       "optional_data": null
+     },
+     {
+       "disabled": true,
+-      "name": "Node_9/Field_3/QB1",
++      "name": "Node_9/Field_2/QB1",
+       "open_switches": [],
+       "optional_data": null
+     }
+   ],
+   "meta": {
+     "case": "Industry_Park",
+-    "creator": "powerfactory-tools @ version 3.0.0",
+-    "date": "2024-09-03",
++    "creator": "powerfactory-tools @ version 3.1.0",
++    "date": "2025-04-16",
+     "grid": "HV_9_Bus",
+-    "id": "e2cc3c89-a7d0-4427-b532-89bc04b66090",
++    "id": "1af8d368-5d21-4c2c-8753-e2322fde2438",
+     "optional_data": [
+       {
+         "description": "The version of PowerFactory used for export.",
+@@ -34,7 +34,7 @@
+     ],
+     "project": "PowerFactory-Tools",
+     "sign_convention": "PASSIVE",
+-    "version": "2.3.1"
++    "version": "2.3.3"
+   },
+   "optional_data": null
+ }
+\ No newline at end of file
+diff --git a/examples/grids/Industry_Park/Industry_Park__MV_2_Bus__steadystate_case.json b/examples/grids/Industry_Park/Industry_Park__MV_2_Bus__steadystate_case.json
+index 1c2b153e..2b08f217 100644
+--- a/examples/grids/Industry_Park/Industry_Park__MV_2_Bus__steadystate_case.json
++++ b/examples/grids/Industry_Park/Industry_Park__MV_2_Bus__steadystate_case.json
+@@ -64,10 +64,10 @@
+   ],
+   "meta": {
+     "case": "Industry_Park",
+-    "creator": "powerfactory-tools @ version 3.0.0",
+-    "date": "2024-09-03",
++    "creator": "powerfactory-tools @ version 3.1.0",
++    "date": "2025-04-16",
+     "grid": "MV_2_Bus",
+-    "id": "cc5f324d-dac5-4ab4-95c8-c6b54aca815b",
++    "id": "5a705154-9197-4028-8dfb-fbe5d991f7a3",
+     "optional_data": [
+       {
+         "description": "The version of PowerFactory used for export.",
+@@ -77,7 +77,7 @@
+     ],
+     "project": "PowerFactory-Tools",
+     "sign_convention": "PASSIVE",
+-    "version": "2.3.1"
++    "version": "2.3.3"
+   },
+   "optional_data": null,
+   "transformers": [
+diff --git a/examples/grids/Industry_Park/Industry_Park__MV_2_Bus__topology.json b/examples/grids/Industry_Park/Industry_Park__MV_2_Bus__topology.json
+index fd8ff60e..36bb4543 100644
+--- a/examples/grids/Industry_Park/Industry_Park__MV_2_Bus__topology.json
++++ b/examples/grids/Industry_Park/Industry_Park__MV_2_Bus__topology.json
+@@ -136,9 +136,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_const_power",
+         "optional_data": null,
+         "u_0": {
+@@ -251,9 +251,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_const_power",
+         "optional_data": null,
+         "u_0": {
+@@ -278,10 +278,10 @@
+   ],
+   "meta": {
+     "case": "Industry_Park",
+-    "creator": "powerfactory-tools @ version 3.0.0",
+-    "date": "2024-09-03",
++    "creator": "powerfactory-tools @ version 3.1.0",
++    "date": "2025-04-16",
+     "grid": "MV_2_Bus",
+-    "id": "cc5f324d-dac5-4ab4-95c8-c6b54aca815b",
++    "id": "5a705154-9197-4028-8dfb-fbe5d991f7a3",
+     "optional_data": [
+       {
+         "description": "The version of PowerFactory used for export.",
+@@ -291,7 +291,7 @@
+     ],
+     "project": "PowerFactory-Tools",
+     "sign_convention": "PASSIVE",
+-    "version": "2.3.1"
++    "version": "2.3.3"
+   },
+   "nodes": [
+     {
+diff --git a/examples/grids/Industry_Park/Industry_Park__MV_2_Bus__topology_case.json b/examples/grids/Industry_Park/Industry_Park__MV_2_Bus__topology_case.json
+index e2b91630..2dcc42f0 100644
+--- a/examples/grids/Industry_Park/Industry_Park__MV_2_Bus__topology_case.json
++++ b/examples/grids/Industry_Park/Industry_Park__MV_2_Bus__topology_case.json
+@@ -2,10 +2,10 @@
+   "elements": [],
+   "meta": {
+     "case": "Industry_Park",
+-    "creator": "powerfactory-tools @ version 3.0.0",
+-    "date": "2024-09-03",
++    "creator": "powerfactory-tools @ version 3.1.0",
++    "date": "2025-04-16",
+     "grid": "MV_2_Bus",
+-    "id": "cc5f324d-dac5-4ab4-95c8-c6b54aca815b",
++    "id": "5a705154-9197-4028-8dfb-fbe5d991f7a3",
+     "optional_data": [
+       {
+         "description": "The version of PowerFactory used for export.",
+@@ -15,7 +15,7 @@
+     ],
+     "project": "PowerFactory-Tools",
+     "sign_convention": "PASSIVE",
+-    "version": "2.3.1"
++    "version": "2.3.3"
+   },
+   "optional_data": null
+ }
+\ No newline at end of file
+diff --git a/examples/grids/Outage/Outage__HV_9_Bus__steadystate_case.json b/examples/grids/Outage/Outage__HV_9_Bus__steadystate_case.json
+index cacc89b3..7df41069 100644
+--- a/examples/grids/Outage/Outage__HV_9_Bus__steadystate_case.json
++++ b/examples/grids/Outage/Outage__HV_9_Bus__steadystate_case.json
+@@ -1272,10 +1272,10 @@
+   ],
+   "meta": {
+     "case": "Outage",
+-    "creator": "powerfactory-tools @ version 3.0.0",
+-    "date": "2024-09-03",
++    "creator": "powerfactory-tools @ version 3.1.0",
++    "date": "2025-04-16",
+     "grid": "HV_9_Bus",
+-    "id": "9040e967-7c6a-4c77-8100-209f0359d2db",
++    "id": "a2d6ff94-0d93-4e48-822a-58e7287924c1",
+     "optional_data": [
+       {
+         "description": "The version of PowerFactory used for export.",
+@@ -1285,7 +1285,7 @@
+     ],
+     "project": "PowerFactory-Tools",
+     "sign_convention": "PASSIVE",
+-    "version": "2.3.1"
++    "version": "2.3.3"
+   },
+   "optional_data": null,
+   "transformers": [
+diff --git a/examples/grids/Outage/Outage__HV_9_Bus__topology.json b/examples/grids/Outage/Outage__HV_9_Bus__topology.json
+index c403c8e1..646ef775 100644
+--- a/examples/grids/Outage/Outage__HV_9_Bus__topology.json
++++ b/examples/grids/Outage/Outage__HV_9_Bus__topology.json
+@@ -2395,9 +2395,9 @@
+         "c_i": 0.0,
+         "c_p": 0.0,
+         "c_z": 1.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -2510,9 +2510,9 @@
+         "c_i": 0.0,
+         "c_p": 0.0,
+         "c_z": 1.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -2539,9 +2539,9 @@
+         "c_i": 1.0,
+         "c_p": 0.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_const_current",
+         "optional_data": null,
+         "u_0": {
+@@ -2654,9 +2654,9 @@
+         "c_i": 1.0,
+         "c_p": 0.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_const_current",
+         "optional_data": null,
+         "u_0": {
+@@ -2683,9 +2683,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_const_power",
+         "optional_data": null,
+         "u_0": {
+@@ -2798,9 +2798,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_const_power",
+         "optional_data": null,
+         "u_0": {
+@@ -2827,9 +2827,9 @@
+         "c_i": 0.0,
+         "c_p": 0.0,
+         "c_z": 1.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_const_impedance",
+         "optional_data": null,
+         "u_0": {
+@@ -2942,9 +2942,9 @@
+         "c_i": 0.0,
+         "c_p": 0.0,
+         "c_z": 1.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_const_impedance",
+         "optional_data": null,
+         "u_0": {
+@@ -2971,9 +2971,9 @@
+         "c_i": 0.0,
+         "c_p": 0.0,
+         "c_z": 1.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_general_2ph",
+         "optional_data": null,
+         "u_0": {
+@@ -3078,9 +3078,9 @@
+         "c_i": 0.0,
+         "c_p": 0.0,
+         "c_z": 1.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_general_2ph",
+         "optional_data": null,
+         "u_0": {
+@@ -3107,9 +3107,9 @@
+         "c_i": 0.0,
+         "c_p": 0.0,
+         "c_z": 1.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_general",
+         "optional_data": null,
+         "u_0": {
+@@ -3222,9 +3222,9 @@
+         "c_i": 0.0,
+         "c_p": 0.0,
+         "c_z": 1.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Load_general",
+         "optional_data": null,
+         "u_0": {
+@@ -3251,9 +3251,9 @@
+         "c_i": 1.0,
+         "c_p": 0.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Standard-NS-Lasttyp",
+         "optional_data": null,
+         "u_0": {
+@@ -3366,9 +3366,9 @@
+         "c_i": 1.0,
+         "c_p": 0.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Standard-NS-Lasttyp",
+         "optional_data": null,
+         "u_0": {
+@@ -3395,9 +3395,9 @@
+         "c_i": 1.0,
+         "c_p": 0.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Standard-NS-Lasttyp",
+         "optional_data": null,
+         "u_0": {
+@@ -3510,9 +3510,9 @@
+         "c_i": 1.0,
+         "c_p": 0.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Standard-NS-Lasttyp",
+         "optional_data": null,
+         "u_0": {
+@@ -3539,9 +3539,9 @@
+         "c_i": 1.0,
+         "c_p": 0.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Standard-NS-Lasttyp",
+         "optional_data": null,
+         "u_0": {
+@@ -3654,9 +3654,9 @@
+         "c_i": 1.0,
+         "c_p": 0.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "Standard-NS-Lasttyp",
+         "optional_data": null,
+         "u_0": {
+@@ -3683,9 +3683,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "LoadLV_const_current",
+         "optional_data": null,
+         "u_0": {
+@@ -3798,9 +3798,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": "LoadLV_const_current",
+         "optional_data": null,
+         "u_0": {
+@@ -3827,9 +3827,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -3942,9 +3942,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -3971,9 +3971,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4086,9 +4086,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4115,9 +4115,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4236,9 +4236,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4265,9 +4265,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4386,9 +4386,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4415,9 +4415,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4536,9 +4536,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4565,9 +4565,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4686,9 +4686,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4715,9 +4715,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4820,9 +4820,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4849,9 +4849,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4964,9 +4964,9 @@
+         "c_i": 0.0,
+         "c_p": 1.0,
+         "c_z": 0.0,
+-        "exp_i": 1,
+-        "exp_p": 0,
+-        "exp_z": 2,
++        "exp_i": 1.0,
++        "exp_p": 0.0,
++        "exp_z": 2.0,
+         "name": null,
+         "optional_data": null,
+         "u_0": {
+@@ -4991,10 +4991,10 @@
+   ],
+   "meta": {
+     "case": "Outage",
+-    "creator": "powerfactory-tools @ version 3.0.0",
+-    "date": "2024-09-03",
++    "creator": "powerfactory-tools @ version 3.1.0",
++    "date": "2025-04-16",
+     "grid": "HV_9_Bus",
+-    "id": "9040e967-7c6a-4c77-8100-209f0359d2db",
++    "id": "a2d6ff94-0d93-4e48-822a-58e7287924c1",
+     "optional_data": [
+       {
+         "description": "The version of PowerFactory used for export.",
+@@ -5004,7 +5004,7 @@
+     ],
+     "project": "PowerFactory-Tools",
+     "sign_convention": "PASSIVE",
+-    "version": "2.3.1"
++    "version": "2.3.3"
+   },
+   "nodes": [
+     {
+diff --git a/examples/grids/Outage/Outage__HV_9_Bus__topology_case.json b/examples/grids/Outage/Outage__HV_9_Bus__topology_case.json
+index 6e7ca07f..c9b0e825 100644
+--- a/examples/grids/Outage/Outage__HV_9_Bus__topology_case.json
++++ b/examples/grids/Outage/Outage__HV_9_Bus__topology_case.json
+@@ -2,110 +2,110 @@
+   "elements": [
+     {
+       "disabled": true,
+-      "name": "Load_1",
++      "name": "Line_34",
+       "open_switches": [],
+       "optional_data": null
+     },
+     {
+       "disabled": true,
+-      "name": "Node_9/Field_1/QB1",
++      "name": "LV_Load_7b__Niederspannungs-Teillast__FIXED_CONSUMPTION",
+       "open_switches": [],
+       "optional_data": null
+     },
+     {
+       "disabled": true,
+-      "name": "LV_Load_7b__Niederspannungs-Teillast__NIGHT_STORAGE",
++      "name": "Fuse_Node_8",
+       "open_switches": [],
+       "optional_data": null
+     },
+     {
+       "disabled": true,
+-      "name": "Transformer_2w_110/20",
++      "name": "Node_9/Field_2/QB1",
+       "open_switches": [],
+       "optional_data": null
+     },
+     {
+       "disabled": false,
+-      "name": "Line_56",
++      "name": "Line_23",
+       "open_switches": [
+-        "Node_6_MV",
+-        "Node_5_MV"
++        "Node_3"
+       ],
+       "optional_data": null
+     },
+     {
+-      "disabled": true,
+-      "name": "LV_Load_7b__Niederspannungs-Teillast__FIXED_CONSUMPTION",
+-      "open_switches": [],
++      "disabled": false,
++      "name": "MV_Load_6__CONSUMER",
++      "open_switches": [
++        "Node_6_MV"
++      ],
+       "optional_data": null
+     },
+     {
+       "disabled": true,
+-      "name": "Node_9/Field_3/QB1",
++      "name": "Load_1",
+       "open_switches": [],
+       "optional_data": null
+     },
+     {
+       "disabled": true,
+-      "name": "Line_34",
++      "name": "LV_Load_7b__Niederspannungs-Teillast(1)__VARIABLE_CONSUMPTION",
+       "open_switches": [],
+       "optional_data": null
+     },
+     {
+       "disabled": true,
+-      "name": "Node_9/Field_2/QB1",
++      "name": "LV_Load_7b__Niederspannungs-Teillast__NIGHT_STORAGE",
+       "open_switches": [],
+       "optional_data": null
+     },
+     {
+       "disabled": true,
+-      "name": "LV_Load_7b__Niederspannungs-Teillast(1)__VARIABLE_CONSUMPTION",
++      "name": "Node_7_LV",
+       "open_switches": [],
+       "optional_data": null
+     },
+     {
+       "disabled": true,
+-      "name": "Node_7_LV",
++      "name": "Node_9/Field_1/QB1",
+       "open_switches": [],
+       "optional_data": null
+     },
+     {
+       "disabled": false,
+-      "name": "MV_Load_6__PRODUCER",
++      "name": "Line_56",
+       "open_switches": [
++        "Node_5_MV",
+         "Node_6_MV"
+       ],
+       "optional_data": null
+     },
+     {
+       "disabled": true,
+-      "name": "Fuse_Node_8",
++      "name": "Node_9/Field_3/QB1",
+       "open_switches": [],
+       "optional_data": null
+     },
+     {
+       "disabled": false,
+-      "name": "Line_23",
++      "name": "MV_Load_6__PRODUCER",
+       "open_switches": [
+-        "Node_3"
++        "Node_6_MV"
+       ],
+       "optional_data": null
+     },
+     {
+-      "disabled": false,
+-      "name": "MV_Load_6__CONSUMER",
+-      "open_switches": [
+-        "Node_6_MV"
+-      ],
++      "disabled": true,
++      "name": "Transformer_2w_110/20",
++      "open_switches": [],
+       "optional_data": null
+     }
+   ],
+   "meta": {
+     "case": "Outage",
+-    "creator": "powerfactory-tools @ version 3.0.0",
+-    "date": "2024-09-03",
++    "creator": "powerfactory-tools @ version 3.1.0",
++    "date": "2025-04-16",
+     "grid": "HV_9_Bus",
+-    "id": "9040e967-7c6a-4c77-8100-209f0359d2db",
++    "id": "a2d6ff94-0d93-4e48-822a-58e7287924c1",
+     "optional_data": [
+       {
+         "description": "The version of PowerFactory used for export.",
+@@ -115,7 +115,7 @@
+     ],
+     "project": "PowerFactory-Tools",
+     "sign_convention": "PASSIVE",
+-    "version": "2.3.1"
++    "version": "2.3.3"
+   },
+   "optional_data": null
+ }
+\ No newline at end of file

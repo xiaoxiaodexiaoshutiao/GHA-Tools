@@ -1,0 +1,257 @@
+﻿2025-04-08T17:14:40.0739872Z Current runner version: '2.323.0'
+2025-04-08T17:14:40.0766720Z ##[group]Operating System
+2025-04-08T17:14:40.0767484Z Ubuntu
+2025-04-08T17:14:40.0768059Z 24.04.2
+2025-04-08T17:14:40.0768496Z LTS
+2025-04-08T17:14:40.0768964Z ##[endgroup]
+2025-04-08T17:14:40.0769555Z ##[group]Runner Image
+2025-04-08T17:14:40.0770160Z Image: ubuntu-24.04
+2025-04-08T17:14:40.0770670Z Version: 20250323.1.0
+2025-04-08T17:14:40.0771719Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-08T17:14:40.0773165Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-04-08T17:14:40.0774087Z ##[endgroup]
+2025-04-08T17:14:40.0774907Z ##[group]Runner Image Provisioner
+2025-04-08T17:14:40.0775640Z 2.0.422.1
+2025-04-08T17:14:40.0776110Z ##[endgroup]
+2025-04-08T17:14:40.0778702Z ##[group]GITHUB_TOKEN Permissions
+2025-04-08T17:14:40.0780918Z Actions: write
+2025-04-08T17:14:40.0781677Z Attestations: write
+2025-04-08T17:14:40.0782264Z Checks: write
+2025-04-08T17:14:40.0782788Z Contents: write
+2025-04-08T17:14:40.0783310Z Deployments: write
+2025-04-08T17:14:40.0783783Z Discussions: write
+2025-04-08T17:14:40.0784316Z Issues: write
+2025-04-08T17:14:40.0784906Z Metadata: read
+2025-04-08T17:14:40.0785408Z Models: read
+2025-04-08T17:14:40.0785942Z Packages: write
+2025-04-08T17:14:40.0786426Z Pages: write
+2025-04-08T17:14:40.0786895Z PullRequests: write
+2025-04-08T17:14:40.0787358Z RepositoryProjects: write
+2025-04-08T17:14:40.0787974Z SecurityEvents: write
+2025-04-08T17:14:40.0788448Z Statuses: write
+2025-04-08T17:14:40.0788921Z ##[endgroup]
+2025-04-08T17:14:40.0791035Z Secret source: Actions
+2025-04-08T17:14:40.0791790Z Prepare workflow directory
+2025-04-08T17:14:40.1130701Z Prepare all required actions
+2025-04-08T17:14:40.1168403Z Getting action download info
+2025-04-08T17:14:40.6172179Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-08T17:14:40.6173246Z Version: 4.2.2
+2025-04-08T17:14:40.6174266Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-08T17:14:40.6175870Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-08T17:14:40.6261221Z ##[endgroup]
+2025-04-08T17:14:40.7157803Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-04-08T17:14:40.7158500Z Version: 5.5.0
+2025-04-08T17:14:40.7159112Z Digest: sha256:1fac95d751afd58314aebd2ab01d4bf3b3109a441917bd2cac2a22898ec494f7
+2025-04-08T17:14:40.7159949Z Source commit SHA: 8d9ed9ac5c53483de85588cdf95a591a75ab9f55
+2025-04-08T17:14:40.7160524Z ##[endgroup]
+2025-04-08T17:14:41.1469392Z Complete job name: flake8 (3.11)
+2025-04-08T17:14:41.2089901Z ##[group]Run actions/checkout@v4
+2025-04-08T17:14:41.2090784Z with:
+2025-04-08T17:14:41.2091219Z   repository: TeskaLabs/seacat-auth
+2025-04-08T17:14:41.2091933Z   token: ***
+2025-04-08T17:14:41.2092334Z   ssh-strict: true
+2025-04-08T17:14:41.2092743Z   ssh-user: git
+2025-04-08T17:14:41.2093161Z   persist-credentials: true
+2025-04-08T17:14:41.2093635Z   clean: true
+2025-04-08T17:14:41.2094084Z   sparse-checkout-cone-mode: true
+2025-04-08T17:14:41.2094590Z   fetch-depth: 1
+2025-04-08T17:14:41.2095318Z   fetch-tags: false
+2025-04-08T17:14:41.2095738Z   show-progress: true
+2025-04-08T17:14:41.2096161Z   lfs: false
+2025-04-08T17:14:41.2096570Z   submodules: false
+2025-04-08T17:14:41.2096992Z   set-safe-directory: true
+2025-04-08T17:14:41.2097753Z ##[endgroup]
+2025-04-08T17:14:41.4802063Z Syncing repository: TeskaLabs/seacat-auth
+2025-04-08T17:14:41.4805417Z ##[group]Getting Git version info
+2025-04-08T17:14:41.4806475Z Working directory is '/home/runner/work/seacat-auth/seacat-auth'
+2025-04-08T17:14:41.4808187Z [command]/usr/bin/git version
+2025-04-08T17:14:41.4915883Z git version 2.49.0
+2025-04-08T17:14:41.4944642Z ##[endgroup]
+2025-04-08T17:14:41.4958376Z Temporarily overriding HOME='/home/runner/work/_temp/e70ab46d-4e1f-4a4e-bc51-bbd9ca6b8933' before making global git config changes
+2025-04-08T17:14:41.4960095Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-08T17:14:41.4963944Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/seacat-auth/seacat-auth
+2025-04-08T17:14:41.4999405Z Deleting the contents of '/home/runner/work/seacat-auth/seacat-auth'
+2025-04-08T17:14:41.5002876Z ##[group]Initializing the repository
+2025-04-08T17:14:41.5007287Z [command]/usr/bin/git init /home/runner/work/seacat-auth/seacat-auth
+2025-04-08T17:14:41.5100886Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-08T17:14:41.5102515Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-08T17:14:41.5103997Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-08T17:14:41.5105377Z hint:
+2025-04-08T17:14:41.5106338Z hint: 	git config --global init.defaultBranch <name>
+2025-04-08T17:14:41.5107449Z hint:
+2025-04-08T17:14:41.5108614Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-08T17:14:41.5110908Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-08T17:14:41.5113042Z hint:
+2025-04-08T17:14:41.5114447Z hint: 	git branch -m <name>
+2025-04-08T17:14:41.5116878Z Initialized empty Git repository in /home/runner/work/seacat-auth/seacat-auth/.git/
+2025-04-08T17:14:41.5124115Z [command]/usr/bin/git remote add origin https://github.com/TeskaLabs/seacat-auth
+2025-04-08T17:14:41.5162288Z ##[endgroup]
+2025-04-08T17:14:41.5164649Z ##[group]Disabling automatic garbage collection
+2025-04-08T17:14:41.5166827Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-08T17:14:41.5198108Z ##[endgroup]
+2025-04-08T17:14:41.5200417Z ##[group]Setting up auth
+2025-04-08T17:14:41.5205894Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-08T17:14:41.5238849Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-08T17:14:41.5604085Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-08T17:14:41.5637106Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-08T17:14:41.5879467Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-08T17:14:41.5916725Z ##[endgroup]
+2025-04-08T17:14:41.5919201Z ##[group]Fetching the repository
+2025-04-08T17:14:41.5928005Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +0affe4ee4e85930ba0f3503145341b604446922d:refs/remotes/pull/462/merge
+2025-04-08T17:14:42.1917327Z From https://github.com/TeskaLabs/seacat-auth
+2025-04-08T17:14:42.1919632Z  * [new ref]         0affe4ee4e85930ba0f3503145341b604446922d -> pull/462/merge
+2025-04-08T17:14:42.1948921Z ##[endgroup]
+2025-04-08T17:14:42.1950576Z ##[group]Determining the checkout info
+2025-04-08T17:14:42.1952305Z ##[endgroup]
+2025-04-08T17:14:42.1957097Z [command]/usr/bin/git sparse-checkout disable
+2025-04-08T17:14:42.1999888Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-08T17:14:42.2029126Z ##[group]Checking out the ref
+2025-04-08T17:14:42.2032135Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/462/merge
+2025-04-08T17:14:42.2991813Z Note: switching to 'refs/remotes/pull/462/merge'.
+2025-04-08T17:14:42.2993229Z 
+2025-04-08T17:14:42.2994300Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-08T17:14:42.2996690Z changes and commit them, and you can discard any commits you make in this
+2025-04-08T17:14:42.2999214Z state without impacting any branches by switching back to a branch.
+2025-04-08T17:14:42.3001043Z 
+2025-04-08T17:14:42.3002155Z If you want to create a new branch to retain commits you create, you may
+2025-04-08T17:14:42.3005664Z do so (now or later) by using -c with the switch command. Example:
+2025-04-08T17:14:42.3007353Z 
+2025-04-08T17:14:42.3007970Z   git switch -c <new-branch-name>
+2025-04-08T17:14:42.3009149Z 
+2025-04-08T17:14:42.3009799Z Or undo this operation with:
+2025-04-08T17:14:42.3010870Z 
+2025-04-08T17:14:42.3011463Z   git switch -
+2025-04-08T17:14:42.3012234Z 
+2025-04-08T17:14:42.3013456Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-08T17:14:42.3015562Z 
+2025-04-08T17:14:42.3018059Z HEAD is now at 0affe4e Merge 3ee9173b8e9cfede18f9702f0f4bb5f9be13396c into e76b10bf1771136e82fd2b40d2191ec5828c6442
+2025-04-08T17:14:42.3022936Z ##[endgroup]
+2025-04-08T17:14:42.3050469Z [command]/usr/bin/git log -1 --format=%H
+2025-04-08T17:14:42.3075033Z 0affe4ee4e85930ba0f3503145341b604446922d
+2025-04-08T17:14:42.3409572Z ##[group]Run actions/setup-python@v5
+2025-04-08T17:14:42.3411349Z with:
+2025-04-08T17:14:42.3412587Z   python-version: 3.11
+2025-04-08T17:14:42.3414039Z   check-latest: false
+2025-04-08T17:14:42.3416148Z   token: ***
+2025-04-08T17:14:42.3417510Z   update-environment: true
+2025-04-08T17:14:42.3419091Z   allow-prereleases: false
+2025-04-08T17:14:42.3420683Z   freethreaded: false
+2025-04-08T17:14:42.3422075Z ##[endgroup]
+2025-04-08T17:14:42.5092241Z ##[group]Installed versions
+2025-04-08T17:14:42.5151530Z Successfully set up CPython (3.11.11)
+2025-04-08T17:14:42.5153869Z ##[endgroup]
+2025-04-08T17:14:42.5298995Z ##[group]Run python -m pip install --upgrade pip
+2025-04-08T17:14:42.5300392Z [36;1mpython -m pip install --upgrade pip[0m
+2025-04-08T17:14:42.5301540Z [36;1mpip install flake8[0m
+2025-04-08T17:14:42.5302794Z [36;1mpip install git+https://github.com/TeskaLabs/asab.git[0m
+2025-04-08T17:14:42.5360810Z shell: /usr/bin/bash -e {0}
+2025-04-08T17:14:42.5361710Z env:
+2025-04-08T17:14:42.5362645Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-08T17:14:42.5364313Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-04-08T17:14:42.5366151Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-08T17:14:42.5367630Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-08T17:14:42.5369119Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-08T17:14:42.5370637Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-04-08T17:14:42.5371879Z ##[endgroup]
+2025-04-08T17:14:43.2598333Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (25.0.1)
+2025-04-08T17:14:43.8779777Z Collecting flake8
+2025-04-08T17:14:43.9164917Z   Downloading flake8-7.2.0-py2.py3-none-any.whl.metadata (3.8 kB)
+2025-04-08T17:14:43.9336370Z Collecting mccabe<0.8.0,>=0.7.0 (from flake8)
+2025-04-08T17:14:43.9380545Z   Downloading mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+2025-04-08T17:14:43.9533990Z Collecting pycodestyle<2.14.0,>=2.13.0 (from flake8)
+2025-04-08T17:14:43.9578400Z   Downloading pycodestyle-2.13.0-py2.py3-none-any.whl.metadata (4.5 kB)
+2025-04-08T17:14:43.9761221Z Collecting pyflakes<3.4.0,>=3.3.0 (from flake8)
+2025-04-08T17:14:43.9816872Z   Downloading pyflakes-3.3.2-py2.py3-none-any.whl.metadata (3.5 kB)
+2025-04-08T17:14:43.9911417Z Downloading flake8-7.2.0-py2.py3-none-any.whl (57 kB)
+2025-04-08T17:14:44.0034369Z Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+2025-04-08T17:14:44.0098615Z Downloading pycodestyle-2.13.0-py2.py3-none-any.whl (31 kB)
+2025-04-08T17:14:44.0171542Z Downloading pyflakes-3.3.2-py2.py3-none-any.whl (63 kB)
+2025-04-08T17:14:44.0379132Z Installing collected packages: pyflakes, pycodestyle, mccabe, flake8
+2025-04-08T17:14:44.1464156Z Successfully installed flake8-7.2.0 mccabe-0.7.0 pycodestyle-2.13.0 pyflakes-3.3.2
+2025-04-08T17:14:44.5584511Z Collecting git+https://github.com/TeskaLabs/asab.git
+2025-04-08T17:14:44.5590365Z   Cloning https://github.com/TeskaLabs/asab.git to /tmp/pip-req-build-3n60dlno
+2025-04-08T17:14:44.5615753Z   Running command git clone --filter=blob:none --quiet https://github.com/TeskaLabs/asab.git /tmp/pip-req-build-3n60dlno
+2025-04-08T17:14:45.3646187Z   Resolved https://github.com/TeskaLabs/asab.git to commit 6b6351f167a738faaf1995f27f272f74eef25bf3
+2025-04-08T17:14:45.3687398Z   Installing build dependencies: started
+2025-04-08T17:14:46.6748854Z   Installing build dependencies: finished with status 'done'
+2025-04-08T17:14:46.6755144Z   Getting requirements to build wheel: started
+2025-04-08T17:14:46.9154249Z   Getting requirements to build wheel: finished with status 'done'
+2025-04-08T17:14:46.9162407Z   Preparing metadata (pyproject.toml): started
+2025-04-08T17:14:47.0969962Z   Preparing metadata (pyproject.toml): finished with status 'done'
+2025-04-08T17:14:47.4423350Z Collecting aiohttp<4,>=3.8.3 (from asab==25.15+1.g6b6351f)
+2025-04-08T17:14:47.4802566Z   Downloading aiohttp-3.11.16-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (7.7 kB)
+2025-04-08T17:14:47.4994334Z Collecting fastjsonschema<3,>=2.16.2 (from asab==25.15+1.g6b6351f)
+2025-04-08T17:14:47.5036003Z   Downloading fastjsonschema-2.21.1-py3-none-any.whl.metadata (2.2 kB)
+2025-04-08T17:14:47.5207749Z Collecting kazoo<3,>=2.9.0 (from asab==25.15+1.g6b6351f)
+2025-04-08T17:14:47.5311830Z   Downloading kazoo-2.10.0-py2.py3-none-any.whl.metadata (47 kB)
+2025-04-08T17:14:47.5714896Z Collecting PyYAML<7,>=6.0 (from asab==25.15+1.g6b6351f)
+2025-04-08T17:14:47.5761066Z   Downloading PyYAML-6.0.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+2025-04-08T17:14:47.5939238Z Collecting aiohappyeyeballs>=2.3.0 (from aiohttp<4,>=3.8.3->asab==25.15+1.g6b6351f)
+2025-04-08T17:14:47.5986539Z   Downloading aiohappyeyeballs-2.6.1-py3-none-any.whl.metadata (5.9 kB)
+2025-04-08T17:14:47.6104185Z Collecting aiosignal>=1.1.2 (from aiohttp<4,>=3.8.3->asab==25.15+1.g6b6351f)
+2025-04-08T17:14:47.6157622Z   Downloading aiosignal-1.3.2-py2.py3-none-any.whl.metadata (3.8 kB)
+2025-04-08T17:14:47.6348651Z Collecting attrs>=17.3.0 (from aiohttp<4,>=3.8.3->asab==25.15+1.g6b6351f)
+2025-04-08T17:14:47.6476837Z   Downloading attrs-25.3.0-py3-none-any.whl.metadata (10 kB)
+2025-04-08T17:14:47.6901946Z Collecting frozenlist>=1.1.1 (from aiohttp<4,>=3.8.3->asab==25.15+1.g6b6351f)
+2025-04-08T17:14:47.6986546Z   Downloading frozenlist-1.5.0-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (13 kB)
+2025-04-08T17:14:47.8313225Z Collecting multidict<7.0,>=4.5 (from aiohttp<4,>=3.8.3->asab==25.15+1.g6b6351f)
+2025-04-08T17:14:47.8368956Z   Downloading multidict-6.3.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.1 kB)
+2025-04-08T17:14:47.8703636Z Collecting propcache>=0.2.0 (from aiohttp<4,>=3.8.3->asab==25.15+1.g6b6351f)
+2025-04-08T17:14:47.8748202Z   Downloading propcache-0.3.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (10 kB)
+2025-04-08T17:14:48.0460289Z Collecting yarl<2.0,>=1.17.0 (from aiohttp<4,>=3.8.3->asab==25.15+1.g6b6351f)
+2025-04-08T17:14:48.0506985Z   Downloading yarl-1.19.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (71 kB)
+2025-04-08T17:14:48.0772620Z Collecting idna>=2.0 (from yarl<2.0,>=1.17.0->aiohttp<4,>=3.8.3->asab==25.15+1.g6b6351f)
+2025-04-08T17:14:48.0818307Z   Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+2025-04-08T17:14:48.0977140Z Downloading aiohttp-3.11.16-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.7 MB)
+2025-04-08T17:14:48.1271008Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 58.7 MB/s eta 0:00:00
+2025-04-08T17:14:48.1316640Z Downloading fastjsonschema-2.21.1-py3-none-any.whl (23 kB)
+2025-04-08T17:14:48.1396804Z Downloading kazoo-2.10.0-py2.py3-none-any.whl (148 kB)
+2025-04-08T17:14:48.1479229Z Downloading PyYAML-6.0.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (762 kB)
+2025-04-08T17:14:48.1600588Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 763.0/763.0 kB 57.6 MB/s eta 0:00:00
+2025-04-08T17:14:48.1654128Z Downloading aiohappyeyeballs-2.6.1-py3-none-any.whl (15 kB)
+2025-04-08T17:14:48.1723088Z Downloading aiosignal-1.3.2-py2.py3-none-any.whl (7.6 kB)
+2025-04-08T17:14:48.1787866Z Downloading attrs-25.3.0-py3-none-any.whl (63 kB)
+2025-04-08T17:14:48.1855699Z Downloading frozenlist-1.5.0-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (274 kB)
+2025-04-08T17:14:48.1942794Z Downloading multidict-6.3.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (238 kB)
+2025-04-08T17:14:48.2040722Z Downloading propcache-0.3.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (232 kB)
+2025-04-08T17:14:48.2126523Z Downloading yarl-1.19.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (358 kB)
+2025-04-08T17:14:48.2220576Z Downloading idna-3.10-py3-none-any.whl (70 kB)
+2025-04-08T17:14:48.2383249Z Building wheels for collected packages: asab
+2025-04-08T17:14:48.2391704Z   Building wheel for asab (pyproject.toml): started
+2025-04-08T17:14:48.5135126Z   Building wheel for asab (pyproject.toml): finished with status 'done'
+2025-04-08T17:14:48.5143465Z   Created wheel for asab: filename=asab-25.15+1.g6b6351f-py3-none-any.whl size=185953 sha256=4dfc422fe4237c57faa96a4065cfd67e203ab2dbbb729058a0eba6eda14cb610
+2025-04-08T17:14:48.5145756Z   Stored in directory: /tmp/pip-ephem-wheel-cache-0ehzq5k2/wheels/50/6d/1c/f952d3f54e3113134735343edb693e8898107ac2a22cc632ba
+2025-04-08T17:14:48.5170442Z Successfully built asab
+2025-04-08T17:14:48.5456170Z Installing collected packages: kazoo, fastjsonschema, PyYAML, propcache, multidict, idna, frozenlist, attrs, aiohappyeyeballs, yarl, aiosignal, aiohttp, asab
+2025-04-08T17:14:49.1836015Z Successfully installed PyYAML-6.0.2 aiohappyeyeballs-2.6.1 aiohttp-3.11.16 aiosignal-1.3.2 asab-25.15+1.g6b6351f attrs-25.3.0 fastjsonschema-2.21.1 frozenlist-1.5.0 idna-3.10 kazoo-2.10.0 multidict-6.3.2 propcache-0.3.1 yarl-1.19.0
+2025-04-08T17:14:49.3305693Z ##[group]Run flake8 seacatauth seacatauth.py
+2025-04-08T17:14:49.3306055Z [36;1mflake8 seacatauth seacatauth.py[0m
+2025-04-08T17:14:49.3353579Z shell: /usr/bin/bash -e {0}
+2025-04-08T17:14:49.3353818Z env:
+2025-04-08T17:14:49.3354051Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-08T17:14:49.3354466Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-04-08T17:14:49.3355076Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-08T17:14:49.3355419Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-08T17:14:49.3355765Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-08T17:14:49.3356104Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-04-08T17:14:49.3356389Z ##[endgroup]
+2025-04-08T17:14:50.9282447Z seacatauth/credentials/providers/client.py:73:8: E251 unexpected spaces around keyword / parameter equals
+2025-04-08T17:14:50.9283683Z seacatauth/credentials/providers/client.py:73:10: E251 unexpected spaces around keyword / parameter equals
+2025-04-08T17:14:50.9285004Z seacatauth/credentials/providers/client.py:74:9: E251 unexpected spaces around keyword / parameter equals
+2025-04-08T17:14:50.9286088Z seacatauth/credentials/providers/client.py:74:11: E251 unexpected spaces around keyword / parameter equals
+2025-04-08T17:14:50.9286841Z seacatauth/credentials/providers/client.py:75:16: E251 unexpected spaces around keyword / parameter equals
+2025-04-08T17:14:50.9287581Z seacatauth/credentials/providers/client.py:75:18: E251 unexpected spaces around keyword / parameter equals
+2025-04-08T17:14:50.9471806Z ##[error]Process completed with exit code 1.
+2025-04-08T17:14:50.9571874Z Post job cleanup.
+2025-04-08T17:14:51.0502572Z [command]/usr/bin/git version
+2025-04-08T17:14:51.0548622Z git version 2.49.0
+2025-04-08T17:14:51.0596086Z Temporarily overriding HOME='/home/runner/work/_temp/427aff81-d7ef-4bdd-ba4f-8ee8a64ff6f4' before making global git config changes
+2025-04-08T17:14:51.0597371Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-08T17:14:51.0603569Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/seacat-auth/seacat-auth
+2025-04-08T17:14:51.0639266Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-08T17:14:51.0672498Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-08T17:14:51.0908901Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-08T17:14:51.0930090Z http.https://github.com/.extraheader
+2025-04-08T17:14:51.0942287Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-08T17:14:51.0972924Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-08T17:14:51.1307629Z Cleaning up orphan processes

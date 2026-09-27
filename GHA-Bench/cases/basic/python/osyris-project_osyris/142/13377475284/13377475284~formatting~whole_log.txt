@@ -1,0 +1,308 @@
+2025-02-17T19:37:01.2808027Z Requested labels: ubuntu-latest
+2025-02-17T19:37:01.2808321Z Job defined at: osyris-project/osyris/.github/workflows/python-app.yml@refs/pull/142/merge
+2025-02-17T19:37:01.2808395Z Waiting for a runner to pick up this job...
+2025-02-17T19:37:02.0419753Z Job is waiting for a hosted runner to come online.
+2025-02-17T19:37:03.9109810Z Job is about to start running on the hosted runner: GitHub Actions 1 (hosted)
+2025-02-17T19:37:05.5219939Z Current runner version: '2.322.0'
+2025-02-17T19:37:05.5244478Z ##[group]Operating System
+2025-02-17T19:37:05.5245302Z Ubuntu
+2025-02-17T19:37:05.5245793Z 24.04.1
+2025-02-17T19:37:05.5246346Z LTS
+2025-02-17T19:37:05.5246850Z ##[endgroup]
+2025-02-17T19:37:05.5247391Z ##[group]Runner Image
+2025-02-17T19:37:05.5248016Z Image: ubuntu-24.04
+2025-02-17T19:37:05.5248516Z Version: 20250209.1.0
+2025-02-17T19:37:05.5249988Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250209.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-17T19:37:05.5251461Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250209.1
+2025-02-17T19:37:05.5252395Z ##[endgroup]
+2025-02-17T19:37:05.5252929Z ##[group]Runner Image Provisioner
+2025-02-17T19:37:05.5253599Z 2.0.422.1
+2025-02-17T19:37:05.5254070Z ##[endgroup]
+2025-02-17T19:37:05.5256424Z ##[group]GITHUB_TOKEN Permissions
+2025-02-17T19:37:05.5258423Z Actions: write
+2025-02-17T19:37:05.5259439Z Attestations: write
+2025-02-17T19:37:05.5260087Z Checks: write
+2025-02-17T19:37:05.5260639Z Contents: write
+2025-02-17T19:37:05.5261211Z Deployments: write
+2025-02-17T19:37:05.5261743Z Discussions: write
+2025-02-17T19:37:05.5262268Z Issues: write
+2025-02-17T19:37:05.5262812Z Metadata: read
+2025-02-17T19:37:05.5263318Z Packages: write
+2025-02-17T19:37:05.5263891Z Pages: write
+2025-02-17T19:37:05.5264402Z PullRequests: write
+2025-02-17T19:37:05.5264915Z RepositoryProjects: write
+2025-02-17T19:37:05.5265559Z SecurityEvents: write
+2025-02-17T19:37:05.5266100Z Statuses: write
+2025-02-17T19:37:05.5266590Z ##[endgroup]
+2025-02-17T19:37:05.5269668Z Secret source: Actions
+2025-02-17T19:37:05.5270372Z Prepare workflow directory
+2025-02-17T19:37:05.5612178Z Prepare all required actions
+2025-02-17T19:37:05.5648833Z Getting action download info
+2025-02-17T19:37:05.7433217Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-02-17T19:37:05.7434128Z Version: 4.2.2
+2025-02-17T19:37:05.7434974Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-02-17T19:37:05.7436017Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-02-17T19:37:05.7436631Z ##[endgroup]
+2025-02-17T19:37:05.8208858Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-02-17T19:37:05.8209823Z Version: 5.4.0
+2025-02-17T19:37:05.8210472Z Digest: sha256:6003df952c8106bcd378d2ba997eef202da924317a57269dfa72449b135adb7f
+2025-02-17T19:37:05.8211330Z Source commit SHA: 42375524e23c412d93fb67b49958b491fce71c38
+2025-02-17T19:37:05.8211923Z ##[endgroup]
+2025-02-17T19:37:06.1582461Z Complete job name: formatting
+2025-02-17T19:37:06.2311305Z ##[group]Run actions/checkout@v4
+2025-02-17T19:37:06.2312148Z with:
+2025-02-17T19:37:06.2312573Z   repository: osyris-project/osyris
+2025-02-17T19:37:06.2313270Z   token: ***
+2025-02-17T19:37:06.2313681Z   ssh-strict: true
+2025-02-17T19:37:06.2314117Z   ssh-user: git
+2025-02-17T19:37:06.2314531Z   persist-credentials: true
+2025-02-17T19:37:06.2314984Z   clean: true
+2025-02-17T19:37:06.2315400Z   sparse-checkout-cone-mode: true
+2025-02-17T19:37:06.2315916Z   fetch-depth: 1
+2025-02-17T19:37:06.2316321Z   fetch-tags: false
+2025-02-17T19:37:06.2316726Z   show-progress: true
+2025-02-17T19:37:06.2317142Z   lfs: false
+2025-02-17T19:37:06.2317521Z   submodules: false
+2025-02-17T19:37:06.2317936Z   set-safe-directory: true
+2025-02-17T19:37:06.2318587Z ##[endgroup]
+2025-02-17T19:37:06.4257180Z Syncing repository: osyris-project/osyris
+2025-02-17T19:37:06.4258914Z ##[group]Getting Git version info
+2025-02-17T19:37:06.4260108Z Working directory is '/home/runner/work/osyris/osyris'
+2025-02-17T19:37:06.4261287Z [command]/usr/bin/git version
+2025-02-17T19:37:06.4315212Z git version 2.48.1
+2025-02-17T19:37:06.4344870Z ##[endgroup]
+2025-02-17T19:37:06.4360060Z Temporarily overriding HOME='/home/runner/work/_temp/5323af32-ad72-4fd0-a237-8b53caa36b5f' before making global git config changes
+2025-02-17T19:37:06.4361510Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-17T19:37:06.4365352Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/osyris/osyris
+2025-02-17T19:37:06.4403609Z Deleting the contents of '/home/runner/work/osyris/osyris'
+2025-02-17T19:37:06.4407590Z ##[group]Initializing the repository
+2025-02-17T19:37:06.4412480Z [command]/usr/bin/git init /home/runner/work/osyris/osyris
+2025-02-17T19:37:06.4478657Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-17T19:37:06.4480097Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-17T19:37:06.4481154Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-17T19:37:06.4481921Z hint:
+2025-02-17T19:37:06.4482453Z hint: 	git config --global init.defaultBranch <name>
+2025-02-17T19:37:06.4483107Z hint:
+2025-02-17T19:37:06.4483946Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-17T19:37:06.4485442Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-17T19:37:06.4486270Z hint:
+2025-02-17T19:37:06.4486706Z hint: 	git branch -m <name>
+2025-02-17T19:37:06.4487478Z Initialized empty Git repository in /home/runner/work/osyris/osyris/.git/
+2025-02-17T19:37:06.4496886Z [command]/usr/bin/git remote add origin https://github.com/osyris-project/osyris
+2025-02-17T19:37:06.4533280Z ##[endgroup]
+2025-02-17T19:37:06.4534515Z ##[group]Disabling automatic garbage collection
+2025-02-17T19:37:06.4537348Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-17T19:37:06.4567513Z ##[endgroup]
+2025-02-17T19:37:06.4568756Z ##[group]Setting up auth
+2025-02-17T19:37:06.4575387Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-17T19:37:06.4607295Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-17T19:37:06.4890039Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-17T19:37:06.4921446Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-17T19:37:06.5197850Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-17T19:37:06.5237819Z ##[endgroup]
+2025-02-17T19:37:06.5239355Z ##[group]Fetching the repository
+2025-02-17T19:37:06.5248596Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +19e5171781298ecc95f8a0c473b006d242ac371b:refs/remotes/pull/142/merge
+2025-02-17T19:37:06.8041507Z From https://github.com/osyris-project/osyris
+2025-02-17T19:37:06.8042468Z  * [new ref]         19e5171781298ecc95f8a0c473b006d242ac371b -> pull/142/merge
+2025-02-17T19:37:06.8071611Z ##[endgroup]
+2025-02-17T19:37:06.8072307Z ##[group]Determining the checkout info
+2025-02-17T19:37:06.8073358Z ##[endgroup]
+2025-02-17T19:37:06.8078364Z [command]/usr/bin/git sparse-checkout disable
+2025-02-17T19:37:06.8117508Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-17T19:37:06.8146929Z ##[group]Checking out the ref
+2025-02-17T19:37:06.8151600Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/142/merge
+2025-02-17T19:37:06.8260105Z Note: switching to 'refs/remotes/pull/142/merge'.
+2025-02-17T19:37:06.8260842Z 
+2025-02-17T19:37:06.8261441Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-17T19:37:06.8262459Z changes and commit them, and you can discard any commits you make in this
+2025-02-17T19:37:06.8263380Z state without impacting any branches by switching back to a branch.
+2025-02-17T19:37:06.8263922Z 
+2025-02-17T19:37:06.8264275Z If you want to create a new branch to retain commits you create, you may
+2025-02-17T19:37:06.8265126Z do so (now or later) by using -c with the switch command. Example:
+2025-02-17T19:37:06.8265888Z 
+2025-02-17T19:37:06.8266107Z   git switch -c <new-branch-name>
+2025-02-17T19:37:06.8266450Z 
+2025-02-17T19:37:06.8266701Z Or undo this operation with:
+2025-02-17T19:37:06.8267191Z 
+2025-02-17T19:37:06.8267380Z   git switch -
+2025-02-17T19:37:06.8267628Z 
+2025-02-17T19:37:06.8268026Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-17T19:37:06.8268611Z 
+2025-02-17T19:37:06.8269595Z HEAD is now at 19e5171 Merge c5d4d49e43c0227b1749994336e37e7e60a8fe34 into 38a2fdcc13e1869a871032737a1e4a1f8fdfd347
+2025-02-17T19:37:06.8271584Z ##[endgroup]
+2025-02-17T19:37:06.8304135Z [command]/usr/bin/git log -1 --format=%H
+2025-02-17T19:37:06.8327588Z 19e5171781298ecc95f8a0c473b006d242ac371b
+2025-02-17T19:37:06.8649255Z ##[group]Run actions/setup-python@v5
+2025-02-17T19:37:06.8649832Z with:
+2025-02-17T19:37:06.8650211Z   python-version: 3.10
+2025-02-17T19:37:06.8650640Z   check-latest: false
+2025-02-17T19:37:06.8651201Z   token: ***
+2025-02-17T19:37:06.8651592Z   update-environment: true
+2025-02-17T19:37:06.8652077Z   allow-prereleases: false
+2025-02-17T19:37:06.8652514Z ##[endgroup]
+2025-02-17T19:37:07.0363628Z ##[group]Installed versions
+2025-02-17T19:37:07.0424200Z Successfully set up CPython (3.10.16)
+2025-02-17T19:37:07.0425396Z ##[endgroup]
+2025-02-17T19:37:07.0548421Z ##[group]Run which python
+2025-02-17T19:37:07.0548995Z [36;1mwhich python[0m
+2025-02-17T19:37:07.0549831Z [36;1mpython -m pip install --upgrade pip[0m
+2025-02-17T19:37:07.0550603Z [36;1mpython -m pip install flake8==7.0.0 black[jupyter]==24.3.0 isort==5.13.2[0m
+2025-02-17T19:37:07.0726932Z shell: /usr/bin/bash -e {0}
+2025-02-17T19:37:07.0727449Z env:
+2025-02-17T19:37:07.0727958Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-17T19:37:07.0728778Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib/pkgconfig
+2025-02-17T19:37:07.0729975Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-17T19:37:07.0730754Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-17T19:37:07.0731532Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-17T19:37:07.0732323Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib
+2025-02-17T19:37:07.0732984Z ##[endgroup]
+2025-02-17T19:37:07.0849786Z /opt/hostedtoolcache/Python/3.10.16/x64/bin/python
+2025-02-17T19:37:07.7282300Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.10.16/x64/lib/python3.10/site-packages (25.0.1)
+2025-02-17T19:37:08.4254832Z Collecting flake8==7.0.0
+2025-02-17T19:37:08.4705714Z   Downloading flake8-7.0.0-py2.py3-none-any.whl.metadata (3.8 kB)
+2025-02-17T19:37:08.5364940Z Collecting black==24.3.0 (from black[jupyter]==24.3.0)
+2025-02-17T19:37:08.5459438Z   Downloading black-24.3.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (75 kB)
+2025-02-17T19:37:08.5986058Z Collecting isort==5.13.2
+2025-02-17T19:37:08.6073277Z   Downloading isort-5.13.2-py3-none-any.whl.metadata (12 kB)
+2025-02-17T19:37:08.6240801Z Collecting mccabe<0.8.0,>=0.7.0 (from flake8==7.0.0)
+2025-02-17T19:37:08.6325047Z   Downloading mccabe-0.7.0-py2.py3-none-any.whl.metadata (5.0 kB)
+2025-02-17T19:37:08.6521685Z Collecting pycodestyle<2.12.0,>=2.11.0 (from flake8==7.0.0)
+2025-02-17T19:37:08.6592143Z   Downloading pycodestyle-2.11.1-py2.py3-none-any.whl.metadata (4.5 kB)
+2025-02-17T19:37:08.6786421Z Collecting pyflakes<3.3.0,>=3.2.0 (from flake8==7.0.0)
+2025-02-17T19:37:08.6856783Z   Downloading pyflakes-3.2.0-py2.py3-none-any.whl.metadata (3.5 kB)
+2025-02-17T19:37:08.7092517Z Collecting click>=8.0.0 (from black==24.3.0->black[jupyter]==24.3.0)
+2025-02-17T19:37:08.7163913Z   Downloading click-8.1.8-py3-none-any.whl.metadata (2.3 kB)
+2025-02-17T19:37:08.7317382Z Collecting mypy-extensions>=0.4.3 (from black==24.3.0->black[jupyter]==24.3.0)
+2025-02-17T19:37:08.7388907Z   Downloading mypy_extensions-1.0.0-py3-none-any.whl.metadata (1.1 kB)
+2025-02-17T19:37:08.7639479Z Collecting packaging>=22.0 (from black==24.3.0->black[jupyter]==24.3.0)
+2025-02-17T19:37:08.7709674Z   Downloading packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+2025-02-17T19:37:08.7880407Z Collecting pathspec>=0.9.0 (from black==24.3.0->black[jupyter]==24.3.0)
+2025-02-17T19:37:08.7951314Z   Downloading pathspec-0.12.1-py3-none-any.whl.metadata (21 kB)
+2025-02-17T19:37:08.8189843Z Collecting platformdirs>=2 (from black==24.3.0->black[jupyter]==24.3.0)
+2025-02-17T19:37:08.8278998Z   Downloading platformdirs-4.3.6-py3-none-any.whl.metadata (11 kB)
+2025-02-17T19:37:08.8499875Z Collecting tomli>=1.1.0 (from black==24.3.0->black[jupyter]==24.3.0)
+2025-02-17T19:37:08.8572606Z   Downloading tomli-2.2.1-py3-none-any.whl.metadata (10 kB)
+2025-02-17T19:37:08.8796558Z Collecting typing-extensions>=4.0.1 (from black==24.3.0->black[jupyter]==24.3.0)
+2025-02-17T19:37:08.8885181Z   Downloading typing_extensions-4.12.2-py3-none-any.whl.metadata (3.0 kB)
+2025-02-17T19:37:08.9375863Z Collecting ipython>=7.8.0 (from black[jupyter]==24.3.0)
+2025-02-17T19:37:08.9449075Z   Downloading ipython-8.32.0-py3-none-any.whl.metadata (5.0 kB)
+2025-02-17T19:37:08.9729435Z Collecting tokenize-rt>=3.2.0 (from black[jupyter]==24.3.0)
+2025-02-17T19:37:08.9803830Z   Downloading tokenize_rt-6.1.0-py2.py3-none-any.whl.metadata (4.1 kB)
+2025-02-17T19:37:09.0011859Z Collecting decorator (from ipython>=7.8.0->black[jupyter]==24.3.0)
+2025-02-17T19:37:09.0089560Z   Downloading decorator-5.1.1-py3-none-any.whl.metadata (4.0 kB)
+2025-02-17T19:37:09.0261791Z Collecting exceptiongroup (from ipython>=7.8.0->black[jupyter]==24.3.0)
+2025-02-17T19:37:09.0340442Z   Downloading exceptiongroup-1.2.2-py3-none-any.whl.metadata (6.6 kB)
+2025-02-17T19:37:09.0530755Z Collecting jedi>=0.16 (from ipython>=7.8.0->black[jupyter]==24.3.0)
+2025-02-17T19:37:09.0602509Z   Downloading jedi-0.19.2-py2.py3-none-any.whl.metadata (22 kB)
+2025-02-17T19:37:09.0819823Z Collecting matplotlib-inline (from ipython>=7.8.0->black[jupyter]==24.3.0)
+2025-02-17T19:37:09.0890501Z   Downloading matplotlib_inline-0.1.7-py3-none-any.whl.metadata (3.9 kB)
+2025-02-17T19:37:09.1077496Z Collecting pexpect>4.3 (from ipython>=7.8.0->black[jupyter]==24.3.0)
+2025-02-17T19:37:09.1151531Z   Downloading pexpect-4.9.0-py2.py3-none-any.whl.metadata (2.5 kB)
+2025-02-17T19:37:09.1534776Z Collecting prompt_toolkit<3.1.0,>=3.0.41 (from ipython>=7.8.0->black[jupyter]==24.3.0)
+2025-02-17T19:37:09.1610703Z   Downloading prompt_toolkit-3.0.50-py3-none-any.whl.metadata (6.6 kB)
+2025-02-17T19:37:09.1861629Z Collecting pygments>=2.4.0 (from ipython>=7.8.0->black[jupyter]==24.3.0)
+2025-02-17T19:37:09.1937212Z   Downloading pygments-2.19.1-py3-none-any.whl.metadata (2.5 kB)
+2025-02-17T19:37:09.2117973Z Collecting stack_data (from ipython>=7.8.0->black[jupyter]==24.3.0)
+2025-02-17T19:37:09.2187173Z   Downloading stack_data-0.6.3-py3-none-any.whl.metadata (18 kB)
+2025-02-17T19:37:09.2412107Z Collecting traitlets>=5.13.0 (from ipython>=7.8.0->black[jupyter]==24.3.0)
+2025-02-17T19:37:09.2483742Z   Downloading traitlets-5.14.3-py3-none-any.whl.metadata (10 kB)
+2025-02-17T19:37:09.2792496Z Collecting parso<0.9.0,>=0.8.4 (from jedi>=0.16->ipython>=7.8.0->black[jupyter]==24.3.0)
+2025-02-17T19:37:09.2864186Z   Downloading parso-0.8.4-py2.py3-none-any.whl.metadata (7.7 kB)
+2025-02-17T19:37:09.3036873Z Collecting ptyprocess>=0.5 (from pexpect>4.3->ipython>=7.8.0->black[jupyter]==24.3.0)
+2025-02-17T19:37:09.3107104Z   Downloading ptyprocess-0.7.0-py2.py3-none-any.whl.metadata (1.3 kB)
+2025-02-17T19:37:09.3275877Z Collecting wcwidth (from prompt_toolkit<3.1.0,>=3.0.41->ipython>=7.8.0->black[jupyter]==24.3.0)
+2025-02-17T19:37:09.3350215Z   Downloading wcwidth-0.2.13-py2.py3-none-any.whl.metadata (14 kB)
+2025-02-17T19:37:09.3580540Z Collecting executing>=1.2.0 (from stack_data->ipython>=7.8.0->black[jupyter]==24.3.0)
+2025-02-17T19:37:09.3650700Z   Downloading executing-2.2.0-py2.py3-none-any.whl.metadata (8.9 kB)
+2025-02-17T19:37:09.3846213Z Collecting asttokens>=2.1.0 (from stack_data->ipython>=7.8.0->black[jupyter]==24.3.0)
+2025-02-17T19:37:09.3915681Z   Downloading asttokens-3.0.0-py3-none-any.whl.metadata (4.7 kB)
+2025-02-17T19:37:09.4070603Z Collecting pure-eval (from stack_data->ipython>=7.8.0->black[jupyter]==24.3.0)
+2025-02-17T19:37:09.4141013Z   Downloading pure_eval-0.2.3-py3-none-any.whl.metadata (6.3 kB)
+2025-02-17T19:37:09.4291209Z Downloading flake8-7.0.0-py2.py3-none-any.whl (57 kB)
+2025-02-17T19:37:09.4419623Z Downloading black-24.3.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.7 MB)
+2025-02-17T19:37:09.5368445Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 19.9 MB/s eta 0:00:00
+2025-02-17T19:37:09.5439646Z Downloading isort-5.13.2-py3-none-any.whl (92 kB)
+2025-02-17T19:37:09.5546163Z Downloading click-8.1.8-py3-none-any.whl (98 kB)
+2025-02-17T19:37:09.5654942Z Downloading ipython-8.32.0-py3-none-any.whl (825 kB)
+2025-02-17T19:37:09.5950161Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 825.5/825.5 kB 28.8 MB/s eta 0:00:00
+2025-02-17T19:37:09.6028955Z Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+2025-02-17T19:37:09.6126948Z Downloading mypy_extensions-1.0.0-py3-none-any.whl (4.7 kB)
+2025-02-17T19:37:09.6225769Z Downloading packaging-24.2-py3-none-any.whl (65 kB)
+2025-02-17T19:37:09.6338851Z Downloading pathspec-0.12.1-py3-none-any.whl (31 kB)
+2025-02-17T19:37:09.6447000Z Downloading platformdirs-4.3.6-py3-none-any.whl (18 kB)
+2025-02-17T19:37:09.6589795Z Downloading pycodestyle-2.11.1-py2.py3-none-any.whl (31 kB)
+2025-02-17T19:37:09.6689682Z Downloading pyflakes-3.2.0-py2.py3-none-any.whl (62 kB)
+2025-02-17T19:37:09.6794860Z Downloading tokenize_rt-6.1.0-py2.py3-none-any.whl (6.0 kB)
+2025-02-17T19:37:09.6887282Z Downloading tomli-2.2.1-py3-none-any.whl (14 kB)
+2025-02-17T19:37:09.6982142Z Downloading typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+2025-02-17T19:37:09.7074657Z Downloading jedi-0.19.2-py2.py3-none-any.whl (1.6 MB)
+2025-02-17T19:37:09.7525150Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 35.8 MB/s eta 0:00:00
+2025-02-17T19:37:09.7596142Z Downloading pexpect-4.9.0-py2.py3-none-any.whl (63 kB)
+2025-02-17T19:37:09.7698410Z Downloading prompt_toolkit-3.0.50-py3-none-any.whl (387 kB)
+2025-02-17T19:37:09.7854623Z Downloading pygments-2.19.1-py3-none-any.whl (1.2 MB)
+2025-02-17T19:37:09.8137935Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 41.2 MB/s eta 0:00:00
+2025-02-17T19:37:09.8211557Z Downloading traitlets-5.14.3-py3-none-any.whl (85 kB)
+2025-02-17T19:37:09.8312416Z Downloading decorator-5.1.1-py3-none-any.whl (9.1 kB)
+2025-02-17T19:37:09.8404040Z Downloading exceptiongroup-1.2.2-py3-none-any.whl (16 kB)
+2025-02-17T19:37:09.8497420Z Downloading matplotlib_inline-0.1.7-py3-none-any.whl (9.9 kB)
+2025-02-17T19:37:09.8599639Z Downloading stack_data-0.6.3-py3-none-any.whl (24 kB)
+2025-02-17T19:37:09.8691214Z Downloading asttokens-3.0.0-py3-none-any.whl (26 kB)
+2025-02-17T19:37:09.8784361Z Downloading executing-2.2.0-py2.py3-none-any.whl (26 kB)
+2025-02-17T19:37:09.8872336Z Downloading parso-0.8.4-py2.py3-none-any.whl (103 kB)
+2025-02-17T19:37:09.8966500Z Downloading ptyprocess-0.7.0-py2.py3-none-any.whl (13 kB)
+2025-02-17T19:37:09.9055899Z Downloading pure_eval-0.2.3-py3-none-any.whl (11 kB)
+2025-02-17T19:37:09.9164346Z Downloading wcwidth-0.2.13-py2.py3-none-any.whl (34 kB)
+2025-02-17T19:37:10.0396036Z Installing collected packages: wcwidth, pure-eval, ptyprocess, typing-extensions, traitlets, tomli, tokenize-rt, pygments, pyflakes, pycodestyle, prompt_toolkit, platformdirs, pexpect, pathspec, parso, packaging, mypy-extensions, mccabe, isort, executing, exceptiongroup, decorator, click, asttokens, stack_data, matplotlib-inline, jedi, flake8, black, ipython
+2025-02-17T19:37:12.5041348Z Successfully installed asttokens-3.0.0 black-24.3.0 click-8.1.8 decorator-5.1.1 exceptiongroup-1.2.2 executing-2.2.0 flake8-7.0.0 ipython-8.32.0 isort-5.13.2 jedi-0.19.2 matplotlib-inline-0.1.7 mccabe-0.7.0 mypy-extensions-1.0.0 packaging-24.2 parso-0.8.4 pathspec-0.12.1 pexpect-4.9.0 platformdirs-4.3.6 prompt_toolkit-3.0.50 ptyprocess-0.7.0 pure-eval-0.2.3 pycodestyle-2.11.1 pyflakes-3.2.0 pygments-2.19.1 stack_data-0.6.3 tokenize-rt-6.1.0 tomli-2.2.1 traitlets-5.14.3 typing-extensions-4.12.2 wcwidth-0.2.13
+2025-02-17T19:37:12.5954452Z ##[group]Run black --check .
+2025-02-17T19:37:12.5954752Z [36;1mblack --check .[0m
+2025-02-17T19:37:12.6012541Z shell: /usr/bin/bash -e {0}
+2025-02-17T19:37:12.6012775Z env:
+2025-02-17T19:37:12.6013030Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-17T19:37:12.6013464Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib/pkgconfig
+2025-02-17T19:37:12.6013883Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-17T19:37:12.6014240Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-17T19:37:12.6014585Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-17T19:37:12.6014943Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib
+2025-02-17T19:37:12.6015234Z ##[endgroup]
+2025-02-17T19:37:13.6839552Z All done! ✨ 🍰 ✨
+2025-02-17T19:37:13.6839909Z 57 files would be left unchanged.
+2025-02-17T19:37:13.7074462Z ##[group]Run flake8 . --count --statistics
+2025-02-17T19:37:13.7074802Z [36;1mflake8 . --count --statistics[0m
+2025-02-17T19:37:13.7133445Z shell: /usr/bin/bash -e {0}
+2025-02-17T19:37:13.7133686Z env:
+2025-02-17T19:37:13.7133934Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-17T19:37:13.7134364Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib/pkgconfig
+2025-02-17T19:37:13.7134778Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-17T19:37:13.7135120Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-17T19:37:13.7135466Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-17T19:37:13.7135815Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib
+2025-02-17T19:37:13.7136102Z ##[endgroup]
+2025-02-17T19:37:14.4707486Z 0
+2025-02-17T19:37:14.4901892Z ##[group]Run isort --check .
+2025-02-17T19:37:14.4902184Z [36;1misort --check .[0m
+2025-02-17T19:37:14.4958709Z shell: /usr/bin/bash -e {0}
+2025-02-17T19:37:14.4958951Z env:
+2025-02-17T19:37:14.4959469Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-17T19:37:14.4959924Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib/pkgconfig
+2025-02-17T19:37:14.4960328Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-17T19:37:14.4960687Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-17T19:37:14.4961030Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-17T19:37:14.4961380Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib
+2025-02-17T19:37:14.4961686Z ##[endgroup]
+2025-02-17T19:37:14.6318704Z ERROR: /home/runner/work/osyris/osyris/src/osyris/units/units.py Imports are incorrectly sorted and/or formatted.
+2025-02-17T19:37:14.6657752Z Skipped 3 files
+2025-02-17T19:37:14.6776792Z ##[error]Process completed with exit code 1.
+2025-02-17T19:37:14.6887243Z Post job cleanup.
+2025-02-17T19:37:14.7819618Z [command]/usr/bin/git version
+2025-02-17T19:37:14.7858837Z git version 2.48.1
+2025-02-17T19:37:14.7912979Z Temporarily overriding HOME='/home/runner/work/_temp/31c5621a-1382-487a-8731-9b495bf211cd' before making global git config changes
+2025-02-17T19:37:14.7913854Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-17T19:37:14.7918437Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/osyris/osyris
+2025-02-17T19:37:14.7953874Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-17T19:37:14.7986078Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-17T19:37:14.8226437Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-17T19:37:14.8248096Z http.https://github.com/.extraheader
+2025-02-17T19:37:14.8261477Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-17T19:37:14.8293210Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-17T19:37:14.8633964Z Cleaning up orphan processes

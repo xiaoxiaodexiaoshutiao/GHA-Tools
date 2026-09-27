@@ -1,0 +1,223 @@
+﻿2025-03-17T19:36:34.2315951Z Current runner version: '2.322.0'
+2025-03-17T19:36:34.2350767Z ##[group]Operating System
+2025-03-17T19:36:34.2351863Z Ubuntu
+2025-03-17T19:36:34.2352864Z 24.04.2
+2025-03-17T19:36:34.2353899Z LTS
+2025-03-17T19:36:34.2354773Z ##[endgroup]
+2025-03-17T19:36:34.2355791Z ##[group]Runner Image
+2025-03-17T19:36:34.2356891Z Image: ubuntu-24.04
+2025-03-17T19:36:34.2357803Z Version: 20250309.1.0
+2025-03-17T19:36:34.2359322Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250309.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-17T19:36:34.2360741Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250309.1
+2025-03-17T19:36:34.2361615Z ##[endgroup]
+2025-03-17T19:36:34.2362251Z ##[group]Runner Image Provisioner
+2025-03-17T19:36:34.2362822Z 2.0.422.1
+2025-03-17T19:36:34.2363303Z ##[endgroup]
+2025-03-17T19:36:34.2365964Z ##[group]GITHUB_TOKEN Permissions
+2025-03-17T19:36:34.2368236Z Actions: read
+2025-03-17T19:36:34.2369016Z Attestations: read
+2025-03-17T19:36:34.2369632Z Checks: read
+2025-03-17T19:36:34.2370176Z Contents: read
+2025-03-17T19:36:34.2371104Z Deployments: read
+2025-03-17T19:36:34.2371952Z Discussions: read
+2025-03-17T19:36:34.2372797Z Issues: read
+2025-03-17T19:36:34.2373563Z Metadata: read
+2025-03-17T19:36:34.2374544Z Packages: read
+2025-03-17T19:36:34.2375246Z Pages: read
+2025-03-17T19:36:34.2376119Z PullRequests: read
+2025-03-17T19:36:34.2376933Z RepositoryProjects: read
+2025-03-17T19:36:34.2377791Z SecurityEvents: read
+2025-03-17T19:36:34.2378729Z Statuses: read
+2025-03-17T19:36:34.2379440Z ##[endgroup]
+2025-03-17T19:36:34.2382080Z Secret source: None
+2025-03-17T19:36:34.2383690Z Prepare workflow directory
+2025-03-17T19:36:34.2937373Z Prepare all required actions
+2025-03-17T19:36:34.2991051Z Getting action download info
+2025-03-17T19:36:34.6675310Z Download action repository 'holoviz-dev/holoviz_tasks@v0' (SHA:3bb53227d05af7daeab2e53faa84fa0301636ce3)
+2025-03-17T19:36:34.9464182Z Getting action download info
+2025-03-17T19:36:35.0762050Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-17T19:36:35.1125724Z Download action repository 'actions/cache@v4' (SHA:d4323d4df104b026a6aa633fdb11d772146be0bf)
+2025-03-17T19:36:35.4106890Z Complete job name: Run pre-commit
+2025-03-17T19:36:35.4713150Z ##[group]Run holoviz-dev/holoviz_tasks/pre-commit@v0
+2025-03-17T19:36:35.4714399Z ##[endgroup]
+2025-03-17T19:36:35.4873948Z ##[group]Run actions/checkout@v4
+2025-03-17T19:36:35.4874441Z with:
+2025-03-17T19:36:35.4874794Z   fetch-depth: 1
+2025-03-17T19:36:35.4875183Z   repository: holoviz/hvplot
+2025-03-17T19:36:35.4875775Z   token: ***
+2025-03-17T19:36:35.4876131Z   ssh-strict: true
+2025-03-17T19:36:35.4876525Z   ssh-user: git
+2025-03-17T19:36:35.4876912Z   persist-credentials: true
+2025-03-17T19:36:35.4877345Z   clean: true
+2025-03-17T19:36:35.4877724Z   sparse-checkout-cone-mode: true
+2025-03-17T19:36:35.4878187Z   fetch-tags: false
+2025-03-17T19:36:35.4878580Z   show-progress: true
+2025-03-17T19:36:35.4878962Z   lfs: false
+2025-03-17T19:36:35.4879333Z   submodules: false
+2025-03-17T19:36:35.4879713Z   set-safe-directory: true
+2025-03-17T19:36:35.4880131Z ##[endgroup]
+2025-03-17T19:36:35.7263604Z Syncing repository: holoviz/hvplot
+2025-03-17T19:36:35.7267027Z ##[group]Getting Git version info
+2025-03-17T19:36:35.7268269Z Working directory is '/home/runner/work/hvplot/hvplot'
+2025-03-17T19:36:35.7270262Z [command]/usr/bin/git version
+2025-03-17T19:36:35.7372963Z git version 2.48.1
+2025-03-17T19:36:35.7403212Z ##[endgroup]
+2025-03-17T19:36:35.7419090Z Temporarily overriding HOME='/home/runner/work/_temp/d39b322f-9c20-4bf2-9c64-2aabb59b090c' before making global git config changes
+2025-03-17T19:36:35.7421785Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-17T19:36:35.7426322Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/hvplot/hvplot
+2025-03-17T19:36:35.7462694Z Deleting the contents of '/home/runner/work/hvplot/hvplot'
+2025-03-17T19:36:35.7466819Z ##[group]Initializing the repository
+2025-03-17T19:36:35.7471820Z [command]/usr/bin/git init /home/runner/work/hvplot/hvplot
+2025-03-17T19:36:35.7543317Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-17T19:36:35.7545586Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-17T19:36:35.7547495Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-17T19:36:35.7548897Z hint:
+2025-03-17T19:36:35.7549778Z hint: 	git config --global init.defaultBranch <name>
+2025-03-17T19:36:35.7550865Z hint:
+2025-03-17T19:36:35.7551902Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-17T19:36:35.7553581Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-17T19:36:35.7554823Z hint:
+2025-03-17T19:36:35.7555308Z hint: 	git branch -m <name>
+2025-03-17T19:36:35.7556214Z Initialized empty Git repository in /home/runner/work/hvplot/hvplot/.git/
+2025-03-17T19:36:35.7563269Z [command]/usr/bin/git remote add origin https://github.com/holoviz/hvplot
+2025-03-17T19:36:35.7599204Z ##[endgroup]
+2025-03-17T19:36:35.7600130Z ##[group]Disabling automatic garbage collection
+2025-03-17T19:36:35.7602795Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-17T19:36:35.7631899Z ##[endgroup]
+2025-03-17T19:36:35.7633147Z ##[group]Setting up auth
+2025-03-17T19:36:35.7638194Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-17T19:36:35.7668682Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-17T19:36:35.7994197Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-17T19:36:35.8023343Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-17T19:36:35.8248330Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-17T19:36:35.8285687Z ##[endgroup]
+2025-03-17T19:36:35.8287547Z ##[group]Fetching the repository
+2025-03-17T19:36:35.8297346Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +65f7e41d6bd91df53be64d6686e604d5fc179fd7:refs/remotes/pull/1523/merge
+2025-03-17T19:36:36.2718716Z From https://github.com/holoviz/hvplot
+2025-03-17T19:36:36.2720641Z  * [new ref]         65f7e41d6bd91df53be64d6686e604d5fc179fd7 -> pull/1523/merge
+2025-03-17T19:36:36.2753174Z ##[endgroup]
+2025-03-17T19:36:36.2755524Z ##[group]Determining the checkout info
+2025-03-17T19:36:36.2757998Z ##[endgroup]
+2025-03-17T19:36:36.2759367Z [command]/usr/bin/git sparse-checkout disable
+2025-03-17T19:36:36.2814052Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-17T19:36:36.2847185Z ##[group]Checking out the ref
+2025-03-17T19:36:36.2851480Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1523/merge
+2025-03-17T19:36:36.3309235Z Note: switching to 'refs/remotes/pull/1523/merge'.
+2025-03-17T19:36:36.3311838Z 
+2025-03-17T19:36:36.3312954Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-17T19:36:36.3315755Z changes and commit them, and you can discard any commits you make in this
+2025-03-17T19:36:36.3317699Z state without impacting any branches by switching back to a branch.
+2025-03-17T19:36:36.3318737Z 
+2025-03-17T19:36:36.3319382Z If you want to create a new branch to retain commits you create, you may
+2025-03-17T19:36:36.3321296Z do so (now or later) by using -c with the switch command. Example:
+2025-03-17T19:36:36.3322774Z 
+2025-03-17T19:36:36.3323136Z   git switch -c <new-branch-name>
+2025-03-17T19:36:36.3324064Z 
+2025-03-17T19:36:36.3324400Z Or undo this operation with:
+2025-03-17T19:36:36.3324992Z 
+2025-03-17T19:36:36.3325266Z   git switch -
+2025-03-17T19:36:36.3325988Z 
+2025-03-17T19:36:36.3326900Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-17T19:36:36.3328248Z 
+2025-03-17T19:36:36.3330066Z HEAD is now at 65f7e41 Merge 5cc7ff3c0acd837fa16523b63a2121335c51c1a8 into 8b8c3ebfe5c185901e6ec8501e4a1a24f322a57a
+2025-03-17T19:36:36.3334892Z ##[endgroup]
+2025-03-17T19:36:36.3372034Z [command]/usr/bin/git log -1 --format=%H
+2025-03-17T19:36:36.3396354Z 65f7e41d6bd91df53be64d6686e604d5fc179fd7
+2025-03-17T19:36:36.3598408Z ##[group]Run echo "PY=$(python -VV | sha256sum | cut -d' ' -f1)" >> $GITHUB_ENV
+2025-03-17T19:36:36.3600547Z [36;1mecho "PY=$(python -VV | sha256sum | cut -d' ' -f1)" >> $GITHUB_ENV[0m
+2025-03-17T19:36:36.3652908Z shell: /usr/bin/bash -el {0}
+2025-03-17T19:36:36.3654203Z ##[endgroup]
+2025-03-17T19:36:36.4741750Z ##[group]Run pipx install pre-commit
+2025-03-17T19:36:36.4742926Z [36;1mpipx install pre-commit[0m
+2025-03-17T19:36:36.4792148Z shell: /usr/bin/bash -el {0}
+2025-03-17T19:36:36.4793141Z env:
+2025-03-17T19:36:36.4794533Z   PY: 1006bc041bc96e450a3636cb68ed5737592efc2a842aa537f9b16a2c2f5ef7cf
+2025-03-17T19:36:36.4796067Z ##[endgroup]
+2025-03-17T19:36:36.7102754Z creating virtual environment...
+2025-03-17T19:36:36.8037224Z installing pre-commit...
+2025-03-17T19:36:38.2276151Z done! ✨ 🌟 ✨
+2025-03-17T19:36:38.2276954Z   installed package pre-commit 4.1.0, installed using Python 3.12.3
+2025-03-17T19:36:38.2277581Z   These apps are now globally available
+2025-03-17T19:36:38.2278160Z     - pre-commit
+2025-03-17T19:36:38.3064273Z ##[group]Run actions/cache/restore@v4
+2025-03-17T19:36:38.3064607Z with:
+2025-03-17T19:36:38.3064843Z   path: ~/.cache/pre-commit
+2025-03-17T19:36:38.3065532Z   key: pre-commit|1006bc041bc96e450a3636cb68ed5737592efc2a842aa537f9b16a2c2f5ef7cf|b74b4cca70abb03faaa2dad45fccb77b21c5d87465cdd8622e714b197998ac91
+2025-03-17T19:36:38.3066251Z   enableCrossOsArchive: false
+2025-03-17T19:36:38.3066530Z   fail-on-cache-miss: false
+2025-03-17T19:36:38.3066787Z   lookup-only: false
+2025-03-17T19:36:38.3067053Z env:
+2025-03-17T19:36:38.3067378Z   PY: 1006bc041bc96e450a3636cb68ed5737592efc2a842aa537f9b16a2c2f5ef7cf
+2025-03-17T19:36:38.3067795Z ##[endgroup]
+2025-03-17T19:36:38.4987966Z Cache hit for: pre-commit|1006bc041bc96e450a3636cb68ed5737592efc2a842aa537f9b16a2c2f5ef7cf|b74b4cca70abb03faaa2dad45fccb77b21c5d87465cdd8622e714b197998ac91
+2025-03-17T19:36:38.7629909Z Received 25819353 of 25819353 (100.0%), 108.5 MBs/sec
+2025-03-17T19:36:38.7630658Z Cache Size: ~25 MB (25819353 B)
+2025-03-17T19:36:38.7661186Z [command]/usr/bin/tar -xf /home/runner/work/_temp/a217e00b-ffd2-4b00-a614-c7b9b7ad591d/cache.tzst -P -C /home/runner/work/hvplot/hvplot --use-compress-program unzstd
+2025-03-17T19:36:39.0258965Z Cache restored successfully
+2025-03-17T19:36:39.0507643Z Cache restored from key: pre-commit|1006bc041bc96e450a3636cb68ed5737592efc2a842aa537f9b16a2c2f5ef7cf|b74b4cca70abb03faaa2dad45fccb77b21c5d87465cdd8622e714b197998ac91
+2025-03-17T19:36:39.0630031Z ##[group]Run echo '```console' > $GITHUB_STEP_SUMMARY
+2025-03-17T19:36:39.0630396Z [36;1mecho '```console' > $GITHUB_STEP_SUMMARY[0m
+2025-03-17T19:36:39.0630748Z [36;1m# Enable color output for pre-commit and remove it for the summary[0m
+2025-03-17T19:36:39.0631216Z [36;1mpre-commit run --all-files --show-diff-on-failure --color=always | \[0m
+2025-03-17T19:36:39.0631688Z [36;1m  tee >(sed -E 's/\x1B\[([0-9]{1,2}(;[0-9]{1,2})*)?[mGK]//g' >> $GITHUB_STEP_SUMMARY) >&1[0m
+2025-03-17T19:36:39.0632050Z [36;1mexit_code=${PIPESTATUS[0]}[0m
+2025-03-17T19:36:39.0632318Z [36;1mecho '```' >> $GITHUB_STEP_SUMMARY[0m
+2025-03-17T19:36:39.0632578Z [36;1mexit $exit_code[0m
+2025-03-17T19:36:39.0682083Z shell: /usr/bin/bash -e {0}
+2025-03-17T19:36:39.0682321Z env:
+2025-03-17T19:36:39.0682599Z   PY: 1006bc041bc96e450a3636cb68ed5737592efc2a842aa537f9b16a2c2f5ef7cf
+2025-03-17T19:36:39.0682944Z ##[endgroup]
+2025-03-17T19:36:39.5084737Z check builtin type constructor use.......................................[42mPassed[m
+2025-03-17T19:36:39.6190655Z check for case conflicts.................................................[42mPassed[m
+2025-03-17T19:36:39.7674950Z check docstring is first.................................................[42mPassed[m
+2025-03-17T19:36:39.7677023Z check that executables have shebangs.................(no files to check)[46;30mSkipped[m
+2025-03-17T19:36:39.8531577Z check toml...............................................................[42mPassed[m
+2025-03-17T19:36:39.9470720Z detect private key.......................................................[42mPassed[m
+2025-03-17T19:36:40.0417029Z fix end of files.........................................................[42mPassed[m
+2025-03-17T19:36:40.1430810Z trim trailing whitespace.................................................[42mPassed[m
+2025-03-17T19:36:40.2202731Z ruff.....................................................................[41mFailed[m
+2025-03-17T19:36:40.2204646Z [2m- hook id: ruff[m
+2025-03-17T19:36:40.2205021Z [2m- exit code: 1[m
+2025-03-17T19:36:40.2205238Z 
+2025-03-17T19:36:40.2205915Z [1mhvplot/tests/conftest.py[0m[36m:[0m9[36m:[0m1[36m:[0m [1;31mE402[0m Module level import not at top of file
+2025-03-17T19:36:40.2206375Z [1;38;5;12m   |[0m
+2025-03-17T19:36:40.2206734Z [1;38;5;12m 7 |[0m param.parameterized.warnings_as_exceptions = True
+2025-03-17T19:36:40.2207082Z [1;38;5;12m 8 |[0m 
+2025-03-17T19:36:40.2207362Z [1;38;5;12m 9 |[0m from packaging.version import Version
+2025-03-17T19:36:40.2207737Z [1;38;5;12m   |[0m[1;38;5;9m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m [1;38;5;9mE402[0m
+2025-03-17T19:36:40.2208037Z [1;38;5;12m10 |[0m 
+2025-03-17T19:36:40.2208258Z [1;38;5;12m11 |[0m optional_markers = {
+2025-03-17T19:36:40.2208503Z [1;38;5;12m   |[0m
+2025-03-17T19:36:40.2208608Z 
+2025-03-17T19:36:40.2209025Z [1mhvplot/tests/conftest.py[0m[36m:[0m9[36m:[0m31[36m:[0m [1;31mF811[0m [[36m*[0m] Redefinition of unused `Version` from line 5
+2025-03-17T19:36:40.2209501Z [1;38;5;12m   |[0m
+2025-03-17T19:36:40.2209802Z [1;38;5;12m 7 |[0m param.parameterized.warnings_as_exceptions = True
+2025-03-17T19:36:40.2210125Z [1;38;5;12m 8 |[0m 
+2025-03-17T19:36:40.2210379Z [1;38;5;12m 9 |[0m from packaging.version import Version
+2025-03-17T19:36:40.2211054Z [1;38;5;12m   |[0m[1;38;5;9m                               ^^^^^^^[0m [1;38;5;9mF811[0m
+2025-03-17T19:36:40.2211368Z [1;38;5;12m10 |[0m 
+2025-03-17T19:36:40.2211746Z [1;38;5;12m11 |[0m optional_markers = {
+2025-03-17T19:36:40.2212187Z [1;38;5;12m   |[0m
+2025-03-17T19:36:40.2212688Z    [1;38;5;12m=[0m [1;38;5;14mhelp[0m: Remove definition: `Version`
+2025-03-17T19:36:40.2213018Z 
+2025-03-17T19:36:40.2213108Z Found 2 errors.
+2025-03-17T19:36:40.2213463Z [[36m*[0m] 1 fixable with the `--fix` option.
+2025-03-17T19:36:40.2213942Z 
+2025-03-17T19:36:40.3013252Z ruff-format..............................................................[42mPassed[m
+2025-03-17T19:36:40.4496525Z clean-notebook...........................................................[42mPassed[m
+2025-03-17T19:36:40.7435004Z codespell................................................................[42mPassed[m
+2025-03-17T19:36:40.7609145Z ##[error]Process completed with exit code 1.
+2025-03-17T19:36:40.7732336Z Post job cleanup.
+2025-03-17T19:36:40.7793857Z Post job cleanup.
+2025-03-17T19:36:40.8721185Z [command]/usr/bin/git version
+2025-03-17T19:36:40.8759438Z git version 2.48.1
+2025-03-17T19:36:40.8812076Z Temporarily overriding HOME='/home/runner/work/_temp/3af88310-ff7f-407a-92ef-53be590723c4' before making global git config changes
+2025-03-17T19:36:40.8812995Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-17T19:36:40.8817499Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/hvplot/hvplot
+2025-03-17T19:36:40.8851314Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-17T19:36:40.8883517Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-17T19:36:40.9117911Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-17T19:36:40.9138229Z http.https://github.com/.extraheader
+2025-03-17T19:36:40.9151460Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-17T19:36:40.9182123Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-17T19:36:40.9510142Z Cleaning up orphan processes

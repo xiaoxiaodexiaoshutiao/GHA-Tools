@@ -1,0 +1,884 @@
+2025-03-11T22:06:24.7989468Z Requested labels: network-node-linux-medium
+2025-03-11T22:06:24.7989691Z Job defined at: hashgraph/pbj/.github/workflows/zxc-compile-pbj-code.yaml@refs/pull/415/merge
+2025-03-11T22:06:24.7989880Z Reusable workflow chain:
+2025-03-11T22:06:24.7989991Z hashgraph/pbj/.github/workflows/flow-pull-request-checks.yaml@refs/pull/415/merge (01aa7d106d329af473d9a498fe303b73dfcb1f94)
+2025-03-11T22:06:24.7990116Z -> hashgraph/pbj/.github/workflows/zxc-compile-pbj-code.yaml@refs/pull/415/merge (01aa7d106d329af473d9a498fe303b73dfcb1f94)
+2025-03-11T22:06:24.7990232Z Waiting for a runner to pick up this job...
+2025-03-11T22:06:26.1877373Z Job is waiting for a runner from 'network-node-linux-medium' to come online.
+2025-03-11T22:06:48.5098866Z Job is about to start running on the runner: network-node-linux-medium-s22jl-runner-78m5z (organization)
+2025-03-11T22:06:51.9054403Z Current runner version: '2.322.0'
+2025-03-11T22:06:51.9064329Z Runner name: 'network-node-linux-medium-s22jl-runner-78m5z'
+2025-03-11T22:06:51.9065547Z Runner group name: 'Network Node - Primary'
+2025-03-11T22:06:51.9066919Z Machine name: 'network-node-linux-medium-s22jl-runner-78m5z'
+2025-03-11T22:06:51.9070805Z ##[group]GITHUB_TOKEN Permissions
+2025-03-11T22:06:51.9072979Z Checks: write
+2025-03-11T22:06:51.9073375Z Contents: read
+2025-03-11T22:06:51.9073742Z Issues: read
+2025-03-11T22:06:51.9074092Z Metadata: read
+2025-03-11T22:06:51.9074455Z PullRequests: write
+2025-03-11T22:06:51.9074835Z Statuses: write
+2025-03-11T22:06:51.9075216Z ##[endgroup]
+2025-03-11T22:06:51.9077910Z Secret source: Actions
+2025-03-11T22:06:51.9078473Z Prepare workflow directory
+2025-03-11T22:06:51.9531510Z Prepare all required actions
+2025-03-11T22:06:51.9561693Z Getting action download info
+2025-03-11T22:06:52.1751205Z Download action repository 'step-security/harden-runner@4d991eb9b905ef189e4c376166672c3f2f230481' (SHA:4d991eb9b905ef189e4c376166672c3f2f230481)
+2025-03-11T22:06:52.9401802Z Download action repository 'actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-11T22:06:53.3416338Z Download action repository 'actions/setup-java@3a4f6e1af504cf6a31855fa899c6aa5355ba6c12' (SHA:3a4f6e1af504cf6a31855fa899c6aa5355ba6c12)
+2025-03-11T22:06:53.8859348Z Download action repository 'gradle/actions@94baf225fe0a508e581a564467443d0e2379123b' (SHA:94baf225fe0a508e581a564467443d0e2379123b)
+2025-03-11T22:06:54.9827038Z Download action repository 'step-security/publish-unit-test-result-action@cc82caac074385ae176d39d2d143ad05e1130b2d' (SHA:cc82caac074385ae176d39d2d143ad05e1130b2d)
+2025-03-11T22:06:55.6684191Z Uses: hashgraph/pbj/.github/workflows/zxc-compile-pbj-code.yaml@refs/pull/415/merge (01aa7d106d329af473d9a498fe303b73dfcb1f94)
+2025-03-11T22:06:55.6685750Z ##[group] Inputs
+2025-03-11T22:06:55.6686224Z   enable-unit-tests: false
+2025-03-11T22:06:55.6686476Z   enable-integration-tests: true
+2025-03-11T22:06:55.6686702Z   enable-jmh-tests: false
+2025-03-11T22:06:55.6686906Z   java-distribution: temurin
+2025-03-11T22:06:55.6687104Z   java-version: 21.0.5
+2025-03-11T22:06:55.6687287Z   gradle-version: wrapper
+2025-03-11T22:06:55.6687472Z   custom-job-label: Standard
+2025-03-11T22:06:55.6687672Z ##[endgroup]
+2025-03-11T22:06:55.6687873Z Complete job name: Integration Tests / Standard
+2025-03-11T22:06:55.6953341Z ##[group]Pull down action image 'ghcr.io/step-security/publish-unit-test-result-action:v2.18.0'
+2025-03-11T22:06:55.6991749Z ##[command]/usr/bin/docker pull ghcr.io/step-security/publish-unit-test-result-action:v2.18.0
+2025-03-11T22:06:56.2919655Z v2.18.0: Pulling from step-security/publish-unit-test-result-action
+2025-03-11T22:06:56.4379225Z da9db072f522: Pulling fs layer
+2025-03-11T22:06:56.4379538Z f3b000d045e4: Pulling fs layer
+2025-03-11T22:06:56.4379760Z cab9ad375d3d: Pulling fs layer
+2025-03-11T22:06:56.4380132Z 25acfdd60196: Pulling fs layer
+2025-03-11T22:06:56.4380332Z 9c30cc8b54e1: Pulling fs layer
+2025-03-11T22:06:56.4380566Z 9055b0cf9e8d: Pulling fs layer
+2025-03-11T22:06:56.4380754Z 8a5f912dd6f8: Pulling fs layer
+2025-03-11T22:06:56.4380950Z e50486f381b2: Pulling fs layer
+2025-03-11T22:06:56.4381189Z 20c613962571: Pulling fs layer
+2025-03-11T22:06:56.4381379Z 25acfdd60196: Waiting
+2025-03-11T22:06:56.4381565Z 9c30cc8b54e1: Waiting
+2025-03-11T22:06:56.4381799Z 20c613962571: Waiting
+2025-03-11T22:06:56.4382007Z 9055b0cf9e8d: Waiting
+2025-03-11T22:06:56.4382172Z e50486f381b2: Waiting
+2025-03-11T22:06:56.4382337Z 8a5f912dd6f8: Waiting
+2025-03-11T22:06:56.5834440Z f3b000d045e4: Download complete
+2025-03-11T22:06:56.5942730Z da9db072f522: Verifying Checksum
+2025-03-11T22:06:56.5943262Z da9db072f522: Download complete
+2025-03-11T22:06:56.6480580Z cab9ad375d3d: Verifying Checksum
+2025-03-11T22:06:56.6481009Z cab9ad375d3d: Download complete
+2025-03-11T22:06:56.6846458Z da9db072f522: Pull complete
+2025-03-11T22:06:56.7474112Z 25acfdd60196: Verifying Checksum
+2025-03-11T22:06:56.7475401Z 25acfdd60196: Download complete
+2025-03-11T22:06:56.7557641Z 9c30cc8b54e1: Verifying Checksum
+2025-03-11T22:06:56.7558234Z 9c30cc8b54e1: Download complete
+2025-03-11T22:06:56.7873140Z 9055b0cf9e8d: Verifying Checksum
+2025-03-11T22:06:56.7873781Z 9055b0cf9e8d: Download complete
+2025-03-11T22:06:56.9170964Z f3b000d045e4: Pull complete
+2025-03-11T22:06:56.9385324Z 20c613962571: Download complete
+2025-03-11T22:06:57.0715548Z e50486f381b2: Verifying Checksum
+2025-03-11T22:06:57.0716250Z e50486f381b2: Download complete
+2025-03-11T22:06:57.0731118Z 8a5f912dd6f8: Verifying Checksum
+2025-03-11T22:06:57.0731662Z 8a5f912dd6f8: Download complete
+2025-03-11T22:06:57.4970274Z cab9ad375d3d: Pull complete
+2025-03-11T22:06:57.5016329Z 25acfdd60196: Pull complete
+2025-03-11T22:06:57.5074975Z 9c30cc8b54e1: Pull complete
+2025-03-11T22:06:57.5118044Z 9055b0cf9e8d: Pull complete
+2025-03-11T22:06:58.4191396Z 8a5f912dd6f8: Pull complete
+2025-03-11T22:06:58.4296605Z e50486f381b2: Pull complete
+2025-03-11T22:06:58.4346459Z 20c613962571: Pull complete
+2025-03-11T22:06:58.4369748Z Digest: sha256:0307a2faf91254fe90f187241738a837b9f454eb68f2546a71d5c789da26d01d
+2025-03-11T22:06:58.4374705Z Status: Downloaded newer image for ghcr.io/step-security/publish-unit-test-result-action:v2.18.0
+2025-03-11T22:06:58.4383756Z ghcr.io/step-security/publish-unit-test-result-action:v2.18.0
+2025-03-11T22:06:58.4429900Z ##[endgroup]
+2025-03-11T22:06:58.4831441Z ##[group]Run step-security/harden-runner@4d991eb9b905ef189e4c376166672c3f2f230481
+2025-03-11T22:06:58.4832679Z with:
+2025-03-11T22:06:58.4833086Z   egress-policy: audit
+2025-03-11T22:06:58.4833813Z   token: ***
+2025-03-11T22:06:58.4834267Z   disable-telemetry: false
+2025-03-11T22:06:58.4834740Z   disable-sudo: false
+2025-03-11T22:06:58.4835199Z   disable-file-monitoring: false
+2025-03-11T22:06:58.4835948Z env:
+2025-03-11T22:06:58.4836329Z   LC_ALL: C.UTF-8
+2025-03-11T22:06:58.4836753Z   PBJ_CORE: pbj-core
+2025-03-11T22:06:58.4837259Z   PBJ_INTEGRATION_TESTS: pbj-integration-tests
+2025-03-11T22:06:58.4837936Z   GRADLE_CACHE_USERNAME: ***
+2025-03-11T22:06:58.4838544Z   GRADLE_CACHE_PASSWORD: ***
+2025-03-11T22:06:58.4838997Z ##[endgroup]
+2025-03-11T22:06:58.6082145Z [harden-runner] pre-step
+2025-03-11T22:06:58.6082920Z [!] Current Configuration: 
+2025-03-11T22:06:58.6085584Z {"repo":"hashgraph/pbj","run_id":"13799133458","correlation_id":"39b40596-dfd6-478d-a5f1-88a2a0d0e594","working_directory":"/home/runner/_work/pbj/pbj","api_url":"https://agent.api.stepsecurity.io/v1","allowed_endpoints":"","egress_policy":"audit","disable_telemetry":false,"disable_sudo":false,"disable_file_monitoring":false,"private":false,"is_github_hosted":false,"is_debug":false,"one_time_key":""}
+2025-03-11T22:06:58.6087853Z 
+2025-03-11T22:06:58.6088543Z [32mView security insights and recommended policy at:[0m
+2025-03-11T22:06:58.6089470Z https://app.stepsecurity.io/github/hashgraph/pbj/actions/runs/13799133458
+2025-03-11T22:06:58.6090386Z [!] Workflow is currently being executed in ARC based runner.
+2025-03-11T22:06:58.6362130Z ##[group]Run step-security/harden-runner@4d991eb9b905ef189e4c376166672c3f2f230481
+2025-03-11T22:06:58.6362931Z with:
+2025-03-11T22:06:58.6363331Z   egress-policy: audit
+2025-03-11T22:06:58.6363975Z   token: ***
+2025-03-11T22:06:58.6364396Z   disable-telemetry: false
+2025-03-11T22:06:58.6364852Z   disable-sudo: false
+2025-03-11T22:06:58.6365396Z   disable-file-monitoring: false
+2025-03-11T22:06:58.6366266Z env:
+2025-03-11T22:06:58.6366727Z   LC_ALL: C.UTF-8
+2025-03-11T22:06:58.6367136Z   PBJ_CORE: pbj-core
+2025-03-11T22:06:58.6367634Z   PBJ_INTEGRATION_TESTS: pbj-integration-tests
+2025-03-11T22:06:58.6368280Z   GRADLE_CACHE_USERNAME: ***
+2025-03-11T22:06:58.6368874Z   GRADLE_CACHE_PASSWORD: ***
+2025-03-11T22:06:58.6369340Z   STATE_disableSudo: false
+2025-03-11T22:06:58.6369782Z ##[endgroup]
+2025-03-11T22:06:58.6708004Z [harden-runner] main-step
+2025-03-11T22:06:58.6710954Z [32mView security insights and recommended policy at:[0m
+2025-03-11T22:06:58.6711456Z https://app.stepsecurity.io/github/hashgraph/pbj/actions/runs/13799133458
+2025-03-11T22:06:58.6977095Z ##[group]Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+2025-03-11T22:06:58.6977805Z with:
+2025-03-11T22:06:58.6978195Z   fetch-depth: 0
+2025-03-11T22:06:58.6978645Z   repository: hashgraph/pbj
+2025-03-11T22:06:58.6979359Z   token: ***
+2025-03-11T22:06:58.6979781Z   ssh-strict: true
+2025-03-11T22:06:58.6980390Z   ssh-user: git
+2025-03-11T22:06:58.6980828Z   persist-credentials: true
+2025-03-11T22:06:58.6981320Z   clean: true
+2025-03-11T22:06:58.6981787Z   sparse-checkout-cone-mode: true
+2025-03-11T22:06:58.6982289Z   fetch-tags: false
+2025-03-11T22:06:58.6982700Z   show-progress: true
+2025-03-11T22:06:58.6983132Z   lfs: false
+2025-03-11T22:06:58.6983530Z   submodules: false
+2025-03-11T22:06:58.6983958Z   set-safe-directory: true
+2025-03-11T22:06:58.6984395Z env:
+2025-03-11T22:06:58.6984755Z   LC_ALL: C.UTF-8
+2025-03-11T22:06:58.6985164Z   PBJ_CORE: pbj-core
+2025-03-11T22:06:58.6985669Z   PBJ_INTEGRATION_TESTS: pbj-integration-tests
+2025-03-11T22:06:58.6986385Z   GRADLE_CACHE_USERNAME: ***
+2025-03-11T22:06:58.6986983Z   GRADLE_CACHE_PASSWORD: ***
+2025-03-11T22:06:58.6987433Z ##[endgroup]
+2025-03-11T22:06:58.7873182Z Syncing repository: hashgraph/pbj
+2025-03-11T22:06:58.7874128Z ##[group]Getting Git version info
+2025-03-11T22:06:58.7874393Z Working directory is '/home/runner/_work/pbj/pbj'
+2025-03-11T22:06:58.7874798Z [command]/usr/bin/git version
+2025-03-11T22:06:58.7886181Z git version 2.48.1
+2025-03-11T22:06:58.7904409Z ##[endgroup]
+2025-03-11T22:06:58.7914580Z Temporarily overriding HOME='/home/runner/_work/_temp/d58f4d7d-38e9-486d-823d-20878fafa10e' before making global git config changes
+2025-03-11T22:06:58.7915157Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-11T22:06:58.7918693Z [command]/usr/bin/git config --global --add safe.directory /home/runner/_work/pbj/pbj
+2025-03-11T22:06:58.7954588Z Deleting the contents of '/home/runner/_work/pbj/pbj'
+2025-03-11T22:06:58.7957211Z ##[group]Initializing the repository
+2025-03-11T22:06:58.7960442Z [command]/usr/bin/git init /home/runner/_work/pbj/pbj
+2025-03-11T22:06:58.8004108Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-11T22:06:58.8004581Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-11T22:06:58.8004979Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-11T22:06:58.8005262Z hint:
+2025-03-11T22:06:58.8005558Z hint: 	git config --global init.defaultBranch <name>
+2025-03-11T22:06:58.8005811Z hint:
+2025-03-11T22:06:58.8006047Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-11T22:06:58.8006421Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-11T22:06:58.8006707Z hint:
+2025-03-11T22:06:58.8006880Z hint: 	git branch -m <name>
+2025-03-11T22:06:58.8007195Z Initialized empty Git repository in /home/runner/_work/pbj/pbj/.git/
+2025-03-11T22:06:58.8014250Z [command]/usr/bin/git remote add origin https://github.com/hashgraph/pbj
+2025-03-11T22:06:58.8042026Z ##[endgroup]
+2025-03-11T22:06:58.8042375Z ##[group]Disabling automatic garbage collection
+2025-03-11T22:06:58.8044770Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-11T22:06:58.8069968Z ##[endgroup]
+2025-03-11T22:06:58.8070449Z ##[group]Setting up auth
+2025-03-11T22:06:58.8075264Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-11T22:06:58.8104434Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-11T22:06:58.8361797Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-11T22:06:58.8388603Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-11T22:06:58.8645634Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-11T22:06:58.8677691Z ##[endgroup]
+2025-03-11T22:06:58.8677997Z ##[group]Fetching the repository
+2025-03-11T22:06:58.8684205Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* +01aa7d106d329af473d9a498fe303b73dfcb1f94:refs/remotes/pull/415/merge
+2025-03-11T22:06:59.8628640Z From https://github.com/hashgraph/pbj
+2025-03-11T22:06:59.8629059Z  * [new branch]      00180-bug                                -> origin/00180-bug
+2025-03-11T22:06:59.8629427Z  * [new branch]      00303-callback                           -> origin/00303-callback
+2025-03-11T22:06:59.8630358Z  * [new branch]      00303-runnable-registration-2            -> origin/00303-runnable-registration-2
+2025-03-11T22:06:59.8632232Z  * [new branch]      00304-propagate-errors                   -> origin/00304-propagate-errors
+2025-03-11T22:06:59.8634095Z  * [new branch]      00306-block-node-helidon                 -> origin/00306-block-node-helidon
+2025-03-11T22:06:59.8636086Z  * [new branch]      00324-grpc-test-coverage                 -> origin/00324-grpc-test-coverage
+2025-03-11T22:06:59.8638058Z  * [new branch]      096_version_bump                         -> origin/096_version_bump
+2025-03-11T22:06:59.8640064Z  * [new branch]      263-notes-for-child-elements             -> origin/263-notes-for-child-elements
+2025-03-11T22:06:59.8641923Z  * [new branch]      414-partiallyQualifiedNames              -> origin/414-partiallyQualifiedNames
+2025-03-11T22:06:59.8646074Z  * [new branch]      dependabot/gradle/pbj-core/hiero-dependency-versions/helidon-4.2.0 -> origin/dependabot/gradle/pbj-core/hiero-dependency-versions/helidon-4.2.0
+2025-03-11T22:06:59.8648124Z  * [new branch]      dependabot/gradle/pbj-core/hiero-dependency-versions/protobuf-4.30.0 -> origin/dependabot/gradle/pbj-core/hiero-dependency-versions/protobuf-4.30.0
+2025-03-11T22:06:59.8649845Z  * [new branch]      handle-incorrect-camel-case              -> origin/handle-incorrect-camel-case
+2025-03-11T22:06:59.8651686Z  * [new branch]      lubo-issue-44                            -> origin/lubo-issue-44
+2025-03-11T22:06:59.8653571Z  * [new branch]      lubo-issue-59                            -> origin/lubo-issue-59
+2025-03-11T22:06:59.8655639Z  * [new branch]      lubo-issue-60                            -> origin/lubo-issue-60
+2025-03-11T22:06:59.8664843Z  * [new branch]      lubo-issue-95                            -> origin/lubo-issue-95
+2025-03-11T22:06:59.8666617Z  * [new branch]      main                                     -> origin/main
+2025-03-11T22:06:59.8668432Z  * [new branch]      more-perf-work                           -> origin/more-perf-work
+2025-03-11T22:06:59.8670425Z  * [new branch]      write-perf-experiments                   -> origin/write-perf-experiments
+2025-03-11T22:06:59.8671963Z  * [new tag]         origin/v0.7.8                            -> origin/v0.7.8
+2025-03-11T22:06:59.8673005Z  * [new tag]         origin/v0.7.9                            -> origin/v0.7.9
+2025-03-11T22:06:59.8674471Z  * [new tag]         v0.1.0                                   -> v0.1.0
+2025-03-11T22:06:59.8675608Z  * [new tag]         v0.1.1                                   -> v0.1.1
+2025-03-11T22:06:59.8676794Z  * [new tag]         v0.2.1                                   -> v0.2.1
+2025-03-11T22:06:59.8677954Z  * [new tag]         v0.2.2                                   -> v0.2.2
+2025-03-11T22:06:59.8679111Z  * [new tag]         v0.3.0                                   -> v0.3.0
+2025-03-11T22:06:59.8680259Z  * [new tag]         v0.3.1                                   -> v0.3.1
+2025-03-11T22:06:59.8681437Z  * [new tag]         v0.4.0                                   -> v0.4.0
+2025-03-11T22:06:59.8682855Z  * [new tag]         v0.5.0                                   -> v0.5.0
+2025-03-11T22:06:59.8684127Z  * [new tag]         v0.5.1                                   -> v0.5.1
+2025-03-11T22:06:59.8684991Z  * [new tag]         v0.5.2                                   -> v0.5.2
+2025-03-11T22:06:59.8686162Z  * [new tag]         v0.5.3                                   -> v0.5.3
+2025-03-11T22:06:59.8687320Z  * [new tag]         v0.6.0                                   -> v0.6.0
+2025-03-11T22:06:59.8688328Z  * [new tag]         v0.6.1                                   -> v0.6.1
+2025-03-11T22:06:59.8689461Z  * [new tag]         v0.7.0                                   -> v0.7.0
+2025-03-11T22:06:59.8690608Z  * [new tag]         v0.7.1                                   -> v0.7.1
+2025-03-11T22:06:59.8691937Z  * [new tag]         v0.7.10                                  -> v0.7.10
+2025-03-11T22:06:59.8692952Z  * [new tag]         v0.7.11                                  -> v0.7.11
+2025-03-11T22:06:59.8707652Z  * [new tag]         v0.7.12                                  -> v0.7.12
+2025-03-11T22:06:59.8708086Z  * [new tag]         v0.7.13                                  -> v0.7.13
+2025-03-11T22:06:59.8708362Z  * [new tag]         v0.7.14                                  -> v0.7.14
+2025-03-11T22:06:59.8708604Z  * [new tag]         v0.7.15                                  -> v0.7.15
+2025-03-11T22:06:59.8708913Z  * [new tag]         v0.7.16                                  -> v0.7.16
+2025-03-11T22:06:59.8709147Z  * [new tag]         v0.7.17                                  -> v0.7.17
+2025-03-11T22:06:59.8709380Z  * [new tag]         v0.7.18                                  -> v0.7.18
+2025-03-11T22:06:59.8709614Z  * [new tag]         v0.7.19                                  -> v0.7.19
+2025-03-11T22:06:59.8709899Z  * [new tag]         v0.7.2                                   -> v0.7.2
+2025-03-11T22:06:59.8710156Z  * [new tag]         v0.7.20                                  -> v0.7.20
+2025-03-11T22:06:59.8710399Z  * [new tag]         v0.7.21                                  -> v0.7.21
+2025-03-11T22:06:59.8710645Z  * [new tag]         v0.7.22                                  -> v0.7.22
+2025-03-11T22:06:59.8710898Z  * [new tag]         v0.7.23                                  -> v0.7.23
+2025-03-11T22:06:59.8711205Z  * [new tag]         v0.7.4                                   -> v0.7.4
+2025-03-11T22:06:59.8711481Z  * [new tag]         v0.7.5                                   -> v0.7.5
+2025-03-11T22:06:59.8712582Z  * [new tag]         v0.7.6                                   -> v0.7.6
+2025-03-11T22:06:59.8713760Z  * [new tag]         v0.7.7                                   -> v0.7.7
+2025-03-11T22:06:59.8714744Z  * [new tag]         v0.7.8                                   -> v0.7.8
+2025-03-11T22:06:59.8715922Z  * [new tag]         v0.7.9                                   -> v0.7.9
+2025-03-11T22:06:59.8717107Z  * [new tag]         v0.8.0                                   -> v0.8.0
+2025-03-11T22:06:59.8718256Z  * [new tag]         v0.8.1                                   -> v0.8.1
+2025-03-11T22:06:59.8719446Z  * [new tag]         v0.8.2                                   -> v0.8.2
+2025-03-11T22:06:59.8720790Z  * [new tag]         v0.8.3                                   -> v0.8.3
+2025-03-11T22:06:59.8721985Z  * [new tag]         v0.8.4                                   -> v0.8.4
+2025-03-11T22:06:59.8723169Z  * [new tag]         v0.8.5                                   -> v0.8.5
+2025-03-11T22:06:59.8724399Z  * [new tag]         v0.8.6                                   -> v0.8.6
+2025-03-11T22:06:59.8725554Z  * [new tag]         v0.8.7                                   -> v0.8.7
+2025-03-11T22:06:59.8726734Z  * [new tag]         v0.8.8                                   -> v0.8.8
+2025-03-11T22:06:59.8727962Z  * [new tag]         v0.8.9                                   -> v0.8.9
+2025-03-11T22:06:59.8729151Z  * [new tag]         v0.9.0                                   -> v0.9.0
+2025-03-11T22:06:59.8730439Z  * [new tag]         v0.9.1                                   -> v0.9.1
+2025-03-11T22:06:59.8731767Z  * [new tag]         v0.9.10                                  -> v0.9.10
+2025-03-11T22:06:59.8733138Z  * [new tag]         v0.9.11                                  -> v0.9.11
+2025-03-11T22:06:59.8734202Z  * [new tag]         v0.9.12                                  -> v0.9.12
+2025-03-11T22:06:59.8735386Z  * [new tag]         v0.9.13                                  -> v0.9.13
+2025-03-11T22:06:59.8736621Z  * [new tag]         v0.9.14                                  -> v0.9.14
+2025-03-11T22:06:59.8737792Z  * [new tag]         v0.9.15                                  -> v0.9.15
+2025-03-11T22:06:59.8738966Z  * [new tag]         v0.9.16                                  -> v0.9.16
+2025-03-11T22:06:59.8740331Z  * [new tag]         v0.9.17                                  -> v0.9.17
+2025-03-11T22:06:59.8741511Z  * [new tag]         v0.9.18                                  -> v0.9.18
+2025-03-11T22:06:59.8742696Z  * [new tag]         v0.9.19                                  -> v0.9.19
+2025-03-11T22:06:59.8743724Z  * [new tag]         v0.9.2                                   -> v0.9.2
+2025-03-11T22:06:59.8744963Z  * [new tag]         v0.9.20                                  -> v0.9.20
+2025-03-11T22:06:59.8746145Z  * [new tag]         v0.9.4                                   -> v0.9.4
+2025-03-11T22:06:59.8747385Z  * [new tag]         v0.9.5                                   -> v0.9.5
+2025-03-11T22:06:59.8748754Z  * [new tag]         v0.9.6                                   -> v0.9.6
+2025-03-11T22:06:59.8750041Z  * [new tag]         v0.9.7                                   -> v0.9.7
+2025-03-11T22:06:59.8751462Z  * [new tag]         v0.9.8                                   -> v0.9.8
+2025-03-11T22:06:59.8752757Z  * [new tag]         v0.9.9                                   -> v0.9.9
+2025-03-11T22:06:59.8755611Z  * [new ref]         01aa7d106d329af473d9a498fe303b73dfcb1f94 -> pull/415/merge
+2025-03-11T22:06:59.8797569Z ##[endgroup]
+2025-03-11T22:06:59.8797867Z ##[group]Determining the checkout info
+2025-03-11T22:06:59.8798352Z ##[endgroup]
+2025-03-11T22:06:59.8802135Z [command]/usr/bin/git sparse-checkout disable
+2025-03-11T22:06:59.8835752Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-11T22:06:59.8873682Z ##[group]Checking out the ref
+2025-03-11T22:06:59.8876478Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/415/merge
+2025-03-11T22:06:59.9136986Z Note: switching to 'refs/remotes/pull/415/merge'.
+2025-03-11T22:06:59.9137192Z 
+2025-03-11T22:06:59.9137353Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-11T22:06:59.9137710Z changes and commit them, and you can discard any commits you make in this
+2025-03-11T22:06:59.9138058Z state without impacting any branches by switching back to a branch.
+2025-03-11T22:06:59.9138257Z 
+2025-03-11T22:06:59.9138398Z If you want to create a new branch to retain commits you create, you may
+2025-03-11T22:06:59.9138716Z do so (now or later) by using -c with the switch command. Example:
+2025-03-11T22:06:59.9138904Z 
+2025-03-11T22:06:59.9139000Z   git switch -c <new-branch-name>
+2025-03-11T22:06:59.9139158Z 
+2025-03-11T22:06:59.9139256Z Or undo this operation with:
+2025-03-11T22:06:59.9139379Z 
+2025-03-11T22:06:59.9139452Z   git switch -
+2025-03-11T22:06:59.9139544Z 
+2025-03-11T22:06:59.9139705Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-11T22:06:59.9140006Z 
+2025-03-11T22:06:59.9140265Z HEAD is now at 01aa7d1 Merge 394436a1c2e56e0e650021fd291ddc4513c0c9b2 into 21ed87b9d39efebf1ab788e9c64e4809e2771b29
+2025-03-11T22:06:59.9146236Z ##[endgroup]
+2025-03-11T22:06:59.9181279Z [command]/usr/bin/git log -1 --format=%H
+2025-03-11T22:06:59.9201392Z 01aa7d106d329af473d9a498fe303b73dfcb1f94
+2025-03-11T22:06:59.9393353Z ##[group]Run actions/setup-java@3a4f6e1af504cf6a31855fa899c6aa5355ba6c12
+2025-03-11T22:06:59.9393677Z with:
+2025-03-11T22:06:59.9393856Z   distribution: temurin
+2025-03-11T22:06:59.9394049Z   java-version: 21.0.5
+2025-03-11T22:06:59.9394241Z   java-package: jdk
+2025-03-11T22:06:59.9394422Z   check-latest: false
+2025-03-11T22:06:59.9394607Z   server-id: github
+2025-03-11T22:06:59.9395088Z   server-username: GITHUB_ACTOR
+2025-03-11T22:06:59.9395343Z   server-password: GITHUB_TOKEN
+2025-03-11T22:06:59.9395608Z   overwrite-settings: true
+2025-03-11T22:06:59.9395811Z   job-status: success
+2025-03-11T22:06:59.9396084Z   token: ***
+2025-03-11T22:06:59.9396249Z env:
+2025-03-11T22:06:59.9396405Z   LC_ALL: C.UTF-8
+2025-03-11T22:06:59.9396574Z   PBJ_CORE: pbj-core
+2025-03-11T22:06:59.9396794Z   PBJ_INTEGRATION_TESTS: pbj-integration-tests
+2025-03-11T22:06:59.9397081Z   GRADLE_CACHE_USERNAME: ***
+2025-03-11T22:06:59.9397333Z   GRADLE_CACHE_PASSWORD: ***
+2025-03-11T22:06:59.9397559Z ##[endgroup]
+2025-03-11T22:07:00.1003328Z ##[group]Installed distributions
+2025-03-11T22:07:00.1029504Z Trying to resolve the latest version from remote
+2025-03-11T22:07:00.3683906Z Resolved latest version as 21.0.5+11.0.LTS
+2025-03-11T22:07:00.3684914Z Trying to download...
+2025-03-11T22:07:00.3686513Z Downloading Java 21.0.5+11.0.LTS (Temurin-Hotspot) from https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.5%2B11/OpenJDK21U-jdk_x64_linux_hotspot_21.0.5_11.tar.gz ...
+2025-03-11T22:07:01.5724066Z Extracting Java archive...
+2025-03-11T22:07:01.5816385Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/_work/_temp/b748ae3b-7ba1-4ea1-b440-47272b173cad -f /home/runner/_work/_temp/6b9cada2-668e-48e2-ac53-195e25717d15
+2025-03-11T22:07:04.1131640Z Java 21.0.5+11.0.LTS was downloaded
+2025-03-11T22:07:04.1132546Z Setting Java 21.0.5+11.0.LTS as the default
+2025-03-11T22:07:04.1150182Z Creating toolchains.xml for JDK version 21.0.5 from temurin
+2025-03-11T22:07:04.1274356Z Writing to /home/runner/.m2/toolchains.xml
+2025-03-11T22:07:04.1275592Z 
+2025-03-11T22:07:04.1275985Z Java configuration:
+2025-03-11T22:07:04.1276670Z   Distribution: temurin
+2025-03-11T22:07:04.1277355Z   Version: 21.0.5+11.0.LTS
+2025-03-11T22:07:04.1278444Z   Path: /home/runner/_work/_tool/Java_Temurin-Hotspot_jdk/21.0.5-11.0.LTS/x64
+2025-03-11T22:07:04.1279362Z 
+2025-03-11T22:07:04.1280222Z ##[endgroup]
+2025-03-11T22:07:04.1310055Z Creating settings.xml with server-id: github
+2025-03-11T22:07:04.1315739Z Writing to /home/runner/.m2/settings.xml
+2025-03-11T22:07:04.1833567Z ##[group]Run gradle/actions/setup-gradle@94baf225fe0a508e581a564467443d0e2379123b
+2025-03-11T22:07:04.1834331Z with:
+2025-03-11T22:07:04.1834744Z   gradle-version: wrapper
+2025-03-11T22:07:04.1835252Z   gradle-home-cache-strict-match: false
+2025-03-11T22:07:04.1835783Z   cache-disabled: false
+2025-03-11T22:07:04.1836207Z   cache-read-only: true
+2025-03-11T22:07:04.1836628Z   cache-write-only: false
+2025-03-11T22:07:04.1837081Z   cache-overwrite-existing: false
+2025-03-11T22:07:04.1837578Z   cache-cleanup: on-success
+2025-03-11T22:07:04.1838127Z   gradle-home-cache-includes: caches
+notifications
+
+2025-03-11T22:07:04.1838714Z   add-job-summary: always
+2025-03-11T22:07:04.1839199Z   add-job-summary-as-pr-comment: never
+2025-03-11T22:07:04.1839734Z   dependency-graph: disabled
+2025-03-11T22:07:04.1840326Z   dependency-graph-report-dir: dependency-graph-reports
+2025-03-11T22:07:04.1841011Z   dependency-graph-continue-on-failure: true
+2025-03-11T22:07:04.1841599Z   build-scan-publish: false
+2025-03-11T22:07:04.1842068Z   validate-wrappers: true
+2025-03-11T22:07:04.1842541Z   allow-snapshot-wrappers: false
+2025-03-11T22:07:04.1843035Z   workflow-job-context: null
+2025-03-11T22:07:04.1843736Z   github-token: ***
+2025-03-11T22:07:04.1844132Z env:
+2025-03-11T22:07:04.1844507Z   LC_ALL: C.UTF-8
+2025-03-11T22:07:04.1844897Z   PBJ_CORE: pbj-core
+2025-03-11T22:07:04.1845379Z   PBJ_INTEGRATION_TESTS: pbj-integration-tests
+2025-03-11T22:07:04.1845994Z   GRADLE_CACHE_USERNAME: ***
+2025-03-11T22:07:04.1846573Z   GRADLE_CACHE_PASSWORD: ***
+2025-03-11T22:07:04.1847235Z   JAVA_HOME: /home/runner/_work/_tool/Java_Temurin-Hotspot_jdk/21.0.5-11.0.LTS/x64
+2025-03-11T22:07:04.1848161Z   JAVA_HOME_21_X64: /home/runner/_work/_tool/Java_Temurin-Hotspot_jdk/21.0.5-11.0.LTS/x64
+2025-03-11T22:07:04.1848863Z ##[endgroup]
+2025-03-11T22:07:04.5160581Z Merged default JDK locations into /home/runner/.m2/toolchains.xml
+2025-03-11T22:07:04.5162396Z ##[group]Restore Gradle state from cache
+2025-03-11T22:07:04.6336552Z Cache hit for: gradle-home-v1|Linux-X64|compile[9f089130751f85de2fa573118b092c5f]-01aa7d106d329af473d9a498fe303b73dfcb1f94
+2025-03-11T22:07:05.5344420Z Received 38706743 of 38706743 (100.0%), 48.8 MBs/sec
+2025-03-11T22:07:05.5345645Z Cache Size: ~37 MB (38706743 B)
+2025-03-11T22:07:05.5366100Z [command]/usr/bin/tar -xf /home/runner/_work/_temp/d789fbaf-d1ff-4a6a-89be-791dc48b7ccc/cache.tgz -P -C /home/runner/_work/pbj/pbj -z
+2025-03-11T22:07:05.8901723Z Cache restored successfully
+2025-03-11T22:07:05.9070491Z Restored cache entry with key gradle-home-v1|Linux-X64|compile[9f089130751f85de2fa573118b092c5f]-01aa7d106d329af473d9a498fe303b73dfcb1f94 to /home/runner/.gradle/caches,/home/runner/.gradle/notifications,/home/runner/.gradle/.setup-gradle in 1390ms
+2025-03-11T22:07:06.0106531Z Cache hit for: gradle-generated-gradle-jars-v1-3942538a3561f85d8699788d33ae5026
+2025-03-11T22:07:06.0138436Z Cache hit for: gradle-groovy-dsl-v1-1d451d0a36c71fac373eaba1daa162d2
+2025-03-11T22:07:06.0203798Z Cache hit for: gradle-instrumented-jars-v1-f8b688b796174195a7ce1a3b1d84757a
+2025-03-11T22:07:06.0238986Z Cache hit for: gradle-wrapper-zips-v1-2404ef08b03d28a6a12a9811a47b570f
+2025-03-11T22:07:06.0246417Z Cache hit for: gradle-generated-gradle-jars-v1-697f81ec8d80712ce7da03f513960371
+2025-03-11T22:07:06.0297277Z Cache hit for: gradle-dependencies-v1-754eab0adb01e9e251dc6e9731bd6806
+2025-03-11T22:07:06.0327660Z Cache hit for: gradle-kotlin-dsl-v1-d7f7b5cfd415645761549dd975652d8b
+2025-03-11T22:07:06.0359823Z Cache hit for: gradle-transforms-v1-72744cd36cb3873f1b8847b5ae29861a
+2025-03-11T22:07:06.1506298Z Received 26172 of 26172 (100.0%), 0.3 MBs/sec
+2025-03-11T22:07:06.1506933Z Cache Size: ~0 MB (26172 B)
+2025-03-11T22:07:06.1636059Z [command]/usr/bin/tar -xf /home/runner/_work/_temp/741336ed-7962-437b-976e-83571aab8384/cache.tgz -P -C /home/runner/_work/pbj/pbj -z
+2025-03-11T22:07:06.1849858Z Cache restored successfully
+2025-03-11T22:07:06.1854259Z Restored cache entry with key gradle-generated-gradle-jars-v1-3942538a3561f85d8699788d33ae5026 to /home/runner/.gradle/caches/8.13/generated-gradle-jars/gradle-test-kit-8.13.jar in 277ms
+2025-03-11T22:07:06.3276153Z Received 169418 of 169418 (100.0%), 1.1 MBs/sec
+2025-03-11T22:07:06.3276804Z Cache Size: ~0 MB (169418 B)
+2025-03-11T22:07:06.3442977Z Received 99365 of 99365 (100.0%), 0.7 MBs/sec
+2025-03-11T22:07:06.3443599Z Cache Size: ~0 MB (99365 B)
+2025-03-11T22:07:06.3804556Z [command]/usr/bin/tar -xf /home/runner/_work/_temp/801c0286-2d25-4e22-b723-4c85a4380cc1/cache.tgz -P -C /home/runner/_work/pbj/pbj -z
+2025-03-11T22:07:06.3844810Z [command]/usr/bin/tar -xf /home/runner/_work/_temp/f1ef9a51-7c0b-4b21-9963-979c8c66e461/cache.tgz -P -C /home/runner/_work/pbj/pbj -z
+2025-03-11T22:07:06.3976316Z Cache restored successfully
+2025-03-11T22:07:06.3985062Z Cache restored successfully
+2025-03-11T22:07:06.4097062Z Restored cache entry with key gradle-instrumented-jars-v1-f8b688b796174195a7ce1a3b1d84757a to /home/runner/.gradle/caches/jars-*/*/ in 489ms
+2025-03-11T22:07:06.4099231Z Restored cache entry with key gradle-groovy-dsl-v1-1d451d0a36c71fac373eaba1daa162d2 to /home/runner/.gradle/caches/*/groovy-dsl/*/ in 488ms
+2025-03-11T22:07:06.5171703Z Received 570635 of 570635 (100.0%), 2.5 MBs/sec
+2025-03-11T22:07:06.5172303Z Cache Size: ~1 MB (570635 B)
+2025-03-11T22:07:06.5261633Z [command]/usr/bin/tar -xf /home/runner/_work/_temp/9c336025-0c23-495d-acc0-a7012f06d7e1/cache.tgz -P -C /home/runner/_work/pbj/pbj -z
+2025-03-11T22:07:06.6356942Z Cache restored successfully
+2025-03-11T22:07:06.6370523Z Restored cache entry with key gradle-kotlin-dsl-v1-d7f7b5cfd415645761549dd975652d8b to /home/runner/.gradle/caches/*/kotlin-dsl/accessors/*/,/home/runner/.gradle/caches/*/kotlin-dsl/scripts/*/ in 727ms
+2025-03-11T22:07:07.0642398Z Received 46833435 of 46833435 (100.0%), 54.8 MBs/sec
+2025-03-11T22:07:07.0643071Z Cache Size: ~45 MB (46833435 B)
+2025-03-11T22:07:07.1049680Z [command]/usr/bin/tar -xf /home/runner/_work/_temp/24a2056b-ee8b-4e85-b94e-2fd2b26ba539/cache.tgz -P -C /home/runner/_work/pbj/pbj -z
+2025-03-11T22:07:07.1875573Z Received 54525952 of 136819736 (39.9%), 51.9 MBs/sec
+2025-03-11T22:07:07.2225474Z Received 46137344 of 238070582 (19.4%), 44.0 MBs/sec
+2025-03-11T22:07:07.2713956Z Received 51452654 of 68229870 (75.4%), 49.1 MBs/sec
+2025-03-11T22:07:08.0021682Z Cache restored successfully
+2025-03-11T22:07:08.0215482Z Restored cache entry with key gradle-generated-gradle-jars-v1-697f81ec8d80712ce7da03f513960371 to /home/runner/.gradle/caches/8.13/generated-gradle-jars/gradle-api-8.13.jar in 2114ms
+2025-03-11T22:07:08.1875392Z Received 125829120 of 136819736 (92.0%), 60.0 MBs/sec
+2025-03-11T22:07:08.2226282Z Received 125829120 of 238070582 (52.9%), 60.0 MBs/sec
+2025-03-11T22:07:08.2716353Z Received 64035566 of 68229870 (93.9%), 30.5 MBs/sec
+2025-03-11T22:07:08.5155346Z Received 68229870 of 68229870 (100.0%), 29.0 MBs/sec
+2025-03-11T22:07:08.5156060Z Cache Size: ~65 MB (68229870 B)
+2025-03-11T22:07:08.6476946Z [command]/usr/bin/tar -xf /home/runner/_work/_temp/069f48e4-4863-4c82-bdfb-bfea958c41d1/cache.tgz -P -C /home/runner/_work/pbj/pbj -z
+2025-03-11T22:07:08.9875263Z Received 136819736 of 136819736 (100.0%), 46.6 MBs/sec
+2025-03-11T22:07:08.9876430Z Cache Size: ~130 MB (136819736 B)
+2025-03-11T22:07:08.9931853Z [command]/usr/bin/tar -xf /home/runner/_work/_temp/7e617eb8-4141-49c4-800a-95a557bf307e/cache.tgz -P -C /home/runner/_work/pbj/pbj -z
+2025-03-11T22:07:09.2230359Z Received 150994944 of 238070582 (63.4%), 48.0 MBs/sec
+2025-03-11T22:07:09.8170429Z Cache restored successfully
+2025-03-11T22:07:09.8406453Z Restored cache entry with key gradle-transforms-v1-72744cd36cb3873f1b8847b5ae29861a to /home/runner/.gradle/caches/transforms-4/*/,/home/runner/.gradle/caches/*/transforms/*/ in 3930ms
+2025-03-11T22:07:09.8513843Z Cache restored successfully
+2025-03-11T22:07:09.8979072Z Restored cache entry with key gradle-wrapper-zips-v1-2404ef08b03d28a6a12a9811a47b570f to /home/runner/.gradle/wrapper/dists/gradle-8.13-bin/5xuhj0ry160q40clulazy9h7d in 3989ms
+2025-03-11T22:07:10.2236376Z Received 213909504 of 238070582 (89.9%), 51.0 MBs/sec
+2025-03-11T22:07:10.7506762Z Received 238070582 of 238070582 (100.0%), 50.1 MBs/sec
+2025-03-11T22:07:10.7510841Z Cache Size: ~227 MB (238070582 B)
+2025-03-11T22:07:10.7560451Z [command]/usr/bin/tar -xf /home/runner/_work/_temp/f570045f-4e8e-438d-ae20-89774e26b6e0/cache.tgz -P -C /home/runner/_work/pbj/pbj -z
+2025-03-11T22:07:12.1985086Z Cache restored successfully
+2025-03-11T22:07:12.2661465Z Restored cache entry with key gradle-dependencies-v1-754eab0adb01e9e251dc6e9731bd6806 to /home/runner/.gradle/caches/modules-*/files-*/*/*/*/* in 6356ms
+2025-03-11T22:07:12.2776819Z ##[endgroup]
+2025-03-11T22:07:12.2935087Z ##[group]All Gradle Wrapper jars are valid
+2025-03-11T22:07:12.2936326Z ✓ Found known Gradle Wrapper JAR files:
+2025-03-11T22:07:12.2937387Z   81a82aaea5abcc8ff68b3dfcb58b3c3c429378efd98e7433460610fecd7ae45f pbj-core/gradle/wrapper/gradle-wrapper.jar
+2025-03-11T22:07:12.2939037Z   81a82aaea5abcc8ff68b3dfcb58b3c3c429378efd98e7433460610fecd7ae45f pbj-integration-tests/gradle/wrapper/gradle-wrapper.jar
+2025-03-11T22:07:12.2940544Z ##[endgroup]
+2025-03-11T22:07:12.3169345Z ##[group]Run ./gradlew assemble
+2025-03-11T22:07:12.3169624Z [36;1m./gradlew assemble[0m
+2025-03-11T22:07:12.3182639Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-11T22:07:12.3182914Z env:
+2025-03-11T22:07:12.3183068Z   LC_ALL: C.UTF-8
+2025-03-11T22:07:12.3183245Z   PBJ_CORE: pbj-core
+2025-03-11T22:07:12.3183452Z   PBJ_INTEGRATION_TESTS: pbj-integration-tests
+2025-03-11T22:07:12.3183796Z   GRADLE_CACHE_USERNAME: ***
+2025-03-11T22:07:12.3184098Z   GRADLE_CACHE_PASSWORD: ***
+2025-03-11T22:07:12.3184389Z   JAVA_HOME: /home/runner/_work/_tool/Java_Temurin-Hotspot_jdk/21.0.5-11.0.LTS/x64
+2025-03-11T22:07:12.3184770Z   JAVA_HOME_21_X64: /home/runner/_work/_tool/Java_Temurin-Hotspot_jdk/21.0.5-11.0.LTS/x64
+2025-03-11T22:07:12.3185087Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+2025-03-11T22:07:12.3185637Z   GRADLE_USER_HOME: /home/runner/.gradle
+2025-03-11T22:07:12.3185865Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+2025-03-11T22:07:12.3186121Z   GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+2025-03-11T22:07:12.3186443Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+2025-03-11T22:07:12.3186796Z   DEVELOCITY_AUTO_INJECTION_CUSTOM_VALUE: gradle-actions
+2025-03-11T22:07:12.3187045Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+2025-03-11T22:07:12.3187253Z ##[endgroup]
+2025-03-11T22:07:12.8356930Z Starting a Gradle Daemon (subsequent builds will be faster)
+2025-03-11T22:07:14.5350894Z Calculating task graph as no cached configuration is available for tasks: assemble
+2025-03-11T22:07:21.4393574Z > Task :assemble UP-TO-DATE
+2025-03-11T22:07:21.5384284Z > Task :pbj-runtime:generateGrammarSource FROM-CACHE
+2025-03-11T22:07:21.5385165Z > Task :pbj-runtime:extractProto
+2025-03-11T22:07:21.6385514Z > Task :pbj-runtime:extractIncludeProto
+2025-03-11T22:07:21.6386803Z > Task :pbj-runtime:generateProto NO-SOURCE
+2025-03-11T22:07:21.6388281Z > Task :pbj-grpc-helidon-config:compileJava FROM-CACHE
+2025-03-11T22:07:21.6389628Z > Task :pbj-grpc-helidon:extractProto
+2025-03-11T22:07:21.6392098Z > Task :aggregation:processResources NO-SOURCE
+2025-03-11T22:07:21.6394369Z > Task :hiero-dependency-versions:assemble UP-TO-DATE
+2025-03-11T22:07:21.6396298Z > Task :pbj-compiler:generateGrammarSource FROM-CACHE
+2025-03-11T22:07:21.7382106Z > Task :pbj-grpc-helidon-config:writeGitProperties
+2025-03-11T22:07:21.7383133Z > Task :pbj-grpc-helidon-config:processResources
+2025-03-11T22:07:21.7384025Z > Task :pbj-grpc-helidon-config:classes
+2025-03-11T22:07:21.7385077Z > Task :pbj-runtime:compileJava FROM-CACHE
+2025-03-11T22:07:21.7385880Z > Task :pbj-compiler:pluginDescriptors
+2025-03-11T22:07:21.7386721Z > Task :pbj-grpc-helidon-config:jar
+2025-03-11T22:07:21.7387546Z > Task :pbj-runtime:writeGitProperties
+2025-03-11T22:07:21.7388378Z > Task :pbj-compiler:writeGitProperties FROM-CACHE
+2025-03-11T22:07:21.7389295Z > Task :pbj-compiler:processResources
+2025-03-11T22:07:21.7390059Z > Task :pbj-runtime:processResources
+2025-03-11T22:07:21.7390823Z > Task :pbj-runtime:classes
+2025-03-11T22:07:21.8347445Z > Task :pbj-compiler:sourcesJar
+2025-03-11T22:07:21.8348487Z > Task :pbj-compiler:generateTestGrammarSource NO-SOURCE
+2025-03-11T22:07:21.8349585Z > Task :pbj-compiler:processTestResources NO-SOURCE
+2025-03-11T22:07:21.8381759Z > Task :pbj-grpc-helidon:extractTestProto
+2025-03-11T22:07:21.8382713Z > Task :pbj-grpc-helidon:processTestResources
+2025-03-11T22:07:21.8383833Z > Task :pbj-grpc-helidon:writeGitProperties FROM-CACHE
+2025-03-11T22:07:21.8385035Z > Task :pbj-grpc-helidon:processResources
+2025-03-11T22:07:21.8385926Z > Task :pbj-grpc-helidon-config:javadoc FROM-CACHE
+2025-03-11T22:07:21.9383155Z > Task :pbj-grpc-helidon-config:sourcesJar
+2025-03-11T22:07:21.9384412Z > Task :pbj-grpc-helidon-config:compileTestJava NO-SOURCE
+2025-03-11T22:07:21.9385559Z > Task :pbj-grpc-helidon-config:processTestResources NO-SOURCE
+2025-03-11T22:07:21.9386557Z > Task :pbj-grpc-helidon-config:testClasses UP-TO-DATE
+2025-03-11T22:07:21.9387441Z > Task :pbj-grpc-helidon-config:javadocJar
+2025-03-11T22:07:21.9389224Z > Task :pbj-grpc-helidon-config:assemble
+2025-03-11T22:07:21.9390158Z > Task :pbj-runtime:generateJmhGrammarSource NO-SOURCE
+2025-03-11T22:07:21.9391002Z > Task :pbj-runtime:jar
+2025-03-11T22:07:21.9391669Z > Task :pbj-runtime:javadoc FROM-CACHE
+2025-03-11T22:07:22.1382063Z > Task :pbj-runtime:extractIncludeJmhProto
+2025-03-11T22:07:22.2386149Z > Task :pbj-runtime:javadocJar
+2025-03-11T22:07:22.2387006Z > Task :pbj-runtime:extractJmhProto
+2025-03-11T22:07:22.2387595Z > Task :pbj-runtime:generateJmhProto NO-SOURCE
+2025-03-11T22:07:22.2388240Z > Task :pbj-grpc-helidon:extractIncludeProto
+2025-03-11T22:07:22.2390629Z > Task :pbj-grpc-helidon:generateProto NO-SOURCE
+2025-03-11T22:07:22.3348695Z > Task :pbj-grpc-helidon:compileJava FROM-CACHE
+2025-03-11T22:07:22.3350157Z > Task :aggregation:compileJava NO-SOURCE
+2025-03-11T22:07:22.3381684Z > Task :aggregation:classes UP-TO-DATE
+2025-03-11T22:07:22.3382092Z > Task :aggregation:jar
+2025-03-11T22:07:22.3383002Z > Task :aggregation:assemble
+2025-03-11T22:07:22.3383788Z > Task :pbj-grpc-helidon:classes
+2025-03-11T22:07:22.4397795Z > Task :pbj-grpc-helidon:jar
+2025-03-11T22:07:22.4399045Z > Task :pbj-runtime:compileJmhJava FROM-CACHE
+2025-03-11T22:07:22.4400569Z > Task :pbj-grpc-helidon:sourcesJar
+2025-03-11T22:07:22.4401828Z > Task :pbj-runtime:processJmhResources NO-SOURCE
+2025-03-11T22:07:22.4402994Z > Task :pbj-grpc-helidon:javadoc FROM-CACHE
+2025-03-11T22:07:22.4404335Z > Task :pbj-runtime:jmhClasses UP-TO-DATE
+2025-03-11T22:07:22.4405470Z > Task :pbj-runtime:sourcesJar
+2025-03-11T22:07:22.4406539Z > Task :pbj-runtime:generateTestGrammarSource NO-SOURCE
+2025-03-11T22:07:22.4407840Z > Task :pbj-grpc-helidon:javadocJar
+2025-03-11T22:07:22.4408649Z > Task :pbj-runtime:extractTestProto
+2025-03-11T22:07:22.4409512Z > Task :pbj-runtime:processTestResources
+2025-03-11T22:07:22.8384818Z > Task :pbj-runtime:extractIncludeTestProto
+2025-03-11T22:07:22.8386077Z > Task :pbj-runtime:generateTestProto FROM-CACHE
+2025-03-11T22:07:23.0348945Z > Task :pbj-grpc-helidon:extractIncludeTestProto
+2025-03-11T22:07:23.0350273Z > Task :pbj-grpc-helidon:generateTestProto FROM-CACHE
+2025-03-11T22:07:23.0351265Z > Task :pbj-runtime:compileTestJava FROM-CACHE
+2025-03-11T22:07:23.0352138Z > Task :pbj-runtime:testClasses
+2025-03-11T22:07:23.0352899Z > Task :pbj-runtime:assemble
+2025-03-11T22:07:23.1349097Z > Task :pbj-grpc-helidon:compileTestJava FROM-CACHE
+2025-03-11T22:07:23.1350123Z > Task :pbj-grpc-helidon:testClasses
+2025-03-11T22:07:23.1381757Z > Task :pbj-grpc-helidon:assemble
+2025-03-11T22:07:33.7347158Z > Task :pbj-compiler:compileJava
+2025-03-11T22:07:33.7348014Z > Task :pbj-compiler:classes
+2025-03-11T22:07:33.7348927Z > Task :pbj-compiler:jar
+2025-03-11T22:07:33.8348793Z > Task :pbj-compiler:compileTestJava FROM-CACHE
+2025-03-11T22:07:33.8349814Z > Task :pbj-compiler:testClasses UP-TO-DATE
+2025-03-11T22:07:35.8349065Z > Task :pbj-compiler:javadoc
+2025-03-11T22:07:35.9347988Z > Task :pbj-compiler:javadocJar
+2025-03-11T22:07:35.9348664Z > Task :pbj-compiler:assemble
+2025-03-11T22:07:35.9349559Z gradle/actions: Writing build results to /home/runner/_work/_temp/.gradle-actions/build-results/gradle-build-1741730835041.json
+2025-03-11T22:07:35.9350233Z 
+2025-03-11T22:07:35.9350375Z BUILD SUCCESSFUL in 23s
+2025-03-11T22:07:35.9350876Z 50 actionable tasks: 34 executed, 16 from cache
+2025-03-11T22:07:36.0346662Z 
+2025-03-11T22:07:36.0347646Z Publishing build scan...
+2025-03-11T22:07:36.2346378Z gradle/actions: Writing build results to /home/runner/_work/_temp/.gradle-actions/build-scans/gradle-build-1741730835041.json
+2025-03-11T22:07:36.3347002Z https://gradle.com/s/an6yfagwvrhyq
+2025-03-11T22:07:36.3347619Z 
+2025-03-11T22:07:36.3348007Z Configuration cache entry stored.
+2025-03-11T22:07:36.6974194Z ##[group]Run ./gradlew assemble
+2025-03-11T22:07:36.6974754Z [36;1m./gradlew assemble[0m
+2025-03-11T22:07:36.6997102Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-11T22:07:36.6997719Z env:
+2025-03-11T22:07:36.6998090Z   LC_ALL: C.UTF-8
+2025-03-11T22:07:36.6998507Z   PBJ_CORE: pbj-core
+2025-03-11T22:07:36.6998996Z   PBJ_INTEGRATION_TESTS: pbj-integration-tests
+2025-03-11T22:07:36.6999700Z   GRADLE_CACHE_USERNAME: ***
+2025-03-11T22:07:36.7000307Z   GRADLE_CACHE_PASSWORD: ***
+2025-03-11T22:07:36.7000979Z   JAVA_HOME: /home/runner/_work/_tool/Java_Temurin-Hotspot_jdk/21.0.5-11.0.LTS/x64
+2025-03-11T22:07:36.7001899Z   JAVA_HOME_21_X64: /home/runner/_work/_tool/Java_Temurin-Hotspot_jdk/21.0.5-11.0.LTS/x64
+2025-03-11T22:07:36.7002676Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+2025-03-11T22:07:36.7003247Z   GRADLE_USER_HOME: /home/runner/.gradle
+2025-03-11T22:07:36.7003798Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+2025-03-11T22:07:36.7004406Z   GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+2025-03-11T22:07:36.7005203Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+2025-03-11T22:07:36.7006524Z   DEVELOCITY_AUTO_INJECTION_CUSTOM_VALUE: gradle-actions
+2025-03-11T22:07:36.7007140Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+2025-03-11T22:07:36.7007643Z ##[endgroup]
+2025-03-11T22:07:37.3151422Z Calculating task graph as no cached configuration is available for tasks: assemble
+2025-03-11T22:07:38.4153013Z > Task :pbj-core:pbj-compiler:generateGrammarSource UP-TO-DATE
+2025-03-11T22:07:38.5142382Z > Task :pbj-core:pbj-compiler:compileJava UP-TO-DATE
+2025-03-11T22:07:38.5143714Z > Task :pbj-core:pbj-compiler:pluginDescriptors UP-TO-DATE
+2025-03-11T22:07:38.6140116Z > Task :pbj-core:pbj-compiler:writeGitProperties UP-TO-DATE
+2025-03-11T22:07:38.6141017Z > Task :pbj-core:pbj-compiler:processResources UP-TO-DATE
+2025-03-11T22:07:38.6141722Z > Task :pbj-core:pbj-compiler:classes UP-TO-DATE
+2025-03-11T22:07:38.6142378Z > Task :pbj-core:pbj-compiler:jar UP-TO-DATE
+2025-03-11T22:07:40.2141942Z > Task :pbj-core:pbj-runtime:generateGrammarSource UP-TO-DATE
+2025-03-11T22:07:40.2142506Z > Task :extractProto
+2025-03-11T22:07:40.2143762Z > Task :pbj-core:pbj-runtime:extractIncludeProto
+2025-03-11T22:07:40.2144630Z > Task :pbj-core:pbj-runtime:extractProto
+2025-03-11T22:07:40.2145642Z > Task :pbj-core:pbj-runtime:generateProto NO-SOURCE
+2025-03-11T22:07:40.2146366Z > Task :extractTestProto
+2025-03-11T22:07:40.2147149Z > Task :extractJmhProto
+2025-03-11T22:07:40.2148129Z > Task :processTestResources
+2025-03-11T22:07:40.2149244Z > Task :processJmhResources
+2025-03-11T22:07:40.2381138Z > Task :pbj-core:pbj-runtime:writeGitProperties UP-TO-DATE
+2025-03-11T22:07:40.2382294Z > Task :pbj-core:pbj-runtime:processResources UP-TO-DATE
+2025-03-11T22:07:40.2383016Z > Task :pbj-core:pbj-runtime:compileJava FROM-CACHE
+2025-03-11T22:07:40.2383647Z > Task :pbj-core:pbj-runtime:classes UP-TO-DATE
+2025-03-11T22:07:40.2384241Z > Task :pbj-core:pbj-runtime:jar UP-TO-DATE
+2025-03-11T22:07:40.3139776Z > Task :writeGitProperties
+2025-03-11T22:07:40.3140786Z > Task :extractIncludeJmhProto
+2025-03-11T22:07:40.3141566Z > Task :generateJmhProto NO-SOURCE
+2025-03-11T22:07:40.4139273Z > Task :extractIncludeProto
+2025-03-11T22:07:40.4140256Z > Task :extractIncludeTestProto
+2025-03-11T22:07:40.8139768Z > Task :cloneHederaProtobufs
+2025-03-11T22:07:40.8140988Z > Task :generateTestProto NO-SOURCE
+2025-03-11T22:07:40.9138505Z > Task :processResources
+2025-03-11T22:07:41.0137627Z > Task :generateProto FROM-CACHE
+2025-03-11T22:07:42.9138058Z > Task :generatePbjSource
+2025-03-11T22:07:44.3138842Z > Task :compileJava FROM-CACHE
+2025-03-11T22:07:44.3139638Z > Task :classes
+2025-03-11T22:07:44.9138817Z > Task :javadoc FROM-CACHE
+2025-03-11T22:07:45.5138651Z > Task :jar
+2025-03-11T22:07:45.5139026Z > Task :startScripts SKIPPED
+2025-03-11T22:07:45.5141739Z > Task :distTar SKIPPED
+2025-03-11T22:07:45.5141960Z > Task :distZip SKIPPED
+2025-03-11T22:07:49.7146129Z 
+2025-03-11T22:07:49.7147559Z > Task :compileTestJava
+2025-03-11T22:07:49.7148281Z Note: Some input files use or override a deprecated API.
+2025-03-11T22:07:49.7149032Z Note: Recompile with -Xlint:deprecation for details.
+2025-03-11T22:07:49.7150567Z Note: /home/runner/_work/pbj/pbj/pbj-integration-tests/src/test/java/com/hedera/pbj/integration/test/ParserNeverWrapsTest.java uses unchecked or unsafe operations.
+2025-03-11T22:07:49.7152207Z Note: Recompile with -Xlint:unchecked for details.
+2025-03-11T22:07:50.3140121Z 
+2025-03-11T22:07:50.3140980Z > Task :testClasses
+2025-03-11T22:07:52.2138622Z 
+2025-03-11T22:07:52.2139322Z > Task :compileJmhJava
+2025-03-11T22:07:52.2140234Z Note: Some input files use unchecked or unsafe operations.
+2025-03-11T22:07:52.2141199Z Note: Recompile with -Xlint:unchecked for details.
+2025-03-11T22:07:52.2141767Z 
+2025-03-11T22:07:52.2142037Z > Task :jmhClasses
+2025-03-11T22:07:52.2142535Z > Task :assemble
+2025-03-11T22:07:52.2145258Z gradle/actions: Writing build results to /home/runner/_work/_temp/.gradle-actions/build-results/gradle-integration-build-1741730857274.json
+2025-03-11T22:07:52.2146584Z 
+2025-03-11T22:07:52.2148175Z [Incubating] Problems report is available at: file:///home/runner/_work/pbj/pbj/pbj-integration-tests/build/reports/problems/problems-report.html
+2025-03-11T22:07:52.2149146Z 
+2025-03-11T22:07:52.2149326Z BUILD SUCCESSFUL in 15s
+2025-03-11T22:07:52.2149931Z 31 actionable tasks: 17 executed, 4 from cache, 10 up-to-date
+2025-03-11T22:07:52.2150385Z 
+2025-03-11T22:07:52.2150571Z Publishing build scan...
+2025-03-11T22:07:52.4140182Z gradle/actions: Writing build results to /home/runner/_work/_temp/.gradle-actions/build-scans/gradle-integration-build-1741730857274.json
+2025-03-11T22:07:52.5138124Z https://gradle.com/s/2dnqstzpe3ste
+2025-03-11T22:07:52.5138408Z 
+2025-03-11T22:07:52.5138499Z Configuration cache entry stored.
+2025-03-11T22:07:52.5480500Z ##[group]Run ./gradlew check
+2025-03-11T22:07:52.5480860Z [36;1m./gradlew check[0m
+2025-03-11T22:07:52.5494438Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-11T22:07:52.5494836Z env:
+2025-03-11T22:07:52.5495057Z   LC_ALL: C.UTF-8
+2025-03-11T22:07:52.5495340Z   PBJ_CORE: pbj-core
+2025-03-11T22:07:52.5495663Z   PBJ_INTEGRATION_TESTS: pbj-integration-tests
+2025-03-11T22:07:52.5496123Z   GRADLE_CACHE_USERNAME: ***
+2025-03-11T22:07:52.5496521Z   GRADLE_CACHE_PASSWORD: ***
+2025-03-11T22:07:52.5496963Z   JAVA_HOME: /home/runner/_work/_tool/Java_Temurin-Hotspot_jdk/21.0.5-11.0.LTS/x64
+2025-03-11T22:07:52.5497571Z   JAVA_HOME_21_X64: /home/runner/_work/_tool/Java_Temurin-Hotspot_jdk/21.0.5-11.0.LTS/x64
+2025-03-11T22:07:52.5498102Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+2025-03-11T22:07:52.5498474Z   GRADLE_USER_HOME: /home/runner/.gradle
+2025-03-11T22:07:52.5498835Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+2025-03-11T22:07:52.5499214Z   GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+2025-03-11T22:07:52.5499730Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+2025-03-11T22:07:52.5500623Z   DEVELOCITY_AUTO_INJECTION_CUSTOM_VALUE: gradle-actions
+2025-03-11T22:07:52.5501037Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+2025-03-11T22:07:52.5501379Z ##[endgroup]
+2025-03-11T22:07:53.1610468Z Calculating task graph as no cached configuration is available for tasks: check
+2025-03-11T22:07:53.8607940Z > Task :pbj-core:pbj-compiler:generateGrammarSource UP-TO-DATE
+2025-03-11T22:07:53.9606656Z > Task :pbj-core:pbj-compiler:compileJava UP-TO-DATE
+2025-03-11T22:07:53.9607511Z > Task :pbj-core:pbj-compiler:pluginDescriptors UP-TO-DATE
+2025-03-11T22:07:53.9608255Z > Task :pbj-core:pbj-compiler:writeGitProperties UP-TO-DATE
+2025-03-11T22:07:53.9609839Z > Task :pbj-core:pbj-compiler:processResources UP-TO-DATE
+2025-03-11T22:07:53.9611417Z > Task :pbj-core:pbj-compiler:classes UP-TO-DATE
+2025-03-11T22:07:54.0602496Z > Task :pbj-core:pbj-compiler:jar UP-TO-DATE
+2025-03-11T22:07:58.6604208Z > Task :pbj-core:pbj-runtime:extractProto UP-TO-DATE
+2025-03-11T22:07:58.6606434Z > Task :pbj-core:pbj-runtime:generateGrammarSource UP-TO-DATE
+2025-03-11T22:07:58.6608727Z > Task :pbj-core:pbj-runtime:extractIncludeProto UP-TO-DATE
+2025-03-11T22:07:58.6610485Z > Task :extractProto UP-TO-DATE
+2025-03-11T22:07:58.6612316Z > Task :extractTestProto UP-TO-DATE
+2025-03-11T22:07:58.6614033Z > Task :processTestResources UP-TO-DATE
+2025-03-11T22:07:58.6615734Z > Task :cloneHederaProtobufs UP-TO-DATE
+2025-03-11T22:07:58.6617384Z > Task :generatePbjSource UP-TO-DATE
+2025-03-11T22:07:58.6619002Z > Task :extractJmhProto UP-TO-DATE
+2025-03-11T22:07:58.6620892Z > Task :processJmhResources UP-TO-DATE
+2025-03-11T22:07:58.6622613Z > Task :findDeclaredProcsJmh FROM-CACHE
+2025-03-11T22:07:58.6624609Z > Task :pbj-core:pbj-runtime:writeGitProperties UP-TO-DATE
+2025-03-11T22:07:58.6626489Z > Task :pbj-core:pbj-runtime:generateProto NO-SOURCE
+2025-03-11T22:07:58.6628174Z > Task :findDeclaredProcsMain FROM-CACHE
+2025-03-11T22:07:58.6629948Z > Task :writeGitProperties UP-TO-DATE
+2025-03-11T22:07:58.6631594Z > Task :findDeclaredProcsTest FROM-CACHE
+2025-03-11T22:07:58.6633899Z > Task :processResources UP-TO-DATE
+2025-03-11T22:07:58.6635634Z > Task :pbj-core:pbj-runtime:compileJava UP-TO-DATE
+2025-03-11T22:07:58.6637144Z > Task :pbj-core:pbj-runtime:processResources UP-TO-DATE
+2025-03-11T22:07:58.6638488Z > Task :pbj-core:pbj-runtime:classes UP-TO-DATE
+2025-03-11T22:07:58.6639427Z > Task :spotlessInternalRegisterDependencies
+2025-03-11T22:07:58.6641075Z > Task :pbj-core:pbj-runtime:jar UP-TO-DATE
+2025-03-11T22:07:58.6642487Z > Task :extractIncludeProto UP-TO-DATE
+2025-03-11T22:07:58.6643663Z > Task :generateProto UP-TO-DATE
+2025-03-11T22:07:58.6645222Z > Task :spotlessFlexmark FROM-CACHE
+2025-03-11T22:07:58.6646491Z > Task :extractIncludeTestProto UP-TO-DATE
+2025-03-11T22:07:58.6647926Z > Task :generateTestProto NO-SOURCE
+2025-03-11T22:07:58.6649215Z > Task :extractIncludeJmhProto UP-TO-DATE
+2025-03-11T22:07:58.6650753Z > Task :generateJmhProto NO-SOURCE
+2025-03-11T22:07:58.9601985Z > Task :findDeclarations
+2025-03-11T22:07:59.3602125Z > Task :explodeCodeSourceJmh FROM-CACHE
+2025-03-11T22:07:59.3602795Z > Task :compileJava UP-TO-DATE
+2025-03-11T22:07:59.3603313Z > Task :classes UP-TO-DATE
+2025-03-11T22:07:59.3603855Z > Task :graphViewJmh FROM-CACHE
+2025-03-11T22:07:59.3621681Z > Task :jar UP-TO-DATE
+2025-03-11T22:07:59.3622381Z > Task :startScripts SKIPPED
+2025-03-11T22:07:59.3622871Z > Task :distTar SKIPPED
+2025-03-11T22:07:59.3623310Z > Task :distZip SKIPPED
+2025-03-11T22:07:59.3623767Z > Task :compileTestJava UP-TO-DATE
+2025-03-11T22:07:59.3624277Z > Task :testClasses UP-TO-DATE
+2025-03-11T22:07:59.4601820Z > Task :artifactsReportJmh
+2025-03-11T22:07:59.4602450Z > Task :compileJmhJava UP-TO-DATE
+2025-03-11T22:07:59.4603560Z > Task :jmhClasses UP-TO-DATE
+2025-03-11T22:07:59.4604547Z > Task :explodeByteCodeSourceJmh FROM-CACHE
+2025-03-11T22:07:59.4605602Z > Task :synthesizeProjectViewJmh FROM-CACHE
+2025-03-11T22:07:59.5601636Z > Task :discoverDuplicationForCompileJmh FROM-CACHE
+2025-03-11T22:07:59.7601307Z > Task :discoverDuplicationForRuntimeJmh
+2025-03-11T22:08:00.0600502Z > Task :javadoc UP-TO-DATE
+2025-03-11T22:08:00.0601204Z > Task :assemble UP-TO-DATE
+2025-03-11T22:08:00.0601891Z > Task :findKotlinMagicJmh FROM-CACHE
+2025-03-11T22:08:00.0602451Z > Task :serviceLoaderJmh FROM-CACHE
+2025-03-11T22:08:00.0602960Z > Task :explodeJarJmh FROM-CACHE
+2025-03-11T22:08:00.0603514Z > Task :synthesizeDependenciesJmh FROM-CACHE
+2025-03-11T22:08:00.0604105Z > Task :computeActualUsageJmh FROM-CACHE
+2025-03-11T22:08:00.1600490Z > Task :explodeCodeSourceMain FROM-CACHE
+2025-03-11T22:08:00.1601209Z > Task :explodeByteCodeSourceMain FROM-CACHE
+2025-03-11T22:08:00.2600618Z > Task :artifactsReportMain
+2025-03-11T22:08:00.2601262Z > Task :explodeJarMain FROM-CACHE
+2025-03-11T22:08:00.2601835Z > Task :findKotlinMagicMain FROM-CACHE
+2025-03-11T22:08:01.0600886Z > Task :nodeSetup
+2025-03-11T22:08:01.0601842Z > Task :serviceLoaderMain FROM-CACHE
+2025-03-11T22:08:01.0602715Z > Task :graphViewMain FROM-CACHE
+2025-03-11T22:08:01.1600872Z > Task :synthesizeProjectViewMain FROM-CACHE
+2025-03-11T22:08:01.1601693Z > Task :discoverDuplicationForCompileMain FROM-CACHE
+2025-03-11T22:08:01.1602426Z > Task :discoverDuplicationForRuntimeMain FROM-CACHE
+2025-03-11T22:08:01.1603117Z > Task :synthesizeDependenciesMain FROM-CACHE
+2025-03-11T22:08:01.1603690Z > Task :computeActualUsageMain FROM-CACHE
+2025-03-11T22:08:01.1604231Z > Task :graphViewTest FROM-CACHE
+2025-03-11T22:08:01.2601546Z > Task :artifactsReportTest
+2025-03-11T22:08:01.2602209Z > Task :explodeJarTest FROM-CACHE
+2025-03-11T22:08:01.2602840Z > Task :findKotlinMagicTest FROM-CACHE
+2025-03-11T22:08:01.2603481Z > Task :serviceLoaderTest FROM-CACHE
+2025-03-11T22:08:01.3601373Z > Task :synthesizeDependenciesTest FROM-CACHE
+2025-03-11T22:08:01.3602204Z > Task :spotlessFlexmarkCheck UP-TO-DATE
+2025-03-11T22:08:01.3602592Z 
+2025-03-11T22:08:01.3602764Z > Task :fuzzTest
+2025-03-11T22:08:01.3603040Z 
+2025-03-11T22:08:01.3603050Z 
+2025-03-11T22:08:02.1599535Z 
+2025-03-11T22:08:02.1600248Z > Task :explodeByteCodeSourceTest
+2025-03-11T22:08:02.2600855Z > Task :spotlessKotlinGradle FROM-CACHE
+2025-03-11T22:08:02.2601695Z > Task :spotlessKotlinGradleCheck UP-TO-DATE
+2025-03-11T22:08:02.2604370Z > Task :spotlessMisc FROM-CACHE
+2025-03-11T22:08:02.2605167Z > Task :spotlessMiscCheck UP-TO-DATE
+2025-03-11T22:08:02.2605970Z > Task :npmSetup SKIPPED
+2025-03-11T22:08:02.2606675Z > Task :spotlessYaml FROM-CACHE
+2025-03-11T22:08:02.2607436Z > Task :spotlessYamlCheck UP-TO-DATE
+2025-03-11T22:08:02.8601048Z > Task :spotlessJava
+2025-03-11T22:08:02.8601652Z > Task :spotlessJavaInfoFiles FROM-CACHE
+2025-03-11T22:08:02.8602298Z > Task :spotlessJavaInfoFilesCheck UP-TO-DATE
+2025-03-11T22:08:02.9601863Z > Task :spotlessJavaCheck FAILED
+2025-03-11T22:08:03.0600705Z 
+2025-03-11T22:08:03.0601740Z ANTLR Tool version 4.10.1 used for code generation does not match the current runtime version 4.13.1
+2025-03-11T22:08:03.0603575Z > Task :explodeCodeSourceTest
+2025-03-11T22:08:03.0604478Z ANTLR Runtime version 4.10.1 used for parser compilation does not match the current runtime version 4.13.1
+2025-03-11T22:08:03.0605649Z ANTLR Tool version 4.10.1 used for code generation does not match the current runtime version 4.13.1
+2025-03-11T22:08:03.0606798Z ANTLR Runtime version 4.10.1 used for parser compilation does not match the current runtime version 4.13.1
+2025-03-11T22:08:31.2600085Z 
+2025-03-11T22:08:31.2600722Z > Task :fuzzTest
+2025-03-11T22:08:31.2600918Z 
+2025-03-11T22:08:31.2601244Z   [0K[32m1 passing [90m(31.1s)[m
+2025-03-11T22:08:31.2601443Z 
+2025-03-11T22:08:31.4601138Z gradle/actions: Writing build results to /home/runner/_work/_temp/.gradle-actions/build-results/__run_2-1741730873129.json
+2025-03-11T22:08:31.4601596Z 
+2025-03-11T22:08:31.4601718Z FAILURE: Build failed with an exception.
+2025-03-11T22:08:31.4601925Z 
+2025-03-11T22:08:31.4602020Z * What went wrong:
+2025-03-11T22:08:31.4602701Z Execution failed for task ':spotlessJavaCheck'.
+2025-03-11T22:08:31.4603572Z > The following files had format violations:
+2025-03-11T22:08:31.4604552Z       src/test/java/com/hedera/pbj/integration/test/SubTypesTest.java
+2025-03-11T22:08:31.4605542Z           @@ -1,16 +1,16 @@
+2025-03-11T22:08:31.4607115Z           +//·SPDX-License-Identifier:·Apache-2.0
+2025-03-11T22:08:31.4608154Z            package·com.hedera.pbj.integration.test;
+2025-03-11T22:08:31.4608959Z            
+2025-03-11T22:08:31.4610049Z            import·static·com.hedera.pbj.compiler.PbjCompiler.compileFilesIn;
+2025-03-11T22:08:31.4611019Z            
+2025-03-11T22:08:31.4611733Z           -import·org.junit.jupiter.api.Test;
+2025-03-11T22:08:31.4612682Z           -import·org.junit.jupiter.api.io.TempDir;
+2025-03-11T22:08:31.4613203Z           -
+2025-03-11T22:08:31.4613644Z            import·java.io.File;
+2025-03-11T22:08:31.4614164Z            import·java.net.URI;
+2025-03-11T22:08:31.4614742Z            import·java.net.URISyntaxException;
+2025-03-11T22:08:31.4615378Z            import·java.net.URL;
+2025-03-11T22:08:31.4615930Z            import·java.util.Arrays;
+2025-03-11T22:08:31.4616497Z            import·java.util.List;
+2025-03-11T22:08:31.4617085Z           +import·org.junit.jupiter.api.Test;
+2025-03-11T22:08:31.4617879Z           +import·org.junit.jupiter.api.io.TempDir;
+2025-03-11T22:08:31.4618575Z            
+2025-03-11T22:08:31.4619058Z            public·class·SubTypesTest·{
+2025-03-11T22:08:31.4619633Z            ····@TempDir
+2025-03-11T22:08:31.4620366Z   Run './gradlew :spotlessApply' to fix these violations.
+2025-03-11T22:08:31.4620791Z 
+2025-03-11T22:08:31.4620941Z * Try:
+2025-03-11T22:08:31.4621399Z > Run with --stacktrace option to get the stack trace.
+2025-03-11T22:08:31.4622076Z > Run with --info or --debug option to get more log output.
+2025-03-11T22:08:31.4622731Z > Get more help at https://help.gradle.org.
+2025-03-11T22:08:31.4623111Z 
+2025-03-11T22:08:31.4623276Z BUILD FAILED in 38s
+2025-03-11T22:08:31.4623851Z 82 actionable tasks: 12 executed, 34 from cache, 36 up-to-date
+2025-03-11T22:08:31.4624297Z 
+2025-03-11T22:08:31.4624475Z Publishing build scan...
+2025-03-11T22:08:31.6600954Z gradle/actions: Writing build results to /home/runner/_work/_temp/.gradle-actions/build-scans/__run_2-1741730873129.json
+2025-03-11T22:08:31.7599947Z https://gradle.com/s/agsiqgsep5e3m
+2025-03-11T22:08:31.7600408Z 
+2025-03-11T22:08:31.7600637Z Configuration cache entry stored.
+2025-03-11T22:08:31.8013398Z ##[error]Process completed with exit code 1.
+2025-03-11T22:08:31.8426719Z ##[group]Run step-security/publish-unit-test-result-action@cc82caac074385ae176d39d2d143ad05e1130b2d
+2025-03-11T22:08:31.8427099Z with:
+2025-03-11T22:08:31.8427276Z   check_name: Integration Test Report
+2025-03-11T22:08:31.8427495Z   time_unit: seconds
+2025-03-11T22:08:31.8427746Z   junit_files: pbj-integration-tests/**/build/test-results/**/*.xml
+2025-03-11T22:08:31.8428130Z   github_token: ***
+2025-03-11T22:08:31.8428322Z   github_token_actor: github-actions
+2025-03-11T22:08:31.8428541Z   github_retries: 10
+2025-03-11T22:08:31.8428716Z   comment_mode: always
+2025-03-11T22:08:31.8428888Z   fail_on: test failures
+2025-03-11T22:08:31.8429061Z   action_fail: false
+2025-03-11T22:08:31.8429240Z   action_fail_on_inconclusive: false
+2025-03-11T22:08:31.8429456Z   report_suite_logs: none
+2025-03-11T22:08:31.8429654Z   ignore_runs: false
+2025-03-11T22:08:31.8429819Z   check_run: true
+2025-03-11T22:08:31.8429981Z   job_summary: true
+2025-03-11T22:08:31.8430180Z   compare_to_earlier_commit: true
+2025-03-11T22:08:31.8430392Z   pull_request_build: merge
+2025-03-11T22:08:31.8430615Z   check_run_annotations: all tests, skipped tests
+2025-03-11T22:08:31.8430856Z   seconds_between_github_reads: 0.25
+2025-03-11T22:08:31.8431064Z   seconds_between_github_writes: 2.0
+2025-03-11T22:08:31.8431263Z   json_thousands_separator:  
+2025-03-11T22:08:31.8431459Z   json_suite_details: false
+2025-03-11T22:08:31.8431648Z   json_test_case_results: false
+2025-03-11T22:08:31.8431855Z   search_pull_requests: false
+2025-03-11T22:08:31.8432032Z env:
+2025-03-11T22:08:31.8432180Z   LC_ALL: C.UTF-8
+2025-03-11T22:08:31.8432344Z   PBJ_CORE: pbj-core
+2025-03-11T22:08:31.8432547Z   PBJ_INTEGRATION_TESTS: pbj-integration-tests
+2025-03-11T22:08:31.8432803Z   GRADLE_CACHE_USERNAME: ***
+2025-03-11T22:08:31.8433040Z   GRADLE_CACHE_PASSWORD: ***
+2025-03-11T22:08:31.8433324Z   JAVA_HOME: /home/runner/_work/_tool/Java_Temurin-Hotspot_jdk/21.0.5-11.0.LTS/x64
+2025-03-11T22:08:31.8433705Z   JAVA_HOME_21_X64: /home/runner/_work/_tool/Java_Temurin-Hotspot_jdk/21.0.5-11.0.LTS/x64
+2025-03-11T22:08:31.8434023Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+2025-03-11T22:08:31.8434254Z   GRADLE_USER_HOME: /home/runner/.gradle
+2025-03-11T22:08:31.8434480Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+2025-03-11T22:08:31.8434707Z   GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+2025-03-11T22:08:31.8435030Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+2025-03-11T22:08:31.8435389Z   DEVELOCITY_AUTO_INJECTION_CUSTOM_VALUE: gradle-actions
+2025-03-11T22:08:31.8435638Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+2025-03-11T22:08:31.8435841Z ##[endgroup]
+2025-03-11T22:08:31.8513198Z ##[command]/usr/bin/docker run --name ghcriostepsecuritypublishunittestresultactionv2180_5004ad --label 623ee3 --workdir /github/workspace --rm -e "LC_ALL" -e "PBJ_CORE" -e "PBJ_INTEGRATION_TESTS" -e "GRADLE_CACHE_USERNAME" -e "GRADLE_CACHE_PASSWORD" -e "JAVA_HOME" -e "JAVA_HOME_21_X64" -e "GRADLE_ACTION_ID" -e "GRADLE_USER_HOME" -e "GRADLE_BUILD_ACTION_SETUP_COMPLETED" -e "GRADLE_BUILD_ACTION_CACHE_RESTORED" -e "DEVELOCITY_INJECTION_INIT_SCRIPT_NAME" -e "DEVELOCITY_AUTO_INJECTION_CUSTOM_VALUE" -e "GITHUB_DEPENDENCY_GRAPH_ENABLED" -e "INPUT_CHECK_NAME" -e "INPUT_TIME_UNIT" -e "INPUT_JUNIT_FILES" -e "INPUT_GITHUB_TOKEN" -e "INPUT_GITHUB_TOKEN_ACTOR" -e "INPUT_GITHUB_RETRIES" -e "INPUT_COMMIT" -e "INPUT_COMMENT_TITLE" -e "INPUT_COMMENT_MODE" -e "INPUT_FAIL_ON" -e "INPUT_ACTION_FAIL" -e "INPUT_ACTION_FAIL_ON_INCONCLUSIVE" -e "INPUT_FILES" -e "INPUT_NUNIT_FILES" -e "INPUT_XUNIT_FILES" -e "INPUT_TRX_FILES" -e "INPUT_TEST_FILE_PREFIX" -e "INPUT_REPORT_INDIVIDUAL_RUNS" -e "INPUT_REPORT_SUITE_LOGS" -e "INPUT_DEDUPLICATE_CLASSES_BY_FILE_NAME" -e "INPUT_LARGE_FILES" -e "INPUT_IGNORE_RUNS" -e "INPUT_CHECK_RUN" -e "INPUT_JOB_SUMMARY" -e "INPUT_COMPARE_TO_EARLIER_COMMIT" -e "INPUT_PULL_REQUEST_BUILD" -e "INPUT_EVENT_FILE" -e "INPUT_EVENT_NAME" -e "INPUT_TEST_CHANGES_LIMIT" -e "INPUT_CHECK_RUN_ANNOTATIONS" -e "INPUT_CHECK_RUN_ANNOTATIONS_BRANCH" -e "INPUT_SECONDS_BETWEEN_GITHUB_READS" -e "INPUT_SECONDS_BETWEEN_GITHUB_WRITES" -e "INPUT_SECONDARY_RATE_LIMIT_WAIT_SECONDS" -e "INPUT_JSON_FILE" -e "INPUT_JSON_THOUSANDS_SEPARATOR" -e "INPUT_JSON_SUITE_DETAILS" -e "INPUT_JSON_TEST_CASE_RESULTS" -e "INPUT_SEARCH_PULL_REQUESTS" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_ID_TOKEN_REQUEST_URL" -e "ACTIONS_ID_TOKEN_REQUEST_TOKEN" -e "ACTIONS_RESULTS_URL" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/_work/_temp/_github_home":"/github/home" -v "/home/runner/_work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/_work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/runner/_work/pbj/pbj":"/github/workspace" ghcr.io/step-security/publish-unit-test-result-action:v2.18.0
+2025-03-11T22:08:32.6029586Z 2025-03-11 22:08:32 +0000 - publish -  INFO - Available memory to read files: 115.7 GiB
+2025-03-11T22:08:32.6534227Z 2025-03-11 22:08:32 +0000 - publish -  INFO - Reading JUnit XML files pbj-integration-tests/**/build/test-results/**/*.xml (1 file, 745 Bytes)
+2025-03-11T22:08:32.6538425Z 2025-03-11 22:08:32 +0000 - publish -  INFO - Finished reading 1 files in 0.00 seconds
+2025-03-11T22:08:32.8610684Z 2025-03-11 22:08:32 +0000 - publish -  INFO - Publishing success results for commit 394436a1c2e56e0e650021fd291ddc4513c0c9b2
+2025-03-11T22:08:33.4419396Z 2025-03-11 22:08:33 +0000 - publish -  INFO - Created check https://github.com/hashgraph/pbj/runs/38597822113
+2025-03-11T22:08:33.4427308Z 2025-03-11 22:08:33 +0000 - publish -  INFO - Created job summary
+2025-03-11T22:08:40.2189493Z 2025-03-11 22:08:40 +0000 - publish -  INFO - Created comment for pull request #415: https://github.com/hashgraph/pbj/pull/415#issuecomment-2715813006
+2025-03-11T22:08:40.4594520Z Post job cleanup.
+2025-03-11T22:08:40.7199562Z In post-action step
+2025-03-11T22:08:40.7208801Z Cache is read-only: will not save state for use in subsequent builds.
+2025-03-11T22:08:40.7213137Z Generating Job Summary
+2025-03-11T22:08:40.7231063Z Completed post-action step
+2025-03-11T22:08:40.7515341Z Post job cleanup.
+2025-03-11T22:08:40.9119831Z Post job cleanup.
+2025-03-11T22:08:40.9895248Z [command]/usr/bin/git version
+2025-03-11T22:08:40.9927584Z git version 2.48.1
+2025-03-11T22:08:40.9959056Z Temporarily overriding HOME='/home/runner/_work/_temp/13c80e53-edac-42d6-96cf-41e40dd84e75' before making global git config changes
+2025-03-11T22:08:40.9959973Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-11T22:08:40.9971056Z [command]/usr/bin/git config --global --add safe.directory /home/runner/_work/pbj/pbj
+2025-03-11T22:08:41.0000762Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-11T22:08:41.0028510Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-11T22:08:41.0348069Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-11T22:08:41.0369732Z http.https://github.com/.extraheader
+2025-03-11T22:08:41.0378436Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-11T22:08:41.0404866Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-11T22:08:41.0793265Z Post job cleanup.
+2025-03-11T22:08:41.1097789Z [harden-runner] post-step
+2025-03-11T22:08:41.1100104Z [!] Workflow is currently being executed in ARC based runner.
+2025-03-11T22:08:41.1176143Z Cleaning up orphan processes
+2025-03-11T22:08:41.1299876Z Terminate orphan process: pid (308) (java)
+2025-03-11T22:08:41.1382663Z Terminate orphan process: pid (446) (java)
+2025-03-11T22:08:41.1461470Z Terminate orphan process: pid (699) (java)

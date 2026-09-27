@@ -1,0 +1,180 @@
+2025-02-18T19:21:50.3098005Z Requested labels: ubuntu-latest
+2025-02-18T19:21:50.3098408Z Job defined at: CBDD/rDock/.github/workflows/build_matrix.yml@refs/pull/149/merge
+2025-02-18T19:21:50.3098548Z Waiting for a runner to pick up this job...
+2025-02-18T19:21:50.9502575Z Job is waiting for a hosted runner to come online.
+2025-02-18T19:21:54.0560579Z Job is about to start running on the hosted runner: GitHub Actions 13 (hosted)
+2025-02-18T19:21:55.8102024Z Current runner version: '2.322.0'
+2025-02-18T19:21:55.8126433Z ##[group]Operating System
+2025-02-18T19:21:55.8127207Z Ubuntu
+2025-02-18T19:21:55.8127828Z 24.04.1
+2025-02-18T19:21:55.8128334Z LTS
+2025-02-18T19:21:55.8128857Z ##[endgroup]
+2025-02-18T19:21:55.8129391Z ##[group]Runner Image
+2025-02-18T19:21:55.8129966Z Image: ubuntu-24.04
+2025-02-18T19:21:55.8130548Z Version: 20250209.1.0
+2025-02-18T19:21:55.8131612Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250209.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-18T19:21:55.8133233Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250209.1
+2025-02-18T19:21:55.8134220Z ##[endgroup]
+2025-02-18T19:21:55.8134738Z ##[group]Runner Image Provisioner
+2025-02-18T19:21:55.8135350Z 2.0.422.1
+2025-02-18T19:21:55.8135916Z ##[endgroup]
+2025-02-18T19:21:55.8138107Z ##[group]GITHUB_TOKEN Permissions
+2025-02-18T19:21:55.8140347Z Actions: write
+2025-02-18T19:21:55.8141082Z Attestations: write
+2025-02-18T19:21:55.8141836Z Checks: write
+2025-02-18T19:21:55.8142831Z Contents: write
+2025-02-18T19:21:55.8143365Z Deployments: write
+2025-02-18T19:21:55.8144004Z Discussions: write
+2025-02-18T19:21:55.8144548Z Issues: write
+2025-02-18T19:21:55.8145096Z Metadata: read
+2025-02-18T19:21:55.8145631Z Packages: write
+2025-02-18T19:21:55.8146141Z Pages: write
+2025-02-18T19:21:55.8146691Z PullRequests: write
+2025-02-18T19:21:55.8147263Z RepositoryProjects: write
+2025-02-18T19:21:55.8147857Z SecurityEvents: write
+2025-02-18T19:21:55.8148444Z Statuses: write
+2025-02-18T19:21:55.8148934Z ##[endgroup]
+2025-02-18T19:21:55.8152020Z Secret source: Actions
+2025-02-18T19:21:55.8153210Z Prepare workflow directory
+2025-02-18T19:21:55.8454874Z Prepare all required actions
+2025-02-18T19:21:55.8490907Z Getting action download info
+2025-02-18T19:21:55.9763707Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-02-18T19:21:56.1091072Z Complete job name: check-lint
+2025-02-18T19:21:56.1804738Z ##[group]Run actions/checkout@v4
+2025-02-18T19:21:56.1805593Z with:
+2025-02-18T19:21:56.1805986Z   repository: CBDD/rDock
+2025-02-18T19:21:56.1806595Z   token: ***
+2025-02-18T19:21:56.1806987Z   ssh-strict: true
+2025-02-18T19:21:56.1807446Z   ssh-user: git
+2025-02-18T19:21:56.1807916Z   persist-credentials: true
+2025-02-18T19:21:56.1808371Z   clean: true
+2025-02-18T19:21:56.1808784Z   sparse-checkout-cone-mode: true
+2025-02-18T19:21:56.1809271Z   fetch-depth: 1
+2025-02-18T19:21:56.1809679Z   fetch-tags: false
+2025-02-18T19:21:56.1810090Z   show-progress: true
+2025-02-18T19:21:56.1810497Z   lfs: false
+2025-02-18T19:21:56.1810873Z   submodules: false
+2025-02-18T19:21:56.1811288Z   set-safe-directory: true
+2025-02-18T19:21:56.1811931Z ##[endgroup]
+2025-02-18T19:21:56.3554412Z Syncing repository: CBDD/rDock
+2025-02-18T19:21:56.3556633Z ##[group]Getting Git version info
+2025-02-18T19:21:56.3557423Z Working directory is '/home/runner/work/rDock/rDock'
+2025-02-18T19:21:56.3558667Z [command]/usr/bin/git version
+2025-02-18T19:21:56.3613156Z git version 2.48.1
+2025-02-18T19:21:56.3640953Z ##[endgroup]
+2025-02-18T19:21:56.3654242Z Temporarily overriding HOME='/home/runner/work/_temp/b62e2753-e92d-4461-95d6-0f0860fab46e' before making global git config changes
+2025-02-18T19:21:56.3655911Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-18T19:21:56.3659198Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/rDock/rDock
+2025-02-18T19:21:56.3693580Z Deleting the contents of '/home/runner/work/rDock/rDock'
+2025-02-18T19:21:56.3697208Z ##[group]Initializing the repository
+2025-02-18T19:21:56.3701070Z [command]/usr/bin/git init /home/runner/work/rDock/rDock
+2025-02-18T19:21:56.3767251Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-18T19:21:56.3769271Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-18T19:21:56.3770937Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-18T19:21:56.3772711Z hint:
+2025-02-18T19:21:56.3773500Z hint: 	git config --global init.defaultBranch <name>
+2025-02-18T19:21:56.3774459Z hint:
+2025-02-18T19:21:56.3775038Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-18T19:21:56.3775953Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-18T19:21:56.3776653Z hint:
+2025-02-18T19:21:56.3777331Z hint: 	git branch -m <name>
+2025-02-18T19:21:56.3778066Z Initialized empty Git repository in /home/runner/work/rDock/rDock/.git/
+2025-02-18T19:21:56.3788759Z [command]/usr/bin/git remote add origin https://github.com/CBDD/rDock
+2025-02-18T19:21:56.3825117Z ##[endgroup]
+2025-02-18T19:21:56.3825857Z ##[group]Disabling automatic garbage collection
+2025-02-18T19:21:56.3831463Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-18T19:21:56.3864994Z ##[endgroup]
+2025-02-18T19:21:56.3865736Z ##[group]Setting up auth
+2025-02-18T19:21:56.3875412Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-18T19:21:56.3909713Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-18T19:21:56.4216260Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-18T19:21:56.4248550Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-18T19:21:56.4498699Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-18T19:21:56.4533833Z ##[endgroup]
+2025-02-18T19:21:56.4535102Z ##[group]Fetching the repository
+2025-02-18T19:21:56.4544109Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +b005b058fa5d46f52b0f2c15eb97b63cbe54d19e:refs/remotes/pull/149/merge
+2025-02-18T19:21:56.9728940Z From https://github.com/CBDD/rDock
+2025-02-18T19:21:56.9730548Z  * [new ref]         b005b058fa5d46f52b0f2c15eb97b63cbe54d19e -> pull/149/merge
+2025-02-18T19:21:56.9757513Z ##[endgroup]
+2025-02-18T19:21:56.9758879Z ##[group]Determining the checkout info
+2025-02-18T19:21:56.9760361Z ##[endgroup]
+2025-02-18T19:21:56.9763495Z [command]/usr/bin/git sparse-checkout disable
+2025-02-18T19:21:56.9800441Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-18T19:21:56.9826847Z ##[group]Checking out the ref
+2025-02-18T19:21:56.9830372Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/149/merge
+2025-02-18T19:21:57.0532735Z Note: switching to 'refs/remotes/pull/149/merge'.
+2025-02-18T19:21:57.0533618Z 
+2025-02-18T19:21:57.0534313Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-18T19:21:57.0535957Z changes and commit them, and you can discard any commits you make in this
+2025-02-18T19:21:57.0537591Z state without impacting any branches by switching back to a branch.
+2025-02-18T19:21:57.0538449Z 
+2025-02-18T19:21:57.0538836Z If you want to create a new branch to retain commits you create, you may
+2025-02-18T19:21:57.0539712Z do so (now or later) by using -c with the switch command. Example:
+2025-02-18T19:21:57.0540199Z 
+2025-02-18T19:21:57.0540476Z   git switch -c <new-branch-name>
+2025-02-18T19:21:57.0540825Z 
+2025-02-18T19:21:57.0541216Z Or undo this operation with:
+2025-02-18T19:21:57.0541807Z 
+2025-02-18T19:21:57.0542315Z   git switch -
+2025-02-18T19:21:57.0542775Z 
+2025-02-18T19:21:57.0543194Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-18T19:21:57.0543776Z 
+2025-02-18T19:21:57.0544427Z HEAD is now at b005b05 Merge 3523bf2c2ca658d1dd7518bd5bf084932e36dd57 into aa15a7736e1aef5eb4342b0d9e24c4710bde123e
+2025-02-18T19:21:57.0546903Z ##[endgroup]
+2025-02-18T19:21:57.0580119Z [command]/usr/bin/git log -1 --format=%H
+2025-02-18T19:21:57.0603736Z b005b058fa5d46f52b0f2c15eb97b63cbe54d19e
+2025-02-18T19:21:57.0804769Z ##[group]Run sudo apt-get update
+2025-02-18T19:21:57.0805452Z [36;1msudo apt-get update[0m
+2025-02-18T19:21:57.0806309Z [36;1msudo apt-get install -y --no-install-recommends clang-format=1:14.0-55~exp2 make[0m
+2025-02-18T19:21:57.0947906Z shell: /usr/bin/bash -e {0}
+2025-02-18T19:21:57.0948467Z ##[endgroup]
+2025-02-18T19:21:57.1681427Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [142 B]
+2025-02-18T19:21:57.1996851Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+2025-02-18T19:21:57.2007734Z Hit:6 https://packages.microsoft.com/repos/azure-cli noble InRelease
+2025-02-18T19:21:57.2018767Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2025-02-18T19:21:57.2070630Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2025-02-18T19:21:57.2097621Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2025-02-18T19:21:57.2116637Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2025-02-18T19:21:57.3826641Z Get:8 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [865 kB]
+2025-02-18T19:21:57.3966869Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [151 kB]
+2025-02-18T19:21:57.3983809Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1014 kB]
+2025-02-18T19:21:57.4053307Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [362 kB]
+2025-02-18T19:21:57.4081471Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Components [212 B]
+2025-02-18T19:21:57.4089421Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+2025-02-18T19:21:57.4397508Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [208 B]
+2025-02-18T19:21:57.4413697Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [17.6 kB]
+2025-02-18T19:21:57.4422320Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [216 B]
+2025-02-18T19:21:57.4430740Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [212 B]
+2025-02-18T19:21:57.5348571Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [617 kB]
+2025-02-18T19:21:57.5390961Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Components [8976 B]
+2025-02-18T19:21:57.5399089Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [803 kB]
+2025-02-18T19:21:57.5450988Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Components [52.0 kB]
+2025-02-18T19:21:57.5470710Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Components [212 B]
+2025-02-18T19:21:57.5473954Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [212 B]
+2025-02-18T19:21:57.5513656Z Get:24 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [6679 B]
+2025-02-18T19:21:57.5547041Z Get:25 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [12.9 kB]
+2025-02-18T19:21:57.5573588Z Get:26 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [21.1 kB]
+2025-02-18T19:22:00.9390877Z Fetched 4317 kB in 1s (6410 kB/s)
+2025-02-18T19:22:01.5694477Z Reading package lists...
+2025-02-18T19:22:01.6013264Z Reading package lists...
+2025-02-18T19:22:01.7554235Z Building dependency tree...
+2025-02-18T19:22:01.7561403Z Reading state information...
+2025-02-18T19:22:01.7687990Z Package clang-format is not available, but is referred to by another package.
+2025-02-18T19:22:01.7689052Z This may mean that the package is missing, has been obsoleted, or
+2025-02-18T19:22:01.7689937Z is only available from another source
+2025-02-18T19:22:01.7690410Z 
+2025-02-18T19:22:01.7718396Z E: Version '1:14.0-55~exp2' for 'clang-format' was not found
+2025-02-18T19:22:01.7752563Z ##[error]Process completed with exit code 100.
+2025-02-18T19:22:01.7865734Z Post job cleanup.
+2025-02-18T19:22:01.8798238Z [command]/usr/bin/git version
+2025-02-18T19:22:01.8834677Z git version 2.48.1
+2025-02-18T19:22:01.8884891Z Temporarily overriding HOME='/home/runner/work/_temp/983901cb-de77-4a8b-a100-f2551ebdd598' before making global git config changes
+2025-02-18T19:22:01.8886327Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-18T19:22:01.8891065Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/rDock/rDock
+2025-02-18T19:22:01.8925277Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-18T19:22:01.8957478Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-18T19:22:01.9190086Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-18T19:22:01.9211141Z http.https://github.com/.extraheader
+2025-02-18T19:22:01.9224042Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-18T19:22:01.9255142Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-18T19:22:01.9595634Z Cleaning up orphan processes

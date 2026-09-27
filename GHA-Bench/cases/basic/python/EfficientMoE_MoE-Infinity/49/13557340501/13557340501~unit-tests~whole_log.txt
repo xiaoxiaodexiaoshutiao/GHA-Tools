@@ -1,0 +1,256 @@
+2025-02-27T02:07:09.7940231Z Requested labels: ubuntu-20.04
+2025-02-27T02:07:09.7940623Z Job defined at: TorchMoE/MoE-Infinity/.github/workflows/pre-commit-format.yml@refs/pull/41/merge
+2025-02-27T02:07:09.7940763Z Waiting for a runner to pick up this job...
+2025-02-27T02:07:10.3753010Z Job is waiting for a hosted runner to come online.
+2025-02-27T02:07:13.0740264Z Job is about to start running on the hosted runner: GitHub Actions 3 (hosted)
+2025-02-27T02:07:14.7642832Z Current runner version: '2.322.0'
+2025-02-27T02:07:14.7676139Z ##[group]Operating System
+2025-02-27T02:07:14.7677421Z Ubuntu
+2025-02-27T02:07:14.7678302Z 20.04.6
+2025-02-27T02:07:14.7679167Z LTS
+2025-02-27T02:07:14.7680083Z ##[endgroup]
+2025-02-27T02:07:14.7681030Z ##[group]Runner Image
+2025-02-27T02:07:14.7681976Z Image: ubuntu-20.04
+2025-02-27T02:07:14.7682919Z Version: 20250223.1.0
+2025-02-27T02:07:14.7684693Z Included Software: https://github.com/actions/runner-images/blob/ubuntu20/20250223.1/images/ubuntu/Ubuntu2004-Readme.md
+2025-02-27T02:07:14.7687168Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu20%2F20250223.1
+2025-02-27T02:07:14.7689029Z ##[endgroup]
+2025-02-27T02:07:14.7690026Z ##[group]Runner Image Provisioner
+2025-02-27T02:07:14.7691167Z 2.0.422.1
+2025-02-27T02:07:14.7692034Z ##[endgroup]
+2025-02-27T02:07:14.7693810Z ##[group]GITHUB_TOKEN Permissions
+2025-02-27T02:07:14.7696368Z Contents: read
+2025-02-27T02:07:14.7697260Z Metadata: read
+2025-02-27T02:07:14.7698449Z Packages: read
+2025-02-27T02:07:14.7699592Z ##[endgroup]
+2025-02-27T02:07:14.7703743Z Secret source: Actions
+2025-02-27T02:07:14.7704878Z Prepare workflow directory
+2025-02-27T02:07:14.8030720Z Prepare all required actions
+2025-02-27T02:07:14.8066319Z Getting action download info
+2025-02-27T02:07:14.9577737Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-02-27T02:07:15.1153794Z Complete job name: unit-tests
+2025-02-27T02:07:15.1857706Z ##[group]Run actions/checkout@v4
+2025-02-27T02:07:15.1858529Z with:
+2025-02-27T02:07:15.1858958Z   repository: TorchMoE/MoE-Infinity
+2025-02-27T02:07:15.1859630Z   token: ***
+2025-02-27T02:07:15.1860035Z   ssh-strict: true
+2025-02-27T02:07:15.1860452Z   ssh-user: git
+2025-02-27T02:07:15.1860880Z   persist-credentials: true
+2025-02-27T02:07:15.1861347Z   clean: true
+2025-02-27T02:07:15.1861766Z   sparse-checkout-cone-mode: true
+2025-02-27T02:07:15.1862272Z   fetch-depth: 1
+2025-02-27T02:07:15.1862686Z   fetch-tags: false
+2025-02-27T02:07:15.1863133Z   show-progress: true
+2025-02-27T02:07:15.1863565Z   lfs: false
+2025-02-27T02:07:15.1863955Z   submodules: false
+2025-02-27T02:07:15.1864391Z   set-safe-directory: true
+2025-02-27T02:07:15.1865049Z ##[endgroup]
+2025-02-27T02:07:15.4044233Z Syncing repository: TorchMoE/MoE-Infinity
+2025-02-27T02:07:15.4046227Z ##[group]Getting Git version info
+2025-02-27T02:07:15.4047043Z Working directory is '/home/runner/work/MoE-Infinity/MoE-Infinity'
+2025-02-27T02:07:15.4048342Z [command]/usr/bin/git version
+2025-02-27T02:07:15.4137065Z git version 2.48.1
+2025-02-27T02:07:15.4166082Z ##[endgroup]
+2025-02-27T02:07:15.4181469Z Temporarily overriding HOME='/home/runner/work/_temp/db1a207d-90ae-4cb8-9766-ffd42871d817' before making global git config changes
+2025-02-27T02:07:15.4183921Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-27T02:07:15.4188108Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/MoE-Infinity/MoE-Infinity
+2025-02-27T02:07:15.4222960Z Deleting the contents of '/home/runner/work/MoE-Infinity/MoE-Infinity'
+2025-02-27T02:07:15.4226994Z ##[group]Initializing the repository
+2025-02-27T02:07:15.4231494Z [command]/usr/bin/git init /home/runner/work/MoE-Infinity/MoE-Infinity
+2025-02-27T02:07:15.4301689Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-27T02:07:15.4303398Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-27T02:07:15.4304385Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-27T02:07:15.4305086Z hint:
+2025-02-27T02:07:15.4305584Z hint: 	git config --global init.defaultBranch <name>
+2025-02-27T02:07:15.4306181Z hint:
+2025-02-27T02:07:15.4306746Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-27T02:07:15.4307653Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-27T02:07:15.4308383Z hint:
+2025-02-27T02:07:15.4308796Z hint: 	git branch -m <name>
+2025-02-27T02:07:15.4309824Z Initialized empty Git repository in /home/runner/work/MoE-Infinity/MoE-Infinity/.git/
+2025-02-27T02:07:15.4318740Z [command]/usr/bin/git remote add origin https://github.com/TorchMoE/MoE-Infinity
+2025-02-27T02:07:15.4359619Z ##[endgroup]
+2025-02-27T02:07:15.4361073Z ##[group]Disabling automatic garbage collection
+2025-02-27T02:07:15.4363599Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-27T02:07:15.4395250Z ##[endgroup]
+2025-02-27T02:07:15.4396123Z ##[group]Setting up auth
+2025-02-27T02:07:15.4401259Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-27T02:07:15.4429729Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-27T02:07:15.4734762Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-27T02:07:15.4764481Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-27T02:07:15.4980218Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-27T02:07:15.5020011Z ##[endgroup]
+2025-02-27T02:07:15.5020828Z ##[group]Fetching the repository
+2025-02-27T02:07:15.5028637Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5277d7ecac0481025564d7f60d681fb8b8a5b875:refs/remotes/pull/41/merge
+2025-02-27T02:07:15.9755566Z From https://github.com/TorchMoE/MoE-Infinity
+2025-02-27T02:07:15.9757580Z  * [new ref]         5277d7ecac0481025564d7f60d681fb8b8a5b875 -> pull/41/merge
+2025-02-27T02:07:15.9779220Z ##[endgroup]
+2025-02-27T02:07:15.9780036Z ##[group]Determining the checkout info
+2025-02-27T02:07:15.9781566Z ##[endgroup]
+2025-02-27T02:07:15.9787100Z [command]/usr/bin/git sparse-checkout disable
+2025-02-27T02:07:15.9823678Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-27T02:07:15.9852704Z ##[group]Checking out the ref
+2025-02-27T02:07:15.9855672Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/41/merge
+2025-02-27T02:07:15.9979893Z Note: switching to 'refs/remotes/pull/41/merge'.
+2025-02-27T02:07:15.9980720Z 
+2025-02-27T02:07:15.9981165Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-27T02:07:15.9982125Z changes and commit them, and you can discard any commits you make in this
+2025-02-27T02:07:15.9983192Z state without impacting any branches by switching back to a branch.
+2025-02-27T02:07:15.9983751Z 
+2025-02-27T02:07:15.9984121Z If you want to create a new branch to retain commits you create, you may
+2025-02-27T02:07:15.9984968Z do so (now or later) by using -c with the switch command. Example:
+2025-02-27T02:07:15.9985455Z 
+2025-02-27T02:07:15.9985676Z   git switch -c <new-branch-name>
+2025-02-27T02:07:15.9986039Z 
+2025-02-27T02:07:15.9986268Z Or undo this operation with:
+2025-02-27T02:07:15.9986588Z 
+2025-02-27T02:07:15.9986824Z   git switch -
+2025-02-27T02:07:15.9987083Z 
+2025-02-27T02:07:15.9987502Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-27T02:07:15.9988147Z 
+2025-02-27T02:07:15.9989372Z HEAD is now at 5277d7e Merge 8fbf62194e6df6bb7002853b94b6d78a500bd807 into 087c68ea8029d846bcdc63fa26a3df43dc34355e
+2025-02-27T02:07:15.9991381Z ##[endgroup]
+2025-02-27T02:07:16.0021252Z [command]/usr/bin/git log -1 --format=%H
+2025-02-27T02:07:16.0041026Z 5277d7ecac0481025564d7f60d681fb8b8a5b875
+2025-02-27T02:07:16.0237689Z ##[group]Run which python
+2025-02-27T02:07:16.0238313Z [36;1mwhich python[0m
+2025-02-27T02:07:16.0238806Z [36;1mpython --version[0m
+2025-02-27T02:07:16.0450243Z shell: /usr/bin/bash -e {0}
+2025-02-27T02:07:16.0450821Z ##[endgroup]
+2025-02-27T02:07:16.0547182Z /usr/bin/python
+2025-02-27T02:07:16.0558989Z Python 3.8.10
+2025-02-27T02:07:16.0612380Z ##[group]Run # Previously we would do pip install .[dev] but this is causing out of
+2025-02-27T02:07:16.0613485Z [36;1m# Previously we would do pip install .[dev] but this is causing out of[0m
+2025-02-27T02:07:16.0614312Z [36;1m# space errors start with torch 2.1.0 release[0m
+2025-02-27T02:07:16.0614982Z [36;1mpip install -r requirements-lint.txt[0m
+2025-02-27T02:07:16.0659964Z shell: /usr/bin/bash -e {0}
+2025-02-27T02:07:16.0660487Z ##[endgroup]
+2025-02-27T02:07:18.0852858Z Collecting clang-format==18.1.5
+2025-02-27T02:07:18.1112361Z   Downloading clang_format-18.1.5-py2.py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.7 MB)
+2025-02-27T02:07:18.3035153Z Collecting isort==5.13.2
+2025-02-27T02:07:18.3080825Z   Downloading isort-5.13.2-py3-none-any.whl (92 kB)
+2025-02-27T02:07:18.7058904Z Collecting mypy==1.8.0
+2025-02-27T02:07:18.7117791Z   Downloading mypy-1.8.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.5 MB)
+2025-02-27T02:07:19.3582522Z Collecting pre-commit
+2025-02-27T02:07:19.4797763Z   Downloading pre_commit-3.5.0-py2.py3-none-any.whl (203 kB)
+2025-02-27T02:07:20.7637574Z Collecting ruff==0.6.9
+2025-02-27T02:07:20.7708946Z   Downloading ruff-0.6.9-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (10.9 MB)
+2025-02-27T02:07:21.1173420Z Collecting toml==0.10.2
+2025-02-27T02:07:21.1215760Z   Downloading toml-0.10.2-py2.py3-none-any.whl (16 kB)
+2025-02-27T02:07:21.1686101Z Collecting tomli==2.0.1
+2025-02-27T02:07:21.1734268Z   Downloading tomli-2.0.1-py3-none-any.whl (12 kB)
+2025-02-27T02:07:21.2293002Z Collecting types-PyYAML
+2025-02-27T02:07:21.2336499Z   Downloading types_PyYAML-6.0.12.20241230-py3-none-any.whl (20 kB)
+2025-02-27T02:07:21.3424666Z Collecting types-requests
+2025-02-27T02:07:21.3474313Z   Downloading types_requests-2.32.0.20241016-py3-none-any.whl (15 kB)
+2025-02-27T02:07:21.4731548Z Collecting types-setuptools
+2025-02-27T02:07:21.4780054Z   Downloading types_setuptools-75.8.0.20250110-py3-none-any.whl (71 kB)
+2025-02-27T02:07:21.5672368Z Collecting typing-extensions>=4.1.0
+2025-02-27T02:07:21.5716826Z   Downloading typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+2025-02-27T02:07:21.6184005Z Collecting mypy-extensions>=1.0.0
+2025-02-27T02:07:21.6226923Z   Downloading mypy_extensions-1.0.0-py3-none-any.whl (4.7 kB)
+2025-02-27T02:07:21.7867976Z Collecting identify>=1.0.0
+2025-02-27T02:07:21.7917810Z   Downloading identify-2.6.1-py2.py3-none-any.whl (98 kB)
+2025-02-27T02:07:21.8579453Z Collecting nodeenv>=0.11.1
+2025-02-27T02:07:21.8627414Z   Downloading nodeenv-1.9.1-py2.py3-none-any.whl (22 kB)
+2025-02-27T02:07:22.0250064Z Collecting virtualenv>=20.10.0
+2025-02-27T02:07:22.0302290Z   Downloading virtualenv-20.29.2-py3-none-any.whl (4.3 MB)
+2025-02-27T02:07:22.1797202Z Collecting cfgv>=2.0.0
+2025-02-27T02:07:22.1846734Z   Downloading cfgv-3.4.0-py2.py3-none-any.whl (7.2 kB)
+2025-02-27T02:07:22.2042971Z Requirement already satisfied: pyyaml>=5.1 in /usr/lib/python3/dist-packages (from pre-commit->-r requirements-lint.txt (line 6)) (5.3.1)
+2025-02-27T02:07:22.2609906Z Collecting urllib3>=2
+2025-02-27T02:07:22.2655320Z   Downloading urllib3-2.2.3-py3-none-any.whl (126 kB)
+2025-02-27T02:07:22.2815382Z Requirement already satisfied: platformdirs<5,>=3.9.1 in /usr/local/lib/python3.8/dist-packages (from virtualenv>=20.10.0->pre-commit->-r requirements-lint.txt (line 6)) (4.3.6)
+2025-02-27T02:07:22.3388137Z Collecting distlib<1,>=0.3.7
+2025-02-27T02:07:22.3435731Z   Downloading distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+2025-02-27T02:07:22.4299628Z Collecting filelock<4,>=3.12.2
+2025-02-27T02:07:22.4341361Z   Downloading filelock-3.16.1-py3-none-any.whl (16 kB)
+2025-02-27T02:07:22.6187876Z Installing collected packages: clang-format, isort, typing-extensions, tomli, mypy-extensions, mypy, identify, nodeenv, distlib, filelock, virtualenv, cfgv, pre-commit, ruff, toml, types-PyYAML, urllib3, types-requests, types-setuptools
+2025-02-27T02:07:24.5246779Z Successfully installed cfgv-3.4.0 clang-format-18.1.5 distlib-0.3.9 filelock-3.16.1 identify-2.6.1 isort-5.13.2 mypy-1.8.0 mypy-extensions-1.0.0 nodeenv-1.9.1 pre-commit-3.5.0 ruff-0.6.9 toml-0.10.2 tomli-2.0.1 types-PyYAML-6.0.12.20241230 types-requests-2.32.0.20241016 types-setuptools-75.8.0.20250110 typing-extensions-4.12.2 urllib3-2.2.3 virtualenv-20.29.2
+2025-02-27T02:07:24.6444433Z ##[group]Run pip show pre-commit clang-format
+2025-02-27T02:07:24.6444813Z [36;1mpip show pre-commit clang-format[0m
+2025-02-27T02:07:24.6445101Z [36;1mpre-commit run --all-files[0m
+2025-02-27T02:07:24.6497531Z shell: /usr/bin/bash -e {0}
+2025-02-27T02:07:24.6497775Z ##[endgroup]
+2025-02-27T02:07:25.3099770Z Name: pre-commit
+2025-02-27T02:07:25.3100316Z Version: 3.5.0
+2025-02-27T02:07:25.3101068Z Summary: A framework for managing and maintaining multi-language pre-commit hooks.
+2025-02-27T02:07:25.3102012Z Home-page: https://github.com/pre-commit/pre-commit
+2025-02-27T02:07:25.3102658Z Author: Anthony Sottile
+2025-02-27T02:07:25.3103164Z Author-email: asottile@umich.edu
+2025-02-27T02:07:25.3103644Z License: MIT
+2025-02-27T02:07:25.3104184Z Location: /home/runner/.local/lib/python3.8/site-packages
+2025-02-27T02:07:25.3104922Z Requires: cfgv, identify, nodeenv, pyyaml, virtualenv
+2025-02-27T02:07:25.3105560Z Required-by: 
+2025-02-27T02:07:25.3128758Z ---
+2025-02-27T02:07:25.3129163Z Name: clang-format
+2025-02-27T02:07:25.3129566Z Version: 18.1.5
+2025-02-27T02:07:25.3130007Z Summary: Clang-Format is an LLVM-based code formatting tool
+2025-02-27T02:07:25.3130575Z Home-page: None
+2025-02-27T02:07:25.3130970Z Author: None
+2025-02-27T02:07:25.3131429Z Author-email: Dominic Kempf <ssc@iwr.uni-heidelberg.de>
+2025-02-27T02:07:25.3131977Z License: Apache 2.0
+2025-02-27T02:07:25.3132474Z Location: /home/runner/.local/lib/python3.8/site-packages
+2025-02-27T02:07:25.3133017Z Requires: 
+2025-02-27T02:07:25.3133293Z Required-by: 
+2025-02-27T02:07:25.4504963Z [INFO] Initializing environment for https://github.com/pre-commit/pre-commit-hooks.
+2025-02-27T02:07:25.7336544Z [INFO] Initializing environment for https://github.com/astral-sh/ruff-pre-commit.
+2025-02-27T02:07:25.9533538Z [INFO] Initializing environment for https://gitlab.com/daverona/pre-commit/cpp.
+2025-02-27T02:07:26.6377860Z [INFO] Initializing environment for https://github.com/codespell-project/codespell.
+2025-02-27T02:07:27.0029297Z [INFO] Installing environment for https://github.com/pre-commit/pre-commit-hooks.
+2025-02-27T02:07:27.0030096Z [INFO] Once installed this environment will be reused.
+2025-02-27T02:07:27.0030857Z [INFO] This may take a few minutes...
+2025-02-27T02:07:29.6930351Z [INFO] Installing environment for https://github.com/astral-sh/ruff-pre-commit.
+2025-02-27T02:07:29.6931232Z [INFO] Once installed this environment will be reused.
+2025-02-27T02:07:29.6931788Z [INFO] This may take a few minutes...
+2025-02-27T02:07:32.9578539Z [INFO] Installing environment for https://github.com/codespell-project/codespell.
+2025-02-27T02:07:32.9579419Z [INFO] Once installed this environment will be reused.
+2025-02-27T02:07:32.9579977Z [INFO] This may take a few minutes...
+2025-02-27T02:07:36.3467816Z Check hooks apply to the repository......................................Passed
+2025-02-27T02:07:36.4566804Z Check for useless excludes...............................................Passed
+2025-02-27T02:07:36.5238370Z Check for case conflicts.................................................Passed
+2025-02-27T02:07:36.5764690Z Check Yaml...............................................................Passed
+2025-02-27T02:07:36.6360596Z Detect Destroyed Symlinks................................................Passed
+2025-02-27T02:07:36.6943987Z Fix End of Files.........................................................Failed
+2025-02-27T02:07:36.6944637Z - hook id: end-of-file-fixer
+2025-02-27T02:07:36.6945038Z - exit code: 1
+2025-02-27T02:07:36.6945375Z - files were modified by this hook
+2025-02-27T02:07:36.6945662Z 
+2025-02-27T02:07:36.6945817Z Fixing CODE_OF_CONDUCT.md
+2025-02-27T02:07:36.6946212Z Fixing .github/workflows/build-test.yml
+2025-02-27T02:07:36.6946520Z 
+2025-02-27T02:07:36.7439169Z fix UTF-8 byte order marker..............................................Passed
+2025-02-27T02:07:36.7918982Z Fix python encoding pragma...............................................Passed
+2025-02-27T02:07:36.8425208Z Mixed line ending........................................................Passed
+2025-02-27T02:07:36.8734271Z Fix requirements.txt.....................................................Passed
+2025-02-27T02:07:36.9241992Z Trim Trailing Whitespace.................................................Failed
+2025-02-27T02:07:36.9242554Z - hook id: trailing-whitespace
+2025-02-27T02:07:36.9242809Z - exit code: 1
+2025-02-27T02:07:36.9243018Z - files were modified by this hook
+2025-02-27T02:07:36.9243185Z 
+2025-02-27T02:07:36.9243303Z Fixing .github/workflows/publish-test.yml
+2025-02-27T02:07:36.9243606Z Fixing .github/workflows/build-test.yml
+2025-02-27T02:07:36.9243789Z 
+2025-02-27T02:07:36.9449181Z ruff.....................................................................Passed
+2025-02-27T02:07:36.9730666Z ruff-format..............................................................Passed
+2025-02-27T02:07:37.1055961Z clang-format.............................................................Passed
+2025-02-27T02:07:37.3292193Z codespell................................................................Failed
+2025-02-27T02:07:37.3292607Z - hook id: codespell
+2025-02-27T02:07:37.3292833Z - exit code: 65
+2025-02-27T02:07:37.3292958Z 
+2025-02-27T02:07:37.3293094Z CODE_OF_CONDUCT.md:8: socio-economic ==> socioeconomic
+2025-02-27T02:07:37.3293320Z 
+2025-02-27T02:07:37.3438289Z ##[error]Process completed with exit code 1.
+2025-02-27T02:07:37.3528318Z Post job cleanup.
+2025-02-27T02:07:37.4437919Z [command]/usr/bin/git version
+2025-02-27T02:07:37.4478171Z git version 2.48.1
+2025-02-27T02:07:37.4518974Z Temporarily overriding HOME='/home/runner/work/_temp/d8b847f4-b383-4b24-ba5e-938abe7e6118' before making global git config changes
+2025-02-27T02:07:37.4519728Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-27T02:07:37.4524152Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/MoE-Infinity/MoE-Infinity
+2025-02-27T02:07:37.4556822Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-27T02:07:37.4587333Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-27T02:07:37.4795189Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-27T02:07:37.4813804Z http.https://github.com/.extraheader
+2025-02-27T02:07:37.4825378Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-27T02:07:37.4853486Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-27T02:07:37.5187443Z Cleaning up orphan processes

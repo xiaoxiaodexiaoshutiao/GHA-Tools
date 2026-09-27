@@ -1,0 +1,14 @@
+diff --git a/api/api.js b/api/api.js
+index d9cadc3ead..cc32375438 100644
+--- a/api/api.js
++++ b/api/api.js
+@@ -342,7 +342,8 @@ function validateRequestParams(req) {
+     // Check whether the params value begins and ends with square braces.
+     if (params[key].match(/^\[.*\]$/)) {
+       // Match the string between square brackets and split into an array with undefined array values filtered out.
+-      params[key] = params[key].match(/^\[(.*)\]$/)[1]
++      params[key] = params[key]
++        .match(/^\[(.*)\]$/)[1]
+         .split(',')
+         .filter(Boolean);
+     }

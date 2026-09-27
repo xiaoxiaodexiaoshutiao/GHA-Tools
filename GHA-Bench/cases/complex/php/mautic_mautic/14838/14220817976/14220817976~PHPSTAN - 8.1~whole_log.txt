@@ -1,0 +1,1031 @@
+2025-04-02T13:26:47.6244086Z Requested labels: ubuntu-latest
+2025-04-02T13:26:47.6244491Z Job defined at: mautic/mautic/.github/workflows/tests.yml@refs/pull/14838/merge
+2025-04-02T13:26:47.6244680Z Waiting for a runner to pick up this job...
+2025-04-02T13:26:48.1226692Z Job is waiting for a hosted runner to come online.
+2025-04-02T13:26:51.1177865Z Job is about to start running on the hosted runner: GitHub Actions 36 (hosted)
+2025-04-02T13:26:53.0328911Z Current runner version: '2.323.0'
+2025-04-02T13:26:53.0378293Z ##[group]Operating System
+2025-04-02T13:26:53.0379063Z Ubuntu
+2025-04-02T13:26:53.0379500Z 24.04.2
+2025-04-02T13:26:53.0380099Z LTS
+2025-04-02T13:26:53.0380571Z ##[endgroup]
+2025-04-02T13:26:53.0381141Z ##[group]Runner Image
+2025-04-02T13:26:53.0381733Z Image: ubuntu-24.04
+2025-04-02T13:26:53.0382226Z Version: 20250330.1.0
+2025-04-02T13:26:53.0383315Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250330.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-02T13:26:53.0384726Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250330.1
+2025-04-02T13:26:53.0385990Z ##[endgroup]
+2025-04-02T13:26:53.0386589Z ##[group]Runner Image Provisioner
+2025-04-02T13:26:53.0387159Z 2.0.422.1
+2025-04-02T13:26:53.0387655Z ##[endgroup]
+2025-04-02T13:26:53.0388690Z ##[group]GITHUB_TOKEN Permissions
+2025-04-02T13:26:53.0390732Z Contents: read
+2025-04-02T13:26:53.0391318Z Metadata: read
+2025-04-02T13:26:53.0392065Z ##[endgroup]
+2025-04-02T13:26:53.0395630Z Secret source: None
+2025-04-02T13:26:53.0396621Z Prepare workflow directory
+2025-04-02T13:26:53.0818863Z Prepare all required actions
+2025-04-02T13:26:53.0856606Z Getting action download info
+2025-04-02T13:26:53.3641913Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-02T13:26:53.3642807Z Version: 4.2.2
+2025-04-02T13:26:53.3643638Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-02T13:26:53.3644688Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-02T13:26:53.3645496Z ##[endgroup]
+2025-04-02T13:26:53.4426137Z ##[group]Download immutable action package 'actions/cache@v4'
+2025-04-02T13:26:53.4426815Z Version: 4.2.3
+2025-04-02T13:26:53.4427483Z Digest: sha256:c8a3bb963e1f1826d8fcc8d1354f0dd29d8ac1db1d4f6f20247055ae11b81ed9
+2025-04-02T13:26:53.4428345Z Source commit SHA: 5a3ec84eff668545956fd18022155c47e93e2684
+2025-04-02T13:26:53.4428961Z ##[endgroup]
+2025-04-02T13:26:53.5468796Z Download action repository 'tj-actions/changed-files@v42' (SHA:ac21d93904fb48e7f76ce4bd2a4d197f67e34abe)
+2025-04-02T13:26:54.1377136Z Download action repository 'shivammathur/setup-php@v2' (SHA:9e72090525849c5e82e596468b86eb55e9cc5401)
+2025-04-02T13:26:54.6549404Z Download action repository 'ramsey/composer-install@v3' (SHA:e52779489de843a9f022c7b8faa648b608b02c70)
+2025-04-02T13:26:55.0107279Z Download action repository 'rtCamp/action-slack-notify@v2' (SHA:c33737706dea87cd7784c687dadc9adf1be59990)
+2025-04-02T13:26:55.4577520Z Getting action download info
+2025-04-02T13:26:55.6448914Z Getting action download info
+2025-04-02T13:26:55.7860580Z Download action repository 'LoveToKnow/slackify-markdown-action@v1' (SHA:698a1d4d0ff1794152a93c03ee8ca5e03a310d4e)
+2025-04-02T13:26:56.4059018Z Complete job name: PHPSTAN - 8.1
+2025-04-02T13:26:56.4481257Z ##[group]Pull down action image 'ghcr.io/rtcamp/action-slack-notify:v2.3.2'
+2025-04-02T13:26:56.4531741Z ##[command]/usr/bin/docker pull ghcr.io/rtcamp/action-slack-notify:v2.3.2
+2025-04-02T13:26:57.1721914Z v2.3.2: Pulling from rtcamp/action-slack-notify
+2025-04-02T13:26:57.3148923Z 43c4264eed91: Pulling fs layer
+2025-04-02T13:26:57.3151814Z 2a240074a9f8: Pulling fs layer
+2025-04-02T13:26:57.3152513Z 730f4904a2e8: Pulling fs layer
+2025-04-02T13:26:57.3153058Z 0b99c3e5f03e: Pulling fs layer
+2025-04-02T13:26:57.3153489Z dc43cb46acf6: Pulling fs layer
+2025-04-02T13:26:57.3153815Z cb705bf0399b: Pulling fs layer
+2025-04-02T13:26:57.3154103Z 0de6fea7e0a1: Pulling fs layer
+2025-04-02T13:26:57.3154376Z 0b99c3e5f03e: Waiting
+2025-04-02T13:26:57.3154619Z dc43cb46acf6: Waiting
+2025-04-02T13:26:57.3154864Z cb705bf0399b: Waiting
+2025-04-02T13:26:57.3155272Z 0de6fea7e0a1: Waiting
+2025-04-02T13:26:57.5906745Z 43c4264eed91: Verifying Checksum
+2025-04-02T13:26:57.5907505Z 43c4264eed91: Download complete
+2025-04-02T13:26:57.6118790Z 2a240074a9f8: Verifying Checksum
+2025-04-02T13:26:57.6120497Z 2a240074a9f8: Download complete
+2025-04-02T13:26:57.7060304Z 43c4264eed91: Pull complete
+2025-04-02T13:26:57.7290150Z 730f4904a2e8: Verifying Checksum
+2025-04-02T13:26:57.7291649Z 730f4904a2e8: Download complete
+2025-04-02T13:26:57.7957021Z dc43cb46acf6: Verifying Checksum
+2025-04-02T13:26:57.7961522Z dc43cb46acf6: Download complete
+2025-04-02T13:26:57.8220787Z 2a240074a9f8: Pull complete
+2025-04-02T13:26:57.8959540Z cb705bf0399b: Verifying Checksum
+2025-04-02T13:26:57.8960183Z cb705bf0399b: Download complete
+2025-04-02T13:26:57.9980376Z 0de6fea7e0a1: Verifying Checksum
+2025-04-02T13:26:57.9981097Z 0de6fea7e0a1: Download complete
+2025-04-02T13:26:58.0610141Z 0b99c3e5f03e: Verifying Checksum
+2025-04-02T13:26:58.0610666Z 0b99c3e5f03e: Download complete
+2025-04-02T13:26:59.0895778Z 730f4904a2e8: Pull complete
+2025-04-02T13:26:59.6042201Z 0b99c3e5f03e: Pull complete
+2025-04-02T13:26:59.6163446Z dc43cb46acf6: Pull complete
+2025-04-02T13:26:59.6266770Z cb705bf0399b: Pull complete
+2025-04-02T13:26:59.6357495Z 0de6fea7e0a1: Pull complete
+2025-04-02T13:26:59.6399166Z Digest: sha256:18276b34f3bd10001ca7e74ce6531cd3297ec95f552da448e33f681962ec3258
+2025-04-02T13:26:59.6416739Z Status: Downloaded newer image for ghcr.io/rtcamp/action-slack-notify:v2.3.2
+2025-04-02T13:26:59.6433967Z ghcr.io/rtcamp/action-slack-notify:v2.3.2
+2025-04-02T13:26:59.6453988Z ##[endgroup]
+2025-04-02T13:26:59.6707122Z ##[group]Run actions/checkout@v4
+2025-04-02T13:26:59.6708034Z with:
+2025-04-02T13:26:59.6708398Z   fetch-depth: 0
+2025-04-02T13:26:59.6708764Z   repository: mautic/mautic
+2025-04-02T13:26:59.6709359Z   token: ***
+2025-04-02T13:26:59.6709707Z   ssh-strict: true
+2025-04-02T13:26:59.6710028Z   ssh-user: git
+2025-04-02T13:26:59.6710231Z   persist-credentials: true
+2025-04-02T13:26:59.6710492Z   clean: true
+2025-04-02T13:26:59.6710728Z   sparse-checkout-cone-mode: true
+2025-04-02T13:26:59.6710975Z   fetch-tags: false
+2025-04-02T13:26:59.6711172Z   show-progress: true
+2025-04-02T13:26:59.6711367Z   lfs: false
+2025-04-02T13:26:59.6711532Z   submodules: false
+2025-04-02T13:26:59.6711728Z   set-safe-directory: true
+2025-04-02T13:26:59.6712280Z ##[endgroup]
+2025-04-02T13:26:59.8505147Z Syncing repository: mautic/mautic
+2025-04-02T13:26:59.8506840Z ##[group]Getting Git version info
+2025-04-02T13:26:59.8507410Z Working directory is '/home/runner/work/mautic/mautic'
+2025-04-02T13:26:59.8508250Z [command]/usr/bin/git version
+2025-04-02T13:26:59.8563312Z git version 2.49.0
+2025-04-02T13:26:59.8591096Z ##[endgroup]
+2025-04-02T13:26:59.8604109Z Temporarily overriding HOME='/home/runner/work/_temp/1c5c2d08-2ba4-4d34-a6a9-e2d55917ec57' before making global git config changes
+2025-04-02T13:26:59.8605424Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-02T13:26:59.8609563Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/mautic/mautic
+2025-04-02T13:26:59.8642809Z Deleting the contents of '/home/runner/work/mautic/mautic'
+2025-04-02T13:26:59.8646540Z ##[group]Initializing the repository
+2025-04-02T13:26:59.8650539Z [command]/usr/bin/git init /home/runner/work/mautic/mautic
+2025-04-02T13:26:59.8706065Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-02T13:26:59.8706812Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-02T13:26:59.8707324Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-02T13:26:59.8707680Z hint:
+2025-04-02T13:26:59.8707970Z hint: 	git config --global init.defaultBranch <name>
+2025-04-02T13:26:59.8708272Z hint:
+2025-04-02T13:26:59.8708555Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-02T13:26:59.8709046Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-02T13:26:59.8709418Z hint:
+2025-04-02T13:26:59.8709614Z hint: 	git branch -m <name>
+2025-04-02T13:26:59.8715734Z Initialized empty Git repository in /home/runner/work/mautic/mautic/.git/
+2025-04-02T13:26:59.8727278Z [command]/usr/bin/git remote add origin https://github.com/mautic/mautic
+2025-04-02T13:26:59.8759889Z ##[endgroup]
+2025-04-02T13:26:59.8760560Z ##[group]Disabling automatic garbage collection
+2025-04-02T13:26:59.8765308Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-02T13:26:59.8792819Z ##[endgroup]
+2025-04-02T13:26:59.8793449Z ##[group]Setting up auth
+2025-04-02T13:26:59.8800581Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-02T13:26:59.8830555Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-02T13:26:59.9101143Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-02T13:26:59.9134028Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-02T13:26:59.9360576Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-02T13:26:59.9399956Z ##[endgroup]
+2025-04-02T13:26:59.9400636Z ##[group]Fetching the repository
+2025-04-02T13:26:59.9410049Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* +4095c2c348cedc4996b93abd380d12d5642a4c4c:refs/remotes/pull/14838/merge
+2025-04-02T13:27:13.4646741Z From https://github.com/mautic/mautic
+2025-04-02T13:27:13.4647344Z  * [new branch]            2.16                    -> origin/2.16
+2025-04-02T13:27:13.4650134Z  * [new branch]            3.0                     -> origin/3.0
+2025-04-02T13:27:13.4651864Z  * [new branch]            3.1                     -> origin/3.1
+2025-04-02T13:27:13.4652529Z  * [new branch]            3.2                     -> origin/3.2
+2025-04-02T13:27:13.4653617Z  * [new branch]            3.3                     -> origin/3.3
+2025-04-02T13:27:13.4659060Z  * [new branch]            4.0                     -> origin/4.0
+2025-04-02T13:27:13.4659692Z  * [new branch]            4.1                     -> origin/4.1
+2025-04-02T13:27:13.4663101Z  * [new branch]            4.2                     -> origin/4.2
+2025-04-02T13:27:13.4664729Z  * [new branch]            4.3                     -> origin/4.3
+2025-04-02T13:27:13.4666104Z  * [new branch]            4.4                     -> origin/4.4
+2025-04-02T13:27:13.4668838Z  * [new branch]            4.x                     -> origin/4.x
+2025-04-02T13:27:13.4670912Z  * [new branch]            5.0                     -> origin/5.0
+2025-04-02T13:27:13.4673452Z  * [new branch]            5.1                     -> origin/5.1
+2025-04-02T13:27:13.4676662Z  * [new branch]            5.2                     -> origin/5.2
+2025-04-02T13:27:13.4678303Z  * [new branch]            5.x                     -> origin/5.x
+2025-04-02T13:27:13.4680512Z  * [new branch]            6.0                     -> origin/6.0
+2025-04-02T13:27:13.4682349Z  * [new branch]            6.x                     -> origin/6.x
+2025-04-02T13:27:13.4684320Z  * [new branch]            7.x                     -> origin/7.x
+2025-04-02T13:27:13.4686693Z  * [new branch]            add-cloned-page-support -> origin/add-cloned-page-support
+2025-04-02T13:27:13.4689481Z  * [new branch]            all-contributors/add-1792826181 -> origin/all-contributors/add-1792826181
+2025-04-02T13:27:13.4691615Z  * [new branch]            all-contributors/add-Hugo-Prossaird -> origin/all-contributors/add-Hugo-Prossaird
+2025-04-02T13:27:13.4693607Z  * [new branch]            all-contributors/add-Jaishree2310 -> origin/all-contributors/add-Jaishree2310
+2025-04-02T13:27:13.4696230Z  * [new branch]            all-contributors/add-TheMarvelFan -> origin/all-contributors/add-TheMarvelFan
+2025-04-02T13:27:13.4698275Z  * [new branch]            all-contributors/add-VishnuGurrapu -> origin/all-contributors/add-VishnuGurrapu
+2025-04-02T13:27:13.4700246Z  * [new branch]            all-contributors/add-caiqueportela -> origin/all-contributors/add-caiqueportela
+2025-04-02T13:27:13.4702130Z  * [new branch]            all-contributors/add-farzammadani -> origin/all-contributors/add-farzammadani
+2025-04-02T13:27:13.4704916Z  * [new branch]            all-contributors/add-matbcvo -> origin/all-contributors/add-matbcvo
+2025-04-02T13:27:13.4707077Z  * [new branch]            boolean-field-filters-fix -> origin/boolean-field-filters-fix
+2025-04-02T13:27:13.4709625Z  * [new branch]            convert_charset_to_utf8mb4 -> origin/convert_charset_to_utf8mb4
+2025-04-02T13:27:13.4715926Z  * [new branch]            dependabot/npm_and_yarn/app/assets/scaffold/files/multi-bc20d10cf2 -> origin/dependabot/npm_and_yarn/app/assets/scaffold/files/multi-bc20d10cf2
+2025-04-02T13:27:13.4718964Z  * [new branch]            dependabot/npm_and_yarn/multi-eac12eccb3 -> origin/dependabot/npm_and_yarn/multi-eac12eccb3
+2025-04-02T13:27:13.4721156Z  * [new branch]            email-draft-feature     -> origin/email-draft-feature
+2025-04-02T13:27:13.4722195Z  * [new branch]            fix-contact-timeline    -> origin/fix-contact-timeline
+2025-04-02T13:27:13.4724499Z  * [new branch]            fix-segment-rebuild-timezone -> origin/fix-segment-rebuild-timezone
+2025-04-02T13:27:13.4727734Z  * [new branch]            fix-sendgrid-bcc        -> origin/fix-sendgrid-bcc
+2025-04-02T13:27:13.4730605Z  * [new branch]            fix/date-time-in-report-filters -> origin/fix/date-time-in-report-filters
+2025-04-02T13:27:13.4732694Z  * [new branch]            fix/notification-encoding-and-wording -> origin/fix/notification-encoding-and-wording
+2025-04-02T13:27:13.4734641Z  * [new branch]            fix/truncate-import-filename -> origin/fix/truncate-import-filename
+2025-04-02T13:27:13.4737615Z  * [new branch]            gitsplit-action-debug   -> origin/gitsplit-action-debug
+2025-04-02T13:27:13.4739556Z  * [new branch]            revert-14356-best-hour-widget-fix -> origin/revert-14356-best-hour-widget-fix
+2025-04-02T13:27:13.4742373Z  * [new branch]            revert-14678-dc-campaign-based-default-off -> origin/revert-14678-dc-campaign-based-default-off
+2025-04-02T13:27:13.4746624Z  * [new branch]            revert-14680-ux-saving-options-for-categories -> origin/revert-14680-ux-saving-options-for-categories
+2025-04-02T13:27:13.4748643Z  * [new branch]            ui-redesign             -> origin/ui-redesign
+2025-04-02T13:27:13.4751615Z  * [new branch]            update-license          -> origin/update-license
+2025-04-02T13:27:13.4754209Z  * [new branch]            update-mailpit          -> origin/update-mailpit
+2025-04-02T13:27:13.4756160Z  * [new tag]               1.0.0                   -> 1.0.0
+2025-04-02T13:27:13.4757572Z  * [new tag]               1.0.0-beta              -> 1.0.0-beta
+2025-04-02T13:27:13.4759426Z  * [new tag]               1.0.0-beta2             -> 1.0.0-beta2
+2025-04-02T13:27:13.4760483Z  * [new tag]               1.0.0-beta3             -> 1.0.0-beta3
+2025-04-02T13:27:13.4762252Z  * [new tag]               1.0.0-beta4             -> 1.0.0-beta4
+2025-04-02T13:27:13.4763182Z  * [new tag]               1.0.0-rc1               -> 1.0.0-rc1
+2025-04-02T13:27:13.4765446Z  * [new tag]               1.0.0-rc2               -> 1.0.0-rc2
+2025-04-02T13:27:13.4766033Z  * [new tag]               1.0.0-rc3               -> 1.0.0-rc3
+2025-04-02T13:27:13.4768049Z  * [new tag]               1.0.0-rc4               -> 1.0.0-rc4
+2025-04-02T13:27:13.4769185Z  * [new tag]               1.0.1                   -> 1.0.1
+2025-04-02T13:27:13.4770415Z  * [new tag]               1.0.2                   -> 1.0.2
+2025-04-02T13:27:13.4772456Z  * [new tag]               1.0.3                   -> 1.0.3
+2025-04-02T13:27:13.4773249Z  * [new tag]               1.0.4                   -> 1.0.4
+2025-04-02T13:27:13.4775338Z  * [new tag]               1.0.5                   -> 1.0.5
+2025-04-02T13:27:13.4776872Z  * [new tag]               1.1.0                   -> 1.1.0
+2025-04-02T13:27:13.4779470Z  * [new tag]               1.1.1                   -> 1.1.1
+2025-04-02T13:27:13.4780043Z  * [new tag]               1.1.2                   -> 1.1.2
+2025-04-02T13:27:13.4781735Z  * [new tag]               1.1.3                   -> 1.1.3
+2025-04-02T13:27:13.4782603Z  * [new tag]               1.2.0                   -> 1.2.0
+2025-04-02T13:27:13.4784487Z  * [new tag]               1.2.0-beta1             -> 1.2.0-beta1
+2025-04-02T13:27:13.4786388Z  * [new tag]               1.2.1                   -> 1.2.1
+2025-04-02T13:27:13.4787942Z  * [new tag]               1.2.2                   -> 1.2.2
+2025-04-02T13:27:13.4788962Z  * [new tag]               1.2.3                   -> 1.2.3
+2025-04-02T13:27:13.4790164Z  * [new tag]               1.2.4                   -> 1.2.4
+2025-04-02T13:27:13.4791323Z  * [new tag]               1.3.0                   -> 1.3.0
+2025-04-02T13:27:13.4793283Z  * [new tag]               1.3.1                   -> 1.3.1
+2025-04-02T13:27:13.4794374Z  * [new tag]               1.4.0                   -> 1.4.0
+2025-04-02T13:27:13.4796693Z  * [new tag]               1.4.1                   -> 1.4.1
+2025-04-02T13:27:13.4797948Z  * [new tag]               2.0.0                   -> 2.0.0
+2025-04-02T13:27:13.4799886Z  * [new tag]               2.0.1                   -> 2.0.1
+2025-04-02T13:27:13.4800714Z  * [new tag]               2.1.0                   -> 2.1.0
+2025-04-02T13:27:13.4802877Z  * [new tag]               2.1.1                   -> 2.1.1
+2025-04-02T13:27:13.4803834Z  * [new tag]               2.10.0                  -> 2.10.0
+2025-04-02T13:27:13.4805394Z  * [new tag]               2.10.0-beta             -> 2.10.0-beta
+2025-04-02T13:27:13.4806934Z  * [new tag]               2.10.1                  -> 2.10.1
+2025-04-02T13:27:13.4808642Z  * [new tag]               2.11.0                  -> 2.11.0
+2025-04-02T13:27:13.4810351Z  * [new tag]               2.11.0-beta             -> 2.11.0-beta
+2025-04-02T13:27:13.4812092Z  * [new tag]               2.12.0                  -> 2.12.0
+2025-04-02T13:27:13.4812717Z  * [new tag]               2.12.0-beta             -> 2.12.0-beta
+2025-04-02T13:27:13.4814560Z  * [new tag]               2.12.1                  -> 2.12.1
+2025-04-02T13:27:13.4816160Z  * [new tag]               2.12.1-beta             -> 2.12.1-beta
+2025-04-02T13:27:13.4818001Z  * [new tag]               2.12.2                  -> 2.12.2
+2025-04-02T13:27:13.4819237Z  * [new tag]               2.12.2-beta             -> 2.12.2-beta
+2025-04-02T13:27:13.4821174Z  * [new tag]               2.13.0                  -> 2.13.0
+2025-04-02T13:27:13.4822542Z  * [new tag]               2.13.0-beta             -> 2.13.0-beta
+2025-04-02T13:27:13.4823808Z  * [new tag]               2.13.1                  -> 2.13.1
+2025-04-02T13:27:13.4825245Z  * [new tag]               2.14.0                  -> 2.14.0
+2025-04-02T13:27:13.4827382Z  * [new tag]               2.14.0-beta             -> 2.14.0-beta
+2025-04-02T13:27:13.4828633Z  * [new tag]               2.14.1                  -> 2.14.1
+2025-04-02T13:27:13.4829882Z  * [new tag]               2.14.1-beta             -> 2.14.1-beta
+2025-04-02T13:27:13.4831706Z  * [new tag]               2.14.2                  -> 2.14.2
+2025-04-02T13:27:13.4834198Z  * [new tag]               2.14.2-beta             -> 2.14.2-beta
+2025-04-02T13:27:13.4836496Z  * [new tag]               2.15.0                  -> 2.15.0
+2025-04-02T13:27:13.4837607Z  * [new tag]               2.15.0-beta             -> 2.15.0-beta
+2025-04-02T13:27:13.4840003Z  * [new tag]               2.15.1                  -> 2.15.1
+2025-04-02T13:27:13.4842236Z  * [new tag]               2.15.1-beta             -> 2.15.1-beta
+2025-04-02T13:27:13.4844198Z  * [new tag]               2.15.2                  -> 2.15.2
+2025-04-02T13:27:13.4845430Z  * [new tag]               2.15.2-beta             -> 2.15.2-beta
+2025-04-02T13:27:13.4847917Z  * [new tag]               2.15.3                  -> 2.15.3
+2025-04-02T13:27:13.4849626Z  * [new tag]               2.15.3-beta             -> 2.15.3-beta
+2025-04-02T13:27:13.4851379Z  * [new tag]               2.16.0                  -> 2.16.0
+2025-04-02T13:27:13.4852416Z  * [new tag]               2.16.0-beta             -> 2.16.0-beta
+2025-04-02T13:27:13.4854380Z  * [new tag]               2.16.1                  -> 2.16.1
+2025-04-02T13:27:13.4855942Z  * [new tag]               2.16.1-beta             -> 2.16.1-beta
+2025-04-02T13:27:13.4857894Z  * [new tag]               2.16.2                  -> 2.16.2
+2025-04-02T13:27:13.4859319Z  * [new tag]               2.16.2-beta             -> 2.16.2-beta
+2025-04-02T13:27:13.4861548Z  * [new tag]               2.16.3                  -> 2.16.3
+2025-04-02T13:27:13.4862700Z  * [new tag]               2.16.3-beta             -> 2.16.3-beta
+2025-04-02T13:27:13.4864685Z  * [new tag]               2.16.4                  -> 2.16.4
+2025-04-02T13:27:13.4866204Z  * [new tag]               2.16.5                  -> 2.16.5
+2025-04-02T13:27:13.4868175Z  * [new tag]               2.2.0                   -> 2.2.0
+2025-04-02T13:27:13.4869646Z  * [new tag]               2.2.1                   -> 2.2.1
+2025-04-02T13:27:13.4870531Z  * [new tag]               2.3.0                   -> 2.3.0
+2025-04-02T13:27:13.4872351Z  * [new tag]               2.4.0                   -> 2.4.0
+2025-04-02T13:27:13.4873308Z  * [new tag]               2.5.0                   -> 2.5.0
+2025-04-02T13:27:13.4875799Z  * [new tag]               2.5.1                   -> 2.5.1
+2025-04-02T13:27:13.4877191Z  * [new tag]               2.6.0                   -> 2.6.0
+2025-04-02T13:27:13.4877852Z  * [new tag]               2.6.1                   -> 2.6.1
+2025-04-02T13:27:13.4879601Z  * [new tag]               2.7.0                   -> 2.7.0
+2025-04-02T13:27:13.4880552Z  * [new tag]               2.7.1                   -> 2.7.1
+2025-04-02T13:27:13.4882275Z  * [new tag]               2.8.0                   -> 2.8.0
+2025-04-02T13:27:13.4883279Z  * [new tag]               2.8.1                   -> 2.8.1
+2025-04-02T13:27:13.4885256Z  * [new tag]               2.8.2                   -> 2.8.2
+2025-04-02T13:27:13.4887169Z  * [new tag]               2.9.0                   -> 2.9.0
+2025-04-02T13:27:13.4888127Z  * [new tag]               2.9.0-beta              -> 2.9.0-beta
+2025-04-02T13:27:13.4890230Z  * [new tag]               2.9.1                   -> 2.9.1
+2025-04-02T13:27:13.4891695Z  * [new tag]               2.9.2                   -> 2.9.2
+2025-04-02T13:27:13.4893437Z  * [new tag]               2.9.2-ines.beta.1       -> 2.9.2-ines.beta.1
+2025-04-02T13:27:13.4894761Z  * [new tag]               2.9.2-ines.beta.2       -> 2.9.2-ines.beta.2
+2025-04-02T13:27:13.4896986Z  * [new tag]               3.0.0                   -> 3.0.0
+2025-04-02T13:27:13.4898011Z  * [new tag]               3.0.0-8885              -> 3.0.0-8885
+2025-04-02T13:27:13.4899388Z  * [new tag]               3.0.0-alpha             -> 3.0.0-alpha
+2025-04-02T13:27:13.4901558Z  * [new tag]               3.0.0-beta              -> 3.0.0-beta
+2025-04-02T13:27:13.4902340Z  * [new tag]               3.0.0-beta2             -> 3.0.0-beta2
+2025-04-02T13:27:13.4904425Z  * [new tag]               3.0.0-beta2fixed        -> 3.0.0-beta2fixed
+2025-04-02T13:27:13.4906698Z  * [new tag]               3.0.1                   -> 3.0.1
+2025-04-02T13:27:13.4907735Z  * [new tag]               3.0.2                   -> 3.0.2
+2025-04-02T13:27:13.4909395Z  * [new tag]               3.0.2-rc                -> 3.0.2-rc
+2025-04-02T13:27:13.4911091Z  * [new tag]               3.1.0                   -> 3.1.0
+2025-04-02T13:27:13.4912645Z  * [new tag]               3.1.0-rc                -> 3.1.0-rc
+2025-04-02T13:27:13.4914053Z  * [new tag]               3.1.1                   -> 3.1.1
+2025-04-02T13:27:13.4915803Z  * [new tag]               3.1.1-rc                -> 3.1.1-rc
+2025-04-02T13:27:13.4917319Z  * [new tag]               3.1.2                   -> 3.1.2
+2025-04-02T13:27:13.4918790Z  * [new tag]               3.1.2-rc                -> 3.1.2-rc
+2025-04-02T13:27:13.4920308Z  * [new tag]               3.2.0                   -> 3.2.0
+2025-04-02T13:27:13.4921866Z  * [new tag]               3.2.0-rc                -> 3.2.0-rc
+2025-04-02T13:27:13.4923430Z  * [new tag]               3.2.1                   -> 3.2.1
+2025-04-02T13:27:13.4924715Z  * [new tag]               3.2.2                   -> 3.2.2
+2025-04-02T13:27:13.4926688Z  * [new tag]               3.2.2-rc                -> 3.2.2-rc
+2025-04-02T13:27:13.4928231Z  * [new tag]               3.2.3                   -> 3.2.3
+2025-04-02T13:27:13.4929714Z  * [new tag]               3.2.4                   -> 3.2.4
+2025-04-02T13:27:13.4930961Z  * [new tag]               3.2.5                   -> 3.2.5
+2025-04-02T13:27:13.4932615Z  * [new tag]               3.2.5-rc                -> 3.2.5-rc
+2025-04-02T13:27:13.4934124Z  * [new tag]               3.3.0                   -> 3.3.0
+2025-04-02T13:27:13.4935801Z  * [new tag]               3.3.0-rc                -> 3.3.0-rc
+2025-04-02T13:27:13.4937437Z  * [new tag]               3.3.1                   -> 3.3.1
+2025-04-02T13:27:13.4938892Z  * [new tag]               3.3.2                   -> 3.3.2
+2025-04-02T13:27:13.4940394Z  * [new tag]               3.3.2-rc                -> 3.3.2-rc
+2025-04-02T13:27:13.4942215Z  * [new tag]               3.3.3                   -> 3.3.3
+2025-04-02T13:27:13.4943699Z  * [new tag]               3.3.3-rc                -> 3.3.3-rc
+2025-04-02T13:27:13.4945542Z  * [new tag]               3.3.4                   -> 3.3.4
+2025-04-02T13:27:13.4946687Z  * [new tag]               3.3.5                   -> 3.3.5
+2025-04-02T13:27:13.4948429Z  * [new tag]               4.0.0                   -> 4.0.0
+2025-04-02T13:27:13.4950080Z  * [new tag]               4.0.0-alpha1            -> 4.0.0-alpha1
+2025-04-02T13:27:13.4951751Z  * [new tag]               4.0.0-beta              -> 4.0.0-beta
+2025-04-02T13:27:13.4953404Z  * [new tag]               4.0.0-rc                -> 4.0.0-rc
+2025-04-02T13:27:13.4955168Z  * [new tag]               4.0.1                   -> 4.0.1
+2025-04-02T13:27:13.4956872Z  * [new tag]               4.0.2                   -> 4.0.2
+2025-04-02T13:27:13.4958513Z  * [new tag]               4.1.0                   -> 4.1.0
+2025-04-02T13:27:13.4959942Z  * [new tag]               4.1.1                   -> 4.1.1
+2025-04-02T13:27:13.4961482Z  * [new tag]               4.1.2                   -> 4.1.2
+2025-04-02T13:27:13.4963032Z  * [new tag]               4.2.0                   -> 4.2.0
+2025-04-02T13:27:13.4964619Z  * [new tag]               4.2.0-rc                -> 4.2.0-rc
+2025-04-02T13:27:13.4966386Z  * [new tag]               4.2.0-rc1               -> 4.2.0-rc1
+2025-04-02T13:27:13.4967977Z  * [new tag]               4.2.1                   -> 4.2.1
+2025-04-02T13:27:13.4969585Z  * [new tag]               4.2.2                   -> 4.2.2
+2025-04-02T13:27:13.4971205Z  * [new tag]               4.3.0                   -> 4.3.0
+2025-04-02T13:27:13.4972783Z  * [new tag]               4.3.0-beta              -> 4.3.0-beta
+2025-04-02T13:27:13.4974331Z  * [new tag]               4.3.0-rc                -> 4.3.0-rc
+2025-04-02T13:27:13.4976040Z  * [new tag]               4.3.1                   -> 4.3.1
+2025-04-02T13:27:13.4977620Z  * [new tag]               4.4.0                   -> 4.4.0
+2025-04-02T13:27:13.4979923Z  * [new tag]               4.4.0-beta              -> 4.4.0-beta
+2025-04-02T13:27:13.4981589Z  * [new tag]               4.4.1                   -> 4.4.1
+2025-04-02T13:27:13.4983322Z  * [new tag]               4.4.10                  -> 4.4.10
+2025-04-02T13:27:13.4985201Z  * [new tag]               4.4.11                  -> 4.4.11
+2025-04-02T13:27:13.4986900Z  * [new tag]               4.4.12                  -> 4.4.12
+2025-04-02T13:27:13.4988136Z  * [new tag]               4.4.13                  -> 4.4.13
+2025-04-02T13:27:13.4989933Z  * [new tag]               4.4.2                   -> 4.4.2
+2025-04-02T13:27:13.4991776Z  * [new tag]               4.4.3                   -> 4.4.3
+2025-04-02T13:27:13.4993543Z  * [new tag]               4.4.4                   -> 4.4.4
+2025-04-02T13:27:13.4995373Z  * [new tag]               4.4.5                   -> 4.4.5
+2025-04-02T13:27:13.4997200Z  * [new tag]               4.4.6                   -> 4.4.6
+2025-04-02T13:27:13.4999605Z  * [new tag]               4.4.7                   -> 4.4.7
+2025-04-02T13:27:13.5001244Z  * [new tag]               4.4.8                   -> 4.4.8
+2025-04-02T13:27:13.5002973Z  * [new tag]               4.4.9                   -> 4.4.9
+2025-04-02T13:27:13.5004660Z  * [new tag]               5.0.0                   -> 5.0.0
+2025-04-02T13:27:13.5006568Z  * [new tag]               5.0.0-alpha             -> 5.0.0-alpha
+2025-04-02T13:27:13.5008289Z  * [new tag]               5.0.0-alpha1            -> 5.0.0-alpha1
+2025-04-02T13:27:13.5010203Z  * [new tag]               5.0.0-beta1             -> 5.0.0-beta1
+2025-04-02T13:27:13.5011991Z  * [new tag]               5.0.0-beta2             -> 5.0.0-beta2
+2025-04-02T13:27:13.5013687Z  * [new tag]               5.0.0-rc1               -> 5.0.0-rc1
+2025-04-02T13:27:13.5015505Z  * [new tag]               5.0.0-rc2               -> 5.0.0-rc2
+2025-04-02T13:27:13.5017232Z  * [new tag]               5.0.1                   -> 5.0.1
+2025-04-02T13:27:13.5018993Z  * [new tag]               5.0.2                   -> 5.0.2
+2025-04-02T13:27:13.5020783Z  * [new tag]               5.0.3                   -> 5.0.3
+2025-04-02T13:27:13.5022849Z  * [new tag]               5.0.4                   -> 5.0.4
+2025-04-02T13:27:13.5024525Z  * [new tag]               5.1.0                   -> 5.1.0
+2025-04-02T13:27:13.5026375Z  * [new tag]               5.1.1                   -> 5.1.1
+2025-04-02T13:27:13.5028065Z  * [new tag]               5.2.0                   -> 5.2.0
+2025-04-02T13:27:13.5029806Z  * [new tag]               5.2.1                   -> 5.2.1
+2025-04-02T13:27:13.5031607Z  * [new tag]               5.2.2                   -> 5.2.2
+2025-04-02T13:27:13.5033447Z  * [new tag]               5.2.3                   -> 5.2.3
+2025-04-02T13:27:13.5035276Z  * [new tag]               5.2.4                   -> 5.2.4
+2025-04-02T13:27:13.5036938Z  * [new tag]               6.0.0                   -> 6.0.0
+2025-04-02T13:27:13.5038568Z  * [new tag]               6.0.0-alpha             -> 6.0.0-alpha
+2025-04-02T13:27:13.5040282Z  * [new tag]               6.0.0-beta2             -> 6.0.0-beta2
+2025-04-02T13:27:13.5041964Z  * [new tag]               6.0.0-rc                -> 6.0.0-rc
+2025-04-02T13:27:13.5045511Z  * [new ref]               4095c2c348cedc4996b93abd380d12d5642a4c4c -> pull/14838/merge
+2025-04-02T13:27:13.5111438Z ##[endgroup]
+2025-04-02T13:27:13.5111830Z ##[group]Determining the checkout info
+2025-04-02T13:27:13.5112992Z ##[endgroup]
+2025-04-02T13:27:13.5119427Z [command]/usr/bin/git sparse-checkout disable
+2025-04-02T13:27:13.5159758Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-02T13:27:13.5186616Z ##[group]Checking out the ref
+2025-04-02T13:27:13.5190754Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/14838/merge
+2025-04-02T13:27:14.0538294Z Note: switching to 'refs/remotes/pull/14838/merge'.
+2025-04-02T13:27:14.0538750Z 
+2025-04-02T13:27:14.0539034Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-02T13:27:14.0539768Z changes and commit them, and you can discard any commits you make in this
+2025-04-02T13:27:14.0540494Z state without impacting any branches by switching back to a branch.
+2025-04-02T13:27:14.0540932Z 
+2025-04-02T13:27:14.0541201Z If you want to create a new branch to retain commits you create, you may
+2025-04-02T13:27:14.0541884Z do so (now or later) by using -c with the switch command. Example:
+2025-04-02T13:27:14.0542275Z 
+2025-04-02T13:27:14.0542423Z   git switch -c <new-branch-name>
+2025-04-02T13:27:14.0542695Z 
+2025-04-02T13:27:14.0542835Z Or undo this operation with:
+2025-04-02T13:27:14.0543084Z 
+2025-04-02T13:27:14.0543210Z   git switch -
+2025-04-02T13:27:14.0543394Z 
+2025-04-02T13:27:14.0543715Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-02T13:27:14.0544194Z 
+2025-04-02T13:27:14.0544783Z HEAD is now at 4095c2c348 Merge c3314834b31cc4f59f9a0e84e1d04dc779db0d48 into efb4bc6757b378e0e35fa8a8e2524c8a68b429f1
+2025-04-02T13:27:14.0598790Z ##[endgroup]
+2025-04-02T13:27:14.0641121Z [command]/usr/bin/git log -1 --format=%H
+2025-04-02T13:27:14.0663869Z 4095c2c348cedc4996b93abd380d12d5642a4c4c
+2025-04-02T13:27:15.4221947Z ##[group]Run actions/cache@v4
+2025-04-02T13:27:15.4222215Z with:
+2025-04-02T13:27:15.4222412Z   path: ./var/phpstan-cache
+2025-04-02T13:27:15.4222891Z   key: Linux-phpstan-1a3e1940fc34d1e74be7f5e6405670cca1c90d52cec64af8d882a5d1666b01f9-14220817976
+2025-04-02T13:27:15.4223681Z   restore-keys: Linux-phpstan-1a3e1940fc34d1e74be7f5e6405670cca1c90d52cec64af8d882a5d1666b01f9
+Linux-phpstan-
+
+2025-04-02T13:27:15.4224238Z   enableCrossOsArchive: false
+2025-04-02T13:27:15.4224474Z   fail-on-cache-miss: false
+2025-04-02T13:27:15.4224690Z   lookup-only: false
+2025-04-02T13:27:15.4224885Z   save-always: false
+2025-04-02T13:27:15.4225338Z ##[endgroup]
+2025-04-02T13:27:15.7390944Z Cache hit for: Linux-phpstan-1a3e1940fc34d1e74be7f5e6405670cca1c90d52cec64af8d882a5d1666b01f9-14220817976
+2025-04-02T13:27:16.5372717Z Received 4474335 of 4474335 (100.0%), 6.9 MBs/sec
+2025-04-02T13:27:16.5373402Z Cache Size: ~4 MB (4474335 B)
+2025-04-02T13:27:16.5399821Z [command]/usr/bin/tar -xf /home/runner/work/_temp/41d81a52-8518-4848-80b3-6189fa77c887/cache.tzst -P -C /home/runner/work/mautic/mautic --use-compress-program unzstd
+2025-04-02T13:27:17.3137269Z Cache restored successfully
+2025-04-02T13:27:17.3292037Z Cache restored from key: Linux-phpstan-1a3e1940fc34d1e74be7f5e6405670cca1c90d52cec64af8d882a5d1666b01f9-14111721949
+2025-04-02T13:27:22.5190971Z ##[group]Run actions/cache@v4
+2025-04-02T13:27:22.5191227Z with:
+2025-04-02T13:27:22.5191409Z   path: ./var/cache/js
+2025-04-02T13:27:22.5191825Z   key: Linux-js-0bc3af2344d4a0451acb38c29b8c7a5a958ff1d1ea6abe39ff8b277c59587f16-14220817976
+2025-04-02T13:27:22.5192519Z   restore-keys: Linux-js-0bc3af2344d4a0451acb38c29b8c7a5a958ff1d1ea6abe39ff8b277c59587f16
+Linux-js-
+
+2025-04-02T13:27:22.5193019Z   enableCrossOsArchive: false
+2025-04-02T13:27:22.5193263Z   fail-on-cache-miss: false
+2025-04-02T13:27:22.5193497Z   lookup-only: false
+2025-04-02T13:27:22.5193694Z   save-always: false
+2025-04-02T13:27:22.5193890Z ##[endgroup]
+2025-04-02T13:27:22.8242735Z Cache hit for: Linux-js-0bc3af2344d4a0451acb38c29b8c7a5a958ff1d1ea6abe39ff8b277c59587f16-14220817976
+2025-04-02T13:27:23.9387110Z Received 64791387 of 64791387 (100.0%), 64.5 MBs/sec
+2025-04-02T13:27:23.9388156Z Cache Size: ~62 MB (64791387 B)
+2025-04-02T13:27:23.9416644Z [command]/usr/bin/tar -xf /home/runner/work/_temp/f7d793f1-9c9f-4d82-b2c0-2ed6af645e59/cache.tzst -P -C /home/runner/work/mautic/mautic --use-compress-program unzstd
+2025-04-02T13:27:24.2498201Z Cache restored successfully
+2025-04-02T13:27:24.2711709Z Cache restored from key: Linux-js-0bc3af2344d4a0451acb38c29b8c7a5a958ff1d1ea6abe39ff8b277c59587f16-14111721949
+2025-04-02T13:27:24.2882889Z ##[group]Run tj-actions/changed-files@v42
+2025-04-02T13:27:24.2883198Z with:
+2025-04-02T13:27:24.2883384Z   separator:  
+2025-04-02T13:27:24.2883598Z   include_all_old_new_renamed_files: false
+2025-04-02T13:27:24.2883884Z   old_new_separator: ,
+2025-04-02T13:27:24.2884100Z   old_new_files_separator:  
+2025-04-02T13:27:24.2884354Z   files_from_source_file_separator: 
+
+2025-04-02T13:27:24.2884612Z   files_separator: 
+
+2025-04-02T13:27:24.2884838Z   files_yaml_from_source_file_separator: 
+
+2025-04-02T13:27:24.2885420Z   files_ignore_yaml_from_source_file_separator: 
+
+2025-04-02T13:27:24.2885712Z   files_ignore_separator: 
+
+2025-04-02T13:27:24.2885962Z   files_ignore_from_source_file_separator: 
+
+2025-04-02T13:27:24.2886240Z   path: .
+2025-04-02T13:27:24.2886419Z   quotepath: true
+2025-04-02T13:27:24.2886622Z   diff_relative: true
+2025-04-02T13:27:24.2886823Z   dir_names: false
+2025-04-02T13:27:24.2887034Z   dir_names_exclude_current_dir: false
+2025-04-02T13:27:24.2887335Z   dir_names_include_files_separator: 
+
+2025-04-02T13:27:24.2887644Z   dir_names_deleted_files_include_only_deleted_dirs: false
+2025-04-02T13:27:24.2887945Z   json: false
+2025-04-02T13:27:24.2888129Z   escape_json: true
+2025-04-02T13:27:24.2888501Z   safe_output: true
+2025-04-02T13:27:24.2888690Z   fetch_depth: 50
+2025-04-02T13:27:24.2888888Z   skip_initial_fetch: false
+2025-04-02T13:27:24.2889134Z   fetch_additional_submodule_history: false
+2025-04-02T13:27:24.2889410Z   since_last_remote_commit: false
+2025-04-02T13:27:24.2889660Z   write_output_files: false
+2025-04-02T13:27:24.2889888Z   output_dir: .github/outputs
+2025-04-02T13:27:24.2890155Z   output_renamed_files_as_deleted_and_added: false
+2025-04-02T13:27:24.2890451Z   recover_deleted_files: false
+2025-04-02T13:27:24.2890688Z   recover_files_separator: 
+
+2025-04-02T13:27:24.2890931Z   recover_files_ignore_separator: 
+
+2025-04-02T13:27:24.2891303Z   token: ***
+2025-04-02T13:27:24.2891521Z   api_url: https://api.github.com
+2025-04-02T13:27:24.2891784Z   use_rest_api: false
+2025-04-02T13:27:24.2892012Z   fail_on_initial_diff_error: false
+2025-04-02T13:27:24.2892280Z   fail_on_submodule_diff_error: false
+2025-04-02T13:27:24.2892545Z   negation_patterns_first: false
+2025-04-02T13:27:24.2892795Z ##[endgroup]
+2025-04-02T13:27:24.4164093Z ##[group]changed-files
+2025-04-02T13:27:24.4309438Z Using local .git directory
+2025-04-02T13:27:24.4733478Z Running on a pull_request (opened) event...
+2025-04-02T13:27:24.4739872Z Repository is shallow, fetching more history...
+2025-04-02T13:27:24.4740352Z Completed fetching more history.
+2025-04-02T13:27:24.5104809Z Retrieving changes between efb4bc6757b378e0e35fa8a8e2524c8a68b429f1 (5.2) → c3314834b31cc4f59f9a0e84e1d04dc779db0d48 (DPMMA-2876_fix-email-variant-duplicates)
+2025-04-02T13:27:24.5153094Z All Done!
+2025-04-02T13:27:24.5153698Z ##[endgroup]
+2025-04-02T13:27:24.5156301Z ##[group]changed-files-all
+2025-04-02T13:27:24.5217339Z All Done!
+2025-04-02T13:27:24.5217911Z ##[endgroup]
+2025-04-02T13:27:24.5321629Z ##[group]Run shivammathur/setup-php@v2
+2025-04-02T13:27:24.5321923Z with:
+2025-04-02T13:27:24.5322111Z   php-version: 8.1
+2025-04-02T13:27:24.5322445Z   extensions: mbstring, xml, ctype, iconv, intl, pdo_sqlite, mysql, pdo_mysql
+2025-04-02T13:27:24.5322842Z   ini-file: production
+2025-04-02T13:27:24.5323060Z ##[endgroup]
+2025-04-02T13:27:24.6032812Z [command]/usr/bin/bash /home/runner/work/_actions/shivammathur/setup-php/v2/src/scripts/run.sh
+2025-04-02T13:27:24.6286502Z 
+2025-04-02T13:27:24.6287040Z [90;1m==> [0m[37;1mSetup PHP[0m
+2025-04-02T13:27:28.6393946Z [32;1m✓ [0m[34;1mPHP [0m[90;1mInstalled PHP 8.1.32[0m
+2025-04-02T13:27:28.6394414Z 
+2025-04-02T13:27:28.6394654Z [90;1m==> [0m[37;1mSetup Extensions[0m
+2025-04-02T13:27:28.6842831Z [32;1m✓ [0m[34;1mmbstring [0m[90;1mEnabled[0m
+2025-04-02T13:27:28.6872355Z [32;1m✓ [0m[34;1mxml [0m[90;1mEnabled[0m
+2025-04-02T13:27:28.6902743Z [32;1m✓ [0m[34;1mctype [0m[90;1mEnabled[0m
+2025-04-02T13:27:28.6932969Z [32;1m✓ [0m[34;1miconv [0m[90;1mEnabled[0m
+2025-04-02T13:27:28.6964272Z [32;1m✓ [0m[34;1mintl [0m[90;1mEnabled[0m
+2025-04-02T13:27:28.6980219Z [32;1m✓ [0m[34;1mpdo_sqlite [0m[90;1mEnabled[0m
+2025-04-02T13:27:28.7009386Z [32;1m✓ [0m[34;1mmysql [0m[90;1mEnabled[0m
+2025-04-02T13:27:28.7024869Z [32;1m✓ [0m[34;1mpdo_mysql [0m[90;1mEnabled[0m
+2025-04-02T13:27:28.7026848Z 
+2025-04-02T13:27:28.7027180Z [90;1m==> [0m[37;1mSetup Tools[0m
+2025-04-02T13:27:29.2352699Z [32;1m✓ [0m[34;1mcomposer [0m[90;1mAdded composer 2.8.6[0m
+2025-04-02T13:27:29.2353179Z 
+2025-04-02T13:27:29.2353472Z [90;1m==> [0m[37;1mSponsor setup-php[0m
+2025-04-02T13:27:29.2354090Z [32;1m✓ [0m[34;1msetup-php [0m[90;1mhttps://setup-php.com/sponsor[0m
+2025-04-02T13:27:29.2568588Z ##[group]Run ramsey/composer-install@v3
+2025-04-02T13:27:29.2568893Z with:
+2025-04-02T13:27:29.2569098Z   dependency-versions: locked
+2025-04-02T13:27:29.2569356Z   require-lock-file: false
+2025-04-02T13:27:29.2569597Z   composer-filename: composer
+2025-04-02T13:27:29.2569824Z env:
+2025-04-02T13:27:29.2570015Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-02T13:27:29.2570252Z   COMPOSER_NO_INTERACTION: 1
+2025-04-02T13:27:29.2570482Z   COMPOSER_NO_AUDIT: 1
+2025-04-02T13:27:29.2570705Z   NPM_CONFIG_CACHE: ./var/cache/js/npm
+2025-04-02T13:27:29.2571154Z ##[endgroup]
+2025-04-02T13:27:29.2646808Z ##[group]Run ${GITHUB_ACTION_PATH}/bin/php_version.sh
+2025-04-02T13:27:29.2647219Z [36;1m${GITHUB_ACTION_PATH}/bin/php_version.sh[0m
+2025-04-02T13:27:29.2701142Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-02T13:27:29.2701484Z env:
+2025-04-02T13:27:29.2701678Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-02T13:27:29.2701929Z   COMPOSER_NO_INTERACTION: 1
+2025-04-02T13:27:29.2702209Z   COMPOSER_NO_AUDIT: 1
+2025-04-02T13:27:29.2702442Z   NPM_CONFIG_CACHE: ./var/cache/js/npm
+2025-04-02T13:27:29.2702698Z ##[endgroup]
+2025-04-02T13:27:29.3654447Z ##[group]Run ${GITHUB_ACTION_PATH}/bin/should_cache.sh ""
+2025-04-02T13:27:29.3654836Z [36;1m${GITHUB_ACTION_PATH}/bin/should_cache.sh ""[0m
+2025-04-02T13:27:29.3700199Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-02T13:27:29.3700526Z env:
+2025-04-02T13:27:29.3700731Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-02T13:27:29.3700982Z   COMPOSER_NO_INTERACTION: 1
+2025-04-02T13:27:29.3701235Z   COMPOSER_NO_AUDIT: 1
+2025-04-02T13:27:29.3701462Z   NPM_CONFIG_CACHE: ./var/cache/js/npm
+2025-04-02T13:27:29.3701717Z ##[endgroup]
+2025-04-02T13:27:29.3807574Z ##[group]Run ${GITHUB_ACTION_PATH}/bin/composer_paths.sh \
+2025-04-02T13:27:29.3807961Z [36;1m${GITHUB_ACTION_PATH}/bin/composer_paths.sh \[0m
+2025-04-02T13:27:29.3808265Z [36;1m  "" \[0m
+2025-04-02T13:27:29.3808460Z [36;1m  "" \[0m
+2025-04-02T13:27:29.3808673Z [36;1m  "/usr/bin/php" \[0m
+2025-04-02T13:27:29.3808911Z [36;1m  "composer"[0m
+2025-04-02T13:27:29.3850515Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-02T13:27:29.3850858Z env:
+2025-04-02T13:27:29.3851051Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-02T13:27:29.3851303Z   COMPOSER_NO_INTERACTION: 1
+2025-04-02T13:27:29.3851540Z   COMPOSER_NO_AUDIT: 1
+2025-04-02T13:27:29.3851774Z   NPM_CONFIG_CACHE: ./var/cache/js/npm
+2025-04-02T13:27:29.3852030Z ##[endgroup]
+2025-04-02T13:27:33.9837435Z ##[group]Run ${GITHUB_ACTION_PATH}/bin/cache_key.sh \
+2025-04-02T13:27:33.9837845Z [36;1m${GITHUB_ACTION_PATH}/bin/cache_key.sh \[0m
+2025-04-02T13:27:33.9838127Z [36;1m  "Linux" \[0m
+2025-04-02T13:27:33.9838332Z [36;1m  "8.1.32" \[0m
+2025-04-02T13:27:33.9838535Z [36;1m  "locked" \[0m
+2025-04-02T13:27:33.9838732Z [36;1m  "" \[0m
+2025-04-02T13:27:33.9838917Z [36;1m  "" \[0m
+2025-04-02T13:27:33.9839096Z [36;1m  "" \[0m
+2025-04-02T13:27:33.9839273Z [36;1m  "" \[0m
+2025-04-02T13:27:33.9839452Z [36;1m  ""[0m
+2025-04-02T13:27:33.9888127Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-02T13:27:33.9888483Z env:
+2025-04-02T13:27:33.9888688Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-02T13:27:33.9888952Z   COMPOSER_NO_INTERACTION: 1
+2025-04-02T13:27:33.9889196Z   COMPOSER_NO_AUDIT: 1
+2025-04-02T13:27:33.9889432Z   NPM_CONFIG_CACHE: ./var/cache/js/npm
+2025-04-02T13:27:33.9889699Z ##[endgroup]
+2025-04-02T13:27:34.0100699Z ##[group]Run actions/cache@v4
+2025-04-02T13:27:34.0100939Z with:
+2025-04-02T13:27:34.0101144Z   path: /home/runner/.cache/composer
+2025-04-02T13:27:34.0101457Z   key: Linux-php-8.1.32-composer-locked
+2025-04-02T13:27:34.0101791Z   restore-keys: Linux-php-8.1.32-composer-locked-
+
+2025-04-02T13:27:34.0102112Z   enableCrossOsArchive: false
+2025-04-02T13:27:34.0102360Z   fail-on-cache-miss: false
+2025-04-02T13:27:34.0102586Z   lookup-only: false
+2025-04-02T13:27:34.0102797Z   save-always: false
+2025-04-02T13:27:34.0102989Z env:
+2025-04-02T13:27:34.0103182Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-02T13:27:34.0103621Z   COMPOSER_NO_INTERACTION: 1
+2025-04-02T13:27:34.0103871Z   COMPOSER_NO_AUDIT: 1
+2025-04-02T13:27:34.0104139Z   CACHE_RESTORE_KEY: Linux-php-8.1.32-composer-locked-
+2025-04-02T13:27:34.0104465Z   NPM_CONFIG_CACHE: ./var/cache/js/npm
+2025-04-02T13:27:34.0104721Z ##[endgroup]
+2025-04-02T13:27:34.3014679Z Cache hit for: Linux-php-8.1.32-composer-locked
+2025-04-02T13:27:35.1608816Z Received 45560948 of 45560948 (100.0%), 60.4 MBs/sec
+2025-04-02T13:27:35.1609918Z Cache Size: ~43 MB (45560948 B)
+2025-04-02T13:27:35.1638544Z [command]/usr/bin/tar -xf /home/runner/work/_temp/6a786958-7780-454c-9681-a9e6b13eae47/cache.tzst -P -C /home/runner/work/mautic/mautic --use-compress-program unzstd
+2025-04-02T13:27:35.2541469Z Cache restored successfully
+2025-04-02T13:27:35.2716777Z Cache restored from key: Linux-php-8.1.32-composer-locked
+2025-04-02T13:27:35.2813379Z ##[group]Run ${GITHUB_ACTION_PATH}/bin/composer_install.sh \
+2025-04-02T13:27:35.2813824Z [36;1m${GITHUB_ACTION_PATH}/bin/composer_install.sh \[0m
+2025-04-02T13:27:35.2814153Z [36;1m  "locked" \[0m
+2025-04-02T13:27:35.2814383Z [36;1m  "" \[0m
+2025-04-02T13:27:35.2814589Z [36;1m  "" \[0m
+2025-04-02T13:27:35.2814802Z [36;1m  "/usr/bin/php" \[0m
+2025-04-02T13:27:35.2815411Z [36;1m  "/usr/local/bin/composer" \[0m
+2025-04-02T13:27:35.2815701Z [36;1m  "./composer.lock" \[0m
+2025-04-02T13:27:35.2815967Z [36;1m  "false" \[0m
+2025-04-02T13:27:35.2816194Z [36;1m  "composer" \[0m
+2025-04-02T13:27:35.2862099Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-02T13:27:35.2862467Z env:
+2025-04-02T13:27:35.2862682Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-02T13:27:35.2863022Z   COMPOSER_NO_INTERACTION: 1
+2025-04-02T13:27:35.2863370Z   COMPOSER_NO_AUDIT: 1
+2025-04-02T13:27:35.2863764Z   CACHE_RESTORE_KEY: Linux-php-8.1.32-composer-locked-
+2025-04-02T13:27:35.2864306Z   NPM_CONFIG_CACHE: ./var/cache/js/npm
+2025-04-02T13:27:35.2864676Z ##[endgroup]
+2025-04-02T13:27:35.8353467Z [32mInstalling dependencies from lock file (including require-dev)[39m
+2025-04-02T13:27:35.8472923Z [32mVerifying lock file contents can be installed on current platform.[39m
+2025-04-02T13:27:35.8839955Z [32mPackage operations: 256 installs, 0 updates, 0 removals[39m
+2025-04-02T13:27:35.9246333Z   - Syncing [32mlightsaml/symfony-bridge[39m ([33mdev-symfony5 26f58d3[39m) into cache
+2025-04-02T13:27:35.9742189Z   - Syncing [32mlightsaml/sp-bundle[39m ([33mdev-symfony5 083bf6d[39m) into cache
+2025-04-02T13:27:36.0109766Z   - Syncing [32mfriendsofsymfony/oauth-server-bundle[39m ([33mdev-upgrade-2 dc8ff34[39m) into cache
+2025-04-02T13:27:36.0487321Z   - Installing [32mcomposer/installers[39m ([33mv1.12.0[39m): Extracting archive
+2025-04-02T13:27:36.0812398Z   - Installing [32mcomposer/package-versions-deprecated[39m ([33m1.11.99.1[39m): Extracting archive
+2025-04-02T13:27:36.0968117Z   - Installing [32mphpstan/phpstan[39m ([33m1.10.47[39m): Extracting archive
+2025-04-02T13:27:36.2448969Z   - Installing [32mphpstan/extension-installer[39m ([33m1.3.0[39m): Extracting archive
+2025-04-02T13:27:36.2602602Z   - Installing [32maws/aws-crt-php[39m ([33mv1.2.4[39m): Extracting archive
+2025-04-02T13:27:36.2625753Z   - Installing [32mbehat/gherkin[39m ([33mv4.9.0[39m): Extracting archive
+2025-04-02T13:27:36.2651272Z   - Installing [32msymfony/polyfill-ctype[39m ([33mv1.31.0[39m): Extracting archive
+2025-04-02T13:27:36.2676992Z   - Installing [32msymfony/deprecation-contracts[39m ([33mv3.5.0[39m): Extracting archive
+2025-04-02T13:27:36.2725447Z   - Installing [32msymfony/yaml[39m ([33m5.4.x-dev a454d47[39m): Extracting archive
+2025-04-02T13:27:36.2739523Z   - Installing [32msymfony/polyfill-php80[39m ([33mv1.31.0[39m): Extracting archive
+2025-04-02T13:27:36.2770322Z   - Installing [32msymfony/polyfill-mbstring[39m ([33mv1.31.0[39m): Extracting archive
+2025-04-02T13:27:36.2826333Z   - Installing [32msymfony/var-dumper[39m ([33mv5.4.47[39m): Extracting archive
+2025-04-02T13:27:36.2835726Z   - Installing [32msymfony/finder[39m ([33m5.4.x-dev 6374178[39m): Extracting archive
+2025-04-02T13:27:36.2863564Z   - Installing [32mpsr/event-dispatcher[39m ([33m1.0.0[39m): Extracting archive
+2025-04-02T13:27:36.2900969Z   - Installing [32msymfony/event-dispatcher-contracts[39m ([33mv3.5.0[39m): Extracting archive
+2025-04-02T13:27:36.2910767Z   - Installing [32msymfony/event-dispatcher[39m ([33m5.4.x-dev 72982eb[39m): Extracting archive
+2025-04-02T13:27:36.2933078Z   - Installing [32msymfony/css-selector[39m ([33m5.4.x-dev 4f7f3c3[39m): Extracting archive
+2025-04-02T13:27:36.2977152Z   - Installing [32msymfony/polyfill-intl-normalizer[39m ([33mv1.31.0[39m): Extracting archive
+2025-04-02T13:27:36.2978413Z   - Installing [32msymfony/polyfill-intl-grapheme[39m ([33mv1.31.0[39m): Extracting archive
+2025-04-02T13:27:36.2979475Z   - Installing [32msymfony/string[39m ([33mv6.4.15[39m): Extracting archive
+2025-04-02T13:27:36.2980386Z   - Installing [32mpsr/container[39m ([33m1.1.2[39m): Extracting archive
+2025-04-02T13:27:36.2981369Z   - Installing [32msymfony/service-contracts[39m ([33mv2.5.3[39m): Extracting archive
+2025-04-02T13:27:36.2982430Z   - Installing [32msymfony/polyfill-php73[39m ([33mv1.31.0[39m): Extracting archive
+2025-04-02T13:27:36.2983431Z   - Installing [32msymfony/console[39m ([33mv5.4.47[39m): Extracting archive
+2025-04-02T13:27:36.2984375Z   - Installing [32msebastian/diff[39m ([33m4.0.5[39m): Extracting archive
+2025-04-02T13:27:36.2985559Z   - Installing [32msebastian/recursion-context[39m ([33m4.0.5[39m): Extracting archive
+2025-04-02T13:27:36.3080495Z   - Installing [32msebastian/exporter[39m ([33m4.0.5[39m): Extracting archive
+2025-04-02T13:27:36.3083385Z   - Installing [32msebastian/comparator[39m ([33m4.0.8[39m): Extracting archive
+2025-04-02T13:27:36.3086612Z   - Installing [32mnikic/php-parser[39m ([33mv4.18.0[39m): Extracting archive
+2025-04-02T13:27:36.3089718Z   - Installing [32mpsy/psysh[39m ([33mv0.11.22[39m): Extracting archive
+2025-04-02T13:27:36.3093179Z   - Installing [32msebastian/version[39m ([33m3.0.2[39m): Extracting archive
+2025-04-02T13:27:36.3095313Z   - Installing [32msebastian/type[39m ([33m3.2.1[39m): Extracting archive
+2025-04-02T13:27:36.3097716Z   - Installing [32msebastian/resource-operations[39m ([33m3.0.3[39m): Extracting archive
+2025-04-02T13:27:36.3100519Z   - Installing [32msebastian/object-reflector[39m ([33m2.0.4[39m): Extracting archive
+2025-04-02T13:27:36.3103060Z   - Installing [32msebastian/object-enumerator[39m ([33m4.0.4[39m): Extracting archive
+2025-04-02T13:27:36.3105774Z   - Installing [32msebastian/global-state[39m ([33m5.0.6[39m): Extracting archive
+2025-04-02T13:27:36.3108071Z   - Installing [32msebastian/environment[39m ([33m5.1.5[39m): Extracting archive
+2025-04-02T13:27:36.3110475Z   - Installing [32msebastian/code-unit[39m ([33m1.0.8[39m): Extracting archive
+2025-04-02T13:27:36.3112819Z   - Installing [32msebastian/cli-parser[39m ([33m1.0.1[39m): Extracting archive
+2025-04-02T13:27:36.3127809Z   - Installing [32mphpunit/php-timer[39m ([33m5.0.3[39m): Extracting archive
+2025-04-02T13:27:36.3129496Z   - Installing [32mphpunit/php-text-template[39m ([33m2.0.4[39m): Extracting archive
+2025-04-02T13:27:36.3131810Z   - Installing [32mphpunit/php-invoker[39m ([33m3.1.1[39m): Extracting archive
+2025-04-02T13:27:36.3133125Z   - Installing [32mphpunit/php-file-iterator[39m ([33m3.0.6[39m): Extracting archive
+2025-04-02T13:27:36.3139787Z   - Installing [32mtheseer/tokenizer[39m ([33m1.2.2[39m): Extracting archive
+2025-04-02T13:27:36.3140976Z   - Installing [32msebastian/lines-of-code[39m ([33m1.0.4[39m): Extracting archive
+2025-04-02T13:27:36.3142112Z   - Installing [32msebastian/complexity[39m ([33m2.0.3[39m): Extracting archive
+2025-04-02T13:27:36.3143381Z   - Installing [32msebastian/code-unit-reverse-lookup[39m ([33m2.0.3[39m): Extracting archive
+2025-04-02T13:27:36.3145209Z   - Installing [32mphpunit/php-code-coverage[39m ([33m9.2.15[39m): Extracting archive
+2025-04-02T13:27:36.3146426Z   - Installing [32mwebmozart/assert[39m ([33m1.11.0[39m): Extracting archive
+2025-04-02T13:27:36.3148181Z   - Installing [32mphpstan/phpdoc-parser[39m ([33m1.25.0[39m): Extracting archive
+2025-04-02T13:27:36.3149487Z   - Installing [32mphpdocumentor/reflection-common[39m ([33m2.2.0[39m): Extracting archive
+2025-04-02T13:27:36.3152182Z   - Installing [32mdoctrine/deprecations[39m ([33m1.1.3[39m): Extracting archive
+2025-04-02T13:27:36.3155225Z   - Installing [32mphpdocumentor/type-resolver[39m ([33m1.8.0[39m): Extracting archive
+2025-04-02T13:27:36.3157655Z   - Installing [32mphpdocumentor/reflection-docblock[39m ([33m5.3.0[39m): Extracting archive
+2025-04-02T13:27:36.3160339Z   - Installing [32mdoctrine/instantiator[39m ([33m1.5.0[39m): Extracting archive
+2025-04-02T13:27:36.3166823Z   - Installing [32mphpspec/prophecy[39m ([33mv1.18.0[39m): Extracting archive
+2025-04-02T13:27:36.3167923Z   - Installing [32mphar-io/version[39m ([33m3.2.1[39m): Extracting archive
+2025-04-02T13:27:36.3169191Z   - Installing [32mphar-io/manifest[39m ([33m2.0.3[39m): Extracting archive
+2025-04-02T13:27:36.3176288Z   - Installing [32mmyclabs/deep-copy[39m ([33m1.11.1[39m): Extracting archive
+2025-04-02T13:27:36.3178700Z   - Installing [32mphpunit/phpunit[39m ([33m9.5.20[39m): Extracting archive
+2025-04-02T13:27:36.3179797Z   - Installing [32mcodeception/stub[39m ([33m4.1.3[39m): Extracting archive
+2025-04-02T13:27:36.3181965Z   - Installing [32mcodeception/lib-asserts[39m ([33m2.1.0[39m): Extracting archive
+2025-04-02T13:27:36.3183212Z   - Installing [32mcodeception/codeception[39m ([33m5.1.2[39m): Extracting archive
+2025-04-02T13:27:36.3184594Z   - Installing [32mcodeception/module-asserts[39m ([33m3.0.0[39m): Extracting archive
+2025-04-02T13:27:36.3186600Z   - Installing [32mcodeception/module-db[39m ([33m3.1.4[39m): Extracting archive
+2025-04-02T13:27:36.3189092Z   - Installing [32msymfony/process[39m ([33mv5.4.47[39m): Extracting archive
+2025-04-02T13:27:36.3191702Z   - Installing [32mphp-webdriver/webdriver[39m ([33m1.15.1[39m): Extracting archive
+2025-04-02T13:27:36.3194541Z   - Installing [32mralouphie/getallheaders[39m ([33m3.0.3[39m): Extracting archive
+2025-04-02T13:27:36.3197446Z   - Installing [32mpsr/http-message[39m ([33m1.1[39m): Extracting archive
+2025-04-02T13:27:36.3200300Z   - Installing [32mpsr/http-factory[39m ([33m1.0.2[39m): Extracting archive
+2025-04-02T13:27:36.3203632Z   - Installing [32mguzzlehttp/psr7[39m ([33m2.6.2[39m): Extracting archive
+2025-04-02T13:27:36.3207331Z   - Installing [32mcodeception/lib-web[39m ([33m1.0.6[39m): Extracting archive
+2025-04-02T13:27:36.3209099Z   - Installing [32mcodeception/module-webdriver[39m ([33m3.2.2[39m): Extracting archive
+2025-04-02T13:27:36.3211268Z   - Installing [32mcomposer/pcre[39m ([33m3.1.4[39m): Extracting archive
+2025-04-02T13:27:36.3214599Z   - Installing [32mcomposer/class-map-generator[39m ([33m1.3.3[39m): Extracting archive
+2025-04-02T13:27:36.3218250Z   - Installing [32mcomposer/metadata-minifier[39m ([33m1.0.0[39m): Extracting archive
+2025-04-02T13:27:36.3219799Z   - Installing [32mcomposer/spdx-licenses[39m ([33m1.5.8[39m): Extracting archive
+2025-04-02T13:27:36.3223051Z   - Installing [32mdoctrine/cache[39m ([33m2.2.0[39m): Extracting archive
+2025-04-02T13:27:36.3226531Z   - Installing [32msymfony/stopwatch[39m ([33m5.4.x-dev fb2c199[39m): Extracting archive
+2025-04-02T13:27:36.3228279Z   - Installing [32mpsr/log[39m ([33m1.1.4[39m): Extracting archive
+2025-04-02T13:27:36.3230760Z   - Installing [32msymfony/filesystem[39m ([33m5.4.x-dev 57c8294[39m): Extracting archive
+2025-04-02T13:27:36.3233366Z   - Installing [32mlaminas/laminas-code[39m ([33m4.7.1[39m): Extracting archive
+2025-04-02T13:27:36.3236640Z   - Installing [32mfriendsofphp/proxy-manager-lts[39m ([33mv1.0.16[39m): Extracting archive
+2025-04-02T13:27:36.3239433Z   - Installing [32mdoctrine/event-manager[39m ([33m1.2.0[39m): Extracting archive
+2025-04-02T13:27:36.3241354Z   - Installing [32mpsr/cache[39m ([33m2.0.0[39m): Extracting archive
+2025-04-02T13:27:36.3244313Z   - Installing [32mdoctrine/dbal[39m ([33m3.7.2[39m): Extracting archive
+2025-04-02T13:27:36.3247020Z   - Installing [32mdoctrine/migrations[39m ([33m3.5.5[39m): Extracting archive
+2025-04-02T13:27:36.3250382Z   - Installing [32mdoctrine/sql-formatter[39m ([33m1.1.3[39m): Extracting archive
+2025-04-02T13:27:36.3253824Z   - Installing [32msymfony/polyfill-php81[39m ([33mv1.31.0[39m): Extracting archive
+2025-04-02T13:27:36.3258232Z   - Installing [32msymfony/options-resolver[39m ([33m5.4.x-dev 74e5b6f[39m): Extracting archive
+2025-04-02T13:27:36.3260757Z   - Installing [32mcomposer/xdebug-handler[39m ([33m3.0.5[39m): Extracting archive
+2025-04-02T13:27:36.3262027Z   - Installing [32mcomposer/semver[39m ([33m3.4.0[39m): Extracting archive
+2025-04-02T13:27:36.3265685Z   - Installing [32mfriendsofphp/php-cs-fixer[39m ([33mv3.53.0[39m): Extracting archive
+2025-04-02T13:27:36.3268386Z   - Installing [32msymfony/http-foundation[39m ([33m5.4.x-dev 3f38b8a[39m): Extracting archive
+2025-04-02T13:27:36.3271220Z   - Installing [32mfriendsofsymfony/oauth2-php[39m ([33m1.3.1[39m): Extracting archive
+2025-04-02T13:27:36.3272436Z   - Installing [32mgiggsey/locale[39m ([33m2.5[39m): Extracting archive
+2025-04-02T13:27:36.3275593Z   - Installing [32mguzzlehttp/promises[39m ([33m2.0.2[39m): Extracting archive
+2025-04-02T13:27:36.3278308Z   - Installing [32mhttp-interop/http-factory-guzzle[39m ([33m1.2.0[39m): Extracting archive
+2025-04-02T13:27:36.3280923Z   - Installing [32mintervention/image[39m ([33m2.7.2[39m): Extracting archive
+2025-04-02T13:27:36.3283690Z   - Installing [32mjms/metadata[39m ([33m2.8.0[39m): Extracting archive
+2025-04-02T13:27:36.3286248Z   - Installing [32mdoctrine/lexer[39m ([33m2.1.0[39m): Extracting archive
+2025-04-02T13:27:36.3289416Z   - Installing [32mdoctrine/annotations[39m ([33m2.0.1[39m): Extracting archive
+2025-04-02T13:27:36.3292747Z   - Installing [32mjms/serializer[39m ([33m3.29.1[39m): Extracting archive
+2025-04-02T13:27:36.3302431Z   - Installing [32mjoomla/string[39m ([33m1.4.6[39m): Extracting archive
+2025-04-02T13:27:36.3303960Z   - Installing [32mjustinrainbow/json-schema[39m ([33mv5.2.13[39m): Extracting archive
+2025-04-02T13:27:36.3306387Z   - Installing [32mknplabs/knp-menu[39m ([33mv3.4.0[39m): Extracting archive
+2025-04-02T13:27:36.3309380Z   - Installing [32mleague/mime-type-detection[39m ([33m1.15.0[39m): Extracting archive
+2025-04-02T13:27:36.3312107Z   - Installing [32mleague/flysystem-local[39m ([33m3.23.1[39m): Extracting archive
+2025-04-02T13:27:36.3314891Z   - Installing [32mleague/flysystem[39m ([33m3.24.0[39m): Extracting archive
+2025-04-02T13:27:36.3320365Z   - Installing [32msymfony/routing[39m ([33m5.4.x-dev dd08c19[39m): Extracting archive
+2025-04-02T13:27:36.3322383Z   - Installing [32msymfony/error-handler[39m ([33mv6.3.12[39m): Extracting archive
+2025-04-02T13:27:36.3344148Z   - Installing [32msymfony/http-kernel[39m ([33mv5.4.47[39m): Extracting archive
+2025-04-02T13:27:36.3345711Z   - Installing [32msymfony/dependency-injection[39m ([33m5.4.x-dev 0c199da[39m): Extracting archive
+2025-04-02T13:27:36.3347007Z   - Installing [32msymfony/config[39m ([33m5.4.x-dev 977c88a[39m): Extracting archive
+2025-04-02T13:27:36.3348175Z   - Installing [32msymfony/var-exporter[39m ([33mv6.4.13[39m): Extracting archive
+2025-04-02T13:27:36.3349262Z   - Installing [32msymfony/cache-contracts[39m ([33mv2.5.3[39m): Extracting archive
+2025-04-02T13:27:36.3350331Z   - Installing [32msymfony/cache[39m ([33m5.4.x-dev 0fe08ee[39m): Extracting archive
+2025-04-02T13:27:36.3351514Z   - Installing [32msymfony/framework-bundle[39m ([33m5.4.x-dev 3d70f14[39m): Extracting archive
+2025-04-02T13:27:36.3352592Z   - Installing [32mrobrichards/xmlseclibs[39m ([33m3.1.1[39m): Extracting archive
+2025-04-02T13:27:36.3355189Z   - Installing [32mlitesaml/lightsaml[39m ([33mv4.1.6[39m): Extracting archive
+2025-04-02T13:27:36.3356576Z   - Installing [32mlightsaml/symfony-bridge[39m ([33mdev-symfony5 26f58d3[39m): Cloning 26f58d33a5 from cache
+2025-04-02T13:27:36.4419434Z   - Installing [32msymfony/dom-crawler[39m ([33mv5.4.45[39m): Extracting archive
+2025-04-02T13:27:36.4423272Z   - Installing [32msymfony/browser-kit[39m ([33mv5.4.45[39m): Extracting archive
+2025-04-02T13:27:36.4425602Z   - Installing [32mliip/functional-test-bundle[39m ([33m4.9.0[39m): Extracting archive
+2025-04-02T13:27:36.4428348Z   - Installing [32mdoctrine/persistence[39m ([33m3.2.0[39m): Extracting archive
+2025-04-02T13:27:36.4431023Z   - Installing [32mdoctrine/common[39m ([33m3.4.3[39m): Extracting archive
+2025-04-02T13:27:36.4433767Z   - Installing [32mliip/test-fixtures-bundle[39m ([33m2.7.2[39m): Extracting archive
+2025-04-02T13:27:36.4437026Z   - Installing [32mparagonie/random_compat[39m ([33mv2.0.21[39m): Extracting archive
+2025-04-02T13:27:36.4440380Z   - Installing [32mmalkusch/lock[39m ([33mv1.4[39m): Extracting archive
+2025-04-02T13:27:36.4443412Z   - Installing [32mmatthiasmullie/path-converter[39m ([33m1.1.3[39m): Extracting archive
+2025-04-02T13:27:36.4447108Z   - Installing [32mwikimedia/less.php[39m ([33mv4.1.1[39m): Extracting archive
+2025-04-02T13:27:36.4449770Z   - Installing [32mtwilio/sdk[39m ([33m5.42.2[39m): Extracting archive
+2025-04-02T13:27:36.4452631Z   - Installing [32mtightenco/collect[39m ([33mv8.83.27[39m): Extracting archive
+2025-04-02T13:27:36.4456242Z   - Installing [32msymfony/expression-language[39m ([33m5.4.x-dev a784b66[39m): Extracting archive
+2025-04-02T13:27:36.4459111Z   - Installing [32mtheofidry/psysh-bundle[39m ([33m4.5.0[39m): Extracting archive
+2025-04-02T13:27:36.4461896Z   - Installing [32msymfony/translation-contracts[39m ([33mv2.5.3[39m): Extracting archive
+2025-04-02T13:27:36.4464691Z   - Installing [32msymfony/validator[39m ([33mv5.4.47[39m): Extracting archive
+2025-04-02T13:27:36.4467368Z   - Installing [32mtwig/twig[39m ([33mv3.14.2[39m): Extracting archive
+2025-04-02T13:27:36.4470245Z   - Installing [32msymfony/twig-bridge[39m ([33mv5.4.45[39m): Extracting archive
+2025-04-02T13:27:36.4472594Z   - Installing [32msymfony/twig-bundle[39m ([33m5.4.x-dev e1ca56e[39m): Extracting archive
+2025-04-02T13:27:36.4475273Z   - Installing [32msymfony/translation[39m ([33m5.4.x-dev 98f26ac[39m): Extracting archive
+2025-04-02T13:27:36.4479089Z   - Installing [32msymfony/templating[39m ([33m5.4.x-dev e9e46b5[39m): Extracting archive
+2025-04-02T13:27:36.4482696Z   - Installing [32msymfony/password-hasher[39m ([33mv6.4.13[39m): Extracting archive
+2025-04-02T13:27:36.4485822Z   - Installing [32msymfony/security-core[39m ([33m5.4.x-dev 2d32497[39m): Extracting archive
+2025-04-02T13:27:36.4506085Z   - Installing [32msymfony/security-csrf[39m ([33m5.4.x-dev 28dcafc[39m): Extracting archive
+2025-04-02T13:27:36.4507273Z   - Installing [32msymfony/property-info[39m ([33mv6.4.15[39m): Extracting archive
+2025-04-02T13:27:36.4508386Z   - Installing [32msymfony/property-access[39m ([33m5.4.x-dev 111e7ed[39m): Extracting archive
+2025-04-02T13:27:36.4509482Z   - Installing [32msymfony/security-http[39m ([33mv5.4.47[39m): Extracting archive
+2025-04-02T13:27:36.4510318Z   - Installing [32msymfony/security-guard[39m ([33mv5.4.45[39m): Extracting archive
+2025-04-02T13:27:36.4510997Z   - Installing [32msymfony/security-bundle[39m ([33m5.4.x-dev d6081d1[39m): Extracting archive
+2025-04-02T13:27:36.4511636Z   - Installing [32msymfony/security-acl[39m ([33mv3.0.4[39m): Extracting archive
+2025-04-02T13:27:36.4512414Z   - Installing [32mmonolog/monolog[39m ([33m2.9.2[39m): Extracting archive
+2025-04-02T13:27:36.4513477Z   - Installing [32msymfony/monolog-bridge[39m ([33m5.4.x-dev cf7d75d[39m): Extracting archive
+2025-04-02T13:27:36.4515440Z   - Installing [32msymfony/monolog-bundle[39m ([33mv3.5.0[39m): Extracting archive
+2025-04-02T13:27:36.4518481Z   - Installing [32msymfony/polyfill-intl-idn[39m ([33mv1.31.0[39m): Extracting archive
+2025-04-02T13:27:36.4520454Z   - Installing [32msymfony/mime[39m ([33m5.4.x-dev 8c1b9b3[39m): Extracting archive
+2025-04-02T13:27:36.4522873Z   - Installing [32msymfony/messenger[39m ([33m5.4.x-dev c21d463[39m): Extracting archive
+2025-04-02T13:27:36.4525623Z   - Installing [32msymfony/redis-messenger[39m ([33mv6.0.19[39m): Extracting archive
+2025-04-02T13:27:36.4529205Z   - Installing [32msymfony/doctrine-messenger[39m ([33mv5.4.45[39m): Extracting archive
+2025-04-02T13:27:36.4533080Z   - Installing [32msymfony/amqp-messenger[39m ([33m5.4.x-dev 822ad5f[39m): Extracting archive
+2025-04-02T13:27:36.4536257Z   - Installing [32megulias/email-validator[39m ([33m3.2.6[39m): Extracting archive
+2025-04-02T13:27:36.4539943Z   - Installing [32msymfony/mailer[39m ([33m5.4.x-dev f732e1f[39m): Extracting archive
+2025-04-02T13:27:36.4541417Z   - Installing [32msymfony/lock[39m ([33mv5.4.45[39m): Extracting archive
+2025-04-02T13:27:36.4544195Z   - Installing [32msymfony/intl[39m ([33mv5.4.47[39m): Extracting archive
+2025-04-02T13:27:36.4547015Z   - Installing [32msymfony/http-client-contracts[39m ([33mv2.5.3[39m): Extracting archive
+2025-04-02T13:27:36.4549962Z   - Installing [32msymfony/http-client[39m ([33mv5.4.47[39m): Extracting archive
+2025-04-02T13:27:36.4552920Z   - Installing [32msymfony/polyfill-intl-icu[39m ([33mv1.31.0[39m): Extracting archive
+2025-04-02T13:27:36.4554485Z   - Installing [32msymfony/form[39m ([33m5.4.x-dev c1974a7[39m): Extracting archive
+2025-04-02T13:27:36.4557601Z   - Installing [32msymfony/dotenv[39m ([33m5.4.x-dev 4cb5f06[39m): Extracting archive
+2025-04-02T13:27:36.4560360Z   - Installing [32msymfony/doctrine-bridge[39m ([33m5.4.x-dev 22f9d7c[39m): Extracting archive
+2025-04-02T13:27:36.4562541Z   - Installing [32msymfony/asset[39m ([33m5.4.x-dev b7a18ea[39m): Extracting archive
+2025-04-02T13:27:36.4566504Z   - Installing [32mstack/builder[39m ([33mv1.0.6[39m): Extracting archive
+2025-04-02T13:27:36.4568596Z   - Installing [32mdoctrine/collections[39m ([33m1.8.0[39m): Extracting archive
+2025-04-02T13:27:36.4570674Z   - Installing [32msimshaun/recurr[39m ([33mv5.0.2[39m): Extracting archive
+2025-04-02T13:27:36.4572736Z   - Installing [32mramsey/collection[39m ([33m1.3.0[39m): Extracting archive
+2025-04-02T13:27:36.4574770Z   - Installing [32mbrick/math[39m ([33m0.11.0[39m): Extracting archive
+2025-04-02T13:27:36.4577068Z   - Installing [32mramsey/uuid[39m ([33m4.7.5[39m): Extracting archive
+2025-04-02T13:27:36.4579693Z   - Installing [32mpredis/predis[39m ([33mv1.1.10[39m): Extracting archive
+2025-04-02T13:27:36.4583239Z   - Installing [32mpsr/simple-cache[39m ([33m2.0.0[39m): Extracting archive
+2025-04-02T13:27:36.4585882Z   - Installing [32mpsr/http-client[39m ([33m1.0.3[39m): Extracting archive
+2025-04-02T13:27:36.4589182Z   - Installing [32mmarkbaker/matrix[39m ([33m3.0.1[39m): Extracting archive
+2025-04-02T13:27:36.4593884Z   - Installing [32mmarkbaker/complex[39m ([33m3.0.2[39m): Extracting archive
+2025-04-02T13:27:36.4594901Z   - Installing [32mmyclabs/php-enum[39m ([33m1.8.4[39m): Extracting archive
+2025-04-02T13:27:36.4597783Z   - Installing [32mmaennchen/zipstream-php[39m ([33m2.4.0[39m): Extracting archive
+2025-04-02T13:27:36.4600876Z   - Installing [32mezyang/htmlpurifier[39m ([33mv4.17.0[39m): Extracting archive
+2025-04-02T13:27:36.4602680Z   - Installing [32mphpoffice/phpspreadsheet[39m ([33m1.27.1[39m): Extracting archive
+2025-04-02T13:27:36.4604401Z   - Installing [32mphp-http/promise[39m ([33m1.3.0[39m): Extracting archive
+2025-04-02T13:27:36.4608175Z   - Installing [32mphp-http/httplug[39m ([33m2.4.0[39m): Extracting archive
+2025-04-02T13:27:36.4609384Z   - Installing [32mguzzlehttp/guzzle[39m ([33m7.8.1[39m): Extracting archive
+2025-04-02T13:27:36.4612112Z   - Installing [32mphp-http/guzzle7-adapter[39m ([33m1.0.0[39m): Extracting archive
+2025-04-02T13:27:36.4613800Z   - Installing [32mparagonie/constant_time_encoding[39m ([33mv2.6.3[39m): Extracting archive
+2025-04-02T13:27:36.4616010Z   - Installing [32mphpseclib/phpseclib[39m ([33m3.0.37[39m): Extracting archive
+2025-04-02T13:27:36.4618153Z   - Installing [32mphp-amqplib/php-amqplib[39m ([33mv3.6.0[39m): Extracting archive
+2025-04-02T13:27:36.4620229Z   - Installing [32mphp-amqplib/rabbitmq-bundle[39m ([33m2.14.0[39m): Extracting archive
+2025-04-02T13:27:36.4622363Z   - Installing [32moneup/uploader-bundle[39m ([33m3.2.1[39m): Extracting archive
+2025-04-02T13:27:36.4626042Z   - Installing [32msensio/framework-extra-bundle[39m ([33mv6.2.10[39m): Extracting archive
+2025-04-02T13:27:36.4629516Z   - Installing [32mnoxlogic/ratelimit-bundle[39m ([33mv1.19.0[39m): Extracting archive
+2025-04-02T13:27:36.4632140Z   - Installing [32mmatthiasmullie/minify[39m ([33m1.3.71[39m): Extracting archive
+2025-04-02T13:27:36.4639727Z   - Installing [32mmustangostang/spyc[39m ([33m0.6.3[39m): Extracting archive
+2025-04-02T13:27:36.4640802Z   - Installing [32mmatomo/device-detector[39m ([33m4.3.1[39m): Extracting archive
+2025-04-02T13:27:36.4642446Z   - Installing [32mlightsaml/sp-bundle[39m ([33mdev-symfony5 083bf6d[39m): Cloning 083bf6d62c from cache
+2025-04-02T13:27:36.5998816Z   - Installing [32mpda/pheanstalk[39m ([33mv4.0.5[39m): Extracting archive
+2025-04-02T13:27:36.6002367Z   - Installing [32mleezy/pheanstalk-bundle[39m ([33mdev-master 972a5c1[39m): Extracting archive
+2025-04-02T13:27:36.6005624Z   - Installing [32mknplabs/knp-menu-bundle[39m ([33mv3.2.0[39m): Extracting archive
+2025-04-02T13:27:36.6008278Z   - Installing [32mknplabs/gaufrette[39m ([33mv0.9.0[39m): Extracting archive
+2025-04-02T13:27:36.6011086Z   - Installing [32mkamermans/guzzle-oauth2-subscriber[39m ([33mv1.0.13[39m): Extracting archive
+2025-04-02T13:27:36.6013665Z   - Installing [32mjoomla/filter[39m ([33m1.4.4[39m): Extracting archive
+2025-04-02T13:27:36.6017066Z   - Installing [32mjms/serializer-bundle[39m ([33m5.4.0[39m): Extracting archive
+2025-04-02T13:27:36.6019787Z   - Installing [32mvoku/stop-words[39m ([33m2.0.1[39m): Extracting archive
+2025-04-02T13:27:36.6022676Z   - Installing [32mvoku/portable-ascii[39m ([33m2.0.1[39m): Extracting archive
+2025-04-02T13:27:36.6025757Z   - Installing [32mjbroadway/urlify[39m ([33m1.2.4-stable[39m): Extracting archive
+2025-04-02T13:27:36.6029045Z   - Installing [32mip2location/ip2location-php[39m ([33m7.2.5[39m): Extracting archive
+2025-04-02T13:27:36.6032000Z   - Installing [32mstudio-42/elfinder[39m ([33m2.1.65[39m): Extracting archive
+2025-04-02T13:27:36.6035356Z   - Installing [32mhelios-ag/fm-elfinder-bundle[39m ([33m12.5[39m): Extracting archive
+2025-04-02T13:27:36.6038539Z   - Installing [32mguzzlehttp/oauth-subscriber[39m ([33m0.6.0[39m): Extracting archive
+2025-04-02T13:27:36.6042250Z   - Installing [32mgiggsey/libphonenumber-for-php[39m ([33m8.13.29[39m): Extracting archive
+2025-04-02T13:27:36.6045952Z   - Installing [32mcomposer/ca-bundle[39m ([33m1.5.0[39m): Extracting archive
+2025-04-02T13:27:36.6048839Z   - Installing [32mmaxmind/web-service-common[39m ([33mv0.9.0[39m): Extracting archive
+2025-04-02T13:27:36.6051883Z   - Installing [32mmaxmind-db/reader[39m ([33mv1.11.1[39m): Extracting archive
+2025-04-02T13:27:36.6054737Z   - Installing [32mgeoip2/geoip2[39m ([33mv2.13.0[39m): Extracting archive
+2025-04-02T13:27:36.6057690Z   - Installing [32mgaufrette/extras[39m ([33mv0.1.0[39m): Extracting archive
+2025-04-02T13:27:36.6060452Z   - Installing [32mmtdowling/jmespath.php[39m ([33m2.7.0[39m): Extracting archive
+2025-04-02T13:27:36.6063394Z   - Installing [32maws/aws-sdk-php[39m ([33m3.298.2[39m): Extracting archive
+2025-04-02T13:27:36.6066516Z   - Installing [32mgaufrette/aws-s3-adapter[39m ([33mv0.4.0[39m)
+2025-04-02T13:27:36.6114417Z   - Installing [32mwilldurand/negotiation[39m ([33m3.1.0[39m): Extracting archive
+2025-04-02T13:27:36.6117610Z   - Installing [32mwilldurand/jsonp-callback-validator[39m ([33mv2.0.0[39m): Extracting archive
+2025-04-02T13:27:36.6119474Z   - Installing [32mfriendsofsymfony/rest-bundle[39m ([33m3.6.0[39m): Extracting archive
+2025-04-02T13:27:36.6123570Z   - Installing [32mfriendsofsymfony/oauth-server-bundle[39m ([33mdev-upgrade-2 dc8ff34[39m): Cloning dc8ff34336 from cache
+2025-04-02T13:27:36.7346339Z   - Installing [32mexercise/htmlpurifier-bundle[39m ([33m4.1.2[39m): Extracting archive
+2025-04-02T13:27:36.7348199Z   - Installing [32msymfony/polyfill-php72[39m ([33mv1.31.0[39m)
+2025-04-02T13:27:36.7468043Z   - Installing [32mdoctrine/inflector[39m ([33m2.0.9[39m): Extracting archive
+2025-04-02T13:27:36.7470542Z   - Installing [32mdoctrine/orm[39m ([33m2.18.0[39m): Extracting archive
+2025-04-02T13:27:36.7473342Z   - Installing [32mdoctrine/doctrine-bundle[39m ([33m2.11.1[39m): Extracting archive
+2025-04-02T13:27:36.7476500Z   - Installing [32mdoctrine/doctrine-migrations-bundle[39m ([33m3.3.0[39m): Extracting archive
+2025-04-02T13:27:36.7478891Z   - Installing [32mdoctrine/data-fixtures[39m ([33m1.7.0[39m): Extracting archive
+2025-04-02T13:27:36.7481382Z   - Installing [32mdoctrine/doctrine-fixtures-bundle[39m ([33m3.5.1[39m): Extracting archive
+2025-04-02T13:27:36.7484014Z   - Installing [32mseld/signal-handler[39m ([33m2.0.2[39m): Extracting archive
+2025-04-02T13:27:36.7488303Z   - Installing [32mseld/phar-utils[39m ([33m1.2.1[39m): Extracting archive
+2025-04-02T13:27:36.7490608Z   - Installing [32mseld/jsonlint[39m ([33m1.10.2[39m): Extracting archive
+2025-04-02T13:27:36.7492942Z   - Installing [32mreact/promise[39m ([33mv3.2.0[39m): Extracting archive
+2025-04-02T13:27:36.7495298Z   - Installing [32mcomposer/composer[39m ([33m2.7.7[39m): Extracting archive
+2025-04-02T13:27:36.7497453Z   - Installing [32mbjeavons/zxcvbn-php[39m ([33m1.3.1[39m): Extracting archive
+2025-04-02T13:27:36.7499783Z   - Installing [32mbeberlei/doctrineextensions[39m ([33mv1.3.0[39m): Extracting archive
+2025-04-02T13:27:36.7502339Z   - Installing [32mbarryvdh/elfinder-flysystem-driver[39m ([33mv0.4.3[39m): Extracting archive
+2025-04-02T13:27:36.7504517Z   - Installing [32mbandwidth-throttle/token-bucket[39m ([33m2.0.0[39m): Extracting archive
+2025-04-02T13:27:36.7511081Z   - Installing [32mmautic/core-lib[39m ([33m5.0.0-dev[39m): Source already present
+2025-04-02T13:27:36.8492826Z   - Installing [32mmautic/transifex[39m ([33m5.0.0[39m): Extracting archive
+2025-04-02T13:27:36.8497062Z   - Installing [32mphpstan/phpstan-deprecation-rules[39m ([33m1.1.3[39m): Extracting archive
+2025-04-02T13:27:36.8498985Z   - Installing [32mphpstan/phpstan-doctrine[39m ([33m1.3.40[39m): Extracting archive
+2025-04-02T13:27:36.8501654Z   - Installing [32mphpstan/phpstan-phpunit[39m ([33m1.3.13[39m): Extracting archive
+2025-04-02T13:27:36.8504821Z   - Installing [32mphpstan/phpstan-symfony[39m ([33m1.3.2[39m): Extracting archive
+2025-04-02T13:27:36.8507653Z   - Installing [32mrector/rector[39m ([33m0.18.12[39m): Extracting archive
+2025-04-02T13:27:36.8510420Z   - Installing [32msymfony/maker-bundle[39m ([33mv1.50.0[39m): Extracting archive
+2025-04-02T13:27:36.8512648Z   - Installing [32msymfony/phpunit-bridge[39m ([33mv5.4.45[39m): Extracting archive
+2025-04-02T13:27:36.8514009Z   - Installing [32msymfony/web-profiler-bundle[39m ([33mv5.4.46[39m): Extracting archive
+2025-04-02T13:27:36.8516346Z   - Installing [32msymplify/easy-coding-standard[39m ([33m12.0.13[39m): Extracting archive
+2025-04-02T13:27:41.8076700Z [30;43mPackage sensio/framework-extra-bundle is abandoned, you should avoid using it. Use Symfony instead.[39;49m
+2025-04-02T13:27:41.8078037Z [30;43mPackage theofidry/psysh-bundle is abandoned, you should avoid using it. No replacement was suggested.[39;49m
+2025-04-02T13:27:41.8078907Z [32mGenerating autoload files[39m
+2025-04-02T13:27:42.0192374Z [32mcomposer/package-versions-deprecated:[39m Generating version class...
+2025-04-02T13:27:42.0194130Z [32mcomposer/package-versions-deprecated:[39m ...done generating version class
+2025-04-02T13:27:42.0213130Z [32m151 packages you are using are looking for funding.[39m
+2025-04-02T13:27:42.0213793Z [32mUse the `composer fund` command to find out more![39m
+2025-04-02T13:27:42.2056996Z [32mphpstan/extension-installer:[39m Extensions installed
+2025-04-02T13:27:42.2058038Z > [32mcomposer/composer:[39m installed
+2025-04-02T13:27:42.2058745Z > [32mphpstan/phpstan-deprecation-rules:[39m installed
+2025-04-02T13:27:42.2059662Z > [32mphpstan/phpstan-doctrine:[39m installed
+2025-04-02T13:27:42.2060237Z > [32mphpstan/phpstan-phpunit:[39m installed
+2025-04-02T13:27:42.2060777Z > [32mphpstan/phpstan-symfony:[39m installed
+2025-04-02T13:27:42.5763036Z > php -r "if(file_exists('./.git')&&file_exists('./build/hooks/pre-commit'.(PHP_OS=='WINNT'?'.win':''))){copy('./build/hooks/pre-commit'.(PHP_OS=='WINNT'?'.win':''),'./.git/hooks/pre-commit');} if(file_exists('./.git')&&file_exists('./build/hooks/post-checkout')){copy('./build/hooks/post-checkout','./.git/hooks/post-checkout');}"
+2025-04-02T13:27:42.6225302Z > php -r "if(file_exists('./.git/hooks/pre-commit')&&(PHP_OS!='WINNT')){chmod('./.git/hooks/pre-commit',0755);} if(file_exists('./.git/hooks/post-checkout')&&(PHP_OS!='WINNT')){chmod('./.git/hooks/post-checkout',0755);}"
+2025-04-02T13:27:43.0431814Z > npm ci --prefer-offline --no-audit
+2025-04-02T13:27:45.7815858Z npm warn deprecated osenv@0.1.5: This package is no longer supported.
+2025-04-02T13:27:45.7881017Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-04-02T13:27:45.8006266Z npm warn deprecated @npmcli/move-file@1.1.2: This functionality has been moved to @npmcli/fs
+2025-04-02T13:27:45.8633254Z npm warn deprecated rimraf@2.7.1: Rimraf versions prior to v4 are no longer supported
+2025-04-02T13:27:45.8976369Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+2025-04-02T13:27:45.9677333Z npm warn deprecated glob@7.1.3: Glob versions prior to v9 are no longer supported
+2025-04-02T13:27:45.9769398Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-04-02T13:27:46.0059404Z npm warn deprecated glob@7.1.7: Glob versions prior to v9 are no longer supported
+2025-04-02T13:27:46.0060940Z npm warn deprecated glob@7.1.7: Glob versions prior to v9 are no longer supported
+2025-04-02T13:27:46.0754699Z npm warn deprecated debug@3.2.6: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
+2025-04-02T13:27:49.1804128Z 
+2025-04-02T13:27:49.1804707Z > mautic@0.0.0 postinstall
+2025-04-02T13:27:49.1805624Z > node_modules/modernizr/bin/modernizr -c modernizr-config.json -d node_modules/modernizr/modernizr-mautic-dist.js & npm run build
+2025-04-02T13:27:49.1806172Z 
+2025-04-02T13:27:49.3096226Z 
+2025-04-02T13:27:49.3096689Z > mautic@0.0.0 build
+2025-04-02T13:27:49.3097226Z > webpack --mode production  --config webpack.config.js
+2025-04-02T13:27:49.3097632Z 
+2025-04-02T13:27:49.4476245Z Modernizr build saved to node_modules/modernizr/modernizr-mautic-dist.js
+2025-04-02T13:27:49.7554300Z Browserslist: caniuse-lite is outdated. Please run:
+2025-04-02T13:27:49.7554725Z   npx update-browserslist-db@latest
+2025-04-02T13:27:49.7555351Z   Why you should do it regularly: https://github.com/browserslist/update-db#readme
+2025-04-02T13:27:51.1482941Z [CKEditorTranslationsPlugin] Error: No translation has been found for the en language.
+2025-04-02T13:27:51.2631566Z asset [1m[33mckeditor.js[39m[22m [1m[33m1.5 MiB[39m[22m [1m[32m[emitted][39m[22m [1m[32m[minimized][39m[22m [1m[33m[big][39m[22m (name: main) 2 related assets
+2025-04-02T13:27:51.2633070Z cached modules 11.5 MiB (javascript) 2.06 KiB (runtime) [1m[32m[cached][39m[22m 1769 modules
+2025-04-02T13:27:51.2633791Z webpack 5.95.0 compiled [1m[32msuccessfully[39m[22m in 1058 ms
+2025-04-02T13:27:51.3030862Z 
+2025-04-02T13:27:51.3031275Z added 738 packages in 8s
+2025-04-02T13:27:51.3032135Z 
+2025-04-02T13:27:51.3032336Z 127 packages are looking for funding
+2025-04-02T13:27:51.3032794Z   run `npm fund` for details
+2025-04-02T13:27:51.7137100Z > npx patch-package
+2025-04-02T13:27:52.1136345Z patch-package 7.0.2
+2025-04-02T13:27:52.1140177Z Applying patches...
+2025-04-02T13:27:52.1180295Z at.js@1.5.4 ✔
+2025-04-02T13:27:52.1190229Z chosen-js@1.8.7 ✔
+2025-04-02T13:27:52.5048290Z > bin/console mautic:assets:generate
+2025-04-02T13:28:00.5071463Z Production assets have been regenerated.
+2025-04-02T13:28:00.5552043Z ##[group]Run if [[ "PHPSTAN" == "PHPSTAN" ]]; then
+2025-04-02T13:28:00.5552498Z [36;1mif [[ "PHPSTAN" == "PHPSTAN" ]]; then[0m
+2025-04-02T13:28:00.5552797Z [36;1m  export SYMFONY_ENV=dev[0m
+2025-04-02T13:28:00.5553056Z [36;1m  export APP_ENV=dev[0m
+2025-04-02T13:28:00.5553297Z [36;1m  export APP_DEBUG=1[0m
+2025-04-02T13:28:00.5553565Z [36;1m  composer phpstan -- --no-progress[0m
+2025-04-02T13:28:00.5553870Z [36;1melif [[ "PHPSTAN" == "Rector" ]]; then[0m
+2025-04-02T13:28:00.5554157Z [36;1m  export SYMFONY_ENV=test[0m
+2025-04-02T13:28:00.5554415Z [36;1m  bin/console cache:warmup[0m
+2025-04-02T13:28:00.5554685Z [36;1m  bin/rector --dry-run --ansi[0m
+2025-04-02T13:28:00.5555151Z [36;1melif [[ "PHPSTAN" == "Twig Lint" ]]; then[0m
+2025-04-02T13:28:00.5555498Z [36;1m  bin/console lint:twig app plugins[0m
+2025-04-02T13:28:00.5555797Z [36;1melif [[ "PHPSTAN" == "CS Fixer" ]]; then[0m
+2025-04-02T13:28:00.5556676Z [36;1m  for file in app/bundles/EmailBundle/Tests/Functional/EmailVariantInCampaignFunctionalTest.php app/bundles/EmailBundle/EventListener/CampaignSubscriber.php; do[0m
+2025-04-02T13:28:00.5557478Z [36;1m    if [[ $file == *.php ]]; then[0m
+2025-04-02T13:28:00.5557769Z [36;1m      cs_fix_files="${cs_fix_files} $file"[0m
+2025-04-02T13:28:00.5558041Z [36;1m    fi[0m
+2025-04-02T13:28:00.5558228Z [36;1m  done[0m
+2025-04-02T13:28:00.5558427Z [36;1m  if [[ $cs_fix_files ]]; then[0m
+2025-04-02T13:28:00.5558952Z [36;1m    bin/php-cs-fixer fix --config=.php-cs-fixer.php --dry-run --using-cache=no --show-progress=dots --diff $cs_fix_files[0m
+2025-04-02T13:28:00.5559460Z [36;1m  fi[0m
+2025-04-02T13:28:00.5559720Z [36;1melif [[ "PHPSTAN" == "scaffolded files mismatch" ]]; then[0m
+2025-04-02T13:28:00.5560305Z [36;1m  wget -q -O /tmp/jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 && chmod 755 /tmp/jq[0m
+2025-04-02T13:28:00.5561178Z [36;1m  /tmp/jq -r '.extra["mautic-scaffold"]["file-mapping"] | to_entries[] | "diff -q \(.key | sub("\\[(project|web)-root\\]";".")) app/\(.value)"' app/composer.json > diff_commands.sh[0m
+2025-04-02T13:28:00.5562160Z [36;1m  /tmp/jq -r '.extra["mautic-scaffold"]["file-mapping"] | to_entries[] | "diff -rui \(.key | sub("\\[(project|web)-root\\]";".")) app/\(.value)"' app/composer.json > diff_commands_verbose.sh[0m
+2025-04-02T13:28:00.5562874Z [36;1m  bash diff_commands.sh 2>&1 | tee /tmp/diff_command_output.txt[0m
+2025-04-02T13:28:00.5563224Z [36;1m  rm diff_commands.sh[0m
+2025-04-02T13:28:00.5563528Z [36;1m  if [[ $(wc -l </tmp/diff_command_output.txt) -ge 1 ]]; then[0m
+2025-04-02T13:28:00.5563913Z [36;1m    echo "some scaffolded files were not updated or deleted"[0m
+2025-04-02T13:28:00.5564338Z [36;1m    echo "Please apply the same changes in the files mentioned above"[0m
+2025-04-02T13:28:00.5564708Z [36;1m    echo "verbose diff:"[0m
+2025-04-02T13:28:00.5565189Z [36;1m    bash diff_commands_verbose.sh[0m
+2025-04-02T13:28:00.5565483Z [36;1m    exit 1[0m
+2025-04-02T13:28:00.5565690Z [36;1m  fi[0m
+2025-04-02T13:28:00.5565950Z [36;1melif [[ "PHPSTAN" == "PHPStan baseline changes" ]]; then[0m
+2025-04-02T13:28:00.5566556Z [36;1m  if [[ "app/bundles/EmailBundle/EventListener/CampaignSubscriber.php" == *"phpstan-baseline.neon"* ]]; then[0m
+2025-04-02T13:28:00.5567338Z [36;1m    stat=$(git diff --shortstat "origin/5.2" 4095c2c348cedc4996b93abd380d12d5642a4c4c -- phpstan-baseline.neon)[0m
+2025-04-02T13:28:00.5567828Z [36;1m    echo $stat[0m
+2025-04-02T13:28:00.5568065Z [36;1m    regex="[0-9]+[[:space:]]insertion"[0m
+2025-04-02T13:28:00.5568355Z [36;1m    if [[ $stat =~ $regex ]]; then[0m
+2025-04-02T13:28:00.5568784Z [36;1m      echo "There are modifications (added or changed lines) to the phpstan-baseline.neon"[0m
+2025-04-02T13:28:00.5569330Z [36;1m      echo "Please fix the PHPStan errors instead of altering the baseline file"[0m
+2025-04-02T13:28:00.5569887Z [36;1m      exit 1[0m
+2025-04-02T13:28:00.5570095Z [36;1m    fi[0m
+2025-04-02T13:28:00.5570279Z [36;1m  fi[0m
+2025-04-02T13:28:00.5570668Z [36;1melif [[ "PHPSTAN" == "composer install" ]]; then[0m
+2025-04-02T13:28:00.5571128Z [36;1m  # create a temp dir and mimic a composer install via mautic/recommended-project[0m
+2025-04-02T13:28:00.5571535Z [36;1m  mkdir test_composer[0m
+2025-04-02T13:28:00.5571781Z [36;1m  cd test_composer[0m
+2025-04-02T13:28:00.5572061Z [36;1m  cp ../.github/ci-files/composer.json ./[0m
+2025-04-02T13:28:00.5572358Z [36;1m  composer install[0m
+2025-04-02T13:28:00.5572579Z [36;1m[0m
+2025-04-02T13:28:00.5572922Z [36;1m  # test if media/css and media/js folder contain the same files as the tarball releases[0m
+2025-04-02T13:28:00.5573439Z [36;1m  test -z "$(comm -23 <(ls ../media/js  | sort) <(ls docroot/media/js  | sort))"[0m
+2025-04-02T13:28:00.5573890Z [36;1m  test -z "$(comm -23 <(ls ../media/css | sort) <(ls docroot/media/css | sort))"[0m
+2025-04-02T13:28:00.5574238Z [36;1m[0m
+2025-04-02T13:28:00.5574437Z [36;1m  # test if console is executable[0m
+2025-04-02T13:28:00.5574719Z [36;1m  ./bin/console cache:clear[0m
+2025-04-02T13:28:00.5575207Z [36;1melif [[ "PHPSTAN" == "composer lock check" ]]; then[0m
+2025-04-02T13:28:00.5575540Z [36;1m  composer validate --ansi[0m
+2025-04-02T13:28:00.5575794Z [36;1melse[0m
+2025-04-02T13:28:00.5575993Z [36;1m  echo "Invalid command"[0m
+2025-04-02T13:28:00.5576236Z [36;1m  exit 1[0m
+2025-04-02T13:28:00.5576423Z [36;1mfi[0m
+2025-04-02T13:28:00.5623269Z shell: /usr/bin/bash -e {0}
+2025-04-02T13:28:00.5623524Z env:
+2025-04-02T13:28:00.5623717Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-02T13:28:00.5623980Z   COMPOSER_NO_INTERACTION: 1
+2025-04-02T13:28:00.5624216Z   COMPOSER_NO_AUDIT: 1
+2025-04-02T13:28:00.5624488Z   CACHE_RESTORE_KEY: Linux-php-8.1.32-composer-locked-
+2025-04-02T13:28:00.5624805Z ##[endgroup]
+2025-04-02T13:28:01.3392098Z > [ ! -f var/cache/test/AppKernelTestDebugContainer.xml ] && (echo 'Building test cache ...'; APP_ENV=test APP_DEBUG=1 bin/console > /dev/null 2>&1);  php -d memory_limit=4G bin/phpstan analyse --ansi '--no-progress'
+2025-04-02T13:28:01.3438363Z Building test cache ...
+2025-04-02T13:28:11.5692806Z Note: Using configuration file /home/runner/work/mautic/mautic/phpstan.neon.
+2025-04-02T13:33:50.9382546Z ##[error]Variable $emailStat in PHPDoc tag @var does not match assigned variable $countVariantSent.
+2025-04-02T13:33:50.9390411Z  ------ ----------------------------------------------------------------------------------- 
+2025-04-02T13:33:50.9391336Z   [32mLine[39m   [32mapp/bundles/EmailBundle/Tests/Functional/EmailVariantInCampaignFunctionalTest.php[39m  
+2025-04-02T13:33:50.9391968Z  ------ ----------------------------------------------------------------------------------- 
+2025-04-02T13:33:50.9392458Z   49     Variable $emailStat in PHPDoc tag @var does not match assigned                     
+2025-04-02T13:33:50.9392980Z          variable $countVariantSent.                                                        
+2025-04-02T13:33:50.9393427Z  ------ ----------------------------------------------------------------------------------- 
+2025-04-02T13:33:50.9393682Z 
+2025-04-02T13:33:50.9393686Z 
+2025-04-02T13:33:50.9393884Z [37;41m                                                                                [39;49m
+2025-04-02T13:33:50.9394377Z [37;41m [ERROR] Found 1 error                                                          [39;49m
+2025-04-02T13:33:50.9394807Z [37;41m                                                                                [39;49m
+2025-04-02T13:33:50.9395238Z 
+2025-04-02T13:33:50.9889165Z Script [ ! -f var/cache/test/AppKernelTestDebugContainer.xml ] && (echo 'Building test cache ...'; APP_ENV=test APP_DEBUG=1 bin/console > /dev/null 2>&1);  php -d memory_limit=4G bin/phpstan analyse --ansi handling the phpstan event returned with error code 1
+2025-04-02T13:33:51.0083261Z ##[error]Process completed with exit code 1.
+2025-04-02T13:33:51.0171324Z Post job cleanup.
+2025-04-02T13:33:51.0223630Z Post job cleanup.
+2025-04-02T13:33:51.1193507Z [command]/usr/bin/git version
+2025-04-02T13:33:51.1235800Z git version 2.49.0
+2025-04-02T13:33:51.1272833Z Copying '/home/runner/.gitconfig' to '/home/runner/work/_temp/0f77552f-1b54-4498-a83a-601d28fad354/.gitconfig'
+2025-04-02T13:33:51.1282780Z Temporarily overriding HOME='/home/runner/work/_temp/0f77552f-1b54-4498-a83a-601d28fad354' before making global git config changes
+2025-04-02T13:33:51.1284140Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-02T13:33:51.1288843Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/mautic/mautic
+2025-04-02T13:33:51.1324106Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-02T13:33:51.1357285Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-02T13:33:51.1595676Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-02T13:33:51.1617528Z http.https://github.com/.extraheader
+2025-04-02T13:33:51.1630702Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-02T13:33:51.1663010Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-02T13:33:51.2011351Z Cleaning up orphan processes

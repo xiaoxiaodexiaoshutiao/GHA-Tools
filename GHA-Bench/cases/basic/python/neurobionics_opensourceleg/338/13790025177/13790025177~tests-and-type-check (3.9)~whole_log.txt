@@ -1,0 +1,297 @@
+2025-03-11T14:05:07.7445485Z Requested labels: ubuntu-latest
+2025-03-11T14:05:07.7445629Z Job defined at: neurobionics/opensourceleg/.github/workflows/main.yml@refs/pull/325/merge
+2025-03-11T14:05:07.7445721Z Waiting for a runner to pick up this job...
+2025-03-11T14:05:09.5308045Z Job is waiting for a hosted runner to come online.
+2025-03-11T14:05:13.0220908Z Job is about to start running on the hosted runner: GitHub Actions 7 (hosted)
+2025-03-11T14:05:14.8922349Z Current runner version: '2.322.0'
+2025-03-11T14:05:14.8947003Z ##[group]Operating System
+2025-03-11T14:05:14.8947806Z Ubuntu
+2025-03-11T14:05:14.8948335Z 24.04.2
+2025-03-11T14:05:14.8948876Z LTS
+2025-03-11T14:05:14.8949403Z ##[endgroup]
+2025-03-11T14:05:14.8949925Z ##[group]Runner Image
+2025-03-11T14:05:14.8950520Z Image: ubuntu-24.04
+2025-03-11T14:05:14.8951077Z Version: 20250302.1.0
+2025-03-11T14:05:14.8952287Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250302.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-11T14:05:14.8953755Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250302.1
+2025-03-11T14:05:14.8954676Z ##[endgroup]
+2025-03-11T14:05:14.8955216Z ##[group]Runner Image Provisioner
+2025-03-11T14:05:14.8955860Z 2.0.422.1
+2025-03-11T14:05:14.8956344Z ##[endgroup]
+2025-03-11T14:05:14.8958581Z ##[group]GITHUB_TOKEN Permissions
+2025-03-11T14:05:14.8960502Z Actions: write
+2025-03-11T14:05:14.8961511Z Attestations: write
+2025-03-11T14:05:14.8962135Z Checks: write
+2025-03-11T14:05:14.8962753Z Contents: write
+2025-03-11T14:05:14.8963271Z Deployments: write
+2025-03-11T14:05:14.8963831Z Discussions: write
+2025-03-11T14:05:14.8964430Z Issues: write
+2025-03-11T14:05:14.8964958Z Metadata: read
+2025-03-11T14:05:14.8965489Z Packages: write
+2025-03-11T14:05:14.8966002Z Pages: write
+2025-03-11T14:05:14.8966529Z PullRequests: write
+2025-03-11T14:05:14.8967095Z RepositoryProjects: write
+2025-03-11T14:05:14.8967726Z SecurityEvents: write
+2025-03-11T14:05:14.8968281Z Statuses: write
+2025-03-11T14:05:14.8968752Z ##[endgroup]
+2025-03-11T14:05:14.8971785Z Secret source: Actions
+2025-03-11T14:05:14.8972624Z Prepare workflow directory
+2025-03-11T14:05:14.9467602Z Prepare all required actions
+2025-03-11T14:05:14.9504276Z Getting action download info
+2025-03-11T14:05:15.1477688Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-11T14:05:15.2252048Z Download action repository 'codecov/codecov-action@v4' (SHA:b9fd7d16f6d7d1b5d2bec1a2887e65ceed900238)
+2025-03-11T14:05:15.5052522Z Complete job name: tests-and-type-check (3.9)
+2025-03-11T14:05:15.5832486Z ##[group]Run actions/checkout@v4
+2025-03-11T14:05:15.5833399Z with:
+2025-03-11T14:05:15.5833841Z   repository: neurobionics/opensourceleg
+2025-03-11T14:05:15.5834554Z   token: ***
+2025-03-11T14:05:15.5834968Z   ssh-strict: true
+2025-03-11T14:05:15.5835381Z   ssh-user: git
+2025-03-11T14:05:15.5835810Z   persist-credentials: true
+2025-03-11T14:05:15.5836273Z   clean: true
+2025-03-11T14:05:15.5836695Z   sparse-checkout-cone-mode: true
+2025-03-11T14:05:15.5837197Z   fetch-depth: 1
+2025-03-11T14:05:15.5837599Z   fetch-tags: false
+2025-03-11T14:05:15.5838028Z   show-progress: true
+2025-03-11T14:05:15.5838446Z   lfs: false
+2025-03-11T14:05:15.5838836Z   submodules: false
+2025-03-11T14:05:15.5839263Z   set-safe-directory: true
+2025-03-11T14:05:15.5839928Z ##[endgroup]
+2025-03-11T14:05:15.7456088Z Syncing repository: neurobionics/opensourceleg
+2025-03-11T14:05:15.7457858Z ##[group]Getting Git version info
+2025-03-11T14:05:15.7458705Z Working directory is '/home/runner/work/opensourceleg/opensourceleg'
+2025-03-11T14:05:15.7459746Z [command]/usr/bin/git version
+2025-03-11T14:05:15.7507330Z git version 2.48.1
+2025-03-11T14:05:15.7534196Z ##[endgroup]
+2025-03-11T14:05:15.7547917Z Temporarily overriding HOME='/home/runner/work/_temp/a1ad8dc1-2983-4db3-b4fd-eb45a9fc6a77' before making global git config changes
+2025-03-11T14:05:15.7553336Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-11T14:05:15.7554623Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/opensourceleg/opensourceleg
+2025-03-11T14:05:15.7587965Z Deleting the contents of '/home/runner/work/opensourceleg/opensourceleg'
+2025-03-11T14:05:15.7591094Z ##[group]Initializing the repository
+2025-03-11T14:05:15.7595535Z [command]/usr/bin/git init /home/runner/work/opensourceleg/opensourceleg
+2025-03-11T14:05:15.7648318Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-11T14:05:15.7649725Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-11T14:05:15.7650689Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-11T14:05:15.7651673Z hint:
+2025-03-11T14:05:15.7652220Z hint: 	git config --global init.defaultBranch <name>
+2025-03-11T14:05:15.7653069Z hint:
+2025-03-11T14:05:15.7654020Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-11T14:05:15.7655082Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-11T14:05:15.7655838Z hint:
+2025-03-11T14:05:15.7656231Z hint: 	git branch -m <name>
+2025-03-11T14:05:15.7657036Z Initialized empty Git repository in /home/runner/work/opensourceleg/opensourceleg/.git/
+2025-03-11T14:05:15.7664387Z [command]/usr/bin/git remote add origin https://github.com/neurobionics/opensourceleg
+2025-03-11T14:05:15.7695581Z ##[endgroup]
+2025-03-11T14:05:15.7696314Z ##[group]Disabling automatic garbage collection
+2025-03-11T14:05:15.7699671Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-11T14:05:15.7727641Z ##[endgroup]
+2025-03-11T14:05:15.7728338Z ##[group]Setting up auth
+2025-03-11T14:05:15.7734444Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-11T14:05:15.7763635Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-11T14:05:15.8039341Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-11T14:05:15.8075561Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-11T14:05:15.8305672Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-11T14:05:15.8340936Z ##[endgroup]
+2025-03-11T14:05:15.8342911Z ##[group]Fetching the repository
+2025-03-11T14:05:15.8351061Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +4a03c7309b40dd8812e8d3432004607e075fec71:refs/remotes/pull/325/merge
+2025-03-11T14:05:16.4088509Z From https://github.com/neurobionics/opensourceleg
+2025-03-11T14:05:16.4090633Z  * [new ref]         4a03c7309b40dd8812e8d3432004607e075fec71 -> pull/325/merge
+2025-03-11T14:05:16.4114500Z ##[endgroup]
+2025-03-11T14:05:16.4116188Z ##[group]Determining the checkout info
+2025-03-11T14:05:16.4118100Z ##[endgroup]
+2025-03-11T14:05:16.4123005Z [command]/usr/bin/git sparse-checkout disable
+2025-03-11T14:05:16.4161609Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-11T14:05:16.4189563Z ##[group]Checking out the ref
+2025-03-11T14:05:16.4193377Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/325/merge
+2025-03-11T14:05:16.4653229Z Note: switching to 'refs/remotes/pull/325/merge'.
+2025-03-11T14:05:16.4654632Z 
+2025-03-11T14:05:16.4655429Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-11T14:05:16.4657157Z changes and commit them, and you can discard any commits you make in this
+2025-03-11T14:05:16.4658743Z state without impacting any branches by switching back to a branch.
+2025-03-11T14:05:16.4659641Z 
+2025-03-11T14:05:16.4660593Z If you want to create a new branch to retain commits you create, you may
+2025-03-11T14:05:16.4663019Z do so (now or later) by using -c with the switch command. Example:
+2025-03-11T14:05:16.4664264Z 
+2025-03-11T14:05:16.4664737Z   git switch -c <new-branch-name>
+2025-03-11T14:05:16.4665631Z 
+2025-03-11T14:05:16.4666145Z Or undo this operation with:
+2025-03-11T14:05:16.4667152Z 
+2025-03-11T14:05:16.4667680Z   git switch -
+2025-03-11T14:05:16.4668438Z 
+2025-03-11T14:05:16.4669711Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-11T14:05:16.4671903Z 
+2025-03-11T14:05:16.4673959Z HEAD is now at 4a03c73 Merge 61ac3be325c6ac8e3998e4151f221ae0840e2a2a into 9edbea5f6d31197034585e132fef772f223675de
+2025-03-11T14:05:16.4766533Z ##[endgroup]
+2025-03-11T14:05:16.4768761Z [command]/usr/bin/git log -1 --format=%H
+2025-03-11T14:05:16.4770098Z 4a03c7309b40dd8812e8d3432004607e075fec71
+2025-03-11T14:05:16.5031273Z Prepare all required actions
+2025-03-11T14:05:16.5032329Z Getting action download info
+2025-03-11T14:05:16.6334325Z Download action repository 'actions/setup-python@v5' (SHA:42375524e23c412d93fb67b49958b491fce71c38)
+2025-03-11T14:05:16.7251614Z Download action repository 'actions/cache@v4' (SHA:d4323d4df104b026a6aa633fdb11d772146be0bf)
+2025-03-11T14:05:17.0337191Z ##[group]Run ./.github/actions/setup-poetry-env
+2025-03-11T14:05:17.0338332Z with:
+2025-03-11T14:05:17.0339076Z   python-version: 3.9
+2025-03-11T14:05:17.0339932Z ##[endgroup]
+2025-03-11T14:05:17.0515870Z ##[group]Run actions/setup-python@v5
+2025-03-11T14:05:17.0517371Z with:
+2025-03-11T14:05:17.0518484Z   python-version: 3.9
+2025-03-11T14:05:17.0519770Z   check-latest: false
+2025-03-11T14:05:17.0520938Z   token: ***
+2025-03-11T14:05:17.0521921Z   update-environment: true
+2025-03-11T14:05:17.0522818Z   allow-prereleases: false
+2025-03-11T14:05:17.0523667Z ##[endgroup]
+2025-03-11T14:05:17.2438414Z ##[group]Installed versions
+2025-03-11T14:05:17.2501149Z Successfully set up CPython (3.9.21)
+2025-03-11T14:05:17.2503750Z ##[endgroup]
+2025-03-11T14:05:17.2636895Z ##[group]Run curl -sSL https://install.python-poetry.org | python - -y
+2025-03-11T14:05:17.2638612Z [36;1mcurl -sSL https://install.python-poetry.org | python - -y[0m
+2025-03-11T14:05:17.2695595Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-11T14:05:17.2696764Z env:
+2025-03-11T14:05:17.2697626Z   pythonLocation: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-11T14:05:17.2699097Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib/pkgconfig
+2025-03-11T14:05:17.2700562Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-11T14:05:17.2702134Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-11T14:05:17.2703463Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-11T14:05:17.2704803Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib
+2025-03-11T14:05:17.2705968Z   POETRY_VERSION: 1.7.1
+2025-03-11T14:05:17.2706737Z ##[endgroup]
+2025-03-11T14:05:27.6039743Z Retrieving Poetry metadata
+2025-03-11T14:05:27.6040154Z 
+2025-03-11T14:05:27.6040486Z # Welcome to Poetry!
+2025-03-11T14:05:27.6040740Z 
+2025-03-11T14:05:27.6041052Z This will download and install the latest version of Poetry,
+2025-03-11T14:05:27.6042001Z a dependency and package manager for Python.
+2025-03-11T14:05:27.6042369Z 
+2025-03-11T14:05:27.6042724Z It will add the `poetry` command to Poetry's bin directory, located at:
+2025-03-11T14:05:27.6043172Z 
+2025-03-11T14:05:27.6043332Z /home/runner/.local/bin
+2025-03-11T14:05:27.6043498Z 
+2025-03-11T14:05:27.6043760Z You can uninstall at any time by executing this script with the --uninstall option,
+2025-03-11T14:05:27.6044281Z and these changes will be reverted.
+2025-03-11T14:05:27.6044484Z 
+2025-03-11T14:05:27.6044632Z Installing Poetry (1.7.1)
+2025-03-11T14:05:27.6044944Z Installing Poetry (1.7.1): Creating environment
+2025-03-11T14:05:27.6045316Z Installing Poetry (1.7.1): Installing Poetry
+2025-03-11T14:05:27.6045644Z Installing Poetry (1.7.1): Creating script
+2025-03-11T14:05:27.6045964Z Installing Poetry (1.7.1): Done
+2025-03-11T14:05:27.6046144Z 
+2025-03-11T14:05:27.6046258Z Poetry (1.7.1) is installed now. Great!
+2025-03-11T14:05:27.6046477Z 
+2025-03-11T14:05:27.6046624Z You can test that everything is set up by executing:
+2025-03-11T14:05:27.6046871Z 
+2025-03-11T14:05:27.6046974Z `poetry --version`
+2025-03-11T14:05:27.6047118Z 
+2025-03-11T14:05:27.6230506Z ##[group]Run echo "$HOME/.local/bin" >> $GITHUB_PATH
+2025-03-11T14:05:27.6230860Z [36;1mecho "$HOME/.local/bin" >> $GITHUB_PATH[0m
+2025-03-11T14:05:27.6278121Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-11T14:05:27.6278683Z env:
+2025-03-11T14:05:27.6278943Z   pythonLocation: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-11T14:05:27.6279361Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib/pkgconfig
+2025-03-11T14:05:27.6279775Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-11T14:05:27.6280309Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-11T14:05:27.6280678Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-11T14:05:27.6281044Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib
+2025-03-11T14:05:27.6281578Z ##[endgroup]
+2025-03-11T14:05:27.6384703Z ##[group]Run poetry config virtualenvs.in-project true
+2025-03-11T14:05:27.6385059Z [36;1mpoetry config virtualenvs.in-project true[0m
+2025-03-11T14:05:27.6429409Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-11T14:05:27.6429771Z env:
+2025-03-11T14:05:27.6430038Z   pythonLocation: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-11T14:05:27.6430495Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib/pkgconfig
+2025-03-11T14:05:27.6430936Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-11T14:05:27.6431489Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-11T14:05:27.6431907Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-11T14:05:27.6432300Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib
+2025-03-11T14:05:27.6432623Z ##[endgroup]
+2025-03-11T14:05:28.1356507Z ##[group]Run actions/cache@v4
+2025-03-11T14:05:28.1356737Z with:
+2025-03-11T14:05:28.1356912Z   path: .venv
+2025-03-11T14:05:28.1357266Z   key: venv-Linux-3.9-65deeddd22af5f35329baf64e2132728c63175d011f3511f71b2fcc6619b93ee
+2025-03-11T14:05:28.1357683Z   enableCrossOsArchive: false
+2025-03-11T14:05:28.1357920Z   fail-on-cache-miss: false
+2025-03-11T14:05:28.1358131Z   lookup-only: false
+2025-03-11T14:05:28.1358321Z   save-always: false
+2025-03-11T14:05:28.1358517Z env:
+2025-03-11T14:05:28.1358750Z   pythonLocation: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-11T14:05:28.1359182Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib/pkgconfig
+2025-03-11T14:05:28.1359567Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-11T14:05:28.1359909Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-11T14:05:28.1360251Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-11T14:05:28.1360595Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib
+2025-03-11T14:05:28.1360880Z ##[endgroup]
+2025-03-11T14:05:28.3284094Z Cache hit for: venv-Linux-3.9-65deeddd22af5f35329baf64e2132728c63175d011f3511f71b2fcc6619b93ee
+2025-03-11T14:05:29.3245453Z Received 139637526 of 139637526 (100.0%), 139.3 MBs/sec
+2025-03-11T14:05:29.3249608Z Cache Size: ~133 MB (139637526 B)
+2025-03-11T14:05:29.3279537Z [command]/usr/bin/tar -xf /home/runner/work/_temp/e87dc3a2-8a06-411e-bab8-b47ee792c8a7/cache.tzst -P -C /home/runner/work/opensourceleg/opensourceleg --use-compress-program unzstd
+2025-03-11T14:05:30.8910491Z Cache restored successfully
+2025-03-11T14:05:30.9375496Z Cache restored from key: venv-Linux-3.9-65deeddd22af5f35329baf64e2132728c63175d011f3511f71b2fcc6619b93ee
+2025-03-11T14:05:30.9522944Z ##[group]Run poetry run pytest tests --cov --cov-config=pyproject.toml --cov-report=xml
+2025-03-11T14:05:30.9523799Z [36;1mpoetry run pytest tests --cov --cov-config=pyproject.toml --cov-report=xml[0m
+2025-03-11T14:05:30.9572355Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-11T14:05:30.9572700Z env:
+2025-03-11T14:05:30.9572965Z   pythonLocation: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-11T14:05:30.9573423Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib/pkgconfig
+2025-03-11T14:05:30.9573875Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-11T14:05:30.9574285Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-11T14:05:30.9574674Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-11T14:05:30.9575260Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib
+2025-03-11T14:05:30.9575586Z ##[endgroup]
+2025-03-11T14:05:32.6131867Z ============================= test session starts ==============================
+2025-03-11T14:05:32.6132441Z platform linux -- Python 3.9.21, pytest-7.4.4, pluggy-1.5.0
+2025-03-11T14:05:32.6132909Z rootdir: /home/runner/work/opensourceleg/opensourceleg
+2025-03-11T14:05:32.6133289Z configfile: pyproject.toml
+2025-03-11T14:05:32.6133568Z plugins: cov-4.1.0
+2025-03-11T14:05:32.6133808Z collected 293 items
+2025-03-11T14:05:32.6133950Z 
+2025-03-11T14:05:32.6460100Z tests/test_actuators/test_actuators_base.py ............................ [  9%]
+2025-03-11T14:05:32.6714826Z ..............                                                           [ 14%]
+2025-03-11T14:05:32.7197033Z tests/test_control/test_compiled_controller.py ...............           [ 19%]
+2025-03-11T14:05:32.7427847Z tests/test_control/test_state_machine.py .....................           [ 26%]
+2025-03-11T14:05:32.7471582Z tests/test_logging/test_logging_decorators.py ...                        [ 27%]
+2025-03-11T14:05:32.7539525Z tests/test_logging/test_logging_exceptions.py ......                     [ 29%]
+2025-03-11T14:05:32.8098266Z tests/test_logging/test_logging_logger.py .............................. [ 39%]
+2025-03-11T14:05:32.8334555Z .............                                                            [ 44%]
+2025-03-11T14:05:32.8783755Z tests/test_math/test_math.py ...................................         [ 56%]
+2025-03-11T14:05:32.8968276Z tests/test_robots/test_robots_base.py .......                            [ 58%]
+2025-03-11T14:05:32.9404913Z tests/test_safety/test_safety.py ....................................... [ 72%]
+2025-03-11T14:05:32.9637520Z ....................                                                     [ 78%]
+2025-03-11T14:05:32.9931019Z tests/test_sensors/test_imu.py .........................                 [ 87%]
+2025-03-11T14:05:32.9983614Z tests/test_sensors/test_loadcell.py ....                                 [ 88%]
+2025-03-11T14:05:33.0099950Z tests/test_sensors/test_sensors_base.py .........                        [ 91%]
+2025-03-11T14:05:33.0255450Z tests/test_time/test_time.py ............                                [ 95%]
+2025-03-11T14:05:33.5984209Z tests/test_units/test_units.py ............                              [100%]
+2025-03-11T14:05:33.5985077Z 
+2025-03-11T14:05:33.5985651Z ---------- coverage: platform linux, python 3.9.21-final-0 -----------
+2025-03-11T14:05:33.5986597Z Coverage XML written to file coverage.xml
+2025-03-11T14:05:33.5986904Z 
+2025-03-11T14:05:33.5986911Z 
+2025-03-11T14:05:33.5987106Z ============================= 293 passed in 1.76s ==============================
+2025-03-11T14:05:33.6829185Z ##[group]Run poetry run mypy
+2025-03-11T14:05:33.6829481Z [36;1mpoetry run mypy[0m
+2025-03-11T14:05:33.6877476Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-11T14:05:33.6877821Z env:
+2025-03-11T14:05:33.6878074Z   pythonLocation: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-11T14:05:33.6878506Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib/pkgconfig
+2025-03-11T14:05:33.6878930Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-11T14:05:33.6879300Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-11T14:05:33.6879665Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.9.21/x64
+2025-03-11T14:05:33.6880023Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.9.21/x64/lib
+2025-03-11T14:05:33.6880338Z ##[endgroup]
+2025-03-11T14:05:37.5559508Z opensourceleg/sensors/encoder.py:69: error: X | Y syntax for unions requires Python 3.10  [syntax]
+2025-03-11T14:05:37.5561031Z opensourceleg/sensors/encoder.py:71: error: X | Y syntax for unions requires Python 3.10  [syntax]
+2025-03-11T14:05:37.7227860Z Found 2 errors in 1 file (checked 35 source files)
+2025-03-11T14:05:37.7344749Z ##[error]Process completed with exit code 1.
+2025-03-11T14:05:37.7419272Z Post job cleanup.
+2025-03-11T14:05:37.7471100Z Post job cleanup.
+2025-03-11T14:05:37.8413597Z [command]/usr/bin/git version
+2025-03-11T14:05:37.8459692Z git version 2.48.1
+2025-03-11T14:05:37.8505038Z Temporarily overriding HOME='/home/runner/work/_temp/641380fe-954f-410b-832f-469cec7f1df7' before making global git config changes
+2025-03-11T14:05:37.8506247Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-11T14:05:37.8510200Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/opensourceleg/opensourceleg
+2025-03-11T14:05:37.8544020Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-11T14:05:37.8575937Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-11T14:05:37.8817378Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-11T14:05:37.8840668Z http.https://github.com/.extraheader
+2025-03-11T14:05:37.8854969Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-11T14:05:37.8886958Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-11T14:05:37.9216642Z Cleaning up orphan processes

@@ -1,0 +1,499 @@
+﻿2025-04-07T15:16:42.6374930Z Current runner version: '2.323.0'
+2025-04-07T15:16:42.6398155Z ##[group]Operating System
+2025-04-07T15:16:42.6398909Z Ubuntu
+2025-04-07T15:16:42.6399490Z 24.04.2
+2025-04-07T15:16:42.6399944Z LTS
+2025-04-07T15:16:42.6400395Z ##[endgroup]
+2025-04-07T15:16:42.6400938Z ##[group]Runner Image
+2025-04-07T15:16:42.6401527Z Image: ubuntu-24.04
+2025-04-07T15:16:42.6402017Z Version: 20250316.1.0
+2025-04-07T15:16:42.6403097Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250316.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-07T15:16:42.6404801Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250316.1
+2025-04-07T15:16:42.6405713Z ##[endgroup]
+2025-04-07T15:16:42.6406292Z ##[group]Runner Image Provisioner
+2025-04-07T15:16:42.6406856Z 2.0.422.1
+2025-04-07T15:16:42.6407312Z ##[endgroup]
+2025-04-07T15:16:42.6409805Z ##[group]GITHUB_TOKEN Permissions
+2025-04-07T15:16:42.6411737Z Actions: write
+2025-04-07T15:16:42.6412559Z Attestations: write
+2025-04-07T15:16:42.6413145Z Checks: write
+2025-04-07T15:16:42.6413664Z Contents: write
+2025-04-07T15:16:42.6414373Z Deployments: write
+2025-04-07T15:16:42.6414915Z Discussions: write
+2025-04-07T15:16:42.6415796Z Issues: write
+2025-04-07T15:16:42.6416549Z Metadata: read
+2025-04-07T15:16:42.6417118Z Models: read
+2025-04-07T15:16:42.6417544Z Packages: write
+2025-04-07T15:16:42.6418126Z Pages: write
+2025-04-07T15:16:42.6418568Z PullRequests: write
+2025-04-07T15:16:42.6419070Z RepositoryProjects: write
+2025-04-07T15:16:42.6419698Z SecurityEvents: write
+2025-04-07T15:16:42.6420204Z Statuses: write
+2025-04-07T15:16:42.6420641Z ##[endgroup]
+2025-04-07T15:16:42.6423063Z Secret source: Actions
+2025-04-07T15:16:42.6423856Z Prepare workflow directory
+2025-04-07T15:16:42.6753195Z Prepare all required actions
+2025-04-07T15:16:42.6791138Z Getting action download info
+2025-04-07T15:16:43.1483366Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-07T15:16:43.1484640Z Version: 4.2.2
+2025-04-07T15:16:43.1485704Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-07T15:16:43.1486926Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-07T15:16:43.1487658Z ##[endgroup]
+2025-04-07T15:16:43.2383804Z Download action repository 'uncch-rdmc/sphinx-action@master' (SHA:a4b4c43c20f64f2f6b54806304588ac0ed7f830e)
+2025-04-07T15:16:43.5855047Z Complete job name: docs
+2025-04-07T15:16:43.6287346Z ##[group]Build container for action use: '/home/runner/work/_actions/uncch-rdmc/sphinx-action/master/Dockerfile'.
+2025-04-07T15:16:43.6339398Z ##[command]/usr/bin/docker build -t 93ee73:2cbc792314ee45e689f3130f10b60a70 -f "/home/runner/work/_actions/uncch-rdmc/sphinx-action/master/Dockerfile" "/home/runner/work/_actions/uncch-rdmc/sphinx-action/master"
+2025-04-07T15:16:44.2780459Z #0 building with "default" instance using docker driver
+2025-04-07T15:16:44.2781323Z 
+2025-04-07T15:16:44.2781690Z #1 [internal] load build definition from Dockerfile
+2025-04-07T15:16:44.2782598Z #1 transferring dockerfile: 222B done
+2025-04-07T15:16:44.2783404Z #1 DONE 0.0s
+2025-04-07T15:16:44.2783738Z 
+2025-04-07T15:16:44.2784560Z #2 [auth] sphinxdoc/sphinx:pull token for registry-1.docker.io
+2025-04-07T15:16:44.2785546Z #2 DONE 0.0s
+2025-04-07T15:16:44.2785874Z 
+2025-04-07T15:16:44.2786329Z #3 [internal] load metadata for docker.io/sphinxdoc/sphinx:3.5.4
+2025-04-07T15:16:44.7911157Z #3 DONE 0.7s
+2025-04-07T15:16:44.9106351Z 
+2025-04-07T15:16:44.9106742Z #4 [internal] load .dockerignore
+2025-04-07T15:16:44.9107405Z #4 transferring context: 2B done
+2025-04-07T15:16:44.9107830Z #4 DONE 0.0s
+2025-04-07T15:16:44.9108005Z 
+2025-04-07T15:16:44.9108140Z #5 [internal] load build context
+2025-04-07T15:16:44.9108477Z #5 transferring context: 7.99kB done
+2025-04-07T15:16:44.9108804Z #5 DONE 0.0s
+2025-04-07T15:16:44.9108966Z 
+2025-04-07T15:16:44.9109386Z #6 [1/3] FROM docker.io/sphinxdoc/sphinx:3.5.4@sha256:5e9a4133333209c2115c150539b1964b60e562482dc375eb378bf952688f4917
+2025-04-07T15:16:44.9110250Z #6 resolve docker.io/sphinxdoc/sphinx:3.5.4@sha256:5e9a4133333209c2115c150539b1964b60e562482dc375eb378bf952688f4917 done
+2025-04-07T15:16:44.9111343Z #6 sha256:b86ae058c239180db39f7680034e1cfb2603045fd44642e2970fd6a063e92bfb 8.99kB / 8.99kB done
+2025-04-07T15:16:44.9112036Z #6 sha256:f7ec5a41d630a33a2d1db59b95d89d93de7ae5a619a3a8571b78457e48266eba 4.35MB / 27.14MB 0.1s
+2025-04-07T15:16:44.9112748Z #6 sha256:388aab6f395415d7b5f9dcb43e1358fc58c8c6d611abe54624a573b652ae9411 0B / 2.77MB 0.1s
+2025-04-07T15:16:44.9113486Z #6 sha256:9501c65d3a7f8312515595d4925124500458e4e8bcc20ef26759b83daa16f0a2 0B / 10.90MB 0.1s
+2025-04-07T15:16:44.9114375Z #6 sha256:5e9a4133333209c2115c150539b1964b60e562482dc375eb378bf952688f4917 2.21kB / 2.21kB done
+2025-04-07T15:16:45.1086122Z #6 sha256:f7ec5a41d630a33a2d1db59b95d89d93de7ae5a619a3a8571b78457e48266eba 24.12MB / 27.14MB 0.3s
+2025-04-07T15:16:45.1087223Z #6 sha256:388aab6f395415d7b5f9dcb43e1358fc58c8c6d611abe54624a573b652ae9411 2.77MB / 2.77MB 0.2s done
+2025-04-07T15:16:45.1088102Z #6 sha256:9501c65d3a7f8312515595d4925124500458e4e8bcc20ef26759b83daa16f0a2 7.34MB / 10.90MB 0.3s
+2025-04-07T15:16:45.2738372Z #6 sha256:ac4bddc73958ff36b2c0655c1a22b9f272f2e1ba1fe13a3e1087d7bdb3cfe470 233B / 233B 0.2s done
+2025-04-07T15:16:45.2742222Z #6 sha256:db3cd99a2d054635e8ead63d4a84e9d344dabd4ec82ad4bb31116da15418fba9 0B / 2.45MB 0.3s
+2025-04-07T15:16:45.2744668Z #6 sha256:f7ec5a41d630a33a2d1db59b95d89d93de7ae5a619a3a8571b78457e48266eba 27.14MB / 27.14MB 0.4s done
+2025-04-07T15:16:45.2746068Z #6 sha256:9501c65d3a7f8312515595d4925124500458e4e8bcc20ef26759b83daa16f0a2 10.90MB / 10.90MB 0.4s done
+2025-04-07T15:16:45.2747167Z #6 extracting sha256:f7ec5a41d630a33a2d1db59b95d89d93de7ae5a619a3a8571b78457e48266eba 0.1s
+2025-04-07T15:16:45.2748913Z #6 sha256:d538a8d9975f1670acb2a9fc79d20af95f59ace22df0948349f916972203de89 0B / 93B 0.4s
+2025-04-07T15:16:45.2751375Z #6 sha256:b6ab453adb5639985ae4fbd8eb01ddca5650ea30c1ad8600d7e3a60131692ee8 0B / 34.59MB 0.4s
+2025-04-07T15:16:45.4860992Z #6 sha256:db3cd99a2d054635e8ead63d4a84e9d344dabd4ec82ad4bb31116da15418fba9 2.45MB / 2.45MB 0.5s done
+2025-04-07T15:16:45.4862899Z #6 sha256:2d045fdff73fd26f00fbc11dab0bae2d025756018df6584c1eae6f222ce707fe 0B / 2.13MB 0.6s
+2025-04-07T15:16:45.5891826Z #6 sha256:d538a8d9975f1670acb2a9fc79d20af95f59ace22df0948349f916972203de89 93B / 93B 0.6s done
+2025-04-07T15:16:45.5893610Z #6 sha256:8b8ba32ebb383d948a4e25d8ae16c55584445564c167b8e0e1780184dffd8875 0B / 20.23MB 0.7s
+2025-04-07T15:16:45.7081772Z #6 sha256:b6ab453adb5639985ae4fbd8eb01ddca5650ea30c1ad8600d7e3a60131692ee8 5.24MB / 34.59MB 0.9s
+2025-04-07T15:16:45.7083833Z #6 sha256:2d045fdff73fd26f00fbc11dab0bae2d025756018df6584c1eae6f222ce707fe 2.13MB / 2.13MB 0.8s done
+2025-04-07T15:16:45.8396933Z #6 sha256:8b8ba32ebb383d948a4e25d8ae16c55584445564c167b8e0e1780184dffd8875 2.10MB / 20.23MB 1.0s
+2025-04-07T15:16:46.0084560Z #6 sha256:b6ab453adb5639985ae4fbd8eb01ddca5650ea30c1ad8600d7e3a60131692ee8 8.39MB / 34.59MB 1.2s
+2025-04-07T15:16:46.0086203Z #6 sha256:8b8ba32ebb383d948a4e25d8ae16c55584445564c167b8e0e1780184dffd8875 6.29MB / 20.23MB 1.2s
+2025-04-07T15:16:46.1664901Z #6 sha256:b6ab453adb5639985ae4fbd8eb01ddca5650ea30c1ad8600d7e3a60131692ee8 13.62MB / 34.59MB 1.3s
+2025-04-07T15:16:46.1665992Z #6 sha256:8b8ba32ebb383d948a4e25d8ae16c55584445564c167b8e0e1780184dffd8875 12.58MB / 20.23MB 1.3s
+2025-04-07T15:16:46.2700242Z #6 extracting sha256:f7ec5a41d630a33a2d1db59b95d89d93de7ae5a619a3a8571b78457e48266eba 1.1s done
+2025-04-07T15:16:46.2701501Z #6 sha256:b6ab453adb5639985ae4fbd8eb01ddca5650ea30c1ad8600d7e3a60131692ee8 16.78MB / 34.59MB 1.4s
+2025-04-07T15:16:46.2702699Z #6 sha256:8b8ba32ebb383d948a4e25d8ae16c55584445564c167b8e0e1780184dffd8875 18.87MB / 20.23MB 1.4s
+2025-04-07T15:16:46.2704485Z #6 extracting sha256:388aab6f395415d7b5f9dcb43e1358fc58c8c6d611abe54624a573b652ae9411
+2025-04-07T15:16:46.3748454Z #6 sha256:b6ab453adb5639985ae4fbd8eb01ddca5650ea30c1ad8600d7e3a60131692ee8 22.02MB / 34.59MB 1.5s
+2025-04-07T15:16:46.3750505Z #6 sha256:8b8ba32ebb383d948a4e25d8ae16c55584445564c167b8e0e1780184dffd8875 20.23MB / 20.23MB 1.4s done
+2025-04-07T15:16:46.5086432Z #6 sha256:b6ab453adb5639985ae4fbd8eb01ddca5650ea30c1ad8600d7e3a60131692ee8 26.21MB / 34.59MB 1.7s
+2025-04-07T15:16:46.5087861Z #6 extracting sha256:388aab6f395415d7b5f9dcb43e1358fc58c8c6d611abe54624a573b652ae9411 0.1s done
+2025-04-07T15:16:46.7084813Z #6 sha256:b6ab453adb5639985ae4fbd8eb01ddca5650ea30c1ad8600d7e3a60131692ee8 34.59MB / 34.59MB 1.9s
+2025-04-07T15:16:47.0591435Z #6 sha256:b6ab453adb5639985ae4fbd8eb01ddca5650ea30c1ad8600d7e3a60131692ee8 34.59MB / 34.59MB 2.0s done
+2025-04-07T15:16:47.3416982Z #6 extracting sha256:9501c65d3a7f8312515595d4925124500458e4e8bcc20ef26759b83daa16f0a2
+2025-04-07T15:16:47.7680873Z #6 extracting sha256:9501c65d3a7f8312515595d4925124500458e4e8bcc20ef26759b83daa16f0a2 0.4s done
+2025-04-07T15:16:47.7681972Z #6 extracting sha256:ac4bddc73958ff36b2c0655c1a22b9f272f2e1ba1fe13a3e1087d7bdb3cfe470 done
+2025-04-07T15:16:47.7682838Z #6 extracting sha256:db3cd99a2d054635e8ead63d4a84e9d344dabd4ec82ad4bb31116da15418fba9
+2025-04-07T15:16:47.9871494Z #6 extracting sha256:db3cd99a2d054635e8ead63d4a84e9d344dabd4ec82ad4bb31116da15418fba9 0.2s done
+2025-04-07T15:16:47.9872710Z #6 extracting sha256:d538a8d9975f1670acb2a9fc79d20af95f59ace22df0948349f916972203de89
+2025-04-07T15:16:48.1277597Z #6 extracting sha256:d538a8d9975f1670acb2a9fc79d20af95f59ace22df0948349f916972203de89 done
+2025-04-07T15:16:48.1280067Z #6 extracting sha256:b6ab453adb5639985ae4fbd8eb01ddca5650ea30c1ad8600d7e3a60131692ee8 0.1s
+2025-04-07T15:16:48.8396399Z #6 extracting sha256:b6ab453adb5639985ae4fbd8eb01ddca5650ea30c1ad8600d7e3a60131692ee8 0.7s done
+2025-04-07T15:16:48.8397864Z #6 extracting sha256:2d045fdff73fd26f00fbc11dab0bae2d025756018df6584c1eae6f222ce707fe
+2025-04-07T15:16:49.1329764Z #6 extracting sha256:2d045fdff73fd26f00fbc11dab0bae2d025756018df6584c1eae6f222ce707fe 0.1s done
+2025-04-07T15:16:49.1330892Z #6 extracting sha256:8b8ba32ebb383d948a4e25d8ae16c55584445564c167b8e0e1780184dffd8875 0.1s
+2025-04-07T15:16:50.4403817Z #6 extracting sha256:8b8ba32ebb383d948a4e25d8ae16c55584445564c167b8e0e1780184dffd8875 1.3s done
+2025-04-07T15:16:50.4731730Z #6 DONE 5.7s
+2025-04-07T15:16:50.6506459Z 
+2025-04-07T15:16:50.6506872Z #7 [2/3] ADD entrypoint.py /entrypoint.py
+2025-04-07T15:16:50.6507398Z #7 DONE 0.0s
+2025-04-07T15:16:50.6507594Z 
+2025-04-07T15:16:50.6507723Z #8 [3/3] ADD sphinx_action /sphinx_action
+2025-04-07T15:16:50.6508028Z #8 DONE 0.0s
+2025-04-07T15:16:50.6508153Z 
+2025-04-07T15:16:50.6508572Z #9 exporting to image
+2025-04-07T15:16:50.6508817Z #9 exporting layers
+2025-04-07T15:16:51.1366985Z #9 exporting layers 0.6s done
+2025-04-07T15:16:51.1557712Z #9 writing image sha256:2ae00c5c87b10e9e621565236fdc8668b2a168f081a2bc68015619531bd74557 done
+2025-04-07T15:16:51.1558679Z #9 naming to docker.io/library/93ee73:2cbc792314ee45e689f3130f10b60a70 done
+2025-04-07T15:16:51.1559302Z #9 DONE 0.6s
+2025-04-07T15:16:51.1613032Z ##[endgroup]
+2025-04-07T15:16:51.1862517Z ##[group]Run actions/checkout@v4
+2025-04-07T15:16:51.1863043Z with:
+2025-04-07T15:16:51.1863237Z   repository: IQSS/dataverse
+2025-04-07T15:16:51.1863624Z   token: ***
+2025-04-07T15:16:51.1863802Z   ssh-strict: true
+2025-04-07T15:16:51.1864146Z   ssh-user: git
+2025-04-07T15:16:51.1864330Z   persist-credentials: true
+2025-04-07T15:16:51.1864538Z   clean: true
+2025-04-07T15:16:51.1864723Z   sparse-checkout-cone-mode: true
+2025-04-07T15:16:51.1864948Z   fetch-depth: 1
+2025-04-07T15:16:51.1865116Z   fetch-tags: false
+2025-04-07T15:16:51.1865295Z   show-progress: true
+2025-04-07T15:16:51.1865469Z   lfs: false
+2025-04-07T15:16:51.1865626Z   submodules: false
+2025-04-07T15:16:51.1865799Z   set-safe-directory: true
+2025-04-07T15:16:51.1866221Z ##[endgroup]
+2025-04-07T15:16:51.2983203Z Syncing repository: IQSS/dataverse
+2025-04-07T15:16:51.2985001Z ##[group]Getting Git version info
+2025-04-07T15:16:51.2985390Z Working directory is '/home/runner/work/dataverse/dataverse'
+2025-04-07T15:16:51.2986122Z [command]/usr/bin/git version
+2025-04-07T15:16:51.2998033Z git version 2.48.1
+2025-04-07T15:16:51.3024435Z ##[endgroup]
+2025-04-07T15:16:51.3038215Z Temporarily overriding HOME='/home/runner/work/_temp/4f5b1a99-8eab-4686-b833-a62aeff113f5' before making global git config changes
+2025-04-07T15:16:51.3039367Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-07T15:16:51.3044966Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/dataverse/dataverse
+2025-04-07T15:16:51.3081846Z Deleting the contents of '/home/runner/work/dataverse/dataverse'
+2025-04-07T15:16:51.3086200Z ##[group]Initializing the repository
+2025-04-07T15:16:51.3090876Z [command]/usr/bin/git init /home/runner/work/dataverse/dataverse
+2025-04-07T15:16:51.3155659Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-07T15:16:51.3156478Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-07T15:16:51.3157170Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-07T15:16:51.3157750Z hint:
+2025-04-07T15:16:51.3158202Z hint: 	git config --global init.defaultBranch <name>
+2025-04-07T15:16:51.3158709Z hint:
+2025-04-07T15:16:51.3159151Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-07T15:16:51.3159939Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-07T15:16:51.3160534Z hint:
+2025-04-07T15:16:51.3160814Z hint: 	git branch -m <name>
+2025-04-07T15:16:51.3161412Z Initialized empty Git repository in /home/runner/work/dataverse/dataverse/.git/
+2025-04-07T15:16:51.3173122Z [command]/usr/bin/git remote add origin https://github.com/IQSS/dataverse
+2025-04-07T15:16:51.3250202Z ##[endgroup]
+2025-04-07T15:16:51.3250673Z ##[group]Disabling automatic garbage collection
+2025-04-07T15:16:51.3251086Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-07T15:16:51.3287234Z ##[endgroup]
+2025-04-07T15:16:51.3287598Z ##[group]Setting up auth
+2025-04-07T15:16:51.3287968Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-07T15:16:51.3318746Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-07T15:16:51.3605944Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-07T15:16:51.3636669Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-07T15:16:51.3872827Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-07T15:16:51.3908739Z ##[endgroup]
+2025-04-07T15:16:51.3909410Z ##[group]Fetching the repository
+2025-04-07T15:16:51.3918520Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +9d7a6f474fe6ade7d699cc2e4d969f853bed3563:refs/remotes/pull/11403/merge
+2025-04-07T15:16:53.1004603Z From https://github.com/IQSS/dataverse
+2025-04-07T15:16:53.1005504Z  * [new ref]         9d7a6f474fe6ade7d699cc2e4d969f853bed3563 -> pull/11403/merge
+2025-04-07T15:16:53.1031669Z ##[endgroup]
+2025-04-07T15:16:53.1032268Z ##[group]Determining the checkout info
+2025-04-07T15:16:53.1035200Z ##[endgroup]
+2025-04-07T15:16:53.1040748Z [command]/usr/bin/git sparse-checkout disable
+2025-04-07T15:16:53.1081041Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-07T15:16:53.1108433Z ##[group]Checking out the ref
+2025-04-07T15:16:53.1112918Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/11403/merge
+2025-04-07T15:16:53.3980225Z Note: switching to 'refs/remotes/pull/11403/merge'.
+2025-04-07T15:16:53.3980645Z 
+2025-04-07T15:16:53.3980991Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-07T15:16:53.3981769Z changes and commit them, and you can discard any commits you make in this
+2025-04-07T15:16:53.3982530Z state without impacting any branches by switching back to a branch.
+2025-04-07T15:16:53.3983302Z 
+2025-04-07T15:16:53.3983497Z If you want to create a new branch to retain commits you create, you may
+2025-04-07T15:16:53.3984137Z do so (now or later) by using -c with the switch command. Example:
+2025-04-07T15:16:53.3984400Z 
+2025-04-07T15:16:53.3984503Z   git switch -c <new-branch-name>
+2025-04-07T15:16:53.3984685Z 
+2025-04-07T15:16:53.3984788Z Or undo this operation with:
+2025-04-07T15:16:53.3984960Z 
+2025-04-07T15:16:53.3985041Z   git switch -
+2025-04-07T15:16:53.3985280Z 
+2025-04-07T15:16:53.3985598Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-07T15:16:53.3986002Z 
+2025-04-07T15:16:53.3986549Z HEAD is now at 9d7a6f4 Merge 975843be3b5a47d310925b79c3d9baa4bc41c2b7 into c687d18116621909e2937e9a133a4c9b942b03fc
+2025-04-07T15:16:53.4001571Z ##[endgroup]
+2025-04-07T15:16:53.4045562Z [command]/usr/bin/git log -1 --format=%H
+2025-04-07T15:16:53.4070151Z 9d7a6f474fe6ade7d699cc2e4d969f853bed3563
+2025-04-07T15:16:53.4257998Z ##[group]Run uncch-rdmc/sphinx-action@master
+2025-04-07T15:16:53.4258287Z with:
+2025-04-07T15:16:53.4258463Z   docs-folder: doc/sphinx-guides/
+2025-04-07T15:16:53.4258711Z   build-command: make html
+2025-04-07T15:16:53.4258916Z ##[endgroup]
+2025-04-07T15:16:53.4349245Z ##[command]/usr/bin/docker run --name ee732cbc792314ee45e689f3130f10b60a70_a9c048 --label 93ee73 --workdir /github/workspace --rm -e "INPUT_DOCS-FOLDER" -e "INPUT_BUILD-COMMAND" -e "INPUT_PRE-BUILD-COMMAND" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_RESULTS_URL" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/runner/work/dataverse/dataverse":"/github/workspace" 93ee73:2cbc792314ee45e689f3130f10b60a70
+2025-04-07T15:16:54.0121577Z WARNING: The directory '/github/home/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+2025-04-07T15:16:54.2507759Z Collecting Sphinx==7.2.6
+2025-04-07T15:16:54.2910600Z   Downloading sphinx-7.2.6-py3-none-any.whl (3.2 MB)
+2025-04-07T15:16:54.3573497Z Collecting sphinx-icon==0.1.2
+2025-04-07T15:16:54.3662539Z   Downloading sphinx-icon-0.1.2.tar.gz (6.9 kB)
+2025-04-07T15:16:54.8080958Z Collecting myst-parser==2.0.0
+2025-04-07T15:16:54.8156112Z   Downloading myst_parser-2.0.0-py3-none-any.whl (77 kB)
+2025-04-07T15:16:54.8467042Z Collecting sphinx-tabs==3.4.5
+2025-04-07T15:16:54.8549176Z   Downloading sphinx_tabs-3.4.5-py3-none-any.whl (9.9 kB)
+2025-04-07T15:16:54.8793631Z Collecting sphinxcontrib-jquery
+2025-04-07T15:16:54.8884375Z   Downloading sphinxcontrib_jquery-4.1-py2.py3-none-any.whl (121 kB)
+2025-04-07T15:16:54.9128976Z Requirement already satisfied: docutils<0.21,>=0.16 in /usr/local/lib/python3.9/site-packages (from myst-parser==2.0.0->-r doc/sphinx-guides/requirements.txt (line 7)) (0.16)
+2025-04-07T15:16:54.9436409Z Collecting mdit-py-plugins~=0.4
+2025-04-07T15:16:54.9514298Z   Downloading mdit_py_plugins-0.4.2-py3-none-any.whl (55 kB)
+2025-04-07T15:16:54.9944439Z Collecting markdown-it-py~=3.0
+2025-04-07T15:16:55.0019008Z   Downloading markdown_it_py-3.0.0-py3-none-any.whl (87 kB)
+2025-04-07T15:16:55.0044651Z Requirement already satisfied: jinja2 in /usr/local/lib/python3.9/site-packages (from myst-parser==2.0.0->-r doc/sphinx-guides/requirements.txt (line 7)) (2.11.3)
+2025-04-07T15:16:55.1724510Z Collecting pyyaml
+2025-04-07T15:16:55.1813251Z   Downloading PyYAML-6.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (737 kB)
+2025-04-07T15:16:55.2535923Z Collecting docutils<0.21,>=0.16
+2025-04-07T15:16:55.2617088Z   Downloading docutils-0.20.1-py3-none-any.whl (572 kB)
+2025-04-07T15:16:55.4130490Z Collecting importlib-metadata>=4.8
+2025-04-07T15:16:55.4219118Z   Downloading importlib_metadata-8.6.1-py3-none-any.whl (26 kB)
+2025-04-07T15:16:55.4237877Z Requirement already satisfied: sphinxcontrib-qthelp in /usr/local/lib/python3.9/site-packages (from Sphinx==7.2.6->-r doc/sphinx-guides/requirements.txt (line 1)) (1.0.3)
+2025-04-07T15:16:55.4242804Z Requirement already satisfied: sphinxcontrib-applehelp in /usr/local/lib/python3.9/site-packages (from Sphinx==7.2.6->-r doc/sphinx-guides/requirements.txt (line 1)) (1.0.2)
+2025-04-07T15:16:55.4917233Z Collecting Pygments>=2.14
+2025-04-07T15:16:55.4998510Z   Downloading pygments-2.19.1-py3-none-any.whl (1.2 MB)
+2025-04-07T15:16:55.5124909Z Requirement already satisfied: babel>=2.9 in /usr/local/lib/python3.9/site-packages (from Sphinx==7.2.6->-r doc/sphinx-guides/requirements.txt (line 1)) (2.9.0)
+2025-04-07T15:16:55.5371271Z Collecting imagesize>=1.3
+2025-04-07T15:16:55.5450752Z   Downloading imagesize-1.4.1-py2.py3-none-any.whl (8.8 kB)
+2025-04-07T15:16:55.5467166Z Requirement already satisfied: alabaster<0.8,>=0.7 in /usr/local/lib/python3.9/site-packages (from Sphinx==7.2.6->-r doc/sphinx-guides/requirements.txt (line 1)) (0.7.12)
+2025-04-07T15:16:55.5971877Z Collecting jinja2
+2025-04-07T15:16:55.6061915Z   Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+2025-04-07T15:16:55.6670849Z Collecting packaging>=21.0
+2025-04-07T15:16:55.6777273Z   Downloading packaging-24.2-py3-none-any.whl (65 kB)
+2025-04-07T15:16:55.7062833Z Collecting sphinxcontrib-htmlhelp>=2.0.0
+2025-04-07T15:16:55.7153314Z   Downloading sphinxcontrib_htmlhelp-2.1.0-py3-none-any.whl (98 kB)
+2025-04-07T15:16:55.7183905Z Requirement already satisfied: snowballstemmer>=2.0 in /usr/local/lib/python3.9/site-packages (from Sphinx==7.2.6->-r doc/sphinx-guides/requirements.txt (line 1)) (2.1.0)
+2025-04-07T15:16:55.7189558Z Requirement already satisfied: sphinxcontrib-jsmath in /usr/local/lib/python3.9/site-packages (from Sphinx==7.2.6->-r doc/sphinx-guides/requirements.txt (line 1)) (1.0.1)
+2025-04-07T15:16:55.7602486Z Collecting sphinxcontrib-serializinghtml>=1.1.9
+2025-04-07T15:16:55.7680096Z   Downloading sphinxcontrib_serializinghtml-2.0.0-py3-none-any.whl (92 kB)
+2025-04-07T15:16:55.7710192Z Requirement already satisfied: sphinxcontrib-devhelp in /usr/local/lib/python3.9/site-packages (from Sphinx==7.2.6->-r doc/sphinx-guides/requirements.txt (line 1)) (1.0.2)
+2025-04-07T15:16:55.7715833Z Requirement already satisfied: requests>=2.25.0 in /usr/local/lib/python3.9/site-packages (from Sphinx==7.2.6->-r doc/sphinx-guides/requirements.txt (line 1)) (2.25.1)
+2025-04-07T15:16:55.8341476Z Collecting Deprecated
+2025-04-07T15:16:55.8417998Z   Downloading Deprecated-1.2.18-py2.py3-none-any.whl (10.0 kB)
+2025-04-07T15:16:55.8551579Z Requirement already satisfied: pytz>=2015.7 in /usr/local/lib/python3.9/site-packages (from babel>=2.9->Sphinx==7.2.6->-r doc/sphinx-guides/requirements.txt (line 1)) (2021.1)
+2025-04-07T15:16:55.9319045Z Collecting zipp>=3.20
+2025-04-07T15:16:55.9391897Z   Downloading zipp-3.21.0-py3-none-any.whl (9.6 kB)
+2025-04-07T15:16:56.1961745Z Collecting MarkupSafe>=2.0
+2025-04-07T15:16:56.2048852Z   Downloading MarkupSafe-3.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (20 kB)
+2025-04-07T15:16:56.2454324Z Collecting mdurl~=0.1
+2025-04-07T15:16:56.2527621Z   Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+2025-04-07T15:16:56.2875177Z Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.9/site-packages (from requests>=2.25.0->Sphinx==7.2.6->-r doc/sphinx-guides/requirements.txt (line 1)) (2020.12.5)
+2025-04-07T15:16:56.2882041Z Requirement already satisfied: urllib3<1.27,>=1.21.1 in /usr/local/lib/python3.9/site-packages (from requests>=2.25.0->Sphinx==7.2.6->-r doc/sphinx-guides/requirements.txt (line 1)) (1.26.4)
+2025-04-07T15:16:56.2889491Z Requirement already satisfied: idna<3,>=2.5 in /usr/local/lib/python3.9/site-packages (from requests>=2.25.0->Sphinx==7.2.6->-r doc/sphinx-guides/requirements.txt (line 1)) (2.10)
+2025-04-07T15:16:56.2897462Z Requirement already satisfied: chardet<5,>=3.0.2 in /usr/local/lib/python3.9/site-packages (from requests>=2.25.0->Sphinx==7.2.6->-r doc/sphinx-guides/requirements.txt (line 1)) (4.0.0)
+2025-04-07T15:16:56.8067263Z Collecting wrapt<2,>=1.10
+2025-04-07T15:16:56.8146031Z   Downloading wrapt-1.17.2-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (82 kB)
+2025-04-07T15:16:56.8452460Z Building wheels for collected packages: sphinx-icon
+2025-04-07T15:16:56.8458490Z   Building wheel for sphinx-icon (setup.py): started
+2025-04-07T15:16:57.0902180Z   Building wheel for sphinx-icon (setup.py): finished with status 'done'
+2025-04-07T15:16:57.0907843Z   Created wheel for sphinx-icon: filename=sphinx_icon-0.1.2-py3-none-any.whl size=8014 sha256=09047fc939e7584a7247247f2acb16a5fcd78e3fa9149ef508467e390ad526fe
+2025-04-07T15:16:57.0909603Z   Stored in directory: /tmp/pip-ephem-wheel-cache-aclgyfg2/wheels/29/d9/23/6f3c03af6d70d95b25a2786a94e4aa6cb0f9b1d53c3a53f56c
+2025-04-07T15:16:57.0926818Z Successfully built sphinx-icon
+2025-04-07T15:16:57.2941008Z Installing collected packages: zipp, mdurl, MarkupSafe, wrapt, sphinxcontrib-serializinghtml, sphinxcontrib-htmlhelp, Pygments, packaging, markdown-it-py, jinja2, importlib-metadata, imagesize, docutils, Sphinx, pyyaml, mdit-py-plugins, Deprecated, sphinxcontrib-jquery, sphinx-tabs, sphinx-icon, myst-parser
+2025-04-07T15:16:57.3134244Z   Attempting uninstall: MarkupSafe
+2025-04-07T15:16:57.3137117Z     Found existing installation: MarkupSafe 1.1.1
+2025-04-07T15:16:57.3163928Z     Uninstalling MarkupSafe-1.1.1:
+2025-04-07T15:16:57.3174639Z       Successfully uninstalled MarkupSafe-1.1.1
+2025-04-07T15:16:57.3432382Z   Attempting uninstall: sphinxcontrib-serializinghtml
+2025-04-07T15:16:57.3435276Z     Found existing installation: sphinxcontrib-serializinghtml 1.1.4
+2025-04-07T15:16:57.3559276Z     Uninstalling sphinxcontrib-serializinghtml-1.1.4:
+2025-04-07T15:16:57.4089727Z       Successfully uninstalled sphinxcontrib-serializinghtml-1.1.4
+2025-04-07T15:16:57.4711775Z   Attempting uninstall: sphinxcontrib-htmlhelp
+2025-04-07T15:16:57.4713813Z     Found existing installation: sphinxcontrib-htmlhelp 1.0.3
+2025-04-07T15:16:57.4833355Z     Uninstalling sphinxcontrib-htmlhelp-1.0.3:
+2025-04-07T15:16:57.5311730Z       Successfully uninstalled sphinxcontrib-htmlhelp-1.0.3
+2025-04-07T15:16:57.5936663Z   Attempting uninstall: Pygments
+2025-04-07T15:16:57.5938085Z     Found existing installation: Pygments 2.8.1
+2025-04-07T15:16:57.6782460Z     Uninstalling Pygments-2.8.1:
+2025-04-07T15:16:57.6831721Z       Successfully uninstalled Pygments-2.8.1
+2025-04-07T15:16:58.3473302Z   Attempting uninstall: packaging
+2025-04-07T15:16:58.3475267Z     Found existing installation: packaging 20.9
+2025-04-07T15:16:58.3526124Z     Uninstalling packaging-20.9:
+2025-04-07T15:16:58.3535952Z       Successfully uninstalled packaging-20.9
+2025-04-07T15:16:58.4596349Z   Attempting uninstall: jinja2
+2025-04-07T15:16:58.4601404Z     Found existing installation: Jinja2 2.11.3
+2025-04-07T15:16:58.4698706Z     Uninstalling Jinja2-2.11.3:
+2025-04-07T15:16:58.4711232Z       Successfully uninstalled Jinja2-2.11.3
+2025-04-07T15:16:58.5707086Z   Attempting uninstall: imagesize
+2025-04-07T15:16:58.5708249Z     Found existing installation: imagesize 1.2.0
+2025-04-07T15:16:58.5724201Z     Uninstalling imagesize-1.2.0:
+2025-04-07T15:16:58.6190953Z       Successfully uninstalled imagesize-1.2.0
+2025-04-07T15:16:58.6293708Z   Attempting uninstall: docutils
+2025-04-07T15:16:58.6296320Z     Found existing installation: docutils 0.16
+2025-04-07T15:16:58.6886583Z     Uninstalling docutils-0.16:
+2025-04-07T15:16:58.7005110Z       Successfully uninstalled docutils-0.16
+2025-04-07T15:16:59.0001168Z   Attempting uninstall: Sphinx
+2025-04-07T15:16:59.0001771Z     Found existing installation: Sphinx 3.5.4
+2025-04-07T15:16:59.0895378Z     Uninstalling Sphinx-3.5.4:
+2025-04-07T15:16:59.1020243Z       Successfully uninstalled Sphinx-3.5.4
+2025-04-07T15:16:59.9319878Z Successfully installed Deprecated-1.2.18 MarkupSafe-3.0.2 Pygments-2.19.1 Sphinx-7.2.6 docutils-0.20.1 imagesize-1.4.1 importlib-metadata-8.6.1 jinja2-3.1.6 markdown-it-py-3.0.0 mdit-py-plugins-0.4.2 mdurl-0.1.2 myst-parser-2.0.0 packaging-24.2 pyyaml-6.0.2 sphinx-icon-0.1.2 sphinx-tabs-3.4.5 sphinxcontrib-htmlhelp-2.1.0 sphinxcontrib-jquery-4.1 sphinxcontrib-serializinghtml-2.0.0 wrapt-1.17.2 zipp-3.21.0
+2025-04-07T15:17:00.1501477Z WARNING: You are using pip version 21.0.1; however, version 25.0.1 is available.
+2025-04-07T15:17:00.1502338Z You should consider upgrading via the '/usr/local/bin/python -m pip install --upgrade pip' command.
+2025-04-07T15:17:00.2132804Z sphinx-build -b html -d build/doctrees  -W --no-color -w "/tmp/sphinx-log" source build/html
+2025-04-07T15:17:00.4456926Z Running Sphinx v7.2.6
+2025-04-07T15:17:00.6245314Z /usr/local/lib/python3.9/site-packages/sphinxcontrib/applehelp/__init__.py:24: RemovedInSphinx80Warning: The alias 'sphinx.util.SkipProgressMessage' is deprecated, use 'sphinx.util.display.SkipProgressMessage' instead. Check CHANGES for Sphinx API modifications.
+2025-04-07T15:17:00.6247405Z   from sphinx.util import SkipProgressMessage, progress_message
+2025-04-07T15:17:00.6249333Z /usr/local/lib/python3.9/site-packages/sphinxcontrib/applehelp/__init__.py:24: RemovedInSphinx80Warning: The alias 'sphinx.util.progress_message' is deprecated, use 'sphinx.util.display.progress_message' instead. Check CHANGES for Sphinx API modifications.
+2025-04-07T15:17:00.6251246Z   from sphinx.util import SkipProgressMessage, progress_message
+2025-04-07T15:17:00.7039615Z making output directory... done
+2025-04-07T15:17:00.9658445Z myst v2.0.0: MdParserConfig(commonmark_only=False, gfm_only=False, enable_extensions=set(), disable_syntax=[], all_links_external=False, url_schemes=('http', 'https', 'mailto', 'ftp'), ref_domains=None, fence_as_directive=set(), number_code_blocks=[], title_to_header=False, heading_anchors=0, heading_slug_func=None, html_meta={}, footnote_transition=True, words_per_minute=200, substitutions={}, linkify_fuzzy_links=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, dmath_double_inline=False, update_mathjax=True, mathjax_classes='tex2jax_process|mathjax_process|math|output_area', enable_checkboxes=False, suppress_warnings=[], highlight_code_blocks=True)
+2025-04-07T15:17:00.9661750Z building [mo]: targets for 0 po files that are out of date
+2025-04-07T15:17:00.9662175Z writing output... 
+2025-04-07T15:17:00.9684738Z building [html]: targets for 133 source files that are out of date
+2025-04-07T15:17:00.9724280Z updating environment: [new config] 133 added, 0 changed, 0 removed
+2025-04-07T15:17:01.0153121Z [2Kreading sources... [  1%] admin/backups
+2025-04-07T15:17:01.0249353Z [2Kreading sources... [  2%] admin/collectionquotas
+2025-04-07T15:17:01.0357329Z [2Kreading sources... [  2%] admin/dashboard
+2025-04-07T15:17:01.0743471Z [2Kreading sources... [  3%] admin/dataverses-datasets
+2025-04-07T15:17:01.0954189Z [2Kreading sources... [  4%] admin/discoverability
+2025-04-07T15:17:01.1295859Z [2Kreading sources... [  5%] admin/external-tools
+2025-04-07T15:17:01.1500378Z [2Kreading sources... [  5%] admin/harvestclients
+2025-04-07T15:17:01.1712337Z [2Kreading sources... [  6%] admin/harvestserver
+2025-04-07T15:17:01.1762186Z [2Kreading sources... [  7%] admin/index
+2025-04-07T15:17:01.2527222Z [2Kreading sources... [  8%] admin/integrations
+2025-04-07T15:17:01.2630570Z [2Kreading sources... [  8%] admin/ip-groups
+2025-04-07T15:17:01.2792678Z [2Kreading sources... [  9%] admin/mail-groups
+2025-04-07T15:17:01.2845582Z [2Kreading sources... [ 10%] admin/maintenance
+2025-04-07T15:17:01.3277903Z [2Kreading sources... [ 11%] admin/make-data-count
+2025-04-07T15:17:01.4652342Z [2Kreading sources... [ 11%] admin/metadatacustomization
+2025-04-07T15:17:01.4814454Z [2Kreading sources... [ 12%] admin/metadataexport
+2025-04-07T15:17:01.5168639Z [2Kreading sources... [ 13%] admin/monitoring
+2025-04-07T15:17:01.5250921Z [2Kreading sources... [ 14%] admin/reporting-tools-and-queries
+2025-04-07T15:17:01.5424425Z [2Kreading sources... [ 14%] admin/solr-search-index
+2025-04-07T15:17:01.5645633Z [2Kreading sources... [ 15%] admin/timers
+2025-04-07T15:17:01.6017040Z [2Kreading sources... [ 16%] admin/troubleshooting
+2025-04-07T15:17:01.6292706Z [2Kreading sources... [ 17%] admin/user-administration
+2025-04-07T15:17:01.6553226Z [2Kreading sources... [ 17%] api/apps
+2025-04-07T15:17:01.6756632Z [2Kreading sources... [ 18%] api/auth
+2025-04-07T15:17:01.6974381Z [2Kreading sources... [ 19%] api/changelog
+2025-04-07T15:17:01.7477394Z [2Kreading sources... [ 20%] api/client-libraries
+2025-04-07T15:17:01.7583518Z [2Kreading sources... [ 20%] api/curation-labels
+2025-04-07T15:17:01.8192265Z [2Kreading sources... [ 21%] api/dataaccess
+2025-04-07T15:17:01.8981442Z [2Kreading sources... [ 22%] api/external-tools
+2025-04-07T15:17:01.9218531Z [2Kreading sources... [ 23%] api/faq
+2025-04-07T15:17:01.9598094Z [2Kreading sources... [ 23%] api/getting-started
+2025-04-07T15:17:01.9649626Z [2Kreading sources... [ 24%] api/index
+2025-04-07T15:17:02.0162138Z [2Kreading sources... [ 25%] api/intro
+2025-04-07T15:17:02.0232011Z [2Kreading sources... [ 26%] api/linkeddatanotification
+2025-04-07T15:17:02.1179160Z [2Kreading sources... [ 26%] api/metrics
+2025-04-07T15:17:03.1012490Z [2Kreading sources... [ 27%] api/native-api
+2025-04-07T15:17:03.1389015Z [2Kreading sources... [ 28%] api/search
+2025-04-07T15:17:03.2055563Z [2Kreading sources... [ 29%] api/sword
+2025-04-07T15:17:03.2533897Z [2Kreading sources... [ 29%] container/app-image
+2025-04-07T15:17:03.3589563Z [2Kreading sources... [ 30%] container/base-image
+2025-04-07T15:17:03.4569527Z [2Kreading sources... [ 31%] container/configbaker-image
+2025-04-07T15:17:03.5416239Z [2Kreading sources... [ 32%] container/dev-usage
+2025-04-07T15:17:03.5460544Z [2Kreading sources... [ 32%] container/index
+2025-04-07T15:17:03.5552337Z [2Kreading sources... [ 33%] container/intro
+2025-04-07T15:17:03.5604160Z [2Kreading sources... [ 34%] container/running/backend-dev
+2025-04-07T15:17:03.6177797Z [2Kreading sources... [ 35%] container/running/demo
+2025-04-07T15:17:03.6229728Z [2Kreading sources... [ 35%] container/running/frontend-dev
+2025-04-07T15:17:03.6304482Z [2Kreading sources... [ 36%] container/running/github-action
+2025-04-07T15:17:03.6342760Z [2Kreading sources... [ 37%] container/running/index
+2025-04-07T15:17:03.6404378Z [2Kreading sources... [ 38%] container/running/metadata-blocks
+2025-04-07T15:17:03.6540806Z [2Kreading sources... [ 38%] container/running/production
+2025-04-07T15:17:03.6737667Z [2Kreading sources... [ 39%] contributor/code
+2025-04-07T15:17:03.7187351Z [2Kreading sources... [ 40%] contributor/documentation
+2025-04-07T15:17:03.7435523Z [2Kreading sources... [ 41%] contributor/index
+2025-04-07T15:17:03.7612578Z [2Kreading sources... [ 41%] developers/api-design
+2025-04-07T15:17:03.7698544Z [2Kreading sources... [ 42%] developers/aux-file-support
+2025-04-07T15:17:03.8082243Z [2Kreading sources... [ 43%] developers/big-data-support
+2025-04-07T15:17:03.8459231Z [2Kreading sources... [ 44%] developers/classic-dev-env
+2025-04-07T15:17:03.8666360Z [2Kreading sources... [ 44%] developers/coding-style
+2025-04-07T15:17:03.8916189Z [2Kreading sources... [ 45%] developers/configuration
+2025-04-07T15:17:03.9010408Z [2Kreading sources... [ 46%] developers/containers
+2025-04-07T15:17:03.9147588Z [2Kreading sources... [ 47%] developers/dataset-migration-api
+2025-04-07T15:17:03.9309861Z [2Kreading sources... [ 47%] developers/dataset-semantic-metadata-api
+2025-04-07T15:17:03.9496600Z [2Kreading sources... [ 48%] developers/debugging
+2025-04-07T15:17:04.0006546Z [2Kreading sources... [ 49%] developers/dependencies
+2025-04-07T15:17:04.1009681Z [2Kreading sources... [ 50%] developers/deployment
+2025-04-07T15:17:04.1184220Z [2Kreading sources... [ 50%] developers/dev-environment
+2025-04-07T15:17:04.1380979Z [2Kreading sources... [ 51%] developers/fontcustom
+2025-04-07T15:17:04.1634534Z [2Kreading sources... [ 52%] developers/geospatial
+2025-04-07T15:17:04.1875956Z [2Kreading sources... [ 53%] developers/globus-api
+2025-04-07T15:17:04.1921863Z [2Kreading sources... [ 53%] developers/index
+2025-04-07T15:17:04.2160808Z [2Kreading sources... [ 54%] developers/intro
+2025-04-07T15:17:04.2406580Z [2Kreading sources... [ 55%] developers/make-data-count
+2025-04-07T15:17:04.2676249Z [2Kreading sources... [ 56%] developers/making-library-releases
+2025-04-07T15:17:04.3395215Z [2Kreading sources... [ 56%] developers/making-releases
+2025-04-07T15:17:04.3575006Z [2Kreading sources... [ 57%] developers/metadataexport
+2025-04-07T15:17:04.3995059Z [2Kreading sources... [ 58%] developers/performance
+2025-04-07T15:17:04.4187100Z [2Kreading sources... [ 59%] developers/remote-users
+2025-04-07T15:17:04.4549590Z [2Kreading sources... [ 59%] developers/s3-direct-upload-api
+2025-04-07T15:17:04.4651927Z [2Kreading sources... [ 60%] developers/security
+2025-04-07T15:17:04.4886547Z [2Kreading sources... [ 61%] developers/selinux
+2025-04-07T15:17:04.5022548Z [2Kreading sources... [ 62%] developers/sql-upgrade-scripts
+2025-04-07T15:17:04.6000008Z [2Kreading sources... [ 62%] developers/testing
+2025-04-07T15:17:04.6588923Z [2Kreading sources... [ 63%] developers/tips
+2025-04-07T15:17:04.6946658Z [2Kreading sources... [ 64%] developers/tools
+2025-04-07T15:17:04.7218177Z [2Kreading sources... [ 65%] developers/troubleshooting
+2025-04-07T15:17:04.7297213Z [2Kreading sources... [ 65%] developers/unf/index
+2025-04-07T15:17:04.7420742Z [2Kreading sources... [ 66%] developers/unf/unf-v3
+2025-04-07T15:17:04.7479165Z [2Kreading sources... [ 67%] developers/unf/unf-v5
+2025-04-07T15:17:04.7971646Z [2Kreading sources... [ 68%] developers/unf/unf-v6
+2025-04-07T15:17:04.9472067Z [2Kreading sources... [ 68%] developers/version-control
+2025-04-07T15:17:04.9692364Z [2Kreading sources... [ 69%] developers/windows
+2025-04-07T15:17:04.9991764Z [2Kreading sources... [ 70%] developers/workflows
+2025-04-07T15:17:05.0106480Z [2Kreading sources... [ 71%] index
+2025-04-07T15:17:05.0427464Z [2Kreading sources... [ 71%] installation/advanced
+2025-04-07T15:17:06.1557058Z [2Kreading sources... [ 72%] installation/config
+2025-04-07T15:17:06.1636035Z [2Kreading sources... [ 73%] installation/external-tools
+2025-04-07T15:17:06.1679820Z [2Kreading sources... [ 74%] installation/index
+2025-04-07T15:17:06.2132659Z [2Kreading sources... [ 74%] installation/installation-main
+2025-04-07T15:17:06.2298364Z [2Kreading sources... [ 75%] installation/intro
+2025-04-07T15:17:06.2598034Z [2Kreading sources... [ 76%] installation/oauth2
+2025-04-07T15:17:06.3037552Z [2Kreading sources... [ 77%] installation/oidc
+2025-04-07T15:17:06.3133550Z [2Kreading sources... [ 77%] installation/orcid
+2025-04-07T15:17:06.3431764Z [2Kreading sources... [ 78%] installation/prep
+2025-04-07T15:17:06.4085939Z [2Kreading sources... [ 79%] installation/prerequisites
+2025-04-07T15:17:06.4906818Z [2Kreading sources... [ 80%] installation/shibboleth
+2025-04-07T15:17:06.4969422Z [2Kreading sources... [ 80%] installation/upgrading
+2025-04-07T15:17:06.5009807Z [2Kreading sources... [ 81%] qa/index
+2025-04-07T15:17:06.5210823Z [2Kreading sources... [ 82%] qa/overview
+2025-04-07T15:17:06.5308137Z [2Kreading sources... [ 83%] qa/performance-tests
+2025-04-07T15:17:06.5500356Z [2Kreading sources... [ 83%] qa/qa-workflow
+2025-04-07T15:17:06.5671899Z [2Kreading sources... [ 84%] qa/test-automation
+2025-04-07T15:17:06.5802856Z [2Kreading sources... [ 85%] qa/testing-approach
+2025-04-07T15:17:06.5993433Z [2Kreading sources... [ 86%] qa/testing-infrastructure
+2025-04-07T15:17:06.6258664Z [2Kreading sources... [ 86%] style/foundations
+2025-04-07T15:17:06.6310692Z [2Kreading sources... [ 87%] style/index
+2025-04-07T15:17:06.6688871Z [2Kreading sources... [ 88%] style/patterns
+2025-04-07T15:17:06.6742471Z [2Kreading sources... [ 89%] style/text
+2025-04-07T15:17:06.7255781Z [2Kreading sources... [ 89%] user/account
+2025-04-07T15:17:06.7445505Z [2Kreading sources... [ 90%] user/appendix
+2025-04-07T15:17:06.9349743Z [2Kreading sources... [ 91%] user/dataset-management
+2025-04-07T15:17:07.1374671Z [2Kreading sources... [ 92%] user/dataverse-management
+2025-04-07T15:17:07.1740234Z [2Kreading sources... [ 92%] user/find-use-data
+2025-04-07T15:17:07.1786391Z [2Kreading sources... [ 93%] user/index
+2025-04-07T15:17:07.1941242Z [2Kreading sources... [ 94%] user/tabulardataingest/csv-tsv
+2025-04-07T15:17:07.2033009Z [2Kreading sources... [ 95%] user/tabulardataingest/excel
+2025-04-07T15:17:07.2073081Z [2Kreading sources... [ 95%] user/tabulardataingest/index
+2025-04-07T15:17:07.2208223Z [2Kreading sources... [ 96%] user/tabulardataingest/ingestprocess
+2025-04-07T15:17:07.2423457Z [2Kreading sources... [ 97%] user/tabulardataingest/rdata
+2025-04-07T15:17:07.2522576Z [2Kreading sources... [ 98%] user/tabulardataingest/spss
+2025-04-07T15:17:07.2568863Z [2Kreading sources... [ 98%] user/tabulardataingest/stata
+2025-04-07T15:17:07.2643922Z [2Kreading sources... [ 99%] user/tabulardataingest/supportedformats
+2025-04-07T15:17:07.2875692Z [2Kreading sources... [100%] versions
+2025-04-07T15:17:07.2880147Z 
+2025-04-07T15:17:07.2880362Z Warning, treated as error:
+2025-04-07T15:17:07.2881406Z /github/workspace/doc/sphinx-guides/source/api/native-api.rst:4675:Explicit markup ends without a blank line; unexpected unindent.
+2025-04-07T15:17:07.9589312Z make: *** [Makefile:64: html] Error 2
+2025-04-07T15:17:07.9593396Z Traceback (most recent call last):
+2025-04-07T15:17:07.9595240Z [sphinx-action] Starting sphinx-action build.
+2025-04-07T15:17:07.9596319Z   File "/entrypoint.py", line 22, in <module>
+2025-04-07T15:17:07.9596920Z     action.build_all_docs(github_env, [os.environ.get("INPUT_DOCS-FOLDER")])
+2025-04-07T15:17:07.9597412Z   File "/sphinx_action/action.py", line 167, in build_all_docs
+2025-04-07T15:17:07.9597698Z Running: 
+2025-04-07T15:17:07.9597863Z ====================================
+2025-04-07T15:17:07.9598090Z Building docs in doc/sphinx-guides/
+2025-04-07T15:17:07.9598317Z ====================================
+2025-04-07T15:17:07.9598562Z [sphinx-action] Running: ['make', 'html', '-e']
+2025-04-07T15:17:07.9598864Z [sphinx-action] Build failed with 0 warnings
+2025-04-07T15:17:07.9599140Z     raise RuntimeError("Build failed")
+2025-04-07T15:17:07.9599367Z RuntimeError: Build failed
+2025-04-07T15:17:08.2256966Z Post job cleanup.
+2025-04-07T15:17:08.3187534Z [command]/usr/bin/git version
+2025-04-07T15:17:08.3223488Z git version 2.48.1
+2025-04-07T15:17:08.3273523Z Temporarily overriding HOME='/home/runner/work/_temp/66d83c9c-46a3-4ce9-a01a-f97ef097bcb7' before making global git config changes
+2025-04-07T15:17:08.3275006Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-07T15:17:08.3279732Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/dataverse/dataverse
+2025-04-07T15:17:08.3314497Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-07T15:17:08.3350753Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-07T15:17:08.3586779Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-07T15:17:08.3607210Z http.https://github.com/.extraheader
+2025-04-07T15:17:08.3620255Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-07T15:17:08.3650965Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-07T15:17:08.3980800Z Cleaning up orphan processes

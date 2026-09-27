@@ -1,0 +1,282 @@
+﻿2025-03-28T02:04:06.9673964Z Current runner version: '2.323.0'
+2025-03-28T02:04:06.9699891Z ##[group]Operating System
+2025-03-28T02:04:06.9700844Z Ubuntu
+2025-03-28T02:04:06.9701394Z 24.04.2
+2025-03-28T02:04:06.9701920Z LTS
+2025-03-28T02:04:06.9702363Z ##[endgroup]
+2025-03-28T02:04:06.9702926Z ##[group]Runner Image
+2025-03-28T02:04:06.9703505Z Image: ubuntu-24.04
+2025-03-28T02:04:06.9703983Z Version: 20250323.1.0
+2025-03-28T02:04:06.9705039Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-28T02:04:06.9706424Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-03-28T02:04:06.9707306Z ##[endgroup]
+2025-03-28T02:04:06.9707874Z ##[group]Runner Image Provisioner
+2025-03-28T02:04:06.9708426Z 2.0.422.1
+2025-03-28T02:04:06.9708884Z ##[endgroup]
+2025-03-28T02:04:06.9711285Z ##[group]GITHUB_TOKEN Permissions
+2025-03-28T02:04:06.9713326Z Actions: read
+2025-03-28T02:04:06.9714142Z Attestations: read
+2025-03-28T02:04:06.9714710Z Checks: read
+2025-03-28T02:04:06.9715251Z Contents: read
+2025-03-28T02:04:06.9715721Z Deployments: read
+2025-03-28T02:04:06.9716219Z Discussions: read
+2025-03-28T02:04:06.9716698Z Issues: read
+2025-03-28T02:04:06.9717200Z Metadata: read
+2025-03-28T02:04:06.9717676Z Models: read
+2025-03-28T02:04:06.9718158Z Packages: read
+2025-03-28T02:04:06.9718667Z Pages: read
+2025-03-28T02:04:06.9719109Z PullRequests: read
+2025-03-28T02:04:06.9719696Z RepositoryProjects: read
+2025-03-28T02:04:06.9720256Z SecurityEvents: read
+2025-03-28T02:04:06.9721041Z Statuses: read
+2025-03-28T02:04:06.9721515Z ##[endgroup]
+2025-03-28T02:04:06.9723693Z Secret source: None
+2025-03-28T02:04:06.9724467Z Prepare workflow directory
+2025-03-28T02:04:07.0056850Z Prepare all required actions
+2025-03-28T02:04:07.0113467Z Getting action download info
+2025-03-28T02:04:07.4570639Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-03-28T02:04:07.4572280Z Version: 4.2.2
+2025-03-28T02:04:07.4573437Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-03-28T02:04:07.4574677Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-03-28T02:04:07.4575515Z ##[endgroup]
+2025-03-28T02:04:07.5622229Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-03-28T02:04:07.5623017Z Version: 5.5.0
+2025-03-28T02:04:07.5623715Z Digest: sha256:1fac95d751afd58314aebd2ab01d4bf3b3109a441917bd2cac2a22898ec494f7
+2025-03-28T02:04:07.5624632Z Source commit SHA: 8d9ed9ac5c53483de85588cdf95a591a75ab9f55
+2025-03-28T02:04:07.5625268Z ##[endgroup]
+2025-03-28T02:04:07.7535172Z ##[group]Download immutable action package 'actions/cache@v4'
+2025-03-28T02:04:07.7535903Z Version: 4.2.3
+2025-03-28T02:04:07.7536602Z Digest: sha256:c8a3bb963e1f1826d8fcc8d1354f0dd29d8ac1db1d4f6f20247055ae11b81ed9
+2025-03-28T02:04:07.7537558Z Source commit SHA: 5a3ec84eff668545956fd18022155c47e93e2684
+2025-03-28T02:04:07.7538205Z ##[endgroup]
+2025-03-28T02:04:08.0215631Z Complete job name: validate
+2025-03-28T02:04:08.0941146Z ##[group]Run actions/checkout@v4
+2025-03-28T02:04:08.0942146Z with:
+2025-03-28T02:04:08.0942650Z   repository: litestar-org/polyfactory
+2025-03-28T02:04:08.0943425Z   token: ***
+2025-03-28T02:04:08.0943859Z   ssh-strict: true
+2025-03-28T02:04:08.0944274Z   ssh-user: git
+2025-03-28T02:04:08.0944709Z   persist-credentials: true
+2025-03-28T02:04:08.0945191Z   clean: true
+2025-03-28T02:04:08.0945618Z   sparse-checkout-cone-mode: true
+2025-03-28T02:04:08.0946139Z   fetch-depth: 1
+2025-03-28T02:04:08.0946552Z   fetch-tags: false
+2025-03-28T02:04:08.0946987Z   show-progress: true
+2025-03-28T02:04:08.0947415Z   lfs: false
+2025-03-28T02:04:08.0947830Z   submodules: false
+2025-03-28T02:04:08.0948290Z   set-safe-directory: true
+2025-03-28T02:04:08.0949125Z ##[endgroup]
+2025-03-28T02:04:08.3726851Z Syncing repository: litestar-org/polyfactory
+2025-03-28T02:04:08.3729273Z ##[group]Getting Git version info
+2025-03-28T02:04:08.3730429Z Working directory is '/home/runner/work/polyfactory/polyfactory'
+2025-03-28T02:04:08.3733068Z [command]/usr/bin/git version
+2025-03-28T02:04:08.3853512Z git version 2.49.0
+2025-03-28T02:04:08.3887538Z ##[endgroup]
+2025-03-28T02:04:08.3903127Z Temporarily overriding HOME='/home/runner/work/_temp/81e4261f-79da-4c3d-81f6-b11189312bea' before making global git config changes
+2025-03-28T02:04:08.3905966Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-28T02:04:08.3908827Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/polyfactory/polyfactory
+2025-03-28T02:04:08.3951594Z Deleting the contents of '/home/runner/work/polyfactory/polyfactory'
+2025-03-28T02:04:08.3956523Z ##[group]Initializing the repository
+2025-03-28T02:04:08.3962023Z [command]/usr/bin/git init /home/runner/work/polyfactory/polyfactory
+2025-03-28T02:04:08.4090573Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-28T02:04:08.4092862Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-28T02:04:08.4094839Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-28T02:04:08.4096432Z hint:
+2025-03-28T02:04:08.4097610Z hint: 	git config --global init.defaultBranch <name>
+2025-03-28T02:04:08.4099348Z hint:
+2025-03-28T02:04:08.4101329Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-28T02:04:08.4104581Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-28T02:04:08.4107242Z hint:
+2025-03-28T02:04:08.4108729Z hint: 	git branch -m <name>
+2025-03-28T02:04:08.4111694Z Initialized empty Git repository in /home/runner/work/polyfactory/polyfactory/.git/
+2025-03-28T02:04:08.4118226Z [command]/usr/bin/git remote add origin https://github.com/litestar-org/polyfactory
+2025-03-28T02:04:08.4164476Z ##[endgroup]
+2025-03-28T02:04:08.4167406Z ##[group]Disabling automatic garbage collection
+2025-03-28T02:04:08.4169894Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-28T02:04:08.4201944Z ##[endgroup]
+2025-03-28T02:04:08.4204525Z ##[group]Setting up auth
+2025-03-28T02:04:08.4210041Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-28T02:04:08.4246023Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-28T02:04:08.4633845Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-28T02:04:08.4665488Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-28T02:04:08.4907207Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-28T02:04:08.4944087Z ##[endgroup]
+2025-03-28T02:04:08.4946682Z ##[group]Fetching the repository
+2025-03-28T02:04:08.4957096Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +7dc67f9a8c6c4815d1d493f94ee8826e9e9cd236:refs/remotes/pull/679/merge
+2025-03-28T02:04:08.7900605Z From https://github.com/litestar-org/polyfactory
+2025-03-28T02:04:08.7903249Z  * [new ref]         7dc67f9a8c6c4815d1d493f94ee8826e9e9cd236 -> pull/679/merge
+2025-03-28T02:04:08.7976958Z ##[endgroup]
+2025-03-28T02:04:08.7979005Z ##[group]Determining the checkout info
+2025-03-28T02:04:08.7981690Z ##[endgroup]
+2025-03-28T02:04:08.7984244Z [command]/usr/bin/git sparse-checkout disable
+2025-03-28T02:04:08.8029981Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-28T02:04:08.8059693Z ##[group]Checking out the ref
+2025-03-28T02:04:08.8062009Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/679/merge
+2025-03-28T02:04:08.8211472Z Note: switching to 'refs/remotes/pull/679/merge'.
+2025-03-28T02:04:08.8212938Z 
+2025-03-28T02:04:08.8214255Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-28T02:04:08.8218279Z changes and commit them, and you can discard any commits you make in this
+2025-03-28T02:04:08.8222309Z state without impacting any branches by switching back to a branch.
+2025-03-28T02:04:08.8224232Z 
+2025-03-28T02:04:08.8225473Z If you want to create a new branch to retain commits you create, you may
+2025-03-28T02:04:08.8228371Z do so (now or later) by using -c with the switch command. Example:
+2025-03-28T02:04:08.8229999Z 
+2025-03-28T02:04:08.8230628Z   git switch -c <new-branch-name>
+2025-03-28T02:04:08.8231957Z 
+2025-03-28T02:04:08.8232564Z Or undo this operation with:
+2025-03-28T02:04:08.8233516Z 
+2025-03-28T02:04:08.8233897Z   git switch -
+2025-03-28T02:04:08.8234629Z 
+2025-03-28T02:04:08.8235647Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-28T02:04:08.8237007Z 
+2025-03-28T02:04:08.8238516Z HEAD is now at 7dc67f9 Merge 27da5856a3885bdb99574a299f2715c0b214587b into e0c6941d3fdf89038484bfe62b80485b897ca439
+2025-03-28T02:04:08.8244554Z ##[endgroup]
+2025-03-28T02:04:08.8264470Z [command]/usr/bin/git log -1 --format=%H
+2025-03-28T02:04:08.8289866Z 7dc67f9a8c6c4815d1d493f94ee8826e9e9cd236
+2025-03-28T02:04:08.8604903Z ##[group]Run actions/setup-python@v5
+2025-03-28T02:04:08.8605985Z with:
+2025-03-28T02:04:08.8606714Z   python-version: 3.13
+2025-03-28T02:04:08.8607602Z   check-latest: false
+2025-03-28T02:04:08.8608697Z   token: ***
+2025-03-28T02:04:08.8609492Z   update-environment: true
+2025-03-28T02:04:08.8610442Z   allow-prereleases: false
+2025-03-28T02:04:08.8611535Z   freethreaded: false
+2025-03-28T02:04:08.8612366Z ##[endgroup]
+2025-03-28T02:04:09.0374546Z ##[group]Installed versions
+2025-03-28T02:04:09.0430350Z Successfully set up CPython (3.13.2)
+2025-03-28T02:04:09.0433112Z ##[endgroup]
+2025-03-28T02:04:09.0583518Z ##[group]Run python -m pip install pre-commit && pre-commit install
+2025-03-28T02:04:09.0585317Z [36;1mpython -m pip install pre-commit && pre-commit install[0m
+2025-03-28T02:04:09.0647559Z shell: /usr/bin/bash -e {0}
+2025-03-28T02:04:09.0649060Z env:
+2025-03-28T02:04:09.0650616Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-28T02:04:09.0653537Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-28T02:04:09.0656213Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-28T02:04:09.0658629Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-28T02:04:09.0661297Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-28T02:04:09.0663706Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-28T02:04:09.0665827Z ##[endgroup]
+2025-03-28T02:04:12.0100211Z Collecting pre-commit
+2025-03-28T02:04:12.0446586Z   Downloading pre_commit-4.2.0-py2.py3-none-any.whl.metadata (1.3 kB)
+2025-03-28T02:04:12.0649991Z Collecting cfgv>=2.0.0 (from pre-commit)
+2025-03-28T02:04:12.0692066Z   Downloading cfgv-3.4.0-py2.py3-none-any.whl.metadata (8.5 kB)
+2025-03-28T02:04:12.1135994Z Collecting identify>=1.0.0 (from pre-commit)
+2025-03-28T02:04:12.1169554Z   Downloading identify-2.6.9-py2.py3-none-any.whl.metadata (4.4 kB)
+2025-03-28T02:04:12.1333367Z Collecting nodeenv>=0.11.1 (from pre-commit)
+2025-03-28T02:04:12.1367969Z   Downloading nodeenv-1.9.1-py2.py3-none-any.whl.metadata (21 kB)
+2025-03-28T02:04:12.1694880Z Collecting pyyaml>=5.1 (from pre-commit)
+2025-03-28T02:04:12.1728236Z   Downloading PyYAML-6.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+2025-03-28T02:04:12.2146464Z Collecting virtualenv>=20.10.0 (from pre-commit)
+2025-03-28T02:04:12.2215452Z   Downloading virtualenv-20.29.3-py3-none-any.whl.metadata (4.5 kB)
+2025-03-28T02:04:12.2422958Z Collecting distlib<1,>=0.3.7 (from virtualenv>=20.10.0->pre-commit)
+2025-03-28T02:04:12.2460262Z   Downloading distlib-0.3.9-py2.py3-none-any.whl.metadata (5.2 kB)
+2025-03-28T02:04:12.2652827Z Collecting filelock<4,>=3.12.2 (from virtualenv>=20.10.0->pre-commit)
+2025-03-28T02:04:12.2811455Z   Downloading filelock-3.18.0-py3-none-any.whl.metadata (2.9 kB)
+2025-03-28T02:04:12.3048508Z Collecting platformdirs<5,>=3.9.1 (from virtualenv>=20.10.0->pre-commit)
+2025-03-28T02:04:12.3079089Z   Downloading platformdirs-4.3.7-py3-none-any.whl.metadata (11 kB)
+2025-03-28T02:04:12.3195439Z Downloading pre_commit-4.2.0-py2.py3-none-any.whl (220 kB)
+2025-03-28T02:04:12.3308454Z Downloading cfgv-3.4.0-py2.py3-none-any.whl (7.2 kB)
+2025-03-28T02:04:12.3364682Z Downloading identify-2.6.9-py2.py3-none-any.whl (99 kB)
+2025-03-28T02:04:12.3444375Z Downloading nodeenv-1.9.1-py2.py3-none-any.whl (22 kB)
+2025-03-28T02:04:12.3502396Z Downloading PyYAML-6.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (759 kB)
+2025-03-28T02:04:12.3604614Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 759.5/759.5 kB 69.6 MB/s eta 0:00:00
+2025-03-28T02:04:12.3640048Z Downloading virtualenv-20.29.3-py3-none-any.whl (4.3 MB)
+2025-03-28T02:04:12.3976434Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 131.6 MB/s eta 0:00:00
+2025-03-28T02:04:12.4035601Z Downloading distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+2025-03-28T02:04:12.4117743Z Downloading filelock-3.18.0-py3-none-any.whl (16 kB)
+2025-03-28T02:04:12.4176272Z Downloading platformdirs-4.3.7-py3-none-any.whl (18 kB)
+2025-03-28T02:04:12.4624475Z Installing collected packages: distlib, pyyaml, platformdirs, nodeenv, identify, filelock, cfgv, virtualenv, pre-commit
+2025-03-28T02:04:12.8659187Z Successfully installed cfgv-3.4.0 distlib-0.3.9 filelock-3.18.0 identify-2.6.9 nodeenv-1.9.1 platformdirs-4.3.7 pre-commit-4.2.0 pyyaml-6.0.2 virtualenv-20.29.3
+2025-03-28T02:04:13.7042653Z pre-commit installed at .git/hooks/pre-commit
+2025-03-28T02:04:13.7994267Z ##[group]Run actions/cache@v4
+2025-03-28T02:04:13.7994563Z with:
+2025-03-28T02:04:13.7994774Z   path: ~/.cache/pre-commit/
+2025-03-28T02:04:13.7995400Z   key: pre-commit|/opt/hostedtoolcache/Python/3.13.2/x64|562e5ccfb09178e873707c682ed57ed59636df27c36d4e5ed7599a89ccd1f862
+2025-03-28T02:04:13.7995980Z   enableCrossOsArchive: false
+2025-03-28T02:04:13.7996200Z   fail-on-cache-miss: false
+2025-03-28T02:04:13.7996423Z   lookup-only: false
+2025-03-28T02:04:13.7996595Z   save-always: false
+2025-03-28T02:04:13.7996768Z env:
+2025-03-28T02:04:13.7996984Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-28T02:04:13.7997381Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-28T02:04:13.7997757Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-28T02:04:13.7998094Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-28T02:04:13.7998436Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-28T02:04:13.7998806Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-28T02:04:13.7999080Z ##[endgroup]
+2025-03-28T02:04:14.0036161Z Cache hit for: pre-commit|/opt/hostedtoolcache/Python/3.13.2/x64|562e5ccfb09178e873707c682ed57ed59636df27c36d4e5ed7599a89ccd1f862
+2025-03-28T02:04:14.7223922Z Received 123627193 of 123627193 (100.0%), 185.1 MBs/sec
+2025-03-28T02:04:14.7226036Z Cache Size: ~118 MB (123627193 B)
+2025-03-28T02:04:14.7258495Z [command]/usr/bin/tar -xf /home/runner/work/_temp/d2d1fc1f-3d22-4fb9-bdee-ce0fc442ebb8/cache.tzst -P -C /home/runner/work/polyfactory/polyfactory --use-compress-program unzstd
+2025-03-28T02:04:16.4585121Z Cache restored successfully
+2025-03-28T02:04:16.5056036Z Cache restored from key: pre-commit|/opt/hostedtoolcache/Python/3.13.2/x64|562e5ccfb09178e873707c682ed57ed59636df27c36d4e5ed7599a89ccd1f862
+2025-03-28T02:04:16.5188815Z ##[group]Run pre-commit run --show-diff-on-failure --color=always --all-files
+2025-03-28T02:04:16.5189370Z [36;1mpre-commit run --show-diff-on-failure --color=always --all-files[0m
+2025-03-28T02:04:16.5238638Z shell: /usr/bin/bash -e {0}
+2025-03-28T02:04:16.5238871Z env:
+2025-03-28T02:04:16.5239122Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-28T02:04:16.5239532Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-28T02:04:16.5239910Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-28T02:04:16.5240463Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-28T02:04:16.5241126Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-28T02:04:16.5241470Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-28T02:04:16.5241770Z ##[endgroup]
+2025-03-28T02:04:17.0067896Z check python ast.........................................................[42mPassed[m
+2025-03-28T02:04:17.0765667Z check for case conflicts.................................................[42mPassed[m
+2025-03-28T02:04:17.1426689Z check for merge conflicts................................................[42mPassed[m
+2025-03-28T02:04:17.1878063Z check toml...............................................................[42mPassed[m
+2025-03-28T02:04:17.3400072Z debug statements (python)................................................[42mPassed[m
+2025-03-28T02:04:17.4175574Z fix end of files.........................................................[42mPassed[m
+2025-03-28T02:04:17.4796880Z mixed line ending........................................................[42mPassed[m
+2025-03-28T02:04:17.5431278Z trim trailing whitespace.................................................[42mPassed[m
+2025-03-28T02:04:17.5935843Z ruff.....................................................................[42mPassed[m
+2025-03-28T02:04:17.6276465Z ruff-format..............................................................[42mPassed[m
+2025-03-28T02:04:17.9258873Z codespell................................................................[42mPassed[m
+2025-03-28T02:04:18.7627637Z prettier.................................................................[42mPassed[m
+2025-03-28T02:04:46.7616512Z mypy.....................................................................[41mFailed[m
+2025-03-28T02:04:46.7617333Z [2m- hook id: mypy[m
+2025-03-28T02:04:46.7617780Z [2m- exit code: 1[m
+2025-03-28T02:04:46.7617992Z 
+2025-03-28T02:04:46.7618941Z polyfactory/factories/pydantic_factory.py:446: error: Argument 1 to "get_field_value" of "ModelFactory" has incompatible type "FieldMeta"; expected "PydanticFieldMeta"  [arg-type]
+2025-03-28T02:04:46.7621542Z polyfactory/factories/pydantic_factory.py:457: error: Argument 1 of "get_field_value" is incompatible with supertype "BaseFactory"; supertype defines the argument type as "FieldMeta"  [override]
+2025-03-28T02:04:46.7623494Z polyfactory/factories/pydantic_factory.py:457: note: This violates the Liskov substitution principle
+2025-03-28T02:04:46.7624871Z polyfactory/factories/pydantic_factory.py:457: note: See https://mypy.readthedocs.io/en/stable/common_issues.html#incompatible-overrides
+2025-03-28T02:04:46.7626700Z polyfactory/factories/beanie_odm_factory.py:61: error: Argument 1 of "get_field_value" is incompatible with supertype "BaseFactory"; supertype defines the argument type as "FieldMeta"  [override]
+2025-03-28T02:04:46.7627847Z polyfactory/factories/beanie_odm_factory.py:61: note: This violates the Liskov substitution principle
+2025-03-28T02:04:46.7628856Z polyfactory/factories/beanie_odm_factory.py:61: note: See https://mypy.readthedocs.io/en/stable/common_issues.html#incompatible-overrides
+2025-03-28T02:04:46.7629517Z Found 3 errors in 2 files (checked 137 source files)
+2025-03-28T02:04:46.7629728Z 
+2025-03-28T02:04:55.9449124Z pyright..................................................................[41mFailed[m
+2025-03-28T02:04:55.9451059Z [2m- hook id: pyright[m
+2025-03-28T02:04:55.9452007Z [2m- exit code: 1[m
+2025-03-28T02:04:55.9452220Z 
+2025-03-28T02:04:55.9452531Z WARNING: there is a new pyright version available (v1.1.397 -> v1.1.398).
+2025-03-28T02:04:55.9453301Z Please install the new version or set PYRIGHT_PYTHON_FORCE_VERSION to `latest`
+2025-03-28T02:04:55.9453780Z 
+2025-03-28T02:04:55.9453786Z 
+2025-03-28T02:04:55.9453963Z added 1 package, and audited 2 packages in 2s
+2025-03-28T02:04:55.9454269Z 
+2025-03-28T02:04:55.9454508Z found [32m[1m0[22m[39m vulnerabilities
+2025-03-28T02:04:55.9455207Z /home/runner/work/polyfactory/polyfactory/polyfactory/factories/pydantic_factory.py
+2025-03-28T02:04:55.9457669Z   /home/runner/work/polyfactory/polyfactory/polyfactory/factories/pydantic_factory.py:[33m446[39m:[33m17[39m - [31merror[39m: Argument of type "FieldMeta" cannot be assigned to parameter "field_meta" of type "PydanticFieldMeta" in function "get_field_value"
+2025-03-28T02:04:55.9459796Z     "FieldMeta" is not assignable to "PydanticFieldMeta"[90m (reportArgumentType)[39m
+2025-03-28T02:04:55.9461844Z   /home/runner/work/polyfactory/polyfactory/polyfactory/factories/pydantic_factory.py:[33m455[39m:[33m9[39m - [31merror[39m: Method "get_field_value" overrides class "BaseFactory" in an incompatible manner
+2025-03-28T02:04:55.9465606Z     Parameter 2 type mismatch: base parameter is type "FieldMeta", override parameter is type "PydanticFieldMeta"
+2025-03-28T02:04:55.9466945Z       "FieldMeta" is not assignable to "PydanticFieldMeta"[90m (reportIncompatibleMethodOverride)[39m
+2025-03-28T02:04:55.9467706Z 2 errors, 0 warnings, 0 informations
+2025-03-28T02:04:55.9468009Z 
+2025-03-28T02:04:56.4056851Z Sphinx Lint..............................................................[42mPassed[m
+2025-03-28T02:04:56.4258879Z ##[error]Process completed with exit code 1.
+2025-03-28T02:04:56.4368347Z Post job cleanup.
+2025-03-28T02:04:56.5350452Z [command]/usr/bin/git version
+2025-03-28T02:04:56.5392690Z git version 2.49.0
+2025-03-28T02:04:56.5444308Z Temporarily overriding HOME='/home/runner/work/_temp/05801313-7ba8-45c5-8a70-b9a1829edd7b' before making global git config changes
+2025-03-28T02:04:56.5445508Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-28T02:04:56.5449848Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/polyfactory/polyfactory
+2025-03-28T02:04:56.5488090Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-28T02:04:56.5529646Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-28T02:04:56.5793329Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-28T02:04:56.5818083Z http.https://github.com/.extraheader
+2025-03-28T02:04:56.5833841Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-28T02:04:56.5869147Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-28T02:04:56.6262840Z Cleaning up orphan processes

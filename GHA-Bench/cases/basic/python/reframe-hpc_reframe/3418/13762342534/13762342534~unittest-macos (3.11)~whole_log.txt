@@ -1,0 +1,275 @@
+2025-03-10T10:24:47.0749375Z Requested labels: macos-latest
+2025-03-10T10:24:47.0749621Z Job defined at: reframe-hpc/reframe/.github/workflows/main.yml@refs/pull/3418/merge
+2025-03-10T10:24:47.0749761Z Waiting for a runner to pick up this job...
+2025-03-10T10:27:46.3116016Z Job is waiting for a hosted runner to come online.
+2025-03-10T10:27:49.7933101Z Job is about to start running on the hosted runner: GitHub Actions 17 (hosted)
+2025-03-10T10:27:51.3319130Z Current runner version: '2.322.0'
+2025-03-10T10:27:51.3335890Z ##[group]Operating System
+2025-03-10T10:27:51.3336370Z macOS
+2025-03-10T10:27:51.3336690Z 14.7.2
+2025-03-10T10:27:51.3337000Z 23H311
+2025-03-10T10:27:51.3337300Z ##[endgroup]
+2025-03-10T10:27:51.3337610Z ##[group]Runner Image
+2025-03-10T10:27:51.3337960Z Image: macos-14-arm64
+2025-03-10T10:27:51.3338290Z Version: 20250120.774
+2025-03-10T10:27:51.3338980Z Included Software: https://github.com/actions/runner-images/blob/macos-14-arm64/20250120.774/images/macos/macos-14-arm64-Readme.md
+2025-03-10T10:27:51.3339930Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-14-arm64%2F20250120.774
+2025-03-10T10:27:51.3340520Z ##[endgroup]
+2025-03-10T10:27:51.3340850Z ##[group]Runner Image Provisioner
+2025-03-10T10:27:51.3341260Z 2.0.422.1+55c30c14fe2a0a1547db1b656933ae07d97649a9
+2025-03-10T10:27:51.3341670Z ##[endgroup]
+2025-03-10T10:27:51.3343040Z ##[group]GITHUB_TOKEN Permissions
+2025-03-10T10:27:51.3344140Z Actions: read
+2025-03-10T10:27:51.3344470Z Attestations: read
+2025-03-10T10:27:51.3344800Z Checks: read
+2025-03-10T10:27:51.3345100Z Contents: read
+2025-03-10T10:27:51.3345420Z Deployments: read
+2025-03-10T10:27:51.3345740Z Discussions: read
+2025-03-10T10:27:51.3346060Z Issues: read
+2025-03-10T10:27:51.3346360Z Metadata: read
+2025-03-10T10:27:51.3346660Z Packages: read
+2025-03-10T10:27:51.3346980Z Pages: read
+2025-03-10T10:27:51.3347280Z PullRequests: read
+2025-03-10T10:27:51.3347620Z RepositoryProjects: read
+2025-03-10T10:27:51.3347970Z SecurityEvents: read
+2025-03-10T10:27:51.3348310Z Statuses: read
+2025-03-10T10:27:51.3348640Z ##[endgroup]
+2025-03-10T10:27:51.3350430Z Secret source: None
+2025-03-10T10:27:51.3350830Z Prepare workflow directory
+2025-03-10T10:27:51.3561530Z Prepare all required actions
+2025-03-10T10:27:51.3588070Z Getting action download info
+2025-03-10T10:27:51.5010830Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-10T10:27:51.7398540Z Download action repository 'actions/setup-python@v5' (SHA:42375524e23c412d93fb67b49958b491fce71c38)
+2025-03-10T10:27:52.8657870Z Complete job name: unittest-macos (3.11)
+2025-03-10T10:27:52.9090520Z ##[group]Run actions/checkout@v4
+2025-03-10T10:27:52.9091270Z with:
+2025-03-10T10:27:52.9091730Z   repository: reframe-hpc/reframe
+2025-03-10T10:27:52.9092700Z   token: ***
+2025-03-10T10:27:52.9093240Z   ssh-strict: true
+2025-03-10T10:27:52.9093700Z   ssh-user: git
+2025-03-10T10:27:52.9094130Z   persist-credentials: true
+2025-03-10T10:27:52.9094900Z   clean: true
+2025-03-10T10:27:52.9095440Z   sparse-checkout-cone-mode: true
+2025-03-10T10:27:52.9096040Z   fetch-depth: 1
+2025-03-10T10:27:52.9096850Z   fetch-tags: false
+2025-03-10T10:27:52.9097380Z   show-progress: true
+2025-03-10T10:27:52.9097900Z   lfs: false
+2025-03-10T10:27:52.9098580Z   submodules: false
+2025-03-10T10:27:52.9099130Z   set-safe-directory: true
+2025-03-10T10:27:52.9099910Z ##[endgroup]
+2025-03-10T10:27:53.2673700Z Syncing repository: reframe-hpc/reframe
+2025-03-10T10:27:53.2675250Z ##[group]Getting Git version info
+2025-03-10T10:27:53.2675790Z Working directory is '/Users/runner/work/reframe/reframe'
+2025-03-10T10:27:53.2676620Z [command]/opt/homebrew/bin/git version
+2025-03-10T10:27:53.3255450Z git version 2.48.1
+2025-03-10T10:27:53.3295510Z ##[endgroup]
+2025-03-10T10:27:53.3307630Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/1332cc69-761c-4239-a60b-533ffadfda7d/.gitconfig'
+2025-03-10T10:27:53.3313400Z Temporarily overriding HOME='/Users/runner/work/_temp/1332cc69-761c-4239-a60b-533ffadfda7d' before making global git config changes
+2025-03-10T10:27:53.3314630Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-10T10:27:53.3331110Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/reframe/reframe
+2025-03-10T10:27:53.3448490Z Deleting the contents of '/Users/runner/work/reframe/reframe'
+2025-03-10T10:27:53.3452330Z ##[group]Initializing the repository
+2025-03-10T10:27:53.3455910Z [command]/opt/homebrew/bin/git init /Users/runner/work/reframe/reframe
+2025-03-10T10:27:53.3639270Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-10T10:27:53.3642340Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-10T10:27:53.3643850Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-10T10:27:53.3644480Z hint:
+2025-03-10T10:27:53.3644930Z hint: 	git config --global init.defaultBranch <name>
+2025-03-10T10:27:53.3645400Z hint:
+2025-03-10T10:27:53.3645850Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-10T10:27:53.3646550Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-10T10:27:53.3647120Z hint:
+2025-03-10T10:27:53.3647440Z hint: 	git branch -m <name>
+2025-03-10T10:27:53.3648060Z Initialized empty Git repository in /Users/runner/work/reframe/reframe/.git/
+2025-03-10T10:27:53.3653270Z [command]/opt/homebrew/bin/git remote add origin https://github.com/reframe-hpc/reframe
+2025-03-10T10:27:53.3711200Z ##[endgroup]
+2025-03-10T10:27:53.3712050Z ##[group]Disabling automatic garbage collection
+2025-03-10T10:27:53.3713500Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+2025-03-10T10:27:53.3756200Z ##[endgroup]
+2025-03-10T10:27:53.3756800Z ##[group]Setting up auth
+2025-03-10T10:27:53.3760530Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-10T10:27:53.3805020Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-10T10:27:53.4493800Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-10T10:27:53.4535120Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-10T10:27:53.5366330Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-10T10:27:53.5427300Z ##[endgroup]
+2025-03-10T10:27:53.5428170Z ##[group]Fetching the repository
+2025-03-10T10:27:53.5437310Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +0e15d18840ed27a07296aa44ff4d275247f0254b:refs/remotes/pull/3418/merge
+2025-03-10T10:27:55.9458390Z From https://github.com/reframe-hpc/reframe
+2025-03-10T10:27:55.9459850Z  * [new ref]         0e15d18840ed27a07296aa44ff4d275247f0254b -> pull/3418/merge
+2025-03-10T10:27:55.9537660Z ##[endgroup]
+2025-03-10T10:27:55.9538540Z ##[group]Determining the checkout info
+2025-03-10T10:27:55.9539380Z ##[endgroup]
+2025-03-10T10:27:55.9539980Z [command]/opt/homebrew/bin/git sparse-checkout disable
+2025-03-10T10:27:55.9581910Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-10T10:27:55.9633290Z ##[group]Checking out the ref
+2025-03-10T10:27:55.9634630Z [command]/opt/homebrew/bin/git checkout --progress --force refs/remotes/pull/3418/merge
+2025-03-10T10:27:56.1033710Z HEAD is now at 0e15d18 Merge 0594c0b52f3718d12af3fb9a97915cd4a057d517 into 67cc87606d416ef4ec63acecc05e2361a5e36434
+2025-03-10T10:27:56.1044750Z ##[endgroup]
+2025-03-10T10:27:56.1110600Z [command]/opt/homebrew/bin/git log -1 --format=%H
+2025-03-10T10:27:56.1155910Z 0e15d18840ed27a07296aa44ff4d275247f0254b
+2025-03-10T10:27:56.1380100Z ##[group]Run actions/setup-python@v5
+2025-03-10T10:27:56.1380820Z with:
+2025-03-10T10:27:56.1381330Z   python-version: 3.11
+2025-03-10T10:27:56.1381920Z   check-latest: false
+2025-03-10T10:27:56.1382810Z   token: ***
+2025-03-10T10:27:56.1383390Z   update-environment: true
+2025-03-10T10:27:56.1384020Z   allow-prereleases: false
+2025-03-10T10:27:56.1384620Z ##[endgroup]
+2025-03-10T10:27:56.2764900Z ##[group]Installed versions
+2025-03-10T10:27:56.2800690Z Successfully set up CPython (3.11.9)
+2025-03-10T10:27:56.2802080Z ##[endgroup]
+2025-03-10T10:27:56.2891760Z ##[group]Run ./bootstrap.sh
+2025-03-10T10:27:56.2892460Z [36;1m./bootstrap.sh[0m
+2025-03-10T10:27:56.2962640Z shell: /bin/bash -e {0}
+2025-03-10T10:27:56.2963240Z env:
+2025-03-10T10:27:56.2963990Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.11.9/arm64
+2025-03-10T10:27:56.2965280Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.11.9/arm64/lib/pkgconfig
+2025-03-10T10:27:56.2966560Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.11.9/arm64
+2025-03-10T10:27:56.2967680Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.11.9/arm64
+2025-03-10T10:27:56.2968800Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.11.9/arm64
+2025-03-10T10:27:56.2969670Z ##[endgroup]
+2025-03-10T10:27:56.4632780Z ==> python3 -m venv --without-pip /var/folders/2s/h6hvv9ps03xgz_krkkstvq_r0000gn/T/tmp.VeNvFm4peg
+2025-03-10T10:27:56.5760270Z ==> source /var/folders/2s/h6hvv9ps03xgz_krkkstvq_r0000gn/T/tmp.VeNvFm4peg/bin/activate
+2025-03-10T10:27:58.1739620Z Collecting pip
+2025-03-10T10:27:58.2426260Z   Downloading pip-25.0.1-py3-none-any.whl.metadata (3.7 kB)
+2025-03-10T10:27:58.3522060Z Collecting setuptools
+2025-03-10T10:27:58.3641040Z   Downloading setuptools-76.0.0-py3-none-any.whl.metadata (6.7 kB)
+2025-03-10T10:27:58.3988670Z Collecting wheel
+2025-03-10T10:27:58.4107790Z   Downloading wheel-0.45.1-py3-none-any.whl.metadata (2.3 kB)
+2025-03-10T10:27:58.4278890Z Downloading pip-25.0.1-py3-none-any.whl (1.8 MB)
+2025-03-10T10:27:58.4863560Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 49.4 MB/s eta 0:00:00
+2025-03-10T10:27:58.4979440Z Downloading setuptools-76.0.0-py3-none-any.whl (1.2 MB)
+2025-03-10T10:27:58.5078090Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 117.7 MB/s eta 0:00:00
+2025-03-10T10:27:58.5193760Z Downloading wheel-0.45.1-py3-none-any.whl (72 kB)
+2025-03-10T10:27:58.5364820Z Installing collected packages: wheel, setuptools, pip
+2025-03-10T10:27:59.5313380Z Successfully installed pip-25.0.1 setuptools-76.0.0 wheel-0.45.1
+2025-03-10T10:27:59.6788360Z ==> python3 -m pip install --no-cache-dir -q -r requirements.txt --target=external/arm64/ --upgrade
+2025-03-10T10:28:03.0235470Z ##[group]Run ./test_reframe.py
+2025-03-10T10:28:03.0235730Z [36;1m./test_reframe.py[0m
+2025-03-10T10:28:03.0291910Z shell: /bin/bash -e {0}
+2025-03-10T10:28:03.0292150Z env:
+2025-03-10T10:28:03.0292400Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.11.9/arm64
+2025-03-10T10:28:03.0292790Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.11.9/arm64/lib/pkgconfig
+2025-03-10T10:28:03.0293190Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.11.9/arm64
+2025-03-10T10:28:03.0293540Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.11.9/arm64
+2025-03-10T10:28:03.0293880Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.11.9/arm64
+2025-03-10T10:28:03.0294140Z ##[endgroup]
+2025-03-10T10:28:04.4503700Z ============================= test session starts ==============================
+2025-03-10T10:28:04.4504420Z platform darwin -- Python 3.11.9, pytest-8.3.4, pluggy-1.5.0
+2025-03-10T10:28:04.4504800Z rootdir: /Users/runner/work/reframe/reframe
+2025-03-10T10:28:04.4505050Z configfile: pyproject.toml
+2025-03-10T10:28:04.4505330Z plugins: parallel-0.1.1, rerunfailures-14.0, forked-1.6.0
+2025-03-10T10:28:04.4505600Z collected 1534 items
+2025-03-10T10:28:04.4505730Z 
+2025-03-10T10:28:04.4899280Z unittests/test_argparser.py ........                                     [  0%]
+2025-03-10T10:28:04.6121880Z unittests/test_autodetect.py ..ss                                        [  0%]
+2025-03-10T10:28:04.6271260Z unittests/test_buildsystems.py ...........................               [  2%]
+2025-03-10T10:28:04.8071230Z unittests/test_ci.py ...                                                 [  2%]
+2025-03-10T10:28:26.7433800Z unittests/test_cli.py .............ss................................... [  5%]
+2025-03-10T10:29:08.0033480Z ...............ssssssss................................................  [ 10%]
+2025-03-10T10:29:08.0045660Z unittests/test_color.py ..                                               [ 10%]
+2025-03-10T10:29:08.3467600Z unittests/test_config.py ............................................... [ 13%]
+2025-03-10T10:29:08.6876650Z s.s.s.s................                                                  [ 15%]
+2025-03-10T10:29:08.7065490Z unittests/test_containers.py ........................................... [ 18%]
+2025-03-10T10:29:08.7131150Z ..................                                                       [ 19%]
+2025-03-10T10:29:08.7245610Z unittests/test_deferrable.py ........................................... [ 22%]
+2025-03-10T10:29:08.7262480Z ......                                                                   [ 22%]
+2025-03-10T10:29:09.0054850Z unittests/test_dependencies.py .............                             [ 23%]
+2025-03-10T10:29:09.0742500Z unittests/test_environments.py ....ss....sss.s.sss.                      [ 24%]
+2025-03-10T10:29:09.0790930Z unittests/test_exceptions.py ..............                              [ 25%]
+2025-03-10T10:29:09.0862740Z unittests/test_fields.py ........                                        [ 26%]
+2025-03-10T10:29:09.2641510Z unittests/test_filters.py ...........                                    [ 26%]
+2025-03-10T10:29:09.5157260Z unittests/test_fixtures.py ......................                        [ 28%]
+2025-03-10T10:29:09.5532050Z unittests/test_launchers.py ..........................................   [ 30%]
+2025-03-10T10:29:09.7336480Z unittests/test_loader.py ...........                                     [ 31%]
+2025-03-10T10:29:09.9614270Z unittests/test_logging.py .................................              [ 33%]
+2025-03-10T10:29:09.9768400Z unittests/test_meta.py ..................                                [ 35%]
+2025-03-10T10:29:10.1015680Z unittests/test_modules.py ssss.ssss.ssssssssssssss.ssssssssssssss.ssss.s [ 38%]
+2025-03-10T10:29:10.1628240Z sss.ssss.ssss.ssss......................                                 [ 40%]
+2025-03-10T10:29:10.2530930Z unittests/test_parameters.py ..............................              [ 42%]
+2025-03-10T10:29:12.5876800Z unittests/test_perflogging.py ....................                       [ 43%]
+2025-03-10T10:29:16.4490040Z unittests/test_pipeline.py ..ss.s....................................... [ 46%]
+2025-03-10T10:29:17.3474620Z ...........................ssss..........                                [ 49%]
+2025-03-10T10:29:55.1186060Z unittests/test_policies.py ............................................. [ 52%]
+2025-03-10T10:30:21.9763680Z ..............................                                           [ 54%]
+2025-03-10T10:30:27.6171300Z unittests/test_profiler.py ...                                           [ 54%]
+2025-03-10T10:30:32.0036290Z unittests/test_reporting.py ............................................ [ 57%]
+2025-03-10T10:30:34.0977760Z ............................                                             [ 59%]
+2025-03-10T10:30:34.1298600Z unittests/test_sanity_functions.py ..................................... [ 61%]
+2025-03-10T10:30:34.2009590Z ............................................                             [ 64%]
+2025-03-10T10:30:34.3900990Z unittests/test_schedulers.py s.........s.........s.........ssssss.s.ssss [ 67%]
+2025-03-10T10:30:36.8159880Z sss.s.sssssss.s.sssssss.s.sssssss.s.sssssss.s.sssssss.s.ss.sssssssss.sss [ 72%]
+2025-03-10T10:30:41.6379380Z ssssss.sssssssssssssssssssFsssssssss.........s.........s.sssssssss...... [ 76%]
+2025-03-10T10:30:41.9752680Z ...s.sssssssss.........ssssss.s.sssssss.s.sssssss.s.sss.....s..s........ [ 81%]
+2025-03-10T10:30:49.2949380Z .sssssssssss.sssssssss.ssssssss......................................... [ 86%]
+2025-03-10T10:30:49.2951590Z                                                                          [ 86%]
+2025-03-10T10:30:50.4769260Z unittests/test_shell.py .......                                          [ 86%]
+2025-03-10T10:30:50.6130000Z unittests/test_testgenerators.py ...                                     [ 86%]
+2025-03-10T10:30:50.6244060Z unittests/test_typecheck.py ............                                 [ 87%]
+2025-03-10T10:30:56.5382790Z unittests/test_utility.py .............................................. [ 90%]
+2025-03-10T10:30:56.7100350Z ..................................................................sss.ss [ 95%]
+2025-03-10T10:30:57.0303090Z s...........                                                             [ 96%]
+2025-03-10T10:30:57.2310170Z unittests/test_variables.py ............................................ [ 98%]
+2025-03-10T10:30:57.2960190Z .......                                                                  [ 99%]
+2025-03-10T10:30:57.3068390Z unittests/test_versioning.py .                                           [ 99%]
+2025-03-10T10:30:57.4181930Z unittests/test_warnings.py .........                                     [100%]
+2025-03-10T10:30:57.4182410Z 
+2025-03-10T10:30:57.4182750Z =================================== FAILURES ===================================
+2025-03-10T10:30:57.4183290Z ______________________________ test_cancel[local] ______________________________
+2025-03-10T10:30:57.4184140Z 
+2025-03-10T10:30:57.4187430Z make_job = <function make_job.<locals>._make_job at 0x1058c2160>
+2025-03-10T10:30:57.4188270Z exec_ctx = <reframe.core.systems.SystemPartition object at 0x106b848d0>
+2025-03-10T10:30:57.4188850Z 
+2025-03-10T10:30:57.4188950Z     def test_cancel(make_job, exec_ctx):
+2025-03-10T10:30:57.4189610Z         minimal_job = make_job(sched_access=exec_ctx.access)
+2025-03-10T10:30:57.4190020Z         prepare_job(minimal_job, 'sleep 30')
+2025-03-10T10:30:57.4192050Z         t_job = time.time()
+2025-03-10T10:30:57.4192360Z     
+2025-03-10T10:30:57.4192870Z         submit_job(minimal_job)
+2025-03-10T10:30:57.4193290Z         minimal_job.cancel()
+2025-03-10T10:30:57.4193550Z     
+2025-03-10T10:30:57.4194190Z         # We give some time to the local scheduler for the TERM signal to be
+2025-03-10T10:30:57.4194850Z         # delivered; if we poll immediately, the process may have not been killed
+2025-03-10T10:30:57.4204300Z         # yet, and the scheduler will assume that it's ignoring its signal, then
+2025-03-10T10:30:57.4205330Z         # wait for a grace period and send a KILL signal, which is not what we
+2025-03-10T10:30:57.4205890Z         # want to test here.
+2025-03-10T10:30:57.4206610Z         time.sleep(0.01)
+2025-03-10T10:30:57.4206940Z     
+2025-03-10T10:30:57.4207190Z         minimal_job.wait()
+2025-03-10T10:30:57.4207790Z         t_job = time.time() - t_job
+2025-03-10T10:30:57.4208190Z         assert minimal_job.finished()
+2025-03-10T10:30:57.4208680Z         assert t_job < 30
+2025-03-10T10:30:57.4209190Z     
+2025-03-10T10:30:57.4209640Z         # Additional scheduler-specific checks
+2025-03-10T10:30:57.4210370Z         sched_name = minimal_job.scheduler.registered_name
+2025-03-10T10:30:57.4210870Z         if sched_name in ('slurm', 'squeue', 'flux'):
+2025-03-10T10:30:57.4211690Z             assert minimal_job.state == 'CANCELLED'
+2025-03-10T10:30:57.4212080Z         elif sched_name == 'local':
+2025-03-10T10:30:57.4212480Z             assert minimal_job.state == 'FAILURE'
+2025-03-10T10:30:57.4213000Z >           assert minimal_job.signal == signal.SIGTERM
+2025-03-10T10:30:57.4213520Z E           assert <Signals.SIGKILL: 9> == <Signals.SIGTERM: 15>
+2025-03-10T10:30:57.4214220Z E            +  where <Signals.SIGKILL: 9> = <reframe.core.schedulers.local._LocalJob object at 0x106b843d0>.signal
+2025-03-10T10:30:57.4214770Z E            +  and   <Signals.SIGTERM: 15> = signal.SIGTERM
+2025-03-10T10:30:57.4215100Z 
+2025-03-10T10:30:57.4215200Z unittests/test_schedulers.py:587: AssertionError
+2025-03-10T10:30:57.4216080Z =========================== short test summary info ============================
+2025-03-10T10:30:57.4216870Z FAILED unittests/test_schedulers.py::test_cancel[local] - assert <Signals.SIGKILL: 9> == <Signals.SIGTERM: 15>
+2025-03-10T10:30:57.4221870Z  +  where <Signals.SIGKILL: 9> = <reframe.core.schedulers.local._LocalJob object at 0x106b843d0>.signal
+2025-03-10T10:30:57.4223050Z  +  and   <Signals.SIGTERM: 15> = signal.SIGTERM
+2025-03-10T10:30:57.4223680Z =========== 1 failed, 1256 passed, 277 skipped in 173.93s (0:02:53) ============
+2025-03-10T10:30:57.6837520Z ##[error]Process completed with exit code 1.
+2025-03-10T10:30:57.6963410Z Post job cleanup.
+2025-03-10T10:30:58.1469840Z [command]/opt/homebrew/bin/git version
+2025-03-10T10:30:58.1629050Z git version 2.48.1
+2025-03-10T10:30:58.1709310Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/800d51fa-f170-490e-9bd7-b04bec1eb456/.gitconfig'
+2025-03-10T10:30:58.1728860Z Temporarily overriding HOME='/Users/runner/work/_temp/800d51fa-f170-490e-9bd7-b04bec1eb456' before making global git config changes
+2025-03-10T10:30:58.1730680Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-10T10:30:58.1750940Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/reframe/reframe
+2025-03-10T10:30:58.1877300Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-10T10:30:58.1946040Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-10T10:30:58.2977820Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-10T10:30:58.3036210Z http.https://github.com/.extraheader
+2025-03-10T10:30:58.3044070Z [command]/opt/homebrew/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-10T10:30:58.3100680Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-10T10:30:58.4067320Z Cleaning up orphan processes

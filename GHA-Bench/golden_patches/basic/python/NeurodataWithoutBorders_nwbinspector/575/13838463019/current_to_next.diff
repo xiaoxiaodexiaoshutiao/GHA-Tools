@@ -1,0 +1,30 @@
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index dbfc3c1ad..2cc62001f 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -1,10 +1,10 @@
+-# v0.6.3 (February 25, 2025)
++# v0.6.3 (March 13, 2025)
+ 
+ ### Improvements
++* Added check for ascending spike times in Units table [#575](https://github.com/NeurodataWithoutBorders/nwbinspector/pull/575)
+ * Added support for PyNWB 3.0 [#557](https://github.com/NeurodataWithoutBorders/nwbinspector/pull/557)
+ * Added support for Python 3.13 [#564](https://github.com/NeurodataWithoutBorders/nwbinspector/pull/564)
+ 
+-
+ # v0.6.2
+ 
+ ### Deprecation
+diff --git a/docs/best_practices/ecephys.rst b/docs/best_practices/ecephys.rst
+index 29353e4b3..96d2e9ea5 100644
+--- a/docs/best_practices/ecephys.rst
++++ b/docs/best_practices/ecephys.rst
+@@ -96,7 +96,7 @@ Check function: :py:meth:`~nwbinspector.checks._ecephys.check_spike_times_not_in
+ .. _best_practice_ascending_spike_times:
+ 
+ Ascending Spike Times
+-~~~~~~~~~~~~~~~~~~~~
++~~~~~~~~~~~~~~~~~~~~~
+ 
+ The spike times within each unit of the :ref:`nwb-schema:sec-units-src` table should be sorted in ascending order.
+ Non-ascending spike times can indicate errors in the spike sorting process or in the temporal alignment of the data.

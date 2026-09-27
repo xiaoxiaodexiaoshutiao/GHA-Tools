@@ -1,0 +1,152 @@
+﻿2025-04-17T13:00:04.0426286Z Current runner version: '2.323.0'
+2025-04-17T13:00:04.0453710Z ##[group]Operating System
+2025-04-17T13:00:04.0454526Z Ubuntu
+2025-04-17T13:00:04.0455074Z 24.04.2
+2025-04-17T13:00:04.0455556Z LTS
+2025-04-17T13:00:04.0456344Z ##[endgroup]
+2025-04-17T13:00:04.0456921Z ##[group]Runner Image
+2025-04-17T13:00:04.0457512Z Image: ubuntu-24.04
+2025-04-17T13:00:04.0458040Z Version: 20250413.1.0
+2025-04-17T13:00:04.0459018Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250413.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-17T13:00:04.0460515Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250413.1
+2025-04-17T13:00:04.0461418Z ##[endgroup]
+2025-04-17T13:00:04.0461952Z ##[group]Runner Image Provisioner
+2025-04-17T13:00:04.0462611Z 2.0.422.1
+2025-04-17T13:00:04.0463037Z ##[endgroup]
+2025-04-17T13:00:04.0464052Z ##[group]GITHUB_TOKEN Permissions
+2025-04-17T13:00:04.0466246Z Contents: read
+2025-04-17T13:00:04.0466752Z Metadata: read
+2025-04-17T13:00:04.0467512Z ##[endgroup]
+2025-04-17T13:00:04.0469909Z Secret source: Actions
+2025-04-17T13:00:04.0470930Z Prepare workflow directory
+2025-04-17T13:00:04.0867264Z Prepare all required actions
+2025-04-17T13:00:04.0905078Z Getting action download info
+2025-04-17T13:00:04.7433123Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-17T13:00:04.7434088Z Version: 4.2.2
+2025-04-17T13:00:04.7435135Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-17T13:00:04.7436533Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-17T13:00:04.7437256Z ##[endgroup]
+2025-04-17T13:00:04.8925875Z Complete job name: style
+2025-04-17T13:00:04.9583202Z ##[group]Run actions/checkout@v4
+2025-04-17T13:00:04.9584014Z with:
+2025-04-17T13:00:04.9584414Z   repository: PennLINC/xcp_d
+2025-04-17T13:00:04.9585022Z   token: ***
+2025-04-17T13:00:04.9585406Z   ssh-strict: true
+2025-04-17T13:00:04.9586035Z   ssh-user: git
+2025-04-17T13:00:04.9586422Z   persist-credentials: true
+2025-04-17T13:00:04.9586880Z   clean: true
+2025-04-17T13:00:04.9587256Z   sparse-checkout-cone-mode: true
+2025-04-17T13:00:04.9587726Z   fetch-depth: 1
+2025-04-17T13:00:04.9588099Z   fetch-tags: false
+2025-04-17T13:00:04.9588485Z   show-progress: true
+2025-04-17T13:00:04.9588871Z   lfs: false
+2025-04-17T13:00:04.9589226Z   submodules: false
+2025-04-17T13:00:04.9589617Z   set-safe-directory: true
+2025-04-17T13:00:04.9590299Z ##[endgroup]
+2025-04-17T13:00:05.1543611Z Syncing repository: PennLINC/xcp_d
+2025-04-17T13:00:05.1546349Z ##[group]Getting Git version info
+2025-04-17T13:00:05.1547578Z Working directory is '/home/runner/work/xcp_d/xcp_d'
+2025-04-17T13:00:05.1549209Z [command]/usr/bin/git version
+2025-04-17T13:00:05.1603615Z git version 2.49.0
+2025-04-17T13:00:05.1632745Z ##[endgroup]
+2025-04-17T13:00:05.1646615Z Temporarily overriding HOME='/home/runner/work/_temp/aa6f50e4-0b38-4abb-ba35-08c78b8cbefb' before making global git config changes
+2025-04-17T13:00:05.1648053Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-17T13:00:05.1651665Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/xcp_d/xcp_d
+2025-04-17T13:00:05.1686579Z Deleting the contents of '/home/runner/work/xcp_d/xcp_d'
+2025-04-17T13:00:05.1690577Z ##[group]Initializing the repository
+2025-04-17T13:00:05.1694387Z [command]/usr/bin/git init /home/runner/work/xcp_d/xcp_d
+2025-04-17T13:00:05.1761854Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-17T13:00:05.1763071Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-17T13:00:05.1764136Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-17T13:00:05.1764816Z hint:
+2025-04-17T13:00:05.1765269Z hint: 	git config --global init.defaultBranch <name>
+2025-04-17T13:00:05.1766278Z hint:
+2025-04-17T13:00:05.1767156Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-17T13:00:05.1768277Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-17T13:00:05.1769222Z hint:
+2025-04-17T13:00:05.1769598Z hint: 	git branch -m <name>
+2025-04-17T13:00:05.1770278Z Initialized empty Git repository in /home/runner/work/xcp_d/xcp_d/.git/
+2025-04-17T13:00:05.1778112Z [command]/usr/bin/git remote add origin https://github.com/PennLINC/xcp_d
+2025-04-17T13:00:05.1812879Z ##[endgroup]
+2025-04-17T13:00:05.1813569Z ##[group]Disabling automatic garbage collection
+2025-04-17T13:00:05.1817296Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-17T13:00:05.1845337Z ##[endgroup]
+2025-04-17T13:00:05.1846430Z ##[group]Setting up auth
+2025-04-17T13:00:05.1852495Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-17T13:00:05.1882659Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-17T13:00:05.2200095Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-17T13:00:05.2230980Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-17T13:00:05.2473653Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-17T13:00:05.2510831Z ##[endgroup]
+2025-04-17T13:00:05.2511646Z ##[group]Fetching the repository
+2025-04-17T13:00:05.2520630Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +895618d9b9106229fd30383ac6ec301f18adcda6:refs/remotes/pull/1433/merge
+2025-04-17T13:00:07.2944068Z From https://github.com/PennLINC/xcp_d
+2025-04-17T13:00:07.2946110Z  * [new ref]         895618d9b9106229fd30383ac6ec301f18adcda6 -> pull/1433/merge
+2025-04-17T13:00:07.2973427Z ##[endgroup]
+2025-04-17T13:00:07.2974674Z ##[group]Determining the checkout info
+2025-04-17T13:00:07.2976453Z ##[endgroup]
+2025-04-17T13:00:07.2981994Z [command]/usr/bin/git sparse-checkout disable
+2025-04-17T13:00:07.3022537Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-17T13:00:07.3053988Z ##[group]Checking out the ref
+2025-04-17T13:00:07.3054740Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1433/merge
+2025-04-17T13:00:07.4430023Z Note: switching to 'refs/remotes/pull/1433/merge'.
+2025-04-17T13:00:07.4430829Z 
+2025-04-17T13:00:07.4431397Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-17T13:00:07.4432832Z changes and commit them, and you can discard any commits you make in this
+2025-04-17T13:00:07.4434248Z state without impacting any branches by switching back to a branch.
+2025-04-17T13:00:07.4435090Z 
+2025-04-17T13:00:07.4435833Z If you want to create a new branch to retain commits you create, you may
+2025-04-17T13:00:07.4437092Z do so (now or later) by using -c with the switch command. Example:
+2025-04-17T13:00:07.4437914Z 
+2025-04-17T13:00:07.4438224Z   git switch -c <new-branch-name>
+2025-04-17T13:00:07.4438727Z 
+2025-04-17T13:00:07.4439018Z Or undo this operation with:
+2025-04-17T13:00:07.4439489Z 
+2025-04-17T13:00:07.4439742Z   git switch -
+2025-04-17T13:00:07.4440116Z 
+2025-04-17T13:00:07.4440765Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-17T13:00:07.4441673Z 
+2025-04-17T13:00:07.4442686Z HEAD is now at 895618d Merge 78b0f883cd824f5471dae3035a5213bbc96c2127 into d9ca3ade1438326d898a1b7cbffed00ee12e9483
+2025-04-17T13:00:07.4463095Z ##[endgroup]
+2025-04-17T13:00:07.4504848Z [command]/usr/bin/git log -1 --format=%H
+2025-04-17T13:00:07.4527663Z 895618d9b9106229fd30383ac6ec301f18adcda6
+2025-04-17T13:00:07.4719909Z ##[group]Run pipx run ruff check .
+2025-04-17T13:00:07.4720532Z [36;1mpipx run ruff check .[0m
+2025-04-17T13:00:07.4773080Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-17T13:00:07.4773736Z ##[endgroup]
+2025-04-17T13:00:07.7581475Z creating virtual environment...
+2025-04-17T13:00:07.8885401Z installing ruff...
+2025-04-17T13:00:10.1191889Z All checks passed!
+2025-04-17T13:00:10.1252492Z ##[group]Run pipx run ruff format --diff .
+2025-04-17T13:00:10.1252904Z [36;1mpipx run ruff format --diff .[0m
+2025-04-17T13:00:10.1302366Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-17T13:00:10.1302740Z ##[endgroup]
+2025-04-17T13:00:10.3166069Z 1 file would be reformatted, 102 files already formatted
+2025-04-17T13:00:10.3166614Z --- xcp_d/utils/bids.py
+2025-04-17T13:00:10.3167010Z +++ xcp_d/utils/bids.py
+2025-04-17T13:00:10.3167713Z @@ -300,9 +300,7 @@
+2025-04-17T13:00:10.3168687Z                      queries['template_to_anat_xfm']['to'] = 'T1w'
+2025-04-17T13:00:10.3169673Z                      queries['anat_to_template_xfm']['from'] = 'T1w'
+2025-04-17T13:00:10.3170522Z                  else:
+2025-04-17T13:00:10.3170899Z -                    LOGGER.info(
+2025-04-17T13:00:10.3171306Z -                        'T2w-to-template transform found. Performing T2w-only processing.'
+2025-04-17T13:00:10.3171768Z -                    )
+2025-04-17T13:00:10.3172222Z +                    LOGGER.info('T2w-to-template transform found. Performing T2w-only processing.')
+2025-04-17T13:00:10.3172752Z                      queries['t1w']['space'] = 'T2w'  # ensure T1w is not collected
+2025-04-17T13:00:10.3173149Z                      queries['template_to_anat_xfm']['to'] = 'T2w'
+2025-04-17T13:00:10.3173519Z                      queries['anat_to_template_xfm']['from'] = 'T2w'
+2025-04-17T13:00:10.3173748Z 
+2025-04-17T13:00:10.3194337Z ##[error]Process completed with exit code 1.
+2025-04-17T13:00:10.3302877Z Post job cleanup.
+2025-04-17T13:00:10.4236168Z [command]/usr/bin/git version
+2025-04-17T13:00:10.4279111Z git version 2.49.0
+2025-04-17T13:00:10.4321263Z Temporarily overriding HOME='/home/runner/work/_temp/c1c0c789-ddc6-4f88-80a2-8ef1c7ec0a6f' before making global git config changes
+2025-04-17T13:00:10.4322312Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-17T13:00:10.4326656Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/xcp_d/xcp_d
+2025-04-17T13:00:10.4360483Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-17T13:00:10.4393072Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-17T13:00:10.4633780Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-17T13:00:10.4655348Z http.https://github.com/.extraheader
+2025-04-17T13:00:10.4667912Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-17T13:00:10.4699220Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-17T13:00:10.5032353Z Cleaning up orphan processes

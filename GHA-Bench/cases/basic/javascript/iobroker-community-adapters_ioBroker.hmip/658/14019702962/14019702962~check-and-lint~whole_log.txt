@@ -1,0 +1,217 @@
+﻿2025-03-23T14:00:27.2590031Z Current runner version: '2.323.0'
+2025-03-23T14:00:27.2615120Z ##[group]Operating System
+2025-03-23T14:00:27.2615937Z Ubuntu
+2025-03-23T14:00:27.2616524Z 24.04.2
+2025-03-23T14:00:27.2617014Z LTS
+2025-03-23T14:00:27.2617666Z ##[endgroup]
+2025-03-23T14:00:27.2618368Z ##[group]Runner Image
+2025-03-23T14:00:27.2618924Z Image: ubuntu-24.04
+2025-03-23T14:00:27.2619464Z Version: 20250316.1.0
+2025-03-23T14:00:27.2620502Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250316.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-23T14:00:27.2621867Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250316.1
+2025-03-23T14:00:27.2622762Z ##[endgroup]
+2025-03-23T14:00:27.2623295Z ##[group]Runner Image Provisioner
+2025-03-23T14:00:27.2623893Z 2.0.422.1
+2025-03-23T14:00:27.2624324Z ##[endgroup]
+2025-03-23T14:00:27.2626657Z ##[group]GITHUB_TOKEN Permissions
+2025-03-23T14:00:27.2629060Z Actions: read
+2025-03-23T14:00:27.2629880Z Attestations: read
+2025-03-23T14:00:27.2630481Z Checks: read
+2025-03-23T14:00:27.2631014Z Contents: read
+2025-03-23T14:00:27.2631509Z Deployments: read
+2025-03-23T14:00:27.2632011Z Discussions: read
+2025-03-23T14:00:27.2632458Z Issues: read
+2025-03-23T14:00:27.2633082Z Metadata: read
+2025-03-23T14:00:27.2633543Z Models: read
+2025-03-23T14:00:27.2634013Z Packages: read
+2025-03-23T14:00:27.2634556Z Pages: read
+2025-03-23T14:00:27.2635040Z PullRequests: read
+2025-03-23T14:00:27.2635533Z RepositoryProjects: read
+2025-03-23T14:00:27.2636158Z SecurityEvents: read
+2025-03-23T14:00:27.2636678Z Statuses: read
+2025-03-23T14:00:27.2637127Z ##[endgroup]
+2025-03-23T14:00:27.2639415Z Secret source: None
+2025-03-23T14:00:27.2640163Z Prepare workflow directory
+2025-03-23T14:00:27.2974311Z Prepare all required actions
+2025-03-23T14:00:27.3012914Z Getting action download info
+2025-03-23T14:00:27.7264571Z Download action repository 'ioBroker/testing-action-check@v1' (SHA:070b1f092f89f19651a1d344fe9461cebb5811ce)
+2025-03-23T14:00:28.1019629Z Getting action download info
+2025-03-23T14:00:28.2178623Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-23T14:00:28.2546597Z Download action repository 'actions/setup-node@v4' (SHA:cdca7365b2dadb8aad0a33bc7601856ffabcc48e)
+2025-03-23T14:00:28.7662452Z Complete job name: check-and-lint
+2025-03-23T14:00:28.8349130Z ##[group]Run ioBroker/testing-action-check@v1
+2025-03-23T14:00:28.8350133Z with:
+2025-03-23T14:00:28.8350572Z   node-version: 20.x
+2025-03-23T14:00:28.8351037Z   lint: true
+2025-03-23T14:00:28.8351490Z   install-command: npm ci
+2025-03-23T14:00:28.8352005Z   package-cache: npm
+2025-03-23T14:00:28.8352477Z   type-checking: false
+2025-03-23T14:00:28.8352982Z   type-checking-command: npm run check
+2025-03-23T14:00:28.8353547Z   lint-command: npm run lint
+2025-03-23T14:00:28.8354083Z   test-command: npm run test:package
+2025-03-23T14:00:28.8354839Z ##[endgroup]
+2025-03-23T14:00:28.8525579Z ##[group]Run actions/checkout@v4
+2025-03-23T14:00:28.8526141Z with:
+2025-03-23T14:00:28.8526713Z   repository: iobroker-community-adapters/ioBroker.hmip
+2025-03-23T14:00:28.8527715Z   token: ***
+2025-03-23T14:00:28.8528161Z   ssh-strict: true
+2025-03-23T14:00:28.8528609Z   ssh-user: git
+2025-03-23T14:00:28.8529060Z   persist-credentials: true
+2025-03-23T14:00:28.8529555Z   clean: true
+2025-03-23T14:00:28.8530036Z   sparse-checkout-cone-mode: true
+2025-03-23T14:00:28.8530555Z   fetch-depth: 1
+2025-03-23T14:00:28.8530989Z   fetch-tags: false
+2025-03-23T14:00:28.8531440Z   show-progress: true
+2025-03-23T14:00:28.8531897Z   lfs: false
+2025-03-23T14:00:28.8532311Z   submodules: false
+2025-03-23T14:00:28.8532788Z   set-safe-directory: true
+2025-03-23T14:00:28.8533282Z ##[endgroup]
+2025-03-23T14:00:29.0130704Z Syncing repository: iobroker-community-adapters/ioBroker.hmip
+2025-03-23T14:00:29.0132850Z ##[group]Getting Git version info
+2025-03-23T14:00:29.0133700Z Working directory is '/home/runner/work/ioBroker.hmip/ioBroker.hmip'
+2025-03-23T14:00:29.0134788Z [command]/usr/bin/git version
+2025-03-23T14:00:29.0185879Z git version 2.48.1
+2025-03-23T14:00:29.0214574Z ##[endgroup]
+2025-03-23T14:00:29.0229342Z Temporarily overriding HOME='/home/runner/work/_temp/792f2275-398d-4195-a19f-470440eac9f5' before making global git config changes
+2025-03-23T14:00:29.0230827Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-23T14:00:29.0234601Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ioBroker.hmip/ioBroker.hmip
+2025-03-23T14:00:29.0272252Z Deleting the contents of '/home/runner/work/ioBroker.hmip/ioBroker.hmip'
+2025-03-23T14:00:29.0276323Z ##[group]Initializing the repository
+2025-03-23T14:00:29.0280907Z [command]/usr/bin/git init /home/runner/work/ioBroker.hmip/ioBroker.hmip
+2025-03-23T14:00:29.0337993Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-23T14:00:29.0339168Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-23T14:00:29.0340141Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-23T14:00:29.0340900Z hint:
+2025-03-23T14:00:29.0341434Z hint: 	git config --global init.defaultBranch <name>
+2025-03-23T14:00:29.0342435Z hint:
+2025-03-23T14:00:29.0343343Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-23T14:00:29.0344331Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-23T14:00:29.0345097Z hint:
+2025-03-23T14:00:29.0345531Z hint: 	git branch -m <name>
+2025-03-23T14:00:29.0346363Z Initialized empty Git repository in /home/runner/work/ioBroker.hmip/ioBroker.hmip/.git/
+2025-03-23T14:00:29.0353839Z [command]/usr/bin/git remote add origin https://github.com/iobroker-community-adapters/ioBroker.hmip
+2025-03-23T14:00:29.0386226Z ##[endgroup]
+2025-03-23T14:00:29.0387204Z ##[group]Disabling automatic garbage collection
+2025-03-23T14:00:29.0390749Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-23T14:00:29.0420044Z ##[endgroup]
+2025-03-23T14:00:29.0427180Z ##[group]Setting up auth
+2025-03-23T14:00:29.0428782Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-23T14:00:29.0459646Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-23T14:00:29.0748056Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-23T14:00:29.0780079Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-23T14:00:29.1026313Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-23T14:00:29.1065595Z ##[endgroup]
+2025-03-23T14:00:29.1066406Z ##[group]Fetching the repository
+2025-03-23T14:00:29.1075296Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +909bfad008ec9c13cfed1c2584a7b4e5af9d9724:refs/remotes/pull/658/merge
+2025-03-23T14:00:29.5818041Z From https://github.com/iobroker-community-adapters/ioBroker.hmip
+2025-03-23T14:00:29.5820132Z  * [new ref]         909bfad008ec9c13cfed1c2584a7b4e5af9d9724 -> pull/658/merge
+2025-03-23T14:00:29.5844781Z ##[endgroup]
+2025-03-23T14:00:29.5846386Z ##[group]Determining the checkout info
+2025-03-23T14:00:29.5848304Z ##[endgroup]
+2025-03-23T14:00:29.5852579Z [command]/usr/bin/git sparse-checkout disable
+2025-03-23T14:00:29.5897603Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-23T14:00:29.5932624Z ##[group]Checking out the ref
+2025-03-23T14:00:29.5936754Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/658/merge
+2025-03-23T14:00:29.6456727Z Note: switching to 'refs/remotes/pull/658/merge'.
+2025-03-23T14:00:29.6457860Z 
+2025-03-23T14:00:29.6458503Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-23T14:00:29.6525867Z changes and commit them, and you can discard any commits you make in this
+2025-03-23T14:00:29.6527670Z state without impacting any branches by switching back to a branch.
+2025-03-23T14:00:29.6528586Z 
+2025-03-23T14:00:29.6529200Z If you want to create a new branch to retain commits you create, you may
+2025-03-23T14:00:29.6530572Z do so (now or later) by using -c with the switch command. Example:
+2025-03-23T14:00:29.6531351Z 
+2025-03-23T14:00:29.6531672Z   git switch -c <new-branch-name>
+2025-03-23T14:00:29.6532209Z 
+2025-03-23T14:00:29.6532534Z Or undo this operation with:
+2025-03-23T14:00:29.6533041Z 
+2025-03-23T14:00:29.6533333Z   git switch -
+2025-03-23T14:00:29.6533739Z 
+2025-03-23T14:00:29.6534378Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-23T14:00:29.6535309Z 
+2025-03-23T14:00:29.6536387Z HEAD is now at 909bfad Merge 2fbb9271f3a5a45d7fddbf0d5d9dd930022e61fb into 530b4b51a44a9003e3612252c77ff146c97fd89b
+2025-03-23T14:00:29.6540204Z ##[endgroup]
+2025-03-23T14:00:29.6541936Z [command]/usr/bin/git log -1 --format=%H
+2025-03-23T14:00:29.6543285Z 909bfad008ec9c13cfed1c2584a7b4e5af9d9724
+2025-03-23T14:00:29.6846724Z ##[group]Run actions/setup-node@v4
+2025-03-23T14:00:29.6847252Z with:
+2025-03-23T14:00:29.6847777Z   node-version: 20.x
+2025-03-23T14:00:29.6848197Z   cache: npm
+2025-03-23T14:00:29.6848577Z   always-auth: false
+2025-03-23T14:00:29.6848982Z   check-latest: false
+2025-03-23T14:00:29.6849538Z   token: ***
+2025-03-23T14:00:29.6849909Z ##[endgroup]
+2025-03-23T14:00:29.8578366Z Found in cache @ /opt/hostedtoolcache/node/20.19.0/x64
+2025-03-23T14:00:29.8585404Z ##[group]Environment details
+2025-03-23T14:00:30.1669157Z node: v20.19.0
+2025-03-23T14:00:30.1670661Z npm: 10.8.2
+2025-03-23T14:00:30.1671596Z yarn: 1.22.22
+2025-03-23T14:00:30.1672764Z ##[endgroup]
+2025-03-23T14:00:30.1692947Z [command]/opt/hostedtoolcache/node/20.19.0/x64/bin/npm config get cache
+2025-03-23T14:00:30.3189448Z /home/runner/.npm
+2025-03-23T14:00:30.4761807Z Cache hit for: node-cache-Linux-x64-npm-ee7d8b2b92ccb624cdf505bd4c14d200f722994e8c00c94284bc3e749bdd4690
+2025-03-23T14:00:31.1531480Z Received 31216561 of 31216561 (100.0%), 54.0 MBs/sec
+2025-03-23T14:00:31.1533192Z Cache Size: ~30 MB (31216561 B)
+2025-03-23T14:00:31.1562187Z [command]/usr/bin/tar -xf /home/runner/work/_temp/21f31eab-0598-4356-8a4a-c6246c25a61d/cache.tzst -P -C /home/runner/work/ioBroker.hmip/ioBroker.hmip --use-compress-program unzstd
+2025-03-23T14:00:31.3015894Z Cache restored successfully
+2025-03-23T14:00:31.3087194Z Cache restored from key: node-cache-Linux-x64-npm-ee7d8b2b92ccb624cdf505bd4c14d200f722994e8c00c94284bc3e749bdd4690
+2025-03-23T14:00:31.3265790Z ##[group]Run npm ci
+2025-03-23T14:00:31.3266113Z [36;1mnpm ci[0m
+2025-03-23T14:00:31.3323852Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-23T14:00:31.3324239Z ##[endgroup]
+2025-03-23T14:00:40.2134155Z 
+2025-03-23T14:00:40.2145606Z added 605 packages, and audited 606 packages in 9s
+2025-03-23T14:00:40.2146371Z 
+2025-03-23T14:00:40.2147000Z 174 packages are looking for funding
+2025-03-23T14:00:40.2147953Z   run `npm fund` for details
+2025-03-23T14:00:40.2161187Z 
+2025-03-23T14:00:40.2161914Z 3 vulnerabilities (1 low, 2 high)
+2025-03-23T14:00:40.2163613Z 
+2025-03-23T14:00:40.2163944Z To address all issues, run:
+2025-03-23T14:00:40.2164410Z   npm audit fix
+2025-03-23T14:00:40.2164629Z 
+2025-03-23T14:00:40.2164927Z Run `npm audit` for details.
+2025-03-23T14:00:40.2515176Z ##[group]Run if false; then
+2025-03-23T14:00:40.2515467Z [36;1mif false; then[0m
+2025-03-23T14:00:40.2515679Z [36;1m  npm run check[0m
+2025-03-23T14:00:40.2515874Z [36;1melse[0m
+2025-03-23T14:00:40.2516072Z [36;1m  echo "Skipping type check..."[0m
+2025-03-23T14:00:40.2516321Z [36;1mfi[0m
+2025-03-23T14:00:40.2567989Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-23T14:00:40.2568316Z ##[endgroup]
+2025-03-23T14:00:40.2634600Z Skipping type check...
+2025-03-23T14:00:40.2655205Z ##[group]Run if true; then
+2025-03-23T14:00:40.2655634Z [36;1mif true; then[0m
+2025-03-23T14:00:40.2655833Z [36;1m  npm run lint[0m
+2025-03-23T14:00:40.2656031Z [36;1melse[0m
+2025-03-23T14:00:40.2656264Z [36;1m  echo "No linter configured, skipping..."[0m
+2025-03-23T14:00:40.2656564Z [36;1mfi[0m
+2025-03-23T14:00:40.2698596Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-23T14:00:40.2698921Z ##[endgroup]
+2025-03-23T14:00:40.3782350Z 
+2025-03-23T14:00:40.3782900Z > iobroker.hmip@1.26.5 lint
+2025-03-23T14:00:40.3783484Z > eslint -c eslint.config.mjs .
+2025-03-23T14:00:40.3783787Z 
+2025-03-23T14:00:43.7252354Z 
+2025-03-23T14:00:43.7254879Z /home/runner/work/ioBroker.hmip/ioBroker.hmip/api/hmCloudAPI.js
+2025-03-23T14:00:43.7285735Z ##[error]  415:5  error  Delete `·`     prettier/prettier
+2025-03-23T14:00:43.7287678Z ##[error]  420:1  error  Delete `····`  prettier/prettier
+2025-03-23T14:00:43.7288122Z 
+2025-03-23T14:00:43.7288555Z ✖ 2 problems (2 errors, 0 warnings)
+2025-03-23T14:00:43.7289246Z   2 errors and 0 warnings potentially fixable with the `--fix` option.
+2025-03-23T14:00:43.7289768Z 
+2025-03-23T14:00:43.7695479Z ##[error]Process completed with exit code 1.
+2025-03-23T14:00:43.7811968Z Post job cleanup.
+2025-03-23T14:00:43.7874419Z Post job cleanup.
+2025-03-23T14:00:43.8803206Z [command]/usr/bin/git version
+2025-03-23T14:00:43.8845784Z git version 2.48.1
+2025-03-23T14:00:43.8887699Z Temporarily overriding HOME='/home/runner/work/_temp/d62604b6-0f6c-4bda-a6f3-fd3106b077be' before making global git config changes
+2025-03-23T14:00:43.8888604Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-23T14:00:43.8892777Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ioBroker.hmip/ioBroker.hmip
+2025-03-23T14:00:43.8926436Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-23T14:00:43.8958670Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-23T14:00:43.9193760Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-23T14:00:43.9216463Z http.https://github.com/.extraheader
+2025-03-23T14:00:43.9229185Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-23T14:00:43.9260071Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-23T14:00:43.9592371Z Cleaning up orphan processes

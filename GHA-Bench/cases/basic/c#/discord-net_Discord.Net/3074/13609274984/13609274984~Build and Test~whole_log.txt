@@ -1,0 +1,399 @@
+2025-03-01T22:10:16.7156040Z Requested labels: ubuntu-22.04
+2025-03-01T22:10:16.7156249Z Job defined at: discord-net/Discord.Net/.github/workflows/dotnet.yml@refs/pull/3074/merge
+2025-03-01T22:10:16.7156326Z Waiting for a runner to pick up this job...
+2025-03-01T22:10:17.0376193Z Job is waiting for a hosted runner to come online.
+2025-03-01T22:10:20.8713258Z Job is about to start running on the hosted runner: GitHub Actions 14 (hosted)
+2025-03-01T22:10:23.1666211Z Current runner version: '2.322.0'
+2025-03-01T22:10:23.1691630Z ##[group]Operating System
+2025-03-01T22:10:23.1692434Z Ubuntu
+2025-03-01T22:10:23.1692961Z 22.04.5
+2025-03-01T22:10:23.1693519Z LTS
+2025-03-01T22:10:23.1693989Z ##[endgroup]
+2025-03-01T22:10:23.1694484Z ##[group]Runner Image
+2025-03-01T22:10:23.1695103Z Image: ubuntu-22.04
+2025-03-01T22:10:23.1695621Z Version: 20250223.1.0
+2025-03-01T22:10:23.1696620Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20250223.1/images/ubuntu/Ubuntu2204-Readme.md
+2025-03-01T22:10:23.1698312Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20250223.1
+2025-03-01T22:10:23.1699209Z ##[endgroup]
+2025-03-01T22:10:23.1699680Z ##[group]Runner Image Provisioner
+2025-03-01T22:10:23.1700328Z 2.0.422.1
+2025-03-01T22:10:23.1700820Z ##[endgroup]
+2025-03-01T22:10:23.1703061Z ##[group]GITHUB_TOKEN Permissions
+2025-03-01T22:10:23.1705029Z Actions: write
+2025-03-01T22:10:23.1705824Z Attestations: write
+2025-03-01T22:10:23.1706445Z Checks: write
+2025-03-01T22:10:23.1707396Z Contents: write
+2025-03-01T22:10:23.1707920Z Deployments: write
+2025-03-01T22:10:23.1708441Z Discussions: write
+2025-03-01T22:10:23.1709003Z Issues: write
+2025-03-01T22:10:23.1709511Z Metadata: read
+2025-03-01T22:10:23.1709994Z Packages: write
+2025-03-01T22:10:23.1710526Z Pages: write
+2025-03-01T22:10:23.1711042Z PullRequests: write
+2025-03-01T22:10:23.1711568Z RepositoryProjects: write
+2025-03-01T22:10:23.1712214Z SecurityEvents: write
+2025-03-01T22:10:23.1712736Z Statuses: write
+2025-03-01T22:10:23.1713176Z ##[endgroup]
+2025-03-01T22:10:23.1715409Z Secret source: Actions
+2025-03-01T22:10:23.1716172Z Prepare workflow directory
+2025-03-01T22:10:23.2283458Z Prepare all required actions
+2025-03-01T22:10:23.2319409Z Getting action download info
+2025-03-01T22:10:23.4989494Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-01T22:10:23.6211891Z Download action repository 'actions/setup-dotnet@v4' (SHA:3951f0dfe7a07e2313ec93c75700083e2005cbab)
+2025-03-01T22:10:24.1463463Z Download action repository 'EnricoMi/publish-unit-test-result-action@v2' (SHA:170bf24d20d201b842d7a52403b73ed297e6645b)
+2025-03-01T22:10:24.6965708Z Download action repository 'actions/upload-artifact@v4' (SHA:4cec3d8aa04e39d1a68397de0c4cd6fb9dce8ec1)
+2025-03-01T22:10:25.3514552Z Complete job name: Build and Test
+2025-03-01T22:10:25.3961106Z ##[group]Pull down action image 'ghcr.io/enricomi/publish-unit-test-result-action:v2.18.0'
+2025-03-01T22:10:25.4024076Z ##[command]/usr/bin/docker pull ghcr.io/enricomi/publish-unit-test-result-action:v2.18.0
+2025-03-01T22:10:26.1475186Z v2.18.0: Pulling from enricomi/publish-unit-test-result-action
+2025-03-01T22:10:26.3232344Z 43c4264eed91: Pulling fs layer
+2025-03-01T22:10:26.3233093Z 534b08b3403f: Pulling fs layer
+2025-03-01T22:10:26.3233780Z ddae5f2796f9: Pulling fs layer
+2025-03-01T22:10:26.3234409Z 7bdf648f802f: Pulling fs layer
+2025-03-01T22:10:26.3235156Z e03ced0b92a9: Pulling fs layer
+2025-03-01T22:10:26.3235656Z 2d933183a85d: Pulling fs layer
+2025-03-01T22:10:26.3236261Z db68f486b295: Pulling fs layer
+2025-03-01T22:10:26.3236872Z f517a3f638b1: Pulling fs layer
+2025-03-01T22:10:26.3237521Z 77d7a167e44a: Pulling fs layer
+2025-03-01T22:10:26.3237899Z 7bdf648f802f: Waiting
+2025-03-01T22:10:26.3238392Z 2d933183a85d: Waiting
+2025-03-01T22:10:26.3238721Z db68f486b295: Waiting
+2025-03-01T22:10:26.3239099Z e03ced0b92a9: Waiting
+2025-03-01T22:10:26.3239436Z f517a3f638b1: Waiting
+2025-03-01T22:10:26.3239748Z 77d7a167e44a: Waiting
+2025-03-01T22:10:26.5221542Z 534b08b3403f: Download complete
+2025-03-01T22:10:26.5418227Z ddae5f2796f9: Verifying Checksum
+2025-03-01T22:10:26.5418926Z ddae5f2796f9: Download complete
+2025-03-01T22:10:26.5448150Z 43c4264eed91: Verifying Checksum
+2025-03-01T22:10:26.5448788Z 43c4264eed91: Download complete
+2025-03-01T22:10:26.6438128Z 43c4264eed91: Pull complete
+2025-03-01T22:10:26.6874468Z 7bdf648f802f: Verifying Checksum
+2025-03-01T22:10:26.6875416Z 7bdf648f802f: Download complete
+2025-03-01T22:10:26.7196503Z e03ced0b92a9: Verifying Checksum
+2025-03-01T22:10:26.7197407Z e03ced0b92a9: Download complete
+2025-03-01T22:10:26.7925655Z 2d933183a85d: Verifying Checksum
+2025-03-01T22:10:26.7926454Z 2d933183a85d: Download complete
+2025-03-01T22:10:26.8733963Z 534b08b3403f: Pull complete
+2025-03-01T22:10:26.9643687Z f517a3f638b1: Verifying Checksum
+2025-03-01T22:10:26.9644997Z f517a3f638b1: Download complete
+2025-03-01T22:10:26.9681342Z 77d7a167e44a: Download complete
+2025-03-01T22:10:27.1727144Z db68f486b295: Verifying Checksum
+2025-03-01T22:10:27.1727759Z db68f486b295: Download complete
+2025-03-01T22:10:27.5463327Z ddae5f2796f9: Pull complete
+2025-03-01T22:10:27.5574872Z 7bdf648f802f: Pull complete
+2025-03-01T22:10:27.5750363Z e03ced0b92a9: Pull complete
+2025-03-01T22:10:27.5849387Z 2d933183a85d: Pull complete
+2025-03-01T22:10:28.5065588Z db68f486b295: Pull complete
+2025-03-01T22:10:28.5213561Z f517a3f638b1: Pull complete
+2025-03-01T22:10:28.5340351Z 77d7a167e44a: Pull complete
+2025-03-01T22:10:28.5394225Z Digest: sha256:0281b3abe275fa80a494973c89895fcf34bdaaaf8093cef17ed7842997574e06
+2025-03-01T22:10:28.5416357Z Status: Downloaded newer image for ghcr.io/enricomi/publish-unit-test-result-action:v2.18.0
+2025-03-01T22:10:28.5429713Z ghcr.io/enricomi/publish-unit-test-result-action:v2.18.0
+2025-03-01T22:10:28.5453652Z ##[endgroup]
+2025-03-01T22:10:28.5731208Z ##[group]Run actions/checkout@v4
+2025-03-01T22:10:28.5731832Z with:
+2025-03-01T22:10:28.5732084Z   repository: discord-net/Discord.Net
+2025-03-01T22:10:28.5732538Z   token: ***
+2025-03-01T22:10:28.5732768Z   ssh-strict: true
+2025-03-01T22:10:28.5733002Z   ssh-user: git
+2025-03-01T22:10:28.5733236Z   persist-credentials: true
+2025-03-01T22:10:28.5733517Z   clean: true
+2025-03-01T22:10:28.5733793Z   sparse-checkout-cone-mode: true
+2025-03-01T22:10:28.5734079Z   fetch-depth: 1
+2025-03-01T22:10:28.5734305Z   fetch-tags: false
+2025-03-01T22:10:28.5734549Z   show-progress: true
+2025-03-01T22:10:28.5734795Z   lfs: false
+2025-03-01T22:10:28.5735020Z   submodules: false
+2025-03-01T22:10:28.5735272Z   set-safe-directory: true
+2025-03-01T22:10:28.5735731Z env:
+2025-03-01T22:10:28.5735976Z   ArtifactStagingDirectory: artifacts
+2025-03-01T22:10:28.5736275Z   IsTagBuild: false
+2025-03-01T22:10:28.5736524Z   DOTNET_INSTALL_DIR: /usr/share/dotnet
+2025-03-01T22:10:28.5736805Z   Suffix: 435
+2025-03-01T22:10:28.5737228Z ##[endgroup]
+2025-03-01T22:10:28.8330772Z Syncing repository: discord-net/Discord.Net
+2025-03-01T22:10:28.8332158Z ##[group]Getting Git version info
+2025-03-01T22:10:28.8332594Z Working directory is '/home/runner/work/Discord.Net/Discord.Net'
+2025-03-01T22:10:28.8333128Z [command]/usr/bin/git version
+2025-03-01T22:10:28.9269521Z git version 2.48.1
+2025-03-01T22:10:28.9301134Z ##[endgroup]
+2025-03-01T22:10:28.9315239Z Temporarily overriding HOME='/home/runner/work/_temp/180115cd-a335-4cf8-8940-756fcc61041b' before making global git config changes
+2025-03-01T22:10:28.9316017Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-01T22:10:28.9321087Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Discord.Net/Discord.Net
+2025-03-01T22:10:28.9394831Z Deleting the contents of '/home/runner/work/Discord.Net/Discord.Net'
+2025-03-01T22:10:28.9398689Z ##[group]Initializing the repository
+2025-03-01T22:10:28.9402847Z [command]/usr/bin/git init /home/runner/work/Discord.Net/Discord.Net
+2025-03-01T22:10:29.0053470Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-01T22:10:29.0054185Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-01T22:10:29.0054787Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-01T22:10:29.0055208Z hint:
+2025-03-01T22:10:29.0055537Z hint: 	git config --global init.defaultBranch <name>
+2025-03-01T22:10:29.0055900Z hint:
+2025-03-01T22:10:29.0056246Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-01T22:10:29.0056831Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-01T22:10:29.0057854Z hint:
+2025-03-01T22:10:29.0058105Z hint: 	git branch -m <name>
+2025-03-01T22:10:29.0136107Z Initialized empty Git repository in /home/runner/work/Discord.Net/Discord.Net/.git/
+2025-03-01T22:10:29.0149543Z [command]/usr/bin/git remote add origin https://github.com/discord-net/Discord.Net
+2025-03-01T22:10:29.0226381Z ##[endgroup]
+2025-03-01T22:10:29.0227246Z ##[group]Disabling automatic garbage collection
+2025-03-01T22:10:29.0231706Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-01T22:10:29.0260362Z ##[endgroup]
+2025-03-01T22:10:29.0260822Z ##[group]Setting up auth
+2025-03-01T22:10:29.0268104Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-01T22:10:29.0296864Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-01T22:10:29.1749326Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-01T22:10:29.1781661Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-01T22:10:29.2016469Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-01T22:10:29.2043824Z ##[endgroup]
+2025-03-01T22:10:29.2044884Z ##[group]Fetching the repository
+2025-03-01T22:10:29.2054475Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +9526f9b884d92b2539884a1bf006fd18d6f04198:refs/remotes/pull/3074/merge
+2025-03-01T22:10:30.1645505Z From https://github.com/discord-net/Discord.Net
+2025-03-01T22:10:30.1646262Z  * [new ref]         9526f9b884d92b2539884a1bf006fd18d6f04198 -> pull/3074/merge
+2025-03-01T22:10:30.1708930Z ##[endgroup]
+2025-03-01T22:10:30.1709323Z ##[group]Determining the checkout info
+2025-03-01T22:10:30.1711404Z ##[endgroup]
+2025-03-01T22:10:30.1716408Z [command]/usr/bin/git sparse-checkout disable
+2025-03-01T22:10:30.1797602Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-01T22:10:30.1824652Z ##[group]Checking out the ref
+2025-03-01T22:10:30.1829212Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/3074/merge
+2025-03-01T22:10:30.2809568Z Note: switching to 'refs/remotes/pull/3074/merge'.
+2025-03-01T22:10:30.2810089Z 
+2025-03-01T22:10:30.2810470Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-01T22:10:30.2811218Z changes and commit them, and you can discard any commits you make in this
+2025-03-01T22:10:30.2811835Z state without impacting any branches by switching back to a branch.
+2025-03-01T22:10:30.2812209Z 
+2025-03-01T22:10:30.2812459Z If you want to create a new branch to retain commits you create, you may
+2025-03-01T22:10:30.2813040Z do so (now or later) by using -c with the switch command. Example:
+2025-03-01T22:10:30.2813426Z 
+2025-03-01T22:10:30.2813561Z   git switch -c <new-branch-name>
+2025-03-01T22:10:30.2813792Z 
+2025-03-01T22:10:30.2813911Z Or undo this operation with:
+2025-03-01T22:10:30.2814120Z 
+2025-03-01T22:10:30.2814222Z   git switch -
+2025-03-01T22:10:30.2814394Z 
+2025-03-01T22:10:30.2816044Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-01T22:10:30.2816537Z 
+2025-03-01T22:10:30.2817185Z HEAD is now at 9526f9b Merge 76e004e7795d21d2d441062cff838dca5adc3b69 into aa66928c484e07a1e247355085849205e5d28692
+2025-03-01T22:10:30.2821997Z ##[endgroup]
+2025-03-01T22:10:30.2863053Z [command]/usr/bin/git log -1 --format=%H
+2025-03-01T22:10:30.2885522Z 9526f9b884d92b2539884a1bf006fd18d6f04198
+2025-03-01T22:10:30.3066443Z ##[group]Run actions/setup-dotnet@v4
+2025-03-01T22:10:30.3066731Z with:
+2025-03-01T22:10:30.3066915Z   dotnet-version: 9.0.x
+2025-03-01T22:10:30.3067282Z   cache: true
+2025-03-01T22:10:30.3067712Z   cache-dependency-path: **/packages.lock.json
+2025-03-01T22:10:30.3067986Z env:
+2025-03-01T22:10:30.3068173Z   ArtifactStagingDirectory: artifacts
+2025-03-01T22:10:30.3068422Z   IsTagBuild: false
+2025-03-01T22:10:30.3068620Z   DOTNET_INSTALL_DIR: /usr/share/dotnet
+2025-03-01T22:10:30.3068865Z   Suffix: 435
+2025-03-01T22:10:30.3069037Z ##[endgroup]
+2025-03-01T22:10:30.4860838Z [command]/home/runner/work/_actions/actions/setup-dotnet/v4/externals/install-dotnet.sh --skip-non-versioned-files --runtime dotnet --channel LTS
+2025-03-01T22:10:31.5570092Z dotnet-install: .NET Core Runtime with version '8.0.13' is already installed.
+2025-03-01T22:10:31.5600278Z [command]/home/runner/work/_actions/actions/setup-dotnet/v4/externals/install-dotnet.sh --skip-non-versioned-files --channel 9.0
+2025-03-01T22:10:32.3052891Z dotnet-install: .NET Core SDK with version '9.0.200' is already installed.
+2025-03-01T22:10:35.8944306Z Cache hit for: dotnet-cache-Linux-bfd9adb4f82a74df6639db7eed2bbda7e0da0c1bdfd815a81d64ddec854eb03e
+2025-03-01T22:10:37.2971674Z Received 0 of 179372187 (0.0%), 0.0 MBs/sec
+2025-03-01T22:10:38.2981289Z Received 109051904 of 179372187 (60.8%), 52.0 MBs/sec
+2025-03-01T22:10:39.0332748Z Received 179372187 of 179372187 (100.0%), 62.5 MBs/sec
+2025-03-01T22:10:39.0333601Z Cache Size: ~171 MB (179372187 B)
+2025-03-01T22:10:39.0455472Z [command]/usr/bin/tar -xf /home/runner/work/_temp/8eaa1b6d-dc82-44dc-89ee-d8e1050e48d8/cache.tzst -P -C /home/runner/work/Discord.Net/Discord.Net --use-compress-program unzstd
+2025-03-01T22:10:39.9068823Z Cache restored successfully
+2025-03-01T22:10:39.9466568Z Cache restored from key: dotnet-cache-Linux-bfd9adb4f82a74df6639db7eed2bbda7e0da0c1bdfd815a81d64ddec854eb03e
+2025-03-01T22:10:39.9651528Z ##[group]Run echo "Suffix=$(date +'%Y%m%d')-435" >> $GITHUB_ENV
+2025-03-01T22:10:39.9651992Z [36;1mecho "Suffix=$(date +'%Y%m%d')-435" >> $GITHUB_ENV[0m
+2025-03-01T22:10:39.9704797Z shell: /usr/bin/bash -e {0}
+2025-03-01T22:10:39.9705038Z env:
+2025-03-01T22:10:39.9705236Z   ArtifactStagingDirectory: artifacts
+2025-03-01T22:10:39.9705513Z   IsTagBuild: false
+2025-03-01T22:10:39.9705727Z   DOTNET_INSTALL_DIR: /usr/share/dotnet
+2025-03-01T22:10:39.9705968Z   Suffix: 435
+2025-03-01T22:10:39.9706146Z   DOTNET_ROOT: /usr/share/dotnet
+2025-03-01T22:10:39.9706366Z ##[endgroup]
+2025-03-01T22:10:39.9832603Z ##[group]Run dotnet restore ./Discord.Net.sln -v minimal --locked-mode
+2025-03-01T22:10:39.9833083Z [36;1mdotnet restore ./Discord.Net.sln -v minimal --locked-mode[0m
+2025-03-01T22:10:39.9877567Z shell: /usr/bin/bash -e {0}
+2025-03-01T22:10:39.9877809Z env:
+2025-03-01T22:10:39.9877998Z   ArtifactStagingDirectory: artifacts
+2025-03-01T22:10:39.9878253Z   IsTagBuild: false
+2025-03-01T22:10:39.9878459Z   DOTNET_INSTALL_DIR: /usr/share/dotnet
+2025-03-01T22:10:39.9878704Z   Suffix: 20250301-435
+2025-03-01T22:10:39.9878907Z   DOTNET_ROOT: /usr/share/dotnet
+2025-03-01T22:10:39.9879123Z ##[endgroup]
+2025-03-01T22:10:42.2484660Z   Determining projects to restore...
+2025-03-01T22:10:45.1564200Z   Restored /home/runner/work/Discord.Net/Discord.Net/test/Discord.Net.Tests.Integration/Discord.Net.Tests.Integration.csproj (in 536 ms).
+2025-03-01T22:10:45.1566096Z   Restored /home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Core/Discord.Net.Core.csproj (in 559 ms).
+2025-03-01T22:10:45.1593750Z   Restored /home/runner/work/Discord.Net/Discord.Net/test/Discord.Net.Tests.Unit/Discord.Net.Tests.Unit.csproj (in 535 ms).
+2025-03-01T22:10:45.1595383Z   Restored /home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.WebSocket/Discord.Net.WebSocket.csproj (in 560 ms).
+2025-03-01T22:10:45.1903090Z   Restored /home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Examples/Discord.Net.Examples.csproj (in 15 ms).
+2025-03-01T22:10:45.2295275Z   Restored /home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj (in 17 ms).
+2025-03-01T22:10:45.2296710Z   Restored /home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Webhook/Discord.Net.Webhook.csproj (in 25 ms).
+2025-03-01T22:10:45.2466395Z   Restored /home/runner/work/Discord.Net/Discord.Net/samples/TextCommandFramework/_TextCommandFramework.csproj (in 40 ms).
+2025-03-01T22:10:45.2605243Z   Restored /home/runner/work/Discord.Net/Discord.Net/samples/WebhookClient/_WebhookClient.csproj (in 11 ms).
+2025-03-01T22:10:45.2778203Z   Restored /home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Commands/Discord.Net.Commands.csproj (in 39 ms).
+2025-03-01T22:10:45.2912834Z   Restored /home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Interactions/Discord.Net.Interactions.csproj (in 112 ms).
+2025-03-01T22:10:45.2968868Z   Restored /home/runner/work/Discord.Net/Discord.Net/samples/ShardedClient/_ShardedClient.csproj (in 24 ms).
+2025-03-01T22:10:45.2974280Z   Restored /home/runner/work/Discord.Net/Discord.Net/samples/BasicBot/_BasicBot.csproj (in 2 ms).
+2025-03-01T22:10:45.3027704Z   Restored /home/runner/work/Discord.Net/Discord.Net/experiment/Discord.Net.BuildOverrides/Discord.Net.BuildOverrides.csproj (in 5 ms).
+2025-03-01T22:10:45.3069751Z   Restored /home/runner/work/Discord.Net/Discord.Net/samples/idn/idn.csproj (in 71 ms).
+2025-03-01T22:10:45.3126853Z   Restored /home/runner/work/Discord.Net/Discord.Net/samples/InteractionFramework/_InteractionFramework.csproj (in 31 ms).
+2025-03-01T22:10:45.3683056Z ##[group]Run dotnet build "Discord.Net.sln" -v minimal -c Release --no-restore /p:BuildNumber=20250301-435 /p:IsTagBuild=false
+2025-03-01T22:10:45.3683851Z [36;1mdotnet build "Discord.Net.sln" -v minimal -c Release --no-restore /p:BuildNumber=20250301-435 /p:IsTagBuild=false[0m
+2025-03-01T22:10:45.3731725Z shell: /usr/bin/bash -e {0}
+2025-03-01T22:10:45.3731965Z env:
+2025-03-01T22:10:45.3732157Z   ArtifactStagingDirectory: artifacts
+2025-03-01T22:10:45.3732408Z   IsTagBuild: false
+2025-03-01T22:10:45.3732620Z   DOTNET_INSTALL_DIR: /usr/share/dotnet
+2025-03-01T22:10:45.3732862Z   Suffix: 20250301-435
+2025-03-01T22:10:45.3733063Z   DOTNET_ROOT: /usr/share/dotnet
+2025-03-01T22:10:45.3733281Z ##[endgroup]
+2025-03-01T22:10:46.7745566Z /home/runner/.nuget/packages/system.collections.immutable/8.0.0/buildTransitive/netcoreapp2.0/System.Collections.Immutable.targets(4,5): warning : System.Collections.Immutable 8.0.0 doesn't support net5.0 and has not been tested with it. Consider upgrading your TargetFramework to net6.0 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Core/Discord.Net.Core.csproj::TargetFramework=net5.0]
+2025-03-01T22:10:59.0411691Z   Discord.Net.Core -> /home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Core/bin/Release/net5.0/Discord.Net.Core.dll
+2025-03-01T22:10:59.1038350Z /home/runner/.nuget/packages/system.collections.immutable/8.0.0/buildTransitive/net461/System.Collections.Immutable.targets(4,5): warning : System.Collections.Immutable 8.0.0 doesn't support net461 and has not been tested with it. Consider upgrading your TargetFramework to net462 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Core/Discord.Net.Core.csproj::TargetFramework=net461]
+2025-03-01T22:11:00.1163961Z   Discord.Net.Core -> /home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Core/bin/Release/net8.0/Discord.Net.Core.dll
+2025-03-01T22:11:00.4832614Z   Discord.Net.Core -> /home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Core/bin/Release/net6.0/Discord.Net.Core.dll
+2025-03-01T22:11:00.9374485Z /home/runner/.nuget/packages/system.collections.immutable/8.0.0/buildTransitive/netcoreapp2.0/System.Collections.Immutable.targets(4,5): warning : System.Collections.Immutable 8.0.0 doesn't support net5.0 and has not been tested with it. Consider upgrading your TargetFramework to net6.0 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=net5.0]
+2025-03-01T22:11:01.0711680Z /home/runner/.nuget/packages/system.collections.immutable/8.0.0/buildTransitive/net461/System.Collections.Immutable.targets(4,5): warning : System.Collections.Immutable 8.0.0 doesn't support net461 and has not been tested with it. Consider upgrading your TargetFramework to net462 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=net461]
+2025-03-01T22:11:01.3339659Z   Discord.Net.Core -> /home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Core/bin/Release/net9.0/Discord.Net.Core.dll
+2025-03-01T22:11:02.2070724Z /home/runner/.nuget/packages/system.collections.immutable/8.0.0/buildTransitive/netcoreapp2.0/System.Collections.Immutable.targets(4,5): warning : System.Collections.Immutable 8.0.0 doesn't support net5.0 and has not been tested with it. Consider upgrading your TargetFramework to net6.0 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Commands/Discord.Net.Commands.csproj::TargetFramework=net5.0]
+2025-03-01T22:11:02.2150637Z /home/runner/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.Abstractions.targets(4,5): warning : Microsoft.Extensions.DependencyInjection.Abstractions 8.0.0 doesn't support net5.0 and has not been tested with it. Consider upgrading your TargetFramework to net6.0 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Commands/Discord.Net.Commands.csproj::TargetFramework=net5.0]
+2025-03-01T22:11:02.3691233Z /home/runner/.nuget/packages/microsoft.bcl.asyncinterfaces/8.0.0/buildTransitive/net461/Microsoft.Bcl.AsyncInterfaces.targets(4,5): warning : Microsoft.Bcl.AsyncInterfaces 8.0.0 doesn't support net461 and has not been tested with it. Consider upgrading your TargetFramework to net462 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Commands/Discord.Net.Commands.csproj::TargetFramework=net461]
+2025-03-01T22:11:02.3740309Z /home/runner/.nuget/packages/system.collections.immutable/8.0.0/buildTransitive/net461/System.Collections.Immutable.targets(4,5): warning : System.Collections.Immutable 8.0.0 doesn't support net461 and has not been tested with it. Consider upgrading your TargetFramework to net462 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Commands/Discord.Net.Commands.csproj::TargetFramework=net461]
+2025-03-01T22:11:02.3756065Z /home/runner/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/buildTransitive/net461/Microsoft.Extensions.DependencyInjection.Abstractions.targets(4,5): warning : Microsoft.Extensions.DependencyInjection.Abstractions 8.0.0 doesn't support net461 and has not been tested with it. Consider upgrading your TargetFramework to net462 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Commands/Discord.Net.Commands.csproj::TargetFramework=net461]
+2025-03-01T22:11:03.4852570Z /home/runner/.nuget/packages/system.collections.immutable/8.0.0/buildTransitive/netcoreapp2.0/System.Collections.Immutable.targets(4,5): warning : System.Collections.Immutable 8.0.0 doesn't support net5.0 and has not been tested with it. Consider upgrading your TargetFramework to net6.0 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.WebSocket/Discord.Net.WebSocket.csproj::TargetFramework=net5.0]
+2025-03-01T22:11:03.6624131Z /home/runner/.nuget/packages/system.collections.immutable/8.0.0/buildTransitive/net461/System.Collections.Immutable.targets(4,5): warning : System.Collections.Immutable 8.0.0 doesn't support net461 and has not been tested with it. Consider upgrading your TargetFramework to net462 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.WebSocket/Discord.Net.WebSocket.csproj::TargetFramework=net461]
+2025-03-01T22:11:04.6721177Z /home/runner/.nuget/packages/system.collections.immutable/8.0.0/buildTransitive/netcoreapp2.0/System.Collections.Immutable.targets(4,5): warning : System.Collections.Immutable 8.0.0 doesn't support net5.0 and has not been tested with it. Consider upgrading your TargetFramework to net6.0 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Webhook/Discord.Net.Webhook.csproj::TargetFramework=net5.0]
+2025-03-01T22:11:05.5813048Z /home/runner/.nuget/packages/system.collections.immutable/8.0.0/buildTransitive/netcoreapp2.0/System.Collections.Immutable.targets(4,5): warning : System.Collections.Immutable 8.0.0 doesn't support net5.0 and has not been tested with it. Consider upgrading your TargetFramework to net6.0 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Interactions/Discord.Net.Interactions.csproj::TargetFramework=net5.0]
+2025-03-01T22:11:05.5831077Z /home/runner/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.Abstractions.targets(4,5): warning : Microsoft.Extensions.DependencyInjection.Abstractions 8.0.0 doesn't support net5.0 and has not been tested with it. Consider upgrading your TargetFramework to net6.0 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Interactions/Discord.Net.Interactions.csproj::TargetFramework=net5.0]
+2025-03-01T22:11:05.7487605Z /home/runner/.nuget/packages/microsoft.bcl.asyncinterfaces/8.0.0/buildTransitive/net461/Microsoft.Bcl.AsyncInterfaces.targets(4,5): warning : Microsoft.Bcl.AsyncInterfaces 8.0.0 doesn't support net461 and has not been tested with it. Consider upgrading your TargetFramework to net462 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Interactions/Discord.Net.Interactions.csproj::TargetFramework=net461]
+2025-03-01T22:11:05.7531888Z /home/runner/.nuget/packages/system.collections.immutable/8.0.0/buildTransitive/net461/System.Collections.Immutable.targets(4,5): warning : System.Collections.Immutable 8.0.0 doesn't support net461 and has not been tested with it. Consider upgrading your TargetFramework to net462 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Interactions/Discord.Net.Interactions.csproj::TargetFramework=net461]
+2025-03-01T22:11:05.7541274Z /home/runner/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/buildTransitive/net461/Microsoft.Extensions.DependencyInjection.Abstractions.targets(4,5): warning : Microsoft.Extensions.DependencyInjection.Abstractions 8.0.0 doesn't support net461 and has not been tested with it. Consider upgrading your TargetFramework to net462 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Interactions/Discord.Net.Interactions.csproj::TargetFramework=net461]
+2025-03-01T22:11:05.9948943Z   Discord.Net.Core -> /home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Core/bin/Release/net461/Discord.Net.Core.dll
+2025-03-01T22:11:07.1235198Z   Discord.Net.Core -> /home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Core/bin/Release/netstandard2.0/Discord.Net.Core.dll
+2025-03-01T22:11:07.6591191Z   _BasicBot -> /home/runner/work/Discord.Net/Discord.Net/samples/BasicBot/bin/Release/net9.0/_BasicBot.dll
+2025-03-01T22:11:07.8269118Z   _TextCommandFramework -> /home/runner/work/Discord.Net/Discord.Net/samples/TextCommandFramework/bin/Release/net8.0/_TextCommandFramework.dll
+2025-03-01T22:11:07.8624341Z   _ShardedClient -> /home/runner/work/Discord.Net/Discord.Net/samples/ShardedClient/bin/Release/net8.0/_ShardedClient.dll
+2025-03-01T22:11:08.2531950Z   _InteractionFramework -> /home/runner/work/Discord.Net/Discord.Net/samples/InteractionFramework/bin/Release/net9.0/_InteractionFramework.dll
+2025-03-01T22:11:08.2653521Z   _WebhookClient -> /home/runner/work/Discord.Net/Discord.Net/samples/WebhookClient/bin/Release/net9.0/_WebhookClient.dll
+2025-03-01T22:11:08.5100893Z   Discord.Net.BuildOverrides -> /home/runner/work/Discord.Net/Discord.Net/experiment/Discord.Net.BuildOverrides/bin/Release/net8.0/Discord.Net.BuildOverrides.dll
+2025-03-01T22:11:08.5793054Z   Discord.Net.BuildOverrides -> /home/runner/work/Discord.Net/Discord.Net/experiment/Discord.Net.BuildOverrides/bin/Release/net9.0/Discord.Net.BuildOverrides.dll
+2025-03-01T22:11:08.7920110Z   Discord.Net.Core -> /home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Core/bin/Release/netstandard2.1/Discord.Net.Core.dll
+2025-03-01T22:11:10.5305282Z ##[error]/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/BaseDiscordClient.cs(289,76): error CS0539: 'BaseDiscordClient.GetEntitlementsAsync(int, ulong?, ulong?, bool, ulong?, ulong?, ulong[], RequestOptions)' in explicit interface declaration is not found among members of the interface that can be implemented [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=net8.0]
+2025-03-01T22:11:10.5320634Z ##[error]/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/BaseDiscordClient.cs(12,47): error CS0535: 'BaseDiscordClient' does not implement interface member 'IDiscordClient.GetEntitlementsAsync(int, ulong?, ulong?, bool, ulong?, ulong?, ulong[], RequestOptions, bool?)' [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=net8.0]
+2025-03-01T22:11:11.7738867Z ##[error]/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/BaseDiscordClient.cs(289,76): error CS0539: 'BaseDiscordClient.GetEntitlementsAsync(int, ulong?, ulong?, bool, ulong?, ulong?, ulong[], RequestOptions)' in explicit interface declaration is not found among members of the interface that can be implemented [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=net6.0]
+2025-03-01T22:11:11.7746699Z ##[error]/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/BaseDiscordClient.cs(12,47): error CS0535: 'BaseDiscordClient' does not implement interface member 'IDiscordClient.GetEntitlementsAsync(int, ulong?, ulong?, bool, ulong?, ulong?, ulong[], RequestOptions, bool?)' [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=net6.0]
+2025-03-01T22:11:12.9699885Z   Discord.Net.Commands -> /home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Commands/bin/Release/net461/Discord.Net.Commands.dll
+2025-03-01T22:11:13.0013049Z   Discord.Net.Commands -> /home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Commands/bin/Release/netstandard2.0/Discord.Net.Commands.dll
+2025-03-01T22:11:13.0019139Z ##[error]/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/BaseDiscordClient.cs(289,76): error CS0539: 'BaseDiscordClient.GetEntitlementsAsync(int, ulong?, ulong?, bool, ulong?, ulong?, ulong[], RequestOptions)' in explicit interface declaration is not found among members of the interface that can be implemented [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=net461]
+2025-03-01T22:11:13.0026681Z ##[error]/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/BaseDiscordClient.cs(12,47): error CS0535: 'BaseDiscordClient' does not implement interface member 'IDiscordClient.GetEntitlementsAsync(int, ulong?, ulong?, bool, ulong?, ulong?, ulong[], RequestOptions, bool?)' [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=net461]
+2025-03-01T22:11:14.0658517Z ##[error]/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/BaseDiscordClient.cs(289,76): error CS0539: 'BaseDiscordClient.GetEntitlementsAsync(int, ulong?, ulong?, bool, ulong?, ulong?, ulong[], RequestOptions)' in explicit interface declaration is not found among members of the interface that can be implemented [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=net5.0]
+2025-03-01T22:11:14.0693713Z ##[error]/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/BaseDiscordClient.cs(12,47): error CS0535: 'BaseDiscordClient' does not implement interface member 'IDiscordClient.GetEntitlementsAsync(int, ulong?, ulong?, bool, ulong?, ulong?, ulong[], RequestOptions, bool?)' [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=net5.0]
+2025-03-01T22:11:14.3308235Z   Discord.Net.Commands -> /home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Commands/bin/Release/netstandard2.1/Discord.Net.Commands.dll
+2025-03-01T22:11:14.3511743Z   Discord.Net.Commands -> /home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Commands/bin/Release/net5.0/Discord.Net.Commands.dll
+2025-03-01T22:11:14.8818620Z ##[error]/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/BaseDiscordClient.cs(289,76): error CS0539: 'BaseDiscordClient.GetEntitlementsAsync(int, ulong?, ulong?, bool, ulong?, ulong?, ulong[], RequestOptions)' in explicit interface declaration is not found among members of the interface that can be implemented [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=netstandard2.0]
+2025-03-01T22:11:14.8826594Z ##[error]/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/BaseDiscordClient.cs(12,47): error CS0535: 'BaseDiscordClient' does not implement interface member 'IDiscordClient.GetEntitlementsAsync(int, ulong?, ulong?, bool, ulong?, ulong?, ulong[], RequestOptions, bool?)' [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=netstandard2.0]
+2025-03-01T22:11:15.9107655Z ##[error]/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/BaseDiscordClient.cs(289,76): error CS0539: 'BaseDiscordClient.GetEntitlementsAsync(int, ulong?, ulong?, bool, ulong?, ulong?, ulong[], RequestOptions)' in explicit interface declaration is not found among members of the interface that can be implemented [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=netstandard2.1]
+2025-03-01T22:11:15.9123468Z ##[error]/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/BaseDiscordClient.cs(12,47): error CS0535: 'BaseDiscordClient' does not implement interface member 'IDiscordClient.GetEntitlementsAsync(int, ulong?, ulong?, bool, ulong?, ulong?, ulong[], RequestOptions, bool?)' [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=netstandard2.1]
+2025-03-01T22:11:15.9798211Z   Discord.Net.Commands -> /home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Commands/bin/Release/net6.0/Discord.Net.Commands.dll
+2025-03-01T22:11:16.8051519Z   Discord.Net.Commands -> /home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Commands/bin/Release/net8.0/Discord.Net.Commands.dll
+2025-03-01T22:11:18.1117662Z   Discord.Net.Commands -> /home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Commands/bin/Release/net9.0/Discord.Net.Commands.dll
+2025-03-01T22:11:18.1223515Z ##[error]/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/BaseDiscordClient.cs(289,76): error CS0539: 'BaseDiscordClient.GetEntitlementsAsync(int, ulong?, ulong?, bool, ulong?, ulong?, ulong[], RequestOptions)' in explicit interface declaration is not found among members of the interface that can be implemented [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=net9.0]
+2025-03-01T22:11:18.1238231Z ##[error]/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/BaseDiscordClient.cs(12,47): error CS0535: 'BaseDiscordClient' does not implement interface member 'IDiscordClient.GetEntitlementsAsync(int, ulong?, ulong?, bool, ulong?, ulong?, ulong[], RequestOptions, bool?)' [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=net9.0]
+2025-03-01T22:11:18.1729290Z 
+2025-03-01T22:11:18.1736633Z Build FAILED.
+2025-03-01T22:11:18.1738935Z 
+2025-03-01T22:11:18.1752698Z /home/runner/.nuget/packages/system.collections.immutable/8.0.0/buildTransitive/netcoreapp2.0/System.Collections.Immutable.targets(4,5): warning : System.Collections.Immutable 8.0.0 doesn't support net5.0 and has not been tested with it. Consider upgrading your TargetFramework to net6.0 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Core/Discord.Net.Core.csproj::TargetFramework=net5.0]
+2025-03-01T22:11:18.1761812Z /home/runner/.nuget/packages/system.collections.immutable/8.0.0/buildTransitive/net461/System.Collections.Immutable.targets(4,5): warning : System.Collections.Immutable 8.0.0 doesn't support net461 and has not been tested with it. Consider upgrading your TargetFramework to net462 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Core/Discord.Net.Core.csproj::TargetFramework=net461]
+2025-03-01T22:11:18.1771069Z /home/runner/.nuget/packages/system.collections.immutable/8.0.0/buildTransitive/netcoreapp2.0/System.Collections.Immutable.targets(4,5): warning : System.Collections.Immutable 8.0.0 doesn't support net5.0 and has not been tested with it. Consider upgrading your TargetFramework to net6.0 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=net5.0]
+2025-03-01T22:11:18.1781515Z /home/runner/.nuget/packages/system.collections.immutable/8.0.0/buildTransitive/net461/System.Collections.Immutable.targets(4,5): warning : System.Collections.Immutable 8.0.0 doesn't support net461 and has not been tested with it. Consider upgrading your TargetFramework to net462 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=net461]
+2025-03-01T22:11:18.1791757Z /home/runner/.nuget/packages/system.collections.immutable/8.0.0/buildTransitive/netcoreapp2.0/System.Collections.Immutable.targets(4,5): warning : System.Collections.Immutable 8.0.0 doesn't support net5.0 and has not been tested with it. Consider upgrading your TargetFramework to net6.0 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Commands/Discord.Net.Commands.csproj::TargetFramework=net5.0]
+2025-03-01T22:11:18.1802805Z /home/runner/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.Abstractions.targets(4,5): warning : Microsoft.Extensions.DependencyInjection.Abstractions 8.0.0 doesn't support net5.0 and has not been tested with it. Consider upgrading your TargetFramework to net6.0 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Commands/Discord.Net.Commands.csproj::TargetFramework=net5.0]
+2025-03-01T22:11:18.1813134Z /home/runner/.nuget/packages/microsoft.bcl.asyncinterfaces/8.0.0/buildTransitive/net461/Microsoft.Bcl.AsyncInterfaces.targets(4,5): warning : Microsoft.Bcl.AsyncInterfaces 8.0.0 doesn't support net461 and has not been tested with it. Consider upgrading your TargetFramework to net462 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Commands/Discord.Net.Commands.csproj::TargetFramework=net461]
+2025-03-01T22:11:18.1822363Z /home/runner/.nuget/packages/system.collections.immutable/8.0.0/buildTransitive/net461/System.Collections.Immutable.targets(4,5): warning : System.Collections.Immutable 8.0.0 doesn't support net461 and has not been tested with it. Consider upgrading your TargetFramework to net462 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Commands/Discord.Net.Commands.csproj::TargetFramework=net461]
+2025-03-01T22:11:18.1832656Z /home/runner/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/buildTransitive/net461/Microsoft.Extensions.DependencyInjection.Abstractions.targets(4,5): warning : Microsoft.Extensions.DependencyInjection.Abstractions 8.0.0 doesn't support net461 and has not been tested with it. Consider upgrading your TargetFramework to net462 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Commands/Discord.Net.Commands.csproj::TargetFramework=net461]
+2025-03-01T22:11:18.1863046Z /home/runner/.nuget/packages/system.collections.immutable/8.0.0/buildTransitive/netcoreapp2.0/System.Collections.Immutable.targets(4,5): warning : System.Collections.Immutable 8.0.0 doesn't support net5.0 and has not been tested with it. Consider upgrading your TargetFramework to net6.0 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.WebSocket/Discord.Net.WebSocket.csproj::TargetFramework=net5.0]
+2025-03-01T22:11:18.1872970Z /home/runner/.nuget/packages/system.collections.immutable/8.0.0/buildTransitive/net461/System.Collections.Immutable.targets(4,5): warning : System.Collections.Immutable 8.0.0 doesn't support net461 and has not been tested with it. Consider upgrading your TargetFramework to net462 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.WebSocket/Discord.Net.WebSocket.csproj::TargetFramework=net461]
+2025-03-01T22:11:18.1882478Z /home/runner/.nuget/packages/system.collections.immutable/8.0.0/buildTransitive/netcoreapp2.0/System.Collections.Immutable.targets(4,5): warning : System.Collections.Immutable 8.0.0 doesn't support net5.0 and has not been tested with it. Consider upgrading your TargetFramework to net6.0 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Webhook/Discord.Net.Webhook.csproj::TargetFramework=net5.0]
+2025-03-01T22:11:18.1917459Z /home/runner/.nuget/packages/system.collections.immutable/8.0.0/buildTransitive/netcoreapp2.0/System.Collections.Immutable.targets(4,5): warning : System.Collections.Immutable 8.0.0 doesn't support net5.0 and has not been tested with it. Consider upgrading your TargetFramework to net6.0 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Interactions/Discord.Net.Interactions.csproj::TargetFramework=net5.0]
+2025-03-01T22:11:18.1929997Z /home/runner/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.Abstractions.targets(4,5): warning : Microsoft.Extensions.DependencyInjection.Abstractions 8.0.0 doesn't support net5.0 and has not been tested with it. Consider upgrading your TargetFramework to net6.0 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Interactions/Discord.Net.Interactions.csproj::TargetFramework=net5.0]
+2025-03-01T22:11:18.1939027Z /home/runner/.nuget/packages/microsoft.bcl.asyncinterfaces/8.0.0/buildTransitive/net461/Microsoft.Bcl.AsyncInterfaces.targets(4,5): warning : Microsoft.Bcl.AsyncInterfaces 8.0.0 doesn't support net461 and has not been tested with it. Consider upgrading your TargetFramework to net462 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Interactions/Discord.Net.Interactions.csproj::TargetFramework=net461]
+2025-03-01T22:11:18.1969927Z /home/runner/.nuget/packages/system.collections.immutable/8.0.0/buildTransitive/net461/System.Collections.Immutable.targets(4,5): warning : System.Collections.Immutable 8.0.0 doesn't support net461 and has not been tested with it. Consider upgrading your TargetFramework to net462 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Interactions/Discord.Net.Interactions.csproj::TargetFramework=net461]
+2025-03-01T22:11:18.1979702Z /home/runner/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/buildTransitive/net461/Microsoft.Extensions.DependencyInjection.Abstractions.targets(4,5): warning : Microsoft.Extensions.DependencyInjection.Abstractions 8.0.0 doesn't support net461 and has not been tested with it. Consider upgrading your TargetFramework to net462 or later. You may also set <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings> in the project file to ignore this warning and attempt to run in this unsupported configuration at your own risk. [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Interactions/Discord.Net.Interactions.csproj::TargetFramework=net461]
+2025-03-01T22:11:18.1996346Z ##[error]/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/BaseDiscordClient.cs(289,76): error CS0539: 'BaseDiscordClient.GetEntitlementsAsync(int, ulong?, ulong?, bool, ulong?, ulong?, ulong[], RequestOptions)' in explicit interface declaration is not found among members of the interface that can be implemented [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=net8.0]
+2025-03-01T22:11:18.2004774Z ##[error]/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/BaseDiscordClient.cs(12,47): error CS0535: 'BaseDiscordClient' does not implement interface member 'IDiscordClient.GetEntitlementsAsync(int, ulong?, ulong?, bool, ulong?, ulong?, ulong[], RequestOptions, bool?)' [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=net8.0]
+2025-03-01T22:11:18.2013335Z ##[error]/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/BaseDiscordClient.cs(289,76): error CS0539: 'BaseDiscordClient.GetEntitlementsAsync(int, ulong?, ulong?, bool, ulong?, ulong?, ulong[], RequestOptions)' in explicit interface declaration is not found among members of the interface that can be implemented [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=net6.0]
+2025-03-01T22:11:18.2021217Z ##[error]/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/BaseDiscordClient.cs(12,47): error CS0535: 'BaseDiscordClient' does not implement interface member 'IDiscordClient.GetEntitlementsAsync(int, ulong?, ulong?, bool, ulong?, ulong?, ulong[], RequestOptions, bool?)' [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=net6.0]
+2025-03-01T22:11:18.2029288Z ##[error]/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/BaseDiscordClient.cs(289,76): error CS0539: 'BaseDiscordClient.GetEntitlementsAsync(int, ulong?, ulong?, bool, ulong?, ulong?, ulong[], RequestOptions)' in explicit interface declaration is not found among members of the interface that can be implemented [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=net461]
+2025-03-01T22:11:18.2037204Z ##[error]/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/BaseDiscordClient.cs(12,47): error CS0535: 'BaseDiscordClient' does not implement interface member 'IDiscordClient.GetEntitlementsAsync(int, ulong?, ulong?, bool, ulong?, ulong?, ulong[], RequestOptions, bool?)' [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=net461]
+2025-03-01T22:11:18.2045611Z ##[error]/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/BaseDiscordClient.cs(289,76): error CS0539: 'BaseDiscordClient.GetEntitlementsAsync(int, ulong?, ulong?, bool, ulong?, ulong?, ulong[], RequestOptions)' in explicit interface declaration is not found among members of the interface that can be implemented [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=net5.0]
+2025-03-01T22:11:18.2055260Z ##[error]/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/BaseDiscordClient.cs(12,47): error CS0535: 'BaseDiscordClient' does not implement interface member 'IDiscordClient.GetEntitlementsAsync(int, ulong?, ulong?, bool, ulong?, ulong?, ulong[], RequestOptions, bool?)' [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=net5.0]
+2025-03-01T22:11:18.2063083Z ##[error]/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/BaseDiscordClient.cs(289,76): error CS0539: 'BaseDiscordClient.GetEntitlementsAsync(int, ulong?, ulong?, bool, ulong?, ulong?, ulong[], RequestOptions)' in explicit interface declaration is not found among members of the interface that can be implemented [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=netstandard2.0]
+2025-03-01T22:11:18.2070515Z ##[error]/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/BaseDiscordClient.cs(12,47): error CS0535: 'BaseDiscordClient' does not implement interface member 'IDiscordClient.GetEntitlementsAsync(int, ulong?, ulong?, bool, ulong?, ulong?, ulong[], RequestOptions, bool?)' [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=netstandard2.0]
+2025-03-01T22:11:18.2078122Z ##[error]/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/BaseDiscordClient.cs(289,76): error CS0539: 'BaseDiscordClient.GetEntitlementsAsync(int, ulong?, ulong?, bool, ulong?, ulong?, ulong[], RequestOptions)' in explicit interface declaration is not found among members of the interface that can be implemented [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=netstandard2.1]
+2025-03-01T22:11:18.2087329Z ##[error]/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/BaseDiscordClient.cs(12,47): error CS0535: 'BaseDiscordClient' does not implement interface member 'IDiscordClient.GetEntitlementsAsync(int, ulong?, ulong?, bool, ulong?, ulong?, ulong[], RequestOptions, bool?)' [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=netstandard2.1]
+2025-03-01T22:11:18.2095201Z ##[error]/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/BaseDiscordClient.cs(289,76): error CS0539: 'BaseDiscordClient.GetEntitlementsAsync(int, ulong?, ulong?, bool, ulong?, ulong?, ulong[], RequestOptions)' in explicit interface declaration is not found among members of the interface that can be implemented [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=net9.0]
+2025-03-01T22:11:18.2104137Z ##[error]/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/BaseDiscordClient.cs(12,47): error CS0535: 'BaseDiscordClient' does not implement interface member 'IDiscordClient.GetEntitlementsAsync(int, ulong?, ulong?, bool, ulong?, ulong?, ulong[], RequestOptions, bool?)' [/home/runner/work/Discord.Net/Discord.Net/src/Discord.Net.Rest/Discord.Net.Rest.csproj::TargetFramework=net9.0]
+2025-03-01T22:11:18.2107948Z     17 Warning(s)
+2025-03-01T22:11:18.2108399Z     14 Error(s)
+2025-03-01T22:11:18.2108668Z 
+2025-03-01T22:11:18.2109005Z Time Elapsed 00:00:32.46
+2025-03-01T22:11:18.2320087Z ##[error]Process completed with exit code 1.
+2025-03-01T22:11:18.2426201Z ##[group]Run EnricoMi/publish-unit-test-result-action@v2
+2025-03-01T22:11:18.2426557Z with:
+2025-03-01T22:11:18.2426734Z   files: ./**/*.trx
+2025-03-01T22:11:18.2427279Z   github_token: ***
+2025-03-01T22:11:18.2427494Z   github_token_actor: github-actions
+2025-03-01T22:11:18.2427746Z   github_retries: 10
+2025-03-01T22:11:18.2427942Z   check_name: Test Results
+2025-03-01T22:11:18.2428149Z   comment_mode: always
+2025-03-01T22:11:18.2428335Z   fail_on: test failures
+2025-03-01T22:11:18.2428530Z   action_fail: false
+2025-03-01T22:11:18.2428732Z   action_fail_on_inconclusive: false
+2025-03-01T22:11:18.2428974Z   time_unit: seconds
+2025-03-01T22:11:18.2429166Z   report_suite_logs: none
+2025-03-01T22:11:18.2429364Z   ignore_runs: false
+2025-03-01T22:11:18.2429545Z   check_run: true
+2025-03-01T22:11:18.2429724Z   job_summary: true
+2025-03-01T22:11:18.2429918Z   compare_to_earlier_commit: true
+2025-03-01T22:11:18.2430170Z   pull_request_build: merge
+2025-03-01T22:11:18.2430444Z   check_run_annotations: all tests, skipped tests
+2025-03-01T22:11:18.2430730Z   seconds_between_github_reads: 0.25
+2025-03-01T22:11:18.2430963Z   seconds_between_github_writes: 2.0
+2025-03-01T22:11:18.2431200Z   json_thousands_separator:  
+2025-03-01T22:11:18.2431423Z   json_suite_details: false
+2025-03-01T22:11:18.2431635Z   json_test_case_results: false
+2025-03-01T22:11:18.2431860Z   search_pull_requests: false
+2025-03-01T22:11:18.2432058Z env:
+2025-03-01T22:11:18.2432243Z   ArtifactStagingDirectory: artifacts
+2025-03-01T22:11:18.2432484Z   IsTagBuild: false
+2025-03-01T22:11:18.2432684Z   DOTNET_INSTALL_DIR: /usr/share/dotnet
+2025-03-01T22:11:18.2432918Z   Suffix: 20250301-435
+2025-03-01T22:11:18.2433111Z   DOTNET_ROOT: /usr/share/dotnet
+2025-03-01T22:11:18.2433331Z ##[endgroup]
+2025-03-01T22:11:18.2530270Z ##[command]/usr/bin/docker run --name ghcrioenricomipublishunittestresultactionv2180_a60413 --label cf2836 --workdir /github/workspace --rm -e "ArtifactStagingDirectory" -e "IsTagBuild" -e "DOTNET_INSTALL_DIR" -e "Suffix" -e "DOTNET_ROOT" -e "INPUT_FILES" -e "INPUT_GITHUB_TOKEN" -e "INPUT_GITHUB_TOKEN_ACTOR" -e "INPUT_GITHUB_RETRIES" -e "INPUT_COMMIT" -e "INPUT_CHECK_NAME" -e "INPUT_COMMENT_TITLE" -e "INPUT_COMMENT_MODE" -e "INPUT_FAIL_ON" -e "INPUT_ACTION_FAIL" -e "INPUT_ACTION_FAIL_ON_INCONCLUSIVE" -e "INPUT_JUNIT_FILES" -e "INPUT_NUNIT_FILES" -e "INPUT_XUNIT_FILES" -e "INPUT_TRX_FILES" -e "INPUT_TIME_UNIT" -e "INPUT_TEST_FILE_PREFIX" -e "INPUT_REPORT_INDIVIDUAL_RUNS" -e "INPUT_REPORT_SUITE_LOGS" -e "INPUT_DEDUPLICATE_CLASSES_BY_FILE_NAME" -e "INPUT_LARGE_FILES" -e "INPUT_IGNORE_RUNS" -e "INPUT_CHECK_RUN" -e "INPUT_JOB_SUMMARY" -e "INPUT_COMPARE_TO_EARLIER_COMMIT" -e "INPUT_PULL_REQUEST_BUILD" -e "INPUT_EVENT_FILE" -e "INPUT_EVENT_NAME" -e "INPUT_TEST_CHANGES_LIMIT" -e "INPUT_CHECK_RUN_ANNOTATIONS" -e "INPUT_CHECK_RUN_ANNOTATIONS_BRANCH" -e "INPUT_SECONDS_BETWEEN_GITHUB_READS" -e "INPUT_SECONDS_BETWEEN_GITHUB_WRITES" -e "INPUT_SECONDARY_RATE_LIMIT_WAIT_SECONDS" -e "INPUT_JSON_FILE" -e "INPUT_JSON_THOUSANDS_SEPARATOR" -e "INPUT_JSON_SUITE_DETAILS" -e "INPUT_JSON_TEST_CASE_RESULTS" -e "INPUT_SEARCH_PULL_REQUESTS" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_RESULTS_URL" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/runner/work/Discord.Net/Discord.Net":"/github/workspace" ghcr.io/enricomi/publish-unit-test-result-action:v2.18.0
+2025-03-01T22:11:18.8771168Z 2025-03-01 22:11:18 +0000 - publish -  INFO - Available memory to read files: 13.6 GiB
+2025-03-01T22:11:18.9011443Z 2025-03-01 22:11:18 +0000 - publish - WARNING - Could not find any files for ./**/*.trx
+2025-03-01T22:11:18.9016374Z 2025-03-01 22:11:18 +0000 - publish -  INFO - Finished reading 0 files in 0.00 seconds
+2025-03-01T22:11:19.1532085Z 2025-03-01 22:11:19 +0000 - publish -  INFO - Publishing neutral results for commit 76e004e7795d21d2d441062cff838dca5adc3b69
+2025-03-01T22:11:19.7296482Z 2025-03-01 22:11:19 +0000 - publish -  INFO - Created check https://github.com/discord-net/Discord.Net/runs/38044460782
+2025-03-01T22:11:19.7301060Z 2025-03-01 22:11:19 +0000 - publish -  INFO - Created job summary
+2025-03-01T22:11:24.6755976Z 2025-03-01 22:11:24 +0000 - publish -  INFO - Created comment for pull request #3074: https://github.com/discord-net/Discord.Net/pull/3074#issuecomment-2692443707
+2025-03-01T22:11:24.6777752Z ##[warning]Could not find any files for ./**/*.trx
+2025-03-01T22:11:24.8161824Z Post job cleanup.
+2025-03-01T22:11:24.9170580Z [command]/usr/bin/git version
+2025-03-01T22:11:24.9211978Z git version 2.48.1
+2025-03-01T22:11:24.9275287Z Temporarily overriding HOME='/home/runner/work/_temp/b114696a-09d6-413a-8b7b-9c8698fd0b9d' before making global git config changes
+2025-03-01T22:11:24.9280065Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-01T22:11:24.9284239Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Discord.Net/Discord.Net
+2025-03-01T22:11:24.9324114Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-01T22:11:24.9358891Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-01T22:11:24.9696102Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-01T22:11:24.9721973Z http.https://github.com/.extraheader
+2025-03-01T22:11:24.9742858Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-01T22:11:24.9780968Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-01T22:11:25.0169610Z Cleaning up orphan processes
+2025-03-01T22:11:25.0494322Z Terminate orphan process: pid (2238) (dotnet)
+2025-03-01T22:11:25.0524681Z Terminate orphan process: pid (2239) (dotnet)
+2025-03-01T22:11:25.0566539Z Terminate orphan process: pid (2240) (dotnet)
+2025-03-01T22:11:25.0599803Z Terminate orphan process: pid (2367) (dotnet)

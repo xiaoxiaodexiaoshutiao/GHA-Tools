@@ -1,0 +1,322 @@
+2025-04-03T23:32:35.1512179Z Requested labels: ubuntu-latest
+2025-04-03T23:32:35.1512468Z Job defined at: openai/openai-agents-python/.github/workflows/tests.yml@refs/pull/388/merge
+2025-04-03T23:32:35.1512565Z Waiting for a runner to pick up this job...
+2025-04-03T23:32:35.5190000Z Job is waiting for a hosted runner to come online.
+2025-04-03T23:32:38.8595866Z Job is about to start running on the hosted runner: GitHub Actions 284 (hosted)
+2025-04-03T23:32:40.3934453Z Current runner version: '2.323.0'
+2025-04-03T23:32:40.3964042Z ##[group]Operating System
+2025-04-03T23:32:40.3964861Z Ubuntu
+2025-04-03T23:32:40.3965446Z 24.04.2
+2025-04-03T23:32:40.3966031Z LTS
+2025-04-03T23:32:40.3966560Z ##[endgroup]
+2025-04-03T23:32:40.3967131Z ##[group]Runner Image
+2025-04-03T23:32:40.3967862Z Image: ubuntu-24.04
+2025-04-03T23:32:40.3968445Z Version: 20250323.1.0
+2025-04-03T23:32:40.3969754Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-03T23:32:40.3971175Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-04-03T23:32:40.3972069Z ##[endgroup]
+2025-04-03T23:32:40.3972655Z ##[group]Runner Image Provisioner
+2025-04-03T23:32:40.3973259Z 2.0.422.1
+2025-04-03T23:32:40.3973744Z ##[endgroup]
+2025-04-03T23:32:40.3976084Z ##[group]GITHUB_TOKEN Permissions
+2025-04-03T23:32:40.3978138Z Actions: read
+2025-04-03T23:32:40.3979303Z Attestations: read
+2025-04-03T23:32:40.3980100Z Checks: read
+2025-04-03T23:32:40.3980686Z Contents: read
+2025-04-03T23:32:40.3981234Z Deployments: read
+2025-04-03T23:32:40.3981847Z Discussions: read
+2025-04-03T23:32:40.3982438Z Issues: read
+2025-04-03T23:32:40.3982999Z Metadata: read
+2025-04-03T23:32:40.3983591Z Models: read
+2025-04-03T23:32:40.3984059Z Packages: read
+2025-04-03T23:32:40.3984581Z Pages: read
+2025-04-03T23:32:40.3985124Z PullRequests: read
+2025-04-03T23:32:40.3985692Z RepositoryProjects: read
+2025-04-03T23:32:40.3986243Z SecurityEvents: read
+2025-04-03T23:32:40.3986837Z Statuses: read
+2025-04-03T23:32:40.3987411Z ##[endgroup]
+2025-04-03T23:32:40.3990697Z Secret source: None
+2025-04-03T23:32:40.3991683Z Prepare workflow directory
+2025-04-03T23:32:40.4489059Z Prepare all required actions
+2025-04-03T23:32:40.4530657Z Getting action download info
+2025-04-03T23:32:40.6399334Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-03T23:32:40.6400306Z Version: 4.2.2
+2025-04-03T23:32:40.6401168Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-03T23:32:40.6402204Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-03T23:32:40.6402819Z ##[endgroup]
+2025-04-03T23:32:40.7254405Z Download action repository 'astral-sh/setup-uv@v5' (SHA:0c5e2b8115b80b4c7c5ddf6ffdd634974642d182)
+2025-04-03T23:32:41.0843970Z Complete job name: lint
+2025-04-03T23:32:41.1590074Z ##[group]Run actions/checkout@v4
+2025-04-03T23:32:41.1591018Z with:
+2025-04-03T23:32:41.1591533Z   repository: openai/openai-agents-python
+2025-04-03T23:32:41.1592343Z   token: ***
+2025-04-03T23:32:41.1592804Z   ssh-strict: true
+2025-04-03T23:32:41.1593261Z   ssh-user: git
+2025-04-03T23:32:41.1593737Z   persist-credentials: true
+2025-04-03T23:32:41.1594210Z   clean: true
+2025-04-03T23:32:41.1594636Z   sparse-checkout-cone-mode: true
+2025-04-03T23:32:41.1595145Z   fetch-depth: 1
+2025-04-03T23:32:41.1595543Z   fetch-tags: false
+2025-04-03T23:32:41.1595962Z   show-progress: true
+2025-04-03T23:32:41.1596388Z   lfs: false
+2025-04-03T23:32:41.1596801Z   submodules: false
+2025-04-03T23:32:41.1597240Z   set-safe-directory: true
+2025-04-03T23:32:41.1597896Z env:
+2025-04-03T23:32:41.1598281Z   UV_FROZEN: 1
+2025-04-03T23:32:41.1598712Z ##[endgroup]
+2025-04-03T23:32:41.3482053Z Syncing repository: openai/openai-agents-python
+2025-04-03T23:32:41.3484094Z ##[group]Getting Git version info
+2025-04-03T23:32:41.3485034Z Working directory is '/home/runner/work/openai-agents-python/openai-agents-python'
+2025-04-03T23:32:41.3486156Z [command]/usr/bin/git version
+2025-04-03T23:32:41.3536087Z git version 2.49.0
+2025-04-03T23:32:41.3565774Z ##[endgroup]
+2025-04-03T23:32:41.3580090Z Temporarily overriding HOME='/home/runner/work/_temp/d672c116-719c-40d4-8258-467e0362e1b9' before making global git config changes
+2025-04-03T23:32:41.3581574Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-03T23:32:41.3586297Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/openai-agents-python/openai-agents-python
+2025-04-03T23:32:41.3624472Z Deleting the contents of '/home/runner/work/openai-agents-python/openai-agents-python'
+2025-04-03T23:32:41.3627965Z ##[group]Initializing the repository
+2025-04-03T23:32:41.3632459Z [command]/usr/bin/git init /home/runner/work/openai-agents-python/openai-agents-python
+2025-04-03T23:32:41.3710365Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-03T23:32:41.3712184Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-03T23:32:41.3713838Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-03T23:32:41.3715030Z hint:
+2025-04-03T23:32:41.3715905Z hint: 	git config --global init.defaultBranch <name>
+2025-04-03T23:32:41.3716996Z hint:
+2025-04-03T23:32:41.3718051Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-03T23:32:41.3719979Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-03T23:32:41.3721322Z hint:
+2025-04-03T23:32:41.3722059Z hint: 	git branch -m <name>
+2025-04-03T23:32:41.3723691Z Initialized empty Git repository in /home/runner/work/openai-agents-python/openai-agents-python/.git/
+2025-04-03T23:32:41.3729883Z [command]/usr/bin/git remote add origin https://github.com/openai/openai-agents-python
+2025-04-03T23:32:41.3766634Z ##[endgroup]
+2025-04-03T23:32:41.3771525Z ##[group]Disabling automatic garbage collection
+2025-04-03T23:32:41.3772388Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-03T23:32:41.3801042Z ##[endgroup]
+2025-04-03T23:32:41.3801890Z ##[group]Setting up auth
+2025-04-03T23:32:41.3809032Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-03T23:32:41.3843628Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-03T23:32:41.4148967Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-03T23:32:41.4182177Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-03T23:32:41.4444566Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-03T23:32:41.4488286Z ##[endgroup]
+2025-04-03T23:32:41.4489288Z ##[group]Fetching the repository
+2025-04-03T23:32:41.4497624Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +993ffcf505bae9c1aff962e03c21b7b77491f39f:refs/remotes/pull/388/merge
+2025-04-03T23:32:41.7869021Z From https://github.com/openai/openai-agents-python
+2025-04-03T23:32:41.7870899Z  * [new ref]         993ffcf505bae9c1aff962e03c21b7b77491f39f -> pull/388/merge
+2025-04-03T23:32:41.7897687Z ##[endgroup]
+2025-04-03T23:32:41.7899738Z ##[group]Determining the checkout info
+2025-04-03T23:32:41.7901600Z ##[endgroup]
+2025-04-03T23:32:41.7906399Z [command]/usr/bin/git sparse-checkout disable
+2025-04-03T23:32:41.7947041Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-03T23:32:41.7975944Z ##[group]Checking out the ref
+2025-04-03T23:32:41.7980287Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/388/merge
+2025-04-03T23:32:41.8216180Z Note: switching to 'refs/remotes/pull/388/merge'.
+2025-04-03T23:32:41.8218431Z 
+2025-04-03T23:32:41.8219552Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-03T23:32:41.8221639Z changes and commit them, and you can discard any commits you make in this
+2025-04-03T23:32:41.8223923Z state without impacting any branches by switching back to a branch.
+2025-04-03T23:32:41.8225538Z 
+2025-04-03T23:32:41.8226466Z If you want to create a new branch to retain commits you create, you may
+2025-04-03T23:32:41.8228262Z do so (now or later) by using -c with the switch command. Example:
+2025-04-03T23:32:41.8229917Z 
+2025-04-03T23:32:41.8230469Z   git switch -c <new-branch-name>
+2025-04-03T23:32:41.8231411Z 
+2025-04-03T23:32:41.8231935Z Or undo this operation with:
+2025-04-03T23:32:41.8232746Z 
+2025-04-03T23:32:41.8233185Z   git switch -
+2025-04-03T23:32:41.8233827Z 
+2025-04-03T23:32:41.8234837Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-03T23:32:41.8236121Z 
+2025-04-03T23:32:41.8237557Z HEAD is now at 993ffcf Merge efc28c7bfa49bca4fb440ec0201d32b33fc22180 into 0110f3ad961564011f59df5e8534489c97e4b971
+2025-04-03T23:32:41.8241596Z ##[endgroup]
+2025-04-03T23:32:41.8276500Z [command]/usr/bin/git log -1 --format=%H
+2025-04-03T23:32:41.8299680Z 993ffcf505bae9c1aff962e03c21b7b77491f39f
+2025-04-03T23:32:41.8586274Z ##[group]Run astral-sh/setup-uv@v5
+2025-04-03T23:32:41.8587348Z with:
+2025-04-03T23:32:41.8588105Z   enable-cache: true
+2025-04-03T23:32:41.8589603Z   github-token: ***
+2025-04-03T23:32:41.8590705Z   cache-dependency-glob: **/uv.lock
+**/requirements*.txt
+
+2025-04-03T23:32:41.8592004Z   prune-cache: true
+2025-04-03T23:32:41.8592896Z   ignore-nothing-to-cache: false
+2025-04-03T23:32:41.8593956Z   ignore-empty-workdir: false
+2025-04-03T23:32:41.8594893Z env:
+2025-04-03T23:32:41.8595601Z   UV_FROZEN: 1
+2025-04-03T23:32:41.8596368Z ##[endgroup]
+2025-04-03T23:32:42.3530450Z Downloading uv from "https://github.com/astral-sh/uv/releases/download/0.6.12/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2025-04-03T23:32:42.6297646Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/26497b51-ab3e-49ba-9619-d5af7b694800 -f /home/runner/work/_temp/09d45088-40d2-4d5e-9a93-f04a9430370a
+2025-04-03T23:32:42.9565702Z Added /opt/hostedtoolcache/uv/0.6.12/x86_64 to the path
+2025-04-03T23:32:42.9566819Z Added /home/runner/.local/bin to the path
+2025-04-03T23:32:42.9589870Z Set UV_CACHE_DIR to /home/runner/work/_temp/setup-uv-cache
+2025-04-03T23:32:42.9590307Z Successfully installed uv version 0.6.12
+2025-04-03T23:32:42.9590781Z Searching files using cache dependency glob: **/uv.lock,**/requirements*.txt
+2025-04-03T23:32:43.0002400Z /home/runner/work/openai-agents-python/openai-agents-python/uv.lock
+2025-04-03T23:32:43.0025699Z Found 1 files to hash.
+2025-04-03T23:32:43.0693574Z Trying to restore uv cache from GitHub Actions cache with key: setup-uv-1-x86_64-unknown-linux-gnu-3.12.3-d8cec76f3ebf626382b896fc1007ea7349de65b260338b4af36686081b43f2a8
+2025-04-03T23:32:43.1153804Z Cache hit for: setup-uv-1-x86_64-unknown-linux-gnu-3.12.3-d8cec76f3ebf626382b896fc1007ea7349de65b260338b4af36686081b43f2a8
+2025-04-03T23:32:43.1668347Z Received 341033 of 341033 (100.0%), 19.1 MBs/sec
+2025-04-03T23:32:43.1669288Z Cache Size: ~0 MB (341033 B)
+2025-04-03T23:32:43.1699295Z [command]/usr/bin/tar -xf /home/runner/work/_temp/e6cc0b29-411f-40d2-895d-47a539394839/cache.tzst -P -C /home/runner/work/openai-agents-python/openai-agents-python --use-compress-program unzstd
+2025-04-03T23:32:43.1803405Z Cache restored successfully
+2025-04-03T23:32:43.1810173Z uv cache restored from GitHub Actions cache with key: setup-uv-1-x86_64-unknown-linux-gnu-3.12.3-d8cec76f3ebf626382b896fc1007ea7349de65b260338b4af36686081b43f2a8
+2025-04-03T23:32:43.1952205Z ##[group]Run make sync
+2025-04-03T23:32:43.1952552Z [36;1mmake sync[0m
+2025-04-03T23:32:43.2007935Z shell: /usr/bin/bash -e {0}
+2025-04-03T23:32:43.2008218Z env:
+2025-04-03T23:32:43.2008397Z   UV_FROZEN: 1
+2025-04-03T23:32:43.2008665Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-04-03T23:32:43.2009260Z ##[endgroup]
+2025-04-03T23:32:43.2129062Z uv sync --all-extras --all-packages --group dev
+2025-04-03T23:32:43.2242906Z Using CPython 3.12.3 interpreter at: /usr/bin/python3
+2025-04-03T23:32:43.2243367Z Creating virtual environment at: .venv
+2025-04-03T23:32:43.2431563Z    Building openai-agents @ file:///home/runner/work/openai-agents-python/openai-agents-python
+2025-04-03T23:32:43.2693365Z Downloading mypy (11.8MiB)
+2025-04-03T23:32:43.2694027Z Downloading babel (9.7MiB)
+2025-04-03T23:32:43.2800768Z Downloading mkdocs-autorefs (5.5MiB)
+2025-04-03T23:32:43.2801991Z Downloading pydantic-core (1.9MiB)
+2025-04-03T23:32:43.2810301Z Downloading numpy (15.4MiB)
+2025-04-03T23:32:43.2812763Z Downloading mkdocs-material (8.3MiB)
+2025-04-03T23:32:43.2815775Z Downloading pygments (1.2MiB)
+2025-04-03T23:32:43.2817781Z Downloading mkdocs (3.7MiB)
+2025-04-03T23:32:43.2818936Z Downloading playwright (43.0MiB)
+2025-04-03T23:32:43.2822526Z Downloading mkdocstrings (1.6MiB)
+2025-04-03T23:32:43.2973317Z Downloading mkdocstrings-python (1.9MiB)
+2025-04-03T23:32:43.2974069Z Downloading ruff (11.8MiB)
+2025-04-03T23:32:43.7683146Z  Downloaded pygments
+2025-04-03T23:32:43.8260961Z  Downloaded pydantic-core
+2025-04-03T23:32:44.0086458Z       Built openai-agents @ file:///home/runner/work/openai-agents-python/openai-agents-python
+2025-04-03T23:32:44.0889484Z  Downloaded mkdocstrings
+2025-04-03T23:32:44.1432640Z  Downloaded mkdocs
+2025-04-03T23:32:44.2884194Z  Downloaded mkdocstrings-python
+2025-04-03T23:32:44.6095537Z  Downloaded babel
+2025-04-03T23:32:44.7222227Z  Downloaded ruff
+2025-04-03T23:32:44.9397357Z  Downloaded numpy
+2025-04-03T23:32:45.2152876Z  Downloaded mkdocs-autorefs
+2025-04-03T23:32:45.2444302Z  Downloaded playwright
+2025-04-03T23:32:45.2662984Z  Downloaded mypy
+2025-04-03T23:32:46.4586441Z  Downloaded mkdocs-material
+2025-04-03T23:32:46.4589053Z Prepared 87 packages in 3.22s
+2025-04-03T23:32:46.8405155Z Installed 87 packages in 381ms
+2025-04-03T23:32:46.8405789Z  + annotated-types==0.7.0
+2025-04-03T23:32:46.8406307Z  + anyio==4.9.0
+2025-04-03T23:32:46.8406734Z  + asttokens==3.0.0
+2025-04-03T23:32:46.8407137Z  + babel==2.17.0
+2025-04-03T23:32:46.8407495Z  + backrefs==5.8
+2025-04-03T23:32:46.8407855Z  + certifi==2025.1.31
+2025-04-03T23:32:46.8410027Z  + cffi==1.17.1
+2025-04-03T23:32:46.8410406Z  + charset-normalizer==3.4.1
+2025-04-03T23:32:46.8410791Z  + click==8.1.8
+2025-04-03T23:32:46.8411104Z  + colorama==0.4.6
+2025-04-03T23:32:46.8411421Z  + coverage==7.7.0
+2025-04-03T23:32:46.8411730Z  + distro==1.9.0
+2025-04-03T23:32:46.8412031Z  + evdev==1.9.1
+2025-04-03T23:32:46.8412371Z  + executing==2.2.0
+2025-04-03T23:32:46.8412757Z  + ghp-import==2.1.0
+2025-04-03T23:32:46.8413119Z  + graphviz==0.20.3
+2025-04-03T23:32:46.8413429Z  + greenlet==3.1.1
+2025-04-03T23:32:46.8413737Z  + griffe==1.6.2
+2025-04-03T23:32:46.8414044Z  + h11==0.14.0
+2025-04-03T23:32:46.8414339Z  + httpcore==1.0.7
+2025-04-03T23:32:46.8414643Z  + httpx==0.28.1
+2025-04-03T23:32:46.8414949Z  + httpx-sse==0.4.0
+2025-04-03T23:32:46.8415257Z  + idna==3.10
+2025-04-03T23:32:46.8415543Z  + iniconfig==2.1.0
+2025-04-03T23:32:46.8415880Z  + inline-snapshot==0.20.8
+2025-04-03T23:32:46.8416234Z  + jinja2==3.1.6
+2025-04-03T23:32:46.8416532Z  + jiter==0.9.0
+2025-04-03T23:32:46.8416849Z  + linkify-it-py==2.0.3
+2025-04-03T23:32:46.8417194Z  + markdown==3.7
+2025-04-03T23:32:46.8417516Z  + markdown-it-py==3.0.0
+2025-04-03T23:32:46.8417864Z  + markupsafe==3.0.2
+2025-04-03T23:32:46.8418184Z  + mcp==1.6.0
+2025-04-03T23:32:46.8418505Z  + mdit-py-plugins==0.4.2
+2025-04-03T23:32:46.8419074Z  + mdurl==0.1.2
+2025-04-03T23:32:46.8419390Z  + mergedeep==1.3.4
+2025-04-03T23:32:46.8419698Z  + mkdocs==1.6.1
+2025-04-03T23:32:46.8420324Z  + mkdocs-autorefs==1.4.1
+2025-04-03T23:32:46.8420721Z  + mkdocs-get-deps==0.2.0
+2025-04-03T23:32:46.8421079Z  + mkdocs-material==9.6.9
+2025-04-03T23:32:46.8421455Z  + mkdocs-material-extensions==1.3.1
+2025-04-03T23:32:46.8421880Z  + mkdocstrings==0.29.0
+2025-04-03T23:32:46.8422241Z  + mkdocstrings-python==1.16.7
+2025-04-03T23:32:46.8422613Z  + mypy==1.15.0
+2025-04-03T23:32:46.8422933Z  + mypy-extensions==1.0.0
+2025-04-03T23:32:46.8423295Z  + numpy==2.2.4
+2025-04-03T23:32:46.8423599Z  + openai==1.68.0
+2025-04-03T23:32:46.8424226Z  + openai-agents==0.0.7 (from file:///home/runner/work/openai-agents-python/openai-agents-python)
+2025-04-03T23:32:46.8424927Z  + packaging==24.2
+2025-04-03T23:32:46.8425245Z  + paginate==0.5.7
+2025-04-03T23:32:46.8425559Z  + pathspec==0.12.1
+2025-04-03T23:32:46.8425884Z  + platformdirs==4.3.7
+2025-04-03T23:32:46.8426226Z  + playwright==1.50.0
+2025-04-03T23:32:46.8426777Z  + pluggy==1.5.0
+2025-04-03T23:32:46.8427089Z  + pycparser==2.22
+2025-04-03T23:32:46.8427402Z  + pydantic==2.10.6
+2025-04-03T23:32:46.8427730Z  + pydantic-core==2.27.2
+2025-04-03T23:32:46.8428113Z  + pydantic-settings==2.8.1
+2025-04-03T23:32:46.8428475Z  + pyee==12.1.1
+2025-04-03T23:32:46.8428943Z  + pygments==2.19.1
+2025-04-03T23:32:46.8429281Z  + pymdown-extensions==10.14.3
+2025-04-03T23:32:46.8429657Z  + pynput==1.8.1
+2025-04-03T23:32:46.8429960Z  + pytest==8.3.5
+2025-04-03T23:32:46.8430281Z  + pytest-asyncio==0.25.3
+2025-04-03T23:32:46.8430639Z  + pytest-mock==3.14.0
+2025-04-03T23:32:46.8431024Z  + python-dateutil==2.9.0.post0
+2025-04-03T23:32:46.8431469Z  + python-dotenv==1.0.1
+2025-04-03T23:32:46.8431814Z  + python-xlib==0.33
+2025-04-03T23:32:46.8432134Z  + pyyaml==6.0.2
+2025-04-03T23:32:46.8432446Z  + pyyaml-env-tag==0.1
+2025-04-03T23:32:46.8432780Z  + requests==2.32.3
+2025-04-03T23:32:46.8433096Z  + rich==13.9.4
+2025-04-03T23:32:46.8433390Z  + ruff==0.9.2
+2025-04-03T23:32:46.8433678Z  + six==1.17.0
+2025-04-03T23:32:46.8433965Z  + sniffio==1.3.1
+2025-04-03T23:32:46.8434227Z  + sounddevice==0.5.1
+2025-04-03T23:32:46.8434538Z  + sse-starlette==2.2.1
+2025-04-03T23:32:46.8434832Z  + starlette==0.46.1
+2025-04-03T23:32:46.8435305Z  + textual==2.1.2
+2025-04-03T23:32:46.8435611Z  + tqdm==4.67.1
+2025-04-03T23:32:46.8435948Z  + types-pynput==1.8.1.20250318
+2025-04-03T23:32:46.8436336Z  + types-requests==2.32.0.20250306
+2025-04-03T23:32:46.8436752Z  + typing-extensions==4.12.2
+2025-04-03T23:32:46.8437118Z  + uc-micro-py==1.0.3
+2025-04-03T23:32:46.8437418Z  + urllib3==2.3.0
+2025-04-03T23:32:46.8437699Z  + uvicorn==0.34.0
+2025-04-03T23:32:46.8437977Z  + watchdog==6.0.0
+2025-04-03T23:32:46.8438265Z  + websockets==15.0.1
+2025-04-03T23:32:46.8523970Z ##[group]Run make lint
+2025-04-03T23:32:46.8524235Z [36;1mmake lint[0m
+2025-04-03T23:32:46.8572777Z shell: /usr/bin/bash -e {0}
+2025-04-03T23:32:46.8573026Z env:
+2025-04-03T23:32:46.8573205Z   UV_FROZEN: 1
+2025-04-03T23:32:46.8573454Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-04-03T23:32:46.8573767Z ##[endgroup]
+2025-04-03T23:32:46.8657483Z uv run ruff check
+2025-04-03T23:32:46.9119936Z src/agents/model_settings.py:46:33: W291 Trailing whitespace
+2025-04-03T23:32:46.9120310Z    |
+2025-04-03T23:32:46.9120517Z 45 |     reasoning: Reasoning | None = None
+2025-04-03T23:32:46.9120803Z 46 |     """Configuration options for 
+2025-04-03T23:32:46.9121070Z    |                                 ^ W291
+2025-04-03T23:32:46.9121449Z 47 |     [reasoning models](https://platform.openai.com/docs/guides/reasoning).
+2025-04-03T23:32:46.9121818Z 48 |     """
+2025-04-03T23:32:46.9121993Z    |
+2025-04-03T23:32:46.9122180Z    = help: Remove trailing whitespace
+2025-04-03T23:32:46.9122476Z 
+2025-04-03T23:32:46.9122553Z Found 1 error.
+2025-04-03T23:32:46.9122882Z No fixes available (1 hidden fix can be enabled with the `--unsafe-fixes` option).
+2025-04-03T23:32:46.9157812Z make: *** [Makefile:12: lint] Error 1
+2025-04-03T23:32:46.9174380Z ##[error]Process completed with exit code 2.
+2025-04-03T23:32:46.9274921Z Post job cleanup.
+2025-04-03T23:32:47.0226993Z [command]/usr/bin/git version
+2025-04-03T23:32:47.0263914Z git version 2.49.0
+2025-04-03T23:32:47.0315193Z Temporarily overriding HOME='/home/runner/work/_temp/7ec48a0f-fa1f-4311-be92-0c15664fd03c' before making global git config changes
+2025-04-03T23:32:47.0344511Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-03T23:32:47.0345650Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/openai-agents-python/openai-agents-python
+2025-04-03T23:32:47.0363912Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-03T23:32:47.0396562Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-03T23:32:47.0631050Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-03T23:32:47.0653574Z http.https://github.com/.extraheader
+2025-04-03T23:32:47.0666732Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-03T23:32:47.0698353Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-03T23:32:47.1037677Z Cleaning up orphan processes

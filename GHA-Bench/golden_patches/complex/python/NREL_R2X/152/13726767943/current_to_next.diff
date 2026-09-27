@@ -1,0 +1,13 @@
+diff --git a/src/r2x/parser/plexos.py b/src/r2x/parser/plexos.py
+index 905436e9..6dd4ad49 100644
+--- a/src/r2x/parser/plexos.py
++++ b/src/r2x/parser/plexos.py
+@@ -1638,7 +1638,7 @@ def _data_file_reader(self, fpath_str: str, csv_file_encoding="utf8"):
+             self._data_file_cache[path] = parsed_file
+             self._data_file_column_types[path] = column_type
+ 
+-        return parsed_file, path, column_type
++        return path, parsed_file, column_type
+ 
+     def _data_file_handler(
+         self,

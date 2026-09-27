@@ -1,0 +1,943 @@
+2025-03-06T22:50:18.3324237Z Requested labels: ubuntu-latest
+2025-03-06T22:50:18.3324480Z Job defined at: wolfSSL/wolfMQTT/.github/workflows/websocket-test.yml@refs/pull/419/merge
+2025-03-06T22:50:18.3324550Z Waiting for a runner to pick up this job...
+2025-03-06T22:50:19.1166821Z Job is waiting for a hosted runner to come online.
+2025-03-06T22:50:22.4385418Z Job is about to start running on the hosted runner: GitHub Actions 51 (hosted)
+2025-03-06T22:50:24.2046086Z Current runner version: '2.322.0'
+2025-03-06T22:50:24.2073009Z ##[group]Operating System
+2025-03-06T22:50:24.2073851Z Ubuntu
+2025-03-06T22:50:24.2074342Z 24.04.2
+2025-03-06T22:50:24.2074848Z LTS
+2025-03-06T22:50:24.2075358Z ##[endgroup]
+2025-03-06T22:50:24.2075897Z ##[group]Runner Image
+2025-03-06T22:50:24.2076447Z Image: ubuntu-24.04
+2025-03-06T22:50:24.2076964Z Version: 20250302.1.0
+2025-03-06T22:50:24.2077995Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250302.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-06T22:50:24.2079351Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250302.1
+2025-03-06T22:50:24.2080309Z ##[endgroup]
+2025-03-06T22:50:24.2080827Z ##[group]Runner Image Provisioner
+2025-03-06T22:50:24.2081680Z 2.0.422.1
+2025-03-06T22:50:24.2082261Z ##[endgroup]
+2025-03-06T22:50:24.2084340Z ##[group]GITHUB_TOKEN Permissions
+2025-03-06T22:50:24.2086385Z Actions: read
+2025-03-06T22:50:24.2087085Z Attestations: read
+2025-03-06T22:50:24.2087773Z Checks: read
+2025-03-06T22:50:24.2088263Z Contents: read
+2025-03-06T22:50:24.2088818Z Deployments: read
+2025-03-06T22:50:24.2089316Z Discussions: read
+2025-03-06T22:50:24.2089819Z Issues: read
+2025-03-06T22:50:24.2090418Z Metadata: read
+2025-03-06T22:50:24.2091390Z Packages: read
+2025-03-06T22:50:24.2092316Z Pages: read
+2025-03-06T22:50:24.2093078Z PullRequests: read
+2025-03-06T22:50:24.2093942Z RepositoryProjects: read
+2025-03-06T22:50:24.2094851Z SecurityEvents: read
+2025-03-06T22:50:24.2095773Z Statuses: read
+2025-03-06T22:50:24.2096572Z ##[endgroup]
+2025-03-06T22:50:24.2100487Z Secret source: None
+2025-03-06T22:50:24.2101880Z Prepare workflow directory
+2025-03-06T22:50:24.2513964Z Prepare all required actions
+2025-03-06T22:50:24.2551406Z Getting action download info
+2025-03-06T22:50:24.4044140Z Download action repository 'actions/checkout@v3' (SHA:f43a0e5ff2bd294095638e18286ca9a3d1956744)
+2025-03-06T22:50:24.5592800Z Complete job name: test-websocket
+2025-03-06T22:50:24.6375261Z ##[group]Run actions/checkout@v3
+2025-03-06T22:50:24.6376128Z with:
+2025-03-06T22:50:24.6376525Z   repository: wolfSSL/wolfMQTT
+2025-03-06T22:50:24.6377145Z   token: ***
+2025-03-06T22:50:24.6377533Z   ssh-strict: true
+2025-03-06T22:50:24.6377962Z   persist-credentials: true
+2025-03-06T22:50:24.6378417Z   clean: true
+2025-03-06T22:50:24.6378820Z   sparse-checkout-cone-mode: true
+2025-03-06T22:50:24.6379316Z   fetch-depth: 1
+2025-03-06T22:50:24.6379718Z   fetch-tags: false
+2025-03-06T22:50:24.6380175Z   lfs: false
+2025-03-06T22:50:24.6380545Z   submodules: false
+2025-03-06T22:50:24.6380962Z   set-safe-directory: true
+2025-03-06T22:50:24.6381845Z ##[endgroup]
+2025-03-06T22:50:24.7880771Z Syncing repository: wolfSSL/wolfMQTT
+2025-03-06T22:50:24.7882859Z ##[group]Getting Git version info
+2025-03-06T22:50:24.7883573Z Working directory is '/home/runner/work/wolfMQTT/wolfMQTT'
+2025-03-06T22:50:24.7884502Z [command]/usr/bin/git version
+2025-03-06T22:50:24.7937206Z git version 2.48.1
+2025-03-06T22:50:24.7967045Z ##[endgroup]
+2025-03-06T22:50:24.7985992Z Temporarily overriding HOME='/home/runner/work/_temp/9bbd9298-6ced-4a3c-b5d9-63b9f5369fb0' before making global git config changes
+2025-03-06T22:50:24.7988964Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-06T22:50:24.7991494Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/wolfMQTT/wolfMQTT
+2025-03-06T22:50:24.8025677Z Deleting the contents of '/home/runner/work/wolfMQTT/wolfMQTT'
+2025-03-06T22:50:24.8029493Z ##[group]Initializing the repository
+2025-03-06T22:50:24.8033729Z [command]/usr/bin/git init /home/runner/work/wolfMQTT/wolfMQTT
+2025-03-06T22:50:24.8125099Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-06T22:50:24.8126902Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-06T22:50:24.8128562Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-06T22:50:24.8129884Z hint:
+2025-03-06T22:50:24.8130817Z hint: 	git config --global init.defaultBranch <name>
+2025-03-06T22:50:24.8132491Z hint:
+2025-03-06T22:50:24.8133468Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-06T22:50:24.8135083Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-06T22:50:24.8136396Z hint:
+2025-03-06T22:50:24.8137116Z hint: 	git branch -m <name>
+2025-03-06T22:50:24.8138380Z Initialized empty Git repository in /home/runner/work/wolfMQTT/wolfMQTT/.git/
+2025-03-06T22:50:24.8141380Z [command]/usr/bin/git remote add origin https://github.com/wolfSSL/wolfMQTT
+2025-03-06T22:50:24.8178358Z ##[endgroup]
+2025-03-06T22:50:24.8179595Z ##[group]Disabling automatic garbage collection
+2025-03-06T22:50:24.8180734Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-06T22:50:24.8209949Z ##[endgroup]
+2025-03-06T22:50:24.8211486Z ##[group]Setting up auth
+2025-03-06T22:50:24.8215881Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-06T22:50:24.8244939Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-06T22:50:24.8561502Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-06T22:50:24.8589347Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-06T22:50:24.8814661Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-06T22:50:24.8846580Z ##[endgroup]
+2025-03-06T22:50:24.8847547Z ##[group]Fetching the repository
+2025-03-06T22:50:24.8855083Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +662b59ca66538fc3693b97ef71a4cd8bbdfaf3ff:refs/remotes/pull/419/merge
+2025-03-06T22:50:25.1786178Z remote: Enumerating objects: 302, done.        
+2025-03-06T22:50:25.1788499Z remote: Counting objects:   0% (1/302)        
+2025-03-06T22:50:25.1790051Z remote: Counting objects:   1% (4/302)        
+2025-03-06T22:50:25.1791725Z remote: Counting objects:   2% (7/302)        
+2025-03-06T22:50:25.1793182Z remote: Counting objects:   3% (10/302)        
+2025-03-06T22:50:25.1794433Z remote: Counting objects:   4% (13/302)        
+2025-03-06T22:50:25.1795803Z remote: Counting objects:   5% (16/302)        
+2025-03-06T22:50:25.1797080Z remote: Counting objects:   6% (19/302)        
+2025-03-06T22:50:25.1798313Z remote: Counting objects:   7% (22/302)        
+2025-03-06T22:50:25.1799517Z remote: Counting objects:   8% (25/302)        
+2025-03-06T22:50:25.1800659Z remote: Counting objects:   9% (28/302)        
+2025-03-06T22:50:25.1802456Z remote: Counting objects:  10% (31/302)        
+2025-03-06T22:50:25.1803851Z remote: Counting objects:  11% (34/302)        
+2025-03-06T22:50:25.1805156Z remote: Counting objects:  12% (37/302)        
+2025-03-06T22:50:25.1806600Z remote: Counting objects:  13% (40/302)        
+2025-03-06T22:50:25.1807936Z remote: Counting objects:  14% (43/302)        
+2025-03-06T22:50:25.1809253Z remote: Counting objects:  15% (46/302)        
+2025-03-06T22:50:25.1810576Z remote: Counting objects:  16% (49/302)        
+2025-03-06T22:50:25.1812087Z remote: Counting objects:  17% (52/302)        
+2025-03-06T22:50:25.1813414Z remote: Counting objects:  18% (55/302)        
+2025-03-06T22:50:25.1814716Z remote: Counting objects:  19% (58/302)        
+2025-03-06T22:50:25.1816038Z remote: Counting objects:  20% (61/302)        
+2025-03-06T22:50:25.1817254Z remote: Counting objects:  21% (64/302)        
+2025-03-06T22:50:25.1818513Z remote: Counting objects:  22% (67/302)        
+2025-03-06T22:50:25.1819845Z remote: Counting objects:  23% (70/302)        
+2025-03-06T22:50:25.1821386Z remote: Counting objects:  24% (73/302)        
+2025-03-06T22:50:25.1822750Z remote: Counting objects:  25% (76/302)        
+2025-03-06T22:50:25.1824390Z remote: Counting objects:  26% (79/302)        
+2025-03-06T22:50:25.1825718Z remote: Counting objects:  27% (82/302)        
+2025-03-06T22:50:25.1827141Z remote: Counting objects:  28% (85/302)        
+2025-03-06T22:50:25.1828498Z remote: Counting objects:  29% (88/302)        
+2025-03-06T22:50:25.1829769Z remote: Counting objects:  30% (91/302)        
+2025-03-06T22:50:25.1831258Z remote: Counting objects:  31% (94/302)        
+2025-03-06T22:50:25.1832611Z remote: Counting objects:  32% (97/302)        
+2025-03-06T22:50:25.1833923Z remote: Counting objects:  33% (100/302)        
+2025-03-06T22:50:25.1835189Z remote: Counting objects:  34% (103/302)        
+2025-03-06T22:50:25.1836475Z remote: Counting objects:  35% (106/302)        
+2025-03-06T22:50:25.1837806Z remote: Counting objects:  36% (109/302)        
+2025-03-06T22:50:25.1839089Z remote: Counting objects:  37% (112/302)        
+2025-03-06T22:50:25.1840375Z remote: Counting objects:  38% (115/302)        
+2025-03-06T22:50:25.1841941Z remote: Counting objects:  39% (118/302)        
+2025-03-06T22:50:25.1843254Z remote: Counting objects:  40% (121/302)        
+2025-03-06T22:50:25.1844507Z remote: Counting objects:  41% (124/302)        
+2025-03-06T22:50:25.1845742Z remote: Counting objects:  42% (127/302)        
+2025-03-06T22:50:25.1846490Z remote: Counting objects:  43% (130/302)        
+2025-03-06T22:50:25.1847184Z remote: Counting objects:  44% (133/302)        
+2025-03-06T22:50:25.1847827Z remote: Counting objects:  45% (136/302)        
+2025-03-06T22:50:25.1848458Z remote: Counting objects:  46% (139/302)        
+2025-03-06T22:50:25.1849088Z remote: Counting objects:  47% (142/302)        
+2025-03-06T22:50:25.1849709Z remote: Counting objects:  48% (145/302)        
+2025-03-06T22:50:25.1850327Z remote: Counting objects:  49% (148/302)        
+2025-03-06T22:50:25.1850955Z remote: Counting objects:  50% (151/302)        
+2025-03-06T22:50:25.1852150Z remote: Counting objects:  51% (155/302)        
+2025-03-06T22:50:25.1852805Z remote: Counting objects:  52% (158/302)        
+2025-03-06T22:50:25.1853436Z remote: Counting objects:  53% (161/302)        
+2025-03-06T22:50:25.1854050Z remote: Counting objects:  54% (164/302)        
+2025-03-06T22:50:25.1854665Z remote: Counting objects:  55% (167/302)        
+2025-03-06T22:50:25.1855283Z remote: Counting objects:  56% (170/302)        
+2025-03-06T22:50:25.1855887Z remote: Counting objects:  57% (173/302)        
+2025-03-06T22:50:25.1856541Z remote: Counting objects:  58% (176/302)        
+2025-03-06T22:50:25.1857175Z remote: Counting objects:  59% (179/302)        
+2025-03-06T22:50:25.1857795Z remote: Counting objects:  60% (182/302)        
+2025-03-06T22:50:25.1858411Z remote: Counting objects:  61% (185/302)        
+2025-03-06T22:50:25.1859015Z remote: Counting objects:  62% (188/302)        
+2025-03-06T22:50:25.1859622Z remote: Counting objects:  63% (191/302)        
+2025-03-06T22:50:25.1860240Z remote: Counting objects:  64% (194/302)        
+2025-03-06T22:50:25.1860861Z remote: Counting objects:  65% (197/302)        
+2025-03-06T22:50:25.1861687Z remote: Counting objects:  66% (200/302)        
+2025-03-06T22:50:25.1862297Z remote: Counting objects:  67% (203/302)        
+2025-03-06T22:50:25.1862907Z remote: Counting objects:  68% (206/302)        
+2025-03-06T22:50:25.1863531Z remote: Counting objects:  69% (209/302)        
+2025-03-06T22:50:25.1864141Z remote: Counting objects:  70% (212/302)        
+2025-03-06T22:50:25.1864751Z remote: Counting objects:  71% (215/302)        
+2025-03-06T22:50:25.1865373Z remote: Counting objects:  72% (218/302)        
+2025-03-06T22:50:25.1865985Z remote: Counting objects:  73% (221/302)        
+2025-03-06T22:50:25.1866586Z remote: Counting objects:  74% (224/302)        
+2025-03-06T22:50:25.1867196Z remote: Counting objects:  75% (227/302)        
+2025-03-06T22:50:25.1867814Z remote: Counting objects:  76% (230/302)        
+2025-03-06T22:50:25.1868465Z remote: Counting objects:  77% (233/302)        
+2025-03-06T22:50:25.1869262Z remote: Counting objects:  78% (236/302)        
+2025-03-06T22:50:25.1869867Z remote: Counting objects:  79% (239/302)        
+2025-03-06T22:50:25.1870481Z remote: Counting objects:  80% (242/302)        
+2025-03-06T22:50:25.1871264Z remote: Counting objects:  81% (245/302)        
+2025-03-06T22:50:25.1871899Z remote: Counting objects:  82% (248/302)        
+2025-03-06T22:50:25.1872513Z remote: Counting objects:  83% (251/302)        
+2025-03-06T22:50:25.1873121Z remote: Counting objects:  84% (254/302)        
+2025-03-06T22:50:25.1873735Z remote: Counting objects:  85% (257/302)        
+2025-03-06T22:50:25.1874347Z remote: Counting objects:  86% (260/302)        
+2025-03-06T22:50:25.1874958Z remote: Counting objects:  87% (263/302)        
+2025-03-06T22:50:25.1875574Z remote: Counting objects:  88% (266/302)        
+2025-03-06T22:50:25.1876186Z remote: Counting objects:  89% (269/302)        
+2025-03-06T22:50:25.1876814Z remote: Counting objects:  90% (272/302)        
+2025-03-06T22:50:25.1877426Z remote: Counting objects:  91% (275/302)        
+2025-03-06T22:50:25.1878050Z remote: Counting objects:  92% (278/302)        
+2025-03-06T22:50:25.1878662Z remote: Counting objects:  93% (281/302)        
+2025-03-06T22:50:25.1879273Z remote: Counting objects:  94% (284/302)        
+2025-03-06T22:50:25.1879886Z remote: Counting objects:  95% (287/302)        
+2025-03-06T22:50:25.1880500Z remote: Counting objects:  96% (290/302)        
+2025-03-06T22:50:25.1881298Z remote: Counting objects:  97% (293/302)        
+2025-03-06T22:50:25.1881936Z remote: Counting objects:  98% (296/302)        
+2025-03-06T22:50:25.1882552Z remote: Counting objects:  99% (299/302)        
+2025-03-06T22:50:25.1883159Z remote: Counting objects: 100% (302/302)        
+2025-03-06T22:50:25.1883817Z remote: Counting objects: 100% (302/302), done.        
+2025-03-06T22:50:25.1884483Z remote: Compressing objects:   0% (1/249)        
+2025-03-06T22:50:25.1885270Z remote: Compressing objects:   1% (3/249)        
+2025-03-06T22:50:25.1885926Z remote: Compressing objects:   2% (5/249)        
+2025-03-06T22:50:25.1886570Z remote: Compressing objects:   3% (8/249)        
+2025-03-06T22:50:25.1887199Z remote: Compressing objects:   4% (10/249)        
+2025-03-06T22:50:25.1887846Z remote: Compressing objects:   5% (13/249)        
+2025-03-06T22:50:25.1888489Z remote: Compressing objects:   6% (15/249)        
+2025-03-06T22:50:25.1889124Z remote: Compressing objects:   7% (18/249)        
+2025-03-06T22:50:25.1889774Z remote: Compressing objects:   8% (20/249)        
+2025-03-06T22:50:25.1890409Z remote: Compressing objects:   9% (23/249)        
+2025-03-06T22:50:25.1891044Z remote: Compressing objects:  10% (25/249)        
+2025-03-06T22:50:25.1891940Z remote: Compressing objects:  11% (28/249)        
+2025-03-06T22:50:25.1892590Z remote: Compressing objects:  12% (30/249)        
+2025-03-06T22:50:25.1893241Z remote: Compressing objects:  13% (33/249)        
+2025-03-06T22:50:25.1893887Z remote: Compressing objects:  14% (35/249)        
+2025-03-06T22:50:25.1894534Z remote: Compressing objects:  15% (38/249)        
+2025-03-06T22:50:25.1944749Z remote: Compressing objects:  16% (40/249)        
+2025-03-06T22:50:25.1945965Z remote: Compressing objects:  17% (43/249)        
+2025-03-06T22:50:25.1947094Z remote: Compressing objects:  18% (45/249)        
+2025-03-06T22:50:25.1948242Z remote: Compressing objects:  19% (48/249)        
+2025-03-06T22:50:25.1949352Z remote: Compressing objects:  20% (50/249)        
+2025-03-06T22:50:25.1950258Z remote: Compressing objects:  21% (53/249)        
+2025-03-06T22:50:25.1951524Z remote: Compressing objects:  22% (55/249)        
+2025-03-06T22:50:25.1952193Z remote: Compressing objects:  23% (58/249)        
+2025-03-06T22:50:25.1952836Z remote: Compressing objects:  24% (60/249)        
+2025-03-06T22:50:25.1953476Z remote: Compressing objects:  25% (63/249)        
+2025-03-06T22:50:25.1954109Z remote: Compressing objects:  26% (65/249)        
+2025-03-06T22:50:25.2034185Z remote: Compressing objects:  27% (68/249)        
+2025-03-06T22:50:25.2035848Z remote: Compressing objects:  28% (70/249)        
+2025-03-06T22:50:25.2037233Z remote: Compressing objects:  29% (73/249)        
+2025-03-06T22:50:25.2038407Z remote: Compressing objects:  30% (75/249)        
+2025-03-06T22:50:25.2039219Z remote: Compressing objects:  31% (78/249)        
+2025-03-06T22:50:25.2039872Z remote: Compressing objects:  32% (80/249)        
+2025-03-06T22:50:25.2040514Z remote: Compressing objects:  33% (83/249)        
+2025-03-06T22:50:25.2041867Z remote: Compressing objects:  34% (85/249)        
+2025-03-06T22:50:25.2043013Z remote: Compressing objects:  35% (88/249)        
+2025-03-06T22:50:25.2044196Z remote: Compressing objects:  36% (90/249)        
+2025-03-06T22:50:25.2045112Z remote: Compressing objects:  37% (93/249)        
+2025-03-06T22:50:25.2045771Z remote: Compressing objects:  38% (95/249)        
+2025-03-06T22:50:25.2046404Z remote: Compressing objects:  39% (98/249)        
+2025-03-06T22:50:25.2047074Z remote: Compressing objects:  40% (100/249)        
+2025-03-06T22:50:25.2047733Z remote: Compressing objects:  41% (103/249)        
+2025-03-06T22:50:25.2048383Z remote: Compressing objects:  42% (105/249)        
+2025-03-06T22:50:25.2049556Z remote: Compressing objects:  43% (108/249)        
+2025-03-06T22:50:25.2050837Z remote: Compressing objects:  44% (110/249)        
+2025-03-06T22:50:25.2051837Z remote: Compressing objects:  45% (113/249)        
+2025-03-06T22:50:25.2052499Z remote: Compressing objects:  46% (115/249)        
+2025-03-06T22:50:25.2053151Z remote: Compressing objects:  47% (118/249)        
+2025-03-06T22:50:25.2053797Z remote: Compressing objects:  48% (120/249)        
+2025-03-06T22:50:25.2054462Z remote: Compressing objects:  49% (123/249)        
+2025-03-06T22:50:25.2055131Z remote: Compressing objects:  50% (125/249)        
+2025-03-06T22:50:25.2055776Z remote: Compressing objects:  51% (127/249)        
+2025-03-06T22:50:25.2056612Z remote: Compressing objects:  52% (130/249)        
+2025-03-06T22:50:25.2057321Z remote: Compressing objects:  53% (132/249)        
+2025-03-06T22:50:25.2057989Z remote: Compressing objects:  54% (135/249)        
+2025-03-06T22:50:25.2058622Z remote: Compressing objects:  55% (137/249)        
+2025-03-06T22:50:25.2059253Z remote: Compressing objects:  56% (140/249)        
+2025-03-06T22:50:25.2059901Z remote: Compressing objects:  57% (142/249)        
+2025-03-06T22:50:25.2060544Z remote: Compressing objects:  58% (145/249)        
+2025-03-06T22:50:25.2061396Z remote: Compressing objects:  59% (147/249)        
+2025-03-06T22:50:25.2062084Z remote: Compressing objects:  60% (150/249)        
+2025-03-06T22:50:25.2062748Z remote: Compressing objects:  61% (152/249)        
+2025-03-06T22:50:25.2063390Z remote: Compressing objects:  62% (155/249)        
+2025-03-06T22:50:25.2064020Z remote: Compressing objects:  63% (157/249)        
+2025-03-06T22:50:25.2064667Z remote: Compressing objects:  64% (160/249)        
+2025-03-06T22:50:25.2085080Z remote: Compressing objects:  65% (162/249)        
+2025-03-06T22:50:25.2099226Z remote: Compressing objects:  66% (165/249)        
+2025-03-06T22:50:25.2108697Z remote: Compressing objects:  67% (167/249)        
+2025-03-06T22:50:25.2110905Z remote: Compressing objects:  68% (170/249)        
+2025-03-06T22:50:25.2117115Z remote: Compressing objects:  69% (172/249)        
+2025-03-06T22:50:25.2119771Z remote: Compressing objects:  70% (175/249)        
+2025-03-06T22:50:25.2125664Z remote: Compressing objects:  71% (177/249)        
+2025-03-06T22:50:25.2127313Z remote: Compressing objects:  72% (180/249)        
+2025-03-06T22:50:25.2129676Z remote: Compressing objects:  73% (182/249)        
+2025-03-06T22:50:25.2132907Z remote: Compressing objects:  74% (185/249)        
+2025-03-06T22:50:25.2134370Z remote: Compressing objects:  75% (187/249)        
+2025-03-06T22:50:25.2135767Z remote: Compressing objects:  76% (190/249)        
+2025-03-06T22:50:25.2137042Z remote: Compressing objects:  77% (192/249)        
+2025-03-06T22:50:25.2138399Z remote: Compressing objects:  78% (195/249)        
+2025-03-06T22:50:25.2140123Z remote: Compressing objects:  79% (197/249)        
+2025-03-06T22:50:25.2141714Z remote: Compressing objects:  80% (200/249)        
+2025-03-06T22:50:25.2143045Z remote: Compressing objects:  81% (202/249)        
+2025-03-06T22:50:25.2144297Z remote: Compressing objects:  82% (205/249)        
+2025-03-06T22:50:25.2145633Z remote: Compressing objects:  83% (207/249)        
+2025-03-06T22:50:25.2146958Z remote: Compressing objects:  84% (210/249)        
+2025-03-06T22:50:25.2148290Z remote: Compressing objects:  85% (212/249)        
+2025-03-06T22:50:25.2149617Z remote: Compressing objects:  86% (215/249)        
+2025-03-06T22:50:25.2150865Z remote: Compressing objects:  87% (217/249)        
+2025-03-06T22:50:25.2152463Z remote: Compressing objects:  88% (220/249)        
+2025-03-06T22:50:25.2153742Z remote: Compressing objects:  89% (222/249)        
+2025-03-06T22:50:25.2155098Z remote: Compressing objects:  90% (225/249)        
+2025-03-06T22:50:25.2156443Z remote: Compressing objects:  91% (227/249)        
+2025-03-06T22:50:25.2157804Z remote: Compressing objects:  92% (230/249)        
+2025-03-06T22:50:25.2159159Z remote: Compressing objects:  93% (232/249)        
+2025-03-06T22:50:25.2160588Z remote: Compressing objects:  94% (235/249)        
+2025-03-06T22:50:25.2162146Z remote: Compressing objects:  95% (237/249)        
+2025-03-06T22:50:25.2163489Z remote: Compressing objects:  96% (240/249)        
+2025-03-06T22:50:25.2164829Z remote: Compressing objects:  97% (242/249)        
+2025-03-06T22:50:25.2166176Z remote: Compressing objects:  98% (245/249)        
+2025-03-06T22:50:25.2167535Z remote: Compressing objects:  99% (247/249)        
+2025-03-06T22:50:25.2168762Z remote: Compressing objects: 100% (249/249)        
+2025-03-06T22:50:25.2170060Z remote: Compressing objects: 100% (249/249), done.        
+2025-03-06T22:50:25.2171457Z Receiving objects:   0% (1/302)
+2025-03-06T22:50:25.2172674Z Receiving objects:   1% (4/302)
+2025-03-06T22:50:25.2173643Z Receiving objects:   2% (7/302)
+2025-03-06T22:50:25.2174586Z Receiving objects:   3% (10/302)
+2025-03-06T22:50:25.2175587Z Receiving objects:   4% (13/302)
+2025-03-06T22:50:25.2207716Z Receiving objects:   5% (16/302)
+2025-03-06T22:50:25.2209356Z Receiving objects:   6% (19/302)
+2025-03-06T22:50:25.2211410Z Receiving objects:   7% (22/302)
+2025-03-06T22:50:25.2262140Z Receiving objects:   8% (25/302)
+2025-03-06T22:50:25.2263754Z Receiving objects:   9% (28/302)
+2025-03-06T22:50:25.2265020Z Receiving objects:  10% (31/302)
+2025-03-06T22:50:25.2282200Z Receiving objects:  11% (34/302)
+2025-03-06T22:50:25.2284685Z Receiving objects:  12% (37/302)
+2025-03-06T22:50:25.2287071Z Receiving objects:  13% (40/302)
+2025-03-06T22:50:25.2296942Z Receiving objects:  14% (43/302)
+2025-03-06T22:50:25.2298413Z Receiving objects:  15% (46/302)
+2025-03-06T22:50:25.2299475Z Receiving objects:  16% (49/302)
+2025-03-06T22:50:25.2302063Z Receiving objects:  17% (52/302)
+2025-03-06T22:50:25.2303272Z Receiving objects:  18% (55/302)
+2025-03-06T22:50:25.2305357Z Receiving objects:  19% (58/302)
+2025-03-06T22:50:25.2309259Z Receiving objects:  20% (61/302)
+2025-03-06T22:50:25.2310399Z Receiving objects:  21% (64/302)
+2025-03-06T22:50:25.2311692Z Receiving objects:  22% (67/302)
+2025-03-06T22:50:25.2312755Z Receiving objects:  23% (70/302)
+2025-03-06T22:50:25.2313925Z Receiving objects:  24% (73/302)
+2025-03-06T22:50:25.2314999Z Receiving objects:  25% (76/302)
+2025-03-06T22:50:25.2316161Z Receiving objects:  26% (79/302)
+2025-03-06T22:50:25.2317243Z Receiving objects:  27% (82/302)
+2025-03-06T22:50:25.2318353Z Receiving objects:  28% (85/302)
+2025-03-06T22:50:25.2319424Z Receiving objects:  29% (88/302)
+2025-03-06T22:50:25.2320505Z Receiving objects:  30% (91/302)
+2025-03-06T22:50:25.2321772Z Receiving objects:  31% (94/302)
+2025-03-06T22:50:25.2326361Z Receiving objects:  32% (97/302)
+2025-03-06T22:50:25.2328048Z Receiving objects:  33% (100/302)
+2025-03-06T22:50:25.2329995Z Receiving objects:  34% (103/302)
+2025-03-06T22:50:25.2443911Z Receiving objects:  35% (106/302)
+2025-03-06T22:50:25.2446474Z Receiving objects:  36% (109/302)
+2025-03-06T22:50:25.2455438Z Receiving objects:  37% (112/302)
+2025-03-06T22:50:25.2458368Z Receiving objects:  38% (115/302)
+2025-03-06T22:50:25.2459802Z Receiving objects:  39% (118/302)
+2025-03-06T22:50:25.2461388Z Receiving objects:  40% (121/302)
+2025-03-06T22:50:25.2462639Z Receiving objects:  41% (124/302)
+2025-03-06T22:50:25.2463971Z Receiving objects:  42% (127/302)
+2025-03-06T22:50:25.2466134Z Receiving objects:  43% (130/302)
+2025-03-06T22:50:25.2470340Z Receiving objects:  44% (133/302)
+2025-03-06T22:50:25.2471995Z Receiving objects:  45% (136/302)
+2025-03-06T22:50:25.2476274Z Receiving objects:  46% (139/302)
+2025-03-06T22:50:25.2477431Z Receiving objects:  47% (142/302)
+2025-03-06T22:50:25.2478505Z Receiving objects:  48% (145/302)
+2025-03-06T22:50:25.2479589Z Receiving objects:  49% (148/302)
+2025-03-06T22:50:25.2480823Z Receiving objects:  50% (151/302)
+2025-03-06T22:50:25.2484322Z Receiving objects:  51% (155/302)
+2025-03-06T22:50:25.2487343Z Receiving objects:  52% (158/302)
+2025-03-06T22:50:25.2488758Z Receiving objects:  53% (161/302)
+2025-03-06T22:50:25.2489787Z Receiving objects:  54% (164/302)
+2025-03-06T22:50:25.2490920Z Receiving objects:  55% (167/302)
+2025-03-06T22:50:25.2492241Z Receiving objects:  56% (170/302)
+2025-03-06T22:50:25.2494661Z Receiving objects:  57% (173/302)
+2025-03-06T22:50:25.2495773Z Receiving objects:  58% (176/302)
+2025-03-06T22:50:25.2496834Z Receiving objects:  59% (179/302)
+2025-03-06T22:50:25.2497880Z Receiving objects:  60% (182/302)
+2025-03-06T22:50:25.2499330Z Receiving objects:  61% (185/302)
+2025-03-06T22:50:25.2501531Z Receiving objects:  62% (188/302)
+2025-03-06T22:50:25.2503346Z Receiving objects:  63% (191/302)
+2025-03-06T22:50:25.2504419Z Receiving objects:  64% (194/302)
+2025-03-06T22:50:25.2505473Z Receiving objects:  65% (197/302)
+2025-03-06T22:50:25.2506525Z Receiving objects:  66% (200/302)
+2025-03-06T22:50:25.2507902Z Receiving objects:  67% (203/302)
+2025-03-06T22:50:25.2512384Z Receiving objects:  68% (206/302)
+2025-03-06T22:50:25.2514151Z Receiving objects:  69% (209/302)
+2025-03-06T22:50:25.2515129Z Receiving objects:  70% (212/302)
+2025-03-06T22:50:25.2516095Z Receiving objects:  71% (215/302)
+2025-03-06T22:50:25.2517005Z Receiving objects:  72% (218/302)
+2025-03-06T22:50:25.2517912Z Receiving objects:  73% (221/302)
+2025-03-06T22:50:25.2519961Z Receiving objects:  74% (224/302)
+2025-03-06T22:50:25.2521911Z Receiving objects:  75% (227/302)
+2025-03-06T22:50:25.2522459Z Receiving objects:  76% (230/302)
+2025-03-06T22:50:25.2522978Z Receiving objects:  77% (233/302)
+2025-03-06T22:50:25.2530969Z Receiving objects:  78% (236/302)
+2025-03-06T22:50:25.2532545Z Receiving objects:  79% (239/302)
+2025-03-06T22:50:25.2584639Z Receiving objects:  80% (242/302)
+2025-03-06T22:50:25.2586547Z Receiving objects:  81% (245/302)
+2025-03-06T22:50:25.2587144Z Receiving objects:  82% (248/302)
+2025-03-06T22:50:25.2608270Z Receiving objects:  83% (251/302)
+2025-03-06T22:50:25.2610760Z Receiving objects:  84% (254/302)
+2025-03-06T22:50:25.2612121Z Receiving objects:  85% (257/302)
+2025-03-06T22:50:25.2613223Z Receiving objects:  86% (260/302)
+2025-03-06T22:50:25.2614239Z Receiving objects:  87% (263/302)
+2025-03-06T22:50:25.2620811Z Receiving objects:  88% (266/302)
+2025-03-06T22:50:25.2624398Z remote: Total 302 (delta 78), reused 175 (delta 37), pack-reused 0 (from 0)        
+2025-03-06T22:50:25.2636437Z Receiving objects:  89% (269/302)
+2025-03-06T22:50:25.2640266Z Receiving objects:  90% (272/302)
+2025-03-06T22:50:25.2643735Z Receiving objects:  91% (275/302)
+2025-03-06T22:50:25.2647332Z Receiving objects:  92% (278/302)
+2025-03-06T22:50:25.2650869Z Receiving objects:  93% (281/302)
+2025-03-06T22:50:25.2652165Z Receiving objects:  94% (284/302)
+2025-03-06T22:50:25.2653694Z Receiving objects:  95% (287/302)
+2025-03-06T22:50:25.2654867Z Receiving objects:  96% (290/302)
+2025-03-06T22:50:25.2656028Z Receiving objects:  97% (293/302)
+2025-03-06T22:50:25.2657141Z Receiving objects:  98% (296/302)
+2025-03-06T22:50:25.2659332Z Receiving objects:  99% (299/302)
+2025-03-06T22:50:25.2660432Z Receiving objects: 100% (302/302)
+2025-03-06T22:50:25.2662008Z Receiving objects: 100% (302/302), 385.22 KiB | 7.86 MiB/s, done.
+2025-03-06T22:50:25.2663441Z Resolving deltas:   0% (0/78)
+2025-03-06T22:50:25.2664403Z Resolving deltas:   1% (1/78)
+2025-03-06T22:50:25.2665481Z Resolving deltas:   2% (2/78)
+2025-03-06T22:50:25.2666530Z Resolving deltas:   3% (3/78)
+2025-03-06T22:50:25.2667588Z Resolving deltas:   5% (4/78)
+2025-03-06T22:50:25.2668608Z Resolving deltas:   6% (5/78)
+2025-03-06T22:50:25.2669930Z Resolving deltas:   7% (6/78)
+2025-03-06T22:50:25.2673811Z Resolving deltas:   8% (7/78)
+2025-03-06T22:50:25.2674782Z Resolving deltas:  10% (8/78)
+2025-03-06T22:50:25.2675762Z Resolving deltas:  11% (9/78)
+2025-03-06T22:50:25.2676660Z Resolving deltas:  12% (10/78)
+2025-03-06T22:50:25.2677547Z Resolving deltas:  14% (11/78)
+2025-03-06T22:50:25.2678436Z Resolving deltas:  15% (12/78)
+2025-03-06T22:50:25.2679339Z Resolving deltas:  17% (14/78)
+2025-03-06T22:50:25.2680204Z Resolving deltas:  20% (16/78)
+2025-03-06T22:50:25.2681227Z Resolving deltas:  21% (17/78)
+2025-03-06T22:50:25.2682124Z Resolving deltas:  23% (18/78)
+2025-03-06T22:50:25.2683026Z Resolving deltas:  24% (19/78)
+2025-03-06T22:50:25.2683914Z Resolving deltas:  25% (20/78)
+2025-03-06T22:50:25.2684797Z Resolving deltas:  26% (21/78)
+2025-03-06T22:50:25.2685681Z Resolving deltas:  28% (22/78)
+2025-03-06T22:50:25.2686569Z Resolving deltas:  29% (23/78)
+2025-03-06T22:50:25.2687462Z Resolving deltas:  30% (24/78)
+2025-03-06T22:50:25.2688316Z Resolving deltas:  32% (25/78)
+2025-03-06T22:50:25.2689186Z Resolving deltas:  33% (26/78)
+2025-03-06T22:50:25.2690056Z Resolving deltas:  34% (27/78)
+2025-03-06T22:50:25.2690935Z Resolving deltas:  35% (28/78)
+2025-03-06T22:50:25.2692009Z Resolving deltas:  37% (29/78)
+2025-03-06T22:50:25.2692861Z Resolving deltas:  38% (30/78)
+2025-03-06T22:50:25.2693965Z Resolving deltas:  39% (31/78)
+2025-03-06T22:50:25.2694855Z Resolving deltas:  41% (32/78)
+2025-03-06T22:50:25.2695726Z Resolving deltas:  43% (34/78)
+2025-03-06T22:50:25.2696633Z Resolving deltas:  44% (35/78)
+2025-03-06T22:50:25.2697486Z Resolving deltas:  46% (36/78)
+2025-03-06T22:50:25.2698331Z Resolving deltas:  47% (37/78)
+2025-03-06T22:50:25.2699184Z Resolving deltas:  48% (38/78)
+2025-03-06T22:50:25.2700037Z Resolving deltas:  50% (39/78)
+2025-03-06T22:50:25.2700732Z Resolving deltas:  51% (40/78)
+2025-03-06T22:50:25.2701439Z Resolving deltas:  52% (41/78)
+2025-03-06T22:50:25.2701984Z Resolving deltas:  53% (42/78)
+2025-03-06T22:50:25.2702680Z Resolving deltas:  55% (43/78)
+2025-03-06T22:50:25.2703567Z Resolving deltas:  56% (44/78)
+2025-03-06T22:50:25.2704425Z Resolving deltas:  57% (45/78)
+2025-03-06T22:50:25.2705313Z Resolving deltas:  58% (46/78)
+2025-03-06T22:50:25.2706201Z Resolving deltas:  60% (47/78)
+2025-03-06T22:50:25.2707133Z Resolving deltas:  61% (48/78)
+2025-03-06T22:50:25.2708025Z Resolving deltas:  62% (49/78)
+2025-03-06T22:50:25.2708894Z Resolving deltas:  64% (50/78)
+2025-03-06T22:50:25.2709763Z Resolving deltas:  65% (51/78)
+2025-03-06T22:50:25.2710619Z Resolving deltas:  66% (52/78)
+2025-03-06T22:50:25.2711654Z Resolving deltas:  67% (53/78)
+2025-03-06T22:50:25.2712517Z Resolving deltas:  69% (54/78)
+2025-03-06T22:50:25.2713363Z Resolving deltas:  70% (55/78)
+2025-03-06T22:50:25.2713870Z Resolving deltas:  71% (56/78)
+2025-03-06T22:50:25.2714353Z Resolving deltas:  73% (57/78)
+2025-03-06T22:50:25.2714849Z Resolving deltas:  74% (58/78)
+2025-03-06T22:50:25.2715354Z Resolving deltas:  75% (59/78)
+2025-03-06T22:50:25.2715849Z Resolving deltas:  76% (60/78)
+2025-03-06T22:50:25.2716342Z Resolving deltas:  78% (61/78)
+2025-03-06T22:50:25.2716874Z Resolving deltas:  79% (62/78)
+2025-03-06T22:50:25.2717373Z Resolving deltas:  82% (64/78)
+2025-03-06T22:50:25.2717871Z Resolving deltas:  83% (65/78)
+2025-03-06T22:50:25.2718361Z Resolving deltas:  84% (66/78)
+2025-03-06T22:50:25.2718880Z Resolving deltas:  85% (67/78)
+2025-03-06T22:50:25.2719385Z Resolving deltas:  87% (68/78)
+2025-03-06T22:50:25.2736765Z Resolving deltas:  88% (69/78)
+2025-03-06T22:50:25.2737643Z Resolving deltas:  89% (70/78)
+2025-03-06T22:50:25.2738233Z Resolving deltas:  91% (71/78)
+2025-03-06T22:50:25.2739006Z Resolving deltas:  92% (72/78)
+2025-03-06T22:50:25.2739873Z Resolving deltas:  93% (73/78)
+2025-03-06T22:50:25.2740891Z Resolving deltas:  94% (74/78)
+2025-03-06T22:50:25.2741930Z Resolving deltas:  96% (75/78)
+2025-03-06T22:50:25.2742508Z Resolving deltas:  97% (76/78)
+2025-03-06T22:50:25.2743000Z Resolving deltas:  98% (77/78)
+2025-03-06T22:50:25.2743481Z Resolving deltas: 100% (78/78)
+2025-03-06T22:50:25.2744050Z Resolving deltas: 100% (78/78), done.
+2025-03-06T22:50:25.2802532Z From https://github.com/wolfSSL/wolfMQTT
+2025-03-06T22:50:25.2803984Z  * [new ref]         662b59ca66538fc3693b97ef71a4cd8bbdfaf3ff -> pull/419/merge
+2025-03-06T22:50:25.2829585Z ##[endgroup]
+2025-03-06T22:50:25.2830781Z ##[group]Determining the checkout info
+2025-03-06T22:50:25.2833686Z ##[endgroup]
+2025-03-06T22:50:25.2835022Z ##[group]Checking out the ref
+2025-03-06T22:50:25.2837724Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/419/merge
+2025-03-06T22:50:25.3042292Z Note: switching to 'refs/remotes/pull/419/merge'.
+2025-03-06T22:50:25.3043155Z 
+2025-03-06T22:50:25.3043837Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-06T22:50:25.3045439Z changes and commit them, and you can discard any commits you make in this
+2025-03-06T22:50:25.3047049Z state without impacting any branches by switching back to a branch.
+2025-03-06T22:50:25.3047706Z 
+2025-03-06T22:50:25.3048074Z If you want to create a new branch to retain commits you create, you may
+2025-03-06T22:50:25.3048892Z do so (now or later) by using -c with the switch command. Example:
+2025-03-06T22:50:25.3049393Z 
+2025-03-06T22:50:25.3049613Z   git switch -c <new-branch-name>
+2025-03-06T22:50:25.3049964Z 
+2025-03-06T22:50:25.3050369Z Or undo this operation with:
+2025-03-06T22:50:25.3050964Z 
+2025-03-06T22:50:25.3051514Z   git switch -
+2025-03-06T22:50:25.3051955Z 
+2025-03-06T22:50:25.3052504Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-06T22:50:25.3053069Z 
+2025-03-06T22:50:25.3053771Z HEAD is now at 662b59c Merge d482ecdc4fb4a143fec42a3e8040a37b5e338412 into 32e700db2e3e41c67367d710081d4ca150500745
+2025-03-06T22:50:25.3055654Z ##[endgroup]
+2025-03-06T22:50:25.3084618Z [command]/usr/bin/git log -1 --format='%H'
+2025-03-06T22:50:25.3105885Z '662b59ca66538fc3693b97ef71a4cd8bbdfaf3ff'
+2025-03-06T22:50:25.3306796Z ##[group]Run sudo apt-get update
+2025-03-06T22:50:25.3307464Z [36;1msudo apt-get update[0m
+2025-03-06T22:50:25.3308207Z [36;1msudo apt-get install -y build-essential autoconf automake libtool[0m
+2025-03-06T22:50:25.3309180Z [36;1msudo apt-get install -y libwebsockets-dev mosquitto mosquitto-clients[0m
+2025-03-06T22:50:25.3359611Z shell: /usr/bin/bash -e {0}
+2025-03-06T22:50:25.3360156Z ##[endgroup]
+2025-03-06T22:50:25.4141583Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [142 B]
+2025-03-06T22:50:25.4473026Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+2025-03-06T22:50:25.4497895Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2025-03-06T22:50:25.4523019Z Get:6 https://packages.microsoft.com/repos/azure-cli noble InRelease [3564 B]
+2025-03-06T22:50:25.4554169Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2025-03-06T22:50:25.4597070Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3599 B]
+2025-03-06T22:50:25.4605149Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2025-03-06T22:50:25.5716070Z Get:8 https://packages.microsoft.com/repos/azure-cli noble/main amd64 Packages [1128 B]
+2025-03-06T22:50:25.6215398Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [916 kB]
+2025-03-06T22:50:25.6271628Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [206 kB]
+2025-03-06T22:50:25.6303203Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [151 kB]
+2025-03-06T22:50:25.6322278Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1036 kB]
+2025-03-06T22:50:25.6385716Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [260 kB]
+2025-03-06T22:50:25.6414022Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [363 kB]
+2025-03-06T22:50:25.6449254Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [758 kB]
+2025-03-06T22:50:25.6507916Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [152 kB]
+2025-03-06T22:50:25.6537274Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Components [212 B]
+2025-03-06T22:50:25.6549745Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [30.1 kB]
+2025-03-06T22:50:25.6995075Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [5884 B]
+2025-03-06T22:50:25.7007523Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+2025-03-06T22:50:25.7019135Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [208 B]
+2025-03-06T22:50:25.7032995Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [20.0 kB]
+2025-03-06T22:50:25.7045369Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [216 B]
+2025-03-06T22:50:25.7056538Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [212 B]
+2025-03-06T22:50:25.7288222Z Get:25 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [7129 B]
+2025-03-06T22:50:25.7343183Z Get:26 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [14.0 kB]
+2025-03-06T22:50:25.7388649Z Get:27 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [22.3 kB]
+2025-03-06T22:50:25.7775414Z Get:28 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [667 kB]
+2025-03-06T22:50:25.7844066Z Get:29 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [128 kB]
+2025-03-06T22:50:25.7878271Z Get:30 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Components [8980 B]
+2025-03-06T22:50:25.7894121Z Get:31 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [822 kB]
+2025-03-06T22:50:25.7944246Z Get:32 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [177 kB]
+2025-03-06T22:50:25.7967110Z Get:33 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Components [52.0 kB]
+2025-03-06T22:50:25.7985354Z Get:34 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [700 kB]
+2025-03-06T22:50:25.8033325Z Get:35 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [138 kB]
+2025-03-06T22:50:25.8475963Z Get:36 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Components [212 B]
+2025-03-06T22:50:25.8494579Z Get:37 http://azure.archive.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [212 B]
+2025-03-06T22:50:29.4224738Z Fetched 7022 kB in 1s (7660 kB/s)
+2025-03-06T22:50:30.0217609Z Reading package lists...
+2025-03-06T22:50:30.0532145Z Reading package lists...
+2025-03-06T22:50:30.1914401Z Building dependency tree...
+2025-03-06T22:50:30.1921976Z Reading state information...
+2025-03-06T22:50:30.3455089Z autoconf is already the newest version (2.71-3).
+2025-03-06T22:50:30.3456828Z automake is already the newest version (1:1.16.5-1.3ubuntu1).
+2025-03-06T22:50:30.3457264Z libtool is already the newest version (2.4.7-7build1).
+2025-03-06T22:50:30.3457654Z The following NEW packages will be installed:
+2025-03-06T22:50:30.3461293Z   build-essential
+2025-03-06T22:50:30.3640400Z 0 upgraded, 1 newly installed, 0 to remove and 38 not upgraded.
+2025-03-06T22:50:30.3641872Z Need to get 4928 B of archives.
+2025-03-06T22:50:30.3642529Z After this operation, 17.4 kB of additional disk space will be used.
+2025-03-06T22:50:30.3643245Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [142 B]
+2025-03-06T22:50:30.4177250Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 build-essential amd64 12.10ubuntu1 [4928 B]
+2025-03-06T22:50:30.6561698Z Fetched 4928 B in 0s (77.1 kB/s)
+2025-03-06T22:50:30.6798280Z Selecting previously unselected package build-essential.
+2025-03-06T22:50:30.7004895Z (Reading database ... 
+2025-03-06T22:50:30.7005654Z (Reading database ... 5%
+2025-03-06T22:50:30.7006063Z (Reading database ... 10%
+2025-03-06T22:50:30.7006372Z (Reading database ... 15%
+2025-03-06T22:50:30.7006612Z (Reading database ... 20%
+2025-03-06T22:50:30.7006856Z (Reading database ... 25%
+2025-03-06T22:50:30.7007068Z (Reading database ... 30%
+2025-03-06T22:50:30.7007274Z (Reading database ... 35%
+2025-03-06T22:50:30.7007479Z (Reading database ... 40%
+2025-03-06T22:50:30.7007676Z (Reading database ... 45%
+2025-03-06T22:50:30.7007934Z (Reading database ... 50%
+2025-03-06T22:50:30.7215974Z (Reading database ... 55%
+2025-03-06T22:50:30.7467518Z (Reading database ... 60%
+2025-03-06T22:50:30.7689859Z (Reading database ... 65%
+2025-03-06T22:50:30.8109179Z (Reading database ... 70%
+2025-03-06T22:50:30.8407132Z (Reading database ... 75%
+2025-03-06T22:50:30.8717609Z (Reading database ... 80%
+2025-03-06T22:50:30.9225026Z (Reading database ... 85%
+2025-03-06T22:50:30.9746542Z (Reading database ... 90%
+2025-03-06T22:50:31.0159063Z (Reading database ... 95%
+2025-03-06T22:50:31.0159652Z (Reading database ... 100%
+2025-03-06T22:50:31.0160368Z (Reading database ... 221041 files and directories currently installed.)
+2025-03-06T22:50:31.0203546Z Preparing to unpack .../build-essential_12.10ubuntu1_amd64.deb ...
+2025-03-06T22:50:31.0240198Z Unpacking build-essential (12.10ubuntu1) ...
+2025-03-06T22:50:31.0624374Z Setting up build-essential (12.10ubuntu1) ...
+2025-03-06T22:50:31.6762530Z 
+2025-03-06T22:50:31.6763464Z Running kernel seems to be up-to-date.
+2025-03-06T22:50:31.6763937Z 
+2025-03-06T22:50:31.6764118Z No services need to be restarted.
+2025-03-06T22:50:31.6764467Z 
+2025-03-06T22:50:31.6764653Z No containers need to be restarted.
+2025-03-06T22:50:31.6765005Z 
+2025-03-06T22:50:31.6765244Z No user sessions are running outdated binaries.
+2025-03-06T22:50:31.6765577Z 
+2025-03-06T22:50:31.6765869Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2025-03-06T22:50:32.4299109Z Reading package lists...
+2025-03-06T22:50:32.5625681Z Building dependency tree...
+2025-03-06T22:50:32.5633008Z Reading state information...
+2025-03-06T22:50:32.7011299Z The following additional packages will be installed:
+2025-03-06T22:50:32.7012029Z   libcap-dev libcap2 libcap2-bin libcjson1 libdlt2 libev-dev libev4t64
+2025-03-06T22:50:32.7014582Z   libmosquitto1 libpam-cap libuv1-dev libwebsockets-evlib-ev
+2025-03-06T22:50:32.7017840Z   libwebsockets-evlib-glib libwebsockets-evlib-uv libwebsockets19t64
+2025-03-06T22:50:32.7022869Z Suggested packages:
+2025-03-06T22:50:32.7023187Z   manpages-dev
+2025-03-06T22:50:32.7205446Z The following NEW packages will be installed:
+2025-03-06T22:50:32.7208202Z   libcap-dev libcjson1 libdlt2 libev-dev libev4t64 libmosquitto1 libuv1-dev
+2025-03-06T22:50:32.7208992Z   libwebsockets-dev libwebsockets-evlib-ev libwebsockets-evlib-glib
+2025-03-06T22:50:32.7210230Z   libwebsockets-evlib-uv libwebsockets19t64 mosquitto mosquitto-clients
+2025-03-06T22:50:32.7214155Z The following packages will be upgraded:
+2025-03-06T22:50:32.7218393Z   libcap2 libcap2-bin libpam-cap
+2025-03-06T22:50:32.7372127Z 3 upgraded, 14 newly installed, 0 to remove and 35 not upgraded.
+2025-03-06T22:50:32.7372702Z Need to get 2270 kB of archives.
+2025-03-06T22:50:32.7373073Z After this operation, 8259 kB of additional disk space will be used.
+2025-03-06T22:50:32.7373464Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [142 B]
+2025-03-06T22:50:32.7876963Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libcjson1 amd64 1.7.17-1 [24.8 kB]
+2025-03-06T22:50:32.8230971Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libmosquitto1 amd64 2.0.18-1build3 [54.1 kB]
+2025-03-06T22:50:32.9023391Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libdlt2 amd64 2.18.10-10 [65.4 kB]
+2025-03-06T22:50:32.9367628Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libcap2 amd64 1:2.66-5ubuntu2.2 [30.0 kB]
+2025-03-06T22:50:32.9756693Z Get:6 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libwebsockets19t64 amd64 4.3.3-1.1build3 [229 kB]
+2025-03-06T22:50:33.0553135Z Get:7 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 mosquitto amd64 2.0.18-1build3 [242 kB]
+2025-03-06T22:50:33.0934020Z Get:8 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libpam-cap amd64 1:2.66-5ubuntu2.2 [12.5 kB]
+2025-03-06T22:50:33.1272058Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libcap2-bin amd64 1:2.66-5ubuntu2.2 [34.2 kB]
+2025-03-06T22:50:33.1608567Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libcap-dev amd64 1:2.66-5ubuntu2.2 [595 kB]
+2025-03-06T22:50:33.2269073Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libev4t64 amd64 1:4.33-2.1build1 [31.0 kB]
+2025-03-06T22:50:33.2621769Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libuv1-dev amd64 1.48.0-1.1build1 [136 kB]
+2025-03-06T22:50:33.3047764Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libwebsockets-evlib-ev amd64 4.3.3-1.1build3 [9374 B]
+2025-03-06T22:50:33.3835667Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libwebsockets-evlib-uv amd64 4.3.3-1.1build3 [12.4 kB]
+2025-03-06T22:50:33.4616110Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libwebsockets-evlib-glib amd64 4.3.3-1.1build3 [9546 B]
+2025-03-06T22:50:33.4947602Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libev-dev amd64 1:4.33-2.1build1 [123 kB]
+2025-03-06T22:50:33.5360598Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libwebsockets-dev amd64 4.3.3-1.1build3 [588 kB]
+2025-03-06T22:50:33.5745040Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 mosquitto-clients amd64 2.0.18-1build3 [71.9 kB]
+2025-03-06T22:50:33.8108297Z Fetched 2270 kB in 1s (2678 kB/s)
+2025-03-06T22:50:33.8312838Z Selecting previously unselected package libcjson1:amd64.
+2025-03-06T22:50:33.8366404Z (Reading database ... 
+2025-03-06T22:50:33.8366803Z (Reading database ... 5%
+2025-03-06T22:50:33.8367360Z (Reading database ... 10%
+2025-03-06T22:50:33.8367694Z (Reading database ... 15%
+2025-03-06T22:50:33.8368075Z (Reading database ... 20%
+2025-03-06T22:50:33.8368414Z (Reading database ... 25%
+2025-03-06T22:50:33.8368666Z (Reading database ... 30%
+2025-03-06T22:50:33.8368915Z (Reading database ... 35%
+2025-03-06T22:50:33.8369154Z (Reading database ... 40%
+2025-03-06T22:50:33.8369405Z (Reading database ... 45%
+2025-03-06T22:50:33.8369649Z (Reading database ... 50%
+2025-03-06T22:50:33.8453026Z (Reading database ... 55%
+2025-03-06T22:50:33.8470933Z (Reading database ... 60%
+2025-03-06T22:50:33.8493053Z (Reading database ... 65%
+2025-03-06T22:50:33.8512914Z (Reading database ... 70%
+2025-03-06T22:50:33.8549966Z (Reading database ... 75%
+2025-03-06T22:50:33.8574530Z (Reading database ... 80%
+2025-03-06T22:50:33.8745261Z (Reading database ... 85%
+2025-03-06T22:50:33.8976540Z (Reading database ... 90%
+2025-03-06T22:50:33.9049505Z (Reading database ... 95%
+2025-03-06T22:50:33.9049947Z (Reading database ... 100%
+2025-03-06T22:50:33.9050372Z (Reading database ... 221050 files and directories currently installed.)
+2025-03-06T22:50:33.9089469Z Preparing to unpack .../libcjson1_1.7.17-1_amd64.deb ...
+2025-03-06T22:50:33.9118428Z Unpacking libcjson1:amd64 (1.7.17-1) ...
+2025-03-06T22:50:33.9366110Z Selecting previously unselected package libmosquitto1:amd64.
+2025-03-06T22:50:33.9494708Z Preparing to unpack .../libmosquitto1_2.0.18-1build3_amd64.deb ...
+2025-03-06T22:50:33.9507420Z Unpacking libmosquitto1:amd64 (2.0.18-1build3) ...
+2025-03-06T22:50:33.9736543Z Selecting previously unselected package libdlt2:amd64.
+2025-03-06T22:50:33.9866868Z Preparing to unpack .../libdlt2_2.18.10-10_amd64.deb ...
+2025-03-06T22:50:33.9879813Z Unpacking libdlt2:amd64 (2.18.10-10) ...
+2025-03-06T22:50:34.0252107Z Preparing to unpack .../libcap2_1%3a2.66-5ubuntu2.2_amd64.deb ...
+2025-03-06T22:50:34.0293136Z Unpacking libcap2:amd64 (1:2.66-5ubuntu2.2) over (1:2.66-5ubuntu2.1) ...
+2025-03-06T22:50:34.0713604Z Setting up libcap2:amd64 (1:2.66-5ubuntu2.2) ...
+2025-03-06T22:50:34.1027010Z Selecting previously unselected package libwebsockets19t64:amd64.
+2025-03-06T22:50:34.1081408Z (Reading database ... 
+2025-03-06T22:50:34.1081817Z (Reading database ... 5%
+2025-03-06T22:50:34.1082206Z (Reading database ... 10%
+2025-03-06T22:50:34.1082595Z (Reading database ... 15%
+2025-03-06T22:50:34.1082987Z (Reading database ... 20%
+2025-03-06T22:50:34.1083380Z (Reading database ... 25%
+2025-03-06T22:50:34.1083757Z (Reading database ... 30%
+2025-03-06T22:50:34.1084063Z (Reading database ... 35%
+2025-03-06T22:50:34.1084305Z (Reading database ... 40%
+2025-03-06T22:50:34.1084542Z (Reading database ... 45%
+2025-03-06T22:50:34.1084785Z (Reading database ... 50%
+2025-03-06T22:50:34.1167057Z (Reading database ... 55%
+2025-03-06T22:50:34.1185393Z (Reading database ... 60%
+2025-03-06T22:50:34.1207553Z (Reading database ... 65%
+2025-03-06T22:50:34.1227146Z (Reading database ... 70%
+2025-03-06T22:50:34.1261647Z (Reading database ... 75%
+2025-03-06T22:50:34.1288162Z (Reading database ... 80%
+2025-03-06T22:50:34.1455121Z (Reading database ... 85%
+2025-03-06T22:50:34.1702477Z (Reading database ... 90%
+2025-03-06T22:50:34.1780331Z (Reading database ... 95%
+2025-03-06T22:50:34.1780837Z (Reading database ... 100%
+2025-03-06T22:50:34.1781740Z (Reading database ... 221067 files and directories currently installed.)
+2025-03-06T22:50:34.1822683Z Preparing to unpack .../00-libwebsockets19t64_4.3.3-1.1build3_amd64.deb ...
+2025-03-06T22:50:34.1835028Z Unpacking libwebsockets19t64:amd64 (4.3.3-1.1build3) ...
+2025-03-06T22:50:34.2119181Z Selecting previously unselected package mosquitto.
+2025-03-06T22:50:34.2252250Z Preparing to unpack .../01-mosquitto_2.0.18-1build3_amd64.deb ...
+2025-03-06T22:50:34.2287780Z Unpacking mosquitto (2.0.18-1build3) ...
+2025-03-06T22:50:34.2860714Z Preparing to unpack .../02-libpam-cap_1%3a2.66-5ubuntu2.2_amd64.deb ...
+2025-03-06T22:50:34.4196352Z Unpacking libpam-cap:amd64 (1:2.66-5ubuntu2.2) over (1:2.66-5ubuntu2.1) ...
+2025-03-06T22:50:34.4586950Z Preparing to unpack .../03-libcap2-bin_1%3a2.66-5ubuntu2.2_amd64.deb ...
+2025-03-06T22:50:34.4628783Z Unpacking libcap2-bin (1:2.66-5ubuntu2.2) over (1:2.66-5ubuntu2.1) ...
+2025-03-06T22:50:34.4897737Z Selecting previously unselected package libcap-dev:amd64.
+2025-03-06T22:50:34.5032897Z Preparing to unpack .../04-libcap-dev_1%3a2.66-5ubuntu2.2_amd64.deb ...
+2025-03-06T22:50:34.5046510Z Unpacking libcap-dev:amd64 (1:2.66-5ubuntu2.2) ...
+2025-03-06T22:50:34.5479865Z Selecting previously unselected package libev4t64:amd64.
+2025-03-06T22:50:34.5614479Z Preparing to unpack .../05-libev4t64_1%3a4.33-2.1build1_amd64.deb ...
+2025-03-06T22:50:34.5625880Z Unpacking libev4t64:amd64 (1:4.33-2.1build1) ...
+2025-03-06T22:50:34.5844160Z Selecting previously unselected package libuv1-dev:amd64.
+2025-03-06T22:50:34.5978872Z Preparing to unpack .../06-libuv1-dev_1.48.0-1.1build1_amd64.deb ...
+2025-03-06T22:50:34.5990978Z Unpacking libuv1-dev:amd64 (1.48.0-1.1build1) ...
+2025-03-06T22:50:34.6284404Z Selecting previously unselected package libwebsockets-evlib-ev:amd64.
+2025-03-06T22:50:34.6419891Z Preparing to unpack .../07-libwebsockets-evlib-ev_4.3.3-1.1build3_amd64.deb ...
+2025-03-06T22:50:34.6430487Z Unpacking libwebsockets-evlib-ev:amd64 (4.3.3-1.1build3) ...
+2025-03-06T22:50:34.6635239Z Selecting previously unselected package libwebsockets-evlib-uv:amd64.
+2025-03-06T22:50:34.6767871Z Preparing to unpack .../08-libwebsockets-evlib-uv_4.3.3-1.1build3_amd64.deb ...
+2025-03-06T22:50:34.6777160Z Unpacking libwebsockets-evlib-uv:amd64 (4.3.3-1.1build3) ...
+2025-03-06T22:50:34.6982179Z Selecting previously unselected package libwebsockets-evlib-glib:amd64.
+2025-03-06T22:50:34.7114832Z Preparing to unpack .../09-libwebsockets-evlib-glib_4.3.3-1.1build3_amd64.deb ...
+2025-03-06T22:50:34.7125604Z Unpacking libwebsockets-evlib-glib:amd64 (4.3.3-1.1build3) ...
+2025-03-06T22:50:34.7333418Z Selecting previously unselected package libev-dev:amd64.
+2025-03-06T22:50:34.7465993Z Preparing to unpack .../10-libev-dev_1%3a4.33-2.1build1_amd64.deb ...
+2025-03-06T22:50:34.7476742Z Unpacking libev-dev:amd64 (1:4.33-2.1build1) ...
+2025-03-06T22:50:34.7701294Z Selecting previously unselected package libwebsockets-dev:amd64.
+2025-03-06T22:50:34.7843695Z Preparing to unpack .../11-libwebsockets-dev_4.3.3-1.1build3_amd64.deb ...
+2025-03-06T22:50:34.7854184Z Unpacking libwebsockets-dev:amd64 (4.3.3-1.1build3) ...
+2025-03-06T22:50:34.8349118Z Selecting previously unselected package mosquitto-clients.
+2025-03-06T22:50:34.8482664Z Preparing to unpack .../12-mosquitto-clients_2.0.18-1build3_amd64.deb ...
+2025-03-06T22:50:34.8491825Z Unpacking mosquitto-clients (2.0.18-1build3) ...
+2025-03-06T22:50:34.8931340Z Setting up libuv1-dev:amd64 (1.48.0-1.1build1) ...
+2025-03-06T22:50:34.8958898Z Setting up libev4t64:amd64 (1:4.33-2.1build1) ...
+2025-03-06T22:50:34.8989750Z Setting up libmosquitto1:amd64 (2.0.18-1build3) ...
+2025-03-06T22:50:34.9016798Z Setting up libcjson1:amd64 (1.7.17-1) ...
+2025-03-06T22:50:34.9042790Z Setting up libwebsockets19t64:amd64 (4.3.3-1.1build3) ...
+2025-03-06T22:50:34.9069013Z Setting up libcap2-bin (1:2.66-5ubuntu2.2) ...
+2025-03-06T22:50:34.9095933Z Setting up mosquitto-clients (2.0.18-1build3) ...
+2025-03-06T22:50:34.9124728Z Setting up libdlt2:amd64 (2.18.10-10) ...
+2025-03-06T22:50:34.9247120Z Setting up libev-dev:amd64 (1:4.33-2.1build1) ...
+2025-03-06T22:50:34.9272143Z Setting up libcap-dev:amd64 (1:2.66-5ubuntu2.2) ...
+2025-03-06T22:50:34.9297811Z Setting up libpam-cap:amd64 (1:2.66-5ubuntu2.2) ...
+2025-03-06T22:50:35.0588510Z Setting up libwebsockets-evlib-glib:amd64 (4.3.3-1.1build3) ...
+2025-03-06T22:50:35.0616424Z Setting up libwebsockets-evlib-ev:amd64 (4.3.3-1.1build3) ...
+2025-03-06T22:50:35.0647068Z Setting up libwebsockets-evlib-uv:amd64 (4.3.3-1.1build3) ...
+2025-03-06T22:50:35.0671733Z Setting up mosquitto (2.0.18-1build3) ...
+2025-03-06T22:50:35.5840760Z Created symlink /etc/systemd/system/multi-user.target.wants/mosquitto.service → /usr/lib/systemd/system/mosquitto.service.
+2025-03-06T22:50:35.5841473Z 
+2025-03-06T22:50:35.9000301Z Setting up libwebsockets-dev:amd64 (4.3.3-1.1build3) ...
+2025-03-06T22:50:35.9031914Z Processing triggers for man-db (2.12.0-4build2) ...
+2025-03-06T22:50:43.3797865Z Processing triggers for libc-bin (2.39-0ubuntu8.4) ...
+2025-03-06T22:50:44.0635051Z 
+2025-03-06T22:50:44.0635527Z Running kernel seems to be up-to-date.
+2025-03-06T22:50:44.0635775Z 
+2025-03-06T22:50:44.0635861Z Restarting services...
+2025-03-06T22:50:44.1584624Z  /etc/needrestart/restart.d/systemd-manager
+2025-03-06T22:50:44.4953046Z  systemctl restart chrony.service multipathd.service packagekit.service php8.3-fpm.service polkit.service rsyslog.service systemd-journald.service systemd-networkd.service systemd-resolved.service systemd-udevd.service udisks2.service walinuxagent.service
+2025-03-06T22:50:44.8400170Z 
+2025-03-06T22:50:44.8402214Z Service restarts being deferred:
+2025-03-06T22:50:44.8403287Z  systemctl restart ModemManager.service
+2025-03-06T22:50:44.8404406Z  /etc/needrestart/restart.d/dbus.service
+2025-03-06T22:50:44.8405216Z  systemctl restart docker.service
+2025-03-06T22:50:44.8406014Z  systemctl restart networkd-dispatcher.service
+2025-03-06T22:50:44.8408120Z  systemctl restart runner-provisioner.service
+2025-03-06T22:50:44.8408692Z  systemctl restart systemd-logind.service
+2025-03-06T22:50:44.8409046Z 
+2025-03-06T22:50:44.8409216Z No containers need to be restarted.
+2025-03-06T22:50:44.8409518Z 
+2025-03-06T22:50:44.8409687Z User sessions running outdated binaries:
+2025-03-06T22:50:44.8414676Z  runner @ user manager service: systemd[1075]
+2025-03-06T22:50:44.8501942Z 
+2025-03-06T22:50:44.8503459Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2025-03-06T22:50:45.6423342Z ##[group]Run ./autogen.sh
+2025-03-06T22:50:45.6423804Z [36;1m./autogen.sh[0m
+2025-03-06T22:50:45.6424201Z [36;1m./configure --enable-websocket[0m
+2025-03-06T22:50:45.6424650Z [36;1mmake[0m
+2025-03-06T22:50:45.6492610Z shell: /usr/bin/bash -e {0}
+2025-03-06T22:50:45.6493009Z ##[endgroup]
+2025-03-06T22:50:45.6578151Z Making missing build-aux directory.
+2025-03-06T22:50:45.6589227Z Touching missing build-aux/config.rpath file.
+2025-03-06T22:50:45.7108100Z autoreconf: export WARNINGS=
+2025-03-06T22:50:45.7125136Z autoreconf: Entering directory '.'
+2025-03-06T22:50:45.7131778Z autoreconf: configure.ac: not using Gettext
+2025-03-06T22:50:46.7134878Z autoreconf: running: aclocal --force -I m4
+2025-03-06T22:50:47.6471933Z autoreconf: configure.ac: tracing
+2025-03-06T22:50:47.9761519Z autoreconf: running: libtoolize --copy --force
+2025-03-06T22:50:48.0848903Z libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, 'build-aux'.
+2025-03-06T22:50:48.0850064Z libtoolize: copying file 'build-aux/ltmain.sh'
+2025-03-06T22:50:48.1079792Z libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+2025-03-06T22:50:48.1080372Z libtoolize: copying file 'm4/libtool.m4'
+2025-03-06T22:50:48.1654453Z libtoolize: copying file 'm4/ltoptions.m4'
+2025-03-06T22:50:48.2238161Z libtoolize: copying file 'm4/ltsugar.m4'
+2025-03-06T22:50:48.2818571Z libtoolize: copying file 'm4/ltversion.m4'
+2025-03-06T22:50:48.3406810Z libtoolize: copying file 'm4/lt~obsolete.m4'
+2025-03-06T22:50:48.4001630Z autoreconf: configure.ac: not using Intltool
+2025-03-06T22:50:48.4002168Z autoreconf: configure.ac: not using Gtkdoc
+2025-03-06T22:50:48.4002489Z autoreconf: running: aclocal --force -I m4
+2025-03-06T22:50:49.2012819Z autoreconf: running: /usr/bin/autoconf --force
+2025-03-06T22:50:49.6149040Z autoreconf: running: /usr/bin/autoheader --force
+2025-03-06T22:50:49.9468298Z autoreconf: running: automake --add-missing --copy --force-missing
+2025-03-06T22:50:50.2625636Z configure.ac:46: installing 'build-aux/compile'
+2025-03-06T22:50:50.2653328Z configure.ac:21: installing 'build-aux/config.guess'
+2025-03-06T22:50:50.2673757Z configure.ac:21: installing 'build-aux/config.sub'
+2025-03-06T22:50:50.2745400Z configure.ac:24: installing 'build-aux/install-sh'
+2025-03-06T22:50:50.2766822Z configure.ac:24: installing 'build-aux/missing'
+2025-03-06T22:50:50.3441953Z Makefile.am: installing 'build-aux/depcomp'
+2025-03-06T22:50:50.4522511Z parallel-tests: installing 'build-aux/test-driver'
+2025-03-06T22:50:50.4808772Z autoreconf: Leaving directory '.'
+2025-03-06T22:50:50.5579415Z checking for pkg-config... /usr/bin/pkg-config
+2025-03-06T22:50:50.5593957Z checking pkg-config is at least version 0.9.0... yes
+2025-03-06T22:50:50.6256277Z checking build system type... x86_64-pc-linux-gnu
+2025-03-06T22:50:50.6257410Z checking host system type... x86_64-pc-linux-gnu
+2025-03-06T22:50:50.6258836Z checking target system type... x86_64-pc-linux-gnu
+2025-03-06T22:50:50.6339544Z checking for a BSD-compatible install... /usr/bin/install -c
+2025-03-06T22:50:50.6366243Z checking whether build environment is sane... yes
+2025-03-06T22:50:50.6442015Z checking for a race-free mkdir -p... /usr/bin/mkdir -p
+2025-03-06T22:50:50.6445852Z checking for gawk... gawk
+2025-03-06T22:50:50.6520779Z checking whether make sets $(MAKE)... yes
+2025-03-06T22:50:50.6570417Z checking whether make supports nested variables... yes
+2025-03-06T22:50:50.6613928Z checking whether UID '1001' is supported by ustar format... yes
+2025-03-06T22:50:50.6614777Z checking whether GID '118' is supported by ustar format... yes
+2025-03-06T22:50:50.6735921Z checking how to create a ustar tar archive... gnutar
+2025-03-06T22:50:50.6780606Z checking how to print strings... printf
+2025-03-06T22:50:50.6849659Z checking whether make supports the include directive... yes (GNU style)
+2025-03-06T22:50:50.6854354Z checking for gcc... gcc
+2025-03-06T22:50:50.7547416Z checking whether the C compiler works... yes
+2025-03-06T22:50:50.7548209Z checking for C compiler default output file name... a.out
+2025-03-06T22:50:50.7823252Z checking for suffix of executables... 
+2025-03-06T22:50:50.8241961Z checking whether we are cross compiling... no
+2025-03-06T22:50:50.8403332Z checking for suffix of object files... o
+2025-03-06T22:50:50.8543276Z checking whether the compiler supports GNU C... yes
+2025-03-06T22:50:50.8686304Z checking whether gcc accepts -g... yes
+2025-03-06T22:50:50.9056807Z checking for gcc option to enable C11 features... none needed
+2025-03-06T22:50:50.9307115Z checking whether gcc understands -c and -o together... yes
+2025-03-06T22:50:50.9566526Z checking dependency style of gcc... gcc3
+2025-03-06T22:50:50.9605179Z checking for a sed that does not truncate output... /usr/bin/sed
+2025-03-06T22:50:50.9635444Z checking for grep that handles long lines and -e... /usr/bin/grep
+2025-03-06T22:50:50.9649294Z checking for egrep... /usr/bin/grep -E
+2025-03-06T22:50:50.9663236Z checking for fgrep... /usr/bin/grep -F
+2025-03-06T22:50:50.9712458Z checking for ld used by gcc... /usr/bin/ld
+2025-03-06T22:50:50.9735285Z checking if the linker (/usr/bin/ld) is GNU ld... yes
+2025-03-06T22:50:50.9761619Z checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+2025-03-06T22:50:51.6369894Z checking the name lister (/usr/bin/nm -B) interface... BSD nm
+2025-03-06T22:50:51.6370645Z checking whether ln -s works... yes
+2025-03-06T22:50:51.6418277Z checking the maximum length of command line arguments... 3145728
+2025-03-06T22:50:51.6444256Z checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+2025-03-06T22:50:51.6445560Z checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+2025-03-06T22:50:51.6446726Z checking for /usr/bin/ld option to reload object files... -r
+2025-03-06T22:50:51.6451718Z checking for file... file
+2025-03-06T22:50:51.6456570Z checking for objdump... objdump
+2025-03-06T22:50:51.6459526Z checking how to recognize dependent libraries... pass_all
+2025-03-06T22:50:51.6464708Z checking for dlltool... no
+2025-03-06T22:50:51.6465941Z checking how to associate runtime and link libraries... printf %s\n
+2025-03-06T22:50:51.6469444Z checking for ar... ar
+2025-03-06T22:50:51.7044999Z checking for archiver @FILE support... @
+2025-03-06T22:50:51.7049110Z checking for strip... strip
+2025-03-06T22:50:51.7053956Z checking for ranlib... ranlib
+2025-03-06T22:50:51.7945868Z checking command to parse /usr/bin/nm -B output from gcc object... ok
+2025-03-06T22:50:51.7960694Z checking for sysroot... no
+2025-03-06T22:50:51.8001621Z checking for a working dd... /usr/bin/dd
+2025-03-06T22:50:51.8038235Z checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+2025-03-06T22:50:51.8208180Z checking for mt... mt
+2025-03-06T22:50:51.8317033Z checking if mt is a manifest tool... no
+2025-03-06T22:50:51.8465152Z checking for stdio.h... yes
+2025-03-06T22:50:51.8670829Z checking for stdlib.h... yes
+2025-03-06T22:50:51.8853388Z checking for string.h... yes
+2025-03-06T22:50:51.9041646Z checking for inttypes.h... yes
+2025-03-06T22:50:51.9218975Z checking for stdint.h... yes
+2025-03-06T22:50:51.9397441Z checking for strings.h... yes
+2025-03-06T22:50:51.9584386Z checking for sys/stat.h... yes
+2025-03-06T22:50:51.9767280Z checking for sys/types.h... yes
+2025-03-06T22:50:51.9976414Z checking for unistd.h... yes
+2025-03-06T22:50:52.0178112Z checking for dlfcn.h... yes
+2025-03-06T22:50:52.0214679Z checking for objdir... .libs
+2025-03-06T22:50:52.0818564Z checking if gcc supports -fno-rtti -fno-exceptions... no
+2025-03-06T22:50:52.0819261Z checking for gcc option to produce PIC... -fPIC -DPIC
+2025-03-06T22:50:52.0966067Z checking if gcc PIC flag -fPIC -DPIC works... yes
+2025-03-06T22:50:52.5576735Z checking if gcc static flag -static works... yes
+2025-03-06T22:50:52.5799296Z checking if gcc supports -c -o file.o... yes
+2025-03-06T22:50:52.5799922Z checking if gcc supports -c -o file.o... (cached) yes
+2025-03-06T22:50:52.5895917Z checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+2025-03-06T22:50:52.6100680Z checking whether -lc should be explicitly linked in... no
+2025-03-06T22:50:52.6607796Z checking dynamic linker characteristics... GNU/Linux ld.so
+2025-03-06T22:50:52.6608610Z checking how to hardcode library paths into programs... immediate
+2025-03-06T22:50:52.6641048Z checking whether stripping libraries is possible... yes
+2025-03-06T22:50:52.6641985Z checking if libtool supports shared libraries... yes
+2025-03-06T22:50:52.6642552Z checking whether to build shared libraries... yes
+2025-03-06T22:50:52.6643075Z checking whether to build static libraries... no
+2025-03-06T22:50:52.6793391Z checking whether the -Werror option is usable... yes
+2025-03-06T22:50:52.6940092Z checking for simple visibility declarations... yes
+2025-03-06T22:50:52.6942942Z checking whether make supports nested variables... (cached) yes
+2025-03-06T22:50:52.6945812Z checking for gcc... (cached) gcc
+2025-03-06T22:50:52.7184446Z checking whether the compiler supports GNU C... (cached) yes
+2025-03-06T22:50:52.7186003Z checking whether gcc accepts -g... (cached) yes
+2025-03-06T22:50:52.7188438Z checking for gcc option to enable C11 features... (cached) none needed
+2025-03-06T22:50:52.7192183Z checking whether gcc understands -c and -o together... (cached) yes
+2025-03-06T22:50:52.7195052Z checking dependency style of gcc... (cached) gcc3
+2025-03-06T22:50:52.7618610Z checking size of long long... 8
+2025-03-06T22:50:52.8036672Z checking size of long... 8
+2025-03-06T22:50:52.8308933Z checking for arpa/inet.h... yes
+2025-03-06T22:50:52.8515495Z checking for fcntl.h... yes
+2025-03-06T22:50:52.8735618Z checking for limits.h... yes
+2025-03-06T22:50:52.8977156Z checking for netdb.h... yes
+2025-03-06T22:50:52.9191258Z checking for netinet/in.h... yes
+2025-03-06T22:50:52.9388800Z checking for stddef.h... yes
+2025-03-06T22:50:52.9597920Z checking for time.h... yes
+2025-03-06T22:50:52.9822330Z checking for sys/ioctl.h... yes
+2025-03-06T22:50:53.0032520Z checking for sys/socket.h... yes
+2025-03-06T22:50:53.0240424Z checking for sys/time.h... yes
+2025-03-06T22:50:53.0453979Z checking for errno.h... yes
+2025-03-06T22:50:53.0658941Z checking for sys/un.h... yes
+2025-03-06T22:50:53.0975366Z checking for gethostbyname... yes
+2025-03-06T22:50:53.1290577Z checking for getaddrinfo... yes
+2025-03-06T22:50:53.1604967Z checking for gettimeofday... yes
+2025-03-06T22:50:53.1917754Z checking for inet_ntoa... yes
+2025-03-06T22:50:53.2268429Z checking for memset... yes
+2025-03-06T22:50:53.2586247Z checking for socket... yes
+2025-03-06T22:50:53.2901335Z checking for signal... yes
+2025-03-06T22:50:53.3214463Z checking for rand... yes
+2025-03-06T22:50:53.3459276Z checking for socket in -lnetwork... no
+2025-03-06T22:50:53.3459853Z checking for wolfSSL... configure: prefix NONE
+2025-03-06T22:50:53.3462289Z checking for debug... no
+2025-03-06T22:50:53.3672600Z checking how to run the C preprocessor... gcc -E
+2025-03-06T22:50:53.3954597Z checking whether gcc is Clang... no
+2025-03-06T22:50:53.4374263Z checking whether pthreads work with "-pthread" and "-lpthread"... yes
+2025-03-06T22:50:53.4710946Z checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
+2025-03-06T22:50:53.4711967Z checking whether more special flags are required for pthreads... no
+2025-03-06T22:50:53.5052457Z checking for PTHREAD_PRIO_INHERIT... yes
+2025-03-06T22:50:53.5299371Z checking for wolfCrypt_Init in -lwolfssl... no
+2025-03-06T22:50:53.5300453Z configure: error: libwolfssl is required and wasn't found on the system. It can be obtained from https://www.wolfssl.com/download.html/.
+2025-03-06T22:50:53.5616458Z ##[error]Process completed with exit code 1.
+2025-03-06T22:50:53.5714012Z Post job cleanup.
+2025-03-06T22:50:53.6417083Z [command]/usr/bin/git version
+2025-03-06T22:50:53.6451267Z git version 2.48.1
+2025-03-06T22:50:53.6493942Z Temporarily overriding HOME='/home/runner/work/_temp/3207503c-2791-4fdc-ae6b-075ca8bbd792' before making global git config changes
+2025-03-06T22:50:53.6495569Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-06T22:50:53.6498705Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/wolfMQTT/wolfMQTT
+2025-03-06T22:50:53.6529519Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-06T22:50:53.6558174Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-06T22:50:53.6781005Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-06T22:50:53.6800291Z http.https://github.com/.extraheader
+2025-03-06T22:50:53.6811751Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-06T22:50:53.6839006Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-06T22:50:53.7159039Z Cleaning up orphan processes

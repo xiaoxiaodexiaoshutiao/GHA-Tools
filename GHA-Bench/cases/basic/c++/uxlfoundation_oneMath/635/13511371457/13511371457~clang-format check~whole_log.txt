@@ -1,0 +1,275 @@
+2025-02-27T09:11:14.3098653Z Requested labels: ubuntu-latest
+2025-02-27T09:11:14.3098932Z Job defined at: uxlfoundation/oneMath/.github/workflows/pr.yml@refs/pull/635/merge
+2025-02-27T09:11:14.3099093Z Waiting for a runner to pick up this job...
+2025-02-27T09:11:16.2553933Z Job is waiting for a hosted runner to come online.
+2025-02-27T09:11:18.4629898Z Job is about to start running on the hosted runner: GitHub Actions 63 (hosted)
+2025-02-27T09:11:20.2704504Z Current runner version: '2.322.0'
+2025-02-27T09:11:20.2729607Z ##[group]Operating System
+2025-02-27T09:11:20.2730387Z Ubuntu
+2025-02-27T09:11:20.2730992Z 24.04.2
+2025-02-27T09:11:20.2731507Z LTS
+2025-02-27T09:11:20.2731938Z ##[endgroup]
+2025-02-27T09:11:20.2732527Z ##[group]Runner Image
+2025-02-27T09:11:20.2733103Z Image: ubuntu-24.04
+2025-02-27T09:11:20.2733605Z Version: 20250223.1.0
+2025-02-27T09:11:20.2734693Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250223.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-27T09:11:20.2736063Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250223.1
+2025-02-27T09:11:20.2736901Z ##[endgroup]
+2025-02-27T09:11:20.2737665Z ##[group]Runner Image Provisioner
+2025-02-27T09:11:20.2738272Z 2.0.422.1
+2025-02-27T09:11:20.2738896Z ##[endgroup]
+2025-02-27T09:11:20.2740999Z ##[group]GITHUB_TOKEN Permissions
+2025-02-27T09:11:20.2743079Z Actions: read
+2025-02-27T09:11:20.2743941Z Attestations: read
+2025-02-27T09:11:20.2744648Z Checks: read
+2025-02-27T09:11:20.2745129Z Contents: read
+2025-02-27T09:11:20.2745682Z Deployments: read
+2025-02-27T09:11:20.2746259Z Discussions: read
+2025-02-27T09:11:20.2746764Z Issues: read
+2025-02-27T09:11:20.2747555Z Metadata: read
+2025-02-27T09:11:20.2748200Z Packages: read
+2025-02-27T09:11:20.2748736Z Pages: read
+2025-02-27T09:11:20.2749217Z PullRequests: read
+2025-02-27T09:11:20.2749821Z RepositoryProjects: read
+2025-02-27T09:11:20.2750409Z SecurityEvents: read
+2025-02-27T09:11:20.2750888Z Statuses: read
+2025-02-27T09:11:20.2751441Z ##[endgroup]
+2025-02-27T09:11:20.2754522Z Secret source: None
+2025-02-27T09:11:20.2755593Z Prepare workflow directory
+2025-02-27T09:11:20.3221983Z Prepare all required actions
+2025-02-27T09:11:20.3260513Z Getting action download info
+2025-02-27T09:11:20.5740188Z Download action repository 'actions/checkout@44c2b7a8a4ea60a981eaca3cf939b5f4305c123b' (SHA:44c2b7a8a4ea60a981eaca3cf939b5f4305c123b)
+2025-02-27T09:11:20.7287851Z Download action repository 'actions/setup-python@f677139bbe7f9c59b41e40162b753c062f5d49a3' (SHA:f677139bbe7f9c59b41e40162b753c062f5d49a3)
+2025-02-27T09:11:20.9435735Z Complete job name: clang-format check
+2025-02-27T09:11:21.0174669Z ##[group]Run actions/checkout@44c2b7a8a4ea60a981eaca3cf939b5f4305c123b
+2025-02-27T09:11:21.0175758Z with:
+2025-02-27T09:11:21.0176211Z   repository: uxlfoundation/oneMath
+2025-02-27T09:11:21.0176927Z   token: ***
+2025-02-27T09:11:21.0177623Z   ssh-strict: true
+2025-02-27T09:11:21.0178065Z   ssh-user: git
+2025-02-27T09:11:21.0178514Z   persist-credentials: true
+2025-02-27T09:11:21.0179014Z   clean: true
+2025-02-27T09:11:21.0179454Z   sparse-checkout-cone-mode: true
+2025-02-27T09:11:21.0179987Z   fetch-depth: 1
+2025-02-27T09:11:21.0180424Z   fetch-tags: false
+2025-02-27T09:11:21.0180872Z   show-progress: true
+2025-02-27T09:11:21.0181311Z   lfs: false
+2025-02-27T09:11:21.0181722Z   submodules: false
+2025-02-27T09:11:21.0182174Z   set-safe-directory: true
+2025-02-27T09:11:21.0182915Z env:
+2025-02-27T09:11:21.0183365Z   CTEST_OUTPUT_ON_FAILURE: 1
+2025-02-27T09:11:21.0183893Z   LAPACK_VERSION: 3.12.0
+2025-02-27T09:11:21.0184382Z   PARALLEL: -j 2
+2025-02-27T09:11:21.0184849Z ##[endgroup]
+2025-02-27T09:11:21.2648399Z Syncing repository: uxlfoundation/oneMath
+2025-02-27T09:11:21.2650911Z ##[group]Getting Git version info
+2025-02-27T09:11:21.2651934Z Working directory is '/home/runner/work/oneMath/oneMath'
+2025-02-27T09:11:21.2653481Z [command]/usr/bin/git version
+2025-02-27T09:11:21.2769062Z git version 2.48.1
+2025-02-27T09:11:21.2805351Z ##[endgroup]
+2025-02-27T09:11:21.2823137Z Temporarily overriding HOME='/home/runner/work/_temp/8a782f93-33e9-44ff-8484-23742f128052' before making global git config changes
+2025-02-27T09:11:21.2827998Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-27T09:11:21.2831956Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/oneMath/oneMath
+2025-02-27T09:11:21.2874886Z Deleting the contents of '/home/runner/work/oneMath/oneMath'
+2025-02-27T09:11:21.2879640Z ##[group]Initializing the repository
+2025-02-27T09:11:21.2885736Z [command]/usr/bin/git init /home/runner/work/oneMath/oneMath
+2025-02-27T09:11:21.2988427Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-27T09:11:21.2991258Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-27T09:11:21.2992850Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-27T09:11:21.2993997Z hint:
+2025-02-27T09:11:21.2995154Z hint: 	git config --global init.defaultBranch <name>
+2025-02-27T09:11:21.2997948Z hint:
+2025-02-27T09:11:21.2999181Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-27T09:11:21.3001138Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-27T09:11:21.3002710Z hint:
+2025-02-27T09:11:21.3003640Z hint: 	git branch -m <name>
+2025-02-27T09:11:21.3005157Z Initialized empty Git repository in /home/runner/work/oneMath/oneMath/.git/
+2025-02-27T09:11:21.3011603Z [command]/usr/bin/git remote add origin https://github.com/uxlfoundation/oneMath
+2025-02-27T09:11:21.3048901Z ##[endgroup]
+2025-02-27T09:11:21.3050323Z ##[group]Disabling automatic garbage collection
+2025-02-27T09:11:21.3053132Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-27T09:11:21.3084289Z ##[endgroup]
+2025-02-27T09:11:21.3085589Z ##[group]Setting up auth
+2025-02-27T09:11:21.3091717Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-27T09:11:21.3123522Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-27T09:11:21.3491973Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-27T09:11:21.3523247Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-27T09:11:21.3748538Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-27T09:11:21.3793325Z ##[endgroup]
+2025-02-27T09:11:21.3796302Z ##[group]Fetching the repository
+2025-02-27T09:11:21.3804989Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +42e4041f6a02af4fc953c3a89e65119b5a8fd6ab:refs/remotes/pull/635/merge
+2025-02-27T09:11:22.1576671Z From https://github.com/uxlfoundation/oneMath
+2025-02-27T09:11:22.1578882Z  * [new ref]         42e4041f6a02af4fc953c3a89e65119b5a8fd6ab -> pull/635/merge
+2025-02-27T09:11:22.1603516Z ##[endgroup]
+2025-02-27T09:11:22.1604606Z ##[group]Determining the checkout info
+2025-02-27T09:11:22.1605999Z ##[endgroup]
+2025-02-27T09:11:22.1612173Z [command]/usr/bin/git sparse-checkout disable
+2025-02-27T09:11:22.1654366Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-27T09:11:22.1683275Z ##[group]Checking out the ref
+2025-02-27T09:11:22.1686890Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/635/merge
+2025-02-27T09:11:22.2359405Z Note: switching to 'refs/remotes/pull/635/merge'.
+2025-02-27T09:11:22.2360566Z 
+2025-02-27T09:11:22.2361358Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-27T09:11:22.2363196Z changes and commit them, and you can discard any commits you make in this
+2025-02-27T09:11:22.2364844Z state without impacting any branches by switching back to a branch.
+2025-02-27T09:11:22.2365834Z 
+2025-02-27T09:11:22.2366661Z If you want to create a new branch to retain commits you create, you may
+2025-02-27T09:11:22.2369463Z do so (now or later) by using -c with the switch command. Example:
+2025-02-27T09:11:22.2370888Z 
+2025-02-27T09:11:22.2371500Z   git switch -c <new-branch-name>
+2025-02-27T09:11:22.2372718Z 
+2025-02-27T09:11:22.2373349Z Or undo this operation with:
+2025-02-27T09:11:22.2374694Z 
+2025-02-27T09:11:22.2375208Z   git switch -
+2025-02-27T09:11:22.2375982Z 
+2025-02-27T09:11:22.2377407Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-27T09:11:22.2379363Z 
+2025-02-27T09:11:22.2381523Z HEAD is now at 42e4041 Merge 4c21de8246f86d03fd5c9574bf4fe44cb4137162 into af66e5ec23913030e3dbb577a176377a07070e14
+2025-02-27T09:11:22.2386754Z ##[endgroup]
+2025-02-27T09:11:22.2411906Z [command]/usr/bin/git log -1 --format='%H'
+2025-02-27T09:11:22.2434528Z '42e4041f6a02af4fc953c3a89e65119b5a8fd6ab'
+2025-02-27T09:11:22.2818527Z ##[group]Run actions/setup-python@f677139bbe7f9c59b41e40162b753c062f5d49a3
+2025-02-27T09:11:22.2820252Z with:
+2025-02-27T09:11:22.2821131Z   python-version: 3.10
+2025-02-27T09:11:22.2822131Z   cache: pip
+2025-02-27T09:11:22.2823032Z   check-latest: false
+2025-02-27T09:11:22.2824294Z   token: ***
+2025-02-27T09:11:22.2825226Z   update-environment: true
+2025-02-27T09:11:22.2826318Z   allow-prereleases: false
+2025-02-27T09:11:22.2827487Z env:
+2025-02-27T09:11:22.2828357Z   CTEST_OUTPUT_ON_FAILURE: 1
+2025-02-27T09:11:22.2829441Z   LAPACK_VERSION: 3.12.0
+2025-02-27T09:11:22.2830450Z   PARALLEL: -j 2
+2025-02-27T09:11:22.2831334Z ##[endgroup]
+2025-02-27T09:11:22.4449052Z ##[group]Installed versions
+2025-02-27T09:11:22.4509265Z Successfully set up CPython (3.10.16)
+2025-02-27T09:11:22.4517069Z ##[endgroup]
+2025-02-27T09:11:22.5701327Z [command]/opt/hostedtoolcache/Python/3.10.16/x64/bin/pip cache dir
+2025-02-27T09:11:22.8334915Z /home/runner/.cache/pip
+2025-02-27T09:11:23.5923525Z Cache Size: ~9 MB (9377212 B)
+2025-02-27T09:11:23.5946871Z [command]/usr/bin/tar -xf /home/runner/work/_temp/2723646d-b469-4725-93e8-1844fc0334a4/cache.tzst -P -C /home/runner/work/oneMath/oneMath --use-compress-program unzstd
+2025-02-27T09:11:23.6194286Z Cache restored successfully
+2025-02-27T09:11:23.6220880Z Cache restored from key: setup-python-Linux-x64-24.04-Ubuntu-python-3.10.16-pip-dfdf661025288a0c49643543fe19fc0d53a12640da24f773114faae99b960284
+2025-02-27T09:11:24.1232167Z Received 9377212 of 9377212 (100.0%), 8.9 MBs/sec
+2025-02-27T09:11:24.1371412Z ##[group]Run pip install pre-commit
+2025-02-27T09:11:24.1371776Z [36;1mpip install pre-commit[0m
+2025-02-27T09:11:24.1425059Z shell: /usr/bin/bash -e {0}
+2025-02-27T09:11:24.1425329Z env:
+2025-02-27T09:11:24.1425530Z   CTEST_OUTPUT_ON_FAILURE: 1
+2025-02-27T09:11:24.1425791Z   LAPACK_VERSION: 3.12.0
+2025-02-27T09:11:24.1426019Z   PARALLEL: -j 2
+2025-02-27T09:11:24.1426310Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-27T09:11:24.1426748Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib/pkgconfig
+2025-02-27T09:11:24.1427363Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-27T09:11:24.1427773Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-27T09:11:24.1428141Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-27T09:11:24.1428504Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib
+2025-02-27T09:11:24.1428818Z ##[endgroup]
+2025-02-27T09:11:24.7693124Z Collecting pre-commit
+2025-02-27T09:11:24.7707511Z   Using cached pre_commit-4.1.0-py2.py3-none-any.whl.metadata (1.3 kB)
+2025-02-27T09:11:24.7828677Z Collecting cfgv>=2.0.0 (from pre-commit)
+2025-02-27T09:11:24.7841182Z   Using cached cfgv-3.4.0-py2.py3-none-any.whl.metadata (8.5 kB)
+2025-02-27T09:11:24.8350817Z Collecting identify>=1.0.0 (from pre-commit)
+2025-02-27T09:11:24.8364131Z   Using cached identify-2.6.8-py2.py3-none-any.whl.metadata (4.4 kB)
+2025-02-27T09:11:24.8519084Z Collecting nodeenv>=0.11.1 (from pre-commit)
+2025-02-27T09:11:24.8532381Z   Using cached nodeenv-1.9.1-py2.py3-none-any.whl.metadata (21 kB)
+2025-02-27T09:11:24.8838287Z Collecting pyyaml>=5.1 (from pre-commit)
+2025-02-27T09:11:24.8855973Z   Using cached PyYAML-6.0.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+2025-02-27T09:11:24.9252168Z Collecting virtualenv>=20.10.0 (from pre-commit)
+2025-02-27T09:11:24.9265398Z   Using cached virtualenv-20.29.2-py3-none-any.whl.metadata (4.5 kB)
+2025-02-27T09:11:24.9444307Z Collecting distlib<1,>=0.3.7 (from virtualenv>=20.10.0->pre-commit)
+2025-02-27T09:11:24.9457505Z   Using cached distlib-0.3.9-py2.py3-none-any.whl.metadata (5.2 kB)
+2025-02-27T09:11:24.9625701Z Collecting filelock<4,>=3.12.2 (from virtualenv>=20.10.0->pre-commit)
+2025-02-27T09:11:24.9639332Z   Using cached filelock-3.17.0-py3-none-any.whl.metadata (2.9 kB)
+2025-02-27T09:11:24.9808587Z Collecting platformdirs<5,>=3.9.1 (from virtualenv>=20.10.0->pre-commit)
+2025-02-27T09:11:24.9821392Z   Using cached platformdirs-4.3.6-py3-none-any.whl.metadata (11 kB)
+2025-02-27T09:11:24.9883458Z Using cached pre_commit-4.1.0-py2.py3-none-any.whl (220 kB)
+2025-02-27T09:11:24.9897450Z Using cached cfgv-3.4.0-py2.py3-none-any.whl (7.2 kB)
+2025-02-27T09:11:24.9909793Z Using cached identify-2.6.8-py2.py3-none-any.whl (99 kB)
+2025-02-27T09:11:24.9922810Z Using cached nodeenv-1.9.1-py2.py3-none-any.whl (22 kB)
+2025-02-27T09:11:24.9935466Z Using cached PyYAML-6.0.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (751 kB)
+2025-02-27T09:11:24.9953027Z Using cached virtualenv-20.29.2-py3-none-any.whl (4.3 MB)
+2025-02-27T09:11:24.9997071Z Using cached distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+2025-02-27T09:11:25.0012863Z Using cached filelock-3.17.0-py3-none-any.whl (16 kB)
+2025-02-27T09:11:25.0025291Z Using cached platformdirs-4.3.6-py3-none-any.whl (18 kB)
+2025-02-27T09:11:25.0456577Z Installing collected packages: distlib, pyyaml, platformdirs, nodeenv, identify, filelock, cfgv, virtualenv, pre-commit
+2025-02-27T09:11:25.3962348Z Successfully installed cfgv-3.4.0 distlib-0.3.9 filelock-3.17.0 identify-2.6.8 nodeenv-1.9.1 platformdirs-4.3.6 pre-commit-4.1.0 pyyaml-6.0.2 virtualenv-20.29.2
+2025-02-27T09:11:25.4745955Z ##[group]Run pre-commit run --all-files --show-diff-on-failure --color always
+2025-02-27T09:11:25.4746525Z [36;1mpre-commit run --all-files --show-diff-on-failure --color always[0m
+2025-02-27T09:11:25.4793186Z shell: /usr/bin/bash -e {0}
+2025-02-27T09:11:25.4793429Z env:
+2025-02-27T09:11:25.4793658Z   CTEST_OUTPUT_ON_FAILURE: 1
+2025-02-27T09:11:25.4793934Z   LAPACK_VERSION: 3.12.0
+2025-02-27T09:11:25.4794157Z   PARALLEL: -j 2
+2025-02-27T09:11:25.4794452Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-27T09:11:25.4794885Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib/pkgconfig
+2025-02-27T09:11:25.4795295Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-27T09:11:25.4795665Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-27T09:11:25.4796037Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-27T09:11:25.4796422Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib
+2025-02-27T09:11:25.4796780Z ##[endgroup]
+2025-02-27T09:11:25.6351512Z [INFO][m Initializing environment for https://github.com/pre-commit/mirrors-clang-format.
+2025-02-27T09:11:25.8682483Z [INFO][m Installing environment for https://github.com/pre-commit/mirrors-clang-format.
+2025-02-27T09:11:25.8683724Z [INFO][m Once installed this environment will be reused.
+2025-02-27T09:11:25.8684166Z [INFO][m This may take a few minutes...
+2025-02-27T09:11:37.1471830Z clang-format.............................................................[41mFailed[m
+2025-02-27T09:11:37.1472692Z [2m- hook id: clang-format[m
+2025-02-27T09:11:37.1473109Z [2m- files were modified by this hook[m
+2025-02-27T09:11:37.1473530Z pre-commit hook(s) made changes.
+2025-02-27T09:11:37.1473994Z If you are seeing this message in CI, reproduce locally with: `pre-commit run --all-files`.
+2025-02-27T09:11:37.1474559Z To run `pre-commit` as part of git workflow, use `pre-commit install`.
+2025-02-27T09:11:37.1475166Z All changes made by hooks:
+2025-02-27T09:11:37.2014029Z [1mdiff --git a/tests/unit_tests/blas/include/reference_blas_templates.hpp b/tests/unit_tests/blas/include/reference_blas_templates.hpp[m
+2025-02-27T09:11:37.2015343Z [1mindex 9e45898..4654c38 100644[m
+2025-02-27T09:11:37.2016186Z [1m--- a/tests/unit_tests/blas/include/reference_blas_templates.hpp[m
+2025-02-27T09:11:37.2017854Z [1m+++ b/tests/unit_tests/blas/include/reference_blas_templates.hpp[m
+2025-02-27T09:11:37.2018416Z [36m@@ -1388,7 +1388,7 @@[m [mtemplate <>[m
+2025-02-27T09:11:37.2019169Z  int iamax(const int* n, const float* x, const int* incx, oneapi::math::index_base base) {[m
+2025-02-27T09:11:37.2019775Z      int res = cblas_isamax_wrapper(*n, x, *incx);[m
+2025-02-27T09:11:37.2020315Z      if (base == oneapi::math::index_base::one && *n >= 1 && *incx >= 1)[m
+2025-02-27T09:11:37.2020761Z [31m-      res++;[m
+2025-02-27T09:11:37.2021059Z [32m+[m[32m        res++;[m
+2025-02-27T09:11:37.2021367Z      return res;[m
+2025-02-27T09:11:37.2021626Z  }[m
+2025-02-27T09:11:37.2021863Z  [m
+2025-02-27T09:11:37.2022168Z [36m@@ -1396,7 +1396,7 @@[m [mtemplate <>[m
+2025-02-27T09:11:37.2022795Z  int iamax(const int* n, const double* x, const int* incx, oneapi::math::index_base base) {[m
+2025-02-27T09:11:37.2023400Z      int res = cblas_idamax_wrapper(*n, x, *incx);[m
+2025-02-27T09:11:37.2023936Z      if (base == oneapi::math::index_base::one && *n >= 1 && *incx >= 1)[m
+2025-02-27T09:11:37.2024580Z [31m-      res++;[m
+2025-02-27T09:11:37.2025007Z [32m+[m[32m        res++;[m
+2025-02-27T09:11:37.2025446Z      return res;[m
+2025-02-27T09:11:37.2025824Z  }[m
+2025-02-27T09:11:37.2026150Z  [m
+2025-02-27T09:11:37.2027570Z [36m@@ -1405,7 +1405,7 @@[m [mint iamax(const int* n, const std::complex<float>* x, const int* incx,[m
+2025-02-27T09:11:37.2028475Z            oneapi::math::index_base base) {[m
+2025-02-27T09:11:37.2029183Z      int res = cblas_icamax_wrapper(*n, (const void*)x, *incx);[m
+2025-02-27T09:11:37.2030382Z      if (base == oneapi::math::index_base::one && *n >= 1 && *incx >= 1)[m
+2025-02-27T09:11:37.2031087Z [31m-      res++;[m
+2025-02-27T09:11:37.2031519Z [32m+[m[32m        res++;[m
+2025-02-27T09:11:37.2031976Z      return res;[m
+2025-02-27T09:11:37.2032357Z  }[m
+2025-02-27T09:11:37.2032690Z  [m
+2025-02-27T09:11:37.2033539Z [36m@@ -1414,7 +1414,7 @@[m [mint iamax(const int* n, const std::complex<double>* x, const int* incx,[m
+2025-02-27T09:11:37.2034463Z            oneapi::math::index_base base) {[m
+2025-02-27T09:11:37.2035180Z      int res = cblas_izamax_wrapper(*n, (const void*)x, *incx);[m
+2025-02-27T09:11:37.2036029Z      if (base == oneapi::math::index_base::one && *n >= 1 && *incx >= 1)[m
+2025-02-27T09:11:37.2036681Z [31m-      res++;[m
+2025-02-27T09:11:37.2036971Z [32m+[m[32m        res++;[m
+2025-02-27T09:11:37.2037475Z      return res;[m
+2025-02-27T09:11:37.2037702Z  }[m
+2025-02-27T09:11:37.2037887Z  [m
+2025-02-27T09:11:37.2183335Z ##[error]Process completed with exit code 1.
+2025-02-27T09:11:37.2278471Z Post job cleanup.
+2025-02-27T09:11:37.3207527Z [command]/usr/bin/git version
+2025-02-27T09:11:37.3245102Z git version 2.48.1
+2025-02-27T09:11:37.3297419Z Temporarily overriding HOME='/home/runner/work/_temp/114e912e-4dd5-4afe-9af6-c1bde5b296c6' before making global git config changes
+2025-02-27T09:11:37.3298603Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-27T09:11:37.3302920Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/oneMath/oneMath
+2025-02-27T09:11:37.3340122Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-27T09:11:37.3372823Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-27T09:11:37.3606211Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-27T09:11:37.3627993Z http.https://github.com/.extraheader
+2025-02-27T09:11:37.3640626Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-27T09:11:37.3675363Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-27T09:11:37.4033633Z Cleaning up orphan processes

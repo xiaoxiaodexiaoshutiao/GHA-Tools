@@ -1,0 +1,48 @@
+diff --git a/ui/components/datasetItemWorkspace/src/components/Inspector/ObjectCard.svelte b/ui/components/datasetItemWorkspace/src/components/Inspector/ObjectCard.svelte
+index f5e952e02..de9dc9662 100644
+--- a/ui/components/datasetItemWorkspace/src/components/Inspector/ObjectCard.svelte
++++ b/ui/components/datasetItemWorkspace/src/components/Inspector/ObjectCard.svelte
+@@ -59,9 +59,9 @@ License: CECILL-C
+   let hiddenTrack = entity.is_track ? entity.ui.displayControl.hidden : false;
+ 
+   $: displayName = entity.data.name
+-    ? `${entity.data.name} (${entity.id})`
++    ? `${entity.data.name as string} (${entity.id})`
+     : entity.data.category
+-      ? `${entity.data.category} (${entity.id})`
++      ? `${entity.data.category as string} (${entity.id})`
+       : entity.id;
+ 
+   $: color = $colorScale[1](entity.id);
+diff --git a/ui/components/datasetItemWorkspace/src/components/SaveShape/RelinkAnnotation.svelte b/ui/components/datasetItemWorkspace/src/components/SaveShape/RelinkAnnotation.svelte
+index b1ee20d0c..a0aada7f7 100644
+--- a/ui/components/datasetItemWorkspace/src/components/SaveShape/RelinkAnnotation.svelte
++++ b/ui/components/datasetItemWorkspace/src/components/SaveShape/RelinkAnnotation.svelte
+@@ -57,9 +57,9 @@ License: CECILL-C
+         res.push({
+           id: entity.id,
+           name: entity.data.name
+-            ? `${entity.data.name} (${entity.id})`
++            ? `${entity.data.name as string} (${entity.id})`
+             : entity.data.category
+-              ? `${entity.data.category} (${entity.id})`
++              ? `${entity.data.category as string} (${entity.id})`
+               : entity.id,
+           color: `${$colorScale[1](entity.id)}3a`,
+         });
+diff --git a/ui/components/datasetItemWorkspace/src/components/VideoPlayer/ObjectTrack.svelte b/ui/components/datasetItemWorkspace/src/components/VideoPlayer/ObjectTrack.svelte
+index 2a4dd7eae..1c3340287 100644
+--- a/ui/components/datasetItemWorkspace/src/components/VideoPlayer/ObjectTrack.svelte
++++ b/ui/components/datasetItemWorkspace/src/components/VideoPlayer/ObjectTrack.svelte
+@@ -62,9 +62,9 @@ License: CECILL-C
+   let highlightState: string = "all";
+ 
+   $: displayName = track.data.name
+-    ? `${track.data.name} (${track.id})`
++    ? `${track.data.name as string} (${track.id})`
+     : track.data.category
+-      ? `${track.data.category} (${track.id})`
++      ? `${track.data.category as string} (${track.id})`
+       : track.id;
+ 
+   $: totalWidth = ($lastFrameIndex / ($lastFrameIndex + 1)) * 100;

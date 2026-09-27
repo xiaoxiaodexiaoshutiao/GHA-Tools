@@ -1,0 +1,206 @@
+2025-02-26T12:49:17.4118627Z Requested labels: ubuntu-latest
+2025-02-26T12:49:17.4119018Z Job defined at: Choices-js/Choices/.github/workflows/lint.yml@refs/pull/1279/merge
+2025-02-26T12:49:17.4119161Z Waiting for a runner to pick up this job...
+2025-02-26T12:49:17.8693282Z Job is waiting for a hosted runner to come online.
+2025-02-26T12:49:21.5716183Z Job is about to start running on the hosted runner: GitHub Actions 7 (hosted)
+2025-02-26T12:49:23.9680986Z Current runner version: '2.322.0'
+2025-02-26T12:49:23.9711053Z ##[group]Operating System
+2025-02-26T12:49:23.9711822Z Ubuntu
+2025-02-26T12:49:23.9712431Z 24.04.2
+2025-02-26T12:49:23.9712987Z LTS
+2025-02-26T12:49:23.9713489Z ##[endgroup]
+2025-02-26T12:49:23.9714094Z ##[group]Runner Image
+2025-02-26T12:49:23.9714842Z Image: ubuntu-24.04
+2025-02-26T12:49:23.9715393Z Version: 20250223.1.0
+2025-02-26T12:49:23.9716514Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250223.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-26T12:49:23.9717955Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250223.1
+2025-02-26T12:49:23.9718871Z ##[endgroup]
+2025-02-26T12:49:23.9719494Z ##[group]Runner Image Provisioner
+2025-02-26T12:49:23.9720076Z 2.0.422.1
+2025-02-26T12:49:23.9720568Z ##[endgroup]
+2025-02-26T12:49:23.9722902Z ##[group]GITHUB_TOKEN Permissions
+2025-02-26T12:49:23.9725255Z Actions: write
+2025-02-26T12:49:23.9726102Z Attestations: write
+2025-02-26T12:49:23.9726832Z Checks: write
+2025-02-26T12:49:23.9727393Z Contents: write
+2025-02-26T12:49:23.9727928Z Deployments: write
+2025-02-26T12:49:23.9728549Z Discussions: write
+2025-02-26T12:49:23.9729147Z Issues: write
+2025-02-26T12:49:23.9729694Z Metadata: read
+2025-02-26T12:49:23.9730277Z Packages: write
+2025-02-26T12:49:23.9730804Z Pages: write
+2025-02-26T12:49:23.9731329Z PullRequests: write
+2025-02-26T12:49:23.9731943Z RepositoryProjects: write
+2025-02-26T12:49:23.9732565Z SecurityEvents: write
+2025-02-26T12:49:23.9733104Z Statuses: write
+2025-02-26T12:49:23.9733652Z ##[endgroup]
+2025-02-26T12:49:23.9736962Z Secret source: Actions
+2025-02-26T12:49:23.9737926Z Prepare workflow directory
+2025-02-26T12:49:24.0126572Z Prepare all required actions
+2025-02-26T12:49:24.0163314Z Getting action download info
+2025-02-26T12:49:24.2206460Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-02-26T12:49:24.3495393Z Download action repository 'actions/setup-node@v4' (SHA:1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a)
+2025-02-26T12:49:24.5199403Z Complete job name: lint
+2025-02-26T12:49:24.5915743Z ##[group]Run actions/checkout@v4
+2025-02-26T12:49:24.5916589Z with:
+2025-02-26T12:49:24.5916979Z   fetch-depth: 1
+2025-02-26T12:49:24.5917405Z   repository: Choices-js/Choices
+2025-02-26T12:49:24.5918089Z   token: ***
+2025-02-26T12:49:24.5918540Z   ssh-strict: true
+2025-02-26T12:49:24.5919036Z   ssh-user: git
+2025-02-26T12:49:24.5919463Z   persist-credentials: true
+2025-02-26T12:49:24.5919920Z   clean: true
+2025-02-26T12:49:24.5920338Z   sparse-checkout-cone-mode: true
+2025-02-26T12:49:24.5920833Z   fetch-tags: false
+2025-02-26T12:49:24.5921251Z   show-progress: true
+2025-02-26T12:49:24.5921675Z   lfs: false
+2025-02-26T12:49:24.5922052Z   submodules: false
+2025-02-26T12:49:24.5922477Z   set-safe-directory: true
+2025-02-26T12:49:24.5923150Z ##[endgroup]
+2025-02-26T12:49:24.8917409Z Syncing repository: Choices-js/Choices
+2025-02-26T12:49:24.8919692Z ##[group]Getting Git version info
+2025-02-26T12:49:24.8920447Z Working directory is '/home/runner/work/Choices/Choices'
+2025-02-26T12:49:24.8921449Z [command]/usr/bin/git version
+2025-02-26T12:49:24.9023493Z git version 2.48.1
+2025-02-26T12:49:24.9052840Z ##[endgroup]
+2025-02-26T12:49:24.9066475Z Temporarily overriding HOME='/home/runner/work/_temp/6a866bab-6d83-4f40-8d5b-3dab9273605e' before making global git config changes
+2025-02-26T12:49:24.9068176Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-26T12:49:24.9071296Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Choices/Choices
+2025-02-26T12:49:24.9107664Z Deleting the contents of '/home/runner/work/Choices/Choices'
+2025-02-26T12:49:24.9111497Z ##[group]Initializing the repository
+2025-02-26T12:49:24.9115393Z [command]/usr/bin/git init /home/runner/work/Choices/Choices
+2025-02-26T12:49:24.9194022Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-26T12:49:24.9195403Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-26T12:49:24.9196769Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-26T12:49:24.9197708Z hint:
+2025-02-26T12:49:24.9198282Z hint: 	git config --global init.defaultBranch <name>
+2025-02-26T12:49:24.9198984Z hint:
+2025-02-26T12:49:24.9199639Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-26T12:49:24.9200729Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-26T12:49:24.9201593Z hint:
+2025-02-26T12:49:24.9202044Z hint: 	git branch -m <name>
+2025-02-26T12:49:24.9206556Z Initialized empty Git repository in /home/runner/work/Choices/Choices/.git/
+2025-02-26T12:49:24.9216716Z [command]/usr/bin/git remote add origin https://github.com/Choices-js/Choices
+2025-02-26T12:49:24.9251233Z ##[endgroup]
+2025-02-26T12:49:24.9252502Z ##[group]Disabling automatic garbage collection
+2025-02-26T12:49:24.9256360Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-26T12:49:24.9285366Z ##[endgroup]
+2025-02-26T12:49:24.9286648Z ##[group]Setting up auth
+2025-02-26T12:49:24.9292853Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-26T12:49:24.9323162Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-26T12:49:24.9687867Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-26T12:49:24.9718573Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-26T12:49:24.9950555Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-26T12:49:24.9986870Z ##[endgroup]
+2025-02-26T12:49:24.9988293Z ##[group]Fetching the repository
+2025-02-26T12:49:24.9997796Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +ef2468f915285a4ac5ee4b4517f00d89ede7d775:refs/remotes/pull/1279/merge
+2025-02-26T12:49:25.6813299Z From https://github.com/Choices-js/Choices
+2025-02-26T12:49:25.6815289Z  * [new ref]         ef2468f915285a4ac5ee4b4517f00d89ede7d775 -> pull/1279/merge
+2025-02-26T12:49:25.6844699Z ##[endgroup]
+2025-02-26T12:49:25.6847102Z ##[group]Determining the checkout info
+2025-02-26T12:49:25.6849971Z ##[endgroup]
+2025-02-26T12:49:25.6852528Z [command]/usr/bin/git sparse-checkout disable
+2025-02-26T12:49:25.6893508Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-26T12:49:25.6922528Z ##[group]Checking out the ref
+2025-02-26T12:49:25.6926180Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1279/merge
+2025-02-26T12:49:25.7203008Z Note: switching to 'refs/remotes/pull/1279/merge'.
+2025-02-26T12:49:25.7204844Z 
+2025-02-26T12:49:25.7205851Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-26T12:49:25.7208999Z changes and commit them, and you can discard any commits you make in this
+2025-02-26T12:49:25.7212979Z state without impacting any branches by switching back to a branch.
+2025-02-26T12:49:25.7215955Z 
+2025-02-26T12:49:25.7217342Z If you want to create a new branch to retain commits you create, you may
+2025-02-26T12:49:25.7220976Z do so (now or later) by using -c with the switch command. Example:
+2025-02-26T12:49:25.7222823Z 
+2025-02-26T12:49:25.7223405Z   git switch -c <new-branch-name>
+2025-02-26T12:49:25.7224658Z 
+2025-02-26T12:49:25.7225244Z Or undo this operation with:
+2025-02-26T12:49:25.7226031Z 
+2025-02-26T12:49:25.7226485Z   git switch -
+2025-02-26T12:49:25.7227084Z 
+2025-02-26T12:49:25.7228034Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-26T12:49:25.7229444Z 
+2025-02-26T12:49:25.7231737Z HEAD is now at ef2468f Merge aeb594d6f1106b345346660000e9b368fb849ce8 into ac13edefb70a9eef7b17c6477ccc186d853767a7
+2025-02-26T12:49:25.7237256Z ##[endgroup]
+2025-02-26T12:49:25.7251830Z [command]/usr/bin/git log -1 --format=%H
+2025-02-26T12:49:25.7273944Z ef2468f915285a4ac5ee4b4517f00d89ede7d775
+2025-02-26T12:49:25.7658009Z ##[group]Run actions/setup-node@v4
+2025-02-26T12:49:25.7659205Z with:
+2025-02-26T12:49:25.7660073Z   node-version: 20
+2025-02-26T12:49:25.7661012Z   cache: npm
+2025-02-26T12:49:25.7661892Z   always-auth: false
+2025-02-26T12:49:25.7662857Z   check-latest: false
+2025-02-26T12:49:25.7664073Z   token: ***
+2025-02-26T12:49:25.7665120Z ##[endgroup]
+2025-02-26T12:49:25.9401721Z Found in cache @ /opt/hostedtoolcache/node/20.18.3/x64
+2025-02-26T12:49:25.9408480Z ##[group]Environment details
+2025-02-26T12:49:32.6040370Z node: v20.18.3
+2025-02-26T12:49:32.6040900Z npm: 10.8.2
+2025-02-26T12:49:32.6041289Z yarn: 1.22.22
+2025-02-26T12:49:32.6042901Z ##[endgroup]
+2025-02-26T12:49:32.6066262Z [command]/opt/hostedtoolcache/node/20.18.3/x64/bin/npm config get cache
+2025-02-26T12:49:33.1813645Z /home/runner/.npm
+2025-02-26T12:49:33.4952437Z Cache hit for: node-cache-Linux-x64-npm-8b75005378e637be3183d6484594565293221d0192082905bb4be859cd608c0b
+2025-02-26T12:49:34.8207100Z Received 0 of 43511970 (0.0%), 0.0 MBs/sec
+2025-02-26T12:49:35.8206075Z Received 30929058 of 43511970 (71.1%), 14.7 MBs/sec
+2025-02-26T12:49:36.8202568Z Received 30929058 of 43511970 (71.1%), 9.8 MBs/sec
+2025-02-26T12:49:37.8211090Z Received 30929058 of 43511970 (71.1%), 7.4 MBs/sec
+2025-02-26T12:49:38.8213111Z Received 30929058 of 43511970 (71.1%), 5.9 MBs/sec
+2025-02-26T12:49:39.8219126Z Received 30929058 of 43511970 (71.1%), 4.9 MBs/sec
+2025-02-26T12:49:40.8217810Z Received 30929058 of 43511970 (71.1%), 4.2 MBs/sec
+2025-02-26T12:49:41.8222383Z Received 35123362 of 43511970 (80.7%), 4.2 MBs/sec
+2025-02-26T12:49:42.4353949Z Received 43511970 of 43511970 (100.0%), 4.8 MBs/sec
+2025-02-26T12:49:42.4355554Z Cache Size: ~41 MB (43511970 B)
+2025-02-26T12:49:42.4391675Z [command]/usr/bin/tar -xf /home/runner/work/_temp/a3e8acde-c6b2-45d0-80cc-1018c21276b7/cache.tzst -P -C /home/runner/work/Choices/Choices --use-compress-program unzstd
+2025-02-26T12:49:42.6322392Z Cache restored successfully
+2025-02-26T12:49:42.6422628Z Cache restored from key: node-cache-Linux-x64-npm-8b75005378e637be3183d6484594565293221d0192082905bb4be859cd608c0b
+2025-02-26T12:49:42.6563372Z ##[group]Run npm ci --no-audit
+2025-02-26T12:49:42.6563742Z [36;1mnpm ci --no-audit[0m
+2025-02-26T12:49:42.6616102Z shell: /usr/bin/bash -e {0}
+2025-02-26T12:49:42.6616367Z env:
+2025-02-26T12:49:42.6616563Z   HUSKY_SKIP_INSTALL: true
+2025-02-26T12:49:42.6616782Z ##[endgroup]
+2025-02-26T12:49:47.7446478Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-02-26T12:49:47.8589335Z npm warn deprecated string-similarity@4.0.4: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+2025-02-26T12:49:47.8670804Z npm warn deprecated npmlog@4.1.2: This package is no longer supported.
+2025-02-26T12:49:47.8817307Z npm warn deprecated @humanwhocodes/config-array@0.11.14: Use @eslint/config-array instead
+2025-02-26T12:49:47.8928457Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+2025-02-26T12:49:47.9494446Z npm warn deprecated are-we-there-yet@1.1.7: This package is no longer supported.
+2025-02-26T12:49:47.9695869Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-02-26T12:49:47.9820064Z npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+2025-02-26T12:49:48.1927068Z npm warn deprecated gauge@2.7.4: This package is no longer supported.
+2025-02-26T12:49:49.0340535Z npm warn deprecated iltorb@2.4.5: The zlib module provides APIs for brotli compression/decompression starting with Node.js v10.16.0, please use it over iltorb
+2025-02-26T12:50:11.9167538Z 
+2025-02-26T12:50:11.9168167Z added 956 packages in 29s
+2025-02-26T12:50:11.9168604Z 
+2025-02-26T12:50:11.9169061Z 214 packages are looking for funding
+2025-02-26T12:50:11.9169553Z   run `npm fund` for details
+2025-02-26T12:50:11.9480703Z ##[group]Run npm run lint:js
+2025-02-26T12:50:11.9481027Z [36;1mnpm run lint:js[0m
+2025-02-26T12:50:11.9528962Z shell: /usr/bin/bash -e {0}
+2025-02-26T12:50:11.9529236Z ##[endgroup]
+2025-02-26T12:50:12.0612987Z 
+2025-02-26T12:50:12.0613604Z > choices.js@11.0.4 lint:js
+2025-02-26T12:50:12.0614557Z > eslint src/scripts test/scripts test-e2e
+2025-02-26T12:50:12.0614901Z 
+2025-02-26T12:50:20.9177642Z 
+2025-02-26T12:50:20.9182942Z /home/runner/work/Choices/Choices/src/scripts/choices.ts
+2025-02-26T12:50:20.9213297Z ##[error]  695:41  error  Replace `·this.setChoices(data,·value,·label,·replaceChoices,·clearSearchFlag,·replaceItems)` with `⏎············this.setChoices(data,·value,·label,·replaceChoices,·clearSearchFlag,·replaceItems),⏎··········`  prettier/prettier
+2025-02-26T12:50:20.9220529Z 
+2025-02-26T12:50:20.9220911Z ✖ 1 problem (1 error, 0 warnings)
+2025-02-26T12:50:20.9221342Z   1 error and 0 warnings potentially fixable with the `--fix` option.
+2025-02-26T12:50:20.9221615Z 
+2025-02-26T12:50:21.0082314Z ##[error]Process completed with exit code 1.
+2025-02-26T12:50:21.0180486Z Post job cleanup.
+2025-02-26T12:50:21.1150550Z [command]/usr/bin/git version
+2025-02-26T12:50:21.1186905Z git version 2.48.1
+2025-02-26T12:50:21.1237168Z Temporarily overriding HOME='/home/runner/work/_temp/3593de07-7349-4059-889f-5b117462bcef' before making global git config changes
+2025-02-26T12:50:21.1238681Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-26T12:50:21.1242270Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Choices/Choices
+2025-02-26T12:50:21.1277366Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-26T12:50:21.1309993Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-26T12:50:21.1584729Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-26T12:50:21.1606326Z http.https://github.com/.extraheader
+2025-02-26T12:50:21.1618913Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-26T12:50:21.1650771Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-26T12:50:21.1981845Z Cleaning up orphan processes

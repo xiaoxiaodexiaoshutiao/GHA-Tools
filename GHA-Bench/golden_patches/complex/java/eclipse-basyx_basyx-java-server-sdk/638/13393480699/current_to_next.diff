@@ -1,0 +1,125 @@
+diff --git a/basyx.submodelrepository/basyx.submodelrepository-http/src/main/java/org/eclipse/digitaltwin/basyx/submodelrepository/http/SubmodelRepositoryApiHTTPController.java b/basyx.submodelrepository/basyx.submodelrepository-http/src/main/java/org/eclipse/digitaltwin/basyx/submodelrepository/http/SubmodelRepositoryApiHTTPController.java
+index f49d89977..9954f4831 100644
+--- a/basyx.submodelrepository/basyx.submodelrepository-http/src/main/java/org/eclipse/digitaltwin/basyx/submodelrepository/http/SubmodelRepositoryApiHTTPController.java
++++ b/basyx.submodelrepository/basyx.submodelrepository-http/src/main/java/org/eclipse/digitaltwin/basyx/submodelrepository/http/SubmodelRepositoryApiHTTPController.java
+@@ -31,6 +31,7 @@
+ import java.util.Arrays;
+ import java.util.List;
+ 
++import com.fasterxml.jackson.databind.ObjectMapper;
+ import org.eclipse.digitaltwin.aas4j.v3.model.OperationRequest;
+ import org.eclipse.digitaltwin.aas4j.v3.model.OperationResult;
+ import org.eclipse.digitaltwin.aas4j.v3.model.OperationVariable;
+@@ -45,6 +46,7 @@
+ import org.eclipse.digitaltwin.basyx.http.Base64UrlEncodedIdentifier;
+ import org.eclipse.digitaltwin.basyx.http.Base64UrlEncodedIdentifierSize;
+ import org.eclipse.digitaltwin.basyx.http.Base64UrlEncoder;
++import org.eclipse.digitaltwin.basyx.http.CustomTypeCloneFactory;
+ import org.eclipse.digitaltwin.basyx.http.pagination.Base64UrlEncodedCursor;
+ import org.eclipse.digitaltwin.basyx.http.pagination.PagedResult;
+ import org.eclipse.digitaltwin.basyx.http.pagination.PagedResultPagingMetadata;
+@@ -77,12 +79,14 @@
+ @RestController
+ public class SubmodelRepositoryApiHTTPController implements SubmodelRepositoryHTTPApi {
+ 
+-	private SubmodelRepository repository;
++	private final SubmodelRepository repository;
++	private final ObjectMapper objectMapper;
+ 
+ 	@Autowired
+-	public SubmodelRepositoryApiHTTPController(SubmodelRepository repository) {
++	public SubmodelRepositoryApiHTTPController(SubmodelRepository repository, ObjectMapper objectMapper) {
+ 		this.repository = repository;
+-	}
++        this.objectMapper = objectMapper;
++    }
+ 
+ 	@Override
+ 	public ResponseEntity<Submodel> postSubmodel(@Parameter(in = ParameterIn.DEFAULT, description = "Submodel object", required = true, schema = @Schema()) @Valid @RequestBody Submodel body) {
+@@ -177,14 +181,18 @@ public ResponseEntity<SubmodelElement> getSubmodelElementByPathSubmodelRepo(Base
+ 
+ 	@Override
+ 	public ResponseEntity<SubmodelElement> postSubmodelElementByPathSubmodelRepo(Base64UrlEncodedIdentifier submodelIdentifier, String idShortPath, @Valid SubmodelElement body, @Valid String level, @Valid String extent) {
+-		repository.createSubmodelElement(submodelIdentifier.getIdentifier(), idShortPath, body);
+-		return new ResponseEntity<>(repository.getSubmodelElement(submodelIdentifier.getIdentifier(), idShortPath), HttpStatus.CREATED);
++		SubmodelElement validatedBody = new CustomTypeCloneFactory<>(SubmodelElement.class, objectMapper).create(body);
++
++		repository.createSubmodelElement(submodelIdentifier.getIdentifier(), idShortPath, validatedBody);
++		return new ResponseEntity<>(validatedBody, HttpStatus.CREATED);
+ 	}
+ 
+ 	@Override
+ 	public ResponseEntity<SubmodelElement> postSubmodelElementSubmodelRepo(Base64UrlEncodedIdentifier submodelIdentifier, @Valid SubmodelElement body) {
+-		repository.createSubmodelElement(submodelIdentifier.getIdentifier(), body);
+-		return new ResponseEntity<>(repository.getSubmodelElement(submodelIdentifier.getIdentifier(), body.getIdShort()), HttpStatus.CREATED);
++		SubmodelElement validatedBody = new CustomTypeCloneFactory<>(SubmodelElement.class, objectMapper).create(body);
++
++		repository.createSubmodelElement(submodelIdentifier.getIdentifier(), validatedBody);
++		return new ResponseEntity<>(validatedBody, HttpStatus.CREATED);
+ 	}
+ 
+ 	@Override
+diff --git a/basyx.submodelservice/basyx.submodelservice-http/src/main/java/org/eclipse/digitaltwin/basyx/submodelservice/http/SubmodelServiceHTTPApiController.java b/basyx.submodelservice/basyx.submodelservice-http/src/main/java/org/eclipse/digitaltwin/basyx/submodelservice/http/SubmodelServiceHTTPApiController.java
+index 124cf25a1..33b3d3c60 100644
+--- a/basyx.submodelservice/basyx.submodelservice-http/src/main/java/org/eclipse/digitaltwin/basyx/submodelservice/http/SubmodelServiceHTTPApiController.java
++++ b/basyx.submodelservice/basyx.submodelservice-http/src/main/java/org/eclipse/digitaltwin/basyx/submodelservice/http/SubmodelServiceHTTPApiController.java
+@@ -29,6 +29,7 @@
+ import java.io.InputStream;
+ import java.util.List;
+ 
++import com.fasterxml.jackson.databind.ObjectMapper;
+ import org.eclipse.digitaltwin.aas4j.v3.model.OperationRequest;
+ import org.eclipse.digitaltwin.aas4j.v3.model.OperationResult;
+ import org.eclipse.digitaltwin.aas4j.v3.model.Submodel;
+@@ -38,6 +39,7 @@
+ import org.eclipse.digitaltwin.basyx.core.exceptions.FileDoesNotExistException;
+ import org.eclipse.digitaltwin.basyx.core.pagination.CursorResult;
+ import org.eclipse.digitaltwin.basyx.core.pagination.PaginationInfo;
++import org.eclipse.digitaltwin.basyx.http.CustomTypeCloneFactory;
+ import org.eclipse.digitaltwin.basyx.http.pagination.Base64UrlEncodedCursor;
+ import org.eclipse.digitaltwin.basyx.http.pagination.PagedResult;
+ import org.eclipse.digitaltwin.basyx.http.pagination.PagedResultPagingMetadata;
+@@ -69,12 +71,14 @@
+ @RestController
+ public class SubmodelServiceHTTPApiController implements SubmodelServiceHTTPApi {
+ 
+-	private SubmodelService service;
++	private final SubmodelService service;
++	private final ObjectMapper objectMapper;
+ 
+ 	@Autowired
+-	public SubmodelServiceHTTPApiController(SubmodelService service) {
++	public SubmodelServiceHTTPApiController(SubmodelService service, ObjectMapper objectMapper) {
+ 		this.service = service;
+-	}
++        this.objectMapper = objectMapper;
++    }
+ 
+ 	@Override
+ 	public ResponseEntity<Void> deleteSubmodelElementByPath(
+@@ -196,16 +200,21 @@ public ResponseEntity<Void> patchSubmodelElementByPathValueOnly(
+ 	public ResponseEntity<SubmodelElement> postSubmodelElement(@Parameter(in = ParameterIn.DEFAULT, description = "Requested submodel element", required = true, schema = @Schema()) @Valid @RequestBody SubmodelElement body,
+ 			@Parameter(in = ParameterIn.QUERY, description = "Determines the structural depth of the respective resource content", schema = @Schema(allowableValues = { "deep",
+ 					"core" }, defaultValue = "deep")) @Valid @RequestParam(value = "level", required = false, defaultValue = "deep") String level) {
+-		service.createSubmodelElement(body);
+-		return new ResponseEntity<>(service.getSubmodelElement(body.getIdShort()), HttpStatus.CREATED);
++
++		SubmodelElement validatedBody = new CustomTypeCloneFactory<>(SubmodelElement.class, objectMapper).create(body);
++		service.createSubmodelElement(validatedBody);
++
++		return new ResponseEntity<>(validatedBody, HttpStatus.CREATED);
+ 	}
+ 
+ 	@Override
+ 	public ResponseEntity<SubmodelElement> postSubmodelElementByPath(
+ 			@Parameter(in = ParameterIn.PATH, description = "IdShort path to the submodel element (dot-separated)", required = true, schema = @Schema()) @PathVariable("idShortPath") String idShortPath,
+ 			@Parameter(in = ParameterIn.DEFAULT, description = "Requested submodel element", required = true, schema = @Schema()) @Valid @RequestBody SubmodelElement body) {
+-		service.createSubmodelElement(idShortPath, body);
+-		return new ResponseEntity<>(service.getSubmodelElement(idShortPath), HttpStatus.CREATED);
++		SubmodelElement validatedBody = new CustomTypeCloneFactory<>(SubmodelElement.class, objectMapper).create(body);
++		service.createSubmodelElement(idShortPath, validatedBody);
++
++		return new ResponseEntity<>(validatedBody, HttpStatus.CREATED);
+ 	}
+ 	
+ 	@Override

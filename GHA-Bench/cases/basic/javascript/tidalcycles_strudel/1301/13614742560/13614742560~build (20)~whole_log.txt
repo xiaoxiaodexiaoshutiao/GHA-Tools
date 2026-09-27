@@ -1,0 +1,247 @@
+2025-03-02T10:56:59.5320259Z Requested labels: ubuntu-latest
+2025-03-02T10:56:59.5320531Z Job defined at: tidalcycles/strudel/.github/workflows/test.yml@refs/pull/1301/merge
+2025-03-02T10:56:59.5320628Z Waiting for a runner to pick up this job...
+2025-03-02T10:56:59.7568467Z Job is waiting for a hosted runner to come online.
+2025-03-02T10:57:02.5165933Z Job is about to start running on the hosted runner: GitHub Actions 9 (hosted)
+2025-03-02T10:57:03.8198379Z Current runner version: '2.322.0'
+2025-03-02T10:57:03.8222399Z ##[group]Operating System
+2025-03-02T10:57:03.8223316Z Ubuntu
+2025-03-02T10:57:03.8223861Z 24.04.2
+2025-03-02T10:57:03.8224425Z LTS
+2025-03-02T10:57:03.8224949Z ##[endgroup]
+2025-03-02T10:57:03.8225464Z ##[group]Runner Image
+2025-03-02T10:57:03.8226092Z Image: ubuntu-24.04
+2025-03-02T10:57:03.8226672Z Version: 20250223.1.0
+2025-03-02T10:57:03.8227775Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250223.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-02T10:57:03.8229276Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250223.1
+2025-03-02T10:57:03.8230244Z ##[endgroup]
+2025-03-02T10:57:03.8230768Z ##[group]Runner Image Provisioner
+2025-03-02T10:57:03.8231465Z 2.0.422.1
+2025-03-02T10:57:03.8232277Z ##[endgroup]
+2025-03-02T10:57:03.8234697Z ##[group]GITHUB_TOKEN Permissions
+2025-03-02T10:57:03.8236863Z Actions: write
+2025-03-02T10:57:03.8237705Z Attestations: write
+2025-03-02T10:57:03.8238350Z Checks: write
+2025-03-02T10:57:03.8238871Z Contents: write
+2025-03-02T10:57:03.8239522Z Deployments: write
+2025-03-02T10:57:03.8240079Z Discussions: write
+2025-03-02T10:57:03.8240657Z Issues: write
+2025-03-02T10:57:03.8241233Z Metadata: read
+2025-03-02T10:57:03.8242009Z Packages: write
+2025-03-02T10:57:03.8242635Z Pages: write
+2025-03-02T10:57:03.8243220Z PullRequests: write
+2025-03-02T10:57:03.8243790Z RepositoryProjects: write
+2025-03-02T10:57:03.8244468Z SecurityEvents: write
+2025-03-02T10:57:03.8244999Z Statuses: write
+2025-03-02T10:57:03.8245537Z ##[endgroup]
+2025-03-02T10:57:03.8248605Z Secret source: Actions
+2025-03-02T10:57:03.8249578Z Prepare workflow directory
+2025-03-02T10:57:03.8650495Z Prepare all required actions
+2025-03-02T10:57:03.8687505Z Getting action download info
+2025-03-02T10:57:04.0300077Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-02T10:57:04.1135088Z Download action repository 'pnpm/action-setup@v4' (SHA:a7487c7e89a18df4991f7f222e4898a00d66ddda)
+2025-03-02T10:57:04.3549650Z Download action repository 'actions/setup-node@v4' (SHA:1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a)
+2025-03-02T10:57:04.5351170Z Complete job name: build (20)
+2025-03-02T10:57:04.6100959Z ##[group]Run actions/checkout@v4
+2025-03-02T10:57:04.6102133Z with:
+2025-03-02T10:57:04.6102622Z   repository: tidalcycles/strudel
+2025-03-02T10:57:04.6103344Z   token: ***
+2025-03-02T10:57:04.6103778Z   ssh-strict: true
+2025-03-02T10:57:04.6104238Z   ssh-user: git
+2025-03-02T10:57:04.6104702Z   persist-credentials: true
+2025-03-02T10:57:04.6105214Z   clean: true
+2025-03-02T10:57:04.6105663Z   sparse-checkout-cone-mode: true
+2025-03-02T10:57:04.6106201Z   fetch-depth: 1
+2025-03-02T10:57:04.6106656Z   fetch-tags: false
+2025-03-02T10:57:04.6107124Z   show-progress: true
+2025-03-02T10:57:04.6107582Z   lfs: false
+2025-03-02T10:57:04.6107997Z   submodules: false
+2025-03-02T10:57:04.6108477Z   set-safe-directory: true
+2025-03-02T10:57:04.6109298Z ##[endgroup]
+2025-03-02T10:57:04.7751094Z Syncing repository: tidalcycles/strudel
+2025-03-02T10:57:04.7753551Z ##[group]Getting Git version info
+2025-03-02T10:57:04.7754581Z Working directory is '/home/runner/work/strudel/strudel'
+2025-03-02T10:57:04.7756038Z [command]/usr/bin/git version
+2025-03-02T10:57:04.7805492Z git version 2.48.1
+2025-03-02T10:57:04.7832029Z ##[endgroup]
+2025-03-02T10:57:04.7845461Z Temporarily overriding HOME='/home/runner/work/_temp/66d1c034-9b3b-4bdf-8ac4-5a2cde86382d' before making global git config changes
+2025-03-02T10:57:04.7847117Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-02T10:57:04.7851630Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/strudel/strudel
+2025-03-02T10:57:04.7887059Z Deleting the contents of '/home/runner/work/strudel/strudel'
+2025-03-02T10:57:04.7892240Z ##[group]Initializing the repository
+2025-03-02T10:57:04.7897945Z [command]/usr/bin/git init /home/runner/work/strudel/strudel
+2025-03-02T10:57:04.7968238Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-02T10:57:04.7970344Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-02T10:57:04.7972320Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-02T10:57:04.7973635Z hint:
+2025-03-02T10:57:04.7974533Z hint: 	git config --global init.defaultBranch <name>
+2025-03-02T10:57:04.7975654Z hint:
+2025-03-02T10:57:04.7976853Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-02T10:57:04.7978743Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-02T10:57:04.7980182Z hint:
+2025-03-02T10:57:04.7981037Z hint: 	git branch -m <name>
+2025-03-02T10:57:04.7982900Z Initialized empty Git repository in /home/runner/work/strudel/strudel/.git/
+2025-03-02T10:57:04.7988886Z [command]/usr/bin/git remote add origin https://github.com/tidalcycles/strudel
+2025-03-02T10:57:04.8022186Z ##[endgroup]
+2025-03-02T10:57:04.8023294Z ##[group]Disabling automatic garbage collection
+2025-03-02T10:57:04.8027931Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-02T10:57:04.8070440Z ##[endgroup]
+2025-03-02T10:57:04.8072117Z ##[group]Setting up auth
+2025-03-02T10:57:04.8079764Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-02T10:57:04.8114296Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-02T10:57:04.8408004Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-02T10:57:04.8441501Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-02T10:57:04.8715234Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-02T10:57:04.8751248Z ##[endgroup]
+2025-03-02T10:57:04.8752616Z ##[group]Fetching the repository
+2025-03-02T10:57:04.8763677Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +b21877ec49c253b54fec62d3b998d56c8a0e8d17:refs/remotes/pull/1301/merge
+2025-03-02T10:57:05.4896736Z From https://github.com/tidalcycles/strudel
+2025-03-02T10:57:05.4900423Z  * [new ref]         b21877ec49c253b54fec62d3b998d56c8a0e8d17 -> pull/1301/merge
+2025-03-02T10:57:05.4922995Z ##[endgroup]
+2025-03-02T10:57:05.4924271Z ##[group]Determining the checkout info
+2025-03-02T10:57:05.4925728Z ##[endgroup]
+2025-03-02T10:57:05.4929663Z [command]/usr/bin/git sparse-checkout disable
+2025-03-02T10:57:05.4967295Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-02T10:57:05.4994675Z ##[group]Checking out the ref
+2025-03-02T10:57:05.4998413Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1301/merge
+2025-03-02T10:57:05.5839157Z Note: switching to 'refs/remotes/pull/1301/merge'.
+2025-03-02T10:57:05.5840934Z 
+2025-03-02T10:57:05.5842377Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-02T10:57:05.5845050Z changes and commit them, and you can discard any commits you make in this
+2025-03-02T10:57:05.5848836Z state without impacting any branches by switching back to a branch.
+2025-03-02T10:57:05.5851512Z 
+2025-03-02T10:57:05.5853704Z If you want to create a new branch to retain commits you create, you may
+2025-03-02T10:57:05.5856467Z do so (now or later) by using -c with the switch command. Example:
+2025-03-02T10:57:05.5858093Z 
+2025-03-02T10:57:05.5858764Z   git switch -c <new-branch-name>
+2025-03-02T10:57:05.5859885Z 
+2025-03-02T10:57:05.5860502Z Or undo this operation with:
+2025-03-02T10:57:05.5861472Z 
+2025-03-02T10:57:05.5862178Z   git switch -
+2025-03-02T10:57:05.5862926Z 
+2025-03-02T10:57:05.5864250Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-02T10:57:05.5866174Z 
+2025-03-02T10:57:05.5867591Z HEAD is now at b21877e Merge 3f6202770f46bac9d9911c8bf341616f13606dca into 690b8648a8d59002302307a96977157cbe2d291c
+2025-03-02T10:57:05.5873183Z ##[endgroup]
+2025-03-02T10:57:05.5892059Z [command]/usr/bin/git log -1 --format=%H
+2025-03-02T10:57:05.5914904Z b21877ec49c253b54fec62d3b998d56c8a0e8d17
+2025-03-02T10:57:05.6189054Z ##[group]Run pnpm/action-setup@v4
+2025-03-02T10:57:05.6190265Z with:
+2025-03-02T10:57:05.6191113Z   version: 9.12.2
+2025-03-02T10:57:05.6192211Z   dest: ~/setup-pnpm
+2025-03-02T10:57:05.6193200Z   run_install: null
+2025-03-02T10:57:05.6194213Z   package_json_file: package.json
+2025-03-02T10:57:05.6195374Z   standalone: false
+2025-03-02T10:57:05.6196324Z ##[endgroup]
+2025-03-02T10:57:05.6750423Z ##[group]Running self-installer...
+2025-03-02T10:57:06.2004868Z Progress: resolved 1, reused 0, downloaded 0, added 0
+2025-03-02T10:57:06.2092010Z Packages: +1
+2025-03-02T10:57:06.2094987Z +
+2025-03-02T10:57:06.6297602Z Progress: resolved 1, reused 0, downloaded 1, added 1, done
+2025-03-02T10:57:06.6640054Z 
+2025-03-02T10:57:06.6640615Z dependencies:
+2025-03-02T10:57:06.6641210Z + pnpm 9.12.2 (10.5.2 is available)
+2025-03-02T10:57:06.6641840Z 
+2025-03-02T10:57:06.6670078Z Done in 830ms
+2025-03-02T10:57:06.6856299Z ##[endgroup]
+2025-03-02T10:57:06.6860589Z Installation Completed!
+2025-03-02T10:57:06.7024830Z ##[group]Run actions/setup-node@v4
+2025-03-02T10:57:06.7025151Z with:
+2025-03-02T10:57:06.7025356Z   node-version: 20
+2025-03-02T10:57:06.7025582Z   cache: pnpm
+2025-03-02T10:57:06.7025799Z   always-auth: false
+2025-03-02T10:57:06.7026037Z   check-latest: false
+2025-03-02T10:57:06.7026410Z   token: ***
+2025-03-02T10:57:06.7026640Z env:
+2025-03-02T10:57:06.7026911Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2025-03-02T10:57:06.7027252Z ##[endgroup]
+2025-03-02T10:57:06.8784585Z Found in cache @ /opt/hostedtoolcache/node/20.18.3/x64
+2025-03-02T10:57:06.8790817Z ##[group]Environment details
+2025-03-02T10:57:07.1866962Z node: v20.18.3
+2025-03-02T10:57:07.1867485Z npm: 10.8.2
+2025-03-02T10:57:07.1867849Z yarn: 1.22.22
+2025-03-02T10:57:07.1868540Z ##[endgroup]
+2025-03-02T10:57:07.1894755Z [command]/home/runner/setup-pnpm/node_modules/.bin/pnpm store path --silent
+2025-03-02T10:57:07.5904483Z /home/runner/setup-pnpm/node_modules/.bin/store/v3
+2025-03-02T10:57:07.6747253Z Cache hit for: node-cache-Linux-x64-pnpm-c27d23c2050d33e803cf4167aaf9dabbac7d70cb35bd1d6d558d8cce8a9bff4c
+2025-03-02T10:57:08.7330803Z Received 222298112 of 235939650 (94.2%), 212.0 MBs/sec
+2025-03-02T10:57:08.8247438Z Received 235939650 of 235939650 (100.0%), 205.9 MBs/sec
+2025-03-02T10:57:08.8250408Z Cache Size: ~225 MB (235939650 B)
+2025-03-02T10:57:08.8370931Z [command]/usr/bin/tar -xf /home/runner/work/_temp/d49a1d35-cfe7-47ea-b064-0439fd9aa399/cache.tzst -P -C /home/runner/work/strudel/strudel --use-compress-program unzstd
+2025-03-02T10:57:11.1478029Z Cache restored successfully
+2025-03-02T10:57:11.1987499Z Cache restored from key: node-cache-Linux-x64-pnpm-c27d23c2050d33e803cf4167aaf9dabbac7d70cb35bd1d6d558d8cce8a9bff4c
+2025-03-02T10:57:11.2131453Z ##[group]Run pnpm install
+2025-03-02T10:57:11.2132145Z [36;1mpnpm install[0m
+2025-03-02T10:57:11.2184876Z shell: /usr/bin/bash -e {0}
+2025-03-02T10:57:11.2185191Z env:
+2025-03-02T10:57:11.2185498Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2025-03-02T10:57:11.2185879Z ##[endgroup]
+2025-03-02T10:57:11.6740042Z Scope: all 33 workspace projects
+2025-03-02T10:57:11.7704597Z Lockfile is up to date, resolution step is skipped
+2025-03-02T10:57:11.9175084Z Progress: resolved 1, reused 0, downloaded 0, added 0
+2025-03-02T10:57:12.1222452Z Packages: +1601
+2025-03-02T10:57:12.1223213Z ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2025-03-02T10:57:12.9169938Z Progress: resolved 1601, reused 1516, downloaded 0, added 0
+2025-03-02T10:57:13.9167373Z Progress: resolved 1601, reused 1600, downloaded 0, added 1361
+2025-03-02T10:57:14.2687376Z Progress: resolved 1601, reused 1600, downloaded 0, added 1601, done
+2025-03-02T10:57:15.2579023Z 
+2025-03-02T10:57:15.2580311Z dependencies:
+2025-03-02T10:57:15.2583595Z + @strudel/core 1.1.0 <- packages/core
+2025-03-02T10:57:15.2584278Z + @strudel/mini 1.1.0 <- packages/mini
+2025-03-02T10:57:15.2585020Z + @strudel/tonal 1.1.0 <- packages/tonal
+2025-03-02T10:57:15.2585791Z + @strudel/transpiler 1.1.0 <- packages/transpiler
+2025-03-02T10:57:15.2586544Z + @strudel/webaudio 1.1.0 <- packages/webaudio
+2025-03-02T10:57:15.2587302Z + @strudel/xen 1.1.0 <- packages/xen
+2025-03-02T10:57:15.2587659Z 
+2025-03-02T10:57:15.2587859Z devDependencies:
+2025-03-02T10:57:15.2588291Z + @eslint/compat 1.2.5
+2025-03-02T10:57:15.2588756Z + @eslint/eslintrc 3.2.0
+2025-03-02T10:57:15.2589236Z + @eslint/js 9.19.0
+2025-03-02T10:57:15.2589692Z + @tauri-apps/cli 2.2.7
+2025-03-02T10:57:15.2590179Z + @vitest/coverage-v8 3.0.4
+2025-03-02T10:57:15.2590726Z + @vitest/ui 3.0.4
+2025-03-02T10:57:15.2591187Z + acorn 8.14.0
+2025-03-02T10:57:15.2591584Z + dependency-tree 11.0.1
+2025-03-02T10:57:15.2592277Z + eslint 9.19.0
+2025-03-02T10:57:15.2592813Z + eslint-plugin-import 2.31.0
+2025-03-02T10:57:15.2593345Z + events 3.3.0
+2025-03-02T10:57:15.2593778Z + globals 15.14.0
+2025-03-02T10:57:15.2594177Z + jsdoc 4.0.4
+2025-03-02T10:57:15.2594595Z + jsdoc-json 2.0.2
+2025-03-02T10:57:15.2595011Z + lerna 8.1.9
+2025-03-02T10:57:15.2595494Z + prettier 3.4.2
+2025-03-02T10:57:15.2595929Z + vitest 3.0.4
+2025-03-02T10:57:15.2596161Z 
+2025-03-02T10:57:15.3227024Z website postinstall$ cp node_modules/hs2js/dist/tree-sitter.wasm public && cp node_modules/hs2js/dist/tree-sitter-haskell.wasm public
+2025-03-02T10:57:15.3376912Z website postinstall: Done
+2025-03-02T10:57:15.3395801Z Done in 4s
+2025-03-02T10:57:15.3932426Z ##[group]Run pnpm run format-check
+2025-03-02T10:57:15.3932830Z [36;1mpnpm run format-check[0m
+2025-03-02T10:57:15.3980008Z shell: /usr/bin/bash -e {0}
+2025-03-02T10:57:15.3980337Z env:
+2025-03-02T10:57:15.3980668Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2025-03-02T10:57:15.3981087Z ##[endgroup]
+2025-03-02T10:57:15.7986050Z 
+2025-03-02T10:57:15.7986952Z > @strudel/monorepo@0.5.0 format-check /home/runner/work/strudel/strudel
+2025-03-02T10:57:15.7987706Z > prettier --check .
+2025-03-02T10:57:15.7987958Z 
+2025-03-02T10:57:15.8938589Z Checking formatting...
+2025-03-02T10:57:17.1254863Z [warn] packages/core/pattern.mjs
+2025-03-02T10:57:20.9222111Z [warn] Code style issues found in the above file. Run Prettier with --write to fix.
+2025-03-02T10:57:20.9534058Z  ELIFECYCLE  Command failed with exit code 1.
+2025-03-02T10:57:20.9736529Z ##[error]Process completed with exit code 1.
+2025-03-02T10:57:20.9834669Z Post job cleanup.
+2025-03-02T10:57:21.0374259Z Pruning is unnecessary.
+2025-03-02T10:57:21.0484361Z Post job cleanup.
+2025-03-02T10:57:21.1420035Z [command]/usr/bin/git version
+2025-03-02T10:57:21.1458522Z git version 2.48.1
+2025-03-02T10:57:21.1509808Z Temporarily overriding HOME='/home/runner/work/_temp/514c135f-642a-447f-91b2-277dc480dac0' before making global git config changes
+2025-03-02T10:57:21.1511388Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-02T10:57:21.1516255Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/strudel/strudel
+2025-03-02T10:57:21.1552445Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-02T10:57:21.1587425Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-02T10:57:21.1825603Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-02T10:57:21.1847389Z http.https://github.com/.extraheader
+2025-03-02T10:57:21.1860904Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-02T10:57:21.1894603Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-02T10:57:21.2246322Z Cleaning up orphan processes

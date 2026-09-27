@@ -1,0 +1,397 @@
+﻿2025-03-19T15:17:07.5213580Z Current runner version: '2.322.0'
+2025-03-19T15:17:07.5241349Z ##[group]Operating System
+2025-03-19T15:17:07.5242231Z Ubuntu
+2025-03-19T15:17:07.5242684Z 24.04.2
+2025-03-19T15:17:07.5243161Z LTS
+2025-03-19T15:17:07.5243633Z ##[endgroup]
+2025-03-19T15:17:07.5244270Z ##[group]Runner Image
+2025-03-19T15:17:07.5244934Z Image: ubuntu-24.04
+2025-03-19T15:17:07.5245464Z Version: 20250316.1.0
+2025-03-19T15:17:07.5246516Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250316.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-19T15:17:07.5247910Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250316.1
+2025-03-19T15:17:07.5249106Z ##[endgroup]
+2025-03-19T15:17:07.5249639Z ##[group]Runner Image Provisioner
+2025-03-19T15:17:07.5250280Z 2.0.422.1
+2025-03-19T15:17:07.5250836Z ##[endgroup]
+2025-03-19T15:17:07.5253225Z ##[group]GITHUB_TOKEN Permissions
+2025-03-19T15:17:07.5255558Z Actions: read
+2025-03-19T15:17:07.5256375Z Attestations: read
+2025-03-19T15:17:07.5256928Z Checks: read
+2025-03-19T15:17:07.5257484Z Contents: read
+2025-03-19T15:17:07.5257944Z Deployments: read
+2025-03-19T15:17:07.5258419Z Discussions: read
+2025-03-19T15:17:07.5259275Z Issues: read
+2025-03-19T15:17:07.5259773Z Metadata: read
+2025-03-19T15:17:07.5260216Z Models: read
+2025-03-19T15:17:07.5260742Z Packages: read
+2025-03-19T15:17:07.5261243Z Pages: read
+2025-03-19T15:17:07.5261689Z PullRequests: read
+2025-03-19T15:17:07.5262246Z RepositoryProjects: read
+2025-03-19T15:17:07.5262772Z SecurityEvents: read
+2025-03-19T15:17:07.5263278Z Statuses: read
+2025-03-19T15:17:07.5263748Z ##[endgroup]
+2025-03-19T15:17:07.5265955Z Secret source: None
+2025-03-19T15:17:07.5266718Z Prepare workflow directory
+2025-03-19T15:17:07.5810741Z Prepare all required actions
+2025-03-19T15:17:07.5869282Z Getting action download info
+2025-03-19T15:17:08.0325915Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-19T15:17:08.1391247Z Download action repository 'actions/setup-node@v4' (SHA:cdca7365b2dadb8aad0a33bc7601856ffabcc48e)
+2025-03-19T15:17:08.5514421Z Download action repository 'actions/setup-java@v4' (SHA:3a4f6e1af504cf6a31855fa899c6aa5355ba6c12)
+2025-03-19T15:17:09.0903121Z Complete job name: graphql-code-generation
+2025-03-19T15:17:09.1706877Z ##[group]Run actions/checkout@v4
+2025-03-19T15:17:09.1708155Z with:
+2025-03-19T15:17:09.1709098Z   repository: opentripplanner/OpenTripPlanner
+2025-03-19T15:17:09.1710503Z   token: ***
+2025-03-19T15:17:09.1711183Z   ssh-strict: true
+2025-03-19T15:17:09.1711891Z   ssh-user: git
+2025-03-19T15:17:09.1712631Z   persist-credentials: true
+2025-03-19T15:17:09.1713485Z   clean: true
+2025-03-19T15:17:09.1714219Z   sparse-checkout-cone-mode: true
+2025-03-19T15:17:09.1715145Z   fetch-depth: 1
+2025-03-19T15:17:09.1715879Z   fetch-tags: false
+2025-03-19T15:17:09.1716605Z   show-progress: true
+2025-03-19T15:17:09.1717346Z   lfs: false
+2025-03-19T15:17:09.1718008Z   submodules: false
+2025-03-19T15:17:09.1718897Z   set-safe-directory: true
+2025-03-19T15:17:09.1720001Z env:
+2025-03-19T15:17:09.1720899Z   MAVEN_ARGS: --no-transfer-progress -Dstyle.color=always
+2025-03-19T15:17:09.1722011Z ##[endgroup]
+2025-03-19T15:17:09.3869930Z Syncing repository: opentripplanner/OpenTripPlanner
+2025-03-19T15:17:09.3872996Z ##[group]Getting Git version info
+2025-03-19T15:17:09.3874454Z Working directory is '/home/runner/work/OpenTripPlanner/OpenTripPlanner'
+2025-03-19T15:17:09.3876475Z [command]/usr/bin/git version
+2025-03-19T15:17:09.3952201Z git version 2.48.1
+2025-03-19T15:17:09.3983426Z ##[endgroup]
+2025-03-19T15:17:09.3998445Z Temporarily overriding HOME='/home/runner/work/_temp/40527740-4bea-4f1d-a739-414a881c37ed' before making global git config changes
+2025-03-19T15:17:09.4001618Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-19T15:17:09.4005499Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/OpenTripPlanner/OpenTripPlanner
+2025-03-19T15:17:09.4046564Z Deleting the contents of '/home/runner/work/OpenTripPlanner/OpenTripPlanner'
+2025-03-19T15:17:09.4050528Z ##[group]Initializing the repository
+2025-03-19T15:17:09.4054906Z [command]/usr/bin/git init /home/runner/work/OpenTripPlanner/OpenTripPlanner
+2025-03-19T15:17:09.4125404Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-19T15:17:09.4127648Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-19T15:17:09.4130154Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-19T15:17:09.4131813Z hint:
+2025-03-19T15:17:09.4133327Z hint: 	git config --global init.defaultBranch <name>
+2025-03-19T15:17:09.4134673Z hint:
+2025-03-19T15:17:09.4135924Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-19T15:17:09.4137961Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-19T15:17:09.4139701Z hint:
+2025-03-19T15:17:09.4140520Z hint: 	git branch -m <name>
+2025-03-19T15:17:09.4142379Z Initialized empty Git repository in /home/runner/work/OpenTripPlanner/OpenTripPlanner/.git/
+2025-03-19T15:17:09.4146423Z [command]/usr/bin/git remote add origin https://github.com/opentripplanner/OpenTripPlanner
+2025-03-19T15:17:09.4181805Z ##[endgroup]
+2025-03-19T15:17:09.4183347Z ##[group]Disabling automatic garbage collection
+2025-03-19T15:17:09.4185541Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-19T15:17:09.4216826Z ##[endgroup]
+2025-03-19T15:17:09.4218221Z ##[group]Setting up auth
+2025-03-19T15:17:09.4224114Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-19T15:17:09.4260355Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-19T15:17:09.4582917Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-19T15:17:09.4626480Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-19T15:17:09.4870779Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-19T15:17:09.4926868Z ##[endgroup]
+2025-03-19T15:17:09.4929332Z ##[group]Fetching the repository
+2025-03-19T15:17:09.4937696Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +9e98464428092342f86c5634c400b3d4af8071a9:refs/remotes/pull/6558/merge
+2025-03-19T15:17:11.2291117Z From https://github.com/opentripplanner/OpenTripPlanner
+2025-03-19T15:17:11.2292478Z  * [new ref]         9e98464428092342f86c5634c400b3d4af8071a9 -> pull/6558/merge
+2025-03-19T15:17:11.2320832Z ##[endgroup]
+2025-03-19T15:17:11.2321302Z ##[group]Determining the checkout info
+2025-03-19T15:17:11.2323331Z ##[endgroup]
+2025-03-19T15:17:11.2328570Z [command]/usr/bin/git sparse-checkout disable
+2025-03-19T15:17:11.2370747Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-19T15:17:11.2400310Z ##[group]Checking out the ref
+2025-03-19T15:17:11.2404297Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/6558/merge
+2025-03-19T15:17:11.5800041Z Note: switching to 'refs/remotes/pull/6558/merge'.
+2025-03-19T15:17:11.5809899Z 
+2025-03-19T15:17:11.5810422Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-19T15:17:11.5811451Z changes and commit them, and you can discard any commits you make in this
+2025-03-19T15:17:11.5812565Z state without impacting any branches by switching back to a branch.
+2025-03-19T15:17:11.5813246Z 
+2025-03-19T15:17:11.5813701Z If you want to create a new branch to retain commits you create, you may
+2025-03-19T15:17:11.5814691Z do so (now or later) by using -c with the switch command. Example:
+2025-03-19T15:17:11.5815275Z 
+2025-03-19T15:17:11.5815517Z   git switch -c <new-branch-name>
+2025-03-19T15:17:11.5816428Z 
+2025-03-19T15:17:11.5816736Z Or undo this operation with:
+2025-03-19T15:17:11.5817009Z 
+2025-03-19T15:17:11.5817140Z   git switch -
+2025-03-19T15:17:11.5817346Z 
+2025-03-19T15:17:11.5817676Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-19T15:17:11.5818132Z 
+2025-03-19T15:17:11.5818624Z HEAD is now at 9e98464 Merge 275dedba8403b44424f7bcadeb7ad5977c63317a into c2355dbdf6f653e59b814f1f775c14afb32c280d
+2025-03-19T15:17:11.5825136Z ##[endgroup]
+2025-03-19T15:17:11.5868659Z [command]/usr/bin/git log -1 --format=%H
+2025-03-19T15:17:11.5892698Z 9e98464428092342f86c5634c400b3d4af8071a9
+2025-03-19T15:17:11.6156607Z ##[group]Run actions/setup-node@v4
+2025-03-19T15:17:11.6156949Z with:
+2025-03-19T15:17:11.6157185Z   node-version: 22
+2025-03-19T15:17:11.6157420Z   always-auth: false
+2025-03-19T15:17:11.6157657Z   check-latest: false
+2025-03-19T15:17:11.6158043Z   token: ***
+2025-03-19T15:17:11.6158253Z env:
+2025-03-19T15:17:11.6158565Z   MAVEN_ARGS: --no-transfer-progress -Dstyle.color=always
+2025-03-19T15:17:11.6159180Z ##[endgroup]
+2025-03-19T15:17:11.7927004Z Found in cache @ /opt/hostedtoolcache/node/22.14.0/x64
+2025-03-19T15:17:11.7933660Z ##[group]Environment details
+2025-03-19T15:17:12.1501048Z node: v22.14.0
+2025-03-19T15:17:12.1501601Z npm: 10.9.2
+2025-03-19T15:17:12.1502088Z yarn: 1.22.22
+2025-03-19T15:17:12.1503519Z ##[endgroup]
+2025-03-19T15:17:12.1635958Z ##[group]Run yarn install
+2025-03-19T15:17:12.1636275Z [36;1myarn install[0m
+2025-03-19T15:17:12.1636498Z [36;1myarn generate[0m
+2025-03-19T15:17:12.1699723Z shell: /usr/bin/bash -e {0}
+2025-03-19T15:17:12.1699993Z env:
+2025-03-19T15:17:12.1700259Z   MAVEN_ARGS: --no-transfer-progress -Dstyle.color=always
+2025-03-19T15:17:12.1700575Z ##[endgroup]
+2025-03-19T15:17:12.3015869Z yarn install v1.22.22
+2025-03-19T15:17:12.3474905Z [1/5] Validating package.json...
+2025-03-19T15:17:12.3491654Z [2/5] Resolving packages...
+2025-03-19T15:17:12.4950335Z [3/5] Fetching packages...
+2025-03-19T15:17:18.5091413Z [4/5] Linking dependencies...
+2025-03-19T15:17:18.5231471Z warning "@graphql-codegen/java > @graphql-codegen/visitor-plugin-common > graphql-tag@2.12.5" has incorrect peer dependency "graphql@^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0".
+2025-03-19T15:17:18.5234289Z warning "@graphql-codegen/cli > @graphql-tools/code-file-loader > @graphql-tools/graphql-tag-pluck > @babel/plugin-syntax-import-assertions@7.22.5" has unmet peer dependency "@babel/core@^7.0.0-0".
+2025-03-19T15:17:18.5514344Z warning Workspaces can only be enabled in private projects.
+2025-03-19T15:17:22.2679711Z [5/5] Building fresh packages...
+2025-03-19T15:17:22.2807280Z Done in 9.98s.
+2025-03-19T15:17:22.4343620Z yarn run v1.22.22
+2025-03-19T15:17:22.4559255Z $ graphql-codegen -c graphql-codegen.yml
+2025-03-19T15:17:23.6065980Z [STARTED] Parse Configuration
+2025-03-19T15:17:23.6073311Z [SUCCESS] Parse Configuration
+2025-03-19T15:17:23.6078449Z [STARTED] Generate outputs
+2025-03-19T15:17:23.6089770Z [STARTED] Generate to GraphQLTypes.java
+2025-03-19T15:17:23.6090442Z [STARTED] Generate to GraphQLDataFetchers.java
+2025-03-19T15:17:23.6096683Z [STARTED] Load GraphQL schemas
+2025-03-19T15:17:23.6098653Z [STARTED] Load GraphQL schemas
+2025-03-19T15:17:23.7434468Z [SUCCESS] Load GraphQL schemas
+2025-03-19T15:17:23.7436206Z [SUCCESS] Load GraphQL schemas
+2025-03-19T15:17:23.7439462Z [STARTED] Load GraphQL documents
+2025-03-19T15:17:23.7440080Z [STARTED] Load GraphQL documents
+2025-03-19T15:17:23.7446057Z [SUCCESS] Load GraphQL documents
+2025-03-19T15:17:23.7447181Z [SUCCESS] Load GraphQL documents
+2025-03-19T15:17:23.7447710Z [STARTED] Generate
+2025-03-19T15:17:23.7448164Z [STARTED] Generate
+2025-03-19T15:17:23.9938119Z [SUCCESS] Generate
+2025-03-19T15:17:23.9938664Z [SUCCESS] Generate
+2025-03-19T15:17:23.9944644Z [SUCCESS] Generate to GraphQLTypes.java
+2025-03-19T15:17:23.9946863Z [SUCCESS] Generate to GraphQLDataFetchers.java
+2025-03-19T15:17:23.9948475Z [SUCCESS] Generate outputs
+2025-03-19T15:17:24.0160265Z Done in 1.58s.
+2025-03-19T15:17:24.0349725Z ##[group]Run actions/setup-java@v4
+2025-03-19T15:17:24.0350002Z with:
+2025-03-19T15:17:24.0350177Z   java-version: 21
+2025-03-19T15:17:24.0350377Z   distribution: temurin
+2025-03-19T15:17:24.0350574Z   cache: maven
+2025-03-19T15:17:24.0350762Z   java-package: jdk
+2025-03-19T15:17:24.0350957Z   check-latest: false
+2025-03-19T15:17:24.0351158Z   server-id: github
+2025-03-19T15:17:24.0351356Z   server-username: GITHUB_ACTOR
+2025-03-19T15:17:24.0351592Z   server-password: GITHUB_TOKEN
+2025-03-19T15:17:24.0351832Z   overwrite-settings: true
+2025-03-19T15:17:24.0352043Z   job-status: success
+2025-03-19T15:17:24.0352365Z   token: ***
+2025-03-19T15:17:24.0352539Z env:
+2025-03-19T15:17:24.0352779Z   MAVEN_ARGS: --no-transfer-progress -Dstyle.color=always
+2025-03-19T15:17:24.0353079Z ##[endgroup]
+2025-03-19T15:17:24.2382045Z ##[group]Installed distributions
+2025-03-19T15:17:24.2426425Z Resolved Java 21.0.6+7 from tool-cache
+2025-03-19T15:17:24.2427053Z Setting Java 21.0.6+7 as the default
+2025-03-19T15:17:24.2441556Z Creating toolchains.xml for JDK version 21 from temurin
+2025-03-19T15:17:24.2534004Z Writing to /home/runner/.m2/toolchains.xml
+2025-03-19T15:17:24.2534574Z 
+2025-03-19T15:17:24.2534862Z Java configuration:
+2025-03-19T15:17:24.2535244Z   Distribution: temurin
+2025-03-19T15:17:24.2536555Z   Version: 21.0.6+7
+2025-03-19T15:17:24.2537193Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-19T15:17:24.2537683Z 
+2025-03-19T15:17:24.2539649Z ##[endgroup]
+2025-03-19T15:17:24.2543664Z Creating settings.xml with server-id: github
+2025-03-19T15:17:24.2561809Z Writing to /home/runner/.m2/settings.xml
+2025-03-19T15:17:26.4872460Z Cache hit for: setup-java-Linux-x64-maven-71babf337acdeea36ae33c943b8de9d31a39e69476ed959bf60a478a26b4abaa
+2025-03-19T15:17:27.6422672Z Received 134217728 of 166766388 (80.5%), 122.4 MBs/sec
+2025-03-19T15:17:27.8907161Z Received 166766388 of 166766388 (100.0%), 122.8 MBs/sec
+2025-03-19T15:17:27.8908598Z Cache Size: ~159 MB (166766388 B)
+2025-03-19T15:17:27.8954351Z [command]/usr/bin/tar -xf /home/runner/work/_temp/5d1f72ba-2e41-433e-ae11-85abad50b07c/cache.tzst -P -C /home/runner/work/OpenTripPlanner/OpenTripPlanner --use-compress-program unzstd
+2025-03-19T15:17:28.4250730Z Cache restored successfully
+2025-03-19T15:17:28.4623602Z Cache restored from key: setup-java-Linux-x64-maven-71babf337acdeea36ae33c943b8de9d31a39e69476ed959bf60a478a26b4abaa
+2025-03-19T15:17:28.4805453Z ##[group]Run mvn $MAVEN_ARGS compile -DskipTests -P prettierSkip
+2025-03-19T15:17:28.4805929Z [36;1mmvn $MAVEN_ARGS compile -DskipTests -P prettierSkip[0m
+2025-03-19T15:17:28.4856142Z shell: /usr/bin/bash -e {0}
+2025-03-19T15:17:28.4856390Z env:
+2025-03-19T15:17:28.4856638Z   MAVEN_ARGS: --no-transfer-progress -Dstyle.color=always
+2025-03-19T15:17:28.4857070Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-19T15:17:28.4857534Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-19T15:17:28.4857903Z ##[endgroup]
+2025-03-19T15:17:32.1457076Z [[1;34mINFO[m] Scanning for projects...
+2025-03-19T15:17:32.8330820Z [[1;34mINFO[m] ------------------------------------------------------------------------
+2025-03-19T15:17:32.8332259Z [[1;34mINFO[m] Detecting the operating system and CPU architecture
+2025-03-19T15:17:32.8333623Z [[1;34mINFO[m] ------------------------------------------------------------------------
+2025-03-19T15:17:32.8355273Z [[1;34mINFO[m] os.detected.name: linux
+2025-03-19T15:17:32.8356227Z [[1;34mINFO[m] os.detected.arch: x86_64
+2025-03-19T15:17:32.8357002Z [[1;34mINFO[m] os.detected.bitness: 64
+2025-03-19T15:17:32.8357802Z [[1;34mINFO[m] os.detected.version: 6.8
+2025-03-19T15:17:32.8358908Z [[1;34mINFO[m] os.detected.version.major: 6
+2025-03-19T15:17:32.8359779Z [[1;34mINFO[m] os.detected.version.minor: 8
+2025-03-19T15:17:32.8360971Z [[1;34mINFO[m] os.detected.release: ubuntu
+2025-03-19T15:17:32.8361937Z [[1;34mINFO[m] os.detected.release.version: 24.04
+2025-03-19T15:17:32.8363380Z [[1;34mINFO[m] os.detected.release.like.ubuntu: true
+2025-03-19T15:17:32.8364379Z [[1;34mINFO[m] os.detected.release.like.debian: true
+2025-03-19T15:17:32.8365511Z [[1;34mINFO[m] os.detected.classifier: linux-x86_64
+2025-03-19T15:17:32.8425772Z [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+2025-03-19T15:17:32.8426999Z [[1;34mINFO[m] [1mReactor Build Order:[m
+2025-03-19T15:17:32.8427824Z [[1;34mINFO[m] 
+2025-03-19T15:17:32.8546620Z [[1;34mINFO[m] OpenTripPlanner - Root                                             [pom]
+2025-03-19T15:17:32.8548250Z [[1;34mINFO[m] OpenTripPlanner - Utils                                            [jar]
+2025-03-19T15:17:32.8549875Z [[1;34mINFO[m] OpenTripPlanner - Raptor                                           [jar]
+2025-03-19T15:17:32.8553709Z [[1;34mINFO[m] OpenTripPlanner - GTFS Realtime (protobuf)                         [jar]
+2025-03-19T15:17:32.8560139Z [[1;34mINFO[m] OpenTripPlanner - Application                                      [jar]
+2025-03-19T15:17:32.8561451Z [[1;34mINFO[m] OpenTripPlanner - Shaded Jar                                       [jar]
+2025-03-19T15:17:32.8658574Z [[1;34mINFO[m] 
+2025-03-19T15:17:32.8660322Z [[1;34mINFO[m] [1m--------------------< [0;36morg.opentripplanner:otp-root[0;1m >--------------------[m
+2025-03-19T15:17:32.8661673Z [[1;34mINFO[m] [1mBuilding OpenTripPlanner - Root 2.8.0-SNAPSHOT                     [1/6][m
+2025-03-19T15:17:32.8662785Z [[1;34mINFO[m]   from pom.xml
+2025-03-19T15:17:32.8663858Z [[1;34mINFO[m] [1m--------------------------------[ pom ]---------------------------------[m
+2025-03-19T15:17:32.9127392Z [[1;34mINFO[m] 
+2025-03-19T15:17:32.9131149Z [[1;34mINFO[m] [1m--- [0;32mprettier:0.22:write[m [1m(default)[m @ [36motp-root[0;1m ---[m
+2025-03-19T15:17:32.9738466Z [[1;34mINFO[m] Skipping plugin execution
+2025-03-19T15:17:32.9747248Z [[1;34mINFO[m] 
+2025-03-19T15:17:32.9749041Z [[1;34mINFO[m] [1m--- [0;32mgit-commit-id:9.0.1:revision[m [1m(default)[m @ [36motp-root[0;1m ---[m
+2025-03-19T15:17:33.0735958Z [[1;34mINFO[m] 
+2025-03-19T15:17:33.0741624Z [[1;34mINFO[m] [1m---------------------< [0;36morg.opentripplanner:utils[0;1m >----------------------[m
+2025-03-19T15:17:33.0754258Z [[1;34mINFO[m] [1mBuilding OpenTripPlanner - Utils 2.8.0-SNAPSHOT                    [2/6][m
+2025-03-19T15:17:33.0755681Z [[1;34mINFO[m]   from utils/pom.xml
+2025-03-19T15:17:33.0756656Z [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+2025-03-19T15:17:33.1090467Z [[1;34mINFO[m] 
+2025-03-19T15:17:33.1092027Z [[1;34mINFO[m] [1m--- [0;32mprettier:0.22:write[m [1m(default)[m @ [36mutils[0;1m ---[m
+2025-03-19T15:17:33.1093309Z [[1;34mINFO[m] Skipping plugin execution
+2025-03-19T15:17:33.1094084Z [[1;34mINFO[m] 
+2025-03-19T15:17:33.1095187Z [[1;34mINFO[m] [1m--- [0;32mgit-commit-id:9.0.1:revision[m [1m(default)[m @ [36mutils[0;1m ---[m
+2025-03-19T15:17:34.0332412Z [[1;34mINFO[m] 
+2025-03-19T15:17:34.0334616Z [[1;34mINFO[m] [1m--- [0;32mresources:3.3.1:resources[m [1m(default-resources)[m @ [36mutils[0;1m ---[m
+2025-03-19T15:17:34.1098461Z [[1;34mINFO[m] skip non existing resourceDirectory /home/runner/work/OpenTripPlanner/OpenTripPlanner/utils/src/main/resources
+2025-03-19T15:17:34.1105658Z [[1;34mINFO[m] 
+2025-03-19T15:17:34.1108631Z [[1;34mINFO[m] [1m--- [0;32mcompiler:3.14.0:compile[m [1m(default-compile)[m @ [36mutils[0;1m ---[m
+2025-03-19T15:17:34.2294611Z [[1;34mINFO[m] Recompiling the module because of [1mchanged source code[m.
+2025-03-19T15:17:34.2387616Z [[1;34mINFO[m] Compiling 44 source files with javac [debug release 21] to target/classes
+2025-03-19T15:17:36.0987154Z [[1;34mINFO[m] 
+2025-03-19T15:17:36.1009670Z [[1;34mINFO[m] [1m---------------------< [0;36morg.opentripplanner:raptor[0;1m >---------------------[m
+2025-03-19T15:17:36.1011084Z [[1;34mINFO[m] [1mBuilding OpenTripPlanner - Raptor 2.8.0-SNAPSHOT                   [3/6][m
+2025-03-19T15:17:36.1012365Z [[1;34mINFO[m]   from raptor/pom.xml
+2025-03-19T15:17:36.1013289Z [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+2025-03-19T15:17:36.1195804Z [[1;34mINFO[m] 
+2025-03-19T15:17:36.1202205Z [[1;34mINFO[m] [1m--- [0;32mprettier:0.22:write[m [1m(default)[m @ [36mraptor[0;1m ---[m
+2025-03-19T15:17:36.1214665Z [[1;34mINFO[m] Skipping plugin execution
+2025-03-19T15:17:36.1217554Z [[1;34mINFO[m] 
+2025-03-19T15:17:36.1251584Z [[1;34mINFO[m] [1m--- [0;32mgit-commit-id:9.0.1:revision[m [1m(default)[m @ [36mraptor[0;1m ---[m
+2025-03-19T15:17:36.3757453Z [[1;34mINFO[m] 
+2025-03-19T15:17:36.3763199Z [[1;34mINFO[m] [1m--- [0;32mresources:3.3.1:resources[m [1m(default-resources)[m @ [36mraptor[0;1m ---[m
+2025-03-19T15:17:36.3789431Z [[1;34mINFO[m] skip non existing resourceDirectory /home/runner/work/OpenTripPlanner/OpenTripPlanner/raptor/src/main/resources
+2025-03-19T15:17:36.3796363Z [[1;34mINFO[m] 
+2025-03-19T15:17:36.3820218Z [[1;34mINFO[m] [1m--- [0;32mcompiler:3.14.0:compile[m [1m(default-compile)[m @ [36mraptor[0;1m ---[m
+2025-03-19T15:17:36.4014661Z [[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+2025-03-19T15:17:36.4027659Z [[1;34mINFO[m] Compiling 207 source files with javac [debug release 21] to target/classes
+2025-03-19T15:17:37.9863282Z [[1;34mINFO[m] /home/runner/work/OpenTripPlanner/OpenTripPlanner/raptor/src/main/java/org/opentripplanner/raptor/rangeraptor/multicriteria/configure/McRangeRaptorConfig.java: Some input files use or override a deprecated API.
+2025-03-19T15:17:37.9867087Z [[1;34mINFO[m] /home/runner/work/OpenTripPlanner/OpenTripPlanner/raptor/src/main/java/org/opentripplanner/raptor/rangeraptor/multicriteria/configure/McRangeRaptorConfig.java: Recompile with -Xlint:deprecation for details.
+2025-03-19T15:17:37.9896643Z [[1;34mINFO[m] /home/runner/work/OpenTripPlanner/OpenTripPlanner/raptor/src/main/java/org/opentripplanner/raptor/api/request/RaptorViaLocation.java: Some input files use unchecked or unsafe operations.
+2025-03-19T15:17:37.9909297Z [[1;34mINFO[m] /home/runner/work/OpenTripPlanner/OpenTripPlanner/raptor/src/main/java/org/opentripplanner/raptor/api/request/RaptorViaLocation.java: Recompile with -Xlint:unchecked for details.
+2025-03-19T15:17:37.9911013Z [[1;34mINFO[m] 
+2025-03-19T15:17:37.9912463Z [[1;34mINFO[m] [1m-------------< [0;36morg.opentripplanner:gtfs-realtime-protobuf[0;1m >-------------[m
+2025-03-19T15:17:37.9913941Z [[1;34mINFO[m] [1mBuilding OpenTripPlanner - GTFS Realtime (protobuf) 2.8.0-SNAPSHOT [4/6][m
+2025-03-19T15:17:37.9914988Z [[1;34mINFO[m]   from gtfs-realtime-protobuf/pom.xml
+2025-03-19T15:17:37.9915985Z [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+2025-03-19T15:17:38.0415262Z [[1;34mINFO[m] 
+2025-03-19T15:17:38.0419196Z [[1;34mINFO[m] [1m--- [0;32mprettier:0.22:write[m [1m(default)[m @ [36mgtfs-realtime-protobuf[0;1m ---[m
+2025-03-19T15:17:38.0686063Z [[1;34mINFO[m] Skipping plugin execution
+2025-03-19T15:17:38.0699837Z [[1;34mINFO[m] 
+2025-03-19T15:17:38.0701017Z [[1;34mINFO[m] [1m--- [0;32mgit-commit-id:9.0.1:revision[m [1m(default)[m @ [36mgtfs-realtime-protobuf[0;1m ---[m
+2025-03-19T15:17:38.6088312Z [[1;34mINFO[m] 
+2025-03-19T15:17:38.6093513Z [[1;34mINFO[m] [1m--- [0;32mprotobuf:0.6.1:compile[m [1m(default)[m @ [36mgtfs-realtime-protobuf[0;1m ---[m
+2025-03-19T15:17:38.7327867Z [[1;34mINFO[m] Compiling 2 proto file(s) to /home/runner/work/OpenTripPlanner/OpenTripPlanner/gtfs-realtime-protobuf/target/generated-sources/protobuf/java
+2025-03-19T15:17:38.7649798Z [[1;34mINFO[m] 
+2025-03-19T15:17:38.7651153Z [[1;34mINFO[m] [1m--- [0;32mresources:3.3.1:resources[m [1m(default-resources)[m @ [36mgtfs-realtime-protobuf[0;1m ---[m
+2025-03-19T15:17:38.8010272Z [[1;34mINFO[m] skip non existing resourceDirectory /home/runner/work/OpenTripPlanner/OpenTripPlanner/gtfs-realtime-protobuf/src/main/resources
+2025-03-19T15:17:38.8029256Z [[1;34mINFO[m] Copying 2 resources from src/main/proto to target/classes
+2025-03-19T15:17:38.8055600Z [[1;34mINFO[m] 
+2025-03-19T15:17:38.8057051Z [[1;34mINFO[m] [1m--- [0;32mcompiler:3.14.0:compile[m [1m(default-compile)[m @ [36mgtfs-realtime-protobuf[0;1m ---[m
+2025-03-19T15:17:38.8597317Z [[1;34mINFO[m] Recompiling the module because of [1mchanged source code[m.
+2025-03-19T15:17:38.8638278Z [[1;34mINFO[m] Compiling 2 source files with javac [debug release 21] to target/classes
+2025-03-19T15:17:40.1735936Z [[1;34mINFO[m] 
+2025-03-19T15:17:40.1737052Z [[1;34mINFO[m] [1m------------------< [0;36morg.opentripplanner:application[0;1m >-------------------[m
+2025-03-19T15:17:40.1738380Z [[1;34mINFO[m] [1mBuilding OpenTripPlanner - Application 2.8.0-SNAPSHOT              [5/6][m
+2025-03-19T15:17:40.1740223Z [[1;34mINFO[m]   from application/pom.xml
+2025-03-19T15:17:40.1743671Z [[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+2025-03-19T15:17:42.5660323Z [[1;34mINFO[m] 
+2025-03-19T15:17:42.5661922Z [[1;34mINFO[m] [1m--- [0;32mprettier:0.22:write[m [1m(default)[m @ [36mapplication[0;1m ---[m
+2025-03-19T15:17:42.5670886Z [[1;34mINFO[m] Skipping plugin execution
+2025-03-19T15:17:42.5675028Z [[1;34mINFO[m] 
+2025-03-19T15:17:42.5679803Z [[1;34mINFO[m] [1m--- [0;32mgit-commit-id:9.0.1:revision[m [1m(default)[m @ [36mapplication[0;1m ---[m
+2025-03-19T15:17:42.7711630Z [[1;34mINFO[m] 
+2025-03-19T15:17:42.7713202Z [[1;34mINFO[m] [1m--- [0;32mbuild-helper:3.6.0:add-source[m [1m(build-helper-generate-sources)[m @ [36mapplication[0;1m ---[m
+2025-03-19T15:17:42.8066892Z [[1;34mINFO[m] Source directory: /home/runner/work/OpenTripPlanner/OpenTripPlanner/application/src/main/java added.
+2025-03-19T15:17:42.8069836Z [[1;34mINFO[m] Source directory: /home/runner/work/OpenTripPlanner/OpenTripPlanner/application/src/ext/java added.
+2025-03-19T15:17:42.8072647Z [[1;34mINFO[m] 
+2025-03-19T15:17:42.8074648Z [[1;34mINFO[m] [1m--- [0;32mpackage-info:1.1.0:generate[m [1m(default)[m @ [36mapplication[0;1m ---[m
+2025-03-19T15:17:42.8373255Z [[1;34mINFO[m] Generating package-info.java: {sourceDirectory=/home/runner/work/OpenTripPlanner/OpenTripPlanner/application/src/main/java, outputDirectory=/home/runner/work/OpenTripPlanner/OpenTripPlanner/application/target/generated-sources, packages=[{pattern='**', caseSensitive=true, template=/home/runner/work/OpenTripPlanner/OpenTripPlanner/application/src/build/templates/package-info-template.java}], inlineReplacePattern='(\s*//\s*<replace>\s*)(.*?)(\s*//\s*</replace>\s*)', generate=true, inline=true}
+2025-03-19T15:17:43.2384725Z [[1;34mINFO[m] 
+2025-03-19T15:17:43.2388176Z [[1;34mINFO[m] [1m--- [0;32mresources:3.3.1:resources[m [1m(default-resources)[m @ [36mapplication[0;1m ---[m
+2025-03-19T15:17:43.2463742Z [[1;34mINFO[m] Copying 25 resources from src/main/resources to target/classes
+2025-03-19T15:17:43.3334709Z [[1;34mINFO[m] Copying 2 resources from src/ext/resources to target/classes
+2025-03-19T15:17:43.3395113Z [[1;34mINFO[m] Copying 258 resources from src/client to target/classes/client
+2025-03-19T15:17:43.3701035Z [[1;34mINFO[m] 
+2025-03-19T15:17:43.3702174Z [[1;34mINFO[m] [1m--- [0;32mcompiler:3.14.0:compile[m [1m(default-compile)[m @ [36mapplication[0;1m ---[m
+2025-03-19T15:17:43.9138066Z [[1;34mINFO[m] Recompiling the module because of [1mchanged dependency[m.
+2025-03-19T15:17:43.9188087Z [[1;34mINFO[m] Compiling 1991 source files with javac [debug release 21] to target/classes
+2025-03-19T15:17:50.5408012Z [[1;34mINFO[m] -------------------------------------------------------------
+2025-03-19T15:17:50.5409515Z [[1;31mERROR[m] COMPILATION ERROR : 
+2025-03-19T15:17:50.5410713Z [[1;34mINFO[m] -------------------------------------------------------------
+2025-03-19T15:17:50.5417392Z [[1;31mERROR[m] /home/runner/work/OpenTripPlanner/OpenTripPlanner/application/src/main/java/org/opentripplanner/apis/gtfs/generated/GraphQLDataFetchers.java:[309,59] cannot find symbol
+2025-03-19T15:17:50.5419906Z   symbol:   class Grams
+2025-03-19T15:17:50.5421442Z   location: package org.opentripplanner.framework.model
+2025-03-19T15:17:50.5422084Z [[1;34mINFO[m] 1 error
+2025-03-19T15:17:50.5422740Z [[1;34mINFO[m] -------------------------------------------------------------
+2025-03-19T15:17:50.5423809Z [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+2025-03-19T15:17:50.5424881Z [[1;34mINFO[m] [1mReactor Summary for OpenTripPlanner - Root 2.8.0-SNAPSHOT:[m
+2025-03-19T15:17:50.5425554Z [[1;34mINFO[m] 
+2025-03-19T15:17:50.5426501Z [[1;34mINFO[m] OpenTripPlanner - Root ............................. [1;32mSUCCESS[m [  0.209 s]
+2025-03-19T15:17:50.5427773Z [[1;34mINFO[m] OpenTripPlanner - Utils ............................ [1;32mSUCCESS[m [  3.025 s]
+2025-03-19T15:17:50.5429208Z [[1;34mINFO[m] OpenTripPlanner - Raptor ........................... [1;32mSUCCESS[m [  1.890 s]
+2025-03-19T15:17:50.5430586Z [[1;34mINFO[m] OpenTripPlanner - GTFS Realtime (protobuf) ......... [1;32mSUCCESS[m [  2.184 s]
+2025-03-19T15:17:50.5431969Z [[1;34mINFO[m] OpenTripPlanner - Application ...................... [1;31mFAILURE[m [ 10.368 s]
+2025-03-19T15:17:50.5433258Z [[1;34mINFO[m] OpenTripPlanner - Shaded Jar ....................... [1;33mSKIPPED[m
+2025-03-19T15:17:50.5434338Z [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+2025-03-19T15:17:50.5435085Z [[1;34mINFO[m] [1;31mBUILD FAILURE[m
+2025-03-19T15:17:50.5435925Z [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+2025-03-19T15:17:50.5436626Z [[1;34mINFO[m] Total time:  18.472 s
+2025-03-19T15:17:50.5437305Z [[1;34mINFO[m] Finished at: 2025-03-19T15:17:50Z
+2025-03-19T15:17:50.5438169Z [[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+2025-03-19T15:17:50.5443569Z [[1;31mERROR[m] Failed to execute goal [32morg.apache.maven.plugins:maven-compiler-plugin:3.14.0:compile[m [1m(default-compile)[m on project [36mapplication[m: [1;31mCompilation failure[m
+2025-03-19T15:17:50.5450799Z [[1;31mERROR[m] [1;31m/home/runner/work/OpenTripPlanner/OpenTripPlanner/application/src/main/java/org/opentripplanner/apis/gtfs/generated/GraphQLDataFetchers.java:[309,59] cannot find symbol[m
+2025-03-19T15:17:50.5452942Z [[1;31mERROR[m] [1;31m  symbol:   class Grams[m
+2025-03-19T15:17:50.5457515Z [[1;31mERROR[m] [1;31m  location: package org.opentripplanner.framework.model[m
+2025-03-19T15:17:50.5471030Z [[1;31mERROR[m] [1;31m[m
+2025-03-19T15:17:50.5471597Z [[1;31mERROR[m] -> [1m[Help 1][m
+2025-03-19T15:17:50.5472069Z [[1;31mERROR[m] 
+2025-03-19T15:17:50.5472990Z [[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+2025-03-19T15:17:50.5474154Z [[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+2025-03-19T15:17:50.5474888Z [[1;31mERROR[m] 
+2025-03-19T15:17:50.5475941Z [[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+2025-03-19T15:17:50.5477362Z [[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+2025-03-19T15:17:50.5478185Z [[1;31mERROR[m] 
+2025-03-19T15:17:50.5479250Z [[1;31mERROR[m] After correcting the problems, you can resume the build with the command
+2025-03-19T15:17:50.5480193Z [[1;31mERROR[m]   [1mmvn <args> -rf :application[m
+2025-03-19T15:17:50.5892252Z ##[error]Process completed with exit code 1.
+2025-03-19T15:17:50.5965309Z Post job cleanup.
+2025-03-19T15:17:50.7809859Z Post job cleanup.
+2025-03-19T15:17:50.8801996Z [command]/usr/bin/git version
+2025-03-19T15:17:50.8848364Z git version 2.48.1
+2025-03-19T15:17:50.8895754Z Temporarily overriding HOME='/home/runner/work/_temp/328f849a-18b9-4fe4-afdc-14edbecb7fdb' before making global git config changes
+2025-03-19T15:17:50.8897563Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-19T15:17:50.8902875Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/OpenTripPlanner/OpenTripPlanner
+2025-03-19T15:17:50.8942373Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-19T15:17:50.8976611Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-19T15:17:50.9235448Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-19T15:17:50.9260192Z http.https://github.com/.extraheader
+2025-03-19T15:17:50.9273905Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-19T15:17:50.9307410Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-19T15:17:50.9687833Z Cleaning up orphan processes

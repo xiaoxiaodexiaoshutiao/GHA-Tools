@@ -1,0 +1,875 @@
+2025-03-21T15:25:24.8396564Z Requested labels: ubuntu-latest
+2025-03-21T15:25:24.8396943Z Job defined at: Consensys/linea-sequencer/.github/workflows/gradle.yml@refs/pull/178/merge
+2025-03-21T15:25:24.8397101Z Waiting for a runner to pick up this job...
+2025-03-21T15:25:26.6062192Z Job is waiting for a hosted runner to come online.
+2025-03-21T15:25:28.5258452Z Job is about to start running on the hosted runner: GitHub Actions 367 (hosted)
+2025-03-21T15:25:30.1546273Z Current runner version: '2.322.0'
+2025-03-21T15:25:30.1570922Z ##[group]Operating System
+2025-03-21T15:25:30.1571714Z Ubuntu
+2025-03-21T15:25:30.1572336Z 24.04.2
+2025-03-21T15:25:30.1572844Z LTS
+2025-03-21T15:25:30.1573302Z ##[endgroup]
+2025-03-21T15:25:30.1573979Z ##[group]Runner Image
+2025-03-21T15:25:30.1574558Z Image: ubuntu-24.04
+2025-03-21T15:25:30.1575077Z Version: 20250316.1.0
+2025-03-21T15:25:30.1576176Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250316.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-21T15:25:30.1577517Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250316.1
+2025-03-21T15:25:30.1578404Z ##[endgroup]
+2025-03-21T15:25:30.1579032Z ##[group]Runner Image Provisioner
+2025-03-21T15:25:30.1579633Z 2.0.422.1
+2025-03-21T15:25:30.1580403Z ##[endgroup]
+2025-03-21T15:25:30.1582645Z ##[group]GITHUB_TOKEN Permissions
+2025-03-21T15:25:30.1585414Z Actions: read
+2025-03-21T15:25:30.1586281Z Attestations: read
+2025-03-21T15:25:30.1587004Z Checks: read
+2025-03-21T15:25:30.1587482Z Contents: read
+2025-03-21T15:25:30.1588014Z Deployments: read
+2025-03-21T15:25:30.1588594Z Discussions: read
+2025-03-21T15:25:30.1589114Z Issues: read
+2025-03-21T15:25:30.1589602Z Metadata: read
+2025-03-21T15:25:30.1590460Z Models: read
+2025-03-21T15:25:30.1590993Z Packages: read
+2025-03-21T15:25:30.1591498Z Pages: read
+2025-03-21T15:25:30.1592094Z PullRequests: read
+2025-03-21T15:25:30.1592634Z RepositoryProjects: read
+2025-03-21T15:25:30.1593192Z SecurityEvents: read
+2025-03-21T15:25:30.1593795Z Statuses: read
+2025-03-21T15:25:30.1594320Z ##[endgroup]
+2025-03-21T15:25:30.1597776Z Secret source: None
+2025-03-21T15:25:30.1598909Z Prepare workflow directory
+2025-03-21T15:25:30.2050604Z Prepare all required actions
+2025-03-21T15:25:30.2086755Z Getting action download info
+2025-03-21T15:25:30.4370242Z Download action repository 'actions/setup-go@v5' (SHA:0aaccfd150d50ccaeb58ebd88d36e91967a5f35b)
+2025-03-21T15:25:30.7735375Z Download action repository 'egor-tensin/setup-gcc@v1' (SHA:eaa888eb19115a521fa72b65cd94fe1f25bbcaac)
+2025-03-21T15:25:30.8994225Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-21T15:25:30.9348361Z Download action repository 'actions/setup-java@v4' (SHA:3a4f6e1af504cf6a31855fa899c6aa5355ba6c12)
+2025-03-21T15:25:31.3068866Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2025-03-21T15:25:31.7193560Z Complete job name: acceptanceTest
+2025-03-21T15:25:31.8046688Z ##[group]Run actions/setup-go@v5
+2025-03-21T15:25:31.8047999Z with:
+2025-03-21T15:25:31.8048796Z   check-latest: false
+2025-03-21T15:25:31.8050120Z   token: ***
+2025-03-21T15:25:31.8050979Z   cache: true
+2025-03-21T15:25:31.8051983Z env:
+2025-03-21T15:25:31.8052680Z   CARGO_NET_GIT_FETCH_WITH_CLI: true
+2025-03-21T15:25:31.8053605Z ##[endgroup]
+2025-03-21T15:25:32.0788365Z Setup go version spec 
+2025-03-21T15:25:32.0791066Z [warning]go-version input was not specified. The action will try to use pre-installed version.
+2025-03-21T15:25:32.1360980Z [command]/usr/bin/go env GOMODCACHE
+2025-03-21T15:25:32.1391658Z [command]/usr/bin/go env GOCACHE
+2025-03-21T15:25:32.1413625Z /home/runner/go/pkg/mod
+2025-03-21T15:25:32.1452252Z /home/runner/.cache/go-build
+2025-03-21T15:25:32.1498476Z ##[warning]Restore cache failed: Dependencies file is not found in /home/runner/work/linea-sequencer/linea-sequencer. Supported file pattern: go.sum
+2025-03-21T15:25:32.1632423Z go version go1.23.7 linux/amd64
+2025-03-21T15:25:32.1633531Z 
+2025-03-21T15:25:32.1635867Z ##[group]go env
+2025-03-21T15:25:32.2810298Z GO111MODULE=''
+2025-03-21T15:25:32.2811285Z GOARCH='amd64'
+2025-03-21T15:25:32.2812131Z GOBIN=''
+2025-03-21T15:25:32.2813054Z GOCACHE='/home/runner/.cache/go-build'
+2025-03-21T15:25:32.2814269Z GOENV='/home/runner/.config/go/env'
+2025-03-21T15:25:32.2815353Z GOEXE=''
+2025-03-21T15:25:32.2816196Z GOEXPERIMENT=''
+2025-03-21T15:25:32.2817113Z GOFLAGS=''
+2025-03-21T15:25:32.2817981Z GOHOSTARCH='amd64'
+2025-03-21T15:25:32.2819249Z GOHOSTOS='linux'
+2025-03-21T15:25:32.2820373Z GOINSECURE=''
+2025-03-21T15:25:32.2821339Z GOMODCACHE='/home/runner/go/pkg/mod'
+2025-03-21T15:25:32.2822452Z GONOPROXY=''
+2025-03-21T15:25:32.2823327Z GONOSUMDB=''
+2025-03-21T15:25:32.2824206Z GOOS='linux'
+2025-03-21T15:25:32.2825111Z GOPATH='/home/runner/go'
+2025-03-21T15:25:32.2826099Z GOPRIVATE=''
+2025-03-21T15:25:32.2827116Z GOPROXY='https://proxy.golang.org,direct'
+2025-03-21T15:25:32.2828437Z GOROOT='/opt/hostedtoolcache/go/1.23.7/x64'
+2025-03-21T15:25:32.2829680Z GOSUMDB='sum.golang.org'
+2025-03-21T15:25:32.2830846Z GOTMPDIR=''
+2025-03-21T15:25:32.2831712Z GOTOOLCHAIN='auto'
+2025-03-21T15:25:32.2832979Z GOTOOLDIR='/opt/hostedtoolcache/go/1.23.7/x64/pkg/tool/linux_amd64'
+2025-03-21T15:25:32.2834418Z GOVCS=''
+2025-03-21T15:25:32.2835252Z GOVERSION='go1.23.7'
+2025-03-21T15:25:32.2836167Z GODEBUG=''
+2025-03-21T15:25:32.2837001Z GOTELEMETRY='local'
+2025-03-21T15:25:32.2838397Z GOTELEMETRYDIR='/home/runner/.config/go/telemetry'
+2025-03-21T15:25:32.2839685Z GCCGO='gccgo'
+2025-03-21T15:25:32.2840698Z GOAMD64='v1'
+2025-03-21T15:25:32.2841505Z AR='ar'
+2025-03-21T15:25:32.2842267Z CC='gcc'
+2025-03-21T15:25:32.2843061Z CXX='g++'
+2025-03-21T15:25:32.2843844Z CGO_ENABLED='1'
+2025-03-21T15:25:32.2844679Z GOMOD='/dev/null'
+2025-03-21T15:25:32.2845678Z GOWORK=''
+2025-03-21T15:25:32.2846467Z CGO_CFLAGS='-O2 -g'
+2025-03-21T15:25:32.2847341Z CGO_CPPFLAGS=''
+2025-03-21T15:25:32.2848213Z CGO_CXXFLAGS='-O2 -g'
+2025-03-21T15:25:32.2849133Z CGO_FFLAGS='-O2 -g'
+2025-03-21T15:25:32.2850405Z CGO_LDFLAGS='-O2 -g'
+2025-03-21T15:25:32.2851356Z PKG_CONFIG='pkg-config'
+2025-03-21T15:25:32.2853911Z GOGCCFLAGS='-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build2669166143=/tmp/go-build -gno-record-gcc-switches'
+2025-03-21T15:25:32.2856119Z 
+2025-03-21T15:25:32.2857975Z ##[endgroup]
+2025-03-21T15:25:32.3210169Z ##[group]Run egor-tensin/setup-gcc@v1
+2025-03-21T15:25:32.3211235Z with:
+2025-03-21T15:25:32.3211975Z   version: latest
+2025-03-21T15:25:32.3212803Z   platform: x64
+2025-03-21T15:25:32.3213594Z   cygwin: 0
+2025-03-21T15:25:32.3214326Z   cc: 1
+2025-03-21T15:25:32.3215051Z   hardlinks: 0
+2025-03-21T15:25:32.3215800Z env:
+2025-03-21T15:25:32.3216560Z   CARGO_NET_GIT_FETCH_WITH_CLI: true
+2025-03-21T15:25:32.3217542Z ##[endgroup]
+2025-03-21T15:25:32.3344658Z ##[group]Run New-Variable os -Value 'Linux' -Option Constant
+2025-03-21T15:25:32.3346606Z [36;1mNew-Variable os -Value 'Linux' -Option Constant[0m
+2025-03-21T15:25:32.3347914Z [36;1m[0m
+2025-03-21T15:25:32.3349168Z [36;1mNew-Variable linux_host -Value ($os -eq 'Linux') -Option Constant[0m
+2025-03-21T15:25:32.3351244Z [36;1mNew-Variable cygwin_host -Value ('0' -eq '1') -Option Constant[0m
+2025-03-21T15:25:32.3353281Z [36;1mNew-Variable windows_host -Value ($os -eq 'Windows' -and !$cygwin_host) -Option Constant[0m
+2025-03-21T15:25:32.3354983Z [36;1m[0m
+2025-03-21T15:25:32.3356129Z [36;1mNew-Variable version -Value ('latest') -Option Constant[0m
+2025-03-21T15:25:32.3357882Z [36;1mNew-Variable latest -Value ($version -eq 'latest') -Option Constant[0m
+2025-03-21T15:25:32.3359670Z [36;1mNew-Variable x64 -Value ('x64' -eq 'x64') -Option Constant[0m
+2025-03-21T15:25:32.3361140Z [36;1m[0m
+2025-03-21T15:25:32.3362019Z [36;1mfunction Locate-Choco {[0m
+2025-03-21T15:25:32.3363341Z [36;1m    $path = Get-Command 'choco' -ErrorAction SilentlyContinue[0m
+2025-03-21T15:25:32.3364712Z [36;1m    if ($path) {[0m
+2025-03-21T15:25:32.3365709Z [36;1m        $path.Path[0m
+2025-03-21T15:25:32.3366697Z [36;1m    } else {[0m
+2025-03-21T15:25:32.3367878Z [36;1m        Join-Path ${env:ProgramData} 'chocolatey' 'bin' 'choco'[0m
+2025-03-21T15:25:32.3369183Z [36;1m    }[0m
+2025-03-21T15:25:32.3370144Z [36;1m}[0m
+2025-03-21T15:25:32.3370990Z [36;1m[0m
+2025-03-21T15:25:32.3371890Z [36;1mfunction Enable-TestingPPA {[0m
+2025-03-21T15:25:32.3373426Z [36;1m    sudo add-apt-repository --yes --update ppa:ubuntu-toolchain-r/test[0m
+2025-03-21T15:25:32.3374903Z [36;1m}[0m
+2025-03-21T15:25:32.3375947Z [36;1m[0m
+2025-03-21T15:25:32.3376855Z [36;1mfunction Install-Package {[0m
+2025-03-21T15:25:32.3377957Z [36;1m    param([0m
+2025-03-21T15:25:32.3379249Z [36;1m        [Parameter(Mandatory=$true, ValueFromRemainingArguments=$true)][0m
+2025-03-21T15:25:32.3381006Z [36;1m        [string[]] $Packages[0m
+2025-03-21T15:25:32.3382065Z [36;1m    )[0m
+2025-03-21T15:25:32.3382934Z [36;1m[0m
+2025-03-21T15:25:32.3383807Z [36;1m    if ($script:linux_host) {[0m
+2025-03-21T15:25:32.3384949Z [36;1m        sudo apt-get update[0m
+2025-03-21T15:25:32.3386676Z [36;1m        sudo DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends $Packages[0m
+2025-03-21T15:25:32.3388516Z [36;1m    } elseif ($script:cygwin_host) {[0m
+2025-03-21T15:25:32.3389691Z [36;1m        $choco = Locate-Choco[0m
+2025-03-21T15:25:32.3391193Z [36;1m        & $choco install $Packages -y --no-progress --source=cygwin[0m
+2025-03-21T15:25:32.3392665Z [36;1m    } elseif ($script:windows_host) {[0m
+2025-03-21T15:25:32.3393857Z [36;1m        $choco = Locate-Choco[0m
+2025-03-21T15:25:32.3395248Z [36;1m        & $choco upgrade $Packages -y --no-progress --allow-downgrade[0m
+2025-03-21T15:25:32.3396650Z [36;1m    } else {[0m
+2025-03-21T15:25:32.3397931Z [36;1m        throw "Sorry, installing packages is unsupported on $script:os"[0m
+2025-03-21T15:25:32.3399359Z [36;1m    }[0m
+2025-03-21T15:25:32.3400310Z [36;1m}[0m
+2025-03-21T15:25:32.3401135Z [36;1m[0m
+2025-03-21T15:25:32.3401969Z [36;1mif ($linux_host) {[0m
+2025-03-21T15:25:32.3402954Z [36;1m    $pkg = 'g++'[0m
+2025-03-21T15:25:32.3403912Z [36;1m    $gcc = 'gcc'[0m
+2025-03-21T15:25:32.3404859Z [36;1m    $gxx = 'g++'[0m
+2025-03-21T15:25:32.3405823Z [36;1m    if (!$latest) {[0m
+2025-03-21T15:25:32.3406861Z [36;1m        Enable-TestingPPA[0m
+2025-03-21T15:25:32.3408124Z [36;1m        $pkg += "-$version"[0m
+2025-03-21T15:25:32.3409225Z [36;1m        $gcc += "-$version"[0m
+2025-03-21T15:25:32.3410421Z [36;1m        $gxx += "-$version"[0m
+2025-03-21T15:25:32.3411484Z [36;1m    }[0m
+2025-03-21T15:25:32.3412343Z [36;1m    if (!$x64) {[0m
+2025-03-21T15:25:32.3413332Z [36;1m        $pkg += '-multilib'[0m
+2025-03-21T15:25:32.3414381Z [36;1m    }[0m
+2025-03-21T15:25:32.3415293Z [36;1m    Install-Package $pkg[0m
+2025-03-21T15:25:32.3416377Z [36;1m} elseif ($cygwin_host) {[0m
+2025-03-21T15:25:32.3417439Z [36;1m    if (!$x64) {[0m
+2025-03-21T15:25:32.3418400Z [36;1m        echo @'[0m
+2025-03-21T15:25:32.3419363Z [36;1m::warning ::[0m
+2025-03-21T15:25:32.3420923Z [36;1m32-bit-targeting GCC is unstable and/or unmaintained on 64-bit Cygwin.[0m
+2025-03-21T15:25:32.3422505Z [36;1mPlease use 32-bit Cygwin instead.[0m
+2025-03-21T15:25:32.3423920Z [36;1mIf you _are_ using 32-bit Cygwin, you can ignore this message.[0m
+2025-03-21T15:25:32.3425270Z [36;1m'@[0m
+2025-03-21T15:25:32.3426116Z [36;1m    }[0m
+2025-03-21T15:25:32.3426960Z [36;1m[0m
+2025-03-21T15:25:32.3427818Z [36;1m    $pkg = 'gcc-g++'[0m
+2025-03-21T15:25:32.3428835Z [36;1m    $gcc = 'gcc'[0m
+2025-03-21T15:25:32.3429784Z [36;1m    $gxx = 'g++'[0m
+2025-03-21T15:25:32.3430897Z [36;1m[0m
+2025-03-21T15:25:32.3431792Z [36;1m    Install-Package $pkg[0m
+2025-03-21T15:25:32.3432896Z [36;1m} elseif ($windows_host) {[0m
+2025-03-21T15:25:32.3434262Z [36;1m    # TODO: use setup-mingw when calling composite actions within[0m
+2025-03-21T15:25:32.3435728Z [36;1m    # composite actions is implemented.[0m
+2025-03-21T15:25:32.3436912Z [36;1m    echo @'[0m
+2025-03-21T15:25:32.3437824Z [36;1m::error ::[0m
+2025-03-21T15:25:32.3439168Z [36;1mPlease use the egor-tensin/setup-mingw action to install GCC on Windows.[0m
+2025-03-21T15:25:32.3440755Z [36;1m'@[0m
+2025-03-21T15:25:32.3441587Z [36;1m    exit 1[0m
+2025-03-21T15:25:32.3442492Z [36;1m} else {[0m
+2025-03-21T15:25:32.3443591Z [36;1m    throw "Sorry, installing GCC is unsupported on $os"[0m
+2025-03-21T15:25:32.3444852Z [36;1m}[0m
+2025-03-21T15:25:32.3445668Z [36;1m[0m
+2025-03-21T15:25:32.3446580Z [36;1mecho "gcc=$gcc" >> $env:GITHUB_OUTPUT[0m
+2025-03-21T15:25:32.3447994Z [36;1mecho "gxx=$gxx" >> $env:GITHUB_OUTPUT[0m
+2025-03-21T15:25:32.3507423Z shell: /usr/bin/pwsh -command ". '{0}'"
+2025-03-21T15:25:32.3508597Z env:
+2025-03-21T15:25:32.3509455Z   CARGO_NET_GIT_FETCH_WITH_CLI: true
+2025-03-21T15:25:32.3510717Z ##[endgroup]
+2025-03-21T15:25:37.1723950Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [142 B]
+2025-03-21T15:25:37.2011777Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+2025-03-21T15:25:37.2019862Z Hit:6 https://packages.microsoft.com/repos/azure-cli noble InRelease
+2025-03-21T15:25:37.2036107Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2025-03-21T15:25:37.2051744Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2025-03-21T15:25:37.2113584Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2025-03-21T15:25:37.2155994Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2025-03-21T15:25:37.3800320Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [23.6 kB]
+2025-03-21T15:25:37.3980635Z Get:9 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [15.1 kB]
+2025-03-21T15:25:37.4013459Z Get:10 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [7661 B]
+2025-03-21T15:25:37.4355781Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [922 kB]
+2025-03-21T15:25:37.4431168Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [151 kB]
+2025-03-21T15:25:37.4445778Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 c-n-f Metadata [13.5 kB]
+2025-03-21T15:25:37.4482233Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1041 kB]
+2025-03-21T15:25:37.4602674Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [262 kB]
+2025-03-21T15:25:37.4667309Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [364 kB]
+2025-03-21T15:25:37.4703122Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 c-n-f Metadata [25.9 kB]
+2025-03-21T15:25:37.4715866Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Components [212 B]
+2025-03-21T15:25:37.4727595Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+2025-03-21T15:25:37.5275903Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-backports/main Translation-en [2588 B]
+2025-03-21T15:25:37.5718624Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [208 B]
+2025-03-21T15:25:37.5732007Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [14.6 kB]
+2025-03-21T15:25:37.5769657Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe Translation-en [14.6 kB]
+2025-03-21T15:25:37.5786238Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [20.0 kB]
+2025-03-21T15:25:37.5822959Z Get:25 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 c-n-f Metadata [1268 B]
+2025-03-21T15:25:37.5824509Z Get:26 http://azure.archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [216 B]
+2025-03-21T15:25:37.5825723Z Get:27 http://azure.archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [212 B]
+2025-03-21T15:25:37.6096570Z Get:28 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [671 kB]
+2025-03-21T15:25:37.6105844Z Get:29 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Components [9000 B]
+2025-03-21T15:25:37.6158724Z Get:30 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 c-n-f Metadata [6936 B]
+2025-03-21T15:25:37.6287518Z Get:31 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [820 kB]
+2025-03-21T15:25:37.6340562Z Get:32 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [177 kB]
+2025-03-21T15:25:37.6396993Z Get:33 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Components [51.9 kB]
+2025-03-21T15:25:37.6404114Z Get:34 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 c-n-f Metadata [17.0 kB]
+2025-03-21T15:25:37.6876459Z Get:35 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Components [208 B]
+2025-03-21T15:25:37.6888745Z Get:36 http://azure.archive.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [208 B]
+2025-03-21T15:25:43.9023377Z Fetched 5016 kB in 1s (5942 kB/s)
+2025-03-21T15:25:44.5319490Z Reading package lists...
+2025-03-21T15:25:44.5745175Z Reading package lists...
+2025-03-21T15:25:44.7243118Z Building dependency tree...
+2025-03-21T15:25:44.7250677Z Reading state information...
+2025-03-21T15:25:44.8836979Z g++ is already the newest version (4:13.2.0-7ubuntu1).
+2025-03-21T15:25:44.8837532Z 0 upgraded, 0 newly installed, 0 to remove and 54 not upgraded.
+2025-03-21T15:25:45.1589772Z ##[group]Run New-Variable os -Value 'Linux' -Option Constant
+2025-03-21T15:25:45.1590381Z [36;1mNew-Variable os -Value 'Linux' -Option Constant[0m
+2025-03-21T15:25:45.1590653Z [36;1m[0m
+2025-03-21T15:25:45.1590939Z [36;1mNew-Variable linux_host -Value ($os -eq 'Linux') -Option Constant[0m
+2025-03-21T15:25:45.1591373Z [36;1mNew-Variable cygwin_host -Value ('0' -eq '1') -Option Constant[0m
+2025-03-21T15:25:45.1591862Z [36;1mNew-Variable windows_host -Value ($os -eq 'Windows' -and !$cygwin_host) -Option Constant[0m
+2025-03-21T15:25:45.1592262Z [36;1m[0m
+2025-03-21T15:25:45.1592504Z [36;1mNew-Variable cc -Value ('1' -eq '1') -Option Constant[0m
+2025-03-21T15:25:45.1592787Z [36;1m[0m
+2025-03-21T15:25:45.1593006Z [36;1mNew-Variable gcc -Value 'gcc' -Option Constant[0m
+2025-03-21T15:25:45.1593483Z [36;1mNew-Variable gxx -Value 'g++' -Option Constant[0m
+2025-03-21T15:25:45.1593753Z [36;1m[0m
+2025-03-21T15:25:45.1593925Z [36;1mfunction Link-Exe {[0m
+2025-03-21T15:25:45.1594134Z [36;1m    param([0m
+2025-03-21T15:25:45.1594361Z [36;1m        [Parameter(Mandatory=$true)][0m
+2025-03-21T15:25:45.1594626Z [36;1m        [string] $Exe,[0m
+2025-03-21T15:25:45.1594867Z [36;1m        [Parameter(Mandatory=$true)][0m
+2025-03-21T15:25:45.1595120Z [36;1m        [string] $LinkName[0m
+2025-03-21T15:25:45.1595342Z [36;1m    )[0m
+2025-03-21T15:25:45.1595512Z [36;1m[0m
+2025-03-21T15:25:45.1595703Z [36;1m    $exe_path = (Get-Command $Exe).Path[0m
+2025-03-21T15:25:45.1596101Z [36;1m    $link_dir = if ($script:windows_host) { Split-Path $exe_path } else { '/usr/local/bin' }[0m
+2025-03-21T15:25:45.1596601Z [36;1m    $link_name = if ($script:windows_host) { "$LinkName.exe" } else { $LinkName }[0m
+2025-03-21T15:25:45.1597115Z [36;1m    $link_path = if ($script:cygwin_host) { "$link_dir/$link_name" } else { Join-Path $link_dir $link_name }[0m
+2025-03-21T15:25:45.1597564Z [36;1m    echo "Creating link $link_path -> $exe_path"[0m
+2025-03-21T15:25:45.1597853Z [36;1m    if ($script:linux_host) {[0m
+2025-03-21T15:25:45.1598127Z [36;1m        sudo ln -f -s $exe_path $link_path[0m
+2025-03-21T15:25:45.1598412Z [36;1m    } elseif ($script:cygwin_host) {[0m
+2025-03-21T15:25:45.1598687Z [36;1m        ln.exe -f -s $exe_path $link_path[0m
+2025-03-21T15:25:45.1598970Z [36;1m    } elseif ($script:windows_host) {[0m
+2025-03-21T15:25:45.1599360Z [36;1m        New-Item -ItemType HardLink -Path $link_path -Value $exe_path -Force | Out-Null[0m
+2025-03-21T15:25:45.1599729Z [36;1m    }[0m
+2025-03-21T15:25:45.1599897Z [36;1m}[0m
+2025-03-21T15:25:45.1600195Z [36;1m[0m
+2025-03-21T15:25:45.1600359Z [36;1mif ($cc) {[0m
+2025-03-21T15:25:45.1600548Z [36;1m    Link-Exe $gcc cc[0m
+2025-03-21T15:25:45.1600769Z [36;1m    if ($gcc -ne 'gcc') {[0m
+2025-03-21T15:25:45.1601006Z [36;1m        Link-Exe $gcc 'gcc'[0m
+2025-03-21T15:25:45.1601227Z [36;1m    }[0m
+2025-03-21T15:25:45.1601410Z [36;1m    Link-Exe $gxx c++[0m
+2025-03-21T15:25:45.1601622Z [36;1m    if ($gxx -ne 'g++') {[0m
+2025-03-21T15:25:45.1601848Z [36;1m        Link-Exe $gxx 'g++'[0m
+2025-03-21T15:25:45.1602226Z [36;1m    }[0m
+2025-03-21T15:25:45.1602394Z [36;1m}[0m
+2025-03-21T15:25:45.1649101Z shell: /usr/bin/pwsh -command ". '{0}'"
+2025-03-21T15:25:45.1649369Z env:
+2025-03-21T15:25:45.1649548Z   CARGO_NET_GIT_FETCH_WITH_CLI: true
+2025-03-21T15:25:45.1649785Z ##[endgroup]
+2025-03-21T15:25:45.8806905Z Creating link /usr/local/bin/cc -> /usr/bin/gcc
+2025-03-21T15:25:45.9111046Z Creating link /usr/local/bin/c++ -> /usr/bin/g++
+2025-03-21T15:25:45.9711791Z ##[group]Run New-Variable cygwin_host -Value ('0' -eq '1') -Option Constant
+2025-03-21T15:25:45.9712300Z [36;1mNew-Variable cygwin_host -Value ('0' -eq '1') -Option Constant[0m
+2025-03-21T15:25:45.9712721Z [36;1mNew-Variable hardlinks -Value ('0' -eq '1') -Option Constant[0m
+2025-03-21T15:25:45.9713037Z [36;1m[0m
+2025-03-21T15:25:45.9713256Z [36;1mif ($cygwin_host -and $hardlinks) {[0m
+2025-03-21T15:25:45.9713519Z [36;1m    echo @'[0m
+2025-03-21T15:25:45.9713744Z [36;1mwhile IFS= read -d '' -r link_path; do[0m
+2025-03-21T15:25:45.9714114Z [36;1m    dest_path="$( readlink --canonicalize-existing -- "$link_path" )"[0m
+2025-03-21T15:25:45.9714456Z [36;1m    dest_ext=".${dest_path##*.}"[0m
+2025-03-21T15:25:45.9714746Z [36;1m    [ "$dest_ext" == ".$dest_path" ] && dest_ext=[0m
+2025-03-21T15:25:45.9715064Z [36;1m    link_ext=".${link_path##*.}"[0m
+2025-03-21T15:25:45.9715326Z [36;1m    [ "$link_ext" == ".$link_path" ] && link_ext=[0m
+2025-03-21T15:25:45.9715660Z [36;1m    echo "Removing symlink $link_path" && rm -f -- "$link_path"[0m
+2025-03-21T15:25:45.9716019Z [36;1m    [ "$link_ext" != "$dest_ext" ] && echo "${PATHEXT//\;/[0m
+2025-03-21T15:25:45.9716437Z [36;1m}" | grep -q --ignore-case --line-regexp -F -- "$dest_ext" && link_path="$link_path$dest_ext"[0m
+2025-03-21T15:25:45.9717130Z [36;1m    echo "Creating hardlink $link_path -> $dest_path" && ln -- "$dest_path" "$link_path"[0m
+2025-03-21T15:25:45.9717548Z [36;1mdone < <( find /usr/local/bin /usr/bin \[0m
+2025-03-21T15:25:45.9717828Z [36;1m               -type l '-(' \[0m
+2025-03-21T15:25:45.9718090Z [36;1m               -path /usr/local/bin/cc -o \[0m
+2025-03-21T15:25:45.9718373Z [36;1m               -path /usr/local/bin/c++ \[0m
+2025-03-21T15:25:45.9718623Z [36;1m               '-)' -print0 )[0m
+2025-03-21T15:25:45.9718941Z [36;1m'@ | & bash.exe --login -o errexit -o nounset -o pipefail -o igncr[0m
+2025-03-21T15:25:45.9719247Z [36;1m}[0m
+2025-03-21T15:25:45.9795593Z shell: /usr/bin/pwsh -command ". '{0}'"
+2025-03-21T15:25:45.9795866Z env:
+2025-03-21T15:25:45.9796043Z   CARGO_NET_GIT_FETCH_WITH_CLI: true
+2025-03-21T15:25:45.9796283Z ##[endgroup]
+2025-03-21T15:25:46.7061352Z ##[group]Run actions/checkout@v4
+2025-03-21T15:25:46.7061609Z with:
+2025-03-21T15:25:46.7061807Z   repository: Consensys/linea-sequencer
+2025-03-21T15:25:46.7062181Z   token: ***
+2025-03-21T15:25:46.7062361Z   ssh-strict: true
+2025-03-21T15:25:46.7062537Z   ssh-user: git
+2025-03-21T15:25:46.7062738Z   persist-credentials: true
+2025-03-21T15:25:46.7062972Z   clean: true
+2025-03-21T15:25:46.7063166Z   sparse-checkout-cone-mode: true
+2025-03-21T15:25:46.7063398Z   fetch-depth: 1
+2025-03-21T15:25:46.7063572Z   fetch-tags: false
+2025-03-21T15:25:46.7063760Z   show-progress: true
+2025-03-21T15:25:46.7063949Z   lfs: false
+2025-03-21T15:25:46.7064116Z   submodules: false
+2025-03-21T15:25:46.7064302Z   set-safe-directory: true
+2025-03-21T15:25:46.7064497Z env:
+2025-03-21T15:25:46.7064672Z   CARGO_NET_GIT_FETCH_WITH_CLI: true
+2025-03-21T15:25:46.7064898Z ##[endgroup]
+2025-03-21T15:25:46.7992746Z Syncing repository: Consensys/linea-sequencer
+2025-03-21T15:25:46.7993863Z ##[group]Getting Git version info
+2025-03-21T15:25:46.7994624Z Working directory is '/home/runner/work/linea-sequencer/linea-sequencer'
+2025-03-21T15:25:46.8043051Z [command]/usr/bin/git version
+2025-03-21T15:25:46.8132083Z git version 2.48.1
+2025-03-21T15:25:46.8157751Z ##[endgroup]
+2025-03-21T15:25:46.8171060Z Temporarily overriding HOME='/home/runner/work/_temp/f70fe327-c68f-405a-b3f7-c3c7373ddd84' before making global git config changes
+2025-03-21T15:25:46.8172048Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-21T15:25:46.8177804Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/linea-sequencer/linea-sequencer
+2025-03-21T15:25:46.8213434Z Deleting the contents of '/home/runner/work/linea-sequencer/linea-sequencer'
+2025-03-21T15:25:46.8216842Z ##[group]Initializing the repository
+2025-03-21T15:25:46.8221664Z [command]/usr/bin/git init /home/runner/work/linea-sequencer/linea-sequencer
+2025-03-21T15:25:46.8293701Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-21T15:25:46.8294659Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-21T15:25:46.8295246Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-21T15:25:46.8295592Z hint:
+2025-03-21T15:25:46.8295870Z hint: 	git config --global init.defaultBranch <name>
+2025-03-21T15:25:46.8296165Z hint:
+2025-03-21T15:25:46.8296458Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-21T15:25:46.8296922Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-21T15:25:46.8297262Z hint:
+2025-03-21T15:25:46.8297593Z hint: 	git branch -m <name>
+2025-03-21T15:25:46.8298662Z Initialized empty Git repository in /home/runner/work/linea-sequencer/linea-sequencer/.git/
+2025-03-21T15:25:46.8309856Z [command]/usr/bin/git remote add origin https://github.com/Consensys/linea-sequencer
+2025-03-21T15:25:46.8346152Z ##[endgroup]
+2025-03-21T15:25:46.8346808Z ##[group]Disabling automatic garbage collection
+2025-03-21T15:25:46.8350821Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-21T15:25:46.8378633Z ##[endgroup]
+2025-03-21T15:25:46.8379213Z ##[group]Setting up auth
+2025-03-21T15:25:46.8386308Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-21T15:25:46.8415861Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-21T15:25:46.8708259Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-21T15:25:46.8736419Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-21T15:25:46.8969561Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-21T15:25:46.9006601Z ##[endgroup]
+2025-03-21T15:25:46.9007066Z ##[group]Fetching the repository
+2025-03-21T15:25:46.9016752Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +ac5368e2588906e48b098aa57f0e8f888a9d8f76:refs/remotes/pull/178/merge
+2025-03-21T15:25:47.2439025Z From https://github.com/Consensys/linea-sequencer
+2025-03-21T15:25:47.2440684Z  * [new ref]         ac5368e2588906e48b098aa57f0e8f888a9d8f76 -> pull/178/merge
+2025-03-21T15:25:47.2465753Z ##[endgroup]
+2025-03-21T15:25:47.2467611Z ##[group]Determining the checkout info
+2025-03-21T15:25:47.2468540Z ##[endgroup]
+2025-03-21T15:25:47.2474202Z [command]/usr/bin/git sparse-checkout disable
+2025-03-21T15:25:47.2514024Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-21T15:25:47.2542109Z ##[group]Checking out the ref
+2025-03-21T15:25:47.2546195Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/178/merge
+2025-03-21T15:25:47.2707810Z Note: switching to 'refs/remotes/pull/178/merge'.
+2025-03-21T15:25:47.2708541Z 
+2025-03-21T15:25:47.2709123Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-21T15:25:47.2711238Z changes and commit them, and you can discard any commits you make in this
+2025-03-21T15:25:47.2712084Z state without impacting any branches by switching back to a branch.
+2025-03-21T15:25:47.2712932Z 
+2025-03-21T15:25:47.2713299Z If you want to create a new branch to retain commits you create, you may
+2025-03-21T15:25:47.2714074Z do so (now or later) by using -c with the switch command. Example:
+2025-03-21T15:25:47.2714520Z 
+2025-03-21T15:25:47.2714742Z   git switch -c <new-branch-name>
+2025-03-21T15:25:47.2715046Z 
+2025-03-21T15:25:47.2715218Z Or undo this operation with:
+2025-03-21T15:25:47.2715494Z 
+2025-03-21T15:25:47.2715646Z   git switch -
+2025-03-21T15:25:47.2715844Z 
+2025-03-21T15:25:47.2716239Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-21T15:25:47.2716756Z 
+2025-03-21T15:25:47.2717388Z HEAD is now at ac5368e Merge 1c18035f5006d8d54933c2944582775a3c504f08 into e7c69d08910fe377aed317f00a159a17826c37f1
+2025-03-21T15:25:47.2719109Z ##[endgroup]
+2025-03-21T15:25:47.2753123Z [command]/usr/bin/git log -1 --format=%H
+2025-03-21T15:25:47.2774574Z ac5368e2588906e48b098aa57f0e8f888a9d8f76
+2025-03-21T15:25:47.2909386Z ##[group]Run actions/setup-java@v4
+2025-03-21T15:25:47.2909647Z with:
+2025-03-21T15:25:47.2909817Z   java-version: 21
+2025-03-21T15:25:47.2910225Z   distribution: temurin
+2025-03-21T15:25:47.2910432Z   java-package: jdk
+2025-03-21T15:25:47.2910620Z   check-latest: false
+2025-03-21T15:25:47.2910809Z   server-id: github
+2025-03-21T15:25:47.2911002Z   server-username: GITHUB_ACTOR
+2025-03-21T15:25:47.2911227Z   server-password: GITHUB_TOKEN
+2025-03-21T15:25:47.2911450Z   overwrite-settings: true
+2025-03-21T15:25:47.2911659Z   job-status: success
+2025-03-21T15:25:47.2911952Z   token: ***
+2025-03-21T15:25:47.2912123Z env:
+2025-03-21T15:25:47.2912288Z   CARGO_NET_GIT_FETCH_WITH_CLI: true
+2025-03-21T15:25:47.2912526Z ##[endgroup]
+2025-03-21T15:25:47.4931783Z ##[group]Installed distributions
+2025-03-21T15:25:47.4974038Z Resolved Java 21.0.6+7 from tool-cache
+2025-03-21T15:25:47.4974495Z Setting Java 21.0.6+7 as the default
+2025-03-21T15:25:47.4986994Z Creating toolchains.xml for JDK version 21 from temurin
+2025-03-21T15:25:47.5062238Z Writing to /home/runner/.m2/toolchains.xml
+2025-03-21T15:25:47.5062732Z 
+2025-03-21T15:25:47.5063369Z Java configuration:
+2025-03-21T15:25:47.5064505Z   Distribution: temurin
+2025-03-21T15:25:47.5064978Z   Version: 21.0.6+7
+2025-03-21T15:25:47.5065685Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-21T15:25:47.5069177Z 
+2025-03-21T15:25:47.5069719Z ##[endgroup]
+2025-03-21T15:25:47.5081218Z Creating settings.xml with server-id: github
+2025-03-21T15:25:47.5103357Z Writing to /home/runner/.m2/settings.xml
+2025-03-21T15:25:47.5192779Z ##[group]Run ./gradlew :acceptance-tests:acceptanceTests
+2025-03-21T15:25:47.5193165Z [36;1m./gradlew :acceptance-tests:acceptanceTests[0m
+2025-03-21T15:25:47.5239624Z shell: /usr/bin/bash -e {0}
+2025-03-21T15:25:47.5239859Z env:
+2025-03-21T15:25:47.5240203Z   CARGO_NET_GIT_FETCH_WITH_CLI: true
+2025-03-21T15:25:47.5240557Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-21T15:25:47.5241019Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-21T15:25:47.5241439Z   JAVA_OPTS: -Dorg.gradle.daemon=false
+2025-03-21T15:25:47.5241681Z ##[endgroup]
+2025-03-21T15:25:47.7257799Z Downloading https://services.gradle.org/distributions/gradle-8.8-bin.zip
+2025-03-21T15:25:49.1483382Z .............10%.............20%.............30%.............40%.............50%.............60%..............70%.............80%.............90%.............100%
+2025-03-21T15:25:50.2663511Z 
+2025-03-21T15:25:50.2664770Z Welcome to Gradle 8.8!
+2025-03-21T15:25:50.2665452Z 
+2025-03-21T15:25:50.2666602Z Here are the highlights of this release:
+2025-03-21T15:25:50.2667276Z  - Running Gradle on Java 22
+2025-03-21T15:25:50.2675520Z  - Configurable Gradle daemon JVM
+2025-03-21T15:25:50.2676116Z  - Improved IDE performance for large projects
+2025-03-21T15:25:50.2676496Z 
+2025-03-21T15:25:50.2676872Z For more details see https://docs.gradle.org/8.8/release-notes.html
+2025-03-21T15:25:50.2677341Z 
+2025-03-21T15:25:50.3662007Z To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.8/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+2025-03-21T15:25:51.4660290Z Daemon will be stopped at the end of the build 
+2025-03-21T15:25:55.5681779Z > Task :buildSrc:extractPluginRequests
+2025-03-21T15:25:55.5682425Z > Task :buildSrc:generatePluginAdapters
+2025-03-21T15:26:18.2656434Z > Task :buildSrc:compileJava
+2025-03-21T15:26:21.8657776Z > Task :buildSrc:compileGroovy
+2025-03-21T15:26:21.8658353Z > Task :buildSrc:compileGroovyPlugins
+2025-03-21T15:26:21.8658837Z > Task :buildSrc:pluginDescriptors
+2025-03-21T15:26:21.8660181Z > Task :buildSrc:processResources
+2025-03-21T15:26:21.8660639Z > Task :buildSrc:classes
+2025-03-21T15:26:21.8661013Z > Task :buildSrc:jar
+2025-03-21T15:27:01.5681389Z > Task :acceptance-tests:compileSolidity NO-SOURCE
+2025-03-21T15:27:01.5719573Z > Task :acceptance-tests:generateContractWrappers NO-SOURCE
+2025-03-21T15:27:01.8675210Z > Task :acceptance-tests:processResources NO-SOURCE
+2025-03-21T15:27:03.1662719Z Warning: Visibility for constructor is ignored. If you want the contract to be non-deployable, making it "abstract" is sufficient.
+2025-03-21T15:27:03.1663600Z 
+2025-03-21T15:27:03.1664957Z > Task :acceptance-tests:compileTestSolidity
+2025-03-21T15:27:03.1665829Z Solidity version 0.8.19 is not installed. Downloading and installing it to ~/.web3j/solc/0.8.19
+2025-03-21T15:27:03.1666959Z Compiler run successful. Artifact(s) can be found in directory "build/resources/test/solidity".
+2025-03-21T15:27:03.1668043Z Compiler run successful. Artifact(s) can be found in directory "build/resources/test/solidity".
+2025-03-21T15:27:03.1669136Z Compiler run successful. Artifact(s) can be found in directory "build/resources/test/solidity".
+2025-03-21T15:27:03.1670437Z Compiler run successful. Artifact(s) can be found in directory "build/resources/test/solidity".
+2025-03-21T15:27:03.1671505Z Compiler run successful. Artifact(s) can be found in directory "build/resources/test/solidity".
+2025-03-21T15:27:03.1672604Z Compiler run successful. Artifact(s) can be found in directory "build/resources/test/solidity".
+2025-03-21T15:27:03.1686250Z   --> src/test/solidity/AcceptanceTestToken.sol:20:5:
+2025-03-21T15:27:03.1691839Z    |
+2025-03-21T15:27:03.1692853Z 20 |     constructor() public ERC20("Acceptance Test", "AT") {
+2025-03-21T15:27:03.1694592Z    |     ^ (Relevant source part starts here and spans across multiple lines).
+2025-03-21T15:27:03.1695578Z 
+2025-03-21T15:27:03.1699401Z Compiler run successful. Artifact(s) can be found in directory "build/resources/test/solidity".
+2025-03-21T15:27:03.1700702Z Compiler run successful. Artifact(s) can be found in directory "build/resources/test/solidity".
+2025-03-21T15:27:03.1701794Z Compiler run successful. Artifact(s) can be found in directory "build/resources/test/solidity".
+2025-03-21T15:27:03.1702847Z Compiler run successful. Artifact(s) can be found in directory "build/resources/test/solidity".
+2025-03-21T15:27:03.5665920Z 
+2025-03-21T15:27:03.5682132Z > Task :acceptance-tests:generateEffectiveLombokConfig
+2025-03-21T15:27:03.5691525Z 
+2025-03-21T15:27:03.5692035Z > Task :acceptance-tests:generateTestContractWrappers
+2025-03-21T15:27:03.5692884Z Ignoring empty ABI file: Context.abi.abi
+2025-03-21T15:27:03.5693383Z 
+2025-03-21T15:27:03.5694462Z Definition of the function approve returns a value but is not defined as a view function. Please ensure it contains the view modifier if you want to read the return value
+2025-03-21T15:27:03.5696593Z Definition of the function transfer returns a value but is not defined as a view function. Please ensure it contains the view modifier if you want to read the return value
+2025-03-21T15:27:03.5698781Z Definition of the function approve returns a value but is not defined as a view function. Please ensure it contains the view modifier if you want to read the return value
+2025-03-21T15:27:03.5701414Z Definition of the function decreaseAllowance returns a value but is not defined as a view function. Please ensure it contains the view modifier if you want to read the return value
+2025-03-21T15:27:03.5703991Z Definition of the function increaseAllowance returns a value but is not defined as a view function. Please ensure it contains the view modifier if you want to read the return value
+2025-03-21T15:27:03.5706124Z Definition of the function transfer returns a value but is not defined as a view function. Please ensure it contains the view modifier if you want to read the return value
+2025-03-21T15:27:03.5708424Z Definition of the function transferFrom returns a value but is not defined as a view function. Please ensure it contains the view modifier if you want to read the return value
+2025-03-21T15:27:03.5725684Z Definition of the function transferFrom returns a value but is not defined as a view function. Please ensure it contains the view modifier if you want to read the return value
+2025-03-21T15:27:03.5727954Z Generating linea.plugin.acc.test.tests.web3j.generated.RevertExample ... File written to /home/runner/work/linea-sequencer/linea-sequencer/acceptance-tests/build/generated/sources/web3j/test/java
+2025-03-21T15:27:03.5729283Z 
+2025-03-21T15:27:03.5730707Z Generating linea.plugin.acc.test.tests.web3j.generated.SimpleStorage ... File written to /home/runner/work/linea-sequencer/linea-sequencer/acceptance-tests/build/generated/sources/web3j/test/java
+2025-03-21T15:27:03.5732037Z 
+2025-03-21T15:27:03.5733215Z Generating linea.plugin.acc.test.tests.web3j.generated.ModExp ... File written to /home/runner/work/linea-sequencer/linea-sequencer/acceptance-tests/build/generated/sources/web3j/test/java
+2025-03-21T15:27:03.5734465Z 
+2025-03-21T15:27:03.5735621Z Generating linea.plugin.acc.test.tests.web3j.generated.IERC20 ... File written to /home/runner/work/linea-sequencer/linea-sequencer/acceptance-tests/build/generated/sources/web3j/test/java
+2025-03-21T15:27:03.5736861Z 
+2025-03-21T15:27:03.5737784Z Definition of the function approve returns a value but is not defined as a view function. Please ensure it contains the view modifier if you want to read the return value
+2025-03-21T15:27:03.5767760Z Definition of the function decreaseAllowance returns a value but is not defined as a view function. Please ensure it contains the view modifier if you want to read the return value
+2025-03-21T15:27:03.5770353Z Definition of the function increaseAllowance returns a value but is not defined as a view function. Please ensure it contains the view modifier if you want to read the return value
+2025-03-21T15:27:03.5785043Z Definition of the function transfer returns a value but is not defined as a view function. Please ensure it contains the view modifier if you want to read the return value
+2025-03-21T15:27:03.5787202Z Definition of the function transferFrom returns a value but is not defined as a view function. Please ensure it contains the view modifier if you want to read the return value
+2025-03-21T15:27:03.5789716Z Generating linea.plugin.acc.test.tests.web3j.generated.AcceptanceTestToken ... File written to /home/runner/work/linea-sequencer/linea-sequencer/acceptance-tests/build/generated/sources/web3j/test/java
+2025-03-21T15:27:03.5791498Z 
+2025-03-21T15:27:03.5792578Z Definition of the function approve returns a value but is not defined as a view function. Please ensure it contains the view modifier if you want to read the return value
+2025-03-21T15:27:03.5795204Z Generating linea.plugin.acc.test.tests.web3j.generated.ExcludedPrecompiles ... File written to /home/runner/work/linea-sequencer/linea-sequencer/acceptance-tests/build/generated/sources/web3j/test/java
+2025-03-21T15:27:03.5796979Z 
+2025-03-21T15:27:03.5811358Z Definition of the function transfer returns a value but is not defined as a view function. Please ensure it contains the view modifier if you want to read the return value
+2025-03-21T15:27:03.5814226Z Definition of the function transferFrom returns a value but is not defined as a view function. Please ensure it contains the view modifier if you want to read the return value
+2025-03-21T15:27:03.5817381Z Generating linea.plugin.acc.test.tests.web3j.generated.MulmodExecutor ... File written to /home/runner/work/linea-sequencer/linea-sequencer/acceptance-tests/build/generated/sources/web3j/test/java
+2025-03-21T15:27:03.5819132Z 
+2025-03-21T15:27:03.5832561Z Generating linea.plugin.acc.test.tests.web3j.generated.EcPairing ... File written to /home/runner/work/linea-sequencer/linea-sequencer/acceptance-tests/build/generated/sources/web3j/test/java
+2025-03-21T15:27:03.5833910Z 
+2025-03-21T15:27:03.5835293Z Generating linea.plugin.acc.test.tests.web3j.generated.IERC20Metadata ... File written to /home/runner/work/linea-sequencer/linea-sequencer/acceptance-tests/build/generated/sources/web3j/test/java
+2025-03-21T15:27:03.5836699Z 
+2025-03-21T15:27:03.5837961Z Generating linea.plugin.acc.test.tests.web3j.generated.ERC20 ... File written to /home/runner/work/linea-sequencer/linea-sequencer/acceptance-tests/build/generated/sources/web3j/test/java
+2025-03-21T15:27:03.5839699Z 
+2025-03-21T15:27:05.5659765Z Note: Processing Log4j annotations
+2025-03-21T15:27:05.5660388Z 
+2025-03-21T15:27:05.5660613Z > Task :acceptance-tests:compileJava
+2025-03-21T15:27:05.5664126Z Note: Annotations processed
+2025-03-21T15:27:05.5665237Z Note: Processing Log4j annotations
+2025-03-21T15:27:05.5666156Z Note: No elements to process
+2025-03-21T15:27:05.5667143Z Note: Processing Log4j annotations
+2025-03-21T15:27:05.5667801Z Note: No elements to process
+2025-03-21T15:27:05.5668417Z Note: Processing Log4j annotations
+2025-03-21T15:27:05.5669052Z Note: No elements to process
+2025-03-21T15:27:06.7656782Z Note: /home/runner/work/linea-sequencer/linea-sequencer/acceptance-tests/src/main/java/linea/plugin/acc/test/utils/MemoryAppender.java uses or overrides a deprecated API.
+2025-03-21T15:27:06.7657950Z Note: Recompile with -Xlint:deprecation for details.
+2025-03-21T15:27:06.7658302Z 
+2025-03-21T15:27:06.7658494Z > Task :acceptance-tests:compileGroovy NO-SOURCE
+2025-03-21T15:27:06.7680667Z > Task :acceptance-tests:classes
+2025-03-21T15:27:08.7654159Z 
+2025-03-21T15:27:08.7654942Z > Task :native:compress:buildJNI
+2025-03-21T15:27:08.7655538Z Building Go module libcompress_jni.so for GNU/Linux
+2025-03-21T15:27:08.7656156Z go: downloading github.com/consensys/compress v0.2.4
+2025-03-21T15:27:08.7656643Z go: downloading github.com/icza/bitio v1.1.0
+2025-03-21T15:27:15.0656948Z 
+2025-03-21T15:27:15.0658991Z > Task :acceptance-tests:generateTestEffectiveLombokConfig
+2025-03-21T15:27:15.0667547Z > Task :native:compress:linuxArm64LibCopy NO-SOURCE
+2025-03-21T15:27:15.0677694Z > Task :native:compress:linuxLibCopy
+2025-03-21T15:27:15.0678544Z > Task :native:compress:macArmLibCopy NO-SOURCE
+2025-03-21T15:27:15.0679317Z > Task :native:compress:macLibCopy NO-SOURCE
+2025-03-21T15:27:15.0682889Z > Task :native:compress:windowsLibCopy NO-SOURCE
+2025-03-21T15:27:15.0683505Z > Task :native:compress:processResources
+2025-03-21T15:27:15.0684057Z > Task :sequencer:generateEffectiveLombokConfig
+2025-03-21T15:27:15.0684663Z > Task :sequencer:processResources NO-SOURCE
+2025-03-21T15:27:16.7655229Z 
+2025-03-21T15:27:16.7655834Z > Task :sequencer:downloadBesu
+2025-03-21T15:27:16.7656687Z Download https://github.com/Consensys/linea-besu-upstream/releases/download/25.3.0-linea2/besu-25.3.0-linea2.tar.gz
+2025-03-21T15:27:17.8666173Z 
+2025-03-21T15:27:17.8666667Z > Task :sequencer:unTarBesu
+2025-03-21T15:27:17.8667203Z > Task :acceptance-tests:processTestResources
+2025-03-21T15:27:17.8667802Z > Task :native:compress:generateEffectiveLombokConfig
+2025-03-21T15:27:19.0659577Z > Task :native:compress:compileJava
+2025-03-21T15:27:19.0665663Z > Task :native:compress:compileGroovy NO-SOURCE
+2025-03-21T15:27:19.0669845Z > Task :native:compress:classes
+2025-03-21T15:27:19.1655195Z > Task :native:compress:jar
+2025-03-21T15:27:23.8690347Z > Task :sequencer:compileJava
+2025-03-21T15:27:23.8691742Z > Task :sequencer:compileGroovy NO-SOURCE
+2025-03-21T15:27:23.8692572Z > Task :sequencer:classes
+2025-03-21T15:27:25.3658952Z > Task :sequencer:jar
+2025-03-21T15:27:30.9654865Z 
+2025-03-21T15:27:30.9655596Z > Task :acceptance-tests:compileTestJava
+2025-03-21T15:27:30.9656644Z Note: /home/runner/work/linea-sequencer/linea-sequencer/acceptance-tests/src/test/java/linea/plugin/acc/test/LineaPluginTestBase.java uses or overrides a deprecated API.
+2025-03-21T15:27:30.9681671Z Note: Recompile with -Xlint:deprecation for details.
+2025-03-21T15:27:33.4654601Z 
+2025-03-21T15:27:33.4657281Z > Task :acceptance-tests:compileTestGroovy NO-SOURCE
+2025-03-21T15:27:33.4658299Z > Task :acceptance-tests:testClasses
+2025-03-21T15:27:49.9660683Z 
+2025-03-21T15:27:49.9661697Z > Task :acceptance-tests:acceptanceTests
+2025-03-21T15:27:49.9662299Z 
+2025-03-21T15:27:49.9662929Z BlockGasLimitTest > multipleBlocksFilledRespectingUserBlockGasLimit() FAILED
+2025-03-21T15:27:49.9664151Z     java.util.NoSuchElementException at BlockGasLimitTest.java:44
+2025-03-21T15:27:50.4655526Z 
+2025-03-21T15:27:50.4662964Z EcPairingLimitsTest > ecPairingLimitsTest(int, BiFunction, String) > [1] 17, linea.plugin.acc.test.EcPairingLimitsTest$$Lambda/0x00007f439054d718@6804a46a, Cumulated line count for module PRECOMPILE_ECPAIRING_FINAL_EXPONENTIATIONS=17 is above the limit 16, stopping selection FAILED
+2025-03-21T15:27:50.4665716Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:50.8654714Z 
+2025-03-21T15:27:50.8658924Z EcPairingLimitsTest > ecPairingLimitsTest(int, BiFunction, String) > [2] 9, linea.plugin.acc.test.EcPairingLimitsTest$$Lambda/0x00007f439054db50@665e0a9b, Cumulated line count for module PRECOMPILE_ECPAIRING_MILLER_LOOPS=65 is above the limit 64, stopping selection FAILED
+2025-03-21T15:27:50.8661381Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:51.1654649Z 
+2025-03-21T15:27:51.1657416Z EcPairingLimitsTest > ecPairingLimitsTest(int, BiFunction, String) > [3] 9, linea.plugin.acc.test.EcPairingLimitsTest$$Lambda/0x00007f439054dd70@46bcdf2e, Cumulated line count for module PRECOMPILE_ECPAIRING_G2_MEMBERSHIP_CALLS=65 is above the limit 64, stopping selection FAILED
+2025-03-21T15:27:51.1659104Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:51.4654395Z 
+2025-03-21T15:27:51.4656031Z ExcludedPrecompilesTest > invalidModExpCallsAreNotMined() FAILED
+2025-03-21T15:27:51.4657260Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:51.7654647Z 
+2025-03-21T15:27:51.7655560Z ExcludedPrecompilesTest > transactionsWithExcludedPrecompilesAreNotAccepted() FAILED
+2025-03-21T15:27:51.7656847Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:52.0654313Z 
+2025-03-21T15:27:52.0655115Z ProfitableTransactionTest > transactionIsNotMinedWhenUnprofitable() FAILED
+2025-03-21T15:27:52.0656055Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:52.3654487Z 
+2025-03-21T15:27:52.3655295Z ProfitableTransactionTest > transactionIsMinedWhenProfitable() FAILED
+2025-03-21T15:27:52.3656049Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:52.5656233Z 
+2025-03-21T15:27:52.5657929Z TransactionCallDataSizeLimitTest > transactionIsMinedWhenNotTooBig() FAILED
+2025-03-21T15:27:52.5659192Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:52.8687055Z 
+2025-03-21T15:27:52.8692735Z TransactionCallDataSizeLimitTest > shouldMineTransactions() FAILED
+2025-03-21T15:27:52.8696309Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:53.1654246Z 
+2025-03-21T15:27:53.1655173Z TransactionCallDataSizeLimitTest > multipleSmallTxsMinedWhileTxTooBigNot() FAILED
+2025-03-21T15:27:53.1656107Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:53.4654502Z 
+2025-03-21T15:27:53.4655720Z TransactionCallDataSizeLimitTest > transactionIsNotMinedWhenTooBig() FAILED
+2025-03-21T15:27:53.4657042Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:53.6673611Z 
+2025-03-21T15:27:53.6674817Z TransactionGasLimitTest > transactionIsNotMinedWhenGasLimitIsExceeded() FAILED
+2025-03-21T15:27:53.6676386Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:53.9710683Z 
+2025-03-21T15:27:53.9711873Z TransactionGasLimitTest > multipleSmallTxsMinedWhileTxTooBigNot() FAILED
+2025-03-21T15:27:53.9716273Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:54.2654606Z 
+2025-03-21T15:27:54.2655577Z TransactionGasLimitTest > transactionIsMinedWhenGasLimitIsNotExceeded() FAILED
+2025-03-21T15:27:54.2656428Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:54.5653900Z 
+2025-03-21T15:27:54.5654530Z TransactionPoolDenialTest > senderOnDenyListCannotAddTransactionToPool() FAILED
+2025-03-21T15:27:54.5655207Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:54.7690693Z 
+2025-03-21T15:27:54.7691606Z TransactionPoolDenialTest > transactionThatTargetPrecompileIsNotAccepted() FAILED
+2025-03-21T15:27:54.7692850Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:55.0653904Z 
+2025-03-21T15:27:55.0654584Z TransactionPoolDenialTest > transactionWithRecipientOnDenyListCannotBeAddedToPool() FAILED
+2025-03-21T15:27:55.0655329Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:55.3654257Z 
+2025-03-21T15:27:55.3655084Z TransactionTraceLimitOverflowTest > transactionOverModuleLineCountRemoved() FAILED
+2025-03-21T15:27:55.3655803Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:55.6653858Z 
+2025-03-21T15:27:55.6654659Z TransactionTraceLimitTest > transactionsMinedInSeparateBlocksTest() FAILED
+2025-03-21T15:27:55.6655426Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:55.8698262Z 
+2025-03-21T15:27:55.8713907Z ExtraDataPricingTest > updateMinGasPriceViaExtraData() FAILED
+2025-03-21T15:27:55.8714972Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:56.1654652Z 
+2025-03-21T15:27:56.1655613Z ExtraDataPricingTest > updateProfitabilityParamsViaExtraData() FAILED
+2025-03-21T15:27:56.1656420Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:56.4654224Z 
+2025-03-21T15:27:56.4655119Z ExtraDataPricingTestWithoutSetMinGasPrice > updateProfitabilityParamsViaExtraData() FAILED
+2025-03-21T15:27:56.4656057Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:56.6654289Z 
+2025-03-21T15:27:56.6655111Z ExtraDataPricingTestWithoutSetMinGasPrice > minGasPriceNotUpdatedViaExtraData() FAILED
+2025-03-21T15:27:56.6655821Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:56.9661959Z 
+2025-03-21T15:27:56.9675819Z StartupExtraDataPricingTest > minGasPriceSetFromChainHeadExtraDataAtStartup() FAILED
+2025-03-21T15:27:56.9678667Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:57.2655428Z 
+2025-03-21T15:27:57.2658252Z EstimateGasCompatibilityModeTest > passingEIP1559FieldsWorks() FAILED
+2025-03-21T15:27:57.2661648Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:57.5653991Z 
+2025-03-21T15:27:57.5654743Z EstimateGasCompatibilityModeTest > passingGasPriceFieldWorks() FAILED
+2025-03-21T15:27:57.5655481Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:57.7655283Z 
+2025-03-21T15:27:57.7659776Z EstimateGasCompatibilityModeTest > passingChainIdFieldWorks() FAILED
+2025-03-21T15:27:57.7661448Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:58.0654475Z 
+2025-03-21T15:27:58.0655933Z EstimateGasCompatibilityModeTest > lineaEstimateGasMatchesEthEstimateGas() FAILED
+2025-03-21T15:27:58.0657413Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:58.3654129Z 
+2025-03-21T15:27:58.3654910Z EstimateGasCompatibilityModeTest > passingChainIdAndEIP1559FieldsWorks() FAILED
+2025-03-21T15:27:58.3656169Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:58.5654130Z 
+2025-03-21T15:27:58.5654887Z EstimateGasCompatibilityModeTest > passingStateOverridesWorks() FAILED
+2025-03-21T15:27:58.5655911Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:58.8654081Z 
+2025-03-21T15:27:58.8655034Z EstimateGasCompatibilityModeTest > failedTransactionReturnErrorResponse() FAILED
+2025-03-21T15:27:58.8655969Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:59.0654437Z 
+2025-03-21T15:27:59.0655295Z EstimateGasCompatibilityModeTest > revertedTransactionReturnErrorResponse() FAILED
+2025-03-21T15:27:59.3654957Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:59.3655507Z 
+2025-03-21T15:27:59.3655795Z EstimateGasCompatibilityModeTest > passingNonceWorks() FAILED
+2025-03-21T15:27:59.3656472Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:59.5653930Z 
+2025-03-21T15:27:59.5654960Z EstimateGasCompatibilityModeTest > lineaEstimateGasIsProfitable() FAILED
+2025-03-21T15:27:59.5655875Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:27:59.8654143Z 
+2025-03-21T15:27:59.8655051Z EstimateGasCompatibilityModeTest > parseErrorLineaEstimateGasRequestReturnErrorResponse() FAILED
+2025-03-21T15:27:59.8655983Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:00.1653984Z 
+2025-03-21T15:28:00.1655202Z EstimateGasCompatibilityModeTest > invalidParametersLineaEstimateGasRequestReturnErrorResponse() FAILED
+2025-03-21T15:28:00.1656164Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:00.3653886Z 
+2025-03-21T15:28:00.3654837Z EstimateGasCompatibilityModeTest > lineaEstimateGasPriorityFeeMinGasPriceLowerBound() FAILED
+2025-03-21T15:28:00.3655684Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:00.6653829Z 
+2025-03-21T15:28:00.6654779Z EstimateGasModuleLimitOverflowTest > estimateGasFailsForExceedingModuleLineCountTest() FAILED
+2025-03-21T15:28:00.6655989Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:00.8654344Z 
+2025-03-21T15:28:00.8654906Z EstimateGasTest > passingEIP1559FieldsWorks() FAILED
+2025-03-21T15:28:00.8655467Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:01.1654274Z 
+2025-03-21T15:28:01.1655227Z EstimateGasTest > passingGasPriceFieldWorks() FAILED
+2025-03-21T15:28:01.1655946Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:01.4653936Z 
+2025-03-21T15:28:01.4654620Z EstimateGasTest > passingChainIdFieldWorks() FAILED
+2025-03-21T15:28:01.4655420Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:01.6653863Z 
+2025-03-21T15:28:01.6654567Z EstimateGasTest > lineaEstimateGasMatchesEthEstimateGas() FAILED
+2025-03-21T15:28:01.6655578Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:01.9654105Z 
+2025-03-21T15:28:01.9654902Z EstimateGasTest > passingChainIdAndEIP1559FieldsWorks() FAILED
+2025-03-21T15:28:01.9655790Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:02.1657117Z 
+2025-03-21T15:28:02.1658038Z EstimateGasTest > passingStateOverridesWorks() FAILED
+2025-03-21T15:28:02.1660606Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:02.4654364Z 
+2025-03-21T15:28:02.4655429Z EstimateGasTest > failedTransactionReturnErrorResponse() FAILED
+2025-03-21T15:28:02.4656161Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:02.6654092Z 
+2025-03-21T15:28:02.6654774Z EstimateGasTest > revertedTransactionReturnErrorResponse() FAILED
+2025-03-21T15:28:02.6655841Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:02.9654231Z 
+2025-03-21T15:28:02.9654774Z EstimateGasTest > passingNonceWorks() FAILED
+2025-03-21T15:28:02.9655654Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:03.2654128Z 
+2025-03-21T15:28:03.2654770Z EstimateGasTest > lineaEstimateGasIsProfitable() FAILED
+2025-03-21T15:28:03.2655659Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:03.4653947Z 
+2025-03-21T15:28:03.4654677Z EstimateGasTest > parseErrorLineaEstimateGasRequestReturnErrorResponse() FAILED
+2025-03-21T15:28:03.4655377Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:03.7653844Z 
+2025-03-21T15:28:03.7654605Z EstimateGasTest > invalidParametersLineaEstimateGasRequestReturnErrorResponse() FAILED
+2025-03-21T15:28:03.7655548Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:03.9654019Z 
+2025-03-21T15:28:03.9654996Z EthSendRawTransactionSimulationCheckTest > transactionOverModuleLineCountNotAccepted() FAILED
+2025-03-21T15:28:03.9656336Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:04.2654105Z 
+2025-03-21T15:28:04.2655307Z EthSendRawTransactionSimulationCheckTest > transactionsWithExcludedPrecompilesAreNotAccepted() FAILED
+2025-03-21T15:28:04.2656924Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:04.4654489Z 
+2025-03-21T15:28:04.4655316Z EthSendRawTransactionSimulationCheckTest > validTransactionsAreAccepted() FAILED
+2025-03-21T15:28:04.4656022Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:04.7654020Z 
+2025-03-21T15:28:04.7655148Z EthSendRawTransactionSimulationCheckTest > transactionsThatRevertAreAccepted() FAILED
+2025-03-21T15:28:04.7656095Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:05.0654213Z 
+2025-03-21T15:28:05.0655162Z EthSendRawTransactionSimulationModExpTest > validModExpCallsAreAccepted() FAILED
+2025-03-21T15:28:05.0656076Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:05.2654093Z 
+2025-03-21T15:28:05.2654903Z EthSendRawTransactionSimulationModExpTest > invalidModExpCallsAreRejected() FAILED
+2025-03-21T15:28:05.2655719Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:05.5654020Z 
+2025-03-21T15:28:05.5654865Z SendBundleMaxBlockGasTest > maxBlockGasForBundlesIsRespected() FAILED
+2025-03-21T15:28:05.5655792Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:05.7662263Z 
+2025-03-21T15:28:05.7663392Z SendBundleTest > singleTxBundleIsAcceptedAndMined() FAILED
+2025-03-21T15:28:05.7665510Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:06.0654311Z 
+2025-03-21T15:28:06.0655107Z SendBundleTest > bundleIsAcceptedAndMined() FAILED
+2025-03-21T15:28:06.0656174Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:06.2657611Z 
+2025-03-21T15:28:06.2658520Z SendBundleTest > payGasWithTokensInBundle() FAILED
+2025-03-21T15:28:06.2659457Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:06.5654380Z 
+2025-03-21T15:28:06.5655270Z SendBundleTest > distributeTokensInBundle() FAILED
+2025-03-21T15:28:06.5656252Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:06.7654774Z 
+2025-03-21T15:28:06.7655630Z SendBundleTest > bundleWithRevertedTxIsNotMined() FAILED
+2025-03-21T15:28:06.7656816Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:07.0654185Z 
+2025-03-21T15:28:07.0655048Z SendBundleTest > mixOfSelectedNotSelectedBundles() FAILED
+2025-03-21T15:28:07.0656075Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:07.2653842Z 
+2025-03-21T15:28:07.2654779Z SendBundleTest > singleNotSelectedTxBundleIsNotMined() FAILED
+2025-03-21T15:28:07.2655791Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:07.5654028Z 
+2025-03-21T15:28:07.5654765Z SendBundleTest > bundleWithNotSelectedTxIsNotMined() FAILED
+2025-03-21T15:28:07.5655963Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:07.8653852Z 
+2025-03-21T15:28:07.8654406Z SetExtraDataTest > setTooShortExtraDataReturnsError() FAILED
+2025-03-21T15:28:07.8655133Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:08.0653859Z 
+2025-03-21T15:28:08.0654463Z SetExtraDataTest > setTooLongExtraDataReturnsError() FAILED
+2025-03-21T15:28:08.0655226Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:08.3653913Z 
+2025-03-21T15:28:08.3654669Z SetExtraDataTest > successfulUpdatePricingParameters() FAILED
+2025-03-21T15:28:08.3655556Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:08.5653787Z 
+2025-03-21T15:28:08.5654467Z SetExtraDataTest > setUnsupportedExtraDataReturnsError() FAILED
+2025-03-21T15:28:08.5655226Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:08.8654067Z 
+2025-03-21T15:28:08.8655139Z SetExtraDataTest > parseErrorLineaEstimateGasRequestReturnErrorResponse() FAILED
+2025-03-21T15:28:08.8655977Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:09.0653876Z 
+2025-03-21T15:28:09.0654707Z SetExtraDataTest > successfulUpdateMinGasPrice() FAILED
+2025-03-21T15:28:09.0655751Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:09.3653711Z 
+2025-03-21T15:28:09.3654114Z SetExtraDataTest > successfulSetExtraData() FAILED
+2025-03-21T15:28:09.3654855Z     java.util.NoSuchElementException at BesuPluginContextImpl.java:191
+2025-03-21T15:28:09.6654057Z 
+2025-03-21T15:28:09.6655606Z 74 tests completed, 73 failed, 1 skipped
+2025-03-21T15:28:10.0663875Z 
+2025-03-21T15:28:10.0663978Z 
+2025-03-21T15:28:10.0664744Z FAILURE: Build failed with an exception.
+2025-03-21T15:28:10.0665171Z 
+2025-03-21T15:28:10.0665372Z * What went wrong:
+2025-03-21T15:28:10.0665866Z Execution failed for task ':acceptance-tests:acceptanceTests'.
+2025-03-21T15:28:10.0667213Z > There were failing tests. See the report at: file:///home/runner/work/linea-sequencer/linea-sequencer/acceptance-tests/build/reports/tests/acceptanceTests/index.html
+2025-03-21T15:28:10.0668239Z 
+2025-03-21T15:28:10.0668374Z * Try:
+2025-03-21T15:28:10.0668719Z > Run with --scan to get full insights.
+2025-03-21T15:28:10.0669038Z 
+2025-03-21T15:28:10.0669191Z BUILD FAILED in 2m 22s
+2025-03-21T15:28:10.0675409Z > Task :acceptance-tests:acceptanceTests FAILED
+2025-03-21T15:28:10.0675799Z 
+2025-03-21T15:28:10.0676749Z Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+2025-03-21T15:28:10.0677367Z 
+2025-03-21T15:28:10.0678115Z You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+2025-03-21T15:28:10.0679285Z 
+2025-03-21T15:28:10.0680648Z For more on this, please refer to https://docs.gradle.org/8.8/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+2025-03-21T15:28:10.0681746Z 27 actionable tasks: 27 executed
+2025-03-21T15:28:10.4895290Z ##[error]Process completed with exit code 1.
+2025-03-21T15:28:10.4937822Z ##[group]Run actions/upload-artifact@v4
+2025-03-21T15:28:10.4938097Z with:
+2025-03-21T15:28:10.4938284Z   name: acceptance-test-report
+2025-03-21T15:28:10.4938541Z   path: acceptance-tests/build/reports/tests/
+2025-03-21T15:28:10.4938801Z   if-no-files-found: warn
+2025-03-21T15:28:10.4939011Z   compression-level: 6
+2025-03-21T15:28:10.4939208Z   overwrite: false
+2025-03-21T15:28:10.4939402Z   include-hidden-files: false
+2025-03-21T15:28:10.4939610Z env:
+2025-03-21T15:28:10.4939775Z   CARGO_NET_GIT_FETCH_WITH_CLI: true
+2025-03-21T15:28:10.4940402Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-21T15:28:10.4940845Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-21T15:28:10.4941380Z ##[endgroup]
+2025-03-21T15:28:10.7298699Z With the provided path, there will be 27 files uploaded
+2025-03-21T15:28:10.7303828Z Artifact name is valid!
+2025-03-21T15:28:10.7305375Z Root directory input is valid!
+2025-03-21T15:28:10.8554006Z Beginning upload of artifact content to blob storage
+2025-03-21T15:28:11.0932323Z Uploaded bytes 599465
+2025-03-21T15:28:11.1160529Z Finished uploading artifact content to blob storage!
+2025-03-21T15:28:11.1163405Z SHA256 digest of uploaded artifact zip is c38da4a186bc3dbb90ff624fbdce485342d2da07da0c69e76a125f0360980fe2
+2025-03-21T15:28:11.1165242Z Finalizing artifact upload
+2025-03-21T15:28:11.1848283Z Artifact acceptance-test-report.zip successfully finalized. Artifact ID 2796895604
+2025-03-21T15:28:11.1849765Z Artifact acceptance-test-report has been successfully uploaded! Final size is 599465 bytes. Artifact ID is 2796895604
+2025-03-21T15:28:11.1857456Z Artifact download URL: https://github.com/Consensys/linea-sequencer/actions/runs/13995166328/artifacts/2796895604
+2025-03-21T15:28:11.1992513Z Post job cleanup.
+2025-03-21T15:28:11.3785578Z Post job cleanup.
+2025-03-21T15:28:11.4753983Z [command]/usr/bin/git version
+2025-03-21T15:28:11.4791527Z git version 2.48.1
+2025-03-21T15:28:11.4834795Z Temporarily overriding HOME='/home/runner/work/_temp/64beb8a3-e6f8-43e0-b06f-0039cec7cce9' before making global git config changes
+2025-03-21T15:28:11.4836194Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-21T15:28:11.4848273Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/linea-sequencer/linea-sequencer
+2025-03-21T15:28:11.4885411Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-21T15:28:11.4916857Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-21T15:28:11.5169129Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-21T15:28:11.5176849Z http.https://github.com/.extraheader
+2025-03-21T15:28:11.5192239Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-21T15:28:11.5227373Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-21T15:28:11.5576037Z Cleaning up orphan processes

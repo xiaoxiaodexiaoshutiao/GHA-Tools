@@ -1,0 +1,23 @@
+diff --git a/anta/input_models/logging.py b/anta/input_models/logging.py
+index ee920a681..059f28ad6 100644
+--- a/anta/input_models/logging.py
++++ b/anta/input_models/logging.py
+@@ -19,4 +19,3 @@ class LoggingQuery(BaseModel):
+     """Last number of messages to check in the logging buffers."""
+     severity_level: LogSeverityLevel = "informational"
+     """Log severity level. Defaults to informational."""
+-
+diff --git a/pyproject.toml b/pyproject.toml
+index 176ca0ff2..12914cdcb 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -434,6 +434,9 @@ runtime-evaluated-base-classes = ["pydantic.BaseModel", "anta.models.AntaTest.In
+ "anta/tests/logging.py" = [
+   "A005",  # TODO: Module `logging` shadows a Python standard-library module
+ ]
++"anta/input_models/logging.py" = [
++  "A005",  # TODO: Module `logging` shadows a Python standard-library module
++]
+ "anta/decorators.py" = [
+   "ANN401",  # Ok to use Any type hint in our decorators
+ ]

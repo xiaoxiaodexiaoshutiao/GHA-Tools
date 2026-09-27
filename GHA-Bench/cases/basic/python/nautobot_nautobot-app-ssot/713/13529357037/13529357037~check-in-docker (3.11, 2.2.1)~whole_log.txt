@@ -1,0 +1,326 @@
+2025-02-25T20:23:06.1722330Z Requested labels: ubuntu-22.04
+2025-02-25T20:23:06.1722571Z Job defined at: nautobot/nautobot-app-ssot/.github/workflows/ci.yml@refs/pull/713/merge
+2025-02-25T20:23:06.1722670Z Waiting for a runner to pick up this job...
+2025-02-25T20:23:06.9450189Z Job is waiting for a hosted runner to come online.
+2025-02-25T20:23:09.8162224Z Job is about to start running on the hosted runner: GitHub Actions 9 (hosted)
+2025-02-25T20:23:11.9687860Z Current runner version: '2.322.0'
+2025-02-25T20:23:11.9712509Z ##[group]Operating System
+2025-02-25T20:23:11.9713316Z Ubuntu
+2025-02-25T20:23:11.9714016Z 22.04.5
+2025-02-25T20:23:11.9714572Z LTS
+2025-02-25T20:23:11.9715042Z ##[endgroup]
+2025-02-25T20:23:11.9715730Z ##[group]Runner Image
+2025-02-25T20:23:11.9716343Z Image: ubuntu-22.04
+2025-02-25T20:23:11.9716964Z Version: 20250209.1.0
+2025-02-25T20:23:11.9718052Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20250209.1/images/ubuntu/Ubuntu2204-Readme.md
+2025-02-25T20:23:11.9719449Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20250209.1
+2025-02-25T20:23:11.9720405Z ##[endgroup]
+2025-02-25T20:23:11.9721016Z ##[group]Runner Image Provisioner
+2025-02-25T20:23:11.9721644Z 2.0.422.1
+2025-02-25T20:23:11.9722206Z ##[endgroup]
+2025-02-25T20:23:11.9724397Z ##[group]GITHUB_TOKEN Permissions
+2025-02-25T20:23:11.9726356Z Actions: write
+2025-02-25T20:23:11.9727163Z Attestations: write
+2025-02-25T20:23:11.9727921Z Checks: write
+2025-02-25T20:23:11.9728442Z Contents: write
+2025-02-25T20:23:11.9728994Z Deployments: write
+2025-02-25T20:23:11.9729668Z Discussions: write
+2025-02-25T20:23:11.9730233Z Issues: write
+2025-02-25T20:23:11.9730840Z Metadata: read
+2025-02-25T20:23:11.9731374Z Packages: write
+2025-02-25T20:23:11.9732116Z Pages: write
+2025-02-25T20:23:11.9733188Z PullRequests: write
+2025-02-25T20:23:11.9734086Z RepositoryProjects: write
+2025-02-25T20:23:11.9735040Z SecurityEvents: write
+2025-02-25T20:23:11.9735684Z Statuses: write
+2025-02-25T20:23:11.9736221Z ##[endgroup]
+2025-02-25T20:23:11.9739052Z Secret source: Actions
+2025-02-25T20:23:11.9740154Z Prepare workflow directory
+2025-02-25T20:23:12.0316484Z Prepare all required actions
+2025-02-25T20:23:12.0352298Z Getting action download info
+2025-02-25T20:23:12.2584664Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-02-25T20:23:12.3568674Z Download action repository 'networktocode/gh-action-setup-poetry-environment@v6' (SHA:3a787c30d807396bd773ce6180bde058abfeb6cd)
+2025-02-25T20:23:12.6988235Z Download action repository 'docker/setup-buildx-action@v3' (SHA:f7ce87c1d6bead3e36075b2ce75da1f6cc28aaca)
+2025-02-25T20:23:13.1651086Z Download action repository 'docker/build-push-action@v5' (SHA:ca052bb54ab0790a636c9b5f226502c73d547a25)
+2025-02-25T20:23:13.6610410Z Getting action download info
+2025-02-25T20:23:13.7935942Z Download action repository 'actions/setup-python@v5' (SHA:42375524e23c412d93fb67b49958b491fce71c38)
+2025-02-25T20:23:14.1737928Z Download action repository 'actions/cache@v4' (SHA:0c907a75c2c80ebcb7f088228285e798b750cf8f)
+2025-02-25T20:23:14.7306499Z Complete job name: check-in-docker (3.11, 2.2.1)
+2025-02-25T20:23:14.8183268Z ##[group]Run actions/checkout@v4
+2025-02-25T20:23:14.8184557Z with:
+2025-02-25T20:23:14.8185384Z   repository: nautobot/nautobot-app-ssot
+2025-02-25T20:23:14.8186692Z   token: ***
+2025-02-25T20:23:14.8187461Z   ssh-strict: true
+2025-02-25T20:23:14.8188271Z   ssh-user: git
+2025-02-25T20:23:14.8189109Z   persist-credentials: true
+2025-02-25T20:23:14.8190017Z   clean: true
+2025-02-25T20:23:14.8190830Z   sparse-checkout-cone-mode: true
+2025-02-25T20:23:14.8191805Z   fetch-depth: 1
+2025-02-25T20:23:14.8192593Z   fetch-tags: false
+2025-02-25T20:23:14.8193405Z   show-progress: true
+2025-02-25T20:23:14.8194224Z   lfs: false
+2025-02-25T20:23:14.8194973Z   submodules: false
+2025-02-25T20:23:14.8195799Z   set-safe-directory: true
+2025-02-25T20:23:14.8196886Z env:
+2025-02-25T20:23:14.8197637Z   APP_NAME: nautobot-ssot
+2025-02-25T20:23:14.8198574Z   INVOKE_NAUTOBOT_SSOT_PYTHON_VER: 3.11
+2025-02-25T20:23:14.8199644Z   INVOKE_NAUTOBOT_SSOT_NAUTOBOT_VER: 2.2.1
+2025-02-25T20:23:14.8200710Z ##[endgroup]
+2025-02-25T20:23:15.0557519Z Syncing repository: nautobot/nautobot-app-ssot
+2025-02-25T20:23:15.0560091Z ##[group]Getting Git version info
+2025-02-25T20:23:15.0561559Z Working directory is '/home/runner/work/nautobot-app-ssot/nautobot-app-ssot'
+2025-02-25T20:23:15.0563597Z [command]/usr/bin/git version
+2025-02-25T20:23:15.0643234Z git version 2.48.1
+2025-02-25T20:23:15.0673573Z ##[endgroup]
+2025-02-25T20:23:15.0686019Z Temporarily overriding HOME='/home/runner/work/_temp/c5756c1f-dc68-48c6-aa32-2a7287eaacb1' before making global git config changes
+2025-02-25T20:23:15.0688628Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-25T20:23:15.0691180Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nautobot-app-ssot/nautobot-app-ssot
+2025-02-25T20:23:15.0728244Z Deleting the contents of '/home/runner/work/nautobot-app-ssot/nautobot-app-ssot'
+2025-02-25T20:23:15.0732488Z ##[group]Initializing the repository
+2025-02-25T20:23:15.0735794Z [command]/usr/bin/git init /home/runner/work/nautobot-app-ssot/nautobot-app-ssot
+2025-02-25T20:23:15.0813580Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-25T20:23:15.0815940Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-25T20:23:15.0818369Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-25T20:23:15.0820864Z hint:
+2025-02-25T20:23:15.0822299Z hint: 	git config --global init.defaultBranch <name>
+2025-02-25T20:23:15.0823467Z hint:
+2025-02-25T20:23:15.0824537Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-25T20:23:15.0826414Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-25T20:23:15.0828104Z hint:
+2025-02-25T20:23:15.0828851Z hint: 	git branch -m <name>
+2025-02-25T20:23:15.0830432Z Initialized empty Git repository in /home/runner/work/nautobot-app-ssot/nautobot-app-ssot/.git/
+2025-02-25T20:23:15.0834131Z [command]/usr/bin/git remote add origin https://github.com/nautobot/nautobot-app-ssot
+2025-02-25T20:23:15.0869323Z ##[endgroup]
+2025-02-25T20:23:15.0870670Z ##[group]Disabling automatic garbage collection
+2025-02-25T20:23:15.0872724Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-25T20:23:15.0903349Z ##[endgroup]
+2025-02-25T20:23:15.0904655Z ##[group]Setting up auth
+2025-02-25T20:23:15.0909573Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-25T20:23:15.0941430Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-25T20:23:15.1280985Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-25T20:23:15.1313781Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-25T20:23:15.1569141Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-25T20:23:15.1611752Z ##[endgroup]
+2025-02-25T20:23:15.1613566Z ##[group]Fetching the repository
+2025-02-25T20:23:15.1621132Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +2b51e4b0924d47d7aad2dd7fe276aee5fc7af902:refs/remotes/pull/713/merge
+2025-02-25T20:23:16.1903192Z From https://github.com/nautobot/nautobot-app-ssot
+2025-02-25T20:23:16.1904544Z  * [new ref]         2b51e4b0924d47d7aad2dd7fe276aee5fc7af902 -> pull/713/merge
+2025-02-25T20:23:16.1930840Z ##[endgroup]
+2025-02-25T20:23:16.1931408Z ##[group]Determining the checkout info
+2025-02-25T20:23:16.1933379Z ##[endgroup]
+2025-02-25T20:23:16.1938164Z [command]/usr/bin/git sparse-checkout disable
+2025-02-25T20:23:16.1980258Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-25T20:23:16.2008643Z ##[group]Checking out the ref
+2025-02-25T20:23:16.2011962Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/713/merge
+2025-02-25T20:23:16.3798313Z Note: switching to 'refs/remotes/pull/713/merge'.
+2025-02-25T20:23:16.3798978Z 
+2025-02-25T20:23:16.3799432Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-25T20:23:16.3800567Z changes and commit them, and you can discard any commits you make in this
+2025-02-25T20:23:16.3801332Z state without impacting any branches by switching back to a branch.
+2025-02-25T20:23:16.3801777Z 
+2025-02-25T20:23:16.3802117Z If you want to create a new branch to retain commits you create, you may
+2025-02-25T20:23:16.3802858Z do so (now or later) by using -c with the switch command. Example:
+2025-02-25T20:23:16.3803256Z 
+2025-02-25T20:23:16.3803428Z   git switch -c <new-branch-name>
+2025-02-25T20:23:16.3803713Z 
+2025-02-25T20:23:16.3803873Z Or undo this operation with:
+2025-02-25T20:23:16.3804133Z 
+2025-02-25T20:23:16.3804287Z   git switch -
+2025-02-25T20:23:16.3804517Z 
+2025-02-25T20:23:16.3804893Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-25T20:23:16.3805373Z 
+2025-02-25T20:23:16.3805947Z HEAD is now at 2b51e4b Merge af463830077f90506ffac87ff15271d5617b58ec into 8b08b2f048d9a449f6bfd74c30c835669473519f
+2025-02-25T20:23:16.3814209Z ##[endgroup]
+2025-02-25T20:23:16.3857267Z [command]/usr/bin/git log -1 --format=%H
+2025-02-25T20:23:16.3880780Z 2b51e4b0924d47d7aad2dd7fe276aee5fc7af902
+2025-02-25T20:23:16.4111690Z ##[group]Run networktocode/gh-action-setup-poetry-environment@v6
+2025-02-25T20:23:16.4112084Z with:
+2025-02-25T20:23:16.4112299Z   poetry-version: 1.8.5
+2025-02-25T20:23:16.4112560Z   poetry-install-options: --only dev
+2025-02-25T20:23:16.4112842Z   python-version: 3.11
+2025-02-25T20:23:16.4113048Z env:
+2025-02-25T20:23:16.4113233Z   APP_NAME: nautobot-ssot
+2025-02-25T20:23:16.4113482Z   INVOKE_NAUTOBOT_SSOT_PYTHON_VER: 3.11
+2025-02-25T20:23:16.4113770Z   INVOKE_NAUTOBOT_SSOT_NAUTOBOT_VER: 2.2.1
+2025-02-25T20:23:16.4114026Z ##[endgroup]
+2025-02-25T20:23:16.4241011Z ##[group]Run actions/setup-python@v5
+2025-02-25T20:23:16.4241292Z with:
+2025-02-25T20:23:16.4241484Z   python-version: 3.11
+2025-02-25T20:23:16.4241712Z   check-latest: false
+2025-02-25T20:23:16.4242035Z   token: ***
+2025-02-25T20:23:16.4242256Z   update-environment: true
+2025-02-25T20:23:16.4242502Z   allow-prereleases: false
+2025-02-25T20:23:16.4242717Z env:
+2025-02-25T20:23:16.4242902Z   APP_NAME: nautobot-ssot
+2025-02-25T20:23:16.4243173Z   INVOKE_NAUTOBOT_SSOT_PYTHON_VER: 3.11
+2025-02-25T20:23:16.4243461Z   INVOKE_NAUTOBOT_SSOT_NAUTOBOT_VER: 2.2.1
+2025-02-25T20:23:16.4243715Z ##[endgroup]
+2025-02-25T20:23:16.5927822Z ##[group]Installed versions
+2025-02-25T20:23:16.5994060Z Successfully set up CPython (3.11.11)
+2025-02-25T20:23:16.5995108Z ##[endgroup]
+2025-02-25T20:23:16.6124425Z ##[group]Run echo Installing Poetry
+2025-02-25T20:23:16.6124786Z [36;1mecho Installing Poetry[0m
+2025-02-25T20:23:16.6237807Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-25T20:23:16.6238245Z env:
+2025-02-25T20:23:16.6238479Z   APP_NAME: nautobot-ssot
+2025-02-25T20:23:16.6238771Z   INVOKE_NAUTOBOT_SSOT_PYTHON_VER: 3.11
+2025-02-25T20:23:16.6239130Z   INVOKE_NAUTOBOT_SSOT_NAUTOBOT_VER: 2.2.1
+2025-02-25T20:23:16.6239540Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-25T20:23:16.6241318Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-02-25T20:23:16.6243007Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-25T20:23:16.6243496Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-25T20:23:16.6243989Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-25T20:23:16.6244498Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-02-25T20:23:16.6244909Z ##[endgroup]
+2025-02-25T20:23:16.6414772Z Installing Poetry
+2025-02-25T20:23:16.6507184Z ##[group]Run if [ -z "1.8.5" ]
+2025-02-25T20:23:16.6544044Z [36;1mif [ -z "1.8.5" ][0m
+2025-02-25T20:23:16.6544448Z [36;1mthen[0m
+2025-02-25T20:23:16.6544995Z [36;1m  curl -sSL https://install.python-poetry.org | python -[0m
+2025-02-25T20:23:16.6545617Z [36;1melse[0m
+2025-02-25T20:23:16.6546221Z [36;1m  curl -sSL https://install.python-poetry.org | python - --version 1.8.5[0m
+2025-02-25T20:23:16.6547283Z [36;1mfi[0m
+2025-02-25T20:23:16.6584018Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-25T20:23:16.6584358Z env:
+2025-02-25T20:23:16.6584562Z   APP_NAME: nautobot-ssot
+2025-02-25T20:23:16.6584806Z   INVOKE_NAUTOBOT_SSOT_PYTHON_VER: 3.11
+2025-02-25T20:23:16.6585097Z   INVOKE_NAUTOBOT_SSOT_NAUTOBOT_VER: 2.2.1
+2025-02-25T20:23:16.6585434Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-25T20:23:16.6585854Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-02-25T20:23:16.6586265Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-25T20:23:16.6586631Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-25T20:23:16.6586994Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-25T20:23:16.6587367Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-02-25T20:23:16.6587675Z ##[endgroup]
+2025-02-25T20:23:30.2045758Z Retrieving Poetry metadata
+2025-02-25T20:23:30.2046396Z 
+2025-02-25T20:23:30.2046654Z # Welcome to Poetry!
+2025-02-25T20:23:30.2046976Z 
+2025-02-25T20:23:30.2047295Z This will download and install the latest version of Poetry,
+2025-02-25T20:23:30.2048355Z a dependency and package manager for Python.
+2025-02-25T20:23:30.2048712Z 
+2025-02-25T20:23:30.2049008Z It will add the `poetry` command to Poetry's bin directory, located at:
+2025-02-25T20:23:30.2049428Z 
+2025-02-25T20:23:30.2049579Z /home/runner/.local/bin
+2025-02-25T20:23:30.2049796Z 
+2025-02-25T20:23:30.2050147Z You can uninstall at any time by executing this script with the --uninstall option,
+2025-02-25T20:23:30.2050788Z and these changes will be reverted.
+2025-02-25T20:23:30.2051062Z 
+2025-02-25T20:23:30.2051244Z Installing Poetry (1.8.5)
+2025-02-25T20:23:30.2051751Z Installing Poetry (1.8.5): Creating environment
+2025-02-25T20:23:30.2052345Z Installing Poetry (1.8.5): Installing Poetry
+2025-02-25T20:23:30.2052872Z Installing Poetry (1.8.5): Creating script
+2025-02-25T20:23:30.2053360Z Installing Poetry (1.8.5): Done
+2025-02-25T20:23:30.2053649Z 
+2025-02-25T20:23:30.2053815Z Poetry (1.8.5) is installed now. Great!
+2025-02-25T20:23:30.2054128Z 
+2025-02-25T20:23:30.2054358Z You can test that everything is set up by executing:
+2025-02-25T20:23:30.2054729Z 
+2025-02-25T20:23:30.2054872Z `poetry --version`
+2025-02-25T20:23:30.2055099Z 
+2025-02-25T20:23:30.2199651Z ##[group]Run ln -s /root/.local/bin/poetry /usr/local/bin/poetry
+2025-02-25T20:23:30.2200105Z [36;1mln -s /root/.local/bin/poetry /usr/local/bin/poetry[0m
+2025-02-25T20:23:30.2237564Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-25T20:23:30.2237936Z env:
+2025-02-25T20:23:30.2238138Z   APP_NAME: nautobot-ssot
+2025-02-25T20:23:30.2238389Z   INVOKE_NAUTOBOT_SSOT_PYTHON_VER: 3.11
+2025-02-25T20:23:30.2238667Z   INVOKE_NAUTOBOT_SSOT_NAUTOBOT_VER: 2.2.1
+2025-02-25T20:23:30.2239000Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-25T20:23:30.2239423Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-02-25T20:23:30.2239839Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-25T20:23:30.2240196Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-25T20:23:30.2240575Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-25T20:23:30.2240963Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-02-25T20:23:30.2241266Z ##[endgroup]
+2025-02-25T20:23:30.2336553Z ##[group]Run echo Checking cache
+2025-02-25T20:23:30.2336823Z [36;1mecho Checking cache[0m
+2025-02-25T20:23:30.2369416Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-25T20:23:30.2369740Z env:
+2025-02-25T20:23:30.2369930Z   APP_NAME: nautobot-ssot
+2025-02-25T20:23:30.2370174Z   INVOKE_NAUTOBOT_SSOT_PYTHON_VER: 3.11
+2025-02-25T20:23:30.2370457Z   INVOKE_NAUTOBOT_SSOT_NAUTOBOT_VER: 2.2.1
+2025-02-25T20:23:30.2370803Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-25T20:23:30.2371236Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-02-25T20:23:30.2371856Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-25T20:23:30.2372222Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-25T20:23:30.2372585Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-25T20:23:30.2372950Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-02-25T20:23:30.2373258Z ##[endgroup]
+2025-02-25T20:23:30.2428202Z Checking cache
+2025-02-25T20:23:30.3018490Z ##[group]Run actions/cache@v4
+2025-02-25T20:23:30.3018833Z with:
+2025-02-25T20:23:30.3019118Z   path: ~/.cache/pypoetry/virtualenvs/
+2025-02-25T20:23:30.3019768Z   key: Linux-poetry-3.11.11-a19ff774615ad880a92c1bb26fa37bd0211f07f68f42d8dda626acfcec2ff599
+2025-02-25T20:23:30.3020626Z   enableCrossOsArchive: false
+2025-02-25T20:23:30.3020922Z   fail-on-cache-miss: false
+2025-02-25T20:23:30.3021192Z   lookup-only: false
+2025-02-25T20:23:30.3021435Z   save-always: false
+2025-02-25T20:23:30.3021662Z env:
+2025-02-25T20:23:30.3021869Z   APP_NAME: nautobot-ssot
+2025-02-25T20:23:30.3022167Z   INVOKE_NAUTOBOT_SSOT_PYTHON_VER: 3.11
+2025-02-25T20:23:30.3022497Z   INVOKE_NAUTOBOT_SSOT_NAUTOBOT_VER: 2.2.1
+2025-02-25T20:23:30.3023113Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-25T20:23:30.3023612Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-02-25T20:23:30.3024111Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-25T20:23:30.3024595Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-25T20:23:30.3025031Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-25T20:23:30.3025472Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-02-25T20:23:30.3025846Z ##[endgroup]
+2025-02-25T20:23:30.5868961Z Cache hit for: Linux-poetry-3.11.11-a19ff774615ad880a92c1bb26fa37bd0211f07f68f42d8dda626acfcec2ff599
+2025-02-25T20:23:31.2239159Z Received 48408257 of 48408257 (100.0%), 89.5 MBs/sec
+2025-02-25T20:23:31.2240414Z Cache Size: ~46 MB (48408257 B)
+2025-02-25T20:23:31.2271684Z [command]/usr/bin/tar -xf /home/runner/work/_temp/ae1feff3-9f6f-4b08-bff4-cb48a258ddf7/cache.tzst -P -C /home/runner/work/nautobot-app-ssot/nautobot-app-ssot --use-compress-program unzstd
+2025-02-25T20:23:32.5899127Z Cache restored successfully
+2025-02-25T20:23:32.6153264Z Cache restored from key: Linux-poetry-3.11.11-a19ff774615ad880a92c1bb26fa37bd0211f07f68f42d8dda626acfcec2ff599
+2025-02-25T20:23:32.6259684Z ##[group]Run poetry install --only dev
+2025-02-25T20:23:32.6260322Z [36;1mpoetry install --only dev[0m
+2025-02-25T20:23:32.6296438Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-02-25T20:23:32.6296752Z env:
+2025-02-25T20:23:32.6296941Z   APP_NAME: nautobot-ssot
+2025-02-25T20:23:32.6297183Z   INVOKE_NAUTOBOT_SSOT_PYTHON_VER: 3.11
+2025-02-25T20:23:32.6297461Z   INVOKE_NAUTOBOT_SSOT_NAUTOBOT_VER: 2.2.1
+2025-02-25T20:23:32.6297787Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-25T20:23:32.6298201Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-02-25T20:23:32.6298627Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-25T20:23:32.6299009Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-25T20:23:32.6299381Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-25T20:23:32.6299745Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-02-25T20:23:32.6300352Z ##[endgroup]
+2025-02-25T20:23:33.4685598Z Installing dependencies from lock file
+2025-02-25T20:23:33.8689737Z 
+2025-02-25T20:23:33.8690263Z No dependencies to install or update
+2025-02-25T20:23:33.8727293Z 
+2025-02-25T20:23:33.8728048Z Installing the current project: nautobot-ssot (3.5.1a0)
+2025-02-25T20:23:33.9480069Z ##[group]Run poetry run invoke lock --constrain-nautobot-ver --constrain-python-ver
+2025-02-25T20:23:33.9480666Z [36;1mpoetry run invoke lock --constrain-nautobot-ver --constrain-python-ver[0m
+2025-02-25T20:23:33.9517842Z shell: /usr/bin/bash -e {0}
+2025-02-25T20:23:33.9518079Z env:
+2025-02-25T20:23:33.9518495Z   APP_NAME: nautobot-ssot
+2025-02-25T20:23:33.9518751Z   INVOKE_NAUTOBOT_SSOT_PYTHON_VER: 3.11
+2025-02-25T20:23:33.9519033Z   INVOKE_NAUTOBOT_SSOT_NAUTOBOT_VER: 2.2.1
+2025-02-25T20:23:33.9519373Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-25T20:23:33.9519793Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-02-25T20:23:33.9520196Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-25T20:23:33.9520559Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-25T20:23:33.9520919Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-02-25T20:23:33.9521309Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-02-25T20:23:33.9521623Z   INVOKE_NAUTOBOT_SSOT_LOCAL: true
+2025-02-25T20:23:33.9521856Z ##[endgroup]
+2025-02-25T20:24:32.5242804Z 
+2025-02-25T20:24:32.5243717Z Failed to clone https://github.com/nautobot/nautobot.git at '2.2.1', verify ref exists on remote.
+2025-02-25T20:24:32.5958134Z Unable to add Nautobot dependency with version constraint, falling back to git branch.
+2025-02-25T20:24:32.6132804Z ##[error]Process completed with exit code 1.
+2025-02-25T20:24:32.6230352Z Post job cleanup.
+2025-02-25T20:24:32.6307435Z Post job cleanup.
+2025-02-25T20:24:32.7245852Z [command]/usr/bin/git version
+2025-02-25T20:24:32.7289786Z git version 2.48.1
+2025-02-25T20:24:32.7335604Z Temporarily overriding HOME='/home/runner/work/_temp/600ce14c-36d3-4909-918d-cb3636685a21' before making global git config changes
+2025-02-25T20:24:32.7336833Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-25T20:24:32.7341020Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nautobot-app-ssot/nautobot-app-ssot
+2025-02-25T20:24:32.7376332Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-25T20:24:32.7409880Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-25T20:24:32.7662068Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-25T20:24:32.7683863Z http.https://github.com/.extraheader
+2025-02-25T20:24:32.7695767Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-25T20:24:32.7728906Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-25T20:24:32.8086016Z Cleaning up orphan processes

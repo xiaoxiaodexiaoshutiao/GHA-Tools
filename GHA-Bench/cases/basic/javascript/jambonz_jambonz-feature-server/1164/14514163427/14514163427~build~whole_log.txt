@@ -1,0 +1,193 @@
+2025-04-17T11:02:12.7598478Z Requested labels: ubuntu-latest
+2025-04-17T11:02:12.7598765Z Job defined at: jambonz/jambonz-feature-server/.github/workflows/build.yml@refs/pull/1164/merge
+2025-04-17T11:02:12.7598909Z Waiting for a runner to pick up this job...
+2025-04-17T11:02:12.9352597Z Job is waiting for a hosted runner to come online.
+2025-04-17T11:02:16.7593019Z Job is about to start running on the hosted runner: GitHub Actions 57 (hosted)
+2025-04-17T11:02:19.6803474Z Current runner version: '2.323.0'
+2025-04-17T11:02:19.6831769Z ##[group]Operating System
+2025-04-17T11:02:19.6832633Z Ubuntu
+2025-04-17T11:02:19.6833268Z 24.04.2
+2025-04-17T11:02:19.6833815Z LTS
+2025-04-17T11:02:19.6834338Z ##[endgroup]
+2025-04-17T11:02:19.6835223Z ##[group]Runner Image
+2025-04-17T11:02:19.6835893Z Image: ubuntu-24.04
+2025-04-17T11:02:19.6836547Z Version: 20250413.1.0
+2025-04-17T11:02:19.6837651Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250413.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-17T11:02:19.6839136Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250413.1
+2025-04-17T11:02:19.6840175Z ##[endgroup]
+2025-04-17T11:02:19.6840779Z ##[group]Runner Image Provisioner
+2025-04-17T11:02:19.6841512Z 2.0.422.1
+2025-04-17T11:02:19.6842048Z ##[endgroup]
+2025-04-17T11:02:19.6844512Z ##[group]GITHUB_TOKEN Permissions
+2025-04-17T11:02:19.6846809Z Actions: write
+2025-04-17T11:02:19.6847737Z Attestations: write
+2025-04-17T11:02:19.6848430Z Checks: write
+2025-04-17T11:02:19.6849094Z Contents: write
+2025-04-17T11:02:19.6849691Z Deployments: write
+2025-04-17T11:02:19.6850306Z Discussions: write
+2025-04-17T11:02:19.6850910Z Issues: write
+2025-04-17T11:02:19.6851479Z Metadata: read
+2025-04-17T11:02:19.6852115Z Models: read
+2025-04-17T11:02:19.6852657Z Packages: write
+2025-04-17T11:02:19.6853245Z Pages: write
+2025-04-17T11:02:19.6853867Z PullRequests: write
+2025-04-17T11:02:19.6854446Z RepositoryProjects: write
+2025-04-17T11:02:19.6855334Z SecurityEvents: write
+2025-04-17T11:02:19.6855946Z Statuses: write
+2025-04-17T11:02:19.6856615Z ##[endgroup]
+2025-04-17T11:02:19.6859918Z Secret source: Actions
+2025-04-17T11:02:19.6860789Z Prepare workflow directory
+2025-04-17T11:02:19.7309086Z Prepare all required actions
+2025-04-17T11:02:19.7355288Z Getting action download info
+2025-04-17T11:02:19.9876105Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-17T11:02:19.9877061Z Version: 4.2.2
+2025-04-17T11:02:19.9877959Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-17T11:02:19.9879018Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-17T11:02:19.9879677Z ##[endgroup]
+2025-04-17T11:02:20.1499498Z ##[group]Download immutable action package 'actions/setup-node@v4'
+2025-04-17T11:02:20.1500243Z Version: 4.4.0
+2025-04-17T11:02:20.1500950Z Digest: sha256:9427cefe82346e992fb5b949e3569b39d537ae41aa3086483b14eceebfc16bc1
+2025-04-17T11:02:20.1501870Z Source commit SHA: 49933ea5288caeca8642d1e84afbd3f7d6820020
+2025-04-17T11:02:20.1502524Z ##[endgroup]
+2025-04-17T11:02:20.6498044Z Complete job name: build
+2025-04-17T11:02:20.7336100Z ##[group]Run actions/checkout@v4
+2025-04-17T11:02:20.7337087Z with:
+2025-04-17T11:02:20.7337586Z   repository: jambonz/jambonz-feature-server
+2025-04-17T11:02:20.7338512Z   token: ***
+2025-04-17T11:02:20.7338958Z   ssh-strict: true
+2025-04-17T11:02:20.7339407Z   ssh-user: git
+2025-04-17T11:02:20.7339858Z   persist-credentials: true
+2025-04-17T11:02:20.7340369Z   clean: true
+2025-04-17T11:02:20.7340853Z   sparse-checkout-cone-mode: true
+2025-04-17T11:02:20.7341380Z   fetch-depth: 1
+2025-04-17T11:02:20.7341818Z   fetch-tags: false
+2025-04-17T11:02:20.7342273Z   show-progress: true
+2025-04-17T11:02:20.7342718Z   lfs: false
+2025-04-17T11:02:20.7343132Z   submodules: false
+2025-04-17T11:02:20.7343582Z   set-safe-directory: true
+2025-04-17T11:02:20.7344294Z ##[endgroup]
+2025-04-17T11:02:21.0228232Z Syncing repository: jambonz/jambonz-feature-server
+2025-04-17T11:02:21.0230389Z ##[group]Getting Git version info
+2025-04-17T11:02:21.0231582Z Working directory is '/home/runner/work/jambonz-feature-server/jambonz-feature-server'
+2025-04-17T11:02:21.0234160Z [command]/usr/bin/git version
+2025-04-17T11:02:21.0328323Z git version 2.49.0
+2025-04-17T11:02:21.0369470Z ##[endgroup]
+2025-04-17T11:02:21.0386785Z Temporarily overriding HOME='/home/runner/work/_temp/31f512c5-04c1-4892-a91b-efd8cee49d00' before making global git config changes
+2025-04-17T11:02:21.0389583Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-17T11:02:21.0394516Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/jambonz-feature-server/jambonz-feature-server
+2025-04-17T11:02:21.0437720Z Deleting the contents of '/home/runner/work/jambonz-feature-server/jambonz-feature-server'
+2025-04-17T11:02:21.0441700Z ##[group]Initializing the repository
+2025-04-17T11:02:21.0447453Z [command]/usr/bin/git init /home/runner/work/jambonz-feature-server/jambonz-feature-server
+2025-04-17T11:02:21.0532229Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-17T11:02:21.0533571Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-17T11:02:21.0534582Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-17T11:02:21.0535664Z hint:
+2025-04-17T11:02:21.0536256Z hint: 	git config --global init.defaultBranch <name>
+2025-04-17T11:02:21.0536913Z hint:
+2025-04-17T11:02:21.0537546Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-17T11:02:21.0538586Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-17T11:02:21.0539863Z hint:
+2025-04-17T11:02:21.0540656Z hint: 	git branch -m <name>
+2025-04-17T11:02:21.0542061Z Initialized empty Git repository in /home/runner/work/jambonz-feature-server/jambonz-feature-server/.git/
+2025-04-17T11:02:21.0555442Z [command]/usr/bin/git remote add origin https://github.com/jambonz/jambonz-feature-server
+2025-04-17T11:02:21.0593059Z ##[endgroup]
+2025-04-17T11:02:21.0594664Z ##[group]Disabling automatic garbage collection
+2025-04-17T11:02:21.0699161Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-17T11:02:21.0703134Z ##[endgroup]
+2025-04-17T11:02:21.0704193Z ##[group]Setting up auth
+2025-04-17T11:02:21.0705578Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-17T11:02:21.0709053Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-17T11:02:21.1046485Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-17T11:02:21.1079998Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-17T11:02:21.1317782Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-17T11:02:21.1365711Z ##[endgroup]
+2025-04-17T11:02:21.1366834Z ##[group]Fetching the repository
+2025-04-17T11:02:21.1375717Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e88c96c522d85c66e0a8391ba3fa15b7967c3c97:refs/remotes/pull/1164/merge
+2025-04-17T11:02:21.8696158Z From https://github.com/jambonz/jambonz-feature-server
+2025-04-17T11:02:21.8698296Z  * [new ref]         e88c96c522d85c66e0a8391ba3fa15b7967c3c97 -> pull/1164/merge
+2025-04-17T11:02:21.8729842Z ##[endgroup]
+2025-04-17T11:02:21.8731564Z ##[group]Determining the checkout info
+2025-04-17T11:02:21.8733458Z ##[endgroup]
+2025-04-17T11:02:21.8736761Z [command]/usr/bin/git sparse-checkout disable
+2025-04-17T11:02:21.8783992Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-17T11:02:21.8814003Z ##[group]Checking out the ref
+2025-04-17T11:02:21.8817555Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1164/merge
+2025-04-17T11:02:21.8983727Z Note: switching to 'refs/remotes/pull/1164/merge'.
+2025-04-17T11:02:21.8985172Z 
+2025-04-17T11:02:21.8986099Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-17T11:02:21.8989588Z changes and commit them, and you can discard any commits you make in this
+2025-04-17T11:02:21.8993202Z state without impacting any branches by switching back to a branch.
+2025-04-17T11:02:21.8995959Z 
+2025-04-17T11:02:21.8997393Z If you want to create a new branch to retain commits you create, you may
+2025-04-17T11:02:21.9000816Z do so (now or later) by using -c with the switch command. Example:
+2025-04-17T11:02:21.9002709Z 
+2025-04-17T11:02:21.9003569Z   git switch -c <new-branch-name>
+2025-04-17T11:02:21.9004906Z 
+2025-04-17T11:02:21.9005912Z Or undo this operation with:
+2025-04-17T11:02:21.9006819Z 
+2025-04-17T11:02:21.9007358Z   git switch -
+2025-04-17T11:02:21.9008044Z 
+2025-04-17T11:02:21.9009121Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-17T11:02:21.9010658Z 
+2025-04-17T11:02:21.9013146Z HEAD is now at e88c96c Merge 82679b8260767671b305bb22ec6ee338bc24b7de into 87195b644475e0ace6b5c8fed49193b94e7d57c9
+2025-04-17T11:02:21.9018990Z ##[endgroup]
+2025-04-17T11:02:21.9034601Z [command]/usr/bin/git log -1 --format=%H
+2025-04-17T11:02:21.9057972Z e88c96c522d85c66e0a8391ba3fa15b7967c3c97
+2025-04-17T11:02:21.9387665Z ##[group]Run actions/setup-node@v4
+2025-04-17T11:02:21.9388922Z with:
+2025-04-17T11:02:21.9389807Z   node-version: 20
+2025-04-17T11:02:21.9390796Z   always-auth: false
+2025-04-17T11:02:21.9391800Z   check-latest: false
+2025-04-17T11:02:21.9393099Z   token: ***
+2025-04-17T11:02:21.9394010Z ##[endgroup]
+2025-04-17T11:02:22.1305182Z Found in cache @ /opt/hostedtoolcache/node/20.19.0/x64
+2025-04-17T11:02:22.1310611Z ##[group]Environment details
+2025-04-17T11:02:22.5395579Z node: v20.19.0
+2025-04-17T11:02:22.5397168Z npm: 10.8.2
+2025-04-17T11:02:22.5398556Z yarn: 1.22.22
+2025-04-17T11:02:22.5400990Z ##[endgroup]
+2025-04-17T11:02:22.5539702Z ##[group]Run npm ci
+2025-04-17T11:02:22.5540756Z [36;1mnpm ci[0m
+2025-04-17T11:02:22.5595148Z shell: /usr/bin/bash -e {0}
+2025-04-17T11:02:22.5596232Z ##[endgroup]
+2025-04-17T11:02:37.8448104Z 
+2025-04-17T11:02:37.8457081Z added 823 packages, and audited 824 packages in 15s
+2025-04-17T11:02:37.8457746Z 
+2025-04-17T11:02:37.8458095Z 126 packages are looking for funding
+2025-04-17T11:02:37.8458713Z   run `npm fund` for details
+2025-04-17T11:02:37.8490186Z 
+2025-04-17T11:02:37.8491772Z 3 moderate severity vulnerabilities
+2025-04-17T11:02:37.8492510Z 
+2025-04-17T11:02:37.8493297Z To address all issues (including breaking changes), run:
+2025-04-17T11:02:37.8494325Z   npm audit fix --force
+2025-04-17T11:02:37.8494841Z 
+2025-04-17T11:02:37.8495970Z Run `npm audit` for details.
+2025-04-17T11:02:37.8873574Z ##[group]Run npm run jslint
+2025-04-17T11:02:37.8873941Z [36;1mnpm run jslint[0m
+2025-04-17T11:02:37.8922811Z shell: /usr/bin/bash -e {0}
+2025-04-17T11:02:37.8923101Z ##[endgroup]
+2025-04-17T11:02:38.0030353Z 
+2025-04-17T11:02:38.0031214Z > jambonz-feature-server@0.9.3 jslint
+2025-04-17T11:02:38.0031980Z > eslint app.js tracer.js lib
+2025-04-17T11:02:38.0032347Z 
+2025-04-17T11:02:40.4188312Z 
+2025-04-17T11:02:40.4189584Z /home/runner/work/jambonz-feature-server/jambonz-feature-server/lib/tasks/llm/llms/ultravox_s2s.js
+2025-04-17T11:02:40.4214714Z ##[error]  45:1  error  Trailing spaces not allowed  no-trailing-spaces
+2025-04-17T11:02:40.4220707Z 
+2025-04-17T11:02:40.4221196Z ✖ 1 problem (1 error, 0 warnings)
+2025-04-17T11:02:40.4221715Z   1 error and 0 warnings potentially fixable with the `--fix` option.
+2025-04-17T11:02:40.4222015Z 
+2025-04-17T11:02:40.4459002Z ##[error]Process completed with exit code 1.
+2025-04-17T11:02:40.4574601Z Post job cleanup.
+2025-04-17T11:02:40.5511571Z [command]/usr/bin/git version
+2025-04-17T11:02:40.5547011Z git version 2.49.0
+2025-04-17T11:02:40.5596910Z Temporarily overriding HOME='/home/runner/work/_temp/ddb425cb-3ec7-4dca-855c-f089d7fe1971' before making global git config changes
+2025-04-17T11:02:40.5598599Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-17T11:02:40.5603539Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/jambonz-feature-server/jambonz-feature-server
+2025-04-17T11:02:40.5638018Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-17T11:02:40.5671354Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-17T11:02:40.5904655Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-17T11:02:40.5926979Z http.https://github.com/.extraheader
+2025-04-17T11:02:40.5940270Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-17T11:02:40.5972050Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-17T11:02:40.6311873Z Cleaning up orphan processes

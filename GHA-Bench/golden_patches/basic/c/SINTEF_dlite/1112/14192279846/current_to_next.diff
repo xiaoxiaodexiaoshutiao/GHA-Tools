@@ -1,0 +1,86 @@
+diff --git a/.github/workflows/ci_automerge_dependabot.yml b/.github/workflows/ci_automerge_dependabot.yml
+index 281ecd73e..9721c5211 100644
+--- a/.github/workflows/ci_automerge_dependabot.yml
++++ b/.github/workflows/ci_automerge_dependabot.yml
+@@ -7,7 +7,7 @@ on:
+ jobs:
+   update-dependabot-branch:
+     name: External
+-    uses: SINTEF/ci-cd/.github/workflows/ci_automerge_prs.yml@v2.9.0
++    uses: SINTEF/ci-cd/.github/workflows/ci_automerge_prs.yml@v2.9.2
+     if: github.repository_owner == 'SINTEF' && startsWith(github.event.pull_request.head.ref, 'dependabot/') && github.actor == 'dependabot[bot]'
+     secrets:
+       PAT: ${{ secrets.RELEASE_PAT }}
+diff --git a/.github/workflows/ci_cd_updated_master.yml b/.github/workflows/ci_cd_updated_master.yml
+index 8e9cb020a..0420ea29e 100644
+--- a/.github/workflows/ci_cd_updated_master.yml
++++ b/.github/workflows/ci_cd_updated_master.yml
+@@ -7,7 +7,7 @@ on:
+ jobs:
+   updates-to-master:
+     name: External
+-    uses: SINTEF/ci-cd/.github/workflows/ci_cd_updated_default_branch.yml@v2.9.0
++    uses: SINTEF/ci-cd/.github/workflows/ci_cd_updated_default_branch.yml@v2.9.2
+     if: github.repository_owner == 'SINTEF'
+     with:
+       # General
+diff --git a/.github/workflows/ci_dependabot.yml b/.github/workflows/ci_dependabot.yml
+index f9be1e897..eebed411d 100644
+--- a/.github/workflows/ci_dependabot.yml
++++ b/.github/workflows/ci_dependabot.yml
+@@ -9,7 +9,7 @@ on:
+ jobs:
+   create-collected-pr:
+     name: External
+-    uses: SINTEF/ci-cd/.github/workflows/ci_update_dependencies.yml@v2.9.0
++    uses: SINTEF/ci-cd/.github/workflows/ci_update_dependencies.yml@v2.9.2
+     if: github.repository_owner == 'sintef'
+     with:
+       git_username: DLite Developers
+diff --git a/python/pyproject.toml b/python/pyproject.toml
+index c300fa853..f3624cdc0 100644
+--- a/python/pyproject.toml
++++ b/python/pyproject.toml
+@@ -1,10 +1,10 @@
+ [build-system]
+ requires = [
+-  "numpy>=1.14.5,<2.1.3", # must agree with ../requirements.txt 
+-  "swig==4.3.0",  # must agree with ../requirements_dev.txt 
+-  "cmake==3.31.4", # must agree with ../requirements_dev.txt 
+-  "setuptools==75.3.0", # must agree with ../requirements_dev.txt 
+-  "wheel==0.45.1", # must agree with ../requirements_dev.txt 
++  "numpy>=1.14.5,<2.1.3", # must agree with ../requirements.txt
++  "swig==4.3.0",  # must agree with ../requirements_dev.txt
++  "cmake==3.31.6", # must agree with ../requirements_dev.txt
++  "setuptools==75.3.0", # must agree with ../requirements_dev.txt
++  "wheel==0.45.1", # must agree with ../requirements_dev.txt
+ ]
+ build-backend = "setuptools.build_meta"
+ 
+diff --git a/requirements_dev.txt b/requirements_dev.txt
+index 7cc6e738d..39f62d040 100644
+--- a/requirements_dev.txt
++++ b/requirements_dev.txt
+@@ -1,7 +1,7 @@
+ # Requirements building
+ swig==4.3.0 # Must agree with python/pyproject.toml
+-cmake==3.31.4 # Must agree with python/pyproject.toml
++cmake==3.31.6 # Must agree with python/pyproject.toml
+ wheel==0.45.1 # Must agree with python/pyproject.toml
+ 
+-# Note, the setuptools==75.3.0 is the highest supported version in the Windows wheel
++# Note, that setuptools 75.3.0 is the highest supported version in the Windows wheel
+ setuptools==75.3.0 # Must agree with python/pyproject.toml
+diff --git a/requirements_full.txt b/requirements_full.txt
+index 22679493a..ec578dab4 100644
+--- a/requirements_full.txt
++++ b/requirements_full.txt
+@@ -25,7 +25,7 @@ urllib3>=1.0.0,<3
+ # Bug in pydantic 2.10.0, 2.10.1: See https://github.com/pydantic/pydantic/issues/9898
+ annotated-types>=0.5.0,<0.8.0
+ pydantic>=1.10.0,!=2.10.0,!=2.10.1,<2.10.7
+-pydantic-core>=0.42,<2.29.1
++pydantic-core>=0.42,<2.32.1
+ typing_extensions>=4.1,<5; python_version<'3.9'
+ fortran-language-server>=1.12.0,<1.13
+ 

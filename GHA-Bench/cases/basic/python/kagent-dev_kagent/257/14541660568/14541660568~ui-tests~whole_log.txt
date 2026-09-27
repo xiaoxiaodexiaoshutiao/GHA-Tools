@@ -1,0 +1,265 @@
+﻿2025-04-18T20:54:20.6956162Z Current runner version: '2.323.0'
+2025-04-18T20:54:20.6982207Z ##[group]Operating System
+2025-04-18T20:54:20.6983118Z Ubuntu
+2025-04-18T20:54:20.6983716Z 24.04.2
+2025-04-18T20:54:20.6984185Z LTS
+2025-04-18T20:54:20.6984653Z ##[endgroup]
+2025-04-18T20:54:20.6985223Z ##[group]Runner Image
+2025-04-18T20:54:20.6985823Z Image: ubuntu-24.04
+2025-04-18T20:54:20.6986324Z Version: 20250413.1.0
+2025-04-18T20:54:20.6987409Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250413.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-18T20:54:20.6989181Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250413.1
+2025-04-18T20:54:20.6990087Z ##[endgroup]
+2025-04-18T20:54:20.6990676Z ##[group]Runner Image Provisioner
+2025-04-18T20:54:20.6991252Z 2.0.422.1
+2025-04-18T20:54:20.6991717Z ##[endgroup]
+2025-04-18T20:54:20.6992827Z ##[group]GITHUB_TOKEN Permissions
+2025-04-18T20:54:20.6995119Z Contents: read
+2025-04-18T20:54:20.6995662Z Metadata: read
+2025-04-18T20:54:20.6996422Z Packages: read
+2025-04-18T20:54:20.6997055Z ##[endgroup]
+2025-04-18T20:54:20.6999719Z Secret source: Actions
+2025-04-18T20:54:20.7000502Z Prepare workflow directory
+2025-04-18T20:54:20.7443074Z Prepare all required actions
+2025-04-18T20:54:20.7497757Z Getting action download info
+2025-04-18T20:54:21.1475234Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-18T20:54:21.1476217Z Version: 4.2.2
+2025-04-18T20:54:21.1477174Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-18T20:54:21.1478454Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-18T20:54:21.1479345Z ##[endgroup]
+2025-04-18T20:54:21.2357379Z ##[group]Download immutable action package 'actions/setup-node@v4'
+2025-04-18T20:54:21.2358061Z Version: 4.4.0
+2025-04-18T20:54:21.2358873Z Digest: sha256:9427cefe82346e992fb5b949e3569b39d537ae41aa3086483b14eceebfc16bc1
+2025-04-18T20:54:21.2359739Z Source commit SHA: 49933ea5288caeca8642d1e84afbd3f7d6820020
+2025-04-18T20:54:21.2360340Z ##[endgroup]
+2025-04-18T20:54:21.5603037Z Complete job name: ui-tests
+2025-04-18T20:54:21.6255383Z ##[group]Run actions/checkout@v4
+2025-04-18T20:54:21.6256183Z with:
+2025-04-18T20:54:21.6256586Z   repository: kagent-dev/kagent
+2025-04-18T20:54:21.6257215Z   token: ***
+2025-04-18T20:54:21.6257596Z   ssh-strict: true
+2025-04-18T20:54:21.6257992Z   ssh-user: git
+2025-04-18T20:54:21.6258399Z   persist-credentials: true
+2025-04-18T20:54:21.6259026Z   clean: true
+2025-04-18T20:54:21.6259432Z   sparse-checkout-cone-mode: true
+2025-04-18T20:54:21.6259919Z   fetch-depth: 1
+2025-04-18T20:54:21.6260307Z   fetch-tags: false
+2025-04-18T20:54:21.6260708Z   show-progress: true
+2025-04-18T20:54:21.6261112Z   lfs: false
+2025-04-18T20:54:21.6261474Z   submodules: false
+2025-04-18T20:54:21.6261880Z   set-safe-directory: true
+2025-04-18T20:54:21.6262541Z ##[endgroup]
+2025-04-18T20:54:21.7875225Z Syncing repository: kagent-dev/kagent
+2025-04-18T20:54:21.7877256Z ##[group]Getting Git version info
+2025-04-18T20:54:21.7878046Z Working directory is '/home/runner/work/kagent/kagent'
+2025-04-18T20:54:21.7879455Z [command]/usr/bin/git version
+2025-04-18T20:54:21.7917634Z git version 2.49.0
+2025-04-18T20:54:21.7944876Z ##[endgroup]
+2025-04-18T20:54:21.7958250Z Temporarily overriding HOME='/home/runner/work/_temp/ae84860f-7d12-4720-8de3-b15b98481e60' before making global git config changes
+2025-04-18T20:54:21.7960623Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-18T20:54:21.7963367Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/kagent/kagent
+2025-04-18T20:54:21.7995704Z Deleting the contents of '/home/runner/work/kagent/kagent'
+2025-04-18T20:54:21.7999601Z ##[group]Initializing the repository
+2025-04-18T20:54:21.8003402Z [command]/usr/bin/git init /home/runner/work/kagent/kagent
+2025-04-18T20:54:21.8059286Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-18T20:54:21.8060535Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-18T20:54:21.8061703Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-18T20:54:21.8062363Z hint:
+2025-04-18T20:54:21.8062832Z hint: 	git config --global init.defaultBranch <name>
+2025-04-18T20:54:21.8063772Z hint:
+2025-04-18T20:54:21.8064543Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-18T20:54:21.8065413Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-18T20:54:21.8066097Z hint:
+2025-04-18T20:54:21.8066471Z hint: 	git branch -m <name>
+2025-04-18T20:54:21.8067150Z Initialized empty Git repository in /home/runner/work/kagent/kagent/.git/
+2025-04-18T20:54:21.8075165Z [command]/usr/bin/git remote add origin https://github.com/kagent-dev/kagent
+2025-04-18T20:54:21.8112335Z ##[endgroup]
+2025-04-18T20:54:21.8113221Z ##[group]Disabling automatic garbage collection
+2025-04-18T20:54:21.8117743Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-18T20:54:21.8157163Z ##[endgroup]
+2025-04-18T20:54:21.8158471Z ##[group]Setting up auth
+2025-04-18T20:54:21.8165043Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-18T20:54:21.8196410Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-18T20:54:21.8473933Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-18T20:54:21.8514784Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-18T20:54:21.8749777Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-18T20:54:21.8785903Z ##[endgroup]
+2025-04-18T20:54:21.8786667Z ##[group]Fetching the repository
+2025-04-18T20:54:21.8794939Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +fc8a061e3d6604a0e1700e48f98768f340c25894:refs/remotes/pull/257/merge
+2025-04-18T20:54:22.3100238Z From https://github.com/kagent-dev/kagent
+2025-04-18T20:54:22.3104921Z  * [new ref]         fc8a061e3d6604a0e1700e48f98768f340c25894 -> pull/257/merge
+2025-04-18T20:54:22.3132603Z ##[endgroup]
+2025-04-18T20:54:22.3140354Z ##[group]Determining the checkout info
+2025-04-18T20:54:22.3141637Z ##[endgroup]
+2025-04-18T20:54:22.3143357Z [command]/usr/bin/git sparse-checkout disable
+2025-04-18T20:54:22.3187187Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-18T20:54:22.3218090Z ##[group]Checking out the ref
+2025-04-18T20:54:22.3223452Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/257/merge
+2025-04-18T20:54:22.3525357Z Note: switching to 'refs/remotes/pull/257/merge'.
+2025-04-18T20:54:22.3527041Z 
+2025-04-18T20:54:22.3528023Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-18T20:54:22.3530064Z changes and commit them, and you can discard any commits you make in this
+2025-04-18T20:54:22.3532485Z state without impacting any branches by switching back to a branch.
+2025-04-18T20:54:22.3533941Z 
+2025-04-18T20:54:22.3534889Z If you want to create a new branch to retain commits you create, you may
+2025-04-18T20:54:22.3536924Z do so (now or later) by using -c with the switch command. Example:
+2025-04-18T20:54:22.3538144Z 
+2025-04-18T20:54:22.3538892Z   git switch -c <new-branch-name>
+2025-04-18T20:54:22.3539827Z 
+2025-04-18T20:54:22.3540361Z Or undo this operation with:
+2025-04-18T20:54:22.3541215Z 
+2025-04-18T20:54:22.3541668Z   git switch -
+2025-04-18T20:54:22.3542305Z 
+2025-04-18T20:54:22.3543312Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-18T20:54:22.3544789Z 
+2025-04-18T20:54:22.3546458Z HEAD is now at fc8a061 Merge 8f7ada0ded9116145e11774210e25819c32d3e72 into 6d76afb34d2436bc096116d199750be040d48a00
+2025-04-18T20:54:22.3550466Z ##[endgroup]
+2025-04-18T20:54:22.3574709Z [command]/usr/bin/git log -1 --format=%H
+2025-04-18T20:54:22.3597157Z fc8a061e3d6604a0e1700e48f98768f340c25894
+2025-04-18T20:54:22.3910905Z ##[group]Run actions/setup-node@v4
+2025-04-18T20:54:22.3912118Z with:
+2025-04-18T20:54:22.3912983Z   node-version: 20
+2025-04-18T20:54:22.3913911Z   cache: npm
+2025-04-18T20:54:22.3914937Z   cache-dependency-path: ui/package-lock.json
+2025-04-18T20:54:22.3916263Z   always-auth: false
+2025-04-18T20:54:22.3917242Z   check-latest: false
+2025-04-18T20:54:22.3918522Z   token: ***
+2025-04-18T20:54:22.3919559Z ##[endgroup]
+2025-04-18T20:54:22.5684053Z Found in cache @ /opt/hostedtoolcache/node/20.19.0/x64
+2025-04-18T20:54:22.5691414Z ##[group]Environment details
+2025-04-18T20:54:22.8406744Z node: v20.19.0
+2025-04-18T20:54:22.8407186Z npm: 10.8.2
+2025-04-18T20:54:22.8407528Z yarn: 1.22.22
+2025-04-18T20:54:22.8408381Z ##[endgroup]
+2025-04-18T20:54:22.8432994Z [command]/opt/hostedtoolcache/node/20.19.0/x64/bin/npm config get cache
+2025-04-18T20:54:22.9457081Z /home/runner/.npm
+2025-04-18T20:54:23.0675341Z npm cache is not found
+2025-04-18T20:54:23.0820007Z ##[group]Run npm ci
+2025-04-18T20:54:23.0820338Z [36;1mnpm ci[0m
+2025-04-18T20:54:23.0873647Z shell: /usr/bin/bash -e {0}
+2025-04-18T20:54:23.0873955Z ##[endgroup]
+2025-04-18T20:54:27.0731791Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-04-18T20:54:27.4917795Z npm warn deprecated domexception@4.0.0: Use your platform's native DOMException instead
+2025-04-18T20:54:27.8057642Z npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
+2025-04-18T20:54:28.9043105Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-04-18T20:54:29.1765845Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-04-18T20:54:29.2349188Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-04-18T20:54:29.3077003Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-04-18T20:54:29.5994411Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-04-18T20:54:29.6180667Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-04-18T20:54:37.4678229Z 
+2025-04-18T20:54:37.4679250Z added 970 packages, and audited 971 packages in 14s
+2025-04-18T20:54:37.4679933Z 
+2025-04-18T20:54:37.4680236Z 244 packages are looking for funding
+2025-04-18T20:54:37.4680728Z   run `npm fund` for details
+2025-04-18T20:54:37.4965077Z 
+2025-04-18T20:54:37.4966053Z 1 low severity vulnerability
+2025-04-18T20:54:37.4966675Z 
+2025-04-18T20:54:37.4967163Z To address all issues, run:
+2025-04-18T20:54:37.4969221Z   npm audit fix --force
+2025-04-18T20:54:37.4999242Z 
+2025-04-18T20:54:37.4999582Z Run `npm audit` for details.
+2025-04-18T20:54:37.5396967Z ##[group]Run npm run test
+2025-04-18T20:54:37.5397238Z [36;1mnpm run test[0m
+2025-04-18T20:54:37.5446089Z shell: /usr/bin/bash -e {0}
+2025-04-18T20:54:37.5446321Z ##[endgroup]
+2025-04-18T20:54:37.6650014Z 
+2025-04-18T20:54:37.6650500Z > kagents-ui@0.1.0 test
+2025-04-18T20:54:37.6650784Z > jest
+2025-04-18T20:54:37.6650901Z 
+2025-04-18T20:54:41.2529997Z PASS src/lib/__tests__/utils.test.ts
+2025-04-18T20:54:41.2810147Z FAIL src/lib/__tests__/toolUtils.test.ts
+2025-04-18T20:54:41.3152641Z   ● Console
+2025-04-18T20:54:41.3166009Z 
+2025-04-18T20:54:41.3166409Z     console.warn
+2025-04-18T20:54:41.3167053Z       Unknown tool type: { someProperty: 'value' }
+2025-04-18T20:54:41.3169150Z 
+2025-04-18T20:54:41.3170233Z     [0m [90m 45 |[39m     [36mreturn[39m tool[33m.[39minline[33m.[39mlabel [33m||[39m providerName [33m||[39m [32m"Inline Tool"[39m[33m;[39m
+2025-04-18T20:54:41.3171258Z      [90m 46 |[39m   } [36melse[39m {
+2025-04-18T20:54:41.3172912Z     [31m[1m>[22m[39m[90m 47 |[39m     console[33m.[39mwarn([32m"Unknown tool type:"[39m[33m,[39m tool)[33m;[39m
+2025-04-18T20:54:41.3173857Z      [90m    |[39m             [31m[1m^[22m[39m
+2025-04-18T20:54:41.3174598Z      [90m 48 |[39m     [36mreturn[39m [32m"Unknown Tool"[39m[33m;[39m
+2025-04-18T20:54:41.3175191Z      [90m 49 |[39m   }
+2025-04-18T20:54:41.3175661Z      [90m 50 |[39m }[33m;[39m[0m
+2025-04-18T20:54:41.3175939Z 
+2025-04-18T20:54:41.3176217Z       at warn (src/lib/toolUtils.ts:47:13)
+2025-04-18T20:54:41.3176874Z       at Object.<anonymous> (src/lib/__tests__/toolUtils.test.ts:128:32)
+2025-04-18T20:54:41.3177289Z 
+2025-04-18T20:54:41.3177415Z     console.warn
+2025-04-18T20:54:41.3177845Z       Unknown tool type: { someProperty: 'value' }
+2025-04-18T20:54:41.3178180Z 
+2025-04-18T20:54:41.3178857Z     [0m [90m 67 |[39m     [36mreturn[39m [32m"MCP Server Tool"[39m[33m;[39m
+2025-04-18T20:54:41.3179568Z      [90m 68 |[39m   } [36melse[39m {
+2025-04-18T20:54:41.3180579Z     [31m[1m>[22m[39m[90m 69 |[39m     console[33m.[39mwarn([32m"Unknown tool type:"[39m[33m,[39m tool)[33m;[39m
+2025-04-18T20:54:41.3181460Z      [90m    |[39m             [31m[1m^[22m[39m
+2025-04-18T20:54:41.3182207Z      [90m 70 |[39m     [36mreturn[39m [32m"No description"[39m[33m;[39m
+2025-04-18T20:54:41.3182809Z      [90m 71 |[39m   }
+2025-04-18T20:54:41.3183275Z      [90m 72 |[39m }[33m;[39m[0m
+2025-04-18T20:54:41.3183542Z 
+2025-04-18T20:54:41.3183753Z       at warn (src/lib/toolUtils.ts:69:13)
+2025-04-18T20:54:41.3184393Z       at Object.<anonymous> (src/lib/__tests__/toolUtils.test.ts:189:32)
+2025-04-18T20:54:41.3184818Z 
+2025-04-18T20:54:41.3184959Z     console.warn
+2025-04-18T20:54:41.3185392Z       Unknown tool type: { someProperty: 'value' }
+2025-04-18T20:54:41.3185719Z 
+2025-04-18T20:54:41.3186332Z     [0m [90m 100 |[39m     [36mreturn[39m [32m`component-${tool.inline.provider}`[39m[33m;[39m
+2025-04-18T20:54:41.3187127Z      [90m 101 |[39m   } [36melse[39m {
+2025-04-18T20:54:41.3188099Z     [31m[1m>[22m[39m[90m 102 |[39m     console[33m.[39mwarn([32m"Unknown tool type:"[39m[33m,[39m tool)[33m;[39m
+2025-04-18T20:54:41.3189226Z      [90m     |[39m             [31m[1m^[22m[39m
+2025-04-18T20:54:41.3190222Z      [90m 103 |[39m     [36mreturn[39m [32m`unknown-${JSON.stringify(tool).slice(0, 20)}`[39m[33m;[39m
+2025-04-18T20:54:41.3190949Z      [90m 104 |[39m   }
+2025-04-18T20:54:41.3191415Z      [90m 105 |[39m }[33m;[39m[0m
+2025-04-18T20:54:41.3191687Z 
+2025-04-18T20:54:41.3191912Z       at warn (src/lib/toolUtils.ts:102:13)
+2025-04-18T20:54:41.3192546Z       at Object.<anonymous> (src/lib/__tests__/toolUtils.test.ts:250:39)
+2025-04-18T20:54:41.3192972Z 
+2025-04-18T20:54:41.3193102Z     console.warn
+2025-04-18T20:54:41.3193526Z       Unknown tool type: { someProperty: 'value' }
+2025-04-18T20:54:41.3193851Z 
+2025-04-18T20:54:41.3194784Z     [0m [90m 119 |[39m     [36mreturn[39m tool[33m.[39mmcpServer[33m.[39mtoolServer[33m;[39m
+2025-04-18T20:54:41.3195590Z      [90m 120 |[39m   } [36melse[39m {
+2025-04-18T20:54:41.3196580Z     [31m[1m>[22m[39m[90m 121 |[39m     console[33m.[39mwarn([32m"Unknown tool type:"[39m[33m,[39m tool)[33m;[39m
+2025-04-18T20:54:41.3197434Z      [90m     |[39m             [31m[1m^[22m[39m
+2025-04-18T20:54:41.3198129Z      [90m 122 |[39m     [36mreturn[39m [32m"unknown"[39m[33m;[39m
+2025-04-18T20:54:41.3198854Z      [90m 123 |[39m   }
+2025-04-18T20:54:41.3199323Z      [90m 124 |[39m }[33m;[39m[0m
+2025-04-18T20:54:41.3199613Z 
+2025-04-18T20:54:41.3199828Z       at warn (src/lib/toolUtils.ts:121:13)
+2025-04-18T20:54:41.3200468Z       at Object.<anonymous> (src/lib/__tests__/toolUtils.test.ts:296:29)
+2025-04-18T20:54:41.3200891Z 
+2025-04-18T20:54:41.3201456Z   ● Tool Utility Functions › getToolIdentifier › should handle MCP adapter tools
+2025-04-18T20:54:41.3201971Z 
+2025-04-18T20:54:41.3202261Z     expect(received).toBe(expected) // Object.is equality
+2025-04-18T20:54:41.3202906Z 
+2025-04-18T20:54:41.3203141Z     Expected: "mcptool-MCP Tool Name"
+2025-04-18T20:54:41.3203694Z     Received: "mcptool-Adapter Label-MCP Tool Name"
+2025-04-18T20:54:41.3204058Z 
+2025-04-18T20:54:41.3204491Z     [0m [90m 209 |[39m         } [36mas[39m [33mMCPToolConfig[39m
+2025-04-18T20:54:41.3205134Z      [90m 210 |[39m       }[33m;[39m
+2025-04-18T20:54:41.3206288Z     [31m[1m>[22m[39m[90m 211 |[39m       expect(getToolIdentifier(mcpAdapterTool))[33m.[39mtoBe([32m"mcptool-MCP Tool Name"[39m)[33m;[39m
+2025-04-18T20:54:41.3207332Z      [90m     |[39m                                                 [31m[1m^[22m[39m
+2025-04-18T20:54:41.3207875Z      [90m 212 |[39m     })[33m;[39m
+2025-04-18T20:54:41.3208302Z      [90m 213 |[39m
+2025-04-18T20:54:41.3209232Z      [90m 214 |[39m     it([32m'should handle regular component tools'[39m[33m,[39m () [33m=>[39m {[0m
+2025-04-18T20:54:41.3209746Z 
+2025-04-18T20:54:41.3210059Z       at Object.toBe (src/lib/__tests__/toolUtils.test.ts:211:49)
+2025-04-18T20:54:41.3210398Z 
+2025-04-18T20:54:41.3364524Z Test Suites: 1 failed, 1 passed, 2 total
+2025-04-18T20:54:41.3849318Z Tests:       1 failed, 52 passed, 53 total
+2025-04-18T20:54:41.3849679Z Snapshots:   0 total
+2025-04-18T20:54:41.3849909Z Time:        1.191 s
+2025-04-18T20:54:41.3850117Z Ran all test suites.
+2025-04-18T20:54:41.3861597Z ##[error]Process completed with exit code 1.
+2025-04-18T20:54:41.3961052Z Post job cleanup.
+2025-04-18T20:54:41.4876294Z [command]/usr/bin/git version
+2025-04-18T20:54:41.4914286Z git version 2.49.0
+2025-04-18T20:54:41.4966983Z Temporarily overriding HOME='/home/runner/work/_temp/56614bb9-c709-4683-99cd-350b34be951d' before making global git config changes
+2025-04-18T20:54:41.4967883Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-18T20:54:41.4972331Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/kagent/kagent
+2025-04-18T20:54:41.5004989Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-18T20:54:41.5036906Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-18T20:54:41.5277769Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-18T20:54:41.5302627Z http.https://github.com/.extraheader
+2025-04-18T20:54:41.5315100Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-18T20:54:41.5351107Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-18T20:54:41.5701640Z Cleaning up orphan processes

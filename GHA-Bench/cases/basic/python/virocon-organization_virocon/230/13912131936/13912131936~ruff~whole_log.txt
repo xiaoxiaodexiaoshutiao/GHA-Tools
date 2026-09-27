@@ -1,0 +1,176 @@
+﻿2025-03-17T23:48:12.7266666Z Current runner version: '2.322.0'
+2025-03-17T23:48:12.7295577Z ##[group]Operating System
+2025-03-17T23:48:12.7296382Z Ubuntu
+2025-03-17T23:48:12.7296866Z 24.04.2
+2025-03-17T23:48:12.7297297Z LTS
+2025-03-17T23:48:12.7297858Z ##[endgroup]
+2025-03-17T23:48:12.7298324Z ##[group]Runner Image
+2025-03-17T23:48:12.7298886Z Image: ubuntu-24.04
+2025-03-17T23:48:12.7299473Z Version: 20250309.1.0
+2025-03-17T23:48:12.7300446Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250309.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-17T23:48:12.7301812Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250309.1
+2025-03-17T23:48:12.7302732Z ##[endgroup]
+2025-03-17T23:48:12.7303422Z ##[group]Runner Image Provisioner
+2025-03-17T23:48:12.7304014Z 2.0.422.1
+2025-03-17T23:48:12.7304502Z ##[endgroup]
+2025-03-17T23:48:12.7306766Z ##[group]GITHUB_TOKEN Permissions
+2025-03-17T23:48:12.7308687Z Actions: write
+2025-03-17T23:48:12.7309523Z Attestations: write
+2025-03-17T23:48:12.7310175Z Checks: write
+2025-03-17T23:48:12.7310642Z Contents: write
+2025-03-17T23:48:12.7311129Z Deployments: write
+2025-03-17T23:48:12.7311620Z Discussions: write
+2025-03-17T23:48:12.7312135Z Issues: write
+2025-03-17T23:48:12.7312563Z Metadata: read
+2025-03-17T23:48:12.7313408Z Packages: write
+2025-03-17T23:48:12.7313986Z Pages: write
+2025-03-17T23:48:12.7314435Z PullRequests: write
+2025-03-17T23:48:12.7314985Z RepositoryProjects: write
+2025-03-17T23:48:12.7315530Z SecurityEvents: write
+2025-03-17T23:48:12.7316037Z Statuses: write
+2025-03-17T23:48:12.7316463Z ##[endgroup]
+2025-03-17T23:48:12.7318829Z Secret source: Actions
+2025-03-17T23:48:12.7319471Z Prepare workflow directory
+2025-03-17T23:48:12.7635971Z Prepare all required actions
+2025-03-17T23:48:12.7674945Z Getting action download info
+2025-03-17T23:48:13.3209177Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-17T23:48:13.4396355Z Download action repository 'astral-sh/ruff-action@v3' (SHA:9828f49eb4cadf267b40eaa330295c412c68c1f9)
+2025-03-17T23:48:14.0555043Z Complete job name: ruff
+2025-03-17T23:48:14.1231555Z ##[group]Run actions/checkout@v4
+2025-03-17T23:48:14.1232414Z with:
+2025-03-17T23:48:14.1232859Z   repository: virocon-organization/virocon
+2025-03-17T23:48:14.1233893Z   token: ***
+2025-03-17T23:48:14.1234289Z   ssh-strict: true
+2025-03-17T23:48:14.1234695Z   ssh-user: git
+2025-03-17T23:48:14.1235114Z   persist-credentials: true
+2025-03-17T23:48:14.1235584Z   clean: true
+2025-03-17T23:48:14.1235997Z   sparse-checkout-cone-mode: true
+2025-03-17T23:48:14.1236502Z   fetch-depth: 1
+2025-03-17T23:48:14.1236910Z   fetch-tags: false
+2025-03-17T23:48:14.1237323Z   show-progress: true
+2025-03-17T23:48:14.1237740Z   lfs: false
+2025-03-17T23:48:14.1238149Z   submodules: false
+2025-03-17T23:48:14.1238567Z   set-safe-directory: true
+2025-03-17T23:48:14.1239313Z ##[endgroup]
+2025-03-17T23:48:14.3685874Z Syncing repository: virocon-organization/virocon
+2025-03-17T23:48:14.3687651Z ##[group]Getting Git version info
+2025-03-17T23:48:14.3688524Z Working directory is '/home/runner/work/virocon/virocon'
+2025-03-17T23:48:14.3689434Z [command]/usr/bin/git version
+2025-03-17T23:48:14.3802169Z git version 2.48.1
+2025-03-17T23:48:14.3833126Z ##[endgroup]
+2025-03-17T23:48:14.3848538Z Temporarily overriding HOME='/home/runner/work/_temp/612ee094-28b4-4307-bce4-47738d9f7b82' before making global git config changes
+2025-03-17T23:48:14.3850985Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-17T23:48:14.3855128Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/virocon/virocon
+2025-03-17T23:48:14.3892873Z Deleting the contents of '/home/runner/work/virocon/virocon'
+2025-03-17T23:48:14.3896446Z ##[group]Initializing the repository
+2025-03-17T23:48:14.3900831Z [command]/usr/bin/git init /home/runner/work/virocon/virocon
+2025-03-17T23:48:14.4002045Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-17T23:48:14.4003342Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-17T23:48:14.4004982Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-17T23:48:14.4005689Z hint:
+2025-03-17T23:48:14.4006253Z hint: 	git config --global init.defaultBranch <name>
+2025-03-17T23:48:14.4006970Z hint:
+2025-03-17T23:48:14.4007996Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-17T23:48:14.4009620Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-17T23:48:14.4010849Z hint:
+2025-03-17T23:48:14.4011526Z hint: 	git branch -m <name>
+2025-03-17T23:48:14.4012467Z Initialized empty Git repository in /home/runner/work/virocon/virocon/.git/
+2025-03-17T23:48:14.4022019Z [command]/usr/bin/git remote add origin https://github.com/virocon-organization/virocon
+2025-03-17T23:48:14.4061871Z ##[endgroup]
+2025-03-17T23:48:14.4063437Z ##[group]Disabling automatic garbage collection
+2025-03-17T23:48:14.4066978Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-17T23:48:14.4095595Z ##[endgroup]
+2025-03-17T23:48:14.4096393Z ##[group]Setting up auth
+2025-03-17T23:48:14.4102142Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-17T23:48:14.4132130Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-17T23:48:14.4490317Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-17T23:48:14.4520977Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-17T23:48:14.4756820Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-17T23:48:14.4792922Z ##[endgroup]
+2025-03-17T23:48:14.4794080Z ##[group]Fetching the repository
+2025-03-17T23:48:14.4802813Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +70389cd05f8d718b5fac55331741f00b3bafce87:refs/remotes/pull/230/merge
+2025-03-17T23:48:15.8225873Z From https://github.com/virocon-organization/virocon
+2025-03-17T23:48:15.8227781Z  * [new ref]         70389cd05f8d718b5fac55331741f00b3bafce87 -> pull/230/merge
+2025-03-17T23:48:15.8251112Z ##[endgroup]
+2025-03-17T23:48:15.8252248Z ##[group]Determining the checkout info
+2025-03-17T23:48:15.8253893Z ##[endgroup]
+2025-03-17T23:48:15.8258374Z [command]/usr/bin/git sparse-checkout disable
+2025-03-17T23:48:15.8300915Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-17T23:48:15.8329711Z ##[group]Checking out the ref
+2025-03-17T23:48:15.8333715Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/230/merge
+2025-03-17T23:48:16.0288615Z Note: switching to 'refs/remotes/pull/230/merge'.
+2025-03-17T23:48:16.0289906Z 
+2025-03-17T23:48:16.0290856Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-17T23:48:16.0293393Z changes and commit them, and you can discard any commits you make in this
+2025-03-17T23:48:16.0295805Z state without impacting any branches by switching back to a branch.
+2025-03-17T23:48:16.0297210Z 
+2025-03-17T23:48:16.0298113Z If you want to create a new branch to retain commits you create, you may
+2025-03-17T23:48:16.0300229Z do so (now or later) by using -c with the switch command. Example:
+2025-03-17T23:48:16.0301474Z 
+2025-03-17T23:48:16.0301987Z   git switch -c <new-branch-name>
+2025-03-17T23:48:16.0302892Z 
+2025-03-17T23:48:16.0303540Z Or undo this operation with:
+2025-03-17T23:48:16.0304375Z 
+2025-03-17T23:48:16.0304791Z   git switch -
+2025-03-17T23:48:16.0305232Z 
+2025-03-17T23:48:16.0305964Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-17T23:48:16.0307071Z 
+2025-03-17T23:48:16.0308350Z HEAD is now at 70389cd Merge 3ec9e648741041ff6f85d8d6207653ca309d1974 into c55836aa421a0ad09da86632c18c13e173aa9b2c
+2025-03-17T23:48:16.0313804Z ##[endgroup]
+2025-03-17T23:48:16.0349684Z [command]/usr/bin/git log -1 --format=%H
+2025-03-17T23:48:16.0372360Z 70389cd05f8d718b5fac55331741f00b3bafce87
+2025-03-17T23:48:16.0645555Z ##[group]Run astral-sh/ruff-action@v3
+2025-03-17T23:48:16.0646688Z with:
+2025-03-17T23:48:16.0647443Z   args: check .
+2025-03-17T23:48:16.0648303Z   src: /home/runner/work/virocon/virocon
+2025-03-17T23:48:16.0649807Z   github-token: ***
+2025-03-17T23:48:16.0650646Z ##[endgroup]
+2025-03-17T23:48:16.1547801Z ##[warning]Could not parse version from /home/runner/work/virocon/virocon/pyproject.toml. Using latest version.
+2025-03-17T23:48:16.4756083Z Downloading ruff from "https://github.com/astral-sh/ruff/releases/download/0.11.0/ruff-x86_64-unknown-linux-gnu.tar.gz" ...
+2025-03-17T23:48:17.0819046Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/de868428-850f-4607-9bfd-a90be2c17edd -f /home/runner/work/_temp/29e189f7-f7c7-4e82-babc-90e83aba59fc
+2025-03-17T23:48:17.3178872Z Added /opt/hostedtoolcache/ruff/0.11.0/x86_64 to the path
+2025-03-17T23:48:17.3180977Z Set RUFF_OUTPUT_FORMAT to github
+2025-03-17T23:48:17.3211242Z Successfully installed ruff version 0.11.0
+2025-03-17T23:48:17.3211755Z [command]/opt/hostedtoolcache/ruff/0.11.0/x86_64/ruff check . /home/runner/work/virocon/virocon
+2025-03-17T23:48:17.3492915Z ##[group]Run ruff format --check . || (
+2025-03-17T23:48:17.3493618Z [36;1mruff format --check . || ([0m
+2025-03-17T23:48:17.3494137Z [36;1m  echo "Formatting issues detected. Showing diff:" &&[0m
+2025-03-17T23:48:17.3494603Z [36;1m  ruff format . &&[0m
+2025-03-17T23:48:17.3494839Z [36;1m  git diff[0m
+2025-03-17T23:48:17.3495049Z [36;1m  exit 1[0m
+2025-03-17T23:48:17.3495213Z [36;1m)[0m
+2025-03-17T23:48:17.3549583Z shell: /usr/bin/bash -e {0}
+2025-03-17T23:48:17.3549838Z env:
+2025-03-17T23:48:17.3550020Z   RUFF_OUTPUT_FORMAT: github
+2025-03-17T23:48:17.3550248Z ##[endgroup]
+2025-03-17T23:48:17.3838257Z ##[error]Would reformat: virocon/_fitting.py
+2025-03-17T23:48:17.3839362Z 1 file would be reformatted, 41 files already formatted
+2025-03-17T23:48:17.3839692Z Formatting issues detected. Showing diff:
+2025-03-17T23:48:17.3925470Z 1 file reformatted, 41 files left unchanged
+2025-03-17T23:48:17.4268786Z diff --git a/virocon/_fitting.py b/virocon/_fitting.py
+2025-03-17T23:48:17.4269485Z index 5fac10c..a6d2375 100644
+2025-03-17T23:48:17.4269886Z --- a/virocon/_fitting.py
+2025-03-17T23:48:17.4270255Z +++ b/virocon/_fitting.py
+2025-03-17T23:48:17.4270786Z @@ -65,7 +65,7 @@ def fit_constrained_function(func, x, y, p0, method, bounds, constraints, weight
+2025-03-17T23:48:17.4331952Z      else:
+2025-03-17T23:48:17.4332346Z          # TODO implement WLSQ
+2025-03-17T23:48:17.4332736Z          raise NotImplementedError(
+2025-03-17T23:48:17.4333462Z -            "At this time only least squares (lsq) " "fitting is supported."
+2025-03-17T23:48:17.4334203Z +            "At this time only least squares (lsq) fitting is supported."
+2025-03-17T23:48:17.4334843Z          )
+2025-03-17T23:48:17.4335203Z  
+2025-03-17T23:48:17.4335546Z      if constraints is None:
+2025-03-17T23:48:17.4343207Z ##[error]Process completed with exit code 1.
+2025-03-17T23:48:17.4423156Z Post job cleanup.
+2025-03-17T23:48:17.5351670Z [command]/usr/bin/git version
+2025-03-17T23:48:17.5388052Z git version 2.48.1
+2025-03-17T23:48:17.5438548Z Temporarily overriding HOME='/home/runner/work/_temp/e5fa149f-5abc-45e7-a1bb-a93c80e78988' before making global git config changes
+2025-03-17T23:48:17.5439950Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-17T23:48:17.5444985Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/virocon/virocon
+2025-03-17T23:48:17.5479310Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-17T23:48:17.5511858Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-17T23:48:17.5753725Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-17T23:48:17.5774336Z http.https://github.com/.extraheader
+2025-03-17T23:48:17.5787079Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-17T23:48:17.5817732Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-17T23:48:17.6145535Z Cleaning up orphan processes

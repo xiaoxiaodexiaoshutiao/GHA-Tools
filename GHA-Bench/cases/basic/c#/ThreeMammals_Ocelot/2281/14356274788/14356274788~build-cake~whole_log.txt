@@ -1,0 +1,246 @@
+﻿2025-04-09T11:49:55.5590387Z Current runner version: '2.323.0'
+2025-04-09T11:49:55.5623418Z ##[group]Operating System
+2025-04-09T11:49:55.5624640Z Ubuntu
+2025-04-09T11:49:55.5625448Z 24.04.2
+2025-04-09T11:49:55.5626314Z LTS
+2025-04-09T11:49:55.5627117Z ##[endgroup]
+2025-04-09T11:49:55.5627938Z ##[group]Runner Image
+2025-04-09T11:49:55.5628861Z Image: ubuntu-24.04
+2025-04-09T11:49:55.5629769Z Version: 20250316.1.0
+2025-04-09T11:49:55.5631479Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250316.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-09T11:49:55.5634179Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250316.1
+2025-04-09T11:49:55.5635789Z ##[endgroup]
+2025-04-09T11:49:55.5636588Z ##[group]Runner Image Provisioner
+2025-04-09T11:49:55.5637695Z 2.0.422.1
+2025-04-09T11:49:55.5638503Z ##[endgroup]
+2025-04-09T11:49:55.5643134Z ##[group]GITHUB_TOKEN Permissions
+2025-04-09T11:49:55.5645944Z Actions: write
+2025-04-09T11:49:55.5647276Z Attestations: write
+2025-04-09T11:49:55.5648277Z Checks: write
+2025-04-09T11:49:55.5649205Z Contents: write
+2025-04-09T11:49:55.5650102Z Deployments: write
+2025-04-09T11:49:55.5651071Z Discussions: write
+2025-04-09T11:49:55.5651920Z Issues: write
+2025-04-09T11:49:55.5652709Z Metadata: read
+2025-04-09T11:49:55.5653822Z Models: read
+2025-04-09T11:49:55.5654663Z Packages: write
+2025-04-09T11:49:55.5655484Z Pages: write
+2025-04-09T11:49:55.5656399Z PullRequests: write
+2025-04-09T11:49:55.5657431Z RepositoryProjects: write
+2025-04-09T11:49:55.5658332Z SecurityEvents: write
+2025-04-09T11:49:55.5659379Z Statuses: write
+2025-04-09T11:49:55.5660282Z ##[endgroup]
+2025-04-09T11:49:55.5663624Z Secret source: Actions
+2025-04-09T11:49:55.5665026Z Prepare workflow directory
+2025-04-09T11:49:55.6234941Z Prepare all required actions
+2025-04-09T11:49:55.6291858Z Getting action download info
+2025-04-09T11:49:55.9297094Z ##[group]Download immutable action package 'actions/setup-dotnet@v3'
+2025-04-09T11:49:55.9298190Z Version: 3.2.0
+2025-04-09T11:49:55.9299222Z Digest: sha256:09a7f032ee325f6c56c94b47470f7cbb6a98e05a903c016b36d55297f4b8385b
+2025-04-09T11:49:55.9300600Z Source commit SHA: 3447fd6a9f9e57506b15f895c5b76d3b197dc7c2
+2025-04-09T11:49:55.9301333Z ##[endgroup]
+2025-04-09T11:49:56.2226762Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-09T11:49:56.2227585Z Version: 4.2.2
+2025-04-09T11:49:56.2228421Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-09T11:49:56.2229459Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-09T11:49:56.2230140Z ##[endgroup]
+2025-04-09T11:49:56.2715552Z Download action repository 'cake-build/cake-action@v3' (SHA:5167c3f6a9e15c76f009de2acdfb9488552bc0b9)
+2025-04-09T11:49:56.5930911Z Complete job name: build-cake
+2025-04-09T11:49:56.6550886Z ##[group]Run dotnet --version
+2025-04-09T11:49:56.6551512Z [36;1mdotnet --version[0m
+2025-04-09T11:49:56.6603543Z shell: /usr/bin/bash -e {0}
+2025-04-09T11:49:56.6604403Z env:
+2025-04-09T11:49:56.6604847Z   DOTNET_INSTALL_DIR: /usr/lib/dotnet
+2025-04-09T11:49:56.6605416Z ##[endgroup]
+2025-04-09T11:49:56.9181238Z 8.0.114
+2025-04-09T11:49:56.9290900Z ##[group]Run dotnet --info
+2025-04-09T11:49:56.9291432Z [36;1mdotnet --info[0m
+2025-04-09T11:49:56.9339134Z shell: /usr/bin/bash -e {0}
+2025-04-09T11:49:56.9339587Z env:
+2025-04-09T11:49:56.9339962Z   DOTNET_INSTALL_DIR: /usr/lib/dotnet
+2025-04-09T11:49:56.9340455Z ##[endgroup]
+2025-04-09T11:49:57.0255982Z .NET SDK:
+2025-04-09T11:49:57.0256591Z  Version:           8.0.114
+2025-04-09T11:49:57.0257074Z  Commit:            54ac9c88f1
+2025-04-09T11:49:57.1373993Z  Workload version:  8.0.100-manifests.2d3000a2
+2025-04-09T11:49:57.1374868Z 
+2025-04-09T11:49:57.1375218Z Runtime Environment:
+2025-04-09T11:49:57.1382667Z  OS Name:     ubuntu
+2025-04-09T11:49:57.1383684Z  OS Version:  24.04
+2025-04-09T11:49:57.1400114Z  OS Platform: Linux
+2025-04-09T11:49:57.1678965Z  RID:         ubuntu.24.04-x64
+2025-04-09T11:49:57.1679933Z  Base Path:   /usr/lib/dotnet/sdk/8.0.114/
+2025-04-09T11:49:57.1680890Z 
+2025-04-09T11:49:57.1681114Z .NET workloads installed:
+2025-04-09T11:49:57.1721571Z  Workload version: 8.0.100-manifests.2d3000a2
+2025-04-09T11:49:57.1722629Z There are no installed workloads to display.
+2025-04-09T11:49:57.1740163Z 
+2025-04-09T11:49:57.1740460Z Host:
+2025-04-09T11:49:57.1741074Z   Version:      8.0.14
+2025-04-09T11:49:57.1741601Z   Architecture: x64
+2025-04-09T11:49:57.1742229Z   Commit:       1584e49360
+2025-04-09T11:49:57.1742668Z 
+2025-04-09T11:49:57.1743099Z .NET SDKs installed:
+2025-04-09T11:49:57.1743632Z   8.0.114 [/usr/lib/dotnet/sdk]
+2025-04-09T11:49:57.1743977Z 
+2025-04-09T11:49:57.1744191Z .NET runtimes installed:
+2025-04-09T11:49:57.1745028Z   Microsoft.AspNetCore.App 8.0.14 [/usr/lib/dotnet/shared/Microsoft.AspNetCore.App]
+2025-04-09T11:49:57.1746200Z   Microsoft.NETCore.App 8.0.14 [/usr/lib/dotnet/shared/Microsoft.NETCore.App]
+2025-04-09T11:49:57.1746861Z 
+2025-04-09T11:49:57.1747072Z Other architectures found:
+2025-04-09T11:49:57.1747571Z   None
+2025-04-09T11:49:57.1747830Z 
+2025-04-09T11:49:57.1748028Z Environment variables:
+2025-04-09T11:49:57.1748497Z   Not set
+2025-04-09T11:49:57.1748737Z 
+2025-04-09T11:49:57.1748927Z global.json file:
+2025-04-09T11:49:57.1749376Z   Not found
+2025-04-09T11:49:57.1749611Z 
+2025-04-09T11:49:57.1749791Z Learn more:
+2025-04-09T11:49:57.1750252Z   https://aka.ms/dotnet/info
+2025-04-09T11:49:57.1750602Z 
+2025-04-09T11:49:57.1750794Z Download .NET:
+2025-04-09T11:49:57.1751263Z   https://aka.ms/dotnet/download
+2025-04-09T11:49:57.1827734Z ##[group]Run DOTNET9_VERSION=$(dotnet --version)
+2025-04-09T11:49:57.1828417Z [36;1mDOTNET9_VERSION=$(dotnet --version)[0m
+2025-04-09T11:49:57.1829026Z [36;1mif [[ "$DOTNET9_VERSION" =~ ^9\.0\.[0-9]+$ ]]; then[0m
+2025-04-09T11:49:57.1829649Z [36;1m  echo "dotnet9_installed=true" >> $GITHUB_ENV[0m
+2025-04-09T11:49:57.1830182Z [36;1melse[0m
+2025-04-09T11:49:57.1830616Z [36;1m  echo "dotnet9_installed=false" >> $GITHUB_ENV[0m
+2025-04-09T11:49:57.1831132Z [36;1mfi[0m
+2025-04-09T11:49:57.1879404Z shell: /usr/bin/bash -e {0}
+2025-04-09T11:49:57.1879878Z env:
+2025-04-09T11:49:57.1880251Z   DOTNET_INSTALL_DIR: /usr/lib/dotnet
+2025-04-09T11:49:57.1880726Z ##[endgroup]
+2025-04-09T11:49:57.2978046Z ##[group]Run actions/setup-dotnet@v3
+2025-04-09T11:49:57.2978599Z with:
+2025-04-09T11:49:57.2978960Z   dotnet-version: 9.0.x
+2025-04-09T11:49:57.2979363Z   cache: false
+2025-04-09T11:49:57.2979720Z env:
+2025-04-09T11:49:57.2980082Z   DOTNET_INSTALL_DIR: /usr/lib/dotnet
+2025-04-09T11:49:57.2980565Z   dotnet9_installed: false
+2025-04-09T11:49:57.2980984Z ##[endgroup]
+2025-04-09T11:49:57.4604856Z [command]/home/runner/work/_actions/actions/setup-dotnet/v3/externals/install-dotnet.sh --channel 9.0
+2025-04-09T11:49:58.2747960Z dotnet-install: Attempting to download using aka.ms link https://builds.dotnet.microsoft.com/dotnet/Sdk/9.0.203/dotnet-sdk-9.0.203-linux-x64.tar.gz
+2025-04-09T11:49:59.8405130Z dotnet-install: Extracting zip from https://builds.dotnet.microsoft.com/dotnet/Sdk/9.0.203/dotnet-sdk-9.0.203-linux-x64.tar.gz
+2025-04-09T11:50:03.5966678Z cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+2025-04-09T11:50:03.6030619Z cp: cannot create directory '/usr/lib/dotnet/host/fxr/9.0.4/': Permission denied
+2025-04-09T11:50:03.6032068Z cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+2025-04-09T11:50:03.6040120Z cp: cannot create directory '/usr/lib/dotnet/packs/Microsoft.AspNetCore.App.Ref/9.0.4/': Permission denied
+2025-04-09T11:50:03.6067939Z mkdir: cannot create directory ‘/usr/lib/dotnet/packs/Microsoft.NETCore.App.Host.linux-x64’: Permission denied
+2025-04-09T11:50:03.6080953Z cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+2025-04-09T11:50:03.6082154Z cp: cannot create directory '/usr/lib/dotnet/packs/Microsoft.NETCore.App.Host.linux-x64/9.0.4/': No such file or directory
+2025-04-09T11:50:03.6191029Z cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+2025-04-09T11:50:03.6193302Z cp: cannot create directory '/usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.4/': Permission denied
+2025-04-09T11:50:03.6298191Z cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+2025-04-09T11:50:03.6300919Z cp: cannot create directory '/usr/lib/dotnet/sdk-manifests/8.0.100/microsoft.net.sdk.aspire/8.2.2/': Permission denied
+2025-04-09T11:50:03.6342253Z mkdir: cannot create directory ‘/usr/lib/dotnet/sdk-manifests/9.0.100’: Permission denied
+2025-04-09T11:50:03.6356041Z cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+2025-04-09T11:50:03.6357506Z cp: cannot create directory '/usr/lib/dotnet/sdk-manifests/9.0.100/microsoft.net.sdk.android/35.0.7/': No such file or directory
+2025-04-09T11:50:03.6397424Z mkdir: cannot create directory ‘/usr/lib/dotnet/sdk-manifests/9.0.100’: Permission denied
+2025-04-09T11:50:03.6411001Z cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+2025-04-09T11:50:03.6412162Z cp: cannot create directory '/usr/lib/dotnet/sdk-manifests/9.0.100/microsoft.net.sdk.ios/18.0.9617/': No such file or directory
+2025-04-09T11:50:03.6451317Z mkdir: cannot create directory ‘/usr/lib/dotnet/sdk-manifests/9.0.100’: Permission denied
+2025-04-09T11:50:03.6465230Z cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+2025-04-09T11:50:03.6466468Z cp: cannot create directory '/usr/lib/dotnet/sdk-manifests/9.0.100/microsoft.net.sdk.maccatalyst/18.0.9617/': No such file or directory
+2025-04-09T11:50:03.6506654Z mkdir: cannot create directory ‘/usr/lib/dotnet/sdk-manifests/9.0.100’: Permission denied
+2025-04-09T11:50:03.6521191Z cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+2025-04-09T11:50:03.6522534Z cp: cannot create directory '/usr/lib/dotnet/sdk-manifests/9.0.100/microsoft.net.sdk.macos/15.0.9617/': No such file or directory
+2025-04-09T11:50:03.6561591Z mkdir: cannot create directory ‘/usr/lib/dotnet/sdk-manifests/9.0.100’: Permission denied
+2025-04-09T11:50:03.6575972Z cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+2025-04-09T11:50:03.6577401Z cp: cannot create directory '/usr/lib/dotnet/sdk-manifests/9.0.100/microsoft.net.sdk.maui/9.0.0/': No such file or directory
+2025-04-09T11:50:03.6616625Z mkdir: cannot create directory ‘/usr/lib/dotnet/sdk-manifests/9.0.100’: Permission denied
+2025-04-09T11:50:03.6630137Z cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+2025-04-09T11:50:03.6631562Z cp: cannot create directory '/usr/lib/dotnet/sdk-manifests/9.0.100/microsoft.net.sdk.tvos/18.0.9617/': No such file or directory
+2025-04-09T11:50:03.6670984Z mkdir: cannot create directory ‘/usr/lib/dotnet/sdk-manifests/9.0.100’: Permission denied
+2025-04-09T11:50:03.6684390Z cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+2025-04-09T11:50:03.6685764Z cp: cannot create directory '/usr/lib/dotnet/sdk-manifests/9.0.100/microsoft.net.workload.emscripten.current/9.0.4/': No such file or directory
+2025-04-09T11:50:03.6725625Z mkdir: cannot create directory ‘/usr/lib/dotnet/sdk-manifests/9.0.100’: Permission denied
+2025-04-09T11:50:03.6739618Z cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+2025-04-09T11:50:03.6740908Z cp: cannot create directory '/usr/lib/dotnet/sdk-manifests/9.0.100/microsoft.net.workload.emscripten.net6/9.0.4/': No such file or directory
+2025-04-09T11:50:03.6780499Z mkdir: cannot create directory ‘/usr/lib/dotnet/sdk-manifests/9.0.100’: Permission denied
+2025-04-09T11:50:03.6793926Z cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+2025-04-09T11:50:03.6795322Z cp: cannot create directory '/usr/lib/dotnet/sdk-manifests/9.0.100/microsoft.net.workload.emscripten.net7/9.0.4/': No such file or directory
+2025-04-09T11:50:03.6834625Z mkdir: cannot create directory ‘/usr/lib/dotnet/sdk-manifests/9.0.100’: Permission denied
+2025-04-09T11:50:03.6848280Z cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+2025-04-09T11:50:03.6849577Z cp: cannot create directory '/usr/lib/dotnet/sdk-manifests/9.0.100/microsoft.net.workload.emscripten.net8/9.0.4/': No such file or directory
+2025-04-09T11:50:03.6888528Z mkdir: cannot create directory ‘/usr/lib/dotnet/sdk-manifests/9.0.100’: Permission denied
+2025-04-09T11:50:03.6902374Z cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+2025-04-09T11:50:03.6903944Z cp: cannot create directory '/usr/lib/dotnet/sdk-manifests/9.0.100/microsoft.net.workload.mono.toolchain.current/9.0.4/': No such file or directory
+2025-04-09T11:50:03.6943592Z mkdir: cannot create directory ‘/usr/lib/dotnet/sdk-manifests/9.0.100’: Permission denied
+2025-04-09T11:50:03.6957059Z cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+2025-04-09T11:50:03.6958679Z cp: cannot create directory '/usr/lib/dotnet/sdk-manifests/9.0.100/microsoft.net.workload.mono.toolchain.net6/9.0.4/': No such file or directory
+2025-04-09T11:50:03.6997601Z mkdir: cannot create directory ‘/usr/lib/dotnet/sdk-manifests/9.0.100’: Permission denied
+2025-04-09T11:50:03.7011059Z cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+2025-04-09T11:50:03.7012347Z cp: cannot create directory '/usr/lib/dotnet/sdk-manifests/9.0.100/microsoft.net.workload.mono.toolchain.net7/9.0.4/': No such file or directory
+2025-04-09T11:50:03.7051892Z mkdir: cannot create directory ‘/usr/lib/dotnet/sdk-manifests/9.0.100’: Permission denied
+2025-04-09T11:50:03.7065796Z cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+2025-04-09T11:50:03.7067275Z cp: cannot create directory '/usr/lib/dotnet/sdk-manifests/9.0.100/microsoft.net.workload.mono.toolchain.net8/9.0.4/': No such file or directory
+2025-04-09T11:50:03.7118709Z cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+2025-04-09T11:50:03.7120443Z cp: cannot create directory '/usr/lib/dotnet/sdk/9.0.203/': Permission denied
+2025-04-09T11:50:03.7159416Z mkdir: cannot create directory ‘/usr/lib/dotnet/sdk/9.0.203’: Permission denied
+2025-04-09T11:50:03.7173105Z cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+2025-04-09T11:50:03.7174665Z cp: cannot create directory '/usr/lib/dotnet/sdk/9.0.203/DotnetTools/dotnet-dev-certs/9.0.4-servicing.25164.3/': No such file or directory
+2025-04-09T11:50:03.7213564Z mkdir: cannot create directory ‘/usr/lib/dotnet/sdk/9.0.203’: Permission denied
+2025-04-09T11:50:03.7227401Z cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+2025-04-09T11:50:03.7228658Z cp: cannot create directory '/usr/lib/dotnet/sdk/9.0.203/DotnetTools/dotnet-user-jwts/9.0.4-servicing.25164.3/': No such file or directory
+2025-04-09T11:50:03.7268598Z mkdir: cannot create directory ‘/usr/lib/dotnet/sdk/9.0.203’: Permission denied
+2025-04-09T11:50:03.7282380Z cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+2025-04-09T11:50:03.7284168Z cp: cannot create directory '/usr/lib/dotnet/sdk/9.0.203/DotnetTools/dotnet-user-secrets/9.0.4-servicing.25164.3/': No such file or directory
+2025-04-09T11:50:03.7322223Z mkdir: cannot create directory ‘/usr/lib/dotnet/sdk/9.0.203’: Permission denied
+2025-04-09T11:50:03.7336574Z cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+2025-04-09T11:50:03.7337976Z cp: cannot create directory '/usr/lib/dotnet/sdk/9.0.203/DotnetTools/dotnet-watch/9.0.203-servicing.25165.9/': No such file or directory
+2025-04-09T11:50:03.7389666Z cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+2025-04-09T11:50:03.7391069Z cp: cannot create directory '/usr/lib/dotnet/shared/Microsoft.AspNetCore.App/9.0.4/': Permission denied
+2025-04-09T11:50:03.7443456Z cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+2025-04-09T11:50:03.7445138Z cp: cannot create directory '/usr/lib/dotnet/shared/Microsoft.NETCore.App/9.0.4/': Permission denied
+2025-04-09T11:50:03.7497766Z cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+2025-04-09T11:50:03.7499229Z cp: cannot create directory '/usr/lib/dotnet/templates/9.0.4/': Permission denied
+2025-04-09T11:50:03.7843221Z cp: cannot create regular file '/usr/lib/dotnet/dotnet': Permission denied
+2025-04-09T11:50:03.7887549Z cp: cannot create regular file '/usr/lib/dotnet/LICENSE.txt': Permission denied
+2025-04-09T11:50:03.7931409Z cp: cannot create regular file '/usr/lib/dotnet/ThirdPartyNotices.txt': Permission denied
+2025-04-09T11:50:04.0768546Z dotnet_install: Error: Failed to verify the version of installed `.NET Core SDK`.
+2025-04-09T11:50:04.0769938Z Installation source: https://builds.dotnet.microsoft.com/dotnet/Sdk/9.0.203/dotnet-sdk-9.0.203-linux-x64.tar.gz.
+2025-04-09T11:50:04.0771136Z Installation location: /usr/lib/dotnet.
+2025-04-09T11:50:04.0771812Z Report the bug at https://github.com/dotnet/install-scripts/issues.
+2025-04-09T11:50:04.0772734Z dotnet_install: Error: `.NET Core SDK` with version = 9.0.203 failed to install with an error.
+2025-04-09T11:50:04.0872465Z ##[error]Failed to install dotnet, exit code: 1. cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: cannot create directory '/usr/lib/dotnet/host/fxr/9.0.4/': Permission denied
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: cannot create directory '/usr/lib/dotnet/packs/Microsoft.AspNetCore.App.Ref/9.0.4/': Permission denied
+mkdir: cannot create directory ‘/usr/lib/dotnet/packs/Microsoft.NETCore.App.Host.linux-x64’: Permission denied
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: cannot create directory '/usr/lib/dotnet/packs/Microsoft.NETCore.App.Host.linux-x64/9.0.4/': No such file or directory
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: cannot create directory '/usr/lib/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.4/': Permission denied
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: cannot create directory '/usr/lib/dotnet/sdk-manifests/8.0.100/microsoft.net.sdk.aspire/8.2.2/': Permission denied
+mkdir: cannot create directory ‘/usr/lib/dotnet/sdk-manifests/9.0.100’: Permission denied
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: cannot create directory '/usr/lib/dotnet/sdk-manifests/9.0.100/microsoft.net.sdk.android/35.0.7/': No such file or directory
+mkdir: cannot create directory ‘/usr/lib/dotnet/sdk-manifests/9.0.100’: Permission denied
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: cannot create directory '/usr/lib/dotnet/sdk-manifests/9.0.100/microsoft.net.sdk.ios/18.0.9617/': No such file or directory
+mkdir: cannot create directory ‘/usr/lib/dotnet/sdk-manifests/9.0.100’: Permission denied
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: cannot create directory '/usr/lib/dotnet/sdk-manifests/9.0.100/microsoft.net.sdk.maccatalyst/18.0.9617/': No such file or directory
+mkdir: cannot create directory ‘/usr/lib/dotnet/sdk-manifests/9.0.100’: Permission denied
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: cannot create directory '/usr/lib/dotnet/sdk-manifests/9.0.100/microsoft.net.sdk.macos/15.0.9617/': No such file or directory
+mkdir: cannot create directory ‘/usr/lib/dotnet/sdk-manifests/9.0.100’: Permission denied
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: cannot create directory '/usr/lib/dotnet/sdk-manifests/9.0.100/microsoft.net.sdk.maui/9.0.0/': No such file or directory
+mkdir: cannot create directory ‘/usr/lib/dotnet/sdk-manifests/9.0.100’: Permission denied
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: cannot create directory '/usr/lib/dotnet/sdk-manifests/9.0.100/microsoft.net.sdk.tvos/18.0.9617/': No such file or directory
+mkdir: cannot create directory ‘/usr/lib/dotnet/sdk-manifests/9.0.100’: Permission denied
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: cannot create directory '/usr/lib/dotnet/sdk-manifests/9.0.100/microsoft.net.workload.emscripten.current/9.0.4/': No such file or directory
+mkdir: cannot create directory ‘/usr/lib/dotnet/sdk-manifests/9.0.100’: Permission denied
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: cannot create directory '/usr/lib/dotnet/sdk-manifests/9.0.100/microsoft.net.workload.emscripten.net6/9.0.4/': No such file or directory
+mkdir: cannot create directory ‘/usr/lib/dotnet/sdk-manifests/9.0.100’: Permission denied
+cp: warning: behavior of -n is non-portable and may change in future; use --update=none instead
+cp: cannot create directory '/usr/lib/dotnet/sdk-manifests/9.0.100/microsoft.net.workload.emscripten.net7/9.0.4/': No such file or directory
+mkdir: cannot create directory ‘/usr/lib/dotnet/sdk-ma
+2025-04-09T11:50:04.0974011Z Cleaning up orphan processes

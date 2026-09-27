@@ -1,0 +1,44 @@
+2025-04-08T04:29:59.5581780Z Requested labels: ubuntu-latest
+2025-04-08T04:29:59.5582114Z Job defined at: Azure/azure-cosmos-dotnet-v3/.github/workflows/prlint.yml@refs/pull/5115/merge
+2025-04-08T04:29:59.5582234Z Waiting for a runner to pick up this job...
+2025-04-08T04:30:00.3007990Z Job is waiting for a hosted runner to come online.
+2025-04-08T04:30:02.8395888Z Job is about to start running on the hosted runner: GitHub Actions 199 (hosted)
+2025-04-08T04:30:04.7237416Z Current runner version: '2.323.0'
+2025-04-08T04:30:04.7264242Z ##[group]Operating System
+2025-04-08T04:30:04.7265127Z Ubuntu
+2025-04-08T04:30:04.7265630Z 24.04.2
+2025-04-08T04:30:04.7266141Z LTS
+2025-04-08T04:30:04.7266703Z ##[endgroup]
+2025-04-08T04:30:04.7267252Z ##[group]Runner Image
+2025-04-08T04:30:04.7267875Z Image: ubuntu-24.04
+2025-04-08T04:30:04.7268431Z Version: 20250323.1.0
+2025-04-08T04:30:04.7269441Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-08T04:30:04.7271157Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-04-08T04:30:04.7272095Z ##[endgroup]
+2025-04-08T04:30:04.7272653Z ##[group]Runner Image Provisioner
+2025-04-08T04:30:04.7273306Z 2.0.422.1
+2025-04-08T04:30:04.7273768Z ##[endgroup]
+2025-04-08T04:30:04.7274952Z ##[group]GITHUB_TOKEN Permissions
+2025-04-08T04:30:04.7276982Z Checks: write
+2025-04-08T04:30:04.7277565Z Metadata: read
+2025-04-08T04:30:04.7278361Z PullRequests: write
+2025-04-08T04:30:04.7278993Z ##[endgroup]
+2025-04-08T04:30:04.7282466Z Secret source: Actions
+2025-04-08T04:30:04.7283597Z Prepare workflow directory
+2025-04-08T04:30:04.7666883Z Prepare all required actions
+2025-04-08T04:30:04.7703379Z Getting action download info
+2025-04-08T04:30:04.9326863Z Download action repository 'morrisoncole/pr-lint-action@v1.7.0' (SHA:327d08270eeda69f390c2073935506556987b9a1)
+2025-04-08T04:30:05.2843654Z Complete job name: pr-lint
+2025-04-08T04:30:05.3631936Z ##[group]Run morrisoncole/pr-lint-action@v1.7.0
+2025-04-08T04:30:05.3632888Z with:
+2025-04-08T04:30:05.3633486Z   title-regex: (\[Internal\]|\[v4\] )?.{3}.+: (Adds|Fixes|Refactors|Removes) .{3}.+
+2025-04-08T04:30:05.3634401Z   repo-token: ***
+2025-04-08T04:30:05.3634857Z   on-failed-regex-fail-action: true
+2025-04-08T04:30:05.3635411Z   on-failed-regex-request-changes: false
+2025-04-08T04:30:05.3635983Z   on-failed-regex-create-review: true
+2025-04-08T04:30:05.3639500Z   on-failed-regex-comment: Please follow the required format: \"[Internal] Category: (Adds|Fixes|Refactors|Removes) Description\"<br /><br /> Internal should be used for PRs that have no customer impact. This flag is used to help generate the changelog to know which PRs should be included. Examples:<br /> Diagnostics: Adds GetElapsedClientLatency to CosmosDiagnostics<br/>  PartitionKey: Fixes null reference when using default(PartitionKey)<br/>  [v4] Client Encryption: Refactors code to external project<br/> [Internal] Query: Adds code generator for CosmosNumbers for easy additions in the future.<br/>
+
+2025-04-08T04:30:05.3643383Z   on-succeeded-regex-dismiss-review-comment: All good!
+2025-04-08T04:30:05.3644272Z ##[endgroup]
+2025-04-08T04:30:06.6776856Z ##[error]Please follow the required format: \"[Internal] Category: (Adds|Fixes|Refactors|Removes) Description\"<br /><br /> Internal should be used for PRs that have no customer impact. This flag is used to help generate the changelog to know which PRs should be included. Examples:<br /> Diagnostics: Adds GetElapsedClientLatency to CosmosDiagnostics<br/>  PartitionKey: Fixes null reference when using default(PartitionKey)<br/>  [v4] Client Encryption: Refactors code to external project<br/> [Internal] Query: Adds code generator for CosmosNumbers for easy additions in the future.<br/>
+2025-04-08T04:30:06.6921817Z Cleaning up orphan processes

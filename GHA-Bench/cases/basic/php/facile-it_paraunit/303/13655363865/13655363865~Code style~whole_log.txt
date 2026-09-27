@@ -1,0 +1,539 @@
+2025-03-04T14:00:31.4389933Z Requested labels: ubuntu-latest
+2025-03-04T14:00:31.4390145Z Job defined at: facile-it/paraunit/.github/workflows/tests.yaml@refs/pull/303/merge
+2025-03-04T14:00:31.4390249Z Waiting for a runner to pick up this job...
+2025-03-04T14:00:32.3409012Z Job is waiting for a hosted runner to come online.
+2025-03-04T14:00:35.7664937Z Job is about to start running on the hosted runner: GitHub Actions 3 (hosted)
+2025-03-04T14:00:37.8994106Z Current runner version: '2.322.0'
+2025-03-04T14:00:37.9018439Z ##[group]Operating System
+2025-03-04T14:00:37.9019256Z Ubuntu
+2025-03-04T14:00:37.9019801Z 24.04.2
+2025-03-04T14:00:37.9020388Z LTS
+2025-03-04T14:00:37.9020886Z ##[endgroup]
+2025-03-04T14:00:37.9021715Z ##[group]Runner Image
+2025-03-04T14:00:37.9022742Z Image: ubuntu-24.04
+2025-03-04T14:00:37.9023563Z Version: 20250223.1.0
+2025-03-04T14:00:37.9025111Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250223.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-04T14:00:37.9026824Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250223.1
+2025-03-04T14:00:37.9027745Z ##[endgroup]
+2025-03-04T14:00:37.9028339Z ##[group]Runner Image Provisioner
+2025-03-04T14:00:37.9029029Z 2.0.422.1
+2025-03-04T14:00:37.9029532Z ##[endgroup]
+2025-03-04T14:00:37.9030758Z ##[group]GITHUB_TOKEN Permissions
+2025-03-04T14:00:37.9032578Z Metadata: read
+2025-03-04T14:00:37.9033450Z RepositoryProjects: read
+2025-03-04T14:00:37.9034128Z ##[endgroup]
+2025-03-04T14:00:37.9037209Z Secret source: None
+2025-03-04T14:00:37.9037978Z Prepare workflow directory
+2025-03-04T14:00:37.9652357Z Prepare all required actions
+2025-03-04T14:00:37.9688364Z Getting action download info
+2025-03-04T14:00:38.1695800Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-04T14:00:38.2681197Z Download action repository 'shivammathur/setup-php@v2' (SHA:9e72090525849c5e82e596468b86eb55e9cc5401)
+2025-03-04T14:00:38.6132423Z Download action repository 'ramsey/composer-install@v3' (SHA:0f18aec461938c57720faaf2dba4421bf698cf42)
+2025-03-04T14:00:38.8904994Z Getting action download info
+2025-03-04T14:00:39.0313980Z Download action repository 'actions/cache@v4' (SHA:d4323d4df104b026a6aa633fdb11d772146be0bf)
+2025-03-04T14:00:39.4713229Z Complete job name: Code style
+2025-03-04T14:00:39.5481117Z ##[group]Run actions/checkout@v4
+2025-03-04T14:00:39.5482508Z with:
+2025-03-04T14:00:39.5483346Z   repository: facile-it/paraunit
+2025-03-04T14:00:39.5484672Z   token: ***
+2025-03-04T14:00:39.5485499Z   ssh-strict: true
+2025-03-04T14:00:39.5486354Z   ssh-user: git
+2025-03-04T14:00:39.5487402Z   persist-credentials: true
+2025-03-04T14:00:39.5488369Z   clean: true
+2025-03-04T14:00:39.5489236Z   sparse-checkout-cone-mode: true
+2025-03-04T14:00:39.5490294Z   fetch-depth: 1
+2025-03-04T14:00:39.5491149Z   fetch-tags: false
+2025-03-04T14:00:39.5492038Z   show-progress: true
+2025-03-04T14:00:39.5492925Z   lfs: false
+2025-03-04T14:00:39.5493964Z   submodules: false
+2025-03-04T14:00:39.5495285Z   set-safe-directory: true
+2025-03-04T14:00:39.5497425Z env:
+2025-03-04T14:00:39.5499880Z   COMPOSER_AUTH: {"github-oauth": {"github.com": "***"}}
+2025-03-04T14:00:39.5501971Z ##[endgroup]
+2025-03-04T14:00:39.7843059Z Syncing repository: facile-it/paraunit
+2025-03-04T14:00:39.7846921Z ##[group]Getting Git version info
+2025-03-04T14:00:39.7849219Z Working directory is '/home/runner/work/paraunit/paraunit'
+2025-03-04T14:00:39.7852565Z [command]/usr/bin/git version
+2025-03-04T14:00:39.7854313Z git version 2.48.1
+2025-03-04T14:00:39.7859797Z ##[endgroup]
+2025-03-04T14:00:39.7874591Z Temporarily overriding HOME='/home/runner/work/_temp/bed4049b-3546-48ae-8d49-4e72f9414488' before making global git config changes
+2025-03-04T14:00:39.7879570Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-04T14:00:39.7883457Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/paraunit/paraunit
+2025-03-04T14:00:39.7919734Z Deleting the contents of '/home/runner/work/paraunit/paraunit'
+2025-03-04T14:00:39.7924361Z ##[group]Initializing the repository
+2025-03-04T14:00:39.7929446Z [command]/usr/bin/git init /home/runner/work/paraunit/paraunit
+2025-03-04T14:00:39.8003456Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-04T14:00:39.8005570Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-04T14:00:39.8007730Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-04T14:00:39.8009405Z hint:
+2025-03-04T14:00:39.8010592Z hint: 	git config --global init.defaultBranch <name>
+2025-03-04T14:00:39.8012585Z hint:
+2025-03-04T14:00:39.8014553Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-04T14:00:39.8017978Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-04T14:00:39.8020522Z hint:
+2025-03-04T14:00:39.8021837Z hint: 	git branch -m <name>
+2025-03-04T14:00:39.8024360Z Initialized empty Git repository in /home/runner/work/paraunit/paraunit/.git/
+2025-03-04T14:00:39.8029915Z [command]/usr/bin/git remote add origin https://github.com/facile-it/paraunit
+2025-03-04T14:00:39.8062577Z ##[endgroup]
+2025-03-04T14:00:39.8064685Z ##[group]Disabling automatic garbage collection
+2025-03-04T14:00:39.8067018Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-04T14:00:39.8097692Z ##[endgroup]
+2025-03-04T14:00:39.8099070Z ##[group]Setting up auth
+2025-03-04T14:00:39.8104848Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-04T14:00:39.8139127Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-04T14:00:39.8465862Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-04T14:00:39.8495950Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-04T14:00:39.8730725Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-04T14:00:39.8782047Z ##[endgroup]
+2025-03-04T14:00:39.8785022Z ##[group]Fetching the repository
+2025-03-04T14:00:39.8796941Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a0e643c44754d57e88358e23656f8d4ed312901a:refs/remotes/pull/303/merge
+2025-03-04T14:00:40.2929832Z From https://github.com/facile-it/paraunit
+2025-03-04T14:00:40.2931702Z  * [new ref]         a0e643c44754d57e88358e23656f8d4ed312901a -> pull/303/merge
+2025-03-04T14:00:40.2958831Z ##[endgroup]
+2025-03-04T14:00:40.2961358Z ##[group]Determining the checkout info
+2025-03-04T14:00:40.2966772Z ##[endgroup]
+2025-03-04T14:00:40.2968360Z [command]/usr/bin/git sparse-checkout disable
+2025-03-04T14:00:40.3010600Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-04T14:00:40.3039729Z ##[group]Checking out the ref
+2025-03-04T14:00:40.3042888Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/303/merge
+2025-03-04T14:00:40.3190633Z Note: switching to 'refs/remotes/pull/303/merge'.
+2025-03-04T14:00:40.3192076Z 
+2025-03-04T14:00:40.3193226Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-04T14:00:40.3196320Z changes and commit them, and you can discard any commits you make in this
+2025-03-04T14:00:40.3199662Z state without impacting any branches by switching back to a branch.
+2025-03-04T14:00:40.3201471Z 
+2025-03-04T14:00:40.3202707Z If you want to create a new branch to retain commits you create, you may
+2025-03-04T14:00:40.3205535Z do so (now or later) by using -c with the switch command. Example:
+2025-03-04T14:00:40.3207377Z 
+2025-03-04T14:00:40.3208035Z   git switch -c <new-branch-name>
+2025-03-04T14:00:40.3209150Z 
+2025-03-04T14:00:40.3209761Z Or undo this operation with:
+2025-03-04T14:00:40.3210519Z 
+2025-03-04T14:00:40.3210874Z   git switch -
+2025-03-04T14:00:40.3211340Z 
+2025-03-04T14:00:40.3212109Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-04T14:00:40.3213195Z 
+2025-03-04T14:00:40.3214531Z HEAD is now at a0e643c Merge b6d9a1daf33339b62135921c4983ce2a5fbafc47 into 86ff1ed351980e7c84ebb1827fc436c5afb46826
+2025-03-04T14:00:40.3219462Z ##[endgroup]
+2025-03-04T14:00:40.3236246Z [command]/usr/bin/git log -1 --format=%H
+2025-03-04T14:00:40.3259036Z a0e643c44754d57e88358e23656f8d4ed312901a
+2025-03-04T14:00:40.3495601Z ##[group]Run shivammathur/setup-php@v2
+2025-03-04T14:00:40.3496933Z with:
+2025-03-04T14:00:40.3497686Z   php-version: 8.1
+2025-03-04T14:00:40.3498509Z   ini-file: production
+2025-03-04T14:00:40.3499335Z env:
+2025-03-04T14:00:40.3500821Z   COMPOSER_AUTH: {"github-oauth": {"github.com": "***"}}
+2025-03-04T14:00:40.3501979Z ##[endgroup]
+2025-03-04T14:00:40.4206832Z [command]/usr/bin/bash /home/runner/work/_actions/shivammathur/setup-php/v2/src/scripts/run.sh
+2025-03-04T14:00:40.4460441Z 
+2025-03-04T14:00:40.4462150Z [90;1m==> [0m[37;1mSetup PHP[0m
+2025-03-04T14:00:43.7654715Z [32;1m✓ [0m[34;1mPHP [0m[90;1mInstalled PHP 8.1.31[0m
+2025-03-04T14:00:43.7656063Z 
+2025-03-04T14:00:43.7656923Z [90;1m==> [0m[37;1mSetup Tools[0m
+2025-03-04T14:00:44.1151171Z [32;1m✓ [0m[34;1mcomposer [0m[90;1mAdded composer 2.8.6[0m
+2025-03-04T14:00:44.1152663Z 
+2025-03-04T14:00:44.1153354Z [90;1m==> [0m[37;1mSponsor setup-php[0m
+2025-03-04T14:00:44.1154599Z [32;1m✓ [0m[34;1msetup-php [0m[90;1mhttps://setup-php.com/sponsor[0m
+2025-03-04T14:00:44.1401728Z ##[group]Run ramsey/composer-install@v3
+2025-03-04T14:00:44.1402045Z with:
+2025-03-04T14:00:44.1402253Z   dependency-versions: highest
+2025-03-04T14:00:44.1402502Z   require-lock-file: false
+2025-03-04T14:00:44.1402720Z env:
+2025-03-04T14:00:44.1403238Z   COMPOSER_AUTH: {"github-oauth": {"github.com": "***"}}
+2025-03-04T14:00:44.1403557Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-03-04T14:00:44.1403814Z   COMPOSER_NO_INTERACTION: 1
+2025-03-04T14:00:44.1404071Z   COMPOSER_NO_AUDIT: 1
+2025-03-04T14:00:44.1404273Z ##[endgroup]
+2025-03-04T14:00:44.1487082Z ##[group]Run ${GITHUB_ACTION_PATH}/bin/php_version.sh
+2025-03-04T14:00:44.1487522Z [36;1m${GITHUB_ACTION_PATH}/bin/php_version.sh[0m
+2025-03-04T14:00:44.1540698Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-04T14:00:44.1541083Z env:
+2025-03-04T14:00:44.1541547Z   COMPOSER_AUTH: {"github-oauth": {"github.com": "***"}}
+2025-03-04T14:00:44.1541868Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-03-04T14:00:44.1542146Z   COMPOSER_NO_INTERACTION: 1
+2025-03-04T14:00:44.1542377Z   COMPOSER_NO_AUDIT: 1
+2025-03-04T14:00:44.1542573Z ##[endgroup]
+2025-03-04T14:00:44.2531358Z ##[group]Run ${GITHUB_ACTION_PATH}/bin/should_cache.sh ""
+2025-03-04T14:00:44.2531767Z [36;1m${GITHUB_ACTION_PATH}/bin/should_cache.sh ""[0m
+2025-03-04T14:00:44.2582851Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-04T14:00:44.2583231Z env:
+2025-03-04T14:00:44.2583737Z   COMPOSER_AUTH: {"github-oauth": {"github.com": "***"}}
+2025-03-04T14:00:44.2584068Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-03-04T14:00:44.2584342Z   COMPOSER_NO_INTERACTION: 1
+2025-03-04T14:00:44.2584568Z   COMPOSER_NO_AUDIT: 1
+2025-03-04T14:00:44.2584771Z ##[endgroup]
+2025-03-04T14:00:44.2716843Z ##[group]Run ${GITHUB_ACTION_PATH}/bin/composer_paths.sh \
+2025-03-04T14:00:44.2717257Z [36;1m${GITHUB_ACTION_PATH}/bin/composer_paths.sh \[0m
+2025-03-04T14:00:44.2717575Z [36;1m  "" \[0m
+2025-03-04T14:00:44.2717778Z [36;1m  "" \[0m
+2025-03-04T14:00:44.2718005Z [36;1m  "/usr/bin/php"[0m
+2025-03-04T14:00:44.2760523Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-04T14:00:44.2760877Z env:
+2025-03-04T14:00:44.2761344Z   COMPOSER_AUTH: {"github-oauth": {"github.com": "***"}}
+2025-03-04T14:00:44.2761682Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-03-04T14:00:44.2761945Z   COMPOSER_NO_INTERACTION: 1
+2025-03-04T14:00:44.2762182Z   COMPOSER_NO_AUDIT: 1
+2025-03-04T14:00:44.2762404Z ##[endgroup]
+2025-03-04T14:00:44.7979219Z PHP version 8.1.31 (/usr/bin/php8.1)
+2025-03-04T14:00:44.7981203Z Run the "diagnose" command to get more detailed diagnostics output.
+2025-03-04T14:00:45.1139313Z ##[group]Run ${GITHUB_ACTION_PATH}/bin/cache_key.sh \
+2025-03-04T14:00:45.1139692Z [36;1m${GITHUB_ACTION_PATH}/bin/cache_key.sh \[0m
+2025-03-04T14:00:45.1139969Z [36;1m  "Linux" \[0m
+2025-03-04T14:00:45.1140168Z [36;1m  "8.1.31" \[0m
+2025-03-04T14:00:45.1140602Z [36;1m  "highest" \[0m
+2025-03-04T14:00:45.1140803Z [36;1m  "" \[0m
+2025-03-04T14:00:45.1141128Z [36;1m  "48c7ce436270d154f1adae1383770425a12bf9fb27393b92d0b58d8b460dc6d9" \[0m
+2025-03-04T14:00:45.1141510Z [36;1m  "" \[0m
+2025-03-04T14:00:45.1141955Z [36;1m  "" \[0m
+2025-03-04T14:00:45.1171641Z [36;1m  ""[0m
+2025-03-04T14:00:45.1218200Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-04T14:00:45.1218527Z env:
+2025-03-04T14:00:45.1219206Z   COMPOSER_AUTH: {"github-oauth": {"github.com": "***"}}
+2025-03-04T14:00:45.1219527Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-03-04T14:00:45.1219759Z   COMPOSER_NO_INTERACTION: 1
+2025-03-04T14:00:45.1219984Z   COMPOSER_NO_AUDIT: 1
+2025-03-04T14:00:45.1220187Z ##[endgroup]
+2025-03-04T14:00:45.1422784Z ##[group]Run actions/cache@v4
+2025-03-04T14:00:45.1423012Z with:
+2025-03-04T14:00:45.1423209Z   path: /home/runner/.cache/composer
+2025-03-04T14:00:45.1423708Z   key: Linux-php-8.1.31-composer-highest-48c7ce436270d154f1adae1383770425a12bf9fb27393b92d0b58d8b460dc6d9
+2025-03-04T14:00:45.1424276Z   restore-keys: Linux-php-8.1.31-composer-highest-
+
+2025-03-04T14:00:45.1424784Z   enableCrossOsArchive: false
+2025-03-04T14:00:45.1425045Z   fail-on-cache-miss: false
+2025-03-04T14:00:45.1425267Z   lookup-only: false
+2025-03-04T14:00:45.1425459Z   save-always: false
+2025-03-04T14:00:45.1425645Z env:
+2025-03-04T14:00:45.1426081Z   COMPOSER_AUTH: {"github-oauth": {"github.com": "***"}}
+2025-03-04T14:00:45.1426396Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-03-04T14:00:45.1426953Z   COMPOSER_NO_INTERACTION: 1
+2025-03-04T14:00:45.1427190Z   COMPOSER_NO_AUDIT: 1
+2025-03-04T14:00:45.1427454Z   CACHE_RESTORE_KEY: Linux-php-8.1.31-composer-highest-
+2025-03-04T14:00:45.1427753Z ##[endgroup]
+2025-03-04T14:00:45.3844232Z Cache hit for: Linux-php-8.1.31-composer-highest-48c7ce436270d154f1adae1383770425a12bf9fb27393b92d0b58d8b460dc6d9
+2025-03-04T14:00:46.0661612Z Received 37319664 of 37319664 (100.0%), 66.2 MBs/sec
+2025-03-04T14:00:46.0662654Z Cache Size: ~36 MB (37319664 B)
+2025-03-04T14:00:46.0692695Z [command]/usr/bin/tar -xf /home/runner/work/_temp/8c5ac94e-a159-443b-b196-2a81baaed2cd/cache.tzst -P -C /home/runner/work/paraunit/paraunit --use-compress-program unzstd
+2025-03-04T14:00:46.1547631Z Cache restored successfully
+2025-03-04T14:00:46.1801272Z Cache restored from key: Linux-php-8.1.31-composer-highest-48c7ce436270d154f1adae1383770425a12bf9fb27393b92d0b58d8b460dc6d9
+2025-03-04T14:00:46.1899446Z ##[group]Run ${GITHUB_ACTION_PATH}/bin/composer_install.sh \
+2025-03-04T14:00:46.1899865Z [36;1m${GITHUB_ACTION_PATH}/bin/composer_install.sh \[0m
+2025-03-04T14:00:46.1900164Z [36;1m  "highest" \[0m
+2025-03-04T14:00:46.1900380Z [36;1m  "" \[0m
+2025-03-04T14:00:46.1900556Z [36;1m  "" \[0m
+2025-03-04T14:00:46.1900745Z [36;1m  "/usr/bin/php" \[0m
+2025-03-04T14:00:46.1900983Z [36;1m  "/usr/local/bin/composer" \[0m
+2025-03-04T14:00:46.1901223Z [36;1m  "" \[0m
+2025-03-04T14:00:46.1901403Z [36;1m  "false"[0m
+2025-03-04T14:00:46.1947516Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-04T14:00:46.1947848Z env:
+2025-03-04T14:00:46.1948340Z   COMPOSER_AUTH: {"github-oauth": {"github.com": "***"}}
+2025-03-04T14:00:46.1948665Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-03-04T14:00:46.1948911Z   COMPOSER_NO_INTERACTION: 1
+2025-03-04T14:00:46.1949133Z   COMPOSER_NO_AUDIT: 1
+2025-03-04T14:00:46.1949398Z   CACHE_RESTORE_KEY: Linux-php-8.1.31-composer-highest-
+2025-03-04T14:00:46.1949687Z ##[endgroup]
+2025-03-04T14:00:46.3874712Z [32mLoading composer repositories with package information[39m
+2025-03-04T14:00:49.3424124Z                                                       [32mUpdating dependencies[39m
+2025-03-04T14:00:49.3967697Z [32mLock file operations: 119 installs, 0 updates, 0 removals[39m
+2025-03-04T14:00:49.3970329Z   - Locking [32mamphp/amp[39m ([33mv3.1.0[39m)
+2025-03-04T14:00:49.3971237Z   - Locking [32mamphp/byte-stream[39m ([33mv2.1.1[39m)
+2025-03-04T14:00:49.3972451Z   - Locking [32mamphp/cache[39m ([33mv2.0.1[39m)
+2025-03-04T14:00:49.3973250Z   - Locking [32mamphp/dns[39m ([33mv2.4.0[39m)
+2025-03-04T14:00:49.3973890Z   - Locking [32mamphp/parallel[39m ([33mv2.3.1[39m)
+2025-03-04T14:00:49.3974527Z   - Locking [32mamphp/parser[39m ([33mv1.1.1[39m)
+2025-03-04T14:00:49.3975147Z   - Locking [32mamphp/pipeline[39m ([33mv1.2.2[39m)
+2025-03-04T14:00:49.3975791Z   - Locking [32mamphp/process[39m ([33mv2.0.3[39m)
+2025-03-04T14:00:49.3976458Z   - Locking [32mamphp/serialization[39m ([33mv1.0.0[39m)
+2025-03-04T14:00:49.3977324Z   - Locking [32mamphp/socket[39m ([33mv2.3.1[39m)
+2025-03-04T14:00:49.3977932Z   - Locking [32mamphp/sync[39m ([33mv2.3.0[39m)
+2025-03-04T14:00:49.3978618Z   - Locking [32mclue/ndjson-react[39m ([33mv1.3.0[39m)
+2025-03-04T14:00:49.3979458Z   - Locking [32mcomposer/package-versions-deprecated[39m ([33m1.11.99.5[39m)
+2025-03-04T14:00:49.3980256Z   - Locking [32mcomposer/pcre[39m ([33m3.3.2[39m)
+2025-03-04T14:00:49.3980888Z   - Locking [32mcomposer/semver[39m ([33m3.4.3[39m)
+2025-03-04T14:00:49.3981819Z   - Locking [32mcomposer/xdebug-handler[39m ([33m3.0.5[39m)
+2025-03-04T14:00:49.3982600Z   - Locking [32mdanog/advanced-json-rpc[39m ([33mv3.2.2[39m)
+2025-03-04T14:00:49.3983319Z   - Locking [32mdaverandom/libdns[39m ([33mv2.1.0[39m)
+2025-03-04T14:00:49.3984043Z   - Locking [32mdnoegel/php-xdg-base-dir[39m ([33mv0.1.1[39m)
+2025-03-04T14:00:49.3984797Z   - Locking [32mdoctrine/deprecations[39m ([33m1.1.4[39m)
+2025-03-04T14:00:49.3985493Z   - Locking [32mdoctrine/instantiator[39m ([33m2.0.0[39m)
+2025-03-04T14:00:49.3986179Z   - Locking [32mevenement/evenement[39m ([33mv3.0.2[39m)
+2025-03-04T14:00:49.3987120Z   - Locking [32mfacile-it/facile-coding-standard[39m ([33m1.3.0[39m)
+2025-03-04T14:00:49.3988020Z   - Locking [32mfelixfbecker/language-server-protocol[39m ([33mv1.5.3[39m)
+2025-03-04T14:00:49.3988851Z   - Locking [32mfidry/cpu-core-counter[39m ([33m1.2.0[39m)
+2025-03-04T14:00:49.3989608Z   - Locking [32mfriendsofphp/php-cs-fixer[39m ([33mv3.70.2[39m)
+2025-03-04T14:00:49.3990588Z   - Locking [32mjangregor/phpstan-prophecy[39m ([33mdev-phpunit-12-support 0a6b630[39m)
+2025-03-04T14:00:49.3991544Z   - Locking [32mjean85/pretty-package-versions[39m ([33m2.1.0[39m)
+2025-03-04T14:00:49.3992292Z   - Locking [32mkelunik/certificate[39m ([33mv1.1.3[39m)
+2025-03-04T14:00:49.3992916Z   - Locking [32mleague/uri[39m ([33m7.5.1[39m)
+2025-03-04T14:00:49.3993568Z   - Locking [32mleague/uri-interfaces[39m ([33m7.5.0[39m)
+2025-03-04T14:00:49.3994237Z   - Locking [32mmyclabs/deep-copy[39m ([33m1.13.0[39m)
+2025-03-04T14:00:49.3994922Z   - Locking [32mnetresearch/jsonmapper[39m ([33mv5.0.0[39m)
+2025-03-04T14:00:49.3995607Z   - Locking [32mnikic/php-parser[39m ([33mv5.4.0[39m)
+2025-03-04T14:00:49.3996240Z   - Locking [32mphar-io/manifest[39m ([33m2.0.4[39m)
+2025-03-04T14:00:49.3997170Z   - Locking [32mphar-io/version[39m ([33m3.2.1[39m)
+2025-03-04T14:00:49.3997984Z   - Locking [32mphpdocumentor/reflection-common[39m ([33m2.2.0[39m)
+2025-03-04T14:00:49.3998839Z   - Locking [32mphpdocumentor/reflection-docblock[39m ([33m5.6.1[39m)
+2025-03-04T14:00:49.3999612Z   - Locking [32mphpdocumentor/type-resolver[39m ([33m1.10.0[39m)
+2025-03-04T14:00:49.4000116Z   - Locking [32mphpspec/prophecy[39m ([33mdev-master 53ab8ce[39m)
+2025-03-04T14:00:49.4000631Z   - Locking [32mphpspec/prophecy-phpunit[39m ([33mdev-master 8819516[39m)
+2025-03-04T14:00:49.4001150Z   - Locking [32mphpstan/extension-installer[39m ([33m1.4.3[39m)
+2025-03-04T14:00:49.4001596Z   - Locking [32mphpstan/phpdoc-parser[39m ([33m2.1.0[39m)
+2025-03-04T14:00:49.4002002Z   - Locking [32mphpstan/phpstan[39m ([33m2.1.6[39m)
+2025-03-04T14:00:49.4002404Z   - Locking [32mphpstan/phpstan-phpunit[39m ([33m2.0.4[39m)
+2025-03-04T14:00:49.4002844Z   - Locking [32mphpunit/php-code-coverage[39m ([33m10.1.16[39m)
+2025-03-04T14:00:49.4003299Z   - Locking [32mphpunit/php-file-iterator[39m ([33m4.1.0[39m)
+2025-03-04T14:00:49.4003885Z   - Locking [32mphpunit/php-invoker[39m ([33m4.0.0[39m)
+2025-03-04T14:00:49.4004314Z   - Locking [32mphpunit/php-text-template[39m ([33m3.0.1[39m)
+2025-03-04T14:00:49.4004746Z   - Locking [32mphpunit/php-timer[39m ([33m6.0.0[39m)
+2025-03-04T14:00:49.4005129Z   - Locking [32mphpunit/phpunit[39m ([33m10.5.45[39m)
+2025-03-04T14:00:49.4005530Z   - Locking [32mpsalm/plugin-phpunit[39m ([33m0.19.2[39m)
+2025-03-04T14:00:49.4005943Z   - Locking [32mpsalm/plugin-symfony[39m ([33mv5.2.7[39m)
+2025-03-04T14:00:49.4006316Z   - Locking [32mpsr/cache[39m ([33m3.0.0[39m)
+2025-03-04T14:00:49.4006959Z   - Locking [32mpsr/container[39m ([33m2.0.2[39m)
+2025-03-04T14:00:49.4007362Z   - Locking [32mpsr/event-dispatcher[39m ([33m1.0.0[39m)
+2025-03-04T14:00:49.4007810Z   - Locking [32mpsr/http-factory[39m ([33m1.1.0[39m)
+2025-03-04T14:00:49.4008186Z   - Locking [32mpsr/http-message[39m ([33m2.0[39m)
+2025-03-04T14:00:49.4008542Z   - Locking [32mpsr/log[39m ([33m3.0.2[39m)
+2025-03-04T14:00:49.4008889Z   - Locking [32mreact/cache[39m ([33mv1.2.0[39m)
+2025-03-04T14:00:49.4009408Z   - Locking [32mreact/child-process[39m ([33mv0.6.6[39m)
+2025-03-04T14:00:49.4009791Z   - Locking [32mreact/dns[39m ([33mv1.13.0[39m)
+2025-03-04T14:00:49.4010160Z   - Locking [32mreact/event-loop[39m ([33mv1.5.0[39m)
+2025-03-04T14:00:49.4010522Z   - Locking [32mreact/promise[39m ([33mv3.2.0[39m)
+2025-03-04T14:00:49.4010953Z   - Locking [32mreact/socket[39m ([33mv1.16.0[39m)
+2025-03-04T14:00:49.4011334Z   - Locking [32mreact/stream[39m ([33mv1.4.0[39m)
+2025-03-04T14:00:49.4011686Z   - Locking [32mrector/rector[39m ([33m2.0.9[39m)
+2025-03-04T14:00:49.4012060Z   - Locking [32mrevolt/event-loop[39m ([33mv1.0.7[39m)
+2025-03-04T14:00:49.4012457Z   - Locking [32msebastian/cli-parser[39m ([33m2.0.1[39m)
+2025-03-04T14:00:49.4012863Z   - Locking [32msebastian/code-unit[39m ([33m2.0.0[39m)
+2025-03-04T14:00:49.4013324Z   - Locking [32msebastian/code-unit-reverse-lookup[39m ([33m3.0.0[39m)
+2025-03-04T14:00:49.4013786Z   - Locking [32msebastian/comparator[39m ([33m5.0.3[39m)
+2025-03-04T14:00:49.4014183Z   - Locking [32msebastian/complexity[39m ([33m3.2.0[39m)
+2025-03-04T14:00:49.4014554Z   - Locking [32msebastian/diff[39m ([33m5.1.1[39m)
+2025-03-04T14:00:49.4014939Z   - Locking [32msebastian/environment[39m ([33m6.1.0[39m)
+2025-03-04T14:00:49.4015328Z   - Locking [32msebastian/exporter[39m ([33m5.1.2[39m)
+2025-03-04T14:00:49.4015730Z   - Locking [32msebastian/global-state[39m ([33m6.0.2[39m)
+2025-03-04T14:00:49.4016149Z   - Locking [32msebastian/lines-of-code[39m ([33m2.0.2[39m)
+2025-03-04T14:00:49.4016792Z   - Locking [32msebastian/object-enumerator[39m ([33m5.0.0[39m)
+2025-03-04T14:00:49.4017288Z   - Locking [32msebastian/object-reflector[39m ([33m3.0.0[39m)
+2025-03-04T14:00:49.4017736Z   - Locking [32msebastian/recursion-context[39m ([33m5.0.0[39m)
+2025-03-04T14:00:49.4018141Z   - Locking [32msebastian/type[39m ([33m4.0.0[39m)
+2025-03-04T14:00:49.4018512Z   - Locking [32msebastian/version[39m ([33m4.0.1[39m)
+2025-03-04T14:00:49.4018907Z   - Locking [32mspatie/array-to-xml[39m ([33m3.4.0[39m)
+2025-03-04T14:00:49.4019283Z   - Locking [32msymfony/cache[39m ([33mv6.4.19[39m)
+2025-03-04T14:00:49.4019686Z   - Locking [32msymfony/cache-contracts[39m ([33mv3.5.1[39m)
+2025-03-04T14:00:49.4020098Z   - Locking [32msymfony/config[39m ([33mv6.4.14[39m)
+2025-03-04T14:00:49.4020477Z   - Locking [32msymfony/console[39m ([33mv6.4.17[39m)
+2025-03-04T14:00:49.4020913Z   - Locking [32msymfony/dependency-injection[39m ([33mv6.4.19[39m)
+2025-03-04T14:00:49.4021396Z   - Locking [32msymfony/deprecation-contracts[39m ([33mv3.5.1[39m)
+2025-03-04T14:00:49.4021841Z   - Locking [32msymfony/error-handler[39m ([33mv6.4.19[39m)
+2025-03-04T14:00:49.4022279Z   - Locking [32msymfony/event-dispatcher[39m ([33mv6.4.13[39m)
+2025-03-04T14:00:49.4022759Z   - Locking [32msymfony/event-dispatcher-contracts[39m ([33mv3.5.1[39m)
+2025-03-04T14:00:49.4023425Z   - Locking [32msymfony/expression-language[39m ([33mv6.4.13[39m)
+2025-03-04T14:00:49.4023873Z   - Locking [32msymfony/filesystem[39m ([33mv6.4.13[39m)
+2025-03-04T14:00:49.4024258Z   - Locking [32msymfony/finder[39m ([33mv6.4.17[39m)
+2025-03-04T14:00:49.4024668Z   - Locking [32msymfony/framework-bundle[39m ([33mv6.4.19[39m)
+2025-03-04T14:00:49.4025108Z   - Locking [32msymfony/http-foundation[39m ([33mv6.4.18[39m)
+2025-03-04T14:00:49.4025532Z   - Locking [32msymfony/http-kernel[39m ([33mv6.4.19[39m)
+2025-03-04T14:00:49.4025957Z   - Locking [32msymfony/options-resolver[39m ([33mv6.4.16[39m)
+2025-03-04T14:00:49.4026391Z   - Locking [32msymfony/phpunit-bridge[39m ([33mv7.2.0[39m)
+2025-03-04T14:00:49.4026944Z   - Locking [32msymfony/polyfill-ctype[39m ([33mv1.31.0[39m)
+2025-03-04T14:00:49.4027411Z   - Locking [32msymfony/polyfill-intl-grapheme[39m ([33mv1.31.0[39m)
+2025-03-04T14:00:49.4027953Z   - Locking [32msymfony/polyfill-intl-normalizer[39m ([33mv1.31.0[39m)
+2025-03-04T14:00:49.4028622Z   - Locking [32msymfony/polyfill-mbstring[39m ([33mv1.31.0[39m)
+2025-03-04T14:00:49.4029075Z   - Locking [32msymfony/polyfill-php80[39m ([33mv1.31.0[39m)
+2025-03-04T14:00:49.4029495Z   - Locking [32msymfony/polyfill-php81[39m ([33mv1.31.0[39m)
+2025-03-04T14:00:49.4029915Z   - Locking [32msymfony/polyfill-php83[39m ([33mv1.31.0[39m)
+2025-03-04T14:00:49.4030332Z   - Locking [32msymfony/polyfill-php84[39m ([33mv1.31.0[39m)
+2025-03-04T14:00:49.4030732Z   - Locking [32msymfony/process[39m ([33mv6.4.19[39m)
+2025-03-04T14:00:49.4031111Z   - Locking [32msymfony/routing[39m ([33mv6.4.18[39m)
+2025-03-04T14:00:49.4031521Z   - Locking [32msymfony/service-contracts[39m ([33mv3.5.1[39m)
+2025-03-04T14:00:49.4031959Z   - Locking [32msymfony/stopwatch[39m ([33mv6.4.19[39m)
+2025-03-04T14:00:49.4032416Z   - Locking [32msymfony/string[39m ([33mv6.4.15[39m)
+2025-03-04T14:00:49.4033115Z   - Locking [32msymfony/var-dumper[39m ([33mv6.4.18[39m)
+2025-03-04T14:00:49.4033821Z   - Locking [32msymfony/var-exporter[39m ([33mv6.4.19[39m)
+2025-03-04T14:00:49.4034238Z   - Locking [32mtheseer/tokenizer[39m ([33m1.2.3[39m)
+2025-03-04T14:00:49.4034601Z   - Locking [32mvimeo/psalm[39m ([33m6.8.8[39m)
+2025-03-04T14:00:49.4034974Z   - Locking [32mwebmozart/assert[39m ([33m1.11.0[39m)
+2025-03-04T14:00:49.4035308Z [32mWriting lock file[39m
+2025-03-04T14:00:49.4035705Z [32mInstalling dependencies from lock file (including require-dev)[39m
+2025-03-04T14:00:49.4106280Z [32mPackage operations: 119 installs, 0 updates, 0 removals[39m
+2025-03-04T14:00:49.4155971Z   - Downloading [32msymfony/stopwatch[39m ([33mv6.4.19[39m)
+2025-03-04T14:00:49.4159204Z   - Downloading [32msymfony/process[39m ([33mv6.4.19[39m)
+2025-03-04T14:00:49.4207144Z   - Downloading [32mfriendsofphp/php-cs-fixer[39m ([33mv3.70.2[39m)
+2025-03-04T14:00:49.4389852Z   - Downloading [32mvimeo/psalm[39m ([33m6.8.8[39m)
+2025-03-04T14:00:49.4405901Z   - Downloading [32msymfony/error-handler[39m ([33mv6.4.19[39m)
+2025-03-04T14:00:49.4409119Z   - Downloading [32msymfony/http-kernel[39m ([33mv6.4.19[39m)
+2025-03-04T14:00:49.4412160Z   - Downloading [32msymfony/var-exporter[39m ([33mv6.4.19[39m)
+2025-03-04T14:00:49.4415203Z   - Downloading [32msymfony/dependency-injection[39m ([33mv6.4.19[39m)
+2025-03-04T14:00:49.4424964Z   - Downloading [32msymfony/cache[39m ([33mv6.4.19[39m)
+2025-03-04T14:00:49.4428442Z   - Downloading [32msymfony/framework-bundle[39m ([33mv6.4.19[39m)
+2025-03-04T14:00:49.8964756Z   - Installing [32mcomposer/package-versions-deprecated[39m ([33m1.11.99.5[39m): Extracting archive
+2025-03-04T14:00:49.9244720Z   - Installing [32msymfony/polyfill-ctype[39m ([33mv1.31.0[39m): Extracting archive
+2025-03-04T14:00:49.9274261Z   - Installing [32mcomposer/pcre[39m ([33m3.3.2[39m): Extracting archive
+2025-03-04T14:00:49.9306363Z   - Installing [32msymfony/polyfill-php80[39m ([33mv1.31.0[39m): Extracting archive
+2025-03-04T14:00:49.9347057Z   - Installing [32msymfony/polyfill-mbstring[39m ([33mv1.31.0[39m): Extracting archive
+2025-03-04T14:00:49.9383870Z   - Installing [32msymfony/polyfill-intl-normalizer[39m ([33mv1.31.0[39m): Extracting archive
+2025-03-04T14:00:49.9418631Z   - Installing [32msymfony/polyfill-intl-grapheme[39m ([33mv1.31.0[39m): Extracting archive
+2025-03-04T14:00:49.9457578Z   - Installing [32msymfony/string[39m ([33mv6.4.15[39m): Extracting archive
+2025-03-04T14:00:49.9494868Z   - Installing [32msymfony/deprecation-contracts[39m ([33mv3.5.1[39m): Extracting archive
+2025-03-04T14:00:49.9527939Z   - Installing [32mpsr/container[39m ([33m2.0.2[39m): Extracting archive
+2025-03-04T14:00:49.9566299Z   - Installing [32msymfony/service-contracts[39m ([33mv3.5.1[39m): Extracting archive
+2025-03-04T14:00:49.9601134Z   - Installing [32msymfony/console[39m ([33mv6.4.17[39m): Extracting archive
+2025-03-04T14:00:49.9606329Z   - Installing [32msymfony/stopwatch[39m ([33mv6.4.19[39m): Extracting archive
+2025-03-04T14:00:49.9611995Z   - Installing [32msymfony/process[39m ([33mv6.4.19[39m): Extracting archive
+2025-03-04T14:00:49.9614245Z   - Installing [32msymfony/polyfill-php81[39m ([33mv1.31.0[39m): Extracting archive
+2025-03-04T14:00:49.9617922Z   - Installing [32msymfony/options-resolver[39m ([33mv6.4.16[39m): Extracting archive
+2025-03-04T14:00:49.9621940Z   - Installing [32msymfony/finder[39m ([33mv6.4.17[39m): Extracting archive
+2025-03-04T14:00:49.9626178Z   - Installing [32msymfony/filesystem[39m ([33mv6.4.13[39m): Extracting archive
+2025-03-04T14:00:49.9630922Z   - Installing [32mpsr/event-dispatcher[39m ([33m1.0.0[39m): Extracting archive
+2025-03-04T14:00:49.9635913Z   - Installing [32msymfony/event-dispatcher-contracts[39m ([33mv3.5.1[39m): Extracting archive
+2025-03-04T14:00:49.9640316Z   - Installing [32msymfony/event-dispatcher[39m ([33mv6.4.13[39m): Extracting archive
+2025-03-04T14:00:49.9643437Z   - Installing [32msebastian/diff[39m ([33m5.1.1[39m): Extracting archive
+2025-03-04T14:00:49.9647758Z   - Installing [32mreact/event-loop[39m ([33mv1.5.0[39m): Extracting archive
+2025-03-04T14:00:49.9651241Z   - Installing [32mevenement/evenement[39m ([33mv3.0.2[39m): Extracting archive
+2025-03-04T14:00:49.9654873Z   - Installing [32mreact/stream[39m ([33mv1.4.0[39m): Extracting archive
+2025-03-04T14:00:49.9658817Z   - Installing [32mreact/promise[39m ([33mv3.2.0[39m): Extracting archive
+2025-03-04T14:00:49.9662592Z   - Installing [32mreact/cache[39m ([33mv1.2.0[39m): Extracting archive
+2025-03-04T14:00:49.9666102Z   - Installing [32mreact/dns[39m ([33mv1.13.0[39m): Extracting archive
+2025-03-04T14:00:49.9669250Z   - Installing [32mreact/socket[39m ([33mv1.16.0[39m): Extracting archive
+2025-03-04T14:00:49.9672461Z   - Installing [32mreact/child-process[39m ([33mv0.6.6[39m): Extracting archive
+2025-03-04T14:00:49.9675542Z   - Installing [32mfidry/cpu-core-counter[39m ([33m1.2.0[39m): Extracting archive
+2025-03-04T14:00:49.9679168Z   - Installing [32mpsr/log[39m ([33m3.0.2[39m): Extracting archive
+2025-03-04T14:00:49.9682149Z   - Installing [32mcomposer/xdebug-handler[39m ([33m3.0.5[39m): Extracting archive
+2025-03-04T14:00:49.9685047Z   - Installing [32mcomposer/semver[39m ([33m3.4.3[39m): Extracting archive
+2025-03-04T14:00:49.9688391Z   - Installing [32mclue/ndjson-react[39m ([33mv1.3.0[39m): Extracting archive
+2025-03-04T14:00:49.9691239Z   - Installing [32mfriendsofphp/php-cs-fixer[39m ([33mv3.70.2[39m): Extracting archive
+2025-03-04T14:00:50.2958287Z   - Installing [32mfacile-it/facile-coding-standard[39m ([33m1.3.0[39m): Extracting archive
+2025-03-04T14:00:50.3208187Z [32mSetting up Facile.it Coding Standards[39m
+2025-03-04T14:00:50.3208472Z 
+2025-03-04T14:00:50.3208700Z   [33mSkipping... CS config file already exists.[39m
+2025-03-04T14:00:50.3209224Z   [32mDelete .php-cs-fixer.dist.php if you want to install it.[39m
+2025-03-04T14:00:50.3213809Z   - Installing [32mphpstan/phpstan[39m ([33m2.1.6[39m): Extracting archive
+2025-03-04T14:00:50.4653626Z   - Installing [32mphpstan/extension-installer[39m ([33m1.4.3[39m): Extracting archive
+2025-03-04T14:00:50.4842192Z   - Installing [32mrevolt/event-loop[39m ([33mv1.0.7[39m): Extracting archive
+2025-03-04T14:00:50.4873314Z   - Installing [32mamphp/serialization[39m ([33mv1.0.0[39m): Extracting archive
+2025-03-04T14:00:50.4908014Z   - Installing [32mamphp/amp[39m ([33mv3.1.0[39m): Extracting archive
+2025-03-04T14:00:50.4949402Z   - Installing [32mamphp/pipeline[39m ([33mv1.2.2[39m): Extracting archive
+2025-03-04T14:00:50.4987886Z   - Installing [32mamphp/sync[39m ([33mv2.3.0[39m): Extracting archive
+2025-03-04T14:00:50.5028690Z   - Installing [32mamphp/cache[39m ([33mv2.0.1[39m): Extracting archive
+2025-03-04T14:00:50.5070117Z   - Installing [32mamphp/parser[39m ([33mv1.1.1[39m): Extracting archive
+2025-03-04T14:00:50.5110812Z   - Installing [32mamphp/byte-stream[39m ([33mv2.1.1[39m): Extracting archive
+2025-03-04T14:00:50.5150612Z   - Installing [32mamphp/process[39m ([33mv2.0.3[39m): Extracting archive
+2025-03-04T14:00:50.5191039Z   - Installing [32mpsr/http-message[39m ([33m2.0[39m): Extracting archive
+2025-03-04T14:00:50.5238395Z   - Installing [32mpsr/http-factory[39m ([33m1.1.0[39m): Extracting archive
+2025-03-04T14:00:50.5239529Z   - Installing [32mleague/uri-interfaces[39m ([33m7.5.0[39m): Extracting archive
+2025-03-04T14:00:50.5245145Z   - Installing [32mleague/uri[39m ([33m7.5.1[39m): Extracting archive
+2025-03-04T14:00:50.5248174Z   - Installing [32mkelunik/certificate[39m ([33mv1.1.3[39m): Extracting archive
+2025-03-04T14:00:50.5252057Z   - Installing [32mdaverandom/libdns[39m ([33mv2.1.0[39m): Extracting archive
+2025-03-04T14:00:50.5255583Z   - Installing [32mamphp/dns[39m ([33mv2.4.0[39m): Extracting archive
+2025-03-04T14:00:50.5260365Z   - Installing [32mamphp/socket[39m ([33mv2.3.1[39m): Extracting archive
+2025-03-04T14:00:50.5265004Z   - Installing [32mdoctrine/instantiator[39m ([33m2.0.0[39m): Extracting archive
+2025-03-04T14:00:50.5269018Z   - Installing [32mjangregor/phpstan-prophecy[39m ([33mdev-phpunit-12-support 0a6b630[39m): Extracting archive
+2025-03-04T14:00:50.5272997Z   - Installing [32mjean85/pretty-package-versions[39m ([33m2.1.0[39m): Extracting archive
+2025-03-04T14:00:50.5275810Z   - Installing [32mwebmozart/assert[39m ([33m1.11.0[39m): Extracting archive
+2025-03-04T14:00:50.5279034Z   - Installing [32mphpstan/phpdoc-parser[39m ([33m2.1.0[39m): Extracting archive
+2025-03-04T14:00:50.5283043Z   - Installing [32mphpdocumentor/reflection-common[39m ([33m2.2.0[39m): Extracting archive
+2025-03-04T14:00:50.5286801Z   - Installing [32mdoctrine/deprecations[39m ([33m1.1.4[39m): Extracting archive
+2025-03-04T14:00:50.5290349Z   - Installing [32mphpdocumentor/type-resolver[39m ([33m1.10.0[39m): Extracting archive
+2025-03-04T14:00:50.5292911Z   - Installing [32mphpdocumentor/reflection-docblock[39m ([33m5.6.1[39m): Extracting archive
+2025-03-04T14:00:50.5295438Z   - Installing [32msebastian/version[39m ([33m4.0.1[39m): Extracting archive
+2025-03-04T14:00:50.5299164Z   - Installing [32msebastian/type[39m ([33m4.0.0[39m): Extracting archive
+2025-03-04T14:00:50.5302388Z   - Installing [32msebastian/recursion-context[39m ([33m5.0.0[39m): Extracting archive
+2025-03-04T14:00:50.5305475Z   - Installing [32msebastian/object-reflector[39m ([33m3.0.0[39m): Extracting archive
+2025-03-04T14:00:50.5308876Z   - Installing [32msebastian/object-enumerator[39m ([33m5.0.0[39m): Extracting archive
+2025-03-04T14:00:50.5311992Z   - Installing [32msebastian/global-state[39m ([33m6.0.2[39m): Extracting archive
+2025-03-04T14:00:50.5315076Z   - Installing [32msebastian/exporter[39m ([33m5.1.2[39m): Extracting archive
+2025-03-04T14:00:50.5318363Z   - Installing [32msebastian/environment[39m ([33m6.1.0[39m): Extracting archive
+2025-03-04T14:00:50.5321377Z   - Installing [32msebastian/comparator[39m ([33m5.0.3[39m): Extracting archive
+2025-03-04T14:00:50.5324445Z   - Installing [32msebastian/code-unit[39m ([33m2.0.0[39m): Extracting archive
+2025-03-04T14:00:50.5327796Z   - Installing [32msebastian/cli-parser[39m ([33m2.0.1[39m): Extracting archive
+2025-03-04T14:00:50.5330673Z   - Installing [32mphpunit/php-timer[39m ([33m6.0.0[39m): Extracting archive
+2025-03-04T14:00:50.5333926Z   - Installing [32mphpunit/php-text-template[39m ([33m3.0.1[39m): Extracting archive
+2025-03-04T14:00:50.5337355Z   - Installing [32mphpunit/php-invoker[39m ([33m4.0.0[39m): Extracting archive
+2025-03-04T14:00:50.5340583Z   - Installing [32mphpunit/php-file-iterator[39m ([33m4.1.0[39m): Extracting archive
+2025-03-04T14:00:50.5343757Z   - Installing [32mtheseer/tokenizer[39m ([33m1.2.3[39m): Extracting archive
+2025-03-04T14:00:50.5347225Z   - Installing [32mnikic/php-parser[39m ([33mv5.4.0[39m): Extracting archive
+2025-03-04T14:00:50.5350649Z   - Installing [32msebastian/lines-of-code[39m ([33m2.0.2[39m): Extracting archive
+2025-03-04T14:00:50.5354349Z   - Installing [32msebastian/complexity[39m ([33m3.2.0[39m): Extracting archive
+2025-03-04T14:00:50.5357976Z   - Installing [32msebastian/code-unit-reverse-lookup[39m ([33m3.0.0[39m): Extracting archive
+2025-03-04T14:00:50.5361248Z   - Installing [32mphpunit/php-code-coverage[39m ([33m10.1.16[39m): Extracting archive
+2025-03-04T14:00:50.5364447Z   - Installing [32mphar-io/version[39m ([33m3.2.1[39m): Extracting archive
+2025-03-04T14:00:50.5367853Z   - Installing [32mphar-io/manifest[39m ([33m2.0.4[39m): Extracting archive
+2025-03-04T14:00:50.5371003Z   - Installing [32mmyclabs/deep-copy[39m ([33m1.13.0[39m): Extracting archive
+2025-03-04T14:00:50.5374348Z   - Installing [32mphpunit/phpunit[39m ([33m10.5.45[39m): Extracting archive
+2025-03-04T14:00:50.5377873Z   - Installing [32mphpspec/prophecy[39m ([33mdev-master 53ab8ce[39m): Extracting archive
+2025-03-04T14:00:50.5381622Z   - Installing [32mphpspec/prophecy-phpunit[39m ([33mdev-master 8819516[39m): Extracting archive
+2025-03-04T14:00:50.5385161Z   - Installing [32mphpstan/phpstan-phpunit[39m ([33m2.0.4[39m): Extracting archive
+2025-03-04T14:00:50.5388526Z   - Installing [32msymfony/polyfill-php84[39m ([33mv1.31.0[39m): Extracting archive
+2025-03-04T14:00:50.5391981Z   - Installing [32mspatie/array-to-xml[39m ([33m3.4.0[39m): Extracting archive
+2025-03-04T14:00:50.5395173Z   - Installing [32mnetresearch/jsonmapper[39m ([33mv5.0.0[39m): Extracting archive
+2025-03-04T14:00:50.5398616Z   - Installing [32mfelixfbecker/language-server-protocol[39m ([33mv1.5.3[39m): Extracting archive
+2025-03-04T14:00:50.5401544Z   - Installing [32mdnoegel/php-xdg-base-dir[39m ([33mv0.1.1[39m): Extracting archive
+2025-03-04T14:00:50.5404763Z   - Installing [32mdanog/advanced-json-rpc[39m ([33mv3.2.2[39m): Extracting archive
+2025-03-04T14:00:50.5407517Z   - Installing [32mamphp/parallel[39m ([33mv2.3.1[39m): Extracting archive
+2025-03-04T14:00:50.5410639Z   - Installing [32mvimeo/psalm[39m ([33m6.8.8[39m): Extracting archive
+2025-03-04T14:00:50.5413698Z   - Installing [32mpsalm/plugin-phpunit[39m ([33m0.19.2[39m): Extracting archive
+2025-03-04T14:00:50.5416964Z   - Installing [32msymfony/routing[39m ([33mv6.4.18[39m): Extracting archive
+2025-03-04T14:00:50.5420151Z   - Installing [32msymfony/polyfill-php83[39m ([33mv1.31.0[39m): Extracting archive
+2025-03-04T14:00:50.5423170Z   - Installing [32msymfony/http-foundation[39m ([33mv6.4.18[39m): Extracting archive
+2025-03-04T14:00:50.5426064Z   - Installing [32msymfony/var-dumper[39m ([33mv6.4.18[39m): Extracting archive
+2025-03-04T14:00:50.5429277Z   - Installing [32msymfony/error-handler[39m ([33mv6.4.19[39m): Extracting archive
+2025-03-04T14:00:50.5432241Z   - Installing [32msymfony/http-kernel[39m ([33mv6.4.19[39m): Extracting archive
+2025-03-04T14:00:50.5435347Z   - Installing [32msymfony/var-exporter[39m ([33mv6.4.19[39m): Extracting archive
+2025-03-04T14:00:50.5438556Z   - Installing [32msymfony/dependency-injection[39m ([33mv6.4.19[39m): Extracting archive
+2025-03-04T14:00:50.5441686Z   - Installing [32msymfony/config[39m ([33mv6.4.14[39m): Extracting archive
+2025-03-04T14:00:50.5444509Z   - Installing [32mpsr/cache[39m ([33m3.0.0[39m): Extracting archive
+2025-03-04T14:00:50.5447659Z   - Installing [32msymfony/cache-contracts[39m ([33mv3.5.1[39m): Extracting archive
+2025-03-04T14:00:50.5450734Z   - Installing [32msymfony/cache[39m ([33mv6.4.19[39m): Extracting archive
+2025-03-04T14:00:50.5453833Z   - Installing [32msymfony/framework-bundle[39m ([33mv6.4.19[39m): Extracting archive
+2025-03-04T14:00:50.5456886Z   - Installing [32mpsalm/plugin-symfony[39m ([33mv5.2.7[39m): Extracting archive
+2025-03-04T14:00:50.5459982Z   - Installing [32mrector/rector[39m ([33m2.0.9[39m): Extracting archive
+2025-03-04T14:00:50.5463043Z   - Installing [32msymfony/expression-language[39m ([33mv6.4.13[39m): Extracting archive
+2025-03-04T14:00:50.5465893Z   - Installing [32msymfony/phpunit-bridge[39m ([33mv7.2.0[39m): Extracting archive
+2025-03-04T14:00:51.9237873Z [32m8 package suggestions were added by new dependencies, use `composer suggest` to see details.[39m
+2025-03-04T14:00:51.9257792Z [32mGenerating autoload files[39m
+2025-03-04T14:00:52.1034874Z [32m86 packages you are using are looking for funding.[39m
+2025-03-04T14:00:52.1035692Z [32mUse the `composer fund` command to find out more![39m
+2025-03-04T14:00:52.1039528Z [32mphpstan/extension-installer:[39m Extensions installed
+2025-03-04T14:00:52.1040366Z > [32mcomposer/pcre:[39m installed
+2025-03-04T14:00:52.1041111Z > [32mjangregor/phpstan-prophecy:[39m installed
+2025-03-04T14:00:52.1041613Z > [32mphpstan/phpstan-phpunit:[39m installed
+2025-03-04T14:00:52.1433742Z ##[group]Run vendor/bin/php-cs-fixer fix --ansi --verbose --dry-run
+2025-03-04T14:00:52.1434257Z [36;1mvendor/bin/php-cs-fixer fix --ansi --verbose --dry-run[0m
+2025-03-04T14:00:52.1481172Z shell: /usr/bin/bash -e {0}
+2025-03-04T14:00:52.1481415Z env:
+2025-03-04T14:00:52.1481932Z   COMPOSER_AUTH: {"github-oauth": {"github.com": "***"}}
+2025-03-04T14:00:52.1482256Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-03-04T14:00:52.1482498Z   COMPOSER_NO_INTERACTION: 1
+2025-03-04T14:00:52.1482723Z   COMPOSER_NO_AUDIT: 1
+2025-03-04T14:00:52.1482979Z   CACHE_RESTORE_KEY: Linux-php-8.1.31-composer-highest-
+2025-03-04T14:00:52.1483274Z ##[endgroup]
+2025-03-04T14:00:52.3295706Z PHP CS Fixer [32m3.70.2[39m [32mPersian Successor[39m by [33mFabien Potencier[39m, [33mDariusz Ruminski[39m and [33mcontributors[39m.
+2025-03-04T14:00:52.3296902Z PHP runtime: [32m8.1.31[39m
+2025-03-04T14:00:52.3297310Z Running analysis on 1 core sequentially.
+2025-03-04T14:00:52.3298325Z [30;43mYou can enable parallel runner and speed up the analysis! Please see [39;49m[31;43m]8;;https://cs.symfony.com/doc/usage.html\usage docs]8;;\[39;49m[30;43m for more information.[39;49m
+2025-03-04T14:00:52.3299449Z Loaded config [33mdefault[39m from "/home/runner/work/paraunit/paraunit/.php-cs-fixer.dist.php".
+2025-03-04T14:00:55.6873395Z    0/212 [░░░░░░░░░░░░░░░░░░░░░░░░░░░░]   0%[1G[2K  22/212 [▓▓░░░░░░░░░░░░░░░░░░░░░░░░░░]  10%[1G[2K  43/212 [▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░░░░]  20%[1G[2K  64/212 [▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░]  30%[1G[2K  85/212 [▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░]  40%[1G[2K 106/212 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░]  50%[1G[2K 128/212 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░░░░]  60%[1G[2K 149/212 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░░░░]  70%[1G[2K 170/212 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░]  80%[1G[2K 191/212 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░]  90%[1G[2K 212/212 [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%
+2025-03-04T14:00:55.6874544Z 
+2025-03-04T14:00:55.6875104Z    1) tests/Functional/Command/ParallelCommandTest.php ([33mno_extra_blank_lines[39m)
+2025-03-04T14:00:55.6875644Z 
+2025-03-04T14:00:55.6875918Z Found 1 of 212 files that can be fixed in 3.338 seconds, 22.00 MB memory used
+2025-03-04T14:00:55.6880698Z 
+2025-03-04T14:00:55.6881134Z [30;43mDetected deprecations in use:[39;49m
+2025-03-04T14:00:55.6882070Z - Rule "native_function_type_declaration_casing" is deprecated. Use "native_type_declaration_casing" instead.
+2025-03-04T14:00:55.7097037Z ##[error]Process completed with exit code 8.
+2025-03-04T14:00:55.7190331Z Post job cleanup.
+2025-03-04T14:00:55.7238635Z Post job cleanup.
+2025-03-04T14:00:55.8179225Z [command]/usr/bin/git version
+2025-03-04T14:00:55.8218653Z git version 2.48.1
+2025-03-04T14:00:55.8272698Z Temporarily overriding HOME='/home/runner/work/_temp/116732f8-d334-4718-9767-e7afd9e2c7fd' before making global git config changes
+2025-03-04T14:00:55.8273695Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-04T14:00:55.8278065Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/paraunit/paraunit
+2025-03-04T14:00:55.8312302Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-04T14:00:55.8343881Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-04T14:00:55.8577897Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-04T14:00:55.8598592Z http.https://github.com/.extraheader
+2025-03-04T14:00:55.8611589Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-04T14:00:55.8645252Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-04T14:00:55.8975178Z Cleaning up orphan processes

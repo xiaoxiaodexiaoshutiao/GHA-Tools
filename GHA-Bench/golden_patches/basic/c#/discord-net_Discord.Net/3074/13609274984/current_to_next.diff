@@ -1,0 +1,13 @@
+diff --git a/src/Discord.Net.Rest/BaseDiscordClient.cs b/src/Discord.Net.Rest/BaseDiscordClient.cs
+index 5eb56b6b13..a242dc77ea 100644
+--- a/src/Discord.Net.Rest/BaseDiscordClient.cs
++++ b/src/Discord.Net.Rest/BaseDiscordClient.cs
+@@ -287,7 +287,7 @@ Task IDiscordClient.DeleteTestEntitlementAsync(ulong entitlementId, RequestOptio
+         ///     Returns all entitlements for a given app.
+         /// </summary>
+         IAsyncEnumerable<IReadOnlyCollection<IEntitlement>> IDiscordClient.GetEntitlementsAsync(int limit, ulong? afterId, ulong? beforeId,
+-            bool excludeEnded, ulong? guildId, ulong? userId, ulong[] skuIds, RequestOptions options) => AsyncEnumerable.Empty<IReadOnlyCollection<IEntitlement>>();
++            bool excludeEnded, ulong? guildId, ulong? userId, ulong[] skuIds, RequestOptions options, bool? excludeDeleted) => AsyncEnumerable.Empty<IReadOnlyCollection<IEntitlement>>();
+ 
+         /// <summary>
+         ///     Gets all SKUs for a given application.

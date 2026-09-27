@@ -1,0 +1,303 @@
+﻿2025-03-24T18:53:42.1249294Z Current runner version: '2.323.0'
+2025-03-24T18:53:42.1283885Z ##[group]Operating System
+2025-03-24T18:53:42.1285010Z Ubuntu
+2025-03-24T18:53:42.1286005Z 24.04.2
+2025-03-24T18:53:42.1286771Z LTS
+2025-03-24T18:53:42.1287605Z ##[endgroup]
+2025-03-24T18:53:42.1288560Z ##[group]Runner Image
+2025-03-24T18:53:42.1289656Z Image: ubuntu-24.04
+2025-03-24T18:53:42.1290687Z Version: 20250323.1.0
+2025-03-24T18:53:42.1292555Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-24T18:53:42.1295083Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-03-24T18:53:42.1296626Z ##[endgroup]
+2025-03-24T18:53:42.1297556Z ##[group]Runner Image Provisioner
+2025-03-24T18:53:42.1298588Z 2.0.422.1
+2025-03-24T18:53:42.1299404Z ##[endgroup]
+2025-03-24T18:53:42.1303733Z ##[group]GITHUB_TOKEN Permissions
+2025-03-24T18:53:42.1306616Z Actions: read
+2025-03-24T18:53:42.1307792Z Attestations: read
+2025-03-24T18:53:42.1308742Z Checks: read
+2025-03-24T18:53:42.1309689Z Contents: read
+2025-03-24T18:53:42.1310851Z Deployments: read
+2025-03-24T18:53:42.1311840Z Discussions: read
+2025-03-24T18:53:42.1312847Z Issues: read
+2025-03-24T18:53:42.1313664Z Metadata: read
+2025-03-24T18:53:42.1314431Z Models: read
+2025-03-24T18:53:42.1315191Z Packages: read
+2025-03-24T18:53:42.1315992Z Pages: read
+2025-03-24T18:53:42.1316735Z PullRequests: read
+2025-03-24T18:53:42.1317662Z RepositoryProjects: read
+2025-03-24T18:53:42.1318595Z SecurityEvents: read
+2025-03-24T18:53:42.1319367Z Statuses: read
+2025-03-24T18:53:42.1320086Z ##[endgroup]
+2025-03-24T18:53:42.1323308Z Secret source: None
+2025-03-24T18:53:42.1324434Z Prepare workflow directory
+2025-03-24T18:53:42.1773862Z Prepare all required actions
+2025-03-24T18:53:42.1827703Z Getting action download info
+2025-03-24T18:53:42.6296867Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-03-24T18:53:42.6297761Z Version: 4.2.2
+2025-03-24T18:53:42.6298619Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-03-24T18:53:42.6299682Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-03-24T18:53:42.6300313Z ##[endgroup]
+2025-03-24T18:53:42.7288123Z ##[group]Download immutable action package 'actions/setup-java@v4'
+2025-03-24T18:53:42.7288809Z Version: 4.7.0
+2025-03-24T18:53:42.7289455Z Digest: sha256:5f5c07139c6dc32a599e9e0b973af500cb67a72aa7e5c437df96130dd73c8479
+2025-03-24T18:53:42.7290328Z Source commit SHA: 3a4f6e1af504cf6a31855fa899c6aa5355ba6c12
+2025-03-24T18:53:42.7291175Z ##[endgroup]
+2025-03-24T18:53:43.0116871Z Download action repository 'gradle/actions@v3' (SHA:d9c87d481d55275bb5441eef3fe0e46805f9ef70)
+2025-03-24T18:53:43.6319745Z ##[group]Download immutable action package 'actions/upload-artifact@v4'
+2025-03-24T18:53:43.6321271Z Version: 4.6.2
+2025-03-24T18:53:43.6322421Z Digest: sha256:290722aa3281d5caf23d0acdc3dbeb3424786a1a01a9cc97e72f147225e37c38
+2025-03-24T18:53:43.6324062Z Source commit SHA: ea165f8d65b6e75b540449e92b4886f43607fa02
+2025-03-24T18:53:43.6325193Z ##[endgroup]
+2025-03-24T18:53:44.0111949Z Complete job name: build
+2025-03-24T18:53:44.0864682Z ##[group]Run actions/checkout@v4
+2025-03-24T18:53:44.0865956Z with:
+2025-03-24T18:53:44.0866729Z   repository: MinecraftTAS/TASmod
+2025-03-24T18:53:44.0867945Z   token: ***
+2025-03-24T18:53:44.0868681Z   ssh-strict: true
+2025-03-24T18:53:44.0869443Z   ssh-user: git
+2025-03-24T18:53:44.0870240Z   persist-credentials: true
+2025-03-24T18:53:44.0871429Z   clean: true
+2025-03-24T18:53:44.0872219Z   sparse-checkout-cone-mode: true
+2025-03-24T18:53:44.0873204Z   fetch-depth: 1
+2025-03-24T18:53:44.0873968Z   fetch-tags: false
+2025-03-24T18:53:44.0874760Z   show-progress: true
+2025-03-24T18:53:44.0875570Z   lfs: false
+2025-03-24T18:53:44.0876325Z   submodules: false
+2025-03-24T18:53:44.0877121Z   set-safe-directory: true
+2025-03-24T18:53:44.0878296Z ##[endgroup]
+2025-03-24T18:53:44.2860954Z Syncing repository: MinecraftTAS/TASmod
+2025-03-24T18:53:44.2864218Z ##[group]Getting Git version info
+2025-03-24T18:53:44.2866655Z Working directory is '/home/runner/work/TASmod/TASmod'
+2025-03-24T18:53:44.2869730Z [command]/usr/bin/git version
+2025-03-24T18:53:44.2918739Z git version 2.49.0
+2025-03-24T18:53:44.2949244Z ##[endgroup]
+2025-03-24T18:53:44.2965107Z Temporarily overriding HOME='/home/runner/work/_temp/8d2ee85b-f0dd-4fda-8177-23cc380d420d' before making global git config changes
+2025-03-24T18:53:44.2969824Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-24T18:53:44.2973671Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/TASmod/TASmod
+2025-03-24T18:53:44.3013322Z Deleting the contents of '/home/runner/work/TASmod/TASmod'
+2025-03-24T18:53:44.3017010Z ##[group]Initializing the repository
+2025-03-24T18:53:44.3022146Z [command]/usr/bin/git init /home/runner/work/TASmod/TASmod
+2025-03-24T18:53:44.3090946Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-24T18:53:44.3092854Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-24T18:53:44.3095316Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-24T18:53:44.3097286Z hint:
+2025-03-24T18:53:44.3098805Z hint: 	git config --global init.defaultBranch <name>
+2025-03-24T18:53:44.3100961Z hint:
+2025-03-24T18:53:44.3102817Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-24T18:53:44.3105824Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-24T18:53:44.3108278Z hint:
+2025-03-24T18:53:44.3109532Z hint: 	git branch -m <name>
+2025-03-24T18:53:44.3111974Z Initialized empty Git repository in /home/runner/work/TASmod/TASmod/.git/
+2025-03-24T18:53:44.3116160Z [command]/usr/bin/git remote add origin https://github.com/MinecraftTAS/TASmod
+2025-03-24T18:53:44.3144424Z ##[endgroup]
+2025-03-24T18:53:44.3145839Z ##[group]Disabling automatic garbage collection
+2025-03-24T18:53:44.3148779Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-24T18:53:44.3181113Z ##[endgroup]
+2025-03-24T18:53:44.3183288Z ##[group]Setting up auth
+2025-03-24T18:53:44.3188552Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-24T18:53:44.3221784Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-24T18:53:44.3528100Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-24T18:53:44.3560587Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-24T18:53:44.3787192Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-24T18:53:44.3820901Z ##[endgroup]
+2025-03-24T18:53:44.3822221Z ##[group]Fetching the repository
+2025-03-24T18:53:44.3831174Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +bd926220989467a311144b458ff77e2e0cd87bfa:refs/remotes/pull/227/merge
+2025-03-24T18:53:44.6937306Z From https://github.com/MinecraftTAS/TASmod
+2025-03-24T18:53:44.6972407Z  * [new ref]         bd926220989467a311144b458ff77e2e0cd87bfa -> pull/227/merge
+2025-03-24T18:53:44.6977221Z ##[endgroup]
+2025-03-24T18:53:44.6979350Z ##[group]Determining the checkout info
+2025-03-24T18:53:44.6982043Z ##[endgroup]
+2025-03-24T18:53:44.6983437Z [command]/usr/bin/git sparse-checkout disable
+2025-03-24T18:53:44.7020858Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-24T18:53:44.7051802Z ##[group]Checking out the ref
+2025-03-24T18:53:44.7055799Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/227/merge
+2025-03-24T18:53:44.7233980Z Note: switching to 'refs/remotes/pull/227/merge'.
+2025-03-24T18:53:44.7234852Z 
+2025-03-24T18:53:44.7235838Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-24T18:53:44.7237780Z changes and commit them, and you can discard any commits you make in this
+2025-03-24T18:53:44.7240910Z state without impacting any branches by switching back to a branch.
+2025-03-24T18:53:44.7242714Z 
+2025-03-24T18:53:44.7243814Z If you want to create a new branch to retain commits you create, you may
+2025-03-24T18:53:44.7246445Z do so (now or later) by using -c with the switch command. Example:
+2025-03-24T18:53:44.7248002Z 
+2025-03-24T18:53:44.7248615Z   git switch -c <new-branch-name>
+2025-03-24T18:53:44.7249653Z 
+2025-03-24T18:53:44.7250213Z Or undo this operation with:
+2025-03-24T18:53:44.7251367Z 
+2025-03-24T18:53:44.7251867Z   git switch -
+2025-03-24T18:53:44.7252620Z 
+2025-03-24T18:53:44.7253394Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-24T18:53:44.7254594Z 
+2025-03-24T18:53:44.7255777Z HEAD is now at bd92622 Merge 62c39c7a07c7c0901875f74aee3436bb996294c5 into fc10ac6441ed5ebbf06bbd9d78ae67a0da034533
+2025-03-24T18:53:44.7260267Z ##[endgroup]
+2025-03-24T18:53:44.7279096Z [command]/usr/bin/git log -1 --format=%H
+2025-03-24T18:53:44.7303683Z bd926220989467a311144b458ff77e2e0cd87bfa
+2025-03-24T18:53:44.7617419Z ##[group]Run actions/setup-java@v4
+2025-03-24T18:53:44.7618329Z with:
+2025-03-24T18:53:44.7618982Z   java-version: 17
+2025-03-24T18:53:44.7619707Z   distribution: temurin
+2025-03-24T18:53:44.7620627Z   architecture: x64
+2025-03-24T18:53:44.7621354Z   java-package: jdk
+2025-03-24T18:53:44.7622096Z   check-latest: false
+2025-03-24T18:53:44.7622848Z   server-id: github
+2025-03-24T18:53:44.7623606Z   server-username: GITHUB_ACTOR
+2025-03-24T18:53:44.7624503Z   server-password: GITHUB_TOKEN
+2025-03-24T18:53:44.7625380Z   overwrite-settings: true
+2025-03-24T18:53:44.7626197Z   job-status: success
+2025-03-24T18:53:44.7627163Z   token: ***
+2025-03-24T18:53:44.7627840Z ##[endgroup]
+2025-03-24T18:53:44.9564482Z ##[group]Installed distributions
+2025-03-24T18:53:44.9606554Z Resolved Java 17.0.14+7 from tool-cache
+2025-03-24T18:53:44.9608340Z Setting Java 17.0.14+7 as the default
+2025-03-24T18:53:44.9620692Z Creating toolchains.xml for JDK version 17 from temurin
+2025-03-24T18:53:44.9695959Z Writing to /home/runner/.m2/toolchains.xml
+2025-03-24T18:53:44.9697203Z 
+2025-03-24T18:53:44.9697761Z Java configuration:
+2025-03-24T18:53:44.9699073Z   Distribution: temurin
+2025-03-24T18:53:44.9700375Z   Version: 17.0.14+7
+2025-03-24T18:53:44.9702414Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.14-7/x64
+2025-03-24T18:53:44.9703842Z 
+2025-03-24T18:53:44.9705158Z ##[endgroup]
+2025-03-24T18:53:44.9720319Z Creating settings.xml with server-id: github
+2025-03-24T18:53:44.9737345Z Writing to /home/runner/.m2/settings.xml
+2025-03-24T18:53:45.0017269Z ##[group]Run gradle/actions/setup-gradle@v3
+2025-03-24T18:53:45.0017992Z with:
+2025-03-24T18:53:45.0018475Z   gradle-version: 8.10.2
+2025-03-24T18:53:45.0019081Z   cache-disabled: false
+2025-03-24T18:53:45.0019652Z   cache-read-only: true
+2025-03-24T18:53:45.0020264Z   cache-write-only: false
+2025-03-24T18:53:45.0021043Z   cache-overwrite-existing: false
+2025-03-24T18:53:45.0021844Z   gradle-home-cache-includes: caches
+notifications
+
+2025-03-24T18:53:45.0022695Z   gradle-home-cache-cleanup: false
+2025-03-24T18:53:45.0023375Z   add-job-summary: always
+2025-03-24T18:53:45.0024037Z   add-job-summary-as-pr-comment: never
+2025-03-24T18:53:45.0024756Z   dependency-graph: disabled
+2025-03-24T18:53:45.0025483Z   dependency-graph-continue-on-failure: true
+2025-03-24T18:53:45.0026261Z   build-scan-publish: false
+2025-03-24T18:53:45.0026907Z   validate-wrappers: false
+2025-03-24T18:53:45.0027538Z   generate-job-summary: true
+2025-03-24T18:53:45.0028277Z   gradle-home-cache-strict-match: false
+2025-03-24T18:53:45.0029011Z   workflow-job-context: null
+2025-03-24T18:53:45.0029907Z   github-token: ***
+2025-03-24T18:53:45.0030534Z env:
+2025-03-24T18:53:45.0031283Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.14-7/x64
+2025-03-24T18:53:45.0032733Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.14-7/x64
+2025-03-24T18:53:45.0033682Z ##[endgroup]
+2025-03-24T18:53:46.1927857Z Merged default JDK locations into /home/runner/.m2/toolchains.xml
+2025-03-24T18:53:46.1930985Z ##[group]Restore Gradle state from cache
+2025-03-24T18:53:47.1763236Z Cache Size: ~83 MB (87179531 B)
+2025-03-24T18:53:47.1801521Z [command]/usr/bin/tar -xf /home/runner/work/_temp/3c76ea4b-53c5-4eb5-96e5-ff15adebda91/cache.tzst -P -C /home/runner/work/TASmod/TASmod --use-compress-program unzstd
+2025-03-24T18:53:47.3667687Z Cache restored successfully
+2025-03-24T18:53:47.3857948Z Restored Gradle User Home from cache key: gradle-home-v1|Linux|build[52f47880dfe259e9e216d078abfb7500]-fc10ac6441ed5ebbf06bbd9d78ae67a0da034533
+2025-03-24T18:53:47.4695296Z Received 87179531 of 87179531 (100.0%), 83.1 MBs/sec
+2025-03-24T18:53:47.6062697Z Cache Size: ~0 MB (81583 B)
+2025-03-24T18:53:47.6085092Z [command]/usr/bin/tar -xf /home/runner/work/_temp/df77e697-f515-4b5b-a634-9e7e157845e6/cache.tzst -P -C /home/runner/work/TASmod/TASmod --use-compress-program unzstd
+2025-03-24T18:53:47.6128995Z Cache Size: ~0 MB (124401 B)
+2025-03-24T18:53:47.6155813Z [command]/usr/bin/tar -xf /home/runner/work/_temp/ccdfc5ef-e22d-43e6-bebc-45f97c8dbf7c/cache.tzst -P -C /home/runner/work/TASmod/TASmod --use-compress-program unzstd
+2025-03-24T18:53:47.6210154Z Cache restored successfully
+2025-03-24T18:53:47.6213085Z Restored instrumented-jars with key gradle-instrumented-jars-v1-bd9548f21764f6b5b08061d1cdf4bb02 to /home/runner/.gradle/caches/jars-*/*/
+2025-03-24T18:53:47.6320599Z Cache restored successfully
+2025-03-24T18:53:47.6322798Z Restored groovy-dsl with key gradle-groovy-dsl-v1-1a918c405e6752780448708083efc146 to /home/runner/.gradle/caches/*/groovy-dsl/*/
+2025-03-24T18:53:47.7243704Z Cache Size: ~12 MB (12588863 B)
+2025-03-24T18:53:47.7402146Z [command]/usr/bin/tar -xf /home/runner/work/_temp/a51ed9c1-495a-434e-a964-e8e63e608a24/cache.tzst -P -C /home/runner/work/TASmod/TASmod --use-compress-program unzstd
+2025-03-24T18:53:47.8808832Z Cache restored successfully
+2025-03-24T18:53:47.8839255Z Restored transforms with key gradle-transforms-v1-6b0b7f1d92f23a61beb0de386bfff35a to /home/runner/.gradle/caches/transforms-4/*/
+2025-03-24T18:53:47.8839975Z /home/runner/.gradle/caches/*/transforms/*/
+2025-03-24T18:53:48.2023912Z Cache Size: ~56 MB (59034058 B)
+2025-03-24T18:53:48.2089950Z [command]/usr/bin/tar -xf /home/runner/work/_temp/0d2557b1-b409-4daf-b0e6-5d07d534768e/cache.tzst -P -C /home/runner/work/TASmod/TASmod --use-compress-program unzstd
+2025-03-24T18:53:48.3166634Z Cache restored successfully
+2025-03-24T18:53:48.3292206Z Restored dependencies with key gradle-dependencies-v1-6cb61bcbd2f8d0b4b378ddcef6368702 to /home/runner/.gradle/caches/modules-*/files-*/*/*/*/*
+2025-03-24T18:53:48.3303592Z ##[endgroup]
+2025-03-24T18:53:48.4016087Z ##[group]Provision Gradle 8.10.2
+2025-03-24T18:53:48.5207018Z Received 81583 of 81583 (100.0%), 0.1 MBs/sec
+2025-03-24T18:53:48.5326747Z Received 124401 of 124401 (100.0%), 0.1 MBs/sec
+2025-03-24T18:53:48.5329047Z Received 12588863 of 12588863 (100.0%), 12.0 MBs/sec
+2025-03-24T18:53:48.5406149Z Received 59034058 of 59034058 (100.0%), 56.3 MBs/sec
+2025-03-24T18:53:49.3661173Z Cache Size: ~130 MB (136494016 B)
+2025-03-24T18:53:49.3691585Z [command]/usr/bin/tar -xf /home/runner/work/_temp/d9192d51-a503-4b77-a14d-cf583f9f8c64/cache.tzst -P -C /home/runner/work/TASmod/TASmod --use-compress-program unzstd
+2025-03-24T18:53:49.5259062Z Received 136494016 of 136494016 (100.0%), 130.0 MBs/sec
+2025-03-24T18:53:49.5540036Z Cache restored successfully
+2025-03-24T18:53:49.5831029Z Restored Gradle distribution gradle-8.10.2 from cache to /home/runner/gradle-installations/downloads/gradle-8.10.2-bin.zip
+2025-03-24T18:53:49.5848579Z [command]/usr/bin/unzip -o -q /home/runner/gradle-installations/downloads/gradle-8.10.2-bin.zip
+2025-03-24T18:53:50.6077912Z Extracted Gradle 8.10.2 to /home/runner/gradle-installations/installs/gradle-8.10.2
+2025-03-24T18:53:50.6079959Z Provisioned Gradle executable /home/runner/gradle-installations/installs/gradle-8.10.2/bin/gradle
+2025-03-24T18:53:50.6081769Z ##[endgroup]
+2025-03-24T18:53:50.6281764Z ##[group]Run gradle build
+2025-03-24T18:53:50.6282095Z [36;1mgradle build[0m
+2025-03-24T18:53:50.6332978Z shell: /usr/bin/bash -e {0}
+2025-03-24T18:53:50.6333255Z env:
+2025-03-24T18:53:50.6333590Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.14-7/x64
+2025-03-24T18:53:50.6334076Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.14-7/x64
+2025-03-24T18:53:50.6334490Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+2025-03-24T18:53:50.6334809Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+2025-03-24T18:53:50.6335105Z   GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+2025-03-24T18:53:50.6335539Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+2025-03-24T18:53:50.6336014Z   DEVELOCITY_AUTO_INJECTION_CUSTOM_VALUE: gradle-actions
+2025-03-24T18:53:50.6336339Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+2025-03-24T18:53:50.6336628Z ##[endgroup]
+2025-03-24T18:53:52.1307498Z Starting a Gradle Daemon (subsequent builds will be faster)
+2025-03-24T18:54:04.1340579Z 
+2025-03-24T18:54:04.1341699Z FAILURE: Build failed with an exception.
+2025-03-24T18:54:04.1344953Z 
+2025-03-24T18:54:04.1345751Z * What went wrong:
+2025-03-24T18:54:04.1347708Z A problem occurred configuring root project 'TASmod'.
+2025-03-24T18:54:04.1348425Z > Could not resolve all artifacts for configuration ':classpath'.
+2025-03-24T18:54:04.1349151Z    > Could not resolve net.fabricmc:fabric-loom:1.10-SNAPSHOT.
+2025-03-24T18:54:04.1349707Z      Required by:
+2025-03-24T18:54:04.1350329Z          root project : > fabric-loom:fabric-loom.gradle.plugin:1.10-SNAPSHOT:20250323.164030-5
+2025-03-24T18:54:04.1351915Z          root project : > legacy-looming:legacy-looming.gradle.plugin:1.10-SNAPSHOT:20250218.180447-1 > net.legacyfabric:legacy-looming:1.10-SNAPSHOT:20250218.180447-1
+2025-03-24T18:54:04.1358091Z       > Plugin net.fabricmc:fabric-loom:1.10-SNAPSHOT:20250323.164030-5 requires at least Gradle 8.12. This build uses Gradle 8.10.2.
+2025-03-24T18:54:04.1363065Z 
+2025-03-24T18:54:04.1363991Z * Try:
+2025-03-24T18:54:04.1365683Z > Upgrade to at least Gradle 8.12. See the instructions at https://docs.gradle.org/8.10.2/userguide/upgrading_version_8.html#sub:updating-gradle.
+2025-03-24T18:54:04.1367926Z > Downgrade plugin net.fabricmc:fabric-loom:1.10-SNAPSHOT:20250323.164030-5 to an older version compatible with Gradle 8.10.2.
+2025-03-24T18:54:04.1369607Z > Run with --stacktrace option to get the stack trace.
+2025-03-24T18:54:04.1372166Z > Run with --info or --debug option to get more log output.
+2025-03-24T18:54:04.1373076Z > Run with --scan to get full insights.
+2025-03-24T18:54:04.1373855Z > Get more help at https://help.gradle.org.
+2025-03-24T18:54:04.1375076Z 
+2025-03-24T18:54:04.1375348Z BUILD FAILED in 13s
+2025-03-24T18:54:04.5890310Z ##[error]Process completed with exit code 1.
+2025-03-24T18:54:04.5976398Z ##[group]Run actions/upload-artifact@v4
+2025-03-24T18:54:04.5976745Z with:
+2025-03-24T18:54:04.5976949Z   name: TestResult
+2025-03-24T18:54:04.5977192Z   path: build/test-results/test/*.xml
+2025-03-24T18:54:04.5977476Z   if-no-files-found: warn
+2025-03-24T18:54:04.5977712Z   compression-level: 6
+2025-03-24T18:54:04.5977941Z   overwrite: false
+2025-03-24T18:54:04.5978174Z   include-hidden-files: false
+2025-03-24T18:54:04.5978415Z env:
+2025-03-24T18:54:04.5978722Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.14-7/x64
+2025-03-24T18:54:04.5979190Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.14-7/x64
+2025-03-24T18:54:04.5979595Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+2025-03-24T18:54:04.5979905Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+2025-03-24T18:54:04.5980206Z   GRADLE_BUILD_ACTION_CACHE_RESTORED: true
+2025-03-24T18:54:04.5980833Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+2025-03-24T18:54:04.5981343Z   DEVELOCITY_AUTO_INJECTION_CUSTOM_VALUE: gradle-actions
+2025-03-24T18:54:04.5981865Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+2025-03-24T18:54:04.5982137Z ##[endgroup]
+2025-03-24T18:54:04.8067929Z ##[warning]No files were found with the provided path: build/test-results/test/*.xml. No artifacts will be uploaded.
+2025-03-24T18:54:04.8272792Z Post job cleanup.
+2025-03-24T18:54:05.0637064Z In post-action step
+2025-03-24T18:54:05.0642727Z Cache is read-only: will not save state for use in subsequent builds.
+2025-03-24T18:54:05.0647526Z Generating Job Summary
+2025-03-24T18:54:05.0667835Z Completed post-action step
+2025-03-24T18:54:05.0810559Z Post job cleanup.
+2025-03-24T18:54:05.2530172Z Post job cleanup.
+2025-03-24T18:54:05.3462320Z [command]/usr/bin/git version
+2025-03-24T18:54:05.3511005Z git version 2.49.0
+2025-03-24T18:54:05.3554626Z Temporarily overriding HOME='/home/runner/work/_temp/90704460-e4a9-48e2-b1e5-10076ae938f3' before making global git config changes
+2025-03-24T18:54:05.3555975Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-24T18:54:05.3561072Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/TASmod/TASmod
+2025-03-24T18:54:05.3598365Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-24T18:54:05.3633738Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-24T18:54:05.3891090Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-24T18:54:05.3914242Z http.https://github.com/.extraheader
+2025-03-24T18:54:05.3932874Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-24T18:54:05.3968107Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-24T18:54:05.4314155Z Cleaning up orphan processes
+2025-03-24T18:54:05.4605869Z Terminate orphan process: pid (1969) (java)

@@ -1,0 +1,220 @@
+﻿2025-03-19T00:41:10.2247310Z Current runner version: '2.322.0'
+2025-03-19T00:41:10.2274065Z ##[group]Operating System
+2025-03-19T00:41:10.2275101Z Ubuntu
+2025-03-19T00:41:10.2275545Z 24.04.2
+2025-03-19T00:41:10.2276124Z LTS
+2025-03-19T00:41:10.2276556Z ##[endgroup]
+2025-03-19T00:41:10.2277070Z ##[group]Runner Image
+2025-03-19T00:41:10.2277666Z Image: ubuntu-24.04
+2025-03-19T00:41:10.2278212Z Version: 20250316.1.0
+2025-03-19T00:41:10.2279244Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250316.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-19T00:41:10.2280626Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250316.1
+2025-03-19T00:41:10.2281518Z ##[endgroup]
+2025-03-19T00:41:10.2282019Z ##[group]Runner Image Provisioner
+2025-03-19T00:41:10.2282633Z 2.0.422.1
+2025-03-19T00:41:10.2283052Z ##[endgroup]
+2025-03-19T00:41:10.2285546Z ##[group]GITHUB_TOKEN Permissions
+2025-03-19T00:41:10.2287726Z Actions: read
+2025-03-19T00:41:10.2288598Z Attestations: read
+2025-03-19T00:41:10.2289180Z Checks: read
+2025-03-19T00:41:10.2289639Z Contents: read
+2025-03-19T00:41:10.2290184Z Deployments: read
+2025-03-19T00:41:10.2290705Z Discussions: read
+2025-03-19T00:41:10.2291159Z Issues: read
+2025-03-19T00:41:10.2291678Z Metadata: read
+2025-03-19T00:41:10.2292118Z Packages: read
+2025-03-19T00:41:10.2292612Z Pages: read
+2025-03-19T00:41:10.2293079Z PullRequests: read
+2025-03-19T00:41:10.2293621Z RepositoryProjects: read
+2025-03-19T00:41:10.2294380Z SecurityEvents: read
+2025-03-19T00:41:10.2294981Z Statuses: read
+2025-03-19T00:41:10.2295548Z ##[endgroup]
+2025-03-19T00:41:10.2297477Z Secret source: None
+2025-03-19T00:41:10.2298458Z Prepare workflow directory
+2025-03-19T00:41:10.2614975Z Prepare all required actions
+2025-03-19T00:41:10.2651806Z Getting action download info
+2025-03-19T00:41:10.6405805Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-19T00:41:10.7477360Z Download action repository 'actions/setup-node@v4' (SHA:cdca7365b2dadb8aad0a33bc7601856ffabcc48e)
+2025-03-19T00:41:11.1398365Z Complete job name: check-linters
+2025-03-19T00:41:11.2033772Z ##[group]Run git config --global core.autocrlf false
+2025-03-19T00:41:11.2034709Z [36;1mgit config --global core.autocrlf false[0m
+2025-03-19T00:41:11.2091351Z shell: /usr/bin/bash -e {0}
+2025-03-19T00:41:11.2092601Z ##[endgroup]
+2025-03-19T00:41:11.2607786Z ##[group]Run actions/checkout@v4
+2025-03-19T00:41:11.2608305Z with:
+2025-03-19T00:41:11.2608687Z   repository: louislam/uptime-kuma
+2025-03-19T00:41:11.2609306Z   token: ***
+2025-03-19T00:41:11.2609684Z   ssh-strict: true
+2025-03-19T00:41:11.2610066Z   ssh-user: git
+2025-03-19T00:41:11.2610460Z   persist-credentials: true
+2025-03-19T00:41:11.2610894Z   clean: true
+2025-03-19T00:41:11.2611276Z   sparse-checkout-cone-mode: true
+2025-03-19T00:41:11.2611754Z   fetch-depth: 1
+2025-03-19T00:41:11.2612120Z   fetch-tags: false
+2025-03-19T00:41:11.2612518Z   show-progress: true
+2025-03-19T00:41:11.2612918Z   lfs: false
+2025-03-19T00:41:11.2613278Z   submodules: false
+2025-03-19T00:41:11.2613686Z   set-safe-directory: true
+2025-03-19T00:41:11.2614260Z ##[endgroup]
+2025-03-19T00:41:11.4733377Z Syncing repository: louislam/uptime-kuma
+2025-03-19T00:41:11.4735384Z ##[group]Getting Git version info
+2025-03-19T00:41:11.4736091Z Working directory is '/home/runner/work/uptime-kuma/uptime-kuma'
+2025-03-19T00:41:11.4737100Z [command]/usr/bin/git version
+2025-03-19T00:41:11.4760048Z git version 2.48.1
+2025-03-19T00:41:11.4788750Z ##[endgroup]
+2025-03-19T00:41:11.4797971Z Copying '/home/runner/.gitconfig' to '/home/runner/work/_temp/ef436739-3bed-43c1-9404-243ebf295b66/.gitconfig'
+2025-03-19T00:41:11.4808198Z Temporarily overriding HOME='/home/runner/work/_temp/ef436739-3bed-43c1-9404-243ebf295b66' before making global git config changes
+2025-03-19T00:41:11.4809614Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-19T00:41:11.4812908Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/uptime-kuma/uptime-kuma
+2025-03-19T00:41:11.4843694Z Deleting the contents of '/home/runner/work/uptime-kuma/uptime-kuma'
+2025-03-19T00:41:11.4847495Z ##[group]Initializing the repository
+2025-03-19T00:41:11.4852259Z [command]/usr/bin/git init /home/runner/work/uptime-kuma/uptime-kuma
+2025-03-19T00:41:11.4924475Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-19T00:41:11.4925415Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-19T00:41:11.4926290Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-19T00:41:11.4926925Z hint:
+2025-03-19T00:41:11.4927390Z hint: 	git config --global init.defaultBranch <name>
+2025-03-19T00:41:11.4927947Z hint:
+2025-03-19T00:41:11.4928477Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-19T00:41:11.4929354Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-19T00:41:11.4930039Z hint:
+2025-03-19T00:41:11.4930404Z hint: 	git branch -m <name>
+2025-03-19T00:41:11.4933147Z Initialized empty Git repository in /home/runner/work/uptime-kuma/uptime-kuma/.git/
+2025-03-19T00:41:11.4942926Z [command]/usr/bin/git remote add origin https://github.com/louislam/uptime-kuma
+2025-03-19T00:41:11.4975189Z ##[endgroup]
+2025-03-19T00:41:11.4975928Z ##[group]Disabling automatic garbage collection
+2025-03-19T00:41:11.4979362Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-19T00:41:11.5008753Z ##[endgroup]
+2025-03-19T00:41:11.5009937Z ##[group]Setting up auth
+2025-03-19T00:41:11.5016370Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-19T00:41:11.5047225Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-19T00:41:11.5368503Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-19T00:41:11.5399571Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-19T00:41:11.5627861Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-19T00:41:11.5665170Z ##[endgroup]
+2025-03-19T00:41:11.5665920Z ##[group]Fetching the repository
+2025-03-19T00:41:11.5675213Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +4c19fbaa63c06f8343ca29273a2fb63644780021:refs/remotes/pull/5668/merge
+2025-03-19T00:41:12.1232485Z From https://github.com/louislam/uptime-kuma
+2025-03-19T00:41:12.1234798Z  * [new ref]         4c19fbaa63c06f8343ca29273a2fb63644780021 -> pull/5668/merge
+2025-03-19T00:41:12.1257359Z ##[endgroup]
+2025-03-19T00:41:12.1258434Z ##[group]Determining the checkout info
+2025-03-19T00:41:12.1259938Z ##[endgroup]
+2025-03-19T00:41:12.1264471Z [command]/usr/bin/git sparse-checkout disable
+2025-03-19T00:41:12.1304518Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-19T00:41:12.1334370Z ##[group]Checking out the ref
+2025-03-19T00:41:12.1338332Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/5668/merge
+2025-03-19T00:41:12.1769066Z Note: switching to 'refs/remotes/pull/5668/merge'.
+2025-03-19T00:41:12.1770339Z 
+2025-03-19T00:41:12.1770957Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-19T00:41:12.1772699Z changes and commit them, and you can discard any commits you make in this
+2025-03-19T00:41:12.1775742Z state without impacting any branches by switching back to a branch.
+2025-03-19T00:41:12.1777441Z 
+2025-03-19T00:41:12.1778586Z If you want to create a new branch to retain commits you create, you may
+2025-03-19T00:41:12.1781208Z do so (now or later) by using -c with the switch command. Example:
+2025-03-19T00:41:12.1782630Z 
+2025-03-19T00:41:12.1783202Z   git switch -c <new-branch-name>
+2025-03-19T00:41:12.1784630Z 
+2025-03-19T00:41:12.1785137Z Or undo this operation with:
+2025-03-19T00:41:12.1785957Z 
+2025-03-19T00:41:12.1786381Z   git switch -
+2025-03-19T00:41:12.1787004Z 
+2025-03-19T00:41:12.1788096Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-19T00:41:12.1789514Z 
+2025-03-19T00:41:12.1790779Z HEAD is now at 4c19fba Merge 6dd37e1ab13c80376f9e06a3a9dee8cfcaaf1219 into 6f8f8f955f1d47016b43db62bf8757bb5b108abf
+2025-03-19T00:41:12.1795169Z ##[endgroup]
+2025-03-19T00:41:12.1815178Z [command]/usr/bin/git log -1 --format=%H
+2025-03-19T00:41:12.1838063Z 4c19fbaa63c06f8343ca29273a2fb63644780021
+2025-03-19T00:41:12.2089733Z ##[group]Run actions/setup-node@v4
+2025-03-19T00:41:12.2090773Z with:
+2025-03-19T00:41:12.2091472Z   node-version: 20
+2025-03-19T00:41:12.2092264Z   always-auth: false
+2025-03-19T00:41:12.2093083Z   check-latest: false
+2025-03-19T00:41:12.2094333Z   token: ***
+2025-03-19T00:41:12.2095072Z ##[endgroup]
+2025-03-19T00:41:12.3939784Z Found in cache @ /opt/hostedtoolcache/node/20.19.0/x64
+2025-03-19T00:41:12.3946305Z ##[group]Environment details
+2025-03-19T00:41:12.7345179Z node: v20.19.0
+2025-03-19T00:41:12.7345804Z npm: 10.8.2
+2025-03-19T00:41:12.7346254Z yarn: 1.22.22
+2025-03-19T00:41:12.7347475Z ##[endgroup]
+2025-03-19T00:41:12.7446530Z ##[group]Run npm install
+2025-03-19T00:41:12.7447036Z [36;1mnpm install[0m
+2025-03-19T00:41:12.7498774Z shell: /usr/bin/bash -e {0}
+2025-03-19T00:41:12.7499204Z ##[endgroup]
+2025-03-19T00:41:16.2996887Z npm warn deprecated topo@3.0.3: This module has moved and is now available at @hapi/topo. Please update your dependencies as this version is no longer maintained an may contain bugs and security issues.
+2025-03-19T00:41:16.7728772Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+2025-03-19T00:41:17.2588678Z npm warn deprecated npmlog@5.0.1: This package is no longer supported.
+2025-03-19T00:41:17.5683279Z npm warn deprecated lodash.get@4.4.2: This package is deprecated. Use the optional chaining (?.) operator instead.
+2025-03-19T00:41:17.8695131Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-03-19T00:41:17.9589453Z npm warn deprecated hoek@6.1.3: This module has moved and is now available at @hapi/hoek. Please update your dependencies as this version is no longer maintained an may contain bugs and security issues.
+2025-03-19T00:41:18.0760552Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-03-19T00:41:18.3896964Z npm warn deprecated event-to-promise@0.7.0: Use promise-toolbox/fromEvent instead
+2025-03-19T00:41:18.5502289Z npm warn deprecated gauge@3.0.2: This package is no longer supported.
+2025-03-19T00:41:19.2767160Z npm warn deprecated are-we-there-yet@2.0.0: This package is no longer supported.
+2025-03-19T00:41:19.5680475Z npm warn deprecated joi@14.3.1: This module has moved and is now available at @hapi/joi. Please update your dependencies as this version is no longer maintained an may contain bugs and security issues.
+2025-03-19T00:41:20.0938204Z npm warn deprecated @playwright/test@1.39.0: Please update to the latest version of Playwright to test up-to-date browsers.
+2025-03-19T00:41:20.1902540Z npm warn deprecated @npmcli/move-file@1.1.2: This functionality has been moved to @npmcli/fs
+2025-03-19T00:41:20.4430839Z npm warn deprecated @humanwhocodes/config-array@0.9.5: Use @eslint/config-array instead
+2025-03-19T00:41:20.7145838Z npm warn deprecated @humanwhocodes/object-schema@1.2.1: Use @eslint/object-schema instead
+2025-03-19T00:41:21.5588516Z npm warn deprecated npmlog@6.0.2: This package is no longer supported.
+2025-03-19T00:41:21.6086003Z npm warn deprecated are-we-there-yet@3.0.1: This package is no longer supported.
+2025-03-19T00:41:21.9440927Z npm warn deprecated gauge@4.0.4: This package is no longer supported.
+2025-03-19T00:41:25.3123864Z npm warn deprecated eslint@8.14.0: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+2025-03-19T00:41:26.6499994Z npm warn deprecated core-js@2.6.12: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
+2025-03-19T00:41:35.6335675Z 
+2025-03-19T00:41:35.6336547Z added 1327 packages, and audited 1328 packages in 23s
+2025-03-19T00:41:35.6341071Z 
+2025-03-19T00:41:35.6341420Z 275 packages are looking for funding
+2025-03-19T00:41:35.6341926Z   run `npm fund` for details
+2025-03-19T00:41:35.6546607Z 
+2025-03-19T00:41:35.6547068Z 11 vulnerabilities (5 moderate, 6 high)
+2025-03-19T00:41:35.6547420Z 
+2025-03-19T00:41:35.6547791Z To address issues that do not require attention, run:
+2025-03-19T00:41:35.6548306Z   npm audit fix
+2025-03-19T00:41:35.6548490Z 
+2025-03-19T00:41:35.6548936Z To address all issues possible (including breaking changes), run:
+2025-03-19T00:41:35.6549489Z   npm audit fix --force
+2025-03-19T00:41:35.6549714Z 
+2025-03-19T00:41:35.6550564Z Some issues need review, and may require choosing
+2025-03-19T00:41:35.6551157Z a different dependency.
+2025-03-19T00:41:35.6551382Z 
+2025-03-19T00:41:35.6551567Z Run `npm audit` for details.
+2025-03-19T00:41:35.6951827Z ##[group]Run npm run lint:prod
+2025-03-19T00:41:35.6952121Z [36;1mnpm run lint:prod[0m
+2025-03-19T00:41:35.7001390Z shell: /usr/bin/bash -e {0}
+2025-03-19T00:41:35.7001620Z ##[endgroup]
+2025-03-19T00:41:35.8108313Z 
+2025-03-19T00:41:35.8108694Z > uptime-kuma@2.0.0-beta.1 lint:prod
+2025-03-19T00:41:35.8109276Z > npm run lint:js-prod && npm run lint:style
+2025-03-19T00:41:35.8109516Z 
+2025-03-19T00:41:35.9192245Z 
+2025-03-19T00:41:35.9192924Z > uptime-kuma@2.0.0-beta.1 lint:js-prod
+2025-03-19T00:41:35.9193667Z > npm run lint:js -- --max-warnings 0
+2025-03-19T00:41:35.9194505Z 
+2025-03-19T00:41:36.0370792Z 
+2025-03-19T00:41:36.0371389Z > uptime-kuma@2.0.0-beta.1 lint:js
+2025-03-19T00:41:36.0372223Z > eslint --ext ".js,.vue" --ignore-path .gitignore . --max-warnings 0
+2025-03-19T00:41:36.0372686Z 
+2025-03-19T00:41:45.3885862Z 
+2025-03-19T00:41:45.3887020Z /home/runner/work/uptime-kuma/uptime-kuma/src/components/notifications/Telegram.vue
+2025-03-19T00:41:45.3918852Z ##[warning]  110:5  warning  The "computed" property should be above the "mounted" property on line 107  vue/order-in-components
+2025-03-19T00:41:45.3925521Z 
+2025-03-19T00:41:45.3925957Z ✖ 1 problem (0 errors, 1 warning)
+2025-03-19T00:41:45.3926387Z   0 errors and 1 warning potentially fixable with the `--fix` option.
+2025-03-19T00:41:45.3926645Z 
+2025-03-19T00:41:45.3926923Z ESLint found too many warnings (maximum: 0).
+2025-03-19T00:41:45.4750873Z ##[error]Process completed with exit code 1.
+2025-03-19T00:41:45.4843021Z Post job cleanup.
+2025-03-19T00:41:45.5776696Z [command]/usr/bin/git version
+2025-03-19T00:41:45.5818965Z git version 2.48.1
+2025-03-19T00:41:45.5854871Z Copying '/home/runner/.gitconfig' to '/home/runner/work/_temp/145c5e90-afb9-4a2e-bf88-990a271078e8/.gitconfig'
+2025-03-19T00:41:45.5863869Z Temporarily overriding HOME='/home/runner/work/_temp/145c5e90-afb9-4a2e-bf88-990a271078e8' before making global git config changes
+2025-03-19T00:41:45.5865161Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-19T00:41:45.5868743Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/uptime-kuma/uptime-kuma
+2025-03-19T00:41:45.5901966Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-19T00:41:45.5933469Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-19T00:41:45.6167207Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-19T00:41:45.6187174Z http.https://github.com/.extraheader
+2025-03-19T00:41:45.6200467Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-19T00:41:45.6232180Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-19T00:41:45.6558131Z Cleaning up orphan processes

@@ -1,0 +1,220 @@
+﻿2025-04-21T18:41:37.1432499Z Current runner version: '2.323.0'
+2025-04-21T18:41:37.1456313Z ##[group]Operating System
+2025-04-21T18:41:37.1457251Z Ubuntu
+2025-04-21T18:41:37.1457695Z 24.04.2
+2025-04-21T18:41:37.1458162Z LTS
+2025-04-21T18:41:37.1458663Z ##[endgroup]
+2025-04-21T18:41:37.1459170Z ##[group]Runner Image
+2025-04-21T18:41:37.1459713Z Image: ubuntu-24.04
+2025-04-21T18:41:37.1460303Z Version: 20250413.1.0
+2025-04-21T18:41:37.1461294Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250413.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-21T18:41:37.1462635Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250413.1
+2025-04-21T18:41:37.1464085Z ##[endgroup]
+2025-04-21T18:41:37.1464608Z ##[group]Runner Image Provisioner
+2025-04-21T18:41:37.1465205Z 2.0.422.1
+2025-04-21T18:41:37.1465664Z ##[endgroup]
+2025-04-21T18:41:37.1468023Z ##[group]GITHUB_TOKEN Permissions
+2025-04-21T18:41:37.1469889Z Actions: write
+2025-04-21T18:41:37.1470729Z Attestations: write
+2025-04-21T18:41:37.1471318Z Checks: write
+2025-04-21T18:41:37.1471826Z Contents: write
+2025-04-21T18:41:37.1472277Z Deployments: write
+2025-04-21T18:41:37.1472806Z Discussions: write
+2025-04-21T18:41:37.1473559Z Issues: write
+2025-04-21T18:41:37.1474040Z Metadata: read
+2025-04-21T18:41:37.1474458Z Models: read
+2025-04-21T18:41:37.1475015Z Packages: write
+2025-04-21T18:41:37.1475465Z Pages: write
+2025-04-21T18:41:37.1475924Z PullRequests: write
+2025-04-21T18:41:37.1476609Z RepositoryProjects: write
+2025-04-21T18:41:37.1477116Z SecurityEvents: write
+2025-04-21T18:41:37.1477618Z Statuses: write
+2025-04-21T18:41:37.1478137Z ##[endgroup]
+2025-04-21T18:41:37.1480493Z Secret source: Actions
+2025-04-21T18:41:37.1481456Z Prepare workflow directory
+2025-04-21T18:41:37.1804940Z Prepare all required actions
+2025-04-21T18:41:37.1843975Z Getting action download info
+2025-04-21T18:41:37.8296913Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-21T18:41:37.8297741Z Version: 4.2.2
+2025-04-21T18:41:37.8298516Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-21T18:41:37.8299492Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-21T18:41:37.8300079Z ##[endgroup]
+2025-04-21T18:41:37.9269850Z ##[group]Download immutable action package 'actions/cache@v4'
+2025-04-21T18:41:37.9270488Z Version: 4.2.3
+2025-04-21T18:41:37.9271100Z Digest: sha256:c8a3bb963e1f1826d8fcc8d1354f0dd29d8ac1db1d4f6f20247055ae11b81ed9
+2025-04-21T18:41:37.9271937Z Source commit SHA: 5a3ec84eff668545956fd18022155c47e93e2684
+2025-04-21T18:41:37.9272503Z ##[endgroup]
+2025-04-21T18:41:38.0349494Z Download action repository 'pnpm/action-setup@v4' (SHA:a7487c7e89a18df4991f7f222e4898a00d66ddda)
+2025-04-21T18:41:38.9226820Z Download action repository 'asdf-vm/actions@v3' (SHA:05e0d2ed97b598bfce82fd30daf324ae0c4570e6)
+2025-04-21T18:41:39.5814476Z Download action repository 'foundry-rs/setup-snfoundry@v3' (SHA:bd5fc266ba0ce7e352b01dd7eaacc0fbb6145d17)
+2025-04-21T18:41:40.3341111Z Download action repository 'Swatinem/rust-cache@v2' (SHA:9d47c6ad4b02e050fd481d890b2ea34778fd09d6)
+2025-04-21T18:41:41.3244091Z Complete job name: compile_and_verify
+2025-04-21T18:41:41.3877909Z ##[group]Run actions/checkout@v4
+2025-04-21T18:41:41.3878448Z with:
+2025-04-21T18:41:41.3878645Z   repository: cairo-book/cairo-book
+2025-04-21T18:41:41.3879028Z   token: ***
+2025-04-21T18:41:41.3879205Z   ssh-strict: true
+2025-04-21T18:41:41.3879374Z   ssh-user: git
+2025-04-21T18:41:41.3879556Z   persist-credentials: true
+2025-04-21T18:41:41.3879760Z   clean: true
+2025-04-21T18:41:41.3879953Z   sparse-checkout-cone-mode: true
+2025-04-21T18:41:41.3880181Z   fetch-depth: 1
+2025-04-21T18:41:41.3880362Z   fetch-tags: false
+2025-04-21T18:41:41.3880547Z   show-progress: true
+2025-04-21T18:41:41.3880727Z   lfs: false
+2025-04-21T18:41:41.3880896Z   submodules: false
+2025-04-21T18:41:41.3881076Z   set-safe-directory: true
+2025-04-21T18:41:41.3881464Z ##[endgroup]
+2025-04-21T18:41:41.5975760Z Syncing repository: cairo-book/cairo-book
+2025-04-21T18:41:41.5977324Z ##[group]Getting Git version info
+2025-04-21T18:41:41.5978170Z Working directory is '/home/runner/work/cairo-book/cairo-book'
+2025-04-21T18:41:41.5978864Z [command]/usr/bin/git version
+2025-04-21T18:41:41.6040067Z git version 2.49.0
+2025-04-21T18:41:41.6068900Z ##[endgroup]
+2025-04-21T18:41:41.6082080Z Temporarily overriding HOME='/home/runner/work/_temp/6323df48-9d84-4d87-a06f-8aa227349929' before making global git config changes
+2025-04-21T18:41:41.6083447Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-21T18:41:41.6087795Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/cairo-book/cairo-book
+2025-04-21T18:41:41.6125912Z Deleting the contents of '/home/runner/work/cairo-book/cairo-book'
+2025-04-21T18:41:41.6129550Z ##[group]Initializing the repository
+2025-04-21T18:41:41.6133682Z [command]/usr/bin/git init /home/runner/work/cairo-book/cairo-book
+2025-04-21T18:41:41.6212704Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-21T18:41:41.6213679Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-21T18:41:41.6214204Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-21T18:41:41.6214588Z hint:
+2025-04-21T18:41:41.6214865Z hint: 	git config --global init.defaultBranch <name>
+2025-04-21T18:41:41.6215180Z hint:
+2025-04-21T18:41:41.6215467Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-21T18:41:41.6215972Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-21T18:41:41.6216351Z hint:
+2025-04-21T18:41:41.6216535Z hint: 	git branch -m <name>
+2025-04-21T18:41:41.6220872Z Initialized empty Git repository in /home/runner/work/cairo-book/cairo-book/.git/
+2025-04-21T18:41:41.6233323Z [command]/usr/bin/git remote add origin https://github.com/cairo-book/cairo-book
+2025-04-21T18:41:41.6268404Z ##[endgroup]
+2025-04-21T18:41:41.6269012Z ##[group]Disabling automatic garbage collection
+2025-04-21T18:41:41.6273195Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-21T18:41:41.6301351Z ##[endgroup]
+2025-04-21T18:41:41.6301905Z ##[group]Setting up auth
+2025-04-21T18:41:41.6308266Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-21T18:41:41.6338680Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-21T18:41:41.6651229Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-21T18:41:41.6681422Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-21T18:41:41.6921806Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-21T18:41:41.6960064Z ##[endgroup]
+2025-04-21T18:41:41.6969159Z ##[group]Fetching the repository
+2025-04-21T18:41:41.6970762Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +4680877d993f5584f835396ae1dc4d1f37e702c6:refs/remotes/pull/1153/merge
+2025-04-21T18:41:42.8071527Z From https://github.com/cairo-book/cairo-book
+2025-04-21T18:41:42.8072700Z  * [new ref]         4680877d993f5584f835396ae1dc4d1f37e702c6 -> pull/1153/merge
+2025-04-21T18:41:42.8113765Z ##[endgroup]
+2025-04-21T18:41:42.8114478Z ##[group]Determining the checkout info
+2025-04-21T18:41:42.8115914Z ##[endgroup]
+2025-04-21T18:41:42.8121491Z [command]/usr/bin/git sparse-checkout disable
+2025-04-21T18:41:42.8166642Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-21T18:41:42.8196962Z ##[group]Checking out the ref
+2025-04-21T18:41:42.8203037Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1153/merge
+2025-04-21T18:41:42.9406341Z Note: switching to 'refs/remotes/pull/1153/merge'.
+2025-04-21T18:41:42.9407257Z 
+2025-04-21T18:41:42.9407645Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-21T18:41:42.9408456Z changes and commit them, and you can discard any commits you make in this
+2025-04-21T18:41:42.9409256Z state without impacting any branches by switching back to a branch.
+2025-04-21T18:41:42.9409743Z 
+2025-04-21T18:41:42.9410074Z If you want to create a new branch to retain commits you create, you may
+2025-04-21T18:41:42.9410829Z do so (now or later) by using -c with the switch command. Example:
+2025-04-21T18:41:42.9411259Z 
+2025-04-21T18:41:42.9411450Z   git switch -c <new-branch-name>
+2025-04-21T18:41:42.9411743Z 
+2025-04-21T18:41:42.9411907Z Or undo this operation with:
+2025-04-21T18:41:42.9412188Z 
+2025-04-21T18:41:42.9412320Z   git switch -
+2025-04-21T18:41:42.9412552Z 
+2025-04-21T18:41:42.9412946Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-21T18:41:42.9413686Z 
+2025-04-21T18:41:42.9414326Z HEAD is now at 4680877 Merge a57b49661f24b86706347c9c37c584a2686cbde8 into 733718f296c776abffe4d9b6afd09accecbb5c73
+2025-04-21T18:41:42.9416289Z ##[endgroup]
+2025-04-21T18:41:42.9459714Z [command]/usr/bin/git log -1 --format=%H
+2025-04-21T18:41:42.9487215Z 4680877d993f5584f835396ae1dc4d1f37e702c6
+2025-04-21T18:41:43.1928203Z ##[group]Run actions/cache@v4
+2025-04-21T18:41:43.1928488Z with:
+2025-04-21T18:41:43.1928674Z   path: ~/.pnpm-store
+node_modules
+
+2025-04-21T18:41:43.1928925Z   key: pnpm-Linux-
+2025-04-21T18:41:43.1929123Z   restore-keys: pnpm-Linux-
+
+2025-04-21T18:41:43.1929354Z   enableCrossOsArchive: false
+2025-04-21T18:41:43.1929570Z   fail-on-cache-miss: false
+2025-04-21T18:41:43.1929788Z   lookup-only: false
+2025-04-21T18:41:43.1929986Z   save-always: false
+2025-04-21T18:41:43.1930160Z ##[endgroup]
+2025-04-21T18:41:43.5368927Z Cache not found for input keys: pnpm-Linux-, pnpm-Linux-
+2025-04-21T18:41:43.5461920Z ##[group]Run pnpm/action-setup@v4
+2025-04-21T18:41:43.5462196Z with:
+2025-04-21T18:41:43.5462374Z   version: 9
+2025-04-21T18:41:43.5462548Z   dest: ~/setup-pnpm
+2025-04-21T18:41:43.5462740Z   run_install: null
+2025-04-21T18:41:43.5462933Z   package_json_file: package.json
+2025-04-21T18:41:43.5463349Z   standalone: false
+2025-04-21T18:41:43.5463522Z ##[endgroup]
+2025-04-21T18:41:43.6031264Z ##[group]Running self-installer...
+2025-04-21T18:41:44.2736523Z Progress: resolved 1, reused 0, downloaded 0, added 0
+2025-04-21T18:41:44.2829213Z Packages: +1
+2025-04-21T18:41:44.2829694Z +
+2025-04-21T18:41:44.7322513Z Progress: resolved 1, reused 0, downloaded 1, added 1, done
+2025-04-21T18:41:44.7776030Z 
+2025-04-21T18:41:44.7776819Z dependencies:
+2025-04-21T18:41:44.7777478Z + pnpm 9.15.9 (10.9.0 is available)
+2025-04-21T18:41:44.7778861Z 
+2025-04-21T18:41:44.7813408Z Done in 1s
+2025-04-21T18:41:44.7998793Z ##[endgroup]
+2025-04-21T18:41:44.8002809Z Installation Completed!
+2025-04-21T18:41:44.8645812Z ##[group]Run actions/cache@v4
+2025-04-21T18:41:44.8646121Z with:
+2025-04-21T18:41:44.8646468Z   path: ~/.asdf
+~/.cache/scarb
+~/.cache/starknet-foundry
+
+2025-04-21T18:41:44.8646944Z   key: asdf-Linux-cdadd1d58409ead77824e47a01f128b3c4ea853ed77b73abfce44615593a109e
+2025-04-21T18:41:44.8647437Z   restore-keys: asdf-Linux-
+
+2025-04-21T18:41:44.8647685Z   enableCrossOsArchive: false
+2025-04-21T18:41:44.8647909Z   fail-on-cache-miss: false
+2025-04-21T18:41:44.8648207Z   lookup-only: false
+2025-04-21T18:41:44.8648393Z   save-always: false
+2025-04-21T18:41:44.8648569Z env:
+2025-04-21T18:41:44.8648861Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2025-04-21T18:41:44.8649170Z ##[endgroup]
+2025-04-21T18:41:45.2337213Z Cache hit for: asdf-Linux-cdadd1d58409ead77824e47a01f128b3c4ea853ed77b73abfce44615593a109e
+2025-04-21T18:41:46.4597952Z Received 37748736 of 236198029 (16.0%), 36.0 MBs/sec
+2025-04-21T18:41:47.4609883Z Received 176160768 of 236198029 (74.6%), 83.9 MBs/sec
+2025-04-21T18:41:47.8866412Z Received 236198029 of 236198029 (100.0%), 92.8 MBs/sec
+2025-04-21T18:41:47.8868696Z Cache Size: ~225 MB (236198029 B)
+2025-04-21T18:41:47.8974951Z [command]/usr/bin/tar -xf /home/runner/work/_temp/629a6971-47dd-41da-bdb3-361e5c126948/cache.tzst -P -C /home/runner/work/cairo-book/cairo-book --use-compress-program unzstd
+2025-04-21T18:41:49.2589031Z Cache restored successfully
+2025-04-21T18:41:49.3168388Z Cache restored from key: asdf-Linux-cdadd1d58409ead77824e47a01f128b3c4ea853ed77b73abfce44615593a109e
+2025-04-21T18:41:49.3295146Z ##[group]Run asdf-vm/actions/install@v3
+2025-04-21T18:41:49.3295615Z with:
+2025-04-21T18:41:49.3295891Z   asdf_branch: master
+2025-04-21T18:41:49.3296224Z   skip_install: false
+2025-04-21T18:41:49.3296538Z env:
+2025-04-21T18:41:49.3296895Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+2025-04-21T18:41:49.3297398Z ##[endgroup]
+2025-04-21T18:41:49.3696155Z Updating asdf in ASDF_DIR "/home/runner/.asdf" on branch "master"
+2025-04-21T18:41:49.3717978Z [command]/usr/bin/git remote set-branches origin master
+2025-04-21T18:41:49.3793224Z [command]/usr/bin/git fetch --depth 1 origin master
+2025-04-21T18:41:49.7794091Z From https://github.com/asdf-vm/asdf
+2025-04-21T18:41:49.7794666Z  * branch            master     -> FETCH_HEAD
+2025-04-21T18:41:49.7832785Z [command]/usr/bin/git checkout -B master origin
+2025-04-21T18:41:49.7854714Z fatal: 'origin' is not a commit and a branch 'master' cannot be created from it
+2025-04-21T18:41:49.7881606Z ##[error]Action failed with error Error: The process '/usr/bin/git' failed with exit code 128
+2025-04-21T18:41:49.7991336Z Post job cleanup.
+2025-04-21T18:41:49.8523651Z Pruning is unnecessary.
+2025-04-21T18:41:49.8641443Z Post job cleanup.
+2025-04-21T18:41:49.9569620Z [command]/usr/bin/git version
+2025-04-21T18:41:49.9608258Z git version 2.49.0
+2025-04-21T18:41:49.9651763Z Temporarily overriding HOME='/home/runner/work/_temp/08c201c4-7e8a-4300-915f-7334edaf245a' before making global git config changes
+2025-04-21T18:41:49.9653289Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-21T18:41:49.9665553Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/cairo-book/cairo-book
+2025-04-21T18:41:49.9701894Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-21T18:41:49.9735548Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-21T18:41:49.9968036Z fatal: No url found for submodule path 'mdbook-quiz-cairo' in .gitmodules
+2025-04-21T18:41:50.0000091Z ##[warning]The process '/usr/bin/git' failed with exit code 128
+2025-04-21T18:41:50.0084030Z Cleaning up orphan processes

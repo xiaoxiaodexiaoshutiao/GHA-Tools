@@ -1,0 +1,224 @@
+2025-03-29T18:09:12.3871818Z Requested labels: ubuntu-latest
+2025-03-29T18:09:12.3872281Z Job defined at: eslint/create-config/.github/workflows/ci.yml@refs/pull/155/merge
+2025-03-29T18:09:12.3872468Z Waiting for a runner to pick up this job...
+2025-03-29T18:09:13.7132371Z Job is waiting for a hosted runner to come online.
+2025-03-29T18:09:16.4601671Z Job is about to start running on the hosted runner: GitHub Actions 14 (hosted)
+2025-03-29T18:09:17.9940032Z Current runner version: '2.323.0'
+2025-03-29T18:09:17.9968057Z ##[group]Operating System
+2025-03-29T18:09:17.9968911Z Ubuntu
+2025-03-29T18:09:17.9969415Z 24.04.2
+2025-03-29T18:09:17.9969903Z LTS
+2025-03-29T18:09:17.9970426Z ##[endgroup]
+2025-03-29T18:09:17.9970971Z ##[group]Runner Image
+2025-03-29T18:09:17.9971518Z Image: ubuntu-24.04
+2025-03-29T18:09:17.9972112Z Version: 20250323.1.0
+2025-03-29T18:09:17.9973148Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-29T18:09:17.9974563Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-03-29T18:09:17.9975453Z ##[endgroup]
+2025-03-29T18:09:17.9976316Z ##[group]Runner Image Provisioner
+2025-03-29T18:09:17.9976979Z 2.0.422.1
+2025-03-29T18:09:17.9977537Z ##[endgroup]
+2025-03-29T18:09:17.9979772Z ##[group]GITHUB_TOKEN Permissions
+2025-03-29T18:09:17.9981815Z Actions: read
+2025-03-29T18:09:17.9982572Z Attestations: read
+2025-03-29T18:09:17.9983339Z Checks: read
+2025-03-29T18:09:17.9983809Z Contents: read
+2025-03-29T18:09:17.9984406Z Deployments: read
+2025-03-29T18:09:17.9984928Z Discussions: read
+2025-03-29T18:09:17.9985425Z Issues: read
+2025-03-29T18:09:17.9986330Z Metadata: read
+2025-03-29T18:09:17.9986823Z Models: read
+2025-03-29T18:09:17.9987313Z Packages: read
+2025-03-29T18:09:17.9987910Z Pages: read
+2025-03-29T18:09:17.9988425Z PullRequests: read
+2025-03-29T18:09:17.9989023Z RepositoryProjects: read
+2025-03-29T18:09:17.9989578Z SecurityEvents: read
+2025-03-29T18:09:17.9990106Z Statuses: read
+2025-03-29T18:09:17.9990657Z ##[endgroup]
+2025-03-29T18:09:17.9993585Z Secret source: None
+2025-03-29T18:09:17.9994401Z Prepare workflow directory
+2025-03-29T18:09:18.0404125Z Prepare all required actions
+2025-03-29T18:09:18.0440925Z Getting action download info
+2025-03-29T18:09:18.1934686Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-29T18:09:18.5176431Z Download action repository 'actions/setup-node@v4' (SHA:cdca7365b2dadb8aad0a33bc7601856ffabcc48e)
+2025-03-29T18:09:18.7425852Z Complete job name: Test (ubuntu-latest, 21.x)
+2025-03-29T18:09:18.8321528Z ##[group]Run actions/checkout@v4
+2025-03-29T18:09:18.8322899Z with:
+2025-03-29T18:09:18.8323711Z   repository: eslint/create-config
+2025-03-29T18:09:18.8325033Z   token: ***
+2025-03-29T18:09:18.8326095Z   ssh-strict: true
+2025-03-29T18:09:18.8326930Z   ssh-user: git
+2025-03-29T18:09:18.8327776Z   persist-credentials: true
+2025-03-29T18:09:18.8328705Z   clean: true
+2025-03-29T18:09:18.8329548Z   sparse-checkout-cone-mode: true
+2025-03-29T18:09:18.8330571Z   fetch-depth: 1
+2025-03-29T18:09:18.8331379Z   fetch-tags: false
+2025-03-29T18:09:18.8332249Z   show-progress: true
+2025-03-29T18:09:18.8333092Z   lfs: false
+2025-03-29T18:09:18.8333869Z   submodules: false
+2025-03-29T18:09:18.8334712Z   set-safe-directory: true
+2025-03-29T18:09:18.8336106Z ##[endgroup]
+2025-03-29T18:09:20.2174395Z Syncing repository: eslint/create-config
+2025-03-29T18:09:20.2176326Z ##[group]Getting Git version info
+2025-03-29T18:09:20.2176968Z Working directory is '/home/runner/work/create-config/create-config'
+2025-03-29T18:09:20.2177712Z [command]/usr/bin/git version
+2025-03-29T18:09:20.3354718Z git version 2.49.0
+2025-03-29T18:09:20.3422431Z ##[endgroup]
+2025-03-29T18:09:20.3438661Z Temporarily overriding HOME='/home/runner/work/_temp/9665eb6c-a2ca-4128-91e3-a62cb84a4eb8' before making global git config changes
+2025-03-29T18:09:20.3440280Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-29T18:09:20.3445931Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/create-config/create-config
+2025-03-29T18:09:20.3524211Z Deleting the contents of '/home/runner/work/create-config/create-config'
+2025-03-29T18:09:20.3528604Z ##[group]Initializing the repository
+2025-03-29T18:09:20.3533352Z [command]/usr/bin/git init /home/runner/work/create-config/create-config
+2025-03-29T18:09:20.3845267Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-29T18:09:20.3847237Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-29T18:09:20.3847892Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-29T18:09:20.3848367Z hint:
+2025-03-29T18:09:20.3848730Z hint: 	git config --global init.defaultBranch <name>
+2025-03-29T18:09:20.3849116Z hint:
+2025-03-29T18:09:20.3849502Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-29T18:09:20.3850088Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-29T18:09:20.3850572Z hint:
+2025-03-29T18:09:20.3850849Z hint: 	git branch -m <name>
+2025-03-29T18:09:20.3918460Z Initialized empty Git repository in /home/runner/work/create-config/create-config/.git/
+2025-03-29T18:09:20.3932395Z [command]/usr/bin/git remote add origin https://github.com/eslint/create-config
+2025-03-29T18:09:20.4009733Z ##[endgroup]
+2025-03-29T18:09:20.4010661Z ##[group]Disabling automatic garbage collection
+2025-03-29T18:09:20.4015072Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-29T18:09:20.4044658Z ##[endgroup]
+2025-03-29T18:09:20.4045852Z ##[group]Setting up auth
+2025-03-29T18:09:20.4052681Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-29T18:09:20.4083060Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-29T18:09:20.5220746Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-29T18:09:20.5252289Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-29T18:09:20.5479807Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-29T18:09:20.5516513Z ##[endgroup]
+2025-03-29T18:09:20.5517095Z ##[group]Fetching the repository
+2025-03-29T18:09:20.5525822Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +e4b901f0b565e3aae22c54452590c69bf7b7c6fe:refs/remotes/pull/155/merge
+2025-03-29T18:09:20.9280986Z From https://github.com/eslint/create-config
+2025-03-29T18:09:20.9281866Z  * [new ref]         e4b901f0b565e3aae22c54452590c69bf7b7c6fe -> pull/155/merge
+2025-03-29T18:09:20.9362967Z ##[endgroup]
+2025-03-29T18:09:20.9365491Z ##[group]Determining the checkout info
+2025-03-29T18:09:20.9366841Z ##[endgroup]
+2025-03-29T18:09:20.9372445Z [command]/usr/bin/git sparse-checkout disable
+2025-03-29T18:09:20.9450537Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-29T18:09:20.9479928Z ##[group]Checking out the ref
+2025-03-29T18:09:20.9483847Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/155/merge
+2025-03-29T18:09:20.9593814Z Note: switching to 'refs/remotes/pull/155/merge'.
+2025-03-29T18:09:20.9594300Z 
+2025-03-29T18:09:20.9594738Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-29T18:09:20.9595279Z changes and commit them, and you can discard any commits you make in this
+2025-03-29T18:09:20.9596231Z state without impacting any branches by switching back to a branch.
+2025-03-29T18:09:20.9596719Z 
+2025-03-29T18:09:20.9597414Z If you want to create a new branch to retain commits you create, you may
+2025-03-29T18:09:20.9598124Z do so (now or later) by using -c with the switch command. Example:
+2025-03-29T18:09:20.9598587Z 
+2025-03-29T18:09:20.9598778Z   git switch -c <new-branch-name>
+2025-03-29T18:09:20.9599123Z 
+2025-03-29T18:09:20.9599327Z Or undo this operation with:
+2025-03-29T18:09:20.9599646Z 
+2025-03-29T18:09:20.9599831Z   git switch -
+2025-03-29T18:09:20.9600102Z 
+2025-03-29T18:09:20.9600515Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-29T18:09:20.9601551Z 
+2025-03-29T18:09:20.9602246Z HEAD is now at e4b901f Merge b590d6a21dbde2213bc8263cdc28e03a9455445a into c3f9ffd8e3c9a73eeabbbd588693133b4505cc2c
+2025-03-29T18:09:20.9604109Z ##[endgroup]
+2025-03-29T18:09:20.9640552Z [command]/usr/bin/git log -1 --format=%H
+2025-03-29T18:09:20.9663096Z e4b901f0b565e3aae22c54452590c69bf7b7c6fe
+2025-03-29T18:09:20.9980547Z ##[group]Run actions/setup-node@v4
+2025-03-29T18:09:20.9980827Z with:
+2025-03-29T18:09:20.9981012Z   node-version: 21.x
+2025-03-29T18:09:20.9981216Z   always-auth: false
+2025-03-29T18:09:20.9981427Z   check-latest: false
+2025-03-29T18:09:20.9981754Z   token: ***
+2025-03-29T18:09:20.9981946Z ##[endgroup]
+2025-03-29T18:09:21.1733996Z Attempting to download 21.x...
+2025-03-29T18:09:21.5522618Z Not found in manifest. Falling back to download directly from Node
+2025-03-29T18:09:21.6596151Z Acquiring 21.7.3 - x64 from https://nodejs.org/dist/v21.7.3/node-v21.7.3-linux-x64.tar.gz
+2025-03-29T18:09:22.3037442Z Extracting ...
+2025-03-29T18:09:22.3139031Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/69316320-1b46-40cf-8407-c15e9527ec29 -f /home/runner/work/_temp/6eefb6ee-697f-43d8-9540-2a7b16628dba
+2025-03-29T18:09:23.3306405Z Adding to the cache ...
+2025-03-29T18:09:24.9722645Z Done
+2025-03-29T18:09:24.9727366Z ##[group]Environment details
+2025-03-29T18:09:25.3225340Z node: v21.7.3
+2025-03-29T18:09:25.3225888Z npm: 10.5.0
+2025-03-29T18:09:25.3226297Z yarn: 1.22.22
+2025-03-29T18:09:25.3227026Z ##[endgroup]
+2025-03-29T18:09:25.3391541Z ##[group]Run npm install
+2025-03-29T18:09:25.3391836Z [36;1mnpm install[0m
+2025-03-29T18:09:25.3445279Z shell: /usr/bin/bash -e {0}
+2025-03-29T18:09:25.3445737Z ##[endgroup]
+2025-03-29T18:09:39.2448371Z npm WARN deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-03-29T18:09:39.2557376Z npm WARN deprecated lodash.get@4.4.2: This package is deprecated. Use the optional chaining (?.) operator instead.
+2025-03-29T18:09:39.4885743Z npm WARN deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-03-29T18:09:40.4972672Z npm WARN deprecated sinon@12.0.1: 16.1.1
+2025-03-29T18:09:41.0237431Z 
+2025-03-29T18:09:41.0238203Z added 372 packages, and audited 373 packages in 16s
+2025-03-29T18:09:41.0238679Z 
+2025-03-29T18:09:41.0238976Z 101 packages are looking for funding
+2025-03-29T18:09:41.0239580Z   run `npm fund` for details
+2025-03-29T18:09:41.0377386Z 
+2025-03-29T18:09:41.0378134Z 11 vulnerabilities (5 moderate, 6 high)
+2025-03-29T18:09:41.0378515Z 
+2025-03-29T18:09:41.0378974Z To address all issues possible (including breaking changes), run:
+2025-03-29T18:09:41.0379606Z   npm audit fix --force
+2025-03-29T18:09:41.0379859Z 
+2025-03-29T18:09:41.0380201Z Some issues need review, and may require choosing
+2025-03-29T18:09:41.0380791Z a different dependency.
+2025-03-29T18:09:41.0381086Z 
+2025-03-29T18:09:41.0381289Z Run `npm audit` for details.
+2025-03-29T18:09:41.0804052Z ##[group]Run npm run test
+2025-03-29T18:09:41.0804339Z [36;1mnpm run test[0m
+2025-03-29T18:09:41.0851833Z shell: /usr/bin/bash -e {0}
+2025-03-29T18:09:41.0852086Z ##[endgroup]
+2025-03-29T18:09:41.2951638Z 
+2025-03-29T18:09:41.2952141Z > @eslint/create-config@1.6.0 test
+2025-03-29T18:09:41.2952716Z > vitest run --coverage
+2025-03-29T18:09:41.2952988Z 
+2025-03-29T18:09:41.6751998Z 
+2025-03-29T18:09:41.6753904Z [7m[1m[36m RUN [39m[22m[27m [36mv1.6.1[39m [90m/home/runner/work/create-config/create-config[39m
+2025-03-29T18:09:41.6755171Z [2m      Coverage enabled with [22m[33mv8[39m
+2025-03-29T18:09:41.6755737Z 
+2025-03-29T18:09:42.2398033Z  [33m❯[39m tests/utils/npm-utils.spec.js [2m ([22m[2m29 tests[22m [2m|[22m [31m1 failed[39m[2m)[22m[90m 184[2mms[22m[39m
+2025-03-29T18:09:42.2401112Z [31m   [33m❯[31m tests/utils/npm-utils.spec.js[2m > [22mnpmUtils[2m > [22mfetchPeerDependencies()[2m > [22mshould fetch peer dependencies from npm registry when npm is not available[39m
+2025-03-29T18:09:42.2403222Z [31m     → Unspecified AssertionError[39m
+2025-03-29T18:09:44.3986311Z  [32m✓[39m tests/config-snapshots.spec.js [2m ([22m[2m44 tests[22m[2m)[22m[33m 2423[2mms[22m[39m
+2025-03-29T18:09:44.4109812Z 
+2025-03-29T18:09:44.4116832Z [31m⎯⎯⎯⎯⎯⎯⎯[1m[7m Failed Tests 1 [27m[22m⎯⎯⎯⎯⎯⎯⎯[39m
+2025-03-29T18:09:44.4117288Z 
+2025-03-29T18:09:44.4120922Z [31m[1m[7m FAIL [27m[22m[39m tests/utils/npm-utils.spec.js[2m > [22mnpmUtils[2m > [22mfetchPeerDependencies()[2m > [22mshould fetch peer dependencies from npm registry when npm is not available
+2025-03-29T18:09:44.4122696Z [31m[1mAssertionError[22m: Unspecified AssertionError[39m
+2025-03-29T18:09:44.4123761Z [36m [2m❯[22m tests/utils/npm-utils.spec.js:[2m274:13[22m[39m
+2025-03-29T18:09:44.4233275Z     [90m272| [39m            [35mconst[39m result [33m=[39m [35mawait[39m [34mfetchPeerDependencies[39m([32m"desired-packag[39m…
+2025-03-29T18:09:44.4234367Z     [90m273| [39m
+2025-03-29T18:09:44.4235861Z     [90m274| [39m            [34massert[39m(fetchStub[33m.[39m[34mcalledOnceWith[39m([32m"https://registry.npmjs.or[39m…
+2025-03-29T18:09:44.4236943Z     [90m   | [39m            [31m^[39m
+2025-03-29T18:09:44.4238047Z     [90m275| [39m            assert[33m.[39m[34mdeepStrictEqual[39m(result[33m,[39m [[32m"eslint@9.0.0"[39m])[33m;[39m
+2025-03-29T18:09:44.4238931Z     [90m276| [39m
+2025-03-29T18:09:44.4239141Z 
+2025-03-29T18:09:44.4239169Z 
+2025-03-29T18:09:44.4269866Z ##[error]AssertionError: Unspecified AssertionError
+ ❯ tests/utils/npm-utils.spec.js:274:13
+
+
+2025-03-29T18:09:44.4280325Z [31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+2025-03-29T18:09:44.4280704Z 
+2025-03-29T18:09:44.4281510Z [2m Test Files [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m1 passed[39m[22m[90m (2)[39m
+2025-03-29T18:09:44.4282839Z [2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m72 passed[39m[22m[90m (73)[39m
+2025-03-29T18:09:44.4284200Z [2m   Start at [22m 18:09:41
+2025-03-29T18:09:44.4285484Z [2m   Duration [22m 2.74s[2m (transform 69ms, setup 0ms, collect 194ms, tests 2.61s, environment 1ms, prepare 171ms)[22m
+2025-03-29T18:09:44.4286410Z 
+2025-03-29T18:09:44.4494372Z ##[error]Process completed with exit code 1.
+2025-03-29T18:09:44.4582131Z Post job cleanup.
+2025-03-29T18:09:44.5522239Z [command]/usr/bin/git version
+2025-03-29T18:09:44.5558196Z git version 2.49.0
+2025-03-29T18:09:44.5609045Z Temporarily overriding HOME='/home/runner/work/_temp/11f9e779-d3fb-4ed4-ad23-3e5d92c60263' before making global git config changes
+2025-03-29T18:09:44.5610527Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-29T18:09:44.5615231Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/create-config/create-config
+2025-03-29T18:09:44.5650486Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-29T18:09:44.5682770Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-29T18:09:44.5944277Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-29T18:09:44.5964849Z http.https://github.com/.extraheader
+2025-03-29T18:09:44.5977240Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-29T18:09:44.6006847Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-29T18:09:44.6363416Z Cleaning up orphan processes

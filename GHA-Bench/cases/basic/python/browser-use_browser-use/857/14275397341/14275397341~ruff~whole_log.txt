@@ -1,0 +1,263 @@
+2025-04-04T22:43:27.0135561Z Requested labels: ubuntu-latest
+2025-04-04T22:43:27.0135871Z Job defined at: browser-use/browser-use/.github/workflows/lint.yml@refs/pull/857/merge
+2025-04-04T22:43:27.0135978Z Waiting for a runner to pick up this job...
+2025-04-04T22:43:27.6472541Z Job is waiting for a hosted runner to come online.
+2025-04-04T22:43:30.8183560Z Job is about to start running on the hosted runner: GitHub Actions 47 (hosted)
+2025-04-04T22:43:32.4273299Z Current runner version: '2.323.0'
+2025-04-04T22:43:32.4299003Z ##[group]Operating System
+2025-04-04T22:43:32.4299809Z Ubuntu
+2025-04-04T22:43:32.4300296Z 24.04.2
+2025-04-04T22:43:32.4300859Z LTS
+2025-04-04T22:43:32.4301338Z ##[endgroup]
+2025-04-04T22:43:32.4301870Z ##[group]Runner Image
+2025-04-04T22:43:32.4302523Z Image: ubuntu-24.04
+2025-04-04T22:43:32.4303014Z Version: 20250323.1.0
+2025-04-04T22:43:32.4304039Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-04T22:43:32.4305465Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-04-04T22:43:32.4306629Z ##[endgroup]
+2025-04-04T22:43:32.4307224Z ##[group]Runner Image Provisioner
+2025-04-04T22:43:32.4307854Z 2.0.422.1
+2025-04-04T22:43:32.4308324Z ##[endgroup]
+2025-04-04T22:43:32.4309507Z ##[group]GITHUB_TOKEN Permissions
+2025-04-04T22:43:32.4311331Z Contents: read
+2025-04-04T22:43:32.4311980Z Metadata: read
+2025-04-04T22:43:32.4312711Z Packages: read
+2025-04-04T22:43:32.4313403Z ##[endgroup]
+2025-04-04T22:43:32.4316448Z Secret source: None
+2025-04-04T22:43:32.4317180Z Prepare workflow directory
+2025-04-04T22:43:32.4634468Z Prepare all required actions
+2025-04-04T22:43:32.4674299Z Getting action download info
+2025-04-04T22:43:32.6644333Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-04T22:43:32.6645249Z Version: 4.2.2
+2025-04-04T22:43:32.6646327Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-04T22:43:32.6647373Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-04T22:43:32.6648019Z ##[endgroup]
+2025-04-04T22:43:32.7626291Z Download action repository 'astral-sh/setup-uv@v5' (SHA:0c5e2b8115b80b4c7c5ddf6ffdd634974642d182)
+2025-04-04T22:43:33.1121852Z Complete job name: ruff
+2025-04-04T22:43:33.1829760Z ##[group]Run actions/checkout@v4
+2025-04-04T22:43:33.1830600Z with:
+2025-04-04T22:43:33.1831033Z   repository: browser-use/browser-use
+2025-04-04T22:43:33.1831751Z   token: ***
+2025-04-04T22:43:33.1832154Z   ssh-strict: true
+2025-04-04T22:43:33.1832568Z   ssh-user: git
+2025-04-04T22:43:33.1832984Z   persist-credentials: true
+2025-04-04T22:43:33.1833464Z   clean: true
+2025-04-04T22:43:33.1833915Z   sparse-checkout-cone-mode: true
+2025-04-04T22:43:33.1834395Z   fetch-depth: 1
+2025-04-04T22:43:33.1834796Z   fetch-tags: false
+2025-04-04T22:43:33.1835204Z   show-progress: true
+2025-04-04T22:43:33.1835769Z   lfs: false
+2025-04-04T22:43:33.1836164Z   submodules: false
+2025-04-04T22:43:33.1836579Z   set-safe-directory: true
+2025-04-04T22:43:33.1837274Z ##[endgroup]
+2025-04-04T22:43:33.3904250Z Syncing repository: browser-use/browser-use
+2025-04-04T22:43:33.3906431Z ##[group]Getting Git version info
+2025-04-04T22:43:33.3907746Z Working directory is '/home/runner/work/browser-use/browser-use'
+2025-04-04T22:43:33.3909103Z [command]/usr/bin/git version
+2025-04-04T22:43:33.3975048Z git version 2.49.0
+2025-04-04T22:43:33.4005814Z ##[endgroup]
+2025-04-04T22:43:33.4023538Z Temporarily overriding HOME='/home/runner/work/_temp/e94d77c1-f239-4b64-adf6-87e5846c31b4' before making global git config changes
+2025-04-04T22:43:33.4027615Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-04T22:43:33.4031584Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/browser-use/browser-use
+2025-04-04T22:43:33.4076246Z Deleting the contents of '/home/runner/work/browser-use/browser-use'
+2025-04-04T22:43:33.4080579Z ##[group]Initializing the repository
+2025-04-04T22:43:33.4086817Z [command]/usr/bin/git init /home/runner/work/browser-use/browser-use
+2025-04-04T22:43:33.4178785Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-04T22:43:33.4180216Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-04T22:43:33.4181226Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-04T22:43:33.4181880Z hint:
+2025-04-04T22:43:33.4182454Z hint: 	git config --global init.defaultBranch <name>
+2025-04-04T22:43:33.4183307Z hint:
+2025-04-04T22:43:33.4183851Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-04T22:43:33.4185384Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-04T22:43:33.4186475Z hint:
+2025-04-04T22:43:33.4187187Z hint: 	git branch -m <name>
+2025-04-04T22:43:33.4188560Z Initialized empty Git repository in /home/runner/work/browser-use/browser-use/.git/
+2025-04-04T22:43:33.4199604Z [command]/usr/bin/git remote add origin https://github.com/browser-use/browser-use
+2025-04-04T22:43:33.4249529Z ##[endgroup]
+2025-04-04T22:43:33.4251874Z ##[group]Disabling automatic garbage collection
+2025-04-04T22:43:33.4252967Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-04T22:43:33.4282450Z ##[endgroup]
+2025-04-04T22:43:33.4283686Z ##[group]Setting up auth
+2025-04-04T22:43:33.4289524Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-04T22:43:33.4321727Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-04T22:43:33.4660695Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-04T22:43:33.4692474Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-04T22:43:33.4937728Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-04T22:43:33.4978682Z ##[endgroup]
+2025-04-04T22:43:33.4979559Z ##[group]Fetching the repository
+2025-04-04T22:43:33.4988304Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +4684b36b06d451a6576c662e1d5600d048a99f09:refs/remotes/pull/857/merge
+2025-04-04T22:43:33.8968295Z From https://github.com/browser-use/browser-use
+2025-04-04T22:43:33.8970062Z  * [new ref]         4684b36b06d451a6576c662e1d5600d048a99f09 -> pull/857/merge
+2025-04-04T22:43:33.9001863Z ##[endgroup]
+2025-04-04T22:43:33.9003125Z ##[group]Determining the checkout info
+2025-04-04T22:43:33.9005145Z ##[endgroup]
+2025-04-04T22:43:33.9009875Z [command]/usr/bin/git sparse-checkout disable
+2025-04-04T22:43:33.9051374Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-04T22:43:33.9082034Z ##[group]Checking out the ref
+2025-04-04T22:43:33.9085139Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/857/merge
+2025-04-04T22:43:34.0077147Z Note: switching to 'refs/remotes/pull/857/merge'.
+2025-04-04T22:43:34.0078460Z 
+2025-04-04T22:43:34.0079153Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-04T22:43:34.0080424Z changes and commit them, and you can discard any commits you make in this
+2025-04-04T22:43:34.0081687Z state without impacting any branches by switching back to a branch.
+2025-04-04T22:43:34.0082372Z 
+2025-04-04T22:43:34.0082858Z If you want to create a new branch to retain commits you create, you may
+2025-04-04T22:43:34.0083900Z do so (now or later) by using -c with the switch command. Example:
+2025-04-04T22:43:34.0084475Z 
+2025-04-04T22:43:34.0084785Z   git switch -c <new-branch-name>
+2025-04-04T22:43:34.0085231Z 
+2025-04-04T22:43:34.0085759Z Or undo this operation with:
+2025-04-04T22:43:34.0086249Z 
+2025-04-04T22:43:34.0086539Z   git switch -
+2025-04-04T22:43:34.0086925Z 
+2025-04-04T22:43:34.0087576Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-04T22:43:34.0088385Z 
+2025-04-04T22:43:34.0089359Z HEAD is now at 4684b36 Merge 50ee53138810a1f251f5949461ff161e61ac7ab6 into 01abdc414b4bea9da34d10c2fb5383c870396f50
+2025-04-04T22:43:34.0384024Z ##[endgroup]
+2025-04-04T22:43:34.0421100Z [command]/usr/bin/git log -1 --format=%H
+2025-04-04T22:43:34.0443583Z 4684b36b06d451a6576c662e1d5600d048a99f09
+2025-04-04T22:43:34.0727686Z ##[group]Run astral-sh/setup-uv@v5
+2025-04-04T22:43:34.0728793Z with:
+2025-04-04T22:43:34.0729985Z   github-token: ***
+2025-04-04T22:43:34.0730936Z   enable-cache: auto
+2025-04-04T22:43:34.0732101Z   cache-dependency-glob: **/uv.lock
+**/requirements*.txt
+
+2025-04-04T22:43:34.0733376Z   prune-cache: true
+2025-04-04T22:43:34.0734346Z   ignore-nothing-to-cache: false
+2025-04-04T22:43:34.0735459Z   ignore-empty-workdir: false
+2025-04-04T22:43:34.0736637Z ##[endgroup]
+2025-04-04T22:43:34.4813364Z Downloading uv from "https://github.com/astral-sh/uv/releases/download/0.6.12/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2025-04-04T22:43:34.7507177Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/d9c345d6-39df-4b7f-bb7c-bc98aba81840 -f /home/runner/work/_temp/1c9545f0-5c0b-446b-8b44-aef4cb54f95d
+2025-04-04T22:43:35.1013763Z Added /opt/hostedtoolcache/uv/0.6.12/x86_64 to the path
+2025-04-04T22:43:35.1014860Z Added /home/runner/.local/bin to the path
+2025-04-04T22:43:35.1041005Z Set UV_CACHE_DIR to /home/runner/work/_temp/setup-uv-cache
+2025-04-04T22:43:35.1041674Z Successfully installed uv version 0.6.12
+2025-04-04T22:43:35.1042395Z Searching files using cache dependency glob: **/uv.lock,**/requirements*.txt
+2025-04-04T22:43:35.1378566Z No matches found for glob
+2025-04-04T22:43:35.1405324Z ##[warning]No file matched to [**/uv.lock,**/requirements*.txt]. The cache will never get invalidated. Make sure you have checked out the target repository and configured the cache-dependency-glob input correctly.
+2025-04-04T22:43:35.3149487Z Trying to restore uv cache from GitHub Actions cache with key: setup-uv-1-x86_64-unknown-linux-gnu-unknown-no-dependency-glob
+2025-04-04T22:43:35.3826381Z Cache hit for: setup-uv-1-x86_64-unknown-linux-gnu-unknown-no-dependency-glob
+2025-04-04T22:43:35.5735304Z Received 14573258 of 14573258 (100.0%), 97.9 MBs/sec
+2025-04-04T22:43:35.5736267Z Cache Size: ~14 MB (14573258 B)
+2025-04-04T22:43:35.5764376Z [command]/usr/bin/tar -xf /home/runner/work/_temp/859580ec-ebbd-4752-a4de-3960349ed294/cache.tzst -P -C /home/runner/work/browser-use/browser-use --use-compress-program unzstd
+2025-04-04T22:43:35.6699149Z Cache restored successfully
+2025-04-04T22:43:35.6734813Z uv cache restored from GitHub Actions cache with key: setup-uv-1-x86_64-unknown-linux-gnu-unknown-no-dependency-glob
+2025-04-04T22:43:35.6914915Z ##[group]Run uv run ruff format
+2025-04-04T22:43:35.6915256Z [36;1muv run ruff format[0m
+2025-04-04T22:43:35.6967519Z shell: /usr/bin/bash -e {0}
+2025-04-04T22:43:35.6967780Z env:
+2025-04-04T22:43:35.6968013Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-04-04T22:43:35.6968308Z ##[endgroup]
+2025-04-04T22:43:35.8297431Z Downloading cpython-3.11.11-linux-x86_64-gnu (20.5MiB)
+2025-04-04T22:43:36.5475875Z  Downloaded cpython-3.11.11-linux-x86_64-gnu
+2025-04-04T22:43:36.6754174Z Using CPython 3.11.11
+2025-04-04T22:43:36.6754645Z Creating virtual environment at: .venv
+2025-04-04T22:43:38.4120477Z    Building browser-use @ file:///home/runner/work/browser-use/browser-use
+2025-04-04T22:43:38.4477285Z Downloading virtualenv (4.1MiB)
+2025-04-04T22:43:38.4480321Z Downloading setuptools (1.2MiB)
+2025-04-04T22:43:38.4484665Z Downloading ruff (10.8MiB)
+2025-04-04T22:43:38.4486138Z Downloading pygments (1.2MiB)
+2025-04-04T22:43:38.4490120Z Downloading zstandard (5.2MiB)
+2025-04-04T22:43:38.4493143Z Downloading sqlalchemy (3.1MiB)
+2025-04-04T22:43:38.4495116Z Downloading numpy (17.4MiB)
+2025-04-04T22:43:38.4497576Z Downloading aiohttp (1.6MiB)
+2025-04-04T22:43:38.4498429Z Downloading tiktoken (1.1MiB)
+2025-04-04T22:43:38.4500833Z Downloading google-ai-generativelanguage (1.3MiB)
+2025-04-04T22:43:38.4502690Z Downloading grpcio-tools (2.4MiB)
+2025-04-04T22:43:38.4505659Z Downloading pillow (4.3MiB)
+2025-04-04T22:43:38.4507752Z Downloading faiss-cpu (29.3MiB)
+2025-04-04T22:43:38.4508887Z Downloading botocore (12.8MiB)
+2025-04-04T22:43:38.4516704Z Downloading pydantic-core (1.9MiB)
+2025-04-04T22:43:38.4517664Z Downloading patchright (43.1MiB)
+2025-04-04T22:43:38.4519118Z Downloading psycopg2-binary (2.9MiB)
+2025-04-04T22:43:38.4521046Z Downloading jedi (1.5MiB)
+2025-04-04T22:43:38.4521593Z Downloading grpcio (5.7MiB)
+2025-04-04T22:43:38.4523323Z Downloading playwright (43.1MiB)
+2025-04-04T22:43:39.0326073Z  Downloaded tiktoken
+2025-04-04T22:43:39.1329015Z  Downloaded aiohttp
+2025-04-04T22:43:39.2043515Z  Downloaded pydantic-core
+2025-04-04T22:43:39.2068983Z  Downloaded pygments
+2025-04-04T22:43:39.2837318Z  Downloaded google-ai-generativelanguage
+2025-04-04T22:43:39.3028408Z  Downloaded grpcio-tools
+2025-04-04T22:43:39.3884741Z  Downloaded psycopg2-binary
+2025-04-04T22:43:39.4157782Z  Downloaded sqlalchemy
+2025-04-04T22:43:39.4229663Z  Downloaded setuptools
+2025-04-04T22:43:39.5347339Z  Downloaded virtualenv
+2025-04-04T22:43:39.5644366Z  Downloaded pillow
+2025-04-04T22:43:39.6575256Z  Downloaded zstandard
+2025-04-04T22:43:39.6846332Z       Built browser-use @ file:///home/runner/work/browser-use/browser-use
+2025-04-04T22:43:39.7104526Z  Downloaded grpcio
+2025-04-04T22:43:40.0140236Z  Downloaded ruff
+2025-04-04T22:43:40.4758368Z  Downloaded numpy
+2025-04-04T22:43:40.7652723Z  Downloaded faiss-cpu
+2025-04-04T22:43:40.9313889Z  Downloaded patchright
+2025-04-04T22:43:40.9387687Z  Downloaded playwright
+2025-04-04T22:43:40.9886814Z  Downloaded jedi
+2025-04-04T22:43:41.0271742Z  Downloaded botocore
+2025-04-04T22:43:41.1841586Z Installed 145 packages in 156ms
+2025-04-04T22:43:41.2152301Z 136 files left unchanged
+2025-04-04T22:43:41.2373123Z ##[group]Run uv run pre-commit run --all-files
+2025-04-04T22:43:41.2373519Z [36;1muv run pre-commit run --all-files[0m
+2025-04-04T22:43:41.2421096Z shell: /usr/bin/bash -e {0}
+2025-04-04T22:43:41.2421339Z env:
+2025-04-04T22:43:41.2421579Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-04-04T22:43:41.2421882Z ##[endgroup]
+2025-04-04T22:43:41.6008415Z [INFO] Initializing environment for https://github.com/astral-sh/ruff-pre-commit.
+2025-04-04T22:43:41.8196010Z [INFO] Initializing environment for https://github.com/pre-commit/pre-commit-hooks.
+2025-04-04T22:43:41.9958435Z [INFO] Initializing environment for https://github.com/codespell-project/codespell.
+2025-04-04T22:43:42.2084271Z [INFO] Initializing environment for https://github.com/codespell-project/codespell:tomli.
+2025-04-04T22:43:42.4369734Z [INFO] Installing environment for https://github.com/astral-sh/ruff-pre-commit.
+2025-04-04T22:43:42.4370649Z [INFO] Once installed this environment will be reused.
+2025-04-04T22:43:42.4371364Z [INFO] This may take a few minutes...
+2025-04-04T22:43:47.0813311Z [INFO] Installing environment for https://github.com/pre-commit/pre-commit-hooks.
+2025-04-04T22:43:47.0813836Z [INFO] Once installed this environment will be reused.
+2025-04-04T22:43:47.0814155Z [INFO] This may take a few minutes...
+2025-04-04T22:43:48.9265039Z [INFO] Installing environment for https://github.com/codespell-project/codespell.
+2025-04-04T22:43:48.9266135Z [INFO] Once installed this environment will be reused.
+2025-04-04T22:43:48.9266529Z [INFO] This may take a few minutes...
+2025-04-04T22:43:52.2910915Z ruff.....................................................................Failed
+2025-04-04T22:43:52.3414064Z - hook id: ruff
+2025-04-04T22:43:52.3414537Z - exit code: 1
+2025-04-04T22:43:52.3414774Z 
+2025-04-04T22:43:52.3415255Z browser_use/browser/browser.py:40:7: F811 Redefinition of unused `ProxySettings` from line 16
+2025-04-04T22:43:52.3416533Z    |
+2025-04-04T22:43:52.3417021Z 40 | class ProxySettings(TypedDict, total=False):
+2025-04-04T22:43:52.3417531Z    |       ^^^^^^^^^^^^^ F811
+2025-04-04T22:43:52.3418379Z 41 |     """the same as playwright.sync_api.ProxySettings, but with typing_extensions.TypedDict so pydantic can validate it"""
+2025-04-04T22:43:52.3419228Z    |
+2025-04-04T22:43:52.3419641Z    = help: Remove definition: `ProxySettings`
+2025-04-04T22:43:52.3420052Z 
+2025-04-04T22:43:52.3420191Z Found 1 error.
+2025-04-04T22:43:52.3420399Z 
+2025-04-04T22:43:52.3420709Z ruff-format..............................................................Passed
+2025-04-04T22:43:52.3971723Z check toml...............................................................Passed
+2025-04-04T22:43:52.4693701Z check yaml...............................................................Passed
+2025-04-04T22:43:52.5261979Z check json...............................................................Passed
+2025-04-04T22:43:52.5920122Z fix end of files.........................................................Passed
+2025-04-04T22:43:52.6625190Z check for merge conflicts................................................Passed
+2025-04-04T22:43:52.6636267Z check illegal windows names..........................(no files to check)Skipped
+2025-04-04T22:43:52.7380895Z check for case conflicts.................................................Passed
+2025-04-04T22:43:52.8134800Z check for added large files..............................................Passed
+2025-04-04T22:43:52.8899541Z check that scripts with shebangs are executable..........................Passed
+2025-04-04T22:43:52.8900550Z check for broken symlinks............................(no files to check)Skipped
+2025-04-04T22:43:52.9674345Z detect destroyed symlinks................................................Passed
+2025-04-04T22:43:53.0138947Z detect private key.......................................................Passed
+2025-04-04T22:43:53.0683602Z mixed line ending........................................................Passed
+2025-04-04T22:43:53.1127874Z fix utf-8 byte order marker..............................................Passed
+2025-04-04T22:43:53.3209388Z codespell................................................................Passed
+2025-04-04T22:43:53.3405808Z ##[error]Process completed with exit code 1.
+2025-04-04T22:43:53.3492597Z Post job cleanup.
+2025-04-04T22:43:53.4439783Z [command]/usr/bin/git version
+2025-04-04T22:43:53.4487820Z git version 2.49.0
+2025-04-04T22:43:53.4531121Z Temporarily overriding HOME='/home/runner/work/_temp/1c7defda-8559-42f9-b95e-728da38d9436' before making global git config changes
+2025-04-04T22:43:53.4532476Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-04T22:43:53.4537704Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/browser-use/browser-use
+2025-04-04T22:43:53.4573678Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-04T22:43:53.4606584Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-04T22:43:53.4834565Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-04T22:43:53.4856127Z http.https://github.com/.extraheader
+2025-04-04T22:43:53.4869212Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-04T22:43:53.4900726Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-04T22:43:53.5229635Z Cleaning up orphan processes

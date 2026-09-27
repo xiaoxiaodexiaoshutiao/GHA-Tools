@@ -1,0 +1,221 @@
+2025-02-15T15:45:50.8112846Z Requested labels: ubuntu-latest
+2025-02-15T15:45:50.8113160Z Job defined at: zmievsa/cadwyn/.github/workflows/ci.yaml@refs/pull/249/merge
+2025-02-15T15:45:50.8113256Z Waiting for a runner to pick up this job...
+2025-02-15T15:45:51.5662883Z Job is waiting for a hosted runner to come online.
+2025-02-15T15:45:54.4694110Z Job is about to start running on the hosted runner: GitHub Actions 10 (hosted)
+2025-02-15T15:45:56.2090194Z Current runner version: '2.322.0'
+2025-02-15T15:45:56.2137657Z ##[group]Operating System
+2025-02-15T15:45:56.2138442Z Ubuntu
+2025-02-15T15:45:56.2139051Z 24.04.1
+2025-02-15T15:45:56.2139554Z LTS
+2025-02-15T15:45:56.2139970Z ##[endgroup]
+2025-02-15T15:45:56.2140564Z ##[group]Runner Image
+2025-02-15T15:45:56.2141108Z Image: ubuntu-24.04
+2025-02-15T15:45:56.2141654Z Version: 20250209.1.0
+2025-02-15T15:45:56.2142692Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250209.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-15T15:45:56.2144049Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250209.1
+2025-02-15T15:45:56.2145249Z ##[endgroup]
+2025-02-15T15:45:56.2145831Z ##[group]Runner Image Provisioner
+2025-02-15T15:45:56.2146418Z 2.0.422.1
+2025-02-15T15:45:56.2147005Z ##[endgroup]
+2025-02-15T15:45:56.2148054Z ##[group]GITHUB_TOKEN Permissions
+2025-02-15T15:45:56.2150061Z Contents: read
+2025-02-15T15:45:56.2151021Z Metadata: read
+2025-02-15T15:45:56.2152115Z Packages: read
+2025-02-15T15:45:56.2153011Z ##[endgroup]
+2025-02-15T15:45:56.2156993Z Secret source: Actions
+2025-02-15T15:45:56.2158278Z Prepare workflow directory
+2025-02-15T15:45:56.2597218Z Prepare all required actions
+2025-02-15T15:45:56.2633831Z Getting action download info
+2025-02-15T15:45:56.4366788Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-02-15T15:45:56.4367674Z Version: 4.2.2
+2025-02-15T15:45:56.4368481Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-02-15T15:45:56.4369476Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-02-15T15:45:56.4370106Z ##[endgroup]
+2025-02-15T15:45:56.5083757Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-02-15T15:45:56.5084480Z Version: 5.4.0
+2025-02-15T15:45:56.5085380Z Digest: sha256:6003df952c8106bcd378d2ba997eef202da924317a57269dfa72449b135adb7f
+2025-02-15T15:45:56.5086250Z Source commit SHA: 42375524e23c412d93fb67b49958b491fce71c38
+2025-02-15T15:45:56.5086854Z ##[endgroup]
+2025-02-15T15:45:56.8192747Z Complete job name: Lint
+2025-02-15T15:45:56.8877676Z ##[group]Run actions/checkout@v4
+2025-02-15T15:45:56.8878506Z with:
+2025-02-15T15:45:56.8878908Z   repository: zmievsa/cadwyn
+2025-02-15T15:45:56.8879542Z   token: ***
+2025-02-15T15:45:56.8879934Z   ssh-strict: true
+2025-02-15T15:45:56.8880338Z   ssh-user: git
+2025-02-15T15:45:56.8880756Z   persist-credentials: true
+2025-02-15T15:45:56.8881212Z   clean: true
+2025-02-15T15:45:56.8881618Z   sparse-checkout-cone-mode: true
+2025-02-15T15:45:56.8882141Z   fetch-depth: 1
+2025-02-15T15:45:56.8882540Z   fetch-tags: false
+2025-02-15T15:45:56.8882945Z   show-progress: true
+2025-02-15T15:45:56.8883368Z   lfs: false
+2025-02-15T15:45:56.8883744Z   submodules: false
+2025-02-15T15:45:56.8884167Z   set-safe-directory: true
+2025-02-15T15:45:56.8884998Z ##[endgroup]
+2025-02-15T15:45:57.0520692Z Syncing repository: zmievsa/cadwyn
+2025-02-15T15:45:57.0522360Z ##[group]Getting Git version info
+2025-02-15T15:45:57.0523022Z Working directory is '/home/runner/work/cadwyn/cadwyn'
+2025-02-15T15:45:57.0524011Z [command]/usr/bin/git version
+2025-02-15T15:45:57.0579044Z git version 2.48.1
+2025-02-15T15:45:57.0606317Z ##[endgroup]
+2025-02-15T15:45:57.0621771Z Temporarily overriding HOME='/home/runner/work/_temp/038fd27e-c5c9-4b23-bc6c-c43a02cccd96' before making global git config changes
+2025-02-15T15:45:57.0624220Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-15T15:45:57.0628300Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/cadwyn/cadwyn
+2025-02-15T15:45:57.0663127Z Deleting the contents of '/home/runner/work/cadwyn/cadwyn'
+2025-02-15T15:45:57.0667393Z ##[group]Initializing the repository
+2025-02-15T15:45:57.0671994Z [command]/usr/bin/git init /home/runner/work/cadwyn/cadwyn
+2025-02-15T15:45:57.0729792Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-15T15:45:57.0731129Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-15T15:45:57.0732480Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-15T15:45:57.0733134Z hint:
+2025-02-15T15:45:57.0733860Z hint: 	git config --global init.defaultBranch <name>
+2025-02-15T15:45:57.0735017Z hint:
+2025-02-15T15:45:57.0735636Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-15T15:45:57.0737300Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-15T15:45:57.0738651Z hint:
+2025-02-15T15:45:57.0739370Z hint: 	git branch -m <name>
+2025-02-15T15:45:57.0740658Z Initialized empty Git repository in /home/runner/work/cadwyn/cadwyn/.git/
+2025-02-15T15:45:57.0747840Z [command]/usr/bin/git remote add origin https://github.com/zmievsa/cadwyn
+2025-02-15T15:45:57.0779222Z ##[endgroup]
+2025-02-15T15:45:57.0780427Z ##[group]Disabling automatic garbage collection
+2025-02-15T15:45:57.0784607Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-15T15:45:57.0812536Z ##[endgroup]
+2025-02-15T15:45:57.0813231Z ##[group]Setting up auth
+2025-02-15T15:45:57.0819258Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-15T15:45:57.0848089Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-15T15:45:57.1120757Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-15T15:45:57.1148693Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-15T15:45:57.1372938Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-15T15:45:57.1409856Z ##[endgroup]
+2025-02-15T15:45:57.1411117Z ##[group]Fetching the repository
+2025-02-15T15:45:57.1420607Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a9dbe963749cac2c2c7ea23d1c4b65229d1d4e93:refs/remotes/pull/249/merge
+2025-02-15T15:45:57.5872502Z From https://github.com/zmievsa/cadwyn
+2025-02-15T15:45:57.5874275Z  * [new ref]         a9dbe963749cac2c2c7ea23d1c4b65229d1d4e93 -> pull/249/merge
+2025-02-15T15:45:57.5877866Z ##[endgroup]
+2025-02-15T15:45:57.5879194Z ##[group]Determining the checkout info
+2025-02-15T15:45:57.5880722Z ##[endgroup]
+2025-02-15T15:45:57.5883447Z [command]/usr/bin/git sparse-checkout disable
+2025-02-15T15:45:57.5922221Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-15T15:45:57.5956121Z ##[group]Checking out the ref
+2025-02-15T15:45:57.5959217Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/249/merge
+2025-02-15T15:45:57.6121901Z Note: switching to 'refs/remotes/pull/249/merge'.
+2025-02-15T15:45:57.6124433Z 
+2025-02-15T15:45:57.6125362Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-15T15:45:57.6127719Z changes and commit them, and you can discard any commits you make in this
+2025-02-15T15:45:57.6129990Z state without impacting any branches by switching back to a branch.
+2025-02-15T15:45:57.6131328Z 
+2025-02-15T15:45:57.6132206Z If you want to create a new branch to retain commits you create, you may
+2025-02-15T15:45:57.6134211Z do so (now or later) by using -c with the switch command. Example:
+2025-02-15T15:45:57.6135718Z 
+2025-02-15T15:45:57.6136235Z   git switch -c <new-branch-name>
+2025-02-15T15:45:57.6137071Z 
+2025-02-15T15:45:57.6137544Z Or undo this operation with:
+2025-02-15T15:45:57.6138299Z 
+2025-02-15T15:45:57.6138724Z   git switch -
+2025-02-15T15:45:57.6139304Z 
+2025-02-15T15:45:57.6140290Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-15T15:45:57.6141701Z 
+2025-02-15T15:45:57.6142729Z HEAD is now at a9dbe96 Merge 75ce93c020d4b75e06e10c9f9b28e372e865b921 into f786a5d29af9faa8b6a3fed84f997a6f96210b75
+2025-02-15T15:45:57.6146261Z ##[endgroup]
+2025-02-15T15:45:57.6167814Z [command]/usr/bin/git log -1 --format=%H
+2025-02-15T15:45:57.6189668Z a9dbe963749cac2c2c7ea23d1c4b65229d1d4e93
+2025-02-15T15:45:57.6567254Z ##[group]Run actions/setup-python@v5
+2025-02-15T15:45:57.6568364Z with:
+2025-02-15T15:45:57.6569109Z   python-version: 3.10
+2025-02-15T15:45:57.6569986Z   check-latest: false
+2025-02-15T15:45:57.6571130Z   token: ***
+2025-02-15T15:45:57.6571928Z   update-environment: true
+2025-02-15T15:45:57.6572907Z   allow-prereleases: false
+2025-02-15T15:45:57.6573843Z ##[endgroup]
+2025-02-15T15:45:57.8243910Z ##[group]Installed versions
+2025-02-15T15:45:57.8307049Z Successfully set up CPython (3.10.16)
+2025-02-15T15:45:57.8309613Z ##[endgroup]
+2025-02-15T15:45:57.8452851Z ##[group]Run python -m pip install uv
+2025-02-15T15:45:57.8454213Z [36;1mpython -m pip install uv[0m
+2025-02-15T15:45:57.8455940Z [36;1muv pip install --system pre-commit pre-commit-uv[0m
+2025-02-15T15:45:57.8457422Z [36;1mpre-commit run --all-files[0m
+2025-02-15T15:45:57.8617523Z shell: /usr/bin/bash -e {0}
+2025-02-15T15:45:57.8618596Z env:
+2025-02-15T15:45:57.8619697Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-15T15:45:57.8621539Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib/pkgconfig
+2025-02-15T15:45:57.8623324Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-15T15:45:57.8625089Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-15T15:45:57.8626731Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-15T15:45:57.8628378Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.16/x64/lib
+2025-02-15T15:45:57.8629745Z ##[endgroup]
+2025-02-15T15:45:58.5952572Z Collecting uv
+2025-02-15T15:45:58.6325954Z   Downloading uv-0.6.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (11 kB)
+2025-02-15T15:45:58.6412310Z Downloading uv-0.6.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.3 MB)
+2025-02-15T15:45:58.7853266Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.3/16.3 MB 126.2 MB/s eta 0:00:00
+2025-02-15T15:45:58.8120797Z Installing collected packages: uv
+2025-02-15T15:45:58.9992743Z Successfully installed uv-0.6.0
+2025-02-15T15:45:59.5812041Z Using Python 3.10.16 environment at: /opt/hostedtoolcache/Python/3.10.16/x64
+2025-02-15T15:45:59.6389089Z Resolved 11 packages in 57ms
+2025-02-15T15:45:59.6451658Z Downloading virtualenv (4.1MiB)
+2025-02-15T15:45:59.7128111Z  Downloaded virtualenv
+2025-02-15T15:45:59.7130378Z Prepared 10 packages in 73ms
+2025-02-15T15:45:59.7196977Z Installed 10 packages in 6ms
+2025-02-15T15:45:59.7197657Z  + cfgv==3.4.0
+2025-02-15T15:45:59.7198020Z  + distlib==0.3.9
+2025-02-15T15:45:59.7198716Z  + filelock==3.17.0
+2025-02-15T15:45:59.7199158Z  + identify==2.6.7
+2025-02-15T15:45:59.7199508Z  + nodeenv==1.9.1
+2025-02-15T15:45:59.7199868Z  + platformdirs==4.3.6
+2025-02-15T15:45:59.7200240Z  + pre-commit==4.1.0
+2025-02-15T15:45:59.7200645Z  + pre-commit-uv==4.1.4
+2025-02-15T15:45:59.7201028Z  + pyyaml==6.0.2
+2025-02-15T15:45:59.7201433Z  + virtualenv==20.29.2
+2025-02-15T15:46:00.0612273Z [INFO] Initializing environment for https://github.com/pre-commit/pre-commit-hooks.
+2025-02-15T15:46:00.3723551Z [INFO] Initializing environment for https://github.com/pre-commit/pygrep-hooks.
+2025-02-15T15:46:00.5939773Z [INFO] Initializing environment for https://github.com/astral-sh/ruff-pre-commit.
+2025-02-15T15:46:00.8390030Z [INFO] Initializing environment for https://github.com/adamchainz/blacken-docs.
+2025-02-15T15:46:01.0799951Z [INFO] Initializing environment for https://github.com/adamchainz/blacken-docs:black==22.12.0.
+2025-02-15T15:46:01.3516843Z [INFO] Initializing environment for https://github.com/igorshubovych/markdownlint-cli.
+2025-02-15T15:46:01.6279262Z [INFO] Installing environment for https://github.com/pre-commit/pre-commit-hooks.
+2025-02-15T15:46:01.6280162Z [INFO] Once installed this environment will be reused.
+2025-02-15T15:46:01.6280709Z [INFO] This may take a few minutes...
+2025-02-15T15:46:01.6302237Z [INFO] Using pre-commit with uv 0.6.0 via pre-commit-uv 4.1.4
+2025-02-15T15:46:02.9997927Z [INFO] Installing environment for https://github.com/astral-sh/ruff-pre-commit.
+2025-02-15T15:46:02.9998868Z [INFO] Once installed this environment will be reused.
+2025-02-15T15:46:02.9999500Z [INFO] This may take a few minutes...
+2025-02-15T15:46:03.0000077Z [INFO] Using pre-commit with uv 0.6.0 via pre-commit-uv 4.1.4
+2025-02-15T15:46:03.8611722Z [INFO] Installing environment for https://github.com/adamchainz/blacken-docs.
+2025-02-15T15:46:03.8612528Z [INFO] Once installed this environment will be reused.
+2025-02-15T15:46:03.8613043Z [INFO] This may take a few minutes...
+2025-02-15T15:46:03.8613799Z [INFO] Using pre-commit with uv 0.6.0 via pre-commit-uv 4.1.4
+2025-02-15T15:46:04.7019901Z [INFO] Installing environment for https://github.com/igorshubovych/markdownlint-cli.
+2025-02-15T15:46:04.7020787Z [INFO] Once installed this environment will be reused.
+2025-02-15T15:46:04.7021376Z [INFO] This may take a few minutes...
+2025-02-15T15:46:16.6146805Z check for added large files..............................................Passed
+2025-02-15T15:46:16.7680767Z check yaml...............................................................Passed
+2025-02-15T15:46:16.8197523Z check toml...............................................................Passed
+2025-02-15T15:46:16.8847039Z fix end of files.........................................................Passed
+2025-02-15T15:46:16.9530288Z trim trailing whitespace.................................................Passed
+2025-02-15T15:46:17.0230161Z detect private key.......................................................Passed
+2025-02-15T15:46:17.1113831Z check blanket noqa.......................................................Passed
+2025-02-15T15:46:17.1498231Z ruff.....................................................................Failed
+2025-02-15T15:46:17.1498825Z - hook id: ruff
+2025-02-15T15:46:17.1499146Z - exit code: 1
+2025-02-15T15:46:17.1499481Z - files were modified by this hook
+2025-02-15T15:46:17.1499800Z 
+2025-02-15T15:46:17.1499960Z Found 1 error (1 fixed, 0 remaining).
+2025-02-15T15:46:17.1500254Z 
+2025-02-15T15:46:17.1795206Z ruff-format..............................................................Passed
+2025-02-15T15:46:17.5669196Z blacken-docs.............................................................Passed
+2025-02-15T15:46:17.7037025Z markdownlint.............................................................Passed
+2025-02-15T15:46:17.7200629Z ##[error]Process completed with exit code 1.
+2025-02-15T15:46:17.7308151Z Post job cleanup.
+2025-02-15T15:46:17.8236162Z [command]/usr/bin/git version
+2025-02-15T15:46:17.8272646Z git version 2.48.1
+2025-02-15T15:46:17.8320124Z Temporarily overriding HOME='/home/runner/work/_temp/31535a66-107c-4e28-83a9-b3727e075c89' before making global git config changes
+2025-02-15T15:46:17.8321311Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-15T15:46:17.8325457Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/cadwyn/cadwyn
+2025-02-15T15:46:17.8359139Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-15T15:46:17.8390296Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-15T15:46:17.8616228Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-15T15:46:17.8637095Z http.https://github.com/.extraheader
+2025-02-15T15:46:17.8650008Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-15T15:46:17.8681113Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-15T15:46:17.9005543Z Cleaning up orphan processes

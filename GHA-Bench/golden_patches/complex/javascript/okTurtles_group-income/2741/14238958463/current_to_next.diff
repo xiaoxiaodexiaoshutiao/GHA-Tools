@@ -1,0 +1,13 @@
+diff --git a/frontend/views/containers/chatroom/MessageBase.vue b/frontend/views/containers/chatroom/MessageBase.vue
+index 4f1eaf5c6b..88384842b3 100644
+--- a/frontend/views/containers/chatroom/MessageBase.vue
++++ b/frontend/views/containers/chatroom/MessageBase.vue
+@@ -301,7 +301,7 @@ export default ({
+     },
+     determineToEnableTruncationToggle () {
+       const msgBodyEl = this.isTypePoll
+-        ? this.$refs.msgFullWidthBody // poll message is rendered in .c-full-width-body container.
++        ? this.$refs.msgFullWidthBody // poll message is rendered in .c-full-width-body container
+         : this.$refs.msgBody
+       const threshold = this.chatMainConfig.isPhone
+         ? CHAT_LONG_MESSAGE_HEIGHT_THRESHOLD_MOBILE

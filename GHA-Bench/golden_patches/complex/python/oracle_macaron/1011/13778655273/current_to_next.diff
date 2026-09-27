@@ -1,0 +1,13 @@
+diff --git a/src/macaron/repo_finder/repo_finder.py b/src/macaron/repo_finder/repo_finder.py
+index 2c916b934..f98f2688e 100644
+--- a/src/macaron/repo_finder/repo_finder.py
++++ b/src/macaron/repo_finder/repo_finder.py
+@@ -103,7 +103,7 @@ def find_repo(purl: PackageURL, check_latest_version: bool = True) -> tuple[str,
+     logger.debug("Analyzing %s with Repo Finder: %s", purl, type(repo_finder))
+     found_repo, outcome = repo_finder.find_repo(purl)
+ 
+-    if check_latest_version and not defaults.getboolean("repofinder", "try_latest_purl"):
++    if check_latest_version and not defaults.getboolean("repofinder", "try_latest_purl", fallback=True):
+         check_latest_version = False
+ 
+     if found_repo or not check_latest_version:

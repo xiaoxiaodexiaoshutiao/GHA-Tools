@@ -1,0 +1,12 @@
+diff --git a/fdb-record-layer-core/src/main/java/com/apple/foundationdb/record/provider/foundationdb/OnlineIndexScrubber.java b/fdb-record-layer-core/src/main/java/com/apple/foundationdb/record/provider/foundationdb/OnlineIndexScrubber.java
+index 9333643216..6776ffb22c 100644
+--- a/fdb-record-layer-core/src/main/java/com/apple/foundationdb/record/provider/foundationdb/OnlineIndexScrubber.java
++++ b/fdb-record-layer-core/src/main/java/com/apple/foundationdb/record/provider/foundationdb/OnlineIndexScrubber.java
+@@ -40,6 +40,7 @@
+  * Scan indexes for problems and optionally report or repair.
+  */
+ @API(API.Status.UNSTABLE)
++@SuppressWarnings("PMD.AvoidUsingHardCodedIP") // Dear PMD, the version string in "deprecated since" is not an IP.
+ public class OnlineIndexScrubber implements AutoCloseable {
+ 
+     @Nonnull private final IndexingCommon common;

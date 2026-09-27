@@ -1,0 +1,223 @@
+﻿2025-04-11T17:24:07.8168286Z Current runner version: '2.323.0'
+2025-04-11T17:24:07.8193453Z ##[group]Operating System
+2025-04-11T17:24:07.8194211Z Ubuntu
+2025-04-11T17:24:07.8194759Z 24.04.2
+2025-04-11T17:24:07.8195283Z LTS
+2025-04-11T17:24:07.8195719Z ##[endgroup]
+2025-04-11T17:24:07.8196284Z ##[group]Runner Image
+2025-04-11T17:24:07.8196840Z Image: ubuntu-24.04
+2025-04-11T17:24:07.8197396Z Version: 20250406.1.0
+2025-04-11T17:24:07.8198384Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250406.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-11T17:24:07.8199839Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250406.1
+2025-04-11T17:24:07.8200728Z ##[endgroup]
+2025-04-11T17:24:07.8201181Z ##[group]Runner Image Provisioner
+2025-04-11T17:24:07.8201841Z 2.0.422.1
+2025-04-11T17:24:07.8202492Z ##[endgroup]
+2025-04-11T17:24:07.8204802Z ##[group]GITHUB_TOKEN Permissions
+2025-04-11T17:24:07.8207342Z Actions: read
+2025-04-11T17:24:07.8208147Z Attestations: read
+2025-04-11T17:24:07.8208736Z Checks: read
+2025-04-11T17:24:07.8209199Z Contents: read
+2025-04-11T17:24:07.8209775Z Deployments: read
+2025-04-11T17:24:07.8210230Z Discussions: read
+2025-04-11T17:24:07.8210706Z Issues: read
+2025-04-11T17:24:07.8211260Z Metadata: read
+2025-04-11T17:24:07.8211705Z Models: read
+2025-04-11T17:24:07.8212442Z Packages: read
+2025-04-11T17:24:07.8213024Z Pages: read
+2025-04-11T17:24:07.8213499Z PullRequests: read
+2025-04-11T17:24:07.8213975Z RepositoryProjects: read
+2025-04-11T17:24:07.8214585Z SecurityEvents: read
+2025-04-11T17:24:07.8215058Z Statuses: read
+2025-04-11T17:24:07.8215587Z ##[endgroup]
+2025-04-11T17:24:07.8218083Z Secret source: None
+2025-04-11T17:24:07.8219169Z Prepare workflow directory
+2025-04-11T17:24:07.8539467Z Prepare all required actions
+2025-04-11T17:24:07.8576646Z Getting action download info
+2025-04-11T17:24:08.2873486Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-11T17:24:08.2874477Z Version: 4.2.2
+2025-04-11T17:24:08.2875499Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-11T17:24:08.2876695Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-11T17:24:08.2877375Z ##[endgroup]
+2025-04-11T17:24:08.3784937Z ##[group]Download immutable action package 'actions/setup-node@v4'
+2025-04-11T17:24:08.3785617Z Version: 4.3.0
+2025-04-11T17:24:08.3786248Z Digest: sha256:9f9f8171ffc89cb7f6897e615e2b43b46bb55176fd279129eb0088157eace9b2
+2025-04-11T17:24:08.3787089Z Source commit SHA: cdca7365b2dadb8aad0a33bc7601856ffabcc48e
+2025-04-11T17:24:08.3787682Z ##[endgroup]
+2025-04-11T17:24:08.5353277Z Complete job name: Test package
+2025-04-11T17:24:08.6007384Z ##[group]Run actions/checkout@v4
+2025-04-11T17:24:08.6008312Z with:
+2025-04-11T17:24:08.6008727Z   repository: simple-icons/simple-icons
+2025-04-11T17:24:08.6009403Z   token: ***
+2025-04-11T17:24:08.6009780Z   ssh-strict: true
+2025-04-11T17:24:08.6010160Z   ssh-user: git
+2025-04-11T17:24:08.6010563Z   persist-credentials: true
+2025-04-11T17:24:08.6010995Z   clean: true
+2025-04-11T17:24:08.6011409Z   sparse-checkout-cone-mode: true
+2025-04-11T17:24:08.6011871Z   fetch-depth: 1
+2025-04-11T17:24:08.6012417Z   fetch-tags: false
+2025-04-11T17:24:08.6012805Z   show-progress: true
+2025-04-11T17:24:08.6013202Z   lfs: false
+2025-04-11T17:24:08.6013554Z   submodules: false
+2025-04-11T17:24:08.6013959Z   set-safe-directory: true
+2025-04-11T17:24:08.6014614Z ##[endgroup]
+2025-04-11T17:24:08.7580730Z Syncing repository: simple-icons/simple-icons
+2025-04-11T17:24:08.7582714Z ##[group]Getting Git version info
+2025-04-11T17:24:08.7583590Z Working directory is '/home/runner/work/simple-icons/simple-icons'
+2025-04-11T17:24:08.7584556Z [command]/usr/bin/git version
+2025-04-11T17:24:08.7628458Z git version 2.49.0
+2025-04-11T17:24:08.7655758Z ##[endgroup]
+2025-04-11T17:24:08.7671072Z Temporarily overriding HOME='/home/runner/work/_temp/d5b85e11-5ca9-40fc-9b27-7c20d8e2cc54' before making global git config changes
+2025-04-11T17:24:08.7673815Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-11T17:24:08.7678043Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/simple-icons/simple-icons
+2025-04-11T17:24:08.7711727Z Deleting the contents of '/home/runner/work/simple-icons/simple-icons'
+2025-04-11T17:24:08.7716017Z ##[group]Initializing the repository
+2025-04-11T17:24:08.7720753Z [command]/usr/bin/git init /home/runner/work/simple-icons/simple-icons
+2025-04-11T17:24:08.7776409Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-11T17:24:08.7777624Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-11T17:24:08.7779137Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-11T17:24:08.7780277Z hint:
+2025-04-11T17:24:08.7781028Z hint: 	git config --global init.defaultBranch <name>
+2025-04-11T17:24:08.7781910Z hint:
+2025-04-11T17:24:08.7782910Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-11T17:24:08.7783793Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-11T17:24:08.7784454Z hint:
+2025-04-11T17:24:08.7784831Z hint: 	git branch -m <name>
+2025-04-11T17:24:08.7785566Z Initialized empty Git repository in /home/runner/work/simple-icons/simple-icons/.git/
+2025-04-11T17:24:08.7792617Z [command]/usr/bin/git remote add origin https://github.com/simple-icons/simple-icons
+2025-04-11T17:24:08.7823445Z ##[endgroup]
+2025-04-11T17:24:08.7824136Z ##[group]Disabling automatic garbage collection
+2025-04-11T17:24:08.7827349Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-11T17:24:08.7855363Z ##[endgroup]
+2025-04-11T17:24:08.7856016Z ##[group]Setting up auth
+2025-04-11T17:24:08.7861742Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-11T17:24:08.7897960Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-11T17:24:08.8176046Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-11T17:24:08.8209745Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-11T17:24:08.8466503Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-11T17:24:08.8504164Z ##[endgroup]
+2025-04-11T17:24:08.8505357Z ##[group]Fetching the repository
+2025-04-11T17:24:08.8514621Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +7e95d6913b2b3a02a6320ce1561afb660c3f5fe4:refs/remotes/pull/13034/merge
+2025-04-11T17:24:09.5036965Z From https://github.com/simple-icons/simple-icons
+2025-04-11T17:24:09.5038793Z  * [new ref]         7e95d6913b2b3a02a6320ce1561afb660c3f5fe4 -> pull/13034/merge
+2025-04-11T17:24:09.5073657Z ##[endgroup]
+2025-04-11T17:24:09.5076703Z ##[group]Determining the checkout info
+2025-04-11T17:24:09.5078040Z ##[endgroup]
+2025-04-11T17:24:09.5082811Z [command]/usr/bin/git sparse-checkout disable
+2025-04-11T17:24:09.5122815Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-11T17:24:09.5150948Z ##[group]Checking out the ref
+2025-04-11T17:24:09.5154890Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/13034/merge
+2025-04-11T17:24:09.6753062Z Note: switching to 'refs/remotes/pull/13034/merge'.
+2025-04-11T17:24:09.6753954Z 
+2025-04-11T17:24:09.6754625Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-11T17:24:09.6756040Z changes and commit them, and you can discard any commits you make in this
+2025-04-11T17:24:09.6757443Z state without impacting any branches by switching back to a branch.
+2025-04-11T17:24:09.6758254Z 
+2025-04-11T17:24:09.6758860Z If you want to create a new branch to retain commits you create, you may
+2025-04-11T17:24:09.6761104Z do so (now or later) by using -c with the switch command. Example:
+2025-04-11T17:24:09.6761815Z 
+2025-04-11T17:24:09.6762342Z   git switch -c <new-branch-name>
+2025-04-11T17:24:09.6762869Z 
+2025-04-11T17:24:09.6763171Z Or undo this operation with:
+2025-04-11T17:24:09.6763613Z 
+2025-04-11T17:24:09.6763862Z   git switch -
+2025-04-11T17:24:09.6764228Z 
+2025-04-11T17:24:09.6764984Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-11T17:24:09.6765839Z 
+2025-04-11T17:24:09.6766782Z HEAD is now at 7e95d69 Merge 6ae7613f711f68523ace031dda6173d399d5fecf into 337791ce270bd05fb1dffff9e79a5885b8dd7800
+2025-04-11T17:24:09.6769871Z ##[endgroup]
+2025-04-11T17:24:09.6799457Z [command]/usr/bin/git log -1 --format=%H
+2025-04-11T17:24:09.6822454Z 7e95d6913b2b3a02a6320ce1561afb660c3f5fe4
+2025-04-11T17:24:09.7113761Z ##[group]Run actions/setup-node@v4
+2025-04-11T17:24:09.7114850Z with:
+2025-04-11T17:24:09.7115684Z   node-version-file: .node-version
+2025-04-11T17:24:09.7116730Z   cache: npm
+2025-04-11T17:24:09.7117622Z   cache-dependency-path: **/package.json
+2025-04-11T17:24:09.7118715Z   always-auth: false
+2025-04-11T17:24:09.7119600Z   check-latest: false
+2025-04-11T17:24:09.7120746Z   token: ***
+2025-04-11T17:24:09.7121542Z ##[endgroup]
+2025-04-11T17:24:09.8835491Z Resolved .node-version as 22
+2025-04-11T17:24:09.8875077Z Found in cache @ /opt/hostedtoolcache/node/22.14.0/x64
+2025-04-11T17:24:09.8881389Z ##[group]Environment details
+2025-04-11T17:24:10.1487335Z node: v22.14.0
+2025-04-11T17:24:10.1487883Z npm: 10.9.2
+2025-04-11T17:24:10.1488306Z yarn: 1.22.22
+2025-04-11T17:24:10.1489190Z ##[endgroup]
+2025-04-11T17:24:10.1509715Z [command]/opt/hostedtoolcache/node/22.14.0/x64/bin/npm config get cache
+2025-04-11T17:24:10.2494175Z /home/runner/.npm
+2025-04-11T17:24:10.5615474Z Cache hit for: node-cache-Linux-x64-npm-73cb35bd764db117e22ccbce2cb16c75fe0f7578ee9c6882d5ac498f036f933a
+2025-04-11T17:24:10.9625468Z Received 66777016 of 66777016 (100.0%), 179.9 MBs/sec
+2025-04-11T17:24:10.9626273Z Cache Size: ~64 MB (66777016 B)
+2025-04-11T17:24:10.9652445Z [command]/usr/bin/tar -xf /home/runner/work/_temp/5dc79550-51ec-48ea-9d06-c823d7f0c5f3/cache.tzst -P -C /home/runner/work/simple-icons/simple-icons --use-compress-program unzstd
+2025-04-11T17:24:11.4258812Z Cache restored successfully
+2025-04-11T17:24:11.4427155Z Cache restored from key: node-cache-Linux-x64-npm-73cb35bd764db117e22ccbce2cb16c75fe0f7578ee9c6882d5ac498f036f933a
+2025-04-11T17:24:11.4681140Z ##[group]Run npm i --ignore-scripts --no-audit --no-fund
+2025-04-11T17:24:11.4681608Z [36;1mnpm i --ignore-scripts --no-audit --no-fund[0m
+2025-04-11T17:24:11.4734964Z shell: /usr/bin/bash -e {0}
+2025-04-11T17:24:11.4735230Z ##[endgroup]
+2025-04-11T17:24:28.3259779Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-04-11T17:24:28.4499824Z npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+2025-04-11T17:24:28.4717633Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+2025-04-11T17:24:28.5389593Z npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+2025-04-11T17:24:28.5473140Z npm warn deprecated glob@8.1.0: Glob versions prior to v9 are no longer supported
+2025-04-11T17:24:28.5599109Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-04-11T17:24:28.5615609Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-04-11T17:24:29.9213576Z npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+2025-04-11T17:24:30.3556609Z 
+2025-04-11T17:24:30.3563233Z added 716 packages in 19s
+2025-04-11T17:24:30.4232677Z ##[group]Run npm run test
+2025-04-11T17:24:30.4232977Z [36;1mnpm run test[0m
+2025-04-11T17:24:30.4286742Z shell: /usr/bin/bash -e {0}
+2025-04-11T17:24:30.4286984Z ##[endgroup]
+2025-04-11T17:24:30.5242627Z 
+2025-04-11T17:24:30.5243306Z > simple-icons@14.12.1 pretest
+2025-04-11T17:24:30.5243835Z > npm run prepublishOnly
+2025-04-11T17:24:30.5244043Z 
+2025-04-11T17:24:30.6184908Z 
+2025-04-11T17:24:30.6185475Z > simple-icons@14.12.1 prepublishOnly
+2025-04-11T17:24:30.6186016Z > npm run build
+2025-04-11T17:24:30.6186159Z 
+2025-04-11T17:24:30.7131624Z 
+2025-04-11T17:24:30.7132386Z > simple-icons@14.12.1 build
+2025-04-11T17:24:30.7132992Z > node scripts/build/package.js
+2025-04-11T17:24:30.7133282Z 
+2025-04-11T17:24:31.3984433Z 
+2025-04-11T17:24:31.3985449Z > simple-icons@14.12.1 test
+2025-04-11T17:24:31.3986345Z > mocha tests --reporter tests/min-reporter.cjs --inline-diffs
+2025-04-11T17:24:31.3986783Z 
+2025-04-11T17:24:33.1499015Z 
+2025-04-11T17:24:33.1502566Z   29552 passing (1s)
+2025-04-11T17:24:33.1503033Z   1 failing
+2025-04-11T17:24:33.1503252Z 
+2025-04-11T17:24:33.1516451Z   1) Manjaro
+2025-04-11T17:24:33.1516766Z        has a valid svg value:
+2025-04-11T17:24:33.1517029Z 
+2025-04-11T17:24:33.1517426Z       AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+2025-04-11T17:24:33.1518139Z + actual - expected
+2025-04-11T17:24:33.1518366Z 
+2025-04-11T17:24:33.1519581Z + '<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Manjaro</title><path d="M2.182 0A2.177 2.177 0 0 0 0 2.182v19.636C0 23.027.973 24 2.182 24h4.363V6.545h8.728V0Zm15.273 0v24h4.363A2.177 2.177 0 0 0 24 21.818V2.182A2.177 2.177 0 0 0 21.818 0ZM8.727 8.727V24h6.546V8.727Z"/></svg>'
+2025-04-11T17:24:33.1521400Z - '<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Simple Icons</title><path d="M2.182 0A2.177 2.177 0 0 0 0 2.182v19.636C0 23.027.973 24 2.182 24h4.363V6.545h8.728V0Zm15.273 0v24h4.363A2.177 2.177 0 0 0 24 21.818V2.182A2.177 2.177 0 0 0 21.818 0ZM8.727 8.727V24h6.546V8.727Z"/></svg>'
+2025-04-11T17:24:33.1522388Z       
+2025-04-11T17:24:33.1522565Z       actual expected
+2025-04-11T17:24:33.1522738Z       
+2025-04-11T17:24:33.1523712Z       <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>ManjaroSimple Icons</title><path d="M2.182 0A2.177 2.177 0 0 0 0 2.182v19.636C0 23.027.973 24 2.182 24h4.363V6.545h8.728V0Zm15.273 0v24h4.363A2.177 2.177 0 0 0 24 21.818V2.182A2.177 2.177 0 0 0 21.818 0ZM8.727 8.727V24h6.546V8.727Z"/></svg>
+2025-04-11T17:24:33.1524547Z       
+2025-04-11T17:24:33.1524962Z       at Context.<anonymous> (file:///home/runner/work/simple-icons/simple-icons/tests/test-icon.js:77:11)
+2025-04-11T17:24:33.1525314Z 
+2025-04-11T17:24:33.1525325Z 
+2025-04-11T17:24:33.1525330Z 
+2025-04-11T17:24:33.1831127Z ##[error]Process completed with exit code 1.
+2025-04-11T17:24:33.1979961Z Post job cleanup.
+2025-04-11T17:24:33.2898726Z [command]/usr/bin/git version
+2025-04-11T17:24:33.2934940Z git version 2.49.0
+2025-04-11T17:24:33.2982830Z Temporarily overriding HOME='/home/runner/work/_temp/e2246be2-5891-4231-b0cf-3b6664203972' before making global git config changes
+2025-04-11T17:24:33.2983782Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-11T17:24:33.2987920Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/simple-icons/simple-icons
+2025-04-11T17:24:33.3020728Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-11T17:24:33.3052890Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-11T17:24:33.3282758Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-11T17:24:33.3303177Z http.https://github.com/.extraheader
+2025-04-11T17:24:33.3314999Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-11T17:24:33.3345289Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-11T17:24:33.3667154Z Cleaning up orphan processes

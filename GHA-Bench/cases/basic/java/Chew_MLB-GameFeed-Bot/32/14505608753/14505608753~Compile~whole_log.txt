@@ -1,0 +1,295 @@
+2025-04-17T00:52:08.1311121Z Requested labels: ubuntu-latest
+2025-04-17T00:52:08.1311357Z Job defined at: Chew/MLB-GameFeed-Bot/.github/workflows/build.yml@refs/pull/32/merge
+2025-04-17T00:52:08.1311456Z Waiting for a runner to pick up this job...
+2025-04-17T00:52:08.6079882Z Job is waiting for a hosted runner to come online.
+2025-04-17T00:52:10.4030739Z Job is about to start running on the hosted runner: GitHub Actions 25 (hosted)
+2025-04-17T00:52:12.0672755Z Current runner version: '2.323.0'
+2025-04-17T00:52:12.0698572Z ##[group]Operating System
+2025-04-17T00:52:12.0699420Z Ubuntu
+2025-04-17T00:52:12.0699944Z 24.04.2
+2025-04-17T00:52:12.0700464Z LTS
+2025-04-17T00:52:12.0701032Z ##[endgroup]
+2025-04-17T00:52:12.0701562Z ##[group]Runner Image
+2025-04-17T00:52:12.0702140Z Image: ubuntu-24.04
+2025-04-17T00:52:12.0702751Z Version: 20250413.1.0
+2025-04-17T00:52:12.0703814Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250413.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-17T00:52:12.0705245Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250413.1
+2025-04-17T00:52:12.0706200Z ##[endgroup]
+2025-04-17T00:52:12.0706715Z ##[group]Runner Image Provisioner
+2025-04-17T00:52:12.0707560Z 2.0.422.1
+2025-04-17T00:52:12.0708109Z ##[endgroup]
+2025-04-17T00:52:12.0710259Z ##[group]GITHUB_TOKEN Permissions
+2025-04-17T00:52:12.0712455Z Actions: read
+2025-04-17T00:52:12.0713205Z Attestations: read
+2025-04-17T00:52:12.0713997Z Checks: read
+2025-04-17T00:52:12.0714504Z Contents: read
+2025-04-17T00:52:12.0715121Z Deployments: read
+2025-04-17T00:52:12.0715682Z Discussions: read
+2025-04-17T00:52:12.0716211Z Issues: read
+2025-04-17T00:52:12.0716821Z Metadata: read
+2025-04-17T00:52:12.0717522Z Models: read
+2025-04-17T00:52:12.0717998Z Packages: read
+2025-04-17T00:52:12.0718632Z Pages: read
+2025-04-17T00:52:12.0719205Z PullRequests: read
+2025-04-17T00:52:12.0719815Z RepositoryProjects: read
+2025-04-17T00:52:12.0720428Z SecurityEvents: read
+2025-04-17T00:52:12.0720942Z Statuses: read
+2025-04-17T00:52:12.0721509Z ##[endgroup]
+2025-04-17T00:52:12.0724564Z Secret source: None
+2025-04-17T00:52:12.0725595Z Prepare workflow directory
+2025-04-17T00:52:12.1030676Z Prepare all required actions
+2025-04-17T00:52:12.1066651Z Getting action download info
+2025-04-17T00:52:12.2796466Z ##[group]Download immutable action package 'actions/checkout@v2'
+2025-04-17T00:52:12.2797775Z Version: 2.7.0
+2025-04-17T00:52:12.2798698Z Digest: sha256:95d28907bc868c0bab52f05f1f84cf8416c9415fba4c92519bc0b83bdce1eae3
+2025-04-17T00:52:12.2799803Z Source commit SHA: ee0669bd1cc54295c223e0bb666b733df41de1c5
+2025-04-17T00:52:12.2800495Z ##[endgroup]
+2025-04-17T00:52:12.3964273Z ##[group]Download immutable action package 'actions/setup-java@v2'
+2025-04-17T00:52:12.3965100Z Version: 2.5.1
+2025-04-17T00:52:12.3965865Z Digest: sha256:6bc7c080fae40d9ddeebd6431baced4b4683753d16f67db48328b625c9f69c57
+2025-04-17T00:52:12.3966842Z Source commit SHA: 91d3aa4956ec4a53e477c4907347b5e3481be8c9
+2025-04-17T00:52:12.3967815Z ##[endgroup]
+2025-04-17T00:52:12.6513131Z Complete job name: Compile
+2025-04-17T00:52:12.7231232Z ##[group]Run actions/checkout@v2
+2025-04-17T00:52:12.7232192Z with:
+2025-04-17T00:52:12.7232711Z   repository: Chew/MLB-GameFeed-Bot
+2025-04-17T00:52:12.7233501Z   token: ***
+2025-04-17T00:52:12.7233982Z   ssh-strict: true
+2025-04-17T00:52:12.7234491Z   persist-credentials: true
+2025-04-17T00:52:12.7235018Z   clean: true
+2025-04-17T00:52:12.7235474Z   fetch-depth: 1
+2025-04-17T00:52:12.7235970Z   lfs: false
+2025-04-17T00:52:12.7236419Z   submodules: false
+2025-04-17T00:52:12.7237125Z   set-safe-directory: true
+2025-04-17T00:52:12.7238095Z ##[endgroup]
+2025-04-17T00:52:12.9746087Z Syncing repository: Chew/MLB-GameFeed-Bot
+2025-04-17T00:52:12.9748409Z ##[group]Getting Git version info
+2025-04-17T00:52:12.9749332Z Working directory is '/home/runner/work/MLB-GameFeed-Bot/MLB-GameFeed-Bot'
+2025-04-17T00:52:12.9750502Z [command]/usr/bin/git version
+2025-04-17T00:52:12.9801753Z git version 2.49.0
+2025-04-17T00:52:12.9830836Z ##[endgroup]
+2025-04-17T00:52:12.9850715Z Temporarily overriding HOME='/home/runner/work/_temp/7346f9fe-3214-4058-9b09-98dd167cde34' before making global git config changes
+2025-04-17T00:52:12.9853328Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-17T00:52:12.9855725Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/MLB-GameFeed-Bot/MLB-GameFeed-Bot
+2025-04-17T00:52:12.9893769Z Deleting the contents of '/home/runner/work/MLB-GameFeed-Bot/MLB-GameFeed-Bot'
+2025-04-17T00:52:12.9897616Z ##[group]Initializing the repository
+2025-04-17T00:52:12.9901886Z [command]/usr/bin/git init /home/runner/work/MLB-GameFeed-Bot/MLB-GameFeed-Bot
+2025-04-17T00:52:13.0122074Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-17T00:52:13.0123298Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-17T00:52:13.0124990Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-17T00:52:13.0125851Z hint:
+2025-04-17T00:52:13.0126794Z hint: 	git config --global init.defaultBranch <name>
+2025-04-17T00:52:13.0128185Z hint:
+2025-04-17T00:52:13.0129395Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-17T00:52:13.0131141Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-17T00:52:13.0132547Z hint:
+2025-04-17T00:52:13.0133350Z hint: 	git branch -m <name>
+2025-04-17T00:52:13.0134931Z Initialized empty Git repository in /home/runner/work/MLB-GameFeed-Bot/MLB-GameFeed-Bot/.git/
+2025-04-17T00:52:13.0139020Z [command]/usr/bin/git remote add origin https://github.com/Chew/MLB-GameFeed-Bot
+2025-04-17T00:52:13.0175080Z ##[endgroup]
+2025-04-17T00:52:13.0176015Z ##[group]Disabling automatic garbage collection
+2025-04-17T00:52:13.0179940Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-17T00:52:13.0209854Z ##[endgroup]
+2025-04-17T00:52:13.0211391Z ##[group]Setting up auth
+2025-04-17T00:52:13.0217260Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-17T00:52:13.0246807Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-17T00:52:13.0555400Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-17T00:52:13.0600042Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-17T00:52:13.0862681Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-17T00:52:13.0905557Z ##[endgroup]
+2025-04-17T00:52:13.0906701Z ##[group]Fetching the repository
+2025-04-17T00:52:13.0918152Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +8cf512b4c73383b9c581c3a49fdcf35204b81a1a:refs/remotes/pull/32/merge
+2025-04-17T00:52:13.2929594Z remote: Enumerating objects: 65, done.        
+2025-04-17T00:52:13.2931003Z remote: Counting objects:   1% (1/65)        
+2025-04-17T00:52:13.2931899Z remote: Counting objects:   3% (2/65)        
+2025-04-17T00:52:13.2932777Z remote: Counting objects:   4% (3/65)        
+2025-04-17T00:52:13.2933654Z remote: Counting objects:   6% (4/65)        
+2025-04-17T00:52:13.2934424Z remote: Counting objects:   7% (5/65)        
+2025-04-17T00:52:13.2935110Z remote: Counting objects:   9% (6/65)        
+2025-04-17T00:52:13.2935802Z remote: Counting objects:  10% (7/65)        
+2025-04-17T00:52:13.2936496Z remote: Counting objects:  12% (8/65)        
+2025-04-17T00:52:13.2937461Z remote: Counting objects:  13% (9/65)        
+2025-04-17T00:52:13.2938163Z remote: Counting objects:  15% (10/65)        
+2025-04-17T00:52:13.2938874Z remote: Counting objects:  16% (11/65)        
+2025-04-17T00:52:13.2939585Z remote: Counting objects:  18% (12/65)        
+2025-04-17T00:52:13.2940345Z remote: Counting objects:  20% (13/65)        
+2025-04-17T00:52:13.2941060Z remote: Counting objects:  21% (14/65)        
+2025-04-17T00:52:13.2942056Z remote: Counting objects:  23% (15/65)        
+2025-04-17T00:52:13.2943190Z remote: Counting objects:  24% (16/65)        
+2025-04-17T00:52:13.2944162Z remote: Counting objects:  26% (17/65)        
+2025-04-17T00:52:13.2945276Z remote: Counting objects:  27% (18/65)        
+2025-04-17T00:52:13.2946780Z remote: Counting objects:  29% (19/65)        
+2025-04-17T00:52:13.2948085Z remote: Counting objects:  30% (20/65)        
+2025-04-17T00:52:13.2949198Z remote: Counting objects:  32% (21/65)        
+2025-04-17T00:52:13.2950172Z remote: Counting objects:  33% (22/65)        
+2025-04-17T00:52:13.2951255Z remote: Counting objects:  35% (23/65)        
+2025-04-17T00:52:13.2952002Z remote: Counting objects:  36% (24/65)        
+2025-04-17T00:52:13.2952654Z remote: Counting objects:  38% (25/65)        
+2025-04-17T00:52:13.2953314Z remote: Counting objects:  40% (26/65)        
+2025-04-17T00:52:13.2953950Z remote: Counting objects:  41% (27/65)        
+2025-04-17T00:52:13.2954760Z remote: Counting objects:  43% (28/65)        
+2025-04-17T00:52:13.2955594Z remote: Counting objects:  44% (29/65)        
+2025-04-17T00:52:13.2956237Z remote: Counting objects:  46% (30/65)        
+2025-04-17T00:52:13.2956867Z remote: Counting objects:  47% (31/65)        
+2025-04-17T00:52:13.2957999Z remote: Counting objects:  49% (32/65)        
+2025-04-17T00:52:13.2958926Z remote: Counting objects:  50% (33/65)        
+2025-04-17T00:52:13.2959594Z remote: Counting objects:  52% (34/65)        
+2025-04-17T00:52:13.2960231Z remote: Counting objects:  53% (35/65)        
+2025-04-17T00:52:13.2960860Z remote: Counting objects:  55% (36/65)        
+2025-04-17T00:52:13.2961650Z remote: Counting objects:  56% (37/65)        
+2025-04-17T00:52:13.2962650Z remote: Counting objects:  58% (38/65)        
+2025-04-17T00:52:13.2963608Z remote: Counting objects:  60% (39/65)        
+2025-04-17T00:52:13.2964417Z remote: Counting objects:  61% (40/65)        
+2025-04-17T00:52:13.2965517Z remote: Counting objects:  63% (41/65)        
+2025-04-17T00:52:13.2966647Z remote: Counting objects:  64% (42/65)        
+2025-04-17T00:52:13.2967915Z remote: Counting objects:  66% (43/65)        
+2025-04-17T00:52:13.2968595Z remote: Counting objects:  67% (44/65)        
+2025-04-17T00:52:13.2969237Z remote: Counting objects:  69% (45/65)        
+2025-04-17T00:52:13.2969887Z remote: Counting objects:  70% (46/65)        
+2025-04-17T00:52:13.2970629Z remote: Counting objects:  72% (47/65)        
+2025-04-17T00:52:13.2971870Z remote: Counting objects:  73% (48/65)        
+2025-04-17T00:52:13.2972745Z remote: Counting objects:  75% (49/65)        
+2025-04-17T00:52:13.2973395Z remote: Counting objects:  76% (50/65)        
+2025-04-17T00:52:13.2974027Z remote: Counting objects:  78% (51/65)        
+2025-04-17T00:52:13.2974645Z remote: Counting objects:  80% (52/65)        
+2025-04-17T00:52:13.2975492Z remote: Counting objects:  81% (53/65)        
+2025-04-17T00:52:13.2976641Z remote: Counting objects:  83% (54/65)        
+2025-04-17T00:52:13.2978055Z remote: Counting objects:  84% (55/65)        
+2025-04-17T00:52:13.2979043Z remote: Counting objects:  86% (56/65)        
+2025-04-17T00:52:13.2980206Z remote: Counting objects:  87% (57/65)        
+2025-04-17T00:52:13.2981309Z remote: Counting objects:  89% (58/65)        
+2025-04-17T00:52:13.2981982Z remote: Counting objects:  90% (59/65)        
+2025-04-17T00:52:13.2982606Z remote: Counting objects:  92% (60/65)        
+2025-04-17T00:52:13.2983226Z remote: Counting objects:  93% (61/65)        
+2025-04-17T00:52:13.2983897Z remote: Counting objects:  95% (62/65)        
+2025-04-17T00:52:13.2984936Z remote: Counting objects:  96% (63/65)        
+2025-04-17T00:52:13.2986039Z remote: Counting objects:  98% (64/65)        
+2025-04-17T00:52:13.2987262Z remote: Counting objects: 100% (65/65)        
+2025-04-17T00:52:13.2988356Z remote: Counting objects: 100% (65/65), done.        
+2025-04-17T00:52:13.2989621Z remote: Compressing objects:   1% (1/52)        
+2025-04-17T00:52:13.2990516Z remote: Compressing objects:   3% (2/52)        
+2025-04-17T00:52:13.2991173Z remote: Compressing objects:   5% (3/52)        
+2025-04-17T00:52:13.2991815Z remote: Compressing objects:   7% (4/52)        
+2025-04-17T00:52:13.2992465Z remote: Compressing objects:   9% (5/52)        
+2025-04-17T00:52:13.2993454Z remote: Compressing objects:  11% (6/52)        
+2025-04-17T00:52:13.2994113Z remote: Compressing objects:  13% (7/52)        
+2025-04-17T00:52:13.2994756Z remote: Compressing objects:  15% (8/52)        
+2025-04-17T00:52:13.2995456Z remote: Compressing objects:  17% (9/52)        
+2025-04-17T00:52:13.2996098Z remote: Compressing objects:  19% (10/52)        
+2025-04-17T00:52:13.2996737Z remote: Compressing objects:  21% (11/52)        
+2025-04-17T00:52:13.2997664Z remote: Compressing objects:  23% (12/52)        
+2025-04-17T00:52:13.2998339Z remote: Compressing objects:  25% (13/52)        
+2025-04-17T00:52:13.2999003Z remote: Compressing objects:  26% (14/52)        
+2025-04-17T00:52:13.2999651Z remote: Compressing objects:  28% (15/52)        
+2025-04-17T00:52:13.3000293Z remote: Compressing objects:  30% (16/52)        
+2025-04-17T00:52:13.3000925Z remote: Compressing objects:  32% (17/52)        
+2025-04-17T00:52:13.3001570Z remote: Compressing objects:  34% (18/52)        
+2025-04-17T00:52:13.3002220Z remote: Compressing objects:  36% (19/52)        
+2025-04-17T00:52:13.3002858Z remote: Compressing objects:  38% (20/52)        
+2025-04-17T00:52:13.3003497Z remote: Compressing objects:  40% (21/52)        
+2025-04-17T00:52:13.3004311Z remote: Compressing objects:  42% (22/52)        
+2025-04-17T00:52:13.3004971Z remote: Compressing objects:  44% (23/52)        
+2025-04-17T00:52:13.3005737Z remote: Compressing objects:  46% (24/52)        
+2025-04-17T00:52:13.3006643Z remote: Compressing objects:  48% (25/52)        
+2025-04-17T00:52:13.3007442Z remote: Compressing objects:  50% (26/52)        
+2025-04-17T00:52:13.3008104Z remote: Compressing objects:  51% (27/52)        
+2025-04-17T00:52:13.3008747Z remote: Compressing objects:  53% (28/52)        
+2025-04-17T00:52:13.3009389Z remote: Compressing objects:  55% (29/52)        
+2025-04-17T00:52:13.3010028Z remote: Compressing objects:  57% (30/52)        
+2025-04-17T00:52:13.3010665Z remote: Compressing objects:  59% (31/52)        
+2025-04-17T00:52:13.3011318Z remote: Compressing objects:  61% (32/52)        
+2025-04-17T00:52:13.3011950Z remote: Compressing objects:  63% (33/52)        
+2025-04-17T00:52:13.3012604Z remote: Compressing objects:  65% (34/52)        
+2025-04-17T00:52:13.3013254Z remote: Compressing objects:  67% (35/52)        
+2025-04-17T00:52:13.3096005Z remote: Compressing objects:  69% (36/52)        
+2025-04-17T00:52:13.3097374Z remote: Compressing objects:  71% (37/52)        
+2025-04-17T00:52:13.3098108Z remote: Compressing objects:  73% (38/52)        
+2025-04-17T00:52:13.3098910Z remote: Compressing objects:  75% (39/52)        
+2025-04-17T00:52:13.3099864Z remote: Compressing objects:  76% (40/52)        
+2025-04-17T00:52:13.3100561Z remote: Compressing objects:  78% (41/52)        
+2025-04-17T00:52:13.3101231Z remote: Compressing objects:  80% (42/52)        
+2025-04-17T00:52:13.3101902Z remote: Compressing objects:  82% (43/52)        
+2025-04-17T00:52:13.3102586Z remote: Compressing objects:  84% (44/52)        
+2025-04-17T00:52:13.3103264Z remote: Compressing objects:  86% (45/52)        
+2025-04-17T00:52:13.3103922Z remote: Compressing objects:  88% (46/52)        
+2025-04-17T00:52:13.3104578Z remote: Compressing objects:  90% (47/52)        
+2025-04-17T00:52:13.3105245Z remote: Compressing objects:  92% (48/52)        
+2025-04-17T00:52:13.3105914Z remote: Compressing objects:  94% (49/52)        
+2025-04-17T00:52:13.3106576Z remote: Compressing objects:  96% (50/52)        
+2025-04-17T00:52:13.3107459Z remote: Compressing objects:  98% (51/52)        
+2025-04-17T00:52:13.3108117Z remote: Compressing objects: 100% (52/52)        
+2025-04-17T00:52:13.3108826Z remote: Compressing objects: 100% (52/52), done.        
+2025-04-17T00:52:13.3109724Z remote: Total 65 (delta 2), reused 43 (delta 2), pack-reused 0 (from 0)        
+2025-04-17T00:52:13.3252922Z From https://github.com/Chew/MLB-GameFeed-Bot
+2025-04-17T00:52:13.3254350Z  * [new ref]         8cf512b4c73383b9c581c3a49fdcf35204b81a1a -> pull/32/merge
+2025-04-17T00:52:13.3280535Z ##[endgroup]
+2025-04-17T00:52:13.3281660Z ##[group]Determining the checkout info
+2025-04-17T00:52:13.3283489Z ##[endgroup]
+2025-04-17T00:52:13.3284361Z ##[group]Checking out the ref
+2025-04-17T00:52:13.3287648Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/32/merge
+2025-04-17T00:52:13.3371546Z Note: switching to 'refs/remotes/pull/32/merge'.
+2025-04-17T00:52:13.3372435Z 
+2025-04-17T00:52:13.3373120Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-17T00:52:13.3374682Z changes and commit them, and you can discard any commits you make in this
+2025-04-17T00:52:13.3376166Z state without impacting any branches by switching back to a branch.
+2025-04-17T00:52:13.3376726Z 
+2025-04-17T00:52:13.3377544Z If you want to create a new branch to retain commits you create, you may
+2025-04-17T00:52:13.3378448Z do so (now or later) by using -c with the switch command. Example:
+2025-04-17T00:52:13.3379111Z 
+2025-04-17T00:52:13.3379510Z   git switch -c <new-branch-name>
+2025-04-17T00:52:13.3380128Z 
+2025-04-17T00:52:13.3380360Z Or undo this operation with:
+2025-04-17T00:52:13.3380700Z 
+2025-04-17T00:52:13.3380892Z   git switch -
+2025-04-17T00:52:13.3381161Z 
+2025-04-17T00:52:13.3381574Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-17T00:52:13.3382149Z 
+2025-04-17T00:52:13.3382798Z HEAD is now at 8cf512b Merge 99cfe8f615b0907fb4c1ea745b1b235d6bf0db27 into a78bc214e6a2a636608c8f24f0c81d1cfaa39981
+2025-04-17T00:52:13.3384164Z ##[endgroup]
+2025-04-17T00:52:13.3413656Z [command]/usr/bin/git log -1 --format='%H'
+2025-04-17T00:52:13.3436322Z '8cf512b4c73383b9c581c3a49fdcf35204b81a1a'
+2025-04-17T00:52:13.3688033Z ##[group]Run actions/setup-java@v2
+2025-04-17T00:52:13.3688659Z with:
+2025-04-17T00:52:13.3689088Z   java-version: 17
+2025-04-17T00:52:13.3689544Z   distribution: zulu
+2025-04-17T00:52:13.3690002Z   cache: gradle
+2025-04-17T00:52:13.3690447Z   java-package: jdk
+2025-04-17T00:52:13.3690909Z   architecture: x64
+2025-04-17T00:52:13.3691377Z   check-latest: false
+2025-04-17T00:52:13.3691861Z   server-id: github
+2025-04-17T00:52:13.3692331Z   server-username: GITHUB_ACTOR
+2025-04-17T00:52:13.3692867Z   server-password: GITHUB_TOKEN
+2025-04-17T00:52:13.3693410Z   overwrite-settings: true
+2025-04-17T00:52:13.3693908Z   job-status: success
+2025-04-17T00:52:13.3694363Z ##[endgroup]
+2025-04-17T00:52:13.5126019Z Trying to resolve the latest version from remote
+2025-04-17T00:52:13.5946569Z Resolved latest version as 17.0.15+6
+2025-04-17T00:52:13.5948057Z Trying to download...
+2025-04-17T00:52:13.5949829Z Downloading Java 17.0.15+6 (Zulu) from https://cdn.azul.com/zulu/bin/zulu17.58.21-ca-jdk17.0.15-linux_x64.tar.gz ...
+2025-04-17T00:52:15.5266377Z Extracting Java archive...
+2025-04-17T00:52:15.5393379Z [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /home/runner/work/_temp/e21041de-2cd4-4da0-896e-84ac02d8c1eb -f /home/runner/work/_temp/a5374e00-8633-4f29-83b0-52ea7138229e
+2025-04-17T00:52:18.1700200Z Java 17.0.15+6 was downloaded
+2025-04-17T00:52:18.1701408Z Setting Java 17.0.15+6 as the default
+2025-04-17T00:52:18.1709413Z 
+2025-04-17T00:52:18.1709835Z Java configuration:
+2025-04-17T00:52:18.1710583Z   Distribution: zulu
+2025-04-17T00:52:18.1713556Z   Version: 17.0.15+6
+2025-04-17T00:52:18.1714249Z   Path: /opt/hostedtoolcache/Java_Zulu_jdk/17.0.15-6/x64
+2025-04-17T00:52:18.1714739Z 
+2025-04-17T00:52:18.1730762Z Creating settings.xml with server-id: github
+2025-04-17T00:52:18.1785975Z Writing to /home/runner/.m2/settings.xml
+2025-04-17T00:52:18.3859944Z ##[error]Cache service responded with 422
+2025-04-17T00:52:18.4033668Z Post job cleanup.
+2025-04-17T00:52:18.5230088Z Post job cleanup.
+2025-04-17T00:52:18.6124841Z [command]/usr/bin/git version
+2025-04-17T00:52:18.6161717Z git version 2.49.0
+2025-04-17T00:52:18.6205201Z Temporarily overriding HOME='/home/runner/work/_temp/dc84c9a7-c4e7-49fc-b9aa-34381f82ff58' before making global git config changes
+2025-04-17T00:52:18.6206578Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-17T00:52:18.6210270Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/MLB-GameFeed-Bot/MLB-GameFeed-Bot
+2025-04-17T00:52:18.6243412Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-17T00:52:18.6274620Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-17T00:52:18.6498206Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-17T00:52:18.6519467Z http.https://github.com/.extraheader
+2025-04-17T00:52:18.6530348Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-17T00:52:18.6560991Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-17T00:52:18.6918498Z Cleaning up orphan processes

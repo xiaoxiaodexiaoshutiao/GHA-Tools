@@ -1,0 +1,177 @@
+2025-04-24T21:54:32.9537190Z Requested labels: ubuntu-latest
+2025-04-24T21:54:32.9537452Z Job defined at: hms-dbmi/viv/.github/workflows/ci.yml@refs/pull/882/merge
+2025-04-24T21:54:32.9537539Z Waiting for a runner to pick up this job...
+2025-04-24T21:54:34.4326471Z Job is waiting for a hosted runner to come online.
+2025-04-24T21:54:36.1514884Z Job is about to start running on the hosted runner: GitHub Actions 45 (hosted)
+2025-04-24T21:54:38.1524278Z Current runner version: '2.323.0'
+2025-04-24T21:54:38.1549555Z ##[group]Operating System
+2025-04-24T21:54:38.1550528Z Ubuntu
+2025-04-24T21:54:38.1551191Z 24.04.2
+2025-04-24T21:54:38.1551747Z LTS
+2025-04-24T21:54:38.1552236Z ##[endgroup]
+2025-04-24T21:54:38.1552898Z ##[group]Runner Image
+2025-04-24T21:54:38.1553595Z Image: ubuntu-24.04
+2025-04-24T21:54:38.1554215Z Version: 20250420.1.0
+2025-04-24T21:54:38.1555318Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250420.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-24T21:54:38.1556721Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250420.1
+2025-04-24T21:54:38.1558204Z ##[endgroup]
+2025-04-24T21:54:38.1559153Z ##[group]Runner Image Provisioner
+2025-04-24T21:54:38.1560373Z 2.0.422.1
+2025-04-24T21:54:38.1561242Z ##[endgroup]
+2025-04-24T21:54:38.1563636Z ##[group]GITHUB_TOKEN Permissions
+2025-04-24T21:54:38.1565703Z Actions: write
+2025-04-24T21:54:38.1566576Z Attestations: write
+2025-04-24T21:54:38.1567298Z Checks: write
+2025-04-24T21:54:38.1567879Z Contents: write
+2025-04-24T21:54:38.1568436Z Deployments: write
+2025-04-24T21:54:38.1569107Z Discussions: write
+2025-04-24T21:54:38.1570064Z Issues: write
+2025-04-24T21:54:38.1570596Z Metadata: read
+2025-04-24T21:54:38.1571235Z Models: read
+2025-04-24T21:54:38.1571793Z Packages: write
+2025-04-24T21:54:38.1572402Z Pages: write
+2025-04-24T21:54:38.1573010Z PullRequests: write
+2025-04-24T21:54:38.1573587Z RepositoryProjects: write
+2025-04-24T21:54:38.1574243Z SecurityEvents: write
+2025-04-24T21:54:38.1574839Z Statuses: write
+2025-04-24T21:54:38.1575399Z ##[endgroup]
+2025-04-24T21:54:38.1577546Z Secret source: Actions
+2025-04-24T21:54:38.1578401Z Prepare workflow directory
+2025-04-24T21:54:38.1995324Z Prepare all required actions
+2025-04-24T21:54:38.2031978Z Getting action download info
+2025-04-24T21:54:38.4060243Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-24T21:54:38.4061154Z Version: 4.2.2
+2025-04-24T21:54:38.4062006Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-24T21:54:38.4063073Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-24T21:54:38.4063704Z ##[endgroup]
+2025-04-24T21:54:38.4872296Z Download action repository 'biomejs/setup-biome@v2' (SHA:f382a98e582959e6aaac8e5f8b17b31749018780)
+2025-04-24T21:54:38.8779225Z Complete job name: Lint
+2025-04-24T21:54:38.9469433Z ##[group]Run actions/checkout@v4
+2025-04-24T21:54:38.9470981Z with:
+2025-04-24T21:54:38.9471409Z   repository: hms-dbmi/viv
+2025-04-24T21:54:38.9472041Z   token: ***
+2025-04-24T21:54:38.9472439Z   ssh-strict: true
+2025-04-24T21:54:38.9472846Z   ssh-user: git
+2025-04-24T21:54:38.9473260Z   persist-credentials: true
+2025-04-24T21:54:38.9473715Z   clean: true
+2025-04-24T21:54:38.9474123Z   sparse-checkout-cone-mode: true
+2025-04-24T21:54:38.9474620Z   fetch-depth: 1
+2025-04-24T21:54:38.9475030Z   fetch-tags: false
+2025-04-24T21:54:38.9475449Z   show-progress: true
+2025-04-24T21:54:38.9475866Z   lfs: false
+2025-04-24T21:54:38.9476278Z   submodules: false
+2025-04-24T21:54:38.9476698Z   set-safe-directory: true
+2025-04-24T21:54:38.9477366Z ##[endgroup]
+2025-04-24T21:54:39.1620740Z Syncing repository: hms-dbmi/viv
+2025-04-24T21:54:39.1622878Z ##[group]Getting Git version info
+2025-04-24T21:54:39.1623593Z Working directory is '/home/runner/work/viv/viv'
+2025-04-24T21:54:39.1625114Z [command]/usr/bin/git version
+2025-04-24T21:54:39.1740297Z git version 2.49.0
+2025-04-24T21:54:39.1775921Z ##[endgroup]
+2025-04-24T21:54:39.1790474Z Temporarily overriding HOME='/home/runner/work/_temp/f921f36f-9258-4a5f-858b-80049cacb213' before making global git config changes
+2025-04-24T21:54:39.1793416Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-24T21:54:39.1797285Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/viv/viv
+2025-04-24T21:54:39.1835224Z Deleting the contents of '/home/runner/work/viv/viv'
+2025-04-24T21:54:39.1838880Z ##[group]Initializing the repository
+2025-04-24T21:54:39.1842865Z [command]/usr/bin/git init /home/runner/work/viv/viv
+2025-04-24T21:54:39.1963261Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-24T21:54:39.1965127Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-24T21:54:39.1967208Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-24T21:54:39.1968585Z hint:
+2025-04-24T21:54:39.1969486Z hint: 	git config --global init.defaultBranch <name>
+2025-04-24T21:54:39.1970923Z hint:
+2025-04-24T21:54:39.1971946Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-24T21:54:39.1973753Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-24T21:54:39.1975282Z hint:
+2025-04-24T21:54:39.1976159Z hint: 	git branch -m <name>
+2025-04-24T21:54:39.1977584Z Initialized empty Git repository in /home/runner/work/viv/viv/.git/
+2025-04-24T21:54:39.1985386Z [command]/usr/bin/git remote add origin https://github.com/hms-dbmi/viv
+2025-04-24T21:54:39.2024069Z ##[endgroup]
+2025-04-24T21:54:39.2025693Z ##[group]Disabling automatic garbage collection
+2025-04-24T21:54:39.2027194Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-24T21:54:39.2061531Z ##[endgroup]
+2025-04-24T21:54:39.2063350Z ##[group]Setting up auth
+2025-04-24T21:54:39.2069169Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-24T21:54:39.2103724Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-24T21:54:39.2526792Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-24T21:54:39.2558063Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-24T21:54:39.2781965Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-24T21:54:39.2817826Z ##[endgroup]
+2025-04-24T21:54:39.2819363Z ##[group]Fetching the repository
+2025-04-24T21:54:39.2828485Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +db3fd2612ce72713fef0ac77c6771b077cc128a1:refs/remotes/pull/882/merge
+2025-04-24T21:54:39.9761785Z From https://github.com/hms-dbmi/viv
+2025-04-24T21:54:39.9763430Z  * [new ref]         db3fd2612ce72713fef0ac77c6771b077cc128a1 -> pull/882/merge
+2025-04-24T21:54:39.9789830Z ##[endgroup]
+2025-04-24T21:54:39.9791756Z ##[group]Determining the checkout info
+2025-04-24T21:54:39.9793828Z ##[endgroup]
+2025-04-24T21:54:39.9797605Z [command]/usr/bin/git sparse-checkout disable
+2025-04-24T21:54:39.9842619Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-24T21:54:39.9870152Z ##[group]Checking out the ref
+2025-04-24T21:54:39.9873667Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/882/merge
+2025-04-24T21:54:40.0452951Z Note: switching to 'refs/remotes/pull/882/merge'.
+2025-04-24T21:54:40.0454165Z 
+2025-04-24T21:54:40.0455100Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-24T21:54:40.0457226Z changes and commit them, and you can discard any commits you make in this
+2025-04-24T21:54:40.0459188Z state without impacting any branches by switching back to a branch.
+2025-04-24T21:54:40.0461050Z 
+2025-04-24T21:54:40.0462202Z If you want to create a new branch to retain commits you create, you may
+2025-04-24T21:54:40.0464537Z do so (now or later) by using -c with the switch command. Example:
+2025-04-24T21:54:40.0465936Z 
+2025-04-24T21:54:40.0466564Z   git switch -c <new-branch-name>
+2025-04-24T21:54:40.0467531Z 
+2025-04-24T21:54:40.0468113Z Or undo this operation with:
+2025-04-24T21:54:40.0469002Z 
+2025-04-24T21:54:40.0469564Z   git switch -
+2025-04-24T21:54:40.0470601Z 
+2025-04-24T21:54:40.0472258Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-24T21:54:40.0474039Z 
+2025-04-24T21:54:40.0476273Z HEAD is now at db3fd26 Merge e1ad7f62103de0bc3d7f4ac0cbeb2f2660789a0d into f598b10b621cce9e6137fde4c7eead3fd7c9053c
+2025-04-24T21:54:40.0481719Z ##[endgroup]
+2025-04-24T21:54:40.0507270Z [command]/usr/bin/git log -1 --format=%H
+2025-04-24T21:54:40.0529361Z db3fd2612ce72713fef0ac77c6771b077cc128a1
+2025-04-24T21:54:40.0861310Z ##[group]Run biomejs/setup-biome@v2
+2025-04-24T21:54:40.0862523Z with:
+2025-04-24T21:54:40.0863655Z   token: ***
+2025-04-24T21:54:40.0864545Z ##[endgroup]
+2025-04-24T21:54:40.1788371Z No working directory specified. Using the current working directory.
+2025-04-24T21:54:41.3287467Z ##[group]Run biome ci .
+2025-04-24T21:54:41.3287782Z [36;1mbiome ci .[0m
+2025-04-24T21:54:41.3323288Z shell: /usr/bin/bash -e {0}
+2025-04-24T21:54:41.3323547Z ##[endgroup]
+2025-04-24T21:54:41.4421809Z [0m./packages/loaders/src/tiff/index.ts[0m[0m [0m[0mformat[0m[0m [0m[0m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[0m
+2025-04-24T21:54:41.4422344Z 
+2025-04-24T21:54:41.4427501Z [0m[0m[1m[31m  [0m[0m[1m[31m✖[0m[0m [0m[0m[31mFile content differs from formatting output[0m[0m
+2025-04-24T21:54:41.4427937Z [0m[0m  [0m[0m
+2025-04-24T21:54:41.4434375Z [0m[0m  [0m[0m  [0m[0m[1m169[0m[0m [0m[0m[1m169[0m[0m[1m │ [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0mi[0m[0mf[0m[0m [0m[0m([0m[0mc[0m[0mu[0m[0mr[0m[0mS[0m[0me[0m[0ml[0m[0me[0m[0mc[0m[0mt[0m[0mi[0m[0mo[0m[0mn[0m[0m)[0m[0m [0m[0m{[0m[0m
+2025-04-24T21:54:41.4436101Z [0m[0m  [0m[0m  [0m[0m[1m170[0m[0m [0m[0m[1m170[0m[0m[1m │ [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0mc[0m[0mo[0m[0mn[0m[0ms[0m[0mt[0m[0m [0m[0mt[0m[0mi[0m[0mf[0m[0mf[0m[0m [0m[0m=[0m[0m [0m[0ma[0m[0mw[0m[0ma[0m[0mi[0m[0mt[0m[0m [0m[0mc[0m[0mu[0m[0mr[0m[0mI[0m[0mm[0m[0ma[0m[0mg[0m[0me[0m[0m.[0m[0mg[0m[0me[0m[0mt[0m[0mI[0m[0mm[0m[0ma[0m[0mg[0m[0me[0m[0m([0m[0mi[0m[0m)[0m[0m;[0m[0m
+2025-04-24T21:54:41.4438848Z [0m[0m  [0m[0m  [0m[0m[1m171[0m[0m [0m[0m [0m[0m [0m[0m [0m[0m[1m │ [0m[0m[31m-[0m[0m [0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[31mi[0m[0m[31mf[0m[0m[31m([0m[0m[31mt[0m[0m[31mi[0m[0m[31mf[0m[0m[31mf[0m[0m[31m.[0m[0m[31mf[0m[0m[31mi[0m[0m[31ml[0m[0m[31me[0m[0m[31mD[0m[0m[31mi[0m[0m[31mr[0m[0m[31me[0m[0m[31mc[0m[0m[31mt[0m[0m[31mo[0m[0m[31mr[0m[0m[31my[0m[0m[31m.[0m[0m[31mS[0m[0m[31ma[0m[0m[31mm[0m[0m[31mp[0m[0m[31ml[0m[0m[31me[0m[0m[31ms[0m[0m[31mP[0m[0m[31me[0m[0m[31mr[0m[0m[31mP[0m[0m[31mi[0m[0m[31mx[0m[0m[31me[0m[0m[31ml[0m[0m[2m[31m·[0m[0m[31m>[0m[0m[2m[31m·[0m[0m[31m1[0m[0m[31m)[0m[0m[2m[31m·[0m[0m[31m{[0m[0m
+2025-04-24T21:54:41.4457048Z [0m[0m  [0m[0m  [0m[0m[1m172[0m[0m [0m[0m [0m[0m [0m[0m [0m[0m[1m │ [0m[0m[31m-[0m[0m [0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[2m[31m·[0m[0m[31mt[0m[0m[31mh[0m[0m[31mr[0m[0m[31mo[0m[0m[31mw[0m[0m[2m[31m·[0m[0m[31mn[0m[0m[31me[0m[0m[31mw[0m[0m[2m[31m·[0m[0m[31mE[0m[0m[31mr[0m[0m[31mr[0m[0m[31mo[0m[0m[31mr[0m[0m[31m([0m[0m[31m`[0m[0m[31mM[0m[0m[31mu[0m[0m[31ml[0m[0m[31mt[0m[0m[31mi[0m[0m[31mp[0m[0m[31ml[0m[0m[31me[0m[0m[2m[31m·[0m[0m[31ms[0m[0m[31ma[0m[0m[31mm[0m[0m[31mp[0m[0m[31ml[0m[0m[31me[0m[0m[31ms[0m[0m[2m[31m·[0m[0m[31mp[0m[0m[31me[0m[0m[31mr[0m[0m[2m[31m·[0m[0m[31mp[0m[0m[31mi[0m[0m[31mx[0m[0m[31me[0m[0m[31ml[0m[0m[2m[31m·[0m[0m[31mi[0m[0m[31mn[0m[0m[2m[31m·[0m[0m[31mt[0m[0m[31mi[0m[0m[31mf[0m[0m[31mf[0m[0m[2m[31m·[0m[0m[31mn[0m[0m[31mo[0m[0m[31mt[0m[0m[2m[31m·[0m[0m[31ms[0m[0m[31mu[0m[0m[31mp[0m[0m[31mp[0m[0m[31mo[0m[0m[31mr[0m[0m[31mt[0m[0m[31me[0m[0m[31md[0m[0m[2m[31m·[0m[0m[31ma[0m[0m[31ms[0m[0m[2m[31m·[0m[0m[31mp[0m[0m[31ma[0m[0m[31mr[0m[0m[31mt[0m[0m[2m[31m·[0m[0m[31mo[0m[0m[31mf[0m[0m[2m[31m·[0m[0m[31ma[0m[0m[2m[31m·[0m[0m[31mm[0m[0m[31mu[0m[0m[31ml[0m[0m[31mt[0m[0m[31mi[0m[0m[31m-[0m[0m[31mt[0m[0m[31mi[0m[0m[31mf[0m[0m[31mf[0m[0m[31m,[0m[0m[2m[31m·[0m[0m[31mf[0m[0m[31mo[0m[0m[31mu[0m[0m[31mn[0m[0m[31md[0m[0m[2m[31m·[0m[0m[31m$[0m[0m[31m{[0m[0m[31mt[0m[0m[31mi[0m[0m[31mf[0m[0m[31mf[0m[0m[31m.[0m[0m[31mf[0m[0m[31mi[0m[0m[31ml[0m[0m[31me[0m[0m[31mD[0m[0m[31mi[0m[0m[31mr[0m[0m[31me[0m[0m[31mc[0m[0m[31mt[0m[0m[31mo[0m[0m[31mr[0m[0m[31my[0m[0m[31m.[0m[0m[31mS[0m[0m[31ma[0m[0m[31mm[0m[0m[31mp[0m[0m[31ml[0m[0m[31me[0m[0m[31ms[0m[0m[31mP[0m[0m[31me[0m[0m[31mr[0m[0m[31mP[0m[0m[31mi[0m[0m[31mx[0m[0m[31me[0m[0m[31ml[0m[0m[31m}[0m[0m[2m[31m·[0m[0m[31ms[0m[0m[31ma[0m[0m[31mm[0m[0m[31mp[0m[0m[31ml[0m[0m[31me[0m[0m[31ms[0m[0m[2m[31m·[0m[0m[31mp[0m[0m[31me[0m[0m[31mr[0m[0m[2m[31m·[0m[0m[31mp[0m[0m[31mi[0m[0m[31mx[0m[0m[31me[0m[0m[31ml[0m[0m[31m`[0m[0m[31m)[0m[0m[31m;[0m[0m
+2025-04-24T21:54:41.4465634Z [0m[0m  [0m[0m  [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m[1m171[0m[0m[1m │ [0m[0m[32m+[0m[0m [0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[32mi[0m[0m[32mf[0m[0m[1m[2m[32m·[0m[0m[32m([0m[0m[32mt[0m[0m[32mi[0m[0m[32mf[0m[0m[32mf[0m[0m[32m.[0m[0m[32mf[0m[0m[32mi[0m[0m[32ml[0m[0m[32me[0m[0m[32mD[0m[0m[32mi[0m[0m[32mr[0m[0m[32me[0m[0m[32mc[0m[0m[32mt[0m[0m[32mo[0m[0m[32mr[0m[0m[32my[0m[0m[32m.[0m[0m[32mS[0m[0m[32ma[0m[0m[32mm[0m[0m[32mp[0m[0m[32ml[0m[0m[32me[0m[0m[32ms[0m[0m[32mP[0m[0m[32me[0m[0m[32mr[0m[0m[32mP[0m[0m[32mi[0m[0m[32mx[0m[0m[32me[0m[0m[32ml[0m[0m[2m[32m·[0m[0m[32m>[0m[0m[2m[32m·[0m[0m[32m1[0m[0m[32m)[0m[0m[2m[32m·[0m[0m[32m{[0m[0m
+2025-04-24T21:54:41.4468169Z [0m[0m  [0m[0m  [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m[1m172[0m[0m[1m │ [0m[0m[32m+[0m[0m [0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[2m[32m·[0m[0m[32mt[0m[0m[32mh[0m[0m[32mr[0m[0m[32mo[0m[0m[32mw[0m[0m[2m[32m·[0m[0m[32mn[0m[0m[32me[0m[0m[32mw[0m[0m[2m[32m·[0m[0m[32mE[0m[0m[32mr[0m[0m[32mr[0m[0m[32mo[0m[0m[32mr[0m[0m[32m([0m[0m
+2025-04-24T21:54:41.4475321Z [0m[0m  [0m[0m  [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m[1m173[0m[0m[1m │ [0m[0m[32m+[0m[0m [0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[32m`[0m[0m[32mM[0m[0m[32mu[0m[0m[32ml[0m[0m[32mt[0m[0m[32mi[0m[0m[32mp[0m[0m[32ml[0m[0m[32me[0m[0m[2m[32m·[0m[0m[32ms[0m[0m[32ma[0m[0m[32mm[0m[0m[32mp[0m[0m[32ml[0m[0m[32me[0m[0m[32ms[0m[0m[2m[32m·[0m[0m[32mp[0m[0m[32me[0m[0m[32mr[0m[0m[2m[32m·[0m[0m[32mp[0m[0m[32mi[0m[0m[32mx[0m[0m[32me[0m[0m[32ml[0m[0m[2m[32m·[0m[0m[32mi[0m[0m[32mn[0m[0m[2m[32m·[0m[0m[32mt[0m[0m[32mi[0m[0m[32mf[0m[0m[32mf[0m[0m[2m[32m·[0m[0m[32mn[0m[0m[32mo[0m[0m[32mt[0m[0m[2m[32m·[0m[0m[32ms[0m[0m[32mu[0m[0m[32mp[0m[0m[32mp[0m[0m[32mo[0m[0m[32mr[0m[0m[32mt[0m[0m[32me[0m[0m[32md[0m[0m[2m[32m·[0m[0m[32ma[0m[0m[32ms[0m[0m[2m[32m·[0m[0m[32mp[0m[0m[32ma[0m[0m[32mr[0m[0m[32mt[0m[0m[2m[32m·[0m[0m[32mo[0m[0m[32mf[0m[0m[2m[32m·[0m[0m[32ma[0m[0m[2m[32m·[0m[0m[32mm[0m[0m[32mu[0m[0m[32ml[0m[0m[32mt[0m[0m[32mi[0m[0m[32m-[0m[0m[32mt[0m[0m[32mi[0m[0m[32mf[0m[0m[32mf[0m[0m[32m,[0m[0m[2m[32m·[0m[0m[32mf[0m[0m[32mo[0m[0m[32mu[0m[0m[32mn[0m[0m[32md[0m[0m[2m[32m·[0m[0m[32m$[0m[0m[32m{[0m[0m[32mt[0m[0m[32mi[0m[0m[32mf[0m[0m[32mf[0m[0m[32m.[0m[0m[32mf[0m[0m[32mi[0m[0m[32ml[0m[0m[32me[0m[0m[32mD[0m[0m[32mi[0m[0m[32mr[0m[0m[32me[0m[0m[32mc[0m[0m[32mt[0m[0m[32mo[0m[0m[32mr[0m[0m[32my[0m[0m[32m.[0m[0m[32mS[0m[0m[32ma[0m[0m[32mm[0m[0m[32mp[0m[0m[32ml[0m[0m[32me[0m[0m[32ms[0m[0m[32mP[0m[0m[32me[0m[0m[32mr[0m[0m[32mP[0m[0m[32mi[0m[0m[32mx[0m[0m[32me[0m[0m[32ml[0m[0m[32m}[0m[0m[2m[32m·[0m[0m[32ms[0m[0m[32ma[0m[0m[32mm[0m[0m[32mp[0m[0m[32ml[0m[0m[32me[0m[0m[32ms[0m[0m[2m[32m·[0m[0m[32mp[0m[0m[32me[0m[0m[32mr[0m[0m[2m[32m·[0m[0m[32mp[0m[0m[32mi[0m[0m[32mx[0m[0m[32me[0m[0m[32ml[0m[0m[32m`[0m[0m
+2025-04-24T21:54:41.4479900Z [0m[0m  [0m[0m  [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m[1m174[0m[0m[1m │ [0m[0m[32m+[0m[0m [0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[1m[2m[32m·[0m[0m[32m)[0m[0m[32m;[0m[0m
+2025-04-24T21:54:41.4480960Z [0m[0m  [0m[0m  [0m[0m[1m173[0m[0m [0m[0m[1m175[0m[0m[1m │ [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m}[0m[0m
+2025-04-24T21:54:41.4482561Z [0m[0m  [0m[0m  [0m[0m[1m174[0m[0m [0m[0m[1m176[0m[0m[1m │ [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0m [0m[0mt[0m[0mi[0m[0mf[0m[0mf[0m[0mI[0m[0mm[0m[0ma[0m[0mg[0m[0me[0m[0m.[0m[0mp[0m[0mu[0m[0ms[0m[0mh[0m[0m([0m[0m{[0m[0m [0m[0ms[0m[0me[0m[0ml[0m[0me[0m[0mc[0m[0mt[0m[0mi[0m[0mo[0m[0mn[0m[0m:[0m[0m [0m[0mc[0m[0mu[0m[0mr[0m[0mS[0m[0me[0m[0ml[0m[0me[0m[0mc[0m[0mt[0m[0mi[0m[0mo[0m[0mn[0m[0m,[0m[0m [0m[0mt[0m[0mi[0m[0mf[0m[0mf[0m[0m [0m[0m}[0m[0m)[0m[0m;[0m[0m
+2025-04-24T21:54:41.4483563Z [0m[0m  [0m[0m
+2025-04-24T21:54:41.4483751Z [0m
+2025-04-24T21:54:41.4484187Z [0mci[0m[0m [0m[0m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[0m
+2025-04-24T21:54:41.4484462Z 
+2025-04-24T21:54:41.4484907Z [0m[0m[1m[31m  [0m[0m[1m[31m✖[0m[0m [0m[0m[31mSome [0m[0m[1m[31merrors[0m[0m[31m were emitted while [0m[0m[1m[31mrunning checks[0m[0m[31m.[0m[0m
+2025-04-24T21:54:41.4485404Z [0m[0m  [0m[0m
+2025-04-24T21:54:41.4485596Z [0m
+2025-04-24T21:54:41.4486118Z [0m[34mChecked [0m[0m[34m146[0m[0m[34m [0m[0m[34mfiles[0m[0m[34m in [0m[0m[34m97[0m[0m[2m[34mms[0m[0m[34m.[0m[0m[34m No fixes applied.[0m[0m
+2025-04-24T21:54:41.4486661Z [0m[0m[31mFound [0m[0m[31m1[0m[0m[31m error.[0m
+2025-04-24T21:54:41.4499288Z ##[error]Process completed with exit code 1.
+2025-04-24T21:54:41.4606941Z Post job cleanup.
+2025-04-24T21:54:41.5561352Z [command]/usr/bin/git version
+2025-04-24T21:54:41.5596714Z git version 2.49.0
+2025-04-24T21:54:41.5646131Z Temporarily overriding HOME='/home/runner/work/_temp/ed91e15a-19ac-4923-9474-300f35bae7ae' before making global git config changes
+2025-04-24T21:54:41.5647450Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-24T21:54:41.5652312Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/viv/viv
+2025-04-24T21:54:41.5685905Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-24T21:54:41.5718130Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-24T21:54:41.5946746Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-24T21:54:41.5966131Z http.https://github.com/.extraheader
+2025-04-24T21:54:41.5978761Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-24T21:54:41.6010615Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-24T21:54:41.6325298Z Cleaning up orphan processes

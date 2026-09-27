@@ -1,0 +1,696 @@
+﻿2025-03-25T10:42:22.8200451Z Current runner version: '2.323.0'
+2025-03-25T10:42:22.8238731Z ##[group]Operating System
+2025-03-25T10:42:22.8239555Z Ubuntu
+2025-03-25T10:42:22.8240020Z 24.04.2
+2025-03-25T10:42:22.8240559Z LTS
+2025-03-25T10:42:22.8241120Z ##[endgroup]
+2025-03-25T10:42:22.8241596Z ##[group]Runner Image
+2025-03-25T10:42:22.8242231Z Image: ubuntu-24.04
+2025-03-25T10:42:22.8242718Z Version: 20250316.1.0
+2025-03-25T10:42:22.8243750Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250316.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-25T10:42:22.8245160Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250316.1
+2025-03-25T10:42:22.8246011Z ##[endgroup]
+2025-03-25T10:42:22.8246535Z ##[group]Runner Image Provisioner
+2025-03-25T10:42:22.8247093Z 2.0.422.1
+2025-03-25T10:42:22.8247731Z ##[endgroup]
+2025-03-25T10:42:22.8250093Z ##[group]GITHUB_TOKEN Permissions
+2025-03-25T10:42:22.8252460Z Actions: write
+2025-03-25T10:42:22.8253138Z Attestations: write
+2025-03-25T10:42:22.8253801Z Checks: write
+2025-03-25T10:42:22.8254271Z Contents: write
+2025-03-25T10:42:22.8254804Z Deployments: write
+2025-03-25T10:42:22.8255271Z Discussions: write
+2025-03-25T10:42:22.8255753Z Issues: write
+2025-03-25T10:42:22.8256190Z Metadata: read
+2025-03-25T10:42:22.8256716Z Models: read
+2025-03-25T10:42:22.8257144Z Packages: write
+2025-03-25T10:42:22.8257965Z Pages: write
+2025-03-25T10:42:22.8258486Z PullRequests: write
+2025-03-25T10:42:22.8258988Z RepositoryProjects: write
+2025-03-25T10:42:22.8259502Z SecurityEvents: write
+2025-03-25T10:42:22.8260050Z Statuses: write
+2025-03-25T10:42:22.8260525Z ##[endgroup]
+2025-03-25T10:42:22.8262700Z Secret source: Actions
+2025-03-25T10:42:22.8263746Z Prepare workflow directory
+2025-03-25T10:42:22.8638055Z Prepare all required actions
+2025-03-25T10:42:22.8674858Z Getting action download info
+2025-03-25T10:42:23.3356440Z ##[group]Download immutable action package 'actions/checkout@v3'
+2025-03-25T10:42:23.3357763Z Version: 3.6.0
+2025-03-25T10:42:23.3358898Z Digest: sha256:942562b9c7d4b1f2557f1da21f4d3eb4eb4fd01f2ad78b2a6e187d1b193e0a0f
+2025-03-25T10:42:23.3360019Z Source commit SHA: f43a0e5ff2bd294095638e18286ca9a3d1956744
+2025-03-25T10:42:23.3360770Z ##[endgroup]
+2025-03-25T10:42:23.4320462Z ##[group]Download immutable action package 'actions/setup-java@v3'
+2025-03-25T10:42:23.4321129Z Version: 3.13.0
+2025-03-25T10:42:23.4321740Z Digest: sha256:3b7001eb8593af6933487f7e47cf7082e610b62f8b3c6ce2bc6e5201bb1ad005
+2025-03-25T10:42:23.4322558Z Source commit SHA: 0ab4596768b603586c0de567f2430c30f5b0d2b0
+2025-03-25T10:42:23.4323121Z ##[endgroup]
+2025-03-25T10:42:23.8512376Z Complete job name: Run unit tests and check formatting
+2025-03-25T10:42:23.9158465Z ##[group]Run actions/checkout@v3
+2025-03-25T10:42:23.9159281Z with:
+2025-03-25T10:42:23.9159700Z   repository: protomaps/basemaps
+2025-03-25T10:42:23.9160356Z   token: ***
+2025-03-25T10:42:23.9160714Z   ssh-strict: true
+2025-03-25T10:42:23.9161113Z   persist-credentials: true
+2025-03-25T10:42:23.9161533Z   clean: true
+2025-03-25T10:42:23.9161936Z   sparse-checkout-cone-mode: true
+2025-03-25T10:42:23.9162387Z   fetch-depth: 1
+2025-03-25T10:42:23.9162756Z   fetch-tags: false
+2025-03-25T10:42:23.9163118Z   lfs: false
+2025-03-25T10:42:23.9163460Z   submodules: false
+2025-03-25T10:42:23.9163846Z   set-safe-directory: true
+2025-03-25T10:42:23.9164451Z ##[endgroup]
+2025-03-25T10:42:24.0691347Z Syncing repository: protomaps/basemaps
+2025-03-25T10:42:24.0693292Z ##[group]Getting Git version info
+2025-03-25T10:42:24.0694126Z Working directory is '/home/runner/work/basemaps/basemaps'
+2025-03-25T10:42:24.0695040Z [command]/usr/bin/git version
+2025-03-25T10:42:24.0755393Z git version 2.48.1
+2025-03-25T10:42:24.0783540Z ##[endgroup]
+2025-03-25T10:42:24.0799731Z Temporarily overriding HOME='/home/runner/work/_temp/c9eaca0b-3a7a-4a9d-869f-311357d0cace' before making global git config changes
+2025-03-25T10:42:24.0801052Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-25T10:42:24.0803024Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/basemaps/basemaps
+2025-03-25T10:42:24.0836545Z Deleting the contents of '/home/runner/work/basemaps/basemaps'
+2025-03-25T10:42:24.0840403Z ##[group]Initializing the repository
+2025-03-25T10:42:24.0843329Z [command]/usr/bin/git init /home/runner/work/basemaps/basemaps
+2025-03-25T10:42:24.0912768Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-25T10:42:24.0914167Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-25T10:42:24.0915222Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-25T10:42:24.0915862Z hint:
+2025-03-25T10:42:24.0916335Z hint: 	git config --global init.defaultBranch <name>
+2025-03-25T10:42:24.0917374Z hint:
+2025-03-25T10:42:24.0918349Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-25T10:42:24.0919471Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-25T10:42:24.0920753Z hint:
+2025-03-25T10:42:24.0921470Z hint: 	git branch -m <name>
+2025-03-25T10:42:24.0922725Z Initialized empty Git repository in /home/runner/work/basemaps/basemaps/.git/
+2025-03-25T10:42:24.0929546Z [command]/usr/bin/git remote add origin https://github.com/protomaps/basemaps
+2025-03-25T10:42:24.0961070Z ##[endgroup]
+2025-03-25T10:42:24.0962207Z ##[group]Disabling automatic garbage collection
+2025-03-25T10:42:24.0964461Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-25T10:42:24.0991734Z ##[endgroup]
+2025-03-25T10:42:24.0992888Z ##[group]Setting up auth
+2025-03-25T10:42:24.0998019Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-25T10:42:24.1025774Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-25T10:42:24.1305380Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-25T10:42:24.1331110Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-25T10:42:24.1553035Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-25T10:42:24.1586938Z ##[endgroup]
+2025-03-25T10:42:24.1587964Z ##[group]Fetching the repository
+2025-03-25T10:42:24.1595500Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +0b819aab0b136ae2747c7d3e0b6b380ec1936d35:refs/remotes/pull/434/merge
+2025-03-25T10:42:24.5886131Z remote: Enumerating objects: 177, done.        
+2025-03-25T10:42:24.5887699Z remote: Counting objects:   0% (1/177)        
+2025-03-25T10:42:24.5888699Z remote: Counting objects:   1% (2/177)        
+2025-03-25T10:42:24.5889526Z remote: Counting objects:   2% (4/177)        
+2025-03-25T10:42:24.5890405Z remote: Counting objects:   3% (6/177)        
+2025-03-25T10:42:24.5891291Z remote: Counting objects:   4% (8/177)        
+2025-03-25T10:42:24.5892128Z remote: Counting objects:   5% (9/177)        
+2025-03-25T10:42:24.5893036Z remote: Counting objects:   6% (11/177)        
+2025-03-25T10:42:24.5894448Z remote: Counting objects:   7% (13/177)        
+2025-03-25T10:42:24.5895875Z remote: Counting objects:   8% (15/177)        
+2025-03-25T10:42:24.5897464Z remote: Counting objects:   9% (16/177)        
+2025-03-25T10:42:24.5898382Z remote: Counting objects:  10% (18/177)        
+2025-03-25T10:42:24.5899280Z remote: Counting objects:  11% (20/177)        
+2025-03-25T10:42:24.5900217Z remote: Counting objects:  12% (22/177)        
+2025-03-25T10:42:24.5901721Z remote: Counting objects:  13% (24/177)        
+2025-03-25T10:42:24.5903219Z remote: Counting objects:  14% (25/177)        
+2025-03-25T10:42:24.5904660Z remote: Counting objects:  15% (27/177)        
+2025-03-25T10:42:24.5906361Z remote: Counting objects:  16% (29/177)        
+2025-03-25T10:42:24.5908228Z remote: Counting objects:  17% (31/177)        
+2025-03-25T10:42:24.5909232Z remote: Counting objects:  18% (32/177)        
+2025-03-25T10:42:24.5910247Z remote: Counting objects:  19% (34/177)        
+2025-03-25T10:42:24.5911229Z remote: Counting objects:  20% (36/177)        
+2025-03-25T10:42:24.5912235Z remote: Counting objects:  21% (38/177)        
+2025-03-25T10:42:24.5913282Z remote: Counting objects:  22% (39/177)        
+2025-03-25T10:42:24.5914429Z remote: Counting objects:  23% (41/177)        
+2025-03-25T10:42:24.5915465Z remote: Counting objects:  24% (43/177)        
+2025-03-25T10:42:24.5916681Z remote: Counting objects:  25% (45/177)        
+2025-03-25T10:42:24.5918011Z remote: Counting objects:  26% (47/177)        
+2025-03-25T10:42:24.5919206Z remote: Counting objects:  27% (48/177)        
+2025-03-25T10:42:24.5920477Z remote: Counting objects:  28% (50/177)        
+2025-03-25T10:42:24.5921711Z remote: Counting objects:  29% (52/177)        
+2025-03-25T10:42:24.5922926Z remote: Counting objects:  30% (54/177)        
+2025-03-25T10:42:24.5924175Z remote: Counting objects:  31% (55/177)        
+2025-03-25T10:42:24.5925413Z remote: Counting objects:  32% (57/177)        
+2025-03-25T10:42:24.5926645Z remote: Counting objects:  33% (59/177)        
+2025-03-25T10:42:24.5927968Z remote: Counting objects:  34% (61/177)        
+2025-03-25T10:42:24.5929216Z remote: Counting objects:  35% (62/177)        
+2025-03-25T10:42:24.5930437Z remote: Counting objects:  36% (64/177)        
+2025-03-25T10:42:24.5931678Z remote: Counting objects:  37% (66/177)        
+2025-03-25T10:42:24.5933013Z remote: Counting objects:  38% (68/177)        
+2025-03-25T10:42:24.5934353Z remote: Counting objects:  39% (70/177)        
+2025-03-25T10:42:24.5935701Z remote: Counting objects:  40% (71/177)        
+2025-03-25T10:42:24.5937039Z remote: Counting objects:  41% (73/177)        
+2025-03-25T10:42:24.5938531Z remote: Counting objects:  42% (75/177)        
+2025-03-25T10:42:24.5939889Z remote: Counting objects:  43% (77/177)        
+2025-03-25T10:42:24.5941251Z remote: Counting objects:  44% (78/177)        
+2025-03-25T10:42:24.5942578Z remote: Counting objects:  45% (80/177)        
+2025-03-25T10:42:24.5943912Z remote: Counting objects:  46% (82/177)        
+2025-03-25T10:42:24.5945238Z remote: Counting objects:  47% (84/177)        
+2025-03-25T10:42:24.5946553Z remote: Counting objects:  48% (85/177)        
+2025-03-25T10:42:24.5947970Z remote: Counting objects:  49% (87/177)        
+2025-03-25T10:42:24.5949367Z remote: Counting objects:  50% (89/177)        
+2025-03-25T10:42:24.5950848Z remote: Counting objects:  51% (91/177)        
+2025-03-25T10:42:24.5952145Z remote: Counting objects:  52% (93/177)        
+2025-03-25T10:42:24.5953419Z remote: Counting objects:  53% (94/177)        
+2025-03-25T10:42:24.5954723Z remote: Counting objects:  54% (96/177)        
+2025-03-25T10:42:24.5956012Z remote: Counting objects:  55% (98/177)        
+2025-03-25T10:42:24.5957412Z remote: Counting objects:  56% (100/177)        
+2025-03-25T10:42:24.5958712Z remote: Counting objects:  57% (101/177)        
+2025-03-25T10:42:24.5959972Z remote: Counting objects:  58% (103/177)        
+2025-03-25T10:42:24.5961248Z remote: Counting objects:  59% (105/177)        
+2025-03-25T10:42:24.5962512Z remote: Counting objects:  60% (107/177)        
+2025-03-25T10:42:24.5963786Z remote: Counting objects:  61% (108/177)        
+2025-03-25T10:42:24.5965050Z remote: Counting objects:  62% (110/177)        
+2025-03-25T10:42:24.5966322Z remote: Counting objects:  63% (112/177)        
+2025-03-25T10:42:24.5967687Z remote: Counting objects:  64% (114/177)        
+2025-03-25T10:42:24.5968941Z remote: Counting objects:  65% (116/177)        
+2025-03-25T10:42:24.5970196Z remote: Counting objects:  66% (117/177)        
+2025-03-25T10:42:24.5971456Z remote: Counting objects:  67% (119/177)        
+2025-03-25T10:42:24.5972709Z remote: Counting objects:  68% (121/177)        
+2025-03-25T10:42:24.5973962Z remote: Counting objects:  69% (123/177)        
+2025-03-25T10:42:24.5975392Z remote: Counting objects:  70% (124/177)        
+2025-03-25T10:42:24.5976687Z remote: Counting objects:  71% (126/177)        
+2025-03-25T10:42:24.5978063Z remote: Counting objects:  72% (128/177)        
+2025-03-25T10:42:24.5979358Z remote: Counting objects:  73% (130/177)        
+2025-03-25T10:42:24.5980631Z remote: Counting objects:  74% (131/177)        
+2025-03-25T10:42:24.5981906Z remote: Counting objects:  75% (133/177)        
+2025-03-25T10:42:24.5983190Z remote: Counting objects:  76% (135/177)        
+2025-03-25T10:42:24.5984508Z remote: Counting objects:  77% (137/177)        
+2025-03-25T10:42:24.5985789Z remote: Counting objects:  78% (139/177)        
+2025-03-25T10:42:24.5987064Z remote: Counting objects:  79% (140/177)        
+2025-03-25T10:42:24.5988472Z remote: Counting objects:  80% (142/177)        
+2025-03-25T10:42:24.5989724Z remote: Counting objects:  81% (144/177)        
+2025-03-25T10:42:24.5990988Z remote: Counting objects:  82% (146/177)        
+2025-03-25T10:42:24.5992272Z remote: Counting objects:  83% (147/177)        
+2025-03-25T10:42:24.5993534Z remote: Counting objects:  84% (149/177)        
+2025-03-25T10:42:24.5994793Z remote: Counting objects:  85% (151/177)        
+2025-03-25T10:42:24.5996059Z remote: Counting objects:  86% (153/177)        
+2025-03-25T10:42:24.5997426Z remote: Counting objects:  87% (154/177)        
+2025-03-25T10:42:24.5998693Z remote: Counting objects:  88% (156/177)        
+2025-03-25T10:42:24.5999978Z remote: Counting objects:  89% (158/177)        
+2025-03-25T10:42:24.6001233Z remote: Counting objects:  90% (160/177)        
+2025-03-25T10:42:24.6002504Z remote: Counting objects:  91% (162/177)        
+2025-03-25T10:42:24.6003759Z remote: Counting objects:  92% (163/177)        
+2025-03-25T10:42:24.6005020Z remote: Counting objects:  93% (165/177)        
+2025-03-25T10:42:24.6006273Z remote: Counting objects:  94% (167/177)        
+2025-03-25T10:42:24.6007619Z remote: Counting objects:  95% (169/177)        
+2025-03-25T10:42:24.6008904Z remote: Counting objects:  96% (170/177)        
+2025-03-25T10:42:24.6010147Z remote: Counting objects:  97% (172/177)        
+2025-03-25T10:42:24.6011410Z remote: Counting objects:  98% (174/177)        
+2025-03-25T10:42:24.6012665Z remote: Counting objects:  99% (176/177)        
+2025-03-25T10:42:24.6013914Z remote: Counting objects: 100% (177/177)        
+2025-03-25T10:42:24.6015234Z remote: Counting objects: 100% (177/177), done.        
+2025-03-25T10:42:24.6016572Z remote: Compressing objects:   0% (1/150)        
+2025-03-25T10:42:24.6017953Z remote: Compressing objects:   1% (2/150)        
+2025-03-25T10:42:24.6049077Z remote: Compressing objects:   2% (3/150)        
+2025-03-25T10:42:24.6051139Z remote: Compressing objects:   3% (5/150)        
+2025-03-25T10:42:24.6052745Z remote: Compressing objects:   4% (6/150)        
+2025-03-25T10:42:24.6054328Z remote: Compressing objects:   5% (8/150)        
+2025-03-25T10:42:24.6055911Z remote: Compressing objects:   6% (9/150)        
+2025-03-25T10:42:24.6057689Z remote: Compressing objects:   7% (11/150)        
+2025-03-25T10:42:24.6059174Z remote: Compressing objects:   8% (12/150)        
+2025-03-25T10:42:24.6060443Z remote: Compressing objects:   9% (14/150)        
+2025-03-25T10:42:24.6061715Z remote: Compressing objects:  10% (15/150)        
+2025-03-25T10:42:24.6062990Z remote: Compressing objects:  11% (17/150)        
+2025-03-25T10:42:24.6064251Z remote: Compressing objects:  12% (18/150)        
+2025-03-25T10:42:24.6065515Z remote: Compressing objects:  13% (20/150)        
+2025-03-25T10:42:24.6066796Z remote: Compressing objects:  14% (21/150)        
+2025-03-25T10:42:24.6068171Z remote: Compressing objects:  15% (23/150)        
+2025-03-25T10:42:24.6069453Z remote: Compressing objects:  16% (24/150)        
+2025-03-25T10:42:24.6070726Z remote: Compressing objects:  17% (26/150)        
+2025-03-25T10:42:24.6071998Z remote: Compressing objects:  18% (27/150)        
+2025-03-25T10:42:24.6073273Z remote: Compressing objects:  19% (29/150)        
+2025-03-25T10:42:24.6074705Z remote: Compressing objects:  20% (30/150)        
+2025-03-25T10:42:24.6075973Z remote: Compressing objects:  21% (32/150)        
+2025-03-25T10:42:24.6077356Z remote: Compressing objects:  22% (33/150)        
+2025-03-25T10:42:24.6078640Z remote: Compressing objects:  23% (35/150)        
+2025-03-25T10:42:24.6079903Z remote: Compressing objects:  24% (36/150)        
+2025-03-25T10:42:24.6081134Z remote: Compressing objects:  25% (38/150)        
+2025-03-25T10:42:24.6082385Z remote: Compressing objects:  26% (39/150)        
+2025-03-25T10:42:24.6083656Z remote: Compressing objects:  27% (41/150)        
+2025-03-25T10:42:24.6084894Z remote: Compressing objects:  28% (42/150)        
+2025-03-25T10:42:24.6086152Z remote: Compressing objects:  29% (44/150)        
+2025-03-25T10:42:24.6087693Z remote: Compressing objects:  30% (45/150)        
+2025-03-25T10:42:24.6089269Z remote: Compressing objects:  31% (47/150)        
+2025-03-25T10:42:24.6090539Z remote: Compressing objects:  32% (48/150)        
+2025-03-25T10:42:24.6091815Z remote: Compressing objects:  33% (50/150)        
+2025-03-25T10:42:24.6093181Z remote: Compressing objects:  34% (51/150)        
+2025-03-25T10:42:24.6095016Z remote: Compressing objects:  35% (53/150)        
+2025-03-25T10:42:24.6096325Z remote: Compressing objects:  36% (54/150)        
+2025-03-25T10:42:24.6097972Z remote: Compressing objects:  37% (56/150)        
+2025-03-25T10:42:24.6100159Z remote: Compressing objects:  38% (57/150)        
+2025-03-25T10:42:24.6102161Z remote: Compressing objects:  39% (59/150)        
+2025-03-25T10:42:24.6103944Z remote: Compressing objects:  40% (60/150)        
+2025-03-25T10:42:24.6105212Z remote: Compressing objects:  41% (62/150)        
+2025-03-25T10:42:24.6106490Z remote: Compressing objects:  42% (63/150)        
+2025-03-25T10:42:24.6107925Z remote: Compressing objects:  43% (65/150)        
+2025-03-25T10:42:24.6196275Z remote: Compressing objects:  44% (66/150)        
+2025-03-25T10:42:24.6199085Z remote: Compressing objects:  45% (68/150)        
+2025-03-25T10:42:24.6200371Z remote: Compressing objects:  46% (69/150)        
+2025-03-25T10:42:24.6201611Z remote: Compressing objects:  47% (71/150)        
+2025-03-25T10:42:24.6202866Z remote: Compressing objects:  48% (72/150)        
+2025-03-25T10:42:24.6204095Z remote: Compressing objects:  49% (74/150)        
+2025-03-25T10:42:24.6205484Z remote: Compressing objects:  50% (75/150)        
+2025-03-25T10:42:24.6207328Z remote: Compressing objects:  51% (77/150)        
+2025-03-25T10:42:24.6208834Z remote: Compressing objects:  52% (78/150)        
+2025-03-25T10:42:24.6210493Z remote: Compressing objects:  53% (80/150)        
+2025-03-25T10:42:24.6212017Z remote: Compressing objects:  54% (81/150)        
+2025-03-25T10:42:24.6213459Z remote: Compressing objects:  55% (83/150)        
+2025-03-25T10:42:24.6214812Z remote: Compressing objects:  56% (84/150)        
+2025-03-25T10:42:24.6216269Z remote: Compressing objects:  57% (86/150)        
+2025-03-25T10:42:24.6217834Z remote: Compressing objects:  58% (87/150)        
+2025-03-25T10:42:24.6219247Z remote: Compressing objects:  59% (89/150)        
+2025-03-25T10:42:24.6220648Z remote: Compressing objects:  60% (90/150)        
+2025-03-25T10:42:24.6222086Z remote: Compressing objects:  61% (92/150)        
+2025-03-25T10:42:24.6223530Z remote: Compressing objects:  62% (93/150)        
+2025-03-25T10:42:24.6224888Z remote: Compressing objects:  63% (95/150)        
+2025-03-25T10:42:24.6226331Z remote: Compressing objects:  64% (96/150)        
+2025-03-25T10:42:24.6228175Z remote: Compressing objects:  65% (98/150)        
+2025-03-25T10:42:24.6230212Z remote: Compressing objects:  66% (99/150)        
+2025-03-25T10:42:24.6231843Z remote: Compressing objects:  67% (101/150)        
+2025-03-25T10:42:24.6233075Z remote: Compressing objects:  68% (102/150)        
+2025-03-25T10:42:24.6234309Z remote: Compressing objects:  69% (104/150)        
+2025-03-25T10:42:24.6235516Z remote: Compressing objects:  70% (105/150)        
+2025-03-25T10:42:24.6236964Z remote: Compressing objects:  71% (107/150)        
+2025-03-25T10:42:24.6238338Z remote: Compressing objects:  72% (108/150)        
+2025-03-25T10:42:24.6239599Z remote: Compressing objects:  73% (110/150)        
+2025-03-25T10:42:24.6240827Z remote: Compressing objects:  74% (111/150)        
+2025-03-25T10:42:24.6242069Z remote: Compressing objects:  75% (113/150)        
+2025-03-25T10:42:24.6243317Z remote: Compressing objects:  76% (114/150)        
+2025-03-25T10:42:24.6244534Z remote: Compressing objects:  77% (116/150)        
+2025-03-25T10:42:24.6245768Z remote: Compressing objects:  78% (117/150)        
+2025-03-25T10:42:24.6246975Z remote: Compressing objects:  79% (119/150)        
+2025-03-25T10:42:24.6248396Z remote: Compressing objects:  80% (120/150)        
+2025-03-25T10:42:24.6249626Z remote: Compressing objects:  81% (122/150)        
+2025-03-25T10:42:24.6250845Z remote: Compressing objects:  82% (123/150)        
+2025-03-25T10:42:24.6252067Z remote: Compressing objects:  83% (125/150)        
+2025-03-25T10:42:24.6253287Z remote: Compressing objects:  84% (126/150)        
+2025-03-25T10:42:24.6254504Z remote: Compressing objects:  85% (128/150)        
+2025-03-25T10:42:24.6255711Z remote: Compressing objects:  86% (129/150)        
+2025-03-25T10:42:24.6256928Z remote: Compressing objects:  87% (131/150)        
+2025-03-25T10:42:24.6258241Z remote: Compressing objects:  88% (132/150)        
+2025-03-25T10:42:24.6259454Z remote: Compressing objects:  89% (134/150)        
+2025-03-25T10:42:24.6260676Z remote: Compressing objects:  90% (135/150)        
+2025-03-25T10:42:24.6261982Z remote: Compressing objects:  91% (137/150)        
+2025-03-25T10:42:24.6263241Z remote: Compressing objects:  92% (138/150)        
+2025-03-25T10:42:24.6264456Z remote: Compressing objects:  93% (140/150)        
+2025-03-25T10:42:24.6265685Z remote: Compressing objects:  94% (141/150)        
+2025-03-25T10:42:24.6266891Z remote: Compressing objects:  95% (143/150)        
+2025-03-25T10:42:24.6268232Z remote: Compressing objects:  96% (144/150)        
+2025-03-25T10:42:24.6269435Z remote: Compressing objects:  97% (146/150)        
+2025-03-25T10:42:24.6270653Z remote: Compressing objects:  98% (147/150)        
+2025-03-25T10:42:24.6271872Z remote: Compressing objects:  99% (149/150)        
+2025-03-25T10:42:24.6273079Z remote: Compressing objects: 100% (150/150)        
+2025-03-25T10:42:24.6274392Z remote: Compressing objects: 100% (150/150), done.        
+2025-03-25T10:42:24.6275651Z Receiving objects:   0% (1/177)
+2025-03-25T10:42:24.6276565Z Receiving objects:   1% (2/177)
+2025-03-25T10:42:24.6277766Z Receiving objects:   2% (4/177)
+2025-03-25T10:42:24.6278696Z Receiving objects:   3% (6/177)
+2025-03-25T10:42:24.6279585Z Receiving objects:   4% (8/177)
+2025-03-25T10:42:24.6280473Z Receiving objects:   5% (9/177)
+2025-03-25T10:42:24.6363355Z Receiving objects:   6% (11/177)
+2025-03-25T10:42:24.6365185Z Receiving objects:   7% (13/177)
+2025-03-25T10:42:24.6409478Z Receiving objects:   8% (15/177)
+2025-03-25T10:42:24.6411421Z Receiving objects:   9% (16/177)
+2025-03-25T10:42:24.6413356Z Receiving objects:  10% (18/177)
+2025-03-25T10:42:24.6414827Z Receiving objects:  11% (20/177)
+2025-03-25T10:42:24.6415786Z Receiving objects:  12% (22/177)
+2025-03-25T10:42:24.6416712Z Receiving objects:  13% (24/177)
+2025-03-25T10:42:24.6522528Z Receiving objects:  14% (25/177)
+2025-03-25T10:42:24.6524084Z Receiving objects:  15% (27/177)
+2025-03-25T10:42:24.6525944Z Receiving objects:  16% (29/177)
+2025-03-25T10:42:24.6527781Z Receiving objects:  17% (31/177)
+2025-03-25T10:42:24.6529345Z Receiving objects:  18% (32/177)
+2025-03-25T10:42:24.6530914Z Receiving objects:  19% (34/177)
+2025-03-25T10:42:24.6532066Z Receiving objects:  20% (36/177)
+2025-03-25T10:42:24.6532995Z Receiving objects:  21% (38/177)
+2025-03-25T10:42:24.6533916Z Receiving objects:  22% (39/177)
+2025-03-25T10:42:24.6534843Z Receiving objects:  23% (41/177)
+2025-03-25T10:42:24.6535756Z Receiving objects:  24% (43/177)
+2025-03-25T10:42:24.6536849Z Receiving objects:  25% (45/177)
+2025-03-25T10:42:24.6538024Z Receiving objects:  26% (47/177)
+2025-03-25T10:42:24.6681104Z Receiving objects:  27% (48/177)
+2025-03-25T10:42:24.6723929Z Receiving objects:  28% (50/177)
+2025-03-25T10:42:24.6725894Z Receiving objects:  29% (52/177)
+2025-03-25T10:42:24.6727155Z Receiving objects:  30% (54/177)
+2025-03-25T10:42:24.7042726Z Receiving objects:  31% (55/177)
+2025-03-25T10:42:24.7045185Z Receiving objects:  32% (57/177)
+2025-03-25T10:42:24.7046394Z Receiving objects:  33% (59/177)
+2025-03-25T10:42:24.7047577Z Receiving objects:  34% (61/177)
+2025-03-25T10:42:24.7048572Z Receiving objects:  35% (62/177)
+2025-03-25T10:42:24.7049488Z Receiving objects:  36% (64/177)
+2025-03-25T10:42:24.7050383Z Receiving objects:  37% (66/177)
+2025-03-25T10:42:24.7140871Z Receiving objects:  38% (68/177)
+2025-03-25T10:42:24.7141827Z Receiving objects:  39% (70/177)
+2025-03-25T10:42:24.7145434Z Receiving objects:  40% (71/177)
+2025-03-25T10:42:24.7147120Z Receiving objects:  41% (73/177)
+2025-03-25T10:42:24.7148884Z Receiving objects:  42% (75/177)
+2025-03-25T10:42:24.7150594Z Receiving objects:  43% (77/177)
+2025-03-25T10:42:24.7152144Z Receiving objects:  44% (78/177)
+2025-03-25T10:42:24.7153679Z Receiving objects:  45% (80/177)
+2025-03-25T10:42:24.7155103Z Receiving objects:  46% (82/177)
+2025-03-25T10:42:24.7218675Z Receiving objects:  47% (84/177)
+2025-03-25T10:42:24.7220274Z Receiving objects:  48% (85/177)
+2025-03-25T10:42:24.7221945Z Receiving objects:  49% (87/177)
+2025-03-25T10:42:24.7223364Z Receiving objects:  50% (89/177)
+2025-03-25T10:42:24.7224380Z Receiving objects:  51% (91/177)
+2025-03-25T10:42:24.7225313Z Receiving objects:  52% (93/177)
+2025-03-25T10:42:24.7226211Z Receiving objects:  53% (94/177)
+2025-03-25T10:42:24.7227118Z Receiving objects:  54% (96/177)
+2025-03-25T10:42:24.7228247Z Receiving objects:  55% (98/177)
+2025-03-25T10:42:24.7229165Z Receiving objects:  56% (100/177)
+2025-03-25T10:42:24.7230070Z Receiving objects:  57% (101/177)
+2025-03-25T10:42:24.7231010Z Receiving objects:  58% (103/177)
+2025-03-25T10:42:24.7231909Z Receiving objects:  59% (105/177)
+2025-03-25T10:42:24.7232819Z Receiving objects:  60% (107/177)
+2025-03-25T10:42:24.7233734Z Receiving objects:  61% (108/177)
+2025-03-25T10:42:24.7234634Z Receiving objects:  62% (110/177)
+2025-03-25T10:42:24.7235551Z Receiving objects:  63% (112/177)
+2025-03-25T10:42:24.7236456Z Receiving objects:  64% (114/177)
+2025-03-25T10:42:24.7237529Z Receiving objects:  65% (116/177)
+2025-03-25T10:42:24.7238448Z Receiving objects:  66% (117/177)
+2025-03-25T10:42:24.7239357Z Receiving objects:  67% (119/177)
+2025-03-25T10:42:24.7240479Z Receiving objects:  68% (121/177)
+2025-03-25T10:42:24.7241411Z Receiving objects:  69% (123/177)
+2025-03-25T10:42:24.7242318Z Receiving objects:  70% (124/177)
+2025-03-25T10:42:24.7243220Z Receiving objects:  71% (126/177)
+2025-03-25T10:42:24.7244131Z Receiving objects:  72% (128/177)
+2025-03-25T10:42:24.7245030Z Receiving objects:  73% (130/177)
+2025-03-25T10:42:24.7371513Z Receiving objects:  74% (131/177)
+2025-03-25T10:42:24.7373033Z Receiving objects:  75% (133/177)
+2025-03-25T10:42:24.7374524Z Receiving objects:  76% (135/177)
+2025-03-25T10:42:24.7375980Z Receiving objects:  77% (137/177)
+2025-03-25T10:42:24.7377594Z Receiving objects:  78% (139/177)
+2025-03-25T10:42:24.7379043Z Receiving objects:  79% (140/177)
+2025-03-25T10:42:24.7380498Z Receiving objects:  80% (142/177)
+2025-03-25T10:42:24.7381930Z Receiving objects:  81% (144/177)
+2025-03-25T10:42:24.7383369Z Receiving objects:  82% (146/177)
+2025-03-25T10:42:24.7384630Z Receiving objects:  83% (147/177)
+2025-03-25T10:42:24.7385553Z Receiving objects:  84% (149/177)
+2025-03-25T10:42:24.7386457Z Receiving objects:  85% (151/177)
+2025-03-25T10:42:24.7387568Z Receiving objects:  86% (153/177)
+2025-03-25T10:42:24.7388500Z Receiving objects:  87% (154/177)
+2025-03-25T10:42:24.7389397Z Receiving objects:  88% (156/177)
+2025-03-25T10:42:24.7390300Z Receiving objects:  89% (158/177)
+2025-03-25T10:42:24.7391234Z Receiving objects:  90% (160/177)
+2025-03-25T10:42:24.7392368Z Receiving objects:  91% (162/177)
+2025-03-25T10:42:24.7454338Z Receiving objects:  92% (163/177)
+2025-03-25T10:42:24.7456482Z Receiving objects:  93% (165/177)
+2025-03-25T10:42:24.7458788Z Receiving objects:  94% (167/177)
+2025-03-25T10:42:24.7460909Z Receiving objects:  95% (169/177)
+2025-03-25T10:42:24.7462485Z Receiving objects:  96% (170/177)
+2025-03-25T10:42:24.7463927Z Receiving objects:  97% (172/177)
+2025-03-25T10:42:24.7473350Z Receiving objects:  98% (174/177)
+2025-03-25T10:42:24.8106358Z Receiving objects:  99% (176/177)
+2025-03-25T10:42:24.8108750Z remote: Total 177 (delta 15), reused 104 (delta 6), pack-reused 0 (from 0)        
+2025-03-25T10:42:24.8116095Z Receiving objects: 100% (177/177)
+2025-03-25T10:42:24.8118348Z Receiving objects: 100% (177/177), 2.46 MiB | 13.04 MiB/s, done.
+2025-03-25T10:42:24.8120549Z Resolving deltas:   0% (0/15)
+2025-03-25T10:42:24.8122015Z Resolving deltas:   6% (1/15)
+2025-03-25T10:42:24.8123557Z Resolving deltas:  13% (2/15)
+2025-03-25T10:42:24.8125105Z Resolving deltas:  20% (3/15)
+2025-03-25T10:42:24.8126635Z Resolving deltas:  26% (4/15)
+2025-03-25T10:42:24.8128311Z Resolving deltas:  33% (5/15)
+2025-03-25T10:42:24.8129682Z Resolving deltas:  40% (6/15)
+2025-03-25T10:42:24.8131047Z Resolving deltas:  46% (7/15)
+2025-03-25T10:42:24.8132176Z Resolving deltas:  53% (8/15)
+2025-03-25T10:42:24.8133046Z Resolving deltas:  60% (9/15)
+2025-03-25T10:42:24.8133885Z Resolving deltas:  66% (10/15)
+2025-03-25T10:42:24.8134737Z Resolving deltas:  73% (11/15)
+2025-03-25T10:42:24.8135581Z Resolving deltas:  80% (12/15)
+2025-03-25T10:42:24.8136499Z Resolving deltas:  86% (13/15)
+2025-03-25T10:42:24.8137574Z Resolving deltas:  93% (14/15)
+2025-03-25T10:42:24.8138447Z Resolving deltas: 100% (15/15)
+2025-03-25T10:42:24.8139326Z Resolving deltas: 100% (15/15), done.
+2025-03-25T10:42:24.8295104Z From https://github.com/protomaps/basemaps
+2025-03-25T10:42:24.8297063Z  * [new ref]         0b819aab0b136ae2747c7d3e0b6b380ec1936d35 -> pull/434/merge
+2025-03-25T10:42:24.8325903Z ##[endgroup]
+2025-03-25T10:42:24.8328283Z ##[group]Determining the checkout info
+2025-03-25T10:42:24.8330756Z ##[endgroup]
+2025-03-25T10:42:24.8332681Z ##[group]Checking out the ref
+2025-03-25T10:42:24.8334977Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/434/merge
+2025-03-25T10:42:24.8571942Z Note: switching to 'refs/remotes/pull/434/merge'.
+2025-03-25T10:42:24.8575011Z 
+2025-03-25T10:42:24.8576280Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-25T10:42:24.8579606Z changes and commit them, and you can discard any commits you make in this
+2025-03-25T10:42:24.8582948Z state without impacting any branches by switching back to a branch.
+2025-03-25T10:42:24.8584768Z 
+2025-03-25T10:42:24.8585826Z If you want to create a new branch to retain commits you create, you may
+2025-03-25T10:42:24.8588790Z do so (now or later) by using -c with the switch command. Example:
+2025-03-25T10:42:24.8590396Z 
+2025-03-25T10:42:24.8591041Z   git switch -c <new-branch-name>
+2025-03-25T10:42:24.8592126Z 
+2025-03-25T10:42:24.8592681Z Or undo this operation with:
+2025-03-25T10:42:24.8593724Z 
+2025-03-25T10:42:24.8594252Z   git switch -
+2025-03-25T10:42:24.8595010Z 
+2025-03-25T10:42:24.8596280Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-25T10:42:24.8598482Z 
+2025-03-25T10:42:24.8600767Z HEAD is now at 0b819aa Merge dfbdcf8ee11f5655ac8c1092bef69a3b7f0dd7eb into 5816d51ab6942423847366efbf5ab351d4eff83c
+2025-03-25T10:42:24.8606759Z ##[endgroup]
+2025-03-25T10:42:24.8619276Z [command]/usr/bin/git log -1 --format='%H'
+2025-03-25T10:42:24.8642017Z '0b819aab0b136ae2747c7d3e0b6b380ec1936d35'
+2025-03-25T10:42:24.9037996Z ##[group]Run actions/setup-java@v3
+2025-03-25T10:42:24.9039445Z with:
+2025-03-25T10:42:24.9040439Z   java-version: 21
+2025-03-25T10:42:24.9041627Z   distribution: temurin
+2025-03-25T10:42:24.9042860Z   cache: maven
+2025-03-25T10:42:24.9043952Z   java-package: jdk
+2025-03-25T10:42:24.9045081Z   check-latest: false
+2025-03-25T10:42:24.9046454Z   server-id: github
+2025-03-25T10:42:24.9047436Z   server-username: GITHUB_ACTOR
+2025-03-25T10:42:24.9048330Z   server-password: GITHUB_TOKEN
+2025-03-25T10:42:24.9049186Z   overwrite-settings: true
+2025-03-25T10:42:24.9049963Z   job-status: success
+2025-03-25T10:42:24.9050936Z   token: ***
+2025-03-25T10:42:24.9051586Z ##[endgroup]
+2025-03-25T10:42:25.0623751Z ##[group]Installed distributions
+2025-03-25T10:42:25.0668394Z Resolved Java 21.0.6+7 from tool-cache
+2025-03-25T10:42:25.0670156Z Setting Java 21.0.6+7 as the default
+2025-03-25T10:42:25.0683154Z Creating toolchains.xml for JDK version 21 from temurin
+2025-03-25T10:42:25.0759658Z Writing to /home/runner/.m2/toolchains.xml
+2025-03-25T10:42:25.0760746Z 
+2025-03-25T10:42:25.0761244Z Java configuration:
+2025-03-25T10:42:25.0762685Z   Distribution: temurin
+2025-03-25T10:42:25.0763913Z   Version: 21.0.6+7
+2025-03-25T10:42:25.0765962Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-25T10:42:25.0767780Z 
+2025-03-25T10:42:25.0769247Z ##[endgroup]
+2025-03-25T10:42:25.0780857Z Creating settings.xml with server-id: github
+2025-03-25T10:42:25.0787511Z Writing to /home/runner/.m2/settings.xml
+2025-03-25T10:42:26.5307682Z Received 62914560 of 154135174 (40.8%), 60.0 MBs/sec
+2025-03-25T10:42:27.4367047Z Received 154135174 of 154135174 (100.0%), 77.1 MBs/sec
+2025-03-25T10:42:27.4368208Z Cache Size: ~147 MB (154135174 B)
+2025-03-25T10:42:27.4397487Z [command]/usr/bin/tar -z -xf /home/runner/work/_temp/b224ccbd-bb58-466a-95d6-6c8c6d8c4ad5/cache.tgz -P -C /home/runner/work/basemaps/basemaps
+2025-03-25T10:42:28.4543961Z Cache restored successfully
+2025-03-25T10:42:28.4872549Z Cache restored from key: setup-java-Linux-maven-47723a6ef6ed7026a3d16e2547ab67c7a954399c166bf563ce6297147b851c77
+2025-03-25T10:42:28.5053658Z ##[group]Run mvn --batch-mode -no-transfer-progress test
+2025-03-25T10:42:28.5054203Z [36;1mmvn --batch-mode -no-transfer-progress test[0m
+2025-03-25T10:42:28.5108210Z shell: /usr/bin/bash -e {0}
+2025-03-25T10:42:28.5108522Z env:
+2025-03-25T10:42:28.5108870Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-25T10:42:28.5109375Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-25T10:42:28.5109752Z ##[endgroup]
+2025-03-25T10:42:32.9099182Z [INFO] Scanning for projects...
+2025-03-25T10:42:32.9767390Z [INFO] 
+2025-03-25T10:42:32.9787838Z [INFO] --------------< com.protomaps.basemap:protomaps-basemap >---------------
+2025-03-25T10:42:32.9794799Z [INFO] Building Protomaps Basemap HEAD
+2025-03-25T10:42:32.9803262Z [INFO]   from pom.xml
+2025-03-25T10:42:32.9805634Z [INFO] --------------------------------[ jar ]---------------------------------
+2025-03-25T10:42:35.8157905Z [INFO] 
+2025-03-25T10:42:35.8160883Z [INFO] --- enforcer:3.4.1:enforce (enforce-java) @ protomaps-basemap ---
+2025-03-25T10:42:36.0390568Z [INFO] Rule 0: org.apache.maven.enforcer.rules.version.RequireJavaVersion passed
+2025-03-25T10:42:36.0391457Z [INFO] 
+2025-03-25T10:42:36.0392039Z [INFO] --- resources:3.3.1:resources (default-resources) @ protomaps-basemap ---
+2025-03-25T10:42:36.1028635Z [INFO] Copying 1 resource from src/main/resources to target/classes
+2025-03-25T10:42:36.1068420Z [INFO] 
+2025-03-25T10:42:36.1069240Z [INFO] --- compiler:3.13.0:compile (default-compile) @ protomaps-basemap ---
+2025-03-25T10:42:36.3790301Z [INFO] Recompiling the module because of changed source code.
+2025-03-25T10:42:36.3890260Z [INFO] Compiling 27 source files with javac [debug target 21] to target/classes
+2025-03-25T10:42:39.0251700Z [INFO] Annotation processing is enabled because one or more processors were found
+2025-03-25T10:42:39.0264979Z   on the class path. A future release of javac may disable annotation processing
+2025-03-25T10:42:39.0265912Z   unless at least one processor is specified by name (-processor), or a search
+2025-03-25T10:42:39.0266792Z   path is specified (--processor-path, --processor-module-path), or annotation
+2025-03-25T10:42:39.0275274Z   processing is enabled explicitly (-proc:only, -proc:full).
+2025-03-25T10:42:39.0276361Z   Use -Xlint:-options to suppress this message.
+2025-03-25T10:42:39.0276942Z   Use -proc:none to disable annotation processing.
+2025-03-25T10:42:39.0279241Z [WARNING] /home/runner/work/basemaps/basemaps/tiles/src/main/java/com/protomaps/basemap/Basemap.java:[167,7] addNaturalEarthSource(java.lang.String,java.nio.file.Path,java.lang.String) in com.onthegomap.planetiler.Planetiler has been deprecated and marked for removal
+2025-03-25T10:42:39.0282181Z [INFO] /home/runner/work/basemaps/basemaps/tiles/src/main/java/com/protomaps/basemap/feature/CountryCoder.java: Some input files use unchecked or unsafe operations.
+2025-03-25T10:42:39.0284410Z [INFO] /home/runner/work/basemaps/basemaps/tiles/src/main/java/com/protomaps/basemap/feature/CountryCoder.java: Recompile with -Xlint:unchecked for details.
+2025-03-25T10:42:39.0285680Z [INFO] 
+2025-03-25T10:42:39.0286191Z [INFO] --- resources:3.3.1:testResources (default-testResources) @ protomaps-basemap ---
+2025-03-25T10:42:39.0423111Z [INFO] Copying 7 resources from src/test/resources to target/test-classes
+2025-03-25T10:42:39.0455518Z [INFO] 
+2025-03-25T10:42:39.0458362Z [INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ protomaps-basemap ---
+2025-03-25T10:42:39.0546182Z [INFO] Recompiling the module because of changed dependency.
+2025-03-25T10:42:39.0557776Z [INFO] Compiling 25 source files with javac [debug target 21] to target/test-classes
+2025-03-25T10:42:40.4188592Z [INFO] Annotation processing is enabled because one or more processors were found
+2025-03-25T10:42:40.4189899Z   on the class path. A future release of javac may disable annotation processing
+2025-03-25T10:42:40.4190910Z   unless at least one processor is specified by name (-processor), or a search
+2025-03-25T10:42:40.4192980Z   path is specified (--processor-path, --processor-module-path), or annotation
+2025-03-25T10:42:40.4195356Z   processing is enabled explicitly (-proc:only, -proc:full).
+2025-03-25T10:42:40.4196697Z   Use -Xlint:-options to suppress this message.
+2025-03-25T10:42:40.4199957Z   Use -proc:none to disable annotation processing.
+2025-03-25T10:42:40.4200606Z [INFO] 
+2025-03-25T10:42:40.4201345Z [INFO] --- surefire:3.0.0-M8:test (default-test) @ protomaps-basemap ---
+2025-03-25T10:42:40.5771192Z [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+2025-03-25T10:42:40.7488742Z [INFO] 
+2025-03-25T10:42:40.7491284Z [INFO] -------------------------------------------------------
+2025-03-25T10:42:40.7493792Z [INFO]  T E S T S
+2025-03-25T10:42:40.7495782Z [INFO] -------------------------------------------------------
+2025-03-25T10:42:41.6288515Z [INFO] Running com.protomaps.basemap.BasemapTest
+2025-03-25T10:42:41.7755110Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.095 s - in com.protomaps.basemap.BasemapTest
+2025-03-25T10:42:41.7758102Z [INFO] Running com.protomaps.basemap.names.ScriptTest
+2025-03-25T10:42:41.8003383Z [INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 s - in com.protomaps.basemap.names.ScriptTest
+2025-03-25T10:42:41.8004576Z [INFO] Running com.protomaps.basemap.names.ScriptSegmenterTest
+2025-03-25T10:42:41.8124094Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s - in com.protomaps.basemap.names.ScriptSegmenterTest
+2025-03-25T10:42:41.8132517Z [INFO] Running com.protomaps.basemap.names.OsmNamesTest
+2025-03-25T10:42:41.8216554Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in com.protomaps.basemap.names.OsmNamesTest
+2025-03-25T10:42:41.8221526Z [INFO] Running com.protomaps.basemap.postprocess.LinkSimplifyTest
+2025-03-25T10:42:42.3876732Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.58 s - in com.protomaps.basemap.postprocess.LinkSimplifyTest
+2025-03-25T10:42:42.3880270Z [INFO] Running com.protomaps.basemap.postprocess.ClipTest
+2025-03-25T10:42:42.5530466Z [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.161 s - in com.protomaps.basemap.postprocess.ClipTest
+2025-03-25T10:42:42.5533827Z [INFO] Running com.protomaps.basemap.layers.PlacesTest
+2025-03-25T10:42:42.7710531Z [INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.217 s - in com.protomaps.basemap.layers.PlacesTest
+2025-03-25T10:42:42.7711572Z [INFO] Running com.protomaps.basemap.layers.BuildingsTest
+2025-03-25T10:42:42.8060399Z [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 s - in com.protomaps.basemap.layers.BuildingsTest
+2025-03-25T10:42:42.8061814Z [INFO] Running com.protomaps.basemap.layers.BoundariesTest
+2025-03-25T10:42:42.8398244Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 s - in com.protomaps.basemap.layers.BoundariesTest
+2025-03-25T10:42:42.8400028Z [INFO] Running com.protomaps.basemap.layers.LanduseTest
+2025-03-25T10:42:42.9315533Z [INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.088 s - in com.protomaps.basemap.layers.LanduseTest
+2025-03-25T10:42:42.9318348Z [INFO] Running com.protomaps.basemap.layers.WaterTest
+2025-03-25T10:42:42.9534138Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 s - in com.protomaps.basemap.layers.WaterTest
+2025-03-25T10:42:42.9568256Z [INFO] Running com.protomaps.basemap.layers.RoadsTest
+2025-03-25T10:42:43.2895186Z [INFO] Tests run: 64, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.324 s - in com.protomaps.basemap.layers.RoadsTest
+2025-03-25T10:42:43.2908244Z [INFO] Running com.protomaps.basemap.layers.LandcoverTest
+2025-03-25T10:42:43.3018141Z [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s - in com.protomaps.basemap.layers.LandcoverTest
+2025-03-25T10:42:43.3024472Z [INFO] Running com.protomaps.basemap.layers.PoisTest
+2025-03-25T10:42:43.3458149Z [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s - in com.protomaps.basemap.layers.PoisTest
+2025-03-25T10:42:43.3497610Z [INFO] Running com.protomaps.basemap.layers.EarthTest
+2025-03-25T10:42:43.3504249Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s - in com.protomaps.basemap.layers.EarthTest
+2025-03-25T10:42:43.3510336Z [INFO] Running com.protomaps.basemap.feature.CountryCoderTest
+2025-03-25T10:42:43.3545255Z 0:00:01 WAR - [1:117] Unexpected token type: START_OBJECT
+2025-03-25T10:42:43.3623535Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s - in com.protomaps.basemap.feature.CountryCoderTest
+2025-03-25T10:42:43.3629850Z [INFO] Running com.protomaps.basemap.feature.MatcherTest
+2025-03-25T10:42:43.3879046Z [INFO] Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 s - in com.protomaps.basemap.feature.MatcherTest
+2025-03-25T10:42:43.3880653Z [INFO] Running com.protomaps.basemap.feature.NaturalEarthDbTest
+2025-03-25T10:42:43.5151468Z [INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.131 s - in com.protomaps.basemap.feature.NaturalEarthDbTest
+2025-03-25T10:42:43.5153131Z [INFO] Running com.protomaps.basemap.feature.QrankDbTest
+2025-03-25T10:42:43.5254430Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in com.protomaps.basemap.feature.QrankDbTest
+2025-03-25T10:42:43.5255722Z [INFO] Running com.protomaps.basemap.locales.CartographicLocaleTest
+2025-03-25T10:42:43.5303964Z [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in com.protomaps.basemap.locales.CartographicLocaleTest
+2025-03-25T10:42:43.5304953Z [INFO] Running com.protomaps.basemap.locales.USTest
+2025-03-25T10:42:43.5462993Z [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s - in com.protomaps.basemap.locales.USTest
+2025-03-25T10:42:43.5463983Z [INFO] Running com.protomaps.basemap.text.FontRegistryTest
+2025-03-25T10:42:44.2304560Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.68 s - in com.protomaps.basemap.text.FontRegistryTest
+2025-03-25T10:42:44.2308345Z [INFO] Running com.protomaps.basemap.text.TextEngineTest
+2025-03-25T10:42:44.3193625Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.09 s - in com.protomaps.basemap.text.TextEngineTest
+2025-03-25T10:42:44.3619815Z [INFO] 
+2025-03-25T10:42:44.3620605Z [INFO] Results:
+2025-03-25T10:42:44.3621774Z [INFO] 
+2025-03-25T10:42:44.3622325Z [INFO] Tests run: 225, Failures: 0, Errors: 0, Skipped: 0
+2025-03-25T10:42:44.3622801Z [INFO] 
+2025-03-25T10:42:44.3642008Z [INFO] ------------------------------------------------------------------------
+2025-03-25T10:42:44.3642565Z [INFO] BUILD SUCCESS
+2025-03-25T10:42:44.3642840Z [INFO] ------------------------------------------------------------------------
+2025-03-25T10:42:44.3651946Z [INFO] Total time:  11.497 s
+2025-03-25T10:42:44.3653848Z [INFO] Finished at: 2025-03-25T10:42:44Z
+2025-03-25T10:42:44.3654384Z [INFO] ------------------------------------------------------------------------
+2025-03-25T10:42:44.3879815Z ##[group]Run mvn spotless:check
+2025-03-25T10:42:44.3880099Z [36;1mmvn spotless:check[0m
+2025-03-25T10:42:44.3930216Z shell: /usr/bin/bash -e {0}
+2025-03-25T10:42:44.3930446Z env:
+2025-03-25T10:42:44.3930730Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-25T10:42:44.3931176Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.6-7/x64
+2025-03-25T10:42:44.3931521Z ##[endgroup]
+2025-03-25T10:42:45.5628678Z [INFO] Scanning for projects...
+2025-03-25T10:42:45.7025016Z [INFO] 
+2025-03-25T10:42:45.7026565Z [INFO] --------------< com.protomaps.basemap:protomaps-basemap >---------------
+2025-03-25T10:42:45.7029224Z [INFO] Building Protomaps Basemap HEAD
+2025-03-25T10:42:45.7030952Z [INFO]   from pom.xml
+2025-03-25T10:42:45.7032709Z [INFO] --------------------------------[ jar ]---------------------------------
+2025-03-25T10:42:45.7085088Z [INFO] 
+2025-03-25T10:42:45.7088542Z [INFO] --- spotless:2.40.0:check (default-cli) @ protomaps-basemap ---
+2025-03-25T10:42:45.9468658Z Recommend replacing '4.21.0' with '4.21' for Eclipse JDT
+2025-03-25T10:42:46.5529447Z [INFO] Index file does not exist. Fallback to an empty index
+2025-03-25T10:42:48.7382474Z [INFO] Spotless.Java is keeping 52 files clean - 1 needs changes to be clean, 51 were already clean, 0 were skipped because caching determined they were already clean
+2025-03-25T10:42:48.8022159Z [INFO] ------------------------------------------------------------------------
+2025-03-25T10:42:48.8024823Z [INFO] BUILD FAILURE
+2025-03-25T10:42:48.8025292Z [INFO] ------------------------------------------------------------------------
+2025-03-25T10:42:48.8035217Z [INFO] Total time:  3.259 s
+2025-03-25T10:42:48.8038334Z [INFO] Finished at: 2025-03-25T10:42:48Z
+2025-03-25T10:42:48.8039334Z [INFO] ------------------------------------------------------------------------
+2025-03-25T10:42:48.8048281Z [ERROR] Failed to execute goal com.diffplug.spotless:spotless-maven-plugin:2.40.0:check (default-cli) on project protomaps-basemap: The following files had format violations:
+2025-03-25T10:42:48.8050381Z [ERROR]     src/main/java/com/protomaps/basemap/layers/Places.java
+2025-03-25T10:42:48.8051171Z [ERROR]         @@ -1,15 +1,12 @@
+2025-03-25T10:42:48.8072745Z [ERROR]          package·com.protomaps.basemap.layers;
+2025-03-25T10:42:48.8074434Z [ERROR]          
+2025-03-25T10:42:48.8075646Z [ERROR]         -import·static·com.onthegomap.planetiler.util.Parse.parseIntOrNull;
+2025-03-25T10:42:48.8095125Z [ERROR]          import·static·com.protomaps.basemap.feature.Matcher.fromTag;
+2025-03-25T10:42:48.8096267Z [ERROR]         -import·static·com.protomaps.basemap.feature.Matcher.getBoolean;
+2025-03-25T10:42:48.8097570Z [ERROR]          import·static·com.protomaps.basemap.feature.Matcher.getInteger;
+2025-03-25T10:42:48.8098571Z [ERROR]          import·static·com.protomaps.basemap.feature.Matcher.getString;
+2025-03-25T10:42:48.8099576Z [ERROR]          import·static·com.protomaps.basemap.feature.Matcher.rule;
+2025-03-25T10:42:48.8100534Z [ERROR]          import·static·com.protomaps.basemap.feature.Matcher.use;
+2025-03-25T10:42:48.8101845Z [ERROR]          import·static·com.protomaps.basemap.feature.Matcher.with;
+2025-03-25T10:42:48.8102774Z [ERROR]          import·static·com.protomaps.basemap.feature.Matcher.without;
+2025-03-25T10:42:48.8103776Z [ERROR]         -import·static·com.protomaps.basemap.feature.Matcher.withoutPoint;
+2025-03-25T10:42:48.8104443Z [ERROR]          
+2025-03-25T10:42:48.8105009Z [ERROR]          import·com.onthegomap.planetiler.FeatureCollector;
+2025-03-25T10:42:48.8105829Z [ERROR]          import·com.onthegomap.planetiler.ForwardingProfile;
+2025-03-25T10:42:48.8106388Z [ERROR]         @@ -23,7 +20,6 @@
+2025-03-25T10:42:48.8106990Z [ERROR]          import·com.protomaps.basemap.names.OsmNames;
+2025-03-25T10:42:48.8107754Z [ERROR]          import·java.util.List;
+2025-03-25T10:42:48.8108290Z [ERROR]          import·java.util.Map;
+2025-03-25T10:42:48.8109274Z [ERROR]         -import·java.util.concurrent.atomic.AtomicInteger;
+2025-03-25T10:42:48.8109865Z [ERROR]          
+2025-03-25T10:42:48.8110605Z [ERROR]          public·class·Places·implements·ForwardingProfile.LayerPostProcessor·{
+2025-03-25T10:42:48.8111321Z [ERROR]          
+2025-03-25T10:42:48.8111635Z [ERROR]         @@ -49,10 +45,10 @@
+2025-03-25T10:42:48.8112075Z [ERROR]          ····),
+2025-03-25T10:42:48.8112473Z [ERROR]          ····rule(
+2025-03-25T10:42:48.8112884Z [ERROR]          ······with("""
+2025-03-25T10:42:48.8113321Z [ERROR]         -········place
+2025-03-25T10:42:48.8113764Z [ERROR]         -········state
+2025-03-25T10:42:48.8114204Z [ERROR]         -········province
+2025-03-25T10:42:48.8114648Z [ERROR]         -······"""),
+2025-03-25T10:42:48.8115080Z [ERROR]         +··········place
+2025-03-25T10:42:48.8115521Z [ERROR]         +··········state
+2025-03-25T10:42:48.8115961Z [ERROR]         +··········province
+2025-03-25T10:42:48.8116415Z [ERROR]         +········"""),
+2025-03-25T10:42:48.8116901Z [ERROR]          ······use("kind",·"region"),
+2025-03-25T10:42:48.8117628Z [ERROR]          ······use("minZoom",·8),
+2025-03-25T10:42:48.8118136Z [ERROR]          ······use("maxZoom",·11),
+2025-03-25T10:42:48.8118560Z [ERROR]         @@ -60,10 +56,10 @@
+2025-03-25T10:42:48.8118986Z [ERROR]          ····),
+2025-03-25T10:42:48.8119369Z [ERROR]          ····rule(
+2025-03-25T10:42:48.8119783Z [ERROR]          ······with("""
+2025-03-25T10:42:48.8120220Z [ERROR]         -········place
+2025-03-25T10:42:48.8120661Z [ERROR]         -········city
+2025-03-25T10:42:48.8121099Z [ERROR]         -········town
+2025-03-25T10:42:48.8121523Z [ERROR]         -······"""),
+2025-03-25T10:42:48.8121949Z [ERROR]         +··········place
+2025-03-25T10:42:48.8122381Z [ERROR]         +··········city
+2025-03-25T10:42:48.8122772Z [ERROR]     ... (5 more lines that didn't fit)
+2025-03-25T10:42:48.8123289Z [ERROR] Run 'mvn spotless:apply' to fix these violations.
+2025-03-25T10:42:48.8123772Z [ERROR] -> [Help 1]
+2025-03-25T10:42:48.8124063Z [ERROR] 
+2025-03-25T10:42:48.8124632Z [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+2025-03-25T10:42:48.8125389Z [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+2025-03-25T10:42:48.8125935Z [ERROR] 
+2025-03-25T10:42:48.8126547Z [ERROR] For more information about the errors and possible solutions, please read the following articles:
+2025-03-25T10:42:48.8127718Z [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+2025-03-25T10:42:48.8382897Z ##[error]Process completed with exit code 1.
+2025-03-25T10:42:48.8500333Z Post job cleanup.
+2025-03-25T10:42:48.9790665Z Post job cleanup.
+2025-03-25T10:42:49.0510786Z [command]/usr/bin/git version
+2025-03-25T10:42:49.0549920Z git version 2.48.1
+2025-03-25T10:42:49.0593384Z Temporarily overriding HOME='/home/runner/work/_temp/65ef818d-fad0-4f48-b40c-5d35f9e2ac4f' before making global git config changes
+2025-03-25T10:42:49.0594681Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-25T10:42:49.0598838Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/basemaps/basemaps
+2025-03-25T10:42:49.0631886Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-25T10:42:49.0662584Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-25T10:42:49.0906421Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-25T10:42:49.0929155Z http.https://github.com/.extraheader
+2025-03-25T10:42:49.0940999Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-25T10:42:49.0972372Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-25T10:42:49.1310392Z Cleaning up orphan processes

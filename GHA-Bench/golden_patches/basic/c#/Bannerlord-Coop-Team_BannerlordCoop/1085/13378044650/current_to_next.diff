@@ -1,0 +1,43 @@
+diff --git a/source/E2E.Tests/Services/Towns/SyncTownTests.cs b/source/E2E.Tests/Services/Towns/SyncTownTests.cs
+index a73a5c1f7..a47aa333a 100644
+--- a/source/E2E.Tests/Services/Towns/SyncTownTests.cs
++++ b/source/E2E.Tests/Services/Towns/SyncTownTests.cs
+@@ -30,21 +30,22 @@ public SyncTownTests(ITestOutputHelper output)
+     public void Server_Town_Fields()
+     {
+         AssertField<Town, float>(nameof(Town._prosperity), 500f);
+-        AssertField<Town, float>(nameof(Town._security), 50f);
+-        AssertField<Town, float>(nameof(Town._loyalty), 60f);
+ 
+         AssertField<Town, int>(nameof(Town._tradeTax), 70);
+         AssertField<Town, int>(nameof(Town._wallLevel), 1);
+         AssertField<Town, int>(nameof(Town.BoostBuildingProcess), 200);
+-
+         AssertField<Town, bool>(nameof(Town._isCastle), true);
+         AssertField<Town, bool>(nameof(Town.InRebelliousState), true);
++
+         AssertReferenceField<Town, Hero>(nameof(Town._governor));
+     }
+ 
+     [Fact]
+     public void Server_Town_Properties()
+     {
++        AssertProperty<Town, float>(nameof(Town.Security), 50f);
++        AssertProperty<Town, float>(nameof(Town.Loyalty), 60f);
++
+         AssertReferenceProperty<Town, Hero>(nameof(Town.Governor));
+     }
+ 
+diff --git a/source/GameInterface/Services/Towns/TownSync.cs b/source/GameInterface/Services/Towns/TownSync.cs
+index edf70b465..f9288f7b2 100644
+--- a/source/GameInterface/Services/Towns/TownSync.cs
++++ b/source/GameInterface/Services/Towns/TownSync.cs
+@@ -9,6 +9,8 @@ public TownSync(IAutoSyncBuilder autoSyncBuilder)
+     {
+         // Already synced manually
+         autoSyncBuilder.AddProperty(AccessTools.Property(typeof(Town), nameof(Town.Governor)));
++        autoSyncBuilder.AddProperty(AccessTools.Property(typeof(Town), nameof(Town.Security)));
++        autoSyncBuilder.AddProperty(AccessTools.Property(typeof(Town), nameof(Town.Loyalty)));
+ 
+         autoSyncBuilder.AddField(AccessTools.Field(typeof(Town), nameof(Town._prosperity)));
+         autoSyncBuilder.AddField(AccessTools.Field(typeof(Town), nameof(Town._wallLevel)));

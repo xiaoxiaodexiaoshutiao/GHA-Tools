@@ -1,0 +1,250 @@
+﻿2025-04-02T18:03:57.7718410Z Current runner version: '2.323.0'
+2025-04-02T18:03:57.7743501Z ##[group]Operating System
+2025-04-02T18:03:57.7744377Z Ubuntu
+2025-04-02T18:03:57.7744824Z 22.04.5
+2025-04-02T18:03:57.7745297Z LTS
+2025-04-02T18:03:57.7745782Z ##[endgroup]
+2025-04-02T18:03:57.7746470Z ##[group]Runner Image
+2025-04-02T18:03:57.7747050Z Image: ubuntu-22.04
+2025-04-02T18:03:57.7747590Z Version: 20250330.1.0
+2025-04-02T18:03:57.7748631Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20250330.1/images/ubuntu/Ubuntu2204-Readme.md
+2025-04-02T18:03:57.7749947Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20250330.1
+2025-04-02T18:03:57.7750869Z ##[endgroup]
+2025-04-02T18:03:57.7751347Z ##[group]Runner Image Provisioner
+2025-04-02T18:03:57.7751906Z 2.0.422.1
+2025-04-02T18:03:57.7752399Z ##[endgroup]
+2025-04-02T18:03:57.7754753Z ##[group]GITHUB_TOKEN Permissions
+2025-04-02T18:03:57.7756929Z Actions: write
+2025-04-02T18:03:57.7757707Z Attestations: write
+2025-04-02T18:03:57.7758272Z Checks: write
+2025-04-02T18:03:57.7758827Z Contents: write
+2025-04-02T18:03:57.7759862Z Deployments: write
+2025-04-02T18:03:57.7760659Z Discussions: write
+2025-04-02T18:03:57.7761400Z Issues: write
+2025-04-02T18:03:57.7761902Z Metadata: read
+2025-04-02T18:03:57.7762337Z Models: read
+2025-04-02T18:03:57.7762863Z Packages: write
+2025-04-02T18:03:57.7763357Z Pages: write
+2025-04-02T18:03:57.7763800Z PullRequests: write
+2025-04-02T18:03:57.7764386Z RepositoryProjects: write
+2025-04-02T18:03:57.7764910Z SecurityEvents: write
+2025-04-02T18:03:57.7765423Z Statuses: write
+2025-04-02T18:03:57.7765899Z ##[endgroup]
+2025-04-02T18:03:57.7768205Z Secret source: Actions
+2025-04-02T18:03:57.7768967Z Prepare workflow directory
+2025-04-02T18:03:57.8328075Z Prepare all required actions
+2025-04-02T18:03:57.8364186Z Getting action download info
+2025-04-02T18:03:58.1823969Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-02T18:03:58.1824977Z Version: 4.2.2
+2025-04-02T18:03:58.1825955Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-02T18:03:58.1827340Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-02T18:03:58.1828169Z ##[endgroup]
+2025-04-02T18:03:58.3610424Z Complete job name: test / mypy
+2025-04-02T18:03:58.4014522Z ##[group]Checking docker version
+2025-04-02T18:03:58.4027547Z ##[command]/usr/bin/docker version --format '{{.Server.APIVersion}}'
+2025-04-02T18:03:58.4897004Z '1.45'
+2025-04-02T18:03:58.4908127Z Docker daemon API version: '1.45'
+2025-04-02T18:03:58.4908869Z ##[command]/usr/bin/docker version --format '{{.Client.APIVersion}}'
+2025-04-02T18:03:58.5076944Z '1.45'
+2025-04-02T18:03:58.5090016Z Docker client API version: '1.45'
+2025-04-02T18:03:58.5094694Z ##[endgroup]
+2025-04-02T18:03:58.5098207Z ##[group]Clean up resources from previous jobs
+2025-04-02T18:03:58.5103386Z ##[command]/usr/bin/docker ps --all --quiet --no-trunc --filter "label=160d8a"
+2025-04-02T18:03:58.5275834Z ##[command]/usr/bin/docker network prune --force --filter "label=160d8a"
+2025-04-02T18:03:58.5404680Z ##[endgroup]
+2025-04-02T18:03:58.5405126Z ##[group]Create local container network
+2025-04-02T18:03:58.5414507Z ##[command]/usr/bin/docker network create --label 160d8a github_network_3029f87df32a4ed496e5abb3cb99b708
+2025-04-02T18:03:58.6134073Z 0ed02aeb59e6ac98289eb4379e7a5206caf6164363cfdfac0585df4281c93b5f
+2025-04-02T18:03:58.6150205Z ##[endgroup]
+2025-04-02T18:03:58.6172810Z ##[group]Starting job container
+2025-04-02T18:03:58.6192150Z ##[command]/usr/bin/docker pull nycplanning/dev:latest
+2025-04-02T18:03:59.0001359Z latest: Pulling from nycplanning/dev
+2025-04-02T18:03:59.0012533Z 6e909acdb790: Pulling fs layer
+2025-04-02T18:03:59.0013786Z a6f2701f375f: Pulling fs layer
+2025-04-02T18:03:59.0014455Z 7a729f9c5873: Pulling fs layer
+2025-04-02T18:03:59.0015253Z 75c77ac11059: Pulling fs layer
+2025-04-02T18:03:59.0016042Z 6dc917c4cebd: Pulling fs layer
+2025-04-02T18:03:59.0017015Z 3a7d765b2e65: Pulling fs layer
+2025-04-02T18:03:59.0017699Z c92de7674da6: Pulling fs layer
+2025-04-02T18:03:59.0018590Z 6894e3483312: Pulling fs layer
+2025-04-02T18:03:59.0019109Z 75c77ac11059: Waiting
+2025-04-02T18:03:59.0019548Z 6dc917c4cebd: Waiting
+2025-04-02T18:03:59.0020021Z 3a7d765b2e65: Waiting
+2025-04-02T18:03:59.0020420Z c92de7674da6: Waiting
+2025-04-02T18:03:59.0020890Z 6894e3483312: Waiting
+2025-04-02T18:03:59.1366668Z a6f2701f375f: Verifying Checksum
+2025-04-02T18:03:59.1367620Z a6f2701f375f: Download complete
+2025-04-02T18:03:59.1750759Z 7a729f9c5873: Verifying Checksum
+2025-04-02T18:03:59.1752316Z 7a729f9c5873: Download complete
+2025-04-02T18:03:59.2422817Z 75c77ac11059: Verifying Checksum
+2025-04-02T18:03:59.2424409Z 75c77ac11059: Download complete
+2025-04-02T18:03:59.2579035Z 6dc917c4cebd: Download complete
+2025-04-02T18:03:59.3085919Z 6e909acdb790: Verifying Checksum
+2025-04-02T18:03:59.3087378Z 6e909acdb790: Download complete
+2025-04-02T18:03:59.3419839Z c92de7674da6: Verifying Checksum
+2025-04-02T18:03:59.3420963Z c92de7674da6: Download complete
+2025-04-02T18:04:00.5170184Z 6e909acdb790: Pull complete
+2025-04-02T18:04:01.4773127Z a6f2701f375f: Pull complete
+2025-04-02T18:04:02.3186140Z 7a729f9c5873: Pull complete
+2025-04-02T18:04:02.3588419Z 75c77ac11059: Pull complete
+2025-04-02T18:04:02.3759724Z 6dc917c4cebd: Pull complete
+2025-04-02T18:04:04.9408084Z 3a7d765b2e65: Verifying Checksum
+2025-04-02T18:04:04.9410334Z 3a7d765b2e65: Download complete
+2025-04-02T18:04:10.8177103Z 6894e3483312: Verifying Checksum
+2025-04-02T18:04:10.8179118Z 6894e3483312: Download complete
+2025-04-02T18:04:30.6679987Z 3a7d765b2e65: Pull complete
+2025-04-02T18:04:30.6820569Z c92de7674da6: Pull complete
+2025-04-02T18:05:08.0685568Z 6894e3483312: Pull complete
+2025-04-02T18:05:08.0724109Z Digest: sha256:8ff776eff596bf1555cdc47365fa769572df20f25d733139276f764508a4086a
+2025-04-02T18:05:08.0740701Z Status: Downloaded newer image for nycplanning/dev:latest
+2025-04-02T18:05:08.0749369Z docker.io/nycplanning/dev:latest
+2025-04-02T18:05:08.0827437Z ##[command]/usr/bin/docker create --name 7624370b00cb47cdbc2ac2c9ae58b5fb_nycplanningdevlatest_4153fb --label 160d8a --workdir /__w/data-engineering/data-engineering --network github_network_3029f87df32a4ed496e5abb3cb99b708  -e "HOME=/github/home" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work":"/__w" -v "/home/runner/runners/2.323.0/externals":"/__e":ro -v "/home/runner/work/_temp":"/__w/_temp" -v "/home/runner/work/_actions":"/__w/_actions" -v "/opt/hostedtoolcache":"/__t" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" --entrypoint "tail" nycplanning/dev:latest "-f" "/dev/null"
+2025-04-02T18:05:08.1115882Z 3655571e75d766bc034471c2769150e2a6db807995c86271508ed089556d1c8c
+2025-04-02T18:05:08.1137410Z ##[command]/usr/bin/docker start 3655571e75d766bc034471c2769150e2a6db807995c86271508ed089556d1c8c
+2025-04-02T18:05:08.3382239Z 3655571e75d766bc034471c2769150e2a6db807995c86271508ed089556d1c8c
+2025-04-02T18:05:08.3401968Z ##[command]/usr/bin/docker ps --all --filter id=3655571e75d766bc034471c2769150e2a6db807995c86271508ed089556d1c8c --filter status=running --no-trunc --format "{{.ID}} {{.Status}}"
+2025-04-02T18:05:08.3505292Z 3655571e75d766bc034471c2769150e2a6db807995c86271508ed089556d1c8c Up Less than a second
+2025-04-02T18:05:08.3523012Z ##[command]/usr/bin/docker inspect --format "{{range .Config.Env}}{{println .}}{{end}}" 3655571e75d766bc034471c2769150e2a6db807995c86271508ed089556d1c8c
+2025-04-02T18:05:08.3633678Z HOME=/github/home
+2025-04-02T18:05:08.3634016Z GITHUB_ACTIONS=true
+2025-04-02T18:05:08.3634373Z CI=true
+2025-04-02T18:05:08.3634869Z PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2025-04-02T18:05:08.3635504Z GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305
+2025-04-02T18:05:08.3635921Z PYTHON_VERSION=3.13.2
+2025-04-02T18:05:08.3636659Z PYTHON_SHA256=d984bcc57cd67caab26f7def42e523b1c015bbc5dc07836cf4f0b63fa159eb56
+2025-04-02T18:05:08.3637342Z CPLUS_INCLUDE_PATH=/usr/include/gdal
+2025-04-02T18:05:08.3638042Z C_INCLUDE_PATH=/usr/include/gdal
+2025-04-02T18:05:08.3638501Z LD_LIBRARY_PATH=/usr/local/lib:/geocode/version-25a_25.1/lib/
+2025-04-02T18:05:08.3639010Z GEOFILES=/geocode/version-25a_25.1/fls/
+2025-04-02T18:05:08.3653424Z ##[endgroup]
+2025-04-02T18:05:08.3662214Z ##[group]Waiting for all services to be ready
+2025-04-02T18:05:08.3663886Z ##[endgroup]
+2025-04-02T18:05:08.3890057Z ##[group]Run actions/checkout@v4
+2025-04-02T18:05:08.3890609Z with:
+2025-04-02T18:05:08.3890826Z   repository: NYCPlanning/data-engineering
+2025-04-02T18:05:08.3891236Z   token: ***
+2025-04-02T18:05:08.3891416Z   ssh-strict: true
+2025-04-02T18:05:08.3891589Z   ssh-user: git
+2025-04-02T18:05:08.3891773Z   persist-credentials: true
+2025-04-02T18:05:08.3891978Z   clean: true
+2025-04-02T18:05:08.3892161Z   sparse-checkout-cone-mode: true
+2025-04-02T18:05:08.3892385Z   fetch-depth: 1
+2025-04-02T18:05:08.3892558Z   fetch-tags: false
+2025-04-02T18:05:08.3892732Z   show-progress: true
+2025-04-02T18:05:08.3892912Z   lfs: false
+2025-04-02T18:05:08.3893079Z   submodules: false
+2025-04-02T18:05:08.3893257Z   set-safe-directory: true
+2025-04-02T18:05:08.3893643Z ##[endgroup]
+2025-04-02T18:05:08.3947755Z ##[command]/usr/bin/docker exec  3655571e75d766bc034471c2769150e2a6db807995c86271508ed089556d1c8c sh -c "cat /etc/*release | grep ^ID"
+2025-04-02T18:05:08.7385399Z Syncing repository: NYCPlanning/data-engineering
+2025-04-02T18:05:08.7387333Z ##[group]Getting Git version info
+2025-04-02T18:05:08.7387795Z Working directory is '/__w/data-engineering/data-engineering'
+2025-04-02T18:05:08.7388671Z [command]/usr/bin/git version
+2025-04-02T18:05:08.7396048Z git version 2.39.5
+2025-04-02T18:05:08.7426767Z ##[endgroup]
+2025-04-02T18:05:08.7441160Z Temporarily overriding HOME='/__w/_temp/55db1293-a890-45d3-86c8-b8b1793e23dd' before making global git config changes
+2025-04-02T18:05:08.7442383Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-02T18:05:08.7447106Z [command]/usr/bin/git config --global --add safe.directory /__w/data-engineering/data-engineering
+2025-04-02T18:05:08.7481239Z Deleting the contents of '/__w/data-engineering/data-engineering'
+2025-04-02T18:05:08.7485867Z ##[group]Initializing the repository
+2025-04-02T18:05:08.7489867Z [command]/usr/bin/git init /__w/data-engineering/data-engineering
+2025-04-02T18:05:08.7523193Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-02T18:05:08.7524015Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-02T18:05:08.7524754Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-02T18:05:08.7525281Z hint: 
+2025-04-02T18:05:08.7525675Z hint: 	git config --global init.defaultBranch <name>
+2025-04-02T18:05:08.7526128Z hint: 
+2025-04-02T18:05:08.7526701Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-02T18:05:08.7527322Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-02T18:05:08.7527713Z hint: 
+2025-04-02T18:05:08.7527911Z hint: 	git branch -m <name>
+2025-04-02T18:05:08.7533301Z Initialized empty Git repository in /__w/data-engineering/data-engineering/.git/
+2025-04-02T18:05:08.7544609Z [command]/usr/bin/git remote add origin https://github.com/NYCPlanning/data-engineering
+2025-04-02T18:05:08.7576169Z ##[endgroup]
+2025-04-02T18:05:08.7577185Z ##[group]Disabling automatic garbage collection
+2025-04-02T18:05:08.7580687Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-02T18:05:08.7609783Z ##[endgroup]
+2025-04-02T18:05:08.7610379Z ##[group]Setting up auth
+2025-04-02T18:05:08.7616714Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-02T18:05:08.7646669Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-02T18:05:08.7897681Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-02T18:05:08.7925944Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-02T18:05:08.8176613Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-02T18:05:08.8211575Z ##[endgroup]
+2025-04-02T18:05:08.8212059Z ##[group]Fetching the repository
+2025-04-02T18:05:08.8220503Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +ad5cacc8558e117512216e5d46a5b915250b2c8d:refs/remotes/pull/1510/merge
+2025-04-02T18:05:10.4392086Z From https://github.com/NYCPlanning/data-engineering
+2025-04-02T18:05:10.4392589Z  * [new ref]         ad5cacc8558e117512216e5d46a5b915250b2c8d -> pull/1510/merge
+2025-04-02T18:05:10.4420363Z ##[endgroup]
+2025-04-02T18:05:10.4421920Z ##[group]Determining the checkout info
+2025-04-02T18:05:10.4422709Z ##[endgroup]
+2025-04-02T18:05:10.4427568Z [command]/usr/bin/git sparse-checkout disable
+2025-04-02T18:05:10.4468594Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-02T18:05:10.4495910Z ##[group]Checking out the ref
+2025-04-02T18:05:10.4499482Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1510/merge
+2025-04-02T18:05:10.7183814Z Note: switching to 'refs/remotes/pull/1510/merge'.
+2025-04-02T18:05:10.7184171Z 
+2025-04-02T18:05:10.7184443Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-02T18:05:10.7185075Z changes and commit them, and you can discard any commits you make in this
+2025-04-02T18:05:10.7185709Z state without impacting any branches by switching back to a branch.
+2025-04-02T18:05:10.7186084Z 
+2025-04-02T18:05:10.7186628Z If you want to create a new branch to retain commits you create, you may
+2025-04-02T18:05:10.7187215Z do so (now or later) by using -c with the switch command. Example:
+2025-04-02T18:05:10.7187583Z 
+2025-04-02T18:05:10.7187722Z   git switch -c <new-branch-name>
+2025-04-02T18:05:10.7187959Z 
+2025-04-02T18:05:10.7188082Z Or undo this operation with:
+2025-04-02T18:05:10.7188289Z 
+2025-04-02T18:05:10.7188403Z   git switch -
+2025-04-02T18:05:10.7188676Z 
+2025-04-02T18:05:10.7188969Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-02T18:05:10.7189384Z 
+2025-04-02T18:05:10.7189856Z HEAD is now at ad5cacc Merge 21328c009da2fcf1245de9da650515b5f9b7abc4 into cdb523d7d064a3e435565bf613e7e2d58e544d75
+2025-04-02T18:05:10.7204715Z ##[endgroup]
+2025-04-02T18:05:10.7242098Z [command]/usr/bin/git log -1 --format=%H
+2025-04-02T18:05:10.7264803Z ad5cacc8558e117512216e5d46a5b915250b2c8d
+2025-04-02T18:05:10.7536513Z ##[group]Run mypy dcpy
+2025-04-02T18:05:10.7536925Z [36;1mmypy dcpy[0m
+2025-04-02T18:05:10.7537236Z [36;1mmypy apps/qa/src[0m
+2025-04-02T18:05:10.7537583Z [36;1mmypy products/facilities[0m
+2025-04-02T18:05:10.7537986Z [36;1mmypy products/template[0m
+2025-04-02T18:05:10.7538325Z [36;1mmypy products/ceqr/build_scripts[0m
+2025-04-02T18:05:10.7538570Z [36;1mmypy admin/ops[0m
+2025-04-02T18:05:10.7542036Z shell: sh -e {0}
+2025-04-02T18:05:10.7542232Z ##[endgroup]
+2025-04-02T18:05:11.0019373Z dcpy/library/script/fisa_dailybudget.py:49: SyntaxWarning: invalid escape sequence '\d'
+2025-04-02T18:05:11.0020240Z   match = re.match("^AIBL_DLY_BUD_96L1_(\d+)$", file.stem)
+2025-04-02T18:05:11.0343524Z dcpy/lifecycle/ingest/transform.py:249: SyntaxWarning: invalid escape sequence '\d'
+2025-04-02T18:05:11.0344233Z   """
+2025-04-02T18:05:46.5866168Z dcpy/test/lifecycle/ingest/test_transform.py:402: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+2025-04-02T18:05:46.6206896Z Success: no issues found in 189 source files
+2025-04-02T18:05:46.8089320Z apps/qa/src/pages/gru/helpers.py:97: SyntaxWarning: invalid escape sequence '\d'
+2025-04-02T18:05:46.8090096Z   if re.match("^\d+\.\d+\.\d+$", image["name"]):
+2025-04-02T18:05:59.1771888Z Success: no issues found in 59 source files
+2025-04-02T18:06:02.3487229Z Success: no issues found in 12 source files
+2025-04-02T18:06:08.7312881Z products/template/build_scripts/transform.py:21: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+2025-04-02T18:06:08.7342136Z Success: no issues found in 13 source files
+2025-04-02T18:06:11.2252061Z products/ceqr/build_scripts/export.py:11: error: Cannot find implementation or library stub for module named ".constants"  [import-not-found]
+2025-04-02T18:06:11.2253302Z products/ceqr/build_scripts/export.py:11: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+2025-04-02T18:06:11.2274224Z Found 1 error in 1 file (checked 2 source files)
+2025-04-02T18:06:11.2571466Z ##[error]Process completed with exit code 1.
+2025-04-02T18:06:11.2671048Z Post job cleanup.
+2025-04-02T18:06:11.2674807Z ##[command]/usr/bin/docker exec  3655571e75d766bc034471c2769150e2a6db807995c86271508ed089556d1c8c sh -c "cat /etc/*release | grep ^ID"
+2025-04-02T18:06:11.4639758Z [command]/usr/bin/git version
+2025-04-02T18:06:11.4682165Z git version 2.39.5
+2025-04-02T18:06:11.4737198Z Temporarily overriding HOME='/__w/_temp/1c79ef6a-e368-4d79-9089-938953ca2f95' before making global git config changes
+2025-04-02T18:06:11.4738340Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-02T18:06:11.4743925Z [command]/usr/bin/git config --global --add safe.directory /__w/data-engineering/data-engineering
+2025-04-02T18:06:11.4783091Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-02T18:06:11.4821925Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-02T18:06:11.5081253Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-02T18:06:11.5101572Z http.https://github.com/.extraheader
+2025-04-02T18:06:11.5113644Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-02T18:06:11.5144929Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-02T18:06:11.5515865Z Stop and remove container: 7624370b00cb47cdbc2ac2c9ae58b5fb_nycplanningdevlatest_4153fb
+2025-04-02T18:06:11.5520692Z ##[command]/usr/bin/docker rm --force 3655571e75d766bc034471c2769150e2a6db807995c86271508ed089556d1c8c
+2025-04-02T18:06:11.7605819Z 3655571e75d766bc034471c2769150e2a6db807995c86271508ed089556d1c8c
+2025-04-02T18:06:11.7638464Z Remove container network: github_network_3029f87df32a4ed496e5abb3cb99b708
+2025-04-02T18:06:11.7642967Z ##[command]/usr/bin/docker network rm github_network_3029f87df32a4ed496e5abb3cb99b708
+2025-04-02T18:06:11.8800662Z github_network_3029f87df32a4ed496e5abb3cb99b708
+2025-04-02T18:06:11.8860417Z Cleaning up orphan processes

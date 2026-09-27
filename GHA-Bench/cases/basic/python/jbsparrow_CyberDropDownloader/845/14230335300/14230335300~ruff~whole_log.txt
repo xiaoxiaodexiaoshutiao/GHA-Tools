@@ -1,0 +1,159 @@
+2025-04-02T21:54:07.3472837Z Requested labels: ubuntu-latest
+2025-04-02T21:54:07.3473177Z Job defined at: jbsparrow/CyberDropDownloader/.github/workflows/ruff.yaml@refs/pull/845/merge
+2025-04-02T21:54:07.3473314Z Waiting for a runner to pick up this job...
+2025-04-02T21:54:07.9037042Z Job is waiting for a hosted runner to come online.
+2025-04-02T21:54:11.3325143Z Job is about to start running on the hosted runner: GitHub Actions 23 (hosted)
+2025-04-02T21:54:13.8426931Z Current runner version: '2.323.0'
+2025-04-02T21:54:13.8458092Z ##[group]Operating System
+2025-04-02T21:54:13.8458940Z Ubuntu
+2025-04-02T21:54:13.8459454Z 24.04.2
+2025-04-02T21:54:13.8459945Z LTS
+2025-04-02T21:54:13.8460417Z ##[endgroup]
+2025-04-02T21:54:13.8460961Z ##[group]Runner Image
+2025-04-02T21:54:13.8461523Z Image: ubuntu-24.04
+2025-04-02T21:54:13.8462096Z Version: 20250330.1.0
+2025-04-02T21:54:13.8463114Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250330.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-02T21:54:13.8464425Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250330.1
+2025-04-02T21:54:13.8465368Z ##[endgroup]
+2025-04-02T21:54:13.8466051Z ##[group]Runner Image Provisioner
+2025-04-02T21:54:13.8466645Z 2.0.422.1
+2025-04-02T21:54:13.8467228Z ##[endgroup]
+2025-04-02T21:54:13.8469518Z ##[group]GITHUB_TOKEN Permissions
+2025-04-02T21:54:13.8471721Z Actions: write
+2025-04-02T21:54:13.8472499Z Attestations: write
+2025-04-02T21:54:13.8473193Z Checks: write
+2025-04-02T21:54:13.8473755Z Contents: write
+2025-04-02T21:54:13.8474327Z Deployments: write
+2025-04-02T21:54:13.8474874Z Discussions: write
+2025-04-02T21:54:13.8475398Z Issues: write
+2025-04-02T21:54:13.8476025Z Metadata: read
+2025-04-02T21:54:13.8476564Z Models: read
+2025-04-02T21:54:13.8477076Z Packages: write
+2025-04-02T21:54:13.8477641Z Pages: write
+2025-04-02T21:54:13.8478149Z PullRequests: write
+2025-04-02T21:54:13.8478674Z RepositoryProjects: write
+2025-04-02T21:54:13.8479307Z SecurityEvents: write
+2025-04-02T21:54:13.8479836Z Statuses: write
+2025-04-02T21:54:13.8480330Z ##[endgroup]
+2025-04-02T21:54:13.8483602Z Secret source: Actions
+2025-04-02T21:54:13.8484723Z Prepare workflow directory
+2025-04-02T21:54:13.8799823Z Prepare all required actions
+2025-04-02T21:54:13.8920076Z Getting action download info
+2025-04-02T21:54:14.1318504Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-02T21:54:14.1320070Z Version: 4.2.2
+2025-04-02T21:54:14.1321667Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-02T21:54:14.1323608Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-02T21:54:14.1324675Z ##[endgroup]
+2025-04-02T21:54:14.2534872Z Download action repository 'astral-sh/ruff-action@v3' (SHA:9828f49eb4cadf267b40eaa330295c412c68c1f9)
+2025-04-02T21:54:14.8399211Z Complete job name: ruff
+2025-04-02T21:54:14.9106365Z ##[group]Run actions/checkout@v4
+2025-04-02T21:54:14.9107247Z with:
+2025-04-02T21:54:14.9107680Z   repository: jbsparrow/CyberDropDownloader
+2025-04-02T21:54:14.9108417Z   token: ***
+2025-04-02T21:54:14.9108838Z   ssh-strict: true
+2025-04-02T21:54:14.9109275Z   ssh-user: git
+2025-04-02T21:54:14.9109685Z   persist-credentials: true
+2025-04-02T21:54:14.9110129Z   clean: true
+2025-04-02T21:54:14.9110537Z   sparse-checkout-cone-mode: true
+2025-04-02T21:54:14.9111023Z   fetch-depth: 1
+2025-04-02T21:54:14.9111420Z   fetch-tags: false
+2025-04-02T21:54:14.9111828Z   show-progress: true
+2025-04-02T21:54:14.9112226Z   lfs: false
+2025-04-02T21:54:14.9112622Z   submodules: false
+2025-04-02T21:54:14.9113028Z   set-safe-directory: true
+2025-04-02T21:54:14.9113676Z ##[endgroup]
+2025-04-02T21:54:15.1113089Z Syncing repository: jbsparrow/CyberDropDownloader
+2025-04-02T21:54:15.1115405Z ##[group]Getting Git version info
+2025-04-02T21:54:15.1116596Z Working directory is '/home/runner/work/CyberDropDownloader/CyberDropDownloader'
+2025-04-02T21:54:15.1117710Z [command]/usr/bin/git version
+2025-04-02T21:54:15.1184148Z git version 2.49.0
+2025-04-02T21:54:15.1213449Z ##[endgroup]
+2025-04-02T21:54:15.1227920Z Temporarily overriding HOME='/home/runner/work/_temp/f9e03a0a-9222-4c71-8546-8fc61f65fbbf' before making global git config changes
+2025-04-02T21:54:15.1229290Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-02T21:54:15.1233961Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/CyberDropDownloader/CyberDropDownloader
+2025-04-02T21:54:15.1270654Z Deleting the contents of '/home/runner/work/CyberDropDownloader/CyberDropDownloader'
+2025-04-02T21:54:15.1274029Z ##[group]Initializing the repository
+2025-04-02T21:54:15.1278272Z [command]/usr/bin/git init /home/runner/work/CyberDropDownloader/CyberDropDownloader
+2025-04-02T21:54:15.1356030Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-02T21:54:15.1357038Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-02T21:54:15.1358062Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-02T21:54:15.1358714Z hint:
+2025-04-02T21:54:15.1359279Z hint: 	git config --global init.defaultBranch <name>
+2025-04-02T21:54:15.1359854Z hint:
+2025-04-02T21:54:15.1360393Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-02T21:54:15.1361258Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-02T21:54:15.1362211Z hint:
+2025-04-02T21:54:15.1362831Z hint: 	git branch -m <name>
+2025-04-02T21:54:15.1363801Z Initialized empty Git repository in /home/runner/work/CyberDropDownloader/CyberDropDownloader/.git/
+2025-04-02T21:54:15.1373870Z [command]/usr/bin/git remote add origin https://github.com/jbsparrow/CyberDropDownloader
+2025-04-02T21:54:15.1406907Z ##[endgroup]
+2025-04-02T21:54:15.1407669Z ##[group]Disabling automatic garbage collection
+2025-04-02T21:54:15.1411373Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-02T21:54:15.1440116Z ##[endgroup]
+2025-04-02T21:54:15.1440785Z ##[group]Setting up auth
+2025-04-02T21:54:15.1447304Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-02T21:54:15.1477437Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-02T21:54:15.1796667Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-02T21:54:15.1827041Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-02T21:54:15.2059144Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-02T21:54:15.2099901Z ##[endgroup]
+2025-04-02T21:54:15.2100694Z ##[group]Fetching the repository
+2025-04-02T21:54:15.2110687Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +c4751712d5bb2aa937dff959e31f48bb55cef3b2:refs/remotes/pull/845/merge
+2025-04-02T21:54:15.8394341Z From https://github.com/jbsparrow/CyberDropDownloader
+2025-04-02T21:54:15.8395759Z  * [new ref]         c4751712d5bb2aa937dff959e31f48bb55cef3b2 -> pull/845/merge
+2025-04-02T21:54:15.8431051Z ##[endgroup]
+2025-04-02T21:54:15.8432651Z ##[group]Determining the checkout info
+2025-04-02T21:54:15.8434120Z ##[endgroup]
+2025-04-02T21:54:15.8437975Z [command]/usr/bin/git sparse-checkout disable
+2025-04-02T21:54:15.8481326Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-02T21:54:15.8509479Z ##[group]Checking out the ref
+2025-04-02T21:54:15.8513015Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/845/merge
+2025-04-02T21:54:15.8692173Z Note: switching to 'refs/remotes/pull/845/merge'.
+2025-04-02T21:54:15.8693532Z 
+2025-04-02T21:54:15.8694554Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-02T21:54:15.8696620Z changes and commit them, and you can discard any commits you make in this
+2025-04-02T21:54:15.8698600Z state without impacting any branches by switching back to a branch.
+2025-04-02T21:54:15.8699898Z 
+2025-04-02T21:54:15.8700579Z If you want to create a new branch to retain commits you create, you may
+2025-04-02T21:54:15.8702192Z do so (now or later) by using -c with the switch command. Example:
+2025-04-02T21:54:15.8703446Z 
+2025-04-02T21:54:15.8703844Z   git switch -c <new-branch-name>
+2025-04-02T21:54:15.8704825Z 
+2025-04-02T21:54:15.8705191Z Or undo this operation with:
+2025-04-02T21:54:15.8706143Z 
+2025-04-02T21:54:15.8706629Z   git switch -
+2025-04-02T21:54:15.8707223Z 
+2025-04-02T21:54:15.8708219Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-02T21:54:15.8709528Z 
+2025-04-02T21:54:15.8711168Z HEAD is now at c475171 Merge f462d32c7ae0742a35d8a27b7fa59c5dbcb375b8 into 63641f0d3e27773a9d5fe0891a8fe9d0da65563d
+2025-04-02T21:54:15.8716173Z ##[endgroup]
+2025-04-02T21:54:15.8739120Z [command]/usr/bin/git log -1 --format=%H
+2025-04-02T21:54:15.8761722Z c4751712d5bb2aa937dff959e31f48bb55cef3b2
+2025-04-02T21:54:15.9140031Z ##[group]Run astral-sh/ruff-action@v3
+2025-04-02T21:54:15.9141291Z with:
+2025-04-02T21:54:15.9142146Z   version: 0.11.0
+2025-04-02T21:54:15.9143153Z   args: check
+2025-04-02T21:54:15.9144432Z   src: /home/runner/work/CyberDropDownloader/CyberDropDownloader
+2025-04-02T21:54:15.9146464Z   github-token: ***
+2025-04-02T21:54:15.9147444Z ##[endgroup]
+2025-04-02T21:54:16.0083220Z Downloading ruff from "https://github.com/astral-sh/ruff/releases/download/0.11.0/ruff-x86_64-unknown-linux-gnu.tar.gz" ...
+2025-04-02T21:54:16.6595582Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/c7182954-2f76-48d2-96e2-5c2bfbc7ece1 -f /home/runner/work/_temp/8f9d4db8-ca4a-4db1-ad2f-c3afab9e2f39
+2025-04-02T21:54:16.8998321Z Added /opt/hostedtoolcache/ruff/0.11.0/x86_64 to the path
+2025-04-02T21:54:16.8999871Z Set RUFF_OUTPUT_FORMAT to github
+2025-04-02T21:54:16.9028263Z Successfully installed ruff version 0.11.0
+2025-04-02T21:54:16.9029075Z [command]/opt/hostedtoolcache/ruff/0.11.0/x86_64/ruff check /home/runner/work/CyberDropDownloader/CyberDropDownloader
+2025-04-02T21:54:16.9425156Z ##[error]cyberdrop_dl/utils/args.py:1:1: I001 Import block is un-sorted or un-formatted
+2025-04-02T21:54:16.9433528Z ##[error]The process '/opt/hostedtoolcache/ruff/0.11.0/x86_64/ruff' failed with exit code 1
+2025-04-02T21:54:16.9624242Z Post job cleanup.
+2025-04-02T21:54:17.0565695Z [command]/usr/bin/git version
+2025-04-02T21:54:17.0601405Z git version 2.49.0
+2025-04-02T21:54:17.0652464Z Temporarily overriding HOME='/home/runner/work/_temp/46e4bf4c-ad65-4f1d-b916-1f95836e9df8' before making global git config changes
+2025-04-02T21:54:17.0654135Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-02T21:54:17.0659332Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/CyberDropDownloader/CyberDropDownloader
+2025-04-02T21:54:17.0693956Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-02T21:54:17.0727234Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-02T21:54:17.0972198Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-02T21:54:17.0994286Z http.https://github.com/.extraheader
+2025-04-02T21:54:17.1008046Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-02T21:54:17.1044094Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-02T21:54:17.1402182Z Cleaning up orphan processes

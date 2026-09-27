@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/ruff.yml b/.github/workflows/ruff.yml
+index ac3211b5..4a450b68 100644
+--- a/.github/workflows/ruff.yml
++++ b/.github/workflows/ruff.yml
+@@ -27,12 +27,12 @@ jobs:
+           python-version: 3.8
+ 
+       - name: Run linter check.
+-        uses: astral-sh/ruff-action@v1
++        uses: astral-sh/ruff-action@v3
+         with:
+           version: 0.7.0
+ 
+       - name: Run code style check.
+-        uses: astral-sh/ruff-action@v1
++        uses: astral-sh/ruff-action@v3
+         with:
+           version: 0.7.0
+           args: "format --check"

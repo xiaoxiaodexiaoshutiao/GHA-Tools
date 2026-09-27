@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/windows-tests.yml b/.github/workflows/windows-tests.yml
+index 22dc9fb..700c1f5 100644
+--- a/.github/workflows/windows-tests.yml
++++ b/.github/workflows/windows-tests.yml
+@@ -46,12 +46,11 @@ jobs:
+         run: |
+           conda info
+           conda list
+-      - name: Run example.py
+-        shell: bash -l {0}
+-        run: python example.py
+       - name: Run tests
+         shell: bash -l {0}
+-        run: pytest -x -vv --cov-report xml --cov=qtawesome qtawesome
++        run: |
++          python example.py
++          pytest -x -vv --cov-report xml --cov=qtawesome qtawesome
+       - name: Upload coverage to Codecov
+         uses: codecov/codecov-action@v4
+         with:

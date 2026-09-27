@@ -1,0 +1,22 @@
+diff --git a/integration-tests/pinecone/pom.xml b/integration-tests/pinecone/pom.xml
+index 9751f843188b..2ce380fa1af3 100644
+--- a/integration-tests/pinecone/pom.xml
++++ b/integration-tests/pinecone/pom.xml
+@@ -160,6 +160,17 @@
+                 </dependency>
+             </dependencies>
+         </profile>
++        <profile>
++            <id>skip-testcontainers-tests</id>
++            <activation>
++                <property>
++                    <name>skip-testcontainers-tests</name>
++                </property>
++            </activation>
++            <properties>
++                <skipTests>true</skipTests>
++            </properties>
++        </profile>
+     </profiles>
+ 
+ </project>

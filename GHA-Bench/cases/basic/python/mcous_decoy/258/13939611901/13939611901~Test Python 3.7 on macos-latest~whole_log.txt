@@ -1,0 +1,143 @@
+﻿2025-03-19T05:33:11.5727560Z Current runner version: '2.322.0'
+2025-03-19T05:33:11.5745430Z ##[group]Operating System
+2025-03-19T05:33:11.5745870Z macOS
+2025-03-19T05:33:11.5746160Z 14.7.4
+2025-03-19T05:33:11.5746450Z 23H420
+2025-03-19T05:33:11.5746740Z ##[endgroup]
+2025-03-19T05:33:11.5747050Z ##[group]Runner Image
+2025-03-19T05:33:11.5747390Z Image: macos-14-arm64
+2025-03-19T05:33:11.5747780Z Version: 20250304.1018
+2025-03-19T05:33:11.5748470Z Included Software: https://github.com/actions/runner-images/blob/macos-14-arm64/20250304.1018/images/macos/macos-14-arm64-Readme.md
+2025-03-19T05:33:11.5749420Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-14-arm64%2F20250304.1018
+2025-03-19T05:33:11.5750020Z ##[endgroup]
+2025-03-19T05:33:11.5750350Z ##[group]Runner Image Provisioner
+2025-03-19T05:33:11.5750740Z 2.0.422.1+55c30c14fe2a0a1547db1b656933ae07d97649a9
+2025-03-19T05:33:11.5751140Z ##[endgroup]
+2025-03-19T05:33:11.5752600Z ##[group]GITHUB_TOKEN Permissions
+2025-03-19T05:33:11.5753570Z Actions: write
+2025-03-19T05:33:11.5753860Z Attestations: write
+2025-03-19T05:33:11.5754140Z Checks: write
+2025-03-19T05:33:11.5754400Z Contents: write
+2025-03-19T05:33:11.5754680Z Deployments: write
+2025-03-19T05:33:11.5754960Z Discussions: write
+2025-03-19T05:33:11.5755230Z Issues: write
+2025-03-19T05:33:11.5755500Z Metadata: read
+2025-03-19T05:33:11.5755760Z Models: read
+2025-03-19T05:33:11.5756020Z Packages: write
+2025-03-19T05:33:11.5756290Z Pages: write
+2025-03-19T05:33:11.5756560Z PullRequests: write
+2025-03-19T05:33:11.5756850Z RepositoryProjects: write
+2025-03-19T05:33:11.5757150Z SecurityEvents: write
+2025-03-19T05:33:11.5757440Z Statuses: write
+2025-03-19T05:33:11.5757720Z ##[endgroup]
+2025-03-19T05:33:11.5758890Z Secret source: Actions
+2025-03-19T05:33:11.5759340Z Prepare workflow directory
+2025-03-19T05:33:11.5955650Z Prepare all required actions
+2025-03-19T05:33:11.5980590Z Getting action download info
+2025-03-19T05:33:11.9042140Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-19T05:33:12.1887460Z Download action repository 'codecov/codecov-action@v3' (SHA:ab904c41d6ece82784817410c45d8b8c02684457)
+2025-03-19T05:33:13.3380990Z Complete job name: Test Python 3.7 on macos-latest
+2025-03-19T05:33:13.3727070Z ##[group]Run actions/checkout@v4
+2025-03-19T05:33:13.3728450Z with:
+2025-03-19T05:33:13.3728790Z   repository: mcous/decoy
+2025-03-19T05:33:13.3729250Z   token: ***
+2025-03-19T05:33:13.3729540Z   ssh-strict: true
+2025-03-19T05:33:13.3729840Z   ssh-user: git
+2025-03-19T05:33:13.3730140Z   persist-credentials: true
+2025-03-19T05:33:13.3730480Z   clean: true
+2025-03-19T05:33:13.3730780Z   sparse-checkout-cone-mode: true
+2025-03-19T05:33:13.3731150Z   fetch-depth: 1
+2025-03-19T05:33:13.3731450Z   fetch-tags: false
+2025-03-19T05:33:13.3731760Z   show-progress: true
+2025-03-19T05:33:13.3732060Z   lfs: false
+2025-03-19T05:33:13.3732370Z   submodules: false
+2025-03-19T05:33:13.3732670Z   set-safe-directory: true
+2025-03-19T05:33:13.3733100Z ##[endgroup]
+2025-03-19T05:33:13.5923240Z Syncing repository: mcous/decoy
+2025-03-19T05:33:13.5924600Z ##[group]Getting Git version info
+2025-03-19T05:33:13.5925080Z Working directory is '/Users/runner/work/decoy/decoy'
+2025-03-19T05:33:13.5925890Z [command]/opt/homebrew/bin/git version
+2025-03-19T05:33:13.6125440Z git version 2.48.1
+2025-03-19T05:33:13.6148120Z ##[endgroup]
+2025-03-19T05:33:13.6153390Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/7ce24aa3-4138-4b51-8802-0e54f5ca00f5/.gitconfig'
+2025-03-19T05:33:13.6159350Z Temporarily overriding HOME='/Users/runner/work/_temp/7ce24aa3-4138-4b51-8802-0e54f5ca00f5' before making global git config changes
+2025-03-19T05:33:13.6160380Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-19T05:33:13.6163040Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/decoy/decoy
+2025-03-19T05:33:13.6257530Z Deleting the contents of '/Users/runner/work/decoy/decoy'
+2025-03-19T05:33:13.6258460Z ##[group]Initializing the repository
+2025-03-19T05:33:13.6259780Z [command]/opt/homebrew/bin/git init /Users/runner/work/decoy/decoy
+2025-03-19T05:33:13.6375070Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-19T05:33:13.6376010Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-19T05:33:13.6376720Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-19T05:33:13.6377240Z hint:
+2025-03-19T05:33:13.6377640Z hint: 	git config --global init.defaultBranch <name>
+2025-03-19T05:33:13.6378070Z hint:
+2025-03-19T05:33:13.6378490Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-19T05:33:13.6379160Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-19T05:33:13.6379680Z hint:
+2025-03-19T05:33:13.6380010Z hint: 	git branch -m <name>
+2025-03-19T05:33:13.6380520Z Initialized empty Git repository in /Users/runner/work/decoy/decoy/.git/
+2025-03-19T05:33:13.6383200Z [command]/opt/homebrew/bin/git remote add origin https://github.com/mcous/decoy
+2025-03-19T05:33:13.6431320Z ##[endgroup]
+2025-03-19T05:33:13.6431900Z ##[group]Disabling automatic garbage collection
+2025-03-19T05:33:13.6433660Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+2025-03-19T05:33:13.6467800Z ##[endgroup]
+2025-03-19T05:33:13.6468320Z ##[group]Setting up auth
+2025-03-19T05:33:13.6472130Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-19T05:33:13.6510710Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-19T05:33:13.7076810Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-19T05:33:13.7109630Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-19T05:33:13.7601400Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-19T05:33:13.7614870Z ##[endgroup]
+2025-03-19T05:33:13.7615550Z ##[group]Fetching the repository
+2025-03-19T05:33:13.7620250Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +875b6ef5320d59bca056ca680db9c694e5a64e4c:refs/remotes/pull/258/merge
+2025-03-19T05:33:14.9696990Z From https://github.com/mcous/decoy
+2025-03-19T05:33:14.9698360Z  * [new ref]         875b6ef5320d59bca056ca680db9c694e5a64e4c -> pull/258/merge
+2025-03-19T05:33:14.9769220Z ##[endgroup]
+2025-03-19T05:33:14.9770140Z ##[group]Determining the checkout info
+2025-03-19T05:33:14.9771200Z ##[endgroup]
+2025-03-19T05:33:14.9772040Z [command]/opt/homebrew/bin/git sparse-checkout disable
+2025-03-19T05:33:14.9811330Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-19T05:33:14.9852710Z ##[group]Checking out the ref
+2025-03-19T05:33:14.9855010Z [command]/opt/homebrew/bin/git checkout --progress --force refs/remotes/pull/258/merge
+2025-03-19T05:33:15.0119250Z HEAD is now at 875b6ef Merge e3776ebee88cf151635f0885d04e9996b288bb27 into 1654d65ec3e5f83f1b2c51478a12fccb294d26b6
+2025-03-19T05:33:15.0397990Z ##[endgroup]
+2025-03-19T05:33:15.0399810Z [command]/opt/homebrew/bin/git log -1 --format=%H
+2025-03-19T05:33:15.0400900Z 875b6ef5320d59bca056ca680db9c694e5a64e4c
+2025-03-19T05:33:15.0612560Z Prepare all required actions
+2025-03-19T05:33:15.0613470Z Getting action download info
+2025-03-19T05:33:15.1968880Z Download action repository 'actions/setup-python@v4' (SHA:65d7f2d534ac1bc67fcd62888c5f4f3d2cb2b236)
+2025-03-19T05:33:15.2900460Z Download action repository 'actions/cache@v3' (SHA:2f8e54208210a422b2efd51efaa6bd6d7ca8920f)
+2025-03-19T05:33:16.3595330Z ##[group]Run ./.github/actions/setup
+2025-03-19T05:33:16.3595560Z with:
+2025-03-19T05:33:16.3595970Z   python-version: 3.7
+2025-03-19T05:33:16.3596130Z   poetry-version: 2.1.1
+2025-03-19T05:33:16.3596290Z   cache: /Users/runner/work/_temp/cache
+2025-03-19T05:33:16.3596470Z ##[endgroup]
+2025-03-19T05:33:16.3684570Z ##[group]Run actions/setup-python@v4
+2025-03-19T05:33:16.3684760Z with:
+2025-03-19T05:33:16.3684920Z   python-version: 3.7
+2025-03-19T05:33:16.3685070Z   update-environment: false
+2025-03-19T05:33:16.3685240Z   check-latest: false
+2025-03-19T05:33:16.3685460Z   token: ***
+2025-03-19T05:33:16.3685620Z   allow-prereleases: false
+2025-03-19T05:33:16.3685770Z ##[endgroup]
+2025-03-19T05:33:16.4634470Z ##[group]Installed versions
+2025-03-19T05:33:16.4687050Z Version 3.7 was not found in the local cache
+2025-03-19T05:33:17.2848900Z ##[error]The version '3.7' with architecture 'arm64' was not found for macOS 14.7.4.
+The list of all available versions can be found here: https://raw.githubusercontent.com/actions/python-versions/main/versions-manifest.json
+2025-03-19T05:33:17.2940740Z Post job cleanup.
+2025-03-19T05:33:17.2993270Z Post job cleanup.
+2025-03-19T05:33:17.3792220Z [command]/opt/homebrew/bin/git version
+2025-03-19T05:33:17.3833930Z git version 2.48.1
+2025-03-19T05:33:17.3857210Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/f5e6f82e-f59b-4025-bc05-2745f2f4dc3a/.gitconfig'
+2025-03-19T05:33:17.3864910Z Temporarily overriding HOME='/Users/runner/work/_temp/f5e6f82e-f59b-4025-bc05-2745f2f4dc3a' before making global git config changes
+2025-03-19T05:33:17.3865650Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-19T05:33:17.3868670Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/decoy/decoy
+2025-03-19T05:33:17.3918680Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-19T05:33:17.3966300Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-19T05:33:17.4444450Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-19T05:33:17.4474850Z http.https://github.com/.extraheader
+2025-03-19T05:33:17.4482650Z [command]/opt/homebrew/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-19T05:33:17.4521230Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-19T05:33:17.5053820Z Cleaning up orphan processes

@@ -1,0 +1,15 @@
+diff --git a/src/tqec/computation/open_graph.py b/src/tqec/computation/open_graph.py
+index c18d7d5d8..a5b6f42a3 100644
+--- a/src/tqec/computation/open_graph.py
++++ b/src/tqec/computation/open_graph.py
+@@ -42,7 +42,9 @@ def __post_init__(self) -> None:
+ 
+     def get_external_stabilizers(self) -> list[str]:
+         """Return the external stabilizers of the correlation surfaces."""
+-        return [obs.external_stabilizer_on_graph(self.graph) for obs in self.observables]
++        return [
++            obs.external_stabilizer_on_graph(self.graph) for obs in self.observables
++        ]
+ 
+ 
+ def fill_ports_for_minimal_simulation(graph: BlockGraph) -> list[FilledGraph]:

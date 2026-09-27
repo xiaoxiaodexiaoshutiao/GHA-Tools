@@ -1,0 +1,215 @@
+2025-02-27T09:09:12.5234454Z Requested labels: ubuntu-latest
+2025-02-27T09:09:12.5234761Z Job defined at: sphinx-doc/sphinx/.github/workflows/lint.yml@refs/pull/13396/merge
+2025-02-27T09:09:12.5234938Z Waiting for a runner to pick up this job...
+2025-02-27T09:09:14.1483712Z Job is waiting for a hosted runner to come online.
+2025-02-27T09:09:17.0438908Z Job is about to start running on the hosted runner: GitHub Actions 11 (hosted)
+2025-02-27T09:09:19.1278590Z Current runner version: '2.322.0'
+2025-02-27T09:09:19.1306094Z ##[group]Operating System
+2025-02-27T09:09:19.1306861Z Ubuntu
+2025-02-27T09:09:19.1307435Z 24.04.2
+2025-02-27T09:09:19.1307949Z LTS
+2025-02-27T09:09:19.1308408Z ##[endgroup]
+2025-02-27T09:09:19.1308924Z ##[group]Runner Image
+2025-02-27T09:09:19.1309528Z Image: ubuntu-24.04
+2025-02-27T09:09:19.1310046Z Version: 20250223.1.0
+2025-02-27T09:09:19.1311131Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250223.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-27T09:09:19.1312831Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250223.1
+2025-02-27T09:09:19.1313734Z ##[endgroup]
+2025-02-27T09:09:19.1314324Z ##[group]Runner Image Provisioner
+2025-02-27T09:09:19.1314919Z 2.0.422.1
+2025-02-27T09:09:19.1315403Z ##[endgroup]
+2025-02-27T09:09:19.1316483Z ##[group]GITHUB_TOKEN Permissions
+2025-02-27T09:09:19.1318468Z Contents: read
+2025-02-27T09:09:19.1319135Z Metadata: read
+2025-02-27T09:09:19.1319865Z ##[endgroup]
+2025-02-27T09:09:19.1323351Z Secret source: None
+2025-02-27T09:09:19.1324126Z Prepare workflow directory
+2025-02-27T09:09:19.1781963Z Prepare all required actions
+2025-02-27T09:09:19.1819574Z Getting action download info
+2025-02-27T09:09:19.3476703Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-02-27T09:09:19.4481333Z Download action repository 'actions/setup-python@v5' (SHA:42375524e23c412d93fb67b49958b491fce71c38)
+2025-02-27T09:09:19.5388128Z Download action repository 'astral-sh/setup-uv@v5' (SHA:1edb52594c857e2b5b13128931090f0640537287)
+2025-02-27T09:09:19.8940432Z Complete job name: docs-lint
+2025-02-27T09:09:19.9668873Z ##[group]Run actions/checkout@v4
+2025-02-27T09:09:19.9669720Z with:
+2025-02-27T09:09:19.9670137Z   persist-credentials: false
+2025-02-27T09:09:19.9670637Z   repository: sphinx-doc/sphinx
+2025-02-27T09:09:19.9671288Z   token: ***
+2025-02-27T09:09:19.9671886Z   ssh-strict: true
+2025-02-27T09:09:19.9672300Z   ssh-user: git
+2025-02-27T09:09:19.9672707Z   clean: true
+2025-02-27T09:09:19.9673109Z   sparse-checkout-cone-mode: true
+2025-02-27T09:09:19.9673595Z   fetch-depth: 1
+2025-02-27T09:09:19.9673977Z   fetch-tags: false
+2025-02-27T09:09:19.9674383Z   show-progress: true
+2025-02-27T09:09:19.9674786Z   lfs: false
+2025-02-27T09:09:19.9675157Z   submodules: false
+2025-02-27T09:09:19.9675569Z   set-safe-directory: true
+2025-02-27T09:09:19.9676250Z env:
+2025-02-27T09:09:19.9676619Z   FORCE_COLOR: 1
+2025-02-27T09:09:19.9677016Z   UV_SYSTEM_PYTHON: 1
+2025-02-27T09:09:19.9677423Z ##[endgroup]
+2025-02-27T09:09:20.1703888Z Syncing repository: sphinx-doc/sphinx
+2025-02-27T09:09:20.1706391Z ##[group]Getting Git version info
+2025-02-27T09:09:20.1707514Z Working directory is '/home/runner/work/sphinx/sphinx'
+2025-02-27T09:09:20.1709488Z [command]/usr/bin/git version
+2025-02-27T09:09:20.1806854Z git version 2.48.1
+2025-02-27T09:09:20.1836099Z ##[endgroup]
+2025-02-27T09:09:20.1852108Z Temporarily overriding HOME='/home/runner/work/_temp/a7587586-4ffe-4d62-b24c-6c0d1585b4bd' before making global git config changes
+2025-02-27T09:09:20.1853742Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-27T09:09:20.1858781Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/sphinx/sphinx
+2025-02-27T09:09:20.1976050Z Deleting the contents of '/home/runner/work/sphinx/sphinx'
+2025-02-27T09:09:20.1978100Z ##[group]Initializing the repository
+2025-02-27T09:09:20.1979202Z [command]/usr/bin/git init /home/runner/work/sphinx/sphinx
+2025-02-27T09:09:20.1995846Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-27T09:09:20.1997559Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-27T09:09:20.1998586Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-27T09:09:20.1999256Z hint:
+2025-02-27T09:09:20.1999728Z hint: 	git config --global init.defaultBranch <name>
+2025-02-27T09:09:20.2000323Z hint:
+2025-02-27T09:09:20.2001899Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-27T09:09:20.2002957Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-27T09:09:20.2004216Z hint:
+2025-02-27T09:09:20.2004950Z hint: 	git branch -m <name>
+2025-02-27T09:09:20.2006179Z Initialized empty Git repository in /home/runner/work/sphinx/sphinx/.git/
+2025-02-27T09:09:20.2015830Z [command]/usr/bin/git remote add origin https://github.com/sphinx-doc/sphinx
+2025-02-27T09:09:20.2051054Z ##[endgroup]
+2025-02-27T09:09:20.2051983Z ##[group]Disabling automatic garbage collection
+2025-02-27T09:09:20.2055493Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-27T09:09:20.2088699Z ##[endgroup]
+2025-02-27T09:09:20.2089370Z ##[group]Setting up auth
+2025-02-27T09:09:20.2099715Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-27T09:09:20.2135249Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-27T09:09:20.2478302Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-27T09:09:20.2510022Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-27T09:09:20.2742856Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-27T09:09:20.2782569Z ##[endgroup]
+2025-02-27T09:09:20.2784054Z ##[group]Fetching the repository
+2025-02-27T09:09:20.2792648Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +0ce448b3a57b5b1c1f53649bc828a0d784aebf5c:refs/remotes/pull/13396/merge
+2025-02-27T09:09:21.0462809Z From https://github.com/sphinx-doc/sphinx
+2025-02-27T09:09:21.0466298Z  * [new ref]         0ce448b3a57b5b1c1f53649bc828a0d784aebf5c -> pull/13396/merge
+2025-02-27T09:09:21.0491197Z ##[endgroup]
+2025-02-27T09:09:21.0492716Z ##[group]Determining the checkout info
+2025-02-27T09:09:21.0495113Z ##[endgroup]
+2025-02-27T09:09:21.0500258Z [command]/usr/bin/git sparse-checkout disable
+2025-02-27T09:09:21.0541875Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-27T09:09:21.0572028Z ##[group]Checking out the ref
+2025-02-27T09:09:21.0576425Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/13396/merge
+2025-02-27T09:09:21.2245592Z Note: switching to 'refs/remotes/pull/13396/merge'.
+2025-02-27T09:09:21.2246524Z 
+2025-02-27T09:09:21.2247128Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-27T09:09:21.2248477Z changes and commit them, and you can discard any commits you make in this
+2025-02-27T09:09:21.2249820Z state without impacting any branches by switching back to a branch.
+2025-02-27T09:09:21.2250604Z 
+2025-02-27T09:09:21.2251188Z If you want to create a new branch to retain commits you create, you may
+2025-02-27T09:09:21.2252628Z do so (now or later) by using -c with the switch command. Example:
+2025-02-27T09:09:21.2253355Z 
+2025-02-27T09:09:21.2253723Z   git switch -c <new-branch-name>
+2025-02-27T09:09:21.2254316Z 
+2025-02-27T09:09:21.2254680Z Or undo this operation with:
+2025-02-27T09:09:21.2255204Z 
+2025-02-27T09:09:21.2255603Z   git switch -
+2025-02-27T09:09:21.2256304Z 
+2025-02-27T09:09:21.2257105Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-27T09:09:21.2258016Z 
+2025-02-27T09:09:21.2259043Z HEAD is now at 0ce448b Merge 5f4dc0d555b4776216f4c30b0450f4dd5e862142 into e7ca2d8eaf047ddb7b860cc16e67c7faf75317ee
+2025-02-27T09:09:21.2262677Z ##[endgroup]
+2025-02-27T09:09:21.2297516Z [command]/usr/bin/git log -1 --format=%H
+2025-02-27T09:09:21.2321433Z 0ce448b3a57b5b1c1f53649bc828a0d784aebf5c
+2025-02-27T09:09:21.2333594Z ##[group]Removing auth
+2025-02-27T09:09:21.2338241Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-27T09:09:21.2369995Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-27T09:09:21.2605921Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-27T09:09:21.2628563Z http.https://github.com/.extraheader
+2025-02-27T09:09:21.2637715Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-27T09:09:21.2672269Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-27T09:09:21.2898728Z ##[endgroup]
+2025-02-27T09:09:21.3176545Z ##[group]Run actions/setup-python@v5
+2025-02-27T09:09:21.3177719Z with:
+2025-02-27T09:09:21.3178617Z   python-version: 3
+2025-02-27T09:09:21.3179560Z   check-latest: false
+2025-02-27T09:09:21.3180823Z   token: ***
+2025-02-27T09:09:21.3182029Z   update-environment: true
+2025-02-27T09:09:21.3183111Z   allow-prereleases: false
+2025-02-27T09:09:21.3184115Z env:
+2025-02-27T09:09:21.3184925Z   FORCE_COLOR: 1
+2025-02-27T09:09:21.3185827Z   UV_SYSTEM_PYTHON: 1
+2025-02-27T09:09:21.3186765Z ##[endgroup]
+2025-02-27T09:09:21.4914233Z ##[group]Installed versions
+2025-02-27T09:09:21.4966960Z Successfully set up CPython (3.13.2)
+2025-02-27T09:09:21.4969258Z ##[endgroup]
+2025-02-27T09:09:21.5184252Z ##[group]Run astral-sh/setup-uv@v5
+2025-02-27T09:09:21.5185302Z with:
+2025-02-27T09:09:21.5186070Z   version: latest
+2025-02-27T09:09:21.5186914Z   enable-cache: false
+2025-02-27T09:09:21.5188118Z   github-token: ***
+2025-02-27T09:09:21.5189205Z   cache-dependency-glob: **/uv.lock
+**/requirements*.txt
+
+2025-02-27T09:09:21.5190425Z   prune-cache: true
+2025-02-27T09:09:21.5191333Z   ignore-nothing-to-cache: false
+2025-02-27T09:09:21.5192606Z env:
+2025-02-27T09:09:21.5193345Z   FORCE_COLOR: 1
+2025-02-27T09:09:21.5194199Z   UV_SYSTEM_PYTHON: 1
+2025-02-27T09:09:21.5195268Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-27T09:09:21.5196795Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-02-27T09:09:21.5198304Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-27T09:09:21.5199663Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-27T09:09:21.5201083Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-27T09:09:21.5202685Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-02-27T09:09:21.5203853Z ##[endgroup]
+2025-02-27T09:09:21.9023946Z Downloading uv from "https://github.com/astral-sh/uv/releases/download/0.6.3/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+2025-02-27T09:09:22.1847937Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/6d7e8fc7-5958-44e9-8df1-d9222824a5c5 -f /home/runner/work/_temp/6e2ea007-a570-48f8-81d3-6ba8d94708d0
+2025-02-27T09:09:22.5190906Z Added /opt/hostedtoolcache/uv/0.6.3/x86_64 to the path
+2025-02-27T09:09:22.5192991Z Added /home/runner/.local/bin to the path
+2025-02-27T09:09:22.5202141Z Set UV_CACHE_DIR to /home/runner/work/_temp/setup-uv-cache
+2025-02-27T09:09:22.5202537Z Successfully installed uv version 0.6.3
+2025-02-27T09:09:22.5330859Z ##[group]Run uv pip install --upgrade sphinx-lint
+2025-02-27T09:09:22.5333428Z [36;1muv pip install --upgrade sphinx-lint[0m
+2025-02-27T09:09:22.5388424Z shell: /usr/bin/bash -e {0}
+2025-02-27T09:09:22.5388691Z env:
+2025-02-27T09:09:22.5388890Z   FORCE_COLOR: 1
+2025-02-27T09:09:22.5389095Z   UV_SYSTEM_PYTHON: 1
+2025-02-27T09:09:22.5389382Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-27T09:09:22.5389814Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-02-27T09:09:22.5390236Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-27T09:09:22.5390616Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-27T09:09:22.5391314Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-27T09:09:22.5391839Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-02-27T09:09:22.5392204Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-02-27T09:09:22.5392503Z ##[endgroup]
+2025-02-27T09:09:22.6243709Z [2mUsing Python 3.13.2 environment at: /opt/hostedtoolcache/Python/3.13.2/x64[0m
+2025-02-27T09:09:22.7237264Z [2mResolved [1m3 packages[0m [2min 98ms[0m[0m
+2025-02-27T09:09:22.7562850Z [2mPrepared [1m3 packages[0m [2min 32ms[0m[0m
+2025-02-27T09:09:22.7601402Z [2mInstalled [1m3 packages[0m [2min 3ms[0m[0m
+2025-02-27T09:09:22.7602287Z  [32m+[39m [1mpolib[0m[2m==1.2.0[0m
+2025-02-27T09:09:22.7602884Z  [32m+[39m [1mregex[0m[2m==2024.11.6[0m
+2025-02-27T09:09:22.7603424Z  [32m+[39m [1msphinx-lint[0m[2m==1.0.0[0m
+2025-02-27T09:09:22.7671843Z ##[group]Run make doclinter
+2025-02-27T09:09:22.7672151Z [36;1mmake doclinter[0m
+2025-02-27T09:09:22.7719239Z shell: /usr/bin/bash -e {0}
+2025-02-27T09:09:22.7719477Z env:
+2025-02-27T09:09:22.7719681Z   FORCE_COLOR: 1
+2025-02-27T09:09:22.7719874Z   UV_SYSTEM_PYTHON: 1
+2025-02-27T09:09:22.7720142Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-27T09:09:22.7720550Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-02-27T09:09:22.7720950Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-27T09:09:22.7721307Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-27T09:09:22.7721883Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-27T09:09:22.7722243Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-02-27T09:09:22.7722583Z   UV_CACHE_DIR: /home/runner/work/_temp/setup-uv-cache
+2025-02-27T09:09:22.7722860Z ##[endgroup]
+2025-02-27T09:09:23.6374113Z CHANGES.rst:19: Line too long (99/85) (line-too-long)
+2025-02-27T09:09:23.6600059Z make: *** [Makefile:60: doclinter] Error 1
+2025-02-27T09:09:23.6616968Z ##[error]Process completed with exit code 2.
+2025-02-27T09:09:23.6743930Z Post job cleanup.
+2025-02-27T09:09:23.7686613Z [command]/usr/bin/git version
+2025-02-27T09:09:23.7723909Z git version 2.48.1
+2025-02-27T09:09:23.7771767Z Temporarily overriding HOME='/home/runner/work/_temp/a0d8eee7-ce98-47df-947c-6805eb8ce199' before making global git config changes
+2025-02-27T09:09:23.7773093Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-27T09:09:23.7776958Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/sphinx/sphinx
+2025-02-27T09:09:23.7810453Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-27T09:09:23.7842271Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-27T09:09:23.8076345Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-27T09:09:23.8107610Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-27T09:09:23.8440727Z Cleaning up orphan processes

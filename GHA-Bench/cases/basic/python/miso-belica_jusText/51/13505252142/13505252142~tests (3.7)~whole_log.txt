@@ -1,0 +1,151 @@
+2025-02-24T18:34:59.3753935Z Requested labels: ubuntu-latest
+2025-02-24T18:34:59.3754331Z Job defined at: miso-belica/jusText/.github/workflows/run-tests.yml@refs/pull/51/merge
+2025-02-24T18:34:59.3754494Z Waiting for a runner to pick up this job...
+2025-02-24T18:34:59.6910463Z Job is waiting for a hosted runner to come online.
+2025-02-24T18:35:02.6338167Z Job is about to start running on the hosted runner: GitHub Actions 10 (hosted)
+2025-02-24T18:35:04.2004644Z Current runner version: '2.322.0'
+2025-02-24T18:35:04.2033334Z ##[group]Operating System
+2025-02-24T18:35:04.2034154Z Ubuntu
+2025-02-24T18:35:04.2034654Z 24.04.1
+2025-02-24T18:35:04.2035268Z LTS
+2025-02-24T18:35:04.2035711Z ##[endgroup]
+2025-02-24T18:35:04.2036238Z ##[group]Runner Image
+2025-02-24T18:35:04.2036904Z Image: ubuntu-24.04
+2025-02-24T18:35:04.2037442Z Version: 20250209.1.0
+2025-02-24T18:35:04.2038543Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250209.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-24T18:35:04.2039980Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250209.1
+2025-02-24T18:35:04.2040919Z ##[endgroup]
+2025-02-24T18:35:04.2041514Z ##[group]Runner Image Provisioner
+2025-02-24T18:35:04.2042142Z 2.0.422.1
+2025-02-24T18:35:04.2042791Z ##[endgroup]
+2025-02-24T18:35:04.2045075Z ##[group]GITHUB_TOKEN Permissions
+2025-02-24T18:35:04.2047306Z Actions: write
+2025-02-24T18:35:04.2048177Z Attestations: write
+2025-02-24T18:35:04.2048796Z Checks: write
+2025-02-24T18:35:04.2049393Z Contents: write
+2025-02-24T18:35:04.2049938Z Deployments: write
+2025-02-24T18:35:04.2050454Z Discussions: write
+2025-02-24T18:35:04.2051039Z Issues: write
+2025-02-24T18:35:04.2051568Z Metadata: read
+2025-02-24T18:35:04.2052031Z Packages: write
+2025-02-24T18:35:04.2052849Z Pages: write
+2025-02-24T18:35:04.2053370Z PullRequests: write
+2025-02-24T18:35:04.2053971Z RepositoryProjects: write
+2025-02-24T18:35:04.2054602Z SecurityEvents: write
+2025-02-24T18:35:04.2055117Z Statuses: write
+2025-02-24T18:35:04.2055663Z ##[endgroup]
+2025-02-24T18:35:04.2058984Z Secret source: Actions
+2025-02-24T18:35:04.2059785Z Prepare workflow directory
+2025-02-24T18:35:04.2470049Z Prepare all required actions
+2025-02-24T18:35:04.2507007Z Getting action download info
+2025-02-24T18:35:04.4333213Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-02-24T18:35:04.5145965Z Download action repository 'actions/setup-python@v5' (SHA:42375524e23c412d93fb67b49958b491fce71c38)
+2025-02-24T18:35:04.8656921Z Complete job name: tests (3.7)
+2025-02-24T18:35:04.9374267Z ##[group]Run actions/checkout@v4
+2025-02-24T18:35:04.9375150Z with:
+2025-02-24T18:35:04.9375583Z   repository: miso-belica/jusText
+2025-02-24T18:35:04.9376306Z   token: ***
+2025-02-24T18:35:04.9376722Z   ssh-strict: true
+2025-02-24T18:35:04.9377133Z   ssh-user: git
+2025-02-24T18:35:04.9377557Z   persist-credentials: true
+2025-02-24T18:35:04.9378020Z   clean: true
+2025-02-24T18:35:04.9378433Z   sparse-checkout-cone-mode: true
+2025-02-24T18:35:04.9378948Z   fetch-depth: 1
+2025-02-24T18:35:04.9379356Z   fetch-tags: false
+2025-02-24T18:35:04.9379780Z   show-progress: true
+2025-02-24T18:35:04.9380217Z   lfs: false
+2025-02-24T18:35:04.9380602Z   submodules: false
+2025-02-24T18:35:04.9381026Z   set-safe-directory: true
+2025-02-24T18:35:04.9381673Z ##[endgroup]
+2025-02-24T18:35:05.1384252Z Syncing repository: miso-belica/jusText
+2025-02-24T18:35:05.1386136Z ##[group]Getting Git version info
+2025-02-24T18:35:05.1386881Z Working directory is '/home/runner/work/jusText/jusText'
+2025-02-24T18:35:05.1387877Z [command]/usr/bin/git version
+2025-02-24T18:35:05.1442892Z git version 2.48.1
+2025-02-24T18:35:05.1472725Z ##[endgroup]
+2025-02-24T18:35:05.1488106Z Temporarily overriding HOME='/home/runner/work/_temp/1b30be50-4048-4fe7-9c3f-2421be1f5510' before making global git config changes
+2025-02-24T18:35:05.1489488Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-24T18:35:05.1493823Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/jusText/jusText
+2025-02-24T18:35:05.1534225Z Deleting the contents of '/home/runner/work/jusText/jusText'
+2025-02-24T18:35:05.1538292Z ##[group]Initializing the repository
+2025-02-24T18:35:05.1542217Z [command]/usr/bin/git init /home/runner/work/jusText/jusText
+2025-02-24T18:35:05.1621660Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-24T18:35:05.1623058Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-24T18:35:05.1624426Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-24T18:35:05.1625129Z hint:
+2025-02-24T18:35:05.1625628Z hint: 	git config --global init.defaultBranch <name>
+2025-02-24T18:35:05.1626403Z hint:
+2025-02-24T18:35:05.1627308Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-24T18:35:05.1628312Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-24T18:35:05.1629027Z hint:
+2025-02-24T18:35:05.1629414Z hint: 	git branch -m <name>
+2025-02-24T18:35:05.1630136Z Initialized empty Git repository in /home/runner/work/jusText/jusText/.git/
+2025-02-24T18:35:05.1639143Z [command]/usr/bin/git remote add origin https://github.com/miso-belica/jusText
+2025-02-24T18:35:05.1675416Z ##[endgroup]
+2025-02-24T18:35:05.1676641Z ##[group]Disabling automatic garbage collection
+2025-02-24T18:35:05.1680658Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-24T18:35:05.1717474Z ##[endgroup]
+2025-02-24T18:35:05.1718997Z ##[group]Setting up auth
+2025-02-24T18:35:05.1730595Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-24T18:35:05.1769007Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-24T18:35:05.2113836Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-24T18:35:05.2155427Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-24T18:35:05.2421784Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-24T18:35:05.2467852Z ##[endgroup]
+2025-02-24T18:35:05.2468973Z ##[group]Fetching the repository
+2025-02-24T18:35:05.2481391Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +4db2a0d7a07eee2cc179eadd24d82c0f9436f5d0:refs/remotes/pull/51/merge
+2025-02-24T18:35:05.5309641Z From https://github.com/miso-belica/jusText
+2025-02-24T18:35:05.5310781Z  * [new ref]         4db2a0d7a07eee2cc179eadd24d82c0f9436f5d0 -> pull/51/merge
+2025-02-24T18:35:05.5335817Z ##[endgroup]
+2025-02-24T18:35:05.5336540Z ##[group]Determining the checkout info
+2025-02-24T18:35:05.5338052Z ##[endgroup]
+2025-02-24T18:35:05.5343675Z [command]/usr/bin/git sparse-checkout disable
+2025-02-24T18:35:05.5384818Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-24T18:35:05.5416977Z ##[group]Checking out the ref
+2025-02-24T18:35:05.5421644Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/51/merge
+2025-02-24T18:35:05.5614965Z Note: switching to 'refs/remotes/pull/51/merge'.
+2025-02-24T18:35:05.5615657Z 
+2025-02-24T18:35:05.5616105Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-24T18:35:05.5617057Z changes and commit them, and you can discard any commits you make in this
+2025-02-24T18:35:05.5618451Z state without impacting any branches by switching back to a branch.
+2025-02-24T18:35:05.5619401Z 
+2025-02-24T18:35:05.5620016Z If you want to create a new branch to retain commits you create, you may
+2025-02-24T18:35:05.5621409Z do so (now or later) by using -c with the switch command. Example:
+2025-02-24T18:35:05.5622156Z 
+2025-02-24T18:35:05.5622684Z   git switch -c <new-branch-name>
+2025-02-24T18:35:05.5623265Z 
+2025-02-24T18:35:05.5623591Z Or undo this operation with:
+2025-02-24T18:35:05.5624135Z 
+2025-02-24T18:35:05.5624472Z   git switch -
+2025-02-24T18:35:05.5624877Z 
+2025-02-24T18:35:05.5625496Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-24T18:35:05.5626403Z 
+2025-02-24T18:35:05.5627428Z HEAD is now at 4db2a0d Merge c070f111a8dc126a3660fd0149b4d46445065e84 into 7fae5d457613cc96cf9ccb070e4aa2e70455f0e2
+2025-02-24T18:35:05.5631074Z ##[endgroup]
+2025-02-24T18:35:05.5669807Z [command]/usr/bin/git log -1 --format=%H
+2025-02-24T18:35:05.5695203Z 4db2a0d7a07eee2cc179eadd24d82c0f9436f5d0
+2025-02-24T18:35:05.5953010Z ##[group]Run actions/setup-python@v5
+2025-02-24T18:35:05.5953629Z with:
+2025-02-24T18:35:05.5954009Z   python-version: 3.7
+2025-02-24T18:35:05.5954455Z   check-latest: false
+2025-02-24T18:35:05.5955034Z   token: ***
+2025-02-24T18:35:05.5955426Z   update-environment: true
+2025-02-24T18:35:05.5955899Z   allow-prereleases: false
+2025-02-24T18:35:05.5956348Z ##[endgroup]
+2025-02-24T18:35:05.7745195Z ##[group]Installed versions
+2025-02-24T18:35:05.7794176Z Version 3.7 was not found in the local cache
+2025-02-24T18:35:06.1284830Z ##[error]The version '3.7' with architecture 'x64' was not found for Ubuntu 24.04.
+The list of all available versions can be found here: https://raw.githubusercontent.com/actions/python-versions/main/versions-manifest.json
+2025-02-24T18:35:06.1571672Z Post job cleanup.
+2025-02-24T18:35:06.2535265Z [command]/usr/bin/git version
+2025-02-24T18:35:06.2572712Z git version 2.48.1
+2025-02-24T18:35:06.2618250Z Temporarily overriding HOME='/home/runner/work/_temp/527fda84-2df8-44d7-b4c5-7bc0439e5644' before making global git config changes
+2025-02-24T18:35:06.2621173Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-24T18:35:06.2631913Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/jusText/jusText
+2025-02-24T18:35:06.2668950Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-24T18:35:06.2704120Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-24T18:35:06.2966320Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-24T18:35:06.2991231Z http.https://github.com/.extraheader
+2025-02-24T18:35:06.3006252Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-24T18:35:06.3039620Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-24T18:35:06.3383634Z Cleaning up orphan processes

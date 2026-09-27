@@ -1,0 +1,19 @@
+diff --git a/bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/api/WledApiV084.java b/bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/api/WledApiV084.java
+index 0d81a5f54ef92..f29f806db6cd9 100644
+--- a/bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/api/WledApiV084.java
++++ b/bundles/org.openhab.binding.wled/src/main/java/org/openhab/binding/wled/internal/api/WledApiV084.java
+@@ -298,10 +298,10 @@ protected void processState(int segmentIndex) throws ApiException {
+         }
+         HSBType tempHSB = WLedHelper.parseToHSBType(state.stateResponse.seg[segmentIndex].col[0].toString());
+         handler.update(segmentIndex, CHANNEL_PRIMARY_COLOR, tempHSB);
+-        handler.update(segmentIndex, CHANNEL_SECONDARY_COLOR, WLedHelper.parseToHSBType(
+-                state.stateResponse.seg[segmentIndex].col[1].toString()));
+-        handler.update(segmentIndex, CHANNEL_THIRD_COLOR, WLedHelper.parseToHSBType(
+-                state.stateResponse.seg[segmentIndex].col[2].toString()));
++        handler.update(segmentIndex, CHANNEL_SECONDARY_COLOR,
++                WLedHelper.parseToHSBType(state.stateResponse.seg[segmentIndex].col[1].toString()));
++        handler.update(segmentIndex, CHANNEL_THIRD_COLOR,
++                WLedHelper.parseToHSBType(state.stateResponse.seg[segmentIndex].col[2].toString()));
+         if (state.ledInfo.rgbw) {
+             handler.update(segmentIndex, CHANNEL_PRIMARY_WHITE,
+                     WLedHelper.parseWhitePercent(state.stateResponse.seg[segmentIndex].col[0].toString()));

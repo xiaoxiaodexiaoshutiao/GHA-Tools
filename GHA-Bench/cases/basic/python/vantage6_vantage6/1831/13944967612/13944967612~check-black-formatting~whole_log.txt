@@ -1,0 +1,201 @@
+﻿2025-03-19T11:03:29.0379908Z Current runner version: '2.322.0'
+2025-03-19T11:03:29.0405823Z ##[group]Operating System
+2025-03-19T11:03:29.0406748Z Ubuntu
+2025-03-19T11:03:29.0407210Z 24.04.2
+2025-03-19T11:03:29.0407843Z LTS
+2025-03-19T11:03:29.0408322Z ##[endgroup]
+2025-03-19T11:03:29.0408864Z ##[group]Runner Image
+2025-03-19T11:03:29.0409514Z Image: ubuntu-24.04
+2025-03-19T11:03:29.0410105Z Version: 20250309.1.0
+2025-03-19T11:03:29.0411133Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250309.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-19T11:03:29.0412589Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250309.1
+2025-03-19T11:03:29.0413529Z ##[endgroup]
+2025-03-19T11:03:29.0414058Z ##[group]Runner Image Provisioner
+2025-03-19T11:03:29.0414742Z 2.0.422.1
+2025-03-19T11:03:29.0415209Z ##[endgroup]
+2025-03-19T11:03:29.0417730Z ##[group]GITHUB_TOKEN Permissions
+2025-03-19T11:03:29.0420013Z Actions: write
+2025-03-19T11:03:29.0420827Z Attestations: write
+2025-03-19T11:03:29.0421614Z Checks: write
+2025-03-19T11:03:29.0422094Z Contents: write
+2025-03-19T11:03:29.0422637Z Deployments: write
+2025-03-19T11:03:29.0423214Z Discussions: write
+2025-03-19T11:03:29.0423667Z Issues: write
+2025-03-19T11:03:29.0424193Z Metadata: read
+2025-03-19T11:03:29.0424657Z Models: read
+2025-03-19T11:03:29.0425136Z Packages: write
+2025-03-19T11:03:29.0425570Z Pages: write
+2025-03-19T11:03:29.0426124Z PullRequests: write
+2025-03-19T11:03:29.0426926Z RepositoryProjects: write
+2025-03-19T11:03:29.0427479Z SecurityEvents: write
+2025-03-19T11:03:29.0428103Z Statuses: write
+2025-03-19T11:03:29.0428556Z ##[endgroup]
+2025-03-19T11:03:29.0430531Z Secret source: Actions
+2025-03-19T11:03:29.0431691Z Prepare workflow directory
+2025-03-19T11:03:29.0771747Z Prepare all required actions
+2025-03-19T11:03:29.0808727Z Getting action download info
+2025-03-19T11:03:29.5068827Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-19T11:03:29.6179345Z Download action repository 'psf/black@stable' (SHA:8a737e727ac5ab2f1d4cf5876720ed276dc8dc4b)
+2025-03-19T11:03:30.0797434Z Complete job name: check-black-formatting
+2025-03-19T11:03:30.1446026Z ##[group]Run actions/checkout@v4
+2025-03-19T11:03:30.1447045Z with:
+2025-03-19T11:03:30.1447434Z   repository: vantage6/vantage6
+2025-03-19T11:03:30.1448064Z   token: ***
+2025-03-19T11:03:30.1448437Z   ssh-strict: true
+2025-03-19T11:03:30.1448826Z   ssh-user: git
+2025-03-19T11:03:30.1449215Z   persist-credentials: true
+2025-03-19T11:03:30.1449650Z   clean: true
+2025-03-19T11:03:30.1450035Z   sparse-checkout-cone-mode: true
+2025-03-19T11:03:30.1450501Z   fetch-depth: 1
+2025-03-19T11:03:30.1450877Z   fetch-tags: false
+2025-03-19T11:03:30.1451265Z   show-progress: true
+2025-03-19T11:03:30.1451660Z   lfs: false
+2025-03-19T11:03:30.1452011Z   submodules: false
+2025-03-19T11:03:30.1452404Z   set-safe-directory: true
+2025-03-19T11:03:30.1453030Z ##[endgroup]
+2025-03-19T11:03:30.3901407Z Syncing repository: vantage6/vantage6
+2025-03-19T11:03:30.3903609Z ##[group]Getting Git version info
+2025-03-19T11:03:30.3904646Z Working directory is '/home/runner/work/vantage6/vantage6'
+2025-03-19T11:03:30.3905725Z [command]/usr/bin/git version
+2025-03-19T11:03:30.4001620Z git version 2.48.1
+2025-03-19T11:03:30.4032035Z ##[endgroup]
+2025-03-19T11:03:30.4047383Z Temporarily overriding HOME='/home/runner/work/_temp/9b2dc024-aa43-4f58-9675-3c42b10ab372' before making global git config changes
+2025-03-19T11:03:30.4050125Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-19T11:03:30.4053897Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/vantage6/vantage6
+2025-03-19T11:03:30.4091565Z Deleting the contents of '/home/runner/work/vantage6/vantage6'
+2025-03-19T11:03:30.4095710Z ##[group]Initializing the repository
+2025-03-19T11:03:30.4100696Z [command]/usr/bin/git init /home/runner/work/vantage6/vantage6
+2025-03-19T11:03:30.4180022Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-19T11:03:30.4181624Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-19T11:03:30.4182607Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-19T11:03:30.4183320Z hint:
+2025-03-19T11:03:30.4183816Z hint: 	git config --global init.defaultBranch <name>
+2025-03-19T11:03:30.4184413Z hint:
+2025-03-19T11:03:30.4184966Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-19T11:03:30.4185877Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-19T11:03:30.4186822Z hint:
+2025-03-19T11:03:30.4187238Z hint: 	git branch -m <name>
+2025-03-19T11:03:30.4190749Z Initialized empty Git repository in /home/runner/work/vantage6/vantage6/.git/
+2025-03-19T11:03:30.4201329Z [command]/usr/bin/git remote add origin https://github.com/vantage6/vantage6
+2025-03-19T11:03:30.4237746Z ##[endgroup]
+2025-03-19T11:03:30.4238560Z ##[group]Disabling automatic garbage collection
+2025-03-19T11:03:30.4242007Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-19T11:03:30.4270784Z ##[endgroup]
+2025-03-19T11:03:30.4271539Z ##[group]Setting up auth
+2025-03-19T11:03:30.4278192Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-19T11:03:30.4307466Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-19T11:03:30.4658392Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-19T11:03:30.4687704Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-19T11:03:30.4923976Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-19T11:03:30.4958961Z ##[endgroup]
+2025-03-19T11:03:30.4960453Z ##[group]Fetching the repository
+2025-03-19T11:03:30.4969133Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +d7992a366bd88223b41dbea3f0338d27bbe1ee16:refs/remotes/pull/1831/merge
+2025-03-19T11:03:31.3599087Z From https://github.com/vantage6/vantage6
+2025-03-19T11:03:31.3599837Z  * [new ref]         d7992a366bd88223b41dbea3f0338d27bbe1ee16 -> pull/1831/merge
+2025-03-19T11:03:31.3628644Z ##[endgroup]
+2025-03-19T11:03:31.3629427Z ##[group]Determining the checkout info
+2025-03-19T11:03:31.3631367Z ##[endgroup]
+2025-03-19T11:03:31.3638000Z [command]/usr/bin/git sparse-checkout disable
+2025-03-19T11:03:31.3677370Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-19T11:03:31.3704574Z ##[group]Checking out the ref
+2025-03-19T11:03:31.3709210Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1831/merge
+2025-03-19T11:03:31.4816468Z Note: switching to 'refs/remotes/pull/1831/merge'.
+2025-03-19T11:03:31.4817510Z 
+2025-03-19T11:03:31.4818023Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-19T11:03:31.4819004Z changes and commit them, and you can discard any commits you make in this
+2025-03-19T11:03:31.4819735Z state without impacting any branches by switching back to a branch.
+2025-03-19T11:03:31.4820158Z 
+2025-03-19T11:03:31.4820432Z If you want to create a new branch to retain commits you create, you may
+2025-03-19T11:03:31.4820934Z do so (now or later) by using -c with the switch command. Example:
+2025-03-19T11:03:31.4821213Z 
+2025-03-19T11:03:31.4821343Z   git switch -c <new-branch-name>
+2025-03-19T11:03:31.4821573Z 
+2025-03-19T11:03:31.4821714Z Or undo this operation with:
+2025-03-19T11:03:31.4821904Z 
+2025-03-19T11:03:31.4822012Z   git switch -
+2025-03-19T11:03:31.4822225Z 
+2025-03-19T11:03:31.4822474Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-19T11:03:31.4822813Z 
+2025-03-19T11:03:31.4823220Z HEAD is now at d7992a3 Merge c7809d3287ea5dd014b0f0f110a9bccd4fbc5bb5 into 3432d8048bf3b434e7c5032525afae787d050072
+2025-03-19T11:03:31.4831729Z ##[endgroup]
+2025-03-19T11:03:31.4870868Z [command]/usr/bin/git log -1 --format=%H
+2025-03-19T11:03:31.4894127Z d7992a366bd88223b41dbea3f0338d27bbe1ee16
+2025-03-19T11:03:31.5110381Z ##[group]Run psf/black@stable
+2025-03-19T11:03:31.5110691Z with:
+2025-03-19T11:03:31.5110939Z   options: --check --diff
+2025-03-19T11:03:31.5111201Z   src: .
+2025-03-19T11:03:31.5111407Z   jupyter: false
+2025-03-19T11:03:31.5111643Z   use_pyproject: false
+2025-03-19T11:03:31.5111882Z   summary: true
+2025-03-19T11:03:31.5112132Z ##[endgroup]
+2025-03-19T11:03:31.5234589Z ##[group]Run # Even when black fails, do not close the shell
+2025-03-19T11:03:31.5235116Z [36;1m# Even when black fails, do not close the shell[0m
+2025-03-19T11:03:31.5235450Z [36;1mset +e[0m
+2025-03-19T11:03:31.5235676Z [36;1m[0m
+2025-03-19T11:03:31.5235913Z [36;1mif [ "$RUNNER_OS" == "Windows" ]; then[0m
+2025-03-19T11:03:31.5236257Z [36;1m  runner="python"[0m
+2025-03-19T11:03:31.5236501Z [36;1melse[0m
+2025-03-19T11:03:31.5236874Z [36;1m  runner="python3"[0m
+2025-03-19T11:03:31.5237117Z [36;1mfi[0m
+2025-03-19T11:03:31.5237354Z [36;1m[0m
+2025-03-19T11:03:31.5237666Z [36;1mout=$(${runner} $GITHUB_ACTION_PATH/action/main.py)[0m
+2025-03-19T11:03:31.5238005Z [36;1mexit_code=$?[0m
+2025-03-19T11:03:31.5238237Z [36;1m[0m
+2025-03-19T11:03:31.5238472Z [36;1m# Display the raw output in the step[0m
+2025-03-19T11:03:31.5238766Z [36;1mecho "${out}"[0m
+2025-03-19T11:03:31.5238996Z [36;1m[0m
+2025-03-19T11:03:31.5239204Z [36;1mif [ "true" == "true" ]; then[0m
+2025-03-19T11:03:31.5239536Z [36;1m  # Display the Markdown output in the job summary[0m
+2025-03-19T11:03:31.5239903Z [36;1m  echo "\`\`\`python" >> $GITHUB_STEP_SUMMARY[0m
+2025-03-19T11:03:31.5240238Z [36;1m  echo "${out}" >> $GITHUB_STEP_SUMMARY[0m
+2025-03-19T11:03:31.5240554Z [36;1m  echo "\`\`\`" >> $GITHUB_STEP_SUMMARY[0m
+2025-03-19T11:03:31.5240836Z [36;1mfi[0m
+2025-03-19T11:03:31.5241041Z [36;1m[0m
+2025-03-19T11:03:31.5241281Z [36;1m# Exit with the exit-code returned by Black[0m
+2025-03-19T11:03:31.5241590Z [36;1mexit ${exit_code}[0m
+2025-03-19T11:03:31.5294080Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-19T11:03:31.5294469Z env:
+2025-03-19T11:03:31.5294711Z   INPUT_OPTIONS: --check --diff
+2025-03-19T11:03:31.5294978Z   INPUT_SRC: .
+2025-03-19T11:03:31.5295203Z   INPUT_JUPYTER: false
+2025-03-19T11:03:31.5295441Z   INPUT_BLACK_ARGS: 
+2025-03-19T11:03:31.5295668Z   INPUT_VERSION: 
+2025-03-19T11:03:31.5295900Z   INPUT_USE_PYPROJECT: false
+2025-03-19T11:03:31.5296172Z   pythonioencoding: utf-8
+2025-03-19T11:03:31.5296414Z ##[endgroup]
+2025-03-19T11:03:38.9854076Z Installing black[colorama]==25.1.0...
+2025-03-19T11:03:38.9855164Z --- /home/runner/work/vantage6/vantage6/dev/load-basic-fixtures.py	2025-03-19 11:03:31.377642+00:00
+2025-03-19T11:03:38.9856353Z +++ /home/runner/work/vantage6/vantage6/dev/load-basic-fixtures.py	2025-03-19 11:03:36.346800+00:00
+2025-03-19T11:03:38.9857380Z @@ -21,11 +21,13 @@
+2025-03-19T11:03:38.9857726Z  client.authenticate("root", "root")
+2025-03-19T11:03:38.9858102Z  
+2025-03-19T11:03:38.9858397Z  parser = argparse.ArgumentParser(
+2025-03-19T11:03:38.9859002Z      description="Load basic fixtures for a given number of nodes"
+2025-03-19T11:03:38.9859506Z  )
+2025-03-19T11:03:38.9860012Z -parser.add_argument("--task-directory", type=str, help="Directory to store tasks on the host")
+2025-03-19T11:03:38.9860501Z +parser.add_argument(
+2025-03-19T11:03:38.9860835Z +    "--task-directory", type=str, help="Directory to store tasks on the host"
+2025-03-19T11:03:38.9861204Z +)
+2025-03-19T11:03:38.9861376Z  parser.add_argument(
+2025-03-19T11:03:38.9861716Z      "--node-test-database-file", type=str, help="Path to the test database file"
+2025-03-19T11:03:38.9862081Z  )
+2025-03-19T11:03:38.9862236Z  parser.add_argument(
+2025-03-19T11:03:38.9862523Z      "--number-of-nodes", type=int, default=2, help="Number of nodes to create"
+2025-03-19T11:03:38.9863301Z would reformat /home/runner/work/vantage6/vantage6/dev/load-basic-fixtures.py
+2025-03-19T11:03:38.9863615Z 
+2025-03-19T11:03:38.9863886Z Oh no! 💥 💔 💥
+2025-03-19T11:03:38.9864145Z 1 file would be reformatted, 289 files would be left unchanged.
+2025-03-19T11:03:38.9875512Z ##[error]Process completed with exit code 1.
+2025-03-19T11:03:39.0006170Z Post job cleanup.
+2025-03-19T11:03:39.0943042Z [command]/usr/bin/git version
+2025-03-19T11:03:39.0985403Z git version 2.48.1
+2025-03-19T11:03:39.1028425Z Temporarily overriding HOME='/home/runner/work/_temp/7d6a6bf7-35fe-4f62-a896-1a87d3e7acd1' before making global git config changes
+2025-03-19T11:03:39.1029688Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-19T11:03:39.1034299Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/vantage6/vantage6
+2025-03-19T11:03:39.1068321Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-19T11:03:39.1100823Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-19T11:03:39.1342790Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-19T11:03:39.1362810Z http.https://github.com/.extraheader
+2025-03-19T11:03:39.1374795Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-19T11:03:39.1405041Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-19T11:03:39.1735741Z Cleaning up orphan processes

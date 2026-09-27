@@ -1,0 +1,66 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 647047c..f0415a2 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -14,8 +14,15 @@ jobs:
+         strategy:
+             fail-fast: false
+             matrix:
+-                os: [ubuntu-22.04, windows-latest, macos-latest]
+-                python-version: ["3.7", "3.8", "3.9", "3.10", "3.11", "3.12"]
++                os: [ubuntu-latest, windows-latest, macos-latest]
++                python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
++                include:
++                    - os: ubuntu-22.04
++                      python-version: "3.7"
++                    - os: windows-latest
++                      python-version: "3.7"
++                    - os: ubuntu-22.04
++                      python-version: "3.7"
+         steps:
+             - name: "Check out repository"
+               uses: actions/checkout@v4
+diff --git a/tests/fixtures.py b/tests/fixtures.py
+index 175abc9..f0b87c6 100644
+--- a/tests/fixtures.py
++++ b/tests/fixtures.py
+@@ -58,6 +58,11 @@ def optional_child(self) -> Optional[SomeClass]:
+         """Get the child instance."""
+         raise NotImplementedError()
+ 
++    @property
++    def union_none_child(self) -> Union[None, SomeClass]:
++        """Get the child instance."""
++        raise NotImplementedError()
++
+     @property
+     def union_child(self) -> Union[SomeClass, "SomeAsyncClass"]:
+         """Get the child instance."""
+diff --git a/tests/test_spy_core.py b/tests/test_spy_core.py
+index bbf473c..41ced73 100644
+--- a/tests/test_spy_core.py
++++ b/tests/test_spy_core.py
+@@ -470,6 +470,12 @@ def test_warn_if_spec_does_not_have_method() -> None:
+         parent = nested_class_subject.create_child_core("optional_child", False)
+         parent.create_child_core("primitive_property", False)
+ 
++    # property access should be allowed through None unions
++    with warnings.catch_warnings():
++        warnings.simplefilter("error")
++        parent = nested_class_subject.create_child_core("union_none_child", False)
++        parent.create_child_core("primitive_property", False)
++
+     # property access should not be checked through unions
+     with warnings.catch_warnings():
+         warnings.simplefilter("error")
+@@ -494,3 +500,10 @@ def test_warn_if_spec_does_not_have_method() -> None:
+     ):
+         parent = nested_class_subject.create_child_core("optional_child", False)
+         parent.create_child_core("this_is_wrong", False)
++
++    # incorrect nested property usage should warn
++    with pytest.warns(
++        MissingSpecAttributeWarning, match="has no attribute 'this_is_wrong'"
++    ):
++        parent = nested_class_subject.create_child_core("union_none_child", False)
++        parent.create_child_core("this_is_wrong", False)

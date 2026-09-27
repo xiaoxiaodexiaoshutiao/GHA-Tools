@@ -1,0 +1,154 @@
+diff --git a/tests/augment/en/test_rephrase.py b/tests/augment/en/test_rephrase.py
+index 0c884d04..b7f1f549 100644
+--- a/tests/augment/en/test_rephrase.py
++++ b/tests/augment/en/test_rephrase.py
+@@ -78,7 +78,8 @@ def test_rephrase(
+         os.environ["OPENAI_API_VERSION"] = "dummy_version"
+         os.environ["AZURE_OPENAI_ENDPOINT"] = "dummy_endpoint"
+         azure_openai_client = AzureOpenAIEvalClient(
+-            embedding_model_name="foo bar"
++            text_model_name="foo",
++            embedding_model_name="bar",
+         )
+         actual = rephrase(
+             instances,
+diff --git a/tests/augment/en/test_rephrase_with_system_role_context.py b/tests/augment/en/test_rephrase_with_system_role_context.py
+index d10d945b..61bedfd0 100644
+--- a/tests/augment/en/test_rephrase_with_system_role_context.py
++++ b/tests/augment/en/test_rephrase_with_system_role_context.py
+@@ -72,7 +72,8 @@ def test_rephrase_with_system_role_context(
+         os.environ["OPENAI_API_VERSION"] = "dummy_version"
+         os.environ["AZURE_OPENAI_ENDPOINT"] = "dummy_endpoint"
+         azure_openai_client = AzureOpenAIEvalClient(
+-            embedding_model_name="foo bar"
++            text_model_name="foo",
++            embedding_model_name="bar",
+         )
+         actual = rephrase_with_system_role_context(
+             instances,
+diff --git a/tests/augment/en/test_rephrase_with_user_role_context.py b/tests/augment/en/test_rephrase_with_user_role_context.py
+index d4a21aac..51bdba51 100644
+--- a/tests/augment/en/test_rephrase_with_user_role_context.py
++++ b/tests/augment/en/test_rephrase_with_user_role_context.py
+@@ -72,7 +72,8 @@ def test_rephrase_with_user_role_context(
+         os.environ["OPENAI_API_VERSION"] = "dummy_version"
+         os.environ["AZURE_OPENAI_ENDPOINT"] = "dummy_endpoint"
+         azure_openai_client = AzureOpenAIEvalClient(
+-            embedding_model_name="foo bar"
++            text_model_name="foo",
++            embedding_model_name="bar",
+         )
+         actual = rephrase_with_user_role_context(
+             instances,
+diff --git a/tests/augment/ja/test_rephrase_with_system_role_context.py b/tests/augment/ja/test_rephrase_with_system_role_context.py
+index 78c375f0..2986919e 100644
+--- a/tests/augment/ja/test_rephrase_with_system_role_context.py
++++ b/tests/augment/ja/test_rephrase_with_system_role_context.py
+@@ -72,7 +72,8 @@ def test_rephrase_with_system_role_context(
+         os.environ["OPENAI_API_VERSION"] = "dummy_version"
+         os.environ["AZURE_OPENAI_ENDPOINT"] = "dummy_endpoint"
+         azure_openai_client = AzureOpenAIEvalClient(
+-            embedding_model_name="foo bar"
++            text_model_name="foo",
++            embedding_model_name="bar",
+         )
+         actual = rephrase_with_system_role_context(
+             instances,
+diff --git a/tests/augment/ja/test_rephrase_with_user_role_context.py b/tests/augment/ja/test_rephrase_with_user_role_context.py
+index 7cbbe633..396cbd15 100644
+--- a/tests/augment/ja/test_rephrase_with_user_role_context.py
++++ b/tests/augment/ja/test_rephrase_with_user_role_context.py
+@@ -72,7 +72,8 @@ def test_rephrase_with_user_role_context(
+         os.environ["OPENAI_API_VERSION"] = "dummy_version"
+         os.environ["AZURE_OPENAI_ENDPOINT"] = "dummy_endpoint"
+         azure_openai_client = AzureOpenAIEvalClient(
+-            embedding_model_name="foo bar"
++            text_model_name="foo",
++            embedding_model_name="bar",
+         )
+         actual = rephrase_with_user_role_context(
+             instances,
+diff --git a/tests/metrics/de/test_reference_based_text_quality.py b/tests/metrics/de/test_reference_based_text_quality.py
+index ad583772..b930be2a 100644
+--- a/tests/metrics/de/test_reference_based_text_quality.py
++++ b/tests/metrics/de/test_reference_based_text_quality.py
+@@ -94,7 +94,8 @@ def test_semantic_similarity_openai(generated_outputs, reference_outputs):
+         os.environ["OPENAI_API_VERSION"] = "dummy_version"
+         os.environ["AZURE_OPENAI_ENDPOINT"] = "dummy_endpoint"
+         azure_openai_client = AzureOpenAIEvalClient(
+-            embedding_model_name="foo bar"
++            text_model_name="foo",
++            embedding_model_name="bar",
+         )
+         metric_value = semantic_similarity(
+             generated_outputs, reference_outputs, eval_model=azure_openai_client
+diff --git a/tests/metrics/de/test_reference_free_text_quality.py b/tests/metrics/de/test_reference_free_text_quality.py
+index e7463cdd..a843ab02 100644
+--- a/tests/metrics/de/test_reference_free_text_quality.py
++++ b/tests/metrics/de/test_reference_free_text_quality.py
+@@ -245,7 +245,8 @@ def test_ai_disclaimer_similarity_openai(generated_outputs):
+         os.environ["OPENAI_API_VERSION"] = "dummy_version"
+         os.environ["AZURE_OPENAI_ENDPOINT"] = "dummy_endpoint"
+         azure_openai_client = AzureOpenAIEvalClient(
+-            embedding_model_name="foo bar"
++            text_model_name="foo",
++            embedding_model_name="bar",
+         )
+         metric_value = ai_disclaimer_similarity(
+             generated_outputs, eval_model=azure_openai_client
+diff --git a/tests/metrics/en/test_reference_based_text_quality.py b/tests/metrics/en/test_reference_based_text_quality.py
+index ee767d1c..d3217de9 100644
+--- a/tests/metrics/en/test_reference_based_text_quality.py
++++ b/tests/metrics/en/test_reference_based_text_quality.py
+@@ -140,7 +140,8 @@ def test_semantic_similarity_openai(generated_outputs, reference_outputs):
+         os.environ["OPENAI_API_VERSION"] = "dummy_version"
+         os.environ["AZURE_OPENAI_ENDPOINT"] = "dummy_endpoint"
+         azure_openai_client = AzureOpenAIEvalClient(
+-            embedding_model_name="foo bar"
++            text_model_name="foo",
++            embedding_model_name="bar",
+         )
+         metric_value = semantic_similarity(
+             generated_outputs, reference_outputs, eval_model=azure_openai_client
+diff --git a/tests/metrics/en/test_reference_free_text_quality.py b/tests/metrics/en/test_reference_free_text_quality.py
+index 429c4dd9..a3dd3da8 100644
+--- a/tests/metrics/en/test_reference_free_text_quality.py
++++ b/tests/metrics/en/test_reference_free_text_quality.py
+@@ -232,7 +232,8 @@ def test_ai_disclaimer_similarity_openai(generated_outputs):
+         os.environ["OPENAI_API_VERSION"] = "dummy_version"
+         os.environ["AZURE_OPENAI_ENDPOINT"] = "dummy_endpoint"
+         azure_openai_client = AzureOpenAIEvalClient(
+-            embedding_model_name="foo bar"
++            text_model_name="foo",
++            embedding_model_name="bar",
+         )
+         metric_value = ai_disclaimer_similarity(
+             generated_outputs, eval_model=azure_openai_client
+diff --git a/tests/metrics/ja/test_reference_based_text_quality.py b/tests/metrics/ja/test_reference_based_text_quality.py
+index 68531dac..ad4990b0 100644
+--- a/tests/metrics/ja/test_reference_based_text_quality.py
++++ b/tests/metrics/ja/test_reference_based_text_quality.py
+@@ -247,7 +247,8 @@ def test_semantic_similarity_openai(generated_outputs, reference_outputs):
+         os.environ["OPENAI_API_VERSION"] = "dummy_version"
+         os.environ["AZURE_OPENAI_ENDPOINT"] = "dummy_endpoint"
+         azure_openai_client = AzureOpenAIEvalClient(
+-            embedding_model_name="foo bar"
++            text_model_name="foo",
++            embedding_model_name="bar",
+         )
+         metric_value = semantic_similarity(
+             generated_outputs, reference_outputs, eval_model=azure_openai_client
+diff --git a/tests/metrics/zh/test_reference_based_text_quality.py b/tests/metrics/zh/test_reference_based_text_quality.py
+index c55761e5..96d0e9c9 100644
+--- a/tests/metrics/zh/test_reference_based_text_quality.py
++++ b/tests/metrics/zh/test_reference_based_text_quality.py
+@@ -187,7 +187,8 @@ def test_semantic_similarity_openai(generated_outputs, reference_outputs):
+         os.environ["OPENAI_API_VERSION"] = "dummy_version"
+         os.environ["AZURE_OPENAI_ENDPOINT"] = "dummy_endpoint"
+         azure_openai_client = AzureOpenAIEvalClient(
+-            embedding_model_name="foo bar"
++            text_model_name="foo",
++            embedding_model_name="bar",
+         )
+         metric_value = semantic_similarity(
+             generated_outputs, reference_outputs, eval_model=azure_openai_client

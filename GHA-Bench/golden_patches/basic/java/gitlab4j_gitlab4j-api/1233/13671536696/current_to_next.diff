@@ -1,0 +1,18 @@
+diff --git a/gitlab4j-api/src/main/java/org/gitlab4j/api/JobApi.java b/gitlab4j-api/src/main/java/org/gitlab4j/api/JobApi.java
+index afb0e5489..5b4e30baf 100644
+--- a/gitlab4j-api/src/main/java/org/gitlab4j/api/JobApi.java
++++ b/gitlab4j-api/src/main/java/org/gitlab4j/api/JobApi.java
+@@ -300,11 +300,10 @@ public Stream<Job> getJobsStream(Object projectIdOrPath, long pipelineId, Boolea
+      * @throws GitLabApiException if any exception occurs during execution
+      */
+     public Job getJob() throws GitLabApiException {
+-        Response response =
+-                get(Response.Status.OK, null, "job");
++        Response response = get(Response.Status.OK, null, "job");
+         return (response.readEntity(Job.class));
+     }
+-    
++
+     /**
+      * Get single job in a project.
+      *

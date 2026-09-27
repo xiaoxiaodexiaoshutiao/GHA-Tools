@@ -1,0 +1,167 @@
+2025-02-24T19:17:25.3532221Z Requested labels: ubuntu-latest
+2025-02-24T19:17:25.3532505Z Job defined at: laminas/getlaminas.org/.github/workflows/markdown-linting.yml@refs/pull/259/merge
+2025-02-24T19:17:25.3532943Z Waiting for a runner to pick up this job...
+2025-02-24T19:17:26.3478215Z Job is waiting for a hosted runner to come online.
+2025-02-24T19:17:29.1159955Z Job is about to start running on the hosted runner: GitHub Actions 14 (hosted)
+2025-02-24T19:17:30.9757715Z Current runner version: '2.322.0'
+2025-02-24T19:17:30.9784110Z ##[group]Operating System
+2025-02-24T19:17:30.9785192Z Ubuntu
+2025-02-24T19:17:30.9785693Z 24.04.1
+2025-02-24T19:17:30.9786199Z LTS
+2025-02-24T19:17:30.9786721Z ##[endgroup]
+2025-02-24T19:17:30.9787276Z ##[group]Runner Image
+2025-02-24T19:17:30.9787827Z Image: ubuntu-24.04
+2025-02-24T19:17:30.9788370Z Version: 20250209.1.0
+2025-02-24T19:17:30.9789398Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250209.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-24T19:17:30.9790729Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250209.1
+2025-02-24T19:17:30.9791716Z ##[endgroup]
+2025-02-24T19:17:30.9792239Z ##[group]Runner Image Provisioner
+2025-02-24T19:17:30.9792854Z 2.0.422.1
+2025-02-24T19:17:30.9793328Z ##[endgroup]
+2025-02-24T19:17:30.9795546Z ##[group]GITHUB_TOKEN Permissions
+2025-02-24T19:17:30.9797511Z Actions: read
+2025-02-24T19:17:30.9798227Z Attestations: read
+2025-02-24T19:17:30.9798944Z Checks: read
+2025-02-24T19:17:30.9799393Z Contents: read
+2025-02-24T19:17:30.9800018Z Deployments: read
+2025-02-24T19:17:30.9800501Z Discussions: read
+2025-02-24T19:17:30.9801008Z Issues: read
+2025-02-24T19:17:30.9801555Z Metadata: read
+2025-02-24T19:17:30.9802044Z Packages: read
+2025-02-24T19:17:30.9802522Z Pages: read
+2025-02-24T19:17:30.9803051Z PullRequests: read
+2025-02-24T19:17:30.9803580Z RepositoryProjects: read
+2025-02-24T19:17:30.9804138Z SecurityEvents: read
+2025-02-24T19:17:30.9804721Z Statuses: read
+2025-02-24T19:17:30.9805531Z ##[endgroup]
+2025-02-24T19:17:30.9808736Z Secret source: None
+2025-02-24T19:17:30.9809953Z Prepare workflow directory
+2025-02-24T19:17:31.0137297Z Prepare all required actions
+2025-02-24T19:17:31.0174460Z Getting action download info
+2025-02-24T19:17:31.2183696Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-02-24T19:17:31.2184671Z Version: 4.2.2
+2025-02-24T19:17:31.2185892Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-02-24T19:17:31.2187035Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-02-24T19:17:31.2187714Z ##[endgroup]
+2025-02-24T19:17:31.3139389Z Download action repository 'DavidAnson/markdownlint-cli2-action@v18' (SHA:eb5ca3ab411449c66620fe7f1b3c9e10547144b0)
+2025-02-24T19:17:31.8450813Z Complete job name: linting
+2025-02-24T19:17:31.9170238Z ##[group]Run actions/checkout@v4
+2025-02-24T19:17:31.9171146Z with:
+2025-02-24T19:17:31.9171600Z   repository: laminas/getlaminas.org
+2025-02-24T19:17:31.9172343Z   token: ***
+2025-02-24T19:17:31.9172776Z   ssh-strict: true
+2025-02-24T19:17:31.9173218Z   ssh-user: git
+2025-02-24T19:17:31.9173670Z   persist-credentials: true
+2025-02-24T19:17:31.9174173Z   clean: true
+2025-02-24T19:17:31.9174621Z   sparse-checkout-cone-mode: true
+2025-02-24T19:17:31.9175322Z   fetch-depth: 1
+2025-02-24T19:17:31.9175765Z   fetch-tags: false
+2025-02-24T19:17:31.9176203Z   show-progress: true
+2025-02-24T19:17:31.9176645Z   lfs: false
+2025-02-24T19:17:31.9177410Z   submodules: false
+2025-02-24T19:17:31.9178326Z   set-safe-directory: true
+2025-02-24T19:17:31.9179223Z ##[endgroup]
+2025-02-24T19:17:32.1644715Z Syncing repository: laminas/getlaminas.org
+2025-02-24T19:17:32.1647041Z ##[group]Getting Git version info
+2025-02-24T19:17:32.1648062Z Working directory is '/home/runner/work/getlaminas.org/getlaminas.org'
+2025-02-24T19:17:32.1649164Z [command]/usr/bin/git version
+2025-02-24T19:17:32.1810819Z git version 2.48.1
+2025-02-24T19:17:32.1846839Z ##[endgroup]
+2025-02-24T19:17:32.1862873Z Temporarily overriding HOME='/home/runner/work/_temp/3b519517-9e99-4fd4-9388-693a2a5ce844' before making global git config changes
+2025-02-24T19:17:32.1865847Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-24T19:17:32.1869740Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/getlaminas.org/getlaminas.org
+2025-02-24T19:17:32.1908659Z Deleting the contents of '/home/runner/work/getlaminas.org/getlaminas.org'
+2025-02-24T19:17:32.1912499Z ##[group]Initializing the repository
+2025-02-24T19:17:32.1917810Z [command]/usr/bin/git init /home/runner/work/getlaminas.org/getlaminas.org
+2025-02-24T19:17:32.2018330Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-24T19:17:32.2019597Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-24T19:17:32.2020556Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-24T19:17:32.2021291Z hint:
+2025-02-24T19:17:32.2022327Z hint: 	git config --global init.defaultBranch <name>
+2025-02-24T19:17:32.2022979Z hint:
+2025-02-24T19:17:32.2023571Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-24T19:17:32.2024518Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-24T19:17:32.2025958Z hint:
+2025-02-24T19:17:32.2026757Z hint: 	git branch -m <name>
+2025-02-24T19:17:32.2029550Z Initialized empty Git repository in /home/runner/work/getlaminas.org/getlaminas.org/.git/
+2025-02-24T19:17:32.2040896Z [command]/usr/bin/git remote add origin https://github.com/laminas/getlaminas.org
+2025-02-24T19:17:32.2077962Z ##[endgroup]
+2025-02-24T19:17:32.2078881Z ##[group]Disabling automatic garbage collection
+2025-02-24T19:17:32.2082369Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-24T19:17:32.2117099Z ##[endgroup]
+2025-02-24T19:17:32.2117833Z ##[group]Setting up auth
+2025-02-24T19:17:32.2123931Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-24T19:17:32.2156160Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-24T19:17:32.2589974Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-24T19:17:32.2621866Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-24T19:17:32.2857786Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-24T19:17:32.2893983Z ##[endgroup]
+2025-02-24T19:17:32.2894799Z ##[group]Fetching the repository
+2025-02-24T19:17:32.2903220Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +61be6af4e105c41d03f0c36cb1a370763a1abe92:refs/remotes/pull/259/merge
+2025-02-24T19:17:32.7056582Z From https://github.com/laminas/getlaminas.org
+2025-02-24T19:17:32.7059052Z  * [new ref]         61be6af4e105c41d03f0c36cb1a370763a1abe92 -> pull/259/merge
+2025-02-24T19:17:32.7087025Z ##[endgroup]
+2025-02-24T19:17:32.7088480Z ##[group]Determining the checkout info
+2025-02-24T19:17:32.7089810Z ##[endgroup]
+2025-02-24T19:17:32.7093426Z [command]/usr/bin/git sparse-checkout disable
+2025-02-24T19:17:32.7133261Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-24T19:17:32.7160563Z ##[group]Checking out the ref
+2025-02-24T19:17:32.7164008Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/259/merge
+2025-02-24T19:17:32.7409582Z Note: switching to 'refs/remotes/pull/259/merge'.
+2025-02-24T19:17:32.7410582Z 
+2025-02-24T19:17:32.7411396Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-24T19:17:32.7413917Z changes and commit them, and you can discard any commits you make in this
+2025-02-24T19:17:32.7417009Z state without impacting any branches by switching back to a branch.
+2025-02-24T19:17:32.7418763Z 
+2025-02-24T19:17:32.7419833Z If you want to create a new branch to retain commits you create, you may
+2025-02-24T19:17:32.7422431Z do so (now or later) by using -c with the switch command. Example:
+2025-02-24T19:17:32.7424082Z 
+2025-02-24T19:17:32.7424665Z   git switch -c <new-branch-name>
+2025-02-24T19:17:32.7425877Z 
+2025-02-24T19:17:32.7426447Z Or undo this operation with:
+2025-02-24T19:17:32.7427727Z 
+2025-02-24T19:17:32.7428227Z   git switch -
+2025-02-24T19:17:32.7428921Z 
+2025-02-24T19:17:32.7429902Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-24T19:17:32.7431191Z 
+2025-02-24T19:17:32.7432592Z HEAD is now at 61be6af Merge 38b188e04dd2d664a2647855f6e6799a8af4f481 into 1985fa46f19aa9b4936cf5d83ff3179802dbd710
+2025-02-24T19:17:32.7438199Z ##[endgroup]
+2025-02-24T19:17:32.7456269Z [command]/usr/bin/git log -1 --format=%H
+2025-02-24T19:17:32.7479116Z 61be6af4e105c41d03f0c36cb1a370763a1abe92
+2025-02-24T19:17:32.7739655Z ##[group]Run DavidAnson/markdownlint-cli2-action@v18
+2025-02-24T19:17:32.7741064Z with:
+2025-02-24T19:17:32.7741951Z   config: .markdownlint.json
+2025-02-24T19:17:32.7743437Z   globs: **/*.md
+!README.md
+!LICENSE.md
+!COPYRIGHT.md
+!bootstrap
+!public
+
+2025-02-24T19:17:32.7745169Z   separator: 
+
+2025-02-24T19:17:32.7746067Z ##[endgroup]
+2025-02-24T19:17:32.8852726Z markdownlint-cli2 v0.15.0 (markdownlint v0.36.1)
+2025-02-24T19:17:32.8855293Z Finding: **/*.md !README.md !LICENSE.md !COPYRIGHT.md !bootstrap !public
+2025-02-24T19:17:32.9125509Z Linting: 22 file(s)
+2025-02-24T19:17:33.2093043Z Summary: 6 error(s)
+2025-02-24T19:17:33.2132580Z ##[error]ADD_BLOG_ENTRY.md:7:1 MD007/ul-indent Unordered list indentation [Expected: 4; Actual: 2] https://github.com/DavidAnson/markdownlint/blob/v0.36.1/doc/md007.md
+2025-02-24T19:17:33.2147734Z ##[error]ADD_BLOG_ENTRY.md:8:1 MD007/ul-indent Unordered list indentation [Expected: 4; Actual: 2] https://github.com/DavidAnson/markdownlint/blob/v0.36.1/doc/md007.md
+2025-02-24T19:17:33.2159725Z ##[error]ADD_BLOG_ENTRY.md:9:1 MD007/ul-indent Unordered list indentation [Expected: 4; Actual: 2] https://github.com/DavidAnson/markdownlint/blob/v0.36.1/doc/md007.md
+2025-02-24T19:17:33.2171678Z ##[error]ADD_BLOG_ENTRY.md:93:1 MD007/ul-indent Unordered list indentation [Expected: 4; Actual: 2] https://github.com/DavidAnson/markdownlint/blob/v0.36.1/doc/md007.md
+2025-02-24T19:17:33.2180769Z ##[error]ADD_BLOG_ENTRY.md:94:1 MD007/ul-indent Unordered list indentation [Expected: 4; Actual: 2] https://github.com/DavidAnson/markdownlint/blob/v0.36.1/doc/md007.md
+2025-02-24T19:17:33.2189743Z ##[error]ADD_BLOG_ENTRY.md:95:1 MD007/ul-indent Unordered list indentation [Expected: 4; Actual: 2] https://github.com/DavidAnson/markdownlint/blob/v0.36.1/doc/md007.md
+2025-02-24T19:17:33.2195590Z ##[error]Failed with exit code: 1
+2025-02-24T19:17:33.2476974Z Post job cleanup.
+2025-02-24T19:17:33.3453351Z [command]/usr/bin/git version
+2025-02-24T19:17:33.3492353Z git version 2.48.1
+2025-02-24T19:17:33.3558523Z Temporarily overriding HOME='/home/runner/work/_temp/253abf3f-1496-4b6d-b8bf-adc77e3cef16' before making global git config changes
+2025-02-24T19:17:33.3561412Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-24T19:17:33.3566119Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/getlaminas.org/getlaminas.org
+2025-02-24T19:17:33.3602638Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-24T19:17:33.3639021Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-24T19:17:33.3872479Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-24T19:17:33.3893938Z http.https://github.com/.extraheader
+2025-02-24T19:17:33.3908489Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-24T19:17:33.3945860Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-24T19:17:33.4301468Z Cleaning up orphan processes

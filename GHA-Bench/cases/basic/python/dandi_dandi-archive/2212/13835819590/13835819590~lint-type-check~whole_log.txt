@@ -1,0 +1,179 @@
+﻿2025-03-13T13:29:50.7054123Z Current runner version: '2.322.0'
+2025-03-13T13:29:50.7079162Z ##[group]Operating System
+2025-03-13T13:29:50.7080005Z Ubuntu
+2025-03-13T13:29:50.7080541Z 22.04.5
+2025-03-13T13:29:50.7081287Z LTS
+2025-03-13T13:29:50.7081844Z ##[endgroup]
+2025-03-13T13:29:50.7082344Z ##[group]Runner Image
+2025-03-13T13:29:50.7082850Z Image: ubuntu-22.04
+2025-03-13T13:29:50.7083430Z Version: 20250309.1.0
+2025-03-13T13:29:50.7084379Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20250309.1/images/ubuntu/Ubuntu2204-Readme.md
+2025-03-13T13:29:50.7085716Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20250309.1
+2025-03-13T13:29:50.7086656Z ##[endgroup]
+2025-03-13T13:29:50.7087128Z ##[group]Runner Image Provisioner
+2025-03-13T13:29:50.7087719Z 2.0.422.1
+2025-03-13T13:29:50.7088155Z ##[endgroup]
+2025-03-13T13:29:50.7090516Z ##[group]GITHUB_TOKEN Permissions
+2025-03-13T13:29:50.7092999Z Actions: write
+2025-03-13T13:29:50.7093780Z Attestations: write
+2025-03-13T13:29:50.7094487Z Checks: write
+2025-03-13T13:29:50.7094923Z Contents: write
+2025-03-13T13:29:50.7095422Z Deployments: write
+2025-03-13T13:29:50.7095910Z Discussions: write
+2025-03-13T13:29:50.7096410Z Issues: write
+2025-03-13T13:29:50.7096895Z Metadata: read
+2025-03-13T13:29:50.7097353Z Packages: write
+2025-03-13T13:29:50.7097851Z Pages: write
+2025-03-13T13:29:50.7098300Z PullRequests: write
+2025-03-13T13:29:50.7098832Z RepositoryProjects: write
+2025-03-13T13:29:50.7099354Z SecurityEvents: write
+2025-03-13T13:29:50.7099930Z Statuses: write
+2025-03-13T13:29:50.7100404Z ##[endgroup]
+2025-03-13T13:29:50.7102767Z Secret source: Actions
+2025-03-13T13:29:50.7103470Z Prepare workflow directory
+2025-03-13T13:29:50.7491630Z Prepare all required actions
+2025-03-13T13:29:50.7528351Z Getting action download info
+2025-03-13T13:29:51.1200630Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-13T13:29:51.2112050Z Download action repository 'actions/setup-node@v4' (SHA:1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a)
+2025-03-13T13:29:51.3750696Z Complete job name: lint-type-check
+2025-03-13T13:29:51.4406268Z ##[group]Run actions/checkout@v4
+2025-03-13T13:29:51.4407081Z with:
+2025-03-13T13:29:51.4407463Z   repository: dandi/dandi-archive
+2025-03-13T13:29:51.4408079Z   token: ***
+2025-03-13T13:29:51.4408435Z   ssh-strict: true
+2025-03-13T13:29:51.4408806Z   ssh-user: git
+2025-03-13T13:29:51.4409185Z   persist-credentials: true
+2025-03-13T13:29:51.4409610Z   clean: true
+2025-03-13T13:29:51.4409978Z   sparse-checkout-cone-mode: true
+2025-03-13T13:29:51.4410435Z   fetch-depth: 1
+2025-03-13T13:29:51.4410958Z   fetch-tags: false
+2025-03-13T13:29:51.4411338Z   show-progress: true
+2025-03-13T13:29:51.4411732Z   lfs: false
+2025-03-13T13:29:51.4412077Z   submodules: false
+2025-03-13T13:29:51.4412462Z   set-safe-directory: true
+2025-03-13T13:29:51.4413105Z ##[endgroup]
+2025-03-13T13:29:51.6207178Z Syncing repository: dandi/dandi-archive
+2025-03-13T13:29:51.6209012Z ##[group]Getting Git version info
+2025-03-13T13:29:51.6209852Z Working directory is '/home/runner/work/dandi-archive/dandi-archive'
+2025-03-13T13:29:51.6211257Z [command]/usr/bin/git version
+2025-03-13T13:29:51.6267644Z git version 2.48.1
+2025-03-13T13:29:51.6295869Z ##[endgroup]
+2025-03-13T13:29:51.6309151Z Temporarily overriding HOME='/home/runner/work/_temp/18d56c54-e716-4a9d-bf62-2a46439450f1' before making global git config changes
+2025-03-13T13:29:51.6314274Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-13T13:29:51.6315676Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/dandi-archive/dandi-archive
+2025-03-13T13:29:51.6347030Z Deleting the contents of '/home/runner/work/dandi-archive/dandi-archive'
+2025-03-13T13:29:51.6350733Z ##[group]Initializing the repository
+2025-03-13T13:29:51.6354802Z [command]/usr/bin/git init /home/runner/work/dandi-archive/dandi-archive
+2025-03-13T13:29:51.6423245Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-13T13:29:51.6425085Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-13T13:29:51.6426523Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-13T13:29:51.6427671Z hint:
+2025-03-13T13:29:51.6428460Z hint: 	git config --global init.defaultBranch <name>
+2025-03-13T13:29:51.6429789Z hint:
+2025-03-13T13:29:51.6431300Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-13T13:29:51.6433372Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-13T13:29:51.6434995Z hint:
+2025-03-13T13:29:51.6435846Z hint: 	git branch -m <name>
+2025-03-13T13:29:51.6437675Z Initialized empty Git repository in /home/runner/work/dandi-archive/dandi-archive/.git/
+2025-03-13T13:29:51.6441458Z [command]/usr/bin/git remote add origin https://github.com/dandi/dandi-archive
+2025-03-13T13:29:51.6475787Z ##[endgroup]
+2025-03-13T13:29:51.6477143Z ##[group]Disabling automatic garbage collection
+2025-03-13T13:29:51.6480713Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-13T13:29:51.6510383Z ##[endgroup]
+2025-03-13T13:29:51.6512063Z ##[group]Setting up auth
+2025-03-13T13:29:51.6518200Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-13T13:29:51.6549142Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-13T13:29:51.6849461Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-13T13:29:51.6880512Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-13T13:29:51.7125896Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-13T13:29:51.7162688Z ##[endgroup]
+2025-03-13T13:29:51.7165903Z ##[group]Fetching the repository
+2025-03-13T13:29:51.7172981Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +1ff3d7295a1a67be1265f7248cd1c211323d7bbf:refs/remotes/pull/2212/merge
+2025-03-13T13:29:52.0782965Z From https://github.com/dandi/dandi-archive
+2025-03-13T13:29:52.0783979Z  * [new ref]         1ff3d7295a1a67be1265f7248cd1c211323d7bbf -> pull/2212/merge
+2025-03-13T13:29:52.0806881Z ##[endgroup]
+2025-03-13T13:29:52.0807624Z ##[group]Determining the checkout info
+2025-03-13T13:29:52.0809117Z ##[endgroup]
+2025-03-13T13:29:52.0814410Z [command]/usr/bin/git sparse-checkout disable
+2025-03-13T13:29:52.0855991Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-13T13:29:52.0883442Z ##[group]Checking out the ref
+2025-03-13T13:29:52.0886634Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/2212/merge
+2025-03-13T13:29:52.1130999Z Note: switching to 'refs/remotes/pull/2212/merge'.
+2025-03-13T13:29:52.1133080Z 
+2025-03-13T13:29:52.1133752Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-13T13:29:52.1135271Z changes and commit them, and you can discard any commits you make in this
+2025-03-13T13:29:52.1136191Z state without impacting any branches by switching back to a branch.
+2025-03-13T13:29:52.1136730Z 
+2025-03-13T13:29:52.1137098Z If you want to create a new branch to retain commits you create, you may
+2025-03-13T13:29:52.1137944Z do so (now or later) by using -c with the switch command. Example:
+2025-03-13T13:29:52.1138416Z 
+2025-03-13T13:29:52.1138623Z   git switch -c <new-branch-name>
+2025-03-13T13:29:52.1139143Z 
+2025-03-13T13:29:52.1139422Z Or undo this operation with:
+2025-03-13T13:29:52.1139748Z 
+2025-03-13T13:29:52.1139925Z   git switch -
+2025-03-13T13:29:52.1140166Z 
+2025-03-13T13:29:52.1140564Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-13T13:29:52.1141567Z 
+2025-03-13T13:29:52.1142923Z HEAD is now at 1ff3d72 Merge a2df8ec039ca2fc81e4748e77177554689c117cb into 0aca4cc497a0a06411b82fed6df4585b5f09330c
+2025-03-13T13:29:52.1145146Z ##[endgroup]
+2025-03-13T13:29:52.1182938Z [command]/usr/bin/git log -1 --format=%H
+2025-03-13T13:29:52.1207393Z 1ff3d7295a1a67be1265f7248cd1c211323d7bbf
+2025-03-13T13:29:52.1461964Z ##[group]Run actions/setup-node@v4
+2025-03-13T13:29:52.1462629Z with:
+2025-03-13T13:29:52.1463079Z   node-version: 16
+2025-03-13T13:29:52.1463568Z   always-auth: false
+2025-03-13T13:29:52.1464089Z   check-latest: false
+2025-03-13T13:29:52.1464785Z   token: ***
+2025-03-13T13:29:52.1465260Z ##[endgroup]
+2025-03-13T13:29:52.3211562Z Attempting to download 16...
+2025-03-13T13:29:52.6012041Z Acquiring 16.20.2 - x64 from https://github.com/actions/node-versions/releases/download/16.20.2-5819740093/node-16.20.2-linux-x64.tar.gz
+2025-03-13T13:29:52.9268678Z Extracting ...
+2025-03-13T13:29:52.9381167Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/d8389ed7-9e3e-4a11-af2a-02a3b4234aa6 -f /home/runner/work/_temp/54b11515-099c-499b-9cf7-49edda70068b
+2025-03-13T13:29:53.6002590Z Adding to the cache ...
+2025-03-13T13:29:54.5885559Z ##[group]Environment details
+2025-03-13T13:29:54.8594691Z node: v16.20.2
+2025-03-13T13:29:54.8595447Z npm: 8.19.4
+2025-03-13T13:29:54.8595903Z yarn: 1.22.22
+2025-03-13T13:29:54.8596481Z ##[endgroup]
+2025-03-13T13:29:54.8812951Z ##[group]Run yarn install
+2025-03-13T13:29:54.8813332Z [36;1myarn install[0m
+2025-03-13T13:29:54.8907559Z shell: /usr/bin/bash -e {0}
+2025-03-13T13:29:54.8907851Z ##[endgroup]
+2025-03-13T13:29:55.0128469Z yarn install v1.22.22
+2025-03-13T13:29:55.0654462Z [1/4] Resolving packages...
+2025-03-13T13:29:55.2543793Z [2/4] Fetching packages...
+2025-03-13T13:30:05.2849461Z [3/4] Linking dependencies...
+2025-03-13T13:30:05.2971793Z warning Workspaces can only be enabled in private projects.
+2025-03-13T13:30:09.1979828Z [4/4] Building fresh packages...
+2025-03-13T13:30:09.6405162Z Done in 14.63s.
+2025-03-13T13:30:09.6654081Z ##[group]Run yarn run lint --no-fix
+2025-03-13T13:30:09.6654403Z [36;1myarn run lint --no-fix[0m
+2025-03-13T13:30:09.6715429Z shell: /usr/bin/bash -e {0}
+2025-03-13T13:30:09.6715662Z ##[endgroup]
+2025-03-13T13:30:09.7904808Z yarn run v1.22.22
+2025-03-13T13:30:09.8171865Z $ eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --max-warnings=0 --ignore-path .gitignore --no-fix
+2025-03-13T13:30:13.9798463Z Done in 4.19s.
+2025-03-13T13:30:13.9886475Z ##[group]Run yarn run type-check
+2025-03-13T13:30:13.9886781Z [36;1myarn run type-check[0m
+2025-03-13T13:30:13.9945999Z shell: /usr/bin/bash -e {0}
+2025-03-13T13:30:13.9946239Z ##[endgroup]
+2025-03-13T13:30:14.1136040Z yarn run v1.22.22
+2025-03-13T13:30:14.1382209Z $ vue-tsc --noEmit
+2025-03-13T13:30:23.0815898Z ##[error]src/views/DandisetLandingView/DandisetMain.vue(404,29): error TS2345: Argument of type '{}' is not assignable to parameter of type 'string | URL'.
+2025-03-13T13:30:23.1252570Z error Command failed with exit code 2.
+2025-03-13T13:30:23.1256788Z info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+2025-03-13T13:30:23.1318077Z ##[error]Process completed with exit code 2.
+2025-03-13T13:30:23.1412721Z Post job cleanup.
+2025-03-13T13:30:23.2344840Z [command]/usr/bin/git version
+2025-03-13T13:30:23.2381643Z git version 2.48.1
+2025-03-13T13:30:23.2429042Z Temporarily overriding HOME='/home/runner/work/_temp/529b57b6-cd63-42ec-b2fe-1afa38f08e67' before making global git config changes
+2025-03-13T13:30:23.2429973Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-13T13:30:23.2434462Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/dandi-archive/dandi-archive
+2025-03-13T13:30:23.2467702Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-13T13:30:23.2499448Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-13T13:30:23.2736175Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-13T13:30:23.2755873Z http.https://github.com/.extraheader
+2025-03-13T13:30:23.2767994Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-13T13:30:23.2798231Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-13T13:30:23.3153071Z Cleaning up orphan processes

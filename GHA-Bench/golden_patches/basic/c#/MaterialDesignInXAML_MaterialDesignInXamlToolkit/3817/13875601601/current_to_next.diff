@@ -1,0 +1,57 @@
+diff --git a/tests/MaterialDesignThemes.UITests/WPF/AutoSuggestBoxes/AutoSuggestTextBoxTests.cs b/tests/MaterialDesignThemes.UITests/WPF/AutoSuggestBoxes/AutoSuggestTextBoxTests.cs
+index 97ab3c860a..5d4c7494c6 100644
+--- a/tests/MaterialDesignThemes.UITests/WPF/AutoSuggestBoxes/AutoSuggestTextBoxTests.cs
++++ b/tests/MaterialDesignThemes.UITests/WPF/AutoSuggestBoxes/AutoSuggestTextBoxTests.cs
+@@ -1,4 +1,4 @@
+-﻿using System.Collections;
++using System.Collections;
+ using System.ComponentModel;
+ using MaterialDesignThemes.UITests.Samples.AutoSuggestBoxes;
+ using MaterialDesignThemes.UITests.Samples.AutoSuggestTextBoxes;
+@@ -178,12 +178,13 @@ public async Task AutoSuggestBox_KeysUpAndDown_WrapAround()
+         await suggestBox.SendInput(new KeyboardInput("e"));
+         await Task.Delay(delay);
+ 
+-        //var itemSource = (await suggestBox.GetSuggestions()).Cast<object>().ToList();
+-
+-        //var suggestions = await suggestionListBox.GetProperty<IEnumerable>(nameof(ListBox.ItemsSource));
+-        //int itemCount = suggestions.Cast<object>().Count();
++        static int? GetSuggestionCount(AutoSuggestBox autoSuggestBox)
++        {
++            int? count = autoSuggestBox.Suggestions?.OfType<object>().Count();
++            return count;
++        }
+ 
+-        int itemCount = CountNonGenericEnumerable(await suggestBox.GetSuggestions());
++        int itemCount = await suggestBox.RemoteExecute(GetSuggestionCount) ?? 0;
+ 
+         //Assert that initially the first item is selected
+         int selectedIndex = await suggestionListBox.GetSelectedIndex();
+@@ -198,27 +199,6 @@ public async Task AutoSuggestBox_KeysUpAndDown_WrapAround()
+         //Assert that the first item is selected after pressing ArrowDown
+         await suggestBox.SendInput(new KeyboardInput(Key.Down));
+         Assert.Equal(0, await suggestionListBox.GetSelectedIndex());
+-
+-
+-    }
+-
+-    internal static int CountNonGenericEnumerable(IEnumerable? source)
+-    {
+-        ArgumentNullException.ThrowIfNull(source);
+-
+-        if (source is ICollection collection)
+-        {
+-            return collection.Count;
+-        }
+-
+-        int count = 0;
+-        IEnumerator e = source.GetEnumerator();
+-        while (e.MoveNext())
+-        {
+-            count++;
+-        }
+-
+-        return count;
+     }
+ 
+     private static async Task AssertExists(IVisualElement<ListBox> suggestionListBox, string text, bool existsOrNotCheck = true)

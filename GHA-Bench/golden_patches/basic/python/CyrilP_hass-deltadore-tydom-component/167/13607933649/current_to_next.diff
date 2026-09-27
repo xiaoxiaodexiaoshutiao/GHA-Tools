@@ -1,0 +1,13 @@
+diff --git a/custom_components/deltadore_tydom/ha_entities.py b/custom_components/deltadore_tydom/ha_entities.py
+index 3bd218b..e7b1f13 100644
+--- a/custom_components/deltadore_tydom/ha_entities.py
++++ b/custom_components/deltadore_tydom/ha_entities.py
+@@ -994,7 +994,7 @@ def __init__(self, device: TydomAlarm, hass) -> None:
+ 
+     @property
+     def alarm_state(self):
+-        """Return the alarm state"""
++        """Return the alarm state."""
+         # alarmMode :  "OFF", "ON", "TEST", "ZONE", "MAINTENANCE"
+         # alarmState: "OFF", "DELAYED", "ON", "QUIET"
+         if self._device.alarmMode == "MAINTENANCE":

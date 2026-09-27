@@ -1,0 +1,234 @@
+﻿2025-03-31T11:21:24.9190460Z Current runner version: '2.323.0'
+2025-03-31T11:21:24.9213912Z ##[group]Operating System
+2025-03-31T11:21:24.9214783Z Ubuntu
+2025-03-31T11:21:24.9215243Z 24.04.2
+2025-03-31T11:21:24.9215724Z LTS
+2025-03-31T11:21:24.9216244Z ##[endgroup]
+2025-03-31T11:21:24.9216769Z ##[group]Runner Image
+2025-03-31T11:21:24.9217321Z Image: ubuntu-24.04
+2025-03-31T11:21:24.9218097Z Version: 20250323.1.0
+2025-03-31T11:21:24.9219099Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-31T11:21:24.9220476Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-03-31T11:21:24.9221420Z ##[endgroup]
+2025-03-31T11:21:24.9221910Z ##[group]Runner Image Provisioner
+2025-03-31T11:21:24.9222506Z 2.0.422.1
+2025-03-31T11:21:24.9222968Z ##[endgroup]
+2025-03-31T11:21:24.9225197Z ##[group]GITHUB_TOKEN Permissions
+2025-03-31T11:21:24.9227187Z Actions: read
+2025-03-31T11:21:24.9228189Z Attestations: read
+2025-03-31T11:21:24.9228816Z Checks: read
+2025-03-31T11:21:24.9229276Z Contents: read
+2025-03-31T11:21:24.9229775Z Deployments: read
+2025-03-31T11:21:24.9230303Z Discussions: read
+2025-03-31T11:21:24.9230767Z Issues: read
+2025-03-31T11:21:24.9231242Z Metadata: read
+2025-03-31T11:21:24.9231650Z Models: read
+2025-03-31T11:21:24.9232176Z Packages: read
+2025-03-31T11:21:24.9232622Z Pages: read
+2025-03-31T11:21:24.9233068Z PullRequests: read
+2025-03-31T11:21:24.9233607Z RepositoryProjects: read
+2025-03-31T11:21:24.9234162Z SecurityEvents: read
+2025-03-31T11:21:24.9234630Z Statuses: read
+2025-03-31T11:21:24.9235146Z ##[endgroup]
+2025-03-31T11:21:24.9238164Z Secret source: None
+2025-03-31T11:21:24.9239089Z Prepare workflow directory
+2025-03-31T11:21:24.9630508Z Prepare all required actions
+2025-03-31T11:21:24.9667276Z Getting action download info
+2025-03-31T11:21:25.4483960Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-31T11:21:25.6170534Z Complete job name: Verify Towncrier entry added
+2025-03-31T11:21:25.6826231Z ##[group]Run actions/checkout@v4
+2025-03-31T11:21:25.6827019Z with:
+2025-03-31T11:21:25.6827644Z   fetch-depth: 0
+2025-03-31T11:21:25.6828041Z   repository: qutip/qutip
+2025-03-31T11:21:25.6828613Z   token: ***
+2025-03-31T11:21:25.6828982Z   ssh-strict: true
+2025-03-31T11:21:25.6829346Z   ssh-user: git
+2025-03-31T11:21:25.6829729Z   persist-credentials: true
+2025-03-31T11:21:25.6830146Z   clean: true
+2025-03-31T11:21:25.6830529Z   sparse-checkout-cone-mode: true
+2025-03-31T11:21:25.6830978Z   fetch-tags: false
+2025-03-31T11:21:25.6831352Z   show-progress: true
+2025-03-31T11:21:25.6831731Z   lfs: false
+2025-03-31T11:21:25.6832071Z   submodules: false
+2025-03-31T11:21:25.6832446Z   set-safe-directory: true
+2025-03-31T11:21:25.6833095Z ##[endgroup]
+2025-03-31T11:21:25.8911363Z Syncing repository: qutip/qutip
+2025-03-31T11:21:25.8913762Z ##[group]Getting Git version info
+2025-03-31T11:21:25.8914807Z Working directory is '/home/runner/work/qutip/qutip'
+2025-03-31T11:21:25.8916355Z [command]/usr/bin/git version
+2025-03-31T11:21:25.8993127Z git version 2.49.0
+2025-03-31T11:21:25.9021053Z ##[endgroup]
+2025-03-31T11:21:25.9036400Z Temporarily overriding HOME='/home/runner/work/_temp/bb91799b-2a0e-4788-aa74-b534f130abc8' before making global git config changes
+2025-03-31T11:21:25.9038980Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-31T11:21:25.9042794Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/qutip/qutip
+2025-03-31T11:21:25.9079616Z Deleting the contents of '/home/runner/work/qutip/qutip'
+2025-03-31T11:21:25.9083708Z ##[group]Initializing the repository
+2025-03-31T11:21:25.9088626Z [command]/usr/bin/git init /home/runner/work/qutip/qutip
+2025-03-31T11:21:25.9156317Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-31T11:21:25.9157896Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-31T11:21:25.9159025Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-31T11:21:25.9160447Z hint:
+2025-03-31T11:21:25.9161213Z hint: 	git config --global init.defaultBranch <name>
+2025-03-31T11:21:25.9162107Z hint:
+2025-03-31T11:21:25.9162941Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-31T11:21:25.9164430Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-31T11:21:25.9165281Z hint:
+2025-03-31T11:21:25.9165640Z hint: 	git branch -m <name>
+2025-03-31T11:21:25.9166290Z Initialized empty Git repository in /home/runner/work/qutip/qutip/.git/
+2025-03-31T11:21:25.9174936Z [command]/usr/bin/git remote add origin https://github.com/qutip/qutip
+2025-03-31T11:21:25.9208694Z ##[endgroup]
+2025-03-31T11:21:25.9209834Z ##[group]Disabling automatic garbage collection
+2025-03-31T11:21:25.9213600Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-31T11:21:25.9242640Z ##[endgroup]
+2025-03-31T11:21:25.9243814Z ##[group]Setting up auth
+2025-03-31T11:21:25.9250263Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-31T11:21:25.9281671Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-31T11:21:25.9566031Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-31T11:21:25.9602838Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-31T11:21:25.9863397Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-31T11:21:25.9903735Z ##[endgroup]
+2025-03-31T11:21:25.9916884Z ##[group]Fetching the repository
+2025-03-31T11:21:25.9919185Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* +f5a95b3a8692d507d9951b239a77ced5ada62fdf:refs/remotes/pull/2672/merge
+2025-03-31T11:21:29.0819001Z From https://github.com/qutip/qutip
+2025-03-31T11:21:29.0820735Z  * [new branch]          dev.major                -> origin/dev.major
+2025-03-31T11:21:29.0822315Z  * [new branch]          master                   -> origin/master
+2025-03-31T11:21:29.0823850Z  * [new branch]          qutip-2.1.X              -> origin/qutip-2.1.X
+2025-03-31T11:21:29.0825478Z  * [new branch]          qutip-2.2.X              -> origin/qutip-2.2.X
+2025-03-31T11:21:29.0827095Z  * [new branch]          qutip-3.0.X              -> origin/qutip-3.0.X
+2025-03-31T11:21:29.0828916Z  * [new branch]          qutip-3.1.X              -> origin/qutip-3.1.X
+2025-03-31T11:21:29.0831397Z  * [new branch]          qutip-4.0.X              -> origin/qutip-4.0.X
+2025-03-31T11:21:29.0832732Z  * [new branch]          qutip-4.1.X              -> origin/qutip-4.1.X
+2025-03-31T11:21:29.0834190Z  * [new branch]          qutip-4.2.X              -> origin/qutip-4.2.X
+2025-03-31T11:21:29.0839318Z  * [new branch]          qutip-4.3.X              -> origin/qutip-4.3.X
+2025-03-31T11:21:29.0840766Z  * [new branch]          qutip-4.4.1              -> origin/qutip-4.4.1
+2025-03-31T11:21:29.0842125Z  * [new branch]          qutip-4.4.X              -> origin/qutip-4.4.X
+2025-03-31T11:21:29.0845103Z  * [new branch]          qutip-4.5.1              -> origin/qutip-4.5.1
+2025-03-31T11:21:29.0849030Z  * [new branch]          qutip-4.5.2              -> origin/qutip-4.5.2
+2025-03-31T11:21:29.0851855Z  * [new branch]          qutip-4.5.3              -> origin/qutip-4.5.3
+2025-03-31T11:21:29.0853286Z  * [new branch]          qutip-4.5.X              -> origin/qutip-4.5.X
+2025-03-31T11:21:29.0854715Z  * [new branch]          qutip-4.6.X              -> origin/qutip-4.6.X
+2025-03-31T11:21:29.0856345Z  * [new branch]          qutip-4.7.X              -> origin/qutip-4.7.X
+2025-03-31T11:21:29.0863436Z  * [new branch]          qutip-5.0.X              -> origin/qutip-5.0.X
+2025-03-31T11:21:29.0865242Z  * [new branch]          qutip-5.1.X              -> origin/qutip-5.1.X
+2025-03-31T11:21:29.0866629Z  * [new tag]             qutip-2.2.0              -> qutip-2.2.0
+2025-03-31T11:21:29.0868401Z  * [new tag]             qutip-3.0.0              -> qutip-3.0.0
+2025-03-31T11:21:29.0869731Z  * [new tag]             qutip-3.0.1              -> qutip-3.0.1
+2025-03-31T11:21:29.0871066Z  * [new tag]             qutip-3.1.0              -> qutip-3.1.0
+2025-03-31T11:21:29.0872485Z  * [new tag]             v2.2.0-alpha-win-support -> v2.2.0-alpha-win-support
+2025-03-31T11:21:29.0873896Z  * [new tag]             v4.0.0                   -> v4.0.0
+2025-03-31T11:21:29.0878618Z  * [new tag]             v4.1.0                   -> v4.1.0
+2025-03-31T11:21:29.0884060Z  * [new tag]             v4.1.1                   -> v4.1.1
+2025-03-31T11:21:29.0886207Z  * [new tag]             v4.1.2                   -> v4.1.2
+2025-03-31T11:21:29.0887861Z  * [new tag]             v4.2.0                   -> v4.2.0
+2025-03-31T11:21:29.0889201Z  * [new tag]             v4.3.1                   -> v4.3.1
+2025-03-31T11:21:29.0890415Z  * [new tag]             v4.4.0                   -> v4.4.0
+2025-03-31T11:21:29.0891620Z  * [new tag]             v4.4.1                   -> v4.4.1
+2025-03-31T11:21:29.0892838Z  * [new tag]             v4.5.0                   -> v4.5.0
+2025-03-31T11:21:29.0894055Z  * [new tag]             v4.5.1                   -> v4.5.1
+2025-03-31T11:21:29.0895266Z  * [new tag]             v4.5.2                   -> v4.5.2
+2025-03-31T11:21:29.0896467Z  * [new tag]             v4.5.3                   -> v4.5.3
+2025-03-31T11:21:29.0897834Z  * [new tag]             v4.6.0                   -> v4.6.0
+2025-03-31T11:21:29.0899024Z  * [new tag]             v4.6.1                   -> v4.6.1
+2025-03-31T11:21:29.0900197Z  * [new tag]             v4.6.2                   -> v4.6.2
+2025-03-31T11:21:29.0901659Z  * [new tag]             v4.6.3                   -> v4.6.3
+2025-03-31T11:21:29.0903008Z  * [new tag]             v4.7.0                   -> v4.7.0
+2025-03-31T11:21:29.0904197Z  * [new tag]             v4.7.1                   -> v4.7.1
+2025-03-31T11:21:29.0905324Z  * [new tag]             v4.7.2                   -> v4.7.2
+2025-03-31T11:21:29.0906415Z  * [new tag]             v4.7.3                   -> v4.7.3
+2025-03-31T11:21:29.0907733Z  * [new tag]             v4.7.4                   -> v4.7.4
+2025-03-31T11:21:29.0908878Z  * [new tag]             v4.7.5                   -> v4.7.5
+2025-03-31T11:21:29.0909992Z  * [new tag]             v4.7.6                   -> v4.7.6
+2025-03-31T11:21:29.0911091Z  * [new tag]             v5.0.0                   -> v5.0.0
+2025-03-31T11:21:29.0912212Z  * [new tag]             v5.0.0a1                 -> v5.0.0a1
+2025-03-31T11:21:29.0913298Z  * [new tag]             v5.0.0a2                 -> v5.0.0a2
+2025-03-31T11:21:29.0914411Z  * [new tag]             v5.0.0b1                 -> v5.0.0b1
+2025-03-31T11:21:29.0915550Z  * [new tag]             v5.0.1                   -> v5.0.1
+2025-03-31T11:21:29.0916643Z  * [new tag]             v5.0.2                   -> v5.0.2
+2025-03-31T11:21:29.0917918Z  * [new tag]             v5.0.3                   -> v5.0.3
+2025-03-31T11:21:29.0919046Z  * [new tag]             v5.0.4                   -> v5.0.4
+2025-03-31T11:21:29.0920141Z  * [new tag]             v5.1.0                   -> v5.1.0
+2025-03-31T11:21:29.0921231Z  * [new tag]             v5.1.1                   -> v5.1.1
+2025-03-31T11:21:29.0922656Z  * [new ref]             f5a95b3a8692d507d9951b239a77ced5ada62fdf -> pull/2672/merge
+2025-03-31T11:21:29.0944762Z ##[endgroup]
+2025-03-31T11:21:29.0946107Z ##[group]Determining the checkout info
+2025-03-31T11:21:29.0948142Z ##[endgroup]
+2025-03-31T11:21:29.0957649Z [command]/usr/bin/git sparse-checkout disable
+2025-03-31T11:21:29.0995801Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-31T11:21:29.1027964Z ##[group]Checking out the ref
+2025-03-31T11:21:29.1030072Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/2672/merge
+2025-03-31T11:21:29.1534526Z Note: switching to 'refs/remotes/pull/2672/merge'.
+2025-03-31T11:21:29.1535688Z 
+2025-03-31T11:21:29.1536542Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-31T11:21:29.1538793Z changes and commit them, and you can discard any commits you make in this
+2025-03-31T11:21:29.1540807Z state without impacting any branches by switching back to a branch.
+2025-03-31T11:21:29.1541973Z 
+2025-03-31T11:21:29.1542759Z If you want to create a new branch to retain commits you create, you may
+2025-03-31T11:21:29.1544630Z do so (now or later) by using -c with the switch command. Example:
+2025-03-31T11:21:29.1545713Z 
+2025-03-31T11:21:29.1546152Z   git switch -c <new-branch-name>
+2025-03-31T11:21:29.1546814Z 
+2025-03-31T11:21:29.1547128Z Or undo this operation with:
+2025-03-31T11:21:29.1547799Z 
+2025-03-31T11:21:29.1548055Z   git switch -
+2025-03-31T11:21:29.1548538Z 
+2025-03-31T11:21:29.1549226Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-31T11:21:29.1550252Z 
+2025-03-31T11:21:29.1551818Z HEAD is now at f5a95b3a8 Merge 3e8f8db6734aadf5df773cec8267736f660a9642 into 1115d78646258d0b54c5cd63e8c84d659590e274
+2025-03-31T11:21:29.1555172Z ##[endgroup]
+2025-03-31T11:21:29.1594004Z [command]/usr/bin/git log -1 --format=%H
+2025-03-31T11:21:29.1616876Z f5a95b3a8692d507d9951b239a77ced5ada62fdf
+2025-03-31T11:21:29.1830953Z ##[group]Run python -m venv towncrier_check
+2025-03-31T11:21:29.1832481Z [36;1mpython -m venv towncrier_check[0m
+2025-03-31T11:21:29.1833898Z [36;1msource towncrier_check/bin/activate[0m
+2025-03-31T11:21:29.1835305Z [36;1mpython -m pip install towncrier[0m
+2025-03-31T11:21:29.1886688Z shell: /usr/bin/bash -l -e {0}
+2025-03-31T11:21:29.1887934Z ##[endgroup]
+2025-03-31T11:21:32.4492637Z Collecting towncrier
+2025-03-31T11:21:32.5024682Z   Downloading towncrier-24.8.0-py3-none-any.whl.metadata (4.2 kB)
+2025-03-31T11:21:32.5538375Z Collecting click (from towncrier)
+2025-03-31T11:21:32.5636994Z   Downloading click-8.1.8-py3-none-any.whl.metadata (2.3 kB)
+2025-03-31T11:21:32.5998004Z Collecting jinja2 (from towncrier)
+2025-03-31T11:21:32.6096794Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+2025-03-31T11:21:32.6862062Z Collecting MarkupSafe>=2.0 (from jinja2->towncrier)
+2025-03-31T11:21:32.6958902Z   Downloading MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.0 kB)
+2025-03-31T11:21:32.7110803Z Downloading towncrier-24.8.0-py3-none-any.whl (56 kB)
+2025-03-31T11:21:32.7253059Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.0/57.0 kB 4.3 MB/s eta 0:00:00
+2025-03-31T11:21:32.7349440Z Downloading click-8.1.8-py3-none-any.whl (98 kB)
+2025-03-31T11:21:32.7429279Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.2/98.2 kB 13.9 MB/s eta 0:00:00
+2025-03-31T11:21:32.7526174Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+2025-03-31T11:21:32.7588181Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB 27.7 MB/s eta 0:00:00
+2025-03-31T11:21:32.7689117Z Downloading MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (23 kB)
+2025-03-31T11:21:32.7907051Z Installing collected packages: MarkupSafe, click, jinja2, towncrier
+2025-03-31T11:21:32.9816318Z Successfully installed MarkupSafe-3.0.2 click-8.1.8 jinja2-3.1.6 towncrier-24.8.0
+2025-03-31T11:21:33.0376495Z ##[group]Run # Fetch the pull request' base branch so towncrier will be able to
+2025-03-31T11:21:33.0377034Z [36;1m# Fetch the pull request' base branch so towncrier will be able to[0m
+2025-03-31T11:21:33.0377626Z [36;1m# compare the current branch with the base branch.[0m
+2025-03-31T11:21:33.0378030Z [36;1m# Source: https://github.com/actions/checkout/#fetch-all-branches.[0m
+2025-03-31T11:21:33.0378541Z [36;1mgit fetch --no-tags origin +refs/heads/${BASE_BRANCH}:refs/remotes/origin/${BASE_BRANCH}[0m
+2025-03-31T11:21:33.0378955Z [36;1msource towncrier_check/bin/activate[0m
+2025-03-31T11:21:33.0379558Z [36;1mtowncrier check --compare-with origin/${BASE_BRANCH}[0m
+2025-03-31T11:21:33.0379916Z [36;1mtowncrier build --version "$(cat VERSION)" --draft[0m
+2025-03-31T11:21:33.0428621Z shell: /usr/bin/bash -l -e {0}
+2025-03-31T11:21:33.0428849Z env:
+2025-03-31T11:21:33.0429015Z   BASE_BRANCH: master
+2025-03-31T11:21:33.0429200Z ##[endgroup]
+2025-03-31T11:21:33.6120184Z Looking at these files:
+2025-03-31T11:21:33.6120559Z ----
+2025-03-31T11:21:33.6121076Z 1. /home/runner/work/qutip/qutip/qutip/core/data/properties.pyx
+2025-03-31T11:21:33.6121819Z 2. /home/runner/work/qutip/qutip/qutip/tests/core/data/test_properties.py
+2025-03-31T11:21:33.6122385Z ----
+2025-03-31T11:21:33.6133628Z No new newsfragments found on this branch.
+2025-03-31T11:21:33.6284553Z ##[error]Process completed with exit code 1.
+2025-03-31T11:21:33.6436405Z Post job cleanup.
+2025-03-31T11:21:33.7364131Z [command]/usr/bin/git version
+2025-03-31T11:21:33.7400319Z git version 2.49.0
+2025-03-31T11:21:33.7449641Z Temporarily overriding HOME='/home/runner/work/_temp/82defca9-4625-4d52-bc27-ada5da495b58' before making global git config changes
+2025-03-31T11:21:33.7450931Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-31T11:21:33.7455686Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/qutip/qutip
+2025-03-31T11:21:33.7490177Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-31T11:21:33.7522392Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-31T11:21:33.7755316Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-31T11:21:33.7775888Z http.https://github.com/.extraheader
+2025-03-31T11:21:33.7789217Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-31T11:21:33.7820816Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-31T11:21:33.8151462Z Cleaning up orphan processes

@@ -1,0 +1,65 @@
+diff --git a/bleak/backends/bluezdbus/client.py b/bleak/backends/bluezdbus/client.py
+index 4090250e7..ec225584d 100644
+--- a/bleak/backends/bluezdbus/client.py
++++ b/bleak/backends/bluezdbus/client.py
+@@ -819,7 +819,7 @@ async def write_gatt_char(
+         self,
+         characteristic: BleakGATTCharacteristic,
+         data: Buffer,
+-        response: Optional[bool],
++        response: bool,
+     ) -> None:
+         if not self.is_connected:
+             raise BleakError("Not connected")
+diff --git a/bleak/backends/client.py b/bleak/backends/client.py
+index 7745b99c0..ddf77f2f3 100644
+--- a/bleak/backends/client.py
++++ b/bleak/backends/client.py
+@@ -191,7 +191,7 @@ async def write_gatt_char(
+         self,
+         characteristic: BleakGATTCharacteristic,
+         data: Buffer,
+-        response: Optional[bool],
++        response: bool,
+     ) -> None:
+         """
+         Perform a write operation on the specified GATT characteristic.
+diff --git a/bleak/backends/corebluetooth/client.py b/bleak/backends/corebluetooth/client.py
+index 0d5a38848..a682dadbd 100644
+--- a/bleak/backends/corebluetooth/client.py
++++ b/bleak/backends/corebluetooth/client.py
+@@ -320,7 +320,7 @@ async def write_gatt_char(
+         self,
+         characteristic: BleakGATTCharacteristic,
+         data: Buffer,
+-        response: Optional[bool],
++        response: bool,
+     ) -> None:
+         value = NSData.alloc().initWithBytes_length_(data, len(data))
+         await self._delegate.write_characteristic(
+diff --git a/bleak/backends/p4android/client.py b/bleak/backends/p4android/client.py
+index 85347c303..f1bca4dd5 100644
+--- a/bleak/backends/p4android/client.py
++++ b/bleak/backends/p4android/client.py
+@@ -370,7 +370,7 @@ async def write_gatt_char(
+         self,
+         characteristic: BleakGATTCharacteristic,
+         data: bytearray,
+-        response: Optional[bool],
++        response: bool,
+     ) -> None:
+         if response:
+             characteristic.obj.setWriteType(
+diff --git a/bleak/backends/winrt/client.py b/bleak/backends/winrt/client.py
+index e40299658..a04ec7c59 100644
+--- a/bleak/backends/winrt/client.py
++++ b/bleak/backends/winrt/client.py
+@@ -888,7 +888,7 @@ async def write_gatt_char(
+         self,
+         characteristic: BleakGATTCharacteristic,
+         data: Buffer,
+-        response: Optional[bool],
++        response: bool,
+     ) -> None:
+         if not self.is_connected:
+             raise BleakError("Not connected")

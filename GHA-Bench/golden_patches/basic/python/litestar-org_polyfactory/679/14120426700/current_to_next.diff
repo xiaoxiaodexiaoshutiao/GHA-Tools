@@ -1,0 +1,57 @@
+diff --git a/polyfactory/factories/beanie_odm_factory.py b/polyfactory/factories/beanie_odm_factory.py
+index 07a88af7..a5bb7fcb 100644
+--- a/polyfactory/factories/beanie_odm_factory.py
++++ b/polyfactory/factories/beanie_odm_factory.py
+@@ -13,7 +13,7 @@
+     from typing_extensions import TypeGuard
+ 
+     from polyfactory.factories.base import BuildContext
+-    from polyfactory.factories.pydantic_factory import PydanticFieldMeta
++    from polyfactory.field_meta import FieldMeta
+ 
+ try:
+     from beanie import Document
+@@ -58,7 +58,7 @@ def is_supported_type(cls, value: Any) -> "TypeGuard[type[T]]":
+     @classmethod
+     def get_field_value(
+         cls,
+-        field_meta: "PydanticFieldMeta",
++        field_meta: "FieldMeta",
+         field_build_parameters: Any | None = None,
+         build_context: BuildContext | None = None,
+     ) -> Any:
+diff --git a/polyfactory/factories/pydantic_factory.py b/polyfactory/factories/pydantic_factory.py
+index f043f671..498dd289 100644
+--- a/polyfactory/factories/pydantic_factory.py
++++ b/polyfactory/factories/pydantic_factory.py
+@@ -454,7 +454,7 @@ def get_constrained_field_value(
+     @classmethod
+     def get_field_value(
+         cls,
+-        field_meta: PydanticFieldMeta,
++        field_meta: FieldMeta,
+         field_build_parameters: Any | None = None,
+         build_context: BuildContext | None = None,
+     ) -> Any:
+@@ -469,6 +469,8 @@ def get_field_value(
+         """
+         result: Any
+ 
++        field_meta = cast("PydanticFieldMeta", field_meta)
++
+         if cls.__use_examples__ and field_meta.examples:
+             result = cls.__random__.choice(field_meta.examples)
+         else:
+diff --git a/tests/constraints/test_decimal_constraints.py b/tests/constraints/test_decimal_constraints.py
+index 64dd62bb..54385515 100644
+--- a/tests/constraints/test_decimal_constraints.py
++++ b/tests/constraints/test_decimal_constraints.py
+@@ -392,7 +392,7 @@ def test_handle_decimal_length() -> None:
+ 
+     # here decimal places should determine max length
+     max_digits = 10
+-    decimal_places = 5
++    decimal_places: int | None = 5
+ 
+     result = handle_decimal_length(decimal, decimal_places, max_digits)
+     assert isinstance(result, Decimal)

@@ -1,0 +1,188 @@
+﻿2025-02-28T07:14:20.1589700Z Current runner version: '2.322.0'
+2025-02-28T07:14:20.1624826Z ##[group]Operating System
+2025-02-28T07:14:20.1625978Z Ubuntu
+2025-02-28T07:14:20.1626774Z 24.04.2
+2025-02-28T07:14:20.1627664Z LTS
+2025-02-28T07:14:20.1628798Z ##[endgroup]
+2025-02-28T07:14:20.1629865Z ##[group]Runner Image
+2025-02-28T07:14:20.1630967Z Image: ubuntu-24.04
+2025-02-28T07:14:20.1631859Z Version: 20250223.1.0
+2025-02-28T07:14:20.1633625Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250223.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-28T07:14:20.1636355Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250223.1
+2025-02-28T07:14:20.1638175Z ##[endgroup]
+2025-02-28T07:14:20.1639186Z ##[group]Runner Image Provisioner
+2025-02-28T07:14:20.1640214Z 2.0.422.1
+2025-02-28T07:14:20.1640917Z ##[endgroup]
+2025-02-28T07:14:20.1644905Z ##[group]GITHUB_TOKEN Permissions
+2025-02-28T07:14:20.1647631Z Actions: read
+2025-02-28T07:14:20.1649144Z Attestations: read
+2025-02-28T07:14:20.1650198Z Checks: read
+2025-02-28T07:14:20.1651190Z Contents: read
+2025-02-28T07:14:20.1652093Z Deployments: read
+2025-02-28T07:14:20.1652903Z Discussions: read
+2025-02-28T07:14:20.1653969Z Issues: read
+2025-02-28T07:14:20.1654793Z Metadata: read
+2025-02-28T07:14:20.1655574Z Packages: read
+2025-02-28T07:14:20.1656606Z Pages: read
+2025-02-28T07:14:20.1657453Z PullRequests: read
+2025-02-28T07:14:20.1658692Z RepositoryProjects: read
+2025-02-28T07:14:20.1659605Z SecurityEvents: read
+2025-02-28T07:14:20.1660541Z Statuses: read
+2025-02-28T07:14:20.1661331Z ##[endgroup]
+2025-02-28T07:14:20.1664328Z Secret source: None
+2025-02-28T07:14:20.1665399Z Prepare workflow directory
+2025-02-28T07:14:20.2146648Z Prepare all required actions
+2025-02-28T07:14:20.2203710Z Getting action download info
+2025-02-28T07:14:20.4105210Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-02-28T07:14:20.5619661Z Complete job name: ruff-format
+2025-02-28T07:14:20.6376237Z ##[group]Run actions/checkout@v4
+2025-02-28T07:14:20.6377107Z with:
+2025-02-28T07:14:20.6377573Z   repository: Electrostatics/pdb2pqr
+2025-02-28T07:14:20.6378458Z   token: ***
+2025-02-28T07:14:20.6378891Z   ssh-strict: true
+2025-02-28T07:14:20.6379327Z   ssh-user: git
+2025-02-28T07:14:20.6379762Z   persist-credentials: true
+2025-02-28T07:14:20.6380256Z   clean: true
+2025-02-28T07:14:20.6380719Z   sparse-checkout-cone-mode: true
+2025-02-28T07:14:20.6381234Z   fetch-depth: 1
+2025-02-28T07:14:20.6381656Z   fetch-tags: false
+2025-02-28T07:14:20.6382098Z   show-progress: true
+2025-02-28T07:14:20.6382540Z   lfs: false
+2025-02-28T07:14:20.6382947Z   submodules: false
+2025-02-28T07:14:20.6383394Z   set-safe-directory: true
+2025-02-28T07:14:20.6384105Z ##[endgroup]
+2025-02-28T07:14:20.8027609Z Syncing repository: Electrostatics/pdb2pqr
+2025-02-28T07:14:20.8029599Z ##[group]Getting Git version info
+2025-02-28T07:14:20.8030447Z Working directory is '/home/runner/work/pdb2pqr/pdb2pqr'
+2025-02-28T07:14:20.8032134Z [command]/usr/bin/git version
+2025-02-28T07:14:20.8072834Z git version 2.48.1
+2025-02-28T07:14:20.8100404Z ##[endgroup]
+2025-02-28T07:14:20.8115412Z Temporarily overriding HOME='/home/runner/work/_temp/232dba36-b25b-425e-9487-0970c6a7ad7e' before making global git config changes
+2025-02-28T07:14:20.8118042Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-28T07:14:20.8122119Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pdb2pqr/pdb2pqr
+2025-02-28T07:14:20.8156811Z Deleting the contents of '/home/runner/work/pdb2pqr/pdb2pqr'
+2025-02-28T07:14:20.8160868Z ##[group]Initializing the repository
+2025-02-28T07:14:20.8165448Z [command]/usr/bin/git init /home/runner/work/pdb2pqr/pdb2pqr
+2025-02-28T07:14:20.8223581Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-28T07:14:20.8225126Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-28T07:14:20.8226162Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-28T07:14:20.8227541Z hint:
+2025-02-28T07:14:20.8228412Z hint: 	git config --global init.defaultBranch <name>
+2025-02-28T07:14:20.8229039Z hint:
+2025-02-28T07:14:20.8229983Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-28T07:14:20.8231626Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-28T07:14:20.8232924Z hint:
+2025-02-28T07:14:20.8233609Z hint: 	git branch -m <name>
+2025-02-28T07:14:20.8234911Z Initialized empty Git repository in /home/runner/work/pdb2pqr/pdb2pqr/.git/
+2025-02-28T07:14:20.8241732Z [command]/usr/bin/git remote add origin https://github.com/Electrostatics/pdb2pqr
+2025-02-28T07:14:20.8274401Z ##[endgroup]
+2025-02-28T07:14:20.8275622Z ##[group]Disabling automatic garbage collection
+2025-02-28T07:14:20.8279687Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-28T07:14:20.8308338Z ##[endgroup]
+2025-02-28T07:14:20.8309562Z ##[group]Setting up auth
+2025-02-28T07:14:20.8316077Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-28T07:14:20.8347014Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-28T07:14:20.8622362Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-28T07:14:20.8653359Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-28T07:14:20.8887260Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-28T07:14:20.8922559Z ##[endgroup]
+2025-02-28T07:14:20.8923839Z ##[group]Fetching the repository
+2025-02-28T07:14:20.8933113Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +50d5625585b9ac50e8ab7807e8c5d70f4a8bb388:refs/remotes/pull/430/merge
+2025-02-28T07:14:22.2333979Z From https://github.com/Electrostatics/pdb2pqr
+2025-02-28T07:14:22.2337404Z  * [new ref]         50d5625585b9ac50e8ab7807e8c5d70f4a8bb388 -> pull/430/merge
+2025-02-28T07:14:22.2358425Z ##[endgroup]
+2025-02-28T07:14:22.2359722Z ##[group]Determining the checkout info
+2025-02-28T07:14:22.2360988Z ##[endgroup]
+2025-02-28T07:14:22.2365223Z [command]/usr/bin/git sparse-checkout disable
+2025-02-28T07:14:22.2404500Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-28T07:14:22.2433585Z ##[group]Checking out the ref
+2025-02-28T07:14:22.2437484Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/430/merge
+2025-02-28T07:14:22.4093480Z Note: switching to 'refs/remotes/pull/430/merge'.
+2025-02-28T07:14:22.4095561Z 
+2025-02-28T07:14:22.4096813Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-28T07:14:22.4098797Z changes and commit them, and you can discard any commits you make in this
+2025-02-28T07:14:22.4100490Z state without impacting any branches by switching back to a branch.
+2025-02-28T07:14:22.4101484Z 
+2025-02-28T07:14:22.4102122Z If you want to create a new branch to retain commits you create, you may
+2025-02-28T07:14:22.4103603Z do so (now or later) by using -c with the switch command. Example:
+2025-02-28T07:14:22.4104491Z 
+2025-02-28T07:14:22.4104845Z   git switch -c <new-branch-name>
+2025-02-28T07:14:22.4105496Z 
+2025-02-28T07:14:22.4105909Z Or undo this operation with:
+2025-02-28T07:14:22.4106828Z 
+2025-02-28T07:14:22.4107336Z   git switch -
+2025-02-28T07:14:22.4108477Z 
+2025-02-28T07:14:22.4109627Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-28T07:14:22.4111274Z 
+2025-02-28T07:14:22.4113305Z HEAD is now at 50d5625 Merge d2dce09a0e358b0fdb8f2d0c6eed0cc6a399e986 into 9dd79cb9589ea8fac701dc40a70698baa7dd009e
+2025-02-28T07:14:22.4119917Z ##[endgroup]
+2025-02-28T07:14:22.4154990Z [command]/usr/bin/git log -1 --format=%H
+2025-02-28T07:14:22.4178520Z 50d5625585b9ac50e8ab7807e8c5d70f4a8bb388
+2025-02-28T07:14:22.4404989Z ##[group]Run pip3 install ruff --break-system-packages
+2025-02-28T07:14:22.4406673Z [36;1mpip3 install ruff --break-system-packages[0m
+2025-02-28T07:14:22.4460869Z shell: /usr/bin/bash -e {0}
+2025-02-28T07:14:22.4461975Z ##[endgroup]
+2025-02-28T07:14:22.7906267Z Defaulting to user installation because normal site-packages is not writeable
+2025-02-28T07:14:23.4968918Z Collecting ruff
+2025-02-28T07:14:23.5471257Z   Downloading ruff-0.9.8-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (25 kB)
+2025-02-28T07:14:23.5650479Z Downloading ruff-0.9.8-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.3 MB)
+2025-02-28T07:14:23.6572504Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.3/11.3 MB 155.9 MB/s eta 0:00:00
+2025-02-28T07:14:23.9258197Z Installing collected packages: ruff
+2025-02-28T07:14:24.0706216Z Successfully installed ruff-0.9.8
+2025-02-28T07:14:24.1562212Z ##[group]Run set +e  # Do not exit shell on ruff failure
+2025-02-28T07:14:24.1562686Z [36;1mset +e  # Do not exit shell on ruff failure[0m
+2025-02-28T07:14:24.1563076Z [36;1mout=$(ruff format --check --diff . 2> app_stderr.txt)[0m
+2025-02-28T07:14:24.1563404Z [36;1m[0m
+2025-02-28T07:14:24.1563611Z [36;1mexit_code=$?[0m
+2025-02-28T07:14:24.1563852Z [36;1merr=$(<app_stderr.txt)[0m
+2025-02-28T07:14:24.1564106Z [36;1m[0m
+2025-02-28T07:14:24.1564339Z [36;1m# Display the raw output in the step[0m
+2025-02-28T07:14:24.1564657Z [36;1mecho "${out}"[0m
+2025-02-28T07:14:24.1564897Z [36;1mecho "${err}"[0m
+2025-02-28T07:14:24.1565124Z [36;1m[0m
+2025-02-28T07:14:24.1565377Z [36;1m# Display the Markdown output in the job summary[0m
+2025-02-28T07:14:24.1565827Z [36;1m{ echo "\`\`\`diff"; echo "${out}"; echo "${err}"; echo "\`\`\`"; } >> "$GITHUB_STEP_SUMMARY"[0m
+2025-02-28T07:14:24.1566195Z [36;1m[0m
+2025-02-28T07:14:24.1566475Z [36;1m# Exit with the exit-code returned by ruff[0m
+2025-02-28T07:14:24.1566790Z [36;1mexit ${exit_code}[0m
+2025-02-28T07:14:24.1615039Z shell: /usr/bin/bash -e {0}
+2025-02-28T07:14:24.1615324Z ##[endgroup]
+2025-02-28T07:14:24.1956626Z --- pdb2pqr/topology.py
+2025-02-28T07:14:24.1958621Z +++ pdb2pqr/topology.py
+2025-02-28T07:14:24.1958999Z @@ -74,8 +74,7 @@
+2025-02-28T07:14:24.1959370Z          elif tag_name == "titrationstate":
+2025-02-28T07:14:24.1960115Z              if self.curr_titration_state is not None:
+2025-02-28T07:14:24.1960593Z                  _LOGGER.info(
+2025-02-28T07:14:24.1960949Z -                    "** Overwriting current topology_titration_state "
+2025-02-28T07:14:24.1961311Z -                    "object!"
+2025-02-28T07:14:24.1961673Z +                    "** Overwriting current topology_titration_state object!"
+2025-02-28T07:14:24.1962050Z                  )
+2025-02-28T07:14:24.1962379Z              self.curr_titration_state = TopologyTitrationState(
+2025-02-28T07:14:24.1962746Z                  self.curr_residue
+2025-02-28T07:14:24.1962953Z 
+2025-02-28T07:14:24.1963073Z --- tests/logging_test.py
+2025-02-28T07:14:24.1963340Z +++ tests/logging_test.py
+2025-02-28T07:14:24.1963573Z @@ -34,6 +34,6 @@
+2025-02-28T07:14:24.1963791Z          (
+2025-02-28T07:14:24.1964009Z              "pdb2pqr.io",
+2025-02-28T07:14:24.1964248Z              "INFO",
+2025-02-28T07:14:24.1964558Z -            f'Logs stored: {tmp_path / output_file.split(".")[0]}.log',
+2025-02-28T07:14:24.1964968Z +            f"Logs stored: {tmp_path / output_file.split('.')[0]}.log",
+2025-02-28T07:14:24.1965349Z          )
+2025-02-28T07:14:24.1965700Z      )
+2025-02-28T07:14:24.1966050Z warning: Selection `DOC` has no effect because preview is not enabled.
+2025-02-28T07:14:24.1966485Z 2 files would be reformatted, 39 files already formatted
+2025-02-28T07:14:24.1977587Z ##[error]Process completed with exit code 1.
+2025-02-28T07:14:24.2090435Z Post job cleanup.
+2025-02-28T07:14:24.3034291Z [command]/usr/bin/git version
+2025-02-28T07:14:24.3070751Z git version 2.48.1
+2025-02-28T07:14:24.3122284Z Temporarily overriding HOME='/home/runner/work/_temp/8f55534f-456a-4572-b38a-e43a43dfc2dd' before making global git config changes
+2025-02-28T07:14:24.3124003Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-28T07:14:24.3128816Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pdb2pqr/pdb2pqr
+2025-02-28T07:14:24.3163355Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-28T07:14:24.3196042Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-28T07:14:24.3430432Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-28T07:14:24.3451254Z http.https://github.com/.extraheader
+2025-02-28T07:14:24.3464082Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-28T07:14:24.3494407Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-28T07:14:24.3855380Z Cleaning up orphan processes

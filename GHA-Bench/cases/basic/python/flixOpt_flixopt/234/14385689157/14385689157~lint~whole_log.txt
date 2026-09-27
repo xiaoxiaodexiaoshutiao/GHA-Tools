@@ -1,0 +1,207 @@
+﻿2025-04-10T16:36:41.4371010Z Current runner version: '2.323.0'
+2025-04-10T16:36:41.4396059Z ##[group]Operating System
+2025-04-10T16:36:41.4396886Z Ubuntu
+2025-04-10T16:36:41.4397478Z 22.04.5
+2025-04-10T16:36:41.4397935Z LTS
+2025-04-10T16:36:41.4398387Z ##[endgroup]
+2025-04-10T16:36:41.4398934Z ##[group]Runner Image
+2025-04-10T16:36:41.4399516Z Image: ubuntu-22.04
+2025-04-10T16:36:41.4400342Z Version: 20250406.1.0
+2025-04-10T16:36:41.4401456Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20250406.1/images/ubuntu/Ubuntu2204-Readme.md
+2025-04-10T16:36:41.4402821Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20250406.1
+2025-04-10T16:36:41.4403711Z ##[endgroup]
+2025-04-10T16:36:41.4404277Z ##[group]Runner Image Provisioner
+2025-04-10T16:36:41.4404814Z 2.0.422.1
+2025-04-10T16:36:41.4405265Z ##[endgroup]
+2025-04-10T16:36:41.4407681Z ##[group]GITHUB_TOKEN Permissions
+2025-04-10T16:36:41.4410351Z Actions: write
+2025-04-10T16:36:41.4411118Z Attestations: write
+2025-04-10T16:36:41.4411706Z Checks: write
+2025-04-10T16:36:41.4412221Z Contents: write
+2025-04-10T16:36:41.4412717Z Deployments: write
+2025-04-10T16:36:41.4413227Z Discussions: write
+2025-04-10T16:36:41.4413748Z Issues: write
+2025-04-10T16:36:41.4414217Z Metadata: read
+2025-04-10T16:36:41.4414691Z Models: read
+2025-04-10T16:36:41.4415111Z Packages: write
+2025-04-10T16:36:41.4415690Z Pages: write
+2025-04-10T16:36:41.4416135Z PullRequests: write
+2025-04-10T16:36:41.4416639Z RepositoryProjects: write
+2025-04-10T16:36:41.4417223Z SecurityEvents: write
+2025-04-10T16:36:41.4417738Z Statuses: write
+2025-04-10T16:36:41.4418185Z ##[endgroup]
+2025-04-10T16:36:41.4420810Z Secret source: Actions
+2025-04-10T16:36:41.4421926Z Prepare workflow directory
+2025-04-10T16:36:41.4803179Z Prepare all required actions
+2025-04-10T16:36:41.4841137Z Getting action download info
+2025-04-10T16:36:41.9467429Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-10T16:36:41.9468598Z Version: 4.2.2
+2025-04-10T16:36:41.9469557Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-10T16:36:41.9470999Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-10T16:36:41.9471836Z ##[endgroup]
+2025-04-10T16:36:42.0403072Z ##[group]Download immutable action package 'actions/setup-python@v4'
+2025-04-10T16:36:42.0403876Z Version: 4.8.0
+2025-04-10T16:36:42.0404558Z Digest: sha256:7e597ce284e0b40cf85abcb7aa2474fa843336422b823ce21b6643f3a262b88d
+2025-04-10T16:36:42.0405583Z Source commit SHA: b64ffcaf5b410884ad320a9cfac8866006a109aa
+2025-04-10T16:36:42.0406276Z ##[endgroup]
+2025-04-10T16:36:42.2636575Z Complete job name: lint
+2025-04-10T16:36:42.3297353Z ##[group]Run actions/checkout@v4
+2025-04-10T16:36:42.3298171Z with:
+2025-04-10T16:36:42.3298562Z   repository: flixOpt/flixopt
+2025-04-10T16:36:42.3299175Z   token: ***
+2025-04-10T16:36:42.3299546Z   ssh-strict: true
+2025-04-10T16:36:42.3300092Z   ssh-user: git
+2025-04-10T16:36:42.3300476Z   persist-credentials: true
+2025-04-10T16:36:42.3300905Z   clean: true
+2025-04-10T16:36:42.3301312Z   sparse-checkout-cone-mode: true
+2025-04-10T16:36:42.3301771Z   fetch-depth: 1
+2025-04-10T16:36:42.3302145Z   fetch-tags: false
+2025-04-10T16:36:42.3302532Z   show-progress: true
+2025-04-10T16:36:42.3302908Z   lfs: false
+2025-04-10T16:36:42.3303264Z   submodules: false
+2025-04-10T16:36:42.3303649Z   set-safe-directory: true
+2025-04-10T16:36:42.3304301Z ##[endgroup]
+2025-04-10T16:36:42.5061174Z Syncing repository: flixOpt/flixopt
+2025-04-10T16:36:42.5063606Z ##[group]Getting Git version info
+2025-04-10T16:36:42.5064684Z Working directory is '/home/runner/work/flixopt/flixopt'
+2025-04-10T16:36:42.5066368Z [command]/usr/bin/git version
+2025-04-10T16:36:42.5107748Z git version 2.49.0
+2025-04-10T16:36:42.5136362Z ##[endgroup]
+2025-04-10T16:36:42.5152272Z Temporarily overriding HOME='/home/runner/work/_temp/42908951-d0be-4348-be81-095e1e9e7cdb' before making global git config changes
+2025-04-10T16:36:42.5158369Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-10T16:36:42.5160878Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/flixopt/flixopt
+2025-04-10T16:36:42.5194525Z Deleting the contents of '/home/runner/work/flixopt/flixopt'
+2025-04-10T16:36:42.5198820Z ##[group]Initializing the repository
+2025-04-10T16:36:42.5203092Z [command]/usr/bin/git init /home/runner/work/flixopt/flixopt
+2025-04-10T16:36:42.5266614Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-10T16:36:42.5267782Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-10T16:36:42.5268869Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-10T16:36:42.5269572Z hint:
+2025-04-10T16:36:42.5270338Z hint: 	git config --global init.defaultBranch <name>
+2025-04-10T16:36:42.5271289Z hint:
+2025-04-10T16:36:42.5272120Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-10T16:36:42.5273110Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-10T16:36:42.5273927Z hint:
+2025-04-10T16:36:42.5274418Z hint: 	git branch -m <name>
+2025-04-10T16:36:42.5275209Z Initialized empty Git repository in /home/runner/work/flixopt/flixopt/.git/
+2025-04-10T16:36:42.5282437Z [command]/usr/bin/git remote add origin https://github.com/flixOpt/flixopt
+2025-04-10T16:36:42.5316026Z ##[endgroup]
+2025-04-10T16:36:42.5316858Z ##[group]Disabling automatic garbage collection
+2025-04-10T16:36:42.5319937Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-10T16:36:42.5347996Z ##[endgroup]
+2025-04-10T16:36:42.5348631Z ##[group]Setting up auth
+2025-04-10T16:36:42.5355060Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-10T16:36:42.5386683Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-10T16:36:42.5663981Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-10T16:36:42.5697303Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-10T16:36:42.5932214Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-10T16:36:42.5969466Z ##[endgroup]
+2025-04-10T16:36:42.5970894Z ##[group]Fetching the repository
+2025-04-10T16:36:42.5980280Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +41ffcb95e7b6779a3d38fc0bf4dd8b5be6db4307:refs/remotes/pull/234/merge
+2025-04-10T16:36:43.3372053Z From https://github.com/flixOpt/flixopt
+2025-04-10T16:36:43.3374570Z  * [new ref]         41ffcb95e7b6779a3d38fc0bf4dd8b5be6db4307 -> pull/234/merge
+2025-04-10T16:36:43.3397474Z ##[endgroup]
+2025-04-10T16:36:43.3398678Z ##[group]Determining the checkout info
+2025-04-10T16:36:43.3400514Z ##[endgroup]
+2025-04-10T16:36:43.3406211Z [command]/usr/bin/git sparse-checkout disable
+2025-04-10T16:36:43.3447047Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-10T16:36:43.3476356Z ##[group]Checking out the ref
+2025-04-10T16:36:43.3481226Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/234/merge
+2025-04-10T16:36:43.3796580Z Note: switching to 'refs/remotes/pull/234/merge'.
+2025-04-10T16:36:43.3797749Z 
+2025-04-10T16:36:43.3798608Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-10T16:36:43.3800729Z changes and commit them, and you can discard any commits you make in this
+2025-04-10T16:36:43.3802025Z state without impacting any branches by switching back to a branch.
+2025-04-10T16:36:43.3802790Z 
+2025-04-10T16:36:43.3803315Z If you want to create a new branch to retain commits you create, you may
+2025-04-10T16:36:43.3804911Z do so (now or later) by using -c with the switch command. Example:
+2025-04-10T16:36:43.3806091Z 
+2025-04-10T16:36:43.3806399Z   git switch -c <new-branch-name>
+2025-04-10T16:36:43.3806875Z 
+2025-04-10T16:36:43.3807172Z Or undo this operation with:
+2025-04-10T16:36:43.3807627Z 
+2025-04-10T16:36:43.3807888Z   git switch -
+2025-04-10T16:36:43.3808276Z 
+2025-04-10T16:36:43.3808944Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-10T16:36:43.3810080Z 
+2025-04-10T16:36:43.3811100Z HEAD is now at 41ffcb9 Merge dd344500bcf3395e615b13e5b18e17e15a4343ef into 1c568136be75700e53e9b8f7855bf57872d86e3d
+2025-04-10T16:36:43.3814230Z ##[endgroup]
+2025-04-10T16:36:43.3845676Z [command]/usr/bin/git log -1 --format=%H
+2025-04-10T16:36:43.3867833Z 41ffcb95e7b6779a3d38fc0bf4dd8b5be6db4307
+2025-04-10T16:36:43.4173645Z ##[group]Run actions/setup-python@v4
+2025-04-10T16:36:43.4174825Z with:
+2025-04-10T16:36:43.4175630Z   python-version: 3.11
+2025-04-10T16:36:43.4176577Z   check-latest: false
+2025-04-10T16:36:43.4177783Z   token: ***
+2025-04-10T16:36:43.4178672Z   update-environment: true
+2025-04-10T16:36:43.4179699Z   allow-prereleases: false
+2025-04-10T16:36:43.4181001Z ##[endgroup]
+2025-04-10T16:36:43.5428260Z ##[group]Installed versions
+2025-04-10T16:36:43.5497780Z Successfully set up CPython (3.11.11)
+2025-04-10T16:36:43.5500787Z ##[endgroup]
+2025-04-10T16:36:43.5635169Z ##[group]Run python -m pip install --upgrade pip
+2025-04-10T16:36:43.5636640Z [36;1mpython -m pip install --upgrade pip[0m
+2025-04-10T16:36:43.5637850Z [36;1mpip install ruff[0m
+2025-04-10T16:36:43.5753481Z shell: /usr/bin/bash -e {0}
+2025-04-10T16:36:43.5754465Z env:
+2025-04-10T16:36:43.5755472Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T16:36:43.5757239Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-04-10T16:36:43.5758966Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T16:36:43.5760675Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T16:36:43.5762234Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T16:36:43.5763821Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-04-10T16:36:43.5765116Z ##[endgroup]
+2025-04-10T16:36:44.2105996Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (25.0.1)
+2025-04-10T16:36:45.0932212Z Collecting ruff
+2025-04-10T16:36:45.1305974Z   Downloading ruff-0.11.4-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (25 kB)
+2025-04-10T16:36:45.1519968Z Downloading ruff-0.11.4-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.3 MB)
+2025-04-10T16:36:45.2576603Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.3/11.3 MB 131.5 MB/s eta 0:00:00
+2025-04-10T16:36:45.2787477Z Installing collected packages: ruff
+2025-04-10T16:36:45.4392128Z Successfully installed ruff-0.11.4
+2025-04-10T16:36:45.5400758Z ##[group]Run ruff check .
+2025-04-10T16:36:45.5401077Z [36;1mruff check .[0m
+2025-04-10T16:36:45.5459113Z shell: /usr/bin/bash -e {0}
+2025-04-10T16:36:45.5459403Z env:
+2025-04-10T16:36:45.5459678Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T16:36:45.5460384Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-04-10T16:36:45.5460812Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T16:36:45.5461215Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T16:36:45.5461619Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-04-10T16:36:45.5462009Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-04-10T16:36:45.5462330Z ##[endgroup]
+2025-04-10T16:36:45.5730871Z tests/test_plots.py:6:1: I001 [*] Import block is un-sorted or un-formatted
+2025-04-10T16:36:45.5731752Z    |
+2025-04-10T16:36:45.5731959Z  4 |   """
+2025-04-10T16:36:45.5732152Z  5 |
+2025-04-10T16:36:45.5732447Z  6 | / import unittest
+2025-04-10T16:36:45.5732719Z  7 | | from typing import Optional
+2025-04-10T16:36:45.5732982Z  8 | |
+2025-04-10T16:36:45.5733223Z  9 | | import matplotlib.pyplot as plt
+2025-04-10T16:36:45.5733870Z 10 | | import numpy as np
+2025-04-10T16:36:45.5734135Z 11 | | import pandas as pd
+2025-04-10T16:36:45.5734384Z 12 | | import plotly
+2025-04-10T16:36:45.5734628Z 13 | | import pytest
+2025-04-10T16:36:45.5734844Z 14 | |
+2025-04-10T16:36:45.5735079Z 15 | | from flixopt import plotting
+2025-04-10T16:36:45.5735360Z    | |____________________________^ I001
+2025-04-10T16:36:45.5735606Z 16 |
+2025-04-10T16:36:45.5735806Z 17 |   @pytest.mark.slow
+2025-04-10T16:36:45.5736025Z    |
+2025-04-10T16:36:45.5736223Z    = help: Organize imports
+2025-04-10T16:36:45.5736377Z 
+2025-04-10T16:36:45.5736470Z Found 1 error.
+2025-04-10T16:36:45.5736699Z [*] 1 fixable with the `--fix` option.
+2025-04-10T16:36:45.5756711Z ##[error]Process completed with exit code 1.
+2025-04-10T16:36:45.5873345Z Post job cleanup.
+2025-04-10T16:36:45.6822607Z [command]/usr/bin/git version
+2025-04-10T16:36:45.6867497Z git version 2.49.0
+2025-04-10T16:36:45.6913262Z Temporarily overriding HOME='/home/runner/work/_temp/af360f8b-48ee-4e65-88a1-ac5df444973f' before making global git config changes
+2025-04-10T16:36:45.6914625Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-10T16:36:45.6918438Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/flixopt/flixopt
+2025-04-10T16:36:45.6953447Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-10T16:36:45.6985747Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-10T16:36:45.7232149Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-10T16:36:45.7254142Z http.https://github.com/.extraheader
+2025-04-10T16:36:45.7266345Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-10T16:36:45.7298435Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-10T16:36:45.7634140Z Cleaning up orphan processes

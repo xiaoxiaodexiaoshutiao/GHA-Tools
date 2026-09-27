@@ -1,0 +1,399 @@
+﻿2025-03-20T18:10:00.3901458Z Current runner version: '2.322.0'
+2025-03-20T18:10:00.3936937Z ##[group]Operating System
+2025-03-20T18:10:00.3938095Z Microsoft Windows Server 2022
+2025-03-20T18:10:00.3938983Z 10.0.20348
+2025-03-20T18:10:00.3939713Z Datacenter
+2025-03-20T18:10:00.3940413Z ##[endgroup]
+2025-03-20T18:10:00.3941176Z ##[group]Runner Image
+2025-03-20T18:10:00.3941982Z Image: windows-2022
+2025-03-20T18:10:00.3942824Z Version: 20250309.1.0
+2025-03-20T18:10:00.3945001Z Included Software: https://github.com/actions/runner-images/blob/win22/20250309.1/images/windows/Windows2022-Readme.md
+2025-03-20T18:10:00.3947747Z Image Release: https://github.com/actions/runner-images/releases/tag/win22%2F20250309.1
+2025-03-20T18:10:00.3949387Z ##[endgroup]
+2025-03-20T18:10:00.3950117Z ##[group]Runner Image Provisioner
+2025-03-20T18:10:00.3951246Z 2.0.422.1
+2025-03-20T18:10:00.3951957Z ##[endgroup]
+2025-03-20T18:10:00.3955025Z ##[group]GITHUB_TOKEN Permissions
+2025-03-20T18:10:00.3957075Z Actions: read
+2025-03-20T18:10:00.3957985Z Attestations: read
+2025-03-20T18:10:00.3959052Z Checks: read
+2025-03-20T18:10:00.3959486Z Contents: read
+2025-03-20T18:10:00.3959949Z Deployments: read
+2025-03-20T18:10:00.3960429Z Discussions: read
+2025-03-20T18:10:00.3960867Z Issues: read
+2025-03-20T18:10:00.3961311Z Metadata: read
+2025-03-20T18:10:00.3961728Z Models: read
+2025-03-20T18:10:00.3962184Z Packages: read
+2025-03-20T18:10:00.3962614Z Pages: read
+2025-03-20T18:10:00.3963060Z PullRequests: read
+2025-03-20T18:10:00.3963540Z RepositoryProjects: read
+2025-03-20T18:10:00.3964314Z SecurityEvents: read
+2025-03-20T18:10:00.3965104Z Statuses: read
+2025-03-20T18:10:00.3965853Z ##[endgroup]
+2025-03-20T18:10:00.3968604Z Secret source: None
+2025-03-20T18:10:00.3969649Z Prepare workflow directory
+2025-03-20T18:10:00.4356230Z Prepare all required actions
+2025-03-20T18:10:00.4394035Z Getting action download info
+2025-03-20T18:10:00.6463271Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-20T18:10:01.1393878Z Download action repository 'seanmiddleditch/gha-setup-ninja@master' (SHA:3b1f8f94a2f8254bd26914c4ab9474d4f0015f67)
+2025-03-20T18:10:01.4540015Z Complete job name: Windows 64bit C++20 MSVC
+2025-03-20T18:10:01.5822228Z ##[group]Run actions/checkout@v4
+2025-03-20T18:10:01.5823311Z with:
+2025-03-20T18:10:01.5823793Z   submodules: recursive
+2025-03-20T18:10:01.5824395Z   repository: free-audio/clap-wrapper
+2025-03-20T18:10:01.5825285Z   token: ***
+2025-03-20T18:10:01.5825771Z   ssh-strict: true
+2025-03-20T18:10:01.5826282Z   ssh-user: git
+2025-03-20T18:10:01.5826803Z   persist-credentials: true
+2025-03-20T18:10:01.5827399Z   clean: true
+2025-03-20T18:10:01.5827925Z   sparse-checkout-cone-mode: true
+2025-03-20T18:10:01.5828577Z   fetch-depth: 1
+2025-03-20T18:10:01.5829084Z   fetch-tags: false
+2025-03-20T18:10:01.5829598Z   show-progress: true
+2025-03-20T18:10:01.5830127Z   lfs: false
+2025-03-20T18:10:01.5830624Z   set-safe-directory: true
+2025-03-20T18:10:01.5831389Z ##[endgroup]
+2025-03-20T18:10:02.3694168Z Syncing repository: free-audio/clap-wrapper
+2025-03-20T18:10:02.3971037Z ##[group]Getting Git version info
+2025-03-20T18:10:02.3972646Z Working directory is 'D:\a\clap-wrapper\clap-wrapper'
+2025-03-20T18:10:02.7974863Z [command]"C:\Program Files\Git\bin\git.exe" version
+2025-03-20T18:10:02.8973947Z git version 2.48.1.windows.1
+2025-03-20T18:10:02.9483818Z ##[endgroup]
+2025-03-20T18:10:02.9515065Z Temporarily overriding HOME='D:\a\_temp\0e7585fd-8e41-48c4-98c6-ee5241ccad1f' before making global git config changes
+2025-03-20T18:10:02.9516403Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-20T18:10:02.9528813Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\clap-wrapper\clap-wrapper
+2025-03-20T18:10:03.0488930Z Deleting the contents of 'D:\a\clap-wrapper\clap-wrapper'
+2025-03-20T18:10:03.0494794Z ##[group]Initializing the repository
+2025-03-20T18:10:03.0507125Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\clap-wrapper\clap-wrapper
+2025-03-20T18:10:03.1848105Z Initialized empty Git repository in D:/a/clap-wrapper/clap-wrapper/.git/
+2025-03-20T18:10:03.1892801Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/free-audio/clap-wrapper
+2025-03-20T18:10:03.2498505Z ##[endgroup]
+2025-03-20T18:10:03.2499395Z ##[group]Disabling automatic garbage collection
+2025-03-20T18:10:03.2511296Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2025-03-20T18:10:03.2826929Z ##[endgroup]
+2025-03-20T18:10:03.2827686Z ##[group]Setting up auth
+2025-03-20T18:10:03.2828472Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2025-03-20T18:10:03.3117940Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2025-03-20T18:10:05.5307037Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-20T18:10:05.5557534Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2025-03-20T18:10:06.0446598Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2025-03-20T18:10:06.0709108Z ##[endgroup]
+2025-03-20T18:10:06.0710126Z ##[group]Fetching the repository
+2025-03-20T18:10:06.0725515Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +86aad9b39bae7c79d9d4967ea100610f5bff3b93:refs/remotes/pull/368/merge
+2025-03-20T18:10:09.6117425Z From https://github.com/free-audio/clap-wrapper
+2025-03-20T18:10:09.6119695Z  * [new ref]         86aad9b39bae7c79d9d4967ea100610f5bff3b93 -> pull/368/merge
+2025-03-20T18:10:09.6531506Z ##[endgroup]
+2025-03-20T18:10:09.6532892Z ##[group]Determining the checkout info
+2025-03-20T18:10:09.6538019Z ##[endgroup]
+2025-03-20T18:10:09.6560952Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2025-03-20T18:10:09.7069760Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2025-03-20T18:10:09.7388315Z ##[group]Checking out the ref
+2025-03-20T18:10:09.7401633Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force refs/remotes/pull/368/merge
+2025-03-20T18:10:09.8267000Z Note: switching to 'refs/remotes/pull/368/merge'.
+2025-03-20T18:10:09.8267716Z 
+2025-03-20T18:10:09.8268200Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-20T18:10:09.8269293Z changes and commit them, and you can discard any commits you make in this
+2025-03-20T18:10:09.8270265Z state without impacting any branches by switching back to a branch.
+2025-03-20T18:10:09.8270965Z 
+2025-03-20T18:10:09.8271371Z If you want to create a new branch to retain commits you create, you may
+2025-03-20T18:10:09.8272076Z do so (now or later) by using -c with the switch command. Example:
+2025-03-20T18:10:09.8272523Z 
+2025-03-20T18:10:09.8272708Z   git switch -c <new-branch-name>
+2025-03-20T18:10:09.8272995Z 
+2025-03-20T18:10:09.8273140Z Or undo this operation with:
+2025-03-20T18:10:09.8273402Z 
+2025-03-20T18:10:09.8273530Z   git switch -
+2025-03-20T18:10:09.8273757Z 
+2025-03-20T18:10:09.8274101Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-20T18:10:09.8274627Z 
+2025-03-20T18:10:09.8275241Z HEAD is now at 86aad9b Merge 0f9bd425c70deabf0796f91cadaa32560c06b5b0 into a610e1a0821d54f2c64d1f13fd737ba2ccf314ab
+2025-03-20T18:10:09.8339408Z ##[endgroup]
+2025-03-20T18:10:09.8340210Z ##[group]Setting up auth for fetching submodules
+2025-03-20T18:10:09.8372321Z [command]"C:\Program Files\Git\bin\git.exe" config --global http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2025-03-20T18:10:09.8730885Z [command]"C:\Program Files\Git\bin\git.exe" config --global --unset-all url.https://github.com/.insteadOf
+2025-03-20T18:10:09.9054821Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add url.https://github.com/.insteadOf git@github.com:
+2025-03-20T18:10:09.9411721Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add url.https://github.com/.insteadOf org-9671159@github.com:
+2025-03-20T18:10:09.9841353Z ##[endgroup]
+2025-03-20T18:10:09.9841908Z ##[group]Fetching submodules
+2025-03-20T18:10:09.9856352Z [command]"C:\Program Files\Git\bin\git.exe" submodule sync --recursive
+2025-03-20T18:10:10.4566267Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 submodule update --init --force --depth=1 --recursive
+2025-03-20T18:10:10.9398084Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local gc.auto 0"
+2025-03-20T18:10:11.3737443Z ##[endgroup]
+2025-03-20T18:10:11.3738053Z ##[group]Persisting credentials for submodules
+2025-03-20T18:10:11.3756767Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'url\.https\:\/\/github\.com\/\.insteadOf' && git config --local --unset-all 'url.https://github.com/.insteadOf' || :\""
+2025-03-20T18:10:11.7982644Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local 'http.https://github.com/.extraheader' 'AUTHORIZATION: basic ***' && git config --local --show-origin --name-only --get-regexp remote.origin.url\""
+2025-03-20T18:10:12.2043345Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --add 'url.https://github.com/.insteadOf' 'git@github.com:'"
+2025-03-20T18:10:12.5994406Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --add 'url.https://github.com/.insteadOf' 'org-9671159@github.com:'"
+2025-03-20T18:10:12.9893151Z ##[endgroup]
+2025-03-20T18:10:13.0162235Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2025-03-20T18:10:13.0375605Z 86aad9b39bae7c79d9d4967ea100610f5bff3b93
+2025-03-20T18:10:13.0779305Z ##[group]Run cmake -S . -B ./build -A x64 -DCLAP_WRAPPER_CXX_STANDARD=20 -DCMAKE_BUILD_TYPE=Debug -DCLAP_WRAPPER_DOWNLOAD_DEPENDENCIES=TRUE -DCLAP_WRAPPER_BUILD_AUV2=TRUE  -DCLAP_WRAPPER_BUILD_STANDALONE=TRUE -DCLAP_WRAPPER_OUTPUT_NAME=downloadplug
+2025-03-20T18:10:13.0781706Z [36;1mcmake -S . -B ./build -A x64 -DCLAP_WRAPPER_CXX_STANDARD=20 -DCMAKE_BUILD_TYPE=Debug -DCLAP_WRAPPER_DOWNLOAD_DEPENDENCIES=TRUE -DCLAP_WRAPPER_BUILD_AUV2=TRUE  -DCLAP_WRAPPER_BUILD_STANDALONE=TRUE -DCLAP_WRAPPER_OUTPUT_NAME=downloadplug[0m
+2025-03-20T18:10:13.0782995Z [36;1mcmake --build ./build --config Debug[0m
+2025-03-20T18:10:13.0823963Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-03-20T18:10:13.0824410Z ##[endgroup]
+2025-03-20T18:10:14.9169887Z -- Building for: Visual Studio 17 2022
+2025-03-20T18:10:15.0044149Z -- [clap-wrapper]: OSX_DEPLOYEMNT_TARGET is undefined. Setting to 10.13
+2025-03-20T18:10:15.0046226Z -- [clap-wrapper]: CMAKE_OSX_ARCHITECTURES is not set. Using native build for clap wrapper
+2025-03-20T18:10:15.0049433Z -- CMAKE_MSVC_RUNTIME_LIBRARY not defined. Setting to static link
+2025-03-20T18:10:15.4640226Z -- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.20348.
+2025-03-20T18:10:48.0964986Z -- The C compiler identification is MSVC 19.43.34808.0
+2025-03-20T18:10:51.1998210Z -- The CXX compiler identification is MSVC 19.43.34808.0
+2025-03-20T18:10:51.3448283Z -- Detecting C compiler ABI info
+2025-03-20T18:11:02.1480858Z -- Detecting C compiler ABI info - done
+2025-03-20T18:11:02.2114279Z -- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/cl.exe - skipped
+2025-03-20T18:11:02.2123385Z -- Detecting C compile features
+2025-03-20T18:11:02.2300217Z -- Detecting C compile features - done
+2025-03-20T18:11:02.2770743Z -- Detecting CXX compiler ABI info
+2025-03-20T18:11:03.0459677Z -- Detecting CXX compiler ABI info - done
+2025-03-20T18:11:03.1039759Z -- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/cl.exe - skipped
+2025-03-20T18:11:03.1044366Z -- Detecting CXX compile features
+2025-03-20T18:11:03.1053342Z -- Detecting CXX compile features - done
+2025-03-20T18:11:03.1076513Z -- clap-wrapper: CLAP_WRAPPER_VERSION is 0.11.0
+2025-03-20T18:11:03.1077266Z -- clap-wrapper: Building with C++ standard 20
+2025-03-20T18:11:03.1085278Z -- clap-wrapper: source dir is D:/a/clap-wrapper/clap-wrapper, platform is WIN
+2025-03-20T18:11:03.1090634Z -- clap-wrapper: including CPM
+2025-03-20T18:11:03.5420324Z -- CPM: Adding package clap@1.2.0 (1.2.0)
+2025-03-20T18:11:03.5454630Z -- Populating clap
+2025-03-20T18:11:03.6843197Z -- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.20348.
+2025-03-20T18:11:04.1654275Z -- Configuring done (0.5s)
+2025-03-20T18:11:04.1806068Z -- Generating done (0.0s)
+2025-03-20T18:11:04.1811525Z -- Build files have been written to: D:/a/clap-wrapper/clap-wrapper/build/_deps/clap-subbuild
+2025-03-20T18:11:04.2915991Z MSBuild version 17.13.15+18b3035f6 for .NET Framework
+2025-03-20T18:11:04.3288780Z 
+2025-03-20T18:11:04.8218344Z   1>Checking Build System
+2025-03-20T18:11:04.9545126Z   1>Creating directories for 'clap-populate'
+2025-03-20T18:11:05.0275618Z   Performing download step (git clone) for 'clap-populate'
+2025-03-20T18:11:05.0837012Z   Cloning into 'clap'...
+2025-03-20T18:11:05.5905904Z   HEAD is now at df8f16c Merge pull request #371 from free-audio/next
+2025-03-20T18:11:06.0469435Z   Building Custom Rule D:/a/clap-wrapper/clap-wrapper/build/_deps/clap-subbuild/CMakeLists.txt
+2025-03-20T18:11:06.0672817Z   Performing update step for 'clap-populate'
+2025-03-20T18:11:06.1510291Z   -- Already at requested tag: 1.2.0
+2025-03-20T18:11:06.1570174Z   No patch step for 'clap-populate'
+2025-03-20T18:11:06.1890223Z   No configure step for 'clap-populate'
+2025-03-20T18:11:06.2209582Z   No build step for 'clap-populate'
+2025-03-20T18:11:06.2528999Z   No install step for 'clap-populate'
+2025-03-20T18:11:06.2842593Z   No test step for 'clap-populate'
+2025-03-20T18:11:06.3146757Z   Completed 'clap-populate'
+2025-03-20T18:11:06.4373867Z   Building Custom Rule D:/a/clap-wrapper/clap-wrapper/build/_deps/clap-subbuild/CMakeLists.txt
+2025-03-20T18:11:06.4880897Z -- clap-wrapper: Configuring clap sdk
+2025-03-20T18:11:06.4896862Z -- CLAP version: 1.2.0
+2025-03-20T18:11:06.5724295Z -- clap-wrapper: using included fmt library since no fmt-header-only available
+2025-03-20T18:11:06.5744132Z -- clap-wrapper: including CPM
+2025-03-20T18:11:06.5767854Z -- CPM: Adding package vst3sdk@3.7.6 (v3.7.6_build_18)
+2025-03-20T18:11:06.5782971Z -- Populating vst3sdk
+2025-03-20T18:11:06.6138722Z -- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.20348.
+2025-03-20T18:11:07.0003192Z -- Configuring done (0.4s)
+2025-03-20T18:11:07.0145565Z -- Generating done (0.0s)
+2025-03-20T18:11:07.0151163Z -- Build files have been written to: D:/a/clap-wrapper/clap-wrapper/build/_deps/vst3sdk-subbuild
+2025-03-20T18:11:07.1055480Z MSBuild version 17.13.15+18b3035f6 for .NET Framework
+2025-03-20T18:11:07.1329277Z 
+2025-03-20T18:11:07.4354010Z   1>Checking Build System
+2025-03-20T18:11:07.5515535Z   1>Creating directories for 'vst3sdk-populate'
+2025-03-20T18:11:07.6107080Z   Performing download step (git clone) for 'vst3sdk-populate'
+2025-03-20T18:11:07.6652363Z   Cloning into 'vst3sdk'...
+2025-03-20T18:11:07.8935345Z   HEAD is now at 05c4a97 VST SDK 3.7.6
+2025-03-20T18:11:08.3207763Z   Submodule 'base' (https://github.com/steinbergmedia/vst3_base) registered for path 'base'
+2025-03-20T18:11:08.3209409Z   Submodule 'pluginterfaces' (https://github.com/steinbergmedia/vst3_pluginterfaces) registered for path 'pluginterfaces'
+2025-03-20T18:11:08.3211546Z   Submodule 'public.sdk' (https://github.com/steinbergmedia/vst3_public_sdk) registered for path 'public.sdk'
+2025-03-20T18:11:08.5513088Z   Cloning into 'D:/a/clap-wrapper/clap-wrapper/build/cpm/vst3sdk/base'...
+2025-03-20T18:11:08.7543833Z   Cloning into 'D:/a/clap-wrapper/clap-wrapper/build/cpm/vst3sdk/pluginterfaces'...
+2025-03-20T18:11:10.0067653Z   Cloning into 'D:/a/clap-wrapper/clap-wrapper/build/cpm/vst3sdk/public.sdk'...
+2025-03-20T18:11:10.0886636Z   Submodule path 'base': checked out 'f44797b42eeea70fe05741fe76626289ebb8463a'
+2025-03-20T18:11:10.1644259Z   Submodule path 'pluginterfaces': checked out 'af466a442dc3dd8fd24399edd8a68fe36594c7b1'
+2025-03-20T18:11:10.4572730Z   Submodule path 'public.sdk': checked out '55d7ed3c6a25496b41fc4440aaad4fae1b967d37'
+2025-03-20T18:11:10.5120793Z   Building Custom Rule D:/a/clap-wrapper/clap-wrapper/build/_deps/vst3sdk-subbuild/CMakeLists.txt
+2025-03-20T18:11:10.5324060Z   Performing update step for 'vst3sdk-populate'
+2025-03-20T18:11:10.6147444Z   -- Already at requested tag: v3.7.6_build_18
+2025-03-20T18:11:10.6203346Z   No patch step for 'vst3sdk-populate'
+2025-03-20T18:11:10.6520395Z   No configure step for 'vst3sdk-populate'
+2025-03-20T18:11:10.6842011Z   No build step for 'vst3sdk-populate'
+2025-03-20T18:11:10.7162544Z   No install step for 'vst3sdk-populate'
+2025-03-20T18:11:10.7597306Z   No test step for 'vst3sdk-populate'
+2025-03-20T18:11:10.8025435Z   Completed 'vst3sdk-populate'
+2025-03-20T18:11:10.9356317Z   Building Custom Rule D:/a/clap-wrapper/clap-wrapper/build/_deps/vst3sdk-subbuild/CMakeLists.txt
+2025-03-20T18:11:10.9878414Z -- clap-wrapper: VST3 version: 3.7.6; VST3 Root D:/a/clap-wrapper/clap-wrapper/build/cpm/vst3sdk
+2025-03-20T18:11:10.9886134Z -- clap-wrapper: Adding VST3 Wrapper to target downloadplug_as_vst3 generating 'downloadplug.vst3'
+2025-03-20T18:11:10.9889486Z -- clap-wrapper: Building VST3 Single File
+2025-03-20T18:11:10.9892735Z -- clap-wrapper: including CPM
+2025-03-20T18:11:10.9917933Z -- CPM: Adding package rtaudio@6.0.1 (6.0.1)
+2025-03-20T18:11:10.9931495Z -- Populating rtaudio
+2025-03-20T18:11:11.0298318Z -- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.20348.
+2025-03-20T18:11:11.4333479Z -- Configuring done (0.4s)
+2025-03-20T18:11:11.4474970Z -- Generating done (0.0s)
+2025-03-20T18:11:11.4480985Z -- Build files have been written to: D:/a/clap-wrapper/clap-wrapper/build/_deps/rtaudio-subbuild
+2025-03-20T18:11:11.5391881Z MSBuild version 17.13.15+18b3035f6 for .NET Framework
+2025-03-20T18:11:11.5653655Z 
+2025-03-20T18:11:11.8550273Z   1>Checking Build System
+2025-03-20T18:11:11.9720113Z   1>Creating directories for 'rtaudio-populate'
+2025-03-20T18:11:12.0310556Z   Performing download step (git clone) for 'rtaudio-populate'
+2025-03-20T18:11:12.0839830Z   Cloning into 'rtaudio'...
+2025-03-20T18:11:12.6533717Z   HEAD is now at b4f0490 Release 6.0.1 with soversion bump to 7.
+2025-03-20T18:11:13.1391801Z   Building Custom Rule D:/a/clap-wrapper/clap-wrapper/build/_deps/rtaudio-subbuild/CMakeLists.txt
+2025-03-20T18:11:13.1565991Z   Performing update step for 'rtaudio-populate'
+2025-03-20T18:11:13.2314652Z   -- Already at requested tag: 6.0.1
+2025-03-20T18:11:13.2363133Z   No patch step for 'rtaudio-populate'
+2025-03-20T18:11:13.2645371Z   No configure step for 'rtaudio-populate'
+2025-03-20T18:11:13.2938146Z   No build step for 'rtaudio-populate'
+2025-03-20T18:11:13.3230458Z   No install step for 'rtaudio-populate'
+2025-03-20T18:11:13.3525084Z   No test step for 'rtaudio-populate'
+2025-03-20T18:11:13.3819330Z   Completed 'rtaudio-populate'
+2025-03-20T18:11:13.4991221Z   Building Custom Rule D:/a/clap-wrapper/clap-wrapper/build/_deps/rtaudio-subbuild/CMakeLists.txt
+2025-03-20T18:11:19.5216119Z -- Could NOT find PkgConfig (missing: PKG_CONFIG_EXECUTABLE) 
+2025-03-20T18:11:19.5326591Z -- Looking for gettimeofday
+2025-03-20T18:11:20.3888723Z -- Looking for gettimeofday - not found
+2025-03-20T18:11:20.4038521Z -- Compiling with support for: wasapi
+2025-03-20T18:11:20.4092968Z -- clap-wrapper: including CPM
+2025-03-20T18:11:20.4116419Z -- CPM: Adding package rtmidi@6.0.0 (6.0.0)
+2025-03-20T18:11:20.4129042Z -- Populating rtmidi
+2025-03-20T18:11:20.4496690Z -- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.20348.
+2025-03-20T18:11:20.8632415Z -- Configuring done (0.4s)
+2025-03-20T18:11:20.8782497Z -- Generating done (0.0s)
+2025-03-20T18:11:20.8787710Z -- Build files have been written to: D:/a/clap-wrapper/clap-wrapper/build/_deps/rtmidi-subbuild
+2025-03-20T18:11:20.9946281Z MSBuild version 17.13.15+18b3035f6 for .NET Framework
+2025-03-20T18:11:21.0481109Z 
+2025-03-20T18:11:21.3986855Z   1>Checking Build System
+2025-03-20T18:11:21.5324671Z   1>Creating directories for 'rtmidi-populate'
+2025-03-20T18:11:21.6031805Z   Performing download step (git clone) for 'rtmidi-populate'
+2025-03-20T18:11:21.6662485Z   Cloning into 'rtmidi'...
+2025-03-20T18:11:22.0329279Z   HEAD is now at 1e5b499 Tiny grammatical fix in tutorial.txt.
+2025-03-20T18:11:22.5731982Z   Building Custom Rule D:/a/clap-wrapper/clap-wrapper/build/_deps/rtmidi-subbuild/CMakeLists.txt
+2025-03-20T18:11:22.5935209Z   Performing update step for 'rtmidi-populate'
+2025-03-20T18:11:22.6813598Z   -- Already at requested tag: 6.0.0
+2025-03-20T18:11:22.6878943Z   No patch step for 'rtmidi-populate'
+2025-03-20T18:11:22.7218773Z   No configure step for 'rtmidi-populate'
+2025-03-20T18:11:22.7549845Z   No build step for 'rtmidi-populate'
+2025-03-20T18:11:22.7883715Z   No install step for 'rtmidi-populate'
+2025-03-20T18:11:22.8227110Z   No test step for 'rtmidi-populate'
+2025-03-20T18:11:22.8579202Z   Completed 'rtmidi-populate'
+2025-03-20T18:11:22.9898244Z   Building Custom Rule D:/a/clap-wrapper/clap-wrapper/build/_deps/rtmidi-subbuild/CMakeLists.txt
+2025-03-20T18:11:23.2613448Z -- Could NOT find PkgConfig (missing: PKG_CONFIG_EXECUTABLE) 
+2025-03-20T18:11:23.2707662Z -- Could NOT find ALSA (missing: ALSA_LIBRARY ALSA_INCLUDE_DIR) 
+2025-03-20T18:11:23.2755009Z -- Compiling with support for: winmm
+2025-03-20T18:11:23.2798193Z -- clap-wrapper: including CPM
+2025-03-20T18:11:23.2822850Z -- CPM: Adding package wil@1.0.240803.1 (v1.0.240803.1)
+2025-03-20T18:11:23.2867646Z -- Populating wil
+2025-03-20T18:11:23.3236937Z -- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.20348.
+2025-03-20T18:11:23.7467226Z -- Configuring done (0.4s)
+2025-03-20T18:11:23.7621029Z -- Generating done (0.0s)
+2025-03-20T18:11:23.7627628Z -- Build files have been written to: D:/a/clap-wrapper/clap-wrapper/build/_deps/wil-subbuild
+2025-03-20T18:11:23.8649767Z MSBuild version 17.13.15+18b3035f6 for .NET Framework
+2025-03-20T18:11:23.9036650Z 
+2025-03-20T18:11:24.2294945Z   1>Checking Build System
+2025-03-20T18:11:24.3440038Z   1>Creating directories for 'wil-populate'
+2025-03-20T18:11:24.4033740Z   Performing download step (git clone) for 'wil-populate'
+2025-03-20T18:11:24.4568432Z   Cloning into 'wil'...
+2025-03-20T18:11:25.2188263Z   HEAD is now at f0c6a81 Sync with OS (#457)
+2025-03-20T18:11:25.6744489Z   Building Custom Rule D:/a/clap-wrapper/clap-wrapper/build/_deps/wil-subbuild/CMakeLists.txt
+2025-03-20T18:11:25.6948902Z   Performing update step for 'wil-populate'
+2025-03-20T18:11:25.7751694Z   -- Already at requested tag: v1.0.240803.1
+2025-03-20T18:11:25.7811522Z   No patch step for 'wil-populate'
+2025-03-20T18:11:25.8122167Z   No configure step for 'wil-populate'
+2025-03-20T18:11:25.8431163Z   No build step for 'wil-populate'
+2025-03-20T18:11:25.8731344Z   No install step for 'wil-populate'
+2025-03-20T18:11:25.9032376Z   No test step for 'wil-populate'
+2025-03-20T18:11:25.9340739Z   Completed 'wil-populate'
+2025-03-20T18:11:26.0588449Z   Building Custom Rule D:/a/clap-wrapper/clap-wrapper/build/_deps/wil-subbuild/CMakeLists.txt
+2025-03-20T18:11:26.1074807Z -- Configuring done (71.2s)
+2025-03-20T18:11:26.2183879Z -- Generating done (0.1s)
+2025-03-20T18:11:26.2184453Z CMake Warning:
+2025-03-20T18:11:26.2184995Z   Manually-specified variables were not used by the project:
+2025-03-20T18:11:26.2185697Z 
+2025-03-20T18:11:26.2185813Z     CLAP_WRAPPER_BUILD_AUV2
+2025-03-20T18:11:26.2186037Z 
+2025-03-20T18:11:26.2186042Z 
+2025-03-20T18:11:26.2195755Z -- Build files have been written to: D:/a/clap-wrapper/clap-wrapper/build
+2025-03-20T18:11:26.3353322Z MSBuild version 17.13.15+18b3035f6 for .NET Framework
+2025-03-20T18:11:26.3645037Z 
+2025-03-20T18:11:26.6845889Z   1>Checking Build System
+2025-03-20T18:11:26.8546105Z   Building Custom Rule D:/a/clap-wrapper/clap-wrapper/CMakeLists.txt
+2025-03-20T18:11:26.9918409Z   baseiids.cpp
+2025-03-20T18:11:28.7224396Z   fbuffer.cpp
+2025-03-20T18:11:28.9076074Z   fdebug.cpp
+2025-03-20T18:11:34.4925512Z   fdynlib.cpp
+2025-03-20T18:11:34.9057092Z   fobject.cpp
+2025-03-20T18:11:35.2890051Z   fstreamer.cpp
+2025-03-20T18:11:35.4053340Z   fstring.cpp
+2025-03-20T18:11:36.8315653Z   timer.cpp
+2025-03-20T18:11:37.6188177Z   updatehandler.cpp
+2025-03-20T18:11:38.3206404Z   fcondition.cpp
+2025-03-20T18:11:38.6610289Z   flock.cpp
+2025-03-20T18:11:39.0214671Z   conststringtable.cpp
+2025-03-20T18:11:39.4555614Z   coreiids.cpp
+2025-03-20T18:11:39.5589690Z   funknown.cpp
+2025-03-20T18:11:40.0389199Z   ustring.cpp
+2025-03-20T18:11:40.0889489Z   commoniids.cpp
+2025-03-20T18:11:40.2156048Z   memorystream.cpp
+2025-03-20T18:11:40.3266494Z   openurl.cpp
+2025-03-20T18:11:40.7790202Z   pluginview.cpp
+2025-03-20T18:11:40.8764520Z   systemclipboard_win32.cpp
+2025-03-20T18:11:41.7420620Z   Generating Code...
+2025-03-20T18:11:42.2166520Z   Compiling...
+2025-03-20T18:11:42.2166795Z   threadchecker_linux.cpp
+2025-03-20T18:11:42.5967489Z   threadchecker_win32.cpp
+2025-03-20T18:11:43.3633817Z   dllmain.cpp
+2025-03-20T18:11:43.7158233Z   pluginfactory.cpp
+2025-03-20T18:11:43.8362132Z   moduleinit.cpp
+2025-03-20T18:11:44.4411963Z   vstinitiids.cpp
+2025-03-20T18:11:44.5749712Z   vstnoteexpressiontypes.cpp
+2025-03-20T18:11:45.0774857Z   vstsinglecomponenteffect.cpp
+2025-03-20T18:11:45.7952750Z   vstaudioeffect.cpp
+2025-03-20T18:11:46.2337816Z   vstcomponent.cpp
+2025-03-20T18:11:46.6595660Z   vstcomponentbase.cpp
+2025-03-20T18:11:46.7817433Z   vstbus.cpp
+2025-03-20T18:11:47.1890749Z   vstparameters.cpp
+2025-03-20T18:11:47.6517213Z   stringconvert.cpp
+2025-03-20T18:11:48.4639365Z   Generating Code...
+2025-03-20T18:11:49.0220367Z   base-sdk-vst3.vcxproj -> D:\a\clap-wrapper\clap-wrapper\build\Debug\base-sdk-vst3.lib
+2025-03-20T18:11:49.0963111Z   Building Custom Rule D:/a/clap-wrapper/clap-wrapper/CMakeLists.txt
+2025-03-20T18:11:49.1702654Z   clap_proxy.cpp
+2025-03-20T18:11:52.0791634Z   sha1.cpp
+2025-03-20T18:11:52.4673496Z   fsutil.cpp
+2025-03-20T18:11:55.8440760Z   Generating Code...
+2025-03-20T18:11:58.0743536Z D:\a\clap-wrapper\clap-wrapper\src\detail\clap\fsutil.cpp(191,10): error C2664: 'bool Clap::Library::getEntryFunction(HMODULE,const char *)': cannot convert argument 2 from 'const _Elem *' to 'const char *' [D:\a\clap-wrapper\clap-wrapper\build\clap-wrapper-shared-detail.vcxproj]
+2025-03-20T18:11:58.0747585Z D:\a\clap-wrapper\clap-wrapper\src\detail\clap\fsutil.cpp(191,10): error C2664:         with [D:\a\clap-wrapper\clap-wrapper\build\clap-wrapper-shared-detail.vcxproj]
+2025-03-20T18:11:58.0750420Z D:\a\clap-wrapper\clap-wrapper\src\detail\clap\fsutil.cpp(191,10): error C2664:         [ [D:\a\clap-wrapper\clap-wrapper\build\clap-wrapper-shared-detail.vcxproj]
+2025-03-20T18:11:58.0753264Z D:\a\clap-wrapper\clap-wrapper\src\detail\clap\fsutil.cpp(191,10): error C2664:             _Elem=char8_t [D:\a\clap-wrapper\clap-wrapper\build\clap-wrapper-shared-detail.vcxproj]
+2025-03-20T18:11:58.0756080Z D:\a\clap-wrapper\clap-wrapper\src\detail\clap\fsutil.cpp(191,10): error C2664:         ] [D:\a\clap-wrapper\clap-wrapper\build\clap-wrapper-shared-detail.vcxproj]
+2025-03-20T18:11:58.0784880Z       D:\a\clap-wrapper\clap-wrapper\src\detail\clap\fsutil.cpp(191,57):
+2025-03-20T18:11:58.0788237Z       Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast
+2025-03-20T18:11:58.0790414Z       D:\a\clap-wrapper\clap-wrapper\src\detail\clap\fsutil.h(96,8):
+2025-03-20T18:11:58.0791764Z       see declaration of 'Clap::Library::getEntryFunction'
+2025-03-20T18:11:58.0792844Z       D:\a\clap-wrapper\clap-wrapper\src\detail\clap\fsutil.cpp(191,10):
+2025-03-20T18:11:58.0794005Z       while trying to match the argument list '(HMODULE, const _Elem *)'
+2025-03-20T18:11:58.0794871Z           with
+2025-03-20T18:11:58.0795288Z           [
+2025-03-20T18:11:58.0795698Z               _Elem=char8_t
+2025-03-20T18:11:58.0796203Z           ]
+2025-03-20T18:11:58.0796581Z   
+2025-03-20T18:11:58.0799169Z D:\a\clap-wrapper\clap-wrapper\src\detail\clap\fsutil.cpp(314,15): error C2664: 'bool Clap::Library::getEntryFunction(HMODULE,const char *)': cannot convert argument 2 from 'const _Elem *' to 'const char *' [D:\a\clap-wrapper\clap-wrapper\build\clap-wrapper-shared-detail.vcxproj]
+2025-03-20T18:11:58.0803752Z D:\a\clap-wrapper\clap-wrapper\src\detail\clap\fsutil.cpp(314,15): error C2664:         with [D:\a\clap-wrapper\clap-wrapper\build\clap-wrapper-shared-detail.vcxproj]
+2025-03-20T18:11:58.0806539Z D:\a\clap-wrapper\clap-wrapper\src\detail\clap\fsutil.cpp(314,15): error C2664:         [ [D:\a\clap-wrapper\clap-wrapper\build\clap-wrapper-shared-detail.vcxproj]
+2025-03-20T18:11:58.0809369Z D:\a\clap-wrapper\clap-wrapper\src\detail\clap\fsutil.cpp(314,15): error C2664:             _Elem=char8_t [D:\a\clap-wrapper\clap-wrapper\build\clap-wrapper-shared-detail.vcxproj]
+2025-03-20T18:11:58.0812195Z D:\a\clap-wrapper\clap-wrapper\src\detail\clap\fsutil.cpp(314,15): error C2664:         ] [D:\a\clap-wrapper\clap-wrapper\build\clap-wrapper-shared-detail.vcxproj]
+2025-03-20T18:11:58.0814150Z       D:\a\clap-wrapper\clap-wrapper\src\detail\clap\fsutil.cpp(314,71):
+2025-03-20T18:11:58.0815896Z       Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast
+2025-03-20T18:11:58.0817628Z       D:\a\clap-wrapper\clap-wrapper\src\detail\clap\fsutil.cpp(227,15):
+2025-03-20T18:11:58.0818708Z       see declaration of 'Clap::Library::getEntryFunction'
+2025-03-20T18:11:58.0819739Z       D:\a\clap-wrapper\clap-wrapper\src\detail\clap\fsutil.cpp(314,15):
+2025-03-20T18:11:58.0822069Z       while trying to match the argument list '(HMODULE, const _Elem *)'
+2025-03-20T18:11:58.0823016Z           with
+2025-03-20T18:11:58.0823437Z           [
+2025-03-20T18:11:58.0823846Z               _Elem=char8_t
+2025-03-20T18:11:58.0824341Z           ]
+2025-03-20T18:11:58.0824720Z   
+2025-03-20T18:11:58.5964601Z ##[error]Process completed with exit code 1.
+2025-03-20T18:11:58.6194539Z Post job cleanup.
+2025-03-20T18:11:58.8899229Z [command]"C:\Program Files\Git\bin\git.exe" version
+2025-03-20T18:11:58.9178964Z git version 2.48.1.windows.1
+2025-03-20T18:11:58.9273936Z Temporarily overriding HOME='D:\a\_temp\2f289ad0-ca68-4911-9a8a-b2610a6f6537' before making global git config changes
+2025-03-20T18:11:58.9275118Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-20T18:11:58.9289960Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\clap-wrapper\clap-wrapper
+2025-03-20T18:11:58.9629068Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2025-03-20T18:11:58.9928224Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2025-03-20T18:11:59.5471425Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-20T18:11:59.5694764Z http.https://github.com/.extraheader
+2025-03-20T18:11:59.5743107Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
+2025-03-20T18:11:59.6036332Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2025-03-20T18:12:00.1317571Z Cleaning up orphan processes
+2025-03-20T18:12:00.1702994Z Terminate orphan process: pid (5816) (vctip)

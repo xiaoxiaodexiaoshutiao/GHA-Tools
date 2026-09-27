@@ -1,0 +1,316 @@
+2025-03-17T14:58:38.7990549Z Requested labels: ubuntu-latest
+2025-03-17T14:58:38.7990852Z Job defined at: eclipse-score/score/.github/workflows/test.yml@refs/pull/707/merge
+2025-03-17T14:58:38.7990953Z Waiting for a runner to pick up this job...
+2025-03-17T14:58:39.3126940Z Job is waiting for a hosted runner to come online.
+2025-03-17T14:58:42.1891738Z Job is about to start running on the hosted runner: GitHub Actions 319 (hosted)
+2025-03-17T14:58:43.6363866Z Current runner version: '2.322.0'
+2025-03-17T14:58:43.6388936Z ##[group]Operating System
+2025-03-17T14:58:43.6389726Z Ubuntu
+2025-03-17T14:58:43.6390338Z 24.04.2
+2025-03-17T14:58:43.6390823Z LTS
+2025-03-17T14:58:43.6391303Z ##[endgroup]
+2025-03-17T14:58:43.6391903Z ##[group]Runner Image
+2025-03-17T14:58:43.6392488Z Image: ubuntu-24.04
+2025-03-17T14:58:43.6393005Z Version: 20250309.1.0
+2025-03-17T14:58:43.6394061Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250309.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-17T14:58:43.6395457Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250309.1
+2025-03-17T14:58:43.6396621Z ##[endgroup]
+2025-03-17T14:58:43.6397276Z ##[group]Runner Image Provisioner
+2025-03-17T14:58:43.6397892Z 2.0.422.1
+2025-03-17T14:58:43.6398328Z ##[endgroup]
+2025-03-17T14:58:43.6399519Z ##[group]GITHUB_TOKEN Permissions
+2025-03-17T14:58:43.6401307Z Contents: read
+2025-03-17T14:58:43.6402007Z Metadata: read
+2025-03-17T14:58:43.6402676Z Packages: read
+2025-03-17T14:58:43.6403368Z ##[endgroup]
+2025-03-17T14:58:43.6406435Z Secret source: None
+2025-03-17T14:58:43.6407235Z Prepare workflow directory
+2025-03-17T14:58:43.6717822Z Prepare all required actions
+2025-03-17T14:58:43.6754983Z Getting action download info
+2025-03-17T14:58:43.8260904Z Download action repository 'actions/checkout@v4.2.2' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-17T14:58:44.0059130Z Complete job name: code
+2025-03-17T14:58:44.1356686Z ##[group]Run actions/checkout@v4.2.2
+2025-03-17T14:58:44.1358539Z with:
+2025-03-17T14:58:44.1359457Z   repository: eclipse-score/score
+2025-03-17T14:58:44.1360852Z   token: ***
+2025-03-17T14:58:44.1361715Z   ssh-strict: true
+2025-03-17T14:58:44.1362631Z   ssh-user: git
+2025-03-17T14:58:44.1363536Z   persist-credentials: true
+2025-03-17T14:58:44.1364565Z   clean: true
+2025-03-17T14:58:44.1365467Z   sparse-checkout-cone-mode: true
+2025-03-17T14:58:44.1366838Z   fetch-depth: 1
+2025-03-17T14:58:44.1368518Z   fetch-tags: false
+2025-03-17T14:58:44.1369611Z   show-progress: true
+2025-03-17T14:58:44.1370580Z   lfs: false
+2025-03-17T14:58:44.1371494Z   submodules: false
+2025-03-17T14:58:44.1372462Z   set-safe-directory: true
+2025-03-17T14:58:44.1374088Z ##[endgroup]
+2025-03-17T14:58:44.3314173Z Syncing repository: eclipse-score/score
+2025-03-17T14:58:44.3315888Z ##[group]Getting Git version info
+2025-03-17T14:58:44.3316785Z Working directory is '/home/runner/work/score/score'
+2025-03-17T14:58:44.3317773Z [command]/usr/bin/git version
+2025-03-17T14:58:44.3377785Z git version 2.48.1
+2025-03-17T14:58:44.3404474Z ##[endgroup]
+2025-03-17T14:58:44.3418661Z Temporarily overriding HOME='/home/runner/work/_temp/f3c0ae6e-5d24-4a30-adee-6ba447a38f73' before making global git config changes
+2025-03-17T14:58:44.3420357Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-17T14:58:44.3423918Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/score/score
+2025-03-17T14:58:44.3457851Z Deleting the contents of '/home/runner/work/score/score'
+2025-03-17T14:58:44.3461483Z ##[group]Initializing the repository
+2025-03-17T14:58:44.3465616Z [command]/usr/bin/git init /home/runner/work/score/score
+2025-03-17T14:58:44.3526736Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-17T14:58:44.3528230Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-17T14:58:44.3529749Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-17T14:58:44.3531163Z hint:
+2025-03-17T14:58:44.3532154Z hint: 	git config --global init.defaultBranch <name>
+2025-03-17T14:58:44.3533643Z hint:
+2025-03-17T14:58:44.3534634Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-17T14:58:44.3535742Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-17T14:58:44.3536804Z hint:
+2025-03-17T14:58:44.3537213Z hint: 	git branch -m <name>
+2025-03-17T14:58:44.3537934Z Initialized empty Git repository in /home/runner/work/score/score/.git/
+2025-03-17T14:58:44.3544243Z [command]/usr/bin/git remote add origin https://github.com/eclipse-score/score
+2025-03-17T14:58:44.3575715Z ##[endgroup]
+2025-03-17T14:58:44.3576806Z ##[group]Disabling automatic garbage collection
+2025-03-17T14:58:44.3579792Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-17T14:58:44.3608057Z ##[endgroup]
+2025-03-17T14:58:44.3608864Z ##[group]Setting up auth
+2025-03-17T14:58:44.3614799Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-17T14:58:44.3644752Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-17T14:58:44.3923302Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-17T14:58:44.3952917Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-17T14:58:44.4187654Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-17T14:58:44.4225477Z ##[endgroup]
+2025-03-17T14:58:44.4227105Z ##[group]Fetching the repository
+2025-03-17T14:58:44.4236200Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +175e5cf4ba7d07fee75b38a8fba54e36c26cd0d3:refs/remotes/pull/707/merge
+2025-03-17T14:58:44.8615270Z From https://github.com/eclipse-score/score
+2025-03-17T14:58:44.8617322Z  * [new ref]         175e5cf4ba7d07fee75b38a8fba54e36c26cd0d3 -> pull/707/merge
+2025-03-17T14:58:44.8641289Z ##[endgroup]
+2025-03-17T14:58:44.8642795Z ##[group]Determining the checkout info
+2025-03-17T14:58:44.8644589Z ##[endgroup]
+2025-03-17T14:58:44.8650385Z [command]/usr/bin/git sparse-checkout disable
+2025-03-17T14:58:44.8688437Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-17T14:58:44.8715712Z ##[group]Checking out the ref
+2025-03-17T14:58:44.8719475Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/707/merge
+2025-03-17T14:58:44.9250341Z Note: switching to 'refs/remotes/pull/707/merge'.
+2025-03-17T14:58:44.9251774Z 
+2025-03-17T14:58:44.9252599Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-17T14:58:44.9255900Z changes and commit them, and you can discard any commits you make in this
+2025-03-17T14:58:44.9257687Z state without impacting any branches by switching back to a branch.
+2025-03-17T14:58:44.9258458Z 
+2025-03-17T14:58:44.9258861Z If you want to create a new branch to retain commits you create, you may
+2025-03-17T14:58:44.9259759Z do so (now or later) by using -c with the switch command. Example:
+2025-03-17T14:58:44.9260288Z 
+2025-03-17T14:58:44.9260498Z   git switch -c <new-branch-name>
+2025-03-17T14:58:44.9260941Z 
+2025-03-17T14:58:44.9261297Z Or undo this operation with:
+2025-03-17T14:58:44.9261891Z 
+2025-03-17T14:58:44.9262188Z   git switch -
+2025-03-17T14:58:44.9262581Z 
+2025-03-17T14:58:44.9263262Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-17T14:58:44.9264290Z 
+2025-03-17T14:58:44.9265216Z HEAD is now at 175e5cf Merge aad8a6a0cc92e06b23484f1950b7887426bd14a3 into 2898b4abd5f1e734e045890e7c9972a6d5e68354
+2025-03-17T14:58:44.9268050Z ##[endgroup]
+2025-03-17T14:58:44.9307901Z [command]/usr/bin/git log -1 --format=%H
+2025-03-17T14:58:44.9329745Z 175e5cf4ba7d07fee75b38a8fba54e36c26cd0d3
+2025-03-17T14:58:44.9547196Z ##[group]Run bazel test //docs/...
+2025-03-17T14:58:44.9548473Z [36;1mbazel test //docs/...[0m
+2025-03-17T14:58:44.9600347Z shell: /usr/bin/bash -e {0}
+2025-03-17T14:58:44.9601405Z ##[endgroup]
+2025-03-17T14:58:46.0267689Z 2025/03/17 14:58:46 Downloading https://releases.bazel.build/7.4.0/release/bazel-7.4.0-linux-x86_64...
+2025-03-17T14:58:46.3548004Z Extracting Bazel installation...
+2025-03-17T14:58:47.4971499Z Starting local Bazel server and connecting to it...
+2025-03-17T14:58:49.0778206Z Computing main repo mapping: 
+2025-03-17T14:58:50.0796157Z Computing main repo mapping: 
+2025-03-17T14:58:50.9407854Z Loading: 
+2025-03-17T14:58:50.9428670Z Loading: 0 packages loaded
+2025-03-17T14:58:51.9525023Z Loading: 0 packages loaded
+2025-03-17T14:58:51.9525736Z     currently loading: docs
+2025-03-17T14:58:53.0815103Z Loading: 0 packages loaded
+2025-03-17T14:58:53.0815617Z     currently loading: docs
+2025-03-17T14:58:53.7163530Z DEBUG: /home/runner/work/score/score/docs/_tooling/extensions/score_source_code_linker/collect_source_files.bzl:150:10: DEPRECATED: Use `parse_source_files_for_needs_links` instead.
+2025-03-17T14:58:53.8664257Z Analyzing: 22 targets (1 packages loaded, 0 targets configured)
+2025-03-17T14:58:53.9075524Z Analyzing: 22 targets (1 packages loaded, 0 targets configured)
+2025-03-17T14:58:53.9076716Z 
+2025-03-17T14:58:54.9117411Z Analyzing: 22 targets (99 packages loaded, 319 targets configured)
+2025-03-17T14:58:54.9123531Z 
+2025-03-17T14:58:55.9139613Z Analyzing: 22 targets (110 packages loaded, 589 targets configured)
+2025-03-17T14:58:55.9145564Z [1 / 1] no actions running
+2025-03-17T14:58:56.9312259Z Analyzing: 22 targets (215 packages loaded, 1951 targets configured)
+2025-03-17T14:58:56.9312944Z [1 / 1] no actions running
+2025-03-17T14:58:57.9390816Z Analyzing: 22 targets (220 packages loaded, 1993 targets configured)
+2025-03-17T14:58:57.9392781Z [1 / 1] no actions running
+2025-03-17T14:58:58.9476655Z Analyzing: 22 targets (228 packages loaded, 2836 targets configured)
+2025-03-17T14:58:58.9477851Z [1 / 1] no actions running
+2025-03-17T14:59:00.0028191Z Analyzing: 22 targets (231 packages loaded, 4882 targets configured)
+2025-03-17T14:59:00.0041278Z [1 / 1] no actions running
+2025-03-17T14:59:01.0059354Z Analyzing: 22 targets (231 packages loaded, 4882 targets configured)
+2025-03-17T14:59:01.0060060Z [1 / 1] no actions running
+2025-03-17T14:59:02.0873369Z Analyzing: 22 targets (231 packages loaded, 4882 targets configured)
+2025-03-17T14:59:02.0874680Z [1 / 1] no actions running
+2025-03-17T14:59:03.0844718Z Analyzing: 22 targets (232 packages loaded, 5007 targets configured)
+2025-03-17T14:59:03.0846229Z [2 / 5] checking cached actions
+2025-03-17T14:59:04.0867737Z Analyzing: 22 targets (232 packages loaded, 5007 targets configured)
+2025-03-17T14:59:04.0869364Z [2 / 5] checking cached actions
+2025-03-17T14:59:05.0903267Z Analyzing: 22 targets (234 packages loaded, 5076 targets configured)
+2025-03-17T14:59:05.0904756Z [2 / 5] checking cached actions
+2025-03-17T14:59:07.0906205Z Analyzing: 22 targets (236 packages loaded, 5188 targets configured)
+2025-03-17T14:59:07.0906975Z [7 / 15] checking cached actions
+2025-03-17T14:59:08.0906285Z Analyzing: 22 targets (237 packages loaded, 5229 targets configured)
+2025-03-17T14:59:08.0907266Z [7 / 15] checking cached actions
+2025-03-17T14:59:09.0939882Z Analyzing: 22 targets (238 packages loaded, 5354 targets configured)
+2025-03-17T14:59:09.0940923Z [7 / 15] checking cached actions
+2025-03-17T14:59:10.0973281Z Analyzing: 22 targets (240 packages loaded, 6330 targets configured)
+2025-03-17T14:59:10.0973986Z [7 / 15] checking cached actions
+2025-03-17T14:59:11.1027389Z Analyzing: 22 targets (240 packages loaded, 6335 targets configured)
+2025-03-17T14:59:11.1030252Z [7 / 15] checking cached actions
+2025-03-17T14:59:12.1030552Z Analyzing: 22 targets (240 packages loaded, 6335 targets configured)
+2025-03-17T14:59:12.1035563Z [7 / 15] checking cached actions
+2025-03-17T14:59:13.3508549Z Analyzing: 22 targets (243 packages loaded, 7446 targets configured)
+2025-03-17T14:59:13.3514453Z [7 / 15] checking cached actions
+2025-03-17T14:59:14.9009628Z Analyzing: 22 targets (244 packages loaded, 7465 targets configured)
+2025-03-17T14:59:14.9031056Z [7 / 15] checking cached actions
+2025-03-17T14:59:15.9452451Z Analyzing: 22 targets (245 packages loaded, 7516 targets configured)
+2025-03-17T14:59:15.9455044Z [7 / 15] checking cached actions
+2025-03-17T14:59:17.0047598Z Analyzing: 22 targets (247 packages loaded, 8144 targets configured)
+2025-03-17T14:59:17.0048825Z [7 / 15] checking cached actions
+2025-03-17T14:59:18.1049557Z Analyzing: 22 targets (248 packages loaded, 8164 targets configured)
+2025-03-17T14:59:18.1050776Z [7 / 15] checking cached actions
+2025-03-17T14:59:19.4001923Z Analyzing: 22 targets (248 packages loaded, 8164 targets configured)
+2025-03-17T14:59:19.4010311Z [7 / 15] checking cached actions
+2025-03-17T14:59:20.5383057Z Analyzing: 22 targets (251 packages loaded, 8275 targets configured)
+2025-03-17T14:59:20.5388084Z [7 / 15] checking cached actions
+2025-03-17T14:59:21.8810399Z Analyzing: 22 targets (252 packages loaded, 8428 targets configured)
+2025-03-17T14:59:21.8813610Z [7 / 15] checking cached actions
+2025-03-17T14:59:23.0758563Z Analyzing: 22 targets (254 packages loaded, 8451 targets configured)
+2025-03-17T14:59:23.0767081Z [7 / 15] checking cached actions
+2025-03-17T14:59:24.1060836Z Analyzing: 22 targets (256 packages loaded, 8505 targets configured)
+2025-03-17T14:59:24.1066891Z [7 / 15] checking cached actions
+2025-03-17T14:59:25.4075397Z Analyzing: 22 targets (256 packages loaded, 8505 targets configured)
+2025-03-17T14:59:25.4076735Z [7 / 15] checking cached actions
+2025-03-17T14:59:27.0521965Z Analyzing: 22 targets (259 packages loaded, 8568 targets configured)
+2025-03-17T14:59:27.0527280Z [7 / 15] checking cached actions
+2025-03-17T14:59:28.1117204Z Analyzing: 22 targets (260 packages loaded, 8588 targets configured)
+2025-03-17T14:59:28.1166614Z [7 / 15] checking cached actions
+2025-03-17T14:59:29.1073345Z Analyzing: 22 targets (262 packages loaded, 8790 targets configured)
+2025-03-17T14:59:29.1078772Z [7 / 15] checking cached actions
+2025-03-17T14:59:30.1101564Z Analyzing: 22 targets (263 packages loaded, 8854 targets configured)
+2025-03-17T14:59:30.1176614Z [7 / 15] checking cached actions
+2025-03-17T14:59:31.1107106Z Analyzing: 22 targets (264 packages loaded, 8935 targets configured)
+2025-03-17T14:59:31.1108341Z [7 / 15] checking cached actions
+2025-03-17T14:59:32.1723342Z Analyzing: 22 targets (264 packages loaded, 8935 targets configured)
+2025-03-17T14:59:32.1724629Z [7 / 15] checking cached actions
+2025-03-17T14:59:33.8403954Z Analyzing: 22 targets (266 packages loaded, 9188 targets configured)
+2025-03-17T14:59:33.8411378Z [7 / 15] checking cached actions
+2025-03-17T14:59:34.8770609Z Analyzing: 22 targets (268 packages loaded, 9502 targets configured)
+2025-03-17T14:59:34.8772544Z [7 / 15] checking cached actions
+2025-03-17T14:59:35.9262670Z Analyzing: 22 targets (269 packages loaded, 9518 targets configured)
+2025-03-17T14:59:35.9269882Z [7 / 15] checking cached actions
+2025-03-17T14:59:37.1143147Z Analyzing: 22 targets (270 packages loaded, 9598 targets configured)
+2025-03-17T14:59:37.1146664Z [7 / 15] checking cached actions
+2025-03-17T14:59:38.2567711Z Analyzing: 22 targets (270 packages loaded, 9598 targets configured)
+2025-03-17T14:59:38.2568945Z [7 / 15] checking cached actions
+2025-03-17T14:59:40.1177463Z Analyzing: 22 targets (274 packages loaded, 10017 targets configured)
+2025-03-17T14:59:40.1189127Z [7 / 15] checking cached actions
+2025-03-17T14:59:41.1166529Z Analyzing: 22 targets (274 packages loaded, 10017 targets configured)
+2025-03-17T14:59:41.1167439Z [7 / 15] checking cached actions
+2025-03-17T14:59:42.1252030Z Analyzing: 22 targets (277 packages loaded, 10067 targets configured)
+2025-03-17T14:59:42.1287728Z [7 / 15] checking cached actions
+2025-03-17T14:59:43.1257418Z Analyzing: 22 targets (278 packages loaded, 10086 targets configured)
+2025-03-17T14:59:43.1258643Z [7 / 15] checking cached actions
+2025-03-17T14:59:44.1295255Z Analyzing: 22 targets (278 packages loaded, 10086 targets configured)
+2025-03-17T14:59:44.1300416Z [7 / 15] checking cached actions
+2025-03-17T14:59:45.1293176Z Analyzing: 22 targets (279 packages loaded, 10127 targets configured)
+2025-03-17T14:59:45.1293848Z [7 / 15] checking cached actions
+2025-03-17T14:59:47.1343619Z Analyzing: 22 targets (282 packages loaded, 10217 targets configured)
+2025-03-17T14:59:47.1344453Z [7 / 15] checking cached actions
+2025-03-17T14:59:48.1363695Z Analyzing: 22 targets (282 packages loaded, 10217 targets configured)
+2025-03-17T14:59:48.1379718Z [7 / 15] checking cached actions
+2025-03-17T14:59:49.1388866Z Analyzing: 22 targets (286 packages loaded, 10642 targets configured)
+2025-03-17T14:59:49.1389534Z [7 / 15] checking cached actions
+2025-03-17T14:59:50.6717317Z Analyzing: 22 targets (286 packages loaded, 10642 targets configured)
+2025-03-17T14:59:50.6717962Z [7 / 15] checking cached actions
+2025-03-17T14:59:51.7968085Z Analyzing: 22 targets (287 packages loaded, 10664 targets configured)
+2025-03-17T14:59:51.7970745Z [7 / 15] checking cached actions
+2025-03-17T14:59:53.1395899Z Analyzing: 22 targets (290 packages loaded, 10837 targets configured)
+2025-03-17T14:59:53.1397479Z [7 / 15] checking cached actions
+2025-03-17T14:59:54.1430831Z Analyzing: 22 targets (290 packages loaded, 10837 targets configured)
+2025-03-17T14:59:54.1432202Z [7 / 15] checking cached actions
+2025-03-17T14:59:55.1487141Z Analyzing: 22 targets (292 packages loaded, 10881 targets configured)
+2025-03-17T14:59:55.1489731Z [7 / 15] checking cached actions
+2025-03-17T14:59:56.1453891Z Analyzing: 22 targets (293 packages loaded, 10920 targets configured)
+2025-03-17T14:59:56.1454998Z [7 / 15] checking cached actions
+2025-03-17T14:59:57.1475241Z Analyzing: 22 targets (294 packages loaded, 11521 targets configured)
+2025-03-17T14:59:57.1476433Z [7 / 15] checking cached actions
+2025-03-17T14:59:58.1522490Z Analyzing: 22 targets (295 packages loaded, 11580 targets configured)
+2025-03-17T14:59:58.1523749Z [7 / 15] checking cached actions
+2025-03-17T14:59:59.1538738Z Analyzing: 22 targets (297 packages loaded, 12277 targets configured)
+2025-03-17T14:59:59.1542831Z [7 / 15] checking cached actions
+2025-03-17T15:00:00.1546769Z Analyzing: 22 targets (298 packages loaded, 12327 targets configured)
+2025-03-17T15:00:00.1549634Z [7 / 15] checking cached actions
+2025-03-17T15:00:01.1552096Z Analyzing: 22 targets (298 packages loaded, 12327 targets configured)
+2025-03-17T15:00:01.1553442Z [7 / 15] checking cached actions
+2025-03-17T15:00:02.1654183Z Analyzing: 22 targets (300 packages loaded, 12489 targets configured)
+2025-03-17T15:00:02.1656467Z [7 / 15] checking cached actions
+2025-03-17T15:00:03.3394424Z Analyzing: 22 targets (301 packages loaded, 12669 targets configured)
+2025-03-17T15:00:03.3401951Z [13 / 24] Creating runfiles tree bazel-out/k8-opt-exec-ST-d57f47055a04/bin/tools/dash/formatters/dash_format_converter.runfiles [for tool]; 0s local ... (4 actions, 3 running)
+2025-03-17T15:00:05.1561941Z Analyzing: 22 targets (302 packages loaded, 12822 targets configured)
+2025-03-17T15:00:05.1563635Z [25 / 30] Action docs/collected_files_for_score_source_code_linker.json; 1s processwrapper-sandbox ... (2 actions running)
+2025-03-17T15:00:06.1613766Z Analyzing: 22 targets (302 packages loaded, 12822 targets configured)
+2025-03-17T15:00:06.1615091Z [27 / 30] JavaToolchainCompileBootClasspath external/rules_java~/toolchains/platformclasspath.jar; 0s processwrapper-sandbox
+2025-03-17T15:00:07.1614559Z Analyzing: 22 targets (303 packages loaded, 12841 targets configured)
+2025-03-17T15:00:07.1616383Z [27 / 30] JavaToolchainCompileBootClasspath external/rules_java~/toolchains/platformclasspath.jar; 1s processwrapper-sandbox
+2025-03-17T15:00:08.1620471Z Analyzing: 22 targets (303 packages loaded, 12841 targets configured)
+2025-03-17T15:00:08.1621735Z [30 / 30] no actions running
+2025-03-17T15:00:09.7832394Z Analyzing: 22 targets (303 packages loaded, 12841 targets configured)
+2025-03-17T15:00:09.7832956Z [30 / 30] no actions running
+2025-03-17T15:00:10.5238114Z INFO: Analyzed 22 targets (304 packages loaded, 12867 targets configured).
+2025-03-17T15:00:11.1124372Z [42 / 59] JavaToolchainCompileClasses external/rules_java~/toolchains/platformclasspath_classes [for tool]; 0s processwrapper-sandbox ... (4 actions, 3 running)
+2025-03-17T15:00:12.1664676Z [45 / 64] JavaToolchainCompileClasses external/rules_java~/toolchains/platformclasspath_classes [for tool]; 1s processwrapper-sandbox ... (4 actions running)
+2025-03-17T15:00:13.1693348Z [47 / 65] Creating runfiles tree bazel-out/k8-fastbuild/bin/docs/sphinx_build.runfiles; 2s local ... (4 actions running)
+2025-03-17T15:00:14.1676209Z [50 / 65] Creating runfiles tree bazel-out/k8-fastbuild/bin/docs/sphinx_build.runfiles; 3s local ... (4 actions running)
+2025-03-17T15:00:17.6160446Z [51 / 65] Creating runfiles tree bazel-out/k8-fastbuild/bin/docs/sphinx_build.runfiles; 7s local ... (4 actions, 3 running)
+2025-03-17T15:00:19.1684998Z [97 / 368] Creating runfiles tree bazel-out/k8-fastbuild/bin/docs/live_preview.runfiles; 7s local ... (4 actions running)
+2025-03-17T15:00:20.1689244Z [120 / 368] Creating runfiles tree bazel-out/k8-fastbuild/bin/docs/score_metamodel_test.runfiles; 6s local ... (4 actions, 3 running)
+2025-03-17T15:00:21.1730650Z [183 / 371] Creating runfiles tree bazel-out/k8-fastbuild/bin/docs/score_metamodel_test.runfiles; 7s local ... (4 actions running)
+2025-03-17T15:00:23.1736425Z [366 / 372] Creating runfiles tree bazel-out/k8-opt-exec-ST-d57f47055a04/bin/docs/sphinx_build.runfiles [for tool]; 5s local ... (4 actions running)
+2025-03-17T15:00:24.1740079Z [367 / 372] Creating runfiles tree bazel-out/k8-fastbuild/bin/docs/ide_support.runfiles; 5s local ... (4 actions running)
+2025-03-17T15:00:25.2863638Z [369 / 373] Testing //docs:score_metamodel_test; 3s processwrapper-sandbox ... (3 actions, 2 running)
+2025-03-17T15:00:27.1767166Z [369 / 373] Testing //docs:score_metamodel_test; 5s processwrapper-sandbox ... (3 actions running)
+2025-03-17T15:00:29.9176243Z [369 / 373] Testing //docs:score_metamodel_test; 8s processwrapper-sandbox ... (3 actions running)
+2025-03-17T15:00:31.1827696Z [370 / 373] 1 / 2 tests; Sphinx building html for //docs:docs; 7s processwrapper-sandbox ... (2 actions running)
+2025-03-17T15:00:32.1940830Z [370 / 373] 1 / 2 tests; Sphinx building html for //docs:docs; 8s processwrapper-sandbox ... (2 actions running)
+2025-03-17T15:00:34.1839477Z [371 / 373] 2 / 2 tests; Sphinx building html for //docs:docs; 10s processwrapper-sandbox
+2025-03-17T15:00:43.9292972Z [371 / 373] 2 / 2 tests; Sphinx building html for //docs:docs; 20s processwrapper-sandbox
+2025-03-17T15:00:51.5519320Z ERROR: /home/runner/work/score/score/docs/BUILD:29:5: Sphinx building html for //docs:docs failed: (Exit 1): sphinx_build failed: error executing SphinxBuildDocs command (from target //docs:docs) bazel-out/k8-opt-exec-ST-d57f47055a04/bin/docs/sphinx_build --show-traceback --builder html --quiet --jobs auto --fresh-env --write-all -W --keep-going ... (remaining 3 arguments skipped)
+2025-03-17T15:00:51.5522909Z 
+2025-03-17T15:00:51.5523370Z Use --sandbox_debug to see verbose messages from the sandbox and retain the sandbox build root for debugging
+2025-03-17T15:00:51.5524916Z process/process_areas/implementation/_assets/detailed_design_example.rst:28: WARNING: dd_sta__dd_example_static: with `ASIL_B` has no parent requirement that contains the same or lower ASIL. Allowed ASIL values: `ASIL_B`, `ASIL_D`. 
+2025-03-17T15:00:51.5526363Z  [score_metamodel]
+2025-03-17T15:00:51.5527557Z process/process_areas/implementation/_assets/detailed_design_example.rst:42: WARNING: dd_dyn__dd_example_dynamic: with `ASIL_B` has no parent requirement that contains the same or lower ASIL. Allowed ASIL values: `ASIL_B`, `ASIL_D`. 
+2025-03-17T15:00:51.5528956Z  [score_metamodel]
+2025-03-17T15:00:51.5529415Z WARNING: Some needs have issues. See the log for more information. [score_metamodel]
+2025-03-17T15:00:51.5838562Z Use --verbose_failures to see the command lines of failed build steps.
+2025-03-17T15:00:51.6602836Z INFO: Elapsed time: 125.218s, Critical Path: 33.71s
+2025-03-17T15:00:51.6603696Z INFO: 372 processes: 358 internal, 11 processwrapper-sandbox, 3 worker.
+2025-03-17T15:00:51.6608129Z ERROR: Build did NOT complete successfully
+2025-03-17T15:00:51.6608798Z //docs:score_metamodel_test                                              PASSED in 3.1s
+2025-03-17T15:00:51.6616692Z //docs:score_source_code_linker_test                                     PASSED in 5.4s
+2025-03-17T15:00:51.6635689Z 
+2025-03-17T15:00:51.6636121Z Executed 2 out of 2 tests: 2 tests pass.
+2025-03-17T15:00:51.6636748Z All tests passed but there were other errors during the build.
+2025-03-17T15:00:51.6637199Z 
+2025-03-17T15:00:51.7423581Z ##[error]Process completed with exit code 1.
+2025-03-17T15:00:51.7520056Z Post job cleanup.
+2025-03-17T15:00:51.8737894Z [command]/usr/bin/git version
+2025-03-17T15:00:51.8784084Z git version 2.48.1
+2025-03-17T15:00:51.8837116Z Temporarily overriding HOME='/home/runner/work/_temp/3dcf6d8f-334f-4091-b3ea-89598a440e1d' before making global git config changes
+2025-03-17T15:00:51.8838805Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-17T15:00:51.8853049Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/score/score
+2025-03-17T15:00:51.8891629Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-17T15:00:51.8927772Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-17T15:00:51.9158101Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-17T15:00:51.9179172Z http.https://github.com/.extraheader
+2025-03-17T15:00:51.9194207Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-17T15:00:51.9224734Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-17T15:00:51.9553399Z Cleaning up orphan processes
+2025-03-17T15:00:51.9866759Z Terminate orphan process: pid (1866) (java.lang=ALL-UNNAMED)

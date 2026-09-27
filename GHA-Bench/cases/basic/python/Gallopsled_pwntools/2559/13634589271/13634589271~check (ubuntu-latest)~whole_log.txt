@@ -1,0 +1,283 @@
+2025-03-03T15:36:58.9295812Z Requested labels: ubuntu-latest
+2025-03-03T15:36:58.9296055Z Job defined at: Gallopsled/pwntools/.github/workflows/changelog.yml@refs/pull/2559/merge
+2025-03-03T15:36:58.9296414Z Waiting for a runner to pick up this job...
+2025-03-03T15:37:00.4673304Z Job is waiting for a hosted runner to come online.
+2025-03-03T15:37:04.0456204Z Job is about to start running on the hosted runner: GitHub Actions 14 (hosted)
+2025-03-03T15:37:05.5163788Z Current runner version: '2.322.0'
+2025-03-03T15:37:05.5187249Z ##[group]Operating System
+2025-03-03T15:37:05.5188307Z Ubuntu
+2025-03-03T15:37:05.5188941Z 24.04.2
+2025-03-03T15:37:05.5189447Z LTS
+2025-03-03T15:37:05.5189871Z ##[endgroup]
+2025-03-03T15:37:05.5190481Z ##[group]Runner Image
+2025-03-03T15:37:05.5191042Z Image: ubuntu-24.04
+2025-03-03T15:37:05.5191600Z Version: 20250223.1.0
+2025-03-03T15:37:05.5192683Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250223.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-03T15:37:05.5194124Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250223.1
+2025-03-03T15:37:05.5195066Z ##[endgroup]
+2025-03-03T15:37:05.5195636Z ##[group]Runner Image Provisioner
+2025-03-03T15:37:05.5196241Z 2.0.422.1
+2025-03-03T15:37:05.5196793Z ##[endgroup]
+2025-03-03T15:37:05.5199112Z ##[group]GITHUB_TOKEN Permissions
+2025-03-03T15:37:05.5201059Z Actions: read
+2025-03-03T15:37:05.5201851Z Attestations: read
+2025-03-03T15:37:05.5202547Z Checks: read
+2025-03-03T15:37:05.5203017Z Contents: read
+2025-03-03T15:37:05.5203514Z Deployments: read
+2025-03-03T15:37:05.5204123Z Discussions: read
+2025-03-03T15:37:05.5204642Z Issues: read
+2025-03-03T15:37:05.5205187Z Metadata: read
+2025-03-03T15:37:05.5205683Z Packages: read
+2025-03-03T15:37:05.5206204Z Pages: read
+2025-03-03T15:37:05.5206756Z PullRequests: read
+2025-03-03T15:37:05.5207323Z RepositoryProjects: read
+2025-03-03T15:37:05.5208100Z SecurityEvents: read
+2025-03-03T15:37:05.5208638Z Statuses: read
+2025-03-03T15:37:05.5209153Z ##[endgroup]
+2025-03-03T15:37:05.5211948Z Secret source: None
+2025-03-03T15:37:05.5212784Z Prepare workflow directory
+2025-03-03T15:37:05.5810320Z Prepare all required actions
+2025-03-03T15:37:05.5846471Z Getting action download info
+2025-03-03T15:37:05.7687120Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-03T15:37:05.8982253Z Complete job name: check (ubuntu-latest)
+2025-03-03T15:37:05.9613823Z ##[group]Run actions/checkout@v4
+2025-03-03T15:37:05.9614681Z with:
+2025-03-03T15:37:05.9615068Z   fetch-depth: 0
+2025-03-03T15:37:05.9615511Z   repository: Gallopsled/pwntools
+2025-03-03T15:37:05.9616211Z   token: ***
+2025-03-03T15:37:05.9616617Z   ssh-strict: true
+2025-03-03T15:37:05.9617025Z   ssh-user: git
+2025-03-03T15:37:05.9617437Z   persist-credentials: true
+2025-03-03T15:37:05.9618245Z   clean: true
+2025-03-03T15:37:05.9618651Z   sparse-checkout-cone-mode: true
+2025-03-03T15:37:05.9619163Z   fetch-tags: false
+2025-03-03T15:37:05.9619613Z   show-progress: true
+2025-03-03T15:37:05.9620036Z   lfs: false
+2025-03-03T15:37:05.9620416Z   submodules: false
+2025-03-03T15:37:05.9620839Z   set-safe-directory: true
+2025-03-03T15:37:05.9621572Z env:
+2025-03-03T15:37:05.9621962Z   GITHUB_BASE: origin/stable
+2025-03-03T15:37:05.9622428Z ##[endgroup]
+2025-03-03T15:37:06.1342223Z Syncing repository: Gallopsled/pwntools
+2025-03-03T15:37:06.1343898Z ##[group]Getting Git version info
+2025-03-03T15:37:06.1344767Z Working directory is '/home/runner/work/pwntools/pwntools'
+2025-03-03T15:37:06.1346288Z [command]/usr/bin/git version
+2025-03-03T15:37:06.1390828Z git version 2.48.1
+2025-03-03T15:37:06.1418195Z ##[endgroup]
+2025-03-03T15:37:06.1433419Z Temporarily overriding HOME='/home/runner/work/_temp/c0e34506-e11e-4cac-bb8f-da4297be689c' before making global git config changes
+2025-03-03T15:37:06.1435855Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-03T15:37:06.1440089Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pwntools/pwntools
+2025-03-03T15:37:06.1474808Z Deleting the contents of '/home/runner/work/pwntools/pwntools'
+2025-03-03T15:37:06.1478781Z ##[group]Initializing the repository
+2025-03-03T15:37:06.1483538Z [command]/usr/bin/git init /home/runner/work/pwntools/pwntools
+2025-03-03T15:37:06.1541346Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-03T15:37:06.1542805Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-03T15:37:06.1544034Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-03T15:37:06.1545018Z hint:
+2025-03-03T15:37:06.1545853Z hint: 	git config --global init.defaultBranch <name>
+2025-03-03T15:37:06.1546495Z hint:
+2025-03-03T15:37:06.1547451Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-03T15:37:06.1549404Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-03T15:37:06.1550819Z hint:
+2025-03-03T15:37:06.1551564Z hint: 	git branch -m <name>
+2025-03-03T15:37:06.1552927Z Initialized empty Git repository in /home/runner/work/pwntools/pwntools/.git/
+2025-03-03T15:37:06.1559662Z [command]/usr/bin/git remote add origin https://github.com/Gallopsled/pwntools
+2025-03-03T15:37:06.1594452Z ##[endgroup]
+2025-03-03T15:37:06.1595688Z ##[group]Disabling automatic garbage collection
+2025-03-03T15:37:06.1599562Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-03T15:37:06.1628191Z ##[endgroup]
+2025-03-03T15:37:06.1629479Z ##[group]Setting up auth
+2025-03-03T15:37:06.1635699Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-03T15:37:06.1666692Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-03T15:37:06.1943464Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-03T15:37:06.1977805Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-03T15:37:06.2204882Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-03T15:37:06.2251755Z ##[endgroup]
+2025-03-03T15:37:06.2253472Z ##[group]Fetching the repository
+2025-03-03T15:37:06.2262620Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* +91bccd9a40568b5f9cb010b76c15b748fa0743c6:refs/remotes/pull/2559/merge
+2025-03-03T15:37:08.2470085Z From https://github.com/Gallopsled/pwntools
+2025-03-03T15:37:08.2472471Z  * [new branch]        beta             -> origin/beta
+2025-03-03T15:37:08.2474785Z  * [new branch]        dev              -> origin/dev
+2025-03-03T15:37:08.2477471Z  * [new branch]        stable           -> origin/stable
+2025-03-03T15:37:08.2479617Z  * [new tag]           2.1.0            -> 2.1.0
+2025-03-03T15:37:08.2481412Z  * [new tag]           2.1.1            -> 2.1.1
+2025-03-03T15:37:08.2483010Z  * [new tag]           2.1.2            -> 2.1.2
+2025-03-03T15:37:08.2484656Z  * [new tag]           2.1.3            -> 2.1.3
+2025-03-03T15:37:08.2486211Z  * [new tag]           2.2              -> 2.2
+2025-03-03T15:37:08.2488004Z  * [new tag]           2.2.0            -> 2.2.0
+2025-03-03T15:37:08.2489600Z  * [new tag]           2.3.0            -> 2.3.0
+2025-03-03T15:37:08.2491177Z  * [new tag]           3.0.0            -> 3.0.0
+2025-03-03T15:37:08.2492780Z  * [new tag]           3.0.1            -> 3.0.1
+2025-03-03T15:37:08.2494492Z  * [new tag]           3.0.2            -> 3.0.2
+2025-03-03T15:37:08.2496296Z  * [new tag]           3.0.3            -> 3.0.3
+2025-03-03T15:37:08.2498258Z  * [new tag]           3.0.4            -> 3.0.4
+2025-03-03T15:37:08.2499992Z  * [new tag]           3.1.0            -> 3.1.0
+2025-03-03T15:37:08.2501685Z  * [new tag]           3.1.0beta0       -> 3.1.0beta0
+2025-03-03T15:37:08.2503485Z  * [new tag]           3.1.0beta1       -> 3.1.0beta1
+2025-03-03T15:37:08.2505316Z  * [new tag]           3.1.0beta2       -> 3.1.0beta2
+2025-03-03T15:37:08.2507152Z  * [new tag]           3.1.0beta3       -> 3.1.0beta3
+2025-03-03T15:37:08.2509161Z  * [new tag]           3.1.1            -> 3.1.1
+2025-03-03T15:37:08.2510952Z  * [new tag]           3.10.0           -> 3.10.0
+2025-03-03T15:37:08.2513162Z  * [new tag]           3.10.0beta0      -> 3.10.0beta0
+2025-03-03T15:37:08.2515399Z  * [new tag]           3.10.0beta1      -> 3.10.0beta1
+2025-03-03T15:37:08.2517833Z  * [new tag]           3.10.0beta2      -> 3.10.0beta2
+2025-03-03T15:37:08.2520126Z  * [new tag]           3.11.0           -> 3.11.0
+2025-03-03T15:37:08.2522366Z  * [new tag]           3.11.0beta0      -> 3.11.0beta0
+2025-03-03T15:37:08.2524663Z  * [new tag]           3.12.0           -> 3.12.0
+2025-03-03T15:37:08.2526962Z  * [new tag]           3.12.0beta0      -> 3.12.0beta0
+2025-03-03T15:37:08.2529405Z  * [new tag]           3.12.1           -> 3.12.1
+2025-03-03T15:37:08.2531575Z  * [new tag]           3.12.2           -> 3.12.2
+2025-03-03T15:37:08.2533748Z  * [new tag]           3.13.0           -> 3.13.0
+2025-03-03T15:37:08.2536002Z  * [new tag]           3.13.0beta0      -> 3.13.0beta0
+2025-03-03T15:37:08.2538492Z  * [new tag]           3.2.0            -> 3.2.0
+2025-03-03T15:37:08.2540796Z  * [new tag]           3.2.0beta0       -> 3.2.0beta0
+2025-03-03T15:37:08.2543075Z  * [new tag]           3.2.0beta1       -> 3.2.0beta1
+2025-03-03T15:37:08.2545358Z  * [new tag]           3.2.0beta2       -> 3.2.0beta2
+2025-03-03T15:37:08.2547847Z  * [new tag]           3.2.0beta3       -> 3.2.0beta3
+2025-03-03T15:37:08.2550168Z  * [new tag]           3.2.0beta4       -> 3.2.0beta4
+2025-03-03T15:37:08.2552486Z  * [new tag]           3.2.0beta5       -> 3.2.0beta5
+2025-03-03T15:37:08.2554793Z  * [new tag]           3.2.1            -> 3.2.1
+2025-03-03T15:37:08.2557088Z  * [new tag]           3.3.0            -> 3.3.0
+2025-03-03T15:37:08.2559598Z  * [new tag]           3.3.0beta0       -> 3.3.0beta0
+2025-03-03T15:37:08.2561883Z  * [new tag]           3.3.1            -> 3.3.1
+2025-03-03T15:37:08.2564115Z  * [new tag]           3.3.2            -> 3.3.2
+2025-03-03T15:37:08.2566376Z  * [new tag]           3.3.3            -> 3.3.3
+2025-03-03T15:37:08.2569054Z  * [new tag]           3.3.4            -> 3.3.4
+2025-03-03T15:37:08.2571341Z  * [new tag]           3.4.0            -> 3.4.0
+2025-03-03T15:37:08.2573625Z  * [new tag]           3.4.0beta0       -> 3.4.0beta0
+2025-03-03T15:37:08.2575955Z  * [new tag]           3.4.0beta1       -> 3.4.0beta1
+2025-03-03T15:37:08.2578444Z  * [new tag]           3.4.0beta2       -> 3.4.0beta2
+2025-03-03T15:37:08.2580772Z  * [new tag]           3.4.0beta3       -> 3.4.0beta3
+2025-03-03T15:37:08.2583079Z  * [new tag]           3.4.0beta4       -> 3.4.0beta4
+2025-03-03T15:37:08.2585328Z  * [new tag]           3.4.1            -> 3.4.1
+2025-03-03T15:37:08.2587509Z  * [new tag]           3.5.0            -> 3.5.0
+2025-03-03T15:37:08.2589909Z  * [new tag]           3.5.0beta0       -> 3.5.0beta0
+2025-03-03T15:37:08.2592185Z  * [new tag]           3.5.0beta1       -> 3.5.0beta1
+2025-03-03T15:37:08.2594415Z  * [new tag]           3.5.1            -> 3.5.1
+2025-03-03T15:37:08.2596600Z  * [new tag]           3.6.0            -> 3.6.0
+2025-03-03T15:37:08.2599036Z  * [new tag]           3.6.0beta0       -> 3.6.0beta0
+2025-03-03T15:37:08.2601326Z  * [new tag]           3.6.0beta1       -> 3.6.0beta1
+2025-03-03T15:37:08.2603559Z  * [new tag]           3.6.1            -> 3.6.1
+2025-03-03T15:37:08.2605789Z  * [new tag]           3.7.0            -> 3.7.0
+2025-03-03T15:37:08.2608182Z  * [new tag]           3.7.0beta0       -> 3.7.0beta0
+2025-03-03T15:37:08.2610495Z  * [new tag]           3.7.0beta1       -> 3.7.0beta1
+2025-03-03T15:37:08.2612779Z  * [new tag]           3.7.1            -> 3.7.1
+2025-03-03T15:37:08.2615018Z  * [new tag]           3.8.0            -> 3.8.0
+2025-03-03T15:37:08.2617276Z  * [new tag]           3.8.0beta0       -> 3.8.0beta0
+2025-03-03T15:37:08.2619766Z  * [new tag]           3.8.0beta1       -> 3.8.0beta1
+2025-03-03T15:37:08.2622057Z  * [new tag]           3.9.0            -> 3.9.0
+2025-03-03T15:37:08.2624316Z  * [new tag]           3.9.0beta0       -> 3.9.0beta0
+2025-03-03T15:37:08.2626621Z  * [new tag]           3.9.1            -> 3.9.1
+2025-03-03T15:37:08.2629128Z  * [new tag]           3.9.2            -> 3.9.2
+2025-03-03T15:37:08.2631560Z  * [new tag]           3.9.3            -> 3.9.3
+2025-03-03T15:37:08.2633784Z  * [new tag]           4.0.0            -> 4.0.0
+2025-03-03T15:37:08.2636006Z  * [new tag]           4.0.0beta0       -> 4.0.0beta0
+2025-03-03T15:37:08.2638413Z  * [new tag]           4.0.1            -> 4.0.1
+2025-03-03T15:37:08.2640544Z  * [new tag]           4.1.0            -> 4.1.0
+2025-03-03T15:37:08.2642695Z  * [new tag]           4.1.0beta0       -> 4.1.0beta0
+2025-03-03T15:37:08.2644866Z  * [new tag]           4.1.1            -> 4.1.1
+2025-03-03T15:37:08.2646992Z  * [new tag]           4.1.2            -> 4.1.2
+2025-03-03T15:37:08.2649280Z  * [new tag]           4.1.3            -> 4.1.3
+2025-03-03T15:37:08.2651454Z  * [new tag]           4.1.4            -> 4.1.4
+2025-03-03T15:37:08.2653611Z  * [new tag]           4.1.5            -> 4.1.5
+2025-03-03T15:37:08.2655765Z  * [new tag]           4.1.7            -> 4.1.7
+2025-03-03T15:37:08.2657331Z  * [new tag]           4.10.0           -> 4.10.0
+2025-03-03T15:37:08.2659027Z  * [new tag]           4.10.0beta0      -> 4.10.0beta0
+2025-03-03T15:37:08.2660592Z  * [new tag]           4.11.0           -> 4.11.0
+2025-03-03T15:37:08.2662035Z  * [new tag]           4.11.0beta0      -> 4.11.0beta0
+2025-03-03T15:37:08.2663451Z  * [new tag]           4.11.1           -> 4.11.1
+2025-03-03T15:37:08.2664839Z  * [new tag]           4.12.0           -> 4.12.0
+2025-03-03T15:37:08.2666248Z  * [new tag]           4.12.0beta0      -> 4.12.0beta0
+2025-03-03T15:37:08.2667865Z  * [new tag]           4.12.0beta1      -> 4.12.0beta1
+2025-03-03T15:37:08.2669258Z  * [new tag]           4.13.0           -> 4.13.0
+2025-03-03T15:37:08.2670600Z  * [new tag]           4.13.0beta0      -> 4.13.0beta0
+2025-03-03T15:37:08.2671967Z  * [new tag]           4.13.1           -> 4.13.1
+2025-03-03T15:37:08.2673413Z  * [new tag]           4.14.0           -> 4.14.0
+2025-03-03T15:37:08.2674986Z  * [new tag]           4.14.0beta0      -> 4.14.0beta0
+2025-03-03T15:37:08.2676412Z  * [new tag]           4.14.0beta1      -> 4.14.0beta1
+2025-03-03T15:37:08.2678136Z  * [new tag]           4.15.0beta0      -> 4.15.0beta0
+2025-03-03T15:37:08.2680266Z  * [new tag]           4.2.0            -> 4.2.0
+2025-03-03T15:37:08.2682197Z  * [new tag]           4.2.0beta0       -> 4.2.0beta0
+2025-03-03T15:37:08.2683583Z  * [new tag]           4.2.1            -> 4.2.1
+2025-03-03T15:37:08.2684888Z  * [new tag]           4.2.2            -> 4.2.2
+2025-03-03T15:37:08.2686210Z  * [new tag]           4.3.0            -> 4.3.0
+2025-03-03T15:37:08.2688158Z  * [new tag]           4.3.0beta0       -> 4.3.0beta0
+2025-03-03T15:37:08.2689634Z  * [new tag]           4.3.1            -> 4.3.1
+2025-03-03T15:37:08.2691398Z  * [new tag]           4.4.0            -> 4.4.0
+2025-03-03T15:37:08.2692864Z  * [new tag]           4.4.0beta0       -> 4.4.0beta0
+2025-03-03T15:37:08.2694233Z  * [new tag]           4.4.0beta1       -> 4.4.0beta1
+2025-03-03T15:37:08.2695575Z  * [new tag]           4.5.0            -> 4.5.0
+2025-03-03T15:37:08.2697252Z  * [new tag]           4.5.0beta0       -> 4.5.0beta0
+2025-03-03T15:37:08.2698881Z  * [new tag]           4.5.0beta1       -> 4.5.0beta1
+2025-03-03T15:37:08.2700203Z  * [new tag]           4.5.1            -> 4.5.1
+2025-03-03T15:37:08.2701479Z  * [new tag]           4.6.0            -> 4.6.0
+2025-03-03T15:37:08.2702787Z  * [new tag]           4.6.0beta0       -> 4.6.0beta0
+2025-03-03T15:37:08.2704139Z  * [new tag]           4.6.0beta1       -> 4.6.0beta1
+2025-03-03T15:37:08.2705470Z  * [new tag]           4.7.0            -> 4.7.0
+2025-03-03T15:37:08.2706768Z  * [new tag]           4.7.0beta0       -> 4.7.0beta0
+2025-03-03T15:37:08.2708325Z  * [new tag]           4.7.1            -> 4.7.1
+2025-03-03T15:37:08.2709624Z  * [new tag]           4.8.0            -> 4.8.0
+2025-03-03T15:37:08.2710932Z  * [new tag]           4.8.0beta0       -> 4.8.0beta0
+2025-03-03T15:37:08.2712229Z  * [new tag]           4.9.0            -> 4.9.0
+2025-03-03T15:37:08.2713599Z  * [new tag]           4.9.0beta0       -> 4.9.0beta0
+2025-03-03T15:37:08.2715244Z  * [new tag]           pwntools-ancient -> pwntools-ancient
+2025-03-03T15:37:08.2717056Z  * [new ref]           91bccd9a40568b5f9cb010b76c15b748fa0743c6 -> pull/2559/merge
+2025-03-03T15:37:08.2721228Z ##[endgroup]
+2025-03-03T15:37:08.2722832Z ##[group]Determining the checkout info
+2025-03-03T15:37:08.2724727Z ##[endgroup]
+2025-03-03T15:37:08.2725835Z [command]/usr/bin/git sparse-checkout disable
+2025-03-03T15:37:08.2735996Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-03T15:37:08.2763176Z ##[group]Checking out the ref
+2025-03-03T15:37:08.2765907Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/2559/merge
+2025-03-03T15:37:08.3938056Z Note: switching to 'refs/remotes/pull/2559/merge'.
+2025-03-03T15:37:08.3939681Z 
+2025-03-03T15:37:08.3940964Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-03T15:37:08.3944246Z changes and commit them, and you can discard any commits you make in this
+2025-03-03T15:37:08.4027362Z state without impacting any branches by switching back to a branch.
+2025-03-03T15:37:08.4029624Z 
+2025-03-03T15:37:08.4030863Z If you want to create a new branch to retain commits you create, you may
+2025-03-03T15:37:08.4033751Z do so (now or later) by using -c with the switch command. Example:
+2025-03-03T15:37:08.4035430Z 
+2025-03-03T15:37:08.4036150Z   git switch -c <new-branch-name>
+2025-03-03T15:37:08.4037369Z 
+2025-03-03T15:37:08.4038250Z Or undo this operation with:
+2025-03-03T15:37:08.4039425Z 
+2025-03-03T15:37:08.4040063Z   git switch -
+2025-03-03T15:37:08.4040963Z 
+2025-03-03T15:37:08.4042413Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-03T15:37:08.4044543Z 
+2025-03-03T15:37:08.4046803Z HEAD is now at 91bccd9a Merge 7371281f0599c7f334f05e09b165ed50ee56fbed into b2345f214e0c2c260989646826559c234842832b
+2025-03-03T15:37:08.4051469Z ##[endgroup]
+2025-03-03T15:37:08.4053843Z [command]/usr/bin/git log -1 --format=%H
+2025-03-03T15:37:08.4055122Z 91bccd9a40568b5f9cb010b76c15b748fa0743c6
+2025-03-03T15:37:08.4235362Z ##[group]Run if git log --stat ${GITHUB_BASE}..HEAD | grep CHANGELOG.md; then
+2025-03-03T15:37:08.4237421Z [36;1mif git log --stat ${GITHUB_BASE}..HEAD | grep CHANGELOG.md; then[0m
+2025-03-03T15:37:08.4239173Z [36;1m   echo 'Changelog updated :D'[0m
+2025-03-03T15:37:08.4240310Z [36;1melse[0m
+2025-03-03T15:37:08.4241590Z [36;1m   if git log --stat ${GITHUB_BASE}..HEAD pwnlib pwn | grep '++\|--'; then[0m
+2025-03-03T15:37:08.4243410Z [36;1m      echo 'Major changes detected, changelog required!'[0m
+2025-03-03T15:37:08.4244755Z [36;1m      false[0m
+2025-03-03T15:37:08.4245606Z [36;1m   else[0m
+2025-03-03T15:37:08.4246724Z [36;1m      echo 'Minor changes detected, no changelog required!'[0m
+2025-03-03T15:37:08.4248190Z [36;1m   fi[0m
+2025-03-03T15:37:08.4248975Z [36;1mfi[0m
+2025-03-03T15:37:08.4301101Z shell: /usr/bin/bash -e {0}
+2025-03-03T15:37:08.4302102Z env:
+2025-03-03T15:37:08.4302880Z   GITHUB_BASE: origin/stable
+2025-03-03T15:37:08.4303845Z ##[endgroup]
+2025-03-03T15:37:08.4453843Z  pwnlib/elf/corefile.py | 5 +++++
+2025-03-03T15:37:08.4455403Z Major changes detected, changelog required!
+2025-03-03T15:37:08.4472384Z ##[error]Process completed with exit code 1.
+2025-03-03T15:37:08.4654865Z Post job cleanup.
+2025-03-03T15:37:08.5600156Z [command]/usr/bin/git version
+2025-03-03T15:37:08.5639875Z git version 2.48.1
+2025-03-03T15:37:08.5688335Z Temporarily overriding HOME='/home/runner/work/_temp/fe59b79c-2ac5-45c2-942a-a0958af214bb' before making global git config changes
+2025-03-03T15:37:08.5693427Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-03T15:37:08.5703372Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pwntools/pwntools
+2025-03-03T15:37:08.5739062Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-03T15:37:08.5774536Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-03T15:37:08.6008296Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-03T15:37:08.6028761Z http.https://github.com/.extraheader
+2025-03-03T15:37:08.6042772Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-03T15:37:08.6077204Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-03T15:37:08.6422203Z Cleaning up orphan processes

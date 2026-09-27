@@ -1,0 +1,237 @@
+2025-03-28T21:14:13.8483722Z Requested labels: ubuntu-latest
+2025-03-28T21:14:13.8484037Z Job defined at: mmcdermott/MEDS_transforms/.github/workflows/tests.yaml@refs/pull/290/merge
+2025-03-28T21:14:13.8484142Z Waiting for a runner to pick up this job...
+2025-03-28T21:14:14.3806364Z Job is waiting for a hosted runner to come online.
+2025-03-28T21:14:18.5423877Z Job is about to start running on the hosted runner: GitHub Actions 16 (hosted)
+2025-03-28T21:14:20.5446964Z Current runner version: '2.323.0'
+2025-03-28T21:14:20.5477496Z ##[group]Operating System
+2025-03-28T21:14:20.5478255Z Ubuntu
+2025-03-28T21:14:20.5478877Z 24.04.2
+2025-03-28T21:14:20.5479328Z LTS
+2025-03-28T21:14:20.5479785Z ##[endgroup]
+2025-03-28T21:14:20.5480385Z ##[group]Runner Image
+2025-03-28T21:14:20.5480962Z Image: ubuntu-24.04
+2025-03-28T21:14:20.5481523Z Version: 20250323.1.0
+2025-03-28T21:14:20.5482573Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-28T21:14:20.5484183Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-03-28T21:14:20.5485160Z ##[endgroup]
+2025-03-28T21:14:20.5485691Z ##[group]Runner Image Provisioner
+2025-03-28T21:14:20.5486252Z 2.0.422.1
+2025-03-28T21:14:20.5486801Z ##[endgroup]
+2025-03-28T21:14:20.5487898Z ##[group]GITHUB_TOKEN Permissions
+2025-03-28T21:14:20.5489967Z Contents: read
+2025-03-28T21:14:20.5490547Z Metadata: read
+2025-03-28T21:14:20.5491295Z Packages: read
+2025-03-28T21:14:20.5491872Z ##[endgroup]
+2025-03-28T21:14:20.5495386Z Secret source: Actions
+2025-03-28T21:14:20.5496431Z Prepare workflow directory
+2025-03-28T21:14:20.5808653Z Prepare all required actions
+2025-03-28T21:14:20.5845567Z Getting action download info
+2025-03-28T21:14:20.8105055Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-03-28T21:14:20.8106005Z Version: 4.2.2
+2025-03-28T21:14:20.8106816Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-03-28T21:14:20.8107835Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-03-28T21:14:20.8108470Z ##[endgroup]
+2025-03-28T21:14:20.9275785Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-03-28T21:14:20.9276517Z Version: 5.5.0
+2025-03-28T21:14:20.9277160Z Digest: sha256:1fac95d751afd58314aebd2ab01d4bf3b3109a441917bd2cac2a22898ec494f7
+2025-03-28T21:14:20.9278030Z Source commit SHA: 8d9ed9ac5c53483de85588cdf95a591a75ab9f55
+2025-03-28T21:14:20.9278642Z ##[endgroup]
+2025-03-28T21:14:21.1750154Z Download action repository 'codecov/codecov-action@v4.0.1' (SHA:e0b68c6749509c5f83f984dd99a76a1c1a231044)
+2025-03-28T21:14:21.3559477Z Download action repository 'codecov/test-results-action@v1' (SHA:f2dba722c67b86c6caa034178c6e4d35335f6706)
+2025-03-28T21:14:21.6524543Z Complete job name: run_tests_ubuntu (3.12)
+2025-03-28T21:14:21.7235724Z ##[group]Run actions/checkout@v4
+2025-03-28T21:14:21.7237561Z with:
+2025-03-28T21:14:21.7238418Z   repository: mmcdermott/MEDS_transforms
+2025-03-28T21:14:21.7239810Z   token: ***
+2025-03-28T21:14:21.7240700Z   ssh-strict: true
+2025-03-28T21:14:21.7241510Z   ssh-user: git
+2025-03-28T21:14:21.7242332Z   persist-credentials: true
+2025-03-28T21:14:21.7243527Z   clean: true
+2025-03-28T21:14:21.7244458Z   sparse-checkout-cone-mode: true
+2025-03-28T21:14:21.7245347Z   fetch-depth: 1
+2025-03-28T21:14:21.7245813Z   fetch-tags: false
+2025-03-28T21:14:21.7246288Z   show-progress: true
+2025-03-28T21:14:21.7246781Z   lfs: false
+2025-03-28T21:14:21.7247308Z   submodules: false
+2025-03-28T21:14:21.7247774Z   set-safe-directory: true
+2025-03-28T21:14:21.7248604Z ##[endgroup]
+2025-03-28T21:14:21.9915772Z Syncing repository: mmcdermott/MEDS_transforms
+2025-03-28T21:14:21.9917703Z ##[group]Getting Git version info
+2025-03-28T21:14:21.9918644Z Working directory is '/home/runner/work/MEDS_transforms/MEDS_transforms'
+2025-03-28T21:14:21.9919775Z [command]/usr/bin/git version
+2025-03-28T21:14:22.0012521Z git version 2.49.0
+2025-03-28T21:14:22.0043382Z ##[endgroup]
+2025-03-28T21:14:22.0059275Z Temporarily overriding HOME='/home/runner/work/_temp/b5085096-31fd-4e27-8704-a92d2393307a' before making global git config changes
+2025-03-28T21:14:22.0062096Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-28T21:14:22.0066613Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/MEDS_transforms/MEDS_transforms
+2025-03-28T21:14:22.0103769Z Deleting the contents of '/home/runner/work/MEDS_transforms/MEDS_transforms'
+2025-03-28T21:14:22.0107785Z ##[group]Initializing the repository
+2025-03-28T21:14:22.0113098Z [command]/usr/bin/git init /home/runner/work/MEDS_transforms/MEDS_transforms
+2025-03-28T21:14:22.0196647Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-28T21:14:22.0198201Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-28T21:14:22.0199360Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-28T21:14:22.0200092Z hint:
+2025-03-28T21:14:22.0200645Z hint: 	git config --global init.defaultBranch <name>
+2025-03-28T21:14:22.0201285Z hint:
+2025-03-28T21:14:22.0201899Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-28T21:14:22.0203380Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-28T21:14:22.0204230Z hint:
+2025-03-28T21:14:22.0204682Z hint: 	git branch -m <name>
+2025-03-28T21:14:22.0207185Z Initialized empty Git repository in /home/runner/work/MEDS_transforms/MEDS_transforms/.git/
+2025-03-28T21:14:22.0219876Z [command]/usr/bin/git remote add origin https://github.com/mmcdermott/MEDS_transforms
+2025-03-28T21:14:22.0255546Z ##[endgroup]
+2025-03-28T21:14:22.0257046Z ##[group]Disabling automatic garbage collection
+2025-03-28T21:14:22.0260533Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-28T21:14:22.0290114Z ##[endgroup]
+2025-03-28T21:14:22.0291665Z ##[group]Setting up auth
+2025-03-28T21:14:22.0298043Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-28T21:14:22.0329869Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-28T21:14:22.0682503Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-28T21:14:22.0715384Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-28T21:14:22.0946636Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-28T21:14:22.0984618Z ##[endgroup]
+2025-03-28T21:14:22.0986387Z ##[group]Fetching the repository
+2025-03-28T21:14:22.0994091Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +69c5196a6964aee149ecf47c59c6a3944808c87f:refs/remotes/pull/290/merge
+2025-03-28T21:14:22.3866121Z From https://github.com/mmcdermott/MEDS_transforms
+2025-03-28T21:14:22.3867198Z  * [new ref]         69c5196a6964aee149ecf47c59c6a3944808c87f -> pull/290/merge
+2025-03-28T21:14:22.3894485Z ##[endgroup]
+2025-03-28T21:14:22.3895210Z ##[group]Determining the checkout info
+2025-03-28T21:14:22.3896701Z ##[endgroup]
+2025-03-28T21:14:22.3901637Z [command]/usr/bin/git sparse-checkout disable
+2025-03-28T21:14:22.3945310Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-28T21:14:22.3973199Z ##[group]Checking out the ref
+2025-03-28T21:14:22.3977778Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/290/merge
+2025-03-28T21:14:22.4063743Z Note: switching to 'refs/remotes/pull/290/merge'.
+2025-03-28T21:14:22.4064533Z 
+2025-03-28T21:14:22.4065161Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-28T21:14:22.4066598Z changes and commit them, and you can discard any commits you make in this
+2025-03-28T21:14:22.4067825Z state without impacting any branches by switching back to a branch.
+2025-03-28T21:14:22.4068797Z 
+2025-03-28T21:14:22.4069468Z If you want to create a new branch to retain commits you create, you may
+2025-03-28T21:14:22.4071059Z do so (now or later) by using -c with the switch command. Example:
+2025-03-28T21:14:22.4072007Z 
+2025-03-28T21:14:22.4072423Z   git switch -c <new-branch-name>
+2025-03-28T21:14:22.4073278Z 
+2025-03-28T21:14:22.4074010Z Or undo this operation with:
+2025-03-28T21:14:22.4074607Z 
+2025-03-28T21:14:22.4074947Z   git switch -
+2025-03-28T21:14:22.4075423Z 
+2025-03-28T21:14:22.4076193Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-28T21:14:22.4077283Z 
+2025-03-28T21:14:22.4078470Z HEAD is now at 69c5196 Merge e7cf5189387d3718915a54731fd8c4f708c8326a into 848d862eb6c15ea6ec764bec39b7a1922487da8c
+2025-03-28T21:14:22.4081723Z ##[endgroup]
+2025-03-28T21:14:22.4109390Z [command]/usr/bin/git log -1 --format=%H
+2025-03-28T21:14:22.4131528Z 69c5196a6964aee149ecf47c59c6a3944808c87f
+2025-03-28T21:14:22.4419621Z ##[group]Run actions/setup-python@v5
+2025-03-28T21:14:22.4420234Z with:
+2025-03-28T21:14:22.4420666Z   python-version: 3.12
+2025-03-28T21:14:22.4421169Z   check-latest: false
+2025-03-28T21:14:22.4421787Z   token: ***
+2025-03-28T21:14:22.4422217Z   update-environment: true
+2025-03-28T21:14:22.4422722Z   allow-prereleases: false
+2025-03-28T21:14:22.4423507Z   freethreaded: false
+2025-03-28T21:14:22.4423990Z ##[endgroup]
+2025-03-28T21:14:22.6180740Z ##[group]Installed versions
+2025-03-28T21:14:22.6252101Z Successfully set up CPython (3.12.9)
+2025-03-28T21:14:22.6254086Z ##[endgroup]
+2025-03-28T21:14:22.6382091Z ##[group]Run pip install -e .[tests]
+2025-03-28T21:14:22.6382990Z [36;1mpip install -e .[tests][0m
+2025-03-28T21:14:22.6436063Z shell: /usr/bin/bash -e {0}
+2025-03-28T21:14:22.6436611Z env:
+2025-03-28T21:14:22.6437146Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-28T21:14:22.6438019Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib/pkgconfig
+2025-03-28T21:14:22.6438829Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-28T21:14:22.6439575Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-28T21:14:22.6440315Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-28T21:14:22.6441089Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib
+2025-03-28T21:14:22.6441725Z ##[endgroup]
+2025-03-28T21:14:23.3359646Z Obtaining file:///home/runner/work/MEDS_transforms/MEDS_transforms
+2025-03-28T21:14:23.3379490Z   Installing build dependencies: started
+2025-03-28T21:14:25.2192111Z   Installing build dependencies: finished with status 'done'
+2025-03-28T21:14:25.2199261Z   Checking if build backend supports build_editable: started
+2025-03-28T21:14:25.3887245Z   Checking if build backend supports build_editable: finished with status 'done'
+2025-03-28T21:14:25.3894847Z   Getting requirements to build editable: started
+2025-03-28T21:14:25.6716807Z   Getting requirements to build editable: finished with status 'done'
+2025-03-28T21:14:25.6725372Z   Preparing editable metadata (pyproject.toml): started
+2025-03-28T21:14:25.9486412Z   Preparing editable metadata (pyproject.toml): finished with status 'done'
+2025-03-28T21:14:26.1480214Z Collecting polars~=1.26 (from MEDS_transforms==0.1.dev1+g69c5196)
+2025-03-28T21:14:26.1930902Z   Downloading polars-1.26.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (14 kB)
+2025-03-28T21:14:26.2648501Z Collecting pyarrow (from MEDS_transforms==0.1.dev1+g69c5196)
+2025-03-28T21:14:26.2733492Z   Downloading pyarrow-19.0.1-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (3.3 kB)
+2025-03-28T21:14:26.2967448Z Collecting hydra-core (from MEDS_transforms==0.1.dev1+g69c5196)
+2025-03-28T21:14:26.3039915Z   Downloading hydra_core-1.3.2-py3-none-any.whl.metadata (5.5 kB)
+2025-03-28T21:14:26.4374818Z Collecting numpy (from MEDS_transforms==0.1.dev1+g69c5196)
+2025-03-28T21:14:26.4452989Z   Downloading numpy-2.2.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)
+2025-03-28T21:14:26.4854770Z Collecting meds==0.3.3 (from MEDS_transforms==0.1.dev1+g69c5196)
+2025-03-28T21:14:26.4941929Z   Downloading meds-0.3.3-py3-none-any.whl.metadata (10 kB)
+2025-03-28T21:14:26.5203874Z Collecting filelock (from MEDS_transforms==0.1.dev1+g69c5196)
+2025-03-28T21:14:26.5278916Z   Downloading filelock-3.18.0-py3-none-any.whl.metadata (2.9 kB)
+2025-03-28T21:14:26.5650633Z Collecting jsonschema>=4.0.0 (from meds==0.3.3->MEDS_transforms==0.1.dev1+g69c5196)
+2025-03-28T21:14:26.5723207Z   Downloading jsonschema-4.23.0-py3-none-any.whl.metadata (7.9 kB)
+2025-03-28T21:14:26.5963756Z Collecting typing-extensions>=4.0 (from meds==0.3.3->MEDS_transforms==0.1.dev1+g69c5196)
+2025-03-28T21:14:26.6032919Z   Downloading typing_extensions-4.13.0-py3-none-any.whl.metadata (3.0 kB)
+2025-03-28T21:14:26.6398222Z Collecting pytest (from MEDS_transforms==0.1.dev1+g69c5196)
+2025-03-28T21:14:26.6474852Z   Downloading pytest-8.3.5-py3-none-any.whl.metadata (7.6 kB)
+2025-03-28T21:14:26.6685727Z Collecting pytest-cov (from MEDS_transforms==0.1.dev1+g69c5196)
+2025-03-28T21:14:26.6756207Z   Downloading pytest_cov-6.0.0-py3-none-any.whl.metadata (27 kB)
+2025-03-28T21:14:26.6955344Z Collecting rootutils (from MEDS_transforms==0.1.dev1+g69c5196)
+2025-03-28T21:14:26.7041878Z   Downloading rootutils-1.0.7-py3-none-any.whl.metadata (4.7 kB)
+2025-03-28T21:14:26.7233445Z Collecting hydra-joblib-launcher (from MEDS_transforms==0.1.dev1+g69c5196)
+2025-03-28T21:14:26.7323497Z   Downloading hydra_joblib_launcher-1.2.0-py3-none-any.whl.metadata (1.0 kB)
+2025-03-28T21:14:26.7525762Z INFO: pip is looking at multiple versions of meds-transforms[tests] to determine which version is compatible with other requirements. This could take a while.
+2025-03-28T21:14:26.7539445Z ERROR: Could not find a version that satisfies the requirement meds_testing_helpers~=0.2.6; extra == "tests" (from meds-transforms[tests]) (from versions: 0.0.1, 0.2.1, 0.2.2, 0.2.3, 0.2.4, 0.2.5)
+2025-03-28T21:14:26.8815749Z ERROR: No matching distribution found for meds_testing_helpers~=0.2.6; extra == "tests"
+2025-03-28T21:14:26.9773919Z ##[error]Process completed with exit code 1.
+2025-03-28T21:14:26.9892056Z ##[group]Run codecov/test-results-action@v1
+2025-03-28T21:14:26.9892365Z with:
+2025-03-28T21:14:26.9893022Z   token: ***
+2025-03-28T21:14:26.9893233Z env:
+2025-03-28T21:14:26.9893482Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-28T21:14:26.9893956Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib/pkgconfig
+2025-03-28T21:14:26.9894368Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-28T21:14:26.9894735Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-28T21:14:26.9895094Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.9/x64
+2025-03-28T21:14:26.9895477Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.9/x64/lib
+2025-03-28T21:14:26.9895775Z ##[endgroup]
+2025-03-28T21:14:27.0711248Z ==> linux OS detected
+2025-03-28T21:14:27.4590375Z https://cli.codecov.io/latest/linux/codecov.SHA256SUM
+2025-03-28T21:14:27.5618940Z gpg: directory '/home/runner/.gnupg' created
+2025-03-28T21:14:27.5622460Z gpg: keybox '/home/runner/.gnupg/pubring.kbx' created
+2025-03-28T21:14:27.5640999Z gpg: /home/runner/.gnupg/trustdb.gpg: trustdb created
+2025-03-28T21:14:27.5642263Z gpg: key 806BB28AED779869: public key "Codecov Uploader (Codecov Uploader Verification Key) <security@codecov.io>" imported
+2025-03-28T21:14:27.5751381Z gpg: Total number processed: 1
+2025-03-28T21:14:27.5751799Z gpg:               imported: 1
+2025-03-28T21:14:27.5814716Z gpg: Signature made Tue Mar 25 17:04:28 2025 UTC
+2025-03-28T21:14:27.5815380Z gpg:                using RSA key 27034E7FDB850E0BBC2C62FF806BB28AED779869
+2025-03-28T21:14:27.5819956Z gpg: Good signature from "Codecov Uploader (Codecov Uploader Verification Key) <security@codecov.io>" [unknown]
+2025-03-28T21:14:27.5821010Z gpg: WARNING: This key is not certified with a trusted signature!
+2025-03-28T21:14:27.5821719Z gpg:          There is no indication that the signature belongs to the owner.
+2025-03-28T21:14:27.5822474Z Primary key fingerprint: 2703 4E7F DB85 0E0B BC2C  62FF 806B B28A ED77 9869
+2025-03-28T21:14:27.6356656Z ==> Uploader SHASUM verified (e2cfdb658c569e92cbb413237a1e9a266f1cb6285bf10c3793d6d606979e2049  codecov)
+2025-03-28T21:14:27.6357705Z ==> Running version latest
+2025-03-28T21:14:27.6591427Z ==> Running version v10.3.0
+2025-03-28T21:14:27.6601728Z ==> Running command '/home/runner/work/_actions/codecov/test-results-action/v1/dist/codecov do-upload'
+2025-03-28T21:14:27.6619824Z [command]/home/runner/work/_actions/codecov/test-results-action/v1/dist/codecov do-upload -C e7cf5189387d3718915a54731fd8c4f708c8326a --report-type test_results
+2025-03-28T21:14:28.3124933Z info - 2025-03-28 21:14:28,311 -- ci service found: github-actions
+2025-03-28T21:14:28.3175379Z warning - 2025-03-28 21:14:28,317 -- No config file could be found. Ignoring config.
+2025-03-28T21:14:28.3501059Z info - 2025-03-28 21:14:28,349 -- Found 0 test_results files to report
+2025-03-28T21:14:28.3504802Z error - 2025-03-28 21:14:28,350 -- No JUnit XML reports found. Please review our documentation (https://docs.codecov.com/docs/test-result-ingestion-beta) to generate and upload the file.
+2025-03-28T21:14:28.7434682Z info - 2025-03-28 21:14:28,742 -- No test results reports found. Triggering notifications without uploading.
+2025-03-28T21:14:28.7435600Z info - 2025-03-28 21:14:28,743 -- Process Upload complete
+2025-03-28T21:14:28.8466041Z Sentry is attempting to send 2 pending events
+2025-03-28T21:14:28.8466669Z Waiting up to 2 seconds
+2025-03-28T21:14:28.8466988Z Press Ctrl-C to quit
+2025-03-28T21:14:28.9659109Z Post job cleanup.
+2025-03-28T21:14:29.0596258Z [command]/usr/bin/git version
+2025-03-28T21:14:29.0633576Z git version 2.49.0
+2025-03-28T21:14:29.0683225Z Temporarily overriding HOME='/home/runner/work/_temp/3f7dea4e-1a72-4878-a482-c023ac8e6596' before making global git config changes
+2025-03-28T21:14:29.0684477Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-28T21:14:29.0688738Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/MEDS_transforms/MEDS_transforms
+2025-03-28T21:14:29.0723725Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-28T21:14:29.0756202Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-28T21:14:29.0996150Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-28T21:14:29.1018533Z http.https://github.com/.extraheader
+2025-03-28T21:14:29.1031055Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-28T21:14:29.1061858Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-28T21:14:29.1391739Z Cleaning up orphan processes

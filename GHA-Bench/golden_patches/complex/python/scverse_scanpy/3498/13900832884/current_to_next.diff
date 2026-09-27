@@ -1,0 +1,61 @@
+diff --git a/src/testing/scanpy/_helpers/__init__.py b/src/testing/scanpy/_helpers/__init__.py
+index ebc2416980..2e2aa2c378 100644
+--- a/src/testing/scanpy/_helpers/__init__.py
++++ b/src/testing/scanpy/_helpers/__init__.py
+@@ -182,10 +182,16 @@ def maybe_dask_process_context():
+ 
+ 
+ def random_mask(n: int, *, rng: np.random.Generator | None = None) -> NDArray[np.bool_]:
++    """Generate a random mask.
++
++    Makes sure that at least 2 mask entries are True and at least 2 are False.
++    This avoids off-by-1 errors even in e.g. neighbors (which already cuts 1 off).
++    """
++    assert n >= 4, "n must be at least 4"
+     rng = np.random.default_rng(rng)
+     mask = rng.choice([True, False], n)
+-    if mask.all():
+-        mask[rng.choice(n)] = False
+-    elif not mask.any():
+-        mask[rng.choice(n)] = True
++    if (n_false := (~mask).sum()) < 2:
++        mask[rng.choice(np.flatnonzero(mask), 2 - n_false, replace=False)] = False
++    if (n_true := mask.sum()) < 2:
++        mask[rng.choice(np.flatnonzero(~mask), 2 - n_true, replace=False)] = True
+     return mask
+diff --git a/tests/test_helpers.py b/tests/test_helpers.py
+new file mode 100644
+index 0000000000..740737b56f
+--- /dev/null
++++ b/tests/test_helpers.py
+@@ -0,0 +1,12 @@
++"""Test our test helpers."""
++
++from __future__ import annotations
++
++import numpy as np
++
++from testing.scanpy._helpers import random_mask
++
++
++def test_random_mask():
++    ns_true = np.array([int(random_mask(4).sum()) for _ in range(1000)])
++    np.testing.assert_equal(ns_true, [2] * 1000)
+diff --git a/tests/test_preprocessing_distributed.py b/tests/test_preprocessing_distributed.py
+index afb120b982..1b474e9594 100644
+--- a/tests/test_preprocessing_distributed.py
++++ b/tests/test_preprocessing_distributed.py
+@@ -151,11 +151,11 @@ def test_write_zarr(adata: AnnData, adata_dist: AnnData):
+         chunks = (chunks[0][0],) + chunks[1]
+ 
+     # write metadata using regular anndata
+-    adata.write_zarr(temp_store, chunks)
++    adata.write_zarr(temp_store, chunks=chunks)
+     if adata_dist.uns["dist-mode"] == "dask":
+         adata_dist.X.to_zarr(temp_store.dir_path("X"), overwrite=True)
+     elif adata_dist.uns["dist-mode"] == "direct":
+-        adata_dist.X.to_zarr(temp_store.dir_path("X"), chunks)
++        adata_dist.X.to_zarr(temp_store.dir_path("X"), chunks=chunks)
+     else:
+         pytest.fail("add branch for new dist-mode")
+ 

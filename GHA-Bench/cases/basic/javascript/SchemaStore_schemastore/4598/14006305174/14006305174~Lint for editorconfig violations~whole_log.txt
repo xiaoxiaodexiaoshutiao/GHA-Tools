@@ -1,0 +1,229 @@
+﻿2025-03-22T07:05:17.8185499Z Current runner version: '2.323.0'
+2025-03-22T07:05:17.8209996Z ##[group]Operating System
+2025-03-22T07:05:17.8210873Z Ubuntu
+2025-03-22T07:05:17.8211478Z 24.04.2
+2025-03-22T07:05:17.8211920Z LTS
+2025-03-22T07:05:17.8212404Z ##[endgroup]
+2025-03-22T07:05:17.8213008Z ##[group]Runner Image
+2025-03-22T07:05:17.8213596Z Image: ubuntu-24.04
+2025-03-22T07:05:17.8214151Z Version: 20250316.1.0
+2025-03-22T07:05:17.8215222Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250316.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-22T07:05:17.8216622Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250316.1
+2025-03-22T07:05:17.8217506Z ##[endgroup]
+2025-03-22T07:05:17.8218069Z ##[group]Runner Image Provisioner
+2025-03-22T07:05:17.8218909Z 2.0.422.1
+2025-03-22T07:05:17.8219391Z ##[endgroup]
+2025-03-22T07:05:17.8221756Z ##[group]GITHUB_TOKEN Permissions
+2025-03-22T07:05:17.8224240Z Actions: read
+2025-03-22T07:05:17.8225182Z Attestations: read
+2025-03-22T07:05:17.8226257Z Checks: read
+2025-03-22T07:05:17.8227203Z Contents: read
+2025-03-22T07:05:17.8228152Z Deployments: read
+2025-03-22T07:05:17.8229223Z Discussions: read
+2025-03-22T07:05:17.8230195Z Issues: read
+2025-03-22T07:05:17.8231046Z Metadata: read
+2025-03-22T07:05:17.8231964Z Models: read
+2025-03-22T07:05:17.8232924Z Packages: read
+2025-03-22T07:05:17.8233830Z Pages: read
+2025-03-22T07:05:17.8234711Z PullRequests: read
+2025-03-22T07:05:17.8235685Z RepositoryProjects: read
+2025-03-22T07:05:17.8236878Z SecurityEvents: read
+2025-03-22T07:05:17.8237720Z Statuses: read
+2025-03-22T07:05:17.8238742Z ##[endgroup]
+2025-03-22T07:05:17.8241767Z Secret source: None
+2025-03-22T07:05:17.8242782Z Prepare workflow directory
+2025-03-22T07:05:17.8695559Z Prepare all required actions
+2025-03-22T07:05:17.8750416Z Getting action download info
+2025-03-22T07:05:18.3307759Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-03-22T07:05:18.3308994Z Version: 4.2.2
+2025-03-22T07:05:18.3309968Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-03-22T07:05:18.3311301Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-03-22T07:05:18.3311991Z ##[endgroup]
+2025-03-22T07:05:18.4271205Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-03-22T07:05:18.4271900Z Version: 5.4.0
+2025-03-22T07:05:18.4272525Z Digest: sha256:6003df952c8106bcd378d2ba997eef202da924317a57269dfa72449b135adb7f
+2025-03-22T07:05:18.4273354Z Source commit SHA: 42375524e23c412d93fb67b49958b491fce71c38
+2025-03-22T07:05:18.4273925Z ##[endgroup]
+2025-03-22T07:05:18.5841998Z Complete job name: Lint for editorconfig violations
+2025-03-22T07:05:18.6487907Z ##[group]Run actions/checkout@v4
+2025-03-22T07:05:18.6488979Z with:
+2025-03-22T07:05:18.6489401Z   repository: SchemaStore/schemastore
+2025-03-22T07:05:18.6490070Z   token: ***
+2025-03-22T07:05:18.6490451Z   ssh-strict: true
+2025-03-22T07:05:18.6490886Z   ssh-user: git
+2025-03-22T07:05:18.6491286Z   persist-credentials: true
+2025-03-22T07:05:18.6491759Z   clean: true
+2025-03-22T07:05:18.6492161Z   sparse-checkout-cone-mode: true
+2025-03-22T07:05:18.6492642Z   fetch-depth: 1
+2025-03-22T07:05:18.6493033Z   fetch-tags: false
+2025-03-22T07:05:18.6493448Z   show-progress: true
+2025-03-22T07:05:18.6493854Z   lfs: false
+2025-03-22T07:05:18.6494207Z   submodules: false
+2025-03-22T07:05:18.6494605Z   set-safe-directory: true
+2025-03-22T07:05:18.6495260Z ##[endgroup]
+2025-03-22T07:05:18.8275017Z Syncing repository: SchemaStore/schemastore
+2025-03-22T07:05:18.8277010Z ##[group]Getting Git version info
+2025-03-22T07:05:18.8277806Z Working directory is '/home/runner/work/schemastore/schemastore'
+2025-03-22T07:05:18.8279206Z [command]/usr/bin/git version
+2025-03-22T07:05:18.8316485Z git version 2.48.1
+2025-03-22T07:05:18.8346922Z ##[endgroup]
+2025-03-22T07:05:18.8362871Z Temporarily overriding HOME='/home/runner/work/_temp/80532fbd-7559-4ef2-8ade-73146c461956' before making global git config changes
+2025-03-22T07:05:18.8365222Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-22T07:05:18.8369840Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/schemastore/schemastore
+2025-03-22T07:05:18.8407433Z Deleting the contents of '/home/runner/work/schemastore/schemastore'
+2025-03-22T07:05:18.8412131Z ##[group]Initializing the repository
+2025-03-22T07:05:18.8417795Z [command]/usr/bin/git init /home/runner/work/schemastore/schemastore
+2025-03-22T07:05:18.8492998Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-22T07:05:18.8494128Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-22T07:05:18.8495225Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-22T07:05:18.8496007Z hint:
+2025-03-22T07:05:18.8496772Z hint: 	git config --global init.defaultBranch <name>
+2025-03-22T07:05:18.8497726Z hint:
+2025-03-22T07:05:18.8498791Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-22T07:05:18.8500254Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-22T07:05:18.8501332Z hint:
+2025-03-22T07:05:18.8501710Z hint: 	git branch -m <name>
+2025-03-22T07:05:18.8502445Z Initialized empty Git repository in /home/runner/work/schemastore/schemastore/.git/
+2025-03-22T07:05:18.8516180Z [command]/usr/bin/git remote add origin https://github.com/SchemaStore/schemastore
+2025-03-22T07:05:18.8552680Z ##[endgroup]
+2025-03-22T07:05:18.8553944Z ##[group]Disabling automatic garbage collection
+2025-03-22T07:05:18.8557042Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-22T07:05:18.8589399Z ##[endgroup]
+2025-03-22T07:05:18.8590586Z ##[group]Setting up auth
+2025-03-22T07:05:18.8596852Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-22T07:05:18.8628861Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-22T07:05:18.8936567Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-22T07:05:18.8968043Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-22T07:05:18.9199412Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-22T07:05:18.9234963Z ##[endgroup]
+2025-03-22T07:05:18.9236170Z ##[group]Fetching the repository
+2025-03-22T07:05:18.9245686Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +73139715f52124567980c37445230fc939b878cc:refs/remotes/pull/4598/merge
+2025-03-22T07:05:20.4450817Z From https://github.com/SchemaStore/schemastore
+2025-03-22T07:05:20.4453924Z  * [new ref]         73139715f52124567980c37445230fc939b878cc -> pull/4598/merge
+2025-03-22T07:05:20.4479737Z ##[endgroup]
+2025-03-22T07:05:20.4480940Z ##[group]Determining the checkout info
+2025-03-22T07:05:20.4482600Z ##[endgroup]
+2025-03-22T07:05:20.4487620Z [command]/usr/bin/git sparse-checkout disable
+2025-03-22T07:05:20.4537677Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-22T07:05:20.4575040Z ##[group]Checking out the ref
+2025-03-22T07:05:20.4579739Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/4598/merge
+2025-03-22T07:05:20.6937573Z Note: switching to 'refs/remotes/pull/4598/merge'.
+2025-03-22T07:05:20.6938723Z 
+2025-03-22T07:05:20.6939417Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-22T07:05:20.6940841Z changes and commit them, and you can discard any commits you make in this
+2025-03-22T07:05:20.6942015Z state without impacting any branches by switching back to a branch.
+2025-03-22T07:05:20.6942681Z 
+2025-03-22T07:05:20.6943171Z If you want to create a new branch to retain commits you create, you may
+2025-03-22T07:05:20.6944527Z do so (now or later) by using -c with the switch command. Example:
+2025-03-22T07:05:20.6945135Z 
+2025-03-22T07:05:20.6945440Z   git switch -c <new-branch-name>
+2025-03-22T07:05:20.6945948Z 
+2025-03-22T07:05:20.6946258Z Or undo this operation with:
+2025-03-22T07:05:20.6946701Z 
+2025-03-22T07:05:20.6946957Z   git switch -
+2025-03-22T07:05:20.6947322Z 
+2025-03-22T07:05:20.6947893Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-22T07:05:20.6948867Z 
+2025-03-22T07:05:20.6949785Z HEAD is now at 7313971 Merge 97f5fb73f771beeb27752f3d403b319d625788d9 into b5e80ebda105002ea7d90e97a519eb2daa0f118f
+2025-03-22T07:05:20.6955449Z ##[endgroup]
+2025-03-22T07:05:20.6997840Z [command]/usr/bin/git log -1 --format=%H
+2025-03-22T07:05:20.7021844Z 73139715f52124567980c37445230fc939b878cc
+2025-03-22T07:05:20.7318914Z ##[group]Run actions/setup-python@v5
+2025-03-22T07:05:20.7319985Z with:
+2025-03-22T07:05:20.7320779Z   python-version: 3.11
+2025-03-22T07:05:20.7321694Z   check-latest: false
+2025-03-22T07:05:20.7322827Z   token: ***
+2025-03-22T07:05:20.7323672Z   update-environment: true
+2025-03-22T07:05:20.7324646Z   allow-prereleases: false
+2025-03-22T07:05:20.7325598Z ##[endgroup]
+2025-03-22T07:05:20.9021371Z ##[group]Installed versions
+2025-03-22T07:05:20.9083054Z Successfully set up CPython (3.11.11)
+2025-03-22T07:05:20.9084112Z ##[endgroup]
+2025-03-22T07:05:20.9197452Z ##[group]Run python3 -m pip install --upgrade pip
+2025-03-22T07:05:20.9197926Z [36;1mpython3 -m pip install --upgrade pip[0m
+2025-03-22T07:05:20.9198301Z [36;1mpython3 -m pip install --upgrade pre-commit[0m
+2025-03-22T07:05:20.9254561Z shell: /usr/bin/bash -e {0}
+2025-03-22T07:05:20.9254849Z env:
+2025-03-22T07:05:20.9255125Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-22T07:05:20.9255571Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-03-22T07:05:20.9256005Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-22T07:05:20.9256411Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-22T07:05:20.9256797Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-22T07:05:20.9257179Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-03-22T07:05:20.9257506Z ##[endgroup]
+2025-03-22T07:05:21.5421271Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (25.0.1)
+2025-03-22T07:05:22.1497613Z Collecting pre-commit
+2025-03-22T07:05:22.2299899Z   Downloading pre_commit-4.2.0-py2.py3-none-any.whl.metadata (1.3 kB)
+2025-03-22T07:05:22.2457374Z Collecting cfgv>=2.0.0 (from pre-commit)
+2025-03-22T07:05:22.2649783Z   Downloading cfgv-3.4.0-py2.py3-none-any.whl.metadata (8.5 kB)
+2025-03-22T07:05:22.3147083Z Collecting identify>=1.0.0 (from pre-commit)
+2025-03-22T07:05:22.3337437Z   Downloading identify-2.6.9-py2.py3-none-any.whl.metadata (4.4 kB)
+2025-03-22T07:05:22.3502306Z Collecting nodeenv>=0.11.1 (from pre-commit)
+2025-03-22T07:05:22.3701328Z   Downloading nodeenv-1.9.1-py2.py3-none-any.whl.metadata (21 kB)
+2025-03-22T07:05:22.4045016Z Collecting pyyaml>=5.1 (from pre-commit)
+2025-03-22T07:05:22.4237027Z   Downloading PyYAML-6.0.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+2025-03-22T07:05:22.4595439Z Collecting virtualenv>=20.10.0 (from pre-commit)
+2025-03-22T07:05:22.4786808Z   Downloading virtualenv-20.29.3-py3-none-any.whl.metadata (4.5 kB)
+2025-03-22T07:05:22.4964965Z Collecting distlib<1,>=0.3.7 (from virtualenv>=20.10.0->pre-commit)
+2025-03-22T07:05:22.5154933Z   Downloading distlib-0.3.9-py2.py3-none-any.whl.metadata (5.2 kB)
+2025-03-22T07:05:22.5351621Z Collecting filelock<4,>=3.12.2 (from virtualenv>=20.10.0->pre-commit)
+2025-03-22T07:05:22.5541175Z   Downloading filelock-3.18.0-py3-none-any.whl.metadata (2.9 kB)
+2025-03-22T07:05:22.5719013Z Collecting platformdirs<5,>=3.9.1 (from virtualenv>=20.10.0->pre-commit)
+2025-03-22T07:05:22.5907987Z   Downloading platformdirs-4.3.7-py3-none-any.whl.metadata (11 kB)
+2025-03-22T07:05:22.6176523Z Downloading pre_commit-4.2.0-py2.py3-none-any.whl (220 kB)
+2025-03-22T07:05:22.6775689Z Downloading cfgv-3.4.0-py2.py3-none-any.whl (7.2 kB)
+2025-03-22T07:05:22.6988937Z Downloading identify-2.6.9-py2.py3-none-any.whl (99 kB)
+2025-03-22T07:05:22.7231917Z Downloading nodeenv-1.9.1-py2.py3-none-any.whl (22 kB)
+2025-03-22T07:05:22.7442244Z Downloading PyYAML-6.0.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (762 kB)
+2025-03-22T07:05:22.7755668Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 763.0/763.0 kB 38.7 MB/s eta 0:00:00
+2025-03-22T07:05:22.7945371Z Downloading virtualenv-20.29.3-py3-none-any.whl (4.3 MB)
+2025-03-22T07:05:22.8445858Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 86.3 MB/s eta 0:00:00
+2025-03-22T07:05:22.8634667Z Downloading distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+2025-03-22T07:05:22.8864764Z Downloading filelock-3.18.0-py3-none-any.whl (16 kB)
+2025-03-22T07:05:22.9077774Z Downloading platformdirs-4.3.7-py3-none-any.whl (18 kB)
+2025-03-22T07:05:22.9421330Z Installing collected packages: distlib, pyyaml, platformdirs, nodeenv, identify, filelock, cfgv, virtualenv, pre-commit
+2025-03-22T07:05:23.2911718Z Successfully installed cfgv-3.4.0 distlib-0.3.9 filelock-3.18.0 identify-2.6.9 nodeenv-1.9.1 platformdirs-4.3.7 pre-commit-4.2.0 pyyaml-6.0.2 virtualenv-20.29.3
+2025-03-22T07:05:23.3733522Z ##[group]Run pre-commit run --all-files
+2025-03-22T07:05:23.3733846Z [36;1mpre-commit run --all-files[0m
+2025-03-22T07:05:23.3783515Z shell: /usr/bin/bash -e {0}
+2025-03-22T07:05:23.3783737Z env:
+2025-03-22T07:05:23.3783969Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-22T07:05:23.3784375Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-03-22T07:05:23.3784759Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-22T07:05:23.3785099Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-22T07:05:23.3785430Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-22T07:05:23.3785768Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-03-22T07:05:23.3786044Z ##[endgroup]
+2025-03-22T07:05:23.6040703Z [INFO] Initializing environment for https://github.com/rbubley/mirrors-prettier.
+2025-03-22T07:05:23.8404469Z [INFO] Initializing environment for https://github.com/rbubley/mirrors-prettier:prettier@3.5.2,prettier-plugin-sort-json@4.0.0,prettier-plugin-toml@2.0.1.
+2025-03-22T07:05:24.0515953Z [INFO] Initializing environment for https://github.com/codespell-project/codespell.
+2025-03-22T07:05:24.4190090Z [INFO] Installing environment for https://github.com/rbubley/mirrors-prettier.
+2025-03-22T07:05:24.4190579Z [INFO] Once installed this environment will be reused.
+2025-03-22T07:05:24.4191055Z [INFO] This may take a few minutes...
+2025-03-22T07:05:27.5885971Z [INFO] Installing environment for https://github.com/codespell-project/codespell.
+2025-03-22T07:05:27.5886476Z [INFO] Once installed this environment will be reused.
+2025-03-22T07:05:27.5886909Z [INFO] This may take a few minutes...
+2025-03-22T07:06:04.4115067Z prettier.................................................................Failed
+2025-03-22T07:06:04.4115658Z - hook id: prettier
+2025-03-22T07:06:04.4116032Z - files were modified by this hook
+2025-03-22T07:06:04.4116285Z 
+2025-03-22T07:06:04.4116478Z [warn] src/test/assetlinks/assetlinks.json
+2025-03-22T07:06:04.4116931Z [warn] Code style issues fixed in the above file.
+2025-03-22T07:06:04.4117378Z [warn] src/schemas/json/assetlinks.json
+2025-03-22T07:06:04.4117732Z [warn] Code style issues fixed in the above file.
+2025-03-22T07:06:04.4117933Z 
+2025-03-22T07:06:08.3203951Z codespell................................................................Passed
+2025-03-22T07:06:08.3385136Z ##[error]Process completed with exit code 1.
+2025-03-22T07:06:08.3485605Z Post job cleanup.
+2025-03-22T07:06:08.4425005Z [command]/usr/bin/git version
+2025-03-22T07:06:08.4462582Z git version 2.48.1
+2025-03-22T07:06:08.4511248Z Temporarily overriding HOME='/home/runner/work/_temp/f54f7270-d98a-4d8c-8f97-abb89bc74c46' before making global git config changes
+2025-03-22T07:06:08.4512719Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-22T07:06:08.4516423Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/schemastore/schemastore
+2025-03-22T07:06:08.4553433Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-22T07:06:08.4585791Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-22T07:06:08.4820925Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-22T07:06:08.4841432Z http.https://github.com/.extraheader
+2025-03-22T07:06:08.4853669Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-22T07:06:08.4883838Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-22T07:06:08.5223097Z Cleaning up orphan processes

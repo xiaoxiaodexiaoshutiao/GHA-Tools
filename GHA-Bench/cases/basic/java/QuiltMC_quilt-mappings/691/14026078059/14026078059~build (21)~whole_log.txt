@@ -1,0 +1,750 @@
+﻿2025-03-24T02:43:18.3560899Z Current runner version: '2.323.0'
+2025-03-24T02:43:18.3586941Z ##[group]Operating System
+2025-03-24T02:43:18.3587691Z Ubuntu
+2025-03-24T02:43:18.3588187Z 24.04.2
+2025-03-24T02:43:18.3588735Z LTS
+2025-03-24T02:43:18.3589251Z ##[endgroup]
+2025-03-24T02:43:18.3589752Z ##[group]Runner Image
+2025-03-24T02:43:18.3590383Z Image: ubuntu-24.04
+2025-03-24T02:43:18.3591170Z Version: 20250316.1.0
+2025-03-24T02:43:18.3592177Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250316.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-24T02:43:18.3593623Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250316.1
+2025-03-24T02:43:18.3594475Z ##[endgroup]
+2025-03-24T02:43:18.3594977Z ##[group]Runner Image Provisioner
+2025-03-24T02:43:18.3595623Z 2.0.422.1
+2025-03-24T02:43:18.3596043Z ##[endgroup]
+2025-03-24T02:43:18.3598343Z ##[group]GITHUB_TOKEN Permissions
+2025-03-24T02:43:18.3600282Z Actions: read
+2025-03-24T02:43:18.3601238Z Attestations: read
+2025-03-24T02:43:18.3601952Z Checks: read
+2025-03-24T02:43:18.3602473Z Contents: read
+2025-03-24T02:43:18.3603024Z Deployments: read
+2025-03-24T02:43:18.3603505Z Discussions: read
+2025-03-24T02:43:18.3604006Z Issues: read
+2025-03-24T02:43:18.3604506Z Metadata: read
+2025-03-24T02:43:18.3604960Z Models: read
+2025-03-24T02:43:18.3605454Z Packages: read
+2025-03-24T02:43:18.3605884Z Pages: read
+2025-03-24T02:43:18.3606425Z PullRequests: read
+2025-03-24T02:43:18.3606922Z RepositoryProjects: read
+2025-03-24T02:43:18.3607453Z SecurityEvents: read
+2025-03-24T02:43:18.3607985Z Statuses: read
+2025-03-24T02:43:18.3608491Z ##[endgroup]
+2025-03-24T02:43:18.3610449Z Secret source: None
+2025-03-24T02:43:18.3611546Z Prepare workflow directory
+2025-03-24T02:43:18.4390294Z Prepare all required actions
+2025-03-24T02:43:18.4444778Z Getting action download info
+2025-03-24T02:43:18.8667963Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-24T02:43:18.9631070Z Download action repository 'actions/setup-java@v4' (SHA:3a4f6e1af504cf6a31855fa899c6aa5355ba6c12)
+2025-03-24T02:43:19.4195746Z Download action repository 'gradle/wrapper-validation-action@v2' (SHA:b5418f5a58f5fd2eb486dd7efb368fe7be7eae45)
+2025-03-24T02:43:19.7452951Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2025-03-24T02:43:20.2749864Z Complete job name: build (21)
+2025-03-24T02:43:20.3226145Z ##[group]Checking docker version
+2025-03-24T02:43:20.3240824Z ##[command]/usr/bin/docker version --format '{{.Server.APIVersion}}'
+2025-03-24T02:43:20.4386359Z '1.45'
+2025-03-24T02:43:20.4400048Z Docker daemon API version: '1.45'
+2025-03-24T02:43:20.4401790Z ##[command]/usr/bin/docker version --format '{{.Client.APIVersion}}'
+2025-03-24T02:43:20.4557300Z '1.45'
+2025-03-24T02:43:20.4571183Z Docker client API version: '1.45'
+2025-03-24T02:43:20.4577688Z ##[endgroup]
+2025-03-24T02:43:20.4581839Z ##[group]Clean up resources from previous jobs
+2025-03-24T02:43:20.4588562Z ##[command]/usr/bin/docker ps --all --quiet --no-trunc --filter "label=86e609"
+2025-03-24T02:43:20.4750962Z ##[command]/usr/bin/docker network prune --force --filter "label=86e609"
+2025-03-24T02:43:20.4889436Z ##[endgroup]
+2025-03-24T02:43:20.4890801Z ##[group]Create local container network
+2025-03-24T02:43:20.4902371Z ##[command]/usr/bin/docker network create --label 86e609 github_network_c19ad1f9277f4df288397611e5b438ed
+2025-03-24T02:43:20.5712433Z 673395bc04822f9db4be4a127665ad38daf68384b60e7ca391e812e3e3f60549
+2025-03-24T02:43:20.5733212Z ##[endgroup]
+2025-03-24T02:43:20.5758447Z ##[group]Starting job container
+2025-03-24T02:43:20.5779488Z ##[command]/usr/bin/docker pull eclipse-temurin:21
+2025-03-24T02:43:21.0984064Z 21: Pulling from library/eclipse-temurin
+2025-03-24T02:43:21.1984176Z 5a7813e071bf: Pulling fs layer
+2025-03-24T02:43:21.1986102Z 8dbbbc6af9dc: Pulling fs layer
+2025-03-24T02:43:21.1988218Z a10b6847b9f1: Pulling fs layer
+2025-03-24T02:43:21.1989923Z dcc1c5ea3c7d: Pulling fs layer
+2025-03-24T02:43:21.1991584Z 91e6cc55403a: Pulling fs layer
+2025-03-24T02:43:21.1993262Z dcc1c5ea3c7d: Waiting
+2025-03-24T02:43:21.1994102Z 91e6cc55403a: Waiting
+2025-03-24T02:43:21.4825202Z 5a7813e071bf: Verifying Checksum
+2025-03-24T02:43:21.4828105Z 5a7813e071bf: Download complete
+2025-03-24T02:43:21.4978193Z 8dbbbc6af9dc: Verifying Checksum
+2025-03-24T02:43:21.4980172Z 8dbbbc6af9dc: Download complete
+2025-03-24T02:43:21.6031650Z dcc1c5ea3c7d: Verifying Checksum
+2025-03-24T02:43:21.6033333Z dcc1c5ea3c7d: Download complete
+2025-03-24T02:43:21.6065068Z 91e6cc55403a: Verifying Checksum
+2025-03-24T02:43:21.6066683Z 91e6cc55403a: Download complete
+2025-03-24T02:43:22.1553054Z a10b6847b9f1: Verifying Checksum
+2025-03-24T02:43:22.6414330Z a10b6847b9f1: Download complete
+2025-03-24T02:43:22.6415065Z 5a7813e071bf: Pull complete
+2025-03-24T02:43:23.9137453Z 8dbbbc6af9dc: Pull complete
+2025-03-24T02:43:25.6994704Z a10b6847b9f1: Pull complete
+2025-03-24T02:43:25.7090128Z dcc1c5ea3c7d: Pull complete
+2025-03-24T02:43:25.7222437Z 91e6cc55403a: Pull complete
+2025-03-24T02:43:25.7262362Z Digest: sha256:6634936b2e8d90ee16eeb94420d71cd5e36ca677a4cf795a9ee1ee6e94379988
+2025-03-24T02:43:25.7274450Z Status: Downloaded newer image for eclipse-temurin:21
+2025-03-24T02:43:25.7286787Z docker.io/library/eclipse-temurin:21
+2025-03-24T02:43:25.7370718Z ##[command]/usr/bin/docker create --name f35a239c8f7d4099b2093623e74e61f9_eclipsetemurin21_979607 --label 86e609 --workdir /__w/quilt-mappings/quilt-mappings --network github_network_c19ad1f9277f4df288397611e5b438ed --user root -e "HOME=/github/home" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work":"/__w" -v "/home/runner/runners/2.323.0/externals":"/__e":ro -v "/home/runner/work/_temp":"/__w/_temp" -v "/home/runner/work/_actions":"/__w/_actions" -v "/opt/hostedtoolcache":"/__t" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" --entrypoint "tail" eclipse-temurin:21 "-f" "/dev/null"
+2025-03-24T02:43:25.7608742Z 4acc7e3855a239295ee3f0adbde6d7dbe1ad6371ee4d9e9e5bb75e5459927962
+2025-03-24T02:43:25.7634186Z ##[command]/usr/bin/docker start 4acc7e3855a239295ee3f0adbde6d7dbe1ad6371ee4d9e9e5bb75e5459927962
+2025-03-24T02:43:25.9989226Z 4acc7e3855a239295ee3f0adbde6d7dbe1ad6371ee4d9e9e5bb75e5459927962
+2025-03-24T02:43:26.0008942Z ##[command]/usr/bin/docker ps --all --filter id=4acc7e3855a239295ee3f0adbde6d7dbe1ad6371ee4d9e9e5bb75e5459927962 --filter status=running --no-trunc --format "{{.ID}} {{.Status}}"
+2025-03-24T02:43:26.0123985Z 4acc7e3855a239295ee3f0adbde6d7dbe1ad6371ee4d9e9e5bb75e5459927962 Up Less than a second
+2025-03-24T02:43:26.0142944Z ##[command]/usr/bin/docker inspect --format "{{range .Config.Env}}{{println .}}{{end}}" 4acc7e3855a239295ee3f0adbde6d7dbe1ad6371ee4d9e9e5bb75e5459927962
+2025-03-24T02:43:26.0257468Z HOME=/github/home
+2025-03-24T02:43:26.0257858Z GITHUB_ACTIONS=true
+2025-03-24T02:43:26.0258054Z CI=true
+2025-03-24T02:43:26.0258404Z PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+2025-03-24T02:43:26.0258860Z JAVA_HOME=/opt/java/openjdk
+2025-03-24T02:43:26.0259095Z LANG=en_US.UTF-8
+2025-03-24T02:43:26.0259289Z LANGUAGE=en_US:en
+2025-03-24T02:43:26.0259475Z LC_ALL=en_US.UTF-8
+2025-03-24T02:43:26.0259690Z JAVA_VERSION=jdk-21.0.6+7
+2025-03-24T02:43:26.0275843Z ##[endgroup]
+2025-03-24T02:43:26.0284929Z ##[group]Waiting for all services to be ready
+2025-03-24T02:43:26.0286399Z ##[endgroup]
+2025-03-24T02:43:26.0516123Z ##[group]Run actions/checkout@v4
+2025-03-24T02:43:26.0516701Z with:
+2025-03-24T02:43:26.0516940Z   repository: QuiltMC/quilt-mappings
+2025-03-24T02:43:26.0517348Z   token: ***
+2025-03-24T02:43:26.0517534Z   ssh-strict: true
+2025-03-24T02:43:26.0517722Z   ssh-user: git
+2025-03-24T02:43:26.0517917Z   persist-credentials: true
+2025-03-24T02:43:26.0518134Z   clean: true
+2025-03-24T02:43:26.0518336Z   sparse-checkout-cone-mode: true
+2025-03-24T02:43:26.0518565Z   fetch-depth: 1
+2025-03-24T02:43:26.0518753Z   fetch-tags: false
+2025-03-24T02:43:26.0518932Z   show-progress: true
+2025-03-24T02:43:26.0519354Z   lfs: false
+2025-03-24T02:43:26.0519527Z   submodules: false
+2025-03-24T02:43:26.0519705Z   set-safe-directory: true
+2025-03-24T02:43:26.0520150Z ##[endgroup]
+2025-03-24T02:43:26.0574784Z ##[command]/usr/bin/docker exec  4acc7e3855a239295ee3f0adbde6d7dbe1ad6371ee4d9e9e5bb75e5459927962 sh -c "cat /etc/*release | grep ^ID"
+2025-03-24T02:43:26.3824799Z Syncing repository: QuiltMC/quilt-mappings
+2025-03-24T02:43:26.3826041Z ##[group]Getting Git version info
+2025-03-24T02:43:26.3826401Z Working directory is '/__w/quilt-mappings/quilt-mappings'
+2025-03-24T02:43:26.3826930Z ##[endgroup]
+2025-03-24T02:43:26.3827204Z Deleting the contents of '/__w/quilt-mappings/quilt-mappings'
+2025-03-24T02:43:26.3827589Z The repository will be downloaded using the GitHub REST API
+2025-03-24T02:43:26.3828010Z To create a local Git repository instead, add Git 2.18 or higher to the PATH
+2025-03-24T02:43:26.3828363Z Downloading the archive
+2025-03-24T02:43:26.9501536Z Writing archive to disk
+2025-03-24T02:43:26.9596264Z Extracting the archive
+2025-03-24T02:43:26.9692455Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /__w/quilt-mappings/quilt-mappings/b09cd948-aac5-46b6-a98e-c1787a509a74 -f /__w/quilt-mappings/quilt-mappings/b09cd948-aac5-46b6-a98e-c1787a509a74.tar.gz
+2025-03-24T02:43:27.2301401Z Resolved version QuiltMC-quilt-mappings-bcd9e64
+2025-03-24T02:43:27.2628612Z ##[group]Run actions/setup-java@v4
+2025-03-24T02:43:27.2628881Z with:
+2025-03-24T02:43:27.2629043Z   java-version: 21
+2025-03-24T02:43:27.2629236Z   distribution: temurin
+2025-03-24T02:43:27.2629435Z   java-package: jdk
+2025-03-24T02:43:27.2629628Z   check-latest: false
+2025-03-24T02:43:27.2629833Z   server-id: github
+2025-03-24T02:43:27.2630021Z   server-username: GITHUB_ACTOR
+2025-03-24T02:43:27.2630252Z   server-password: GITHUB_TOKEN
+2025-03-24T02:43:27.2630478Z   overwrite-settings: true
+2025-03-24T02:43:27.2630861Z   job-status: success
+2025-03-24T02:43:27.2631194Z   token: ***
+2025-03-24T02:43:27.2631392Z ##[endgroup]
+2025-03-24T02:43:27.2635690Z ##[command]/usr/bin/docker exec  4acc7e3855a239295ee3f0adbde6d7dbe1ad6371ee4d9e9e5bb75e5459927962 sh -c "cat /etc/*release | grep ^ID"
+2025-03-24T02:43:27.5751174Z ##[group]Installed distributions
+2025-03-24T02:43:27.5787864Z Trying to resolve the latest version from remote
+2025-03-24T02:43:27.8260894Z Resolved latest version as 21.0.6+7.0.LTS
+2025-03-24T02:43:27.8261623Z Trying to download...
+2025-03-24T02:43:27.8263379Z Downloading Java 21.0.6+7.0.LTS (Temurin-Hotspot) from https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.6%2B7/OpenJDK21U-jdk_x64_linux_hotspot_21.0.6_7.tar.gz ...
+2025-03-24T02:43:29.0785186Z Extracting Java archive...
+2025-03-24T02:43:29.0879018Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /__w/_temp/e3263d00-39e2-4f7a-8076-29f6ade2cd69 -f /__w/_temp/8bbce2bc-99f6-4eea-86e1-d2f890c2c9c0
+2025-03-24T02:43:31.9276093Z Java 21.0.6+7.0.LTS was downloaded
+2025-03-24T02:43:31.9276448Z Setting Java 21.0.6+7.0.LTS as the default
+2025-03-24T02:43:31.9290151Z Creating toolchains.xml for JDK version 21 from temurin
+2025-03-24T02:43:31.9364054Z Writing to /github/home/.m2/toolchains.xml
+2025-03-24T02:43:31.9365796Z 
+2025-03-24T02:43:31.9366033Z Java configuration:
+2025-03-24T02:43:31.9366755Z   Distribution: temurin
+2025-03-24T02:43:31.9370485Z   Version: 21.0.6+7.0.LTS
+2025-03-24T02:43:31.9371280Z   Path: /__t/Java_Temurin-Hotspot_jdk/21.0.6-7.0.LTS/x64
+2025-03-24T02:43:31.9371813Z 
+2025-03-24T02:43:31.9372468Z ##[endgroup]
+2025-03-24T02:43:31.9387035Z Creating settings.xml with server-id: github
+2025-03-24T02:43:31.9388235Z Writing to /github/home/.m2/settings.xml
+2025-03-24T02:43:31.9560758Z ##[group]Run gradle/wrapper-validation-action@v2
+2025-03-24T02:43:31.9561111Z with:
+2025-03-24T02:43:31.9561293Z   min-wrapper-count: 1
+2025-03-24T02:43:31.9561512Z   allow-snapshots: false
+2025-03-24T02:43:31.9561715Z env:
+2025-03-24T02:43:31.9561937Z   JAVA_HOME: /__t/Java_Temurin-Hotspot_jdk/21.0.6-7.0.LTS/x64
+2025-03-24T02:43:31.9562499Z   JAVA_HOME_21_X64: /__t/Java_Temurin-Hotspot_jdk/21.0.6-7.0.LTS/x64
+2025-03-24T02:43:31.9562801Z ##[endgroup]
+2025-03-24T02:43:31.9566224Z ##[command]/usr/bin/docker exec  4acc7e3855a239295ee3f0adbde6d7dbe1ad6371ee4d9e9e5bb75e5459927962 sh -c "cat /etc/*release | grep ^ID"
+2025-03-24T02:43:32.2357378Z ✓ Found known Gradle Wrapper JAR files:
+2025-03-24T02:43:32.2358332Z   d3b261c2820e9e3d8d639ed084900f11f4a86050a8f83342ade7b6bc9b0d2bdd gradle/wrapper/gradle-wrapper.jar
+2025-03-24T02:43:32.2498809Z ##[group]Run ./gradlew build javadocJar --stacktrace
+2025-03-24T02:43:32.2499387Z [36;1m./gradlew build javadocJar --stacktrace[0m
+2025-03-24T02:43:32.2502764Z shell: sh -e {0}
+2025-03-24T02:43:32.2502975Z env:
+2025-03-24T02:43:32.2503243Z   JAVA_HOME: /__t/Java_Temurin-Hotspot_jdk/21.0.6-7.0.LTS/x64
+2025-03-24T02:43:32.2503657Z   JAVA_HOME_21_X64: /__t/Java_Temurin-Hotspot_jdk/21.0.6-7.0.LTS/x64
+2025-03-24T02:43:32.2503998Z ##[endgroup]
+2025-03-24T02:43:32.4038697Z Downloading https://services.gradle.org/distributions/gradle-8.5-all.zip
+2025-03-24T02:43:34.2808136Z ....................10%.....................20%.....................30%.....................40%.....................50%.....................60%....................70%.....................80%.....................90%.....................100%
+2025-03-24T02:43:37.9564988Z 
+2025-03-24T02:43:37.9566111Z Welcome to Gradle 8.5!
+2025-03-24T02:43:37.9568169Z 
+2025-03-24T02:43:37.9569439Z Here are the highlights of this release:
+2025-03-24T02:43:37.9572495Z  - Support for running on Java 21
+2025-03-24T02:43:37.9574745Z  - Faster first use with Kotlin DSL
+2025-03-24T02:43:37.9575774Z  - Improved error and warning messages
+2025-03-24T02:43:37.9576838Z 
+2025-03-24T02:43:37.9577368Z For more details see https://docs.gradle.org/8.5/release-notes.html
+2025-03-24T02:43:37.9578185Z 
+2025-03-24T02:43:38.0563269Z Starting a Gradle Daemon (subsequent builds will be faster)
+2025-03-24T02:44:10.9582468Z > Task :buildSrc:compileJava
+2025-03-24T02:44:11.0562670Z > Task :buildSrc:compileGroovy NO-SOURCE
+2025-03-24T02:44:11.0563884Z > Task :buildSrc:pluginDescriptors
+2025-03-24T02:44:11.0570788Z > Task :buildSrc:processResources
+2025-03-24T02:44:11.0571258Z > Task :buildSrc:classes
+2025-03-24T02:44:11.0571603Z > Task :buildSrc:jar
+2025-03-24T02:44:18.8561811Z > Task :compileJava NO-SOURCE
+2025-03-24T02:44:18.8562626Z > Task :processResources NO-SOURCE
+2025-03-24T02:44:18.8564582Z > Task :classes UP-TO-DATE
+2025-03-24T02:44:18.8565450Z > Task :jar SKIPPED
+2025-03-24T02:44:18.8566217Z > Task :assemble UP-TO-DATE
+2025-03-24T02:44:18.9564640Z > Task :checkLicenseConstants
+2025-03-24T02:44:18.9567778Z > Task :checkLicenseDoclet
+2025-03-24T02:44:18.9569228Z > Task :checkLicenseMain NO-SOURCE
+2025-03-24T02:44:18.9569873Z > Task :checkLicensePackageDocs
+2025-03-24T02:44:18.9570676Z > Task :checkLicenseTest NO-SOURCE
+2025-03-24T02:44:18.9571321Z > Task :checkLicenses
+2025-03-24T02:44:19.1563308Z 
+2025-03-24T02:44:19.1581697Z > Task :downloadWantedVersionManifest
+2025-03-24T02:44:19.1583134Z Downloading https://piston-meta.mojang.com/v1/packages/8db78dc03ffbf717d037bbe86774946b2b8a510f/1.21.5-rc1.json
+2025-03-24T02:44:21.1558190Z 
+2025-03-24T02:44:21.1559263Z > Task :downloadMinecraftLibraries
+2025-03-24T02:44:21.1561797Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-jemalloc/3.3.3/lwjgl-jemalloc-3.3.3-natives-windows.jar
+2025-03-24T02:44:21.1566063Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-stb/3.3.3/lwjgl-stb-3.3.3-natives-windows.jar
+2025-03-24T02:44:21.1567361Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-stb/3.3.3/lwjgl-stb-3.3.3-natives-windows-x86.jar
+2025-03-24T02:44:21.1568533Z Downloading https://libraries.minecraft.net/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar
+2025-03-24T02:44:21.1569633Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-glfw/3.3.3/lwjgl-glfw-3.3.3-natives-macos.jar
+2025-03-24T02:44:21.1571109Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-freetype/3.3.3/lwjgl-freetype-3.3.3-natives-windows-arm64.jar
+2025-03-24T02:44:21.1572552Z Downloading https://libraries.minecraft.net/com/ibm/icu/icu4j/76.1/icu4j-76.1.jar
+2025-03-24T02:44:21.1573672Z Downloading https://libraries.minecraft.net/com/fasterxml/jackson/core/jackson-core/2.13.4/jackson-core-2.13.4.jar
+2025-03-24T02:44:21.1574843Z Downloading https://libraries.minecraft.net/com/nimbusds/lang-tag/1.7/lang-tag-1.7.jar
+2025-03-24T02:44:21.1576288Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-jemalloc/3.3.3/lwjgl-jemalloc-3.3.3-natives-windows-x86.jar
+2025-03-24T02:44:21.1579879Z Downloading https://libraries.minecraft.net/io/netty/netty-transport-classes-epoll/4.1.118.Final/netty-transport-classes-epoll-4.1.118.Final.jar
+2025-03-24T02:44:21.1582377Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-freetype/3.3.3/lwjgl-freetype-3.3.3-natives-windows-x86.jar
+2025-03-24T02:44:21.1584398Z Downloading https://libraries.minecraft.net/com/fasterxml/jackson/core/jackson-databind/2.13.4.2/jackson-databind-2.13.4.2.jar
+2025-03-24T02:44:21.1600961Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-jemalloc/3.3.3/lwjgl-jemalloc-3.3.3-natives-linux.jar
+2025-03-24T02:44:21.1606080Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-freetype/3.3.3/lwjgl-freetype-3.3.3.jar
+2025-03-24T02:44:21.1607294Z Downloading https://libraries.minecraft.net/net/minidev/accessors-smart/2.5.1/accessors-smart-2.5.1.jar
+2025-03-24T02:44:21.1619179Z Downloading https://libraries.minecraft.net/org/apache/logging/log4j/log4j-core/2.24.1/log4j-core-2.24.1.jar
+2025-03-24T02:44:21.1623867Z Downloading https://libraries.minecraft.net/com/google/guava/guava/33.3.1-jre/guava-33.3.1-jre.jar
+2025-03-24T02:44:21.1625510Z Downloading https://libraries.minecraft.net/io/netty/netty-transport-native-epoll/4.1.118.Final/netty-transport-native-epoll-4.1.118.Final-linux-aarch_64.jar
+2025-03-24T02:44:21.1627163Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-glfw/3.3.3/lwjgl-glfw-3.3.3-natives-windows-x86.jar
+2025-03-24T02:44:21.1628331Z Downloading https://libraries.minecraft.net/com/mojang/patchy/2.2.10/patchy-2.2.10.jar
+2025-03-24T02:44:21.1629523Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-opengl/3.3.3/lwjgl-opengl-3.3.3-natives-windows-x86.jar
+2025-03-24T02:44:21.1631048Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-freetype/3.3.3/lwjgl-freetype-3.3.3-natives-windows.jar
+2025-03-24T02:44:21.1632368Z Downloading https://libraries.minecraft.net/io/netty/netty-handler/4.1.118.Final/netty-handler-4.1.118.Final.jar
+2025-03-24T02:44:21.1633439Z Downloading https://libraries.minecraft.net/org/ow2/asm/asm/9.6/asm-9.6.jar
+2025-03-24T02:44:21.1634403Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-opengl/3.3.3/lwjgl-opengl-3.3.3.jar
+2025-03-24T02:44:21.1635555Z Downloading https://libraries.minecraft.net/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar
+2025-03-24T02:44:21.1636650Z Downloading https://libraries.minecraft.net/net/java/dev/jna/jna/5.15.0/jna-5.15.0.jar
+2025-03-24T02:44:21.1637666Z Downloading https://libraries.minecraft.net/com/github/oshi/oshi-core/6.6.5/oshi-core-6.6.5.jar
+2025-03-24T02:44:21.1638835Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-opengl/3.3.3/lwjgl-opengl-3.3.3-natives-macos.jar
+2025-03-24T02:44:21.1640162Z Downloading https://libraries.minecraft.net/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar
+2025-03-24T02:44:21.1641467Z Downloading https://libraries.minecraft.net/commons-io/commons-io/2.17.0/commons-io-2.17.0.jar
+2025-03-24T02:44:21.1642573Z Downloading https://libraries.minecraft.net/ca/weblite/java-objc-bridge/1.1/java-objc-bridge-1.1.jar
+2025-03-24T02:44:21.1643644Z Downloading https://libraries.minecraft.net/com/mojang/jtracy/1.0.29/jtracy-1.0.29.jar
+2025-03-24T02:44:21.1644684Z Downloading https://libraries.minecraft.net/com/mojang/text2speech/1.18.11/text2speech-1.18.11.jar
+2025-03-24T02:44:21.1645746Z Downloading https://libraries.minecraft.net/com/google/code/gson/gson/2.11.0/gson-2.11.0.jar
+2025-03-24T02:44:21.1647121Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-openal/3.3.3/lwjgl-openal-3.3.3-natives-macos-arm64.jar
+2025-03-24T02:44:21.1648442Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-jemalloc/3.3.3/lwjgl-jemalloc-3.3.3-natives-macos.jar
+2025-03-24T02:44:21.1649630Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-tinyfd/3.3.3/lwjgl-tinyfd-3.3.3.jar
+2025-03-24T02:44:21.1664512Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-freetype/3.3.3/lwjgl-freetype-3.3.3-natives-macos-arm64.jar
+2025-03-24T02:44:21.1672420Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-glfw/3.3.3/lwjgl-glfw-3.3.3-natives-windows-arm64.jar
+2025-03-24T02:44:21.1674172Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-freetype/3.3.3/lwjgl-freetype-3.3.3-natives-macos-patch.jar
+2025-03-24T02:44:21.1675862Z Downloading https://libraries.minecraft.net/commons-codec/commons-codec/1.17.1/commons-codec-1.17.1.jar
+2025-03-24T02:44:21.1677409Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-tinyfd/3.3.3/lwjgl-tinyfd-3.3.3-natives-linux.jar
+2025-03-24T02:44:21.1679568Z Downloading https://libraries.minecraft.net/io/netty/netty-transport-native-unix-common/4.1.118.Final/netty-transport-native-unix-common-4.1.118.Final.jar
+2025-03-24T02:44:21.1682273Z Downloading https://libraries.minecraft.net/com/mojang/brigadier/1.3.10/brigadier-1.3.10.jar
+2025-03-24T02:44:21.1683440Z Downloading https://libraries.minecraft.net/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar
+2025-03-24T02:44:21.1684763Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-opengl/3.3.3/lwjgl-opengl-3.3.3-natives-windows-arm64.jar
+2025-03-24T02:44:21.1686055Z Downloading https://libraries.minecraft.net/com/nimbusds/nimbus-jose-jwt/9.40/nimbus-jose-jwt-9.40.jar
+2025-03-24T02:44:21.1687165Z Downloading https://libraries.minecraft.net/it/unimi/dsi/fastutil/8.5.15/fastutil-8.5.15.jar
+2025-03-24T02:44:21.1688379Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-tinyfd/3.3.3/lwjgl-tinyfd-3.3.3-natives-windows-arm64.jar
+2025-03-24T02:44:21.1689736Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-openal/3.3.3/lwjgl-openal-3.3.3-natives-windows.jar
+2025-03-24T02:44:21.1691213Z Downloading https://libraries.minecraft.net/io/netty/netty-transport/4.1.118.Final/netty-transport-4.1.118.Final.jar
+2025-03-24T02:44:21.1692498Z Downloading https://libraries.minecraft.net/com/nimbusds/oauth2-oidc-sdk/11.18/oauth2-oidc-sdk-11.18.jar
+2025-03-24T02:44:21.1693769Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-opengl/3.3.3/lwjgl-opengl-3.3.3-natives-windows.jar
+2025-03-24T02:44:21.1695042Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-openal/3.3.3/lwjgl-openal-3.3.3-natives-macos.jar
+2025-03-24T02:44:21.1696398Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-jemalloc/3.3.3/lwjgl-jemalloc-3.3.3-natives-macos-arm64.jar
+2025-03-24T02:44:21.1697785Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-openal/3.3.3/lwjgl-openal-3.3.3-natives-windows-arm64.jar
+2025-03-24T02:44:21.1699098Z Downloading https://libraries.minecraft.net/io/netty/netty-common/4.1.118.Final/netty-common-4.1.118.Final.jar
+2025-03-24T02:44:21.1700314Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-glfw/3.3.3/lwjgl-glfw-3.3.3-natives-linux.jar
+2025-03-24T02:44:21.1701745Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-tinyfd/3.3.3/lwjgl-tinyfd-3.3.3-natives-macos-arm64.jar
+2025-03-24T02:44:21.1702965Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-openal/3.3.3/lwjgl-openal-3.3.3.jar
+2025-03-24T02:44:21.1704015Z Downloading https://libraries.minecraft.net/com/mojang/logging/1.5.10/logging-1.5.10.jar
+2025-03-24T02:44:21.1705212Z Downloading https://libraries.minecraft.net/com/github/stephenc/jcip/jcip-annotations/1.0-1/jcip-annotations-1.0-1.jar
+2025-03-24T02:44:21.1706506Z Downloading https://libraries.minecraft.net/com/mojang/blocklist/1.0.10/blocklist-1.0.10.jar
+2025-03-24T02:44:21.1707692Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-stb/3.3.3/lwjgl-stb-3.3.3-natives-windows-arm64.jar
+2025-03-24T02:44:21.1709169Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-openal/3.3.3/lwjgl-openal-3.3.3-natives-linux.jar
+2025-03-24T02:44:21.1710468Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-tinyfd/3.3.3/lwjgl-tinyfd-3.3.3-natives-windows-x86.jar
+2025-03-24T02:44:21.1711865Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl/3.3.3/lwjgl-3.3.3-natives-linux.jar
+2025-03-24T02:44:21.1713012Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl/3.3.3/lwjgl-3.3.3.jar
+2025-03-24T02:44:21.1714110Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-tinyfd/3.3.3/lwjgl-tinyfd-3.3.3-natives-windows.jar
+2025-03-24T02:44:21.1715317Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-jemalloc/3.3.3/lwjgl-jemalloc-3.3.3.jar
+2025-03-24T02:44:21.1716388Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-stb/3.3.3/lwjgl-stb-3.3.3.jar
+2025-03-24T02:44:21.1717343Z Downloading https://libraries.minecraft.net/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar
+2025-03-24T02:44:21.1718518Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-openal/3.3.3/lwjgl-openal-3.3.3-natives-windows-x86.jar
+2025-03-24T02:44:21.1719716Z Downloading https://libraries.minecraft.net/net/minidev/json-smart/2.5.1/json-smart-2.5.1.jar
+2025-03-24T02:44:21.1720877Z Downloading https://libraries.minecraft.net/com/mojang/authlib/6.0.58/authlib-6.0.58.jar
+2025-03-24T02:44:21.1722001Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-glfw/3.3.3/lwjgl-glfw-3.3.3-natives-windows.jar
+2025-03-24T02:44:21.1723132Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-glfw/3.3.3/lwjgl-glfw-3.3.3.jar
+2025-03-24T02:44:21.1729815Z Downloading https://libraries.minecraft.net/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.jar
+2025-03-24T02:44:21.1731187Z Downloading https://libraries.minecraft.net/org/jcraft/jorbis/0.0.17/jorbis-0.0.17.jar
+2025-03-24T02:44:21.1732347Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-freetype/3.3.3/lwjgl-freetype-3.3.3-natives-linux.jar
+2025-03-24T02:44:21.1733757Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-jemalloc/3.3.3/lwjgl-jemalloc-3.3.3-natives-windows-arm64.jar
+2025-03-24T02:44:21.1735048Z Downloading https://libraries.minecraft.net/com/microsoft/azure/msal4j/1.17.2/msal4j-1.17.2.jar
+2025-03-24T02:44:21.1736513Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl/3.3.3/lwjgl-3.3.3-natives-windows-x86.jar
+2025-03-24T02:44:21.1737646Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl/3.3.3/lwjgl-3.3.3-natives-windows.jar
+2025-03-24T02:44:21.1738787Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl/3.3.3/lwjgl-3.3.3-natives-macos-arm64.jar
+2025-03-24T02:44:21.1740067Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-opengl/3.3.3/lwjgl-opengl-3.3.3-natives-linux.jar
+2025-03-24T02:44:21.1741463Z Downloading https://libraries.minecraft.net/com/mojang/datafixerupper/8.0.16/datafixerupper-8.0.16.jar
+2025-03-24T02:44:21.1742625Z Downloading https://libraries.minecraft.net/com/nimbusds/content-type/2.3/content-type-2.3.jar
+2025-03-24T02:44:21.1743598Z Downloading https://libraries.minecraft.net/org/joml/joml/1.10.8/joml-1.10.8.jar
+2025-03-24T02:44:21.1744608Z Downloading https://libraries.minecraft.net/com/mojang/jtracy/1.0.29/jtracy-1.0.29-natives-macos.jar
+2025-03-24T02:44:21.1745961Z Downloading https://libraries.minecraft.net/com/fasterxml/jackson/core/jackson-annotations/2.13.4/jackson-annotations-2.13.4.jar
+2025-03-24T02:44:21.1747460Z Downloading https://libraries.minecraft.net/org/apache/logging/log4j/log4j-slf4j2-impl/2.24.1/log4j-slf4j2-impl-2.24.1.jar
+2025-03-24T02:44:21.1748803Z Downloading https://libraries.minecraft.net/org/apache/logging/log4j/log4j-api/2.24.1/log4j-api-2.24.1.jar
+2025-03-24T02:44:21.1750038Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-stb/3.3.3/lwjgl-stb-3.3.3-natives-macos-arm64.jar
+2025-03-24T02:44:21.1751418Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-stb/3.3.3/lwjgl-stb-3.3.3-natives-linux.jar
+2025-03-24T02:44:21.1752876Z Downloading https://libraries.minecraft.net/org/apache/commons/commons-compress/1.27.1/commons-compress-1.27.1.jar
+2025-03-24T02:44:21.1754083Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl/3.3.3/lwjgl-3.3.3-natives-macos.jar
+2025-03-24T02:44:21.1755738Z Downloading https://libraries.minecraft.net/io/netty/netty-transport-native-epoll/4.1.118.Final/netty-transport-native-epoll-4.1.118.Final-linux-x86_64.jar
+2025-03-24T02:44:21.1757363Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-opengl/3.3.3/lwjgl-opengl-3.3.3-natives-macos-arm64.jar
+2025-03-24T02:44:21.1758673Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-glfw/3.3.3/lwjgl-glfw-3.3.3-natives-macos-arm64.jar
+2025-03-24T02:44:21.1759896Z Downloading https://libraries.minecraft.net/com/mojang/jtracy/1.0.29/jtracy-1.0.29-natives-windows.jar
+2025-03-24T02:44:21.1761226Z Downloading https://libraries.minecraft.net/io/netty/netty-codec/4.1.118.Final/netty-codec-4.1.118.Final.jar
+2025-03-24T02:44:21.1762505Z Downloading https://libraries.minecraft.net/io/netty/netty-resolver/4.1.118.Final/netty-resolver-4.1.118.Final.jar
+2025-03-24T02:44:21.1763814Z Downloading https://libraries.minecraft.net/commons-logging/commons-logging/1.3.4/commons-logging-1.3.4.jar
+2025-03-24T02:44:21.1765049Z Downloading https://libraries.minecraft.net/net/java/dev/jna/jna-platform/5.15.0/jna-platform-5.15.0.jar
+2025-03-24T02:44:21.1766282Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-tinyfd/3.3.3/lwjgl-tinyfd-3.3.3-natives-macos.jar
+2025-03-24T02:44:21.1767481Z Downloading https://libraries.minecraft.net/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar
+2025-03-24T02:44:21.1768727Z Downloading https://libraries.minecraft.net/io/netty/netty-buffer/4.1.118.Final/netty-buffer-4.1.118.Final.jar
+2025-03-24T02:44:21.1769937Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl-stb/3.3.3/lwjgl-stb-3.3.3-natives-macos.jar
+2025-03-24T02:44:21.1771277Z Downloading https://libraries.minecraft.net/com/mojang/jtracy/1.0.29/jtracy-1.0.29-natives-linux.jar
+2025-03-24T02:44:21.1772439Z Downloading https://libraries.minecraft.net/org/lwjgl/lwjgl/3.3.3/lwjgl-3.3.3-natives-windows-arm64.jar
+2025-03-24T02:44:30.3558498Z 
+2025-03-24T02:44:30.3559023Z > Task :extractTinyIntermediateMappings
+2025-03-24T02:44:32.3557603Z 
+2025-03-24T02:44:32.3559460Z > Task :downloadMinecraftJars
+2025-03-24T02:44:32.3560131Z :downloading minecraft jars
+2025-03-24T02:44:32.3561389Z Downloading https://piston-data.mojang.com/v1/objects/5d6f13aed7cf733fed301cc01aedcc7f1488d2e2/client.jar
+2025-03-24T02:44:32.3562557Z Downloading https://piston-data.mojang.com/v1/objects/6e5564e9b1a0a45d3cb028d5af591cd30e53b404/server.jar
+2025-03-24T02:44:36.3599603Z 
+2025-03-24T02:44:36.3621564Z > Task :extractServerJar
+2025-03-24T02:44:38.3557327Z 
+2025-03-24T02:44:38.3557866Z > Task :mergeJars
+2025-03-24T02:44:38.3558327Z :merging jars
+2025-03-24T02:44:42.3557313Z 
+2025-03-24T02:44:42.3558813Z > Task :mapIntermediateMappingsJar
+2025-03-24T02:44:42.3559402Z :mapping minecraft from official to hashed
+2025-03-24T02:44:44.2560082Z 
+2025-03-24T02:44:44.2564178Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/typeSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:44.3560936Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/typeSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:44.3564047Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/typeSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:44.4562593Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/typeSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:44.4613343Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/enumSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:44.5563177Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/typeSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:44.5574379Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/typeSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:44.9560289Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/typeSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:44.9567188Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/typeSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:45.0560727Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/typeSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:45.5560490Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/typeSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:45.7587747Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/typeSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:46.0561476Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/typeSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:46.0565790Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/typeSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:46.1560806Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/typeSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:46.2561296Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/typeSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:46.2565668Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/typeSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:46.3561710Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/typeSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:46.3564411Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/typeSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:46.3567024Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/typeSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:46.3570275Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/typeSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:46.5570032Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/typeSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:46.5572947Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/typeSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:46.5575496Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/typeSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:46.7610238Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/enumSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:46.7615135Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/typeSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:46.8562658Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/typeSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:47.0560900Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/typeSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:47.0563918Z unknown invokedynamic bsm: java/lang/runtime/SwitchBootstraps/typeSwitch(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite; (tag=6 iif=false)
+2025-03-24T02:44:49.2559361Z 
+2025-03-24T02:44:49.2565979Z > Task :generatePackageInfoMappings
+2025-03-24T02:44:49.2572218Z Scanning /__w/quilt-mappings/quilt-mappings/build/minecraft/mapped/1.21.5-rc1-hashed.jar for package-info classes
+2025-03-24T02:44:49.5583809Z 
+2025-03-24T02:44:49.5592347Z > Task :findDuplicateMappingFiles
+2025-03-24T02:45:04.9557994Z 
+2025-03-24T02:45:04.9569669Z > Task :mappingLint FAILED
+2025-03-24T02:45:04.9584457Z error: net/minecraft/block/FlowerPotBlock.tryToggleEyeblossom(Lnet/minecraft/unmapped/C_txtbiemp;)Lnet/minecraft/unmapped/C_txtbiemp;: entry name contains unknown/misspelled word: "eyeblossom"
+2025-03-24T02:45:04.9600246Z Found 1 errors and 0 warnings!
+2025-03-24T02:45:04.9606057Z 
+2025-03-24T02:45:04.9626985Z FAILURE: Build failed with an exception.
+2025-03-24T02:45:04.9633962Z 
+2025-03-24T02:45:04.9639819Z * What went wrong:
+2025-03-24T02:45:04.9640905Z Execution failed for task ':mappingLint'.
+2025-03-24T02:45:04.9642224Z > There was a failure while executing work items
+2025-03-24T02:45:04.9643614Z    > A failure occurred while executing quilt.internal.task.lint.MappingLintTask$LintAction
+2025-03-24T02:45:04.9649994Z       > Found 1 errors and 0 warnings! See the log for details.
+2025-03-24T02:45:04.9655406Z 
+2025-03-24T02:45:04.9656263Z * Try:
+2025-03-24T02:45:04.9664996Z > Run with --info or --debug option to get more log output.
+2025-03-24T02:45:04.9665524Z > Run with --scan to get full insights.
+2025-03-24T02:45:04.9666021Z > Get more help at https://help.gradle.org.
+2025-03-24T02:45:04.9666353Z 
+2025-03-24T02:45:04.9666474Z * Exception is:
+2025-03-24T02:45:04.9667105Z org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':mappingLint'.
+2025-03-24T02:45:04.9668901Z 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.lambda$executeIfValid$1(ExecuteActionsTaskExecuter.java:148)
+2025-03-24T02:45:04.9686285Z 	at org.gradle.internal.Try$Failure.ifSuccessfulOrElse(Try.java:282)
+2025-03-24T02:45:04.9691806Z 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:146)
+2025-03-24T02:45:04.9710225Z 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:134)
+2025-03-24T02:45:04.9846673Z 	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+2025-03-24T02:45:04.9856457Z 	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
+2025-03-24T02:45:04.9860294Z 	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+2025-03-24T02:45:04.9861951Z 	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
+2025-03-24T02:45:04.9863437Z 	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+2025-03-24T02:45:04.9864953Z 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+2025-03-24T02:45:04.9866387Z 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+2025-03-24T02:45:04.9867751Z 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+2025-03-24T02:45:04.9869356Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+2025-03-24T02:45:04.9871353Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+2025-03-24T02:45:04.9872980Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+2025-03-24T02:45:04.9874366Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+2025-03-24T02:45:04.9875775Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+2025-03-24T02:45:04.9877206Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+2025-03-24T02:45:04.9878574Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+2025-03-24T02:45:04.9879962Z 	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
+2025-03-24T02:45:04.9886750Z 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+2025-03-24T02:45:04.9947095Z 	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:42)
+2025-03-24T02:45:04.9948667Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:331)
+2025-03-24T02:45:04.9950426Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:318)
+2025-03-24T02:45:04.9952454Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(DefaultTaskExecutionGraph.java:314)
+2025-03-24T02:45:04.9954083Z 	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:80)
+2025-03-24T02:45:04.9971664Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:314)
+2025-03-24T02:45:04.9973548Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
+2025-03-24T02:45:04.9975508Z 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:463)
+2025-03-24T02:45:04.9976727Z 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:380)
+2025-03-24T02:45:04.9977949Z 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+2025-03-24T02:45:04.9979433Z 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
+2025-03-24T02:45:04.9981137Z Caused by: org.gradle.workers.WorkerExecutionException: There was a failure while executing work items
+2025-03-24T02:45:04.9982432Z 	at org.gradle.workers.internal.DefaultWorkerExecutor.workerExecutionException(DefaultWorkerExecutor.java:219)
+2025-03-24T02:45:04.9983741Z 	at org.gradle.workers.internal.DefaultWorkerExecutor.await(DefaultWorkerExecutor.java:213)
+2025-03-24T02:45:04.9984888Z 	at org.gradle.workers.internal.DefaultWorkerExecutor.access$100(DefaultWorkerExecutor.java:59)
+2025-03-24T02:45:05.0009250Z 	at org.gradle.workers.internal.DefaultWorkerExecutor$DefaultWorkQueue.await(DefaultWorkerExecutor.java:308)
+2025-03-24T02:45:05.0010748Z 	at quilt.internal.task.lint.MappingLintTask.run(MappingLintTask.java:112)
+2025-03-24T02:45:05.0011888Z 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+2025-03-24T02:45:05.0012966Z 	at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:125)
+2025-03-24T02:45:05.0014089Z 	at org.gradle.api.internal.project.taskfactory.IncrementalTaskAction.doExecute(IncrementalTaskAction.java:45)
+2025-03-24T02:45:05.0015449Z 	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:51)
+2025-03-24T02:45:05.0017137Z 	at org.gradle.api.internal.project.taskfactory.IncrementalTaskAction.execute(IncrementalTaskAction.java:26)
+2025-03-24T02:45:05.0018586Z 	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:29)
+2025-03-24T02:45:05.0019738Z 	at org.gradle.api.internal.tasks.execution.TaskExecution$3.run(TaskExecution.java:248)
+2025-03-24T02:45:05.0021093Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
+2025-03-24T02:45:05.0022775Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
+2025-03-24T02:45:05.0024145Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+2025-03-24T02:45:05.0025498Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+2025-03-24T02:45:05.0027109Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+2025-03-24T02:45:05.0028502Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+2025-03-24T02:45:05.0029860Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:47)
+2025-03-24T02:45:05.0031379Z 	at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:68)
+2025-03-24T02:45:05.0032848Z 	at org.gradle.api.internal.tasks.execution.TaskExecution.executeAction(TaskExecution.java:233)
+2025-03-24T02:45:05.0034063Z 	at org.gradle.api.internal.tasks.execution.TaskExecution.executeActions(TaskExecution.java:216)
+2025-03-24T02:45:05.0035384Z 	at org.gradle.api.internal.tasks.execution.TaskExecution.executeWithPreviousOutputFiles(TaskExecution.java:199)
+2025-03-24T02:45:05.0036627Z 	at org.gradle.api.internal.tasks.execution.TaskExecution.execute(TaskExecution.java:166)
+2025-03-24T02:45:05.0037687Z 	at org.gradle.internal.execution.steps.ExecuteStep.executeInternal(ExecuteStep.java:105)
+2025-03-24T02:45:05.0038945Z 	at org.gradle.internal.execution.steps.ExecuteStep.access$000(ExecuteStep.java:44)
+2025-03-24T02:45:05.0039965Z 	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:59)
+2025-03-24T02:45:05.0041400Z 	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:56)
+2025-03-24T02:45:05.0042759Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+2025-03-24T02:45:05.0044562Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+2025-03-24T02:45:05.0046248Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+2025-03-24T02:45:05.0047661Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+2025-03-24T02:45:05.0049037Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+2025-03-24T02:45:05.0050406Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+2025-03-24T02:45:05.0051774Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+2025-03-24T02:45:05.0053126Z 	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
+2025-03-24T02:45:05.0054295Z 	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:56)
+2025-03-24T02:45:05.0055236Z 	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:44)
+2025-03-24T02:45:05.0056418Z 	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.execute(RemovePreviousOutputsStep.java:67)
+2025-03-24T02:45:05.0062441Z 	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.execute(RemovePreviousOutputsStep.java:37)
+2025-03-24T02:45:05.0068101Z 	at org.gradle.internal.execution.steps.CancelExecutionStep.execute(CancelExecutionStep.java:41)
+2025-03-24T02:45:05.0069548Z 	at org.gradle.internal.execution.steps.TimeoutStep.executeWithoutTimeout(TimeoutStep.java:74)
+2025-03-24T02:45:05.0070856Z 	at org.gradle.internal.execution.steps.TimeoutStep.execute(TimeoutStep.java:55)
+2025-03-24T02:45:05.0071944Z 	at org.gradle.internal.execution.steps.CreateOutputsStep.execute(CreateOutputsStep.java:50)
+2025-03-24T02:45:05.0073094Z 	at org.gradle.internal.execution.steps.CreateOutputsStep.execute(CreateOutputsStep.java:28)
+2025-03-24T02:45:05.0074789Z 	at org.gradle.internal.execution.steps.CaptureStateAfterExecutionStep.executeDelegateBroadcastingChanges(CaptureStateAfterExecutionStep.java:100)
+2025-03-24T02:45:05.0076722Z 	at org.gradle.internal.execution.steps.CaptureStateAfterExecutionStep.execute(CaptureStateAfterExecutionStep.java:72)
+2025-03-24T02:45:05.0078343Z 	at org.gradle.internal.execution.steps.CaptureStateAfterExecutionStep.execute(CaptureStateAfterExecutionStep.java:50)
+2025-03-24T02:45:05.0079742Z 	at org.gradle.internal.execution.steps.ResolveInputChangesStep.execute(ResolveInputChangesStep.java:40)
+2025-03-24T02:45:05.0085300Z 	at org.gradle.internal.execution.steps.ResolveInputChangesStep.execute(ResolveInputChangesStep.java:29)
+2025-03-24T02:45:05.0095223Z 	at org.gradle.internal.execution.steps.BuildCacheStep.executeWithoutCache(BuildCacheStep.java:179)
+2025-03-24T02:45:05.0100962Z 	at org.gradle.internal.execution.steps.BuildCacheStep.lambda$execute$1(BuildCacheStep.java:70)
+2025-03-24T02:45:05.0101869Z 	at org.gradle.internal.Either$Right.fold(Either.java:175)
+2025-03-24T02:45:05.0102675Z 	at org.gradle.internal.execution.caching.CachingState.fold(CachingState.java:59)
+2025-03-24T02:45:05.0103681Z 	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:68)
+2025-03-24T02:45:05.0104697Z 	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:46)
+2025-03-24T02:45:05.0105850Z 	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:36)
+2025-03-24T02:45:05.0107214Z 	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:25)
+2025-03-24T02:45:05.0108707Z 	at org.gradle.internal.execution.steps.RecordOutputsStep.execute(RecordOutputsStep.java:36)
+2025-03-24T02:45:05.0109815Z 	at org.gradle.internal.execution.steps.RecordOutputsStep.execute(RecordOutputsStep.java:22)
+2025-03-24T02:45:05.0111141Z 	at org.gradle.internal.execution.steps.SkipUpToDateStep.executeBecause(SkipUpToDateStep.java:91)
+2025-03-24T02:45:05.0112501Z 	at org.gradle.internal.execution.steps.SkipUpToDateStep.lambda$execute$2(SkipUpToDateStep.java:55)
+2025-03-24T02:45:05.0113645Z 	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:55)
+2025-03-24T02:45:05.0114704Z 	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:37)
+2025-03-24T02:45:05.0115813Z 	at org.gradle.internal.execution.steps.ResolveChangesStep.execute(ResolveChangesStep.java:65)
+2025-03-24T02:45:05.0116989Z 	at org.gradle.internal.execution.steps.ResolveChangesStep.execute(ResolveChangesStep.java:36)
+2025-03-24T02:45:05.0118512Z 	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:37)
+2025-03-24T02:45:05.0120376Z 	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:27)
+2025-03-24T02:45:05.0135288Z 	at org.gradle.internal.execution.steps.ResolveCachingStateStep.execute(ResolveCachingStateStep.java:76)
+2025-03-24T02:45:05.0145435Z 	at org.gradle.internal.execution.steps.ResolveCachingStateStep.execute(ResolveCachingStateStep.java:37)
+2025-03-24T02:45:05.0155456Z 	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:108)
+2025-03-24T02:45:05.0165235Z 	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:55)
+2025-03-24T02:45:05.0166726Z 	at org.gradle.internal.execution.steps.CaptureStateBeforeExecutionStep.execute(CaptureStateBeforeExecutionStep.java:71)
+2025-03-24T02:45:05.0168321Z 	at org.gradle.internal.execution.steps.CaptureStateBeforeExecutionStep.execute(CaptureStateBeforeExecutionStep.java:45)
+2025-03-24T02:45:05.0169875Z 	at org.gradle.internal.execution.steps.SkipEmptyWorkStep.executeWithNonEmptySources(SkipEmptyWorkStep.java:177)
+2025-03-24T02:45:05.0171407Z 	at org.gradle.internal.execution.steps.SkipEmptyWorkStep.execute(SkipEmptyWorkStep.java:81)
+2025-03-24T02:45:05.0172513Z 	at org.gradle.internal.execution.steps.SkipEmptyWorkStep.execute(SkipEmptyWorkStep.java:53)
+2025-03-24T02:45:05.0173902Z 	at org.gradle.internal.execution.steps.RemoveUntrackedExecutionStateStep.execute(RemoveUntrackedExecutionStateStep.java:32)
+2025-03-24T02:45:05.0175546Z 	at org.gradle.internal.execution.steps.RemoveUntrackedExecutionStateStep.execute(RemoveUntrackedExecutionStateStep.java:21)
+2025-03-24T02:45:05.0177238Z 	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsStartedStep.execute(MarkSnapshottingInputsStartedStep.java:38)
+2025-03-24T02:45:05.0178871Z 	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.execute(LoadPreviousExecutionStateStep.java:36)
+2025-03-24T02:45:05.0180443Z 	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.execute(LoadPreviousExecutionStateStep.java:23)
+2025-03-24T02:45:05.0182051Z 	at org.gradle.internal.execution.steps.CleanupStaleOutputsStep.execute(CleanupStaleOutputsStep.java:75)
+2025-03-24T02:45:05.0183336Z 	at org.gradle.internal.execution.steps.CleanupStaleOutputsStep.execute(CleanupStaleOutputsStep.java:41)
+2025-03-24T02:45:05.0184885Z 	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.lambda$execute$2(ExecuteWorkBuildOperationFiringStep.java:66)
+2025-03-24T02:45:05.0186613Z 	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:66)
+2025-03-24T02:45:05.0188288Z 	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:38)
+2025-03-24T02:45:05.0189737Z 	at org.gradle.internal.execution.steps.AssignWorkspaceStep.lambda$execute$0(AssignWorkspaceStep.java:32)
+2025-03-24T02:45:05.0195497Z 	at org.gradle.api.internal.tasks.execution.TaskExecution$4.withWorkspace(TaskExecution.java:293)
+2025-03-24T02:45:05.0208968Z 	at org.gradle.internal.execution.steps.AssignWorkspaceStep.execute(AssignWorkspaceStep.java:30)
+2025-03-24T02:45:05.0217893Z 	at org.gradle.internal.execution.steps.AssignWorkspaceStep.execute(AssignWorkspaceStep.java:21)
+2025-03-24T02:45:05.0219170Z 	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:37)
+2025-03-24T02:45:05.0220168Z 	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:27)
+2025-03-24T02:45:05.0221263Z 	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:47)
+2025-03-24T02:45:05.0222158Z 	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:34)
+2025-03-24T02:45:05.0223137Z 	at org.gradle.internal.execution.impl.DefaultExecutionEngine$1.execute(DefaultExecutionEngine.java:64)
+2025-03-24T02:45:05.0224396Z 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:145)
+2025-03-24T02:45:05.0225764Z 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:134)
+2025-03-24T02:45:05.0227108Z 	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+2025-03-24T02:45:05.0228533Z 	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
+2025-03-24T02:45:05.0237901Z 	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+2025-03-24T02:45:05.0246742Z 	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
+2025-03-24T02:45:05.0248127Z 	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+2025-03-24T02:45:05.0249377Z 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+2025-03-24T02:45:05.0250693Z 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+2025-03-24T02:45:05.0251842Z 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+2025-03-24T02:45:05.0253194Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+2025-03-24T02:45:05.0254761Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+2025-03-24T02:45:05.0256119Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+2025-03-24T02:45:05.0257297Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+2025-03-24T02:45:05.0258528Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+2025-03-24T02:45:05.0259719Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+2025-03-24T02:45:05.0264674Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+2025-03-24T02:45:05.0273572Z 	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
+2025-03-24T02:45:05.0283404Z 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+2025-03-24T02:45:05.0288857Z 	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:42)
+2025-03-24T02:45:05.0290267Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:331)
+2025-03-24T02:45:05.0292108Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:318)
+2025-03-24T02:45:05.0294190Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(DefaultTaskExecutionGraph.java:314)
+2025-03-24T02:45:05.0295786Z 	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:80)
+2025-03-24T02:45:05.0297510Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:314)
+2025-03-24T02:45:05.0299347Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
+2025-03-24T02:45:05.0301046Z 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:463)
+2025-03-24T02:45:05.0302225Z 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:380)
+2025-03-24T02:45:05.0303441Z 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+2025-03-24T02:45:05.0304677Z 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
+2025-03-24T02:45:05.0306337Z Caused by: org.gradle.workers.internal.DefaultWorkerExecutor$WorkExecutionException: A failure occurred while executing quilt.internal.task.lint.MappingLintTask$LintAction
+2025-03-24T02:45:05.0308152Z 	at org.gradle.workers.internal.DefaultWorkerExecutor$WorkItemExecution.waitForCompletion(DefaultWorkerExecutor.java:283)
+2025-03-24T02:45:05.0309696Z 	at org.gradle.internal.work.DefaultAsyncWorkTracker.lambda$waitForItemsAndGatherFailures$2(DefaultAsyncWorkTracker.java:130)
+2025-03-24T02:45:05.0315208Z 	at org.gradle.internal.Factories$1.create(Factories.java:31)
+2025-03-24T02:45:05.0324989Z 	at org.gradle.internal.work.DefaultWorkerLeaseService.withoutLocks(DefaultWorkerLeaseService.java:336)
+2025-03-24T02:45:05.0339445Z 	at org.gradle.internal.work.DefaultWorkerLeaseService.withoutLocks(DefaultWorkerLeaseService.java:319)
+2025-03-24T02:45:05.0349509Z 	at org.gradle.internal.work.DefaultWorkerLeaseService.withoutLock(DefaultWorkerLeaseService.java:324)
+2025-03-24T02:45:05.0363669Z 	at org.gradle.internal.work.DefaultAsyncWorkTracker.waitForItemsAndGatherFailures(DefaultAsyncWorkTracker.java:126)
+2025-03-24T02:45:05.0365331Z 	at org.gradle.internal.work.DefaultAsyncWorkTracker.waitForItemsAndGatherFailures(DefaultAsyncWorkTracker.java:88)
+2025-03-24T02:45:05.0366640Z 	at org.gradle.internal.work.DefaultAsyncWorkTracker.waitForAll(DefaultAsyncWorkTracker.java:78)
+2025-03-24T02:45:05.0367844Z 	at org.gradle.internal.work.DefaultAsyncWorkTracker.waitForCompletion(DefaultAsyncWorkTracker.java:72)
+2025-03-24T02:45:05.0369005Z 	at org.gradle.workers.internal.DefaultWorkerExecutor.await(DefaultWorkerExecutor.java:211)
+2025-03-24T02:45:05.0370077Z 	at org.gradle.workers.internal.DefaultWorkerExecutor.access$100(DefaultWorkerExecutor.java:59)
+2025-03-24T02:45:05.0371414Z 	at org.gradle.workers.internal.DefaultWorkerExecutor$DefaultWorkQueue.await(DefaultWorkerExecutor.java:308)
+2025-03-24T02:45:05.0372474Z 	at quilt.internal.task.lint.MappingLintTask.run(MappingLintTask.java:112)
+2025-03-24T02:45:05.0373511Z 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+2025-03-24T02:45:05.0374531Z 	at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:125)
+2025-03-24T02:45:05.0375606Z 	at org.gradle.api.internal.project.taskfactory.IncrementalTaskAction.doExecute(IncrementalTaskAction.java:45)
+2025-03-24T02:45:05.0376914Z 	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:51)
+2025-03-24T02:45:05.0378236Z 	at org.gradle.api.internal.project.taskfactory.IncrementalTaskAction.execute(IncrementalTaskAction.java:26)
+2025-03-24T02:45:05.0379565Z 	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:29)
+2025-03-24T02:45:05.0385533Z 	at org.gradle.api.internal.tasks.execution.TaskExecution$3.run(TaskExecution.java:248)
+2025-03-24T02:45:05.0391272Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
+2025-03-24T02:45:05.0397193Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
+2025-03-24T02:45:05.0407504Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+2025-03-24T02:45:05.0413267Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+2025-03-24T02:45:05.0414836Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+2025-03-24T02:45:05.0416231Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+2025-03-24T02:45:05.0417570Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:47)
+2025-03-24T02:45:05.0418918Z 	at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:68)
+2025-03-24T02:45:05.0420172Z 	at org.gradle.api.internal.tasks.execution.TaskExecution.executeAction(TaskExecution.java:233)
+2025-03-24T02:45:05.0421473Z 	at org.gradle.api.internal.tasks.execution.TaskExecution.executeActions(TaskExecution.java:216)
+2025-03-24T02:45:05.0422831Z 	at org.gradle.api.internal.tasks.execution.TaskExecution.executeWithPreviousOutputFiles(TaskExecution.java:199)
+2025-03-24T02:45:05.0424030Z 	at org.gradle.api.internal.tasks.execution.TaskExecution.execute(TaskExecution.java:166)
+2025-03-24T02:45:05.0425054Z 	at org.gradle.internal.execution.steps.ExecuteStep.executeInternal(ExecuteStep.java:105)
+2025-03-24T02:45:05.0426053Z 	at org.gradle.internal.execution.steps.ExecuteStep.access$000(ExecuteStep.java:44)
+2025-03-24T02:45:05.0427003Z 	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:59)
+2025-03-24T02:45:05.0427920Z 	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:56)
+2025-03-24T02:45:05.0429270Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+2025-03-24T02:45:05.0435402Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+2025-03-24T02:45:05.0449754Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+2025-03-24T02:45:05.0463228Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+2025-03-24T02:45:05.0464789Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+2025-03-24T02:45:05.0466167Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+2025-03-24T02:45:05.0467529Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+2025-03-24T02:45:05.0468871Z 	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
+2025-03-24T02:45:05.0470041Z 	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:56)
+2025-03-24T02:45:05.0471125Z 	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:44)
+2025-03-24T02:45:05.0472282Z 	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.execute(RemovePreviousOutputsStep.java:67)
+2025-03-24T02:45:05.0473782Z 	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.execute(RemovePreviousOutputsStep.java:37)
+2025-03-24T02:45:05.0475052Z 	at org.gradle.internal.execution.steps.CancelExecutionStep.execute(CancelExecutionStep.java:41)
+2025-03-24T02:45:05.0476227Z 	at org.gradle.internal.execution.steps.TimeoutStep.executeWithoutTimeout(TimeoutStep.java:74)
+2025-03-24T02:45:05.0477750Z 	at org.gradle.internal.execution.steps.TimeoutStep.execute(TimeoutStep.java:55)
+2025-03-24T02:45:05.0478781Z 	at org.gradle.internal.execution.steps.CreateOutputsStep.execute(CreateOutputsStep.java:50)
+2025-03-24T02:45:05.0479907Z 	at org.gradle.internal.execution.steps.CreateOutputsStep.execute(CreateOutputsStep.java:28)
+2025-03-24T02:45:05.0481864Z 	at org.gradle.internal.execution.steps.CaptureStateAfterExecutionStep.executeDelegateBroadcastingChanges(CaptureStateAfterExecutionStep.java:100)
+2025-03-24T02:45:05.0483708Z 	at org.gradle.internal.execution.steps.CaptureStateAfterExecutionStep.execute(CaptureStateAfterExecutionStep.java:72)
+2025-03-24T02:45:05.0485271Z 	at org.gradle.internal.execution.steps.CaptureStateAfterExecutionStep.execute(CaptureStateAfterExecutionStep.java:50)
+2025-03-24T02:45:05.0486696Z 	at org.gradle.internal.execution.steps.ResolveInputChangesStep.execute(ResolveInputChangesStep.java:40)
+2025-03-24T02:45:05.0488018Z 	at org.gradle.internal.execution.steps.ResolveInputChangesStep.execute(ResolveInputChangesStep.java:29)
+2025-03-24T02:45:05.0489297Z 	at org.gradle.internal.execution.steps.BuildCacheStep.executeWithoutCache(BuildCacheStep.java:179)
+2025-03-24T02:45:05.0490486Z 	at org.gradle.internal.execution.steps.BuildCacheStep.lambda$execute$1(BuildCacheStep.java:70)
+2025-03-24T02:45:05.0499952Z 	at org.gradle.internal.Either$Right.fold(Either.java:175)
+2025-03-24T02:45:05.0509472Z 	at org.gradle.internal.execution.caching.CachingState.fold(CachingState.java:59)
+2025-03-24T02:45:05.0519060Z 	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:68)
+2025-03-24T02:45:05.0533318Z 	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:46)
+2025-03-24T02:45:05.0534687Z 	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:36)
+2025-03-24T02:45:05.0536032Z 	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:25)
+2025-03-24T02:45:05.0537270Z 	at org.gradle.internal.execution.steps.RecordOutputsStep.execute(RecordOutputsStep.java:36)
+2025-03-24T02:45:05.0538403Z 	at org.gradle.internal.execution.steps.RecordOutputsStep.execute(RecordOutputsStep.java:22)
+2025-03-24T02:45:05.0539565Z 	at org.gradle.internal.execution.steps.SkipUpToDateStep.executeBecause(SkipUpToDateStep.java:91)
+2025-03-24T02:45:05.0545899Z 	at org.gradle.internal.execution.steps.SkipUpToDateStep.lambda$execute$2(SkipUpToDateStep.java:55)
+2025-03-24T02:45:05.0555466Z 	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:55)
+2025-03-24T02:45:05.0556761Z 	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:37)
+2025-03-24T02:45:05.0557860Z 	at org.gradle.internal.execution.steps.ResolveChangesStep.execute(ResolveChangesStep.java:65)
+2025-03-24T02:45:05.0559013Z 	at org.gradle.internal.execution.steps.ResolveChangesStep.execute(ResolveChangesStep.java:36)
+2025-03-24T02:45:05.0560677Z 	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:37)
+2025-03-24T02:45:05.0562547Z 	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:27)
+2025-03-24T02:45:05.0564133Z 	at org.gradle.internal.execution.steps.ResolveCachingStateStep.execute(ResolveCachingStateStep.java:76)
+2025-03-24T02:45:05.0565474Z 	at org.gradle.internal.execution.steps.ResolveCachingStateStep.execute(ResolveCachingStateStep.java:37)
+2025-03-24T02:45:05.0566620Z 	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:108)
+2025-03-24T02:45:05.0567622Z 	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:55)
+2025-03-24T02:45:05.0568927Z 	at org.gradle.internal.execution.steps.CaptureStateBeforeExecutionStep.execute(CaptureStateBeforeExecutionStep.java:71)
+2025-03-24T02:45:05.0574941Z 	at org.gradle.internal.execution.steps.CaptureStateBeforeExecutionStep.execute(CaptureStateBeforeExecutionStep.java:45)
+2025-03-24T02:45:05.0590056Z 	at org.gradle.internal.execution.steps.SkipEmptyWorkStep.executeWithNonEmptySources(SkipEmptyWorkStep.java:177)
+2025-03-24T02:45:05.0595982Z 	at org.gradle.internal.execution.steps.SkipEmptyWorkStep.execute(SkipEmptyWorkStep.java:81)
+2025-03-24T02:45:05.0597128Z 	at org.gradle.internal.execution.steps.SkipEmptyWorkStep.execute(SkipEmptyWorkStep.java:53)
+2025-03-24T02:45:05.0598850Z 	at org.gradle.internal.execution.steps.RemoveUntrackedExecutionStateStep.execute(RemoveUntrackedExecutionStateStep.java:32)
+2025-03-24T02:45:05.0600686Z 	at org.gradle.internal.execution.steps.RemoveUntrackedExecutionStateStep.execute(RemoveUntrackedExecutionStateStep.java:21)
+2025-03-24T02:45:05.0602436Z 	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsStartedStep.execute(MarkSnapshottingInputsStartedStep.java:38)
+2025-03-24T02:45:05.0604113Z 	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.execute(LoadPreviousExecutionStateStep.java:36)
+2025-03-24T02:45:05.0605693Z 	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.execute(LoadPreviousExecutionStateStep.java:23)
+2025-03-24T02:45:05.0607141Z 	at org.gradle.internal.execution.steps.CleanupStaleOutputsStep.execute(CleanupStaleOutputsStep.java:75)
+2025-03-24T02:45:05.0608474Z 	at org.gradle.internal.execution.steps.CleanupStaleOutputsStep.execute(CleanupStaleOutputsStep.java:41)
+2025-03-24T02:45:05.0610075Z 	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.lambda$execute$2(ExecuteWorkBuildOperationFiringStep.java:66)
+2025-03-24T02:45:05.0612012Z 	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:66)
+2025-03-24T02:45:05.0613737Z 	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:38)
+2025-03-24T02:45:05.0615259Z 	at org.gradle.internal.execution.steps.AssignWorkspaceStep.lambda$execute$0(AssignWorkspaceStep.java:32)
+2025-03-24T02:45:05.0616467Z 	at org.gradle.api.internal.tasks.execution.TaskExecution$4.withWorkspace(TaskExecution.java:293)
+2025-03-24T02:45:05.0617632Z 	at org.gradle.internal.execution.steps.AssignWorkspaceStep.execute(AssignWorkspaceStep.java:30)
+2025-03-24T02:45:05.0618810Z 	at org.gradle.internal.execution.steps.AssignWorkspaceStep.execute(AssignWorkspaceStep.java:21)
+2025-03-24T02:45:05.0619960Z 	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:37)
+2025-03-24T02:45:05.0625608Z 	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:27)
+2025-03-24T02:45:05.0639816Z 	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:47)
+2025-03-24T02:45:05.0645327Z 	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:34)
+2025-03-24T02:45:05.0655211Z 	at org.gradle.internal.execution.impl.DefaultExecutionEngine$1.execute(DefaultExecutionEngine.java:64)
+2025-03-24T02:45:05.0665556Z 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:145)
+2025-03-24T02:45:05.0667185Z 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:134)
+2025-03-24T02:45:05.0668781Z 	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+2025-03-24T02:45:05.0670655Z 	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
+2025-03-24T02:45:05.0672392Z 	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+2025-03-24T02:45:05.0673939Z 	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
+2025-03-24T02:45:05.0675472Z 	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+2025-03-24T02:45:05.0677291Z 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+2025-03-24T02:45:05.0678686Z 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+2025-03-24T02:45:05.0680010Z 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+2025-03-24T02:45:05.0681881Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+2025-03-24T02:45:05.0683667Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+2025-03-24T02:45:05.0685205Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+2025-03-24T02:45:05.0686512Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+2025-03-24T02:45:05.0687848Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+2025-03-24T02:45:05.0689171Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+2025-03-24T02:45:05.0690460Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+2025-03-24T02:45:05.0705016Z 	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
+2025-03-24T02:45:05.0714834Z 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+2025-03-24T02:45:05.0724389Z 	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:42)
+2025-03-24T02:45:05.0734007Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:331)
+2025-03-24T02:45:05.0735642Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:318)
+2025-03-24T02:45:05.0737404Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(DefaultTaskExecutionGraph.java:314)
+2025-03-24T02:45:05.0738922Z 	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:80)
+2025-03-24T02:45:05.0740458Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:314)
+2025-03-24T02:45:05.0742399Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
+2025-03-24T02:45:05.0743968Z 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:463)
+2025-03-24T02:45:05.0745214Z 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:380)
+2025-03-24T02:45:05.0746498Z 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+2025-03-24T02:45:05.0747771Z 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
+2025-03-24T02:45:05.0748899Z Caused by: org.gradle.api.GradleException: Found 1 errors and 0 warnings! See the log for details.
+2025-03-24T02:45:05.0749955Z 	at quilt.internal.task.lint.MappingLintTask$LintAction.execute(MappingLintTask.java:230)
+2025-03-24T02:45:05.0755314Z 	at org.gradle.workers.internal.DefaultWorkerServer.execute(DefaultWorkerServer.java:63)
+2025-03-24T02:45:05.0765056Z 	at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:66)
+2025-03-24T02:45:05.0775133Z 	at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:62)
+2025-03-24T02:45:05.0781059Z 	at org.gradle.internal.classloader.ClassLoaderUtils.executeInClassloader(ClassLoaderUtils.java:100)
+2025-03-24T02:45:05.0782764Z 	at org.gradle.workers.internal.NoIsolationWorkerFactory$1.lambda$execute$0(NoIsolationWorkerFactory.java:62)
+2025-03-24T02:45:05.0783868Z 	at org.gradle.workers.internal.AbstractWorker$1.call(AbstractWorker.java:44)
+2025-03-24T02:45:05.0784805Z 	at org.gradle.workers.internal.AbstractWorker$1.call(AbstractWorker.java:41)
+2025-03-24T02:45:05.0786284Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+2025-03-24T02:45:05.0788052Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+2025-03-24T02:45:05.0789594Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+2025-03-24T02:45:05.0791080Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+2025-03-24T02:45:05.0792421Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+2025-03-24T02:45:05.0793784Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+2025-03-24T02:45:05.0795109Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+2025-03-24T02:45:05.0796426Z 	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
+2025-03-24T02:45:05.0797714Z 	at org.gradle.workers.internal.AbstractWorker.executeWrappedInBuildOperation(AbstractWorker.java:41)
+2025-03-24T02:45:05.0798912Z 	at org.gradle.workers.internal.NoIsolationWorkerFactory$1.execute(NoIsolationWorkerFactory.java:59)
+2025-03-24T02:45:05.0800115Z 	at org.gradle.workers.internal.DefaultWorkerExecutor.lambda$submitWork$0(DefaultWorkerExecutor.java:170)
+2025-03-24T02:45:05.0814937Z 	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runExecution(DefaultConditionalExecutionQueue.java:187)
+2025-03-24T02:45:05.0829760Z 	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.access$700(DefaultConditionalExecutionQueue.java:120)
+2025-03-24T02:45:05.0835764Z 	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner$1.run(DefaultConditionalExecutionQueue.java:162)
+2025-03-24T02:45:05.0836872Z 	at org.gradle.internal.Factories$1.create(Factories.java:31)
+2025-03-24T02:45:05.0837805Z 	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:264)
+2025-03-24T02:45:05.0839133Z 	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:128)
+2025-03-24T02:45:05.0840703Z 	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:133)
+2025-03-24T02:45:05.0842229Z 	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runBatch(DefaultConditionalExecutionQueue.java:157)
+2025-03-24T02:45:05.0843853Z 	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.run(DefaultConditionalExecutionQueue.java:126)
+2025-03-24T02:45:05.0844827Z 	... 2 more
+2025-03-24T02:45:05.0844996Z 
+2025-03-24T02:45:05.0845003Z 
+2025-03-24T02:45:05.0845126Z BUILD FAILED in 1m 32s
+2025-03-24T02:45:05.0845347Z 
+2025-03-24T02:45:05.0845768Z Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+2025-03-24T02:45:05.0846336Z 
+2025-03-24T02:45:05.0846976Z You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+2025-03-24T02:45:05.0847768Z 
+2025-03-24T02:45:05.0848561Z For more on this, please refer to https://docs.gradle.org/8.5/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+2025-03-24T02:45:05.0849607Z 17 actionable tasks: 17 executed
+2025-03-24T02:45:05.4247612Z ##[error]Process completed with exit code 1.
+2025-03-24T02:45:05.4343375Z Post job cleanup.
+2025-03-24T02:45:05.4347519Z ##[command]/usr/bin/docker exec  4acc7e3855a239295ee3f0adbde6d7dbe1ad6371ee4d9e9e5bb75e5459927962 sh -c "cat /etc/*release | grep ^ID"
+2025-03-24T02:45:05.7156115Z Post job cleanup.
+2025-03-24T02:45:05.7159862Z ##[command]/usr/bin/docker exec  4acc7e3855a239295ee3f0adbde6d7dbe1ad6371ee4d9e9e5bb75e5459927962 sh -c "cat /etc/*release | grep ^ID"
+2025-03-24T02:45:05.9338391Z Stop and remove container: f35a239c8f7d4099b2093623e74e61f9_eclipsetemurin21_979607
+2025-03-24T02:45:05.9343348Z ##[command]/usr/bin/docker rm --force 4acc7e3855a239295ee3f0adbde6d7dbe1ad6371ee4d9e9e5bb75e5459927962
+2025-03-24T02:45:07.1599632Z 4acc7e3855a239295ee3f0adbde6d7dbe1ad6371ee4d9e9e5bb75e5459927962
+2025-03-24T02:45:07.1627771Z Remove container network: github_network_c19ad1f9277f4df288397611e5b438ed
+2025-03-24T02:45:07.1632831Z ##[command]/usr/bin/docker network rm github_network_c19ad1f9277f4df288397611e5b438ed
+2025-03-24T02:45:07.3023900Z github_network_c19ad1f9277f4df288397611e5b438ed
+2025-03-24T02:45:07.3085750Z Cleaning up orphan processes

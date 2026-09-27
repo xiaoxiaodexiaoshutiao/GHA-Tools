@@ -1,0 +1,351 @@
+﻿2025-04-30T09:14:08.5409463Z Current runner version: '2.323.0'
+2025-04-30T09:14:08.5441175Z ##[group]Operating System
+2025-04-30T09:14:08.5442535Z Ubuntu
+2025-04-30T09:14:08.5443303Z 24.04.2
+2025-04-30T09:14:08.5443999Z LTS
+2025-04-30T09:14:08.5444787Z ##[endgroup]
+2025-04-30T09:14:08.5445520Z ##[group]Runner Image
+2025-04-30T09:14:08.5446448Z Image: ubuntu-24.04
+2025-04-30T09:14:08.5447403Z Version: 20250420.1.0
+2025-04-30T09:14:08.5449034Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250420.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-30T09:14:08.5451414Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250420.1
+2025-04-30T09:14:08.5453155Z ##[endgroup]
+2025-04-30T09:14:08.5454013Z ##[group]Runner Image Provisioner
+2025-04-30T09:14:08.5454912Z 2.0.422.1
+2025-04-30T09:14:08.5455688Z ##[endgroup]
+2025-04-30T09:14:08.5457400Z ##[group]GITHUB_TOKEN Permissions
+2025-04-30T09:14:08.5460166Z Contents: read
+2025-04-30T09:14:08.5460954Z Metadata: read
+2025-04-30T09:14:08.5462063Z Packages: read
+2025-04-30T09:14:08.5463086Z ##[endgroup]
+2025-04-30T09:14:08.5465675Z Secret source: Actions
+2025-04-30T09:14:08.5466895Z Prepare workflow directory
+2025-04-30T09:14:08.6007909Z Prepare all required actions
+2025-04-30T09:14:08.6062129Z Getting action download info
+2025-04-30T09:14:09.0791100Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-30T09:14:09.0792366Z Version: 4.2.2
+2025-04-30T09:14:09.0793493Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-30T09:14:09.0794579Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-30T09:14:09.0795258Z ##[endgroup]
+2025-04-30T09:14:09.1578588Z Download action repository 'shivammathur/cache-extensions@v1' (SHA:f86518659a7b9c0ff16c43bc958474a51bb956bd)
+2025-04-30T09:14:09.3524661Z ##[group]Download immutable action package 'actions/cache@v4'
+2025-04-30T09:14:09.3525287Z Version: 4.2.3
+2025-04-30T09:14:09.3525914Z Digest: sha256:c8a3bb963e1f1826d8fcc8d1354f0dd29d8ac1db1d4f6f20247055ae11b81ed9
+2025-04-30T09:14:09.3526752Z Source commit SHA: 5a3ec84eff668545956fd18022155c47e93e2684
+2025-04-30T09:14:09.3527315Z ##[endgroup]
+2025-04-30T09:14:09.4577712Z Download action repository 'shivammathur/setup-php@v2' (SHA:cf4cade2721270509d5b1c766ab3549210a39a2a)
+2025-04-30T09:14:09.7384502Z Complete job name: lint (7.4)
+2025-04-30T09:14:09.8012311Z ##[group]Run sudo chown -R $USER:$USER $GITHUB_WORKSPACE
+2025-04-30T09:14:09.8013414Z [36;1msudo chown -R $USER:$USER $GITHUB_WORKSPACE[0m
+2025-04-30T09:14:09.8048354Z shell: /usr/bin/bash -e {0}
+2025-04-30T09:14:09.8049218Z env:
+2025-04-30T09:14:09.8049630Z   extensions: zip
+2025-04-30T09:14:09.8050091Z   key: cache-v1
+2025-04-30T09:14:09.8050520Z ##[endgroup]
+2025-04-30T09:14:09.8437656Z ##[group]Run actions/checkout@v4
+2025-04-30T09:14:09.8438302Z with:
+2025-04-30T09:14:09.8438842Z   repository: glpi-project/glpi-inventory-plugin
+2025-04-30T09:14:09.8439847Z   token: ***
+2025-04-30T09:14:09.8440279Z   ssh-strict: true
+2025-04-30T09:14:09.8440756Z   ssh-user: git
+2025-04-30T09:14:09.8441247Z   persist-credentials: true
+2025-04-30T09:14:09.8441958Z   clean: true
+2025-04-30T09:14:09.8442463Z   sparse-checkout-cone-mode: true
+2025-04-30T09:14:09.8443081Z   fetch-depth: 1
+2025-04-30T09:14:09.8443516Z   fetch-tags: false
+2025-04-30T09:14:09.8443990Z   show-progress: true
+2025-04-30T09:14:09.8444452Z   lfs: false
+2025-04-30T09:14:09.8444868Z   submodules: false
+2025-04-30T09:14:09.8445340Z   set-safe-directory: true
+2025-04-30T09:14:09.8445854Z env:
+2025-04-30T09:14:09.8446220Z   extensions: zip
+2025-04-30T09:14:09.8446656Z   key: cache-v1
+2025-04-30T09:14:09.8447061Z ##[endgroup]
+2025-04-30T09:14:10.0273270Z Syncing repository: glpi-project/glpi-inventory-plugin
+2025-04-30T09:14:10.0276166Z ##[group]Getting Git version info
+2025-04-30T09:14:10.0277858Z Working directory is '/home/runner/work/glpi-inventory-plugin/glpi-inventory-plugin'
+2025-04-30T09:14:10.0280158Z [command]/usr/bin/git version
+2025-04-30T09:14:10.0333459Z git version 2.49.0
+2025-04-30T09:14:10.0360351Z ##[endgroup]
+2025-04-30T09:14:10.0374398Z Temporarily overriding HOME='/home/runner/work/_temp/7720ccc2-8f0e-48da-9a46-ac4ef20b0ef5' before making global git config changes
+2025-04-30T09:14:10.0376880Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-30T09:14:10.0379463Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/glpi-inventory-plugin/glpi-inventory-plugin
+2025-04-30T09:14:10.0412197Z Deleting the contents of '/home/runner/work/glpi-inventory-plugin/glpi-inventory-plugin'
+2025-04-30T09:14:10.0414917Z ##[group]Initializing the repository
+2025-04-30T09:14:10.0419667Z [command]/usr/bin/git init /home/runner/work/glpi-inventory-plugin/glpi-inventory-plugin
+2025-04-30T09:14:10.0485720Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-30T09:14:10.0487815Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-30T09:14:10.0490172Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-30T09:14:10.0492363Z hint:
+2025-04-30T09:14:10.0494142Z hint: 	git config --global init.defaultBranch <name>
+2025-04-30T09:14:10.0496348Z hint:
+2025-04-30T09:14:10.0498493Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-30T09:14:10.0501993Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-30T09:14:10.0504730Z hint:
+2025-04-30T09:14:10.0506198Z hint: 	git branch -m <name>
+2025-04-30T09:14:10.0509353Z Initialized empty Git repository in /home/runner/work/glpi-inventory-plugin/glpi-inventory-plugin/.git/
+2025-04-30T09:14:10.0514249Z [command]/usr/bin/git remote add origin https://github.com/glpi-project/glpi-inventory-plugin
+2025-04-30T09:14:10.0539090Z ##[endgroup]
+2025-04-30T09:14:10.0542008Z ##[group]Disabling automatic garbage collection
+2025-04-30T09:14:10.0544419Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-30T09:14:10.0573372Z ##[endgroup]
+2025-04-30T09:14:10.0575870Z ##[group]Setting up auth
+2025-04-30T09:14:10.0580850Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-30T09:14:10.0614473Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-30T09:14:10.0918650Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-30T09:14:10.0951559Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-30T09:14:10.1176052Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-30T09:14:10.1214069Z ##[endgroup]
+2025-04-30T09:14:10.1215502Z ##[group]Fetching the repository
+2025-04-30T09:14:10.1224838Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +0a45f6139f22c04a83ce9fa2083d065f452f2451:refs/remotes/pull/673/merge
+2025-04-30T09:14:11.0079139Z From https://github.com/glpi-project/glpi-inventory-plugin
+2025-04-30T09:14:11.0083644Z  * [new ref]         0a45f6139f22c04a83ce9fa2083d065f452f2451 -> pull/673/merge
+2025-04-30T09:14:11.0110729Z ##[endgroup]
+2025-04-30T09:14:11.0113213Z ##[group]Determining the checkout info
+2025-04-30T09:14:11.0115648Z ##[endgroup]
+2025-04-30T09:14:11.0118912Z [command]/usr/bin/git sparse-checkout disable
+2025-04-30T09:14:11.0160859Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-30T09:14:11.0190246Z ##[group]Checking out the ref
+2025-04-30T09:14:11.0192879Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/673/merge
+2025-04-30T09:14:11.0993884Z Note: switching to 'refs/remotes/pull/673/merge'.
+2025-04-30T09:14:11.0995334Z 
+2025-04-30T09:14:11.0996453Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-30T09:14:11.0999657Z changes and commit them, and you can discard any commits you make in this
+2025-04-30T09:14:11.1002358Z state without impacting any branches by switching back to a branch.
+2025-04-30T09:14:11.1003740Z 
+2025-04-30T09:14:11.1004421Z If you want to create a new branch to retain commits you create, you may
+2025-04-30T09:14:11.1005912Z do so (now or later) by using -c with the switch command. Example:
+2025-04-30T09:14:11.1006873Z 
+2025-04-30T09:14:11.1007288Z   git switch -c <new-branch-name>
+2025-04-30T09:14:11.1007931Z 
+2025-04-30T09:14:11.1008336Z Or undo this operation with:
+2025-04-30T09:14:11.1008915Z 
+2025-04-30T09:14:11.1009259Z   git switch -
+2025-04-30T09:14:11.1009756Z 
+2025-04-30T09:14:11.1010457Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-30T09:14:11.1011458Z 
+2025-04-30T09:14:11.1012756Z HEAD is now at 0a45f61 Merge 66cb0e03b62eeb68dcef2dd09c54eb46b6193d87 into 563b1e45dc70c6056c6a394ee80c2812e7aace9a
+2025-04-30T09:14:11.1016477Z ##[endgroup]
+2025-04-30T09:14:11.1044127Z [command]/usr/bin/git log -1 --format=%H
+2025-04-30T09:14:11.1066828Z 0a45f6139f22c04a83ce9fa2083d065f452f2451
+2025-04-30T09:14:11.1248040Z ##[group]Run shivammathur/cache-extensions@v1
+2025-04-30T09:14:11.1249033Z with:
+2025-04-30T09:14:11.1249719Z   php-version: 7.4
+2025-04-30T09:14:11.1250450Z   extensions: zip
+2025-04-30T09:14:11.1251174Z   key: cache-v1
+2025-04-30T09:14:11.1252005Z env:
+2025-04-30T09:14:11.1252657Z   extensions: zip
+2025-04-30T09:14:11.1253385Z   key: cache-v1
+2025-04-30T09:14:11.1254081Z ##[endgroup]
+2025-04-30T09:14:11.2607016Z [command]/usr/bin/bash /home/runner/work/_actions/shivammathur/cache-extensions/v1/src/scripts/cache.sh data zip 7.4 cache-v1
+2025-04-30T09:14:11.4593059Z Cache hit for: Linux-noble-x86_64-7.4-037b1c51da9b2c29a6d6743295f3957f00076a1ace9f7f8d9b123d451cd852e8-20240716
+2025-04-30T09:14:11.4594070Z -deps
+2025-04-30T09:14:11.5726503Z Received 202 of 202 (100.0%), 0.0 MBs/sec
+2025-04-30T09:14:11.5727567Z Cache Size: ~0 MB (202 B)
+2025-04-30T09:14:11.5763604Z [command]/usr/bin/tar -xf /home/runner/work/_temp/540b31bf-3ecc-448b-bdf8-ca5246a8d426/cache.tzst -P -C /home/runner/work/glpi-inventory-plugin/glpi-inventory-plugin --use-compress-program unzstd
+2025-04-30T09:14:11.5816666Z Cache restored successfully
+2025-04-30T09:14:11.5832380Z [command]/usr/bin/bash /home/runner/work/_actions/shivammathur/cache-extensions/v1/src/scripts/cache.sh dependencies zip 7.4
+2025-04-30T09:14:12.2851235Z ##[group]Run actions/cache@v4
+2025-04-30T09:14:12.2851503Z with:
+2025-04-30T09:14:12.2851916Z   path: /usr/lib/php/20190902
+2025-04-30T09:14:12.2852361Z   key: Linux-noble-x86_64-7.4-037b1c51da9b2c29a6d6743295f3957f00076a1ace9f7f8d9b123d451cd852e8-20240716
+2025-04-30T09:14:12.2853023Z   restore-keys: Linux-noble-x86_64-7.4-037b1c51da9b2c29a6d6743295f3957f00076a1ace9f7f8d9b123d451cd852e8-20240716
+2025-04-30T09:14:12.2853508Z   enableCrossOsArchive: false
+2025-04-30T09:14:12.2853751Z   fail-on-cache-miss: false
+2025-04-30T09:14:12.2853977Z   lookup-only: false
+2025-04-30T09:14:12.2854178Z   save-always: false
+2025-04-30T09:14:12.2854363Z env:
+2025-04-30T09:14:12.2854525Z   extensions: zip
+2025-04-30T09:14:12.2854711Z   key: cache-v1
+2025-04-30T09:14:12.2854888Z ##[endgroup]
+2025-04-30T09:14:12.4859094Z Cache hit for: Linux-noble-x86_64-7.4-037b1c51da9b2c29a6d6743295f3957f00076a1ace9f7f8d9b123d451cd852e8-20240716
+2025-04-30T09:14:12.8250702Z Received 31938728 of 31938728 (100.0%), 99.9 MBs/sec
+2025-04-30T09:14:12.8251479Z Cache Size: ~30 MB (31938728 B)
+2025-04-30T09:14:12.8280586Z [command]/usr/bin/tar -xf /home/runner/work/_temp/134a3aa8-471b-4fe4-9f17-bac31a0cf010/cache.tzst -P -C /home/runner/work/glpi-inventory-plugin/glpi-inventory-plugin --use-compress-program unzstd
+2025-04-30T09:14:13.0084001Z Cache restored successfully
+2025-04-30T09:14:13.0356861Z Cache restored from key: Linux-noble-x86_64-7.4-037b1c51da9b2c29a6d6743295f3957f00076a1ace9f7f8d9b123d451cd852e8-20240716
+2025-04-30T09:14:13.0474932Z ##[group]Run shivammathur/setup-php@v2
+2025-04-30T09:14:13.0475390Z with:
+2025-04-30T09:14:13.0475567Z   php-version: 7.4
+2025-04-30T09:14:13.0475759Z   extensions: zip
+2025-04-30T09:14:13.0475947Z   ini-file: production
+2025-04-30T09:14:13.0476149Z env:
+2025-04-30T09:14:13.0476312Z   extensions: zip
+2025-04-30T09:14:13.0476496Z   key: cache-v1
+2025-04-30T09:14:13.0476682Z   runner: ubuntu-latest
+2025-04-30T09:14:13.0476875Z ##[endgroup]
+2025-04-30T09:14:13.1177550Z [command]/usr/bin/bash /home/runner/work/_actions/shivammathur/setup-php/v2/src/scripts/run.sh
+2025-04-30T09:14:13.1334626Z 
+2025-04-30T09:14:13.1335157Z [90;1m==> [0m[37;1mSetup PHP[0m
+2025-04-30T09:14:16.4618895Z [32;1m✓ [0m[34;1mPHP [0m[90;1mInstalled PHP 7.4.33[0m
+2025-04-30T09:14:16.4619428Z 
+2025-04-30T09:14:16.4619692Z [90;1m==> [0m[37;1mSetup Extensions[0m
+2025-04-30T09:14:16.5046809Z [32;1m✓ [0m[34;1mzip [0m[90;1mEnabled[0m
+2025-04-30T09:14:16.5047362Z 
+2025-04-30T09:14:16.5047742Z [90;1m==> [0m[37;1mSetup Tools[0m
+2025-04-30T09:14:16.9816224Z [32;1m✓ [0m[34;1mcomposer [0m[90;1mAdded composer 2.8.6[0m
+2025-04-30T09:14:16.9818371Z 
+2025-04-30T09:14:16.9819320Z [90;1m==> [0m[37;1mSponsor setup-php[0m
+2025-04-30T09:14:16.9821309Z [32;1m✓ [0m[34;1msetup-php [0m[90;1mhttps://setup-php.com/sponsor[0m
+2025-04-30T09:14:17.1309032Z ##[group]Run actions/cache@v4
+2025-04-30T09:14:17.1309277Z with:
+2025-04-30T09:14:17.1309468Z   path: /tmp/composer-cache
+2025-04-30T09:14:17.1309828Z   key: Linux-2f31963a9d9ae648cb71d7474ab5729ecadb9de045566aaa717f2ff688bcacf3
+2025-04-30T09:14:17.1310212Z   enableCrossOsArchive: false
+2025-04-30T09:14:17.1310447Z   fail-on-cache-miss: false
+2025-04-30T09:14:17.1310662Z   lookup-only: false
+2025-04-30T09:14:17.1310849Z   save-always: false
+2025-04-30T09:14:17.1311029Z env:
+2025-04-30T09:14:17.1311194Z   extensions: zip
+2025-04-30T09:14:17.1311380Z   key: cache-v1
+2025-04-30T09:14:17.1311573Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-30T09:14:17.1311991Z   COMPOSER_NO_INTERACTION: 1
+2025-04-30T09:14:17.1312227Z   COMPOSER_NO_AUDIT: 1
+2025-04-30T09:14:17.1312416Z ##[endgroup]
+2025-04-30T09:14:17.3309085Z Cache not found for input keys: Linux-2f31963a9d9ae648cb71d7474ab5729ecadb9de045566aaa717f2ff688bcacf3
+2025-04-30T09:14:17.3389927Z ##[group]Run composer install
+2025-04-30T09:14:17.3390211Z [36;1mcomposer install[0m
+2025-04-30T09:14:17.3421559Z shell: /usr/bin/bash -e {0}
+2025-04-30T09:14:17.3422046Z env:
+2025-04-30T09:14:17.3422214Z   extensions: zip
+2025-04-30T09:14:17.3422400Z   key: cache-v1
+2025-04-30T09:14:17.3422592Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-30T09:14:17.3422819Z   COMPOSER_NO_INTERACTION: 1
+2025-04-30T09:14:17.3423034Z   COMPOSER_NO_AUDIT: 1
+2025-04-30T09:14:17.3423229Z ##[endgroup]
+2025-04-30T09:14:17.5188877Z Installing dependencies from lock file (including require-dev)
+2025-04-30T09:14:17.5204440Z Verifying lock file contents can be installed on current platform.
+2025-04-30T09:14:17.5341067Z Package operations: 44 installs, 0 updates, 0 removals
+2025-04-30T09:14:17.5356872Z   - Downloading symfony/polyfill-php81 (v1.31.0)
+2025-04-30T09:14:17.5365019Z   - Downloading symfony/polyfill-php80 (v1.31.0)
+2025-04-30T09:14:17.5367885Z   - Downloading symfony/polyfill-mbstring (v1.31.0)
+2025-04-30T09:14:17.5370786Z   - Downloading symfony/polyfill-ctype (v1.31.0)
+2025-04-30T09:14:17.5373828Z   - Downloading symfony/deprecation-contracts (v2.5.4)
+2025-04-30T09:14:17.5376997Z   - Downloading twig/twig (v3.11.3)
+2025-04-30T09:14:17.5379897Z   - Downloading symfony/polyfill-intl-normalizer (v1.31.0)
+2025-04-30T09:14:17.5382916Z   - Downloading symfony/polyfill-intl-grapheme (v1.31.0)
+2025-04-30T09:14:17.5385592Z   - Downloading symfony/string (v5.4.47)
+2025-04-30T09:14:17.5388869Z   - Downloading psr/container (1.1.2)
+2025-04-30T09:14:17.5391653Z   - Downloading symfony/service-contracts (v2.5.4)
+2025-04-30T09:14:17.5394797Z   - Downloading symfony/polyfill-php73 (v1.31.0)
+2025-04-30T09:14:17.5397592Z   - Downloading symfony/console (v5.4.47)
+2025-04-30T09:14:17.5399763Z   - Downloading glpi-project/tools (0.7.4)
+2025-04-30T09:14:17.5402237Z   - Downloading phpstan/phpstan (2.1.11)
+2025-04-30T09:14:17.5404570Z   - Downloading sebastian/version (3.0.2)
+2025-04-30T09:14:17.5406037Z   - Downloading sebastian/type (3.2.1)
+2025-04-30T09:14:17.5408201Z   - Downloading sebastian/resource-operations (3.0.4)
+2025-04-30T09:14:17.5409559Z   - Downloading sebastian/recursion-context (4.0.5)
+2025-04-30T09:14:17.5411377Z   - Downloading sebastian/object-reflector (2.0.4)
+2025-04-30T09:14:17.5413392Z   - Downloading sebastian/object-enumerator (4.0.4)
+2025-04-30T09:14:17.5415000Z   - Downloading sebastian/global-state (5.0.7)
+2025-04-30T09:14:17.5416969Z   - Downloading sebastian/exporter (4.0.6)
+2025-04-30T09:14:17.5418452Z   - Downloading sebastian/environment (5.1.5)
+2025-04-30T09:14:17.5420320Z   - Downloading sebastian/diff (4.0.6)
+2025-04-30T09:14:17.5422175Z   - Downloading sebastian/comparator (4.0.8)
+2025-04-30T09:14:17.5424325Z   - Downloading sebastian/code-unit (1.0.8)
+2025-04-30T09:14:17.5425735Z   - Downloading sebastian/cli-parser (1.0.2)
+2025-04-30T09:14:17.5428188Z   - Downloading phpunit/php-timer (5.0.3)
+2025-04-30T09:14:17.5429583Z   - Downloading phpunit/php-text-template (2.0.4)
+2025-04-30T09:14:17.5431387Z   - Downloading phpunit/php-invoker (3.1.1)
+2025-04-30T09:14:17.5433316Z   - Downloading phpunit/php-file-iterator (3.0.6)
+2025-04-30T09:14:17.5435806Z   - Downloading theseer/tokenizer (1.2.3)
+2025-04-30T09:14:17.5437955Z   - Downloading nikic/php-parser (v5.4.0)
+2025-04-30T09:14:17.5439979Z   - Downloading sebastian/lines-of-code (1.0.4)
+2025-04-30T09:14:17.5441465Z   - Downloading sebastian/complexity (2.0.3)
+2025-04-30T09:14:17.5443520Z   - Downloading sebastian/code-unit-reverse-lookup (2.0.3)
+2025-04-30T09:14:17.5445208Z   - Downloading phpunit/php-code-coverage (9.2.32)
+2025-04-30T09:14:17.5448020Z   - Downloading phar-io/version (3.2.1)
+2025-04-30T09:14:17.5449453Z   - Downloading phar-io/manifest (2.0.4)
+2025-04-30T09:14:17.5451253Z   - Downloading myclabs/deep-copy (1.13.0)
+2025-04-30T09:14:17.5453513Z   - Downloading doctrine/instantiator (1.5.0)
+2025-04-30T09:14:17.5454993Z   - Downloading phpunit/phpunit (9.6.22)
+2025-04-30T09:14:17.5457282Z   - Downloading squizlabs/php_codesniffer (3.12.0)
+2025-04-30T09:14:18.1152622Z   - Installing symfony/polyfill-php81 (v1.31.0): Extracting archive
+2025-04-30T09:14:18.1189812Z   - Installing symfony/polyfill-php80 (v1.31.0): Extracting archive
+2025-04-30T09:14:18.1214588Z   - Installing symfony/polyfill-mbstring (v1.31.0): Extracting archive
+2025-04-30T09:14:18.1243378Z   - Installing symfony/polyfill-ctype (v1.31.0): Extracting archive
+2025-04-30T09:14:18.1272786Z   - Installing symfony/deprecation-contracts (v2.5.4): Extracting archive
+2025-04-30T09:14:18.1303164Z   - Installing twig/twig (v3.11.3): Extracting archive
+2025-04-30T09:14:18.1333982Z   - Installing symfony/polyfill-intl-normalizer (v1.31.0): Extracting archive
+2025-04-30T09:14:18.1364662Z   - Installing symfony/polyfill-intl-grapheme (v1.31.0): Extracting archive
+2025-04-30T09:14:18.1396395Z   - Installing symfony/string (v5.4.47): Extracting archive
+2025-04-30T09:14:18.1431468Z   - Installing psr/container (1.1.2): Extracting archive
+2025-04-30T09:14:18.1482601Z   - Installing symfony/service-contracts (v2.5.4): Extracting archive
+2025-04-30T09:14:18.1483703Z   - Installing symfony/polyfill-php73 (v1.31.0): Extracting archive
+2025-04-30T09:14:18.1484614Z   - Installing symfony/console (v5.4.47): Extracting archive
+2025-04-30T09:14:18.1485351Z   - Installing glpi-project/tools (0.7.4): Extracting archive
+2025-04-30T09:14:18.1486149Z   - Installing phpstan/phpstan (2.1.11): Extracting archive
+2025-04-30T09:14:18.1497650Z   - Installing sebastian/version (3.0.2): Extracting archive
+2025-04-30T09:14:18.1498275Z   - Installing sebastian/type (3.2.1): Extracting archive
+2025-04-30T09:14:18.1516529Z   - Installing sebastian/resource-operations (3.0.4): Extracting archive
+2025-04-30T09:14:18.1517275Z   - Installing sebastian/recursion-context (4.0.5): Extracting archive
+2025-04-30T09:14:18.1518017Z   - Installing sebastian/object-reflector (2.0.4): Extracting archive
+2025-04-30T09:14:18.1518967Z   - Installing sebastian/object-enumerator (4.0.4): Extracting archive
+2025-04-30T09:14:18.1519687Z   - Installing sebastian/global-state (5.0.7): Extracting archive
+2025-04-30T09:14:18.1520361Z   - Installing sebastian/exporter (4.0.6): Extracting archive
+2025-04-30T09:14:18.1521010Z   - Installing sebastian/environment (5.1.5): Extracting archive
+2025-04-30T09:14:18.1523763Z   - Installing sebastian/diff (4.0.6): Extracting archive
+2025-04-30T09:14:18.1525004Z   - Installing sebastian/comparator (4.0.8): Extracting archive
+2025-04-30T09:14:18.1527681Z   - Installing sebastian/code-unit (1.0.8): Extracting archive
+2025-04-30T09:14:18.1555818Z   - Installing sebastian/cli-parser (1.0.2): Extracting archive
+2025-04-30T09:14:18.1556594Z   - Installing phpunit/php-timer (5.0.3): Extracting archive
+2025-04-30T09:14:18.1557585Z   - Installing phpunit/php-text-template (2.0.4): Extracting archive
+2025-04-30T09:14:18.1558305Z   - Installing phpunit/php-invoker (3.1.1): Extracting archive
+2025-04-30T09:14:18.1558978Z   - Installing phpunit/php-file-iterator (3.0.6): Extracting archive
+2025-04-30T09:14:18.1559630Z   - Installing theseer/tokenizer (1.2.3): Extracting archive
+2025-04-30T09:14:18.1560240Z   - Installing nikic/php-parser (v5.4.0): Extracting archive
+2025-04-30T09:14:18.1560900Z   - Installing sebastian/lines-of-code (1.0.4): Extracting archive
+2025-04-30T09:14:18.1561583Z   - Installing sebastian/complexity (2.0.3): Extracting archive
+2025-04-30T09:14:18.1562532Z   - Installing sebastian/code-unit-reverse-lookup (2.0.3): Extracting archive
+2025-04-30T09:14:18.1563311Z   - Installing phpunit/php-code-coverage (9.2.32): Extracting archive
+2025-04-30T09:14:18.1563986Z   - Installing phar-io/version (3.2.1): Extracting archive
+2025-04-30T09:14:18.1564584Z   - Installing phar-io/manifest (2.0.4): Extracting archive
+2025-04-30T09:14:18.1570781Z   - Installing myclabs/deep-copy (1.13.0): Extracting archive
+2025-04-30T09:14:18.1571472Z   - Installing doctrine/instantiator (1.5.0): Extracting archive
+2025-04-30T09:14:18.1572840Z   - Installing phpunit/phpunit (9.6.22): Extracting archive
+2025-04-30T09:14:18.1573736Z   - Installing squizlabs/php_codesniffer (3.12.0): Extracting archive
+2025-04-30T09:14:19.0536254Z Generating optimized autoload files
+2025-04-30T09:14:19.3477913Z 40 packages you are using are looking for funding.
+2025-04-30T09:14:19.3478470Z Use the `composer fund` command to find out more!
+2025-04-30T09:14:19.3893543Z ##[group]Run vendor/bin/phpcs
+2025-04-30T09:14:19.3893858Z [36;1mvendor/bin/phpcs[0m
+2025-04-30T09:14:19.3924479Z shell: /usr/bin/bash -e {0}
+2025-04-30T09:14:19.3924731Z env:
+2025-04-30T09:14:19.3924905Z   extensions: zip
+2025-04-30T09:14:19.3925091Z   key: cache-v1
+2025-04-30T09:14:19.3925286Z   COMPOSER_PROCESS_TIMEOUT: 0
+2025-04-30T09:14:19.3925519Z   COMPOSER_NO_INTERACTION: 1
+2025-04-30T09:14:19.3925742Z   COMPOSER_NO_AUDIT: 1
+2025-04-30T09:14:19.3925938Z ##[endgroup]
+2025-04-30T09:14:23.5645360Z ............................................................  60 / 184 (33%)
+2025-04-30T09:14:29.6041251Z ............................................................ 120 / 184 (65%)
+2025-04-30T09:14:34.0636952Z ...........................................................[32mE[0m 180 / 184 (98%)
+2025-04-30T09:14:34.2528870Z ....                                                         184 / 184 (100%)
+2025-04-30T09:14:34.2529326Z 
+2025-04-30T09:14:34.2529334Z 
+2025-04-30T09:14:34.2538868Z 
+2025-04-30T09:14:34.2539708Z [1mFILE: /home/runner/work/glpi-inventory-plugin/glpi-inventory-plugin/setup.php[0m
+2025-04-30T09:14:34.2540441Z -----------------------------------------------------------------------------
+2025-04-30T09:14:34.2541040Z [1mFOUND 1 ERROR AFFECTING 1 LINE[0m
+2025-04-30T09:14:34.2541542Z -----------------------------------------------------------------------------
+2025-04-30T09:14:34.2542630Z  242 | [31mERROR[0m | [x] Expected 1 space after comma in argument list; 3 found
+2025-04-30T09:14:34.2543640Z -----------------------------------------------------------------------------
+2025-04-30T09:14:34.2544380Z [1mPHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY[0m
+2025-04-30T09:14:34.2544976Z -----------------------------------------------------------------------------
+2025-04-30T09:14:34.2545339Z 
+2025-04-30T09:14:34.2545489Z Time: 14.81 secs; Memory: 60.01MB
+2025-04-30T09:14:34.2545746Z 
+2025-04-30T09:14:34.2643026Z ##[error]Process completed with exit code 2.
+2025-04-30T09:14:34.2719557Z Post job cleanup.
+2025-04-30T09:14:34.3631528Z [command]/usr/bin/git version
+2025-04-30T09:14:34.3667151Z git version 2.49.0
+2025-04-30T09:14:34.3715985Z Temporarily overriding HOME='/home/runner/work/_temp/cbcf802b-1328-4b81-98d3-c07c2a0f5643' before making global git config changes
+2025-04-30T09:14:34.3717213Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-30T09:14:34.3722464Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/glpi-inventory-plugin/glpi-inventory-plugin
+2025-04-30T09:14:34.3756101Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-30T09:14:34.3789688Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-30T09:14:34.4015109Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-30T09:14:34.4035674Z http.https://github.com/.extraheader
+2025-04-30T09:14:34.4047827Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-30T09:14:34.4077390Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-30T09:14:34.4402742Z Cleaning up orphan processes

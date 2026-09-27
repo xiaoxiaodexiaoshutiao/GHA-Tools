@@ -1,0 +1,331 @@
+﻿2025-04-17T03:24:55.2731709Z Current runner version: '2.323.0'
+2025-04-17T03:24:55.2757022Z ##[group]Operating System
+2025-04-17T03:24:55.2758049Z Ubuntu
+2025-04-17T03:24:55.2758581Z 24.04.2
+2025-04-17T03:24:55.2759086Z LTS
+2025-04-17T03:24:55.2759529Z ##[endgroup]
+2025-04-17T03:24:55.2760096Z ##[group]Runner Image
+2025-04-17T03:24:55.2760677Z Image: ubuntu-24.04
+2025-04-17T03:24:55.2761206Z Version: 20250413.1.0
+2025-04-17T03:24:55.2762175Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250413.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-17T03:24:55.2763626Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250413.1
+2025-04-17T03:24:55.2764524Z ##[endgroup]
+2025-04-17T03:24:55.2764988Z ##[group]Runner Image Provisioner
+2025-04-17T03:24:55.2765657Z 2.0.422.1
+2025-04-17T03:24:55.2766082Z ##[endgroup]
+2025-04-17T03:24:55.2768723Z ##[group]GITHUB_TOKEN Permissions
+2025-04-17T03:24:55.2770690Z Actions: write
+2025-04-17T03:24:55.2771504Z Attestations: write
+2025-04-17T03:24:55.2772096Z Checks: write
+2025-04-17T03:24:55.2772543Z Contents: write
+2025-04-17T03:24:55.2773119Z Deployments: write
+2025-04-17T03:24:55.2773628Z Discussions: write
+2025-04-17T03:24:55.2774119Z Issues: write
+2025-04-17T03:24:55.2774708Z Metadata: read
+2025-04-17T03:24:55.2775159Z Models: read
+2025-04-17T03:24:55.2775652Z Packages: write
+2025-04-17T03:24:55.2776132Z Pages: write
+2025-04-17T03:24:55.2776632Z PullRequests: write
+2025-04-17T03:24:55.2777134Z RepositoryProjects: write
+2025-04-17T03:24:55.2777712Z SecurityEvents: write
+2025-04-17T03:24:55.2778400Z Statuses: write
+2025-04-17T03:24:55.2778887Z ##[endgroup]
+2025-04-17T03:24:55.2781294Z Secret source: Actions
+2025-04-17T03:24:55.2782350Z Prepare workflow directory
+2025-04-17T03:24:55.3110718Z Prepare all required actions
+2025-04-17T03:24:55.3149858Z Getting action download info
+2025-04-17T03:24:55.8966565Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-17T03:24:55.8967593Z Version: 4.2.2
+2025-04-17T03:24:55.8968858Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-17T03:24:55.8969972Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-17T03:24:55.8970735Z ##[endgroup]
+2025-04-17T03:24:56.0122746Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-04-17T03:24:56.0123435Z Version: 5.5.0
+2025-04-17T03:24:56.0124060Z Digest: sha256:1fac95d751afd58314aebd2ab01d4bf3b3109a441917bd2cac2a22898ec494f7
+2025-04-17T03:24:56.0124888Z Source commit SHA: 8d9ed9ac5c53483de85588cdf95a591a75ab9f55
+2025-04-17T03:24:56.0125471Z ##[endgroup]
+2025-04-17T03:24:56.4164830Z Download action repository 'pre-commit/action@v3.0.1' (SHA:2c7b3805fd2a0fd8c1884dcaebf91fc102a13ecd)
+2025-04-17T03:24:56.8706796Z Download action repository 'pre-commit-ci/lite-action@v1.1.0' (SHA:5d6cc0eb514c891a40562a58a8e71576c5c7fb43)
+2025-04-17T03:24:57.7503942Z Getting action download info
+2025-04-17T03:24:57.9083498Z ##[group]Download immutable action package 'actions/cache@v4'
+2025-04-17T03:24:57.9084057Z Version: 4.2.3
+2025-04-17T03:24:57.9084597Z Digest: sha256:c8a3bb963e1f1826d8fcc8d1354f0dd29d8ac1db1d4f6f20247055ae11b81ed9
+2025-04-17T03:24:57.9085303Z Source commit SHA: 5a3ec84eff668545956fd18022155c47e93e2684
+2025-04-17T03:24:57.9085780Z ##[endgroup]
+2025-04-17T03:24:58.0444556Z Complete job name: lint
+2025-04-17T03:24:58.1102464Z ##[group]Run actions/checkout@v4
+2025-04-17T03:24:58.1103138Z with:
+2025-04-17T03:24:58.1103496Z   repository: AppDaemon/appdaemon
+2025-04-17T03:24:58.1104044Z   token: ***
+2025-04-17T03:24:58.1104331Z   ssh-strict: true
+2025-04-17T03:24:58.1104625Z   ssh-user: git
+2025-04-17T03:24:58.1104935Z   persist-credentials: true
+2025-04-17T03:24:58.1105250Z   clean: true
+2025-04-17T03:24:58.1105543Z   sparse-checkout-cone-mode: true
+2025-04-17T03:24:58.1105878Z   fetch-depth: 1
+2025-04-17T03:24:58.1106154Z   fetch-tags: false
+2025-04-17T03:24:58.1106448Z   show-progress: true
+2025-04-17T03:24:58.1106728Z   lfs: false
+2025-04-17T03:24:58.1107007Z   submodules: false
+2025-04-17T03:24:58.1107537Z   set-safe-directory: true
+2025-04-17T03:24:58.1108522Z ##[endgroup]
+2025-04-17T03:24:58.3891304Z Syncing repository: AppDaemon/appdaemon
+2025-04-17T03:24:58.3893397Z ##[group]Getting Git version info
+2025-04-17T03:24:58.3894166Z Working directory is '/home/runner/work/appdaemon/appdaemon'
+2025-04-17T03:24:58.3895333Z [command]/usr/bin/git version
+2025-04-17T03:24:58.4009938Z git version 2.49.0
+2025-04-17T03:24:58.4041787Z ##[endgroup]
+2025-04-17T03:24:58.4055409Z Temporarily overriding HOME='/home/runner/work/_temp/aa5511bc-8177-4577-a860-48faf8b913c8' before making global git config changes
+2025-04-17T03:24:58.4056349Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-17T03:24:58.4061036Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/appdaemon/appdaemon
+2025-04-17T03:24:58.4101604Z Deleting the contents of '/home/runner/work/appdaemon/appdaemon'
+2025-04-17T03:24:58.4105450Z ##[group]Initializing the repository
+2025-04-17T03:24:58.4109490Z [command]/usr/bin/git init /home/runner/work/appdaemon/appdaemon
+2025-04-17T03:24:58.4196819Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-17T03:24:58.4197498Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-17T03:24:58.4198268Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-17T03:24:58.4198726Z hint:
+2025-04-17T03:24:58.4199111Z hint: 	git config --global init.defaultBranch <name>
+2025-04-17T03:24:58.4199495Z hint:
+2025-04-17T03:24:58.4199867Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-17T03:24:58.4200435Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-17T03:24:58.4200905Z hint:
+2025-04-17T03:24:58.4201171Z hint: 	git branch -m <name>
+2025-04-17T03:24:58.4221472Z Initialized empty Git repository in /home/runner/work/appdaemon/appdaemon/.git/
+2025-04-17T03:24:58.4233057Z [command]/usr/bin/git remote add origin https://github.com/AppDaemon/appdaemon
+2025-04-17T03:24:58.4270871Z ##[endgroup]
+2025-04-17T03:24:58.4271729Z ##[group]Disabling automatic garbage collection
+2025-04-17T03:24:58.4276058Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-17T03:24:58.4304998Z ##[endgroup]
+2025-04-17T03:24:58.4305527Z ##[group]Setting up auth
+2025-04-17T03:24:58.4311656Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-17T03:24:58.4344748Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-17T03:24:58.4730197Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-17T03:24:58.4764630Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-17T03:24:58.5006633Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-17T03:24:58.5042609Z ##[endgroup]
+2025-04-17T03:24:58.5043277Z ##[group]Fetching the repository
+2025-04-17T03:24:58.5051741Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +90198f7c1fdd38775bf890929d1c601dc862a10d:refs/remotes/pull/2220/merge
+2025-04-17T03:24:59.9716471Z From https://github.com/AppDaemon/appdaemon
+2025-04-17T03:24:59.9717301Z  * [new ref]         90198f7c1fdd38775bf890929d1c601dc862a10d -> pull/2220/merge
+2025-04-17T03:24:59.9746958Z ##[endgroup]
+2025-04-17T03:24:59.9747565Z ##[group]Determining the checkout info
+2025-04-17T03:24:59.9750113Z ##[endgroup]
+2025-04-17T03:24:59.9755442Z [command]/usr/bin/git sparse-checkout disable
+2025-04-17T03:24:59.9797723Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-17T03:24:59.9825213Z ##[group]Checking out the ref
+2025-04-17T03:24:59.9830191Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/2220/merge
+2025-04-17T03:25:00.0835321Z Note: switching to 'refs/remotes/pull/2220/merge'.
+2025-04-17T03:25:00.0836156Z 
+2025-04-17T03:25:00.0836718Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-17T03:25:00.0838840Z changes and commit them, and you can discard any commits you make in this
+2025-04-17T03:25:00.0840031Z state without impacting any branches by switching back to a branch.
+2025-04-17T03:25:00.0840812Z 
+2025-04-17T03:25:00.0841293Z If you want to create a new branch to retain commits you create, you may
+2025-04-17T03:25:00.0842328Z do so (now or later) by using -c with the switch command. Example:
+2025-04-17T03:25:00.0842960Z 
+2025-04-17T03:25:00.0843162Z   git switch -c <new-branch-name>
+2025-04-17T03:25:00.0843591Z 
+2025-04-17T03:25:00.0843849Z Or undo this operation with:
+2025-04-17T03:25:00.0844302Z 
+2025-04-17T03:25:00.0844496Z   git switch -
+2025-04-17T03:25:00.0844791Z 
+2025-04-17T03:25:00.0845249Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-17T03:25:00.0845899Z 
+2025-04-17T03:25:00.0846612Z HEAD is now at 90198f7 Merge dca3ddd0f4d74c3daaa9d5a97316d00fe95a8349 into 59f031a6d53649535cb27d8833d5465b29e0aff2
+2025-04-17T03:25:00.0852709Z ##[endgroup]
+2025-04-17T03:25:00.0892425Z [command]/usr/bin/git log -1 --format=%H
+2025-04-17T03:25:00.0918147Z 90198f7c1fdd38775bf890929d1c601dc862a10d
+2025-04-17T03:25:00.1161841Z ##[group]Run actions/setup-python@v5
+2025-04-17T03:25:00.1162140Z with:
+2025-04-17T03:25:00.1162353Z   python-version: 3.12
+2025-04-17T03:25:00.1162557Z   cache: pip
+2025-04-17T03:25:00.1162769Z   cache-dependency-path: pyproject.toml
+2025-04-17T03:25:00.1163034Z   check-latest: false
+2025-04-17T03:25:00.1163418Z   token: ***
+2025-04-17T03:25:00.1163664Z   update-environment: true
+2025-04-17T03:25:00.1163891Z   allow-prereleases: false
+2025-04-17T03:25:00.1164105Z   freethreaded: false
+2025-04-17T03:25:00.1164312Z ##[endgroup]
+2025-04-17T03:25:00.2810172Z ##[group]Installed versions
+2025-04-17T03:25:00.2888732Z Successfully set up CPython (3.12.10)
+2025-04-17T03:25:00.2889741Z ##[endgroup]
+2025-04-17T03:25:00.3159647Z [command]/opt/hostedtoolcache/Python/3.12.10/x64/bin/pip cache dir
+2025-04-17T03:25:00.6063130Z /home/runner/.cache/pip
+2025-04-17T03:25:00.8709343Z pip cache is not found
+2025-04-17T03:25:00.8841061Z ##[group]Run pre-commit/action@v3.0.1
+2025-04-17T03:25:00.8841340Z with:
+2025-04-17T03:25:00.8841535Z   extra_args: --all-files
+2025-04-17T03:25:00.8841735Z env:
+2025-04-17T03:25:00.8841971Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.10/x64
+2025-04-17T03:25:00.8842380Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.10/x64/lib/pkgconfig
+2025-04-17T03:25:00.8842785Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+2025-04-17T03:25:00.8843143Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+2025-04-17T03:25:00.8843508Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+2025-04-17T03:25:00.8843875Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.10/x64/lib
+2025-04-17T03:25:00.8844159Z ##[endgroup]
+2025-04-17T03:25:00.8921537Z ##[group]Run python -m pip install pre-commit
+2025-04-17T03:25:00.8921898Z [36;1mpython -m pip install pre-commit[0m
+2025-04-17T03:25:00.8974177Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-17T03:25:00.8974538Z env:
+2025-04-17T03:25:00.8974779Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.10/x64
+2025-04-17T03:25:00.8975191Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.10/x64/lib/pkgconfig
+2025-04-17T03:25:00.8975589Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+2025-04-17T03:25:00.8975932Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+2025-04-17T03:25:00.8976285Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+2025-04-17T03:25:00.8976629Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.10/x64/lib
+2025-04-17T03:25:00.8976917Z ##[endgroup]
+2025-04-17T03:25:01.5925449Z Collecting pre-commit
+2025-04-17T03:25:01.6572551Z   Downloading pre_commit-4.2.0-py2.py3-none-any.whl.metadata (1.3 kB)
+2025-04-17T03:25:01.6822405Z Collecting cfgv>=2.0.0 (from pre-commit)
+2025-04-17T03:25:01.6918814Z   Downloading cfgv-3.4.0-py2.py3-none-any.whl.metadata (8.5 kB)
+2025-04-17T03:25:01.7439235Z Collecting identify>=1.0.0 (from pre-commit)
+2025-04-17T03:25:01.7536289Z   Downloading identify-2.6.9-py2.py3-none-any.whl.metadata (4.4 kB)
+2025-04-17T03:25:01.7801295Z Collecting nodeenv>=0.11.1 (from pre-commit)
+2025-04-17T03:25:01.7909972Z   Downloading nodeenv-1.9.1-py2.py3-none-any.whl.metadata (21 kB)
+2025-04-17T03:25:01.8346378Z Collecting pyyaml>=5.1 (from pre-commit)
+2025-04-17T03:25:01.8446199Z   Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+2025-04-17T03:25:01.9033065Z Collecting virtualenv>=20.10.0 (from pre-commit)
+2025-04-17T03:25:01.9136594Z   Downloading virtualenv-20.30.0-py3-none-any.whl.metadata (4.5 kB)
+2025-04-17T03:25:01.9466324Z Collecting distlib<1,>=0.3.7 (from virtualenv>=20.10.0->pre-commit)
+2025-04-17T03:25:01.9567975Z   Downloading distlib-0.3.9-py2.py3-none-any.whl.metadata (5.2 kB)
+2025-04-17T03:25:01.9835880Z Collecting filelock<4,>=3.12.2 (from virtualenv>=20.10.0->pre-commit)
+2025-04-17T03:25:01.9933042Z   Downloading filelock-3.18.0-py3-none-any.whl.metadata (2.9 kB)
+2025-04-17T03:25:02.0209144Z Collecting platformdirs<5,>=3.9.1 (from virtualenv>=20.10.0->pre-commit)
+2025-04-17T03:25:02.0315962Z   Downloading platformdirs-4.3.7-py3-none-any.whl.metadata (11 kB)
+2025-04-17T03:25:02.0498284Z Downloading pre_commit-4.2.0-py2.py3-none-any.whl (220 kB)
+2025-04-17T03:25:02.0836905Z Downloading cfgv-3.4.0-py2.py3-none-any.whl (7.2 kB)
+2025-04-17T03:25:02.0957282Z Downloading identify-2.6.9-py2.py3-none-any.whl (99 kB)
+2025-04-17T03:25:02.1088755Z Downloading nodeenv-1.9.1-py2.py3-none-any.whl (22 kB)
+2025-04-17T03:25:02.1214690Z Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (767 kB)
+2025-04-17T03:25:02.1390071Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 767.5/767.5 kB 59.5 MB/s eta 0:00:00
+2025-04-17T03:25:02.1485279Z Downloading virtualenv-20.30.0-py3-none-any.whl (4.3 MB)
+2025-04-17T03:25:02.1809732Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 136.0 MB/s eta 0:00:00
+2025-04-17T03:25:02.1910101Z Downloading distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+2025-04-17T03:25:02.2061089Z Downloading filelock-3.18.0-py3-none-any.whl (16 kB)
+2025-04-17T03:25:02.2187669Z Downloading platformdirs-4.3.7-py3-none-any.whl (18 kB)
+2025-04-17T03:25:02.2530471Z Installing collected packages: distlib, pyyaml, platformdirs, nodeenv, identify, filelock, cfgv, virtualenv, pre-commit
+2025-04-17T03:25:02.6551225Z Successfully installed cfgv-3.4.0 distlib-0.3.9 filelock-3.18.0 identify-2.6.9 nodeenv-1.9.1 platformdirs-4.3.7 pre-commit-4.2.0 pyyaml-6.0.2 virtualenv-20.30.0
+2025-04-17T03:25:02.8243016Z ##[group]Run python -m pip freeze --local
+2025-04-17T03:25:02.8243325Z [36;1mpython -m pip freeze --local[0m
+2025-04-17T03:25:02.8291145Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-17T03:25:02.8291456Z env:
+2025-04-17T03:25:02.8291703Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.10/x64
+2025-04-17T03:25:02.8292100Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.10/x64/lib/pkgconfig
+2025-04-17T03:25:02.8292501Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+2025-04-17T03:25:02.8292837Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+2025-04-17T03:25:02.8293197Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+2025-04-17T03:25:02.8293549Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.10/x64/lib
+2025-04-17T03:25:02.8293833Z ##[endgroup]
+2025-04-17T03:25:03.0748976Z cfgv==3.4.0
+2025-04-17T03:25:03.0749424Z distlib==0.3.9
+2025-04-17T03:25:03.0749818Z filelock==3.18.0
+2025-04-17T03:25:03.0750135Z identify==2.6.9
+2025-04-17T03:25:03.0750382Z nodeenv==1.9.1
+2025-04-17T03:25:03.0750648Z platformdirs==4.3.7
+2025-04-17T03:25:03.0750923Z pre_commit==4.2.0
+2025-04-17T03:25:03.0751594Z PyYAML==6.0.2
+2025-04-17T03:25:03.0751884Z virtualenv==20.30.0
+2025-04-17T03:25:03.1664152Z ##[group]Run actions/cache@v4
+2025-04-17T03:25:03.1664368Z with:
+2025-04-17T03:25:03.1664543Z   path: ~/.cache/pre-commit
+2025-04-17T03:25:03.1665045Z   key: pre-commit-3|/opt/hostedtoolcache/Python/3.12.10/x64|1d7c0294fcebaf0222faeb7f00e3de9ad364079ef25d91aa65d843502d9f9db5
+2025-04-17T03:25:03.1665580Z   enableCrossOsArchive: false
+2025-04-17T03:25:03.1665796Z   fail-on-cache-miss: false
+2025-04-17T03:25:03.1665998Z   lookup-only: false
+2025-04-17T03:25:03.1666175Z   save-always: false
+2025-04-17T03:25:03.1666346Z env:
+2025-04-17T03:25:03.1666569Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.10/x64
+2025-04-17T03:25:03.1666962Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.10/x64/lib/pkgconfig
+2025-04-17T03:25:03.1667346Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+2025-04-17T03:25:03.1667682Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+2025-04-17T03:25:03.1668258Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+2025-04-17T03:25:03.1668597Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.10/x64/lib
+2025-04-17T03:25:03.1668885Z ##[endgroup]
+2025-04-17T03:25:03.5218877Z Cache not found for input keys: pre-commit-3|/opt/hostedtoolcache/Python/3.12.10/x64|1d7c0294fcebaf0222faeb7f00e3de9ad364079ef25d91aa65d843502d9f9db5
+2025-04-17T03:25:03.5290589Z ##[group]Run pre-commit run --show-diff-on-failure --color=always --all-files
+2025-04-17T03:25:03.5291089Z [36;1mpre-commit run --show-diff-on-failure --color=always --all-files[0m
+2025-04-17T03:25:03.5338530Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-17T03:25:03.5338854Z env:
+2025-04-17T03:25:03.5339097Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.10/x64
+2025-04-17T03:25:03.5339499Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.10/x64/lib/pkgconfig
+2025-04-17T03:25:03.5339891Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+2025-04-17T03:25:03.5340250Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+2025-04-17T03:25:03.5340595Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+2025-04-17T03:25:03.5340934Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.10/x64/lib
+2025-04-17T03:25:03.5341221Z ##[endgroup]
+2025-04-17T03:25:03.9281711Z [INFO][m Initializing environment for https://github.com/pre-commit/pre-commit-hooks.
+2025-04-17T03:25:04.4638563Z [43;30m[WARNING][m repo `https://github.com/pre-commit/pre-commit-hooks` uses deprecated stage names (commit, push) which will be removed in a future version.  Hint: often `pre-commit autoupdate --repo https://github.com/pre-commit/pre-commit-hooks` will fix this.  if it does not -- consider reporting an issue to that repo.
+2025-04-17T03:25:04.4672629Z [INFO][m Initializing environment for https://github.com/charliermarsh/ruff-pre-commit.
+2025-04-17T03:25:04.9169199Z [INFO][m Installing environment for https://github.com/pre-commit/pre-commit-hooks.
+2025-04-17T03:25:04.9170153Z [INFO][m Once installed this environment will be reused.
+2025-04-17T03:25:04.9170739Z [INFO][m This may take a few minutes...
+2025-04-17T03:25:09.2460535Z [INFO][m Installing environment for https://github.com/charliermarsh/ruff-pre-commit.
+2025-04-17T03:25:09.2461119Z [INFO][m Once installed this environment will be reused.
+2025-04-17T03:25:09.2461514Z [INFO][m This may take a few minutes...
+2025-04-17T03:25:13.4273703Z fix end of files.........................................................[42mPassed[m
+2025-04-17T03:25:13.5808322Z trim trailing whitespace.................................................[42mPassed[m
+2025-04-17T03:25:13.6740092Z ruff.....................................................................[41mFailed[m
+2025-04-17T03:25:13.6740510Z [2m- hook id: ruff[m
+2025-04-17T03:25:13.6740747Z [2m- exit code: 1[m
+2025-04-17T03:25:13.6741004Z [2m- files were modified by this hook[m
+2025-04-17T03:25:13.6741190Z 
+2025-04-17T03:25:13.6741285Z Found 2 errors (2 fixed, 0 remaining).
+2025-04-17T03:25:13.6741906Z 
+2025-04-17T03:25:13.6742074Z pre-commit hook(s) made changes.
+2025-04-17T03:25:13.6742650Z If you are seeing this message in CI, reproduce locally with: `pre-commit run --all-files`.
+2025-04-17T03:25:13.6743153Z To run `pre-commit` as part of git workflow, use `pre-commit install`.
+2025-04-17T03:25:13.6743489Z All changes made by hooks:
+2025-04-17T03:25:13.7385817Z [1mdiff --git a/appdaemon/models/config/app.py b/appdaemon/models/config/app.py[m
+2025-04-17T03:25:13.7386697Z [1mindex 5798b48..8521afe 100644[m
+2025-04-17T03:25:13.7387098Z [1m--- a/appdaemon/models/config/app.py[m
+2025-04-17T03:25:13.7387526Z [1m+++ b/appdaemon/models/config/app.py[m
+2025-04-17T03:25:13.7388358Z [36m@@ -6,7 +6,7 @@[m [mfrom copy import deepcopy[m
+2025-04-17T03:25:13.7388785Z  from pathlib import Path[m
+2025-04-17T03:25:13.7389154Z  from typing import Annotated, Any, Literal[m
+2025-04-17T03:25:13.7389487Z  [m
+2025-04-17T03:25:13.7390101Z [31m-from pydantic import BaseModel, Discriminator, Field, RootModel, Tag, ValidationError, field_validator[m
+2025-04-17T03:25:13.7391054Z [32m+[m[32mfrom pydantic import BaseModel, Discriminator, Field, RootModel, Tag, field_validator[m
+2025-04-17T03:25:13.7391801Z  from pydantic_core import PydanticUndefinedType[m
+2025-04-17T03:25:13.7392132Z  [m
+2025-04-17T03:25:13.7392385Z  from ... import exceptions as ade[m
+2025-04-17T03:25:13.7392790Z [36m@@ -104,7 +104,7 @@[m [mclass AllAppConfig(RootModel):[m
+2025-04-17T03:25:13.7393172Z                          case _:[m
+2025-04-17T03:25:13.7393504Z                              cfg["name"] = app_name[m
+2025-04-17T03:25:13.7393861Z                              values[app_name] = cfg[m
+2025-04-17T03:25:13.7394225Z [31m-                except Exception as e:[m
+2025-04-17T03:25:13.7394591Z [32m+[m[32m                except Exception:[m
+2025-04-17T03:25:13.7394987Z                      raise ade.BadAppConfig(app_name, cfg)[m
+2025-04-17T03:25:13.7395335Z              return values[m
+2025-04-17T03:25:13.7395587Z  [m
+2025-04-17T03:25:13.7577109Z ##[error]Process completed with exit code 1.
+2025-04-17T03:25:13.7638901Z ##[group]Run pre-commit-ci/lite-action@v1.1.0
+2025-04-17T03:25:13.7639192Z with:
+2025-04-17T03:25:13.7639407Z   msg: [pre-commit.ci lite] apply automatic fixes
+2025-04-17T03:25:13.7639664Z env:
+2025-04-17T03:25:13.7639887Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.10/x64
+2025-04-17T03:25:13.7640285Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.10/x64/lib/pkgconfig
+2025-04-17T03:25:13.7640662Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+2025-04-17T03:25:13.7641003Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+2025-04-17T03:25:13.7641341Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.10/x64
+2025-04-17T03:25:13.7641687Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.10/x64/lib
+2025-04-17T03:25:13.7641971Z ##[endgroup]
+2025-04-17T03:25:13.8949088Z appdaemon/models/config/app.py: needs update
+2025-04-17T03:25:13.8976282Z fetching pr...
+2025-04-17T03:25:14.8241684Z saving artifact...
+2025-04-17T03:25:16.0184116Z artifact published!
+2025-04-17T03:25:16.0317345Z Post job cleanup.
+2025-04-17T03:25:16.0621839Z Post job cleanup.
+2025-04-17T03:25:16.0673374Z Post job cleanup.
+2025-04-17T03:25:16.1605140Z [command]/usr/bin/git version
+2025-04-17T03:25:16.1641235Z git version 2.49.0
+2025-04-17T03:25:16.1691422Z Temporarily overriding HOME='/home/runner/work/_temp/46506682-36f9-4625-b8ce-96b6751aa8ef' before making global git config changes
+2025-04-17T03:25:16.1692719Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-17T03:25:16.1697472Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/appdaemon/appdaemon
+2025-04-17T03:25:16.1735028Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-17T03:25:16.1769236Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-17T03:25:16.2008897Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-17T03:25:16.2031167Z http.https://github.com/.extraheader
+2025-04-17T03:25:16.2043391Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-17T03:25:16.2076303Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-17T03:25:16.2411665Z Cleaning up orphan processes

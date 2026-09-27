@@ -1,0 +1,184 @@
+diff --git a/test/unittests/libethereum/ClientTest.cpp b/test/unittests/libethereum/ClientTest.cpp
+index 4f6f835f6..ade323edf 100644
+--- a/test/unittests/libethereum/ClientTest.cpp
++++ b/test/unittests/libethereum/ClientTest.cpp
+@@ -1070,7 +1070,7 @@ BOOST_AUTO_TEST_CASE( ClientSnapshotsTest, *boost::unit_test::disabled() ) {
+ 
+     BOOST_REQUIRE( testClient->latestBlock().info().stateRoot() == empty_state_root_hash );
+ 
+-    std::this_thread::sleep_for( 1000ms );
++    std::this_thread::sleep_for( 3000ms );
+ 
+     BOOST_REQUIRE( fs::exists( fs::path( fixture.getTmpDataDir() ) / "snapshots" / "2" / "snapshot_hash.txt" ) );
+ 
+diff --git a/test/unittests/libskutils/test_skutils_helper.cpp b/test/unittests/libskutils/test_skutils_helper.cpp
+index 1141a4e81..df1737a5c 100644
+--- a/test/unittests/libskutils/test_skutils_helper.cpp
++++ b/test/unittests/libskutils/test_skutils_helper.cpp
+@@ -1380,9 +1380,9 @@ void test_print_header_name( const char* s ) {
+     cc::_on_ = bPrev;
+ }
+ 
+-
+-int g_nDefaultPort = 9696;
+-int g_nDefaultPortProxygen = 8686;
++int randomOffset = std::rand() % 50000;
++int g_nDefaultPort = 9696 + randomOffset;
++int g_nDefaultPortProxygen = 8686 + randomOffset;
+ 
+ std::vector< std::string > g_vecTestClientNamesA = {"Frodo", "Bilbo", "Sam", "Elrond", "Galadriel",
+     "Celeborn", "Balrog", "Anduin", "Samwise", "Gandalf", "Legolas", "Aragorn", "Gimli", "Faramir",
+diff --git a/test/unittests/libweb3jsonrpc/jsonrpc.cpp b/test/unittests/libweb3jsonrpc/jsonrpc.cpp
+index 8f3418557..37a8b2681 100644
+--- a/test/unittests/libweb3jsonrpc/jsonrpc.cpp
++++ b/test/unittests/libweb3jsonrpc/jsonrpc.cpp
+@@ -339,7 +339,10 @@ struct JsonRpcFixture : public TestOutputHelperFixture {
+         client.reset( new eth::ClientTest( chainParams, ( int ) chainParams.networkID,
+             shared_ptr< GasPricer >(), NULL, monitor, tempDir.path(), WithExisting::Kill ) );
+ 
+-        client->setAuthor( coinbase.address() );
++        if ( !_generation2 )
++            client->setAuthor( coinbase.address() );
++        else
++            client->setAuthor( chainParams.sChain.blockAuthor );
+ 
+         // wait for 1st block - because it's always empty
+         std::promise< void > blockPromise;
+@@ -352,11 +355,6 @@ struct JsonRpcFixture : public TestOutputHelperFixture {
+         if ( !_isSyncNode )
+             blockPromise.get_future().wait();
+ 
+-        if ( !_generation2 )
+-            client->setAuthor( coinbase.address() );
+-        else
+-            client->setAuthor( chainParams.sChain.blockAuthor );
+-
+         using FullServer = ModularServer< rpc::EthFace, rpc::NetFace, rpc::Web3Face,
+             rpc::AdminEthFace /*, rpc::AdminNetFace*/, rpc::DebugFace, rpc::TestFace >;
+ 
+@@ -396,7 +394,7 @@ struct JsonRpcFixture : public TestOutputHelperFixture {
+ 
+         sleep( 1 );
+ 
+-        auto httpClient = new jsonrpc::HttpClient(
++        httpClient = new jsonrpc::HttpClient(
+             "http://" + chainParams.nodeInfo.ip + ":" +
+             std::to_string( serverOpts.netOpts_.bindOptsStandard_.nBasePortHTTP4_ ) );
+         httpClient->SetTimeout( 1000000000 );
+@@ -410,6 +408,9 @@ struct JsonRpcFixture : public TestOutputHelperFixture {
+     ~JsonRpcFixture() {
+         if ( skale_server_connector )
+             skale_server_connector->StopListening();
++
++        if ( httpClient )
++            delete httpClient;
+         BOOST_TEST_MESSAGE( "Destructed JsonRpcFixture" );
+     }
+ 
+@@ -447,6 +448,7 @@ struct JsonRpcFixture : public TestOutputHelperFixture {
+     unique_ptr< WebThreeStubClient > rpcClient;
+     std::string adminSession;
+     SkaleServerOverride* skale_server_connector;
++    jsonrpc::HttpClient* httpClient;
+     time_t powPatchActivationTimestamp;
+     time_t push0PatchActivationTimestamp;
+ };
+@@ -2510,7 +2512,7 @@ BOOST_AUTO_TEST_CASE( storage_limit_contract ) {
+     txCall["from"] = toJS( senderAddress );
+     txCall["gasPrice"] = fixture.rpcClient->eth_gasPrice();
+     txHash = fixture.rpcClient->eth_call( txCall, "latest" );
+-    BOOST_REQUIRE( fixture.client->state().storageUsed( contract ) == 0 );
++    BOOST_REQUIRE( fixture.client->state().createReadOnlySnapBasedCopy().storageUsed( contract ) == 0 );
+ 
+     Json::Value txPushValueAndCall;  // call storeAndCall(1)
+     txPushValueAndCall["to"] = contractAddress;
+@@ -2520,7 +2522,7 @@ BOOST_AUTO_TEST_CASE( storage_limit_contract ) {
+     txPushValueAndCall["gasPrice"] = fixture.rpcClient->eth_gasPrice();
+     txHash = fixture.rpcClient->eth_sendTransaction( txPushValueAndCall );
+     dev::eth::mineTransaction( *( fixture.client ), 1 );
+-    BOOST_REQUIRE( fixture.client->state().storageUsed( contract ) == 96 );
++    BOOST_REQUIRE( fixture.client->state().createReadOnlySnapBasedCopy().storageUsed( contract ) == 96 );
+ 
+     Json::Value txPushValue;  // call store(2)
+     txPushValue["to"] = contractAddress;
+@@ -2530,7 +2532,7 @@ BOOST_AUTO_TEST_CASE( storage_limit_contract ) {
+     txPushValue["gasPrice"] = fixture.rpcClient->eth_gasPrice();
+     txHash = fixture.rpcClient->eth_sendTransaction( txPushValue );
+     dev::eth::mineTransaction( *( fixture.client ), 1 );
+-    BOOST_REQUIRE( fixture.client->state().storageUsed( contract ) == 128 );
++    BOOST_REQUIRE( fixture.client->state().createReadOnlySnapBasedCopy().storageUsed( contract ) == 128 );
+ 
+     Json::Value txThrow;  // trying to call store(3)
+     txThrow["to"] = contractAddress;
+@@ -2539,7 +2541,7 @@ BOOST_AUTO_TEST_CASE( storage_limit_contract ) {
+     txThrow["gasPrice"] = fixture.rpcClient->eth_gasPrice();
+     txHash = fixture.rpcClient->eth_sendTransaction( txThrow );
+     dev::eth::mineTransaction( *( fixture.client ), 1 );
+-    BOOST_REQUIRE( fixture.client->state().storageUsed( contract ) == 128 );
++    BOOST_REQUIRE( fixture.client->state().createReadOnlySnapBasedCopy().storageUsed( contract ) == 128 );
+ 
+     Json::Value txEraseValue;  // call erase(2)
+     txEraseValue["to"] = contractAddress;
+@@ -2549,7 +2551,7 @@ BOOST_AUTO_TEST_CASE( storage_limit_contract ) {
+     txEraseValue["gasPrice"] = fixture.rpcClient->eth_gasPrice();
+     txHash = fixture.rpcClient->eth_sendTransaction( txEraseValue );
+     dev::eth::mineTransaction( *( fixture.client ), 1 );
+-    BOOST_REQUIRE( fixture.client->state().storageUsed( contract ) == 96 );
++    BOOST_REQUIRE( fixture.client->state().createReadOnlySnapBasedCopy().storageUsed( contract ) == 96 );
+ 
+     Json::Value txZeroValue;  // call zero(1)
+     txZeroValue["to"] = contractAddress;
+@@ -2559,7 +2561,7 @@ BOOST_AUTO_TEST_CASE( storage_limit_contract ) {
+     txZeroValue["gasPrice"] = fixture.rpcClient->eth_gasPrice();
+     txHash = fixture.rpcClient->eth_sendTransaction( txZeroValue );
+     dev::eth::mineTransaction( *( fixture.client ), 1 );
+-    BOOST_REQUIRE( fixture.client->state().storageUsed( contract ) == 64 );
++    BOOST_REQUIRE( fixture.client->state().createReadOnlySnapBasedCopy().storageUsed( contract ) == 64 );
+ 
+     Json::Value txZeroValue1;  // call zero(1)
+     txZeroValue1["to"] = contractAddress;
+@@ -2569,7 +2571,7 @@ BOOST_AUTO_TEST_CASE( storage_limit_contract ) {
+     txZeroValue1["gasPrice"] = fixture.rpcClient->eth_gasPrice();
+     txHash = fixture.rpcClient->eth_sendTransaction( txZeroValue1 );
+     dev::eth::mineTransaction( *( fixture.client ), 1 );
+-    BOOST_REQUIRE( fixture.client->state().storageUsed( contract ) == 64 );
++    BOOST_REQUIRE( fixture.client->state().createReadOnlySnapBasedCopy().storageUsed( contract ) == 64 );
+ 
+     Json::Value txValueChanged;  // call strangeFunction(1)
+     txValueChanged["to"] = contractAddress;
+@@ -2579,7 +2581,7 @@ BOOST_AUTO_TEST_CASE( storage_limit_contract ) {
+     txValueChanged["gasPrice"] = fixture.rpcClient->eth_gasPrice();
+     txHash = fixture.rpcClient->eth_sendTransaction( txValueChanged );
+     dev::eth::mineTransaction( *( fixture.client ), 1 );
+-    BOOST_REQUIRE( fixture.client->state().storageUsed( contract ) == 96 );
++    BOOST_REQUIRE( fixture.client->state().createReadOnlySnapBasedCopy().storageUsed( contract ) == 96 );
+ 
+     Json::Value txValueChanged1;  // call strangeFunction(0)
+     txValueChanged1["to"] = contractAddress;
+@@ -2589,7 +2591,7 @@ BOOST_AUTO_TEST_CASE( storage_limit_contract ) {
+     txValueChanged1["gasPrice"] = fixture.rpcClient->eth_gasPrice();
+     txHash = fixture.rpcClient->eth_sendTransaction( txValueChanged1 );
+     dev::eth::mineTransaction( *( fixture.client ), 1 );
+-    BOOST_REQUIRE( fixture.client->state().storageUsed( contract ) == 96 );
++    BOOST_REQUIRE( fixture.client->state().createReadOnlySnapBasedCopy().storageUsed( contract ) == 96 );
+ 
+     Json::Value txValueChanged2;  // call strangeFunction(2)
+     txValueChanged2["to"] = contractAddress;
+@@ -2599,7 +2601,7 @@ BOOST_AUTO_TEST_CASE( storage_limit_contract ) {
+     txValueChanged2["gasPrice"] = fixture.rpcClient->eth_gasPrice();
+     txHash = fixture.rpcClient->eth_sendTransaction( txValueChanged2 );
+     dev::eth::mineTransaction( *( fixture.client ), 1 );
+-    BOOST_REQUIRE( fixture.client->state().storageUsed( contract ) == 128 );
++    BOOST_REQUIRE( fixture.client->state().createReadOnlySnapBasedCopy().storageUsed( contract ) == 128 );
+ 
+     Json::Value txValueChanged3;  // try call strangeFunction(3)
+     txValueChanged3["to"] = contractAddress;
+@@ -2609,7 +2611,7 @@ BOOST_AUTO_TEST_CASE( storage_limit_contract ) {
+     txValueChanged3["gasPrice"] = fixture.rpcClient->eth_gasPrice();
+     txHash = fixture.rpcClient->eth_sendTransaction( txValueChanged3 );
+     dev::eth::mineTransaction( *( fixture.client ), 1 );
+-    BOOST_REQUIRE( fixture.client->state().storageUsed( contract ) == 128 );
++    BOOST_REQUIRE( fixture.client->state().createReadOnlySnapBasedCopy().storageUsed( contract ) == 128 );
+ }
+ 
+ BOOST_AUTO_TEST_CASE( storage_limit_chain ) {

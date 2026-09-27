@@ -1,0 +1,13 @@
+diff --git a/tests/unit/test_async_rate_limited_transport.py b/tests/unit/test_async_rate_limited_transport.py
+index 953d6cd..3273847 100644
+--- a/tests/unit/test_async_rate_limited_transport.py
++++ b/tests/unit/test_async_rate_limited_transport.py
+@@ -63,7 +63,7 @@ async def count_responses(request: httpx.Request) -> httpx.Response:  # noqa: AR
+         ) as client,
+         anyio.create_task_group() as tg,
+     ):
+-        with anyio.move_on_after(0.06) as scope:
++        with anyio.move_on_after(0.07) as scope:
+             for _ in range(10):
+                 tg.start_soon(client.get, "http://example.com")
+             await anyio.sleep(2)

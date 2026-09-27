@@ -1,0 +1,16 @@
+diff --git a/tests/testthat/helper-ar-arima.R b/tests/testthat/helper-ar-arima.R
+index 077ed303f..54a86c2d9 100644
+--- a/tests/testthat/helper-ar-arima.R
++++ b/tests/testthat/helper-ar-arima.R
+@@ -18,6 +18,9 @@ model_arima_temp_noxreg <- arima(data_arima$Temp[1:150], c(2, 1, 0))
+ if (!requireNamespace("forecast", quietly = TRUE)) {
+   warning("The forecast package is required for testing explain_forecast()")
+ } else {
+-  model_forecast_ARIMA_temp <- forecast::Arima(data_arima$Temp[1:150], order = c(2, 1, 0), xreg = data_arima$Wind[1:150])
++  model_forecast_ARIMA_temp <- forecast::Arima(
++    data_arima$Temp[1:150],
++    order = c(2, 1, 0),
++    xreg = data_arima$Wind[1:150]
++  )
+ }
+-

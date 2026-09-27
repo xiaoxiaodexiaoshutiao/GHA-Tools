@@ -1,0 +1,314 @@
+2025-03-04T13:33:12.1504149Z Requested labels: ubuntu-latest
+2025-03-04T13:33:12.1504408Z Job defined at: pmgbergen/porepy/.github/workflows/run-static-checks.yml@refs/pull/1364/merge
+2025-03-04T13:33:12.1504502Z Waiting for a runner to pick up this job...
+2025-03-04T13:33:12.5548299Z Job is waiting for a hosted runner to come online.
+2025-03-04T13:33:15.0405172Z Job is about to start running on the hosted runner: GitHub Actions 20 (hosted)
+2025-03-04T13:33:16.8256606Z Current runner version: '2.322.0'
+2025-03-04T13:33:16.8282520Z ##[group]Operating System
+2025-03-04T13:33:16.8283284Z Ubuntu
+2025-03-04T13:33:16.8284025Z 24.04.2
+2025-03-04T13:33:16.8284527Z LTS
+2025-03-04T13:33:16.8284978Z ##[endgroup]
+2025-03-04T13:33:16.8285571Z ##[group]Runner Image
+2025-03-04T13:33:16.8286141Z Image: ubuntu-24.04
+2025-03-04T13:33:16.8286603Z Version: 20250223.1.0
+2025-03-04T13:33:16.8287703Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250223.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-04T13:33:16.8289092Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250223.1
+2025-03-04T13:33:16.8290031Z ##[endgroup]
+2025-03-04T13:33:16.8290587Z ##[group]Runner Image Provisioner
+2025-03-04T13:33:16.8291185Z 2.0.422.1
+2025-03-04T13:33:16.8291668Z ##[endgroup]
+2025-03-04T13:33:16.8294210Z ##[group]GITHUB_TOKEN Permissions
+2025-03-04T13:33:16.8296344Z Actions: write
+2025-03-04T13:33:16.8297078Z Attestations: write
+2025-03-04T13:33:16.8297779Z Checks: write
+2025-03-04T13:33:16.8298285Z Contents: write
+2025-03-04T13:33:16.8298792Z Deployments: write
+2025-03-04T13:33:16.8299345Z Discussions: write
+2025-03-04T13:33:16.8299861Z Issues: write
+2025-03-04T13:33:16.8300352Z Metadata: read
+2025-03-04T13:33:16.8300926Z Packages: write
+2025-03-04T13:33:16.8301443Z Pages: write
+2025-03-04T13:33:16.8301890Z PullRequests: write
+2025-03-04T13:33:16.8302488Z RepositoryProjects: write
+2025-03-04T13:33:16.8303075Z SecurityEvents: write
+2025-03-04T13:33:16.8393944Z Statuses: write
+2025-03-04T13:33:16.8394798Z ##[endgroup]
+2025-03-04T13:33:16.8399459Z Secret source: Actions
+2025-03-04T13:33:16.8400815Z Prepare workflow directory
+2025-03-04T13:33:16.8707457Z Prepare all required actions
+2025-03-04T13:33:16.8754106Z Getting action download info
+2025-03-04T13:33:17.0555688Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-04T13:33:17.1353136Z Download action repository 'actions/setup-python@v5' (SHA:42375524e23c412d93fb67b49958b491fce71c38)
+2025-03-04T13:33:17.2277467Z Download action repository 'actions/cache@v4' (SHA:d4323d4df104b026a6aa633fdb11d772146be0bf)
+2025-03-04T13:33:17.7426927Z Complete job name: Static tests (3.13)
+2025-03-04T13:33:17.8112345Z ##[group]Run actions/checkout@v4
+2025-03-04T13:33:17.8113184Z with:
+2025-03-04T13:33:17.8113821Z   repository: pmgbergen/porepy
+2025-03-04T13:33:17.8114475Z   token: ***
+2025-03-04T13:33:17.8114865Z   ssh-strict: true
+2025-03-04T13:33:17.8115261Z   ssh-user: git
+2025-03-04T13:33:17.8115669Z   persist-credentials: true
+2025-03-04T13:33:17.8116124Z   clean: true
+2025-03-04T13:33:17.8116529Z   sparse-checkout-cone-mode: true
+2025-03-04T13:33:17.8117011Z   fetch-depth: 1
+2025-03-04T13:33:17.8117398Z   fetch-tags: false
+2025-03-04T13:33:17.8117798Z   show-progress: true
+2025-03-04T13:33:17.8118196Z   lfs: false
+2025-03-04T13:33:17.8118559Z   submodules: false
+2025-03-04T13:33:17.8118955Z   set-safe-directory: true
+2025-03-04T13:33:17.8119657Z ##[endgroup]
+2025-03-04T13:33:17.9931076Z Syncing repository: pmgbergen/porepy
+2025-03-04T13:33:17.9932752Z ##[group]Getting Git version info
+2025-03-04T13:33:17.9933397Z Working directory is '/home/runner/work/porepy/porepy'
+2025-03-04T13:33:17.9935352Z [command]/usr/bin/git version
+2025-03-04T13:33:17.9984879Z git version 2.48.1
+2025-03-04T13:33:18.0012296Z ##[endgroup]
+2025-03-04T13:33:18.0026320Z Temporarily overriding HOME='/home/runner/work/_temp/034ac52b-0c57-45d5-ae0d-d9efe40ca7c5' before making global git config changes
+2025-03-04T13:33:18.0027655Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-04T13:33:18.0031407Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/porepy/porepy
+2025-03-04T13:33:18.0071337Z Deleting the contents of '/home/runner/work/porepy/porepy'
+2025-03-04T13:33:18.0077408Z ##[group]Initializing the repository
+2025-03-04T13:33:18.0084307Z [command]/usr/bin/git init /home/runner/work/porepy/porepy
+2025-03-04T13:33:18.0185759Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-04T13:33:18.0187712Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-04T13:33:18.0189294Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-04T13:33:18.0190406Z hint:
+2025-03-04T13:33:18.0191155Z hint: 	git config --global init.defaultBranch <name>
+2025-03-04T13:33:18.0191948Z hint:
+2025-03-04T13:33:18.0192494Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-04T13:33:18.0193377Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-04T13:33:18.0194302Z hint:
+2025-03-04T13:33:18.0194678Z hint: 	git branch -m <name>
+2025-03-04T13:33:18.0195364Z Initialized empty Git repository in /home/runner/work/porepy/porepy/.git/
+2025-03-04T13:33:18.0201845Z [command]/usr/bin/git remote add origin https://github.com/pmgbergen/porepy
+2025-03-04T13:33:18.0234317Z ##[endgroup]
+2025-03-04T13:33:18.0235432Z ##[group]Disabling automatic garbage collection
+2025-03-04T13:33:18.0237858Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-04T13:33:18.0266490Z ##[endgroup]
+2025-03-04T13:33:18.0267522Z ##[group]Setting up auth
+2025-03-04T13:33:18.0272616Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-04T13:33:18.0303963Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-04T13:33:18.0580701Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-04T13:33:18.0614775Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-04T13:33:18.0869891Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-04T13:33:18.0909326Z ##[endgroup]
+2025-03-04T13:33:18.0910236Z ##[group]Fetching the repository
+2025-03-04T13:33:18.0920742Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a1e25c157a58296cdd92fa1e419c0cbaa9ca9155:refs/remotes/pull/1364/merge
+2025-03-04T13:33:18.8729099Z From https://github.com/pmgbergen/porepy
+2025-03-04T13:33:18.8730466Z  * [new ref]         a1e25c157a58296cdd92fa1e419c0cbaa9ca9155 -> pull/1364/merge
+2025-03-04T13:33:18.8755519Z ##[endgroup]
+2025-03-04T13:33:18.8757411Z ##[group]Determining the checkout info
+2025-03-04T13:33:18.8759457Z ##[endgroup]
+2025-03-04T13:33:18.8763699Z [command]/usr/bin/git sparse-checkout disable
+2025-03-04T13:33:18.8801734Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-04T13:33:18.8831567Z ##[group]Checking out the ref
+2025-03-04T13:33:18.8834150Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1364/merge
+2025-03-04T13:33:18.9464627Z Note: switching to 'refs/remotes/pull/1364/merge'.
+2025-03-04T13:33:18.9466973Z 
+2025-03-04T13:33:18.9468108Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-04T13:33:18.9470481Z changes and commit them, and you can discard any commits you make in this
+2025-03-04T13:33:18.9472187Z state without impacting any branches by switching back to a branch.
+2025-03-04T13:33:18.9473159Z 
+2025-03-04T13:33:18.9474265Z If you want to create a new branch to retain commits you create, you may
+2025-03-04T13:33:18.9475775Z do so (now or later) by using -c with the switch command. Example:
+2025-03-04T13:33:18.9476603Z 
+2025-03-04T13:33:18.9476956Z   git switch -c <new-branch-name>
+2025-03-04T13:33:18.9477543Z 
+2025-03-04T13:33:18.9477871Z Or undo this operation with:
+2025-03-04T13:33:18.9478403Z 
+2025-03-04T13:33:18.9478683Z   git switch -
+2025-03-04T13:33:18.9479092Z 
+2025-03-04T13:33:18.9479796Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-04T13:33:18.9481273Z 
+2025-03-04T13:33:18.9482646Z HEAD is now at a1e25c1 Merge ab92b3bf3f35a5c56fc781ca8a8b5cdf80c28807 into 74e2c7c3dbcbddd67ad169b994ba5b3e6e3482ae
+2025-03-04T13:33:18.9486923Z ##[endgroup]
+2025-03-04T13:33:18.9514753Z [command]/usr/bin/git log -1 --format=%H
+2025-03-04T13:33:18.9537919Z a1e25c157a58296cdd92fa1e419c0cbaa9ca9155
+2025-03-04T13:33:18.9845433Z ##[group]Run actions/setup-python@v5
+2025-03-04T13:33:18.9846565Z with:
+2025-03-04T13:33:18.9847328Z   python-version: 3.13
+2025-03-04T13:33:18.9848263Z   architecture: x64
+2025-03-04T13:33:18.9849091Z   cache: pip
+2025-03-04T13:33:18.9849871Z   check-latest: false
+2025-03-04T13:33:18.9851014Z   token: ***
+2025-03-04T13:33:18.9851833Z   update-environment: true
+2025-03-04T13:33:18.9852818Z   allow-prereleases: false
+2025-03-04T13:33:18.9853885Z ##[endgroup]
+2025-03-04T13:33:19.1591653Z ##[group]Installed versions
+2025-03-04T13:33:19.1648243Z Successfully set up CPython (3.13.2)
+2025-03-04T13:33:19.1649902Z ##[endgroup]
+2025-03-04T13:33:19.2820726Z [command]/opt/hostedtoolcache/Python/3.13.2/x64/bin/pip cache dir
+2025-03-04T13:33:19.5472443Z /home/runner/.cache/pip
+2025-03-04T13:33:19.6932878Z Cache hit for: setup-python-Linux-x64-24.04-Ubuntu-python-3.13.2-pip-ada34eaec95d95a075194c2d6281543d3f585b1ba7a33dd9b4f3000549a0ec40
+2025-03-04T13:33:20.7933888Z Received 142606336 of 146151523 (97.6%), 135.9 MBs/sec
+2025-03-04T13:33:20.8252403Z Received 146151523 of 146151523 (100.0%), 134.9 MBs/sec
+2025-03-04T13:33:20.8253287Z Cache Size: ~139 MB (146151523 B)
+2025-03-04T13:33:20.8281787Z [command]/usr/bin/tar -xf /home/runner/work/_temp/2a9596f1-255c-4190-9c6d-e55eed586b53/cache.tzst -P -C /home/runner/work/porepy/porepy --use-compress-program unzstd
+2025-03-04T13:33:21.0462511Z Cache restored successfully
+2025-03-04T13:33:21.0778306Z Cache restored from key: setup-python-Linux-x64-24.04-Ubuntu-python-3.13.2-pip-ada34eaec95d95a075194c2d6281543d3f585b1ba7a33dd9b4f3000549a0ec40
+2025-03-04T13:33:21.1498221Z ##[group]Run actions/cache@v4
+2025-03-04T13:33:21.1498525Z with:
+2025-03-04T13:33:21.1498748Z   path: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:21.1499274Z   key: /opt/hostedtoolcache/Python/3.13.2/x64-ada34eaec95d95a075194c2d6281543d3f585b1ba7a33dd9b4f3000549a0ec40
+2025-03-04T13:33:21.1499765Z   enableCrossOsArchive: false
+2025-03-04T13:33:21.1500009Z   fail-on-cache-miss: false
+2025-03-04T13:33:21.1500260Z   lookup-only: false
+2025-03-04T13:33:21.1500472Z   save-always: false
+2025-03-04T13:33:21.1500668Z env:
+2025-03-04T13:33:21.1500912Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:21.1501360Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-04T13:33:21.1501764Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:21.1502127Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:21.1502473Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:21.1502862Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-04T13:33:21.1503165Z ##[endgroup]
+2025-03-04T13:33:21.3866097Z Cache hit for: /opt/hostedtoolcache/Python/3.13.2/x64-ada34eaec95d95a075194c2d6281543d3f585b1ba7a33dd9b4f3000549a0ec40
+2025-03-04T13:33:22.5593656Z Received 134217728 of 284372151 (47.2%), 121.7 MBs/sec
+2025-03-04T13:33:23.5585123Z Received 264241152 of 284372151 (92.9%), 122.9 MBs/sec
+2025-03-04T13:33:24.0428205Z Received 284372151 of 284372151 (100.0%), 107.0 MBs/sec
+2025-03-04T13:33:24.0476221Z Cache Size: ~271 MB (284372151 B)
+2025-03-04T13:33:24.0534314Z [command]/usr/bin/tar -xf /home/runner/work/_temp/b04fa878-5590-412c-becf-bd1306c546f9/cache.tzst -P -C /home/runner/work/porepy/porepy --use-compress-program unzstd
+2025-03-04T13:33:26.4216891Z Cache restored successfully
+2025-03-04T13:33:26.4951609Z Cache restored from key: /opt/hostedtoolcache/Python/3.13.2/x64-ada34eaec95d95a075194c2d6281543d3f585b1ba7a33dd9b4f3000549a0ec40
+2025-03-04T13:33:26.5096757Z ##[group]Run actions/cache@v4
+2025-03-04T13:33:26.5097006Z with:
+2025-03-04T13:33:26.5097409Z   path: mypy-cache-3.13
+2025-03-04T13:33:26.5097618Z   key: Linux-mypy
+2025-03-04T13:33:26.5097835Z   enableCrossOsArchive: false
+2025-03-04T13:33:26.5098068Z   fail-on-cache-miss: false
+2025-03-04T13:33:26.5098274Z   lookup-only: false
+2025-03-04T13:33:26.5098469Z   save-always: false
+2025-03-04T13:33:26.5098648Z env:
+2025-03-04T13:33:26.5098879Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:26.5099278Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-04T13:33:26.5099665Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:26.5100015Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:26.5100352Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:26.5100701Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-04T13:33:26.5101009Z ##[endgroup]
+2025-03-04T13:33:26.7483032Z Cache hit for: Linux-mypy
+2025-03-04T13:33:27.0226579Z Received 1672506 of 1672506 (100.0%), 8.9 MBs/sec
+2025-03-04T13:33:27.0227436Z Cache Size: ~2 MB (1672506 B)
+2025-03-04T13:33:27.0254521Z [command]/usr/bin/tar -xf /home/runner/work/_temp/a5182b85-7c37-48b9-a517-a30dbb7987cf/cache.tzst -P -C /home/runner/work/porepy/porepy --use-compress-program unzstd
+2025-03-04T13:33:27.1081709Z Cache restored successfully
+2025-03-04T13:33:27.1161099Z Cache restored from key: Linux-mypy
+2025-03-04T13:33:27.1278456Z ##[group]Run pip install -U pip
+2025-03-04T13:33:27.1278814Z [36;1mpip install -U pip[0m
+2025-03-04T13:33:27.1279095Z [36;1mpip install toml[0m
+2025-03-04T13:33:27.1279674Z [36;1mpip install --no-build-isolation --no-deps -r <(python -c "import toml; print('\n'.join(toml.load('pyproject.toml')['project']['dependencies']))")[0m
+2025-03-04T13:33:27.1280648Z [36;1mpip install --no-build-isolation --no-deps -r <(python -c "import toml; print('\n'.join(toml.load('pyproject.toml')['project']['optional-dependencies']['development']))")[0m
+2025-03-04T13:33:27.1281270Z [36;1mpip freeze[0m
+2025-03-04T13:33:27.1334521Z shell: /usr/bin/bash -e {0}
+2025-03-04T13:33:27.1334771Z env:
+2025-03-04T13:33:27.1335014Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:27.1335427Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-04T13:33:27.1335809Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:27.1336173Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:27.1336504Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:27.1336845Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-04T13:33:27.1337121Z ##[endgroup]
+2025-03-04T13:33:27.6566335Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages (25.0.1)
+2025-03-04T13:33:28.2938942Z Requirement already satisfied: toml in /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages (0.10.2)
+2025-03-04T13:33:28.7679898Z Requirement already satisfied: deepdiff in /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages (from -r /dev/fd/63 (line 1)) (8.2.0)
+2025-03-04T13:33:28.7684160Z Requirement already satisfied: future in /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages (from -r /dev/fd/63 (line 2)) (1.0.0)
+2025-03-04T13:33:28.7688218Z Requirement already satisfied: gmsh in /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages (from -r /dev/fd/63 (line 3)) (4.13.1)
+2025-03-04T13:33:28.7694261Z Requirement already satisfied: matplotlib<3.11 in /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages (from -r /dev/fd/63 (line 4)) (3.10.0)
+2025-03-04T13:33:28.7698471Z Requirement already satisfied: meshio in /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages (from -r /dev/fd/63 (line 5)) (5.3.5)
+2025-03-04T13:33:28.7704421Z Requirement already satisfied: networkx in /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages (from -r /dev/fd/63 (line 6)) (3.4.2)
+2025-03-04T13:33:28.7708601Z Requirement already satisfied: numba in /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages (from -r /dev/fd/63 (line 7)) (0.61.0)
+2025-03-04T13:33:28.7714364Z Requirement already satisfied: numpy<2.2 in /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages (from -r /dev/fd/63 (line 8)) (2.1.3)
+2025-03-04T13:33:28.7718470Z Requirement already satisfied: scipy in /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages (from -r /dev/fd/63 (line 9)) (1.15.1)
+2025-03-04T13:33:28.7722370Z Requirement already satisfied: seaborn in /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages (from -r /dev/fd/63 (line 10)) (0.13.2)
+2025-03-04T13:33:28.7726460Z Requirement already satisfied: shapely in /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages (from -r /dev/fd/63 (line 11)) (2.0.7)
+2025-03-04T13:33:28.7730374Z Requirement already satisfied: six in /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages (from -r /dev/fd/63 (line 12)) (1.17.0)
+2025-03-04T13:33:28.7734538Z Requirement already satisfied: sympy in /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages (from -r /dev/fd/63 (line 13)) (1.13.3)
+2025-03-04T13:33:28.7738952Z Requirement already satisfied: typing_extensions in /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages (from -r /dev/fd/63 (line 14)) (4.12.2)
+2025-03-04T13:33:29.2148482Z Requirement already satisfied: isort in /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages (from -r /dev/fd/63 (line 1)) (6.0.0)
+2025-03-04T13:33:29.2151649Z Requirement already satisfied: ruff in /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages (from -r /dev/fd/63 (line 2)) (0.9.6)
+2025-03-04T13:33:29.2155203Z Requirement already satisfied: mypy in /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages (from -r /dev/fd/63 (line 3)) (1.15.0)
+2025-03-04T13:33:29.2158694Z Requirement already satisfied: mypy-extensions in /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages (from -r /dev/fd/63 (line 4)) (1.0.0)
+2025-03-04T13:33:29.2161855Z Requirement already satisfied: traitlets in /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages (from -r /dev/fd/63 (line 5)) (5.14.3)
+2025-03-04T13:33:29.5021366Z deepdiff==8.2.0
+2025-03-04T13:33:29.5021821Z future==1.0.0
+2025-03-04T13:33:29.5022181Z gmsh==4.13.1
+2025-03-04T13:33:29.5022569Z isort==6.0.0
+2025-03-04T13:33:29.5022973Z matplotlib==3.10.0
+2025-03-04T13:33:29.5023372Z meshio==5.3.5
+2025-03-04T13:33:29.5024011Z mypy==1.15.0
+2025-03-04T13:33:29.5024454Z mypy-extensions==1.0.0
+2025-03-04T13:33:29.5024945Z networkx==3.4.2
+2025-03-04T13:33:29.5025345Z numba==0.61.0
+2025-03-04T13:33:29.5025715Z numpy==2.1.3
+2025-03-04T13:33:29.5026082Z ruff==0.9.6
+2025-03-04T13:33:29.5026485Z scipy==1.15.1
+2025-03-04T13:33:29.5026786Z seaborn==0.13.2
+2025-03-04T13:33:29.5027094Z shapely==2.0.7
+2025-03-04T13:33:29.5027412Z six==1.17.0
+2025-03-04T13:33:29.5027721Z sympy==1.13.3
+2025-03-04T13:33:29.5028100Z toml==0.10.2
+2025-03-04T13:33:29.5028376Z traitlets==5.14.3
+2025-03-04T13:33:29.5028731Z typing_extensions==4.12.2
+2025-03-04T13:33:29.5324166Z ##[group]Run ruff check src tests
+2025-03-04T13:33:29.5324483Z [36;1mruff check src tests[0m
+2025-03-04T13:33:29.5371405Z shell: /usr/bin/bash -e {0}
+2025-03-04T13:33:29.5371623Z env:
+2025-03-04T13:33:29.5371871Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:29.5372273Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-04T13:33:29.5372660Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:29.5373004Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:29.5373348Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:29.5373918Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-04T13:33:29.5374212Z ##[endgroup]
+2025-03-04T13:33:29.6113989Z All checks passed!
+2025-03-04T13:33:29.6154210Z ##[group]Run ruff format --check src tests
+2025-03-04T13:33:29.6154724Z [36;1mruff format --check src tests[0m
+2025-03-04T13:33:29.6201264Z shell: /usr/bin/bash -e {0}
+2025-03-04T13:33:29.6201488Z env:
+2025-03-04T13:33:29.6201727Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:29.6202137Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-04T13:33:29.6202536Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:29.6202890Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:29.6203225Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:29.6203823Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-04T13:33:29.6204128Z ##[endgroup]
+2025-03-04T13:33:29.7568251Z Would reformat: tests/models/test_poromechanics.py
+2025-03-04T13:33:29.7568832Z 1 file would be reformatted, 293 files already formatted
+2025-03-04T13:33:29.7603145Z ##[error]Process completed with exit code 1.
+2025-03-04T13:33:29.7644880Z ##[group]Run isort src tests
+2025-03-04T13:33:29.7645146Z [36;1misort src tests[0m
+2025-03-04T13:33:29.7691061Z shell: /usr/bin/bash -e {0}
+2025-03-04T13:33:29.7691295Z env:
+2025-03-04T13:33:29.7691540Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:29.7691936Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-04T13:33:29.7692317Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:29.7692653Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:29.7692987Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:29.7693326Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-04T13:33:29.7693751Z ##[endgroup]
+2025-03-04T13:33:30.5055068Z Skipped 1 files
+2025-03-04T13:33:30.5218502Z ##[group]Run mypy src --cache-dir mypy-cache-3.13
+2025-03-04T13:33:30.5218879Z [36;1mmypy src --cache-dir mypy-cache-3.13[0m
+2025-03-04T13:33:30.5264787Z shell: /usr/bin/bash -e {0}
+2025-03-04T13:33:30.5265038Z env:
+2025-03-04T13:33:30.5265290Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:30.5265699Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-03-04T13:33:30.5266094Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:30.5266433Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:30.5266781Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-04T13:33:30.5267130Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-04T13:33:30.5267424Z ##[endgroup]
+2025-03-04T13:34:01.9866194Z Success: no issues found in 182 source files
+2025-03-04T13:34:02.0124617Z Post job cleanup.
+2025-03-04T13:34:02.1085291Z [command]/usr/bin/git version
+2025-03-04T13:34:02.1122014Z git version 2.48.1
+2025-03-04T13:34:02.1173378Z Temporarily overriding HOME='/home/runner/work/_temp/bcbd073e-4b41-4d0a-bdcc-66d997ef0bcc' before making global git config changes
+2025-03-04T13:34:02.1192971Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-04T13:34:02.1194085Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/porepy/porepy
+2025-03-04T13:34:02.1217671Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-04T13:34:02.1249362Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-04T13:34:02.1482488Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-04T13:34:02.1503003Z http.https://github.com/.extraheader
+2025-03-04T13:34:02.1515772Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-04T13:34:02.1546510Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-04T13:34:02.1877896Z Cleaning up orphan processes

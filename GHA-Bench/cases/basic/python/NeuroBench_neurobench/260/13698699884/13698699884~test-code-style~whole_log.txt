@@ -1,0 +1,335 @@
+2025-03-06T12:29:33.9628251Z Requested labels: ubuntu-latest
+2025-03-06T12:29:33.9628502Z Job defined at: NeuroBench/neurobench/.github/workflows/python-tests.yaml@refs/pull/251/merge
+2025-03-06T12:29:33.9628610Z Waiting for a runner to pick up this job...
+2025-03-06T12:29:34.7697897Z Job is waiting for a hosted runner to come online.
+2025-03-06T12:29:38.0527870Z Job is about to start running on the hosted runner: GitHub Actions 5 (hosted)
+2025-03-06T12:29:39.8432128Z Current runner version: '2.322.0'
+2025-03-06T12:29:39.8458149Z ##[group]Operating System
+2025-03-06T12:29:39.8459030Z Ubuntu
+2025-03-06T12:29:39.8459831Z 24.04.2
+2025-03-06T12:29:39.8460309Z LTS
+2025-03-06T12:29:39.8460860Z ##[endgroup]
+2025-03-06T12:29:39.8461408Z ##[group]Runner Image
+2025-03-06T12:29:39.8461977Z Image: ubuntu-24.04
+2025-03-06T12:29:39.8462580Z Version: 20250302.1.0
+2025-03-06T12:29:39.8463594Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250302.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-06T12:29:39.8464958Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250302.1
+2025-03-06T12:29:39.8465920Z ##[endgroup]
+2025-03-06T12:29:39.8466465Z ##[group]Runner Image Provisioner
+2025-03-06T12:29:39.8467106Z 2.0.422.1
+2025-03-06T12:29:39.8467629Z ##[endgroup]
+2025-03-06T12:29:39.8470211Z ##[group]GITHUB_TOKEN Permissions
+2025-03-06T12:29:39.8472459Z Actions: write
+2025-03-06T12:29:39.8473211Z Attestations: write
+2025-03-06T12:29:39.8473919Z Checks: write
+2025-03-06T12:29:39.8474429Z Contents: write
+2025-03-06T12:29:39.8475023Z Deployments: write
+2025-03-06T12:29:39.8475558Z Discussions: write
+2025-03-06T12:29:39.8476054Z Issues: write
+2025-03-06T12:29:39.8476621Z Metadata: read
+2025-03-06T12:29:39.8477140Z Packages: write
+2025-03-06T12:29:39.8477638Z Pages: write
+2025-03-06T12:29:39.8478228Z PullRequests: write
+2025-03-06T12:29:39.8478748Z RepositoryProjects: write
+2025-03-06T12:29:39.8479611Z SecurityEvents: write
+2025-03-06T12:29:39.8480272Z Statuses: write
+2025-03-06T12:29:39.8480782Z ##[endgroup]
+2025-03-06T12:29:39.8484035Z Secret source: Actions
+2025-03-06T12:29:39.8485072Z Prepare workflow directory
+2025-03-06T12:29:39.8893160Z Prepare all required actions
+2025-03-06T12:29:39.8932291Z Getting action download info
+2025-03-06T12:29:40.0814187Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-06T12:29:40.1649844Z Download action repository 'actions/setup-python@v5' (SHA:42375524e23c412d93fb67b49958b491fce71c38)
+2025-03-06T12:29:40.3261058Z Complete job name: test-code-style
+2025-03-06T12:29:40.4057811Z ##[group]Run actions/checkout@v4
+2025-03-06T12:29:40.4058799Z with:
+2025-03-06T12:29:40.4059583Z   repository: NeuroBench/neurobench
+2025-03-06T12:29:40.4060413Z   token: ***
+2025-03-06T12:29:40.4060864Z   ssh-strict: true
+2025-03-06T12:29:40.4061319Z   ssh-user: git
+2025-03-06T12:29:40.4061774Z   persist-credentials: true
+2025-03-06T12:29:40.4062284Z   clean: true
+2025-03-06T12:29:40.4062761Z   sparse-checkout-cone-mode: true
+2025-03-06T12:29:40.4063330Z   fetch-depth: 1
+2025-03-06T12:29:40.4063781Z   fetch-tags: false
+2025-03-06T12:29:40.4064278Z   show-progress: true
+2025-03-06T12:29:40.4064740Z   lfs: false
+2025-03-06T12:29:40.4065174Z   submodules: false
+2025-03-06T12:29:40.4065650Z   set-safe-directory: true
+2025-03-06T12:29:40.4066786Z ##[endgroup]
+2025-03-06T12:29:40.5825907Z Syncing repository: NeuroBench/neurobench
+2025-03-06T12:29:40.5828507Z ##[group]Getting Git version info
+2025-03-06T12:29:40.5830213Z Working directory is '/home/runner/work/neurobench/neurobench'
+2025-03-06T12:29:40.5832324Z [command]/usr/bin/git version
+2025-03-06T12:29:40.5875315Z git version 2.48.1
+2025-03-06T12:29:40.5903319Z ##[endgroup]
+2025-03-06T12:29:40.5919678Z Temporarily overriding HOME='/home/runner/work/_temp/875e6747-3e37-48ae-bc03-fea3d999ddcd' before making global git config changes
+2025-03-06T12:29:40.5922425Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-06T12:29:40.5925949Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/neurobench/neurobench
+2025-03-06T12:29:40.5962463Z Deleting the contents of '/home/runner/work/neurobench/neurobench'
+2025-03-06T12:29:40.5966763Z ##[group]Initializing the repository
+2025-03-06T12:29:40.5971836Z [command]/usr/bin/git init /home/runner/work/neurobench/neurobench
+2025-03-06T12:29:40.6026628Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-06T12:29:40.6028535Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-06T12:29:40.6029765Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-06T12:29:40.6031153Z hint:
+2025-03-06T12:29:40.6031751Z hint: 	git config --global init.defaultBranch <name>
+2025-03-06T12:29:40.6032777Z hint:
+2025-03-06T12:29:40.6033959Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-06T12:29:40.6035892Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-06T12:29:40.6037454Z hint:
+2025-03-06T12:29:40.6038314Z hint: 	git branch -m <name>
+2025-03-06T12:29:40.6039992Z Initialized empty Git repository in /home/runner/work/neurobench/neurobench/.git/
+2025-03-06T12:29:40.6045410Z [command]/usr/bin/git remote add origin https://github.com/NeuroBench/neurobench
+2025-03-06T12:29:40.6077720Z ##[endgroup]
+2025-03-06T12:29:40.6079327Z ##[group]Disabling automatic garbage collection
+2025-03-06T12:29:40.6082888Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-06T12:29:40.6112195Z ##[endgroup]
+2025-03-06T12:29:40.6113022Z ##[group]Setting up auth
+2025-03-06T12:29:40.6118506Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-06T12:29:40.6148514Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-06T12:29:40.6427708Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-06T12:29:40.6458023Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-06T12:29:40.6689238Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-06T12:29:40.6733946Z ##[endgroup]
+2025-03-06T12:29:40.6734884Z ##[group]Fetching the repository
+2025-03-06T12:29:40.6743701Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +113f4ff4733cdb45345c004c31724c11425c9995:refs/remotes/pull/251/merge
+2025-03-06T12:29:43.8616881Z From https://github.com/NeuroBench/neurobench
+2025-03-06T12:29:43.8620492Z  * [new ref]         113f4ff4733cdb45345c004c31724c11425c9995 -> pull/251/merge
+2025-03-06T12:29:43.8643676Z ##[endgroup]
+2025-03-06T12:29:43.8645245Z ##[group]Determining the checkout info
+2025-03-06T12:29:43.8646894Z ##[endgroup]
+2025-03-06T12:29:43.8651941Z [command]/usr/bin/git sparse-checkout disable
+2025-03-06T12:29:43.8695259Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-06T12:29:43.8726618Z ##[group]Checking out the ref
+2025-03-06T12:29:43.8730328Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/251/merge
+2025-03-06T12:29:44.5782124Z Note: switching to 'refs/remotes/pull/251/merge'.
+2025-03-06T12:29:44.5782844Z 
+2025-03-06T12:29:44.5783292Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-06T12:29:44.5784324Z changes and commit them, and you can discard any commits you make in this
+2025-03-06T12:29:44.5785373Z state without impacting any branches by switching back to a branch.
+2025-03-06T12:29:44.5787303Z 
+2025-03-06T12:29:44.5787825Z If you want to create a new branch to retain commits you create, you may
+2025-03-06T12:29:44.5788894Z do so (now or later) by using -c with the switch command. Example:
+2025-03-06T12:29:44.5789731Z 
+2025-03-06T12:29:44.5790009Z   git switch -c <new-branch-name>
+2025-03-06T12:29:44.5790446Z 
+2025-03-06T12:29:44.5790716Z Or undo this operation with:
+2025-03-06T12:29:44.5791125Z 
+2025-03-06T12:29:44.5791363Z   git switch -
+2025-03-06T12:29:44.5791702Z 
+2025-03-06T12:29:44.5792211Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-06T12:29:44.5792984Z 
+2025-03-06T12:29:44.5793830Z HEAD is now at 113f4ff Merge c8f906d7cda99196046ef6b5c7f669535ff0b0d6 into a913f3408eb5f3c07b66f25c0806a4d664938b76
+2025-03-06T12:29:44.5834864Z ##[endgroup]
+2025-03-06T12:29:44.5875497Z [command]/usr/bin/git log -1 --format=%H
+2025-03-06T12:29:44.5899787Z 113f4ff4733cdb45345c004c31724c11425c9995
+2025-03-06T12:29:44.6235621Z ##[group]Run actions/setup-python@v5
+2025-03-06T12:29:44.6235981Z with:
+2025-03-06T12:29:44.6236201Z   python-version: 3.11
+2025-03-06T12:29:44.6236443Z   check-latest: false
+2025-03-06T12:29:44.6236800Z   token: ***
+2025-03-06T12:29:44.6237004Z   update-environment: true
+2025-03-06T12:29:44.6237247Z   allow-prereleases: false
+2025-03-06T12:29:44.6237508Z ##[endgroup]
+2025-03-06T12:29:44.7965646Z ##[group]Installed versions
+2025-03-06T12:29:44.8028935Z Successfully set up CPython (3.11.11)
+2025-03-06T12:29:44.8030064Z ##[endgroup]
+2025-03-06T12:29:44.8150851Z ##[group]Run python -m pip install --upgrade pip
+2025-03-06T12:29:44.8151361Z [36;1mpython -m pip install --upgrade pip[0m
+2025-03-06T12:29:44.8151687Z [36;1mpip install poetry[0m
+2025-03-06T12:29:44.8207381Z shell: /usr/bin/bash -e {0}
+2025-03-06T12:29:44.8207654Z env:
+2025-03-06T12:29:44.8207923Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-06T12:29:44.8208428Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-03-06T12:29:44.8208871Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-06T12:29:44.8209509Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-06T12:29:44.8209897Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-06T12:29:44.8210313Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-03-06T12:29:44.8210636Z ##[endgroup]
+2025-03-06T12:29:51.0742651Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages (25.0.1)
+2025-03-06T12:29:52.2288646Z Collecting poetry
+2025-03-06T12:29:52.2695971Z   Downloading poetry-2.1.1-py3-none-any.whl.metadata (7.1 kB)
+2025-03-06T12:29:52.2894447Z Collecting build<2.0.0,>=1.2.1 (from poetry)
+2025-03-06T12:29:52.2922824Z   Downloading build-1.2.2.post1-py3-none-any.whl.metadata (6.5 kB)
+2025-03-06T12:29:52.3102348Z Collecting cachecontrol<0.15.0,>=0.14.0 (from cachecontrol[filecache]<0.15.0,>=0.14.0->poetry)
+2025-03-06T12:29:52.3128820Z   Downloading cachecontrol-0.14.2-py3-none-any.whl.metadata (3.1 kB)
+2025-03-06T12:29:52.3280235Z Collecting cleo<3.0.0,>=2.1.0 (from poetry)
+2025-03-06T12:29:52.3307717Z   Downloading cleo-2.1.0-py3-none-any.whl.metadata (12 kB)
+2025-03-06T12:29:52.4202020Z Collecting dulwich<0.23.0,>=0.22.6 (from poetry)
+2025-03-06T12:29:52.4235434Z   Downloading dulwich-0.22.8-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+2025-03-06T12:29:52.4373551Z Collecting fastjsonschema<3.0.0,>=2.18.0 (from poetry)
+2025-03-06T12:29:52.4399512Z   Downloading fastjsonschema-2.21.1-py3-none-any.whl.metadata (2.2 kB)
+2025-03-06T12:29:52.4532820Z Collecting findpython<0.7.0,>=0.6.2 (from poetry)
+2025-03-06T12:29:52.4559683Z   Downloading findpython-0.6.2-py3-none-any.whl.metadata (5.3 kB)
+2025-03-06T12:29:52.4665237Z Collecting installer<0.8.0,>=0.7.0 (from poetry)
+2025-03-06T12:29:52.4697358Z   Downloading installer-0.7.0-py3-none-any.whl.metadata (936 bytes)
+2025-03-06T12:29:52.5016492Z Collecting keyring<26.0.0,>=25.1.0 (from poetry)
+2025-03-06T12:29:52.5042042Z   Downloading keyring-25.6.0-py3-none-any.whl.metadata (20 kB)
+2025-03-06T12:29:52.5216123Z Collecting packaging>=24.0 (from poetry)
+2025-03-06T12:29:52.5241988Z   Downloading packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+2025-03-06T12:29:52.5358141Z Collecting pbs-installer<2026.0.0,>=2025.1.6 (from pbs-installer[download,install]<2026.0.0,>=2025.1.6->poetry)
+2025-03-06T12:29:52.5387002Z   Downloading pbs_installer-2025.2.12-py3-none-any.whl.metadata (991 bytes)
+2025-03-06T12:29:52.5537919Z Collecting pkginfo<2.0,>=1.12 (from poetry)
+2025-03-06T12:29:52.5563311Z   Downloading pkginfo-1.12.1.2-py3-none-any.whl.metadata (13 kB)
+2025-03-06T12:29:52.5733796Z Collecting platformdirs<5,>=3.0.0 (from poetry)
+2025-03-06T12:29:52.5763299Z   Downloading platformdirs-4.3.6-py3-none-any.whl.metadata (11 kB)
+2025-03-06T12:29:52.5936000Z Collecting poetry-core==2.1.1 (from poetry)
+2025-03-06T12:29:52.5969603Z   Downloading poetry_core-2.1.1-py3-none-any.whl.metadata (3.5 kB)
+2025-03-06T12:29:52.6058730Z Collecting pyproject-hooks<2.0.0,>=1.0.0 (from poetry)
+2025-03-06T12:29:52.6083077Z   Downloading pyproject_hooks-1.2.0-py3-none-any.whl.metadata (1.3 kB)
+2025-03-06T12:29:52.6331708Z Collecting requests<3.0,>=2.26 (from poetry)
+2025-03-06T12:29:52.6359241Z   Downloading requests-2.32.3-py3-none-any.whl.metadata (4.6 kB)
+2025-03-06T12:29:52.6478037Z Collecting requests-toolbelt<2.0.0,>=1.0.0 (from poetry)
+2025-03-06T12:29:52.6505435Z   Downloading requests_toolbelt-1.0.0-py2.py3-none-any.whl.metadata (14 kB)
+2025-03-06T12:29:52.6638503Z Collecting shellingham<2.0,>=1.5 (from poetry)
+2025-03-06T12:29:52.6664617Z   Downloading shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+2025-03-06T12:29:52.6818941Z Collecting tomlkit<1.0.0,>=0.11.4 (from poetry)
+2025-03-06T12:29:52.6843921Z   Downloading tomlkit-0.13.2-py3-none-any.whl.metadata (2.7 kB)
+2025-03-06T12:29:52.7074986Z Collecting trove-classifiers>=2022.5.19 (from poetry)
+2025-03-06T12:29:52.7104155Z   Downloading trove_classifiers-2025.3.3.18-py3-none-any.whl.metadata (2.3 kB)
+2025-03-06T12:29:52.7445230Z Collecting virtualenv<21.0.0,>=20.26.6 (from poetry)
+2025-03-06T12:29:52.7472369Z   Downloading virtualenv-20.29.2-py3-none-any.whl.metadata (4.5 kB)
+2025-03-06T12:29:52.8075860Z Collecting msgpack<2.0.0,>=0.5.2 (from cachecontrol<0.15.0,>=0.14.0->cachecontrol[filecache]<0.15.0,>=0.14.0->poetry)
+2025-03-06T12:29:52.8102903Z   Downloading msgpack-1.1.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (8.4 kB)
+2025-03-06T12:29:52.8319649Z Collecting filelock>=3.8.0 (from cachecontrol[filecache]<0.15.0,>=0.14.0->poetry)
+2025-03-06T12:29:52.8352857Z   Downloading filelock-3.17.0-py3-none-any.whl.metadata (2.9 kB)
+2025-03-06T12:29:52.8468188Z Collecting crashtest<0.5.0,>=0.4.1 (from cleo<3.0.0,>=2.1.0->poetry)
+2025-03-06T12:29:52.8494144Z   Downloading crashtest-0.4.1-py3-none-any.whl.metadata (1.1 kB)
+2025-03-06T12:29:53.2206342Z Collecting rapidfuzz<4.0.0,>=3.0.0 (from cleo<3.0.0,>=2.1.0->poetry)
+2025-03-06T12:29:53.2236641Z   Downloading rapidfuzz-3.12.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (12 kB)
+2025-03-06T12:29:53.2471370Z Collecting urllib3>=1.25 (from dulwich<0.23.0,>=0.22.6->poetry)
+2025-03-06T12:29:53.2498771Z   Downloading urllib3-2.3.0-py3-none-any.whl.metadata (6.5 kB)
+2025-03-06T12:29:53.2672822Z Collecting SecretStorage>=3.2 (from keyring<26.0.0,>=25.1.0->poetry)
+2025-03-06T12:29:53.2702246Z   Downloading SecretStorage-3.3.3-py3-none-any.whl.metadata (4.0 kB)
+2025-03-06T12:29:53.2805872Z Collecting jeepney>=0.4.2 (from keyring<26.0.0,>=25.1.0->poetry)
+2025-03-06T12:29:53.2839802Z   Downloading jeepney-0.9.0-py3-none-any.whl.metadata (1.2 kB)
+2025-03-06T12:29:53.3101463Z Collecting importlib_metadata>=4.11.4 (from keyring<26.0.0,>=25.1.0->poetry)
+2025-03-06T12:29:53.3212265Z   Downloading importlib_metadata-8.6.1-py3-none-any.whl.metadata (4.7 kB)
+2025-03-06T12:29:53.3341231Z Collecting jaraco.classes (from keyring<26.0.0,>=25.1.0->poetry)
+2025-03-06T12:29:53.3367474Z   Downloading jaraco.classes-3.4.0-py3-none-any.whl.metadata (2.6 kB)
+2025-03-06T12:29:53.3515821Z Collecting jaraco.functools (from keyring<26.0.0,>=25.1.0->poetry)
+2025-03-06T12:29:53.3542282Z   Downloading jaraco.functools-4.1.0-py3-none-any.whl.metadata (2.9 kB)
+2025-03-06T12:29:53.3670270Z Collecting jaraco.context (from keyring<26.0.0,>=25.1.0->poetry)
+2025-03-06T12:29:53.3697531Z   Downloading jaraco.context-6.0.1-py3-none-any.whl.metadata (4.1 kB)
+2025-03-06T12:29:53.3894829Z Collecting httpx<1,>=0.27.0 (from pbs-installer[download,install]<2026.0.0,>=2025.1.6->poetry)
+2025-03-06T12:29:53.3920599Z   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+2025-03-06T12:29:53.4383612Z Collecting zstandard>=0.21.0 (from pbs-installer[download,install]<2026.0.0,>=2025.1.6->poetry)
+2025-03-06T12:29:53.4412840Z   Downloading zstandard-0.23.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.0 kB)
+2025-03-06T12:29:53.5146416Z Collecting charset-normalizer<4,>=2 (from requests<3.0,>=2.26->poetry)
+2025-03-06T12:29:53.5177120Z   Downloading charset_normalizer-3.4.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (35 kB)
+2025-03-06T12:29:53.5327391Z Collecting idna<4,>=2.5 (from requests<3.0,>=2.26->poetry)
+2025-03-06T12:29:53.5353851Z   Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+2025-03-06T12:29:53.5622972Z Collecting certifi>=2017.4.17 (from requests<3.0,>=2.26->poetry)
+2025-03-06T12:29:53.5649026Z   Downloading certifi-2025.1.31-py3-none-any.whl.metadata (2.5 kB)
+2025-03-06T12:29:53.5938676Z Collecting distlib<1,>=0.3.7 (from virtualenv<21.0.0,>=20.26.6->poetry)
+2025-03-06T12:29:53.5965639Z   Downloading distlib-0.3.9-py2.py3-none-any.whl.metadata (5.2 kB)
+2025-03-06T12:29:53.6306250Z Collecting anyio (from httpx<1,>=0.27.0->pbs-installer[download,install]<2026.0.0,>=2025.1.6->poetry)
+2025-03-06T12:29:53.6333000Z   Downloading anyio-4.8.0-py3-none-any.whl.metadata (4.6 kB)
+2025-03-06T12:29:53.6535705Z Collecting httpcore==1.* (from httpx<1,>=0.27.0->pbs-installer[download,install]<2026.0.0,>=2025.1.6->poetry)
+2025-03-06T12:29:53.6561287Z   Downloading httpcore-1.0.7-py3-none-any.whl.metadata (21 kB)
+2025-03-06T12:29:53.6695016Z Collecting h11<0.15,>=0.13 (from httpcore==1.*->httpx<1,>=0.27.0->pbs-installer[download,install]<2026.0.0,>=2025.1.6->poetry)
+2025-03-06T12:29:53.6721284Z   Downloading h11-0.14.0-py3-none-any.whl.metadata (8.2 kB)
+2025-03-06T12:29:53.6911587Z Collecting zipp>=3.20 (from importlib_metadata>=4.11.4->keyring<26.0.0,>=25.1.0->poetry)
+2025-03-06T12:29:53.6938230Z   Downloading zipp-3.21.0-py3-none-any.whl.metadata (3.7 kB)
+2025-03-06T12:29:53.8215829Z Collecting cryptography>=2.0 (from SecretStorage>=3.2->keyring<26.0.0,>=25.1.0->poetry)
+2025-03-06T12:29:53.8245318Z   Downloading cryptography-44.0.2-cp39-abi3-manylinux_2_34_x86_64.whl.metadata (5.7 kB)
+2025-03-06T12:29:53.8484682Z Collecting more-itertools (from jaraco.classes->keyring<26.0.0,>=25.1.0->poetry)
+2025-03-06T12:29:53.8511297Z   Downloading more_itertools-10.6.0-py3-none-any.whl.metadata (37 kB)
+2025-03-06T12:29:53.8619378Z Collecting backports.tarfile (from jaraco.context->keyring<26.0.0,>=25.1.0->poetry)
+2025-03-06T12:29:53.8644768Z   Downloading backports.tarfile-1.2.0-py3-none-any.whl.metadata (2.0 kB)
+2025-03-06T12:29:53.9382387Z Collecting cffi>=1.12 (from cryptography>=2.0->SecretStorage>=3.2->keyring<26.0.0,>=25.1.0->poetry)
+2025-03-06T12:29:53.9413774Z   Downloading cffi-1.17.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.5 kB)
+2025-03-06T12:29:53.9571123Z Collecting sniffio>=1.1 (from anyio->httpx<1,>=0.27.0->pbs-installer[download,install]<2026.0.0,>=2025.1.6->poetry)
+2025-03-06T12:29:53.9597998Z   Downloading sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+2025-03-06T12:29:53.9739952Z Collecting typing_extensions>=4.5 (from anyio->httpx<1,>=0.27.0->pbs-installer[download,install]<2026.0.0,>=2025.1.6->poetry)
+2025-03-06T12:29:53.9767526Z   Downloading typing_extensions-4.12.2-py3-none-any.whl.metadata (3.0 kB)
+2025-03-06T12:29:53.9906917Z Collecting pycparser (from cffi>=1.12->cryptography>=2.0->SecretStorage>=3.2->keyring<26.0.0,>=25.1.0->poetry)
+2025-03-06T12:29:53.9931197Z   Downloading pycparser-2.22-py3-none-any.whl.metadata (943 bytes)
+2025-03-06T12:29:54.0051026Z Downloading poetry-2.1.1-py3-none-any.whl (277 kB)
+2025-03-06T12:29:54.0123817Z Downloading poetry_core-2.1.1-py3-none-any.whl (331 kB)
+2025-03-06T12:29:54.0188475Z Downloading build-1.2.2.post1-py3-none-any.whl (22 kB)
+2025-03-06T12:29:54.0237171Z Downloading cachecontrol-0.14.2-py3-none-any.whl (21 kB)
+2025-03-06T12:29:54.0286092Z Downloading cleo-2.1.0-py3-none-any.whl (78 kB)
+2025-03-06T12:29:54.0332636Z Downloading dulwich-0.22.8-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.0 MB)
+2025-03-06T12:29:54.0431923Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 112.4 MB/s eta 0:00:00
+2025-03-06T12:29:54.0465137Z Downloading fastjsonschema-2.21.1-py3-none-any.whl (23 kB)
+2025-03-06T12:29:54.0511763Z Downloading findpython-0.6.2-py3-none-any.whl (20 kB)
+2025-03-06T12:29:54.0733748Z Downloading installer-0.7.0-py3-none-any.whl (453 kB)
+2025-03-06T12:29:54.0806793Z Downloading keyring-25.6.0-py3-none-any.whl (39 kB)
+2025-03-06T12:29:54.0856044Z Downloading packaging-24.2-py3-none-any.whl (65 kB)
+2025-03-06T12:29:54.0904074Z Downloading pbs_installer-2025.2.12-py3-none-any.whl (53 kB)
+2025-03-06T12:29:54.0952143Z Downloading pkginfo-1.12.1.2-py3-none-any.whl (32 kB)
+2025-03-06T12:29:54.0996823Z Downloading platformdirs-4.3.6-py3-none-any.whl (18 kB)
+2025-03-06T12:29:54.1042235Z Downloading pyproject_hooks-1.2.0-py3-none-any.whl (10 kB)
+2025-03-06T12:29:54.1087584Z Downloading requests-2.32.3-py3-none-any.whl (64 kB)
+2025-03-06T12:29:54.1136231Z Downloading requests_toolbelt-1.0.0-py2.py3-none-any.whl (54 kB)
+2025-03-06T12:29:54.1183773Z Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+2025-03-06T12:29:54.1230269Z Downloading tomlkit-0.13.2-py3-none-any.whl (37 kB)
+2025-03-06T12:29:54.1277859Z Downloading trove_classifiers-2025.3.3.18-py3-none-any.whl (13 kB)
+2025-03-06T12:29:54.1327965Z Downloading virtualenv-20.29.2-py3-none-any.whl (4.3 MB)
+2025-03-06T12:29:54.1618497Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 153.9 MB/s eta 0:00:00
+2025-03-06T12:29:54.1647627Z Downloading certifi-2025.1.31-py3-none-any.whl (166 kB)
+2025-03-06T12:29:54.1705849Z Downloading charset_normalizer-3.4.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (143 kB)
+2025-03-06T12:29:54.1764094Z Downloading crashtest-0.4.1-py3-none-any.whl (7.6 kB)
+2025-03-06T12:29:54.1809793Z Downloading distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+2025-03-06T12:29:54.1881040Z Downloading filelock-3.17.0-py3-none-any.whl (16 kB)
+2025-03-06T12:29:54.1928118Z Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+2025-03-06T12:29:54.1978171Z Downloading httpcore-1.0.7-py3-none-any.whl (78 kB)
+2025-03-06T12:29:54.2026763Z Downloading idna-3.10-py3-none-any.whl (70 kB)
+2025-03-06T12:29:54.2074663Z Downloading importlib_metadata-8.6.1-py3-none-any.whl (26 kB)
+2025-03-06T12:29:54.2120812Z Downloading jeepney-0.9.0-py3-none-any.whl (49 kB)
+2025-03-06T12:29:54.2167570Z Downloading msgpack-1.1.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (403 kB)
+2025-03-06T12:29:54.2255817Z Downloading rapidfuzz-3.12.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.1 MB)
+2025-03-06T12:29:54.2470494Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 151.6 MB/s eta 0:00:00
+2025-03-06T12:29:54.2500072Z Downloading SecretStorage-3.3.3-py3-none-any.whl (15 kB)
+2025-03-06T12:29:54.2543081Z Downloading urllib3-2.3.0-py3-none-any.whl (128 kB)
+2025-03-06T12:29:54.2591959Z Downloading zstandard-0.23.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (5.4 MB)
+2025-03-06T12:29:54.2927802Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 168.7 MB/s eta 0:00:00
+2025-03-06T12:29:54.2955044Z Downloading jaraco.classes-3.4.0-py3-none-any.whl (6.8 kB)
+2025-03-06T12:29:54.3001013Z Downloading jaraco.context-6.0.1-py3-none-any.whl (6.8 kB)
+2025-03-06T12:29:54.3042506Z Downloading jaraco.functools-4.1.0-py3-none-any.whl (10 kB)
+2025-03-06T12:29:54.3086002Z Downloading cryptography-44.0.2-cp39-abi3-manylinux_2_34_x86_64.whl (4.2 MB)
+2025-03-06T12:29:54.3349442Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 166.0 MB/s eta 0:00:00
+2025-03-06T12:29:54.3378244Z Downloading zipp-3.21.0-py3-none-any.whl (9.6 kB)
+2025-03-06T12:29:54.3428540Z Downloading anyio-4.8.0-py3-none-any.whl (96 kB)
+2025-03-06T12:29:54.3476074Z Downloading backports.tarfile-1.2.0-py3-none-any.whl (30 kB)
+2025-03-06T12:29:54.3518224Z Downloading more_itertools-10.6.0-py3-none-any.whl (63 kB)
+2025-03-06T12:29:54.3565169Z Downloading cffi-1.17.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (467 kB)
+2025-03-06T12:29:54.3629659Z Downloading h11-0.14.0-py3-none-any.whl (58 kB)
+2025-03-06T12:29:54.3673189Z Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+2025-03-06T12:29:54.3715417Z Downloading typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+2025-03-06T12:29:54.3761365Z Downloading pycparser-2.22-py3-none-any.whl (117 kB)
+2025-03-06T12:29:54.4872401Z Installing collected packages: trove-classifiers, fastjsonschema, distlib, zstandard, zipp, urllib3, typing_extensions, tomlkit, sniffio, shellingham, rapidfuzz, pyproject-hooks, pycparser, poetry-core, platformdirs, pkginfo, pbs-installer, packaging, msgpack, more-itertools, jeepney, installer, idna, h11, filelock, crashtest, charset-normalizer, certifi, backports.tarfile, virtualenv, requests, jaraco.functools, jaraco.context, jaraco.classes, importlib_metadata, httpcore, findpython, dulwich, cleo, cffi, build, anyio, requests-toolbelt, httpx, cryptography, cachecontrol, SecretStorage, keyring, poetry
+2025-03-06T12:29:56.7108255Z Successfully installed SecretStorage-3.3.3 anyio-4.8.0 backports.tarfile-1.2.0 build-1.2.2.post1 cachecontrol-0.14.2 certifi-2025.1.31 cffi-1.17.1 charset-normalizer-3.4.1 cleo-2.1.0 crashtest-0.4.1 cryptography-44.0.2 distlib-0.3.9 dulwich-0.22.8 fastjsonschema-2.21.1 filelock-3.17.0 findpython-0.6.2 h11-0.14.0 httpcore-1.0.7 httpx-0.28.1 idna-3.10 importlib_metadata-8.6.1 installer-0.7.0 jaraco.classes-3.4.0 jaraco.context-6.0.1 jaraco.functools-4.1.0 jeepney-0.9.0 keyring-25.6.0 more-itertools-10.6.0 msgpack-1.1.0 packaging-24.2 pbs-installer-2025.2.12 pkginfo-1.12.1.2 platformdirs-4.3.6 poetry-2.1.1 poetry-core-2.1.1 pycparser-2.22 pyproject-hooks-1.2.0 rapidfuzz-3.12.2 requests-2.32.3 requests-toolbelt-1.0.0 shellingham-1.5.4 sniffio-1.3.1 tomlkit-0.13.2 trove-classifiers-2025.3.3.18 typing_extensions-4.12.2 urllib3-2.3.0 virtualenv-20.29.2 zipp-3.21.0 zstandard-0.23.0
+2025-03-06T12:29:56.8578090Z ##[group]Run if [ "" = "3.11" ]; then
+2025-03-06T12:29:56.8578431Z [36;1mif [ "" = "3.11" ]; then[0m
+2025-03-06T12:29:56.8578738Z [36;1m    poetry run pytest --cov --cov-report=xml[0m
+2025-03-06T12:29:56.8579211Z [36;1m  else[0m
+2025-03-06T12:29:56.8579421Z [36;1m    poetry run pytest[0m
+2025-03-06T12:29:56.8579652Z [36;1m  fi[0m
+2025-03-06T12:29:56.8626903Z shell: /usr/bin/bash -e {0}
+2025-03-06T12:29:56.8627180Z env:
+2025-03-06T12:29:56.8627459Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-06T12:29:56.8627926Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib/pkgconfig
+2025-03-06T12:29:56.8628377Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-06T12:29:56.8628781Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-06T12:29:56.8629348Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.11/x64
+2025-03-06T12:29:56.8629755Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.11/x64/lib
+2025-03-06T12:29:56.8630135Z ##[endgroup]
+2025-03-06T12:29:58.5726935Z Creating virtualenv neurobench-i8fWETce-py3.11 in /home/runner/.cache/pypoetry/virtualenvs
+2025-03-06T12:29:58.8959190Z Command not found: pytest
+2025-03-06T12:29:58.9495068Z ##[error]Process completed with exit code 1.
+2025-03-06T12:29:58.9599585Z Post job cleanup.
+2025-03-06T12:29:59.0551939Z [command]/usr/bin/git version
+2025-03-06T12:29:59.0591601Z git version 2.48.1
+2025-03-06T12:29:59.0642724Z Temporarily overriding HOME='/home/runner/work/_temp/851a4890-f979-475d-b389-b7c5e596a9d5' before making global git config changes
+2025-03-06T12:29:59.0644043Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-06T12:29:59.0648894Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/neurobench/neurobench
+2025-03-06T12:29:59.0685258Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-06T12:29:59.0719307Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-06T12:29:59.0959833Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-06T12:29:59.0981158Z http.https://github.com/.extraheader
+2025-03-06T12:29:59.0993336Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-06T12:29:59.1023721Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-06T12:29:59.1363352Z Cleaning up orphan processes

@@ -1,0 +1,51 @@
+diff --git a/.github/workflows/build-test.yml b/.github/workflows/build-test.yml
+index 1bac6ee..68b8ba5 100644
+--- a/.github/workflows/build-test.yml
++++ b/.github/workflows/build-test.yml
+@@ -19,7 +19,7 @@ jobs:
+     steps:
+       - name: Checkout Source Code
+         uses: actions/checkout@v3
+-          
++
+       - name: Install Dependencies
+         run: |
+           apt update && apt install -y python3-pip
+@@ -29,4 +29,3 @@ jobs:
+       - name: Build Wheel
+         run: |
+           BUILD_OPS=1 python3 -m build
+-
+diff --git a/.github/workflows/publish-test.yml b/.github/workflows/publish-test.yml
+index 17edb37..cb8ae34 100644
+--- a/.github/workflows/publish-test.yml
++++ b/.github/workflows/publish-test.yml
+@@ -39,7 +39,7 @@ jobs:
+     steps:
+       - name: Checkout Source Code
+         uses: actions/checkout@v3
+-        
++
+       - name: Download version value artifact
+         uses: actions/download-artifact@v4
+         with:
+diff --git a/CODE_OF_CONDUCT.md b/CODE_OF_CONDUCT.md
+index f95d690..b3f31ae 100644
+--- a/CODE_OF_CONDUCT.md
++++ b/CODE_OF_CONDUCT.md
+@@ -5,7 +5,7 @@
+ We as members, contributors, and leaders pledge to make participation in our
+ community a harassment-free experience for everyone, regardless of age, body
+ size, visible or invisible disability, ethnicity, sex characteristics, gender
+-identity and expression, level of experience, education, socio-economic status,
++identity and expression, level of experience, education, socioeconomic status,
+ nationality, personal appearance, race, religion, or sexual identity
+ and orientation.
+ 
+@@ -125,4 +125,4 @@ enforcement ladder](https://github.com/mozilla/diversity).
+ 
+ For answers to common questions about this code of conduct, see the FAQ at
+ https://www.contributor-covenant.org/faq. Translations are available at
+-https://www.contributor-covenant.org/translations.
+\ No newline at end of file
++https://www.contributor-covenant.org/translations.

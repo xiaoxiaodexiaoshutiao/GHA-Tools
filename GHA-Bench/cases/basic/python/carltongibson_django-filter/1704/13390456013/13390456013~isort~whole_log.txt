@@ -1,0 +1,343 @@
+2025-02-18T12:44:51.2301510Z Requested labels: ubuntu-latest
+2025-02-18T12:44:51.2301764Z Job defined at: carltongibson/django-filter/.github/workflows/tests.yml@refs/pull/1704/merge
+2025-02-18T12:44:51.2301870Z Waiting for a runner to pick up this job...
+2025-02-18T12:44:53.0149748Z Job is waiting for a hosted runner to come online.
+2025-02-18T12:44:55.3238437Z Job is about to start running on the hosted runner: GitHub Actions 9 (hosted)
+2025-02-18T12:44:57.3622557Z Current runner version: '2.322.0'
+2025-02-18T12:44:57.3650665Z ##[group]Operating System
+2025-02-18T12:44:57.3651463Z Ubuntu
+2025-02-18T12:44:57.3652072Z 24.04.1
+2025-02-18T12:44:57.3652584Z LTS
+2025-02-18T12:44:57.3653046Z ##[endgroup]
+2025-02-18T12:44:57.3653602Z ##[group]Runner Image
+2025-02-18T12:44:57.3654183Z Image: ubuntu-24.04
+2025-02-18T12:44:57.3654685Z Version: 20250209.1.0
+2025-02-18T12:44:57.3655802Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250209.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-18T12:44:57.3657490Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250209.1
+2025-02-18T12:44:57.3658460Z ##[endgroup]
+2025-02-18T12:44:57.3658986Z ##[group]Runner Image Provisioner
+2025-02-18T12:44:57.3659581Z 2.0.422.1
+2025-02-18T12:44:57.3660102Z ##[endgroup]
+2025-02-18T12:44:57.3662245Z ##[group]GITHUB_TOKEN Permissions
+2025-02-18T12:44:57.3664225Z Actions: read
+2025-02-18T12:44:57.3664975Z Attestations: read
+2025-02-18T12:44:57.3665678Z Checks: read
+2025-02-18T12:44:57.3666153Z Contents: read
+2025-02-18T12:44:57.3666865Z Deployments: read
+2025-02-18T12:44:57.3667487Z Discussions: read
+2025-02-18T12:44:57.3667995Z Issues: read
+2025-02-18T12:44:57.3668466Z Metadata: read
+2025-02-18T12:44:57.3669003Z Packages: read
+2025-02-18T12:44:57.3669510Z Pages: read
+2025-02-18T12:44:57.3669986Z PullRequests: read
+2025-02-18T12:44:57.3670606Z RepositoryProjects: read
+2025-02-18T12:44:57.3671169Z SecurityEvents: read
+2025-02-18T12:44:57.3671660Z Statuses: read
+2025-02-18T12:44:57.3672268Z ##[endgroup]
+2025-02-18T12:44:57.3675075Z Secret source: None
+2025-02-18T12:44:57.3675903Z Prepare workflow directory
+2025-02-18T12:44:57.4086895Z Prepare all required actions
+2025-02-18T12:44:57.4137586Z Getting action download info
+2025-02-18T12:44:57.6045909Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-02-18T12:44:57.6047111Z Version: 4.2.2
+2025-02-18T12:44:57.6048004Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-02-18T12:44:57.6049030Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-02-18T12:44:57.6049646Z ##[endgroup]
+2025-02-18T12:44:57.7114447Z ##[group]Download immutable action package 'actions/setup-python@v5'
+2025-02-18T12:44:57.7115172Z Version: 5.4.0
+2025-02-18T12:44:57.7115817Z Digest: sha256:6003df952c8106bcd378d2ba997eef202da924317a57269dfa72449b135adb7f
+2025-02-18T12:44:57.7116884Z Source commit SHA: 42375524e23c412d93fb67b49958b491fce71c38
+2025-02-18T12:44:57.7117538Z ##[endgroup]
+2025-02-18T12:44:58.0108627Z Complete job name: isort
+2025-02-18T12:44:58.0806365Z ##[group]Run actions/checkout@v4
+2025-02-18T12:44:58.0807939Z with:
+2025-02-18T12:44:58.0808659Z   repository: carltongibson/django-filter
+2025-02-18T12:44:58.0809773Z   token: ***
+2025-02-18T12:44:58.0810437Z   ssh-strict: true
+2025-02-18T12:44:58.0811080Z   ssh-user: git
+2025-02-18T12:44:58.0811746Z   persist-credentials: true
+2025-02-18T12:44:58.0812484Z   clean: true
+2025-02-18T12:44:58.0813151Z   sparse-checkout-cone-mode: true
+2025-02-18T12:44:58.0813971Z   fetch-depth: 1
+2025-02-18T12:44:58.0814636Z   fetch-tags: false
+2025-02-18T12:44:58.0815313Z   show-progress: true
+2025-02-18T12:44:58.0815995Z   lfs: false
+2025-02-18T12:44:58.0816812Z   submodules: false
+2025-02-18T12:44:58.0817519Z   set-safe-directory: true
+2025-02-18T12:44:58.0818735Z ##[endgroup]
+2025-02-18T12:44:58.3562537Z Syncing repository: carltongibson/django-filter
+2025-02-18T12:44:58.3564352Z ##[group]Getting Git version info
+2025-02-18T12:44:58.3565215Z Working directory is '/home/runner/work/django-filter/django-filter'
+2025-02-18T12:44:58.3566334Z [command]/usr/bin/git version
+2025-02-18T12:44:58.3655906Z git version 2.48.1
+2025-02-18T12:44:58.3700663Z ##[endgroup]
+2025-02-18T12:44:58.3717625Z Temporarily overriding HOME='/home/runner/work/_temp/6564cd45-ceb4-4a7f-bb5b-bf8dc27ab309' before making global git config changes
+2025-02-18T12:44:58.3721439Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-18T12:44:58.3727951Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/django-filter/django-filter
+2025-02-18T12:44:58.3777229Z Deleting the contents of '/home/runner/work/django-filter/django-filter'
+2025-02-18T12:44:58.3781908Z ##[group]Initializing the repository
+2025-02-18T12:44:58.3786214Z [command]/usr/bin/git init /home/runner/work/django-filter/django-filter
+2025-02-18T12:44:58.3865023Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-18T12:44:58.3867261Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-18T12:44:58.3869080Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-18T12:44:58.3870547Z hint:
+2025-02-18T12:44:58.3871554Z hint: 	git config --global init.defaultBranch <name>
+2025-02-18T12:44:58.3872818Z hint:
+2025-02-18T12:44:58.3874063Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-18T12:44:58.3876015Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-18T12:44:58.3877818Z hint:
+2025-02-18T12:44:58.3878683Z hint: 	git branch -m <name>
+2025-02-18T12:44:58.3880302Z Initialized empty Git repository in /home/runner/work/django-filter/django-filter/.git/
+2025-02-18T12:44:58.3884003Z [command]/usr/bin/git remote add origin https://github.com/carltongibson/django-filter
+2025-02-18T12:44:58.3921196Z ##[endgroup]
+2025-02-18T12:44:58.3922753Z ##[group]Disabling automatic garbage collection
+2025-02-18T12:44:58.3924547Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-18T12:44:58.3956111Z ##[endgroup]
+2025-02-18T12:44:58.3957826Z ##[group]Setting up auth
+2025-02-18T12:44:58.3962880Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-18T12:44:58.3995382Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-18T12:44:58.4340449Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-18T12:44:58.4368953Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-18T12:44:58.4595363Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-18T12:44:58.4640901Z ##[endgroup]
+2025-02-18T12:44:58.4642585Z ##[group]Fetching the repository
+2025-02-18T12:44:58.4651567Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +10411bceebc5180ca93cba3f9349e736bcafb944:refs/remotes/pull/1704/merge
+2025-02-18T12:44:58.8037462Z From https://github.com/carltongibson/django-filter
+2025-02-18T12:44:58.8039077Z  * [new ref]         10411bceebc5180ca93cba3f9349e736bcafb944 -> pull/1704/merge
+2025-02-18T12:44:58.8064433Z ##[endgroup]
+2025-02-18T12:44:58.8065617Z ##[group]Determining the checkout info
+2025-02-18T12:44:58.8067292Z ##[endgroup]
+2025-02-18T12:44:58.8072280Z [command]/usr/bin/git sparse-checkout disable
+2025-02-18T12:44:58.8114095Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-18T12:44:58.8141700Z ##[group]Checking out the ref
+2025-02-18T12:44:58.8145505Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1704/merge
+2025-02-18T12:44:58.8262891Z Note: switching to 'refs/remotes/pull/1704/merge'.
+2025-02-18T12:44:58.8263849Z 
+2025-02-18T12:44:58.8264552Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-02-18T12:44:58.8266122Z changes and commit them, and you can discard any commits you make in this
+2025-02-18T12:44:58.8268996Z state without impacting any branches by switching back to a branch.
+2025-02-18T12:44:58.8270663Z 
+2025-02-18T12:44:58.8271751Z If you want to create a new branch to retain commits you create, you may
+2025-02-18T12:44:58.8274562Z do so (now or later) by using -c with the switch command. Example:
+2025-02-18T12:44:58.8276057Z 
+2025-02-18T12:44:58.8277000Z   git switch -c <new-branch-name>
+2025-02-18T12:44:58.8278049Z 
+2025-02-18T12:44:58.8278663Z Or undo this operation with:
+2025-02-18T12:44:58.8279567Z 
+2025-02-18T12:44:58.8280044Z   git switch -
+2025-02-18T12:44:58.8280766Z 
+2025-02-18T12:44:58.8281944Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-02-18T12:44:58.8283389Z 
+2025-02-18T12:44:58.8284858Z HEAD is now at 10411bc Merge 49189eab8aeab2a80272c6a55f97ce27c3107f16 into 27dd67284405ee832701509b3515baa50c6e074d
+2025-02-18T12:44:58.8290448Z ##[endgroup]
+2025-02-18T12:44:58.8309405Z [command]/usr/bin/git log -1 --format=%H
+2025-02-18T12:44:58.8331303Z 10411bceebc5180ca93cba3f9349e736bcafb944
+2025-02-18T12:44:58.8637134Z ##[group]Run actions/setup-python@v5
+2025-02-18T12:44:58.8638373Z with:
+2025-02-18T12:44:58.8639241Z   python-version: 3.13
+2025-02-18T12:44:58.8640265Z   check-latest: false
+2025-02-18T12:44:58.8641538Z   token: ***
+2025-02-18T12:44:58.8642473Z   update-environment: true
+2025-02-18T12:44:58.8643575Z   allow-prereleases: false
+2025-02-18T12:44:58.8644629Z ##[endgroup]
+2025-02-18T12:44:59.0443028Z ##[group]Installed versions
+2025-02-18T12:44:59.0495791Z Successfully set up CPython (3.13.2)
+2025-02-18T12:44:59.0498349Z ##[endgroup]
+2025-02-18T12:44:59.0646913Z ##[group]Run python -m pip install --upgrade pip setuptools
+2025-02-18T12:44:59.0648654Z [36;1mpython -m pip install --upgrade pip setuptools[0m
+2025-02-18T12:44:59.0861697Z shell: /usr/bin/bash -e {0}
+2025-02-18T12:44:59.0862696Z env:
+2025-02-18T12:44:59.0863710Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-18T12:44:59.0865441Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-02-18T12:44:59.0867564Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-18T12:44:59.0869112Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-18T12:44:59.0870656Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-18T12:44:59.0872232Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-02-18T12:44:59.0873549Z ##[endgroup]
+2025-02-18T12:45:00.4851535Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages (25.0.1)
+2025-02-18T12:45:00.6606342Z Collecting setuptools
+2025-02-18T12:45:00.7277326Z   Downloading setuptools-75.8.0-py3-none-any.whl.metadata (6.7 kB)
+2025-02-18T12:45:00.7587173Z Downloading setuptools-75.8.0-py3-none-any.whl (1.2 MB)
+2025-02-18T12:45:00.8268889Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 32.1 MB/s eta 0:00:00
+2025-02-18T12:45:00.8423446Z Installing collected packages: setuptools
+2025-02-18T12:45:01.6050857Z Successfully installed setuptools-75.8.0
+2025-02-18T12:45:01.7499634Z ##[group]Run python -m pip install tox
+2025-02-18T12:45:01.7500015Z [36;1mpython -m pip install tox[0m
+2025-02-18T12:45:01.7558374Z shell: /usr/bin/bash -e {0}
+2025-02-18T12:45:01.7558643Z env:
+2025-02-18T12:45:01.7558900Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-18T12:45:01.7559327Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-02-18T12:45:01.7559729Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-18T12:45:01.7560088Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-18T12:45:01.7560456Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-18T12:45:01.7560798Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-02-18T12:45:01.7561121Z ##[endgroup]
+2025-02-18T12:45:02.2320423Z Collecting tox
+2025-02-18T12:45:02.2975434Z   Downloading tox-4.24.1-py3-none-any.whl.metadata (3.7 kB)
+2025-02-18T12:45:02.3168001Z Collecting cachetools>=5.5 (from tox)
+2025-02-18T12:45:02.3307866Z   Downloading cachetools-5.5.1-py3-none-any.whl.metadata (5.4 kB)
+2025-02-18T12:45:02.3435769Z Collecting chardet>=5.2 (from tox)
+2025-02-18T12:45:02.3574050Z   Downloading chardet-5.2.0-py3-none-any.whl.metadata (3.4 kB)
+2025-02-18T12:45:02.3737637Z Collecting colorama>=0.4.6 (from tox)
+2025-02-18T12:45:02.3876525Z   Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+2025-02-18T12:45:02.4119710Z Collecting filelock>=3.16.1 (from tox)
+2025-02-18T12:45:02.4259921Z   Downloading filelock-3.17.0-py3-none-any.whl.metadata (2.9 kB)
+2025-02-18T12:45:02.4446773Z Collecting packaging>=24.2 (from tox)
+2025-02-18T12:45:02.4585377Z   Downloading packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+2025-02-18T12:45:02.4751351Z Collecting platformdirs>=4.3.6 (from tox)
+2025-02-18T12:45:02.4889535Z   Downloading platformdirs-4.3.6-py3-none-any.whl.metadata (11 kB)
+2025-02-18T12:45:02.5078645Z Collecting pluggy>=1.5 (from tox)
+2025-02-18T12:45:02.5217817Z   Downloading pluggy-1.5.0-py3-none-any.whl.metadata (4.8 kB)
+2025-02-18T12:45:02.5379375Z Collecting pyproject-api>=1.8 (from tox)
+2025-02-18T12:45:02.5531416Z   Downloading pyproject_api-1.9.0-py3-none-any.whl.metadata (2.7 kB)
+2025-02-18T12:45:02.5974784Z Collecting virtualenv>=20.27.1 (from tox)
+2025-02-18T12:45:02.6116183Z   Downloading virtualenv-20.29.2-py3-none-any.whl.metadata (4.5 kB)
+2025-02-18T12:45:02.6352287Z Collecting distlib<1,>=0.3.7 (from virtualenv>=20.27.1->tox)
+2025-02-18T12:45:02.6491085Z   Downloading distlib-0.3.9-py2.py3-none-any.whl.metadata (5.2 kB)
+2025-02-18T12:45:02.6756499Z Downloading tox-4.24.1-py3-none-any.whl (171 kB)
+2025-02-18T12:45:02.7193954Z Downloading cachetools-5.5.1-py3-none-any.whl (9.5 kB)
+2025-02-18T12:45:02.7353419Z Downloading chardet-5.2.0-py3-none-any.whl (199 kB)
+2025-02-18T12:45:02.7560747Z Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+2025-02-18T12:45:02.7721905Z Downloading filelock-3.17.0-py3-none-any.whl (16 kB)
+2025-02-18T12:45:02.7883504Z Downloading packaging-24.2-py3-none-any.whl (65 kB)
+2025-02-18T12:45:02.8054104Z Downloading platformdirs-4.3.6-py3-none-any.whl (18 kB)
+2025-02-18T12:45:02.8221798Z Downloading pluggy-1.5.0-py3-none-any.whl (20 kB)
+2025-02-18T12:45:02.8386345Z Downloading pyproject_api-1.9.0-py3-none-any.whl (13 kB)
+2025-02-18T12:45:02.8550255Z Downloading virtualenv-20.29.2-py3-none-any.whl (4.3 MB)
+2025-02-18T12:45:02.9101272Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 81.3 MB/s eta 0:00:00
+2025-02-18T12:45:02.9249732Z Downloading distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+2025-02-18T12:45:02.9689883Z Installing collected packages: distlib, pluggy, platformdirs, packaging, filelock, colorama, chardet, cachetools, virtualenv, pyproject-api, tox
+2025-02-18T12:45:03.6572295Z Successfully installed cachetools-5.5.1 chardet-5.2.0 colorama-0.4.6 distlib-0.3.9 filelock-3.17.0 packaging-24.2 platformdirs-4.3.6 pluggy-1.5.0 pyproject-api-1.9.0 tox-4.24.1 virtualenv-20.29.2
+2025-02-18T12:45:03.7416815Z ##[group]Run python -m pip --version
+2025-02-18T12:45:03.7417171Z [36;1mpython -m pip --version[0m
+2025-02-18T12:45:03.7417442Z [36;1mpython -m tox --version[0m
+2025-02-18T12:45:03.7417691Z [36;1mpython -m tox -e isort,lint,docs[0m
+2025-02-18T12:45:03.7472972Z shell: /usr/bin/bash -e {0}
+2025-02-18T12:45:03.7473225Z env:
+2025-02-18T12:45:03.7473471Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-18T12:45:03.7473869Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib/pkgconfig
+2025-02-18T12:45:03.7474246Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-18T12:45:03.7474587Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-18T12:45:03.7474925Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-02-18T12:45:03.7475265Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-02-18T12:45:03.7475552Z ##[endgroup]
+2025-02-18T12:45:03.9094995Z pip 25.0.1 from /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages/pip (python 3.13)
+2025-02-18T12:45:04.7580372Z 4.24.1 from /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages/tox/__init__.py
+2025-02-18T12:45:05.1762384Z isort: install_deps> python -I -m pip install isort
+2025-02-18T12:45:06.4198924Z .pkg: install_requires> python -I -m pip install 'flit_core<4,>=3.2'
+2025-02-18T12:45:07.5329713Z .pkg: _optional_hooks> python /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages/pyproject_api/_backend.py True flit_core.buildapi
+2025-02-18T12:45:07.6464429Z .pkg: get_requires_for_build_sdist> python /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages/pyproject_api/_backend.py True flit_core.buildapi
+2025-02-18T12:45:07.6493814Z .pkg: freeze> python -m pip freeze --all
+2025-02-18T12:45:07.8790565Z .pkg: flit_core==3.10.1,pip==25.0.1
+2025-02-18T12:45:07.8794631Z .pkg: build_sdist> python /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages/pyproject_api/_backend.py True flit_core.buildapi
+2025-02-18T12:45:07.9129774Z isort: install_package_deps> python -I -m pip install 'Django>=4.2'
+2025-02-18T12:45:10.6227705Z isort: install_package> python -I -m pip install --force-reinstall --no-deps /home/runner/work/django-filter/django-filter/.tox/.tmp/package/1/django_filter-25.1.tar.gz
+2025-02-18T12:45:11.8206988Z isort: freeze> python -m pip freeze --all
+2025-02-18T12:45:12.0502543Z isort: asgiref==3.8.1,Django==5.1.6,django-filter @ file:///home/runner/work/django-filter/django-filter/.tox/.tmp/package/1/django_filter-25.1.tar.gz#sha256=e37b3fb8f2fe42709d571591e51272cfd8845b3ec15da13c48e93887182b3d58,isort==6.0.0,pip==25.0.1,sqlparse==0.5.3
+2025-02-18T12:45:12.0505579Z isort: commands[0]> isort --check-only --diff django_filters tests
+2025-02-18T12:45:12.2900483Z isort: OK ✔ in 7.22 seconds
+2025-02-18T12:45:12.2900913Z lint: install_deps> python -I -m pip install flake8
+2025-02-18T12:45:13.6796288Z lint: install_package_deps> python -I -m pip install 'Django>=4.2'
+2025-02-18T12:45:16.0641855Z lint: install_package> python -I -m pip install --force-reinstall --no-deps /home/runner/work/django-filter/django-filter/.tox/.tmp/package/2/django_filter-25.1.tar.gz
+2025-02-18T12:45:17.2999688Z lint: freeze> python -m pip freeze --all
+2025-02-18T12:45:17.5362702Z lint: asgiref==3.8.1,Django==5.1.6,django-filter @ file:///home/runner/work/django-filter/django-filter/.tox/.tmp/package/2/django_filter-25.1.tar.gz#sha256=e37b3fb8f2fe42709d571591e51272cfd8845b3ec15da13c48e93887182b3d58,flake8==7.1.2,mccabe==0.7.0,pip==25.0.1,pycodestyle==2.12.1,pyflakes==3.2.0,sqlparse==0.5.3
+2025-02-18T12:45:17.5365371Z lint: commands[0]> flake8 django_filters tests
+2025-02-18T12:45:18.6176965Z lint: OK ✔ in 6.33 seconds
+2025-02-18T12:45:18.6177583Z docs: install_deps> python -I -m pip install -r requirements/docs.txt
+2025-02-18T12:45:27.1231501Z docs: install_package_deps> python -I -m pip install 'Django>=4.2'
+2025-02-18T12:45:27.5721140Z docs: install_package> python -I -m pip install --force-reinstall --no-deps /home/runner/work/django-filter/django-filter/.tox/.tmp/package/3/django_filter-25.1.tar.gz
+2025-02-18T12:45:28.8541836Z docs: freeze> python -m pip freeze --all
+2025-02-18T12:45:29.1062174Z docs: alabaster==1.0.0,asgiref==3.8.1,babel==2.17.0,beautifulsoup4==4.13.3,certifi==2025.1.31,charset-normalizer==3.4.1,Django==5.1.6,django-filter @ file:///home/runner/work/django-filter/django-filter/.tox/.tmp/package/3/django_filter-25.1.tar.gz#sha256=e37b3fb8f2fe42709d571591e51272cfd8845b3ec15da13c48e93887182b3d58,docutils==0.21.2,furo==2024.8.6,idna==3.10,imagesize==1.4.1,Jinja2==3.1.5,MarkupSafe==3.0.2,packaging==24.2,pip==25.0.1,Pygments==2.19.1,requests==2.32.3,snowballstemmer==2.2.0,soupsieve==2.6,Sphinx==8.1.3,sphinx-basic-ng==1.0.0b2,sphinxcontrib-applehelp==2.0.0,sphinxcontrib-devhelp==2.0.0,sphinxcontrib-htmlhelp==2.1.0,sphinxcontrib-jsmath==1.0.1,sphinxcontrib-qthelp==2.0.0,sphinxcontrib-serializinghtml==2.0.0,sqlparse==0.5.3,typing_extensions==4.12.2,urllib3==2.3.0
+2025-02-18T12:45:29.1065856Z docs: commands[0]> sphinx-build -WE docs _docs
+2025-02-18T12:45:29.3992889Z Running Sphinx v8.1.3
+2025-02-18T12:45:29.6041725Z loading translations [en]... done
+2025-02-18T12:45:29.8803703Z making output directory... done
+2025-02-18T12:45:29.8807277Z Converting `source_suffix = '.txt'` to `source_suffix = {'.txt': 'restructuredtext'}`.
+2025-02-18T12:45:29.9573433Z building [mo]: targets for 0 po files that are out of date
+2025-02-18T12:45:29.9576030Z writing output... 
+2025-02-18T12:45:29.9586942Z building [html]: targets for 12 source files that are out of date
+2025-02-18T12:45:29.9600274Z updating environment: [new config] 12 added, 0 changed, 0 removed
+2025-02-18T12:45:29.9601520Z reading sources... [  8%] dev/tests
+2025-02-18T12:45:29.9828934Z reading sources... [ 17%] guide/install
+2025-02-18T12:45:29.9869737Z reading sources... [ 25%] guide/migration
+2025-02-18T12:45:30.1301039Z reading sources... [ 33%] guide/rest_framework
+2025-02-18T12:45:30.1427544Z reading sources... [ 42%] guide/tips
+2025-02-18T12:45:30.1732074Z reading sources... [ 50%] guide/usage
+2025-02-18T12:45:30.1915999Z reading sources... [ 58%] index
+2025-02-18T12:45:30.1954242Z reading sources... [ 67%] ref/fields
+2025-02-18T12:45:30.1993332Z reading sources... [ 75%] ref/filters
+2025-02-18T12:45:30.2498555Z reading sources... [ 83%] ref/filterset
+2025-02-18T12:45:30.2707736Z reading sources... [ 92%] ref/settings
+2025-02-18T12:45:30.2787980Z reading sources... [100%] ref/widgets
+2025-02-18T12:45:30.2878492Z 
+2025-02-18T12:45:30.2880933Z /home/runner/work/django-filter/django-filter/docs/guide/tips.txt:316: WARNING: Title underline too short.
+2025-02-18T12:45:30.2881708Z 
+2025-02-18T12:45:30.2881918Z Solution 1: Use the ``Filter.method`` feature.
+2025-02-18T12:45:30.2882413Z """""""""""""""""""""""" [docutils]
+2025-02-18T12:45:30.2883034Z /home/runner/work/django-filter/django-filter/docs/guide/tips.txt:315: CRITICAL: Title level inconsistent:
+2025-02-18T12:45:30.2883678Z 
+2025-02-18T12:45:30.2883868Z Solution 1: Use the ``Filter.method`` feature.
+2025-02-18T12:45:30.2884318Z """""""""""""""""""""""" [docutils]
+2025-02-18T12:45:30.2885410Z /home/runner/work/django-filter/django-filter/docs/guide/tips.txt:332: WARNING: Definition list ends without a blank line; unexpected unindent. [docutils]
+2025-02-18T12:45:30.2887179Z /home/runner/work/django-filter/django-filter/docs/guide/tips.txt:340: WARNING: Title underline too short.
+2025-02-18T12:45:30.2887916Z 
+2025-02-18T12:45:30.2888085Z Solution 2: Write a new filter class
+2025-02-18T12:45:30.2888422Z """""""""""""""""""""""" [docutils]
+2025-02-18T12:45:30.2888920Z /home/runner/work/django-filter/django-filter/docs/guide/tips.txt:339: CRITICAL: Title level inconsistent:
+2025-02-18T12:45:30.2889354Z 
+2025-02-18T12:45:30.2889454Z Solution 2: Write a new filter class
+2025-02-18T12:45:30.2889706Z """""""""""""""""""""""" [docutils]
+2025-02-18T12:45:30.2890363Z /home/runner/work/django-filter/django-filter/docs/guide/tips.txt:352: WARNING: Definition list ends without a blank line; unexpected unindent. [docutils]
+2025-02-18T12:45:30.2891298Z looking for now-outdated files... none found
+2025-02-18T12:45:30.2922261Z pickling environment... done
+2025-02-18T12:45:30.2925021Z checking consistency... done
+2025-02-18T12:45:30.2939081Z preparing documents... done
+2025-02-18T12:45:30.2941563Z copying assets... 
+2025-02-18T12:45:30.2942446Z copying static files... 
+2025-02-18T12:45:30.2981117Z Writing evaluated template result to /home/runner/work/django-filter/django-filter/_docs/_static/language_data.js
+2025-02-18T12:45:30.3022890Z Writing evaluated template result to /home/runner/work/django-filter/django-filter/_docs/_static/documentation_options.js
+2025-02-18T12:45:30.3056132Z Writing evaluated template result to /home/runner/work/django-filter/django-filter/_docs/_static/basic.css
+2025-02-18T12:45:30.3085558Z copying static files: done
+2025-02-18T12:45:30.3088150Z copying extra files... 
+2025-02-18T12:45:30.3088532Z copying extra files: done
+2025-02-18T12:45:30.3088884Z copying assets: done
+2025-02-18T12:45:30.3091775Z writing output... [  8%] dev/tests
+2025-02-18T12:45:30.3968506Z writing output... [ 17%] guide/install
+2025-02-18T12:45:30.4388794Z writing output... [ 25%] guide/migration
+2025-02-18T12:45:30.4765810Z writing output... [ 33%] guide/rest_framework
+2025-02-18T12:45:30.5051073Z writing output... [ 42%] guide/tips
+2025-02-18T12:45:30.5768840Z writing output... [ 50%] guide/usage
+2025-02-18T12:45:30.6181198Z writing output... [ 58%] index
+2025-02-18T12:45:30.6360453Z writing output... [ 67%] ref/fields
+2025-02-18T12:45:30.6509473Z writing output... [ 75%] ref/filters
+2025-02-18T12:45:30.7281256Z writing output... [ 83%] ref/filterset
+2025-02-18T12:45:30.7629728Z writing output... [ 92%] ref/settings
+2025-02-18T12:45:30.7841141Z writing output... [100%] ref/widgets
+2025-02-18T12:45:30.8040805Z 
+2025-02-18T12:45:30.8191137Z generating indices... genindex done
+2025-02-18T12:45:30.8289283Z writing additional pages... search done
+2025-02-18T12:45:30.8293351Z copying images... [100%] assets/form.png
+2025-02-18T12:45:30.8295492Z 
+2025-02-18T12:45:30.8327570Z dumping search index in English (code: en)... done
+2025-02-18T12:45:30.8332814Z dumping object inventory... done
+2025-02-18T12:45:30.8345071Z build finished with problems, 6 warnings (with warnings treated as errors).
+2025-02-18T12:45:30.9639436Z docs: exit 1 (1.86 seconds) /home/runner/work/django-filter/django-filter> sphinx-build -WE docs _docs pid=2283
+2025-02-18T12:45:30.9645254Z .pkg: _exit> python /opt/hostedtoolcache/Python/3.13.2/x64/lib/python3.13/site-packages/pyproject_api/_backend.py True flit_core.buildapi
+2025-02-18T12:45:30.9790569Z   isort: OK (7.22=setup[7.04]+cmd[0.18] seconds)
+2025-02-18T12:45:30.9791083Z   lint: OK (6.33=setup[5.30]+cmd[1.02] seconds)
+2025-02-18T12:45:30.9791558Z   docs: FAIL code 1 (12.42=setup[10.56]+cmd[1.86] seconds)
+2025-02-18T12:45:30.9792000Z   evaluation failed :( (26.04 seconds)
+2025-02-18T12:45:31.0113752Z ##[error]Process completed with exit code 255.
+2025-02-18T12:45:31.0233555Z Post job cleanup.
+2025-02-18T12:45:31.1202526Z [command]/usr/bin/git version
+2025-02-18T12:45:31.1239558Z git version 2.48.1
+2025-02-18T12:45:31.1290557Z Temporarily overriding HOME='/home/runner/work/_temp/751a716a-c804-4416-b7d9-de1b07a1a80c' before making global git config changes
+2025-02-18T12:45:31.1291868Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-18T12:45:31.1296901Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/django-filter/django-filter
+2025-02-18T12:45:31.1332696Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-18T12:45:31.1365963Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-18T12:45:31.1602902Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-18T12:45:31.1624233Z http.https://github.com/.extraheader
+2025-02-18T12:45:31.1636980Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-18T12:45:31.1668171Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-18T12:45:31.2014562Z Cleaning up orphan processes

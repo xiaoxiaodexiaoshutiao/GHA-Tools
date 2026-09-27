@@ -1,0 +1,203 @@
+﻿2025-04-03T17:39:58.5593229Z Current runner version: '2.323.0'
+2025-04-03T17:39:58.5620117Z ##[group]Operating System
+2025-04-03T17:39:58.5621021Z Ubuntu
+2025-04-03T17:39:58.5621461Z 24.04.2
+2025-04-03T17:39:58.5621927Z LTS
+2025-04-03T17:39:58.5622465Z ##[endgroup]
+2025-04-03T17:39:58.5622941Z ##[group]Runner Image
+2025-04-03T17:39:58.5623501Z Image: ubuntu-24.04
+2025-04-03T17:39:58.5624041Z Version: 20250323.1.0
+2025-04-03T17:39:58.5625114Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-03T17:39:58.5626452Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-04-03T17:39:58.5627397Z ##[endgroup]
+2025-04-03T17:39:58.5628277Z ##[group]Runner Image Provisioner
+2025-04-03T17:39:58.5628882Z 2.0.422.1
+2025-04-03T17:39:58.5629411Z ##[endgroup]
+2025-04-03T17:39:58.5631831Z ##[group]GITHUB_TOKEN Permissions
+2025-04-03T17:39:58.5634061Z Actions: write
+2025-04-03T17:39:58.5634847Z Attestations: write
+2025-04-03T17:39:58.5635406Z Checks: write
+2025-04-03T17:39:58.5635967Z Contents: write
+2025-04-03T17:39:58.5636423Z Deployments: write
+2025-04-03T17:39:58.5636929Z Discussions: write
+2025-04-03T17:39:58.5637485Z Issues: write
+2025-04-03T17:39:58.5638231Z Metadata: read
+2025-04-03T17:39:58.5638736Z Models: read
+2025-04-03T17:39:58.5639249Z Packages: write
+2025-04-03T17:39:58.5639745Z Pages: write
+2025-04-03T17:39:58.5640185Z PullRequests: write
+2025-04-03T17:39:58.5640742Z RepositoryProjects: write
+2025-04-03T17:39:58.5641251Z SecurityEvents: write
+2025-04-03T17:39:58.5641777Z Statuses: write
+2025-04-03T17:39:58.5642253Z ##[endgroup]
+2025-04-03T17:39:58.5644713Z Secret source: Actions
+2025-04-03T17:39:58.5645445Z Prepare workflow directory
+2025-04-03T17:39:58.5963515Z Prepare all required actions
+2025-04-03T17:39:58.6001717Z Getting action download info
+2025-04-03T17:39:58.9920662Z ##[group]Download immutable action package 'actions/checkout@v4'
+2025-04-03T17:39:58.9921714Z Version: 4.2.2
+2025-04-03T17:39:58.9922750Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+2025-04-03T17:39:58.9923893Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-03T17:39:58.9924616Z ##[endgroup]
+2025-04-03T17:39:59.1013077Z Download action repository 'psf/black@stable' (SHA:8a737e727ac5ab2f1d4cf5876720ed276dc8dc4b)
+2025-04-03T17:39:59.4592079Z Complete job name: linter
+2025-04-03T17:39:59.5235945Z ##[group]Run actions/checkout@v4
+2025-04-03T17:39:59.5236742Z with:
+2025-04-03T17:39:59.5237127Z   repository: mathLab/PINA
+2025-04-03T17:39:59.5237718Z   token: ***
+2025-04-03T17:39:59.5238290Z   ssh-strict: true
+2025-04-03T17:39:59.5238673Z   ssh-user: git
+2025-04-03T17:39:59.5239056Z   persist-credentials: true
+2025-04-03T17:39:59.5239493Z   clean: true
+2025-04-03T17:39:59.5239878Z   sparse-checkout-cone-mode: true
+2025-04-03T17:39:59.5240338Z   fetch-depth: 1
+2025-04-03T17:39:59.5240705Z   fetch-tags: false
+2025-04-03T17:39:59.5241091Z   show-progress: true
+2025-04-03T17:39:59.5241475Z   lfs: false
+2025-04-03T17:39:59.5241854Z   submodules: false
+2025-04-03T17:39:59.5242235Z   set-safe-directory: true
+2025-04-03T17:39:59.5242915Z ##[endgroup]
+2025-04-03T17:39:59.7536352Z Syncing repository: mathLab/PINA
+2025-04-03T17:39:59.7538354Z ##[group]Getting Git version info
+2025-04-03T17:39:59.7538976Z Working directory is '/home/runner/work/PINA/PINA'
+2025-04-03T17:39:59.7540113Z [command]/usr/bin/git version
+2025-04-03T17:39:59.7657563Z git version 2.49.0
+2025-04-03T17:39:59.7687433Z ##[endgroup]
+2025-04-03T17:39:59.7703073Z Temporarily overriding HOME='/home/runner/work/_temp/c3b54e98-2d6b-4859-a87c-c405f5ffd6cc' before making global git config changes
+2025-04-03T17:39:59.7705423Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-03T17:39:59.7709741Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/PINA/PINA
+2025-04-03T17:39:59.7746288Z Deleting the contents of '/home/runner/work/PINA/PINA'
+2025-04-03T17:39:59.7751084Z ##[group]Initializing the repository
+2025-04-03T17:39:59.7755826Z [command]/usr/bin/git init /home/runner/work/PINA/PINA
+2025-04-03T17:39:59.7835822Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-03T17:39:59.7837552Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-03T17:39:59.7838899Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-03T17:39:59.7840272Z hint:
+2025-04-03T17:39:59.7841142Z hint: 	git config --global init.defaultBranch <name>
+2025-04-03T17:39:59.7842171Z hint:
+2025-04-03T17:39:59.7843163Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-03T17:39:59.7844766Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-03T17:39:59.7846045Z hint:
+2025-04-03T17:39:59.7846749Z hint: 	git branch -m <name>
+2025-04-03T17:39:59.7848140Z Initialized empty Git repository in /home/runner/work/PINA/PINA/.git/
+2025-04-03T17:39:59.7853989Z [command]/usr/bin/git remote add origin https://github.com/mathLab/PINA
+2025-04-03T17:39:59.7888857Z ##[endgroup]
+2025-04-03T17:39:59.7890139Z ##[group]Disabling automatic garbage collection
+2025-04-03T17:39:59.7893860Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-03T17:39:59.7923679Z ##[endgroup]
+2025-04-03T17:39:59.7924849Z ##[group]Setting up auth
+2025-04-03T17:39:59.7931318Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-03T17:39:59.7961861Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-03T17:39:59.8268880Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-03T17:39:59.8298936Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-03T17:39:59.8526899Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-03T17:39:59.8560387Z ##[endgroup]
+2025-04-03T17:39:59.8561174Z ##[group]Fetching the repository
+2025-04-03T17:39:59.8569105Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +31039353ab180202549c734bbd98bc2acd563da9:refs/remotes/pull/520/merge
+2025-04-03T17:40:00.8856538Z From https://github.com/mathLab/PINA
+2025-04-03T17:40:00.8858368Z  * [new ref]         31039353ab180202549c734bbd98bc2acd563da9 -> pull/520/merge
+2025-04-03T17:40:00.8883201Z ##[endgroup]
+2025-04-03T17:40:00.8884864Z ##[group]Determining the checkout info
+2025-04-03T17:40:00.8886683Z ##[endgroup]
+2025-04-03T17:40:00.8889696Z [command]/usr/bin/git sparse-checkout disable
+2025-04-03T17:40:00.8930844Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-03T17:40:00.8958464Z ##[group]Checking out the ref
+2025-04-03T17:40:00.8961399Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/520/merge
+2025-04-03T17:40:01.1012954Z Note: switching to 'refs/remotes/pull/520/merge'.
+2025-04-03T17:40:01.1014586Z 
+2025-04-03T17:40:01.1015382Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-03T17:40:01.1018740Z changes and commit them, and you can discard any commits you make in this
+2025-04-03T17:40:01.1020459Z state without impacting any branches by switching back to a branch.
+2025-04-03T17:40:01.1021478Z 
+2025-04-03T17:40:01.1022109Z If you want to create a new branch to retain commits you create, you may
+2025-04-03T17:40:01.1023592Z do so (now or later) by using -c with the switch command. Example:
+2025-04-03T17:40:01.1024446Z 
+2025-04-03T17:40:01.1024740Z   git switch -c <new-branch-name>
+2025-04-03T17:40:01.1025332Z 
+2025-04-03T17:40:01.1025599Z Or undo this operation with:
+2025-04-03T17:40:01.1026142Z 
+2025-04-03T17:40:01.1026354Z   git switch -
+2025-04-03T17:40:01.1026781Z 
+2025-04-03T17:40:01.1027985Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-03T17:40:01.1029158Z 
+2025-04-03T17:40:01.1030493Z HEAD is now at 3103935 Merge a92277e2d3764f60248f0c4920786c23f5f402e7 into f48da47ed45af03a02d16b039b72635438210c86
+2025-04-03T17:40:01.1040174Z ##[endgroup]
+2025-04-03T17:40:01.1086438Z [command]/usr/bin/git log -1 --format=%H
+2025-04-03T17:40:01.1115692Z 31039353ab180202549c734bbd98bc2acd563da9
+2025-04-03T17:40:01.1350518Z ##[group]Run psf/black@stable
+2025-04-03T17:40:01.1350987Z with:
+2025-04-03T17:40:01.1351318Z   src: ./pina
+2025-04-03T17:40:01.1351704Z   options: --check --diff
+2025-04-03T17:40:01.1352079Z   jupyter: false
+2025-04-03T17:40:01.1352429Z   use_pyproject: false
+2025-04-03T17:40:01.1352788Z   summary: true
+2025-04-03T17:40:01.1353148Z ##[endgroup]
+2025-04-03T17:40:01.1469138Z ##[group]Run # Even when black fails, do not close the shell
+2025-04-03T17:40:01.1469830Z [36;1m# Even when black fails, do not close the shell[0m
+2025-04-03T17:40:01.1470379Z [36;1mset +e[0m
+2025-04-03T17:40:01.1470782Z [36;1m[0m
+2025-04-03T17:40:01.1471187Z [36;1mif [ "$RUNNER_OS" == "Windows" ]; then[0m
+2025-04-03T17:40:01.1471688Z [36;1m  runner="python"[0m
+2025-04-03T17:40:01.1472116Z [36;1melse[0m
+2025-04-03T17:40:01.1472525Z [36;1m  runner="python3"[0m
+2025-04-03T17:40:01.1472961Z [36;1mfi[0m
+2025-04-03T17:40:01.1473362Z [36;1m[0m
+2025-04-03T17:40:01.1473870Z [36;1mout=$(${runner} $GITHUB_ACTION_PATH/action/main.py)[0m
+2025-04-03T17:40:01.1474396Z [36;1mexit_code=$?[0m
+2025-04-03T17:40:01.1474817Z [36;1m[0m
+2025-04-03T17:40:01.1475217Z [36;1m# Display the raw output in the step[0m
+2025-04-03T17:40:01.1475679Z [36;1mecho "${out}"[0m
+2025-04-03T17:40:01.1476091Z [36;1m[0m
+2025-04-03T17:40:01.1476470Z [36;1mif [ "true" == "true" ]; then[0m
+2025-04-03T17:40:01.1476981Z [36;1m  # Display the Markdown output in the job summary[0m
+2025-04-03T17:40:01.1477519Z [36;1m  echo "\`\`\`python" >> $GITHUB_STEP_SUMMARY[0m
+2025-04-03T17:40:01.1478159Z [36;1m  echo "${out}" >> $GITHUB_STEP_SUMMARY[0m
+2025-04-03T17:40:01.1478643Z [36;1m  echo "\`\`\`" >> $GITHUB_STEP_SUMMARY[0m
+2025-04-03T17:40:01.1479100Z [36;1mfi[0m
+2025-04-03T17:40:01.1547922Z [36;1m[0m
+2025-04-03T17:40:01.1548490Z [36;1m# Exit with the exit-code returned by Black[0m
+2025-04-03T17:40:01.1549006Z [36;1mexit ${exit_code}[0m
+2025-04-03T17:40:01.1603044Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-04-03T17:40:01.1603625Z env:
+2025-04-03T17:40:01.1604019Z   INPUT_OPTIONS: --check --diff
+2025-04-03T17:40:01.1604469Z   INPUT_SRC: ./pina
+2025-04-03T17:40:01.1604863Z   INPUT_JUPYTER: false
+2025-04-03T17:40:01.1605258Z   INPUT_BLACK_ARGS: 
+2025-04-03T17:40:01.1605649Z   INPUT_VERSION: 
+2025-04-03T17:40:01.1606041Z   INPUT_USE_PYPROJECT: false
+2025-04-03T17:40:01.1606488Z   pythonioencoding: utf-8
+2025-04-03T17:40:01.1606896Z ##[endgroup]
+2025-04-03T17:40:06.1493028Z Installing black[colorama]==25.1.0...
+2025-04-03T17:40:06.1493929Z --- /home/runner/work/PINA/PINA/pina/solver/solver.py	2025-04-03 17:40:00.953733+00:00
+2025-04-03T17:40:06.1495019Z +++ /home/runner/work/PINA/PINA/pina/solver/solver.py	2025-04-03 17:40:06.067466+00:00
+2025-04-03T17:40:06.1495770Z @@ -14,11 +14,11 @@
+2025-04-03T17:40:06.1496143Z  
+2025-04-03T17:40:06.1496743Z  class SolverInterface(lightning.pytorch.LightningModule, metaclass=ABCMeta):
+2025-04-03T17:40:06.1497446Z      """
+2025-04-03T17:40:06.1498296Z      Abstract base class for PINA solvers. All specific solvers must inherit
+2025-04-03T17:40:06.1498947Z      from this interface. This class extends
+2025-04-03T17:40:06.1499667Z -    :class:`~lightning.pytorch.core.LightningModule`, providing additional 
+2025-04-03T17:40:06.1500493Z +    :class:`~lightning.pytorch.core.LightningModule`, providing additional
+2025-04-03T17:40:06.1501074Z      functionalities for defining and optimizing Deep Learning models.
+2025-04-03T17:40:06.1501494Z  
+2025-04-03T17:40:06.1501836Z      By inheriting from this base class, solvers gain access to built-in training
+2025-04-03T17:40:06.1502701Z      loops, logging utilities, and optimization techniques.
+2025-04-03T17:40:06.1503065Z      """
+2025-04-03T17:40:06.1503374Z would reformat /home/runner/work/PINA/PINA/pina/solver/solver.py
+2025-04-03T17:40:06.1503647Z 
+2025-04-03T17:40:06.1503974Z Oh no! 💥 💔 💥
+2025-04-03T17:40:06.1504284Z 1 file would be reformatted, 112 files would be left unchanged.
+2025-04-03T17:40:06.1516540Z ##[error]Process completed with exit code 1.
+2025-04-03T17:40:06.1661280Z Post job cleanup.
+2025-04-03T17:40:06.2586325Z [command]/usr/bin/git version
+2025-04-03T17:40:06.2623397Z git version 2.49.0
+2025-04-03T17:40:06.2671695Z Temporarily overriding HOME='/home/runner/work/_temp/5b419c2f-cc81-4366-bf95-5826a416cbb3' before making global git config changes
+2025-04-03T17:40:06.2672979Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-03T17:40:06.2676472Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/PINA/PINA
+2025-04-03T17:40:06.2710094Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-03T17:40:06.2742541Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-03T17:40:06.2977529Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-03T17:40:06.3001074Z http.https://github.com/.extraheader
+2025-04-03T17:40:06.3014152Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-03T17:40:06.3045148Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-03T17:40:06.3375728Z Cleaning up orphan processes

@@ -1,0 +1,343 @@
+﻿2025-03-16T15:15:36.9329612Z Current runner version: '2.322.0'
+2025-03-16T15:15:36.9355713Z ##[group]Operating System
+2025-03-16T15:15:36.9356595Z Ubuntu
+2025-03-16T15:15:36.9357305Z 24.04.2
+2025-03-16T15:15:36.9357790Z LTS
+2025-03-16T15:15:36.9358309Z ##[endgroup]
+2025-03-16T15:15:36.9358833Z ##[group]Runner Image
+2025-03-16T15:15:36.9359384Z Image: ubuntu-24.04
+2025-03-16T15:15:36.9359958Z Version: 20250309.1.0
+2025-03-16T15:15:36.9360939Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250309.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-16T15:15:36.9362303Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250309.1
+2025-03-16T15:15:36.9363242Z ##[endgroup]
+2025-03-16T15:15:36.9363764Z ##[group]Runner Image Provisioner
+2025-03-16T15:15:36.9364364Z 2.0.422.1
+2025-03-16T15:15:36.9364808Z ##[endgroup]
+2025-03-16T15:15:36.9367268Z ##[group]GITHUB_TOKEN Permissions
+2025-03-16T15:15:36.9369373Z Actions: write
+2025-03-16T15:15:36.9370206Z Attestations: write
+2025-03-16T15:15:36.9370837Z Checks: write
+2025-03-16T15:15:36.9371308Z Contents: write
+2025-03-16T15:15:36.9371820Z Deployments: write
+2025-03-16T15:15:36.9372269Z Discussions: write
+2025-03-16T15:15:36.9372831Z Issues: write
+2025-03-16T15:15:36.9373351Z Metadata: read
+2025-03-16T15:15:36.9373786Z Packages: write
+2025-03-16T15:15:36.9374332Z Pages: write
+2025-03-16T15:15:36.9374799Z PullRequests: write
+2025-03-16T15:15:36.9375329Z RepositoryProjects: write
+2025-03-16T15:15:36.9375906Z SecurityEvents: write
+2025-03-16T15:15:36.9376443Z Statuses: write
+2025-03-16T15:15:36.9376889Z ##[endgroup]
+2025-03-16T15:15:36.9379310Z Secret source: Actions
+2025-03-16T15:15:36.9380310Z Prepare workflow directory
+2025-03-16T15:15:36.9706704Z Prepare all required actions
+2025-03-16T15:15:36.9745073Z Getting action download info
+2025-03-16T15:15:37.5415750Z Download action repository 'actions/checkout@v2' (SHA:ee0669bd1cc54295c223e0bb666b733df41de1c5)
+2025-03-16T15:15:37.6276852Z Download action repository 'home-assistant/actions@master' (SHA:a19f5f4e08ef2786e4604a948f62addd937a6bc9)
+2025-03-16T15:15:38.0672661Z Complete job name: validate
+2025-03-16T15:15:38.1296347Z ##[group]Run actions/checkout@v2
+2025-03-16T15:15:38.1297330Z with:
+2025-03-16T15:15:38.1297745Z   repository: IATkachenko/HA-YandexWeather
+2025-03-16T15:15:38.1298435Z   token: ***
+2025-03-16T15:15:38.1298891Z   ssh-strict: true
+2025-03-16T15:15:38.1299377Z   persist-credentials: true
+2025-03-16T15:15:38.1299823Z   clean: true
+2025-03-16T15:15:38.1300177Z   fetch-depth: 1
+2025-03-16T15:15:38.1300551Z   lfs: false
+2025-03-16T15:15:38.1300902Z   submodules: false
+2025-03-16T15:15:38.1301303Z   set-safe-directory: true
+2025-03-16T15:15:38.1301996Z ##[endgroup]
+2025-03-16T15:15:38.2862119Z Syncing repository: IATkachenko/HA-YandexWeather
+2025-03-16T15:15:38.2863952Z ##[group]Getting Git version info
+2025-03-16T15:15:38.2864768Z Working directory is '/home/runner/work/HA-YandexWeather/HA-YandexWeather'
+2025-03-16T15:15:38.2865881Z [command]/usr/bin/git version
+2025-03-16T15:15:38.2897421Z git version 2.48.1
+2025-03-16T15:15:38.2923263Z ##[endgroup]
+2025-03-16T15:15:38.2939804Z Temporarily overriding HOME='/home/runner/work/_temp/bd317d82-c77d-484d-bc95-977e977b126c' before making global git config changes
+2025-03-16T15:15:38.2941132Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-16T15:15:38.2943448Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/HA-YandexWeather/HA-YandexWeather
+2025-03-16T15:15:38.2979900Z Deleting the contents of '/home/runner/work/HA-YandexWeather/HA-YandexWeather'
+2025-03-16T15:15:38.2983646Z ##[group]Initializing the repository
+2025-03-16T15:15:38.2987305Z [command]/usr/bin/git init /home/runner/work/HA-YandexWeather/HA-YandexWeather
+2025-03-16T15:15:38.3043550Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-16T15:15:38.3044670Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-16T15:15:38.3045665Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-16T15:15:38.3046625Z hint:
+2025-03-16T15:15:38.3047336Z hint: 	git config --global init.defaultBranch <name>
+2025-03-16T15:15:38.3048200Z hint:
+2025-03-16T15:15:38.3049071Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-16T15:15:38.3049963Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-16T15:15:38.3050631Z hint:
+2025-03-16T15:15:38.3051000Z hint: 	git branch -m <name>
+2025-03-16T15:15:38.3051769Z Initialized empty Git repository in /home/runner/work/HA-YandexWeather/HA-YandexWeather/.git/
+2025-03-16T15:15:38.3057283Z [command]/usr/bin/git remote add origin https://github.com/IATkachenko/HA-YandexWeather
+2025-03-16T15:15:38.3088913Z ##[endgroup]
+2025-03-16T15:15:38.3089646Z ##[group]Disabling automatic garbage collection
+2025-03-16T15:15:38.3092232Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-16T15:15:38.3121629Z ##[endgroup]
+2025-03-16T15:15:38.3122905Z ##[group]Setting up auth
+2025-03-16T15:15:38.3128619Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-16T15:15:38.3157349Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-16T15:15:38.3446681Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-16T15:15:38.3475126Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-16T15:15:38.3703721Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-16T15:15:38.3738155Z ##[endgroup]
+2025-03-16T15:15:38.3745182Z ##[group]Fetching the repository
+2025-03-16T15:15:38.3746900Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +9f1e4bb852f81258aef6508a537570eed6d292c6:refs/remotes/pull/136/merge
+2025-03-16T15:15:38.8379024Z remote: Enumerating objects: 68, done.        
+2025-03-16T15:15:38.8380570Z remote: Counting objects:   1% (1/68)        
+2025-03-16T15:15:38.8381583Z remote: Counting objects:   2% (2/68)        
+2025-03-16T15:15:38.8382875Z remote: Counting objects:   4% (3/68)        
+2025-03-16T15:15:38.8383997Z remote: Counting objects:   5% (4/68)        
+2025-03-16T15:15:38.8385191Z remote: Counting objects:   7% (5/68)        
+2025-03-16T15:15:38.8386542Z remote: Counting objects:   8% (6/68)        
+2025-03-16T15:15:38.8388055Z remote: Counting objects:  10% (7/68)        
+2025-03-16T15:15:38.8389370Z remote: Counting objects:  11% (8/68)        
+2025-03-16T15:15:38.8390389Z remote: Counting objects:  13% (9/68)        
+2025-03-16T15:15:38.8391211Z remote: Counting objects:  14% (10/68)        
+2025-03-16T15:15:38.8392040Z remote: Counting objects:  16% (11/68)        
+2025-03-16T15:15:38.8392931Z remote: Counting objects:  17% (12/68)        
+2025-03-16T15:15:38.8393864Z remote: Counting objects:  19% (13/68)        
+2025-03-16T15:15:38.8395831Z remote: Counting objects:  20% (14/68)        
+2025-03-16T15:15:38.8397736Z remote: Counting objects:  22% (15/68)        
+2025-03-16T15:15:38.8398780Z remote: Counting objects:  23% (16/68)        
+2025-03-16T15:15:38.8399724Z remote: Counting objects:  25% (17/68)        
+2025-03-16T15:15:38.8400715Z remote: Counting objects:  26% (18/68)        
+2025-03-16T15:15:38.8401685Z remote: Counting objects:  27% (19/68)        
+2025-03-16T15:15:38.8402661Z remote: Counting objects:  29% (20/68)        
+2025-03-16T15:15:38.8403654Z remote: Counting objects:  30% (21/68)        
+2025-03-16T15:15:38.8404631Z remote: Counting objects:  32% (22/68)        
+2025-03-16T15:15:38.8405620Z remote: Counting objects:  33% (23/68)        
+2025-03-16T15:15:38.8406602Z remote: Counting objects:  35% (24/68)        
+2025-03-16T15:15:38.8408202Z remote: Counting objects:  36% (25/68)        
+2025-03-16T15:15:38.8409284Z remote: Counting objects:  38% (26/68)        
+2025-03-16T15:15:38.8410452Z remote: Counting objects:  39% (27/68)        
+2025-03-16T15:15:38.8411649Z remote: Counting objects:  41% (28/68)        
+2025-03-16T15:15:38.8413439Z remote: Counting objects:  42% (29/68)        
+2025-03-16T15:15:38.8415355Z remote: Counting objects:  44% (30/68)        
+2025-03-16T15:15:38.8416662Z remote: Counting objects:  45% (31/68)        
+2025-03-16T15:15:38.8418067Z remote: Counting objects:  47% (32/68)        
+2025-03-16T15:15:38.8419258Z remote: Counting objects:  48% (33/68)        
+2025-03-16T15:15:38.8420454Z remote: Counting objects:  50% (34/68)        
+2025-03-16T15:15:38.8421684Z remote: Counting objects:  51% (35/68)        
+2025-03-16T15:15:38.8422911Z remote: Counting objects:  52% (36/68)        
+2025-03-16T15:15:38.8424136Z remote: Counting objects:  54% (37/68)        
+2025-03-16T15:15:38.8425357Z remote: Counting objects:  55% (38/68)        
+2025-03-16T15:15:38.8426605Z remote: Counting objects:  57% (39/68)        
+2025-03-16T15:15:38.8427920Z remote: Counting objects:  58% (40/68)        
+2025-03-16T15:15:38.8429158Z remote: Counting objects:  60% (41/68)        
+2025-03-16T15:15:38.8430437Z remote: Counting objects:  61% (42/68)        
+2025-03-16T15:15:38.8431757Z remote: Counting objects:  63% (43/68)        
+2025-03-16T15:15:38.8433083Z remote: Counting objects:  64% (44/68)        
+2025-03-16T15:15:38.8434414Z remote: Counting objects:  66% (45/68)        
+2025-03-16T15:15:38.8435741Z remote: Counting objects:  67% (46/68)        
+2025-03-16T15:15:38.8437156Z remote: Counting objects:  69% (47/68)        
+2025-03-16T15:15:38.8438495Z remote: Counting objects:  70% (48/68)        
+2025-03-16T15:15:38.8439805Z remote: Counting objects:  72% (49/68)        
+2025-03-16T15:15:38.8441135Z remote: Counting objects:  73% (50/68)        
+2025-03-16T15:15:38.8442455Z remote: Counting objects:  75% (51/68)        
+2025-03-16T15:15:38.8443772Z remote: Counting objects:  76% (52/68)        
+2025-03-16T15:15:38.8445234Z remote: Counting objects:  77% (53/68)        
+2025-03-16T15:15:38.8446516Z remote: Counting objects:  79% (54/68)        
+2025-03-16T15:15:38.8447910Z remote: Counting objects:  80% (55/68)        
+2025-03-16T15:15:38.8449176Z remote: Counting objects:  82% (56/68)        
+2025-03-16T15:15:38.8450435Z remote: Counting objects:  83% (57/68)        
+2025-03-16T15:15:38.8451690Z remote: Counting objects:  85% (58/68)        
+2025-03-16T15:15:38.8452941Z remote: Counting objects:  86% (59/68)        
+2025-03-16T15:15:38.8454173Z remote: Counting objects:  88% (60/68)        
+2025-03-16T15:15:38.8455426Z remote: Counting objects:  89% (61/68)        
+2025-03-16T15:15:38.8456669Z remote: Counting objects:  91% (62/68)        
+2025-03-16T15:15:38.8457997Z remote: Counting objects:  92% (63/68)        
+2025-03-16T15:15:38.8459243Z remote: Counting objects:  94% (64/68)        
+2025-03-16T15:15:38.8460491Z remote: Counting objects:  95% (65/68)        
+2025-03-16T15:15:38.8461750Z remote: Counting objects:  97% (66/68)        
+2025-03-16T15:15:38.8463012Z remote: Counting objects:  98% (67/68)        
+2025-03-16T15:15:38.8464262Z remote: Counting objects: 100% (68/68)        
+2025-03-16T15:15:38.8465587Z remote: Counting objects: 100% (68/68), done.        
+2025-03-16T15:15:38.8466923Z remote: Compressing objects:   1% (1/59)        
+2025-03-16T15:15:38.8468307Z remote: Compressing objects:   3% (2/59)        
+2025-03-16T15:15:38.8469589Z remote: Compressing objects:   5% (3/59)        
+2025-03-16T15:15:38.8470874Z remote: Compressing objects:   6% (4/59)        
+2025-03-16T15:15:38.8472189Z remote: Compressing objects:   8% (5/59)        
+2025-03-16T15:15:38.8473509Z remote: Compressing objects:  10% (6/59)        
+2025-03-16T15:15:38.8474836Z remote: Compressing objects:  11% (7/59)        
+2025-03-16T15:15:38.8476170Z remote: Compressing objects:  13% (8/59)        
+2025-03-16T15:15:38.8477597Z remote: Compressing objects:  15% (9/59)        
+2025-03-16T15:15:38.8479103Z remote: Compressing objects:  16% (10/59)        
+2025-03-16T15:15:38.8480489Z remote: Compressing objects:  18% (11/59)        
+2025-03-16T15:15:38.8481914Z remote: Compressing objects:  20% (12/59)        
+2025-03-16T15:15:38.8483230Z remote: Compressing objects:  22% (13/59)        
+2025-03-16T15:15:38.8484547Z remote: Compressing objects:  23% (14/59)        
+2025-03-16T15:15:38.8485835Z remote: Compressing objects:  25% (15/59)        
+2025-03-16T15:15:38.8487231Z remote: Compressing objects:  27% (16/59)        
+2025-03-16T15:15:38.8488544Z remote: Compressing objects:  28% (17/59)        
+2025-03-16T15:15:38.8489852Z remote: Compressing objects:  30% (18/59)        
+2025-03-16T15:15:38.8491154Z remote: Compressing objects:  32% (19/59)        
+2025-03-16T15:15:38.8492440Z remote: Compressing objects:  33% (20/59)        
+2025-03-16T15:15:38.8493744Z remote: Compressing objects:  35% (21/59)        
+2025-03-16T15:15:38.8495049Z remote: Compressing objects:  37% (22/59)        
+2025-03-16T15:15:38.8496422Z remote: Compressing objects:  38% (23/59)        
+2025-03-16T15:15:38.8497844Z remote: Compressing objects:  40% (24/59)        
+2025-03-16T15:15:38.8499180Z remote: Compressing objects:  42% (25/59)        
+2025-03-16T15:15:38.8500494Z remote: Compressing objects:  44% (26/59)        
+2025-03-16T15:15:38.8501811Z remote: Compressing objects:  45% (27/59)        
+2025-03-16T15:15:38.8503133Z remote: Compressing objects:  47% (28/59)        
+2025-03-16T15:15:38.8504432Z remote: Compressing objects:  49% (29/59)        
+2025-03-16T15:15:38.8505746Z remote: Compressing objects:  50% (30/59)        
+2025-03-16T15:15:38.8507134Z remote: Compressing objects:  52% (31/59)        
+2025-03-16T15:15:38.8508437Z remote: Compressing objects:  54% (32/59)        
+2025-03-16T15:15:38.8509740Z remote: Compressing objects:  55% (33/59)        
+2025-03-16T15:15:38.8511022Z remote: Compressing objects:  57% (34/59)        
+2025-03-16T15:15:38.8512299Z remote: Compressing objects:  59% (35/59)        
+2025-03-16T15:15:38.8513706Z remote: Compressing objects:  61% (36/59)        
+2025-03-16T15:15:38.8514987Z remote: Compressing objects:  62% (37/59)        
+2025-03-16T15:15:38.8516239Z remote: Compressing objects:  64% (38/59)        
+2025-03-16T15:15:38.8517606Z remote: Compressing objects:  66% (39/59)        
+2025-03-16T15:15:38.8518874Z remote: Compressing objects:  67% (40/59)        
+2025-03-16T15:15:38.8520132Z remote: Compressing objects:  69% (41/59)        
+2025-03-16T15:15:38.8521378Z remote: Compressing objects:  71% (42/59)        
+2025-03-16T15:15:38.8522633Z remote: Compressing objects:  72% (43/59)        
+2025-03-16T15:15:38.8523901Z remote: Compressing objects:  74% (44/59)        
+2025-03-16T15:15:38.8525160Z remote: Compressing objects:  76% (45/59)        
+2025-03-16T15:15:38.8526415Z remote: Compressing objects:  77% (46/59)        
+2025-03-16T15:15:38.8527786Z remote: Compressing objects:  79% (47/59)        
+2025-03-16T15:15:38.8529089Z remote: Compressing objects:  81% (48/59)        
+2025-03-16T15:15:38.8530385Z remote: Compressing objects:  83% (49/59)        
+2025-03-16T15:15:38.8531666Z remote: Compressing objects:  84% (50/59)        
+2025-03-16T15:15:38.8532934Z remote: Compressing objects:  86% (51/59)        
+2025-03-16T15:15:38.8534202Z remote: Compressing objects:  88% (52/59)        
+2025-03-16T15:15:38.8535477Z remote: Compressing objects:  89% (53/59)        
+2025-03-16T15:15:38.8536744Z remote: Compressing objects:  91% (54/59)        
+2025-03-16T15:15:38.8538111Z remote: Compressing objects:  93% (55/59)        
+2025-03-16T15:15:38.8539381Z remote: Compressing objects:  94% (56/59)        
+2025-03-16T15:15:38.8540650Z remote: Compressing objects:  96% (57/59)        
+2025-03-16T15:15:38.8541924Z remote: Compressing objects:  98% (58/59)        
+2025-03-16T15:15:38.8543190Z remote: Compressing objects: 100% (59/59)        
+2025-03-16T15:15:38.8544545Z remote: Compressing objects: 100% (59/59), done.        
+2025-03-16T15:15:38.8734244Z remote: Total 68 (delta 6), reused 26 (delta 2), pack-reused 0 (from 0)        
+2025-03-16T15:15:38.8805693Z From https://github.com/IATkachenko/HA-YandexWeather
+2025-03-16T15:15:38.8807829Z  * [new ref]         9f1e4bb852f81258aef6508a537570eed6d292c6 -> pull/136/merge
+2025-03-16T15:15:38.8832860Z ##[endgroup]
+2025-03-16T15:15:38.8834930Z ##[group]Determining the checkout info
+2025-03-16T15:15:38.8837167Z ##[endgroup]
+2025-03-16T15:15:38.8839171Z ##[group]Checking out the ref
+2025-03-16T15:15:38.8841255Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/136/merge
+2025-03-16T15:15:38.8921691Z Note: switching to 'refs/remotes/pull/136/merge'.
+2025-03-16T15:15:38.8923060Z 
+2025-03-16T15:15:38.8924217Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-16T15:15:38.8926407Z changes and commit them, and you can discard any commits you make in this
+2025-03-16T15:15:38.8929006Z state without impacting any branches by switching back to a branch.
+2025-03-16T15:15:38.8930361Z 
+2025-03-16T15:15:38.8931114Z If you want to create a new branch to retain commits you create, you may
+2025-03-16T15:15:38.8932807Z do so (now or later) by using -c with the switch command. Example:
+2025-03-16T15:15:38.8933803Z 
+2025-03-16T15:15:38.8934185Z   git switch -c <new-branch-name>
+2025-03-16T15:15:38.8934840Z 
+2025-03-16T15:15:38.8935179Z Or undo this operation with:
+2025-03-16T15:15:38.8935790Z 
+2025-03-16T15:15:38.8936082Z   git switch -
+2025-03-16T15:15:38.8936497Z 
+2025-03-16T15:15:38.8937493Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-16T15:15:38.8938865Z 
+2025-03-16T15:15:38.8940276Z HEAD is now at 9f1e4bb Merge 89eac7f6c4aa7e62decb6c08cffc700bd7222e6c into 8f5d392a1cb6dee263336a6098b36df8ca2210da
+2025-03-16T15:15:38.8942943Z ##[endgroup]
+2025-03-16T15:15:38.8964177Z [command]/usr/bin/git log -1 --format='%H'
+2025-03-16T15:15:38.8988630Z '9f1e4bb852f81258aef6508a537570eed6d292c6'
+2025-03-16T15:15:38.9265770Z ##[group]Run home-assistant/actions/hassfest@master
+2025-03-16T15:15:38.9266955Z ##[endgroup]
+2025-03-16T15:15:38.9401042Z ##[group]Run echo "::add-matcher::/home/runner/work/_actions/home-assistant/actions/master/hassfest/problem-matcher.json"
+2025-03-16T15:15:38.9404186Z [36;1mecho "::add-matcher::/home/runner/work/_actions/home-assistant/actions/master/hassfest/problem-matcher.json"[0m
+2025-03-16T15:15:38.9457787Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-16T15:15:38.9459000Z ##[endgroup]
+2025-03-16T15:15:38.9614495Z ##[group]Run docker run --rm -v /home/runner/work/HA-YandexWeather/HA-YandexWeather://github/workspace ghcr.io/home-assistant/hassfest
+2025-03-16T15:15:38.9618112Z [36;1mdocker run --rm -v /home/runner/work/HA-YandexWeather/HA-YandexWeather://github/workspace ghcr.io/home-assistant/hassfest[0m
+2025-03-16T15:15:38.9663327Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-16T15:15:38.9664488Z ##[endgroup]
+2025-03-16T15:15:39.0270405Z Unable to find image 'ghcr.io/home-assistant/hassfest:latest' locally
+2025-03-16T15:15:39.7446141Z latest: Pulling from home-assistant/hassfest
+2025-03-16T15:15:39.7448013Z f18232174bc9: Pulling fs layer
+2025-03-16T15:15:39.7448533Z a507b793f9af: Pulling fs layer
+2025-03-16T15:15:39.7448896Z 85be7329d6c2: Pulling fs layer
+2025-03-16T15:15:39.7449239Z b0d8a12effa9: Pulling fs layer
+2025-03-16T15:15:39.7449572Z 50896b1fd67e: Pulling fs layer
+2025-03-16T15:15:39.7449898Z 6602a3ac27df: Pulling fs layer
+2025-03-16T15:15:39.7450260Z ee0b21e78b0d: Pulling fs layer
+2025-03-16T15:15:39.7450583Z 50896b1fd67e: Waiting
+2025-03-16T15:15:39.7450872Z 6602a3ac27df: Waiting
+2025-03-16T15:15:39.7451169Z b0d8a12effa9: Waiting
+2025-03-16T15:15:39.9347371Z a507b793f9af: Verifying Checksum
+2025-03-16T15:15:39.9349438Z a507b793f9af: Download complete
+2025-03-16T15:15:39.9558168Z f18232174bc9: Download complete
+2025-03-16T15:15:40.0864139Z f18232174bc9: Pull complete
+2025-03-16T15:15:40.1347001Z 50896b1fd67e: Verifying Checksum
+2025-03-16T15:15:40.1353945Z 50896b1fd67e: Download complete
+2025-03-16T15:15:40.2035447Z b0d8a12effa9: Verifying Checksum
+2025-03-16T15:15:40.2036589Z b0d8a12effa9: Download complete
+2025-03-16T15:15:40.2301606Z 85be7329d6c2: Verifying Checksum
+2025-03-16T15:15:40.3413973Z 85be7329d6c2: Download complete
+2025-03-16T15:15:40.3414308Z 6602a3ac27df: Verifying Checksum
+2025-03-16T15:15:40.3414699Z 6602a3ac27df: Download complete
+2025-03-16T15:15:40.3621651Z a507b793f9af: Pull complete
+2025-03-16T15:15:41.0510516Z 85be7329d6c2: Pull complete
+2025-03-16T15:15:41.0697398Z b0d8a12effa9: Pull complete
+2025-03-16T15:15:41.0820374Z 50896b1fd67e: Pull complete
+2025-03-16T15:15:41.6732964Z ee0b21e78b0d: Verifying Checksum
+2025-03-16T15:15:41.6733523Z ee0b21e78b0d: Download complete
+2025-03-16T15:15:44.0680396Z 6602a3ac27df: Pull complete
+2025-03-16T15:15:47.0989744Z ee0b21e78b0d: Pull complete
+2025-03-16T15:15:47.1028929Z Digest: sha256:f30c0e1c8b32d8ac4066bae21c8cb27667773d346a8c89a55a1cfc2d34b78c3b
+2025-03-16T15:15:47.1041144Z Status: Downloaded newer image for ghcr.io/home-assistant/hassfest:latest
+2025-03-16T15:15:51.5714270Z Error loading libturbojpeg; Camera snapshot performance will be sub-optimal
+2025-03-16T15:15:51.5714921Z Traceback (most recent call last):
+2025-03-16T15:15:51.5715674Z   File "/usr/src/homeassistant/homeassistant/components/camera/img_util.py", line 100, in __init__
+2025-03-16T15:15:51.5716400Z     TurboJPEGSingleton.__instance = TurboJPEG()
+2025-03-16T15:15:51.5716790Z                                     ~~~~~~~~~^^
+2025-03-16T15:15:51.5717630Z   File "/usr/local/lib/python3.13/site-packages/turbojpeg.py", line 300, in __init__
+2025-03-16T15:15:51.5718363Z     self.__find_turbojpeg() if lib_path is None else lib_path)
+2025-03-16T15:15:51.5718844Z     ~~~~~~~~~~~~~~~~~~~~~^^
+2025-03-16T15:15:51.5719248Z   File "/usr/local/lib/python3.13/site-packages/turbojpeg.py", line 967, in __find_turbojpeg
+2025-03-16T15:15:51.5719786Z     raise RuntimeError(
+2025-03-16T15:15:51.5720291Z     ...<2 lines>...
+2025-03-16T15:15:51.5720617Z         'e.g. jpeg = TurboJPEG(lib_path)')
+2025-03-16T15:15:51.5721147Z RuntimeError: Unable to locate turbojpeg library automatically. You may specify the turbojpeg library path manually.
+2025-03-16T15:15:51.5721759Z e.g. jpeg = TurboJPEG(lib_path)
+2025-03-16T15:15:51.6955143Z Validating application_credentials... done in 0.00s
+2025-03-16T15:15:51.6986786Z Validating bluetooth... done in 0.00s
+2025-03-16T15:15:51.6987794Z Validating codeowners... done in 0.00s
+2025-03-16T15:15:51.6997834Z Validating config_schema... done in 0.00s
+2025-03-16T15:15:51.7699050Z Validating dependencies... done in 0.07s
+2025-03-16T15:15:51.7734771Z Validating dhcp... done in 0.00s
+2025-03-16T15:15:51.7735416Z Validating icons... done in 0.00s
+2025-03-16T15:15:51.7744842Z Validating json... done in 0.00s
+2025-03-16T15:15:51.7750498Z Validating manifest... done in 0.00s
+2025-03-16T15:15:51.7781591Z Validating mqtt... done in 0.00s
+2025-03-16T15:15:51.7782067Z Validating quality_scale... done in 0.00s
+2025-03-16T15:15:51.7782552Z Validating requirements... done in 0.00s
+2025-03-16T15:15:51.7801084Z Validating services... done in 0.00s
+2025-03-16T15:15:51.7831505Z Validating ssdp... done in 0.00s
+2025-03-16T15:15:51.7911016Z Validating translations... done in 0.01s
+2025-03-16T15:15:51.7940808Z Validating usb... done in 0.00s
+2025-03-16T15:15:51.7970250Z Validating zeroconf... done in 0.00s
+2025-03-16T15:15:51.8002981Z Validating config_flow... done in 0.00s
+2025-03-16T15:15:51.8003400Z 
+2025-03-16T15:15:51.8003522Z Integrations: 1
+2025-03-16T15:15:51.8003832Z Invalid integrations: 1
+2025-03-16T15:15:51.8004041Z 
+2025-03-16T15:15:51.8004425Z Integration yandex_weather - /github/workspace/custom_components/yandex_weather:
+2025-03-16T15:15:51.8024465Z ##[error]* [ERROR] [DEPENDENCIES] Using component weatherkit but it's not in 'dependencies' or 'after_dependencies'
+2025-03-16T15:15:51.8024976Z 
+2025-03-16T15:15:52.1222225Z ##[error]Process completed with exit code 1.
+2025-03-16T15:15:52.1325113Z Post job cleanup.
+2025-03-16T15:15:52.2184882Z [command]/usr/bin/git version
+2025-03-16T15:15:52.2222728Z git version 2.48.1
+2025-03-16T15:15:52.2266740Z Temporarily overriding HOME='/home/runner/work/_temp/ae28e788-6df8-4ff7-a438-28fdfc7b893e' before making global git config changes
+2025-03-16T15:15:52.2268313Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-16T15:15:52.2271784Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/HA-YandexWeather/HA-YandexWeather
+2025-03-16T15:15:52.2304427Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-16T15:15:52.2335723Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-16T15:15:52.2567743Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-16T15:15:52.2588899Z http.https://github.com/.extraheader
+2025-03-16T15:15:52.2599210Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-16T15:15:52.2629494Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-16T15:15:52.2983067Z Cleaning up orphan processes

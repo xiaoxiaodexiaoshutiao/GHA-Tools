@@ -1,0 +1,227 @@
+﻿2025-04-01T17:09:20.9634247Z Current runner version: '2.323.0'
+2025-04-01T17:09:20.9661350Z ##[group]Operating System
+2025-04-01T17:09:20.9662146Z Ubuntu
+2025-04-01T17:09:20.9662709Z 24.04.2
+2025-04-01T17:09:20.9663163Z LTS
+2025-04-01T17:09:20.9663630Z ##[endgroup]
+2025-04-01T17:09:20.9664145Z ##[group]Runner Image
+2025-04-01T17:09:20.9664736Z Image: ubuntu-24.04
+2025-04-01T17:09:20.9665217Z Version: 20250330.1.0
+2025-04-01T17:09:20.9666256Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250330.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-04-01T17:09:20.9667917Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250330.1
+2025-04-01T17:09:20.9668821Z ##[endgroup]
+2025-04-01T17:09:20.9669371Z ##[group]Runner Image Provisioner
+2025-04-01T17:09:20.9669945Z 2.0.422.1
+2025-04-01T17:09:20.9670394Z ##[endgroup]
+2025-04-01T17:09:20.9671381Z ##[group]GITHUB_TOKEN Permissions
+2025-04-01T17:09:20.9673485Z Contents: read
+2025-04-01T17:09:20.9674034Z Metadata: read
+2025-04-01T17:09:20.9674766Z ##[endgroup]
+2025-04-01T17:09:20.9677453Z Secret source: None
+2025-04-01T17:09:20.9678375Z Prepare workflow directory
+2025-04-01T17:09:21.0074569Z Prepare all required actions
+2025-04-01T17:09:21.0132139Z Getting action download info
+2025-04-01T17:09:21.5288339Z Download action repository 'actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-04-01T17:09:21.6227303Z Download action repository 'actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9' (SHA:67a3573c9a986a3f9c594539f4ab511d57bb3ce9)
+2025-04-01T17:09:22.2119829Z Complete job name: format
+2025-04-01T17:09:22.2794557Z ##[group]Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+2025-04-01T17:09:22.2795554Z with:
+2025-04-01T17:09:22.2795958Z   repository: Tyrrrz/DiscordChatExporter
+2025-04-01T17:09:22.2796641Z   token: ***
+2025-04-01T17:09:22.2797170Z   ssh-strict: true
+2025-04-01T17:09:22.2797575Z   ssh-user: git
+2025-04-01T17:09:22.2797955Z   persist-credentials: true
+2025-04-01T17:09:22.2798418Z   clean: true
+2025-04-01T17:09:22.2798797Z   sparse-checkout-cone-mode: true
+2025-04-01T17:09:22.2799262Z   fetch-depth: 1
+2025-04-01T17:09:22.2799654Z   fetch-tags: false
+2025-04-01T17:09:22.2800032Z   show-progress: true
+2025-04-01T17:09:22.2800401Z   lfs: false
+2025-04-01T17:09:22.2800744Z   submodules: false
+2025-04-01T17:09:22.2801120Z   set-safe-directory: true
+2025-04-01T17:09:22.2801770Z env:
+2025-04-01T17:09:22.2802157Z   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+2025-04-01T17:09:22.2802642Z   DOTNET_NOLOGO: true
+2025-04-01T17:09:22.2803043Z   DOTNET_CLI_TELEMETRY_OPTOUT: true
+2025-04-01T17:09:22.2803523Z ##[endgroup]
+2025-04-01T17:09:22.4515708Z Syncing repository: Tyrrrz/DiscordChatExporter
+2025-04-01T17:09:22.4517846Z ##[group]Getting Git version info
+2025-04-01T17:09:22.4518677Z Working directory is '/home/runner/work/DiscordChatExporter/DiscordChatExporter'
+2025-04-01T17:09:22.4519735Z [command]/usr/bin/git version
+2025-04-01T17:09:22.4579896Z git version 2.49.0
+2025-04-01T17:09:22.4610026Z ##[endgroup]
+2025-04-01T17:09:22.4626059Z Temporarily overriding HOME='/home/runner/work/_temp/d4315fb7-dcd0-4f55-b921-f1b222b8a012' before making global git config changes
+2025-04-01T17:09:22.4628692Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-01T17:09:22.4633249Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/DiscordChatExporter/DiscordChatExporter
+2025-04-01T17:09:22.4670543Z Deleting the contents of '/home/runner/work/DiscordChatExporter/DiscordChatExporter'
+2025-04-01T17:09:22.4674644Z ##[group]Initializing the repository
+2025-04-01T17:09:22.4679957Z [command]/usr/bin/git init /home/runner/work/DiscordChatExporter/DiscordChatExporter
+2025-04-01T17:09:22.4751388Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-04-01T17:09:22.4752750Z hint: is subject to change. To configure the initial branch name to use in all
+2025-04-01T17:09:22.4753654Z hint: of your new repositories, which will suppress this warning, call:
+2025-04-01T17:09:22.4754626Z hint:
+2025-04-01T17:09:22.4755440Z hint: 	git config --global init.defaultBranch <name>
+2025-04-01T17:09:22.4756263Z hint:
+2025-04-01T17:09:22.4756828Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-04-01T17:09:22.4758639Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-04-01T17:09:22.4759895Z hint:
+2025-04-01T17:09:22.4760566Z hint: 	git branch -m <name>
+2025-04-01T17:09:22.4762091Z Initialized empty Git repository in /home/runner/work/DiscordChatExporter/DiscordChatExporter/.git/
+2025-04-01T17:09:22.4769861Z [command]/usr/bin/git remote add origin https://github.com/Tyrrrz/DiscordChatExporter
+2025-04-01T17:09:22.4804011Z ##[endgroup]
+2025-04-01T17:09:22.4805158Z ##[group]Disabling automatic garbage collection
+2025-04-01T17:09:22.4809274Z [command]/usr/bin/git config --local gc.auto 0
+2025-04-01T17:09:22.4839398Z ##[endgroup]
+2025-04-01T17:09:22.4840551Z ##[group]Setting up auth
+2025-04-01T17:09:22.4847400Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-01T17:09:22.4879287Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-01T17:09:22.5178390Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-01T17:09:22.5209688Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-01T17:09:22.5446569Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-04-01T17:09:22.5486348Z ##[endgroup]
+2025-04-01T17:09:22.5488009Z ##[group]Fetching the repository
+2025-04-01T17:09:22.5497135Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +23ddbaccf8247c02a6283a5045955c3cc78dc2d1:refs/remotes/pull/1349/merge
+2025-04-01T17:09:23.2037943Z From https://github.com/Tyrrrz/DiscordChatExporter
+2025-04-01T17:09:23.2039661Z  * [new ref]         23ddbaccf8247c02a6283a5045955c3cc78dc2d1 -> pull/1349/merge
+2025-04-01T17:09:23.2064794Z ##[endgroup]
+2025-04-01T17:09:23.2065548Z ##[group]Determining the checkout info
+2025-04-01T17:09:23.2067427Z ##[endgroup]
+2025-04-01T17:09:23.2072774Z [command]/usr/bin/git sparse-checkout disable
+2025-04-01T17:09:23.2115696Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-04-01T17:09:23.2146154Z ##[group]Checking out the ref
+2025-04-01T17:09:23.2150678Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1349/merge
+2025-04-01T17:09:23.2310360Z Note: switching to 'refs/remotes/pull/1349/merge'.
+2025-04-01T17:09:23.2311282Z 
+2025-04-01T17:09:23.2311779Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-04-01T17:09:23.2313175Z changes and commit them, and you can discard any commits you make in this
+2025-04-01T17:09:23.2315181Z state without impacting any branches by switching back to a branch.
+2025-04-01T17:09:23.2316308Z 
+2025-04-01T17:09:23.2317226Z If you want to create a new branch to retain commits you create, you may
+2025-04-01T17:09:23.2318836Z do so (now or later) by using -c with the switch command. Example:
+2025-04-01T17:09:23.2319979Z 
+2025-04-01T17:09:23.2320345Z   git switch -c <new-branch-name>
+2025-04-01T17:09:23.2320965Z 
+2025-04-01T17:09:23.2321333Z Or undo this operation with:
+2025-04-01T17:09:23.2321940Z 
+2025-04-01T17:09:23.2322248Z   git switch -
+2025-04-01T17:09:23.2322686Z 
+2025-04-01T17:09:23.2323402Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-04-01T17:09:23.2324535Z 
+2025-04-01T17:09:23.2325768Z HEAD is now at 23ddbac Merge f526dbe2135e26a6dd5d1d7802ed67e23656ef2a into 606c0827596baa95d8ccee75a185de98c4dcf8a0
+2025-04-01T17:09:23.2329601Z ##[endgroup]
+2025-04-01T17:09:23.2360648Z [command]/usr/bin/git log -1 --format=%H
+2025-04-01T17:09:23.2384498Z 23ddbaccf8247c02a6283a5045955c3cc78dc2d1
+2025-04-01T17:09:23.2600122Z ##[group]Run actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9
+2025-04-01T17:09:23.2600888Z with:
+2025-04-01T17:09:23.2601274Z   dotnet-version: 9.0.x
+2025-04-01T17:09:23.2601706Z   cache: false
+2025-04-01T17:09:23.2602077Z env:
+2025-04-01T17:09:23.2602473Z   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+2025-04-01T17:09:23.2602990Z   DOTNET_NOLOGO: true
+2025-04-01T17:09:23.2603448Z   DOTNET_CLI_TELEMETRY_OPTOUT: true
+2025-04-01T17:09:23.2603930Z ##[endgroup]
+2025-04-01T17:09:23.4398370Z [command]/home/runner/work/_actions/actions/setup-dotnet/67a3573c9a986a3f9c594539f4ab511d57bb3ce9/externals/install-dotnet.sh --skip-non-versioned-files --runtime dotnet --channel LTS
+2025-04-01T17:09:23.8193164Z dotnet-install: Attempting to download using aka.ms link https://builds.dotnet.microsoft.com/dotnet/Runtime/8.0.14/dotnet-runtime-8.0.14-linux-x64.tar.gz
+2025-04-01T17:09:24.0282077Z dotnet-install: Remote file https://builds.dotnet.microsoft.com/dotnet/Runtime/8.0.14/dotnet-runtime-8.0.14-linux-x64.tar.gz size is 31283064 bytes.
+2025-04-01T17:09:24.0289167Z dotnet-install: Extracting archive from https://builds.dotnet.microsoft.com/dotnet/Runtime/8.0.14/dotnet-runtime-8.0.14-linux-x64.tar.gz
+2025-04-01T17:09:24.6506264Z dotnet-install: Downloaded file size is 31283064 bytes.
+2025-04-01T17:09:24.6507569Z dotnet-install: The remote and local file sizes are equal.
+2025-04-01T17:09:24.6818324Z dotnet-install: Installed version is 8.0.14
+2025-04-01T17:09:24.6879827Z dotnet-install: Adding to current process PATH: `/usr/share/dotnet`. Note: This change will be visible only when sourcing script.
+2025-04-01T17:09:24.6882639Z dotnet-install: Note that the script does not resolve dependencies during installation.
+2025-04-01T17:09:24.6884590Z dotnet-install: To check the list of dependencies, go to https://learn.microsoft.com/dotnet/core/install, select your operating system and check the "Dependencies" section.
+2025-04-01T17:09:24.6886404Z dotnet-install: Installation finished successfully.
+2025-04-01T17:09:24.6912430Z [command]/home/runner/work/_actions/actions/setup-dotnet/67a3573c9a986a3f9c594539f4ab511d57bb3ce9/externals/install-dotnet.sh --skip-non-versioned-files --channel 9.0
+2025-04-01T17:09:24.9462382Z dotnet-install: Attempting to download using aka.ms link https://builds.dotnet.microsoft.com/dotnet/Sdk/9.0.202/dotnet-sdk-9.0.202-linux-x64.tar.gz
+2025-04-01T17:09:25.8523149Z dotnet-install: Remote file https://builds.dotnet.microsoft.com/dotnet/Sdk/9.0.202/dotnet-sdk-9.0.202-linux-x64.tar.gz size is 217102088 bytes.
+2025-04-01T17:09:25.8525410Z dotnet-install: Extracting archive from https://builds.dotnet.microsoft.com/dotnet/Sdk/9.0.202/dotnet-sdk-9.0.202-linux-x64.tar.gz
+2025-04-01T17:09:30.4267579Z dotnet-install: Downloaded file size is 217102088 bytes.
+2025-04-01T17:09:30.4269116Z dotnet-install: The remote and local file sizes are equal.
+2025-04-01T17:09:30.7045083Z dotnet-install: Installed version is 9.0.202
+2025-04-01T17:09:30.7109692Z dotnet-install: Adding to current process PATH: `/usr/share/dotnet`. Note: This change will be visible only when sourcing script.
+2025-04-01T17:09:30.7111304Z dotnet-install: Note that the script does not resolve dependencies during installation.
+2025-04-01T17:09:30.7113066Z dotnet-install: To check the list of dependencies, go to https://learn.microsoft.com/dotnet/core/install, select your operating system and check the "Dependencies" section.
+2025-04-01T17:09:30.7114418Z dotnet-install: Installation finished successfully.
+2025-04-01T17:09:30.7248553Z ##[group]Run dotnet build -p:CSharpier_Bypass=true --configuration Release
+2025-04-01T17:09:30.7249141Z [36;1mdotnet build -p:CSharpier_Bypass=true --configuration Release[0m
+2025-04-01T17:09:30.7302314Z shell: /usr/bin/bash -e {0}
+2025-04-01T17:09:30.7302568Z env:
+2025-04-01T17:09:30.7302774Z   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+2025-04-01T17:09:30.7303287Z   DOTNET_NOLOGO: true
+2025-04-01T17:09:30.7303493Z   DOTNET_CLI_TELEMETRY_OPTOUT: true
+2025-04-01T17:09:30.7303729Z   DOTNET_ROOT: /usr/share/dotnet
+2025-04-01T17:09:30.7303984Z ##[endgroup]
+2025-04-01T17:09:32.1128373Z   Determining projects to restore...
+2025-04-01T17:09:35.4459342Z   Restored /home/runner/work/DiscordChatExporter/DiscordChatExporter/DiscordChatExporter.Cli/DiscordChatExporter.Cli.csproj (in 2.83 sec).
+2025-04-01T17:09:35.4467144Z   Restored /home/runner/work/DiscordChatExporter/DiscordChatExporter/DiscordChatExporter.Core/DiscordChatExporter.Core.csproj (in 2.83 sec).
+2025-04-01T17:09:35.4475552Z   Restored /home/runner/work/DiscordChatExporter/DiscordChatExporter/DiscordChatExporter.Cli.Tests/DiscordChatExporter.Cli.Tests.csproj (in 2.83 sec).
+2025-04-01T17:09:36.1842304Z   Restored /home/runner/work/DiscordChatExporter/DiscordChatExporter/DiscordChatExporter.Gui/DiscordChatExporter.Gui.csproj (in 3.58 sec).
+2025-04-01T17:09:36.4067943Z   CSharpier bypassed because CSharpier_Bypass is set to 'true'
+2025-04-01T17:09:36.4184165Z   CSharpier bypassed because CSharpier_Bypass is set to 'true'
+2025-04-01T17:09:36.4244077Z   CSharpier bypassed because CSharpier_Bypass is set to 'true'
+2025-04-01T17:09:36.5830637Z   CSharpier bypassed because CSharpier_Bypass is set to 'true'
+2025-04-01T17:09:42.4250866Z   DiscordChatExporter.Core -> /home/runner/work/DiscordChatExporter/DiscordChatExporter/DiscordChatExporter.Core/bin/Release/net9.0/DiscordChatExporter.Core.dll
+2025-04-01T17:09:44.4832122Z   DiscordChatExporter.Cli -> /home/runner/work/DiscordChatExporter/DiscordChatExporter/DiscordChatExporter.Cli/bin/Release/net9.0/DiscordChatExporter.Cli.dll
+2025-04-01T17:09:46.6162858Z   DiscordChatExporter.Cli.Tests -> /home/runner/work/DiscordChatExporter/DiscordChatExporter/DiscordChatExporter.Cli.Tests/bin/Release/net9.0/DiscordChatExporter.Cli.Tests.dll
+2025-04-01T17:09:48.4574840Z   DiscordChatExporter.Gui -> /home/runner/work/DiscordChatExporter/DiscordChatExporter/DiscordChatExporter.Gui/bin/Release/net9.0/DiscordChatExporter.dll
+2025-04-01T17:09:48.5171641Z 
+2025-04-01T17:09:48.5178538Z Build succeeded.
+2025-04-01T17:09:48.5179356Z     0 Warning(s)
+2025-04-01T17:09:48.5181503Z     0 Error(s)
+2025-04-01T17:09:48.5187758Z 
+2025-04-01T17:09:48.5191944Z Time Elapsed 00:00:17.30
+2025-04-01T17:09:48.5708703Z ##[group]Run dotnet build -t:CSharpierFormat --configuration Release --no-restore
+2025-04-01T17:09:48.5709274Z [36;1mdotnet build -t:CSharpierFormat --configuration Release --no-restore[0m
+2025-04-01T17:09:48.5761841Z shell: /usr/bin/bash -e {0}
+2025-04-01T17:09:48.5762069Z env:
+2025-04-01T17:09:48.5762259Z   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+2025-04-01T17:09:48.5762517Z   DOTNET_NOLOGO: true
+2025-04-01T17:09:48.5762714Z   DOTNET_CLI_TELEMETRY_OPTOUT: true
+2025-04-01T17:09:48.5762951Z   DOTNET_ROOT: /usr/share/dotnet
+2025-04-01T17:09:48.5763159Z ##[endgroup]
+2025-04-01T17:09:50.6978504Z /home/runner/.nuget/packages/csharpier.msbuild/0.30.6/build/CSharpier.MsBuild.targets(23,5): error : Error /home/runner/work/DiscordChatExporter/DiscordChatExporter/DiscordChatExporter.Core/Exceptions/ChannelEmptyException.cs - Was not formatted. [/home/runner/work/DiscordChatExporter/DiscordChatExporter/DiscordChatExporter.Core/DiscordChatExporter.Core.csproj]
+2025-04-01T17:09:50.6985842Z     ----------------------------- Expected: Around Line 8 -----------------------------
+2025-04-01T17:09:50.6990998Z     public class ChannelEmptyException(string message)
+2025-04-01T17:09:50.6995657Z         : DiscordChatExporterException(message, false, null) { }
+2025-04-01T17:09:50.7037798Z     ----------------------------- Actual: Around Line 8 -----------------------------
+2025-04-01T17:09:50.7038748Z     public class ChannelEmptyException(string message)
+2025-04-01T17:09:50.7039473Z         : DiscordChatExporterException(message, false, null)
+2025-04-01T17:09:50.7039946Z     { }
+2025-04-01T17:09:50.7040182Z     
+2025-04-01T17:09:52.1469455Z 
+2025-04-01T17:09:52.1477827Z Build FAILED.
+2025-04-01T17:09:52.1488391Z 
+2025-04-01T17:09:52.1493182Z /home/runner/.nuget/packages/csharpier.msbuild/0.30.6/build/CSharpier.MsBuild.targets(23,5): error : Error /home/runner/work/DiscordChatExporter/DiscordChatExporter/DiscordChatExporter.Core/Exceptions/ChannelEmptyException.cs - Was not formatted. [/home/runner/work/DiscordChatExporter/DiscordChatExporter/DiscordChatExporter.Core/DiscordChatExporter.Core.csproj]
+2025-04-01T17:09:52.1517692Z     0 Warning(s)
+2025-04-01T17:09:52.1547620Z     1 Error(s)
+2025-04-01T17:09:52.1548160Z 
+2025-04-01T17:09:52.1548354Z Time Elapsed 00:00:03.40
+2025-04-01T17:09:52.2009710Z ##[error]Process completed with exit code 1.
+2025-04-01T17:09:52.2110618Z ##[group]Run echo "::error title=Bad formatting::Formatting issues detected. Please build the solution locally to fix them."
+2025-04-01T17:09:52.2112038Z [36;1mecho "::error title=Bad formatting::Formatting issues detected. Please build the solution locally to fix them."[0m
+2025-04-01T17:09:52.2183269Z shell: /usr/bin/bash -e {0}
+2025-04-01T17:09:52.2183780Z env:
+2025-04-01T17:09:52.2184098Z   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+2025-04-01T17:09:52.2184499Z   DOTNET_NOLOGO: true
+2025-04-01T17:09:52.2184847Z   DOTNET_CLI_TELEMETRY_OPTOUT: true
+2025-04-01T17:09:52.2185265Z   DOTNET_ROOT: /usr/share/dotnet
+2025-04-01T17:09:52.2185672Z ##[endgroup]
+2025-04-01T17:09:52.2304587Z ##[error]Formatting issues detected. Please build the solution locally to fix them.
+2025-04-01T17:09:52.2435089Z Post job cleanup.
+2025-04-01T17:09:52.3574577Z [command]/usr/bin/git version
+2025-04-01T17:09:52.3630636Z git version 2.49.0
+2025-04-01T17:09:52.3717279Z Temporarily overriding HOME='/home/runner/work/_temp/6256ee93-744b-42e2-bc5e-092b28300c85' before making global git config changes
+2025-04-01T17:09:52.3718670Z Adding repository directory to the temporary git global config as a safe directory
+2025-04-01T17:09:52.3726796Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/DiscordChatExporter/DiscordChatExporter
+2025-04-01T17:09:52.3780447Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-04-01T17:09:52.3823158Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-04-01T17:09:52.4101413Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-04-01T17:09:52.4126666Z http.https://github.com/.extraheader
+2025-04-01T17:09:52.4140126Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-04-01T17:09:52.4173472Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-04-01T17:09:52.4550508Z Cleaning up orphan processes
+2025-04-01T17:09:52.4871073Z Terminate orphan process: pid (2398) (dotnet)
+2025-04-01T17:09:52.4891236Z Terminate orphan process: pid (2400) (dotnet)
+2025-04-01T17:09:52.4918906Z Terminate orphan process: pid (2467) (dotnet)
+2025-04-01T17:09:52.4980483Z Terminate orphan process: pid (2495) (dotnet)
+2025-04-01T17:09:52.5010774Z Terminate orphan process: pid (2562) (dotnet)

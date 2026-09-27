@@ -1,0 +1,355 @@
+2025-03-01T17:50:59.6902598Z Requested labels: ubuntu-latest
+2025-03-01T17:50:59.6902910Z Job defined at: pandas-dev/pandas-stubs/.github/workflows/test.yml@refs/pull/1135/merge
+2025-03-01T17:50:59.6903043Z Waiting for a runner to pick up this job...
+2025-03-01T17:51:00.4836401Z Job is waiting for a hosted runner to come online.
+2025-03-01T17:51:04.1061283Z Job is about to start running on the hosted runner: GitHub Actions 202 (hosted)
+2025-03-01T17:51:06.4870394Z Current runner version: '2.322.0'
+2025-03-01T17:51:06.4893492Z ##[group]Operating System
+2025-03-01T17:51:06.4894296Z Ubuntu
+2025-03-01T17:51:06.4894914Z 24.04.2
+2025-03-01T17:51:06.4895432Z LTS
+2025-03-01T17:51:06.4895875Z ##[endgroup]
+2025-03-01T17:51:06.4896694Z ##[group]Runner Image
+2025-03-01T17:51:06.4897282Z Image: ubuntu-24.04
+2025-03-01T17:51:06.4897797Z Version: 20250223.1.0
+2025-03-01T17:51:06.4898936Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250223.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-01T17:51:06.4900389Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250223.1
+2025-03-01T17:51:06.4901280Z ##[endgroup]
+2025-03-01T17:51:06.4901910Z ##[group]Runner Image Provisioner
+2025-03-01T17:51:06.4902517Z 2.0.422.1
+2025-03-01T17:51:06.4903051Z ##[endgroup]
+2025-03-01T17:51:06.4905214Z ##[group]GITHUB_TOKEN Permissions
+2025-03-01T17:51:06.4907239Z Actions: read
+2025-03-01T17:51:06.4908128Z Attestations: read
+2025-03-01T17:51:06.4908839Z Checks: read
+2025-03-01T17:51:06.4909327Z Contents: read
+2025-03-01T17:51:06.4909876Z Deployments: read
+2025-03-01T17:51:06.4910461Z Discussions: read
+2025-03-01T17:51:06.4910989Z Issues: read
+2025-03-01T17:51:06.4911497Z Metadata: read
+2025-03-01T17:51:06.4912050Z Packages: read
+2025-03-01T17:51:06.4912574Z Pages: read
+2025-03-01T17:51:06.4913079Z PullRequests: read
+2025-03-01T17:51:06.4913687Z RepositoryProjects: read
+2025-03-01T17:51:06.4914290Z SecurityEvents: read
+2025-03-01T17:51:06.4914795Z Statuses: read
+2025-03-01T17:51:06.4915390Z ##[endgroup]
+2025-03-01T17:51:06.4918478Z Secret source: None
+2025-03-01T17:51:06.4919260Z Prepare workflow directory
+2025-03-01T17:51:06.5290719Z Prepare all required actions
+2025-03-01T17:51:06.5327336Z Getting action download info
+2025-03-01T17:51:06.7247001Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-03-01T17:51:06.8096913Z Download action repository 'pre-commit/action@v3.0.0' (SHA:646c83fcd040023954eafda54b4db0192ce70507)
+2025-03-01T17:51:07.3655458Z Getting action download info
+2025-03-01T17:51:07.5035467Z Download action repository 'actions/cache@v3' (SHA:2f8e54208210a422b2efd51efaa6bd6d7ca8920f)
+2025-03-01T17:51:08.4058245Z Complete job name: precommit
+2025-03-01T17:51:08.4867695Z ##[group]Run actions/checkout@v4
+2025-03-01T17:51:08.4869099Z with:
+2025-03-01T17:51:08.4869988Z   repository: pandas-dev/pandas-stubs
+2025-03-01T17:51:08.4871402Z   token: ***
+2025-03-01T17:51:08.4872233Z   ssh-strict: true
+2025-03-01T17:51:08.4873114Z   ssh-user: git
+2025-03-01T17:51:08.4874006Z   persist-credentials: true
+2025-03-01T17:51:08.4874978Z   clean: true
+2025-03-01T17:51:08.4875860Z   sparse-checkout-cone-mode: true
+2025-03-01T17:51:08.4877122Z   fetch-depth: 1
+2025-03-01T17:51:08.4877982Z   fetch-tags: false
+2025-03-01T17:51:08.4878865Z   show-progress: true
+2025-03-01T17:51:08.4879753Z   lfs: false
+2025-03-01T17:51:08.4880597Z   submodules: false
+2025-03-01T17:51:08.4881489Z   set-safe-directory: true
+2025-03-01T17:51:08.4882764Z env:
+2025-03-01T17:51:08.4883548Z   MPLBACKEND: Agg
+2025-03-01T17:51:08.4884372Z ##[endgroup]
+2025-03-01T17:51:08.6813285Z Syncing repository: pandas-dev/pandas-stubs
+2025-03-01T17:51:08.6816594Z ##[group]Getting Git version info
+2025-03-01T17:51:08.6818209Z Working directory is '/home/runner/work/pandas-stubs/pandas-stubs'
+2025-03-01T17:51:08.6820802Z [command]/usr/bin/git version
+2025-03-01T17:51:08.6887932Z git version 2.48.1
+2025-03-01T17:51:08.6916228Z ##[endgroup]
+2025-03-01T17:51:08.6931319Z Temporarily overriding HOME='/home/runner/work/_temp/198dfb5c-1270-4f33-b3b5-b3c93d1187ad' before making global git config changes
+2025-03-01T17:51:08.6936361Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-01T17:51:08.6940353Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pandas-stubs/pandas-stubs
+2025-03-01T17:51:08.6973742Z Deleting the contents of '/home/runner/work/pandas-stubs/pandas-stubs'
+2025-03-01T17:51:08.6977152Z ##[group]Initializing the repository
+2025-03-01T17:51:08.6981314Z [command]/usr/bin/git init /home/runner/work/pandas-stubs/pandas-stubs
+2025-03-01T17:51:08.7042355Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-01T17:51:08.7044369Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-01T17:51:08.7047001Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-01T17:51:08.7049328Z hint:
+2025-03-01T17:51:08.7050377Z hint: 	git config --global init.defaultBranch <name>
+2025-03-01T17:51:08.7051875Z hint:
+2025-03-01T17:51:08.7053068Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-01T17:51:08.7054910Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-01T17:51:08.7056570Z hint:
+2025-03-01T17:51:08.7057644Z hint: 	git branch -m <name>
+2025-03-01T17:51:08.7059198Z Initialized empty Git repository in /home/runner/work/pandas-stubs/pandas-stubs/.git/
+2025-03-01T17:51:08.7062547Z [command]/usr/bin/git remote add origin https://github.com/pandas-dev/pandas-stubs
+2025-03-01T17:51:08.7091078Z ##[endgroup]
+2025-03-01T17:51:08.7092511Z ##[group]Disabling automatic garbage collection
+2025-03-01T17:51:08.7094379Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-01T17:51:08.7125502Z ##[endgroup]
+2025-03-01T17:51:08.7128108Z ##[group]Setting up auth
+2025-03-01T17:51:08.7133375Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-01T17:51:08.7165812Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-01T17:51:08.7467036Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-01T17:51:08.7499458Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-01T17:51:08.7746263Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-01T17:51:08.7787341Z ##[endgroup]
+2025-03-01T17:51:08.7788814Z ##[group]Fetching the repository
+2025-03-01T17:51:08.7797371Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +2e067163032185514036e29a973372a579fd4da4:refs/remotes/pull/1135/merge
+2025-03-01T17:51:09.4620357Z From https://github.com/pandas-dev/pandas-stubs
+2025-03-01T17:51:09.4622480Z  * [new ref]         2e067163032185514036e29a973372a579fd4da4 -> pull/1135/merge
+2025-03-01T17:51:09.4645776Z ##[endgroup]
+2025-03-01T17:51:09.4646736Z ##[group]Determining the checkout info
+2025-03-01T17:51:09.4648400Z ##[endgroup]
+2025-03-01T17:51:09.4653678Z [command]/usr/bin/git sparse-checkout disable
+2025-03-01T17:51:09.4692181Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-03-01T17:51:09.4719829Z ##[group]Checking out the ref
+2025-03-01T17:51:09.4723440Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/1135/merge
+2025-03-01T17:51:09.4887427Z Note: switching to 'refs/remotes/pull/1135/merge'.
+2025-03-01T17:51:09.4887942Z 
+2025-03-01T17:51:09.4888386Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-01T17:51:09.4889374Z changes and commit them, and you can discard any commits you make in this
+2025-03-01T17:51:09.4890346Z state without impacting any branches by switching back to a branch.
+2025-03-01T17:51:09.4890924Z 
+2025-03-01T17:51:09.4891291Z If you want to create a new branch to retain commits you create, you may
+2025-03-01T17:51:09.4892140Z do so (now or later) by using -c with the switch command. Example:
+2025-03-01T17:51:09.4892719Z 
+2025-03-01T17:51:09.4892960Z   git switch -c <new-branch-name>
+2025-03-01T17:51:09.4893194Z 
+2025-03-01T17:51:09.4893335Z Or undo this operation with:
+2025-03-01T17:51:09.4893852Z 
+2025-03-01T17:51:09.4893979Z   git switch -
+2025-03-01T17:51:09.4894166Z 
+2025-03-01T17:51:09.4894448Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-01T17:51:09.4894788Z 
+2025-03-01T17:51:09.4895168Z HEAD is now at 2e06716 Merge edb440d9c5bf415e5a553cc6d67d06b3d1c1b37b into 4b42588040237cd9973575fe6f7f90fb16d50635
+2025-03-01T17:51:09.4897292Z ##[endgroup]
+2025-03-01T17:51:09.4930550Z [command]/usr/bin/git log -1 --format=%H
+2025-03-01T17:51:09.4951931Z 2e067163032185514036e29a973372a579fd4da4
+2025-03-01T17:51:09.5148299Z ##[group]Run pre-commit/action@v3.0.0
+2025-03-01T17:51:09.5148715Z with:
+2025-03-01T17:51:09.5149008Z   extra_args: --all-files
+2025-03-01T17:51:09.5149310Z env:
+2025-03-01T17:51:09.5149559Z   MPLBACKEND: Agg
+2025-03-01T17:51:09.5149833Z ##[endgroup]
+2025-03-01T17:51:09.5235935Z ##[group]Run python -m pip install pre-commit
+2025-03-01T17:51:09.5236607Z [36;1mpython -m pip install pre-commit[0m
+2025-03-01T17:51:09.5287576Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-01T17:51:09.5288068Z env:
+2025-03-01T17:51:09.5288325Z   MPLBACKEND: Agg
+2025-03-01T17:51:09.5288592Z ##[endgroup]
+2025-03-01T17:51:10.6370971Z Defaulting to user installation because normal site-packages is not writeable
+2025-03-01T17:51:11.9112189Z Collecting pre-commit
+2025-03-01T17:51:11.9736002Z   Downloading pre_commit-4.1.0-py2.py3-none-any.whl.metadata (1.3 kB)
+2025-03-01T17:51:12.0042542Z Collecting cfgv>=2.0.0 (from pre-commit)
+2025-03-01T17:51:12.0142829Z   Downloading cfgv-3.4.0-py2.py3-none-any.whl.metadata (8.5 kB)
+2025-03-01T17:51:12.0926606Z Collecting identify>=1.0.0 (from pre-commit)
+2025-03-01T17:51:12.1024429Z   Downloading identify-2.6.8-py2.py3-none-any.whl.metadata (4.4 kB)
+2025-03-01T17:51:12.1322901Z Collecting nodeenv>=0.11.1 (from pre-commit)
+2025-03-01T17:51:12.1418499Z   Downloading nodeenv-1.9.1-py2.py3-none-any.whl.metadata (21 kB)
+2025-03-01T17:51:12.1504275Z Requirement already satisfied: pyyaml>=5.1 in /usr/lib/python3/dist-packages (from pre-commit) (6.0.1)
+2025-03-01T17:51:12.2406517Z Collecting virtualenv>=20.10.0 (from pre-commit)
+2025-03-01T17:51:12.2504414Z   Downloading virtualenv-20.29.2-py3-none-any.whl.metadata (4.5 kB)
+2025-03-01T17:51:12.2962177Z Collecting distlib<1,>=0.3.7 (from virtualenv>=20.10.0->pre-commit)
+2025-03-01T17:51:12.3064029Z   Downloading distlib-0.3.9-py2.py3-none-any.whl.metadata (5.2 kB)
+2025-03-01T17:51:12.3443777Z Collecting filelock<4,>=3.12.2 (from virtualenv>=20.10.0->pre-commit)
+2025-03-01T17:51:12.3540198Z   Downloading filelock-3.17.0-py3-none-any.whl.metadata (2.9 kB)
+2025-03-01T17:51:12.3586527Z Requirement already satisfied: platformdirs<5,>=3.9.1 in /usr/local/lib/python3.12/dist-packages (from virtualenv>=20.10.0->pre-commit) (4.3.6)
+2025-03-01T17:51:12.3881361Z Downloading pre_commit-4.1.0-py2.py3-none-any.whl (220 kB)
+2025-03-01T17:51:12.4106421Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 220.6/220.6 kB 10.4 MB/s eta 0:00:00
+2025-03-01T17:51:12.4201004Z Downloading cfgv-3.4.0-py2.py3-none-any.whl (7.2 kB)
+2025-03-01T17:51:12.4318862Z Downloading identify-2.6.8-py2.py3-none-any.whl (99 kB)
+2025-03-01T17:51:12.4362408Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.1/99.1 kB 33.5 MB/s eta 0:00:00
+2025-03-01T17:51:12.4460747Z Downloading nodeenv-1.9.1-py2.py3-none-any.whl (22 kB)
+2025-03-01T17:51:12.4587095Z Downloading virtualenv-20.29.2-py3-none-any.whl (4.3 MB)
+2025-03-01T17:51:12.5052483Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 95.6 MB/s eta 0:00:00
+2025-03-01T17:51:12.5147833Z Downloading distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+2025-03-01T17:51:12.5210838Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 469.0/469.0 kB 98.6 MB/s eta 0:00:00
+2025-03-01T17:51:12.5307612Z Downloading filelock-3.17.0-py3-none-any.whl (16 kB)
+2025-03-01T17:51:12.8669488Z Installing collected packages: distlib, nodeenv, identify, filelock, cfgv, virtualenv, pre-commit
+2025-03-01T17:51:13.1588247Z Successfully installed cfgv-3.4.0 distlib-0.3.9 filelock-3.17.0 identify-2.6.8 nodeenv-1.9.1 pre-commit-4.1.0 virtualenv-20.29.2
+2025-03-01T17:51:13.2238785Z ##[group]Run python -m pip freeze --local
+2025-03-01T17:51:13.2239116Z [36;1mpython -m pip freeze --local[0m
+2025-03-01T17:51:13.2286418Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-01T17:51:13.2286741Z env:
+2025-03-01T17:51:13.2286917Z   MPLBACKEND: Agg
+2025-03-01T17:51:13.2287117Z ##[endgroup]
+2025-03-01T17:51:13.6126966Z argcomplete==3.5.3
+2025-03-01T17:51:13.6127430Z attrs==23.2.0
+2025-03-01T17:51:13.6127818Z Automat==22.10.0
+2025-03-01T17:51:13.6128672Z Babel==2.10.3
+2025-03-01T17:51:13.6129069Z bcc==0.29.1
+2025-03-01T17:51:13.6129436Z bcrypt==3.2.2
+2025-03-01T17:51:13.6129806Z blinker==1.7.0
+2025-03-01T17:51:13.6130198Z boto3==1.34.46
+2025-03-01T17:51:13.6130569Z botocore==1.34.46
+2025-03-01T17:51:13.6130969Z certifi==2023.11.17
+2025-03-01T17:51:13.6131362Z cfgv==3.4.0
+2025-03-01T17:51:13.6131723Z chardet==5.2.0
+2025-03-01T17:51:13.6132104Z click==8.1.6
+2025-03-01T17:51:13.6132481Z cloud-init==24.4
+2025-03-01T17:51:13.6132913Z colorama==0.4.6
+2025-03-01T17:51:13.6133332Z command-not-found==0.3
+2025-03-01T17:51:13.6133776Z configobj==5.0.8
+2025-03-01T17:51:13.6134171Z constantly==23.10.4
+2025-03-01T17:51:13.6134590Z cryptography==41.0.7
+2025-03-01T17:51:13.6135032Z dbus-python==1.3.2
+2025-03-01T17:51:13.6135499Z distlib==0.3.9
+2025-03-01T17:51:13.6135911Z distro==1.9.0
+2025-03-01T17:51:13.6136462Z distro-info==1.7+build1
+2025-03-01T17:51:13.6136852Z filelock==3.17.0
+2025-03-01T17:51:13.6137193Z httplib2==0.20.4
+2025-03-01T17:51:13.6137559Z hyperlink==21.0.0
+2025-03-01T17:51:13.6137901Z identify==2.6.8
+2025-03-01T17:51:13.6138229Z idna==3.6
+2025-03-01T17:51:13.6138547Z incremental==22.10.0
+2025-03-01T17:51:13.6138888Z Jinja2==3.1.2
+2025-03-01T17:51:13.6139228Z jmespath==1.0.1
+2025-03-01T17:51:13.6139581Z jsonpatch==1.32
+2025-03-01T17:51:13.6139927Z jsonpointer==2.0
+2025-03-01T17:51:13.6140264Z jsonschema==4.10.3
+2025-03-01T17:51:13.6140618Z launchpadlib==1.11.0
+2025-03-01T17:51:13.6141000Z lazr.restfulclient==0.14.6
+2025-03-01T17:51:13.6141397Z lazr.uri==1.0.6
+2025-03-01T17:51:13.6141753Z markdown-it-py==3.0.0
+2025-03-01T17:51:13.6142164Z MarkupSafe==2.1.5
+2025-03-01T17:51:13.6142648Z mdurl==0.1.2
+2025-03-01T17:51:13.6142979Z mercurial==6.7.2
+2025-03-01T17:51:13.6143300Z netaddr==0.8.0
+2025-03-01T17:51:13.6143637Z netifaces==0.11.0
+2025-03-01T17:51:13.6143983Z nodeenv==1.9.1
+2025-03-01T17:51:13.6144316Z oauthlib==3.2.2
+2025-03-01T17:51:13.6144679Z packaging==24.0
+2025-03-01T17:51:13.6145025Z pexpect==4.9.0
+2025-03-01T17:51:13.6145371Z pipx==1.7.1
+2025-03-01T17:51:13.6145716Z platformdirs==4.3.6
+2025-03-01T17:51:13.6146264Z pre_commit==4.1.0
+2025-03-01T17:51:13.6146592Z ptyprocess==0.7.0
+2025-03-01T17:51:13.6146912Z pyasn1==0.4.8
+2025-03-01T17:51:13.6147231Z pyasn1-modules==0.2.8
+2025-03-01T17:51:13.6147570Z Pygments==2.17.2
+2025-03-01T17:51:13.6147892Z PyGObject==3.48.2
+2025-03-01T17:51:13.6148209Z PyHamcrest==2.1.0
+2025-03-01T17:51:13.6148515Z PyJWT==2.7.0
+2025-03-01T17:51:13.6148810Z pyOpenSSL==23.2.0
+2025-03-01T17:51:13.6149126Z pyparsing==3.1.1
+2025-03-01T17:51:13.6149422Z pyparted==3.12.0
+2025-03-01T17:51:13.6149726Z pyrsistent==0.20.0
+2025-03-01T17:51:13.6149978Z pyserial==3.5
+2025-03-01T17:51:13.6150177Z python-apt==2.7.7+ubuntu4
+2025-03-01T17:51:13.6150409Z python-dateutil==2.8.2
+2025-03-01T17:51:13.6150628Z python-debian==0.1.49+ubuntu2
+2025-03-01T17:51:13.6150868Z python-magic==0.4.27
+2025-03-01T17:51:13.6151120Z pytz==2024.1
+2025-03-01T17:51:13.6151297Z PyYAML==6.0.1
+2025-03-01T17:51:13.6151466Z requests==2.31.0
+2025-03-01T17:51:13.6151649Z rich==13.7.1
+2025-03-01T17:51:13.6151838Z s3transfer==0.10.1
+2025-03-01T17:51:13.6152041Z service-identity==24.1.0
+2025-03-01T17:51:13.6152255Z setuptools==68.1.2
+2025-03-01T17:51:13.6152430Z six==1.16.0
+2025-03-01T17:51:13.6152598Z sos==4.7.2
+2025-03-01T17:51:13.6152771Z ssh-import-id==5.11
+2025-03-01T17:51:13.6152962Z systemd-python==235
+2025-03-01T17:51:13.6153143Z Twisted==24.3.0
+2025-03-01T17:51:13.6153329Z typing_extensions==4.10.0
+2025-03-01T17:51:13.6153547Z ubuntu-pro-client==8001
+2025-03-01T17:51:13.6153971Z ufw==0.36.2
+2025-03-01T17:51:13.6154136Z urllib3==2.0.7
+2025-03-01T17:51:13.6154305Z userpath==1.9.2
+2025-03-01T17:51:13.6154483Z virtualenv==20.29.2
+2025-03-01T17:51:13.6154663Z wadllib==1.3.6
+2025-03-01T17:51:13.6154843Z WALinuxAgent==2.9.1.1
+2025-03-01T17:51:13.6155027Z wheel==0.42.0
+2025-03-01T17:51:13.6155194Z zope.interface==6.1
+2025-03-01T17:51:13.6155377Z zstandard==0.22.0
+2025-03-01T17:51:13.7118721Z ##[group]Run actions/cache@v3
+2025-03-01T17:51:13.7119000Z with:
+2025-03-01T17:51:13.7119426Z   path: ~/.cache/pre-commit
+2025-03-01T17:51:13.7119863Z   key: pre-commit-3||b869e95afa86a52a3920800ddd7824f1d64ba2619df7cd6e366ac49d61da04da
+2025-03-01T17:51:13.7120331Z   enableCrossOsArchive: false
+2025-03-01T17:51:13.7120594Z   fail-on-cache-miss: false
+2025-03-01T17:51:13.7120833Z   lookup-only: false
+2025-03-01T17:51:13.7121034Z env:
+2025-03-01T17:51:13.7121219Z   MPLBACKEND: Agg
+2025-03-01T17:51:13.7121419Z ##[endgroup]
+2025-03-01T17:51:14.0450510Z Cache hit for: pre-commit-3||b869e95afa86a52a3920800ddd7824f1d64ba2619df7cd6e366ac49d61da04da
+2025-03-01T17:51:15.1846631Z Received 27532571 of 27532571 (100.0%), 28.3 MBs/sec
+2025-03-01T17:51:15.1847509Z Cache Size: ~26 MB (27532571 B)
+2025-03-01T17:51:15.1878446Z [command]/usr/bin/tar -xf /home/runner/work/_temp/f929cc04-9cd2-465e-9aff-e28cf68f4935/cache.tzst -P -C /home/runner/work/pandas-stubs/pandas-stubs --use-compress-program unzstd
+2025-03-01T17:51:15.4617665Z Cache restored successfully
+2025-03-01T17:51:15.4829376Z Cache restored from key: pre-commit-3||b869e95afa86a52a3920800ddd7824f1d64ba2619df7cd6e366ac49d61da04da
+2025-03-01T17:51:15.4930060Z ##[group]Run pre-commit run --show-diff-on-failure --color=always --all-files
+2025-03-01T17:51:15.4930576Z [36;1mpre-commit run --show-diff-on-failure --color=always --all-files[0m
+2025-03-01T17:51:15.4976144Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2025-03-01T17:51:15.4976460Z env:
+2025-03-01T17:51:15.4976641Z   MPLBACKEND: Agg
+2025-03-01T17:51:15.4976834Z ##[endgroup]
+2025-03-01T17:51:20.6369336Z black....................................................................[41mFailed[m
+2025-03-01T17:51:20.6369803Z [2m- hook id: black[m
+2025-03-01T17:51:20.6370073Z [2m- files were modified by this hook[m
+2025-03-01T17:51:20.6370261Z 
+2025-03-01T17:51:20.6370406Z [1mreformatted tests/test_styler.py[0m
+2025-03-01T17:51:20.6370596Z 
+2025-03-01T17:51:20.6370725Z [1mAll done! ✨ 🍰 ✨[0m
+2025-03-01T17:51:20.6371098Z [34m[1m1 file [0m[1mreformatted[0m, [34m234 files [0mleft unchanged.
+2025-03-01T17:51:20.6371380Z 
+2025-03-01T17:51:21.0886684Z isort....................................................................[41mFailed[m
+2025-03-01T17:51:21.0887175Z [2m- hook id: isort[m
+2025-03-01T17:51:21.0887463Z [2m- files were modified by this hook[m
+2025-03-01T17:51:21.0887643Z 
+2025-03-01T17:51:21.0887895Z Fixing /home/runner/work/pandas-stubs/pandas-stubs/pandas-stubs/io/formats/style.pyi
+2025-03-01T17:51:21.0888420Z Fixing /home/runner/work/pandas-stubs/pandas-stubs/tests/test_styler.py
+2025-03-01T17:51:21.0888744Z 
+2025-03-01T17:51:21.1693859Z ruff.....................................................................[42mPassed[m
+2025-03-01T17:51:21.3826820Z codespell................................................................[42mPassed[m
+2025-03-01T17:51:21.3827472Z pre-commit hook(s) made changes.
+2025-03-01T17:51:21.3828127Z If you are seeing this message in CI, reproduce locally with: `pre-commit run --all-files`.
+2025-03-01T17:51:21.3828978Z To run `pre-commit` as part of git workflow, use `pre-commit install`.
+2025-03-01T17:51:21.3829343Z All changes made by hooks:
+2025-03-01T17:51:21.3899869Z [1mdiff --git a/pandas-stubs/io/formats/style.pyi b/pandas-stubs/io/formats/style.pyi[m
+2025-03-01T17:51:21.3900611Z [1mindex 2e63dee..2953634 100644[m
+2025-03-01T17:51:21.3900946Z [1m--- a/pandas-stubs/io/formats/style.pyi[m
+2025-03-01T17:51:21.3901297Z [1m+++ b/pandas-stubs/io/formats/style.pyi[m
+2025-03-01T17:51:21.3901672Z [36m@@ -11,9 +11,9 @@[m [mfrom typing import ([m
+2025-03-01T17:51:21.3902339Z  [m
+2025-03-01T17:51:21.3902577Z  from matplotlib.colors import Colormap[m
+2025-03-01T17:51:21.3902867Z  import numpy as np[m
+2025-03-01T17:51:21.3903128Z [32m+[m[32mfrom pandas import Index[m
+2025-03-01T17:51:21.3903443Z  from pandas.core.frame import DataFrame[m
+2025-03-01T17:51:21.3903755Z  from pandas.core.series import Series[m
+2025-03-01T17:51:21.3904045Z [31m-from pandas import Index[m
+2025-03-01T17:51:21.3904276Z  [m
+2025-03-01T17:51:21.3904626Z  from pandas._typing import ([m
+2025-03-01T17:51:21.3904879Z      Axis,[m
+2025-03-01T17:51:21.3905190Z [1mdiff --git a/tests/test_styler.py b/tests/test_styler.py[m
+2025-03-01T17:51:21.3905548Z [1mindex e3c420e..976b5a1 100644[m
+2025-03-01T17:51:21.3905815Z [1m--- a/tests/test_styler.py[m
+2025-03-01T17:51:21.3906424Z [1m+++ b/tests/test_styler.py[m
+2025-03-01T17:51:21.3906743Z [36m@@ -13,8 +13,8 @@[m [mimport numpy as np[m
+2025-03-01T17:51:21.3907051Z  import numpy.typing as npt[m
+2025-03-01T17:51:21.3907317Z  from pandas import ([m
+2025-03-01T17:51:21.3907542Z      DataFrame,[m
+2025-03-01T17:51:21.3907756Z [32m+[m[32m    Index,[m
+2025-03-01T17:51:21.3907990Z      Series,[m
+2025-03-01T17:51:21.3908188Z [31m-    Index[m
+2025-03-01T17:51:21.3908375Z  )[m
+2025-03-01T17:51:21.3908602Z  from pandas._testing import ensure_clean[m
+2025-03-01T17:51:21.3908880Z  import pytest[m
+2025-03-01T17:51:21.4070316Z ##[error]Process completed with exit code 1.
+2025-03-01T17:51:21.4127535Z Post job cleanup.
+2025-03-01T17:51:21.4203893Z Post job cleanup.
+2025-03-01T17:51:21.5128993Z [command]/usr/bin/git version
+2025-03-01T17:51:21.5164440Z git version 2.48.1
+2025-03-01T17:51:21.5207128Z Temporarily overriding HOME='/home/runner/work/_temp/2f86a095-01d2-4b6c-af11-1f12e13f1b6d' before making global git config changes
+2025-03-01T17:51:21.5208433Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-01T17:51:21.5219840Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pandas-stubs/pandas-stubs
+2025-03-01T17:51:21.5253551Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-01T17:51:21.5285690Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-01T17:51:21.5512845Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-01T17:51:21.5533017Z http.https://github.com/.extraheader
+2025-03-01T17:51:21.5544914Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-01T17:51:21.5574369Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-01T17:51:21.5896884Z Cleaning up orphan processes

@@ -1,0 +1,342 @@
+2025-03-28T17:44:35.4736451Z Requested labels: ubuntu-latest
+2025-03-28T17:44:35.4736750Z Job defined at: hgrecco/pint-pandas/.github/workflows/lint.yml@refs/pull/273/merge
+2025-03-28T17:44:35.4736886Z Waiting for a runner to pick up this job...
+2025-03-28T17:44:37.4638507Z Job is waiting for a hosted runner to come online.
+2025-03-28T17:44:39.0518263Z Job is about to start running on the hosted runner: GitHub Actions 33 (hosted)
+2025-03-28T17:44:40.6825631Z Current runner version: '2.323.0'
+2025-03-28T17:44:40.6859838Z ##[group]Operating System
+2025-03-28T17:44:40.6860718Z Ubuntu
+2025-03-28T17:44:40.6861181Z 24.04.2
+2025-03-28T17:44:40.6861661Z LTS
+2025-03-28T17:44:40.6862209Z ##[endgroup]
+2025-03-28T17:44:40.6862743Z ##[group]Runner Image
+2025-03-28T17:44:40.6863364Z Image: ubuntu-24.04
+2025-03-28T17:44:40.6863898Z Version: 20250323.1.0
+2025-03-28T17:44:40.6865009Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250323.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-03-28T17:44:40.6866755Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250323.1
+2025-03-28T17:44:40.6867761Z ##[endgroup]
+2025-03-28T17:44:40.6868297Z ##[group]Runner Image Provisioner
+2025-03-28T17:44:40.6868959Z 2.0.422.1
+2025-03-28T17:44:40.6869426Z ##[endgroup]
+2025-03-28T17:44:40.6872009Z ##[group]GITHUB_TOKEN Permissions
+2025-03-28T17:44:40.6874194Z Actions: write
+2025-03-28T17:44:40.6875008Z Attestations: write
+2025-03-28T17:44:40.6875725Z Checks: write
+2025-03-28T17:44:40.6876445Z Contents: write
+2025-03-28T17:44:40.6877095Z Deployments: write
+2025-03-28T17:44:40.6877631Z Discussions: write
+2025-03-28T17:44:40.6878103Z Issues: write
+2025-03-28T17:44:40.6878681Z Metadata: read
+2025-03-28T17:44:40.6879189Z Models: read
+2025-03-28T17:44:40.6879731Z Packages: write
+2025-03-28T17:44:40.6880310Z Pages: write
+2025-03-28T17:44:40.6880843Z PullRequests: write
+2025-03-28T17:44:40.6881498Z RepositoryProjects: write
+2025-03-28T17:44:40.6882151Z SecurityEvents: write
+2025-03-28T17:44:40.6882764Z Statuses: write
+2025-03-28T17:44:40.6883368Z ##[endgroup]
+2025-03-28T17:44:40.6886661Z Secret source: Actions
+2025-03-28T17:44:40.6887802Z Prepare workflow directory
+2025-03-28T17:44:40.7192966Z Prepare all required actions
+2025-03-28T17:44:40.7229235Z Getting action download info
+2025-03-28T17:44:40.9742014Z Download action repository 'actions/checkout@v2' (SHA:ee0669bd1cc54295c223e0bb666b733df41de1c5)
+2025-03-28T17:44:41.0586491Z Download action repository 'actions/setup-python@v2' (SHA:e9aba2c848f5ebd159c070c61ea2c4e2b122355e)
+2025-03-28T17:44:41.1643032Z Download action repository 'pre-commit/action@v2.0.0' (SHA:0764670bf370aab253130d534e1eda7ff497dc60)
+2025-03-28T17:44:41.4371448Z Complete job name: lint
+2025-03-28T17:44:41.5060149Z ##[group]Run actions/checkout@v2
+2025-03-28T17:44:41.5060967Z with:
+2025-03-28T17:44:41.5061379Z   repository: hgrecco/pint-pandas
+2025-03-28T17:44:41.5062039Z   token: ***
+2025-03-28T17:44:41.5062436Z   ssh-strict: true
+2025-03-28T17:44:41.5062857Z   persist-credentials: true
+2025-03-28T17:44:41.5063304Z   clean: true
+2025-03-28T17:44:41.5063677Z   fetch-depth: 1
+2025-03-28T17:44:41.5064062Z   lfs: false
+2025-03-28T17:44:41.5064439Z   submodules: false
+2025-03-28T17:44:41.5064856Z   set-safe-directory: true
+2025-03-28T17:44:41.5065532Z ##[endgroup]
+2025-03-28T17:44:41.6722370Z Syncing repository: hgrecco/pint-pandas
+2025-03-28T17:44:41.6725371Z ##[group]Getting Git version info
+2025-03-28T17:44:41.6726927Z Working directory is '/home/runner/work/pint-pandas/pint-pandas'
+2025-03-28T17:44:41.6728779Z [command]/usr/bin/git version
+2025-03-28T17:44:41.6769853Z git version 2.49.0
+2025-03-28T17:44:41.6797170Z ##[endgroup]
+2025-03-28T17:44:41.6815490Z Temporarily overriding HOME='/home/runner/work/_temp/521ca827-a5a7-4b9c-8c71-8de618659aee' before making global git config changes
+2025-03-28T17:44:41.6820402Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-28T17:44:41.6822420Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pint-pandas/pint-pandas
+2025-03-28T17:44:41.6860422Z Deleting the contents of '/home/runner/work/pint-pandas/pint-pandas'
+2025-03-28T17:44:41.6864547Z ##[group]Initializing the repository
+2025-03-28T17:44:41.6868724Z [command]/usr/bin/git init /home/runner/work/pint-pandas/pint-pandas
+2025-03-28T17:44:41.6932827Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-03-28T17:44:41.6934150Z hint: is subject to change. To configure the initial branch name to use in all
+2025-03-28T17:44:41.6935302Z hint: of your new repositories, which will suppress this warning, call:
+2025-03-28T17:44:41.6936405Z hint:
+2025-03-28T17:44:41.6936918Z hint: 	git config --global init.defaultBranch <name>
+2025-03-28T17:44:41.6937712Z hint:
+2025-03-28T17:44:41.6938775Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-03-28T17:44:41.6940315Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-03-28T17:44:41.6941618Z hint:
+2025-03-28T17:44:41.6942369Z hint: 	git branch -m <name>
+2025-03-28T17:44:41.6943787Z Initialized empty Git repository in /home/runner/work/pint-pandas/pint-pandas/.git/
+2025-03-28T17:44:41.6949990Z [command]/usr/bin/git remote add origin https://github.com/hgrecco/pint-pandas
+2025-03-28T17:44:41.6983742Z ##[endgroup]
+2025-03-28T17:44:41.6985079Z ##[group]Disabling automatic garbage collection
+2025-03-28T17:44:41.6986992Z [command]/usr/bin/git config --local gc.auto 0
+2025-03-28T17:44:41.7018304Z ##[endgroup]
+2025-03-28T17:44:41.7019533Z ##[group]Setting up auth
+2025-03-28T17:44:41.7025126Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-28T17:44:41.7056903Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-28T17:44:41.7359632Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-28T17:44:41.7393378Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-28T17:44:41.7633519Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-03-28T17:44:41.7669102Z ##[endgroup]
+2025-03-28T17:44:41.7669852Z ##[group]Fetching the repository
+2025-03-28T17:44:41.7677064Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +2cdc042a952d164d15960a7e592b919d8c835312:refs/remotes/pull/273/merge
+2025-03-28T17:44:41.9946103Z remote: Enumerating objects: 60, done.        
+2025-03-28T17:44:41.9947339Z remote: Counting objects:   1% (1/60)        
+2025-03-28T17:44:41.9948370Z remote: Counting objects:   3% (2/60)        
+2025-03-28T17:44:41.9949420Z remote: Counting objects:   5% (3/60)        
+2025-03-28T17:44:41.9950413Z remote: Counting objects:   6% (4/60)        
+2025-03-28T17:44:41.9951410Z remote: Counting objects:   8% (5/60)        
+2025-03-28T17:44:41.9952393Z remote: Counting objects:  10% (6/60)        
+2025-03-28T17:44:41.9953429Z remote: Counting objects:  11% (7/60)        
+2025-03-28T17:44:41.9954361Z remote: Counting objects:  13% (8/60)        
+2025-03-28T17:44:41.9955238Z remote: Counting objects:  15% (9/60)        
+2025-03-28T17:44:41.9956123Z remote: Counting objects:  16% (10/60)        
+2025-03-28T17:44:41.9957215Z remote: Counting objects:  18% (11/60)        
+2025-03-28T17:44:41.9957946Z remote: Counting objects:  20% (12/60)        
+2025-03-28T17:44:41.9958581Z remote: Counting objects:  21% (13/60)        
+2025-03-28T17:44:41.9959176Z remote: Counting objects:  23% (14/60)        
+2025-03-28T17:44:41.9960147Z remote: Counting objects:  25% (15/60)        
+2025-03-28T17:44:41.9961084Z remote: Counting objects:  26% (16/60)        
+2025-03-28T17:44:41.9962017Z remote: Counting objects:  28% (17/60)        
+2025-03-28T17:44:41.9962935Z remote: Counting objects:  30% (18/60)        
+2025-03-28T17:44:41.9963856Z remote: Counting objects:  31% (19/60)        
+2025-03-28T17:44:41.9965149Z remote: Counting objects:  33% (20/60)        
+2025-03-28T17:44:41.9966494Z remote: Counting objects:  35% (21/60)        
+2025-03-28T17:44:41.9967523Z remote: Counting objects:  36% (22/60)        
+2025-03-28T17:44:41.9968620Z remote: Counting objects:  38% (23/60)        
+2025-03-28T17:44:41.9969853Z remote: Counting objects:  40% (24/60)        
+2025-03-28T17:44:41.9970842Z remote: Counting objects:  41% (25/60)        
+2025-03-28T17:44:41.9971777Z remote: Counting objects:  43% (26/60)        
+2025-03-28T17:44:41.9972776Z remote: Counting objects:  45% (27/60)        
+2025-03-28T17:44:41.9973717Z remote: Counting objects:  46% (28/60)        
+2025-03-28T17:44:41.9974702Z remote: Counting objects:  48% (29/60)        
+2025-03-28T17:44:41.9975677Z remote: Counting objects:  50% (30/60)        
+2025-03-28T17:44:41.9976757Z remote: Counting objects:  51% (31/60)        
+2025-03-28T17:44:41.9977686Z remote: Counting objects:  53% (32/60)        
+2025-03-28T17:44:41.9978480Z remote: Counting objects:  55% (33/60)        
+2025-03-28T17:44:41.9979043Z remote: Counting objects:  56% (34/60)        
+2025-03-28T17:44:41.9979594Z remote: Counting objects:  58% (35/60)        
+2025-03-28T17:44:41.9980136Z remote: Counting objects:  60% (36/60)        
+2025-03-28T17:44:41.9980681Z remote: Counting objects:  61% (37/60)        
+2025-03-28T17:44:41.9981245Z remote: Counting objects:  63% (38/60)        
+2025-03-28T17:44:41.9981799Z remote: Counting objects:  65% (39/60)        
+2025-03-28T17:44:41.9982382Z remote: Counting objects:  66% (40/60)        
+2025-03-28T17:44:41.9982943Z remote: Counting objects:  68% (41/60)        
+2025-03-28T17:44:41.9983494Z remote: Counting objects:  70% (42/60)        
+2025-03-28T17:44:41.9984061Z remote: Counting objects:  71% (43/60)        
+2025-03-28T17:44:41.9984613Z remote: Counting objects:  73% (44/60)        
+2025-03-28T17:44:41.9985160Z remote: Counting objects:  75% (45/60)        
+2025-03-28T17:44:41.9985711Z remote: Counting objects:  76% (46/60)        
+2025-03-28T17:44:41.9986464Z remote: Counting objects:  78% (47/60)        
+2025-03-28T17:44:41.9987017Z remote: Counting objects:  80% (48/60)        
+2025-03-28T17:44:41.9987564Z remote: Counting objects:  81% (49/60)        
+2025-03-28T17:44:41.9988115Z remote: Counting objects:  83% (50/60)        
+2025-03-28T17:44:41.9988676Z remote: Counting objects:  85% (51/60)        
+2025-03-28T17:44:41.9989220Z remote: Counting objects:  86% (52/60)        
+2025-03-28T17:44:41.9989771Z remote: Counting objects:  88% (53/60)        
+2025-03-28T17:44:41.9990479Z remote: Counting objects:  90% (54/60)        
+2025-03-28T17:44:41.9991039Z remote: Counting objects:  91% (55/60)        
+2025-03-28T17:44:41.9991626Z remote: Counting objects:  93% (56/60)        
+2025-03-28T17:44:41.9992162Z remote: Counting objects:  95% (57/60)        
+2025-03-28T17:44:41.9992716Z remote: Counting objects:  96% (58/60)        
+2025-03-28T17:44:41.9993261Z remote: Counting objects:  98% (59/60)        
+2025-03-28T17:44:41.9993815Z remote: Counting objects: 100% (60/60)        
+2025-03-28T17:44:41.9994398Z remote: Counting objects: 100% (60/60), done.        
+2025-03-28T17:44:41.9995002Z remote: Compressing objects:   1% (1/56)        
+2025-03-28T17:44:41.9995588Z remote: Compressing objects:   3% (2/56)        
+2025-03-28T17:44:41.9996437Z remote: Compressing objects:   5% (3/56)        
+2025-03-28T17:44:41.9997369Z remote: Compressing objects:   7% (4/56)        
+2025-03-28T17:44:41.9998357Z remote: Compressing objects:   8% (5/56)        
+2025-03-28T17:44:41.9999412Z remote: Compressing objects:  10% (6/56)        
+2025-03-28T17:44:42.0000434Z remote: Compressing objects:  12% (7/56)        
+2025-03-28T17:44:42.0001404Z remote: Compressing objects:  14% (8/56)        
+2025-03-28T17:44:42.0002362Z remote: Compressing objects:  16% (9/56)        
+2025-03-28T17:44:42.0003005Z remote: Compressing objects:  17% (10/56)        
+2025-03-28T17:44:42.0003592Z remote: Compressing objects:  19% (11/56)        
+2025-03-28T17:44:42.0004186Z remote: Compressing objects:  21% (12/56)        
+2025-03-28T17:44:42.0004770Z remote: Compressing objects:  23% (13/56)        
+2025-03-28T17:44:42.0005365Z remote: Compressing objects:  25% (14/56)        
+2025-03-28T17:44:42.0006156Z remote: Compressing objects:  26% (15/56)        
+2025-03-28T17:44:42.0006761Z remote: Compressing objects:  28% (16/56)        
+2025-03-28T17:44:42.0007976Z remote: Compressing objects:  30% (17/56)        
+2025-03-28T17:44:42.0008952Z remote: Compressing objects:  32% (18/56)        
+2025-03-28T17:44:42.0009994Z remote: Compressing objects:  33% (19/56)        
+2025-03-28T17:44:42.0010823Z remote: Compressing objects:  35% (20/56)        
+2025-03-28T17:44:42.0011732Z remote: Compressing objects:  37% (21/56)        
+2025-03-28T17:44:42.0012469Z remote: Compressing objects:  39% (22/56)        
+2025-03-28T17:44:42.0013067Z remote: Compressing objects:  41% (23/56)        
+2025-03-28T17:44:42.0013647Z remote: Compressing objects:  42% (24/56)        
+2025-03-28T17:44:42.0014219Z remote: Compressing objects:  44% (25/56)        
+2025-03-28T17:44:42.0096292Z remote: Compressing objects:  46% (26/56)        
+2025-03-28T17:44:42.0097476Z remote: Compressing objects:  48% (27/56)        
+2025-03-28T17:44:42.0098677Z remote: Compressing objects:  50% (28/56)        
+2025-03-28T17:44:42.0099781Z remote: Compressing objects:  51% (29/56)        
+2025-03-28T17:44:42.0100760Z remote: Compressing objects:  53% (30/56)        
+2025-03-28T17:44:42.0101711Z remote: Compressing objects:  55% (31/56)        
+2025-03-28T17:44:42.0102660Z remote: Compressing objects:  57% (32/56)        
+2025-03-28T17:44:42.0103704Z remote: Compressing objects:  58% (33/56)        
+2025-03-28T17:44:42.0104703Z remote: Compressing objects:  60% (34/56)        
+2025-03-28T17:44:42.0105777Z remote: Compressing objects:  62% (35/56)        
+2025-03-28T17:44:42.0107044Z remote: Compressing objects:  64% (36/56)        
+2025-03-28T17:44:42.0108102Z remote: Compressing objects:  66% (37/56)        
+2025-03-28T17:44:42.0109133Z remote: Compressing objects:  67% (38/56)        
+2025-03-28T17:44:42.0110190Z remote: Compressing objects:  69% (39/56)        
+2025-03-28T17:44:42.0111231Z remote: Compressing objects:  71% (40/56)        
+2025-03-28T17:44:42.0112369Z remote: Compressing objects:  73% (41/56)        
+2025-03-28T17:44:42.0113438Z remote: Compressing objects:  75% (42/56)        
+2025-03-28T17:44:42.0114546Z remote: Compressing objects:  76% (43/56)        
+2025-03-28T17:44:42.0115616Z remote: Compressing objects:  78% (44/56)        
+2025-03-28T17:44:42.0116875Z remote: Compressing objects:  80% (45/56)        
+2025-03-28T17:44:42.0117505Z remote: Compressing objects:  82% (46/56)        
+2025-03-28T17:44:42.0118094Z remote: Compressing objects:  83% (47/56)        
+2025-03-28T17:44:42.0118697Z remote: Compressing objects:  85% (48/56)        
+2025-03-28T17:44:42.0119293Z remote: Compressing objects:  87% (49/56)        
+2025-03-28T17:44:42.0119897Z remote: Compressing objects:  89% (50/56)        
+2025-03-28T17:44:42.0120504Z remote: Compressing objects:  91% (51/56)        
+2025-03-28T17:44:42.0121097Z remote: Compressing objects:  92% (52/56)        
+2025-03-28T17:44:42.0121691Z remote: Compressing objects:  94% (53/56)        
+2025-03-28T17:44:42.0122298Z remote: Compressing objects:  96% (54/56)        
+2025-03-28T17:44:42.0122910Z remote: Compressing objects:  98% (55/56)        
+2025-03-28T17:44:42.0123661Z remote: Compressing objects: 100% (56/56)        
+2025-03-28T17:44:42.0124296Z remote: Compressing objects: 100% (56/56), done.        
+2025-03-28T17:44:42.0125154Z remote: Total 60 (delta 4), reused 26 (delta 1), pack-reused 0 (from 0)        
+2025-03-28T17:44:42.0223490Z From https://github.com/hgrecco/pint-pandas
+2025-03-28T17:44:42.0224769Z  * [new ref]         2cdc042a952d164d15960a7e592b919d8c835312 -> pull/273/merge
+2025-03-28T17:44:42.0252072Z ##[endgroup]
+2025-03-28T17:44:42.0252840Z ##[group]Determining the checkout info
+2025-03-28T17:44:42.0254495Z ##[endgroup]
+2025-03-28T17:44:42.0255294Z ##[group]Checking out the ref
+2025-03-28T17:44:42.0259237Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/273/merge
+2025-03-28T17:44:42.0338520Z Note: switching to 'refs/remotes/pull/273/merge'.
+2025-03-28T17:44:42.0339445Z 
+2025-03-28T17:44:42.0340081Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-03-28T17:44:42.0341818Z changes and commit them, and you can discard any commits you make in this
+2025-03-28T17:44:42.0343263Z state without impacting any branches by switching back to a branch.
+2025-03-28T17:44:42.0343866Z 
+2025-03-28T17:44:42.0344211Z If you want to create a new branch to retain commits you create, you may
+2025-03-28T17:44:42.0344995Z do so (now or later) by using -c with the switch command. Example:
+2025-03-28T17:44:42.0345440Z 
+2025-03-28T17:44:42.0345636Z   git switch -c <new-branch-name>
+2025-03-28T17:44:42.0346212Z 
+2025-03-28T17:44:42.0346546Z Or undo this operation with:
+2025-03-28T17:44:42.0347050Z 
+2025-03-28T17:44:42.0347325Z   git switch -
+2025-03-28T17:44:42.0347607Z 
+2025-03-28T17:44:42.0347982Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-03-28T17:44:42.0348520Z 
+2025-03-28T17:44:42.0349127Z HEAD is now at 2cdc042 Merge 682b443f24a87a63113a573dbd1853effab7369c into ad3bb181b02648c54b5dbed88fea44ab9b441f65
+2025-03-28T17:44:42.0350374Z ##[endgroup]
+2025-03-28T17:44:42.0381124Z [command]/usr/bin/git log -1 --format='%H'
+2025-03-28T17:44:42.0404232Z '2cdc042a952d164d15960a7e592b919d8c835312'
+2025-03-28T17:44:42.0620519Z ##[group]Run actions/setup-python@v2
+2025-03-28T17:44:42.0621135Z with:
+2025-03-28T17:44:42.0621499Z   python-version: 3.x
+2025-03-28T17:44:42.0622066Z   token: ***
+2025-03-28T17:44:42.0622447Z ##[endgroup]
+2025-03-28T17:44:42.1732169Z Successfully setup CPython (3.13.2)
+2025-03-28T17:44:42.1842321Z ##[group]Run pre-commit/action@v2.0.0
+2025-03-28T17:44:42.1842877Z with:
+2025-03-28T17:44:42.1843328Z   extra_args: --all-files --show-diff-on-failure
+2025-03-28T17:44:42.1843863Z env:
+2025-03-28T17:44:42.1844323Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.2/x64
+2025-03-28T17:44:42.1845030Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.2/x64/lib
+2025-03-28T17:44:42.1845615Z ##[endgroup]
+2025-03-28T17:44:42.2279433Z ##[group]install pre-commit
+2025-03-28T17:44:42.2296671Z [command]/opt/hostedtoolcache/Python/3.13.2/x64/bin/pip install pre-commit
+2025-03-28T17:44:44.7896410Z Collecting pre-commit
+2025-03-28T17:44:44.8390394Z   Downloading pre_commit-4.2.0-py2.py3-none-any.whl.metadata (1.3 kB)
+2025-03-28T17:44:44.8569463Z Collecting cfgv>=2.0.0 (from pre-commit)
+2025-03-28T17:44:44.8642118Z   Downloading cfgv-3.4.0-py2.py3-none-any.whl.metadata (8.5 kB)
+2025-03-28T17:44:44.9092311Z Collecting identify>=1.0.0 (from pre-commit)
+2025-03-28T17:44:44.9164490Z   Downloading identify-2.6.9-py2.py3-none-any.whl.metadata (4.4 kB)
+2025-03-28T17:44:44.9359812Z Collecting nodeenv>=0.11.1 (from pre-commit)
+2025-03-28T17:44:44.9429871Z   Downloading nodeenv-1.9.1-py2.py3-none-any.whl.metadata (21 kB)
+2025-03-28T17:44:44.9824429Z Collecting pyyaml>=5.1 (from pre-commit)
+2025-03-28T17:44:44.9896654Z   Downloading PyYAML-6.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+2025-03-28T17:44:45.0345289Z Collecting virtualenv>=20.10.0 (from pre-commit)
+2025-03-28T17:44:45.0417773Z   Downloading virtualenv-20.29.3-py3-none-any.whl.metadata (4.5 kB)
+2025-03-28T17:44:45.0645054Z Collecting distlib<1,>=0.3.7 (from virtualenv>=20.10.0->pre-commit)
+2025-03-28T17:44:45.0714889Z   Downloading distlib-0.3.9-py2.py3-none-any.whl.metadata (5.2 kB)
+2025-03-28T17:44:45.0953466Z Collecting filelock<4,>=3.12.2 (from virtualenv>=20.10.0->pre-commit)
+2025-03-28T17:44:45.1025366Z   Downloading filelock-3.18.0-py3-none-any.whl.metadata (2.9 kB)
+2025-03-28T17:44:45.1258820Z Collecting platformdirs<5,>=3.9.1 (from virtualenv>=20.10.0->pre-commit)
+2025-03-28T17:44:45.1328783Z   Downloading platformdirs-4.3.7-py3-none-any.whl.metadata (11 kB)
+2025-03-28T17:44:45.1466373Z Downloading pre_commit-4.2.0-py2.py3-none-any.whl (220 kB)
+2025-03-28T17:44:45.1697011Z Downloading cfgv-3.4.0-py2.py3-none-any.whl (7.2 kB)
+2025-03-28T17:44:45.1790220Z Downloading identify-2.6.9-py2.py3-none-any.whl (99 kB)
+2025-03-28T17:44:45.1892892Z Downloading nodeenv-1.9.1-py2.py3-none-any.whl (22 kB)
+2025-03-28T17:44:45.1991691Z Downloading PyYAML-6.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (759 kB)
+2025-03-28T17:44:45.2134129Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 759.5/759.5 kB 80.9 MB/s eta 0:00:00
+2025-03-28T17:44:45.2210048Z Downloading virtualenv-20.29.3-py3-none-any.whl (4.3 MB)
+2025-03-28T17:44:45.2473285Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 170.6 MB/s eta 0:00:00
+2025-03-28T17:44:45.2544738Z Downloading distlib-0.3.9-py2.py3-none-any.whl (468 kB)
+2025-03-28T17:44:45.2672108Z Downloading filelock-3.18.0-py3-none-any.whl (16 kB)
+2025-03-28T17:44:45.2769496Z Downloading platformdirs-4.3.7-py3-none-any.whl (18 kB)
+2025-03-28T17:44:45.3426426Z Installing collected packages: distlib, pyyaml, platformdirs, nodeenv, identify, filelock, cfgv, virtualenv, pre-commit
+2025-03-28T17:44:45.7312996Z Successfully installed cfgv-3.4.0 distlib-0.3.9 filelock-3.18.0 identify-2.6.9 nodeenv-1.9.1 platformdirs-4.3.7 pre-commit-4.2.0 pyyaml-6.0.2 virtualenv-20.29.3
+2025-03-28T17:44:45.8897051Z [command]/opt/hostedtoolcache/Python/3.13.2/x64/bin/pip freeze --local
+2025-03-28T17:44:46.1143782Z cfgv==3.4.0
+2025-03-28T17:44:46.1144269Z distlib==0.3.9
+2025-03-28T17:44:46.1144899Z filelock==3.18.0
+2025-03-28T17:44:46.1145197Z identify==2.6.9
+2025-03-28T17:44:46.1145470Z nodeenv==1.9.1
+2025-03-28T17:44:46.1145751Z platformdirs==4.3.7
+2025-03-28T17:44:46.1146339Z pre_commit==4.2.0
+2025-03-28T17:44:46.1146608Z PyYAML==6.0.2
+2025-03-28T17:44:46.1146976Z virtualenv==20.29.3
+2025-03-28T17:44:46.1406986Z ##[endgroup]
+2025-03-28T17:44:46.6309042Z Cache Size: ~24 MB (25493188 B)
+2025-03-28T17:44:46.6336940Z [command]/usr/bin/tar -z -xf /home/runner/work/_temp/b47e50d0-b1a8-4b19-827b-a21157f7dbda/cache.tgz -P -C /home/runner/work/pint-pandas/pint-pandas
+2025-03-28T17:44:47.1575035Z [command]/opt/hostedtoolcache/Python/3.13.2/x64/bin/pre-commit run --show-diff-on-failure --color=always --all-files --show-diff-on-failure
+2025-03-28T17:44:47.6257531Z check yaml...............................................................[42mPassed[m
+2025-03-28T17:44:47.6766445Z fix end of files.........................................................[41mFailed[m
+2025-03-28T17:44:47.6767288Z [2m- hook id: end-of-file-fixer[m
+2025-03-28T17:44:47.6767800Z [2m- exit code: 1[m
+2025-03-28T17:44:47.6768303Z [2m- files were modified by this hook[m
+2025-03-28T17:44:47.6768706Z 
+2025-03-28T17:44:47.6768875Z Fixing docs/user/reading.rst
+2025-03-28T17:44:47.6769166Z 
+2025-03-28T17:44:47.7303556Z trim trailing whitespace.................................................[42mPassed[m
+2025-03-28T17:44:47.7470835Z ruff.....................................................................[42mPassed[m
+2025-03-28T17:44:47.7653877Z ruff-format..............................................................[42mPassed[m
+2025-03-28T17:44:48.0400747Z mdformat.................................................................[42mPassed[m
+2025-03-28T17:44:48.2512255Z nbstripout...............................................................[42mPassed[m
+2025-03-28T17:44:48.2513036Z pre-commit hook(s) made changes.
+2025-03-28T17:44:48.2513737Z If you are seeing this message in CI, reproduce locally with: `pre-commit run --all-files`.
+2025-03-28T17:44:48.2514816Z To run `pre-commit` as part of git workflow, use `pre-commit install`.
+2025-03-28T17:44:48.2515398Z All changes made by hooks:
+2025-03-28T17:44:48.2531343Z [1mdiff --git a/docs/user/reading.rst b/docs/user/reading.rst[m
+2025-03-28T17:44:48.2532060Z [1mindex 1d75909..db89f75 100644[m
+2025-03-28T17:44:48.2532573Z [1m--- a/docs/user/reading.rst[m
+2025-03-28T17:44:48.2533036Z [1m+++ b/docs/user/reading.rst[m
+2025-03-28T17:44:48.2533899Z [36m@@ -195,4 +195,3 @@[m [mThe reverse operation can be done with :py:func:`df.pint.dequantify` and the :py[m
+2025-03-28T17:44:48.2534769Z          return f"{column_name} [{unit}]"[m
+2025-03-28T17:44:48.2535172Z  [m
+2025-03-28T17:44:48.2535632Z      df_.pint.dequantify(writing_function=writing_function)[m
+2025-03-28T17:44:48.2536369Z [31m-[m
+2025-03-28T17:44:48.2752634Z ##[error]The process '/opt/hostedtoolcache/Python/3.13.2/x64/bin/pre-commit' failed with exit code 1
+2025-03-28T17:44:48.2879148Z Post job cleanup.
+2025-03-28T17:44:48.3746466Z [command]/usr/bin/git version
+2025-03-28T17:44:48.3786638Z git version 2.49.0
+2025-03-28T17:44:48.3831106Z Temporarily overriding HOME='/home/runner/work/_temp/8b6267b0-33ec-49bd-bce7-e9307c8c0312' before making global git config changes
+2025-03-28T17:44:48.3832424Z Adding repository directory to the temporary git global config as a safe directory
+2025-03-28T17:44:48.3835812Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/pint-pandas/pint-pandas
+2025-03-28T17:44:48.3870204Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-03-28T17:44:48.3901623Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-03-28T17:44:48.4134383Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-03-28T17:44:48.4156734Z http.https://github.com/.extraheader
+2025-03-28T17:44:48.4166222Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-03-28T17:44:48.4197362Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-03-28T17:44:48.4567509Z Cleaning up orphan processes

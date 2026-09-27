@@ -1,0 +1,2235 @@
+diff --git a/.github/workflows/lint-only-changed-files.yaml b/.github/workflows/lint-only-changed-files.yaml
+index e5d4397c1..8988d2842 100644
+--- a/.github/workflows/lint-only-changed-files.yaml
++++ b/.github/workflows/lint-only-changed-files.yaml
+@@ -30,7 +30,9 @@ jobs:
+             any::lintr
+             any::purrr
+             progressr
+-            any::cyclocomp
++            any::cyclocomp,
++            any::future,
++            any::future.apply
+ 
+       - name: Add lintr options
+         run: |
+diff --git a/.github/workflows/pkgdown.yaml b/.github/workflows/pkgdown.yaml
+index 47188d5ab..4c623d99e 100644
+--- a/.github/workflows/pkgdown.yaml
++++ b/.github/workflows/pkgdown.yaml
+@@ -36,7 +36,7 @@ jobs:
+ 
+       - name: Deploy to GitHub pages 🚀
+         if: github.event_name != 'pull_request'
+-        uses: JamesIves/github-pages-deploy-action@v4.7.2
++        uses: JamesIves/github-pages-deploy-action@v4.7.3
+         with:
+           clean: false
+           branch: gh-pages
+diff --git a/.lintr b/.lintr
+index 6588b4777..6ff2de3b8 100644
+--- a/.lintr
++++ b/.lintr
+@@ -1,7 +1,6 @@
+ linters: linters_with_tags(
+     tags = NULL, # include all linters
+     implicit_integer_linter = NULL,
+-    extraction_operator_linter = NULL,
+     keyword_quote_linter = NULL,
+     undesirable_function_linter(
+       fun = c(
+@@ -20,5 +19,5 @@ linters: linters_with_tags(
+ exclusions: c(
+     list.files("tests", recursive = TRUE, full.names = TRUE),
+     list.files("inst", recursive = TRUE, full.names = TRUE),
+-    "R/stanmodels.R"
++    "R/stanmodels.R", "R/deprecated.R"
+   )
+diff --git a/R/checks.R b/R/checks.R
+index a9e7aea9e..4f27d83a3 100644
+--- a/R/checks.R
++++ b/R/checks.R
+@@ -109,7 +109,7 @@ check_stan_delay <- function(dist) {
+   }
+   assert_numeric(attr(dist, "cdf_cutoff"), lower = 0, upper = 1)
+   # Check that `dist` has a finite maximum
+-  if (any(is.infinite(max(dist))) && !(attr(dist, "cdf_cutoff") > 0)) {
++  if (any(is.infinite(max(dist))) && attr(dist, "cdf_cutoff") == 0) {
+     cli_abort(
+       c(
+         "i" = "All distributions passed to the model need to have a
+diff --git a/R/create.R b/R/create.R
+index b8bfa62ba..4991b8264 100644
+--- a/R/create.R
++++ b/R/create.R
+@@ -93,8 +93,7 @@ create_shifted_cases <- function(data, shift,
+     ,
+     confirm := ceiling(confirm)
+   ]
+-  shifted_reported_cases <- shifted_reported_cases[-(1:smoothing_window)]
+-  return(shifted_reported_cases)
++  shifted_reported_cases[-(1:smoothing_window)]
+ }
+ 
+ #' Construct the Required Future Rt assumption
+@@ -120,7 +119,7 @@ create_future_rt <- function(future = c("latest", "project", "estimate"),
+   out <- list(fixed = FALSE, from = 0)
+   if (is.character(future)) {
+     future <- arg_match(future)
+-    if (!(future == "project")) {
++    if (future != "project") {
+       out$fixed <- TRUE
+       out$from <- ifelse(future == "latest", 0, -delay)
+     }
+@@ -195,7 +194,7 @@ create_rt_data <- function(rt = rt_opts(), breakpoints = NULL,
+ 
+     breakpoints <- seq_along(breakpoints)
+     breakpoints <- floor(breakpoints / rt$rw)
+-    if (!(rt$future == "project")) {
++    if (rt$future != "project") {
+       max_bps <- length(breakpoints) - horizon + future_rt$from
+       if (max_bps < length(breakpoints)) {
+         breakpoints[(max_bps + 1):length(breakpoints)] <- breakpoints[max_bps]
+@@ -238,7 +237,7 @@ create_rt_data <- function(rt = rt_opts(), breakpoints = NULL,
+ #' @return A list of settings defining the Gaussian process
+ #' @keywords internal
+ create_backcalc_data <- function(backcalc = backcalc_opts()) {
+-  data <- list(
++  list(
+     rt_half_window = as.integer((backcalc$rt_window - 1) / 2),
+     backcalc_prior = data.table::fcase(
+       backcalc$prior == "none", 0,
+@@ -247,7 +246,6 @@ create_backcalc_data <- function(backcalc = backcalc_opts()) {
+       default = 0
+     )
+   )
+-  return(data)
+ }
+ 
+ #' Create Gaussian Process Data
+@@ -292,16 +290,16 @@ create_gp_data <- function(gp = gp_opts(), data) {
+     fixed <- FALSE
+   }
+ 
+-  time <- data$t - data$seeding_time
++  est_time <- data$t - data$seeding_time
+   if (data$future_fixed > 0) {
+-    time <- time + data$fixed_from - data$horizon
++    est_time <- est_time + data$fixed_from - data$horizon
+   }
+   if (data$stationary == 1) {
+-    time <- time - 1
++    est_time <- est_time - 1
+   }
+ 
+   # basis functions
+-  M <- ceiling(time * gp$basis_prop)
++  M <- ceiling(est_time * gp$basis_prop)
+ 
+   # map settings to underlying gp stan requirements
+   gp_data <- list(
+@@ -353,7 +351,7 @@ create_gp_data <- function(gp = gp_opts(), data) {
+ #' create_obs_model(obs_opts(week_length = 3), dates = dates)
+ #' }
+ create_obs_model <- function(obs = obs_opts(), dates) {
+-  data <- list(
++  opts <- list(
+     model_type = as.numeric(obs$family == "negbin"),
+     week_effect = ifelse(obs$week_effect, obs$week_length, 1),
+     obs_weight = obs$weight,
+@@ -362,9 +360,9 @@ create_obs_model <- function(obs = obs_opts(), dates) {
+     return_likelihood = as.numeric(obs$return_likelihood)
+   )
+ 
+-  data$day_of_week <- add_day_of_week(dates, data$week_effect)
++  opts$day_of_week <- add_day_of_week(dates, opts$week_effect)
+ 
+-  return(data)
++  return(opts)
+ }
+ 
+ #' Create Stan Data Required for estimate_infections
+@@ -464,7 +462,7 @@ create_stan_data <- function(data, seeding_time, rt, gp, obs, backcalc,
+   # used
+   stan_data$shifted_cases <-
+     stan_data$shifted_cases / mean(obs$scale)
+-  return(stan_data)
++  stan_data
+ }
+ 
+ ##' Create initial conditions for delays
+@@ -472,17 +470,17 @@ create_stan_data <- function(data, seeding_time, rt, gp, obs, backcalc,
+ ##' @inheritParams create_initial_conditions
+ ##' @return A list of initial conditions for delays
+ ##' @keywords internal
+-create_delay_inits <- function(data) {
++create_delay_inits <- function(stan_data) {
+   out <- list()
+-  if (data$delay_n_p > 0) {
++  if (stan_data$delay_n_p > 0) {
+     out$delay_params <- array(truncnorm::rtruncnorm(
+-      n = data$delay_params_length, a = data$delay_params_lower,
+-      mean = data$delay_params_mean, sd = data$delay_params_sd * 0.1
++      n = stan_data$delay_params_length, a = stan_data$delay_params_lower,
++      mean = stan_data$delay_params_mean, sd = stan_data$delay_params_sd * 0.1
+     ))
+   } else {
+     out$delay_params <- array(numeric(0))
+   }
+-  return(out)
++  out
+ }
+ 
+ #' Create Initial Conditions Generating Function
+@@ -497,45 +495,44 @@ create_delay_inits <- function(data) {
+ #' @importFrom truncnorm rtruncnorm
+ #' @importFrom data.table fcase
+ #' @keywords internal
+-create_initial_conditions <- function(data) {
+-  init_fun <- function() {
+-    out <- create_delay_inits(data)
++create_initial_conditions <- function(stan_data) {
++  function() {
++    out <- create_delay_inits(stan_data)
+ 
+-    if (data$fixed == 0) {
++    if (stan_data$fixed == 0) {
+       out$eta <- array(rnorm(
+-        ifelse(data$gp_type == 1, data$M * 2, data$M),
++        ifelse(stan_data$gp_type == 1, stan_data$M * 2, stan_data$M),
+         mean = 0, sd = 0.1
+       ))
+     } else {
+       out$eta <- array(numeric(0))
+     }
+-    if (data$estimate_r == 1) {
++    if (stan_data$estimate_r == 1) {
+       out$initial_infections <- array(rnorm(1))
+     } else {
+       out$initial_infections <- array(numeric(0))
+     }
+ 
+-    if (data$bp_n > 0) {
++    if (stan_data$bp_n > 0) {
+       out$bp_sd <- array(truncnorm::rtruncnorm(1, a = 0, mean = 0, sd = 0.1))
+-      out$bp_effects <- array(rnorm(data$bp_n, 0, 0.1))
++      out$bp_effects <- array(rnorm(stan_data$bp_n, 0, 0.1))
+     } else {
+       out$bp_sd <- array(numeric(0))
+       out$bp_effects <- array(numeric(0))
+     }
+-    if (data$week_effect > 0) {
++    if (stan_data$week_effect > 0) {
+       out$day_of_week_simplex <- array(
+-        rep(1 / data$week_effect, data$week_effect)
++        rep(1 / stan_data$week_effect, stan_data$week_effect)
+       )
+     }
+     out$params <- array(truncnorm::rtruncnorm(
+-      data$n_params_variable,
+-      a = data$params_lower,
+-      b = data$params_upper,
++      stan_data$n_params_variable,
++      a = stan_data$params_lower,
++      b = stan_data$params_upper,
+       mean = 0, sd = 1
+     ))
+-    return(out)
++    out
+   }
+-  return(init_fun)
+ }
+ 
+ #' Create a List of Stan Arguments
+@@ -602,14 +599,14 @@ create_stan_args <- function(stan = stan_opts(),
+     init <- 2
+   }
+   # set up shared default arguments
+-  args <- list(
++  stan_args <- list(
+     data = data,
+     init = init,
+     refresh = ifelse(verbose, 50, 0)
+   )
+-  args <- modifyList(args, stan)
+-  args$return_fit <- NULL
+-  return(args)
++  stan_args <- modifyList(stan_args, stan)
++  stan_args$return_fit <- NULL
++  return(stan_args)
+ }
+ 
+ ##' Create delay variables for stan
+@@ -642,9 +639,9 @@ create_stan_delays <- function(..., time_points = 1L) {
+   } else {
+     flat_delays <- delays
+   }
+-  parametric <- unname(vapply(
+-    flat_delays, function(x) get_distribution(x) != "nonparametric", logical(1)
+-  ))
++  parametric <- unname(
++    vapply(flat_delays, get_distribution, character(1)) != "nonparametric"
++  )
+   param_length <- unname(vapply(flat_delays[parametric], function(x) {
+     length(get_parameters(x))
+   }, numeric(1)))
+diff --git a/R/dist_spec.R b/R/dist_spec.R
+index f7226c69a..69d055eef 100644
+--- a/R/dist_spec.R
++++ b/R/dist_spec.R
+@@ -47,34 +47,30 @@ discrete_pmf <- function(distribution =
+                          params, max_value, cdf_cutoff, width) {
+   distribution <- arg_match(distribution)
+   ## define unnormalised support function and cumulative density function
+-  if (distribution == "exp") {
+-    updist <- function(n) {
++  updist <- switch(distribution,
++    exp = function(n) {
+       pexp(n, params[["rate"]])
+-    }
+-    qdist <- qexp
+-  } else if (distribution == "gamma") {
+-    updist <- function(n) {
++    },
++    gamma = function(n) {
+       pgamma(n, params[["shape"]], params[["rate"]])
+-    }
+-    qdist <- qgamma
+-  } else if (distribution == "lognormal") {
+-    updist <- function(n) {
++    },
++   lognormal = function(n) {
+       plnorm(n, params[["meanlog"]], params[["sdlog"]])
+-    }
+-    qdist <- qlnorm
+-  } else if (distribution == "normal") {
+-    updist <- function(n) {
++   },
++   normal = function(n) {
+       pnorm(n, params[["mean"]], params[["sd"]])
+-    }
+-    qdist <- qnorm
+-  } else if (distribution == "fixed") {
+-    updist <- function(n) {
++   },
++   fixed = function(n) {
+       as.integer(n > params[["value"]])
+     }
+-    qdist <- function(p, value) {
+-      return(value)
+-    }
+-  }
++  )
++  qdist <- switch(distribution,
++    exp = qexp,
++    gamma = qgamma,
++    lognormal = qlnorm,
++    normal = qnorm,
++    fixed = function(p, value) value
++  )
+ 
+   ## apply CDF cutoff if given
+   if (!missing(cdf_cutoff)) {
+@@ -186,7 +182,7 @@ discrete_pmf <- function(distribution =
+ ##' @method != dist_spec
+ ##' @export
+ `!=.dist_spec` <- function(e1, e2) {
+-  !(e1 == e2)
++  !(e1 == e2) # nolint: comparison_negation_linter
+ }
+ 
+ #' Combines multiple delay distributions for further processing
+@@ -253,7 +249,7 @@ c.dist_spec <- function(...) {
+     attr(dist_specs, "class") <- c("multi_dist_spec", "dist_spec", "list")
+   }
+ 
+-  return(dist_specs)
++  dist_specs
+ }
+ 
+ #' Returns the mean of one or more delay distribution
+@@ -291,32 +287,29 @@ mean.dist_spec <- function(x, ..., ignore_uncertainty = FALSE) {
+   if (get_distribution(x) == "nonparametric") {
+     ## nonparametric
+     pmf <- get_pmf(x)
+-    return(sum((seq_along(pmf) - 1) * pmf))
++    sum((seq_along(pmf) - 1) * pmf)
+   } else {
+     params <- get_parameters(x)
+     if (!all(vapply(params, is.numeric, logical(1)))) {
+-      if (ignore_uncertainty) {
+-        params <- lapply(params, mean, ignore_uncertainty = TRUE)
+-      } else {
++      if (!ignore_uncertainty) {
+         return(NA_real_)
+       }
++      params <- lapply(params, mean, ignore_uncertainty = TRUE)
+     }
+-    dist <- get_distribution(x)
+-    if (dist == "lognormal") {
+-      return(exp(params$meanlog + params$sdlog**2 / 2))
+-    } else if (dist == "gamma") {
+-      return(params$shape / params$rate)
+-    } else if (dist == "normal") {
+-      return(params$mean)
+-    } else if (dist == "fixed") {
+-      return(params$value)
+-    } else {
++    ret_mean <- switch(get_distribution(x),
++      lognormal = exp(params$meanlog + params$sdlog**2 / 2),
++      gamma = params$shape / params$rate,
++      normal = params$mean,
++      fixed = params$value
++    )
++    if (is.null(ret_mean)) {
+       cli_abort(
+         c(
+           "!" = "Don't know how to calculate mean of {dist} distribution."
+         )
+       )
+     }
++    ret_mean
+   }
+ }
+ 
+@@ -359,25 +352,23 @@ sd <- function(x, ...) {
+ #' sd(dist1 + dist2)
+ #' }
+ sd.dist_spec <- function(x, ...) {
+-  if (x$distribution == "nonparametric") {
++  if (get_distribution(x) == "nonparametric") {
+     ## nonparametric
+     mean_pmf <- sum((seq_along(x$pmf) - 1) * x$pmf)
+-    return(sum((seq_along(x$pmf) - 1)**2 * x$pmf) - mean_pmf^2)
++    sum((seq_along(x$pmf) - 1)**2 * x$pmf) - mean_pmf^2
+   } else {
+     ## parametric
+     if (!all(vapply(x$parameters, is.numeric, logical(1)))) {
+       return(NA_real_)
+     }
+-    if (x$distribution == "lognormal") {
+-      sqrt(exp(x$parameters$sdlog**2) - 1) *
+-        exp(x$parameters$meanlog + 0.5 * x$parameters$sdlog**2)
+-    } else if (x$distribution == "gamma") {
+-      sqrt(x$parameters$shape / x$parameters$rate**2)
+-    } else if (x$distribution == "normal") {
+-      x$parameters$sd
+-    } else if (x$distribution == "fixed") {
+-      0
+-    } else {
++    ret_sd <- switch(get_distribution(x),
++      lognormal = sqrt(exp(x$parameters$sdlog**2) - 1) *
++        exp(x$parameters$meanlog + 0.5 * x$parameters$sdlog**2),
++      gamma = sqrt(x$parameters$shape / x$parameters$rate**2),
++      normal = x$parameters$sd,
++      fixed = 0.0
++    )
++    if (is.null(ret_sd)) {
+       cli_abort(
+         c(
+           "!" = "Don't know how to calculate standard deviation of
+@@ -385,13 +376,13 @@ sd.dist_spec <- function(x, ...) {
+         )
+       )
+     }
++    ret_sd
+   }
+ }
+ 
+ #' @export
+ sd.multi_dist_spec <- function(x, ...) {
+-  ret <- vapply(x, sd, numeric(1))
+-  return(ret)
++  vapply(x, sd, numeric(1))
+ }
+ #' @export
+ sd.default <- function(x, ...) {
+@@ -429,24 +420,16 @@ sd.default <- function(x, ...) {
+ max.dist_spec <- function(x, ...) {
+   ## try to discretise (which applies cdf cutoff and max)
+   x <- discretise(x, strict = FALSE)
+-  if (get_distribution(x) == "nonparametric") {
+-    ## nonparametric
+-    return(length(get_pmf(x)) - 1)
+-  } else if (get_distribution(x) == "fixed") {
+-    return(get_parameters(x)$value)
+-  } else {
+-    if (is.null(attr(x, "max"))) {
+-      return(Inf)
+-    } else {
+-      return(attr(x, "max"))
+-    }
+-  }
++  switch(get_distribution(x),
++    nonparametric = length(get_pmf(x)) - 1,
++    fixed = get_parameters(x)$value,
++    ifelse(is.null(attr(x, "max")), Inf, attr(x, "max"))
++  )
+ }
+ 
+ #' @export
+ max.multi_dist_spec <- function(x, ...) {
+-  ret <- vapply(x, max, numeric(1))
+-  return(ret)
++  vapply(x, max, numeric(1))
+ }
+ 
+ #' @export
+@@ -496,39 +479,37 @@ discretise.dist_spec <- function(x, strict = TRUE, ...) {
+   }
+   if (get_distribution(x) == "nonparametric") {
+     return(x)
+-  } else {
+-    if (!is.na(sd(x)) && is_constrained(x)) {
+-      cdf_cutoff <- attr(x, "cdf_cutoff")
+-      if (is.null(cdf_cutoff)) {
+-        cdf_cutoff <- 0
+-      }
+-      max <- attr(x, "max")
+-      if (is.null(max)) {
+-        max <- Inf
+-      }
+-      y <- list(
+-        pmf = discrete_pmf(
+-          get_distribution(x), get_parameters(x), max, cdf_cutoff,
+-          width = 1
+-        )
+-      )
+-      y$distribution <- "nonparametric"
+-      preserve_attributes <- setdiff(
+-        names(attributes(x)), c("cdf_cutoff", "max", "names")
+-      )
+-      for (attribute in preserve_attributes) {
+-        attributes(y)[attribute] <- attributes(x)[attribute]
+-      }
+-      return(y)
+-    } else if (strict) {
+-      cli_abort(
+-        c(
+-          "!" = "Cannot discretise a distribution with uncertain parameters."
+-        )
++  } else if (!is.na(sd(x)) && is_constrained(x)) {
++    cdf_cutoff <- attr(x, "cdf_cutoff")
++    if (is.null(cdf_cutoff)) {
++      cdf_cutoff <- 0
++    }
++    dist_max <- attr(x, "max")
++    if (is.null(dist_max)) {
++      dist_max <- Inf
++    }
++    y <- list(
++      pmf = discrete_pmf(
++        get_distribution(x), get_parameters(x), dist_max, cdf_cutoff,
++        width = 1
+       )
+-    } else {
+-      return(x)
++    )
++    y$distribution <- "nonparametric"
++    preserve_attributes <- setdiff(
++      names(attributes(x)), c("cdf_cutoff", "max", "names")
++    )
++    for (attribute in preserve_attributes) {
++      attributes(y)[attribute] <- attributes(x)[attribute]
+     }
++    return(y)
++  } else if (strict) {
++    cli_abort(
++      c(
++        "!" = "Cannot discretise a distribution with uncertain parameters."
++      )
++    )
++  } else {
++    return(x)
+   }
+ }
+ #' @method discretise multi_dist_spec
+@@ -575,7 +556,7 @@ collapse <- function(x, ...) {
+ #' # The maxf the sum of two distributions
+ #' collapse(discretise(dist1 + dist2, strict = FALSE))
+ collapse.dist_spec <- function(x, ...) {
+-  return(x)
++  x
+ }
+ #' @method collapse multi_dist_spec
+ #' @export
+@@ -608,8 +589,7 @@ collapse.multi_dist_spec <- function(x, ...) {
+   x[unlist(next_ids)] <- NULL
+   ## if wev have collapsed all we turn into a single dist_spec
+   if ((length(x) == 1) && is(x[[1]], "dist_spec")) x <- x[[1]]
+-
+-  return(x)
++  x
+ }
+ 
+ #' Prints the parameters of one or more delay distributions
+@@ -662,14 +642,15 @@ print.dist_spec <- function(x, ...) {
+     } else {
+       ## parametric
+       cat(indent_str, "- ", get_distribution(x, i), " distribution", sep = "")
+-      dist <- extract_single_dist(x, i)
++      single_dist <- extract_single_dist(x, i)
+       constrain_str <- character(0)
+-      if (!is.null(attr(dist, "max")) && is.finite(attr(dist, "max"))) {
+-        constrain_str["max"] <- paste("max:", max(dist))
++      if (!is.null(attr(single_dist, "max")) &&
++            is.finite(attr(single_dist, "max"))) {
++        constrain_str["max"] <- paste("max:", max(single_dist))
+       }
+-      if (!is.null(attr(dist, "cdf_cutoff"))) {
++      if (!is.null(attr(single_dist, "cdf_cutoff"))) {
+         constrain_str["cdf_cutoff"] <-
+-          paste("cdf_cutoff:", attr(dist, "cdf_cutoff"))
++          paste("cdf_cutoff:", attr(single_dist, "cdf_cutoff"))
+       }
+       if (length(constrain_str) > 0) {
+         cat(" (", toString(constrain_str), ")", sep = "")
+@@ -752,7 +733,7 @@ plot.dist_spec <- function(x, samples = 50L, res = 1, cumulative = TRUE, ...) {
+           return(FALSE)
+         }
+         sd_dist <- sd(y)
+-        return(is.na(sd_dist) || sd_dist > 0)
++        is.na(sd_dist) || sd_dist > 0
+       }, logical(1))
+       if (!any(uncertain)) {
+         samples <- 1 ## only need 1 sample if fixed
+@@ -779,7 +760,7 @@ plot.dist_spec <- function(x, samples = 50L, res = 1, cumulative = TRUE, ...) {
+           distribution = get_distribution(x, i), params = get_parameters(y),
+           max_value = attr(y, "max"), cdf_cutoff = cdf_cutoff, width = res
+         )
+-        return(data.table(x = (seq_along(x) - 1) * res, p = x))
++        data.table(x = (seq_along(x) - 1) * res, p = x)
+       })
+       pmf_dt <- rbindlist(pmf_dt, idcol = "sample")
+ 
+@@ -789,7 +770,7 @@ plot.dist_spec <- function(x, samples = 50L, res = 1, cumulative = TRUE, ...) {
+       )
+       pmf_dt <- pmf_dt[, distribution := dist_name]
+     }
+-    return(pmf_dt)
++    pmf_dt
+   })
+   pmf_data <- rbindlist(pmf_data)[, `:=`(
+     type = factor("pmf", levels = c("pmf", "cmf")),
+@@ -797,7 +778,7 @@ plot.dist_spec <- function(x, samples = 50L, res = 1, cumulative = TRUE, ...) {
+   )]
+ 
+   # Plot PMF and CDF as facets in the same plot
+-  plot <- ggplot(
++  p <- ggplot(
+     pmf_data,
+     mapping = aes(x = x, y = p, group = sample, color = type)
+   ) +
+@@ -814,10 +795,10 @@ plot.dist_spec <- function(x, samples = 50L, res = 1, cumulative = TRUE, ...) {
+       ,
+       type := factor("cmf", levels = c("pmf", "cmf"))
+     ]
+-    plot <- plot +
++    p <- p +
+       geom_step(data = cmf_data)
+   }
+-  return(plot)
++  return(p)
+ }
+ 
+ #' Extract a single element of a composite `<dist_spec>`
+@@ -854,9 +835,9 @@ extract_single_dist <- function(x, i) {
+     )
+   }
+   if (ndist(x) == 1) {
+-    return(x)
++    x
+   } else {
+-    return(x[[i]])
++    x[[i]]
+   }
+ }
+ 
+@@ -963,15 +944,15 @@ is_constrained.dist_spec <- function(x, ...) {
+   }
+   cdf_cutoff <- attr(x, "cdf_cutoff")
+   tol_constrained <- !is.null(cdf_cutoff) && cdf_cutoff > 0
+-  max <- attr(x, "max")
+-  max_constrained <- !is.null(max) && is.finite(max)
+-  return(tol_constrained || max_constrained)
++  max_dist <- attr(x, "max")
++  max_constrained <- !is.null(max_dist) && is.finite(max_dist)
++  tol_constrained || max_constrained
+ }
+ #' @method is_constrained multi_dist_spec
+ #' @export
+ is_constrained.multi_dist_spec <- function(x, ...) {
+   constrained <- vapply(x, is_constrained, logical(1))
+-  return(all(constrained))
++  all(constrained)
+ }
+ 
+ #' @details
+@@ -1017,7 +998,7 @@ is_constrained.multi_dist_spec <- function(x, ...) {
+ #' LogNormal(meanlog = Normal(1.5, 0.5), sdlog = 0.25, max = 10)
+ LogNormal <- function(meanlog, sdlog, mean, sd, ...) {
+   params <- as.list(environment())
+-  return(new_dist_spec(params, "lognormal", ...))
++  new_dist_spec(params, "lognormal", ...)
+ }
+ 
+ #' @inheritParams stats::GammaDist
+@@ -1031,7 +1012,7 @@ LogNormal <- function(meanlog, sdlog, mean, sd, ...) {
+ #' Gamma(shape = Normal(16, 2), rate = Normal(4, 1))
+ Gamma <- function(shape, rate, scale, mean, sd, ...) {
+   params <- as.list(environment())
+-  return(new_dist_spec(params, "gamma", ...))
++  new_dist_spec(params, "gamma", ...)
+ }
+ 
+ #' @rdname Distributions
+@@ -1042,7 +1023,7 @@ Gamma <- function(shape, rate, scale, mean, sd, ...) {
+ #' Normal(mean = 4, sd = 1, max = 10)
+ Normal <- function(mean, sd, ...) {
+   params <- as.list(environment())
+-  return(new_dist_spec(params, "normal", ...))
++  new_dist_spec(params, "normal", ...)
+ }
+ 
+ #' @rdname Distributions
+@@ -1054,7 +1035,7 @@ Normal <- function(mean, sd, ...) {
+ #' Fixed(value = 3.5)
+ Fixed <- function(value, ...) {
+   params <- as.list(environment())
+-  return(new_dist_spec(params, "fixed"))
++  new_dist_spec(params, "fixed")
+ }
+ 
+ #' Generates a nonparametric distribution.
+@@ -1072,7 +1053,7 @@ Fixed <- function(value, ...) {
+ NonParametric <- function(pmf, ...) {
+   check_sparse_pmf_tail(pmf)
+   params <- list(pmf = pmf / sum(pmf))
+-  return(new_dist_spec(params, "nonparametric"))
++  new_dist_spec(params, "nonparametric")
+ }
+ 
+ #' Get the names of the natural parameters of a distribution
+@@ -1089,16 +1070,12 @@ NonParametric <- function(pmf, ...) {
+ #' natural_params("gamma")
+ #' }
+ natural_params <- function(distribution) {
+-  if (distribution == "gamma") {
+-    ret <- c("shape", "rate")
+-  } else if (distribution == "lognormal") {
+-    ret <- c("meanlog", "sdlog")
+-  } else if (distribution == "normal") {
+-    ret <- c("mean", "sd")
+-  } else if (distribution == "fixed") {
+-    ret <- "value"
+-  }
+-  return(ret)
++  switch(distribution,
++    gamma = c("shape", "rate"),
++    lognormal = c("meanlog", "sdlog"),
++    normal = c("mean", "sd"),
++    fixed = "value"
++  )
+ }
+ 
+ #' Get the lower bounds of the parameters of a distribution
+@@ -1113,16 +1090,12 @@ natural_params <- function(distribution) {
+ #' lower_bounds("lognormal")
+ #' }
+ lower_bounds <- function(distribution) {
+-  if (distribution == "gamma") {
+-    ret <- c(shape = 0, rate = 0, scale = 0, mean = 0, sd = 0)
+-  } else if (distribution == "lognormal") {
+-    ret <- c(meanlog = -Inf, sdlog = 0, mean = 0, sd = 0)
+-  } else if (distribution == "normal") {
+-    ret <- c(mean = -Inf, sd = 0)
+-  } else if (distribution == "fixed") {
+-    ret <- c(value = 1)
+-  }
+-  return(ret)
++  switch(distribution,
++    gamma = c(shape = 0, rate = 0, scale = 0, mean = 0, sd = 0),
++    lognormal = c(meanlog = -Inf, sdlog = 0, mean = 0, sd = 0),
++    normal = c(mean = -Inf, sd = 0),
++    fixed = c(value = 1)
++  )
+ }
+ 
+ #' Define bounds of a `<dist_spec>`
+@@ -1188,7 +1161,7 @@ extract_params <- function(params, distribution) {
+       )
+     )
+   }
+-  return(params)
++  params
+ }
+ 
+ #' Internal function for generating a `dist_spec` given parameters and a
+@@ -1250,7 +1223,7 @@ new_dist_spec <- function(params, distribution, max = Inf, cdf_cutoff = 0) {
+             return(FALSE)
+           }
+           sd_dist <- sd(x)
+-          return(is.na(sd_dist) || sd_dist > 0)
++          is.na(sd_dist) || sd_dist > 0
+         }, logical(1))
+         if (any(uncertain)) {
+           # nolint start: duplicate_argument_linter
+@@ -1368,7 +1341,7 @@ convert_to_natural <- function(params, distribution) {
+   } else {
+     params <- x
+   }
+-  return(params)
++  params
+ }
+ 
+ ##' Extracts an element of a `<dist_spec>`
+@@ -1497,8 +1470,8 @@ get_distribution <- function(x, id = NULL) {
+ ##' @keywords internal
+ ndist <- function(x) {
+   if (is(x, "multi_dist_spec")) {
+-    return(length(x))
++    length(x)
+   } else {
+-    return(1L)
++    1L
+   }
+ }
+diff --git a/R/epinow-internal.R b/R/epinow-internal.R
+index 97a7b4cc8..066cea94b 100644
+--- a/R/epinow-internal.R
++++ b/R/epinow-internal.R
+@@ -15,7 +15,7 @@ update_horizon <- function(horizon, target_date, data) {
+       as.Date(target_date) - max(data$date)
+     )
+   }
+-  return(horizon)
++  horizon
+ }
+ 
+ #' Save Observed Data
+@@ -34,7 +34,7 @@ save_input <- function(data, target_folder) {
+     saveRDS(latest_date, file.path(target_folder, "latest_date.rds"))
+     saveRDS(data, file.path(target_folder, "reported_cases.rds"))
+   }
+-  return(invisible(NULL))
++  invisible(NULL)
+ }
+ 
+ #' Save Estimated Infections
+diff --git a/R/estimate_delay.R b/R/estimate_delay.R
+index 76af0a97b..c2f3d835f 100644
+--- a/R/estimate_delay.R
++++ b/R/estimate_delay.R
+@@ -54,7 +54,7 @@ dist_fit <- function(values = NULL, samples = 1000, cores = 1,
+   lows <- ifelse(lows <= 0, 1e-6, lows)
+   ups <- values + 1
+ 
+-  data <- list(
++  stan_data <- list(
+     N = length(values),
+     low = lows,
+     up = ups,
+@@ -66,20 +66,23 @@ dist_fit <- function(values = NULL, samples = 1000, cores = 1,
+ 
+   model <- epinow2_stan_model(backend, "dist_fit")
+ 
+-  if (dist == "exp") {
+-    data$dist <- 0
+-    data$lam_mean <- array(mean(values))
+-  } else if (dist == "lognormal") {
+-    data$dist <- 1
+-    data$prior_mean <- array(log(mean(values)))
+-    data$prior_sd <- array(log(sd(values)))
+-  } else if (dist == "gamma") {
+-    data$dist <- 2
+-    data$prior_mean <- array(mean(values))
+-    data$prior_sd <- array(sd(values))
+-    data$par_sigma <- array(1.0)
+-  }
+-
++  stan_data <- modifyList(stan_data, switch(dist,
++    exp = list(
++      dist = 0,
++      lam_mean = array(mean(values))
++    ),
++    lognormal = list(
++      dist = 1,
++      prior_mean = array(log(mean(values))),
++      prior_sd = array(log(sd(values)))
++    ),
++    gamma = list(
++      dist = 2,
++      prior_mean = array(mean(values)),
++      prior_sd = array(sd(values)),
++      par_sigma = array(1.0)
++    )
++  ))
+   # set adapt delta based on the sample size
+   if (length(values) <= 30) {
+     adapt_delta <- 0.999
+@@ -88,7 +91,7 @@ dist_fit <- function(values = NULL, samples = 1000, cores = 1,
+   }
+ 
+   # fit model
+-  args <- create_stan_args(
++  stan_args <- create_stan_args(
+     stan = stan_opts(
+       model,
+       samples = samples,
+@@ -97,10 +100,10 @@ dist_fit <- function(values = NULL, samples = 1000, cores = 1,
+       chains = chains,
+       cores = cores
+     ),
+-    data = data, verbose = verbose, model = "dist_fit"
++    data = stan_data, verbose = verbose, model = "dist_fit"
+   )
+ 
+-  fit <- fit_model(args, id = "dist_fit")
++  fit <- fit_model(stan_args, id = "dist_fit")
+ 
+   return(fit)
+ }
+@@ -229,11 +232,11 @@ bootstrapped_dist_fit <- function(values, dist = "lognormal",
+   })
+ 
+   if (!missing(max_value)) {
+-    max <- max_value
++    dist_max <- max_value
+   } else {
+-    max <- max(values)
++    dist_max <- max(values)
+   }
+-  return(new_dist_spec(params = params, max = max, distribution = dist))
++  return(new_dist_spec(params = params, max = dist_max, distribution = dist))
+ }
+ 
+ #' Estimate a Delay Distribution
+@@ -255,9 +258,8 @@ bootstrapped_dist_fit <- function(values, dist = "lognormal",
+ #' estimate_delay(delays, samples = 1000, bootstraps = 10)
+ #' }
+ estimate_delay <- function(delays, ...) {
+-  fit <- bootstrapped_dist_fit(
++  bootstrapped_dist_fit(
+     values = delays,
+     dist = "lognormal", ...
+   )
+-  return(fit)
+ }
+diff --git a/R/estimate_infections.R b/R/estimate_infections.R
+index e8dbeb823..4894f4793 100644
+--- a/R/estimate_infections.R
++++ b/R/estimate_infections.R
+@@ -265,7 +265,7 @@ estimate_infections <- function(data,
+   ))
+ 
+   # Set up default settings
+-  args <- create_stan_args(
++  stan_args <- create_stan_args(
+     stan = stan,
+     data = stan_data,
+     init = create_initial_conditions(stan_data),
+@@ -273,7 +273,7 @@ estimate_infections <- function(data,
+   )
+ 
+   # Fit model
+-  fit <- fit_model(args, id = id)
++  fit <- fit_model(stan_args, id = id)
+ 
+   # Extract parameters of interest from the fit
+   out <- extract_parameter_samples(fit, stan_data,
+@@ -378,5 +378,5 @@ format_fit <- function(posterior_samples, horizon, shift, burn_in, start_date,
+     order_by = c("variable", "date"),
+     CrIs = CrIs
+   )
+-  return(format_out)
++  format_out
+ }
+diff --git a/R/estimate_secondary.R b/R/estimate_secondary.R
+index a95153b73..08120cb2a 100644
+--- a/R/estimate_secondary.R
++++ b/R/estimate_secondary.R
+@@ -260,10 +260,10 @@ estimate_secondary <- function(data,
+     c(stan_data, list(estimate_r = 0, fixed = 1, bp_n = 0))
+   )
+   # fit
+-  args <- create_stan_args(
++  stan_ <- create_stan_args(
+     stan = stan, data = stan_data, init = inits, model = "estimate_secondary"
+   )
+-  fit <- fit_model(args, id = "estimate_secondary")
++  fit <- fit_model(stan_, id = "estimate_secondary")
+ 
+   out <- list()
+   out$predictions <- extract_stan_param(fit, "sim_secondary", CrIs = CrIs)
+@@ -320,10 +320,10 @@ update_secondary_args <- function(data, priors, verbose = TRUE) {
+       )
+     }
+     # replace scaling if present in the prior
+-    scale <- priors[grepl("frac_obs", variable, fixed = TRUE)]
+-    if (nrow(scale) > 0) {
+-      data$obs_scale_mean <- as.array(signif(scale$mean, 3))
+-      data$obs_scale_sd <- as.array(signif(scale$sd, 3))
++    frac_obs <- priors[grepl("frac_obs", variable, fixed = TRUE)]
++    if (nrow(frac_obs) > 0) {
++      data$obs_scale_mean <- as.array(signif(frac_obs$mean, 3))
++      data$obs_scale_sd <- as.array(signif(frac_obs$sd, 3))
+     }
+     # replace delay parameters if present
+     delay_params <- priors[grepl("delay_params", variable, fixed = TRUE)]
+@@ -398,14 +398,14 @@ plot.estimate_secondary <- function(x, primary = FALSE,
+     predictions <- predictions[date <= to]
+   }
+ 
+-  plot <- ggplot2::ggplot(predictions, ggplot2::aes(x = date, y = secondary)) +
++  p <- ggplot2::ggplot(predictions, ggplot2::aes(x = date, y = secondary)) +
+     ggplot2::geom_col(
+       fill = "grey", col = "white",
+       show.legend = FALSE, na.rm = TRUE
+     )
+ 
+   if (primary) {
+-    plot <- plot +
++    p <- p +
+       ggplot2::geom_point(
+         data = predictions,
+         ggplot2::aes(y = primary),
+@@ -416,16 +416,15 @@ plot.estimate_secondary <- function(x, primary = FALSE,
+         ggplot2::aes(y = primary), alpha = 0.4
+       )
+   }
+-  plot <- plot_CrIs(plot, extract_CrIs(predictions),
++  p <- plot_CrIs(p, extract_CrIs(predictions),
+     alpha = 0.6, linewidth = 1
+   )
+-  plot <- plot +
++  p +
+     ggplot2::theme_bw() +
+     ggplot2::labs(y = "Reports per day", x = "Date") +
+     ggplot2::scale_x_date(date_breaks = "week", date_labels = "%b %d") +
+     ggplot2::scale_y_continuous(labels = scales::comma) +
+     ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 90))
+-  return(plot)
+ }
+ 
+ #' Convolve and scale a time series
+@@ -627,7 +626,7 @@ forecast_secondary <- function(estimate,
+     primary <- primary[date > max(estimate$predictions$date, na.rm = TRUE)]
+     primary <- primary[, .(date, sample, value)]
+     if (!is.null(samples)) {
+-      primary <- primary[sample(seq_len(.N), samples, replace = TRUE)]
++      primary <- primary[sample(.N, samples, replace = TRUE)]
+     }
+   }
+   ## rename to avoid conflict with estimate
+@@ -642,7 +641,7 @@ forecast_secondary <- function(estimate,
+     include = FALSE
+   )
+   # extract data from stanfit
+-  data <- estimate$data
++  stan_data <- estimate$data
+ 
+   # combined primary from data and input primary
+   primary_fit <- estimate$predictions[
+@@ -661,38 +660,38 @@ forecast_secondary <- function(estimate,
+   data.table::setorderv(primary_fit, c("sample", "date"))
+ 
+   # update data with primary samples and day of week
+-  data$primary <- t(
++  stan_data$primary <- t(
+     matrix(primary_fit$value, ncol = length(unique(primary_fit$sample)))
+   )
+-  data$day_of_week <- add_day_of_week(
+-    unique(primary_fit$date), data$week_effect
++  stan_data$day_of_week <- add_day_of_week(
++    unique(primary_fit$date), stan_data$week_effect
+   )
+-  data$n <- nrow(data$primary)
+-  data$t <- ncol(data$primary)
+-  data$h <- nrow(primary[sample == min(sample)])
++  stan_data$n <- nrow(stan_data$primary)
++  stan_data$t <- ncol(stan_data$primary)
++  stan_data$h <- nrow(primary[sample == min(sample)])
+ 
+   # extract samples for posterior of estimates
+-  posterior_samples <- sample(seq_len(data$n), data$n, replace = TRUE) # nolint
+-  draws <- purrr::map(draws, ~ as.matrix(.[posterior_samples, ]))
++  posterior_samples <- sample(stan_data$n, stan_data$n, replace = TRUE)
++  draws <- purrr::map(draws, function(x) as.matrix(x[posterior_samples, ]))
+   # combine with data
+-  data <- c(data, draws)
++  stan_data <- c(stan_data, draws)
+ 
+   # allocate empty parameters
+-  data <- allocate_empty(
+-    data, c("params", "delay_params"),
+-    n = data$n
++  stan_data <- allocate_empty(
++    stan_data, c("params", "delay_params"),
++    n = stan_data$n
+   )
+-  data$all_dates <- as.integer(all_dates)
++  stan_data$all_dates <- as.integer(all_dates)
+ 
+   ## simulate
+-  args <- create_stan_args(
++  stan_args <- create_stan_args(
+     stan_opts(
+       model = model, backend = backend, chains = 1, samples = 1, warmup = 1
+     ),
+-    data = data, fixed_param = TRUE, model = "simulate_secondary"
++    data = stan_data, fixed_param = TRUE, model = "simulate_secondary"
+   )
+ 
+-  sims <- fit_model(args, id = "simulate_secondary")
++  sims <- fit_model(stan_args, id = "simulate_secondary")
+ 
+   # extract samples and organise
+   dates <- unique(primary_fit$date)
+@@ -702,7 +701,10 @@ forecast_secondary <- function(estimate,
+   samples <- samples[, c("iterations", "time") := NULL]
+   samples <- samples[
+     ,
+-    date := rep(tail(dates, ifelse(all_dates, data$t, data$h)), data$n)
++    date := rep(
++      tail(dates, ifelse(all_dates, stan_data$t, stan_data$h)),
++      stan_data$n
++    )
+   ]
+ 
+   # summarise samples
+diff --git a/R/estimate_truncation.R b/R/estimate_truncation.R
+index 877d3476c..813aa4521 100644
+--- a/R/estimate_truncation.R
++++ b/R/estimate_truncation.R
+@@ -190,18 +190,17 @@ estimate_truncation <- function(data,
+ 
+   # initial conditions
+   init_fn <- function() {
+-    data <- c(create_delay_inits(stan_data), list(
++    c(create_delay_inits(stan_data), list(
+       dispersion = abs(rnorm(1, 0, 1)),
+       sigma = abs(rnorm(1, 0, 1))
+     ))
+-    return(data)
+   }
+ 
+   # fit
+-  args <- create_stan_args(
++  stan_args <- create_stan_args(
+     stan = stan, data = stan_data, init = init_fn, model = "estimate_truncation"
+   )
+-  fit <- fit_model(args, id = "estimate_truncation")
++  fit <- fit_model(stan_args, id = "estimate_truncation")
+ 
+   out <- list()
+   # Summarise fit truncation distribution for downstream usage
+@@ -258,8 +257,7 @@ estimate_truncation <- function(data,
+     target_obs <- data.table::merge.data.table(target_obs, estimates,
+       by = "index", all.x = TRUE
+     )
+-    target_obs <- target_obs[order(date)][, index := NULL]
+-    return(target_obs)
++    target_obs[order(date)][, index := NULL]
+   }
+   out$obs <- purrr::map(1:(stan_data$obs_sets), link_obs)
+   out$obs <- data.table::rbindlist(out$obs)
+@@ -294,7 +292,7 @@ estimate_truncation <- function(data,
+ #' @importFrom ggplot2 scale_y_continuous theme theme_bw
+ #' @export
+ plot.estimate_truncation <- function(x, ...) {
+-  plot <- ggplot2::ggplot(x$obs, ggplot2::aes(x = date, y = last_confirm)) +
++  p <- ggplot2::ggplot(x$obs, ggplot2::aes(x = date, y = last_confirm)) +
+     ggplot2::geom_col(
+       fill = "grey", col = "white",
+       show.legend = FALSE, na.rm = TRUE
+@@ -305,11 +303,11 @@ plot.estimate_truncation <- function(x, ...) {
+     ) +
+     ggplot2::facet_wrap(~report_date, scales = "free")
+ 
+-  plot <- plot_CrIs(plot, extract_CrIs(x$obs),
++  p <- plot_CrIs(p, extract_CrIs(x$obs),
+     alpha = 0.8, linewidth = 1
+   )
+ 
+-  plot <- plot +
++  p +
+     ggplot2::theme_bw() +
+     ggplot2::labs(
+       y = "Reports", x = "Date", col = "Type", fill = "Type"
+@@ -317,5 +315,4 @@ plot.estimate_truncation <- function(x, ...) {
+     ggplot2::scale_x_date(date_breaks = "day", date_labels = "%b %d") +
+     ggplot2::scale_y_continuous(labels = scales::comma) +
+     ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 90))
+-  return(plot)
+ }
+diff --git a/R/extract.R b/R/extract.R
+index 2ad676e32..d3fdf15dc 100644
+--- a/R/extract.R
++++ b/R/extract.R
+@@ -31,11 +31,10 @@ extract_parameter <- function(param, samples, dates) {
+ 
+   param_df <- param_df[, var := NULL][, sample := seq_len(.N), by = .(time)]
+   param_df <- param_df[, date := dates, by = .(sample)]
+-  param_df <- param_df[, .(
++  param_df[, .(
+     parameter = param, time, date,
+     sample, value
+   )]
+-  return(param_df)
+ }
+ 
+ 
+@@ -73,9 +72,9 @@ extract_static_parameter <- function(param, samples) {
+ #' @importFrom rstan extract
+ extract_samples <- function(stan_fit, pars = NULL, include = TRUE) {
+   if (inherits(stan_fit, "stanfit")) {
+-    args <- list(object = stan_fit, include = include)
+-    if (!is.null(pars)) args <- c(args, list(pars = pars))
+-    return(do.call(rstan::extract, args))
++    extract_args <- list(object = stan_fit, include = include)
++    if (!is.null(pars)) extract_args <- c(extract_args, list(pars = pars))
++    return(do.call(rstan::extract, extract_args))
+   }
+   if (!inherits(stan_fit, "CmdStanMCMC") &&
+     !inherits(stan_fit, "CmdStanFit")) {
+@@ -107,10 +106,7 @@ extract_samples <- function(stan_fit, pars = NULL, include = TRUE) {
+   ]
+   samples <- split(samples_df, by = "variable")
+   samples <- purrr::map(samples, function(df) {
+-    permutation <- sample(
+-      seq_len(max(df$.draw)), max(df$.draw),
+-      replace = FALSE
+-    )
++    permutation <- sample(max(df$.draw), max(df$.draw), replace = FALSE)
+     df <- df[, new_draw := permutation[.draw]]
+     setkey(df, new_draw)
+     max_indices <- strsplit(tail(df$index, 1), split = ",", fixed = TRUE)[[1]]
+@@ -127,7 +123,7 @@ extract_samples <- function(stan_fit, pars = NULL, include = TRUE) {
+     dimnames(ret) <- c(
+       list(iterations = NULL), rep(list(NULL), length(max_indices))
+     )
+-    return(ret)
++    ret
+   })
+ 
+   return(samples)
+@@ -170,7 +166,7 @@ extract_parameter_samples <- function(stan_fit, data, reported_dates,
+   if (drop_length_1) {
+     samples <- lapply(samples, function(x) {
+       if (length(dim(x)) > 1 && dim(x)[1] == 1) dim(x) <- dim(x)[-1]
+-      return(x)
++      x
+     })
+   }
+ 
+@@ -299,30 +295,30 @@ extract_stan_param <- function(fit, params = NULL,
+     var_names <- TRUE
+   }
+   if (inherits(fit, "stanfit")) { # rstan backend
+-    args <- list(object = fit, probs = sym_CrIs)
+-    if (!is.null(params)) args <- c(args, list(pars = params))
+-    summary <- do.call(rstan::summary, args)
+-    summary <- data.table::as.data.table(summary$summary,
++    summary_args <- list(object = fit, probs = sym_CrIs)
++    if (!is.null(params)) summary_args <- c(summary_args, list(pars = params))
++    param_summary <- do.call(rstan::summary, summary_args)
++    param_summary <- data.table::as.data.table(param_summary$summary,
+       keep.rownames = ifelse(var_names,
+         "variable",
+         FALSE
+       )
+     )
+-    summary <- summary[, c("n_eff", "Rhat") := NULL]
++    param_summary <- param_summary[, c("n_eff", "Rhat") := NULL]
+   } else if (inherits(fit, "CmdStanMCMC")) { # cmdstanr backend
+-    summary <- fit$summary(
++    param_summary <- fit$summary(
+       variable = params,
+       mean, mcse_mean, sd, ~ quantile(.x, probs = sym_CrIs)
+     )
+-    if (!var_names) summary$variable <- NULL
+-    summary <- data.table::as.data.table(summary)
++    if (!var_names) param_summary$variable <- NULL
++    param_summary <- data.table::as.data.table(param_summary)
+   }
+   cols <- c("mean", "se_mean", "sd", CrIs)
+   if (var_names) {
+     cols <- c("variable", cols)
+   }
+-  colnames(summary) <- cols
+-  return(summary)
++  colnames(param_summary) <- cols
++  return(param_summary)
+ }
+ 
+ #' Generate initial conditions from a Stan fit
+@@ -385,7 +381,7 @@ extract_inits <- function(fit, current_inits,
+     res$reports <- NULL
+     res$obs_reports <- NULL
+     res$imputed_reports <- NULL
+-    return(res)
++    res
+   }
+   # extract samples
+   fit_inits <- purrr::map(1:samples, init_fun) # nolint
+diff --git a/R/fit.R b/R/fit.R
+index 3ae7710dd..eef409631 100644
+--- a/R/fit.R
++++ b/R/fit.R
+@@ -80,7 +80,7 @@ fit_model_with_nuts <- function(args, future = FALSE, max_execution_time = Inf,
+           futile.logger::flog.error(error_text,
+             name = "EpiNow2.epinow.estimate_infections.fit"
+           )
+-          return(NULL)
++          NULL
+         }
+       )
+     } else {
+@@ -92,9 +92,9 @@ fit_model_with_nuts <- function(args, future = FALSE, max_execution_time = Inf,
+ 
+     if ((inherits(fit, "stanfit") && fit@mode != 2L) ||
+       inherits(fit, "CmdStanMCMC")) {
+-      return(fit)
++      fit
+     } else {
+-      return(NULL)
++      NULL
+     }
+   }
+ 
+@@ -213,11 +213,10 @@ fit_model_approximate <- function(args, future = FALSE, id = "stan") {
+     fit <- do.call(sample_func, stan_args)
+ 
+     if (length(names(fit)) == 0) {
+-      return(NULL)
++      NULL
+     } else {
+-      return(fit)
++      fit
+     }
+-    return(fit)
+   }
+   safe_fit <- purrr::safely(fit_approximate) # nolint
+   fit <- NULL
+diff --git a/R/get.R b/R/get.R
+index be23195ac..e72c00538 100644
+--- a/R/get.R
++++ b/R/get.R
+@@ -15,10 +15,10 @@ get_regions <- function(results_dir) {
+   )
+ 
+   # put into alphabetical order
+-  regions <- regions[!(regions == "runtimes.csv")]
++  regions <- regions[regions != "runtimes.csv"]
+   regions <- sort(regions)
+   names(regions) <- regions
+-  return(regions)
++  regions
+ }
+ 
+ #' Get a Single Raw Result
+@@ -39,8 +39,7 @@ get_regions <- function(results_dir) {
+ get_raw_result <- function(file, region, date,
+                            result_dir) {
+   file_path <- file.path(result_dir, region, date, file)
+-  object <- readRDS(file_path)
+-  return(object)
++  readRDS(file_path)
+ }
+ #' Get Combined Regional Results
+ #'
+@@ -115,7 +114,7 @@ get_regional_results <- function(regional_output,
+         idcol = "region", fill = TRUE
+       )
+       out$summarised <- summarised
+-      return(out)
++      out
+     }
+     out <- list()
+     out$estimates <- get_estimates_file(
+@@ -144,7 +143,7 @@ get_regional_results <- function(regional_output,
+         idcol = "region", fill = TRUE
+       )
+       out$summarised <- summarised
+-      return(out)
++      out
+     }
+     out <- list()
+     out$estimates <- get_estimates_data("estimates")
+diff --git a/R/opts.R b/R/opts.R
+index 8707e5cf2..9975d50a7 100644
+--- a/R/opts.R
++++ b/R/opts.R
+@@ -119,7 +119,7 @@ generation_time_opts <- gt_opts
+ secondary_opts <- function(type = c("incidence", "prevalence"), ...) {
+   type <- arg_match(type)
+   if (type == "incidence") {
+-    data <- list(
++    opts <- list(
+       cumulative = 0,
+       historic = 1,
+       primary_hist_additive = 1,
+@@ -127,7 +127,7 @@ secondary_opts <- function(type = c("incidence", "prevalence"), ...) {
+       primary_current_additive = 0
+     )
+   } else if (type == "prevalence") {
+-    data <- list(
++    opts <- list(
+       cumulative = 1,
+       historic = 1,
+       primary_hist_additive = 0,
+@@ -135,9 +135,9 @@ secondary_opts <- function(type = c("incidence", "prevalence"), ...) {
+       primary_current_additive = 1
+     )
+   }
+-  data <- modifyList(data, list(...))
+-  attr(data, "class") <- c("secondary_opts", class(data))
+-  return(data)
++  opts <- modifyList(opts, list(...))
++  attr(opts, "class") <- c("secondary_opts", class(opts))
++  return(opts)
+ }
+ 
+ #' Delay Distribution Options
+@@ -291,7 +291,7 @@ rt_opts <- function(prior = LogNormal(mean = 1, sd = 1),
+                     future = "latest",
+                     gp_on = c("R_t-1", "R0"),
+                     pop = 0) {
+-  rt <- list(
++  opts <- list(
+     use_rt = use_rt,
+     rw = rw,
+     use_breakpoints = use_breakpoints,
+@@ -301,8 +301,8 @@ rt_opts <- function(prior = LogNormal(mean = 1, sd = 1),
+   )
+ 
+   # replace default settings with those specified by user
+-  if (rt$rw > 0) {
+-    rt$use_breakpoints <- TRUE
++  if (opts$rw > 0) {
++    opts$use_breakpoints <- TRUE
+   }
+ 
+   if (is.list(prior) && !is(prior, "dist_spec")) {
+@@ -314,20 +314,18 @@ rt_opts <- function(prior = LogNormal(mean = 1, sd = 1),
+     )
+   }
+ 
+-  if (rt$use_rt) {
+-    rt$prior <- prior
+-  } else {
+-    if (!missing(prior)) {
+-      cli_warn(
+-        c(
+-          "!" = "Rt {.var prior} is ignored if {.var use_rt} is FALSE."
+-        )
++  if (opts$use_rt) {
++    opts$prior <- prior
++  } else if (!missing(prior)) {
++    cli_warn(
++      c(
++        "!" = "Rt {.var prior} is ignored if {.var use_rt} is FALSE."
+       )
+-    }
++    )
+   }
+ 
+-  attr(rt, "class") <- c("rt_opts", class(rt))
+-  return(rt)
++  attr(opts, "class") <- c("rt_opts", class(opts))
++  return(opts)
+ }
+ 
+ #' Back Calculation Options
+@@ -990,21 +988,20 @@ stan_opts <- function(object = NULL,
+     object = object,
+     method = method
+   ))
+-  if (method == "sampling") {
+-    opts <- c(
++  opts <- switch(method,
++    sampling = c(
+       opts, stan_sampling_opts(samples = samples, backend = backend, ...)
+-    )
+-  } else if (method == "vb") {
+-    opts <- c(opts, stan_vb_opts(samples = samples, ...))
+-  } else if (method == "laplace") {
+-    opts <- c(
++    ),
++    vb = c(
++      opts, stan_vb_opts(samples = samples, ...)
++    ),
++    laplace = c(
+       opts, stan_laplace_opts(backend = backend, ...)
+-    )
+-  } else if (method == "pathfinder") {
+-    opts <- c(
++    ),
++    pathfinder = c(
+       opts, stan_pathfinder_opts(samples = samples, backend = backend, ...)
+     )
+-  }
++  )
+ 
+   opts <- c(opts, list(return_fit = return_fit))
+   attr(opts, "class") <- c("stan_opts", class(opts))
+@@ -1084,8 +1081,7 @@ opts_list <- function(opts, reported_cases, ...) {
+   regions <- unique(reported_cases$region)
+   default <- rep(list(opts), length(regions))
+   names(default) <- regions
+-  out <- modifyList(default, list(...))
+-  return(out)
++  modifyList(default, list(...))
+ }
+ 
+ #' Filter Options for a Target Region
+@@ -1106,7 +1102,7 @@ filter_opts <- function(opts, region) {
+   } else {
+     out <- opts
+   }
+-  return(out)
++  out
+ }
+ 
+ #' Apply default CDF cutoff to a <dist_spec> if it is unconstrained
+@@ -1144,5 +1140,5 @@ apply_default_cdf_cutoff <- function(dist, default_cdf_cutoff, cdf_cutoff_set) {
+       )
+     )
+   }
+-  return(dist)
++  dist
+ }
+diff --git a/R/plot.R b/R/plot.R
+index 91f4bfcea..0a8933d61 100644
+--- a/R/plot.R
++++ b/R/plot.R
+@@ -15,17 +15,18 @@
+ plot_CrIs <- function(plot, CrIs, alpha, linewidth) {
+   index <- 1
+   alpha_per_CrI <- alpha / (length(CrIs) - 1)
++  p <- plot
+   for (CrI in CrIs) {
+     bottom <- paste0("lower_", CrI)
+     top <- paste0("upper_", CrI)
+     if (index == 1) {
+-      plot <- plot +
++      p <- p +
+         ggplot2::geom_ribbon(
+           ggplot2::aes(ymin = .data[[bottom]], ymax = .data[[top]]),
+           alpha = 0.2, linewidth = linewidth
+         )
+     } else {
+-      plot <- plot +
++      p <- p +
+         ggplot2::geom_ribbon(
+           ggplot2::aes(
+             ymin = .data[[bottom]], ymax = .data[[top]],
+@@ -36,7 +37,7 @@ plot_CrIs <- function(plot, CrIs, alpha, linewidth) {
+     }
+     index <- index + 1
+   }
+-  return(plot)
++  p
+ }
+ 
+ #' Plot Estimates
+@@ -158,14 +159,14 @@ plot_estimates <- function(estimate, reported, ylab, hline,
+   }
+ 
+   # initialise plot
+-  plot <- ggplot2::ggplot(
++  p <- ggplot2::ggplot(
+     estimate, ggplot2::aes(x = date, col = type, fill = type)
+   )
+ 
+   # add in reported data if present (either as column or as a line)
+   if (!missing(reported)) {
+     if (obs_as_col) {
+-      plot <- plot +
++      p <- p +
+         ggplot2::geom_col(
+           data = reported[date >= min(estimate$date, na.rm = TRUE) &
+             date <= max(estimate$date, na.rm = TRUE)],
+@@ -173,7 +174,7 @@ plot_estimates <- function(estimate, reported, ylab, hline,
+           show.legend = FALSE, na.rm = TRUE
+         )
+     } else {
+-      plot <- plot +
++      p <- p +
+         ggplot2::geom_line(
+           data = reported,
+           ggplot2::aes(y = confirm, fill = NULL),
+@@ -189,7 +190,7 @@ plot_estimates <- function(estimate, reported, ylab, hline,
+   }
+ 
+   # plot estimates
+-  plot <- plot +
++  p <- p +
+     ggplot2::geom_vline(
+       xintercept = orig_estimate[
+         type == "Estimate based on partial data"
+@@ -198,12 +199,12 @@ plot_estimates <- function(estimate, reported, ylab, hline,
+     )
+ 
+   # plot CrIs
+-  plot <- plot_CrIs(plot, extract_CrIs(estimate),
++  p <- plot_CrIs(p, extract_CrIs(estimate),
+     alpha = 0.6, linewidth = 0.05
+   )
+ 
+   # add plot theming
+-  plot <- plot +
++  p <- p +
+     ggplot2::theme_bw() +
+     ggplot2::theme(legend.position = "bottom") +
+     ggplot2::scale_color_brewer(palette = "Dark2") +
+@@ -216,10 +217,10 @@ plot_estimates <- function(estimate, reported, ylab, hline,
+ 
+   # add in a horizontal line if required
+   if (!missing(hline)) {
+-    plot <- plot +
++    p <- p +
+       ggplot2::geom_hline(yintercept = hline, linetype = 2)
+   }
+-  return(plot)
++  p
+ }
+ 
+ 
+@@ -264,7 +265,7 @@ plot_summary <- function(summary_results,
+ 
+   # generic plotting function
+   inner_plot <- function(df) {
+-    plot <- ggplot2::ggplot(df, ggplot2::aes(
++    p <- ggplot2::ggplot(df, ggplot2::aes(
+       x = region,
+       col = `Expected change in reports`
+     ))
+@@ -274,7 +275,7 @@ plot_summary <- function(summary_results,
+     for (CrI in CrIs) {
+       bottom <- paste0("lower_", CrI)
+       top <- paste0("upper_", CrI)
+-      plot <- plot +
++      p <- p +
+         ggplot2::geom_linerange(
+           ggplot2::aes(ymin = .data[[bottom]], ymax = .data[[top]]),
+           alpha = ifelse(index == 1, 0.4, alpha_per_CrI),
+@@ -283,7 +284,7 @@ plot_summary <- function(summary_results,
+       index <- index + 1
+     }
+ 
+-    plot <- plot +
++    p <- p +
+       ggplot2::geom_hline(yintercept = 1, linetype = 2) +
+       ggplot2::facet_wrap(~metric, ncol = 1, scales = "free_y") +
+       ggplot2::theme_bw() +
+@@ -354,8 +355,7 @@ plot_summary <- function(summary_results,
+     ggplot2::coord_cartesian(ylim = c(0, min(max_rt, 4)))
+ 
+   # join plots together
+-  plot <- cases_plot + rt_plot + patchwork::plot_layout(ncol = 1)
+-  return(plot)
++  cases_plot + rt_plot + patchwork::plot_layout(ncol = 1)
+ }
+ 
+ #' Plot method for estimate_infections
+diff --git a/R/preprocessing.R b/R/preprocessing.R
+index f61acf267..1a8e431d8 100644
+--- a/R/preprocessing.R
++++ b/R/preprocessing.R
+@@ -188,7 +188,7 @@ default_fill_missing_obs <- function(data, obs, obs_column) {
+       ))
+     }
+   }
+-  return(data)
++  data
+ }
+ 
+ ##' Add missing values for future dates
+diff --git a/R/regional_epinow.R b/R/regional_epinow.R
+index 259ae45bc..8a1772c9a 100644
+--- a/R/regional_epinow.R
++++ b/R/regional_epinow.R
+@@ -310,8 +310,7 @@ clean_regions <- function(data, non_zero_points) {
+     # nolint end
+   }
+   # exclude zero regions
+-  reported_cases <- reported_cases[!is.na(region)][region %in% eval_regions]
+-  return(reported_cases)
++  reported_cases[!is.na(region)][region %in% eval_regions]
+ }
+ 
+ #' Run epinow with Regional Processing Code
+@@ -478,5 +477,5 @@ process_regions <- function(regional_out, regions) {
+   sucessful_regional_out <- purrr::keep(
+     purrr::compact(regional_out), ~ is.finite(.$timing)
+   )
+-  return(list(all = regional_out, successful = sucessful_regional_out))
++  list(all = regional_out, successful = sucessful_regional_out)
+ }
+diff --git a/R/report.R b/R/report.R
+index d09b1e588..6da080567 100644
+--- a/R/report.R
++++ b/R/report.R
+@@ -76,7 +76,7 @@ report_summary <- function(summarised_estimates,
+   ]
+ 
+   # regional summary
+-  summary <- data.table::data.table(
++  summary_estimates <- data.table::data.table(
+     measure = c(
+       "New infections per day",
+       "Expected change in reports",
+@@ -94,7 +94,7 @@ report_summary <- function(summarised_estimates,
+   )
+ 
+   if (return_numeric) {
+-    summary$numeric_estimate <- list(
++    summary_estimates$numeric_estimate <- list(
+       current_cases,
+       prob_control,
+       R_latest,
+@@ -104,9 +104,9 @@ report_summary <- function(summarised_estimates,
+   }
+ 
+   if (!is.null(target_folder)) {
+-    saveRDS(summary, file.path(target_folder, "summary.rds"))
++    saveRDS(summary_estimates, file.path(target_folder, "summary.rds"))
+   }
+-  return(summary)
++  return(summary_estimates)
+ }
+ 
+ 
+@@ -188,7 +188,7 @@ report_plots <- function(summarised_estimates, reported,
+   )
+ 
+   # summary plot ------------------------------------------------------------
+-  summary <- suppressWarnings(
++  plot_summary <- suppressWarnings(
+     suppressMessages(
+       reports +
+         ggplot2::theme(legend.position = "none") +
+@@ -226,7 +226,7 @@ report_plots <- function(summarised_estimates, reported,
+     reports = reports,
+     R = R,
+     growth_rate = growth_rate,
+-    summary = summary
++    summary = plot_summary
+   )
+ 
+   if (!is.null(target_folder)) {
+diff --git a/R/setup.R b/R/setup.R
+index ff726ee6a..747d6ded4 100644
+--- a/R/setup.R
++++ b/R/setup.R
+@@ -217,8 +217,7 @@ setup_future <- function(data,
+ #' @keywords internal
+ setup_dt <- function(data) {
+   suppressMessages(data.table::setDTthreads(threads = 1))
+-  data <- data.table::setDT(data)
+-  return(data)
++  data.table::setDT(data)
+ }
+ 
+ #' Setup Target Folder for Saving
+diff --git a/R/simulate_infections.R b/R/simulate_infections.R
+index 25bd9aae3..b43d726a7 100644
+--- a/R/simulate_infections.R
++++ b/R/simulate_infections.R
+@@ -96,7 +96,7 @@ simulate_infections <- function(R, initial_infections,
+     seeding_time <- sum(max(generation_time))
+   }
+ 
+-  data <- list(
++  stan_data <- list(
+     n = 1,
+     t = nrow(R) + seeding_time,
+     seeding_time = seeding_time,
+@@ -107,13 +107,14 @@ simulate_infections <- function(R, initial_infections,
+     pop = pop
+   )
+ 
+-  data <- c(data, create_stan_delays(
++  stan_data <- c(stan_data, create_stan_delays(
+     gt = generation_time,
+     delay = delays,
+     trunc = truncation
+   ))
+ 
+-  if (length(data$delay_params_sd) > 0 && any(data$delay_params_sd > 0)) {
++  if (length(stan_data$delay_params_sd) > 0 &&
++      any(stan_data$delay_params_sd > 0)) {
+     cli_abort(
+       c(
+         "!" = "Cannot simulate from uncertain parameters.",
+@@ -122,13 +123,13 @@ simulate_infections <- function(R, initial_infections,
+       )
+     )
+   }
+-  data$delay_params <- array(
+-    data$delay_params_mean,
+-    dim = c(1, length(data$delay_params_mean))
++  stan_data$delay_params <- array(
++    stan_data$delay_params_mean,
++    dim = c(1, length(stan_data$delay_params_mean))
+   )
+-  data$delay_params_sd <- NULL
++  stan_data$delay_params_sd <- NULL
+ 
+-  data <- c(data, create_obs_model(
++  stan_data <- c(stan_data, create_obs_model(
+     obs,
+     dates = R$date
+   ))
+@@ -155,7 +156,7 @@ simulate_infections <- function(R, initial_infections,
+     obs$dispersion <- NULL
+   }
+ 
+-  data <- c(data, create_stan_params(
++  stan_data <- c(stan_data, create_stan_params(
+     alpha = NULL,
+     rho = NULL,
+     R0 = NULL,
+@@ -163,36 +164,36 @@ simulate_infections <- function(R, initial_infections,
+     dispersion = obs$dispersion
+   ))
+   ## set empty params matrix - variable parameters not supported here
+-  data$params <- array(dim = c(1, 0))
++  stan_data$params <- array(dim = c(1, 0))
+ 
+   ## day of week effect
+   if (is.null(day_of_week_effect)) {
+-    day_of_week_effect <- rep(1, data$week_effect)
++    day_of_week_effect <- rep(1, stan_data$week_effect)
+   }
+ 
+   day_of_week_effect <- day_of_week_effect / sum(day_of_week_effect)
+-  data$day_of_week_simplex <- array(
++  stan_data$day_of_week_simplex <- array(
+     day_of_week_effect,
+-    dim = c(1, data$week_effect)
++    dim = c(1, stan_data$week_effect)
+   )
+ 
+   # Create stan arguments
+   stan <- stan_opts(backend = backend, chains = 1, samples = 1, warmup = 1)
+-  args <- create_stan_args(
++  stan_args <- create_stan_args(
+     stan,
+-    data = data, fixed_param = TRUE, model = "simulate_infections",
++    data = stan_data, fixed_param = TRUE, model = "simulate_infections",
+     verbose = FALSE
+   )
+ 
+   ## simulate
+-  sim <- fit_model(args, id = "simulate_infections")
++  sim <- fit_model(stan_args, id = "simulate_infections")
+ 
+   ## join batches
+   dates <- c(
+     seq(min(R$date) - seeding_time, min(R$date) - 1, by = "day"),
+     R$date
+   )
+-  out <- extract_parameter_samples(sim, data,
++  out <- extract_parameter_samples(sim, stan_data,
+     reported_inf_dates = dates,
+     reported_dates = dates[-(1:seeding_time)],
+     imputed_dates = dates[-(1:seeding_time)],
+@@ -378,15 +379,15 @@ forecast_infections <- function(estimates,
+   }
+ 
+   # redefine time if Rt != data$t
+-  time <- estimates$args$t
++  est_time <- estimates$args$t
+   horizon <- estimates$args$h
+-  obs_time <- time - shift
++  obs_time <- est_time - shift
+ 
+   if (obs_time != dim(draws$R)[2]) {
+-    horizon <- dim(draws$R)[2] - time + horizon + shift
++    horizon <- dim(draws$R)[2] - est_time + horizon + shift
+     horizon <- ifelse(horizon < 0, 0, horizon) # nolint
+-    time <- dim(draws$R)[2] + shift
+-    obs_time <- time - shift
++    est_time <- dim(draws$R)[2] + shift
++    obs_time <- est_time - shift
+     starting_day <- estimates$args$day_of_week[1]
+     days <- max(estimates$args$day_of_week)
+     day_of_week <- (
+@@ -395,7 +396,7 @@ forecast_infections <- function(estimates,
+     day_of_week <- ifelse(day_of_week == 0, days, day_of_week)
+ 
+     estimates$args$horizon <- horizon
+-    estimates$args$t <- time
++    estimates$args$t <- est_time
+     estimates$args$day_of_week <- day_of_week
+   }
+ 
+@@ -419,32 +420,31 @@ forecast_infections <- function(estimates,
+     draws <- map(draws, ~ matrix(.[nstart:nend, ], nrow = nend - nstart + 1))
+ 
+     ## prepare data for stan command
+-    data <- c(
++    stan_data <- c(
+       list(n = dim(draws$R)[1], initial_as_scale = 1), draws, estimates$args
+     )
+ 
+     ## allocate empty parameters
+-    data <- allocate_empty(
+-      data, c("delay_params", "params"),
+-      n = data$n
++    stan_data <- allocate_empty(
++      stan_data, c("delay_params", "params"),
++      n = stan_data$n
+     )
+ 
+-    args <- create_stan_args(
++    stan_args <- create_stan_args(
+       stan,
+-      data = data, fixed_param = TRUE, model = "simulate_infections",
++      data = stan_data, fixed_param = TRUE, model = "simulate_infections",
+       verbose = FALSE
+     )
+ 
+     ## simulate
+-    sims <- fit_model(args, id = "simulate_infections")
++    sims <- fit_model(stan_args, id = "simulate_infections")
+ 
+-    out <- extract_parameter_samples(sims, data,
++    extract_parameter_samples(sims, stan_data,
+       reported_inf_dates = dates,
+       reported_dates = dates[-(1:shift)],
+       imputed_dates = dates[-(1:shift)],
+       drop_length_1 = TRUE, merge = TRUE
+     )
+-    return(out)
+   }
+ 
+   ## set up batching
+diff --git a/R/simulate_secondary.R b/R/simulate_secondary.R
+index 04560d602..72cfee6aa 100644
+--- a/R/simulate_secondary.R
++++ b/R/simulate_secondary.R
+@@ -58,7 +58,7 @@ simulate_secondary <- function(primary,
+   primary <- merge.data.table(all_dates, primary, by = "date", all.x = TRUE)
+   primary <- primary[, primary := nafill(primary, type = "const", fill = 0)]
+ 
+-  data <- list(
++  stan_data <- list(
+     n = 1,
+     t = nrow(primary),
+     h = nrow(primary),
+@@ -68,14 +68,15 @@ simulate_secondary <- function(primary,
+     seeding_time = 0L
+   )
+ 
+-  data <- c(data, secondary)
++  stan_data <- c(stan_data, secondary)
+ 
+-  data <- c(data, create_stan_delays(
++  stan_data <- c(stan_data, create_stan_delays(
+     delay = delays,
+     trunc = truncation
+   ))
+ 
+-  if (length(data$delay_params_sd) > 0 && any(data$delay_params_sd > 0)) {
++  if (length(stan_data$delay_params_sd) > 0 &&
++      any(stan_data$delay_params_sd > 0)) {
+     cli_abort(
+       c(
+         "!" = "Cannot simulate from uncertain parameters.",
+@@ -84,13 +85,13 @@ simulate_secondary <- function(primary,
+       )
+     )
+   }
+-  data$delay_params <- array(
+-    data$delay_params_mean,
+-    dim = c(1, length(data$delay_params_mean))
++  stan_data$delay_params <- array(
++    stan_data$delay_params_mean,
++    dim = c(1, length(stan_data$delay_params_mean))
+   )
+-  data$delay_params_sd <- NULL
++  stan_data$delay_params_sd <- NULL
+ 
+-  data <- c(data, create_obs_model(
++  stan_data <- c(stan_data, create_obs_model(
+     obs,
+     dates = primary$date
+   ))
+@@ -117,35 +118,35 @@ simulate_secondary <- function(primary,
+     obs$dispersion <- NULL
+   }
+ 
+-  data <- c(data, create_stan_params(
++  stan_data <- c(stan_data, create_stan_params(
+     frac_obs = obs$scale,
+     dispersion = obs$dispersion
+   ))
+ 
+   ## set empty params matrix - variable parameters not supported here
+-  data$params <- array(dim = c(1, 0))
++  stan_data$params <- array(dim = c(1, 0))
+ 
+   ## day of week effect
+   if (is.null(day_of_week_effect)) {
+-    day_of_week_effect <- rep(1, data$week_effect)
++    day_of_week_effect <- rep(1, stan_data$week_effect)
+   }
+ 
+   day_of_week_effect <- day_of_week_effect / sum(day_of_week_effect)
+-  data$day_of_week_simplex <- array(
++  stan_data$day_of_week_simplex <- array(
+     day_of_week_effect,
+-    dim = c(1, data$week_effect)
++    dim = c(1, stan_data$week_effect)
+   )
+ 
+   # Create stan arguments
+   stan <- stan_opts(backend = backend, chains = 1, samples = 1, warmup = 1)
+-  args <- create_stan_args(
++  stan_args <- create_stan_args(
+     stan,
+-    data = data, fixed_param = TRUE, model = "simulate_secondary",
++    data = stan_data, fixed_param = TRUE, model = "simulate_secondary",
+     verbose = FALSE
+   )
+ 
+   ## simulate
+-  sim <- fit_model(args, id = "simulate_secondary")
++  sim <- fit_model(stan_args, id = "simulate_secondary")
+ 
+   secondary <- extract_samples(sim, "sim_secondary")$sim_secondary[1, , ]
+   out <- data.table(date = all_dates, secondary = secondary)
+diff --git a/R/stan.R b/R/stan.R
+index 50ed78f4b..bc63169f2 100644
+--- a/R/stan.R
++++ b/R/stan.R
+@@ -35,7 +35,7 @@ epinow2_cmdstan_model <- function(model = "estimate_infections",
+   monitor <- suppressMessages
+   if (verbose) {
+     monitor <- function(x) {
+-      return(x)
++      x
+     }
+   }
+   model <- monitor(cmdstanr::cmdstan_model(
+diff --git a/R/summarise.R b/R/summarise.R
+index 3dca2a201..19a7c0316 100644
+--- a/R/summarise.R
++++ b/R/summarise.R
+@@ -38,16 +38,14 @@ summarise_results <- function(regions,
+         )
+       )
+     }
+-  } else {
+-    if (!is.null(summaries)) {
+-      cli_abort(
+-        c(
+-          "!" = "Cannot supply both {.var results_dir} and {.var summary}.",
+-          "i" = "Only one of {.var results_dir} or {.var summary} should be
++  } else if (!is.null(summaries)) {
++    cli_abort(
++      c(
++        "!" = "Cannot supply both {.var results_dir} and {.var summary}.",
++        "i" = "Only one of {.var results_dir} or {.var summary} should be
+         supplied."
+-        )
+       )
+-    }
++    )
+   }
+ 
+   if (is.null(summaries)) {
+@@ -328,7 +326,7 @@ regional_summary <- function(regional_output = NULL,
+       save_ggplot(summary_plot, "summary_plot.png",
+         width = data.table::fcase(
+           length(regions) > 60 & length(regions) > 120, 36,
+-          length(regions) > 60 & !(length(regions) > 120), 24,
++          length(regions) > 60 & length(regions) <= 120, 24,
+           default = 12
+         )
+       )
+@@ -363,7 +361,7 @@ regional_summary <- function(regional_output = NULL,
+     if (all_regions) {
+       plots_per_row <- data.table::fcase(
+         length(regions) > 60 & length(regions) > 120, 8,
+-        length(regions) > 60 & !(length(regions) > 120), 5,
++        length(regions) > 60 & length(regions) <= 120, 5,
+         default = 3
+       )
+ 
+@@ -680,8 +678,7 @@ calc_CrIs <- function(samples, summarise_by = NULL, CrIs = c(0.2, 0.5, 0.9)) {
+ extract_CrIs <- function(summarised) {
+   CrIs <- grep("lower_", colnames(summarised), value = TRUE, fixed = TRUE)
+   CrIs <- gsub("lower_", "", CrIs, fixed = TRUE)
+-  CrIs <- as.numeric(CrIs)
+-  return(CrIs)
++  as.numeric(CrIs)
+ }
+ 
+ #' Calculate Summary Statistics
+diff --git a/R/utilities.R b/R/utilities.R
+index 9f6383332..563291ba1 100644
+--- a/R/utilities.R
++++ b/R/utilities.R
+@@ -91,11 +91,10 @@ map_prob_change <- function(var) {
+     var <= 1, "Decreasing"
+   )
+ 
+-  var <- factor(var, levels = c(
++  factor(var, levels = c(
+     "Increasing", "Likely increasing", "Stable",
+     "Likely decreasing", "Decreasing"
+   ))
+-  return(var)
+ }
+ 
+ #' Convert Growth Rates to Reproduction numbers.
+@@ -116,8 +115,7 @@ map_prob_change <- function(var) {
+ #' growth_to_R(0.2, 4, 1)
+ growth_to_R <- function(r, gamma_mean, gamma_sd) {
+   k <- (gamma_sd / gamma_mean)^2
+-  R <- (1 + k * r * gamma_mean)^(1 / k)
+-  return(R)
++  (1 + k * r * gamma_mean)^(1 / k)
+ }
+ 
+ #' Convert Reproduction Numbers to Growth Rates
+@@ -134,8 +132,7 @@ growth_to_R <- function(r, gamma_mean, gamma_sd) {
+ #' R_to_growth(2.18, 4, 1)
+ R_to_growth <- function(R, gamma_mean, gamma_sd) {
+   k <- (gamma_sd / gamma_mean)^2
+-  r <- (R^k - 1) / (k * gamma_mean)
+-  return(r)
++  (R^k - 1) / (k * gamma_mean)
+ }
+ 
+ 
+@@ -153,7 +150,7 @@ allocate_delays <- function(delay_var, no_delays) {
+   } else {
+     out <- numeric(0)
+   }
+-  return(array(out))
++  array(out)
+ }
+ 
+ #' Allocate Empty Parameters to a List
+@@ -263,7 +260,7 @@ expose_stan_fns <- function(files, target_dir, ...) {
+     "\n }"
+   )
+   rstan::expose_stan_functions(rstan::stanc(model_code = functions), ...)
+-  return(invisible(NULL))
++  invisible(NULL)
+ }
+ 
+ #' Convert mean and sd to log mean for a log normal distribution
+@@ -319,18 +316,17 @@ discretised_lognormal_pmf_conv <- function(x, meanlog, sdlog) {
+     meanlog, sdlog, length(x) - 1,
+     reverse = TRUE
+   )
+-  conv <- sum(x * pmf, na.rm = TRUE)
+-  return(conv)
++  sum(x * pmf, na.rm = TRUE)
+ }
+ 
+ discretised_gamma_pmf <- function(mean, sd, max_d, zero_pad = 0,
+                                   reverse = FALSE) {
+-  alpha <- exp(2 * (log(mean) - log(sd)))
+-  beta <- exp(log(mean) - 2 * log(sd))
+-  pmf <- pgamma(1:(max_d + 1), shape = alpha, scale = beta) -
+-    pgamma(0:max_d, shape = alpha, scale = beta)
++  alpha_param <- exp(2 * (log(mean) - log(sd)))
++  beta_param <- exp(log(mean) - 2 * log(sd))
++  pmf <- pgamma(1:(max_d + 1), shape = alpha_param, scale = beta_param) -
++    pgamma(0:max_d, shape = alpha_param, scale = beta_param)
+   pmf <- as.vector(pmf) /
+-    as.vector(pgamma(max_d + 1, shape = alpha, scale = beta))
++    as.vector(pgamma(max_d + 1, shape = alpha_param, scale = beta_param))
+   if (zero_pad > 0) {
+     pmf <- c(rep(0, zero_pad), pmf)
+   }
+diff --git a/data-raw/estimate-infections.R b/data-raw/estimate-infections.R
+index 406b51d2d..6428c92fe 100644
+--- a/data-raw/estimate-infections.R
++++ b/data-raw/estimate-infections.R
+@@ -1,6 +1,6 @@
+-library("EpiNow2")
+-library("here")
+-library("purrr")
++library(EpiNow2)
++library(here)
++library(purrr)
+ 
+ options(mc.cores = 4)
+ 
+@@ -45,7 +45,7 @@ example_regional_epinow <- modify_tree(
+     for (name in plot_names) {
+       x[[name]] <- NULL
+     }
+-    return(x)
++    x
+   }
+ )
+ 
+diff --git a/data-raw/truncated.R b/data-raw/truncated.R
+index 288e966b7..dbc43ba82 100644
+--- a/data-raw/truncated.R
++++ b/data-raw/truncated.R
+@@ -1,4 +1,4 @@
+-library("EpiNow2")
++library(EpiNow2)
+ 
+ #' Apply truncation to a data set
+ #'
+@@ -37,7 +37,7 @@ apply_truncation <- function(index, data, dist) {
+   trunc_data[
+     (.N - length(cmf) + 1):.N, confirm := as.integer(confirm * cmf)
+   ]
+-  return(trunc_data)
++  trunc_data
+ }
+ 
+ # get example case counts
+diff --git a/man/create_delay_inits.Rd b/man/create_delay_inits.Rd
+index 8ba670c90..d2e376782 100644
+--- a/man/create_delay_inits.Rd
++++ b/man/create_delay_inits.Rd
+@@ -4,10 +4,7 @@
+ \alias{create_delay_inits}
+ \title{Create initial conditions for delays}
+ \usage{
+-create_delay_inits(data)
+-}
+-\arguments{
+-\item{data}{A list of data as produced by \code{\link[=create_stan_data]{create_stan_data()}}.}
++create_delay_inits(stan_data)
+ }
+ \value{
+ A list of initial conditions for delays
+diff --git a/man/create_initial_conditions.Rd b/man/create_initial_conditions.Rd
+index 308a1b8ba..f5eecc144 100644
+--- a/man/create_initial_conditions.Rd
++++ b/man/create_initial_conditions.Rd
+@@ -4,7 +4,7 @@
+ \alias{create_initial_conditions}
+ \title{Create Initial Conditions Generating Function}
+ \usage{
+-create_initial_conditions(data)
++create_initial_conditions(stan_data)
+ }
+ \arguments{
+ \item{data}{A list of data as produced by \code{\link[=create_stan_data]{create_stan_data()}}.}
+diff --git a/vignettes/precompile.R b/vignettes/precompile.R
+index dca4d5425..48606135d 100644
+--- a/vignettes/precompile.R
++++ b/vignettes/precompile.R
+@@ -1,6 +1,6 @@
+ # Vignettes that have long run times
+ 
+-library("knitr")
++library(knitr)
+ orig_files <- list.files(pattern = "Rmd.orig$")
+ for (f in orig_files) {
+   knit(f, sub(".orig$", "", f))

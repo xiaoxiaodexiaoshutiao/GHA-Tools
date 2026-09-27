@@ -1,0 +1,237 @@
+diff --git a/.github/workflows/pkgdown.yaml b/.github/workflows/pkgdown.yaml
+index 087f0b0..bfc9f4d 100644
+--- a/.github/workflows/pkgdown.yaml
++++ b/.github/workflows/pkgdown.yaml
+@@ -4,12 +4,13 @@ on:
+   push:
+     branches: [main, master]
+   pull_request:
+-    branches: [main, master]
+   release:
+     types: [published]
+   workflow_dispatch:
+ 
+-name: pkgdown
++name: pkgdown.yaml
++
++permissions: read-all
+ 
+ jobs:
+   pkgdown:
+@@ -19,8 +20,10 @@ jobs:
+       group: pkgdown-${{ github.event_name != 'pull_request' || github.run_id }}
+     env:
+       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
++    permissions:
++      contents: write
+     steps:
+-      - uses: actions/checkout@v3
++      - uses: actions/checkout@v4
+ 
+       - uses: r-lib/actions/setup-pandoc@v2
+ 
+@@ -39,7 +42,7 @@ jobs:
+ 
+       - name: Deploy to GitHub pages 🚀
+         if: github.event_name != 'pull_request'
+-        uses: JamesIves/github-pages-deploy-action@v4.4.1
++        uses: JamesIves/github-pages-deploy-action@v4.5.0
+         with:
+           clean: false
+           branch: gh-pages
+diff --git a/.github/workflows/pr-commands.yaml b/.github/workflows/pr-commands.yaml
+index e5edf9f..2edd93f 100644
+--- a/.github/workflows/pr-commands.yaml
++++ b/.github/workflows/pr-commands.yaml
+@@ -1,55 +1,85 @@
++# Workflow derived from https://github.com/r-lib/actions/tree/v2/examples
++# Need help debugging build failures? Start at https://github.com/r-lib/actions#where-to-find-help
+ on:
+   issue_comment:
+     types: [created]
+-name: Commands
++
++name: pr-commands.yaml
++
++permissions: read-all
++
+ jobs:
+   document:
+-    if: startsWith(github.event.comment.body, '/document')
++    if: ${{ github.event.issue.pull_request && (github.event.comment.author_association == 'MEMBER' || github.event.comment.author_association == 'OWNER') && startsWith(github.event.comment.body, '/document') }}
+     name: document
+-    runs-on: macOS-latest
++    runs-on: ubuntu-latest
+     env:
+       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
++    permissions:
++      contents: write
+     steps:
+-      - uses: actions/checkout@v2
+-      - uses: r-lib/actions/pr-fetch@v1
++      - uses: actions/checkout@v4
++
++      - uses: r-lib/actions/pr-fetch@v2
+         with:
+           repo-token: ${{ secrets.GITHUB_TOKEN }}
+-      - uses: r-lib/actions/setup-r@v1
+-      - name: Install dependencies
+-        run: Rscript -e 'install.packages(c("remotes", "roxygen2"))' -e 'remotes::install_deps(dependencies = TRUE)'
++
++      - uses: r-lib/actions/setup-r@v2
++        with:
++          use-public-rspm: true
++
++      - uses: r-lib/actions/setup-r-dependencies@v2
++        with:
++          extra-packages: any::roxygen2
++          needs: pr-document
++
+       - name: Document
+-        run: Rscript -e 'roxygen2::roxygenise()'
++        run: roxygen2::roxygenise()
++        shell: Rscript {0}
++
+       - name: commit
+         run: |
+-          git config --local user.email "actions@github.com"
+-          git config --local user.name "GitHub Actions"
++          git config --local user.name "$GITHUB_ACTOR"
++          git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
+           git add man/\* NAMESPACE
+           git commit -m 'Document'
+-      - uses: r-lib/actions/pr-push@v1
++
++      - uses: r-lib/actions/pr-push@v2
+         with:
+           repo-token: ${{ secrets.GITHUB_TOKEN }}
++
+   style:
+-    if: startsWith(github.event.comment.body, '/style')
++    if: ${{ github.event.issue.pull_request && (github.event.comment.author_association == 'MEMBER' || github.event.comment.author_association == 'OWNER') && startsWith(github.event.comment.body, '/style') }}
+     name: style
+-    runs-on: macOS-latest
++    runs-on: ubuntu-latest
+     env:
+       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
++    permissions:
++      contents: write
+     steps:
+-      - uses: actions/checkout@v2
+-      - uses: r-lib/actions/pr-fetch@v1
++      - uses: actions/checkout@v4
++
++      - uses: r-lib/actions/pr-fetch@v2
+         with:
+           repo-token: ${{ secrets.GITHUB_TOKEN }}
+-      - uses: r-lib/actions/setup-r@v1
++
++      - uses: r-lib/actions/setup-r@v2
++
+       - name: Install dependencies
+-        run: Rscript -e 'install.packages("styler")'
++        run: install.packages("styler")
++        shell: Rscript {0}
++
+       - name: Style
+-        run: Rscript -e 'styler::style_pkg()'
++        run: styler::style_pkg()
++        shell: Rscript {0}
++
+       - name: commit
+         run: |
+-          git config --local user.email "actions@github.com"
+-          git config --local user.name "GitHub Actions"
++          git config --local user.name "$GITHUB_ACTOR"
++          git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
+           git add \*.R
+           git commit -m 'Style'
+-      - uses: r-lib/actions/pr-push@v1
++
++      - uses: r-lib/actions/pr-push@v2
+         with:
+           repo-token: ${{ secrets.GITHUB_TOKEN }}
+diff --git a/.github/workflows/test-coverage.yaml b/.github/workflows/test-coverage.yaml
+index 2c5bb50..0ab748d 100644
+--- a/.github/workflows/test-coverage.yaml
++++ b/.github/workflows/test-coverage.yaml
+@@ -4,9 +4,10 @@ on:
+   push:
+     branches: [main, master]
+   pull_request:
+-    branches: [main, master]
+ 
+-name: test-coverage
++name: test-coverage.yaml
++
++permissions: read-all
+ 
+ jobs:
+   test-coverage:
+@@ -15,7 +16,7 @@ jobs:
+       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+ 
+     steps:
+-      - uses: actions/checkout@v3
++      - uses: actions/checkout@v4
+ 
+       - uses: r-lib/actions/setup-r@v2
+         with:
+@@ -23,28 +24,39 @@ jobs:
+ 
+       - uses: r-lib/actions/setup-r-dependencies@v2
+         with:
+-          extra-packages: any::covr
++          extra-packages: any::covr, any::xml2
+           needs: coverage
+ 
+       - name: Test coverage
+         run: |
+-          covr::codecov(
++          cov <- covr::package_coverage(
+             quiet = FALSE,
+             clean = FALSE,
+-            install_path = file.path(Sys.getenv("RUNNER_TEMP"), "package")
++            install_path = file.path(normalizePath(Sys.getenv("RUNNER_TEMP"), winslash = "/"), "package")
+           )
++          print(cov)
++          covr::to_cobertura(cov)
+         shell: Rscript {0}
+ 
++      - uses: codecov/codecov-action@v5
++        with:
++          # Fail if error if not on PR, or if on PR and token is given
++          fail_ci_if_error: ${{ github.event_name != 'pull_request' || secrets.CODECOV_TOKEN }}
++          files: ./cobertura.xml
++          plugins: noop
++          disable_search: true
++          token: ${{ secrets.CODECOV_TOKEN }}
++
+       - name: Show testthat output
+         if: always()
+         run: |
+           ## --------------------------------------------------------------------
+-          find ${{ runner.temp }}/package -name 'testthat.Rout*' -exec cat '{}' \; || true
++          find '${{ runner.temp }}/package' -name 'testthat.Rout*' -exec cat '{}' \; || true
+         shell: bash
+ 
+       - name: Upload test results
+         if: failure()
+-        uses: actions/upload-artifact@v3
++        uses: actions/upload-artifact@v4
+         with:
+           name: coverage-test-failures
+           path: ${{ runner.temp }}/package
+diff --git a/src/rc50.c b/src/rc50.c
+index b4d5ff2..7f74dc5 100644
+--- a/src/rc50.c
++++ b/src/rc50.c
+@@ -34,7 +34,7 @@
+ #include <signal.h>
+ 
+ #include <sys/time.h>
+-#include <sys/unistd.h>
++#include <unistd.h>
+ 
+ #include "redefine.h"
+ #include "transform.h"

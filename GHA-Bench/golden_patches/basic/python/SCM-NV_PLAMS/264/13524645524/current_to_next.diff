@@ -1,0 +1,13 @@
+diff --git a/unit_tests/test_job_analysis.py b/unit_tests/test_job_analysis.py
+index 26cc0525b..bda1efc9f 100644
+--- a/unit_tests/test_job_analysis.py
++++ b/unit_tests/test_job_analysis.py
+@@ -858,7 +858,7 @@ def test_filter_jobs(self, dummy_single_jobs):
+             .add_field("Output", lambda j: j.results.read_file("$JN.out")[:5])
+             .add_field("Atoms", lambda j: [at.symbol for at in j.molecule], expansion_depth=1)
+             .remove_field("Path")
+-            .filter_jobs(lambda d: d["Formula"] is not None and d["Atoms"] is not "O")
++            .filter_jobs(lambda d: d["Formula"] is not None and d["Atoms"] != "O")
+             .collapse_field("Atoms")
+         )
+ 

@@ -1,0 +1,61 @@
+diff --git a/custom_components/yandex_weather/const.py b/custom_components/yandex_weather/const.py
+index b750735..6f9f278 100644
+--- a/custom_components/yandex_weather/const.py
++++ b/custom_components/yandex_weather/const.py
+@@ -48,6 +48,8 @@
+ ATTR_API_FORECAST_ICONS = "forecast_icons"
+ 
+ ATTR_FORECAST_DATA = "forecast"  # just to be able to load saved forecast after restart
++ATTR_FORECAST_HOURLY = "forecastHourly"
++ATTR_FORECAST_DAILY = "forecastDaily"
+ 
+ CONF_UPDATES_PER_DAY = "updates_per_day"
+ CONF_IMAGE_SOURCE = "image_source"
+diff --git a/custom_components/yandex_weather/updater.py b/custom_components/yandex_weather/updater.py
+index 4b04c09..60aacc1 100644
+--- a/custom_components/yandex_weather/updater.py
++++ b/custom_components/yandex_weather/updater.py
+@@ -27,10 +27,6 @@
+     ATTR_FORECAST_WIND_BEARING,
+     Forecast,
+ )
+-from homeassistant.components.weatherkit.const import (
+-    ATTR_FORECAST_DAILY,
+-    ATTR_FORECAST_HOURLY,
+-)
+ from homeassistant.core import HomeAssistant, callback
+ from homeassistant.helpers.device_registry import DeviceEntryType
+ from homeassistant.helpers.entity import DeviceInfo
+@@ -49,6 +45,8 @@
+     ATTR_API_WIND_BEARING,
+     ATTR_API_WIND_SPEED,
+     ATTR_API_YA_CONDITION,
++    ATTR_FORECAST_DAILY,
++    ATTR_FORECAST_HOURLY,
+     ATTR_MIN_FORECAST_TEMPERATURE,
+     CONDITION_ICONS,
+     DOMAIN,
+diff --git a/custom_components/yandex_weather/weather.py b/custom_components/yandex_weather/weather.py
+index a2c7b59..f1f9af7 100644
+--- a/custom_components/yandex_weather/weather.py
++++ b/custom_components/yandex_weather/weather.py
+@@ -15,10 +15,6 @@
+     WeatherEntity,
+     WeatherEntityFeature,
+ )
+-from homeassistant.components.weatherkit.const import (
+-    ATTR_FORECAST_DAILY,
+-    ATTR_FORECAST_HOURLY,
+-)
+ from homeassistant.config_entries import ConfigEntry
+ from homeassistant.const import (
+     STATE_UNAVAILABLE,
+@@ -45,6 +41,8 @@
+     ATTR_API_WIND_BEARING,
+     ATTR_API_WIND_SPEED,
+     ATTR_API_YA_CONDITION,
++    ATTR_FORECAST_DAILY,
++    ATTR_FORECAST_HOURLY,
+     ATTRIBUTION,
+     CONF_IMAGE_SOURCE,
+     DOMAIN,

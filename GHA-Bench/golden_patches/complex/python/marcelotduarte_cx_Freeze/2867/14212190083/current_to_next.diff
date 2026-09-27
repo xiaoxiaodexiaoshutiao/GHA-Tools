@@ -1,0 +1,33 @@
+diff --git a/cx_Freeze/freezer.py b/cx_Freeze/freezer.py
+index 53aafc420..705b075b8 100644
+--- a/cx_Freeze/freezer.py
++++ b/cx_Freeze/freezer.py
+@@ -1146,10 +1146,10 @@ def _default_bin_path_excludes(self) -> list[str]:
+         return ["/lib", "/usr/lib", "/System/Library/Frameworks"]
+ 
+     def _default_bin_path_includes(self) -> list[str]:
+-        # use macpython distributed files if available in cx_Freeze/.dylibs
+-        module_libs = Path(__file__).resolve().parent / ".dylibs"
+-        if module_libs.is_dir():
+-            return self._validate_bin_path([module_libs])
++        # use macpython distributed files if available
++        bases_lib = get_resource_file_path("bases", "lib", "")
++        if bases_lib:
++            return self._validate_bin_path([bases_lib])
+         # use default
+         return super()._default_bin_path_includes()
+ 
+diff --git a/pyproject.toml b/pyproject.toml
+index 77c394a7f..42dd67efe 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -180,6 +180,9 @@ cd /opt/_internal && tar -xvf static-libs-for-embedding-only.tar.xz
+ 
+ [tool.cibuildwheel.macos]
+ archs = "universal2"
++repair-wheel-command = """
++delocate-wheel --require-archs {delocate_archs} -L bases/lib -w {dest_dir} {wheel}
++"""
+ 
+ [tool.coverage.html]
+ directory = "build/coverage_html_report"

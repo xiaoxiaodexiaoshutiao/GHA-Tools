@@ -1,0 +1,13 @@
+diff --git a/src/SPC/builder/extension/xlswriter.php b/src/SPC/builder/extension/xlswriter.php
+index 0eedb4345..bf6f89940 100644
+--- a/src/SPC/builder/extension/xlswriter.php
++++ b/src/SPC/builder/extension/xlswriter.php
+@@ -28,7 +28,7 @@ public function patchBeforeMake(): bool
+     {
+         if (PHP_OS_FAMILY === 'Windows') {
+             $content = file_get_contents($this->source_dir . '/library/libxlsxwriter/src/theme.c');
+-            $bom = pack('CCC', 0xef, 0xbb, 0xbf);
++            $bom = pack('CCC', 0xEF, 0xBB, 0xBF);
+             if (substr($content, 0, 3) !== $bom) {
+                 file_put_contents($this->source_dir . '/library/libxlsxwriter/src/theme.c', $content);
+                 return true;
